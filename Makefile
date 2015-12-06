@@ -100,7 +100,7 @@ ASMCOMP=asmcomp/arch.cmo asmcomp/debuginfo.cmo \
   asmcomp/asmlink.cmo asmcomp/asmlibrarian.cmo asmcomp/asmpackager.cmo \
   driver/opterrors.cmo driver/optcompile.cmo
 
-TOPLEVEL=toplevel/genprintval.cmo toplevel/toploop.cmo \
+TOPLEVEL=toplevel/genprintval.cmo toplevel/fastppx.cmo toplevel/toploop.cmo \
   toplevel/trace.cmo toplevel/topdirs.cmo toplevel/topmain.cmo
 
 BYTESTART=driver/main.cmo
