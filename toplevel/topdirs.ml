@@ -536,6 +536,12 @@ let _ =
 
 (* Set various compiler flags *)
 
+  Hashtbl.add directive_table "dsource"
+             (Directive_bool(fun b -> Clflags.dump_source := b));
+
+  Hashtbl.add directive_table "dparsetree"
+             (Directive_bool(fun b -> Clflags.dump_parsetree := b));
+
   Hashtbl.add directive_table "labels"
              (Directive_bool(fun b -> Clflags.classic := not b));
 
