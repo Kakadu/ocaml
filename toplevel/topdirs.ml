@@ -403,11 +403,21 @@ let install_ppx_mapper ppf (lid: Longident.t) =
 
     let open Path in
     let open Ident in
-    match desc.val_type.desc with
-    | Tconstr (Pdot (Pident {name="Ast_mapper";_}, "mapper", _), [], _) ->
+    (* (Printtyp.value_description {stamp=0;name="asdf";flags=0} ppf *)
+    (*                                                  desc); *)
+
+    let rec is_good_type t =
+      match t.desc with
+      | Tlink l -> is_good_type l
+      | Tconstr (Pdot (Pident {name="Ast_mapper";_}, "mapper", _), [], _) -> true
+      | _ -> false
+    in
+    if is_good_type desc.val_type
+    then
        let mapper = eval_path !toplevel_env path in
        Fastppx.add_extension ppf mapper
-    | _ -> fprintf ppf "type of the value should be 'Ast_mapper.mapper'. Nothing added.\n%!"
+    else
+      fprintf ppf "type of the value should be 'Ast_mapper.mapper'. Nothing added.\n%!"
   with
     Not_found -> fprintf ppf "Identifier is unbound in the current environment.\n%!"
 
