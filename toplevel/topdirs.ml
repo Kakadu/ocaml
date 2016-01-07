@@ -396,6 +396,21 @@ let _ = add_directive "remove_printer"
       doc = "Remove the named function from the table of toplevel printers.";
     }
 
+(* Installing mapper specified by indent if it exists and type is appropriate *)
+let install_ppx_mapper ppf (lid: Longident.t) =
+  try
+    let (path, desc) = Env.lookup_value lid !toplevel_env in
+
+    let open Path in
+    let open Ident in
+    match desc.val_type.desc with
+    | Tconstr (Pdot (Pident {name="Ast_mapper";_}, "mapper", _), [], _) ->
+       let mapper = eval_path !toplevel_env path in
+       Fastppx.add_extension ppf mapper
+    | _ -> fprintf ppf "type of the value should be 'Ast_mapper.mapper'. Nothing added.\n%!"
+  with
+    Not_found -> fprintf ppf "Identifier is unbound in the current environment.\n%!"
+
 (* The trace *)
 
 external current_environment: unit -> Obj.t = "caml_get_current_environment"
@@ -698,6 +713,21 @@ let _ = add_directive "ppx"
       section = section_options;
       doc = "After parsing, pipe the abstract \
           syntax tree through the preprocessor command.";
+    }
+
+let _ = add_directive "ppx_mapper"
+    (Directive_ident(install_ppx_mapper std_out))
+    {
+      section = section_options;
+      doc = "After parsing, pipe the abstract \
+          syntax tree to specified PPX mappers.";
+    }
+
+let _ = add_directive "ppx_mappers_clear"
+    (Directive_none Fastppx.clear)
+    {
+      section = section_options;
+      doc = "Forget all added PPX mappers.";
     }
 
 let _ = add_directive "warnings"
