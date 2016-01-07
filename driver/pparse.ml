@@ -102,20 +102,37 @@ let rewrite magic ast ppxs =
        (List.rev ppxs))
 
 let apply_rewriters_str ?(restore = true) ~tool_name ast =
-  match !Clflags.all_ppx with
-  | [] -> ast
-  | ppxs ->
-      let ast = Ast_mapper.add_ppx_context_str ~tool_name ast in
-      let ast = rewrite Config.ast_impl_magic_number ast ppxs in
-      Ast_mapper.drop_ppx_context_str ~restore ast
+  (* print_endline "apply_rewriters_str"; *)
+  let magic = Config.ast_impl_magic_number in
+  let rec helper ast ppxs =
+    match ppxs with
+    | [] -> ast
+    | Clflags.ExternalPPX ppx :: tl ->
+       let file1 = write_ast magic ast in
+       helper (read_ast magic (apply_rewriter magic file1 ppx)) tl
+    | Clflags.LocalPPX m :: tl ->
+       let m : Ast_mapper.mapper = Obj.obj m in
+       helper (m.Ast_mapper.structure m ast) tl
+  in
+  let ast = Ast_mapper.add_ppx_context_str ~tool_name ast in
+  let ast = helper ast !Clflags.all_ppx in
+  Ast_mapper.drop_ppx_context_str ~restore ast
 
 let apply_rewriters_sig ?(restore = true) ~tool_name ast =
-  match !Clflags.all_ppx with
-  | [] -> ast
-  | ppxs ->
-      let ast = Ast_mapper.add_ppx_context_sig ~tool_name ast in
-      let ast = rewrite Config.ast_intf_magic_number ast ppxs in
-      Ast_mapper.drop_ppx_context_sig ~restore ast
+  let magic = Config.ast_intf_magic_number in
+  let rec helper ast ppxs =
+    match ppxs with
+    | [] -> ast
+    | Clflags.ExternalPPX ppx :: tl ->
+       let file1 = write_ast magic ast in
+       helper (read_ast magic (apply_rewriter magic file1 ppx)) tl
+    | Clflags.LocalPPX m :: tl ->
+       let m : Ast_mapper.mapper = Obj.obj m in
+       helper (m.Ast_mapper.signature m ast) tl
+  in
+  let ast = Ast_mapper.add_ppx_context_sig ~tool_name ast in
+  let ast = helper ast !Clflags.all_ppx in
+  Ast_mapper.drop_ppx_context_sig ~restore ast
 
 let apply_rewriters ?restore ~tool_name magic ast =
   if magic = Config.ast_impl_magic_number then

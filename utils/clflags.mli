@@ -10,6 +10,8 @@
 (*                                                                     *)
 (***********************************************************************)
 
+type ppx_cfg = ExternalPPX of string | LocalPPX of Obj.t
+
 val objfiles : string list ref
 val ccobjs : string list ref
 val dllibs : string list ref
@@ -32,7 +34,7 @@ val classic : bool ref
 val nopervasives : bool ref
 val open_modules : string list ref
 val preprocessor : string option ref
-val all_ppx : string list ref
+val all_ppx : ppx_cfg list ref
 val annotations : bool ref
 val binary_annotations : bool ref
 val use_threads : bool ref

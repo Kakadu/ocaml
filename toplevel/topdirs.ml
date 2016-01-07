@@ -414,8 +414,8 @@ let install_ppx_mapper ppf (lid: Longident.t) =
     in
     if is_good_type desc.val_type
     then
-       let mapper = eval_path !toplevel_env path in
-       Fastppx.add_extension ppf mapper
+      let mapper = eval_path !toplevel_env path in
+      Clflags.(all_ppx := LocalPPX mapper :: !all_ppx)
     else
       fprintf ppf "type of the value should be 'Ast_mapper.mapper'. Nothing added.\n%!"
   with
@@ -718,7 +718,7 @@ let _ = add_directive "rectypes"
     }
 
 let _ = add_directive "ppx"
-    (Directive_string(fun s -> Clflags.all_ppx := s :: !Clflags.all_ppx))
+    (Directive_string(fun s -> Clflags.(all_ppx := ExternalPPX s :: !all_ppx)))
     {
       section = section_options;
       doc = "After parsing, pipe the abstract \
@@ -734,7 +734,7 @@ let _ = add_directive "ppx_mapper"
     }
 
 let _ = add_directive "ppx_mappers_clear"
-    (Directive_none Fastppx.clear)
+    (Directive_none (fun () -> Clflags.all_ppx := []))
     {
       section = section_options;
       doc = "Forget all added PPX mappers.";

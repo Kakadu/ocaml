@@ -308,7 +308,7 @@ let readenv ppf position =
   last_objfiles := [];
   read_OCAMLPARAM ppf position;
   all_ccopts := !last_ccopts @ !first_ccopts;
-  all_ppx := !last_ppx @ !first_ppx
+  all_ppx := List.map (fun x -> ExternalPPX x) (!last_ppx @ !first_ppx)
 
 let get_objfiles () =
   List.rev (!last_objfiles @ !objfiles @ !first_objfiles)

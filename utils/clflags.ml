@@ -12,6 +12,8 @@
 
 (* Command-line parameters *)
 
+type ppx_cfg = ExternalPPX of string | LocalPPX of Obj.t
+
 let objfiles = ref ([] : string list)   (* .cmo and .cma files *)
 and ccobjs = ref ([] : string list)     (* .o, .a, .so and -cclib -lxxx *)
 and dllibs = ref ([] : string list)     (* .so and -dllib -lxxx *)
@@ -34,7 +36,7 @@ and all_ccopts = ref ([] : string list)     (* -ccopt *)
 and classic = ref false                 (* -nolabels *)
 and nopervasives = ref false            (* -nopervasives *)
 and preprocessor = ref(None : string option) (* -pp *)
-and all_ppx = ref ([] : string list)        (* -ppx *)
+and all_ppx = ref ([] : ppx_cfg list)        (* -ppx *)
 let annotations = ref false             (* -annot *)
 let binary_annotations = ref false      (* -annot *)
 and use_threads = ref false             (* -thread *)
