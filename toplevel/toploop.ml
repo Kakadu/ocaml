@@ -359,11 +359,11 @@ let use_print_results = ref true
 let preprocess_phrase ppf phr =
   let phr =
     match phr with
+    | Ptop_def [] -> phr
     | Ptop_def str ->
         let str =
           Pparse.apply_rewriters_str ~restore:true ~tool_name:"ocaml" str
         in
-        let str = Fastppx.apply str in
         Ptop_def str
     | phr -> phr
   in
