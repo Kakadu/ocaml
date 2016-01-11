@@ -414,8 +414,8 @@ let install_ppx_mapper ppf (lid: Longident.t) =
     in
     if is_good_type desc.val_type
     then
-       let mapper = eval_path !toplevel_env path in
-       Fastppx.add_extension ppf mapper
+      let mapper = eval_path !toplevel_env path in
+      Pparse.add_in_process_ppx (Obj.obj mapper)
     else
       fprintf ppf "type of the value should be 'Ast_mapper.mapper'. Nothing added.\n%!"
   with
@@ -733,11 +733,12 @@ let _ = add_directive "ppx_mapper"
           syntax tree to specified PPX mappers.";
     }
 
-let _ = add_directive "ppx_mappers_clear"
-    (Directive_none Fastppx.clear)
+let _ = add_directive "ppxs_clear"
+    (Directive_none Pparse.clear_ppx)
     {
       section = section_options;
-      doc = "Forget all added PPX mappers.";
+      doc = "Forget all added PPX preprocessor \
+             (external and in-process)";
     }
 
 let _ = add_directive "warnings"
