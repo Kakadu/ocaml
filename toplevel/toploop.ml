@@ -328,7 +328,11 @@ let phrase ppf phr =
   let phr =
     match phr with
     | Ptop_def str ->
-        Ptop_def (Pparse.apply_rewriters ~tool_name:"ocaml" ast_impl_magic_number str)
+         let str =
+           Pparse.apply_rewriters ~tool_name:"ocaml" ast_impl_magic_number str
+         in
+         let str = Fastppx.apply str in
+         Ptop_def str
     | phr -> phr
   in
   if !Clflags.dump_parsetree then Printast.top_phrase ppf phr;

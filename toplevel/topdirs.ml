@@ -250,6 +250,23 @@ let _ = Hashtbl.add directive_table "install_printer"
 let _ = Hashtbl.add directive_table "remove_printer"
              (Directive_ident (dir_remove_printer std_out))
 
+let immediate_ppx ppf (lid: Longident.t) =
+  let (path, desc) = Env.lookup_value lid !toplevel_env in
+(*
+  fprintf ppf "%a\n%a\n@."
+    Printtyp.longident lid
+    Printtyp.type_expr ({desc=desc.val_type.desc; level=0; id=0});
+  flush stdout;
+*)
+  (* TODO: add typechecking for val_type.desc *)
+  let () = match desc.val_type.desc with
+    | _ ->
+        let mapper = eval_path !toplevel_env path in
+        Fastppx.add_extension ppf mapper;
+        ()
+  in
+  ()
+
 (* The trace *)
 
 external current_environment: unit -> Obj.t = "caml_get_current_environment"
@@ -463,6 +480,12 @@ let _ =
 
 (* Set various compiler flags *)
 
+  Hashtbl.add directive_table "dsource"
+             (Directive_bool(fun b -> Clflags.dump_source := b));
+
+  Hashtbl.add directive_table "dparsetree"
+             (Directive_bool(fun b -> Clflags.dump_parsetree := b));
+
   Hashtbl.add directive_table "labels"
              (Directive_bool(fun b -> Clflags.classic := not b));
 
@@ -474,6 +497,9 @@ let _ =
 
   Hashtbl.add directive_table "ppx"
     (Directive_string(fun s -> Clflags.all_ppx := s :: !Clflags.all_ppx));
+
+  Hashtbl.add directive_table "ppx2" (Directive_ident (immediate_ppx std_out) );
+  Hashtbl.add directive_table "ppx2clear" (Directive_none Fastppx.clear);
 
   Hashtbl.add directive_table "warnings"
              (Directive_string (parse_warnings std_out false));
