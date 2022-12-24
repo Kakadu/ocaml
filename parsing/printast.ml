@@ -380,6 +380,12 @@ and expression i ppf x =
   | Pexp_extension (s, arg) ->
       line i ppf "Pexp_extension \"%s\"\n" s.txt;
       payload i ppf arg
+  | Pexp_metaocaml_escape e ->
+      line i ppf "Pexp_metaocaml_escape\n";
+      expression i ppf e
+  | Pexp_metaocaml_bracket e ->
+      line i ppf "Pexp_metaocaml_bracket\n";
+      expression i ppf e
   | Pexp_unreachable ->
       line i ppf "Pexp_unreachable"
 

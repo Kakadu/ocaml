@@ -2390,16 +2390,6 @@ simple_expr:
       { $1 }
 ;
 %inline simple_expr_attrs:
-  | DOTLESS e = seq_expr GREATERDOT                 /* NNN */
-    { (e.pexp_desc,
-       (None,
-        Attr.mk ~loc:(make_loc $sloc) (mknoloc "metaocaml.bracket") (PStr []) ::
-                               e.pexp_attributes)) }/* NNN */
-  | DOTTILDE e = simple_expr                        /* NNN */
-    { (e.pexp_desc,
-       (None,
-        Attr.mk ~loc:(make_loc $sloc) (mknoloc "metaocaml.escape") (PStr []) ::
-        e.pexp_attributes)) }                       /* NNN */
   | BEGIN ext = ext attrs = attributes e = seq_expr END
       { e.pexp_desc, (ext, attrs @ e.pexp_attributes) }
   | BEGIN ext_attributes END
@@ -2436,6 +2426,10 @@ simple_expr:
       { Pexp_override $2 }
   | LBRACELESS object_expr_content error
       { unclosed "{<" $loc($1) ">}" $loc($3) }
+  | DOTLESS seq_expr GREATERDOT
+      { Pexp_metaocaml_bracket $2 }
+  | DOTTILDE simple_expr
+      { Pexp_metaocaml_escape $2 }
   | LBRACELESS GREATERRBRACE
       { Pexp_override [] }
   | simple_expr DOT mkrhs(label_longident)

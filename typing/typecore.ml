@@ -4000,7 +4000,9 @@ and type_expect_
       end
   | Pexp_extension ext ->
       raise (Error_forward (Builtin_attributes.error_of_extension ext))
-
+  | Pexp_metaocaml_bracket _
+  | Pexp_metaocaml_escape _ ->
+      raise (Error_forward (Location.errorf ~loc "Metaocaml stuff shouldn't reach typechecker."))
   | Pexp_unreachable ->
       re { exp_desc = Texp_unreachable;
            exp_loc = loc; exp_extra = [];

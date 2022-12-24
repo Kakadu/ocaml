@@ -419,6 +419,8 @@ module E = struct
         List.iter (sub.binding_op sub) ands;
         sub.expr sub body
     | Pexp_extension x -> sub.extension sub x
+    | Pexp_metaocaml_bracket x
+    | Pexp_metaocaml_escape x -> sub.expr sub x
     | Pexp_unreachable -> ()
 
   let iter_binding_op sub {pbop_op; pbop_pat; pbop_exp; pbop_loc} =

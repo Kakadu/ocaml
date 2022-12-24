@@ -212,6 +212,8 @@ module Exp = struct
   let letop ?loc ?attrs let_ ands body =
     mk ?loc ?attrs (Pexp_letop {let_; ands; body})
   let extension ?loc ?attrs a = mk ?loc ?attrs (Pexp_extension a)
+  let metaocaml_bracket ?loc ?attrs a = mk ?loc ?attrs (Pexp_metaocaml_bracket a)
+  let metaocaml_escape ?loc ?attrs a = mk ?loc ?attrs (Pexp_metaocaml_escape a)
   let unreachable ?loc ?attrs () = mk ?loc ?attrs Pexp_unreachable
 
   let case lhs ?guard rhs =

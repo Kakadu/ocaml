@@ -188,6 +188,8 @@ module Exp:
     val letop: ?loc:loc -> ?attrs:attrs -> binding_op
                -> binding_op list -> expression -> expression
     val extension: ?loc:loc -> ?attrs:attrs -> extension -> expression
+    val metaocaml_bracket: ?loc:loc -> ?attrs:attrs -> expression -> expression
+    val metaocaml_escape: ?loc:loc -> ?attrs:attrs -> expression -> expression
     val unreachable: ?loc:loc -> ?attrs:attrs -> unit -> expression
 
     val case: pattern -> ?guard:expression -> expression -> case

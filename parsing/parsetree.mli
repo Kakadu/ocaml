@@ -415,6 +415,8 @@ and expression_desc =
       (** - [let* P = E0 in E1]
             - [let* P0 = E00 and* P1 = E01 in E1] *)
   | Pexp_extension of extension  (** [[%id]] *)
+  | Pexp_metaocaml_bracket of expression (** [ .< E >. ] *)
+  | Pexp_metaocaml_escape of expression (** [ .~ E ] *)
   | Pexp_unreachable  (** [.] *)
 
 and case =

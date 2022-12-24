@@ -269,6 +269,8 @@ let rec add_expr bv exp =
       | _ -> handle_extension e
       end
   | Pexp_extension e -> handle_extension e
+  | Pexp_metaocaml_bracket _
+  | Pexp_metaocaml_escape _
   | Pexp_unreachable -> ()
 
 and add_cases bv cases =
