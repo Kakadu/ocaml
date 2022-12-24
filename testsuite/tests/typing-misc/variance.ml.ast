@@ -1,0 +1,216 @@
+[
+  structure_item (testsuite/tests/typing-misc/variance.ml[8,71+0]..[8,71+41])
+    Pstr_type Rec
+    [
+      type_declaration "t" (testsuite/tests/typing-misc/variance.ml[8,71+9]..[8,71+10]) (testsuite/tests/typing-misc/variance.ml[8,71+0]..[8,71+41])
+        ptype_params =
+          [
+            core_type (testsuite/tests/typing-misc/variance.ml[8,71+6]..[8,71+8])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (testsuite/tests/typing-misc/variance.ml[8,71+13]..[8,71+41])
+              Ptyp_alias "a"
+              core_type (testsuite/tests/typing-misc/variance.ml[8,71+13]..[8,71+35])
+                Ptyp_variant closed=Open
+                [
+                  Rtag "Foo" false
+                    [
+                      core_type (testsuite/tests/typing-misc/variance.ml[8,71+24]..[8,71+34])
+                        Ptyp_arrow
+                        Nolabel
+                        core_type (testsuite/tests/typing-misc/variance.ml[8,71+24]..[8,71+26])
+                          Ptyp_var a
+                        core_type (testsuite/tests/typing-misc/variance.ml[8,71+30]..[8,71+34])
+                          Ptyp_constr "unit" (testsuite/tests/typing-misc/variance.ml[8,71+30]..[8,71+34])
+                          []
+                    ]
+                ]
+                None
+    ]
+  structure_item (testsuite/tests/typing-misc/variance.ml[9,115+0]..[13,254+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/variance.ml[9,115+9]..[13,254+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/variance.ml[9,115+9]..[13,254+2])
+          Pexp_tuple
+          [
+            expression (testsuite/tests/typing-misc/variance.ml[9,115+9]..[11,182+2])
+              Pexp_constant PConst_string ("\ntype 'a t = 'a constraint 'a = [> `Foo of 'a -> unit ]\n",(testsuite/tests/typing-misc/variance.ml[9,115+11]..[11,182+0]),Some "")
+            expression (testsuite/tests/typing-misc/variance.ml[11,182+4]..[13,254+2])
+              Pexp_construct "Principal" (testsuite/tests/typing-misc/variance.ml[11,182+4]..[11,182+13])
+              Some
+                expression (testsuite/tests/typing-misc/variance.ml[11,182+13]..[13,254+2])
+                  Pexp_constant PConst_string ("\ntype +'a t = 'a constraint 'a = [> `Foo of 'a -> unit ]\n",(testsuite/tests/typing-misc/variance.ml[11,182+15]..[13,254+0]),Some "")
+          ]
+    ]
+  structure_item (testsuite/tests/typing-misc/variance.ml[17,280+0]..[17,280+34])
+    Pstr_type Rec
+    [
+      type_declaration "t" (testsuite/tests/typing-misc/variance.ml[17,280+8]..[17,280+9]) (testsuite/tests/typing-misc/variance.ml[17,280+0]..[17,280+34])
+        ptype_params =
+          [
+            core_type (testsuite/tests/typing-misc/variance.ml[17,280+5]..[17,280+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (testsuite/tests/typing-misc/variance.ml[17,280+13]..[17,280+33])
+              Ptyp_arrow
+              Nolabel
+              core_type (testsuite/tests/typing-misc/variance.ml[17,280+14]..[17,280+24])
+                Ptyp_arrow
+                Nolabel
+                core_type (testsuite/tests/typing-misc/variance.ml[17,280+14]..[17,280+16])
+                  Ptyp_var a
+                core_type (testsuite/tests/typing-misc/variance.ml[17,280+20]..[17,280+24])
+                  Ptyp_constr "unit" (testsuite/tests/typing-misc/variance.ml[17,280+20]..[17,280+24])
+                  []
+              core_type (testsuite/tests/typing-misc/variance.ml[17,280+29]..[17,280+33])
+                Ptyp_constr "unit" (testsuite/tests/typing-misc/variance.ml[17,280+29]..[17,280+33])
+                []
+    ]
+  structure_item (testsuite/tests/typing-misc/variance.ml[18,317+0]..[18,317+32])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-misc/variance.ml[18,317+4]..[18,317+6])
+          Ppat_var "tl" (testsuite/tests/typing-misc/variance.ml[18,317+4]..[18,317+6])
+        expression (testsuite/tests/typing-misc/variance.ml[18,317+9]..[18,317+32])
+          Pexp_apply
+          expression (testsuite/tests/typing-misc/variance.ml[18,317+9]..[18,317+10])
+            Pexp_ident "!" (testsuite/tests/typing-misc/variance.ml[18,317+9]..[18,317+10])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/typing-misc/variance.ml[18,317+10]..[18,317+32])
+                Pexp_apply
+                expression (testsuite/tests/typing-misc/variance.ml[18,317+11]..[18,317+14])
+                  Pexp_ident "ref" (testsuite/tests/typing-misc/variance.ml[18,317+11]..[18,317+14])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/typing-misc/variance.ml[18,317+15]..[18,317+31])
+                      Pexp_constraint
+                      expression (testsuite/tests/typing-misc/variance.ml[18,317+16]..[18,317+18])
+                        Pexp_construct "[]" (testsuite/tests/typing-misc/variance.ml[18,317+16]..[18,317+18])
+                        None
+                      core_type (testsuite/tests/typing-misc/variance.ml[18,317+21]..[18,317+30])
+                        Ptyp_constr "list" (testsuite/tests/typing-misc/variance.ml[18,317+26]..[18,317+30])
+                        [
+                          core_type (testsuite/tests/typing-misc/variance.ml[18,317+21]..[18,317+25])
+                            Ptyp_constr "t" (testsuite/tests/typing-misc/variance.ml[18,317+24]..[18,317+25])
+                            [
+                              core_type (testsuite/tests/typing-misc/variance.ml[18,317+21]..[18,317+23])
+                                Ptyp_var a
+                            ]
+                        ]
+                ]
+          ]
+    ]
+  structure_item (testsuite/tests/typing-misc/variance.ml[19,352+0]..[22,422+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/variance.ml[19,352+9]..[22,422+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/variance.ml[19,352+9]..[22,422+2])
+          Pexp_constant PConst_string ("\ntype 'a t = ('a -> unit) -> unit\nval tl : '_a t list = []\n",(testsuite/tests/typing-misc/variance.ml[19,352+11]..[22,422+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-misc/variance.ml[24,427+0]..[24,427+39])
+    Pstr_type Rec
+    [
+      type_declaration "u" (testsuite/tests/typing-misc/variance.ml[24,427+8]..[24,427+9]) (testsuite/tests/typing-misc/variance.ml[24,427+0]..[24,427+39])
+        ptype_params =
+          [
+            core_type (testsuite/tests/typing-misc/variance.ml[24,427+5]..[24,427+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (testsuite/tests/typing-misc/variance.ml[24,427+12]..[24,427+39])
+                "U" (testsuite/tests/typing-misc/variance.ml[24,427+12]..[24,427+13])
+                [
+                  core_type (testsuite/tests/typing-misc/variance.ml[24,427+18]..[24,427+38])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (testsuite/tests/typing-misc/variance.ml[24,427+19]..[24,427+29])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (testsuite/tests/typing-misc/variance.ml[24,427+19]..[24,427+21])
+                        Ptyp_var a
+                      core_type (testsuite/tests/typing-misc/variance.ml[24,427+25]..[24,427+29])
+                        Ptyp_constr "unit" (testsuite/tests/typing-misc/variance.ml[24,427+25]..[24,427+29])
+                        []
+                    core_type (testsuite/tests/typing-misc/variance.ml[24,427+34]..[24,427+38])
+                      Ptyp_constr "unit" (testsuite/tests/typing-misc/variance.ml[24,427+34]..[24,427+38])
+                      []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/typing-misc/variance.ml[25,469+0]..[25,469+32])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-misc/variance.ml[25,469+4]..[25,469+6])
+          Ppat_var "ul" (testsuite/tests/typing-misc/variance.ml[25,469+4]..[25,469+6])
+        expression (testsuite/tests/typing-misc/variance.ml[25,469+9]..[25,469+32])
+          Pexp_apply
+          expression (testsuite/tests/typing-misc/variance.ml[25,469+9]..[25,469+10])
+            Pexp_ident "!" (testsuite/tests/typing-misc/variance.ml[25,469+9]..[25,469+10])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/typing-misc/variance.ml[25,469+10]..[25,469+32])
+                Pexp_apply
+                expression (testsuite/tests/typing-misc/variance.ml[25,469+11]..[25,469+14])
+                  Pexp_ident "ref" (testsuite/tests/typing-misc/variance.ml[25,469+11]..[25,469+14])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/typing-misc/variance.ml[25,469+15]..[25,469+31])
+                      Pexp_constraint
+                      expression (testsuite/tests/typing-misc/variance.ml[25,469+16]..[25,469+18])
+                        Pexp_construct "[]" (testsuite/tests/typing-misc/variance.ml[25,469+16]..[25,469+18])
+                        None
+                      core_type (testsuite/tests/typing-misc/variance.ml[25,469+21]..[25,469+30])
+                        Ptyp_constr "list" (testsuite/tests/typing-misc/variance.ml[25,469+26]..[25,469+30])
+                        [
+                          core_type (testsuite/tests/typing-misc/variance.ml[25,469+21]..[25,469+25])
+                            Ptyp_constr "u" (testsuite/tests/typing-misc/variance.ml[25,469+24]..[25,469+25])
+                            [
+                              core_type (testsuite/tests/typing-misc/variance.ml[25,469+21]..[25,469+23])
+                                Ptyp_var a
+                            ]
+                        ]
+                ]
+          ]
+    ]
+  structure_item (testsuite/tests/typing-misc/variance.ml[26,504+0]..[29,580+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/variance.ml[26,504+9]..[29,580+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/variance.ml[26,504+9]..[29,580+2])
+          Pexp_constant PConst_string ("\ntype 'a u = U of (('a -> unit) -> unit)\nval ul : 'a u list = []\n",(testsuite/tests/typing-misc/variance.ml[26,504+11]..[29,580+0]),Some "")
+    ]
+]
+

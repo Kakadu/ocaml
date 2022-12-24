@@ -1,0 +1,2650 @@
+[
+  structure_item (toplevel/toploop.ml[16,1079+0]..[16,1079+11])
+    Pstr_open Fresh
+    module_expr (toplevel/toploop.ml[16,1079+5]..[16,1079+11])
+      Pmod_ident "Format" (toplevel/toploop.ml[16,1079+5]..[16,1079+11])
+  structure_item (toplevel/toploop.ml[17,1091+0]..[17,1091+17])
+    Pstr_include    module_expr (toplevel/toploop.ml[17,1091+8]..[17,1091+17])
+      Pmod_ident "Topcommon" (toplevel/toploop.ml[17,1091+8]..[17,1091+17])
+  structure_item (toplevel/toploop.ml[18,1109+0]..[18,1109+15])
+    Pstr_include    module_expr (toplevel/toploop.ml[18,1109+8]..[18,1109+15])
+      Pmod_ident "Topeval" (toplevel/toploop.ml[18,1109+8]..[18,1109+15])
+  structure_item (toplevel/toploop.ml[20,1126+0]..[23,1168+20])
+    Pstr_type Rec
+    [
+      type_declaration "input" (toplevel/toploop.ml[20,1126+5]..[20,1126+10]) (toplevel/toploop.ml[20,1126+0]..[23,1168+20])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (toplevel/toploop.ml[21,1139+2]..[21,1139+9])
+                "Stdin" (toplevel/toploop.ml[21,1139+4]..[21,1139+9])
+                []
+                None
+              (toplevel/toploop.ml[22,1149+2]..[22,1149+18])
+                "File" (toplevel/toploop.ml[22,1149+4]..[22,1149+8])
+                [
+                  core_type (toplevel/toploop.ml[22,1149+12]..[22,1149+18])
+                    Ptyp_constr "string" (toplevel/toploop.ml[22,1149+12]..[22,1149+18])
+                    []
+                ]
+                None
+              (toplevel/toploop.ml[23,1168+2]..[23,1168+20])
+                "String" (toplevel/toploop.ml[23,1168+4]..[23,1168+10])
+                [
+                  core_type (toplevel/toploop.ml[23,1168+14]..[23,1168+20])
+                    Ptyp_constr "string" (toplevel/toploop.ml[23,1168+14]..[23,1168+20])
+                    []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (toplevel/toploop.ml[25,1190+0]..[25,1190+32])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[25,1190+4]..[25,1190+21])
+          Ppat_var "use_print_results" (toplevel/toploop.ml[25,1190+4]..[25,1190+21])
+        expression (toplevel/toploop.ml[25,1190+24]..[25,1190+32])
+          Pexp_apply
+          expression (toplevel/toploop.ml[25,1190+24]..[25,1190+27])
+            Pexp_ident "ref" (toplevel/toploop.ml[25,1190+24]..[25,1190+27])
+          [
+            <arg>
+            Nolabel
+              expression (toplevel/toploop.ml[25,1190+28]..[25,1190+32])
+                Pexp_construct "true" (toplevel/toploop.ml[25,1190+28]..[25,1190+32])
+                None
+          ]
+    ]
+  structure_item (toplevel/toploop.ml[27,1224+0]..[29,1279+26])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[27,1224+4]..[27,1224+21])
+          Ppat_var "filename_of_input" (toplevel/toploop.ml[27,1224+4]..[27,1224+21])
+        expression (toplevel/toploop.ml[27,1224+24]..[29,1279+26])
+          Pexp_function
+          [
+            <case>
+              pattern (toplevel/toploop.ml[28,1257+4]..[28,1257+13])
+                Ppat_construct "File" (toplevel/toploop.ml[28,1257+4]..[28,1257+8])
+                Some
+                  []
+                  pattern (toplevel/toploop.ml[28,1257+9]..[28,1257+13])
+                    Ppat_var "name" (toplevel/toploop.ml[28,1257+9]..[28,1257+13])
+              expression (toplevel/toploop.ml[28,1257+17]..[28,1257+21])
+                Pexp_ident "name" (toplevel/toploop.ml[28,1257+17]..[28,1257+21])
+            <case>
+              pattern (toplevel/toploop.ml[29,1279+4]..[29,1279+20])
+                Ppat_or
+                pattern (toplevel/toploop.ml[29,1279+4]..[29,1279+9])
+                  Ppat_construct "Stdin" (toplevel/toploop.ml[29,1279+4]..[29,1279+9])
+                  None
+                pattern (toplevel/toploop.ml[29,1279+12]..[29,1279+20])
+                  Ppat_construct "String" (toplevel/toploop.ml[29,1279+12]..[29,1279+18])
+                  Some
+                    []
+                    pattern (toplevel/toploop.ml[29,1279+19]..[29,1279+20])
+                      Ppat_any
+              expression (toplevel/toploop.ml[29,1279+24]..[29,1279+26])
+                Pexp_constant PConst_string("",(toplevel/toploop.ml[29,1279+25]..[29,1279+25]),None)
+          ]
+    ]
+  structure_item (toplevel/toploop.ml[31,1307+0]..[53,1978+50])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[31,1307+4]..[31,1307+14])
+          Ppat_var "use_lexbuf" (toplevel/toploop.ml[31,1307+4]..[31,1307+14])
+        expression (toplevel/toploop.ml[31,1307+15]..[53,1978+50]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[31,1307+15]..[31,1307+18])
+            Ppat_var "ppf" (toplevel/toploop.ml[31,1307+15]..[31,1307+18])
+          expression (toplevel/toploop.ml[31,1307+19]..[53,1978+50]) ghost
+            Pexp_fun
+            Labelled "wrap_in_module"
+            None
+            pattern (toplevel/toploop.ml[31,1307+20]..[31,1307+34])
+              Ppat_var "wrap_in_module" (toplevel/toploop.ml[31,1307+20]..[31,1307+34])
+            expression (toplevel/toploop.ml[31,1307+35]..[53,1978+50]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (toplevel/toploop.ml[31,1307+35]..[31,1307+37])
+                Ppat_var "lb" (toplevel/toploop.ml[31,1307+35]..[31,1307+37])
+              expression (toplevel/toploop.ml[31,1307+38]..[53,1978+50]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (toplevel/toploop.ml[31,1307+38]..[31,1307+42])
+                  Ppat_var "name" (toplevel/toploop.ml[31,1307+38]..[31,1307+42])
+                expression (toplevel/toploop.ml[31,1307+43]..[53,1978+50]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (toplevel/toploop.ml[31,1307+43]..[31,1307+51])
+                    Ppat_var "filename" (toplevel/toploop.ml[31,1307+43]..[31,1307+51])
+                  expression (toplevel/toploop.ml[32,1361+2]..[53,1978+50])
+                    Pexp_sequence
+                    expression (toplevel/toploop.ml[32,1361+2]..[32,1361+25])
+                      Pexp_apply
+                      expression (toplevel/toploop.ml[32,1361+2]..[32,1361+22])
+                        Pexp_ident "Warnings.reset_fatal" (toplevel/toploop.ml[32,1361+2]..[32,1361+22])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (toplevel/toploop.ml[32,1361+23]..[32,1361+25])
+                            Pexp_construct "()" (toplevel/toploop.ml[32,1361+23]..[32,1361+25])
+                            None
+                      ]
+                    expression (toplevel/toploop.ml[33,1388+2]..[53,1978+50])
+                      Pexp_sequence
+                      expression (toplevel/toploop.ml[33,1388+2]..[33,1388+27])
+                        Pexp_apply
+                        expression (toplevel/toploop.ml[33,1388+2]..[33,1388+15])
+                          Pexp_ident "Location.init" (toplevel/toploop.ml[33,1388+2]..[33,1388+15])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[33,1388+16]..[33,1388+18])
+                              Pexp_ident "lb" (toplevel/toploop.ml[33,1388+16]..[33,1388+18])
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[33,1388+19]..[33,1388+27])
+                              Pexp_ident "filename" (toplevel/toploop.ml[33,1388+19]..[33,1388+27])
+                        ]
+                      expression (toplevel/toploop.ml[35,1453+2]..[53,1978+50])
+                        Pexp_sequence
+                        expression (toplevel/toploop.ml[35,1453+2]..[35,1453+25])
+                          Pexp_apply
+                          expression (toplevel/toploop.ml[35,1453+2]..[35,1453+22])
+                            Pexp_ident "Lexer.skip_hash_bang" (toplevel/toploop.ml[35,1453+2]..[35,1453+22])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[35,1453+23]..[35,1453+25])
+                                Pexp_ident "lb" (toplevel/toploop.ml[35,1453+23]..[35,1453+25])
+                          ]
+                        expression (toplevel/toploop.ml[36,1480+2]..[53,1978+50])
+                          Pexp_apply
+                          expression (toplevel/toploop.ml[36,1480+2]..[36,1480+19])
+                            Pexp_ident "Misc.protect_refs" (toplevel/toploop.ml[36,1480+2]..[36,1480+19])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[37,1500+4]..[38,1541+43])
+                                Pexp_construct "::" (toplevel/toploop.ml[37,1500+6]..[38,1541+43]) ghost
+                                Some
+                                  expression (toplevel/toploop.ml[37,1500+6]..[38,1541+43]) ghost
+                                    Pexp_tuple
+                                    [
+                                      expression (toplevel/toploop.ml[37,1500+6]..[37,1500+39])
+                                        Pexp_construct "R" (toplevel/toploop.ml[37,1500+6]..[37,1500+7])
+                                        Some
+                                          expression (toplevel/toploop.ml[37,1500+8]..[37,1500+39])
+                                            Pexp_tuple
+                                            [
+                                              expression (toplevel/toploop.ml[37,1500+9]..[37,1500+28])
+                                                Pexp_ident "Location.input_name" (toplevel/toploop.ml[37,1500+9]..[37,1500+28])
+                                              expression (toplevel/toploop.ml[37,1500+30]..[37,1500+38])
+                                                Pexp_ident "filename" (toplevel/toploop.ml[37,1500+30]..[37,1500+38])
+                                            ]
+                                      expression (toplevel/toploop.ml[38,1541+6]..[38,1541+43]) ghost
+                                        Pexp_construct "::" (toplevel/toploop.ml[38,1541+6]..[38,1541+43]) ghost
+                                        Some
+                                          expression (toplevel/toploop.ml[38,1541+6]..[38,1541+43]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (toplevel/toploop.ml[38,1541+6]..[38,1541+40])
+                                                Pexp_construct "R" (toplevel/toploop.ml[38,1541+6]..[38,1541+7])
+                                                Some
+                                                  expression (toplevel/toploop.ml[38,1541+8]..[38,1541+40])
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (toplevel/toploop.ml[38,1541+9]..[38,1541+30])
+                                                        Pexp_ident "Location.input_lexbuf" (toplevel/toploop.ml[38,1541+9]..[38,1541+30])
+                                                      expression (toplevel/toploop.ml[38,1541+32]..[38,1541+39])
+                                                        Pexp_construct "Some" (toplevel/toploop.ml[38,1541+32]..[38,1541+36])
+                                                        Some
+                                                          expression (toplevel/toploop.ml[38,1541+37]..[38,1541+39])
+                                                            Pexp_ident "lb" (toplevel/toploop.ml[38,1541+37]..[38,1541+39])
+                                                    ]
+                                              expression (toplevel/toploop.ml[38,1541+42]..[38,1541+43]) ghost
+                                                Pexp_construct "[]" (toplevel/toploop.ml[38,1541+42]..[38,1541+43]) ghost
+                                                None
+                                            ]
+                                    ]
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[39,1585+4]..[53,1978+50])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (toplevel/toploop.ml[39,1585+9]..[39,1585+11])
+                                  Ppat_construct "()" (toplevel/toploop.ml[39,1585+9]..[39,1585+11])
+                                  None
+                                expression (toplevel/toploop.ml[40,1600+4]..[53,1978+49])
+                                  Pexp_try
+                                  expression (toplevel/toploop.ml[41,1608+6]..[49,1883+10])
+                                    Pexp_sequence
+                                    expression (toplevel/toploop.ml[41,1608+6]..[48,1851+30])
+                                      Pexp_apply
+                                      expression (toplevel/toploop.ml[41,1608+6]..[41,1608+15])
+                                        Pexp_ident "List.iter" (toplevel/toploop.ml[41,1608+6]..[41,1608+15])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (toplevel/toploop.ml[42,1624+8]..[44,1690+76])
+                                            Pexp_fun
+                                            Nolabel
+                                            None
+                                            pattern (toplevel/toploop.ml[42,1624+13]..[42,1624+15])
+                                              Ppat_var "ph" (toplevel/toploop.ml[42,1624+13]..[42,1624+15])
+                                            expression (toplevel/toploop.ml[43,1643+10]..[44,1690+75])
+                                              Pexp_let Nonrec
+                                              [
+                                                <def>
+                                                  pattern (toplevel/toploop.ml[43,1643+14]..[43,1643+16])
+                                                    Ppat_var "ph" (toplevel/toploop.ml[43,1643+14]..[43,1643+16])
+                                                  expression (toplevel/toploop.ml[43,1643+19]..[43,1643+43])
+                                                    Pexp_apply
+                                                    expression (toplevel/toploop.ml[43,1643+19]..[43,1643+36])
+                                                      Pexp_ident "preprocess_phrase" (toplevel/toploop.ml[43,1643+19]..[43,1643+36])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (toplevel/toploop.ml[43,1643+37]..[43,1643+40])
+                                                          Pexp_ident "ppf" (toplevel/toploop.ml[43,1643+37]..[43,1643+40])
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (toplevel/toploop.ml[43,1643+41]..[43,1643+43])
+                                                          Pexp_ident "ph" (toplevel/toploop.ml[43,1643+41]..[43,1643+43])
+                                                    ]
+                                              ]
+                                              expression (toplevel/toploop.ml[44,1690+10]..[44,1690+75])
+                                                Pexp_ifthenelse
+                                                expression (toplevel/toploop.ml[44,1690+13]..[44,1690+59])
+                                                  Pexp_apply
+                                                  expression (toplevel/toploop.ml[44,1690+13]..[44,1690+16])
+                                                    Pexp_ident "not" (toplevel/toploop.ml[44,1690+13]..[44,1690+16])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (toplevel/toploop.ml[44,1690+17]..[44,1690+59])
+                                                        Pexp_apply
+                                                        expression (toplevel/toploop.ml[44,1690+18]..[44,1690+32])
+                                                          Pexp_ident "execute_phrase" (toplevel/toploop.ml[44,1690+18]..[44,1690+32])
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (toplevel/toploop.ml[44,1690+33]..[44,1690+51])
+                                                              Pexp_apply
+                                                              expression (toplevel/toploop.ml[44,1690+33]..[44,1690+34])
+                                                                Pexp_ident "!" (toplevel/toploop.ml[44,1690+33]..[44,1690+34])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (toplevel/toploop.ml[44,1690+34]..[44,1690+51])
+                                                                    Pexp_ident "use_print_results" (toplevel/toploop.ml[44,1690+34]..[44,1690+51])
+                                                              ]
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (toplevel/toploop.ml[44,1690+52]..[44,1690+55])
+                                                              Pexp_ident "ppf" (toplevel/toploop.ml[44,1690+52]..[44,1690+55])
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (toplevel/toploop.ml[44,1690+56]..[44,1690+58])
+                                                              Pexp_ident "ph" (toplevel/toploop.ml[44,1690+56]..[44,1690+58])
+                                                        ]
+                                                  ]
+                                                expression (toplevel/toploop.ml[44,1690+65]..[44,1690+75])
+                                                  Pexp_apply
+                                                  expression (toplevel/toploop.ml[44,1690+65]..[44,1690+70])
+                                                    Pexp_ident "raise" (toplevel/toploop.ml[44,1690+65]..[44,1690+70])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (toplevel/toploop.ml[44,1690+71]..[44,1690+75])
+                                                        Pexp_construct "Exit" (toplevel/toploop.ml[44,1690+71]..[44,1690+75])
+                                                        None
+                                                  ]
+                                                None
+                                        <arg>
+                                        Nolabel
+                                          expression (toplevel/toploop.ml[45,1767+8]..[48,1851+30])
+                                            Pexp_ifthenelse
+                                            expression (toplevel/toploop.ml[45,1767+12]..[45,1767+26])
+                                              Pexp_ident "wrap_in_module" (toplevel/toploop.ml[45,1767+12]..[45,1767+26])
+                                            expression (toplevel/toploop.ml[46,1799+11]..[46,1799+37])
+                                              Pexp_apply
+                                              expression (toplevel/toploop.ml[46,1799+11]..[46,1799+29])
+                                                Pexp_ident "parse_mod_use_file" (toplevel/toploop.ml[46,1799+11]..[46,1799+29])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (toplevel/toploop.ml[46,1799+30]..[46,1799+34])
+                                                    Pexp_ident "name" (toplevel/toploop.ml[46,1799+30]..[46,1799+34])
+                                                <arg>
+                                                Nolabel
+                                                  expression (toplevel/toploop.ml[46,1799+35]..[46,1799+37])
+                                                    Pexp_ident "lb" (toplevel/toploop.ml[46,1799+35]..[46,1799+37])
+                                              ]
+                                            Some
+                                              expression (toplevel/toploop.ml[48,1851+11]..[48,1851+29])
+                                                Pexp_apply
+                                                expression (toplevel/toploop.ml[48,1851+11]..[48,1851+26])
+                                                  Pexp_apply
+                                                  expression (toplevel/toploop.ml[48,1851+11]..[48,1851+12])
+                                                    Pexp_ident "!" (toplevel/toploop.ml[48,1851+11]..[48,1851+12])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (toplevel/toploop.ml[48,1851+12]..[48,1851+26])
+                                                        Pexp_ident "parse_use_file" (toplevel/toploop.ml[48,1851+12]..[48,1851+26])
+                                                  ]
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[48,1851+27]..[48,1851+29])
+                                                      Pexp_ident "lb" (toplevel/toploop.ml[48,1851+27]..[48,1851+29])
+                                                ]
+                                      ]
+                                    expression (toplevel/toploop.ml[49,1883+6]..[49,1883+10])
+                                      Pexp_construct "true" (toplevel/toploop.ml[49,1883+6]..[49,1883+10])
+                                      None
+                                  [
+                                    <case>
+                                      pattern (toplevel/toploop.ml[51,1903+6]..[51,1903+10])
+                                        Ppat_construct "Exit" (toplevel/toploop.ml[51,1903+6]..[51,1903+10])
+                                        None
+                                      expression (toplevel/toploop.ml[51,1903+14]..[51,1903+19])
+                                        Pexp_construct "false" (toplevel/toploop.ml[51,1903+14]..[51,1903+19])
+                                        None
+                                    <case>
+                                      pattern (toplevel/toploop.ml[52,1923+6]..[52,1923+15])
+                                        Ppat_construct "Sys.Break" (toplevel/toploop.ml[52,1923+6]..[52,1923+15])
+                                        None
+                                      expression (toplevel/toploop.ml[52,1923+19]..[52,1923+54])
+                                        Pexp_sequence
+                                        expression (toplevel/toploop.ml[52,1923+19]..[52,1923+47])
+                                          Pexp_apply
+                                          expression (toplevel/toploop.ml[52,1923+19]..[52,1923+26])
+                                            Pexp_ident "fprintf" (toplevel/toploop.ml[52,1923+19]..[52,1923+26])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[52,1923+27]..[52,1923+30])
+                                                Pexp_ident "ppf" (toplevel/toploop.ml[52,1923+27]..[52,1923+30])
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[52,1923+31]..[52,1923+47])
+                                                Pexp_constant PConst_string("Interrupted.@.",(toplevel/toploop.ml[52,1923+32]..[52,1923+46]),None)
+                                          ]
+                                        expression (toplevel/toploop.ml[52,1923+49]..[52,1923+54])
+                                          Pexp_construct "false" (toplevel/toploop.ml[52,1923+49]..[52,1923+54])
+                                          None
+                                    <case>
+                                      pattern (toplevel/toploop.ml[53,1978+6]..[53,1978+7])
+                                        Ppat_var "x" (toplevel/toploop.ml[53,1978+6]..[53,1978+7])
+                                      expression (toplevel/toploop.ml[53,1978+11]..[53,1978+49])
+                                        Pexp_sequence
+                                        expression (toplevel/toploop.ml[53,1978+11]..[53,1978+42])
+                                          Pexp_apply
+                                          expression (toplevel/toploop.ml[53,1978+11]..[53,1978+36])
+                                            Pexp_ident "Location.report_exception" (toplevel/toploop.ml[53,1978+11]..[53,1978+36])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[53,1978+37]..[53,1978+40])
+                                                Pexp_ident "ppf" (toplevel/toploop.ml[53,1978+37]..[53,1978+40])
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[53,1978+41]..[53,1978+42])
+                                                Pexp_ident "x" (toplevel/toploop.ml[53,1978+41]..[53,1978+42])
+                                          ]
+                                        expression (toplevel/toploop.ml[53,1978+44]..[53,1978+49])
+                                          Pexp_construct "false" (toplevel/toploop.ml[53,1978+44]..[53,1978+49])
+                                          None
+                                  ]
+                          ]
+    ]
+  structure_item (toplevel/toploop.ml[55,2030+0]..[73,2670+15])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[55,2030+4]..[55,2030+14])
+          Ppat_var "use_output" (toplevel/toploop.ml[55,2030+4]..[55,2030+14])
+        expression (toplevel/toploop.ml[55,2030+15]..[73,2670+15]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[55,2030+15]..[55,2030+18])
+            Ppat_var "ppf" (toplevel/toploop.ml[55,2030+15]..[55,2030+18])
+          expression (toplevel/toploop.ml[55,2030+19]..[73,2670+15]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (toplevel/toploop.ml[55,2030+19]..[55,2030+26])
+              Ppat_var "command" (toplevel/toploop.ml[55,2030+19]..[55,2030+26])
+            expression (toplevel/toploop.ml[56,2059+2]..[73,2670+15])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (toplevel/toploop.ml[56,2059+6]..[56,2059+8])
+                    Ppat_var "fn" (toplevel/toploop.ml[56,2059+6]..[56,2059+8])
+                  expression (toplevel/toploop.ml[56,2059+11]..[56,2059+51])
+                    Pexp_apply
+                    expression (toplevel/toploop.ml[56,2059+11]..[56,2059+29])
+                      Pexp_ident "Filename.temp_file" (toplevel/toploop.ml[56,2059+11]..[56,2059+29])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (toplevel/toploop.ml[56,2059+30]..[56,2059+37])
+                          Pexp_constant PConst_string("ocaml",(toplevel/toploop.ml[56,2059+31]..[56,2059+36]),None)
+                      <arg>
+                      Nolabel
+                        expression (toplevel/toploop.ml[56,2059+38]..[56,2059+51])
+                          Pexp_constant PConst_string("_toploop.ml",(toplevel/toploop.ml[56,2059+39]..[56,2059+50]),None)
+                    ]
+              ]
+              expression (toplevel/toploop.ml[57,2114+2]..[73,2670+15])
+                Pexp_apply
+                expression (toplevel/toploop.ml[57,2114+2]..[57,2114+18])
+                  Pexp_ident "Misc.try_finally" (toplevel/toploop.ml[57,2114+2]..[57,2114+18])
+                [
+                  <arg>
+                  Labelled "always"
+                    expression (toplevel/toploop.ml[57,2114+27]..[58,2152+47])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (toplevel/toploop.ml[57,2114+32]..[57,2114+34])
+                        Ppat_construct "()" (toplevel/toploop.ml[57,2114+32]..[57,2114+34])
+                        None
+                      expression (toplevel/toploop.ml[58,2152+6]..[58,2152+46])
+                        Pexp_try
+                        expression (toplevel/toploop.ml[58,2152+10]..[58,2152+23])
+                          Pexp_apply
+                          expression (toplevel/toploop.ml[58,2152+10]..[58,2152+20])
+                            Pexp_ident "Sys.remove" (toplevel/toploop.ml[58,2152+10]..[58,2152+20])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[58,2152+21]..[58,2152+23])
+                                Pexp_ident "fn" (toplevel/toploop.ml[58,2152+21]..[58,2152+23])
+                          ]
+                        [
+                          <case>
+                            pattern (toplevel/toploop.ml[58,2152+29]..[58,2152+40])
+                              Ppat_construct "Sys_error" (toplevel/toploop.ml[58,2152+29]..[58,2152+38])
+                              Some
+                                []
+                                pattern (toplevel/toploop.ml[58,2152+39]..[58,2152+40])
+                                  Ppat_any
+                            expression (toplevel/toploop.ml[58,2152+44]..[58,2152+46])
+                              Pexp_construct "()" (toplevel/toploop.ml[58,2152+44]..[58,2152+46])
+                              None
+                        ]
+                  <arg>
+                  Nolabel
+                    expression (toplevel/toploop.ml[59,2200+4]..[73,2670+15])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (toplevel/toploop.ml[59,2200+9]..[59,2200+11])
+                        Ppat_construct "()" (toplevel/toploop.ml[59,2200+9]..[59,2200+11])
+                        None
+                      expression (toplevel/toploop.ml[60,2215+7]..[73,2670+14])
+                        Pexp_match
+                        expression (toplevel/toploop.ml[61,2228+9]..[63,2294+30])
+                          Pexp_apply
+                          expression (toplevel/toploop.ml[61,2228+9]..[61,2228+24])
+                            Pexp_ident "Printf.ksprintf" (toplevel/toploop.ml[61,2228+9]..[61,2228+24])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[61,2228+25]..[61,2228+36])
+                                Pexp_ident "Sys.command" (toplevel/toploop.ml[61,2228+25]..[61,2228+36])
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[61,2228+37]..[61,2228+46])
+                                Pexp_constant PConst_string("%s > %s",(toplevel/toploop.ml[61,2228+38]..[61,2228+45]),None)
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[62,2275+11]..[62,2275+18])
+                                Pexp_ident "command" (toplevel/toploop.ml[62,2275+11]..[62,2275+18])
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[63,2294+11]..[63,2294+30])
+                                Pexp_apply
+                                expression (toplevel/toploop.ml[63,2294+12]..[63,2294+26])
+                                  Pexp_ident "Filename.quote" (toplevel/toploop.ml[63,2294+12]..[63,2294+26])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[63,2294+27]..[63,2294+29])
+                                      Pexp_ident "fn" (toplevel/toploop.ml[63,2294+27]..[63,2294+29])
+                                ]
+                          ]
+                        [
+                          <case>
+                            pattern (toplevel/toploop.ml[65,2337+9]..[65,2337+10])
+                              Ppat_constant PConst_int (0,None)
+                            expression (toplevel/toploop.ml[66,2351+9]..[70,2520+78])
+                              Pexp_let Nonrec
+                              [
+                                <def>
+                                  pattern (toplevel/toploop.ml[66,2351+13]..[66,2351+15])
+                                    Ppat_var "ic" (toplevel/toploop.ml[66,2351+13]..[66,2351+15])
+                                  expression (toplevel/toploop.ml[66,2351+18]..[66,2351+32])
+                                    Pexp_apply
+                                    expression (toplevel/toploop.ml[66,2351+18]..[66,2351+29])
+                                      Pexp_ident "open_in_bin" (toplevel/toploop.ml[66,2351+18]..[66,2351+29])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (toplevel/toploop.ml[66,2351+30]..[66,2351+32])
+                                          Pexp_ident "fn" (toplevel/toploop.ml[66,2351+30]..[66,2351+32])
+                                    ]
+                              ]
+                              expression (toplevel/toploop.ml[67,2387+9]..[70,2520+78])
+                                Pexp_apply
+                                expression (toplevel/toploop.ml[67,2387+9]..[67,2387+25])
+                                  Pexp_ident "Misc.try_finally" (toplevel/toploop.ml[67,2387+9]..[67,2387+25])
+                                [
+                                  <arg>
+                                  Labelled "always"
+                                    expression (toplevel/toploop.ml[67,2387+34]..[67,2387+57])
+                                      Pexp_fun
+                                      Nolabel
+                                      None
+                                      pattern (toplevel/toploop.ml[67,2387+39]..[67,2387+41])
+                                        Ppat_construct "()" (toplevel/toploop.ml[67,2387+39]..[67,2387+41])
+                                        None
+                                      expression (toplevel/toploop.ml[67,2387+45]..[67,2387+56])
+                                        Pexp_apply
+                                        expression (toplevel/toploop.ml[67,2387+45]..[67,2387+53])
+                                          Pexp_ident "close_in" (toplevel/toploop.ml[67,2387+45]..[67,2387+53])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (toplevel/toploop.ml[67,2387+54]..[67,2387+56])
+                                              Pexp_ident "ic" (toplevel/toploop.ml[67,2387+54]..[67,2387+56])
+                                        ]
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[68,2445+11]..[70,2520+78])
+                                      Pexp_fun
+                                      Nolabel
+                                      None
+                                      pattern (toplevel/toploop.ml[68,2445+16]..[68,2445+18])
+                                        Ppat_construct "()" (toplevel/toploop.ml[68,2445+16]..[68,2445+18])
+                                        None
+                                      expression (toplevel/toploop.ml[69,2467+12]..[70,2520+77])
+                                        Pexp_let Nonrec
+                                        [
+                                          <def>
+                                            pattern (toplevel/toploop.ml[69,2467+16]..[69,2467+22])
+                                              Ppat_var "lexbuf" (toplevel/toploop.ml[69,2467+16]..[69,2467+22])
+                                            expression (toplevel/toploop.ml[69,2467+25]..[69,2467+49])
+                                              Pexp_apply
+                                              expression (toplevel/toploop.ml[69,2467+26]..[69,2467+45])
+                                                Pexp_ident "Lexing.from_channel" (toplevel/toploop.ml[69,2467+26]..[69,2467+45])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (toplevel/toploop.ml[69,2467+46]..[69,2467+48])
+                                                    Pexp_ident "ic" (toplevel/toploop.ml[69,2467+46]..[69,2467+48])
+                                              ]
+                                        ]
+                                        expression (toplevel/toploop.ml[70,2520+12]..[70,2520+77])
+                                          Pexp_apply
+                                          expression (toplevel/toploop.ml[70,2520+12]..[70,2520+22])
+                                            Pexp_ident "use_lexbuf" (toplevel/toploop.ml[70,2520+12]..[70,2520+22])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[70,2520+23]..[70,2520+26])
+                                                Pexp_ident "ppf" (toplevel/toploop.ml[70,2520+23]..[70,2520+26])
+                                            <arg>
+                                            Labelled "wrap_in_module"
+                                              expression (toplevel/toploop.ml[70,2520+43]..[70,2520+48])
+                                                Pexp_construct "false" (toplevel/toploop.ml[70,2520+43]..[70,2520+48])
+                                                None
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[70,2520+49]..[70,2520+55])
+                                                Pexp_ident "lexbuf" (toplevel/toploop.ml[70,2520+49]..[70,2520+55])
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[70,2520+56]..[70,2520+58])
+                                                Pexp_constant PConst_string("",(toplevel/toploop.ml[70,2520+57]..[70,2520+57]),None)
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[70,2520+59]..[70,2520+77])
+                                                Pexp_constant PConst_string("(command-output)",(toplevel/toploop.ml[70,2520+60]..[70,2520+76]),None)
+                                          ]
+                                ]
+                          <case>
+                            pattern (toplevel/toploop.ml[71,2599+9]..[71,2599+10])
+                              Ppat_var "n" (toplevel/toploop.ml[71,2599+9]..[71,2599+10])
+                            expression (toplevel/toploop.ml[72,2613+9]..[73,2670+14])
+                              Pexp_sequence
+                              expression (toplevel/toploop.ml[72,2613+9]..[72,2613+55])
+                                Pexp_apply
+                                expression (toplevel/toploop.ml[72,2613+9]..[72,2613+16])
+                                  Pexp_ident "fprintf" (toplevel/toploop.ml[72,2613+9]..[72,2613+16])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[72,2613+17]..[72,2613+20])
+                                      Pexp_ident "ppf" (toplevel/toploop.ml[72,2613+17]..[72,2613+20])
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[72,2613+21]..[72,2613+53])
+                                      Pexp_constant PConst_string("Command exited with code %d.@.",(toplevel/toploop.ml[72,2613+22]..[72,2613+52]),None)
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[72,2613+54]..[72,2613+55])
+                                      Pexp_ident "n" (toplevel/toploop.ml[72,2613+54]..[72,2613+55])
+                                ]
+                              expression (toplevel/toploop.ml[73,2670+9]..[73,2670+14])
+                                Pexp_construct "false" (toplevel/toploop.ml[73,2670+9]..[73,2670+14])
+                                None
+                        ]
+                ]
+    ]
+  structure_item (toplevel/toploop.ml[75,2687+0]..[93,3368+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[75,2687+4]..[75,2687+13])
+          Ppat_var "use_input" (toplevel/toploop.ml[75,2687+4]..[75,2687+13])
+        expression (toplevel/toploop.ml[75,2687+14]..[93,3368+11]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[75,2687+14]..[75,2687+17])
+            Ppat_var "ppf" (toplevel/toploop.ml[75,2687+14]..[75,2687+17])
+          expression (toplevel/toploop.ml[75,2687+18]..[93,3368+11]) ghost
+            Pexp_fun
+            Labelled "wrap_in_module"
+            None
+            pattern (toplevel/toploop.ml[75,2687+19]..[75,2687+33])
+              Ppat_var "wrap_in_module" (toplevel/toploop.ml[75,2687+19]..[75,2687+33])
+            expression (toplevel/toploop.ml[75,2687+34]..[93,3368+11]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (toplevel/toploop.ml[75,2687+34]..[75,2687+39])
+                Ppat_var "input" (toplevel/toploop.ml[75,2687+34]..[75,2687+39])
+              expression (toplevel/toploop.ml[76,2729+2]..[93,3368+11])
+                Pexp_match
+                expression (toplevel/toploop.ml[76,2729+8]..[76,2729+13])
+                  Pexp_ident "input" (toplevel/toploop.ml[76,2729+8]..[76,2729+13])
+                [
+                  <case>
+                    pattern (toplevel/toploop.ml[77,2748+4]..[77,2748+9])
+                      Ppat_construct "Stdin" (toplevel/toploop.ml[77,2748+4]..[77,2748+9])
+                      None
+                    expression (toplevel/toploop.ml[78,2761+4]..[79,2807+54])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (toplevel/toploop.ml[78,2761+8]..[78,2761+14])
+                            Ppat_var "lexbuf" (toplevel/toploop.ml[78,2761+8]..[78,2761+14])
+                          expression (toplevel/toploop.ml[78,2761+17]..[78,2761+42])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[78,2761+17]..[78,2761+36])
+                              Pexp_ident "Lexing.from_channel" (toplevel/toploop.ml[78,2761+17]..[78,2761+36])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[78,2761+37]..[78,2761+42])
+                                  Pexp_ident "stdin" (toplevel/toploop.ml[78,2761+37]..[78,2761+42])
+                            ]
+                      ]
+                      expression (toplevel/toploop.ml[79,2807+4]..[79,2807+54])
+                        Pexp_apply
+                        expression (toplevel/toploop.ml[79,2807+4]..[79,2807+14])
+                          Pexp_ident "use_lexbuf" (toplevel/toploop.ml[79,2807+4]..[79,2807+14])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[79,2807+15]..[79,2807+18])
+                              Pexp_ident "ppf" (toplevel/toploop.ml[79,2807+15]..[79,2807+18])
+                          <arg>
+                          Labelled "wrap_in_module"
+                            expression (toplevel/toploop.ml[79,2807+20]..[79,2807+34])
+                              Pexp_ident "wrap_in_module" (toplevel/toploop.ml[79,2807+20]..[79,2807+34])
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[79,2807+35]..[79,2807+41])
+                              Pexp_ident "lexbuf" (toplevel/toploop.ml[79,2807+35]..[79,2807+41])
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[79,2807+42]..[79,2807+44])
+                              Pexp_constant PConst_string("",(toplevel/toploop.ml[79,2807+43]..[79,2807+43]),None)
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[79,2807+45]..[79,2807+54])
+                              Pexp_constant PConst_string("(stdin)",(toplevel/toploop.ml[79,2807+46]..[79,2807+53]),None)
+                        ]
+                  <case>
+                    pattern (toplevel/toploop.ml[80,2862+4]..[80,2862+16])
+                      Ppat_construct "String" (toplevel/toploop.ml[80,2862+4]..[80,2862+10])
+                      Some
+                        []
+                        pattern (toplevel/toploop.ml[80,2862+11]..[80,2862+16])
+                          Ppat_var "value" (toplevel/toploop.ml[80,2862+11]..[80,2862+16])
+                    expression (toplevel/toploop.ml[81,2882+4]..[82,2927+67])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (toplevel/toploop.ml[81,2882+8]..[81,2882+14])
+                            Ppat_var "lexbuf" (toplevel/toploop.ml[81,2882+8]..[81,2882+14])
+                          expression (toplevel/toploop.ml[81,2882+17]..[81,2882+41])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[81,2882+17]..[81,2882+35])
+                              Pexp_ident "Lexing.from_string" (toplevel/toploop.ml[81,2882+17]..[81,2882+35])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[81,2882+36]..[81,2882+41])
+                                  Pexp_ident "value" (toplevel/toploop.ml[81,2882+36]..[81,2882+41])
+                            ]
+                      ]
+                      expression (toplevel/toploop.ml[82,2927+4]..[82,2927+67])
+                        Pexp_apply
+                        expression (toplevel/toploop.ml[82,2927+4]..[82,2927+14])
+                          Pexp_ident "use_lexbuf" (toplevel/toploop.ml[82,2927+4]..[82,2927+14])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[82,2927+15]..[82,2927+18])
+                              Pexp_ident "ppf" (toplevel/toploop.ml[82,2927+15]..[82,2927+18])
+                          <arg>
+                          Labelled "wrap_in_module"
+                            expression (toplevel/toploop.ml[82,2927+20]..[82,2927+34])
+                              Pexp_ident "wrap_in_module" (toplevel/toploop.ml[82,2927+20]..[82,2927+34])
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[82,2927+35]..[82,2927+41])
+                              Pexp_ident "lexbuf" (toplevel/toploop.ml[82,2927+35]..[82,2927+41])
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[82,2927+42]..[82,2927+44])
+                              Pexp_constant PConst_string("",(toplevel/toploop.ml[82,2927+43]..[82,2927+43]),None)
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[82,2927+45]..[82,2927+67])
+                              Pexp_constant PConst_string("(command-line input)",(toplevel/toploop.ml[82,2927+46]..[82,2927+66]),None)
+                        ]
+                  <case>
+                    pattern (toplevel/toploop.ml[83,2995+4]..[83,2995+13])
+                      Ppat_construct "File" (toplevel/toploop.ml[83,2995+4]..[83,2995+8])
+                      Some
+                        []
+                        pattern (toplevel/toploop.ml[83,2995+9]..[83,2995+13])
+                          Ppat_var "name" (toplevel/toploop.ml[83,2995+9]..[83,2995+13])
+                    expression (toplevel/toploop.ml[84,3012+4]..[93,3368+11])
+                      Pexp_match
+                      expression (toplevel/toploop.ml[84,3012+10]..[84,3012+29])
+                        Pexp_apply
+                        expression (toplevel/toploop.ml[84,3012+10]..[84,3012+24])
+                          Pexp_ident "Load_path.find" (toplevel/toploop.ml[84,3012+10]..[84,3012+24])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[84,3012+25]..[84,3012+29])
+                              Pexp_ident "name" (toplevel/toploop.ml[84,3012+25]..[84,3012+29])
+                        ]
+                      [
+                        <case>
+                          pattern (toplevel/toploop.ml[85,3047+6]..[85,3047+14])
+                            Ppat_var "filename" (toplevel/toploop.ml[85,3047+6]..[85,3047+14])
+                          expression (toplevel/toploop.ml[86,3065+6]..[90,3227+62])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (toplevel/toploop.ml[86,3065+10]..[86,3065+12])
+                                  Ppat_var "ic" (toplevel/toploop.ml[86,3065+10]..[86,3065+12])
+                                expression (toplevel/toploop.ml[86,3065+15]..[86,3065+35])
+                                  Pexp_apply
+                                  expression (toplevel/toploop.ml[86,3065+15]..[86,3065+26])
+                                    Pexp_ident "open_in_bin" (toplevel/toploop.ml[86,3065+15]..[86,3065+26])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[86,3065+27]..[86,3065+35])
+                                        Pexp_ident "filename" (toplevel/toploop.ml[86,3065+27]..[86,3065+35])
+                                  ]
+                            ]
+                            expression (toplevel/toploop.ml[87,3104+6]..[90,3227+62])
+                              Pexp_apply
+                              expression (toplevel/toploop.ml[87,3104+6]..[87,3104+22])
+                                Pexp_ident "Misc.try_finally" (toplevel/toploop.ml[87,3104+6]..[87,3104+22])
+                              [
+                                <arg>
+                                Labelled "always"
+                                  expression (toplevel/toploop.ml[87,3104+31]..[87,3104+54])
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (toplevel/toploop.ml[87,3104+36]..[87,3104+38])
+                                      Ppat_construct "()" (toplevel/toploop.ml[87,3104+36]..[87,3104+38])
+                                      None
+                                    expression (toplevel/toploop.ml[87,3104+42]..[87,3104+53])
+                                      Pexp_apply
+                                      expression (toplevel/toploop.ml[87,3104+42]..[87,3104+50])
+                                        Pexp_ident "close_in" (toplevel/toploop.ml[87,3104+42]..[87,3104+50])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (toplevel/toploop.ml[87,3104+51]..[87,3104+53])
+                                            Pexp_ident "ic" (toplevel/toploop.ml[87,3104+51]..[87,3104+53])
+                                      ]
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[88,3159+8]..[90,3227+62])
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (toplevel/toploop.ml[88,3159+13]..[88,3159+15])
+                                      Ppat_construct "()" (toplevel/toploop.ml[88,3159+13]..[88,3159+15])
+                                      None
+                                    expression (toplevel/toploop.ml[89,3178+10]..[90,3227+61])
+                                      Pexp_let Nonrec
+                                      [
+                                        <def>
+                                          pattern (toplevel/toploop.ml[89,3178+14]..[89,3178+20])
+                                            Ppat_var "lexbuf" (toplevel/toploop.ml[89,3178+14]..[89,3178+20])
+                                          expression (toplevel/toploop.ml[89,3178+23]..[89,3178+45])
+                                            Pexp_apply
+                                            expression (toplevel/toploop.ml[89,3178+23]..[89,3178+42])
+                                              Pexp_ident "Lexing.from_channel" (toplevel/toploop.ml[89,3178+23]..[89,3178+42])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (toplevel/toploop.ml[89,3178+43]..[89,3178+45])
+                                                  Pexp_ident "ic" (toplevel/toploop.ml[89,3178+43]..[89,3178+45])
+                                            ]
+                                      ]
+                                      expression (toplevel/toploop.ml[90,3227+10]..[90,3227+61])
+                                        Pexp_apply
+                                        expression (toplevel/toploop.ml[90,3227+10]..[90,3227+20])
+                                          Pexp_ident "use_lexbuf" (toplevel/toploop.ml[90,3227+10]..[90,3227+20])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (toplevel/toploop.ml[90,3227+21]..[90,3227+24])
+                                              Pexp_ident "ppf" (toplevel/toploop.ml[90,3227+21]..[90,3227+24])
+                                          <arg>
+                                          Labelled "wrap_in_module"
+                                            expression (toplevel/toploop.ml[90,3227+26]..[90,3227+40])
+                                              Pexp_ident "wrap_in_module" (toplevel/toploop.ml[90,3227+26]..[90,3227+40])
+                                          <arg>
+                                          Nolabel
+                                            expression (toplevel/toploop.ml[90,3227+41]..[90,3227+47])
+                                              Pexp_ident "lexbuf" (toplevel/toploop.ml[90,3227+41]..[90,3227+47])
+                                          <arg>
+                                          Nolabel
+                                            expression (toplevel/toploop.ml[90,3227+48]..[90,3227+52])
+                                              Pexp_ident "name" (toplevel/toploop.ml[90,3227+48]..[90,3227+52])
+                                          <arg>
+                                          Nolabel
+                                            expression (toplevel/toploop.ml[90,3227+53]..[90,3227+61])
+                                              Pexp_ident "filename" (toplevel/toploop.ml[90,3227+53]..[90,3227+61])
+                                        ]
+                              ]
+                        <case>
+                          pattern (toplevel/toploop.ml[91,3290+6]..[91,3290+25])
+                            Ppat_exception
+                            pattern (toplevel/toploop.ml[91,3290+16]..[91,3290+25])
+                              Ppat_construct "Not_found" (toplevel/toploop.ml[91,3290+16]..[91,3290+25])
+                              None
+                          expression (toplevel/toploop.ml[92,3319+6]..[93,3368+11])
+                            Pexp_sequence
+                            expression (toplevel/toploop.ml[92,3319+6]..[92,3319+47])
+                              Pexp_apply
+                              expression (toplevel/toploop.ml[92,3319+6]..[92,3319+13])
+                                Pexp_ident "fprintf" (toplevel/toploop.ml[92,3319+6]..[92,3319+13])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[92,3319+14]..[92,3319+17])
+                                    Pexp_ident "ppf" (toplevel/toploop.ml[92,3319+14]..[92,3319+17])
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[92,3319+18]..[92,3319+42])
+                                    Pexp_constant PConst_string("Cannot find file %s.@.",(toplevel/toploop.ml[92,3319+19]..[92,3319+41]),None)
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[92,3319+43]..[92,3319+47])
+                                    Pexp_ident "name" (toplevel/toploop.ml[92,3319+43]..[92,3319+47])
+                              ]
+                            expression (toplevel/toploop.ml[93,3368+6]..[93,3368+11])
+                              Pexp_construct "false" (toplevel/toploop.ml[93,3368+6]..[93,3368+11])
+                              None
+                      ]
+                ]
+    ]
+  structure_item (toplevel/toploop.ml[95,3381+0]..[96,3410+41])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[95,3381+4]..[95,3381+17])
+          Ppat_var "mod_use_input" (toplevel/toploop.ml[95,3381+4]..[95,3381+17])
+        expression (toplevel/toploop.ml[95,3381+18]..[96,3410+41]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[95,3381+18]..[95,3381+21])
+            Ppat_var "ppf" (toplevel/toploop.ml[95,3381+18]..[95,3381+21])
+          expression (toplevel/toploop.ml[95,3381+22]..[96,3410+41]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (toplevel/toploop.ml[95,3381+22]..[95,3381+26])
+              Ppat_var "name" (toplevel/toploop.ml[95,3381+22]..[95,3381+26])
+            expression (toplevel/toploop.ml[96,3410+2]..[96,3410+41])
+              Pexp_apply
+              expression (toplevel/toploop.ml[96,3410+2]..[96,3410+11])
+                Pexp_ident "use_input" (toplevel/toploop.ml[96,3410+2]..[96,3410+11])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[96,3410+12]..[96,3410+15])
+                    Pexp_ident "ppf" (toplevel/toploop.ml[96,3410+12]..[96,3410+15])
+                <arg>
+                Labelled "wrap_in_module"
+                  expression (toplevel/toploop.ml[96,3410+32]..[96,3410+36])
+                    Pexp_construct "true" (toplevel/toploop.ml[96,3410+32]..[96,3410+36])
+                    None
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[96,3410+37]..[96,3410+41])
+                    Pexp_ident "name" (toplevel/toploop.ml[96,3410+37]..[96,3410+41])
+              ]
+    ]
+  structure_item (toplevel/toploop.ml[97,3452+0]..[98,3477+42])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[97,3452+4]..[97,3452+13])
+          Ppat_var "use_input" (toplevel/toploop.ml[97,3452+4]..[97,3452+13])
+        expression (toplevel/toploop.ml[97,3452+14]..[98,3477+42]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[97,3452+14]..[97,3452+17])
+            Ppat_var "ppf" (toplevel/toploop.ml[97,3452+14]..[97,3452+17])
+          expression (toplevel/toploop.ml[97,3452+18]..[98,3477+42]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (toplevel/toploop.ml[97,3452+18]..[97,3452+22])
+              Ppat_var "name" (toplevel/toploop.ml[97,3452+18]..[97,3452+22])
+            expression (toplevel/toploop.ml[98,3477+2]..[98,3477+42])
+              Pexp_apply
+              expression (toplevel/toploop.ml[98,3477+2]..[98,3477+11])
+                Pexp_ident "use_input" (toplevel/toploop.ml[98,3477+2]..[98,3477+11])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[98,3477+12]..[98,3477+15])
+                    Pexp_ident "ppf" (toplevel/toploop.ml[98,3477+12]..[98,3477+15])
+                <arg>
+                Labelled "wrap_in_module"
+                  expression (toplevel/toploop.ml[98,3477+32]..[98,3477+37])
+                    Pexp_construct "false" (toplevel/toploop.ml[98,3477+32]..[98,3477+37])
+                    None
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[98,3477+38]..[98,3477+42])
+                    Pexp_ident "name" (toplevel/toploop.ml[98,3477+38]..[98,3477+42])
+              ]
+    ]
+  structure_item (toplevel/toploop.ml[99,3520+0]..[100,3544+27])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[99,3520+4]..[99,3520+12])
+          Ppat_var "use_file" (toplevel/toploop.ml[99,3520+4]..[99,3520+12])
+        expression (toplevel/toploop.ml[99,3520+13]..[100,3544+27]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[99,3520+13]..[99,3520+16])
+            Ppat_var "ppf" (toplevel/toploop.ml[99,3520+13]..[99,3520+16])
+          expression (toplevel/toploop.ml[99,3520+17]..[100,3544+27]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (toplevel/toploop.ml[99,3520+17]..[99,3520+21])
+              Ppat_var "name" (toplevel/toploop.ml[99,3520+17]..[99,3520+21])
+            expression (toplevel/toploop.ml[100,3544+2]..[100,3544+27])
+              Pexp_apply
+              expression (toplevel/toploop.ml[100,3544+2]..[100,3544+11])
+                Pexp_ident "use_input" (toplevel/toploop.ml[100,3544+2]..[100,3544+11])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[100,3544+12]..[100,3544+15])
+                    Pexp_ident "ppf" (toplevel/toploop.ml[100,3544+12]..[100,3544+15])
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[100,3544+16]..[100,3544+27])
+                    Pexp_construct "File" (toplevel/toploop.ml[100,3544+17]..[100,3544+21])
+                    Some
+                      expression (toplevel/toploop.ml[100,3544+22]..[100,3544+26])
+                        Pexp_ident "name" (toplevel/toploop.ml[100,3544+22]..[100,3544+26])
+              ]
+    ]
+  structure_item (toplevel/toploop.ml[102,3573+0]..[105,3658+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[102,3573+4]..[102,3573+16])
+          Ppat_var "use_silently" (toplevel/toploop.ml[102,3573+4]..[102,3573+16])
+        expression (toplevel/toploop.ml[102,3573+17]..[105,3658+34]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[102,3573+17]..[102,3573+20])
+            Ppat_var "ppf" (toplevel/toploop.ml[102,3573+17]..[102,3573+20])
+          expression (toplevel/toploop.ml[102,3573+21]..[105,3658+34]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (toplevel/toploop.ml[102,3573+21]..[102,3573+25])
+              Ppat_var "name" (toplevel/toploop.ml[102,3573+21]..[102,3573+25])
+            expression (toplevel/toploop.ml[103,3601+2]..[105,3658+34])
+              Pexp_apply
+              expression (toplevel/toploop.ml[103,3601+2]..[103,3601+19])
+                Pexp_ident "Misc.protect_refs" (toplevel/toploop.ml[103,3601+2]..[103,3601+19])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[104,3621+4]..[104,3621+36])
+                    Pexp_construct "::" (toplevel/toploop.ml[104,3621+6]..[104,3621+36]) ghost
+                    Some
+                      expression (toplevel/toploop.ml[104,3621+6]..[104,3621+36]) ghost
+                        Pexp_tuple
+                        [
+                          expression (toplevel/toploop.ml[104,3621+6]..[104,3621+34])
+                            Pexp_construct "R" (toplevel/toploop.ml[104,3621+6]..[104,3621+7])
+                            Some
+                              expression (toplevel/toploop.ml[104,3621+8]..[104,3621+34])
+                                Pexp_tuple
+                                [
+                                  expression (toplevel/toploop.ml[104,3621+9]..[104,3621+26])
+                                    Pexp_ident "use_print_results" (toplevel/toploop.ml[104,3621+9]..[104,3621+26])
+                                  expression (toplevel/toploop.ml[104,3621+28]..[104,3621+33])
+                                    Pexp_construct "false" (toplevel/toploop.ml[104,3621+28]..[104,3621+33])
+                                    None
+                                ]
+                          expression (toplevel/toploop.ml[104,3621+35]..[104,3621+36]) ghost
+                            Pexp_construct "[]" (toplevel/toploop.ml[104,3621+35]..[104,3621+36]) ghost
+                            None
+                        ]
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[105,3658+4]..[105,3658+34])
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (toplevel/toploop.ml[105,3658+9]..[105,3658+11])
+                      Ppat_construct "()" (toplevel/toploop.ml[105,3658+9]..[105,3658+11])
+                      None
+                    expression (toplevel/toploop.ml[105,3658+15]..[105,3658+33])
+                      Pexp_apply
+                      expression (toplevel/toploop.ml[105,3658+15]..[105,3658+24])
+                        Pexp_ident "use_input" (toplevel/toploop.ml[105,3658+15]..[105,3658+24])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (toplevel/toploop.ml[105,3658+25]..[105,3658+28])
+                            Pexp_ident "ppf" (toplevel/toploop.ml[105,3658+25]..[105,3658+28])
+                        <arg>
+                        Nolabel
+                          expression (toplevel/toploop.ml[105,3658+29]..[105,3658+33])
+                            Pexp_ident "name" (toplevel/toploop.ml[105,3658+29]..[105,3658+33])
+                      ]
+              ]
+    ]
+  structure_item (toplevel/toploop.ml[107,3694+0]..[107,3694+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[107,3694+4]..[107,3694+13])
+          Ppat_var "load_file" (toplevel/toploop.ml[107,3694+4]..[107,3694+13])
+        expression (toplevel/toploop.ml[107,3694+16]..[107,3694+31])
+          Pexp_apply
+          expression (toplevel/toploop.ml[107,3694+16]..[107,3694+25])
+            Pexp_ident "load_file" (toplevel/toploop.ml[107,3694+16]..[107,3694+25])
+          [
+            <arg>
+            Nolabel
+              expression (toplevel/toploop.ml[107,3694+26]..[107,3694+31])
+                Pexp_construct "false" (toplevel/toploop.ml[107,3694+26]..[107,3694+31])
+                None
+          ]
+    ]
+  structure_item (toplevel/toploop.ml[111,3798+0]..[133,4606+32])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[111,3798+4]..[111,3798+14])
+          Ppat_var "run_script" (toplevel/toploop.ml[111,3798+4]..[111,3798+14])
+        expression (toplevel/toploop.ml[111,3798+15]..[133,4606+32]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[111,3798+15]..[111,3798+18])
+            Ppat_var "ppf" (toplevel/toploop.ml[111,3798+15]..[111,3798+18])
+          expression (toplevel/toploop.ml[111,3798+19]..[133,4606+32]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (toplevel/toploop.ml[111,3798+19]..[111,3798+23])
+              Ppat_var "name" (toplevel/toploop.ml[111,3798+19]..[111,3798+23])
+            expression (toplevel/toploop.ml[111,3798+24]..[133,4606+32]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (toplevel/toploop.ml[111,3798+24]..[111,3798+28])
+                Ppat_var "args" (toplevel/toploop.ml[111,3798+24]..[111,3798+28])
+              expression (toplevel/toploop.ml[112,3829+2]..[133,4606+32])
+                Pexp_sequence
+                expression (toplevel/toploop.ml[112,3829+2]..[112,3829+23])
+                  Pexp_apply
+                  expression (toplevel/toploop.ml[112,3829+16]..[112,3829+18])
+                    Pexp_ident ":=" (toplevel/toploop.ml[112,3829+16]..[112,3829+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (toplevel/toploop.ml[112,3829+2]..[112,3829+15])
+                        Pexp_ident "Clflags.debug" (toplevel/toploop.ml[112,3829+2]..[112,3829+15])
+                    <arg>
+                    Nolabel
+                      expression (toplevel/toploop.ml[112,3829+19]..[112,3829+23])
+                        Pexp_construct "true" (toplevel/toploop.ml[112,3829+19]..[112,3829+23])
+                        None
+                  ]
+                expression (toplevel/toploop.ml[113,3854+2]..[133,4606+32])
+                  Pexp_sequence
+                  expression (toplevel/toploop.ml[113,3854+2]..[113,3854+24])
+                    Pexp_apply
+                    expression (toplevel/toploop.ml[113,3854+2]..[113,3854+19])
+                      Pexp_ident "override_sys_argv" (toplevel/toploop.ml[113,3854+2]..[113,3854+19])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (toplevel/toploop.ml[113,3854+20]..[113,3854+24])
+                          Pexp_ident "args" (toplevel/toploop.ml[113,3854+20]..[113,3854+24])
+                    ]
+                  expression (toplevel/toploop.ml[114,3880+2]..[133,4606+32])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (toplevel/toploop.ml[114,3880+6]..[114,3880+14])
+                          Ppat_var "filename" (toplevel/toploop.ml[114,3880+6]..[114,3880+14])
+                        expression (toplevel/toploop.ml[114,3880+17]..[114,3880+39])
+                          Pexp_apply
+                          expression (toplevel/toploop.ml[114,3880+17]..[114,3880+34])
+                            Pexp_ident "filename_of_input" (toplevel/toploop.ml[114,3880+17]..[114,3880+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[114,3880+35]..[114,3880+39])
+                                Pexp_ident "name" (toplevel/toploop.ml[114,3880+35]..[114,3880+39])
+                          ]
+                    ]
+                    expression (toplevel/toploop.ml[115,3923+2]..[133,4606+32])
+                      Pexp_sequence
+                      expression (toplevel/toploop.ml[115,3923+2]..[115,3923+56])
+                        Pexp_apply
+                        expression (toplevel/toploop.ml[115,3923+2]..[115,3923+20])
+                          Pexp_ident "Compmisc.init_path" (toplevel/toploop.ml[115,3923+2]..[115,3923+20])
+                        [
+                          <arg>
+                          Labelled "dir"
+                            expression (toplevel/toploop.ml[115,3923+26]..[115,3923+53])
+                              Pexp_apply
+                              expression (toplevel/toploop.ml[115,3923+27]..[115,3923+43])
+                                Pexp_ident "Filename.dirname" (toplevel/toploop.ml[115,3923+27]..[115,3923+43])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[115,3923+44]..[115,3923+52])
+                                    Pexp_ident "filename" (toplevel/toploop.ml[115,3923+44]..[115,3923+52])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[115,3923+54]..[115,3923+56])
+                              Pexp_construct "()" (toplevel/toploop.ml[115,3923+54]..[115,3923+56])
+                              None
+                        ]
+                      expression (toplevel/toploop.ml[117,4061+2]..[133,4606+32])
+                        Pexp_sequence
+                        expression (toplevel/toploop.ml[117,4061+2]..[121,4242+5])
+                          Pexp_try
+                          expression (toplevel/toploop.ml[118,4069+8]..[118,4069+46])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[118,4069+21]..[118,4069+23])
+                              Pexp_ident ":=" (toplevel/toploop.ml[118,4069+21]..[118,4069+23])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[118,4069+8]..[118,4069+20])
+                                  Pexp_ident "toplevel_env" (toplevel/toploop.ml[118,4069+8]..[118,4069+20])
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[118,4069+24]..[118,4069+46])
+                                  Pexp_apply
+                                  expression (toplevel/toploop.ml[118,4069+24]..[118,4069+44])
+                                    Pexp_ident "Compmisc.initial_env" (toplevel/toploop.ml[118,4069+24]..[118,4069+44])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[118,4069+44]..[118,4069+46])
+                                        Pexp_construct "()" (toplevel/toploop.ml[118,4069+44]..[118,4069+46])
+                                        None
+                                  ]
+                            ]
+                          [
+                            <case>
+                              pattern (toplevel/toploop.ml[119,4116+9]..[119,4116+46])
+                                Ppat_alias "exn" (toplevel/toploop.ml[119,4116+43]..[119,4116+46])
+                                pattern (toplevel/toploop.ml[119,4116+9]..[119,4116+39])
+                                  Ppat_or
+                                  pattern (toplevel/toploop.ml[119,4116+9]..[119,4116+20])
+                                    Ppat_construct "Env.Error" (toplevel/toploop.ml[119,4116+9]..[119,4116+18])
+                                    Some
+                                      []
+                                      pattern (toplevel/toploop.ml[119,4116+19]..[119,4116+20])
+                                        Ppat_any
+                                  pattern (toplevel/toploop.ml[119,4116+23]..[119,4116+39])
+                                    Ppat_construct "Typetexp.Error" (toplevel/toploop.ml[119,4116+23]..[119,4116+37])
+                                    Some
+                                      []
+                                      pattern (toplevel/toploop.ml[119,4116+38]..[119,4116+39])
+                                        Ppat_any
+                              expression (toplevel/toploop.ml[120,4166+6]..[120,4166+75])
+                                Pexp_sequence
+                                expression (toplevel/toploop.ml[120,4166+6]..[120,4166+39])
+                                  Pexp_apply
+                                  expression (toplevel/toploop.ml[120,4166+6]..[120,4166+31])
+                                    Pexp_ident "Location.report_exception" (toplevel/toploop.ml[120,4166+6]..[120,4166+31])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[120,4166+32]..[120,4166+35])
+                                        Pexp_ident "ppf" (toplevel/toploop.ml[120,4166+32]..[120,4166+35])
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[120,4166+36]..[120,4166+39])
+                                        Pexp_ident "exn" (toplevel/toploop.ml[120,4166+36]..[120,4166+39])
+                                  ]
+                                expression (toplevel/toploop.ml[120,4166+41]..[120,4166+75])
+                                  Pexp_apply
+                                  expression (toplevel/toploop.ml[120,4166+41]..[120,4166+46])
+                                    Pexp_ident "raise" (toplevel/toploop.ml[120,4166+41]..[120,4166+46])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[120,4166+47]..[120,4166+75])
+                                        Pexp_construct "Compenv.Exit_with_status" (toplevel/toploop.ml[120,4166+48]..[120,4166+72])
+                                        Some
+                                          expression (toplevel/toploop.ml[120,4166+73]..[120,4166+74])
+                                            Pexp_constant PConst_int (2,None)
+                                  ]
+                          ]
+                        expression (toplevel/toploop.ml[122,4249+2]..[133,4606+32])
+                          Pexp_sequence
+                          expression (toplevel/toploop.ml[122,4249+2]..[122,4249+26])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[122,4249+18]..[122,4249+20])
+                              Pexp_ident ":=" (toplevel/toploop.ml[122,4249+18]..[122,4249+20])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[122,4249+2]..[122,4249+17])
+                                  Pexp_ident "Sys.interactive" (toplevel/toploop.ml[122,4249+2]..[122,4249+17])
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[122,4249+21]..[122,4249+26])
+                                  Pexp_construct "false" (toplevel/toploop.ml[122,4249+21]..[122,4249+26])
+                                  None
+                            ]
+                          expression (toplevel/toploop.ml[123,4277+2]..[133,4606+32])
+                            Pexp_sequence
+                            expression (toplevel/toploop.ml[123,4277+2]..[123,4277+23])
+                              Pexp_apply
+                              expression (toplevel/toploop.ml[123,4277+2]..[123,4277+11])
+                                Pexp_ident "run_hooks" (toplevel/toploop.ml[123,4277+2]..[123,4277+11])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[123,4277+12]..[123,4277+23])
+                                    Pexp_construct "After_setup" (toplevel/toploop.ml[123,4277+12]..[123,4277+23])
+                                    None
+                              ]
+                            expression (toplevel/toploop.ml[124,4302+2]..[133,4606+32])
+                              Pexp_let Nonrec
+                              [
+                                <def>
+                                  pattern (toplevel/toploop.ml[124,4302+6]..[124,4302+19])
+                                    Ppat_var "explicit_name" (toplevel/toploop.ml[124,4302+6]..[124,4302+19])
+                                  expression (toplevel/toploop.ml[125,4324+4]..[131,4566+34])
+                                    Pexp_match
+                                    expression (toplevel/toploop.ml[125,4324+10]..[125,4324+14])
+                                      Pexp_ident "name" (toplevel/toploop.ml[125,4324+10]..[125,4324+14])
+                                    [
+                                      <case>
+                                        pattern (toplevel/toploop.ml[126,4344+6]..[126,4344+27])
+                                          Ppat_alias "filename" (toplevel/toploop.ml[126,4344+19]..[126,4344+27])
+                                          pattern (toplevel/toploop.ml[126,4344+6]..[126,4344+15])
+                                            Ppat_construct "File" (toplevel/toploop.ml[126,4344+6]..[126,4344+10])
+                                            Some
+                                              []
+                                              pattern (toplevel/toploop.ml[126,4344+11]..[126,4344+15])
+                                                Ppat_var "name" (toplevel/toploop.ml[126,4344+11]..[126,4344+15])
+                                        expression (toplevel/toploop.ml[126,4344+32]..[130,4547+18])
+                                          Pexp_ifthenelse
+                                          expression (toplevel/toploop.ml[128,4437+7]..[128,4437+46])
+                                            Pexp_apply
+                                            expression (toplevel/toploop.ml[128,4437+18]..[128,4437+20])
+                                              Pexp_ident "&&" (toplevel/toploop.ml[128,4437+18]..[128,4437+20])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (toplevel/toploop.ml[128,4437+7]..[128,4437+17])
+                                                  Pexp_apply
+                                                  expression (toplevel/toploop.ml[128,4437+12]..[128,4437+14])
+                                                    Pexp_ident "<>" (toplevel/toploop.ml[128,4437+12]..[128,4437+14])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (toplevel/toploop.ml[128,4437+7]..[128,4437+11])
+                                                        Pexp_ident "name" (toplevel/toploop.ml[128,4437+7]..[128,4437+11])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (toplevel/toploop.ml[128,4437+15]..[128,4437+17])
+                                                        Pexp_constant PConst_string("",(toplevel/toploop.ml[128,4437+16]..[128,4437+16]),None)
+                                                  ]
+                                              <arg>
+                                              Nolabel
+                                                expression (toplevel/toploop.ml[128,4437+21]..[128,4437+46])
+                                                  Pexp_apply
+                                                  expression (toplevel/toploop.ml[128,4437+21]..[128,4437+41])
+                                                    Pexp_ident "Filename.is_implicit" (toplevel/toploop.ml[128,4437+21]..[128,4437+41])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (toplevel/toploop.ml[128,4437+42]..[128,4437+46])
+                                                        Pexp_ident "name" (toplevel/toploop.ml[128,4437+42]..[128,4437+46])
+                                                  ]
+                                            ]
+                                          expression (toplevel/toploop.ml[129,4484+9]..[129,4484+62])
+                                            Pexp_construct "File" (toplevel/toploop.ml[129,4484+9]..[129,4484+13])
+                                            Some
+                                              expression (toplevel/toploop.ml[129,4484+14]..[129,4484+62])
+                                                Pexp_apply
+                                                expression (toplevel/toploop.ml[129,4484+15]..[129,4484+30])
+                                                  Pexp_ident "Filename.concat" (toplevel/toploop.ml[129,4484+15]..[129,4484+30])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[129,4484+31]..[129,4484+56])
+                                                      Pexp_ident "Filename.current_dir_name" (toplevel/toploop.ml[129,4484+31]..[129,4484+56])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[129,4484+57]..[129,4484+61])
+                                                      Pexp_ident "name" (toplevel/toploop.ml[129,4484+57]..[129,4484+61])
+                                                ]
+                                          Some
+                                            expression (toplevel/toploop.ml[130,4547+9]..[130,4547+17])
+                                              Pexp_ident "filename" (toplevel/toploop.ml[130,4547+9]..[130,4547+17])
+                                      <case>
+                                        pattern (toplevel/toploop.ml[131,4566+6]..[131,4566+29])
+                                          Ppat_alias "x" (toplevel/toploop.ml[131,4566+28]..[131,4566+29])
+                                          pattern (toplevel/toploop.ml[131,4566+6]..[131,4566+24])
+                                            Ppat_or
+                                            pattern (toplevel/toploop.ml[131,4566+7]..[131,4566+12])
+                                              Ppat_construct "Stdin" (toplevel/toploop.ml[131,4566+7]..[131,4566+12])
+                                              None
+                                            pattern (toplevel/toploop.ml[131,4566+15]..[131,4566+23])
+                                              Ppat_construct "String" (toplevel/toploop.ml[131,4566+15]..[131,4566+21])
+                                              Some
+                                                []
+                                                pattern (toplevel/toploop.ml[131,4566+22]..[131,4566+23])
+                                                  Ppat_any
+                                        expression (toplevel/toploop.ml[131,4566+33]..[131,4566+34])
+                                          Pexp_ident "x" (toplevel/toploop.ml[131,4566+33]..[131,4566+34])
+                                    ]
+                              ]
+                              expression (toplevel/toploop.ml[133,4606+2]..[133,4606+32])
+                                Pexp_apply
+                                expression (toplevel/toploop.ml[133,4606+2]..[133,4606+14])
+                                  Pexp_ident "use_silently" (toplevel/toploop.ml[133,4606+2]..[133,4606+14])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[133,4606+15]..[133,4606+18])
+                                      Pexp_ident "ppf" (toplevel/toploop.ml[133,4606+15]..[133,4606+18])
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[133,4606+19]..[133,4606+32])
+                                      Pexp_ident "explicit_name" (toplevel/toploop.ml[133,4606+19]..[133,4606+32])
+                                ]
+    ]
+  structure_item (toplevel/toploop.ml[138,4808+0]..[143,5014+17])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[138,4808+4]..[138,4808+5])
+          Ppat_any
+        expression (toplevel/toploop.ml[139,4816+2]..[143,5014+17])
+          Pexp_sequence
+          expression (toplevel/toploop.ml[139,4816+2]..[141,4925+60])
+            Pexp_ifthenelse
+            expression (toplevel/toploop.ml[139,4816+5]..[139,4816+21])
+              Pexp_apply
+              expression (toplevel/toploop.ml[139,4816+5]..[139,4816+6])
+                Pexp_ident "!" (toplevel/toploop.ml[139,4816+5]..[139,4816+6])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[139,4816+6]..[139,4816+21])
+                    Pexp_ident "Sys.interactive" (toplevel/toploop.ml[139,4816+6]..[139,4816+21])
+              ]
+            expression (toplevel/toploop.ml[140,4857+4]..[141,4925+60])
+              Pexp_apply
+              expression (toplevel/toploop.ml[140,4857+4]..[140,4857+15])
+                Pexp_ident "invalid_arg" (toplevel/toploop.ml[140,4857+4]..[140,4857+15])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[140,4857+16]..[141,4925+60])
+                    Pexp_constant PConst_string("The ocamltoplevel.cma library from compiler-libs cannot be loaded inside the OCaml toplevel",(toplevel/toploop.ml[140,4857+17]..[141,4925+59]),None)
+              ]
+            None
+          expression (toplevel/toploop.ml[142,4987+2]..[143,5014+17])
+            Pexp_sequence
+            expression (toplevel/toploop.ml[142,4987+2]..[142,4987+25])
+              Pexp_apply
+              expression (toplevel/toploop.ml[142,4987+18]..[142,4987+20])
+                Pexp_ident ":=" (toplevel/toploop.ml[142,4987+18]..[142,4987+20])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[142,4987+2]..[142,4987+17])
+                    Pexp_ident "Sys.interactive" (toplevel/toploop.ml[142,4987+2]..[142,4987+17])
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[142,4987+21]..[142,4987+25])
+                    Pexp_construct "true" (toplevel/toploop.ml[142,4987+21]..[142,4987+25])
+                    None
+              ]
+            expression (toplevel/toploop.ml[143,5014+2]..[143,5014+17])
+              Pexp_apply
+              expression (toplevel/toploop.ml[143,5014+2]..[143,5014+14])
+                Pexp_ident "Topeval.init" (toplevel/toploop.ml[143,5014+2]..[143,5014+14])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[143,5014+15]..[143,5014+17])
+                    Pexp_construct "()" (toplevel/toploop.ml[143,5014+15]..[143,5014+17])
+                    None
+              ]
+    ]
+  structure_item (toplevel/toploop.ml[145,5033+0]..[170,5861+49])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[145,5033+4]..[145,5033+18])
+          Ppat_var "find_ocamlinit" (toplevel/toploop.ml[145,5033+4]..[145,5033+18])
+        expression (toplevel/toploop.ml[145,5033+19]..[170,5861+49]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[145,5033+19]..[145,5033+21])
+            Ppat_construct "()" (toplevel/toploop.ml[145,5033+19]..[145,5033+21])
+            None
+          expression (toplevel/toploop.ml[146,5057+2]..[170,5861+49])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (toplevel/toploop.ml[146,5057+6]..[146,5057+15])
+                  Ppat_var "ocamlinit" (toplevel/toploop.ml[146,5057+6]..[146,5057+15])
+                expression (toplevel/toploop.ml[146,5057+18]..[146,5057+30])
+                  Pexp_constant PConst_string(".ocamlinit",(toplevel/toploop.ml[146,5057+19]..[146,5057+29]),None)
+            ]
+            expression (toplevel/toploop.ml[147,5091+2]..[170,5861+49])
+              Pexp_ifthenelse
+              expression (toplevel/toploop.ml[147,5091+5]..[147,5091+30])
+                Pexp_apply
+                expression (toplevel/toploop.ml[147,5091+5]..[147,5091+20])
+                  Pexp_ident "Sys.file_exists" (toplevel/toploop.ml[147,5091+5]..[147,5091+20])
+                [
+                  <arg>
+                  Nolabel
+                    expression (toplevel/toploop.ml[147,5091+21]..[147,5091+30])
+                      Pexp_ident "ocamlinit" (toplevel/toploop.ml[147,5091+21]..[147,5091+30])
+                ]
+              expression (toplevel/toploop.ml[147,5091+36]..[147,5091+50])
+                Pexp_construct "Some" (toplevel/toploop.ml[147,5091+36]..[147,5091+40])
+                Some
+                  expression (toplevel/toploop.ml[147,5091+41]..[147,5091+50])
+                    Pexp_ident "ocamlinit" (toplevel/toploop.ml[147,5091+41]..[147,5091+50])
+              Some
+                expression (toplevel/toploop.ml[148,5147+2]..[170,5861+49])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (toplevel/toploop.ml[148,5147+6]..[148,5147+12])
+                        Ppat_var "getenv" (toplevel/toploop.ml[148,5147+6]..[148,5147+12])
+                      expression (toplevel/toploop.ml[148,5147+13]..[149,5192+60]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (toplevel/toploop.ml[148,5147+13]..[148,5147+16])
+                          Ppat_var "var" (toplevel/toploop.ml[148,5147+13]..[148,5147+16])
+                        expression (toplevel/toploop.ml[148,5147+19]..[149,5192+60])
+                          Pexp_match
+                          expression (toplevel/toploop.ml[148,5147+25]..[148,5147+39])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[148,5147+25]..[148,5147+35])
+                              Pexp_ident "Sys.getenv" (toplevel/toploop.ml[148,5147+25]..[148,5147+35])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[148,5147+36]..[148,5147+39])
+                                  Pexp_ident "var" (toplevel/toploop.ml[148,5147+36]..[148,5147+39])
+                            ]
+                          [
+                            <case>
+                              pattern (toplevel/toploop.ml[149,5192+6]..[149,5192+25])
+                                Ppat_exception
+                                pattern (toplevel/toploop.ml[149,5192+16]..[149,5192+25])
+                                  Ppat_construct "Not_found" (toplevel/toploop.ml[149,5192+16]..[149,5192+25])
+                                  None
+                              expression (toplevel/toploop.ml[149,5192+29]..[149,5192+33])
+                                Pexp_construct "None" (toplevel/toploop.ml[149,5192+29]..[149,5192+33])
+                                None
+                            <case>
+                              pattern (toplevel/toploop.ml[149,5192+36]..[149,5192+38])
+                                Ppat_constant PConst_string("",(toplevel/toploop.ml[149,5192+37]..[149,5192+37]),None)
+                              expression (toplevel/toploop.ml[149,5192+42]..[149,5192+46])
+                                Pexp_construct "None" (toplevel/toploop.ml[149,5192+42]..[149,5192+46])
+                                None
+                            <case>
+                              pattern (toplevel/toploop.ml[149,5192+49]..[149,5192+50])
+                                Ppat_var "v" (toplevel/toploop.ml[149,5192+49]..[149,5192+50])
+                              expression (toplevel/toploop.ml[149,5192+54]..[149,5192+60])
+                                Pexp_construct "Some" (toplevel/toploop.ml[149,5192+54]..[149,5192+58])
+                                Some
+                                  expression (toplevel/toploop.ml[149,5192+59]..[149,5192+60])
+                                    Pexp_ident "v" (toplevel/toploop.ml[149,5192+59]..[149,5192+60])
+                          ]
+                  ]
+                  expression (toplevel/toploop.ml[151,5258+2]..[170,5861+49])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (toplevel/toploop.ml[151,5258+6]..[151,5258+19])
+                          Ppat_var "exists_in_dir" (toplevel/toploop.ml[151,5258+6]..[151,5258+19])
+                        expression (toplevel/toploop.ml[151,5258+20]..[155,5388+56]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (toplevel/toploop.ml[151,5258+20]..[151,5258+23])
+                            Ppat_var "dir" (toplevel/toploop.ml[151,5258+20]..[151,5258+23])
+                          expression (toplevel/toploop.ml[151,5258+24]..[155,5388+56]) ghost
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (toplevel/toploop.ml[151,5258+24]..[151,5258+28])
+                              Ppat_var "file" (toplevel/toploop.ml[151,5258+24]..[151,5258+28])
+                            expression (toplevel/toploop.ml[151,5258+31]..[155,5388+56])
+                              Pexp_match
+                              expression (toplevel/toploop.ml[151,5258+37]..[151,5258+40])
+                                Pexp_ident "dir" (toplevel/toploop.ml[151,5258+37]..[151,5258+40])
+                              [
+                                <case>
+                                  pattern (toplevel/toploop.ml[152,5304+6]..[152,5304+10])
+                                    Ppat_construct "None" (toplevel/toploop.ml[152,5304+6]..[152,5304+10])
+                                    None
+                                  expression (toplevel/toploop.ml[152,5304+14]..[152,5304+18])
+                                    Pexp_construct "None" (toplevel/toploop.ml[152,5304+14]..[152,5304+18])
+                                    None
+                                <case>
+                                  pattern (toplevel/toploop.ml[153,5323+6]..[153,5323+14])
+                                    Ppat_construct "Some" (toplevel/toploop.ml[153,5323+6]..[153,5323+10])
+                                    Some
+                                      []
+                                      pattern (toplevel/toploop.ml[153,5323+11]..[153,5323+14])
+                                        Ppat_var "dir" (toplevel/toploop.ml[153,5323+11]..[153,5323+14])
+                                  expression (toplevel/toploop.ml[154,5341+8]..[155,5388+56])
+                                    Pexp_let Nonrec
+                                    [
+                                      <def>
+                                        pattern (toplevel/toploop.ml[154,5341+12]..[154,5341+16])
+                                          Ppat_var "file" (toplevel/toploop.ml[154,5341+12]..[154,5341+16])
+                                        expression (toplevel/toploop.ml[154,5341+19]..[154,5341+43])
+                                          Pexp_apply
+                                          expression (toplevel/toploop.ml[154,5341+19]..[154,5341+34])
+                                            Pexp_ident "Filename.concat" (toplevel/toploop.ml[154,5341+19]..[154,5341+34])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[154,5341+35]..[154,5341+38])
+                                                Pexp_ident "dir" (toplevel/toploop.ml[154,5341+35]..[154,5341+38])
+                                            <arg>
+                                            Nolabel
+                                              expression (toplevel/toploop.ml[154,5341+39]..[154,5341+43])
+                                                Pexp_ident "file" (toplevel/toploop.ml[154,5341+39]..[154,5341+43])
+                                          ]
+                                    ]
+                                    expression (toplevel/toploop.ml[155,5388+8]..[155,5388+56])
+                                      Pexp_ifthenelse
+                                      expression (toplevel/toploop.ml[155,5388+11]..[155,5388+31])
+                                        Pexp_apply
+                                        expression (toplevel/toploop.ml[155,5388+11]..[155,5388+26])
+                                          Pexp_ident "Sys.file_exists" (toplevel/toploop.ml[155,5388+11]..[155,5388+26])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (toplevel/toploop.ml[155,5388+27]..[155,5388+31])
+                                              Pexp_ident "file" (toplevel/toploop.ml[155,5388+27]..[155,5388+31])
+                                        ]
+                                      expression (toplevel/toploop.ml[155,5388+37]..[155,5388+46])
+                                        Pexp_construct "Some" (toplevel/toploop.ml[155,5388+37]..[155,5388+41])
+                                        Some
+                                          expression (toplevel/toploop.ml[155,5388+42]..[155,5388+46])
+                                            Pexp_ident "file" (toplevel/toploop.ml[155,5388+42]..[155,5388+46])
+                                      Some
+                                        expression (toplevel/toploop.ml[155,5388+52]..[155,5388+56])
+                                          Pexp_construct "None" (toplevel/toploop.ml[155,5388+52]..[155,5388+56])
+                                          None
+                              ]
+                    ]
+                    expression (toplevel/toploop.ml[157,5450+2]..[170,5861+49])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (toplevel/toploop.ml[157,5450+6]..[157,5450+14])
+                            Ppat_var "home_dir" (toplevel/toploop.ml[157,5450+6]..[157,5450+14])
+                          expression (toplevel/toploop.ml[157,5450+15]..[157,5450+33]) ghost
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (toplevel/toploop.ml[157,5450+15]..[157,5450+17])
+                              Ppat_construct "()" (toplevel/toploop.ml[157,5450+15]..[157,5450+17])
+                              None
+                            expression (toplevel/toploop.ml[157,5450+20]..[157,5450+33])
+                              Pexp_apply
+                              expression (toplevel/toploop.ml[157,5450+20]..[157,5450+26])
+                                Pexp_ident "getenv" (toplevel/toploop.ml[157,5450+20]..[157,5450+26])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[157,5450+27]..[157,5450+33])
+                                    Pexp_constant PConst_string("HOME",(toplevel/toploop.ml[157,5450+28]..[157,5450+32]),None)
+                              ]
+                      ]
+                      expression (toplevel/toploop.ml[158,5487+2]..[170,5861+49])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (toplevel/toploop.ml[158,5487+6]..[158,5487+16])
+                              Ppat_var "config_dir" (toplevel/toploop.ml[158,5487+6]..[158,5487+16])
+                            expression (toplevel/toploop.ml[158,5487+17]..[165,5672+58]) ghost
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (toplevel/toploop.ml[158,5487+17]..[158,5487+19])
+                                Ppat_construct "()" (toplevel/toploop.ml[158,5487+17]..[158,5487+19])
+                                None
+                              expression (toplevel/toploop.ml[159,5509+4]..[165,5672+58])
+                                Pexp_ifthenelse
+                                expression (toplevel/toploop.ml[159,5509+7]..[159,5509+16])
+                                  Pexp_ident "Sys.win32" (toplevel/toploop.ml[159,5509+7]..[159,5509+16])
+                                expression (toplevel/toploop.ml[159,5509+22]..[159,5509+26])
+                                  Pexp_construct "None" (toplevel/toploop.ml[159,5509+22]..[159,5509+26])
+                                  None
+                                Some
+                                  expression (toplevel/toploop.ml[160,5541+4]..[165,5672+58])
+                                    Pexp_match
+                                    expression (toplevel/toploop.ml[160,5541+10]..[160,5541+34])
+                                      Pexp_apply
+                                      expression (toplevel/toploop.ml[160,5541+10]..[160,5541+16])
+                                        Pexp_ident "getenv" (toplevel/toploop.ml[160,5541+10]..[160,5541+16])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (toplevel/toploop.ml[160,5541+17]..[160,5541+34])
+                                            Pexp_constant PConst_string("XDG_CONFIG_HOME",(toplevel/toploop.ml[160,5541+18]..[160,5541+33]),None)
+                                      ]
+                                    [
+                                      <case>
+                                        pattern (toplevel/toploop.ml[161,5581+6]..[161,5581+17])
+                                          Ppat_alias "v" (toplevel/toploop.ml[161,5581+16]..[161,5581+17])
+                                          pattern (toplevel/toploop.ml[161,5581+6]..[161,5581+12])
+                                            Ppat_construct "Some" (toplevel/toploop.ml[161,5581+6]..[161,5581+10])
+                                            Some
+                                              []
+                                              pattern (toplevel/toploop.ml[161,5581+11]..[161,5581+12])
+                                                Ppat_any
+                                        expression (toplevel/toploop.ml[161,5581+21]..[161,5581+22])
+                                          Pexp_ident "v" (toplevel/toploop.ml[161,5581+21]..[161,5581+22])
+                                      <case>
+                                        pattern (toplevel/toploop.ml[162,5604+6]..[162,5604+10])
+                                          Ppat_construct "None" (toplevel/toploop.ml[162,5604+6]..[162,5604+10])
+                                          None
+                                        expression (toplevel/toploop.ml[163,5618+8]..[165,5672+58])
+                                          Pexp_match
+                                          expression (toplevel/toploop.ml[163,5618+14]..[163,5618+25])
+                                            Pexp_apply
+                                            expression (toplevel/toploop.ml[163,5618+14]..[163,5618+22])
+                                              Pexp_ident "home_dir" (toplevel/toploop.ml[163,5618+14]..[163,5618+22])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (toplevel/toploop.ml[163,5618+23]..[163,5618+25])
+                                                  Pexp_construct "()" (toplevel/toploop.ml[163,5618+23]..[163,5618+25])
+                                                  None
+                                            ]
+                                          [
+                                            <case>
+                                              pattern (toplevel/toploop.ml[164,5649+10]..[164,5649+14])
+                                                Ppat_construct "None" (toplevel/toploop.ml[164,5649+10]..[164,5649+14])
+                                                None
+                                              expression (toplevel/toploop.ml[164,5649+18]..[164,5649+22])
+                                                Pexp_construct "None" (toplevel/toploop.ml[164,5649+18]..[164,5649+22])
+                                                None
+                                            <case>
+                                              pattern (toplevel/toploop.ml[165,5672+10]..[165,5672+18])
+                                                Ppat_construct "Some" (toplevel/toploop.ml[165,5672+10]..[165,5672+14])
+                                                Some
+                                                  []
+                                                  pattern (toplevel/toploop.ml[165,5672+15]..[165,5672+18])
+                                                    Ppat_var "dir" (toplevel/toploop.ml[165,5672+15]..[165,5672+18])
+                                              expression (toplevel/toploop.ml[165,5672+22]..[165,5672+58])
+                                                Pexp_construct "Some" (toplevel/toploop.ml[165,5672+22]..[165,5672+26])
+                                                Some
+                                                  expression (toplevel/toploop.ml[165,5672+27]..[165,5672+58])
+                                                    Pexp_apply
+                                                    expression (toplevel/toploop.ml[165,5672+28]..[165,5672+43])
+                                                      Pexp_ident "Filename.concat" (toplevel/toploop.ml[165,5672+28]..[165,5672+43])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (toplevel/toploop.ml[165,5672+44]..[165,5672+47])
+                                                          Pexp_ident "dir" (toplevel/toploop.ml[165,5672+44]..[165,5672+47])
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (toplevel/toploop.ml[165,5672+48]..[165,5672+57])
+                                                          Pexp_constant PConst_string(".config",(toplevel/toploop.ml[165,5672+49]..[165,5672+56]),None)
+                                                    ]
+                                          ]
+                                    ]
+                        ]
+                        expression (toplevel/toploop.ml[167,5736+2]..[170,5861+49])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (toplevel/toploop.ml[167,5736+6]..[167,5736+13])
+                                Ppat_var "init_ml" (toplevel/toploop.ml[167,5736+6]..[167,5736+13])
+                              expression (toplevel/toploop.ml[167,5736+16]..[167,5736+49])
+                                Pexp_apply
+                                expression (toplevel/toploop.ml[167,5736+16]..[167,5736+31])
+                                  Pexp_ident "Filename.concat" (toplevel/toploop.ml[167,5736+16]..[167,5736+31])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[167,5736+32]..[167,5736+39])
+                                      Pexp_constant PConst_string("ocaml",(toplevel/toploop.ml[167,5736+33]..[167,5736+38]),None)
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[167,5736+40]..[167,5736+49])
+                                      Pexp_constant PConst_string("init.ml",(toplevel/toploop.ml[167,5736+41]..[167,5736+48]),None)
+                                ]
+                          ]
+                          expression (toplevel/toploop.ml[168,5789+2]..[170,5861+49])
+                            Pexp_match
+                            expression (toplevel/toploop.ml[168,5789+8]..[168,5789+45])
+                              Pexp_apply
+                              expression (toplevel/toploop.ml[168,5789+8]..[168,5789+21])
+                                Pexp_ident "exists_in_dir" (toplevel/toploop.ml[168,5789+8]..[168,5789+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[168,5789+22]..[168,5789+37])
+                                    Pexp_apply
+                                    expression (toplevel/toploop.ml[168,5789+23]..[168,5789+33])
+                                      Pexp_ident "config_dir" (toplevel/toploop.ml[168,5789+23]..[168,5789+33])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (toplevel/toploop.ml[168,5789+34]..[168,5789+36])
+                                          Pexp_construct "()" (toplevel/toploop.ml[168,5789+34]..[168,5789+36])
+                                          None
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[168,5789+38]..[168,5789+45])
+                                    Pexp_ident "init_ml" (toplevel/toploop.ml[168,5789+38]..[168,5789+45])
+                              ]
+                            [
+                              <case>
+                                pattern (toplevel/toploop.ml[169,5840+4]..[169,5840+15])
+                                  Ppat_alias "v" (toplevel/toploop.ml[169,5840+14]..[169,5840+15])
+                                  pattern (toplevel/toploop.ml[169,5840+4]..[169,5840+10])
+                                    Ppat_construct "Some" (toplevel/toploop.ml[169,5840+4]..[169,5840+8])
+                                    Some
+                                      []
+                                      pattern (toplevel/toploop.ml[169,5840+9]..[169,5840+10])
+                                        Ppat_any
+                                expression (toplevel/toploop.ml[169,5840+19]..[169,5840+20])
+                                  Pexp_ident "v" (toplevel/toploop.ml[169,5840+19]..[169,5840+20])
+                              <case>
+                                pattern (toplevel/toploop.ml[170,5861+4]..[170,5861+8])
+                                  Ppat_construct "None" (toplevel/toploop.ml[170,5861+4]..[170,5861+8])
+                                  None
+                                expression (toplevel/toploop.ml[170,5861+12]..[170,5861+49])
+                                  Pexp_apply
+                                  expression (toplevel/toploop.ml[170,5861+12]..[170,5861+25])
+                                    Pexp_ident "exists_in_dir" (toplevel/toploop.ml[170,5861+12]..[170,5861+25])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[170,5861+26]..[170,5861+39])
+                                        Pexp_apply
+                                        expression (toplevel/toploop.ml[170,5861+27]..[170,5861+35])
+                                          Pexp_ident "home_dir" (toplevel/toploop.ml[170,5861+27]..[170,5861+35])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (toplevel/toploop.ml[170,5861+36]..[170,5861+38])
+                                              Pexp_construct "()" (toplevel/toploop.ml[170,5861+36]..[170,5861+38])
+                                              None
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[170,5861+40]..[170,5861+49])
+                                        Pexp_ident "ocamlinit" (toplevel/toploop.ml[170,5861+40]..[170,5861+49])
+                                  ]
+                            ]
+    ]
+  structure_item (toplevel/toploop.ml[172,5912+0]..[181,6205+58])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[172,5912+4]..[172,5912+18])
+          Ppat_var "load_ocamlinit" (toplevel/toploop.ml[172,5912+4]..[172,5912+18])
+        expression (toplevel/toploop.ml[172,5912+19]..[181,6205+58]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[172,5912+19]..[172,5912+22])
+            Ppat_var "ppf" (toplevel/toploop.ml[172,5912+19]..[172,5912+22])
+          expression (toplevel/toploop.ml[173,5937+2]..[181,6205+58])
+            Pexp_ifthenelse
+            expression (toplevel/toploop.ml[173,5937+5]..[173,5937+20])
+              Pexp_apply
+              expression (toplevel/toploop.ml[173,5937+5]..[173,5937+6])
+                Pexp_ident "!" (toplevel/toploop.ml[173,5937+5]..[173,5937+6])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[173,5937+6]..[173,5937+20])
+                    Pexp_ident "Clflags.noinit" (toplevel/toploop.ml[173,5937+6]..[173,5937+20])
+              ]
+            expression (toplevel/toploop.ml[173,5937+26]..[173,5937+28])
+              Pexp_construct "()" (toplevel/toploop.ml[173,5937+26]..[173,5937+28])
+              None
+            Some
+              expression (toplevel/toploop.ml[174,5966+7]..[181,6205+58])
+                Pexp_match
+                expression (toplevel/toploop.ml[174,5966+13]..[174,5966+31])
+                  Pexp_apply
+                  expression (toplevel/toploop.ml[174,5966+13]..[174,5966+14])
+                    Pexp_ident "!" (toplevel/toploop.ml[174,5966+13]..[174,5966+14])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (toplevel/toploop.ml[174,5966+14]..[174,5966+31])
+                        Pexp_ident "Clflags.init_file" (toplevel/toploop.ml[174,5966+14]..[174,5966+31])
+                  ]
+                [
+                  <case>
+                    pattern (toplevel/toploop.ml[175,6003+4]..[175,6003+10])
+                      Ppat_construct "Some" (toplevel/toploop.ml[175,6003+4]..[175,6003+8])
+                      Some
+                        []
+                        pattern (toplevel/toploop.ml[175,6003+9]..[175,6003+10])
+                          Ppat_var "f" (toplevel/toploop.ml[175,6003+9]..[175,6003+10])
+                    expression (toplevel/toploop.ml[176,6017+4]..[177,6083+55])
+                      Pexp_ifthenelse
+                      expression (toplevel/toploop.ml[176,6017+7]..[176,6017+24])
+                        Pexp_apply
+                        expression (toplevel/toploop.ml[176,6017+7]..[176,6017+22])
+                          Pexp_ident "Sys.file_exists" (toplevel/toploop.ml[176,6017+7]..[176,6017+22])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[176,6017+23]..[176,6017+24])
+                              Pexp_ident "f" (toplevel/toploop.ml[176,6017+23]..[176,6017+24])
+                        ]
+                      expression (toplevel/toploop.ml[176,6017+30]..[176,6017+65])
+                        Pexp_apply
+                        expression (toplevel/toploop.ml[176,6017+30]..[176,6017+36])
+                          Pexp_ident "ignore" (toplevel/toploop.ml[176,6017+30]..[176,6017+36])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[176,6017+37]..[176,6017+65])
+                              Pexp_apply
+                              expression (toplevel/toploop.ml[176,6017+38]..[176,6017+50])
+                                Pexp_ident "use_silently" (toplevel/toploop.ml[176,6017+38]..[176,6017+50])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[176,6017+51]..[176,6017+54])
+                                    Pexp_ident "ppf" (toplevel/toploop.ml[176,6017+51]..[176,6017+54])
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[176,6017+55]..[176,6017+63])
+                                    Pexp_construct "File" (toplevel/toploop.ml[176,6017+56]..[176,6017+60])
+                                    Some
+                                      expression (toplevel/toploop.ml[176,6017+61]..[176,6017+62])
+                                        Pexp_ident "f" (toplevel/toploop.ml[176,6017+61]..[176,6017+62])
+                              ]
+                        ]
+                      Some
+                        expression (toplevel/toploop.ml[177,6083+9]..[177,6083+55])
+                          Pexp_apply
+                          expression (toplevel/toploop.ml[177,6083+9]..[177,6083+16])
+                            Pexp_ident "fprintf" (toplevel/toploop.ml[177,6083+9]..[177,6083+16])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[177,6083+17]..[177,6083+20])
+                                Pexp_ident "ppf" (toplevel/toploop.ml[177,6083+17]..[177,6083+20])
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[177,6083+21]..[177,6083+53])
+                                Pexp_constant PConst_string("Init file not found: \"%s\".@.",(toplevel/toploop.ml[177,6083+22]..[177,6083+52]),None)
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[177,6083+54]..[177,6083+55])
+                                Pexp_ident "f" (toplevel/toploop.ml[177,6083+54]..[177,6083+55])
+                          ]
+                  <case>
+                    pattern (toplevel/toploop.ml[178,6139+4]..[178,6139+8])
+                      Ppat_construct "None" (toplevel/toploop.ml[178,6139+4]..[178,6139+8])
+                      None
+                    expression (toplevel/toploop.ml[179,6151+6]..[181,6205+58])
+                      Pexp_match
+                      expression (toplevel/toploop.ml[179,6151+12]..[179,6151+29])
+                        Pexp_apply
+                        expression (toplevel/toploop.ml[179,6151+12]..[179,6151+26])
+                          Pexp_ident "find_ocamlinit" (toplevel/toploop.ml[179,6151+12]..[179,6151+26])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[179,6151+27]..[179,6151+29])
+                              Pexp_construct "()" (toplevel/toploop.ml[179,6151+27]..[179,6151+29])
+                              None
+                        ]
+                      [
+                        <case>
+                          pattern (toplevel/toploop.ml[180,6186+8]..[180,6186+12])
+                            Ppat_construct "None" (toplevel/toploop.ml[180,6186+8]..[180,6186+12])
+                            None
+                          expression (toplevel/toploop.ml[180,6186+16]..[180,6186+18])
+                            Pexp_construct "()" (toplevel/toploop.ml[180,6186+16]..[180,6186+18])
+                            None
+                        <case>
+                          pattern (toplevel/toploop.ml[181,6205+8]..[181,6205+17])
+                            Ppat_construct "Some" (toplevel/toploop.ml[181,6205+8]..[181,6205+12])
+                            Some
+                              []
+                              pattern (toplevel/toploop.ml[181,6205+13]..[181,6205+17])
+                                Ppat_var "file" (toplevel/toploop.ml[181,6205+13]..[181,6205+17])
+                          expression (toplevel/toploop.ml[181,6205+21]..[181,6205+58])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[181,6205+21]..[181,6205+27])
+                              Pexp_ident "ignore" (toplevel/toploop.ml[181,6205+21]..[181,6205+27])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[181,6205+28]..[181,6205+58])
+                                  Pexp_apply
+                                  expression (toplevel/toploop.ml[181,6205+29]..[181,6205+41])
+                                    Pexp_ident "use_silently" (toplevel/toploop.ml[181,6205+29]..[181,6205+41])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[181,6205+42]..[181,6205+45])
+                                        Pexp_ident "ppf" (toplevel/toploop.ml[181,6205+42]..[181,6205+45])
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[181,6205+46]..[181,6205+57])
+                                        Pexp_construct "File" (toplevel/toploop.ml[181,6205+47]..[181,6205+51])
+                                        Some
+                                          expression (toplevel/toploop.ml[181,6205+52]..[181,6205+56])
+                                            Pexp_ident "file" (toplevel/toploop.ml[181,6205+52]..[181,6205+56])
+                                  ]
+                            ]
+                      ]
+                ]
+    ]
+  structure_item (toplevel/toploop.ml[185,6293+0]..[185,6293+17])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (toplevel/toploop.ml[185,6293+0]..[185,6293+17])
+          pext_name = "PPerror"
+          pext_kind =
+            Pext_decl
+              []
+              None
+  structure_item (toplevel/toploop.ml[187,6312+0]..[226,7770+6])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/toploop.ml[187,6312+4]..[187,6312+8])
+          Ppat_var "loop" (toplevel/toploop.ml[187,6312+4]..[187,6312+8])
+        expression (toplevel/toploop.ml[187,6312+9]..[226,7770+6]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/toploop.ml[187,6312+9]..[187,6312+12])
+            Ppat_var "ppf" (toplevel/toploop.ml[187,6312+9]..[187,6312+12])
+          expression (toplevel/toploop.ml[188,6327+2]..[226,7770+6])
+            Pexp_sequence
+            expression (toplevel/toploop.ml[188,6327+2]..[188,6327+23])
+              Pexp_apply
+              expression (toplevel/toploop.ml[188,6327+16]..[188,6327+18])
+                Pexp_ident ":=" (toplevel/toploop.ml[188,6327+16]..[188,6327+18])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[188,6327+2]..[188,6327+15])
+                    Pexp_ident "Clflags.debug" (toplevel/toploop.ml[188,6327+2]..[188,6327+15])
+                <arg>
+                Nolabel
+                  expression (toplevel/toploop.ml[188,6327+19]..[188,6327+23])
+                    Pexp_construct "true" (toplevel/toploop.ml[188,6327+19]..[188,6327+23])
+                    None
+              ]
+            expression (toplevel/toploop.ml[189,6352+2]..[226,7770+6])
+              Pexp_sequence
+              expression (toplevel/toploop.ml[189,6352+2]..[189,6352+40])
+                Pexp_apply
+                expression (toplevel/toploop.ml[189,6352+34]..[189,6352+36])
+                  Pexp_ident ":=" (toplevel/toploop.ml[189,6352+34]..[189,6352+36])
+                [
+                  <arg>
+                  Nolabel
+                    expression (toplevel/toploop.ml[189,6352+2]..[189,6352+33])
+                      Pexp_ident "Location.formatter_for_warnings" (toplevel/toploop.ml[189,6352+2]..[189,6352+33])
+                  <arg>
+                  Nolabel
+                    expression (toplevel/toploop.ml[189,6352+37]..[189,6352+40])
+                      Pexp_ident "ppf" (toplevel/toploop.ml[189,6352+37]..[189,6352+40])
+                ]
+              expression (toplevel/toploop.ml[190,6394+2]..[226,7770+6])
+                Pexp_sequence
+                expression (toplevel/toploop.ml[190,6394+2]..[194,6580+34])
+                  Pexp_ifthenelse
+                  expression (toplevel/toploop.ml[190,6394+5]..[190,6394+27])
+                    Pexp_apply
+                    expression (toplevel/toploop.ml[190,6394+5]..[190,6394+8])
+                      Pexp_ident "not" (toplevel/toploop.ml[190,6394+5]..[190,6394+8])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (toplevel/toploop.ml[190,6394+9]..[190,6394+27])
+                          Pexp_apply
+                          expression (toplevel/toploop.ml[190,6394+9]..[190,6394+10])
+                            Pexp_ident "!" (toplevel/toploop.ml[190,6394+9]..[190,6394+10])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[190,6394+10]..[190,6394+27])
+                                Pexp_ident "Clflags.noversion" (toplevel/toploop.ml[190,6394+10]..[190,6394+27])
+                          ]
+                    ]
+                  expression (toplevel/toploop.ml[191,6427+4]..[194,6580+34])
+                    Pexp_apply
+                    expression (toplevel/toploop.ml[191,6427+4]..[191,6427+11])
+                      Pexp_ident "fprintf" (toplevel/toploop.ml[191,6427+4]..[191,6427+11])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (toplevel/toploop.ml[191,6427+12]..[191,6427+15])
+                          Pexp_ident "ppf" (toplevel/toploop.ml[191,6427+12]..[191,6427+15])
+                      <arg>
+                      Nolabel
+                        expression (toplevel/toploop.ml[191,6427+16]..[191,6427+67])
+                          Pexp_constant PConst_string("OCaml version %s%s%s@.Enter #help;; for help.@.@.",(toplevel/toploop.ml[191,6427+17]..[191,6427+66]),None)
+                      <arg>
+                      Nolabel
+                        expression (toplevel/toploop.ml[192,6495+6]..[192,6495+20])
+                          Pexp_ident "Config.version" (toplevel/toploop.ml[192,6495+6]..[192,6495+20])
+                      <arg>
+                      Nolabel
+                        expression (toplevel/toploop.ml[193,6516+6]..[193,6516+63])
+                          Pexp_ifthenelse
+                          expression (toplevel/toploop.ml[193,6516+10]..[193,6516+43])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[193,6516+39]..[193,6516+40])
+                              Pexp_ident "=" (toplevel/toploop.ml[193,6516+39]..[193,6516+40])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[193,6516+10]..[193,6516+38])
+                                  Pexp_ident "Topeval.implementation_label" (toplevel/toploop.ml[193,6516+10]..[193,6516+38])
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[193,6516+41]..[193,6516+43])
+                                  Pexp_constant PConst_string("",(toplevel/toploop.ml[193,6516+42]..[193,6516+42]),None)
+                            ]
+                          expression (toplevel/toploop.ml[193,6516+49]..[193,6516+51])
+                            Pexp_constant PConst_string("",(toplevel/toploop.ml[193,6516+50]..[193,6516+50]),None)
+                          Some
+                            expression (toplevel/toploop.ml[193,6516+57]..[193,6516+62])
+                              Pexp_constant PConst_string(" - ",(toplevel/toploop.ml[193,6516+58]..[193,6516+61]),None)
+                      <arg>
+                      Nolabel
+                        expression (toplevel/toploop.ml[194,6580+6]..[194,6580+34])
+                          Pexp_ident "Topeval.implementation_label" (toplevel/toploop.ml[194,6580+6]..[194,6580+34])
+                    ]
+                  None
+                expression (toplevel/toploop.ml[195,6616+2]..[226,7770+6])
+                  Pexp_sequence
+                  expression (toplevel/toploop.ml[195,6616+2]..[199,6785+5])
+                    Pexp_try
+                    expression (toplevel/toploop.ml[196,6624+8]..[196,6624+34])
+                      Pexp_apply
+                      expression (toplevel/toploop.ml[196,6624+8]..[196,6624+31])
+                        Pexp_ident "initialize_toplevel_env" (toplevel/toploop.ml[196,6624+8]..[196,6624+31])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (toplevel/toploop.ml[196,6624+32]..[196,6624+34])
+                            Pexp_construct "()" (toplevel/toploop.ml[196,6624+32]..[196,6624+34])
+                            None
+                      ]
+                    [
+                      <case>
+                        pattern (toplevel/toploop.ml[197,6659+9]..[197,6659+46])
+                          Ppat_alias "exn" (toplevel/toploop.ml[197,6659+43]..[197,6659+46])
+                          pattern (toplevel/toploop.ml[197,6659+9]..[197,6659+39])
+                            Ppat_or
+                            pattern (toplevel/toploop.ml[197,6659+9]..[197,6659+20])
+                              Ppat_construct "Env.Error" (toplevel/toploop.ml[197,6659+9]..[197,6659+18])
+                              Some
+                                []
+                                pattern (toplevel/toploop.ml[197,6659+19]..[197,6659+20])
+                                  Ppat_any
+                            pattern (toplevel/toploop.ml[197,6659+23]..[197,6659+39])
+                              Ppat_construct "Typetexp.Error" (toplevel/toploop.ml[197,6659+23]..[197,6659+37])
+                              Some
+                                []
+                                pattern (toplevel/toploop.ml[197,6659+38]..[197,6659+39])
+                                  Ppat_any
+                        expression (toplevel/toploop.ml[198,6709+6]..[198,6709+75])
+                          Pexp_sequence
+                          expression (toplevel/toploop.ml[198,6709+6]..[198,6709+39])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[198,6709+6]..[198,6709+31])
+                              Pexp_ident "Location.report_exception" (toplevel/toploop.ml[198,6709+6]..[198,6709+31])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[198,6709+32]..[198,6709+35])
+                                  Pexp_ident "ppf" (toplevel/toploop.ml[198,6709+32]..[198,6709+35])
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[198,6709+36]..[198,6709+39])
+                                  Pexp_ident "exn" (toplevel/toploop.ml[198,6709+36]..[198,6709+39])
+                            ]
+                          expression (toplevel/toploop.ml[198,6709+41]..[198,6709+75])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[198,6709+41]..[198,6709+46])
+                              Pexp_ident "raise" (toplevel/toploop.ml[198,6709+41]..[198,6709+46])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[198,6709+47]..[198,6709+75])
+                                  Pexp_construct "Compenv.Exit_with_status" (toplevel/toploop.ml[198,6709+48]..[198,6709+72])
+                                  Some
+                                    expression (toplevel/toploop.ml[198,6709+73]..[198,6709+74])
+                                      Pexp_constant PConst_int (2,None)
+                            ]
+                    ]
+                  expression (toplevel/toploop.ml[200,6792+2]..[226,7770+6])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (toplevel/toploop.ml[200,6792+6]..[200,6792+8])
+                          Ppat_var "lb" (toplevel/toploop.ml[200,6792+6]..[200,6792+8])
+                        expression (toplevel/toploop.ml[200,6792+11]..[200,6792+45])
+                          Pexp_apply
+                          expression (toplevel/toploop.ml[200,6792+11]..[200,6792+31])
+                            Pexp_ident "Lexing.from_function" (toplevel/toploop.ml[200,6792+11]..[200,6792+31])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[200,6792+32]..[200,6792+45])
+                                Pexp_ident "refill_lexbuf" (toplevel/toploop.ml[200,6792+32]..[200,6792+45])
+                          ]
+                    ]
+                    expression (toplevel/toploop.ml[201,6841+2]..[226,7770+6])
+                      Pexp_sequence
+                      expression (toplevel/toploop.ml[201,6841+2]..[201,6841+33])
+                        Pexp_apply
+                        expression (toplevel/toploop.ml[201,6841+2]..[201,6841+15])
+                          Pexp_ident "Location.init" (toplevel/toploop.ml[201,6841+2]..[201,6841+15])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[201,6841+16]..[201,6841+18])
+                              Pexp_ident "lb" (toplevel/toploop.ml[201,6841+16]..[201,6841+18])
+                          <arg>
+                          Nolabel
+                            expression (toplevel/toploop.ml[201,6841+19]..[201,6841+33])
+                              Pexp_constant PConst_string("//toplevel//",(toplevel/toploop.ml[201,6841+20]..[201,6841+32]),None)
+                        ]
+                      expression (toplevel/toploop.ml[202,6876+2]..[226,7770+6])
+                        Pexp_sequence
+                        expression (toplevel/toploop.ml[202,6876+2]..[202,6876+39])
+                          Pexp_apply
+                          expression (toplevel/toploop.ml[202,6876+22]..[202,6876+24])
+                            Pexp_ident ":=" (toplevel/toploop.ml[202,6876+22]..[202,6876+24])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[202,6876+2]..[202,6876+21])
+                                Pexp_ident "Location.input_name" (toplevel/toploop.ml[202,6876+2]..[202,6876+21])
+                            <arg>
+                            Nolabel
+                              expression (toplevel/toploop.ml[202,6876+25]..[202,6876+39])
+                                Pexp_constant PConst_string("//toplevel//",(toplevel/toploop.ml[202,6876+26]..[202,6876+38]),None)
+                          ]
+                        expression (toplevel/toploop.ml[203,6917+2]..[226,7770+6])
+                          Pexp_sequence
+                          expression (toplevel/toploop.ml[203,6917+2]..[203,6917+34])
+                            Pexp_apply
+                            expression (toplevel/toploop.ml[203,6917+24]..[203,6917+26])
+                              Pexp_ident ":=" (toplevel/toploop.ml[203,6917+24]..[203,6917+26])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[203,6917+2]..[203,6917+23])
+                                  Pexp_ident "Location.input_lexbuf" (toplevel/toploop.ml[203,6917+2]..[203,6917+23])
+                              <arg>
+                              Nolabel
+                                expression (toplevel/toploop.ml[203,6917+27]..[203,6917+34])
+                                  Pexp_construct "Some" (toplevel/toploop.ml[203,6917+27]..[203,6917+31])
+                                  Some
+                                    expression (toplevel/toploop.ml[203,6917+32]..[203,6917+34])
+                                      Pexp_ident "lb" (toplevel/toploop.ml[203,6917+32]..[203,6917+34])
+                            ]
+                          expression (toplevel/toploop.ml[204,6953+2]..[226,7770+6])
+                            Pexp_sequence
+                            expression (toplevel/toploop.ml[204,6953+2]..[204,6953+52])
+                              Pexp_apply
+                              expression (toplevel/toploop.ml[204,6953+31]..[204,6953+33])
+                                Pexp_ident ":=" (toplevel/toploop.ml[204,6953+31]..[204,6953+33])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[204,6953+2]..[204,6953+30])
+                                    Pexp_ident "Location.input_phrase_buffer" (toplevel/toploop.ml[204,6953+2]..[204,6953+30])
+                                <arg>
+                                Nolabel
+                                  expression (toplevel/toploop.ml[204,6953+34]..[204,6953+52])
+                                    Pexp_construct "Some" (toplevel/toploop.ml[204,6953+34]..[204,6953+38])
+                                    Some
+                                      expression (toplevel/toploop.ml[204,6953+39]..[204,6953+52])
+                                        Pexp_ident "phrase_buffer" (toplevel/toploop.ml[204,6953+39]..[204,6953+52])
+                              ]
+                            expression (toplevel/toploop.ml[205,7007+2]..[226,7770+6])
+                              Pexp_sequence
+                              expression (toplevel/toploop.ml[205,7007+2]..[205,7007+22])
+                                Pexp_apply
+                                expression (toplevel/toploop.ml[205,7007+2]..[205,7007+17])
+                                  Pexp_ident "Sys.catch_break" (toplevel/toploop.ml[205,7007+2]..[205,7007+17])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (toplevel/toploop.ml[205,7007+18]..[205,7007+22])
+                                      Pexp_construct "true" (toplevel/toploop.ml[205,7007+18]..[205,7007+22])
+                                      None
+                                ]
+                              expression (toplevel/toploop.ml[206,7031+2]..[226,7770+6])
+                                Pexp_sequence
+                                expression (toplevel/toploop.ml[206,7031+2]..[206,7031+23])
+                                  Pexp_apply
+                                  expression (toplevel/toploop.ml[206,7031+2]..[206,7031+11])
+                                    Pexp_ident "run_hooks" (toplevel/toploop.ml[206,7031+2]..[206,7031+11])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (toplevel/toploop.ml[206,7031+12]..[206,7031+23])
+                                        Pexp_construct "After_setup" (toplevel/toploop.ml[206,7031+12]..[206,7031+23])
+                                        None
+                                  ]
+                                expression (toplevel/toploop.ml[207,7056+2]..[226,7770+6])
+                                  Pexp_sequence
+                                  expression (toplevel/toploop.ml[207,7056+2]..[207,7056+20])
+                                    Pexp_apply
+                                    expression (toplevel/toploop.ml[207,7056+2]..[207,7056+16])
+                                      Pexp_ident "load_ocamlinit" (toplevel/toploop.ml[207,7056+2]..[207,7056+16])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (toplevel/toploop.ml[207,7056+17]..[207,7056+20])
+                                          Pexp_ident "ppf" (toplevel/toploop.ml[207,7056+17]..[207,7056+20])
+                                    ]
+                                  expression (toplevel/toploop.ml[208,7078+2]..[226,7770+6])
+                                    Pexp_while
+                                    expression (toplevel/toploop.ml[208,7078+8]..[208,7078+12])
+                                      Pexp_construct "true" (toplevel/toploop.ml[208,7078+8]..[208,7078+12])
+                                      None
+                                    expression (toplevel/toploop.ml[209,7094+4]..[225,7705+64])
+                                      Pexp_let Nonrec
+                                      [
+                                        <def>
+                                          pattern (toplevel/toploop.ml[209,7094+8]..[209,7094+12])
+                                            Ppat_var "snap" (toplevel/toploop.ml[209,7094+8]..[209,7094+12])
+                                          expression (toplevel/toploop.ml[209,7094+15]..[209,7094+32])
+                                            Pexp_apply
+                                            expression (toplevel/toploop.ml[209,7094+15]..[209,7094+29])
+                                              Pexp_ident "Btype.snapshot" (toplevel/toploop.ml[209,7094+15]..[209,7094+29])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (toplevel/toploop.ml[209,7094+30]..[209,7094+32])
+                                                  Pexp_construct "()" (toplevel/toploop.ml[209,7094+30]..[209,7094+32])
+                                                  None
+                                            ]
+                                      ]
+                                      expression (toplevel/toploop.ml[210,7130+4]..[225,7705+64])
+                                        Pexp_try
+                                        expression (toplevel/toploop.ml[211,7138+6]..[220,7508+41])
+                                          Pexp_sequence
+                                          expression (toplevel/toploop.ml[211,7138+6]..[211,7138+27])
+                                            Pexp_apply
+                                            expression (toplevel/toploop.ml[211,7138+6]..[211,7138+24])
+                                              Pexp_ident "Lexing.flush_input" (toplevel/toploop.ml[211,7138+6]..[211,7138+24])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (toplevel/toploop.ml[211,7138+25]..[211,7138+27])
+                                                  Pexp_ident "lb" (toplevel/toploop.ml[211,7138+25]..[211,7138+27])
+                                            ]
+                                          expression (toplevel/toploop.ml[213,7236+6]..[220,7508+41])
+                                            Pexp_sequence
+                                            expression (toplevel/toploop.ml[213,7236+6]..[213,7236+32])
+                                              Pexp_apply
+                                              expression (toplevel/toploop.ml[213,7236+6]..[213,7236+18])
+                                                Pexp_ident "Buffer.reset" (toplevel/toploop.ml[213,7236+6]..[213,7236+18])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (toplevel/toploop.ml[213,7236+19]..[213,7236+32])
+                                                    Pexp_ident "phrase_buffer" (toplevel/toploop.ml[213,7236+19]..[213,7236+32])
+                                              ]
+                                            expression (toplevel/toploop.ml[214,7270+6]..[220,7508+41])
+                                              Pexp_sequence
+                                              expression (toplevel/toploop.ml[214,7270+6]..[214,7270+22])
+                                                Pexp_apply
+                                                expression (toplevel/toploop.ml[214,7270+6]..[214,7270+20])
+                                                  Pexp_ident "Location.reset" (toplevel/toploop.ml[214,7270+6]..[214,7270+20])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[214,7270+20]..[214,7270+22])
+                                                      Pexp_construct "()" (toplevel/toploop.ml[214,7270+20]..[214,7270+22])
+                                                      None
+                                                ]
+                                              expression (toplevel/toploop.ml[215,7294+6]..[220,7508+41])
+                                                Pexp_sequence
+                                                expression (toplevel/toploop.ml[215,7294+6]..[215,7294+29])
+                                                  Pexp_apply
+                                                  expression (toplevel/toploop.ml[215,7294+6]..[215,7294+26])
+                                                    Pexp_ident "Warnings.reset_fatal" (toplevel/toploop.ml[215,7294+6]..[215,7294+26])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (toplevel/toploop.ml[215,7294+27]..[215,7294+29])
+                                                        Pexp_construct "()" (toplevel/toploop.ml[215,7294+27]..[215,7294+29])
+                                                        None
+                                                  ]
+                                                expression (toplevel/toploop.ml[216,7325+6]..[220,7508+41])
+                                                  Pexp_sequence
+                                                  expression (toplevel/toploop.ml[216,7325+6]..[216,7325+24])
+                                                    Pexp_apply
+                                                    expression (toplevel/toploop.ml[216,7325+17]..[216,7325+19])
+                                                      Pexp_ident ":=" (toplevel/toploop.ml[216,7325+17]..[216,7325+19])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (toplevel/toploop.ml[216,7325+6]..[216,7325+16])
+                                                          Pexp_ident "first_line" (toplevel/toploop.ml[216,7325+6]..[216,7325+16])
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (toplevel/toploop.ml[216,7325+20]..[216,7325+24])
+                                                          Pexp_construct "true" (toplevel/toploop.ml[216,7325+20]..[216,7325+24])
+                                                          None
+                                                    ]
+                                                  expression (toplevel/toploop.ml[217,7351+6]..[220,7508+41])
+                                                    Pexp_let Nonrec
+                                                    [
+                                                      <def>
+                                                        pattern (toplevel/toploop.ml[217,7351+10]..[217,7351+13])
+                                                          Ppat_var "phr" (toplevel/toploop.ml[217,7351+10]..[217,7351+13])
+                                                        expression (toplevel/toploop.ml[217,7351+16]..[217,7351+72])
+                                                          Pexp_try
+                                                          expression (toplevel/toploop.ml[217,7351+20]..[217,7351+45])
+                                                            Pexp_apply
+                                                            expression (toplevel/toploop.ml[217,7351+20]..[217,7351+42])
+                                                              Pexp_apply
+                                                              expression (toplevel/toploop.ml[217,7351+20]..[217,7351+21])
+                                                                Pexp_ident "!" (toplevel/toploop.ml[217,7351+20]..[217,7351+21])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (toplevel/toploop.ml[217,7351+21]..[217,7351+42])
+                                                                    Pexp_ident "parse_toplevel_phrase" (toplevel/toploop.ml[217,7351+21]..[217,7351+42])
+                                                              ]
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (toplevel/toploop.ml[217,7351+43]..[217,7351+45])
+                                                                  Pexp_ident "lb" (toplevel/toploop.ml[217,7351+43]..[217,7351+45])
+                                                            ]
+                                                          [
+                                                            <case>
+                                                              pattern (toplevel/toploop.ml[217,7351+51]..[217,7351+55])
+                                                                Ppat_construct "Exit" (toplevel/toploop.ml[217,7351+51]..[217,7351+55])
+                                                                None
+                                                              expression (toplevel/toploop.ml[217,7351+59]..[217,7351+72])
+                                                                Pexp_apply
+                                                                expression (toplevel/toploop.ml[217,7351+59]..[217,7351+64])
+                                                                  Pexp_ident "raise" (toplevel/toploop.ml[217,7351+59]..[217,7351+64])
+                                                                [
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (toplevel/toploop.ml[217,7351+65]..[217,7351+72])
+                                                                      Pexp_construct "PPerror" (toplevel/toploop.ml[217,7351+65]..[217,7351+72])
+                                                                      None
+                                                                ]
+                                                          ]
+                                                    ]
+                                                    expression (toplevel/toploop.ml[218,7427+6]..[220,7508+41])
+                                                      Pexp_let Nonrec
+                                                      [
+                                                        <def>
+                                                          pattern (toplevel/toploop.ml[218,7427+10]..[218,7427+13])
+                                                            Ppat_var "phr" (toplevel/toploop.ml[218,7427+10]..[218,7427+13])
+                                                          expression (toplevel/toploop.ml[218,7427+16]..[218,7427+41])
+                                                            Pexp_apply
+                                                            expression (toplevel/toploop.ml[218,7427+16]..[218,7427+33])
+                                                              Pexp_ident "preprocess_phrase" (toplevel/toploop.ml[218,7427+16]..[218,7427+33])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (toplevel/toploop.ml[218,7427+34]..[218,7427+37])
+                                                                  Pexp_ident "ppf" (toplevel/toploop.ml[218,7427+34]..[218,7427+37])
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (toplevel/toploop.ml[218,7427+38]..[218,7427+41])
+                                                                  Pexp_ident "phr" (toplevel/toploop.ml[218,7427+38]..[218,7427+41])
+                                                            ]
+                                                      ]
+                                                      expression (toplevel/toploop.ml[219,7473+6]..[220,7508+41])
+                                                        Pexp_sequence
+                                                        expression (toplevel/toploop.ml[219,7473+6]..[219,7473+33])
+                                                          Pexp_apply
+                                                          expression (toplevel/toploop.ml[219,7473+6]..[219,7473+30])
+                                                            Pexp_ident "Env.reset_cache_toplevel" (toplevel/toploop.ml[219,7473+6]..[219,7473+30])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (toplevel/toploop.ml[219,7473+31]..[219,7473+33])
+                                                                Pexp_construct "()" (toplevel/toploop.ml[219,7473+31]..[219,7473+33])
+                                                                None
+                                                          ]
+                                                        expression (toplevel/toploop.ml[220,7508+6]..[220,7508+41])
+                                                          Pexp_apply
+                                                          expression (toplevel/toploop.ml[220,7508+6]..[220,7508+12])
+                                                            Pexp_ident "ignore" (toplevel/toploop.ml[220,7508+6]..[220,7508+12])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (toplevel/toploop.ml[220,7508+12]..[220,7508+41])
+                                                                Pexp_apply
+                                                                expression (toplevel/toploop.ml[220,7508+13]..[220,7508+27])
+                                                                  Pexp_ident "execute_phrase" (toplevel/toploop.ml[220,7508+13]..[220,7508+27])
+                                                                [
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (toplevel/toploop.ml[220,7508+28]..[220,7508+32])
+                                                                      Pexp_construct "true" (toplevel/toploop.ml[220,7508+28]..[220,7508+32])
+                                                                      None
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (toplevel/toploop.ml[220,7508+33]..[220,7508+36])
+                                                                      Pexp_ident "ppf" (toplevel/toploop.ml[220,7508+33]..[220,7508+36])
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (toplevel/toploop.ml[220,7508+37]..[220,7508+40])
+                                                                      Pexp_ident "phr" (toplevel/toploop.ml[220,7508+37]..[220,7508+40])
+                                                                ]
+                                                          ]
+                                        [
+                                          <case>
+                                            pattern (toplevel/toploop.ml[222,7559+6]..[222,7559+17])
+                                              Ppat_construct "End_of_file" (toplevel/toploop.ml[222,7559+6]..[222,7559+17])
+                                              None
+                                            expression (toplevel/toploop.ml[222,7559+21]..[222,7559+55])
+                                              Pexp_apply
+                                              expression (toplevel/toploop.ml[222,7559+21]..[222,7559+26])
+                                                Pexp_ident "raise" (toplevel/toploop.ml[222,7559+21]..[222,7559+26])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (toplevel/toploop.ml[222,7559+27]..[222,7559+55])
+                                                    Pexp_construct "Compenv.Exit_with_status" (toplevel/toploop.ml[222,7559+28]..[222,7559+52])
+                                                    Some
+                                                      expression (toplevel/toploop.ml[222,7559+53]..[222,7559+54])
+                                                        Pexp_constant PConst_int (0,None)
+                                              ]
+                                          <case>
+                                            pattern (toplevel/toploop.ml[223,7615+6]..[223,7615+15])
+                                              Ppat_construct "Sys.Break" (toplevel/toploop.ml[223,7615+6]..[223,7615+15])
+                                              None
+                                            expression (toplevel/toploop.ml[223,7615+19]..[223,7615+69])
+                                              Pexp_sequence
+                                              expression (toplevel/toploop.ml[223,7615+19]..[223,7615+47])
+                                                Pexp_apply
+                                                expression (toplevel/toploop.ml[223,7615+19]..[223,7615+26])
+                                                  Pexp_ident "fprintf" (toplevel/toploop.ml[223,7615+19]..[223,7615+26])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[223,7615+27]..[223,7615+30])
+                                                      Pexp_ident "ppf" (toplevel/toploop.ml[223,7615+27]..[223,7615+30])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[223,7615+31]..[223,7615+47])
+                                                      Pexp_constant PConst_string("Interrupted.@.",(toplevel/toploop.ml[223,7615+32]..[223,7615+46]),None)
+                                                ]
+                                              expression (toplevel/toploop.ml[223,7615+49]..[223,7615+69])
+                                                Pexp_apply
+                                                expression (toplevel/toploop.ml[223,7615+49]..[223,7615+64])
+                                                  Pexp_ident "Btype.backtrack" (toplevel/toploop.ml[223,7615+49]..[223,7615+64])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[223,7615+65]..[223,7615+69])
+                                                      Pexp_ident "snap" (toplevel/toploop.ml[223,7615+65]..[223,7615+69])
+                                                ]
+                                          <case>
+                                            pattern (toplevel/toploop.ml[224,7685+6]..[224,7685+13])
+                                              Ppat_construct "PPerror" (toplevel/toploop.ml[224,7685+6]..[224,7685+13])
+                                              None
+                                            expression (toplevel/toploop.ml[224,7685+17]..[224,7685+19])
+                                              Pexp_construct "()" (toplevel/toploop.ml[224,7685+17]..[224,7685+19])
+                                              None
+                                          <case>
+                                            pattern (toplevel/toploop.ml[225,7705+6]..[225,7705+7])
+                                              Ppat_var "x" (toplevel/toploop.ml[225,7705+6]..[225,7705+7])
+                                            expression (toplevel/toploop.ml[225,7705+11]..[225,7705+64])
+                                              Pexp_sequence
+                                              expression (toplevel/toploop.ml[225,7705+11]..[225,7705+42])
+                                                Pexp_apply
+                                                expression (toplevel/toploop.ml[225,7705+11]..[225,7705+36])
+                                                  Pexp_ident "Location.report_exception" (toplevel/toploop.ml[225,7705+11]..[225,7705+36])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[225,7705+37]..[225,7705+40])
+                                                      Pexp_ident "ppf" (toplevel/toploop.ml[225,7705+37]..[225,7705+40])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[225,7705+41]..[225,7705+42])
+                                                      Pexp_ident "x" (toplevel/toploop.ml[225,7705+41]..[225,7705+42])
+                                                ]
+                                              expression (toplevel/toploop.ml[225,7705+44]..[225,7705+64])
+                                                Pexp_apply
+                                                expression (toplevel/toploop.ml[225,7705+44]..[225,7705+59])
+                                                  Pexp_ident "Btype.backtrack" (toplevel/toploop.ml[225,7705+44]..[225,7705+59])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (toplevel/toploop.ml[225,7705+60]..[225,7705+64])
+                                                      Pexp_ident "snap" (toplevel/toploop.ml[225,7705+60]..[225,7705+64])
+                                                ]
+                                        ]
+    ]
+]
+

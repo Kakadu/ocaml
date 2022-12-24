@@ -1,0 +1,865 @@
+[
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[5,24+0]..[8,111+5])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[5,24+0]..[8,111+5])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "idfunc" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[5,24+6]..[5,24+12])
+        pci_expr =
+          class_expr (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[6,39+2]..[8,111+5])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[6,39+8]..[6,39+8]) ghost
+                Ppat_any
+              [
+                class_field (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+4]..[7,48+62])
+                  Pcf_method Public
+                    "id" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+11]..[7,48+13])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+16]..[7,48+62]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+52]..[7,48+62])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+56]..[7,48+57])
+                          Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+56]..[7,48+57])
+                        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+61]..[7,48+62])
+                          Pexp_ident "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+61]..[7,48+62])
+                      Some
+                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+16]..[7,48+49])
+                          Ptyp_poly 'ab
+                          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+21]..[7,48+49])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+22]..[7,48+41])
+                              Ptyp_alias "ab"
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+22]..[7,48+34])
+                                Ptyp_variant closed=Closed
+                                [
+                                  Rtag "A" true
+                                    []
+                                  Rtag "B" true
+                                    []
+                                ]
+                                Some
+                                  []
+                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[7,48+46]..[7,48+49])
+                              Ptyp_var ab
+              ]
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[9,117+0]..[11,194+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[9,117+9]..[11,194+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[9,117+9]..[11,194+2])
+          Pexp_constant PConst_string ("\nclass idfunc : object method id : ([< `A | `B ] as 'a) -> 'a end\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[9,117+11]..[11,194+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+0]..[14,231+27])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+4]..[13,199+29]) ghost
+          Ppat_constraint
+          pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+4]..[13,199+7])
+            Ppat_var "act" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+4]..[13,199+7])
+          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+10]..[13,199+29]) ghost
+            Ptyp_poly
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+10]..[13,199+29])
+              Ptyp_arrow
+              Nolabel
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+10]..[13,199+21])
+                Ptyp_variant closed=Closed
+                [
+                  Rtag "A" true
+                    []
+                  Rtag "B" true
+                    []
+                ]
+                None
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+25]..[13,199+29])
+                Ptyp_variant closed=Closed
+                [
+                  Rtag "A" true
+                    []
+                ]
+                None
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+4]..[14,231+27])
+          Pexp_constraint
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[14,231+1]..[14,231+27])
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[14,231+5]..[14,231+6])
+              Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[14,231+5]..[14,231+6])
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[14,231+10]..[14,231+27])
+              Pexp_apply
+              expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[14,231+10]..[14,231+25])
+                Pexp_send "id"
+                expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[14,231+10]..[14,231+22])
+                  Pexp_new "idfunc" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[14,231+15]..[14,231+21])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[14,231+26]..[14,231+27])
+                    Pexp_ident "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[14,231+26]..[14,231+27])
+              ]
+          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+10]..[13,199+29])
+            Ptyp_arrow
+            Nolabel
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+10]..[13,199+21])
+              Ptyp_variant closed=Closed
+              [
+                Rtag "A" true
+                  []
+                Rtag "B" true
+                  []
+              ]
+              None
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[13,199+25]..[13,199+29])
+              Ptyp_variant closed=Closed
+              [
+                Rtag "A" true
+                  []
+              ]
+              None
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[15,259+0]..[22,514+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[15,259+9]..[22,514+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[15,259+9]..[22,514+2])
+          Pexp_constant PConst_string ("\nLine 2, characters 10-27:\n2 |  fun x -> (new idfunc)#id x\n              ^^^^^^^^^^^^^^^^^\nError: This expression has type [ `A | `B ]\n       but an expression was expected of type [ `A ]\n       The second variant type does not allow tag(s) `B\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[15,259+11]..[22,514+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+0]..[28,604+73])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+4]..[28,604+5])
+          Ppat_var "f" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+4]..[28,604+5])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+6]..[28,604+73]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+6]..[28,604+67])
+            Ppat_constraint
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+7]..[28,604+8])
+              Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+7]..[28,604+8])
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+11]..[28,604+66])
+              Ptyp_alias "c"
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+11]..[28,604+60])
+                Ptyp_object Closed
+                  method m
+                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+17]..[28,604+58])
+                      Ptyp_poly 'a
+                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+21]..[28,604+58])
+                        Ptyp_object Closed
+                          method n
+                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+26]..[28,604+56])
+                              Ptyp_poly 'r
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+30]..[28,604+56])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+31]..[28,604+49])
+                                  Ptyp_alias "r"
+                                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+31]..[28,604+43])
+                                    Ptyp_variant closed=Closed
+                                    [
+                                      Rtag "A" false
+                                        [
+                                          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+40]..[28,604+42])
+                                            Ptyp_var a
+                                        ]
+                                    ]
+                                    Some
+                                      []
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+54]..[28,604+56])
+                                  Ptyp_var c
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+70]..[28,604+73])
+            Pexp_send "m"
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+70]..[28,604+71])
+              Pexp_ident "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[28,604+70]..[28,604+71])
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[29,680+0]..[40,1033+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[29,680+9]..[40,1033+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[29,680+9]..[40,1033+2])
+          Pexp_tuple
+          [
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[29,680+9]..[33,815+2])
+              Pexp_constant PConst_string ("\nval f :\n  (< m : 'a. < n : 'c. ([< `A of 'a ] as 'c) -> 'b > > as 'b) ->\n  < n : 'd. ([< `A of 'e ] as 'd) -> 'b > = <fun>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[29,680+11]..[33,815+0]),Some "")
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[33,815+4]..[40,1033+2])
+              Pexp_construct "Principal" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[33,815+4]..[33,815+13])
+              Some
+                expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[33,815+13]..[40,1033+2])
+                  Pexp_constant PConst_string ("\nval f :\n  (< m : 'a. < n : 'c. ([< `A of 'a ] as 'c) -> 'b > > as 'b) ->\n  < n : 'd.\n          ([< `A of 'e ] as 'd) ->\n          (< m : 'a. < n : 'g. ([< `A of 'a ] as 'g) -> 'f > > as 'f) > =\n  <fun>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[33,815+15]..[40,1033+0]),Some "")
+          ]
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[42,1038+0]..[46,1201+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[42,1038+4]..[42,1038+5])
+          Ppat_var "o" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[42,1038+4]..[42,1038+5])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[43,1046+2]..[46,1201+5])
+          Pexp_object
+          class_structure
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[43,1046+9]..[43,1046+20])
+              Ppat_constraint
+              pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[43,1046+10]..[43,1046+14])
+                Ppat_var "self" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[43,1046+10]..[43,1046+14])
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[43,1046+17]..[43,1046+19])
+                Ptyp_var s
+            [
+              class_field (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+4]..[45,1127+73])
+                Pcf_method Public
+                  "m" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+11]..[44,1067+12])
+                  Concrete Fresh
+                  expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+15]..[45,1127+73]) ghost
+                    Pexp_poly
+                    expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+6]..[45,1127+73])
+                      Pexp_object
+                      class_structure
+                        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+12]..[45,1127+12]) ghost
+                          Ppat_any
+                        [
+                          class_field (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+13]..[45,1127+69])
+                            Pcf_method Public
+                              "n" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+20]..[45,1127+21])
+                              Concrete Fresh
+                              expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+24]..[45,1127+69]) ghost
+                                Pexp_poly
+                                expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+56]..[45,1127+69])
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+60]..[45,1127+61])
+                                    Ppat_any
+                                  expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+65]..[45,1127+69])
+                                    Pexp_ident "self" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+65]..[45,1127+69])
+                                Some
+                                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+24]..[45,1127+53])
+                                    Ptyp_poly 'r
+                                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+28]..[45,1127+53])
+                                      Ptyp_arrow
+                                      Nolabel
+                                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+29]..[45,1127+46])
+                                        Ptyp_alias "r"
+                                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+29]..[45,1127+40])
+                                          Ptyp_variant closed=Closed
+                                          [
+                                            Rtag "A" false
+                                              [
+                                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+38]..[45,1127+39])
+                                                  Ptyp_any
+                                              ]
+                                          ]
+                                          Some
+                                            []
+                                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[45,1127+51]..[45,1127+53])
+                                        Ptyp_var s
+                        ]
+                    Some
+                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+15]..[44,1067+57])
+                        Ptyp_poly 'a
+                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+19]..[44,1067+57])
+                          Ptyp_object Closed
+                            method n
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+25]..[44,1067+55])
+                                Ptyp_poly 'r
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+29]..[44,1067+55])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+30]..[44,1067+48])
+                                    Ptyp_alias "r"
+                                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+30]..[44,1067+42])
+                                      Ptyp_variant closed=Closed
+                                      [
+                                        Rtag "A" false
+                                          [
+                                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+39]..[44,1067+41])
+                                              Ptyp_var a
+                                          ]
+                                      ]
+                                      Some
+                                        []
+                                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[44,1067+53]..[44,1067+55])
+                                    Ptyp_var s
+            ]
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[47,1209+0]..[47,1209+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[47,1209+4]..[47,1209+5])
+          Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[47,1209+4]..[47,1209+5])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[47,1209+8]..[47,1209+11])
+          Pexp_apply
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[47,1209+8]..[47,1209+9])
+            Pexp_ident "f" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[47,1209+8]..[47,1209+9])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[47,1209+10]..[47,1209+11])
+                Pexp_ident "o" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[47,1209+10]..[47,1209+11])
+          ]
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[48,1223+0]..[55,1451+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[48,1223+9]..[55,1451+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[48,1223+9]..[55,1451+2])
+          Pexp_constant PConst_string ("\nval o : < m : 'a. < n : 'c. ([< `A of 'a ] as 'c) -> 'b > > as 'b = <obj>\nval x :\n  < n : 'b.\n          ([< `A of '_weak1 ] as 'b) ->\n          (< m : 'a. < n : 'd. ([< `A of 'a ] as 'd) -> 'c > > as 'c) > =\n  <obj>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[48,1223+11]..[55,1451+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+0]..[58,1534+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+4]..[57,1456+6])
+          Ppat_var "g1" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+4]..[57,1456+6])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+7]..[58,1534+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+7]..[57,1456+75])
+            Ppat_constraint
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+8]..[57,1456+9])
+              Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+8]..[57,1456+9])
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+12]..[57,1456+74])
+              Ptyp_object Closed
+                method m
+                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+18]..[57,1456+72])
+                    Ptyp_poly 'a
+                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+22]..[57,1456+72])
+                      Ptyp_alias "c"
+                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+22]..[57,1456+66])
+                        Ptyp_object Closed
+                          method n
+                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+27]..[57,1456+64])
+                              Ptyp_poly 'r
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+31]..[57,1456+64])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+32]..[57,1456+55])
+                                  Ptyp_alias "r"
+                                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+32]..[57,1456+49])
+                                    Ptyp_variant closed=Closed
+                                    [
+                                      Rtag "A" false
+                                        [
+                                          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+41]..[57,1456+48])
+                                            Ptyp_tuple
+                                            [
+                                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+41]..[57,1456+43])
+                                                Ptyp_var a
+                                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+46]..[57,1456+48])
+                                                Ptyp_var c
+                                            ]
+                                        ]
+                                    ]
+                                    Some
+                                      []
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+60]..[57,1456+64])
+                                  Ptyp_constr "unit" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[57,1456+60]..[57,1456+64])
+                                  []
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[58,1534+2]..[58,1534+5])
+            Pexp_send "m"
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[58,1534+2]..[58,1534+3])
+              Pexp_ident "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[58,1534+2]..[58,1534+3])
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[59,1542+0]..[63,1698+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[59,1542+9]..[63,1698+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[59,1542+9]..[63,1698+2])
+          Pexp_constant PConst_string ("\nval g1 :\n  < m : 'a. < n : 'c. ([< `A of 'a * 'b ] as 'c) -> unit > as 'b > ->\n  (< n : 'e. ([< `A of 'f * 'd ] as 'e) -> unit > as 'd) = <fun>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[59,1542+11]..[63,1698+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+0]..[66,1781+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+4]..[65,1703+6])
+          Ppat_var "g2" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+4]..[65,1703+6])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+7]..[66,1781+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+7]..[65,1703+75])
+            Ppat_constraint
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+8]..[65,1703+9])
+              Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+8]..[65,1703+9])
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+12]..[65,1703+74])
+              Ptyp_alias "c"
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+12]..[65,1703+68])
+                Ptyp_object Closed
+                  method m
+                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+18]..[65,1703+66])
+                      Ptyp_poly 'a
+                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+22]..[65,1703+66])
+                        Ptyp_object Closed
+                          method n
+                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+27]..[65,1703+64])
+                              Ptyp_poly 'r
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+31]..[65,1703+64])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+32]..[65,1703+55])
+                                  Ptyp_alias "r"
+                                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+32]..[65,1703+49])
+                                    Ptyp_variant closed=Closed
+                                    [
+                                      Rtag "A" false
+                                        [
+                                          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+41]..[65,1703+48])
+                                            Ptyp_tuple
+                                            [
+                                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+41]..[65,1703+43])
+                                                Ptyp_var a
+                                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+46]..[65,1703+48])
+                                                Ptyp_var c
+                                            ]
+                                        ]
+                                    ]
+                                    Some
+                                      []
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+60]..[65,1703+64])
+                                  Ptyp_constr "unit" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[65,1703+60]..[65,1703+64])
+                                  []
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[66,1781+2]..[66,1781+5])
+            Pexp_send "m"
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[66,1781+2]..[66,1781+3])
+              Pexp_ident "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[66,1781+2]..[66,1781+3])
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[67,1789+0]..[82,2239+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[67,1789+9]..[82,2239+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[67,1789+9]..[82,2239+2])
+          Pexp_tuple
+          [
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[67,1789+9]..[71,1939+2])
+              Pexp_constant PConst_string ("\nval g2 :\n  (< m : 'a. < n : 'c. ([< `A of 'a * 'b ] as 'c) -> unit > > as 'b) ->\n  < n : 'd. ([< `A of 'e * 'b ] as 'd) -> unit > = <fun>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[67,1789+11]..[71,1939+0]),Some "")
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[71,1939+4]..[82,2239+2])
+              Pexp_construct "Principal" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[71,1939+4]..[71,1939+13])
+              Some
+                expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[71,1939+13]..[82,2239+2])
+                  Pexp_constant PConst_string ("\nval g2 :\n  (< m : 'a. < n : 'c. ([< `A of 'a * 'b ] as 'c) -> unit > > as 'b) ->\n  < n : 'd.\n          ([< `A of\n                'e *\n                (< m : 'a. < n : 'g. ([< `A of 'a * 'f ] as 'g) -> unit > >\n                 as 'f) ]\n           as 'd) ->\n          unit > =\n  <fun>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[71,1939+15]..[82,2239+0]),Some "")
+          ]
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+0]..[84,2244+74])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+4]..[84,2244+6])
+          Ppat_var "g3" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+4]..[84,2244+6])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+7]..[84,2244+74]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+7]..[84,2244+68])
+            Ppat_constraint
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+8]..[84,2244+9])
+              Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+8]..[84,2244+9])
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+12]..[84,2244+67])
+              Ptyp_object Closed
+                method m
+                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+18]..[84,2244+65])
+                    Ptyp_poly 'a
+                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+22]..[84,2244+65])
+                      Ptyp_tuple
+                      [
+                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+23]..[84,2244+59])
+                          Ptyp_alias "c"
+                          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+23]..[84,2244+53])
+                            Ptyp_object Closed
+                              method n
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+29]..[84,2244+51])
+                                  Ptyp_poly 'b
+                                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+33]..[84,2244+51])
+                                    Ptyp_alias "b"
+                                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+33]..[84,2244+45])
+                                      Ptyp_variant closed=Closed
+                                      [
+                                        Rtag "A" false
+                                          [
+                                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+42]..[84,2244+44])
+                                              Ptyp_var a
+                                          ]
+                                      ]
+                                      Some
+                                        []
+                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+63]..[84,2244+65])
+                          Ptyp_var c
+                      ]
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+71]..[84,2244+74])
+            Pexp_send "m"
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+71]..[84,2244+72])
+              Pexp_ident "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[84,2244+71]..[84,2244+72])
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[85,2321+0]..[89,2501+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[85,2321+9]..[89,2501+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[85,2321+9]..[89,2501+2])
+          Pexp_constant PConst_string ("\nval g3 :\n  < m : 'a. < n : 'b. [< `A of 'a ] as 'b > * < n : 'c. [< `A of 'a ] as 'c > > ->\n  < n : 'd. [< `A of 'e ] as 'd > * < n : 'f. [< `A of 'e ] as 'f > = <fun>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[85,2321+11]..[89,2501+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+0]..[91,2506+73])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+4]..[91,2506+5])
+          Ppat_var "g" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+4]..[91,2506+5])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+6]..[91,2506+73]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+6]..[91,2506+67])
+            Ppat_constraint
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+7]..[91,2506+8])
+              Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+7]..[91,2506+8])
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+11]..[91,2506+66])
+              Ptyp_alias "c"
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+11]..[91,2506+60])
+                Ptyp_object Closed
+                  method m
+                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+17]..[91,2506+58])
+                      Ptyp_poly 'a 'b
+                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+24]..[91,2506+58])
+                        Ptyp_object Closed
+                          method n
+                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+29]..[91,2506+56])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+30]..[91,2506+49])
+                                Ptyp_alias "b"
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+30]..[91,2506+43])
+                                  Ptyp_variant closed=Closed
+                                  [
+                                    Rtag "A" false
+                                      [
+                                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+39]..[91,2506+41])
+                                          Ptyp_var a
+                                      ]
+                                  ]
+                                  Some
+                                    []
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+54]..[91,2506+56])
+                                Ptyp_var c
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+70]..[91,2506+73])
+            Pexp_send "m"
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+70]..[91,2506+71])
+              Pexp_ident "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[91,2506+70]..[91,2506+71])
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[92,2582+0]..[102,2896+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[92,2582+9]..[102,2896+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[92,2582+9]..[102,2896+2])
+          Pexp_tuple
+          [
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[92,2582+9]..[96,2704+2])
+              Pexp_constant PConst_string ("\nval g :\n  (< m : 'a 'c. < n : ([< `A of 'a ] as 'c) -> 'b > > as 'b) ->\n  < n : [< `A of 'd ] -> 'b > = <fun>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[92,2582+11]..[96,2704+0]),Some "")
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[96,2704+4]..[102,2896+2])
+              Pexp_construct "Principal" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[96,2704+4]..[96,2704+13])
+              Some
+                expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[96,2704+13]..[102,2896+2])
+                  Pexp_constant PConst_string ("\nval g :\n  (< m : 'a 'c. < n : ([< `A of 'a ] as 'c) -> 'b > > as 'b) ->\n  < n : [< `A of 'd ] ->\n        (< m : 'a 'f. < n : ([< `A of 'a ] as 'f) -> 'e > > as 'e) > =\n  <fun>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[96,2704+15]..[102,2896+0]),Some "")
+          ]
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[104,2901+0]..[108,3024+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[104,2901+4]..[104,2901+5])
+          Ppat_var "o" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[104,2901+4]..[104,2901+5])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[105,2909+2]..[108,3024+5])
+          Pexp_object
+          class_structure
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[105,2909+9]..[105,2909+20])
+              Ppat_constraint
+              pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[105,2909+10]..[105,2909+14])
+                Ppat_var "self" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[105,2909+10]..[105,2909+14])
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[105,2909+17]..[105,2909+19])
+                Ptyp_var s
+            [
+              class_field (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+4]..[107,2989+34])
+                Pcf_method Public
+                  "m" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+11]..[106,2930+12])
+                  Concrete Fresh
+                  expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+15]..[107,2989+34]) ghost
+                    Pexp_poly
+                    expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[107,2989+6]..[107,2989+34])
+                      Pexp_object
+                      class_structure
+                        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[107,2989+12]..[107,2989+12]) ghost
+                          Ppat_any
+                        [
+                          class_field (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[107,2989+13]..[107,2989+30])
+                            Pcf_method Public
+                              "n" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[107,2989+20]..[107,2989+21])
+                              Concrete Fresh
+                              expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[107,2989+22]..[107,2989+30]) ghost
+                                Pexp_poly
+                                expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[107,2989+22]..[107,2989+30]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[107,2989+22]..[107,2989+23])
+                                    Ppat_any
+                                  expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[107,2989+26]..[107,2989+30])
+                                    Pexp_ident "self" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[107,2989+26]..[107,2989+30])
+                                None
+                        ]
+                    Some
+                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+15]..[106,2930+56])
+                        Ptyp_poly 'a 'b
+                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+22]..[106,2930+56])
+                          Ptyp_object Closed
+                            method n
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+28]..[106,2930+54])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+29]..[106,2930+47])
+                                  Ptyp_alias "b"
+                                  core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+29]..[106,2930+41])
+                                    Ptyp_variant closed=Closed
+                                    [
+                                      Rtag "A" false
+                                        [
+                                          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+38]..[106,2930+40])
+                                            Ptyp_var a
+                                        ]
+                                    ]
+                                    Some
+                                      []
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[106,2930+52]..[106,2930+54])
+                                  Ptyp_var s
+            ]
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[109,3032+0]..[109,3032+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[109,3032+4]..[109,3032+5])
+          Ppat_var "y" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[109,3032+4]..[109,3032+5])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[109,3032+8]..[109,3032+11])
+          Pexp_apply
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[109,3032+8]..[109,3032+9])
+            Pexp_ident "g" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[109,3032+8]..[109,3032+9])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[109,3032+10]..[109,3032+11])
+                Pexp_ident "o" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[109,3032+10]..[109,3032+11])
+          ]
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[110,3046+0]..[116,3249+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[110,3046+9]..[116,3249+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[110,3046+9]..[116,3249+2])
+          Pexp_constant PConst_string ("\nval o : < m : 'a 'c. < n : ([< `A of 'a ] as 'c) -> 'b > > as 'b = <obj>\nval y :\n  < n : _[< `A of '_weak2 ] ->\n        (< m : 'a 'c. < n : ([< `A of 'a ] as 'c) -> 'b > > as 'b) > =\n  <obj>\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[110,3046+11]..[116,3249+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+0]..[120,3324+69])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+4]..[120,3324+5])
+          Ppat_var "h" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+4]..[120,3324+5])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+6]..[120,3324+69]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+6]..[120,3324+63])
+            Ppat_constraint
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+7]..[120,3324+8])
+              Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+7]..[120,3324+8])
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+11]..[120,3324+62])
+              Ptyp_alias "c"
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+11]..[120,3324+56])
+                Ptyp_object Closed
+                  method m
+                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+17]..[120,3324+54])
+                      Ptyp_poly 'a
+                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+21]..[120,3324+54])
+                        Ptyp_object Closed
+                          method n
+                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+26]..[120,3324+52])
+                              Ptyp_poly 'b
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+30]..[120,3324+52])
+                                Ptyp_variant closed=Closed
+                                [
+                                  Rtag "A" false
+                                    [
+                                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+39]..[120,3324+51])
+                                        Ptyp_tuple
+                                        [
+                                          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+39]..[120,3324+41])
+                                            Ptyp_var a
+                                          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+44]..[120,3324+46])
+                                            Ptyp_var b
+                                          core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+49]..[120,3324+51])
+                                            Ptyp_var c
+                                        ]
+                                    ]
+                                ]
+                                Some
+                                  []
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+66]..[120,3324+69])
+            Pexp_send "m"
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+66]..[120,3324+67])
+              Pexp_ident "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[120,3324+66]..[120,3324+67])
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[121,3396+0]..[129,3798+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[121,3396+9]..[129,3798+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[121,3396+9]..[129,3798+2])
+          Pexp_constant PConst_string ("\nLine 1, characters 66-69:\n1 | let h (x : < m : 'a. <n : 'b. [< `A of 'a * 'b * 'c] > > as 'c) = x#m;;\n                                                                      ^^^\nError: This expression has type\n         < n : 'b. [< `A of 'a * 'b0 * < m : 'a. < n : 'b0. 'c > > ] as 'c >\n       but an expression was expected of type 'd\n       The universal variable 'a would escape its scope\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[121,3396+11]..[129,3798+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+0]..[133,3856+66])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+4]..[133,3856+5])
+          Ppat_var "j" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+4]..[133,3856+5])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+6]..[133,3856+66]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+6]..[133,3856+60])
+            Ppat_constraint
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+7]..[133,3856+8])
+              Ppat_var "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+7]..[133,3856+8])
+            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+11]..[133,3856+59])
+              Ptyp_alias "c"
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+11]..[133,3856+53])
+                Ptyp_object Closed
+                  method m
+                    core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+17]..[133,3856+51])
+                      Ptyp_poly 'a
+                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+21]..[133,3856+51])
+                        Ptyp_object Closed
+                          method n
+                            core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+26]..[133,3856+49])
+                              Ptyp_poly 'b
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+30]..[133,3856+49])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+30]..[133,3856+43])
+                                  Ptyp_variant closed=Closed
+                                  [
+                                    Rtag "A" false
+                                      [
+                                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+39]..[133,3856+41])
+                                          Ptyp_var a
+                                      ]
+                                  ]
+                                  Some
+                                    []
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+47]..[133,3856+49])
+                                  Ptyp_var c
+          expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+63]..[133,3856+66])
+            Pexp_send "m"
+            expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+63]..[133,3856+64])
+              Pexp_ident "x" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[133,3856+63]..[133,3856+64])
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[134,3925+0]..[142,4323+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[134,3925+9]..[142,4323+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[134,3925+9]..[142,4323+2])
+          Pexp_constant PConst_string ("\nLine 1, characters 63-66:\n1 | let j (x : < m : 'a. <n : 'b. [< `A of 'a ] -> 'c > > as 'c) = x#m;;\n                                                                   ^^^\nError: This expression has type\n         < n : ([< `A of 'a ] as 'b) -> (< m : 'a. < n : 'b -> 'c > > as 'c) >\n       but an expression was expected of type 'd\n       The universal variable 'a would escape its scope\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[134,3925+11]..[142,4323+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[144,4328+0]..[148,4440+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[144,4328+4]..[144,4328+5])
+          Ppat_var "o" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[144,4328+4]..[144,4328+5])
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[145,4336+2]..[148,4440+5])
+          Pexp_object
+          class_structure
+            pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[145,4336+9]..[145,4336+20])
+              Ppat_constraint
+              pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[145,4336+10]..[145,4336+14])
+                Ppat_var "self" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[145,4336+10]..[145,4336+14])
+              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[145,4336+17]..[145,4336+19])
+                Ptyp_var b
+            [
+              class_field (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[146,4357+4]..[147,4405+34])
+                Pcf_method Public
+                  "m" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[146,4357+11]..[146,4357+12])
+                  Concrete Fresh
+                  expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[146,4357+15]..[147,4405+34]) ghost
+                    Pexp_poly
+                    expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[147,4405+6]..[147,4405+34])
+                      Pexp_object
+                      class_structure
+                        pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[147,4405+12]..[147,4405+12]) ghost
+                          Ppat_any
+                        [
+                          class_field (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[147,4405+13]..[147,4405+30])
+                            Pcf_method Public
+                              "n" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[147,4405+20]..[147,4405+21])
+                              Concrete Fresh
+                              expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[147,4405+22]..[147,4405+30]) ghost
+                                Pexp_poly
+                                expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[147,4405+22]..[147,4405+30]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[147,4405+22]..[147,4405+23])
+                                    Ppat_any
+                                  expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[147,4405+26]..[147,4405+30])
+                                    Pexp_ident "self" (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[147,4405+26]..[147,4405+30])
+                                None
+                        ]
+                    Some
+                      core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[146,4357+15]..[146,4357+45])
+                        Ptyp_poly 'a
+                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[146,4357+19]..[146,4357+45])
+                          Ptyp_object Closed
+                            method n
+                              core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[146,4357+25]..[146,4357+43])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[146,4357+25]..[146,4357+37])
+                                  Ptyp_variant closed=Closed
+                                  [
+                                    Rtag "A" false
+                                      [
+                                        core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[146,4357+34]..[146,4357+36])
+                                          Ptyp_var a
+                                      ]
+                                  ]
+                                  Some
+                                    []
+                                core_type (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[146,4357+41]..[146,4357+43])
+                                  Ptyp_var b
+            ]
+    ]
+  structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[149,4448+0]..[157,4794+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[149,4448+9]..[157,4794+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[149,4448+9]..[157,4794+2])
+          Pexp_constant PConst_string ("\nLines 3-4, characters 4-34:\n3 | ....method m : 'a. < n : [< `A of 'a] -> 'b > =\n4 |       object method n _ = self end\nError: The method m has type 'b but is expected to have type\n         < n : ([< `A of 'a ] as 'c) ->\n               (< m : 'a. < n : 'c -> 'd >; .. > as 'd) >\n       The universal variable 'a would escape its scope\n",(testsuite/tests/typing-polyvariants-bugs/pr10664a.ml[149,4448+11]..[157,4794+0]),Some "")
+    ]
+]
+

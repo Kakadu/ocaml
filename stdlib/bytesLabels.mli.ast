@@ -1,0 +1,2850 @@
+[
+  signature_item (stdlib/bytesLabels.mli[24,1290+0]..[55,2534+5])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[24,1290+0]..[55,2534+5])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[24,1290+0]..[55,2534+5])
+          Pexp_constant PConst_string(" Byte sequence operations.\n\n   A byte sequence is a mutable data structure that contains a\n   fixed-length sequence of bytes. Each byte can be indexed in\n   constant time for reading or writing.\n\n   Given a byte sequence [s] of length [l], we can access each of the\n   [l] bytes of [s] via its index in the sequence. Indexes start at\n   [0], and we will call an index valid in [s] if it falls within the\n   range [[0...l-1]] (inclusive). A position is the point between two\n   bytes or at the beginning or end of the sequence.  We call a\n   position valid in [s] if it falls within the range [[0...l]]\n   (inclusive). Note that the byte at index [n] is between positions\n   [n] and [n+1].\n\n   Two parameters [start] and [len] are said to designate a valid\n   range of [s] if [len >= 0] and [start] and [start+len] are valid\n   positions in [s].\n\n   Byte sequences can be modified in place, for instance via the [set]\n   and [blit] functions described below.  See also strings (module\n   {!String}), which are almost the same data structure, but cannot be\n   modified in place.\n\n   Bytes are represented by the OCaml type [char].\n\n   The labeled version of this module can be used as described in the\n   {!StdLabels} module.\n\n   @since 4.02\n\n   ",(stdlib/bytesLabels.mli[24,1290+0]..[55,2534+5]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[57,2541+0]..[57,2541+48])
+    Psig_value
+    value_description "length" (stdlib/bytesLabels.mli[57,2541+9]..[57,2541+15]) (stdlib/bytesLabels.mli[57,2541+0]..[57,2541+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[58,2590+0]..[58,2590+59])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[58,2590+0]..[58,2590+59])
+              Pexp_constant PConst_string(" Return the length (number of bytes) of the argument. ",(stdlib/bytesLabels.mli[58,2590+0]..[58,2590+59]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[57,2541+18]..[57,2541+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[57,2541+18]..[57,2541+23])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[57,2541+18]..[57,2541+23])
+          []
+        core_type (stdlib/bytesLabels.mli[57,2541+27]..[57,2541+30])
+          Ptyp_constr "int" (stdlib/bytesLabels.mli[57,2541+27]..[57,2541+30])
+          []
+      [
+        "%bytes_length"
+      ]
+  signature_item (stdlib/bytesLabels.mli[60,2651+0]..[60,2651+55])
+    Psig_value
+    value_description "get" (stdlib/bytesLabels.mli[60,2651+9]..[60,2651+12]) (stdlib/bytesLabels.mli[60,2651+0]..[60,2651+55])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[61,2707+0]..[62,2768+66])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[61,2707+0]..[62,2768+66])
+              Pexp_constant PConst_string(" [get s n] returns the byte at index [n] in argument [s].\n    @raise Invalid_argument if [n] is not a valid index in [s]. ",(stdlib/bytesLabels.mli[61,2707+0]..[62,2768+66]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[60,2651+15]..[60,2651+35])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[60,2651+15]..[60,2651+20])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[60,2651+15]..[60,2651+20])
+          []
+        core_type (stdlib/bytesLabels.mli[60,2651+24]..[60,2651+35])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[60,2651+24]..[60,2651+27])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[60,2651+24]..[60,2651+27])
+            []
+          core_type (stdlib/bytesLabels.mli[60,2651+31]..[60,2651+35])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[60,2651+31]..[60,2651+35])
+            []
+      [
+        "%bytes_safe_get"
+      ]
+  signature_item (stdlib/bytesLabels.mli[65,2837+0]..[65,2837+63])
+    Psig_value
+    value_description "set" (stdlib/bytesLabels.mli[65,2837+9]..[65,2837+12]) (stdlib/bytesLabels.mli[65,2837+0]..[65,2837+63])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[66,2901+0]..[68,2986+66])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[66,2901+0]..[68,2986+66])
+              Pexp_constant PConst_string(" [set s n c] modifies [s] in place, replacing the byte at index [n]\n    with [c].\n    @raise Invalid_argument if [n] is not a valid index in [s]. ",(stdlib/bytesLabels.mli[66,2901+0]..[68,2986+66]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[65,2837+15]..[65,2837+43])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[65,2837+15]..[65,2837+20])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[65,2837+15]..[65,2837+20])
+          []
+        core_type (stdlib/bytesLabels.mli[65,2837+24]..[65,2837+43])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[65,2837+24]..[65,2837+27])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[65,2837+24]..[65,2837+27])
+            []
+          core_type (stdlib/bytesLabels.mli[65,2837+31]..[65,2837+43])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[65,2837+31]..[65,2837+35])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[65,2837+31]..[65,2837+35])
+              []
+            core_type (stdlib/bytesLabels.mli[65,2837+39]..[65,2837+43])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[65,2837+39]..[65,2837+43])
+              []
+      [
+        "%bytes_safe_set"
+      ]
+  signature_item (stdlib/bytesLabels.mli[70,3054+0]..[70,3054+52])
+    Psig_value
+    value_description "create" (stdlib/bytesLabels.mli[70,3054+9]..[70,3054+15]) (stdlib/bytesLabels.mli[70,3054+0]..[70,3054+52])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[71,3107+0]..[73,3229+76])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[71,3107+0]..[73,3229+76])
+              Pexp_constant PConst_string(" [create n] returns a new byte sequence of length [n]. The\n    sequence is uninitialized and contains arbitrary bytes.\n    @raise Invalid_argument if [n < 0] or [n > ]{!Sys.max_string_length}. ",(stdlib/bytesLabels.mli[71,3107+0]..[73,3229+76]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[70,3054+18]..[70,3054+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[70,3054+18]..[70,3054+21])
+          Ptyp_constr "int" (stdlib/bytesLabels.mli[70,3054+18]..[70,3054+21])
+          []
+        core_type (stdlib/bytesLabels.mli[70,3054+25]..[70,3054+30])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[70,3054+25]..[70,3054+30])
+          []
+      [
+        "caml_create_bytes"
+      ]
+  signature_item (stdlib/bytesLabels.mli[75,3307+0]..[75,3307+31])
+    Psig_value
+    value_description "make" (stdlib/bytesLabels.mli[75,3307+4]..[75,3307+8]) (stdlib/bytesLabels.mli[75,3307+0]..[75,3307+31])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[76,3339+0]..[78,3427+76])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[76,3339+0]..[78,3427+76])
+              Pexp_constant PConst_string(" [make n c] returns a new byte sequence of length [n], filled with\n    the byte [c].\n    @raise Invalid_argument if [n < 0] or [n > ]{!Sys.max_string_length}. ",(stdlib/bytesLabels.mli[76,3339+0]..[78,3427+76]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[75,3307+11]..[75,3307+31])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[75,3307+11]..[75,3307+14])
+          Ptyp_constr "int" (stdlib/bytesLabels.mli[75,3307+11]..[75,3307+14])
+          []
+        core_type (stdlib/bytesLabels.mli[75,3307+18]..[75,3307+31])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[75,3307+18]..[75,3307+22])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[75,3307+18]..[75,3307+22])
+            []
+          core_type (stdlib/bytesLabels.mli[75,3307+26]..[75,3307+31])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[75,3307+26]..[75,3307+31])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[80,3505+0]..[80,3505+42])
+    Psig_value
+    value_description "init" (stdlib/bytesLabels.mli[80,3505+4]..[80,3505+8]) (stdlib/bytesLabels.mli[80,3505+0]..[80,3505+42])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[81,3548+0]..[84,3699+76])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[81,3548+0]..[84,3699+76])
+              Pexp_constant PConst_string(" [init n f] returns a fresh byte sequence of length [n],\n    with character [i] initialized to the result of [f i] (in increasing\n    index order).\n    @raise Invalid_argument if [n < 0] or [n > ]{!Sys.max_string_length}. ",(stdlib/bytesLabels.mli[81,3548+0]..[84,3699+76]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[80,3505+11]..[80,3505+42])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[80,3505+11]..[80,3505+14])
+          Ptyp_constr "int" (stdlib/bytesLabels.mli[80,3505+11]..[80,3505+14])
+          []
+        core_type (stdlib/bytesLabels.mli[80,3505+18]..[80,3505+42])
+          Ptyp_arrow
+          Labelled "f"
+          core_type (stdlib/bytesLabels.mli[80,3505+21]..[80,3505+32])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[80,3505+21]..[80,3505+24])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[80,3505+21]..[80,3505+24])
+              []
+            core_type (stdlib/bytesLabels.mli[80,3505+28]..[80,3505+32])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[80,3505+28]..[80,3505+32])
+              []
+          core_type (stdlib/bytesLabels.mli[80,3505+37]..[80,3505+42])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[80,3505+37]..[80,3505+42])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[86,3777+0]..[86,3777+17])
+    Psig_value
+    value_description "empty" (stdlib/bytesLabels.mli[86,3777+4]..[86,3777+9]) (stdlib/bytesLabels.mli[86,3777+0]..[86,3777+17])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[87,3795+0]..[87,3795+33])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[87,3795+0]..[87,3795+33])
+              Pexp_constant PConst_string(" A byte sequence of size 0. ",(stdlib/bytesLabels.mli[87,3795+0]..[87,3795+33]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[86,3777+12]..[86,3777+17])
+        Ptyp_constr "bytes" (stdlib/bytesLabels.mli[86,3777+12]..[86,3777+17])
+        []
+      []
+  signature_item (stdlib/bytesLabels.mli[89,3830+0]..[89,3830+25])
+    Psig_value
+    value_description "copy" (stdlib/bytesLabels.mli[89,3830+4]..[89,3830+8]) (stdlib/bytesLabels.mli[89,3830+0]..[89,3830+25])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[90,3856+0]..[91,3923+16])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[90,3856+0]..[91,3923+16])
+              Pexp_constant PConst_string(" Return a new byte sequence that contains the same bytes as the\n    argument. ",(stdlib/bytesLabels.mli[90,3856+0]..[91,3923+16]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[89,3830+11]..[89,3830+25])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[89,3830+11]..[89,3830+16])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[89,3830+11]..[89,3830+16])
+          []
+        core_type (stdlib/bytesLabels.mli[89,3830+20]..[89,3830+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[89,3830+20]..[89,3830+25])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[93,3941+0]..[93,3941+31])
+    Psig_value
+    value_description "of_string" (stdlib/bytesLabels.mli[93,3941+4]..[93,3941+13]) (stdlib/bytesLabels.mli[93,3941+0]..[93,3941+31])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[94,3973+0]..[95,4040+20])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[94,3973+0]..[95,4040+20])
+              Pexp_constant PConst_string(" Return a new byte sequence that contains the same bytes as the\n    given string. ",(stdlib/bytesLabels.mli[94,3973+0]..[95,4040+20]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[93,3941+16]..[93,3941+31])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[93,3941+16]..[93,3941+22])
+          Ptyp_constr "string" (stdlib/bytesLabels.mli[93,3941+16]..[93,3941+22])
+          []
+        core_type (stdlib/bytesLabels.mli[93,3941+26]..[93,3941+31])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[93,3941+26]..[93,3941+31])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[97,4062+0]..[97,4062+31])
+    Psig_value
+    value_description "to_string" (stdlib/bytesLabels.mli[97,4062+4]..[97,4062+13]) (stdlib/bytesLabels.mli[97,4062+0]..[97,4062+31])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[98,4094+0]..[99,4165+16])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[98,4094+0]..[99,4165+16])
+              Pexp_constant PConst_string(" Return a new string that contains the same bytes as the given byte\n    sequence. ",(stdlib/bytesLabels.mli[98,4094+0]..[99,4165+16]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[97,4062+16]..[97,4062+31])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[97,4062+16]..[97,4062+21])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[97,4062+16]..[97,4062+21])
+          []
+        core_type (stdlib/bytesLabels.mli[97,4062+25]..[97,4062+31])
+          Ptyp_constr "string" (stdlib/bytesLabels.mli[97,4062+25]..[97,4062+31])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[101,4183+0]..[101,4183+46])
+    Psig_value
+    value_description "sub" (stdlib/bytesLabels.mli[101,4183+4]..[101,4183+7]) (stdlib/bytesLabels.mli[101,4183+0]..[101,4183+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[102,4230+0]..[106,4457+26])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[102,4230+0]..[106,4457+26])
+              Pexp_constant PConst_string(" [sub s ~pos ~len] returns a new byte sequence of length [len],\n    containing the subsequence of [s] that starts at position [pos]\n    and has length [len].\n    @raise Invalid_argument if [pos] and [len] do not designate a\n    valid range of [s]. ",(stdlib/bytesLabels.mli[102,4230+0]..[106,4457+26]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[101,4183+10]..[101,4183+46])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[101,4183+10]..[101,4183+15])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[101,4183+10]..[101,4183+15])
+          []
+        core_type (stdlib/bytesLabels.mli[101,4183+19]..[101,4183+46])
+          Ptyp_arrow
+          Labelled "pos"
+          core_type (stdlib/bytesLabels.mli[101,4183+23]..[101,4183+26])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[101,4183+23]..[101,4183+26])
+            []
+          core_type (stdlib/bytesLabels.mli[101,4183+30]..[101,4183+46])
+            Ptyp_arrow
+            Labelled "len"
+            core_type (stdlib/bytesLabels.mli[101,4183+34]..[101,4183+37])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[101,4183+34]..[101,4183+37])
+              []
+            core_type (stdlib/bytesLabels.mli[101,4183+41]..[101,4183+46])
+              Ptyp_constr "bytes" (stdlib/bytesLabels.mli[101,4183+41]..[101,4183+46])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[108,4485+0]..[108,4485+54])
+    Psig_value
+    value_description "sub_string" (stdlib/bytesLabels.mli[108,4485+4]..[108,4485+14]) (stdlib/bytesLabels.mli[108,4485+0]..[108,4485+54])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[109,4540+0]..[109,4540+69])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[109,4540+0]..[109,4540+69])
+              Pexp_constant PConst_string(" Same as {!sub} but return a string instead of a byte sequence. ",(stdlib/bytesLabels.mli[109,4540+0]..[109,4540+69]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[108,4485+17]..[108,4485+54])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[108,4485+17]..[108,4485+22])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[108,4485+17]..[108,4485+22])
+          []
+        core_type (stdlib/bytesLabels.mli[108,4485+26]..[108,4485+54])
+          Ptyp_arrow
+          Labelled "pos"
+          core_type (stdlib/bytesLabels.mli[108,4485+30]..[108,4485+33])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[108,4485+30]..[108,4485+33])
+            []
+          core_type (stdlib/bytesLabels.mli[108,4485+37]..[108,4485+54])
+            Ptyp_arrow
+            Labelled "len"
+            core_type (stdlib/bytesLabels.mli[108,4485+41]..[108,4485+44])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[108,4485+41]..[108,4485+44])
+              []
+            core_type (stdlib/bytesLabels.mli[108,4485+48]..[108,4485+54])
+              Ptyp_constr "string" (stdlib/bytesLabels.mli[108,4485+48]..[108,4485+54])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[111,4611+0]..[111,4611+52])
+    Psig_value
+    value_description "extend" (stdlib/bytesLabels.mli[111,4611+4]..[111,4611+10]) (stdlib/bytesLabels.mli[111,4611+0]..[111,4611+52])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[112,4664+0]..[119,5085+33])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[112,4664+0]..[119,5085+33])
+              Pexp_constant PConst_string(" [extend s ~left ~right] returns a new byte sequence that contains\n    the bytes of [s], with [left] uninitialized bytes prepended and\n    [right] uninitialized bytes appended to it. If [left] or [right]\n    is negative, then bytes are removed (instead of appended) from\n    the corresponding side of [s].\n    @raise Invalid_argument if the result length is negative or\n    longer than {!Sys.max_string_length} bytes.\n    @since 4.05 in BytesLabels ",(stdlib/bytesLabels.mli[112,4664+0]..[119,5085+33]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[111,4611+13]..[111,4611+52])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[111,4611+13]..[111,4611+18])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[111,4611+13]..[111,4611+18])
+          []
+        core_type (stdlib/bytesLabels.mli[111,4611+22]..[111,4611+52])
+          Ptyp_arrow
+          Labelled "left"
+          core_type (stdlib/bytesLabels.mli[111,4611+27]..[111,4611+30])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[111,4611+27]..[111,4611+30])
+            []
+          core_type (stdlib/bytesLabels.mli[111,4611+34]..[111,4611+52])
+            Ptyp_arrow
+            Labelled "right"
+            core_type (stdlib/bytesLabels.mli[111,4611+40]..[111,4611+43])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[111,4611+40]..[111,4611+43])
+              []
+            core_type (stdlib/bytesLabels.mli[111,4611+47]..[111,4611+52])
+              Ptyp_constr "bytes" (stdlib/bytesLabels.mli[111,4611+47]..[111,4611+52])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[121,5120+0]..[121,5120+54])
+    Psig_value
+    value_description "fill" (stdlib/bytesLabels.mli[121,5120+4]..[121,5120+8]) (stdlib/bytesLabels.mli[121,5120+0]..[121,5120+54])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[122,5175+0]..[125,5349+26])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[122,5175+0]..[125,5349+26])
+              Pexp_constant PConst_string(" [fill s ~pos ~len c] modifies [s] in place, replacing [len]\n    characters with [c], starting at [pos].\n    @raise Invalid_argument if [pos] and [len] do not designate a\n    valid range of [s]. ",(stdlib/bytesLabels.mli[122,5175+0]..[125,5349+26]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[121,5120+11]..[121,5120+54])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[121,5120+11]..[121,5120+16])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[121,5120+11]..[121,5120+16])
+          []
+        core_type (stdlib/bytesLabels.mli[121,5120+20]..[121,5120+54])
+          Ptyp_arrow
+          Labelled "pos"
+          core_type (stdlib/bytesLabels.mli[121,5120+24]..[121,5120+27])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[121,5120+24]..[121,5120+27])
+            []
+          core_type (stdlib/bytesLabels.mli[121,5120+31]..[121,5120+54])
+            Ptyp_arrow
+            Labelled "len"
+            core_type (stdlib/bytesLabels.mli[121,5120+35]..[121,5120+38])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[121,5120+35]..[121,5120+38])
+              []
+            core_type (stdlib/bytesLabels.mli[121,5120+42]..[121,5120+54])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/bytesLabels.mli[121,5120+42]..[121,5120+46])
+                Ptyp_constr "char" (stdlib/bytesLabels.mli[121,5120+42]..[121,5120+46])
+                []
+              core_type (stdlib/bytesLabels.mli[121,5120+50]..[121,5120+54])
+                Ptyp_constr "unit" (stdlib/bytesLabels.mli[121,5120+50]..[121,5120+54])
+                []
+      []
+  signature_item (stdlib/bytesLabels.mli[127,5377+0]..[129,5454+9])
+    Psig_value
+    value_description "blit" (stdlib/bytesLabels.mli[127,5377+4]..[127,5377+8]) (stdlib/bytesLabels.mli[127,5377+0]..[129,5454+9])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[130,5464+0]..[137,5884+47])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[130,5464+0]..[137,5884+47])
+              Pexp_constant PConst_string(" [blit ~src ~src_pos ~dst ~dst_pos ~len] copies [len] bytes from sequence\n    [src], starting at index [src_pos], to sequence [dst], starting at\n    index [dst_pos]. It works correctly even if [src] and [dst] are the\n    same byte sequence, and the source and destination intervals\n    overlap.\n    @raise Invalid_argument if [src_pos] and [len] do not\n    designate a valid range of [src], or if [dst_pos] and [len]\n    do not designate a valid range of [dst]. ",(stdlib/bytesLabels.mli[130,5464+0]..[137,5884+47]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[128,5388+2]..[129,5454+9])
+        Ptyp_arrow
+        Labelled "src"
+        core_type (stdlib/bytesLabels.mli[128,5388+6]..[128,5388+11])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[128,5388+6]..[128,5388+11])
+          []
+        core_type (stdlib/bytesLabels.mli[128,5388+15]..[129,5454+9])
+          Ptyp_arrow
+          Labelled "src_pos"
+          core_type (stdlib/bytesLabels.mli[128,5388+23]..[128,5388+26])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[128,5388+23]..[128,5388+26])
+            []
+          core_type (stdlib/bytesLabels.mli[128,5388+30]..[129,5454+9])
+            Ptyp_arrow
+            Labelled "dst"
+            core_type (stdlib/bytesLabels.mli[128,5388+34]..[128,5388+39])
+              Ptyp_constr "bytes" (stdlib/bytesLabels.mli[128,5388+34]..[128,5388+39])
+              []
+            core_type (stdlib/bytesLabels.mli[128,5388+43]..[129,5454+9])
+              Ptyp_arrow
+              Labelled "dst_pos"
+              core_type (stdlib/bytesLabels.mli[128,5388+51]..[128,5388+54])
+                Ptyp_constr "int" (stdlib/bytesLabels.mli[128,5388+51]..[128,5388+54])
+                []
+              core_type (stdlib/bytesLabels.mli[128,5388+58]..[129,5454+9])
+                Ptyp_arrow
+                Labelled "len"
+                core_type (stdlib/bytesLabels.mli[128,5388+62]..[128,5388+65])
+                  Ptyp_constr "int" (stdlib/bytesLabels.mli[128,5388+62]..[128,5388+65])
+                  []
+                core_type (stdlib/bytesLabels.mli[129,5454+5]..[129,5454+9])
+                  Ptyp_constr "unit" (stdlib/bytesLabels.mli[129,5454+5]..[129,5454+9])
+                  []
+      []
+  signature_item (stdlib/bytesLabels.mli[139,5933+0]..[141,6018+9])
+    Psig_value
+    value_description "blit_string" (stdlib/bytesLabels.mli[139,5933+4]..[139,5933+15]) (stdlib/bytesLabels.mli[139,5933+0]..[141,6018+9])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[142,6028+0]..[148,6367+33])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[142,6028+0]..[148,6367+33])
+              Pexp_constant PConst_string(" [blit ~src ~src_pos ~dst ~dst_pos ~len] copies [len] bytes from string\n    [src], starting at index [src_pos], to byte sequence [dst],\n    starting at index [dst_pos].\n    @raise Invalid_argument if [src_pos] and [len] do not\n    designate a valid range of [src], or if [dst_pos] and [len]\n    do not designate a valid range of [dst].\n    @since 4.05 in BytesLabels ",(stdlib/bytesLabels.mli[142,6028+0]..[148,6367+33]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[140,5951+2]..[141,6018+9])
+        Ptyp_arrow
+        Labelled "src"
+        core_type (stdlib/bytesLabels.mli[140,5951+6]..[140,5951+12])
+          Ptyp_constr "string" (stdlib/bytesLabels.mli[140,5951+6]..[140,5951+12])
+          []
+        core_type (stdlib/bytesLabels.mli[140,5951+16]..[141,6018+9])
+          Ptyp_arrow
+          Labelled "src_pos"
+          core_type (stdlib/bytesLabels.mli[140,5951+24]..[140,5951+27])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[140,5951+24]..[140,5951+27])
+            []
+          core_type (stdlib/bytesLabels.mli[140,5951+31]..[141,6018+9])
+            Ptyp_arrow
+            Labelled "dst"
+            core_type (stdlib/bytesLabels.mli[140,5951+35]..[140,5951+40])
+              Ptyp_constr "bytes" (stdlib/bytesLabels.mli[140,5951+35]..[140,5951+40])
+              []
+            core_type (stdlib/bytesLabels.mli[140,5951+44]..[141,6018+9])
+              Ptyp_arrow
+              Labelled "dst_pos"
+              core_type (stdlib/bytesLabels.mli[140,5951+52]..[140,5951+55])
+                Ptyp_constr "int" (stdlib/bytesLabels.mli[140,5951+52]..[140,5951+55])
+                []
+              core_type (stdlib/bytesLabels.mli[140,5951+59]..[141,6018+9])
+                Ptyp_arrow
+                Labelled "len"
+                core_type (stdlib/bytesLabels.mli[140,5951+63]..[140,5951+66])
+                  Ptyp_constr "int" (stdlib/bytesLabels.mli[140,5951+63]..[140,5951+66])
+                  []
+                core_type (stdlib/bytesLabels.mli[141,6018+5]..[141,6018+9])
+                  Ptyp_constr "unit" (stdlib/bytesLabels.mli[141,6018+5]..[141,6018+9])
+                  []
+      []
+  signature_item (stdlib/bytesLabels.mli[150,6402+0]..[150,6402+45])
+    Psig_value
+    value_description "concat" (stdlib/bytesLabels.mli[150,6402+4]..[150,6402+10]) (stdlib/bytesLabels.mli[150,6402+0]..[150,6402+45])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[151,6448+0]..[156,6721+6])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[151,6448+0]..[156,6721+6])
+              Pexp_constant PConst_string(" [concat ~sep sl] concatenates the list of byte sequences [sl],\n    inserting the separator byte sequence [sep] between each, and\n    returns the result as a new byte sequence.\n    @raise Invalid_argument if the result is longer than\n    {!Sys.max_string_length} bytes.\n    ",(stdlib/bytesLabels.mli[151,6448+0]..[156,6721+6]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[150,6402+13]..[150,6402+45])
+        Ptyp_arrow
+        Labelled "sep"
+        core_type (stdlib/bytesLabels.mli[150,6402+17]..[150,6402+22])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[150,6402+17]..[150,6402+22])
+          []
+        core_type (stdlib/bytesLabels.mli[150,6402+26]..[150,6402+45])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[150,6402+26]..[150,6402+36])
+            Ptyp_constr "list" (stdlib/bytesLabels.mli[150,6402+32]..[150,6402+36])
+            [
+              core_type (stdlib/bytesLabels.mli[150,6402+26]..[150,6402+31])
+                Ptyp_constr "bytes" (stdlib/bytesLabels.mli[150,6402+26]..[150,6402+31])
+                []
+            ]
+          core_type (stdlib/bytesLabels.mli[150,6402+40]..[150,6402+45])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[150,6402+40]..[150,6402+45])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[158,6729+0]..[158,6729+33])
+    Psig_value
+    value_description "cat" (stdlib/bytesLabels.mli[158,6729+4]..[158,6729+7]) (stdlib/bytesLabels.mli[158,6729+0]..[158,6729+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[159,6763+0]..[163,6950+33])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[159,6763+0]..[163,6950+33])
+              Pexp_constant PConst_string(" [cat s1 s2] concatenates [s1] and [s2] and returns the result\n    as a new byte sequence.\n    @raise Invalid_argument if the result is longer than\n    {!Sys.max_string_length} bytes.\n    @since 4.05 in BytesLabels ",(stdlib/bytesLabels.mli[159,6763+0]..[163,6950+33]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[158,6729+10]..[158,6729+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[158,6729+10]..[158,6729+15])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[158,6729+10]..[158,6729+15])
+          []
+        core_type (stdlib/bytesLabels.mli[158,6729+19]..[158,6729+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[158,6729+19]..[158,6729+24])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[158,6729+19]..[158,6729+24])
+            []
+          core_type (stdlib/bytesLabels.mli[158,6729+28]..[158,6729+33])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[158,6729+28]..[158,6729+33])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[165,6985+0]..[165,6985+44])
+    Psig_value
+    value_description "iter" (stdlib/bytesLabels.mli[165,6985+4]..[165,6985+8]) (stdlib/bytesLabels.mli[165,6985+0]..[165,6985+44])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[166,7030+0]..[168,7165+28])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[166,7030+0]..[168,7165+28])
+              Pexp_constant PConst_string(" [iter ~f s] applies function [f] in turn to all the bytes of [s].\n    It is equivalent to [f (get s 0); f (get s 1); ...; f (get s\n    (length s - 1)); ()]. ",(stdlib/bytesLabels.mli[166,7030+0]..[168,7165+28]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[165,6985+11]..[165,6985+44])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/bytesLabels.mli[165,6985+14]..[165,6985+26])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[165,6985+14]..[165,6985+18])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[165,6985+14]..[165,6985+18])
+            []
+          core_type (stdlib/bytesLabels.mli[165,6985+22]..[165,6985+26])
+            Ptyp_constr "unit" (stdlib/bytesLabels.mli[165,6985+22]..[165,6985+26])
+            []
+        core_type (stdlib/bytesLabels.mli[165,6985+31]..[165,6985+44])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[165,6985+31]..[165,6985+36])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[165,6985+31]..[165,6985+36])
+            []
+          core_type (stdlib/bytesLabels.mli[165,6985+40]..[165,6985+44])
+            Ptyp_constr "unit" (stdlib/bytesLabels.mli[165,6985+40]..[165,6985+44])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[170,7195+0]..[170,7195+52])
+    Psig_value
+    value_description "iteri" (stdlib/bytesLabels.mli[170,7195+4]..[170,7195+9]) (stdlib/bytesLabels.mli[170,7195+0]..[170,7195+52])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[171,7248+0]..[173,7374+16])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[171,7248+0]..[173,7374+16])
+              Pexp_constant PConst_string(" Same as {!iter}, but the function is applied to the index of\n    the byte as first argument and the byte itself as second\n    argument. ",(stdlib/bytesLabels.mli[171,7248+0]..[173,7374+16]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[170,7195+12]..[170,7195+52])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/bytesLabels.mli[170,7195+15]..[170,7195+34])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[170,7195+15]..[170,7195+18])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[170,7195+15]..[170,7195+18])
+            []
+          core_type (stdlib/bytesLabels.mli[170,7195+22]..[170,7195+34])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[170,7195+22]..[170,7195+26])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[170,7195+22]..[170,7195+26])
+              []
+            core_type (stdlib/bytesLabels.mli[170,7195+30]..[170,7195+34])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[170,7195+30]..[170,7195+34])
+              []
+        core_type (stdlib/bytesLabels.mli[170,7195+39]..[170,7195+52])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[170,7195+39]..[170,7195+44])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[170,7195+39]..[170,7195+44])
+            []
+          core_type (stdlib/bytesLabels.mli[170,7195+48]..[170,7195+52])
+            Ptyp_constr "unit" (stdlib/bytesLabels.mli[170,7195+48]..[170,7195+52])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[175,7392+0]..[175,7392+44])
+    Psig_value
+    value_description "map" (stdlib/bytesLabels.mli[175,7392+4]..[175,7392+7]) (stdlib/bytesLabels.mli[175,7392+0]..[175,7392+44])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[176,7437+0]..[178,7586+38])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[176,7437+0]..[178,7586+38])
+              Pexp_constant PConst_string(" [map ~f s] applies function [f] in turn to all the bytes of [s] (in\n    increasing index order) and stores the resulting bytes in a new sequence\n    that is returned as the result. ",(stdlib/bytesLabels.mli[176,7437+0]..[178,7586+38]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[175,7392+10]..[175,7392+44])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/bytesLabels.mli[175,7392+13]..[175,7392+25])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[175,7392+13]..[175,7392+17])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[175,7392+13]..[175,7392+17])
+            []
+          core_type (stdlib/bytesLabels.mli[175,7392+21]..[175,7392+25])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[175,7392+21]..[175,7392+25])
+            []
+        core_type (stdlib/bytesLabels.mli[175,7392+30]..[175,7392+44])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[175,7392+30]..[175,7392+35])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[175,7392+30]..[175,7392+35])
+            []
+          core_type (stdlib/bytesLabels.mli[175,7392+39]..[175,7392+44])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[175,7392+39]..[175,7392+44])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[180,7626+0]..[180,7626+52])
+    Psig_value
+    value_description "mapi" (stdlib/bytesLabels.mli[180,7626+4]..[180,7626+8]) (stdlib/bytesLabels.mli[180,7626+0]..[180,7626+52])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[181,7679+0]..[183,7809+56])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[181,7679+0]..[183,7809+56])
+              Pexp_constant PConst_string(" [mapi ~f s] calls [f] with each character of [s] and its\n    index (in increasing index order) and stores the resulting bytes\n    in a new sequence that is returned as the result. ",(stdlib/bytesLabels.mli[181,7679+0]..[183,7809+56]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[180,7626+11]..[180,7626+52])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/bytesLabels.mli[180,7626+14]..[180,7626+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[180,7626+14]..[180,7626+17])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[180,7626+14]..[180,7626+17])
+            []
+          core_type (stdlib/bytesLabels.mli[180,7626+21]..[180,7626+33])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[180,7626+21]..[180,7626+25])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[180,7626+21]..[180,7626+25])
+              []
+            core_type (stdlib/bytesLabels.mli[180,7626+29]..[180,7626+33])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[180,7626+29]..[180,7626+33])
+              []
+        core_type (stdlib/bytesLabels.mli[180,7626+38]..[180,7626+52])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[180,7626+38]..[180,7626+43])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[180,7626+38]..[180,7626+43])
+            []
+          core_type (stdlib/bytesLabels.mli[180,7626+47]..[180,7626+52])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[180,7626+47]..[180,7626+52])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[185,7867+0]..[185,7867+62])
+    Psig_value
+    value_description "fold_left" (stdlib/bytesLabels.mli[185,7867+4]..[185,7867+13]) (stdlib/bytesLabels.mli[185,7867+0]..[185,7867+62])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[186,7930+0]..[189,8060+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[186,7930+0]..[189,8060+18])
+              Pexp_constant PConst_string(" [fold_left f x s] computes\n    [f (... (f (f x (get s 0)) (get s 1)) ...) (get s (n-1))],\n    where [n] is the length of [s].\n    @since 4.13 ",(stdlib/bytesLabels.mli[186,7930+0]..[189,8060+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[185,7867+16]..[185,7867+62])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/bytesLabels.mli[185,7867+19]..[185,7867+35])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[185,7867+19]..[185,7867+21])
+            Ptyp_var a
+          core_type (stdlib/bytesLabels.mli[185,7867+25]..[185,7867+35])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[185,7867+25]..[185,7867+29])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[185,7867+25]..[185,7867+29])
+              []
+            core_type (stdlib/bytesLabels.mli[185,7867+33]..[185,7867+35])
+              Ptyp_var a
+        core_type (stdlib/bytesLabels.mli[185,7867+40]..[185,7867+62])
+          Ptyp_arrow
+          Labelled "init"
+          core_type (stdlib/bytesLabels.mli[185,7867+45]..[185,7867+47])
+            Ptyp_var a
+          core_type (stdlib/bytesLabels.mli[185,7867+51]..[185,7867+62])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[185,7867+51]..[185,7867+56])
+              Ptyp_constr "bytes" (stdlib/bytesLabels.mli[185,7867+51]..[185,7867+56])
+              []
+            core_type (stdlib/bytesLabels.mli[185,7867+60]..[185,7867+62])
+              Ptyp_var a
+      []
+  signature_item (stdlib/bytesLabels.mli[191,8080+0]..[191,8080+63])
+    Psig_value
+    value_description "fold_right" (stdlib/bytesLabels.mli[191,8080+4]..[191,8080+14]) (stdlib/bytesLabels.mli[191,8080+0]..[191,8080+63])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[192,8144+0]..[195,8276+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[192,8144+0]..[195,8276+18])
+              Pexp_constant PConst_string(" [fold_right f s x] computes\n    [f (get s 0) (f (get s 1) ( ... (f (get s (n-1)) x) ...))],\n    where [n] is the length of [s].\n    @since 4.13 ",(stdlib/bytesLabels.mli[192,8144+0]..[195,8276+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[191,8080+17]..[191,8080+63])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/bytesLabels.mli[191,8080+20]..[191,8080+36])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[191,8080+20]..[191,8080+24])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[191,8080+20]..[191,8080+24])
+            []
+          core_type (stdlib/bytesLabels.mli[191,8080+28]..[191,8080+36])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[191,8080+28]..[191,8080+30])
+              Ptyp_var a
+            core_type (stdlib/bytesLabels.mli[191,8080+34]..[191,8080+36])
+              Ptyp_var a
+        core_type (stdlib/bytesLabels.mli[191,8080+41]..[191,8080+63])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[191,8080+41]..[191,8080+46])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[191,8080+41]..[191,8080+46])
+            []
+          core_type (stdlib/bytesLabels.mli[191,8080+50]..[191,8080+63])
+            Ptyp_arrow
+            Labelled "init"
+            core_type (stdlib/bytesLabels.mli[191,8080+55]..[191,8080+57])
+              Ptyp_var a
+            core_type (stdlib/bytesLabels.mli[191,8080+61]..[191,8080+63])
+              Ptyp_var a
+      []
+  signature_item (stdlib/bytesLabels.mli[197,8296+0]..[197,8296+47])
+    Psig_value
+    value_description "for_all" (stdlib/bytesLabels.mli[197,8296+4]..[197,8296+11]) (stdlib/bytesLabels.mli[197,8296+0]..[197,8296+47])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[198,8344+0]..[199,8421+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[198,8344+0]..[199,8421+18])
+              Pexp_constant PConst_string(" [for_all p s] checks if all characters in [s] satisfy the predicate [p].\n    @since 4.13 ",(stdlib/bytesLabels.mli[198,8344+0]..[199,8421+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[197,8296+14]..[197,8296+47])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/bytesLabels.mli[197,8296+17]..[197,8296+29])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[197,8296+17]..[197,8296+21])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[197,8296+17]..[197,8296+21])
+            []
+          core_type (stdlib/bytesLabels.mli[197,8296+25]..[197,8296+29])
+            Ptyp_constr "bool" (stdlib/bytesLabels.mli[197,8296+25]..[197,8296+29])
+            []
+        core_type (stdlib/bytesLabels.mli[197,8296+34]..[197,8296+47])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[197,8296+34]..[197,8296+39])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[197,8296+34]..[197,8296+39])
+            []
+          core_type (stdlib/bytesLabels.mli[197,8296+43]..[197,8296+47])
+            Ptyp_constr "bool" (stdlib/bytesLabels.mli[197,8296+43]..[197,8296+47])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[201,8441+0]..[201,8441+46])
+    Psig_value
+    value_description "exists" (stdlib/bytesLabels.mli[201,8441+4]..[201,8441+10]) (stdlib/bytesLabels.mli[201,8441+0]..[201,8441+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[202,8488+0]..[204,8578+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[202,8488+0]..[204,8578+18])
+              Pexp_constant PConst_string(" [exists p s] checks if at least one character of [s] satisfies the predicate\n    [p].\n    @since 4.13 ",(stdlib/bytesLabels.mli[202,8488+0]..[204,8578+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[201,8441+13]..[201,8441+46])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/bytesLabels.mli[201,8441+16]..[201,8441+28])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[201,8441+16]..[201,8441+20])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[201,8441+16]..[201,8441+20])
+            []
+          core_type (stdlib/bytesLabels.mli[201,8441+24]..[201,8441+28])
+            Ptyp_constr "bool" (stdlib/bytesLabels.mli[201,8441+24]..[201,8441+28])
+            []
+        core_type (stdlib/bytesLabels.mli[201,8441+33]..[201,8441+46])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[201,8441+33]..[201,8441+38])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[201,8441+33]..[201,8441+38])
+            []
+          core_type (stdlib/bytesLabels.mli[201,8441+42]..[201,8441+46])
+            Ptyp_constr "bool" (stdlib/bytesLabels.mli[201,8441+42]..[201,8441+46])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[206,8598+0]..[206,8598+25])
+    Psig_value
+    value_description "trim" (stdlib/bytesLabels.mli[206,8598+4]..[206,8598+8]) (stdlib/bytesLabels.mli[206,8598+0]..[206,8598+25])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[207,8624+0]..[209,8751+62])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[207,8624+0]..[209,8751+62])
+              Pexp_constant PConst_string(" Return a copy of the argument, without leading and trailing\n    whitespace. The bytes regarded as whitespace are the ASCII\n    characters [' '], ['\\012'], ['\\n'], ['\\r'], and ['\\t']. ",(stdlib/bytesLabels.mli[207,8624+0]..[209,8751+62]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[206,8598+11]..[206,8598+25])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[206,8598+11]..[206,8598+16])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[206,8598+11]..[206,8598+16])
+          []
+        core_type (stdlib/bytesLabels.mli[206,8598+20]..[206,8598+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[206,8598+20]..[206,8598+25])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[211,8815+0]..[211,8815+28])
+    Psig_value
+    value_description "escaped" (stdlib/bytesLabels.mli[211,8815+4]..[211,8815+11]) (stdlib/bytesLabels.mli[211,8815+0]..[211,8815+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[212,8844+0]..[217,9160+38])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[212,8844+0]..[217,9160+38])
+              Pexp_constant PConst_string(" Return a copy of the argument, with special characters represented\n    by escape sequences, following the lexical conventions of OCaml.\n    All characters outside the ASCII printable range (32..126) are\n    escaped, as well as backslash and double-quote.\n    @raise Invalid_argument if the result is longer than\n    {!Sys.max_string_length} bytes. ",(stdlib/bytesLabels.mli[212,8844+0]..[217,9160+38]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[211,8815+14]..[211,8815+28])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[211,8815+14]..[211,8815+19])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[211,8815+14]..[211,8815+19])
+          []
+        core_type (stdlib/bytesLabels.mli[211,8815+23]..[211,8815+28])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[211,8815+23]..[211,8815+28])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[219,9200+0]..[219,9200+32])
+    Psig_value
+    value_description "index" (stdlib/bytesLabels.mli[219,9200+4]..[219,9200+9]) (stdlib/bytesLabels.mli[219,9200+0]..[219,9200+32])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[220,9233+0]..[222,9315+53])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[220,9233+0]..[222,9315+53])
+              Pexp_constant PConst_string(" [index s c] returns the index of the first occurrence of byte [c]\n    in [s].\n    @raise Not_found if [c] does not occur in [s]. ",(stdlib/bytesLabels.mli[220,9233+0]..[222,9315+53]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[219,9200+12]..[219,9200+32])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[219,9200+12]..[219,9200+17])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[219,9200+12]..[219,9200+17])
+          []
+        core_type (stdlib/bytesLabels.mli[219,9200+21]..[219,9200+32])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[219,9200+21]..[219,9200+25])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[219,9200+21]..[219,9200+25])
+            []
+          core_type (stdlib/bytesLabels.mli[219,9200+29]..[219,9200+32])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[219,9200+29]..[219,9200+32])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[224,9370+0]..[224,9370+42])
+    Psig_value
+    value_description "index_opt" (stdlib/bytesLabels.mli[224,9370+4]..[224,9370+13]) (stdlib/bytesLabels.mli[224,9370+0]..[224,9370+42])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[225,9413+0]..[227,9538+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[225,9413+0]..[227,9538+18])
+              Pexp_constant PConst_string(" [index_opt s c] returns the index of the first occurrence of byte [c]\n    in [s] or [None] if [c] does not occur in [s].\n    @since 4.05 ",(stdlib/bytesLabels.mli[225,9413+0]..[227,9538+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[224,9370+15]..[224,9370+42])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[224,9370+15]..[224,9370+20])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[224,9370+15]..[224,9370+20])
+          []
+        core_type (stdlib/bytesLabels.mli[224,9370+24]..[224,9370+42])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[224,9370+24]..[224,9370+28])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[224,9370+24]..[224,9370+28])
+            []
+          core_type (stdlib/bytesLabels.mli[224,9370+32]..[224,9370+42])
+            Ptyp_constr "option" (stdlib/bytesLabels.mli[224,9370+36]..[224,9370+42])
+            [
+              core_type (stdlib/bytesLabels.mli[224,9370+32]..[224,9370+35])
+                Ptyp_constr "int" (stdlib/bytesLabels.mli[224,9370+32]..[224,9370+35])
+                []
+            ]
+      []
+  signature_item (stdlib/bytesLabels.mli[229,9558+0]..[229,9558+33])
+    Psig_value
+    value_description "rindex" (stdlib/bytesLabels.mli[229,9558+4]..[229,9558+10]) (stdlib/bytesLabels.mli[229,9558+0]..[229,9558+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[230,9592+0]..[232,9674+53])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[230,9592+0]..[232,9674+53])
+              Pexp_constant PConst_string(" [rindex s c] returns the index of the last occurrence of byte [c]\n    in [s].\n    @raise Not_found if [c] does not occur in [s]. ",(stdlib/bytesLabels.mli[230,9592+0]..[232,9674+53]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[229,9558+13]..[229,9558+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[229,9558+13]..[229,9558+18])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[229,9558+13]..[229,9558+18])
+          []
+        core_type (stdlib/bytesLabels.mli[229,9558+22]..[229,9558+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[229,9558+22]..[229,9558+26])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[229,9558+22]..[229,9558+26])
+            []
+          core_type (stdlib/bytesLabels.mli[229,9558+30]..[229,9558+33])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[229,9558+30]..[229,9558+33])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[234,9729+0]..[234,9729+43])
+    Psig_value
+    value_description "rindex_opt" (stdlib/bytesLabels.mli[234,9729+4]..[234,9729+14]) (stdlib/bytesLabels.mli[234,9729+0]..[234,9729+43])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[235,9773+0]..[237,9898+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[235,9773+0]..[237,9898+18])
+              Pexp_constant PConst_string(" [rindex_opt s c] returns the index of the last occurrence of byte [c]\n    in [s] or [None] if [c] does not occur in [s].\n    @since 4.05 ",(stdlib/bytesLabels.mli[235,9773+0]..[237,9898+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[234,9729+16]..[234,9729+43])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[234,9729+16]..[234,9729+21])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[234,9729+16]..[234,9729+21])
+          []
+        core_type (stdlib/bytesLabels.mli[234,9729+25]..[234,9729+43])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[234,9729+25]..[234,9729+29])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[234,9729+25]..[234,9729+29])
+            []
+          core_type (stdlib/bytesLabels.mli[234,9729+33]..[234,9729+43])
+            Ptyp_constr "option" (stdlib/bytesLabels.mli[234,9729+37]..[234,9729+43])
+            [
+              core_type (stdlib/bytesLabels.mli[234,9729+33]..[234,9729+36])
+                Ptyp_constr "int" (stdlib/bytesLabels.mli[234,9729+33]..[234,9729+36])
+                []
+            ]
+      []
+  signature_item (stdlib/bytesLabels.mli[239,9918+0]..[239,9918+44])
+    Psig_value
+    value_description "index_from" (stdlib/bytesLabels.mli[239,9918+4]..[239,9918+14]) (stdlib/bytesLabels.mli[239,9918+0]..[239,9918+44])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[240,9963+0]..[244,10192+72])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[240,9963+0]..[244,10192+72])
+              Pexp_constant PConst_string(" [index_from s i c] returns the index of the first occurrence of\n    byte [c] in [s] after position [i].  [index s c] is\n    equivalent to [index_from s 0 c].\n    @raise Invalid_argument if [i] is not a valid position in [s].\n    @raise Not_found if [c] does not occur in [s] after position [i]. ",(stdlib/bytesLabels.mli[240,9963+0]..[244,10192+72]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[239,9918+17]..[239,9918+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[239,9918+17]..[239,9918+22])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[239,9918+17]..[239,9918+22])
+          []
+        core_type (stdlib/bytesLabels.mli[239,9918+26]..[239,9918+44])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[239,9918+26]..[239,9918+29])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[239,9918+26]..[239,9918+29])
+            []
+          core_type (stdlib/bytesLabels.mli[239,9918+33]..[239,9918+44])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[239,9918+33]..[239,9918+37])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[239,9918+33]..[239,9918+37])
+              []
+            core_type (stdlib/bytesLabels.mli[239,9918+41]..[239,9918+44])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[239,9918+41]..[239,9918+44])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[246,10266+0]..[246,10266+54])
+    Psig_value
+    value_description "index_from_opt" (stdlib/bytesLabels.mli[246,10266+4]..[246,10266+18]) (stdlib/bytesLabels.mli[246,10266+0]..[246,10266+54])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[247,10321+0]..[252,10623+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[247,10321+0]..[252,10623+18])
+              Pexp_constant PConst_string(" [index_from_opt s i c] returns the index of the first occurrence of\n    byte [c] in [s] after position [i] or [None] if [c] does not occur in [s]\n    after position [i].\n    [index_opt s c] is equivalent to [index_from_opt s 0 c].\n    @raise Invalid_argument if [i] is not a valid position in [s].\n    @since 4.05 ",(stdlib/bytesLabels.mli[247,10321+0]..[252,10623+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[246,10266+20]..[246,10266+54])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[246,10266+20]..[246,10266+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[246,10266+20]..[246,10266+25])
+          []
+        core_type (stdlib/bytesLabels.mli[246,10266+29]..[246,10266+54])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[246,10266+29]..[246,10266+32])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[246,10266+29]..[246,10266+32])
+            []
+          core_type (stdlib/bytesLabels.mli[246,10266+36]..[246,10266+54])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[246,10266+36]..[246,10266+40])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[246,10266+36]..[246,10266+40])
+              []
+            core_type (stdlib/bytesLabels.mli[246,10266+44]..[246,10266+54])
+              Ptyp_constr "option" (stdlib/bytesLabels.mli[246,10266+48]..[246,10266+54])
+              [
+                core_type (stdlib/bytesLabels.mli[246,10266+44]..[246,10266+47])
+                  Ptyp_constr "int" (stdlib/bytesLabels.mli[246,10266+44]..[246,10266+47])
+                  []
+              ]
+      []
+  signature_item (stdlib/bytesLabels.mli[254,10643+0]..[254,10643+45])
+    Psig_value
+    value_description "rindex_from" (stdlib/bytesLabels.mli[254,10643+4]..[254,10643+15]) (stdlib/bytesLabels.mli[254,10643+0]..[254,10643+45])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[255,10689+0]..[259,10938+75])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[255,10689+0]..[259,10938+75])
+              Pexp_constant PConst_string(" [rindex_from s i c] returns the index of the last occurrence of\n    byte [c] in [s] before position [i+1].  [rindex s c] is equivalent\n    to [rindex_from s (length s - 1) c].\n    @raise Invalid_argument if [i+1] is not a valid position in [s].\n    @raise Not_found if [c] does not occur in [s] before position [i+1]. ",(stdlib/bytesLabels.mli[255,10689+0]..[259,10938+75]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[254,10643+18]..[254,10643+45])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[254,10643+18]..[254,10643+23])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[254,10643+18]..[254,10643+23])
+          []
+        core_type (stdlib/bytesLabels.mli[254,10643+27]..[254,10643+45])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[254,10643+27]..[254,10643+30])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[254,10643+27]..[254,10643+30])
+            []
+          core_type (stdlib/bytesLabels.mli[254,10643+34]..[254,10643+45])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[254,10643+34]..[254,10643+38])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[254,10643+34]..[254,10643+38])
+              []
+            core_type (stdlib/bytesLabels.mli[254,10643+42]..[254,10643+45])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[254,10643+42]..[254,10643+45])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[261,11015+0]..[261,11015+55])
+    Psig_value
+    value_description "rindex_from_opt" (stdlib/bytesLabels.mli[261,11015+4]..[261,11015+19]) (stdlib/bytesLabels.mli[261,11015+0]..[261,11015+55])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[262,11071+0]..[267,11393+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[262,11071+0]..[267,11393+18])
+              Pexp_constant PConst_string(" [rindex_from_opt s i c] returns the index of the last occurrence\n    of byte [c] in [s] before position [i+1] or [None] if [c] does not\n    occur in [s] before position [i+1].  [rindex_opt s c] is equivalent to\n    [rindex_from s (length s - 1) c].\n    @raise Invalid_argument if [i+1] is not a valid position in [s].\n    @since 4.05 ",(stdlib/bytesLabels.mli[262,11071+0]..[267,11393+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[261,11015+21]..[261,11015+55])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[261,11015+21]..[261,11015+26])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[261,11015+21]..[261,11015+26])
+          []
+        core_type (stdlib/bytesLabels.mli[261,11015+30]..[261,11015+55])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[261,11015+30]..[261,11015+33])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[261,11015+30]..[261,11015+33])
+            []
+          core_type (stdlib/bytesLabels.mli[261,11015+37]..[261,11015+55])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[261,11015+37]..[261,11015+41])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[261,11015+37]..[261,11015+41])
+              []
+            core_type (stdlib/bytesLabels.mli[261,11015+45]..[261,11015+55])
+              Ptyp_constr "option" (stdlib/bytesLabels.mli[261,11015+49]..[261,11015+55])
+              [
+                core_type (stdlib/bytesLabels.mli[261,11015+45]..[261,11015+48])
+                  Ptyp_constr "int" (stdlib/bytesLabels.mli[261,11015+45]..[261,11015+48])
+                  []
+              ]
+      []
+  signature_item (stdlib/bytesLabels.mli[269,11413+0]..[269,11413+36])
+    Psig_value
+    value_description "contains" (stdlib/bytesLabels.mli[269,11413+4]..[269,11413+12]) (stdlib/bytesLabels.mli[269,11413+0]..[269,11413+36])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[270,11450+0]..[270,11450+55])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[270,11450+0]..[270,11450+55])
+              Pexp_constant PConst_string(" [contains s c] tests if byte [c] appears in [s]. ",(stdlib/bytesLabels.mli[270,11450+0]..[270,11450+55]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[269,11413+15]..[269,11413+36])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[269,11413+15]..[269,11413+20])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[269,11413+15]..[269,11413+20])
+          []
+        core_type (stdlib/bytesLabels.mli[269,11413+24]..[269,11413+36])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[269,11413+24]..[269,11413+28])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[269,11413+24]..[269,11413+28])
+            []
+          core_type (stdlib/bytesLabels.mli[269,11413+32]..[269,11413+36])
+            Ptyp_constr "bool" (stdlib/bytesLabels.mli[269,11413+32]..[269,11413+36])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[272,11507+0]..[272,11507+48])
+    Psig_value
+    value_description "contains_from" (stdlib/bytesLabels.mli[272,11507+4]..[272,11507+17]) (stdlib/bytesLabels.mli[272,11507+0]..[272,11507+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[273,11556+0]..[276,11707+73])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[273,11556+0]..[276,11707+73])
+              Pexp_constant PConst_string(" [contains_from s start c] tests if byte [c] appears in [s] after\n    position [start].  [contains s c] is equivalent to [contains_from\n    s 0 c].\n    @raise Invalid_argument if [start] is not a valid position in [s]. ",(stdlib/bytesLabels.mli[273,11556+0]..[276,11707+73]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[272,11507+20]..[272,11507+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[272,11507+20]..[272,11507+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[272,11507+20]..[272,11507+25])
+          []
+        core_type (stdlib/bytesLabels.mli[272,11507+29]..[272,11507+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[272,11507+29]..[272,11507+32])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[272,11507+29]..[272,11507+32])
+            []
+          core_type (stdlib/bytesLabels.mli[272,11507+36]..[272,11507+48])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[272,11507+36]..[272,11507+40])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[272,11507+36]..[272,11507+40])
+              []
+            core_type (stdlib/bytesLabels.mli[272,11507+44]..[272,11507+48])
+              Ptyp_constr "bool" (stdlib/bytesLabels.mli[272,11507+44]..[272,11507+48])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[278,11782+0]..[278,11782+49])
+    Psig_value
+    value_description "rcontains_from" (stdlib/bytesLabels.mli[278,11782+4]..[278,11782+18]) (stdlib/bytesLabels.mli[278,11782+0]..[278,11782+49])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[279,11832+0]..[282,11994+23])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[279,11832+0]..[282,11994+23])
+              Pexp_constant PConst_string(" [rcontains_from s stop c] tests if byte [c] appears in [s] before\n    position [stop+1].\n    @raise Invalid_argument if [stop < 0] or [stop+1] is not a valid\n    position in [s]. ",(stdlib/bytesLabels.mli[279,11832+0]..[282,11994+23]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[278,11782+21]..[278,11782+49])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[278,11782+21]..[278,11782+26])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[278,11782+21]..[278,11782+26])
+          []
+        core_type (stdlib/bytesLabels.mli[278,11782+30]..[278,11782+49])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[278,11782+30]..[278,11782+33])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[278,11782+30]..[278,11782+33])
+            []
+          core_type (stdlib/bytesLabels.mli[278,11782+37]..[278,11782+49])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[278,11782+37]..[278,11782+41])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[278,11782+37]..[278,11782+41])
+              []
+            core_type (stdlib/bytesLabels.mli[278,11782+45]..[278,11782+49])
+              Ptyp_constr "bool" (stdlib/bytesLabels.mli[278,11782+45]..[278,11782+49])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[284,12019+0]..[284,12019+36])
+    Psig_value
+    value_description "uppercase_ascii" (stdlib/bytesLabels.mli[284,12019+4]..[284,12019+19]) (stdlib/bytesLabels.mli[284,12019+0]..[284,12019+36])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[285,12056+0]..[287,12180+39])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[285,12056+0]..[287,12180+39])
+              Pexp_constant PConst_string(" Return a copy of the argument, with all lowercase letters\n   translated to uppercase, using the US-ASCII character set.\n   @since 4.03 (4.05 in BytesLabels) ",(stdlib/bytesLabels.mli[285,12056+0]..[287,12180+39]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[284,12019+22]..[284,12019+36])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[284,12019+22]..[284,12019+27])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[284,12019+22]..[284,12019+27])
+          []
+        core_type (stdlib/bytesLabels.mli[284,12019+31]..[284,12019+36])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[284,12019+31]..[284,12019+36])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[289,12221+0]..[289,12221+36])
+    Psig_value
+    value_description "lowercase_ascii" (stdlib/bytesLabels.mli[289,12221+4]..[289,12221+19]) (stdlib/bytesLabels.mli[289,12221+0]..[289,12221+36])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[290,12258+0]..[292,12382+39])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[290,12258+0]..[292,12382+39])
+              Pexp_constant PConst_string(" Return a copy of the argument, with all uppercase letters\n   translated to lowercase, using the US-ASCII character set.\n   @since 4.03 (4.05 in BytesLabels) ",(stdlib/bytesLabels.mli[290,12258+0]..[292,12382+39]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[289,12221+22]..[289,12221+36])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[289,12221+22]..[289,12221+27])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[289,12221+22]..[289,12221+27])
+          []
+        core_type (stdlib/bytesLabels.mli[289,12221+31]..[289,12221+36])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[289,12221+31]..[289,12221+36])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[294,12423+0]..[294,12423+37])
+    Psig_value
+    value_description "capitalize_ascii" (stdlib/bytesLabels.mli[294,12423+4]..[294,12423+20]) (stdlib/bytesLabels.mli[294,12423+0]..[294,12423+37])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[295,12461+0]..[297,12576+39])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[295,12461+0]..[297,12576+39])
+              Pexp_constant PConst_string(" Return a copy of the argument, with the first character set to uppercase,\n   using the US-ASCII character set.\n   @since 4.03 (4.05 in BytesLabels) ",(stdlib/bytesLabels.mli[295,12461+0]..[297,12576+39]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[294,12423+23]..[294,12423+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[294,12423+23]..[294,12423+28])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[294,12423+23]..[294,12423+28])
+          []
+        core_type (stdlib/bytesLabels.mli[294,12423+32]..[294,12423+37])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[294,12423+32]..[294,12423+37])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[299,12617+0]..[299,12617+39])
+    Psig_value
+    value_description "uncapitalize_ascii" (stdlib/bytesLabels.mli[299,12617+4]..[299,12617+22]) (stdlib/bytesLabels.mli[299,12617+0]..[299,12617+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[300,12657+0]..[302,12772+39])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[300,12657+0]..[302,12772+39])
+              Pexp_constant PConst_string(" Return a copy of the argument, with the first character set to lowercase,\n   using the US-ASCII character set.\n   @since 4.03 (4.05 in BytesLabels) ",(stdlib/bytesLabels.mli[300,12657+0]..[302,12772+39]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[299,12617+25]..[299,12617+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[299,12617+25]..[299,12617+30])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[299,12617+25]..[299,12617+30])
+          []
+        core_type (stdlib/bytesLabels.mli[299,12617+34]..[299,12617+39])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[299,12617+34]..[299,12617+39])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[304,12813+0]..[304,12813+14])
+    Psig_type Rec
+    [
+      type_declaration "t" (stdlib/bytesLabels.mli[304,12813+5]..[304,12813+6]) (stdlib/bytesLabels.mli[304,12813+0]..[304,12813+14])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/bytesLabels.mli[305,12828+0]..[305,12828+47])
+              Pstr_eval
+              expression (stdlib/bytesLabels.mli[305,12828+0]..[305,12828+47])
+                Pexp_constant PConst_string(" An alias for the type of byte sequences. ",(stdlib/bytesLabels.mli[305,12828+0]..[305,12828+47]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (stdlib/bytesLabels.mli[304,12813+9]..[304,12813+14])
+              Ptyp_constr "bytes" (stdlib/bytesLabels.mli[304,12813+9]..[304,12813+14])
+              []
+    ]
+  signature_item (stdlib/bytesLabels.mli[307,12877+0]..[307,12877+26])
+    Psig_value
+    value_description "compare" (stdlib/bytesLabels.mli[307,12877+4]..[307,12877+11]) (stdlib/bytesLabels.mli[307,12877+0]..[307,12877+26])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[308,12904+0]..[311,13102+60])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[308,12904+0]..[311,13102+60])
+              Pexp_constant PConst_string(" The comparison function for byte sequences, with the same\n    specification as {!Stdlib.compare}.  Along with the type [t],\n    this function [compare] allows the module [Bytes] to be passed as\n    argument to the functors {!Set.Make} and {!Map.Make}. ",(stdlib/bytesLabels.mli[308,12904+0]..[311,13102+60]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[307,12877+13]..[307,12877+26])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[307,12877+13]..[307,12877+14])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[307,12877+13]..[307,12877+14])
+          []
+        core_type (stdlib/bytesLabels.mli[307,12877+18]..[307,12877+26])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[307,12877+18]..[307,12877+19])
+            Ptyp_constr "t" (stdlib/bytesLabels.mli[307,12877+18]..[307,12877+19])
+            []
+          core_type (stdlib/bytesLabels.mli[307,12877+23]..[307,12877+26])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[307,12877+23]..[307,12877+26])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[313,13164+0]..[313,13164+25])
+    Psig_value
+    value_description "equal" (stdlib/bytesLabels.mli[313,13164+4]..[313,13164+9]) (stdlib/bytesLabels.mli[313,13164+0]..[313,13164+25])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[314,13190+0]..[315,13236+40])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[314,13190+0]..[315,13236+40])
+              Pexp_constant PConst_string(" The equality function for byte sequences.\n    @since 4.03 (4.05 in BytesLabels) ",(stdlib/bytesLabels.mli[314,13190+0]..[315,13236+40]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[313,13164+11]..[313,13164+25])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[313,13164+11]..[313,13164+12])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[313,13164+11]..[313,13164+12])
+          []
+        core_type (stdlib/bytesLabels.mli[313,13164+16]..[313,13164+25])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[313,13164+16]..[313,13164+17])
+            Ptyp_constr "t" (stdlib/bytesLabels.mli[313,13164+16]..[313,13164+17])
+            []
+          core_type (stdlib/bytesLabels.mli[313,13164+21]..[313,13164+25])
+            Ptyp_constr "bool" (stdlib/bytesLabels.mli[313,13164+21]..[313,13164+25])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[317,13278+0]..[318,13296+77])
+    Psig_value
+    value_description "starts_with" (stdlib/bytesLabels.mli[317,13278+4]..[317,13278+15]) (stdlib/bytesLabels.mli[317,13278+0]..[318,13296+77])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[319,13374+0]..[322,13460+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[319,13374+0]..[322,13460+18])
+              Pexp_constant PConst_string(" [starts_with ][~prefix s] is [true] if and only if [s] starts with\n    [prefix].\n\n    @since 4.13 ",(stdlib/bytesLabels.mli[319,13374+0]..[322,13460+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[318,13296+2]..[318,13296+77])
+        Ptyp_arrow
+        Labelled "prefix"
+        core_type (stdlib/bytesLabels.mli[318,13296+55]..[318,13296+60])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[318,13296+55]..[318,13296+60])
+          []
+        core_type (stdlib/bytesLabels.mli[318,13296+64]..[318,13296+77])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[318,13296+64]..[318,13296+69])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[318,13296+64]..[318,13296+69])
+            []
+          core_type (stdlib/bytesLabels.mli[318,13296+73]..[318,13296+77])
+            Ptyp_constr "bool" (stdlib/bytesLabels.mli[318,13296+73]..[318,13296+77])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[324,13480+0]..[325,13496+77])
+    Psig_value
+    value_description "ends_with" (stdlib/bytesLabels.mli[324,13480+4]..[324,13480+13]) (stdlib/bytesLabels.mli[324,13480+0]..[325,13496+77])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[326,13574+0]..[328,13652+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[326,13574+0]..[328,13652+18])
+              Pexp_constant PConst_string(" [ends_with ][~suffix s] is [true] if and only if [s] ends with [suffix].\n\n    @since 4.13 ",(stdlib/bytesLabels.mli[326,13574+0]..[328,13652+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[325,13496+2]..[325,13496+77])
+        Ptyp_arrow
+        Labelled "suffix"
+        core_type (stdlib/bytesLabels.mli[325,13496+55]..[325,13496+60])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[325,13496+55]..[325,13496+60])
+          []
+        core_type (stdlib/bytesLabels.mli[325,13496+64]..[325,13496+77])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[325,13496+64]..[325,13496+69])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[325,13496+64]..[325,13496+69])
+            []
+          core_type (stdlib/bytesLabels.mli[325,13496+73]..[325,13496+77])
+            Ptyp_constr "bool" (stdlib/bytesLabels.mli[325,13496+73]..[325,13496+77])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[330,13672+0]..[338,14131+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[330,13672+0]..[338,14131+2])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[330,13672+0]..[338,14131+2])
+          Pexp_constant PConst_string(" {1:unsafe Unsafe conversions (for advanced users)}\n\n    This section describes unsafe, low-level conversion functions\n    between [bytes] and [string]. They do not copy the internal data;\n    used improperly, they can break the immutability invariant on\n    strings provided by the [-safe-string] option. They are available for\n    expert library authors, but for most purposes you should use the\n    always-correct {!to_string} and {!of_string} instead.\n",(stdlib/bytesLabels.mli[330,13672+0]..[338,14131+2]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[340,14135+0]..[340,14135+38])
+    Psig_value
+    value_description "unsafe_to_string" (stdlib/bytesLabels.mli[340,14135+4]..[340,14135+20]) (stdlib/bytesLabels.mli[340,14135+0]..[340,14135+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[341,14174+0]..[414,17394+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[341,14174+0]..[414,17394+2])
+              Pexp_constant PConst_string(" Unsafely convert a byte sequence into a string.\n\n    To reason about the use of [unsafe_to_string], it is convenient to\n    consider an \"ownership\" discipline. A piece of code that\n    manipulates some data \"owns\" it; there are several disjoint ownership\n    modes, including:\n    - Unique ownership: the data may be accessed and mutated\n    - Shared ownership: the data has several owners, that may only\n      access it, not mutate it.\n\n    Unique ownership is linear: passing the data to another piece of\n    code means giving up ownership (we cannot write the\n    data again). A unique owner may decide to make the data shared\n    (giving up mutation rights on it), but shared data may not become\n    uniquely-owned again.\n\n   [unsafe_to_string s] can only be used when the caller owns the byte\n   sequence [s] -- either uniquely or as shared immutable data. The\n   caller gives up ownership of [s], and gains ownership of the\n   returned string.\n\n   There are two valid use-cases that respect this ownership\n   discipline:\n\n   1. Creating a string by initializing and mutating a byte sequence\n   that is never changed after initialization is performed.\n\n   {[\nlet string_init len f : string =\n  let s = Bytes.create len in\n  for i = 0 to len - 1 do Bytes.set s i (f i) done;\n  Bytes.unsafe_to_string s\n   ]}\n\n   This function is safe because the byte sequence [s] will never be\n   accessed or mutated after [unsafe_to_string] is called. The\n   [string_init] code gives up ownership of [s], and returns the\n   ownership of the resulting string to its caller.\n\n   Note that it would be unsafe if [s] was passed as an additional\n   parameter to the function [f] as it could escape this way and be\n   mutated in the future -- [string_init] would give up ownership of\n   [s] to pass it to [f], and could not call [unsafe_to_string]\n   safely.\n\n   We have provided the {!String.init}, {!String.map} and\n   {!String.mapi} functions to cover most cases of building\n   new strings. You should prefer those over [to_string] or\n   [unsafe_to_string] whenever applicable.\n\n   2. Temporarily giving ownership of a byte sequence to a function\n   that expects a uniquely owned string and returns ownership back, so\n   that we can mutate the sequence again after the call ended.\n\n   {[\nlet bytes_length (s : bytes) =\n  String.length (Bytes.unsafe_to_string s)\n   ]}\n\n   In this use-case, we do not promise that [s] will never be mutated\n   after the call to [bytes_length s]. The {!String.length} function\n   temporarily borrows unique ownership of the byte sequence\n   (and sees it as a [string]), but returns this ownership back to\n   the caller, which may assume that [s] is still a valid byte\n   sequence after the call. Note that this is only correct because we\n   know that {!String.length} does not capture its argument -- it could\n   escape by a side-channel such as a memoization combinator.\n\n   The caller may not mutate [s] while the string is borrowed (it has\n   temporarily given up ownership). This affects concurrent programs,\n   but also higher-order functions: if {!String.length} returned\n   a closure to be called later, [s] should not be mutated until this\n   closure is fully applied and returns ownership.\n",(stdlib/bytesLabels.mli[341,14174+0]..[414,17394+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[340,14135+23]..[340,14135+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[340,14135+23]..[340,14135+28])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[340,14135+23]..[340,14135+28])
+          []
+        core_type (stdlib/bytesLabels.mli[340,14135+32]..[340,14135+38])
+          Ptyp_constr "string" (stdlib/bytesLabels.mli[340,14135+32]..[340,14135+38])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[416,17398+0]..[416,17398+38])
+    Psig_value
+    value_description "unsafe_of_string" (stdlib/bytesLabels.mli[416,17398+4]..[416,17398+20]) (stdlib/bytesLabels.mli[416,17398+0]..[416,17398+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[417,17437+0]..[457,19278+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[417,17437+0]..[457,19278+2])
+              Pexp_constant PConst_string(" Unsafely convert a shared string to a byte sequence that should\n    not be mutated.\n\n    The same ownership discipline that makes [unsafe_to_string]\n    correct applies to [unsafe_of_string]: you may use it if you were\n    the owner of the [string] value, and you will own the return\n    [bytes] in the same mode.\n\n    In practice, unique ownership of string values is extremely\n    difficult to reason about correctly. You should always assume\n    strings are shared, never uniquely owned.\n\n    For example, string literals are implicitly shared by the\n    compiler, so you never uniquely own them.\n\n    {[\nlet incorrect = Bytes.unsafe_of_string \"hello\"\nlet s = Bytes.of_string \"hello\"\n    ]}\n\n    The first declaration is incorrect, because the string literal\n    [\"hello\"] could be shared by the compiler with other parts of the\n    program, and mutating [incorrect] is a bug. You must always use\n    the second version, which performs a copy and is thus correct.\n\n    Assuming unique ownership of strings that are not string\n    literals, but are (partly) built from string literals, is also\n    incorrect. For example, mutating [unsafe_of_string (\"foo\" ^ s)]\n    could mutate the shared string [\"foo\"] -- assuming a rope-like\n    representation of strings. More generally, functions operating on\n    strings will assume shared ownership, they do not preserve unique\n    ownership. It is thus incorrect to assume unique ownership of the\n    result of [unsafe_of_string].\n\n    The only case we have reasonable confidence is safe is if the\n    produced [bytes] is shared -- used as an immutable byte\n    sequence. This is possibly useful for incremental migration of\n    low-level programs that manipulate immutable sequences of bytes\n    (for example {!Marshal.from_bytes}) and previously used the\n    [string] type for this purpose.\n",(stdlib/bytesLabels.mli[417,17437+0]..[457,19278+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[416,17398+23]..[416,17398+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[416,17398+23]..[416,17398+29])
+          Ptyp_constr "string" (stdlib/bytesLabels.mli[416,17398+23]..[416,17398+29])
+          []
+        core_type (stdlib/bytesLabels.mli[416,17398+33]..[416,17398+38])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[416,17398+33]..[416,17398+38])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[460,19283+0]..[460,19283+50])
+    Psig_value
+    value_description "split_on_char" (stdlib/bytesLabels.mli[460,19283+4]..[460,19283+17]) (stdlib/bytesLabels.mli[460,19283+0]..[460,19283+50])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[461,19334+0]..[473,19835+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[461,19334+0]..[473,19835+2])
+              Pexp_constant PConst_string(" [split_on_char sep s] returns the list of all (possibly empty)\n    subsequences of [s] that are delimited by the [sep] character.\n\n    The function's output is specified by the following invariants:\n\n    - The list is not empty.\n    - Concatenating its elements using [sep] as a separator returns a\n      byte sequence equal to the input ([Bytes.concat (Bytes.make 1 sep)\n      (Bytes.split_on_char sep s) = s]).\n    - No byte sequence in the result contains the [sep] character.\n\n    @since 4.13\n",(stdlib/bytesLabels.mli[461,19334+0]..[473,19835+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[460,19283+19]..[460,19283+50])
+        Ptyp_arrow
+        Labelled "sep"
+        core_type (stdlib/bytesLabels.mli[460,19283+23]..[460,19283+27])
+          Ptyp_constr "char" (stdlib/bytesLabels.mli[460,19283+23]..[460,19283+27])
+          []
+        core_type (stdlib/bytesLabels.mli[460,19283+31]..[460,19283+50])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[460,19283+31]..[460,19283+36])
+            Ptyp_constr "bytes" (stdlib/bytesLabels.mli[460,19283+31]..[460,19283+36])
+            []
+          core_type (stdlib/bytesLabels.mli[460,19283+40]..[460,19283+50])
+            Ptyp_constr "list" (stdlib/bytesLabels.mli[460,19283+46]..[460,19283+50])
+            [
+              core_type (stdlib/bytesLabels.mli[460,19283+40]..[460,19283+45])
+                Ptyp_constr "bytes" (stdlib/bytesLabels.mli[460,19283+40]..[460,19283+45])
+                []
+            ]
+      []
+  signature_item (stdlib/bytesLabels.mli[475,19839+0]..[475,19839+20])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[475,19839+0]..[475,19839+20])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[475,19839+0]..[475,19839+20])
+          Pexp_constant PConst_string(" {1 Iterators} ",(stdlib/bytesLabels.mli[475,19839+0]..[475,19839+20]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[477,19861+0]..[477,19861+28])
+    Psig_value
+    value_description "to_seq" (stdlib/bytesLabels.mli[477,19861+4]..[477,19861+10]) (stdlib/bytesLabels.mli[477,19861+0]..[477,19861+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[478,19890+0]..[480,20028+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[478,19890+0]..[480,20028+18])
+              Pexp_constant PConst_string(" Iterate on the string, in increasing index order. Modifications of the\n    string during iteration will be reflected in the sequence.\n    @since 4.07 ",(stdlib/bytesLabels.mli[478,19890+0]..[480,20028+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[477,19861+13]..[477,19861+28])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[477,19861+13]..[477,19861+14])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[477,19861+13]..[477,19861+14])
+          []
+        core_type (stdlib/bytesLabels.mli[477,19861+18]..[477,19861+28])
+          Ptyp_constr "Seq.t" (stdlib/bytesLabels.mli[477,19861+23]..[477,19861+28])
+          [
+            core_type (stdlib/bytesLabels.mli[477,19861+18]..[477,19861+22])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[477,19861+18]..[477,19861+22])
+              []
+          ]
+      []
+  signature_item (stdlib/bytesLabels.mli[482,20048+0]..[482,20048+37])
+    Psig_value
+    value_description "to_seqi" (stdlib/bytesLabels.mli[482,20048+4]..[482,20048+11]) (stdlib/bytesLabels.mli[482,20048+0]..[482,20048+37])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[483,20086+0]..[484,20163+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[483,20086+0]..[484,20163+18])
+              Pexp_constant PConst_string(" Iterate on the string, in increasing order, yielding indices along chars\n    @since 4.07 ",(stdlib/bytesLabels.mli[483,20086+0]..[484,20163+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[482,20048+14]..[482,20048+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[482,20048+14]..[482,20048+15])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[482,20048+14]..[482,20048+15])
+          []
+        core_type (stdlib/bytesLabels.mli[482,20048+19]..[482,20048+37])
+          Ptyp_constr "Seq.t" (stdlib/bytesLabels.mli[482,20048+32]..[482,20048+37])
+          [
+            core_type (stdlib/bytesLabels.mli[482,20048+20]..[482,20048+30])
+              Ptyp_tuple
+              [
+                core_type (stdlib/bytesLabels.mli[482,20048+20]..[482,20048+23])
+                  Ptyp_constr "int" (stdlib/bytesLabels.mli[482,20048+20]..[482,20048+23])
+                  []
+                core_type (stdlib/bytesLabels.mli[482,20048+26]..[482,20048+30])
+                  Ptyp_constr "char" (stdlib/bytesLabels.mli[482,20048+26]..[482,20048+30])
+                  []
+              ]
+          ]
+      []
+  signature_item (stdlib/bytesLabels.mli[486,20183+0]..[486,20183+28])
+    Psig_value
+    value_description "of_seq" (stdlib/bytesLabels.mli[486,20183+4]..[486,20183+10]) (stdlib/bytesLabels.mli[486,20183+0]..[486,20183+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[487,20212+0]..[488,20251+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[487,20212+0]..[488,20251+18])
+              Pexp_constant PConst_string(" Create a string from the generator\n    @since 4.07 ",(stdlib/bytesLabels.mli[487,20212+0]..[488,20251+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[486,20183+13]..[486,20183+28])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[486,20183+13]..[486,20183+23])
+          Ptyp_constr "Seq.t" (stdlib/bytesLabels.mli[486,20183+18]..[486,20183+23])
+          [
+            core_type (stdlib/bytesLabels.mli[486,20183+13]..[486,20183+17])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[486,20183+13]..[486,20183+17])
+              []
+          ]
+        core_type (stdlib/bytesLabels.mli[486,20183+27]..[486,20183+28])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[486,20183+27]..[486,20183+28])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[490,20271+0]..[492,20311+18])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[490,20271+0]..[492,20311+18])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[490,20271+0]..[492,20311+18])
+          Pexp_constant PConst_string(" {1:utf UTF codecs and validations}\n\n    @since 4.14 ",(stdlib/bytesLabels.mli[490,20271+0]..[492,20311+18]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[494,20331+0]..[494,20331+22])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[494,20331+0]..[494,20331+22])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[494,20331+0]..[494,20331+22])
+          Pexp_constant PConst_string(" {2:utf_8 UTF-8} ",(stdlib/bytesLabels.mli[494,20331+0]..[494,20331+22]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[496,20355+0]..[496,20355+50])
+    Psig_value
+    value_description "get_utf_8_uchar" (stdlib/bytesLabels.mli[496,20355+4]..[496,20355+19]) (stdlib/bytesLabels.mli[496,20355+0]..[496,20355+50])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[497,20406+0]..[498,20475+11])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[497,20406+0]..[498,20475+11])
+              Pexp_constant PConst_string(" [get_utf_8_uchar b i] decodes an UTF-8 character at index [i] in\n    [b]. ",(stdlib/bytesLabels.mli[497,20406+0]..[498,20475+11]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[496,20355+22]..[496,20355+50])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[496,20355+22]..[496,20355+23])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[496,20355+22]..[496,20355+23])
+          []
+        core_type (stdlib/bytesLabels.mli[496,20355+27]..[496,20355+50])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[496,20355+27]..[496,20355+30])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[496,20355+27]..[496,20355+30])
+            []
+          core_type (stdlib/bytesLabels.mli[496,20355+34]..[496,20355+50])
+            Ptyp_constr "Uchar.utf_decode" (stdlib/bytesLabels.mli[496,20355+34]..[496,20355+50])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[500,20488+0]..[500,20488+48])
+    Psig_value
+    value_description "set_utf_8_uchar" (stdlib/bytesLabels.mli[500,20488+4]..[500,20488+19]) (stdlib/bytesLabels.mli[500,20488+0]..[500,20488+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[501,20537+0]..[505,20806+29])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[501,20537+0]..[505,20806+29])
+              Pexp_constant PConst_string(" [set_utf_8_uchar b i u] UTF-8 encodes [u] at index [i] in [b]\n    and returns the number of bytes [n] that were written starting\n    at [i]. If [n] is [0] there was not enough space to encode [u]\n    at [i] and [b] was left untouched. Otherwise a new character can\n    be encoded at [i + n]. ",(stdlib/bytesLabels.mli[501,20537+0]..[505,20806+29]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[500,20488+22]..[500,20488+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[500,20488+22]..[500,20488+23])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[500,20488+22]..[500,20488+23])
+          []
+        core_type (stdlib/bytesLabels.mli[500,20488+27]..[500,20488+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[500,20488+27]..[500,20488+30])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[500,20488+27]..[500,20488+30])
+            []
+          core_type (stdlib/bytesLabels.mli[500,20488+34]..[500,20488+48])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[500,20488+34]..[500,20488+41])
+              Ptyp_constr "Uchar.t" (stdlib/bytesLabels.mli[500,20488+34]..[500,20488+41])
+              []
+            core_type (stdlib/bytesLabels.mli[500,20488+45]..[500,20488+48])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[500,20488+45]..[500,20488+48])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[507,20837+0]..[507,20837+30])
+    Psig_value
+    value_description "is_valid_utf_8" (stdlib/bytesLabels.mli[507,20837+4]..[507,20837+18]) (stdlib/bytesLabels.mli[507,20837+0]..[507,20837+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[508,20868+0]..[509,20935+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[508,20868+0]..[509,20935+18])
+              Pexp_constant PConst_string(" [is_valid_utf_8 b] is [true] if and only if [b] contains valid\n    UTF-8 data. ",(stdlib/bytesLabels.mli[508,20868+0]..[509,20935+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[507,20837+21]..[507,20837+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[507,20837+21]..[507,20837+22])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[507,20837+21]..[507,20837+22])
+          []
+        core_type (stdlib/bytesLabels.mli[507,20837+26]..[507,20837+30])
+          Ptyp_constr "bool" (stdlib/bytesLabels.mli[507,20837+26]..[507,20837+30])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[511,20955+0]..[511,20955+28])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[511,20955+0]..[511,20955+28])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[511,20955+0]..[511,20955+28])
+          Pexp_constant PConst_string(" {2:utf_16be UTF-16BE} ",(stdlib/bytesLabels.mli[511,20955+0]..[511,20955+28]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[513,20985+0]..[513,20985+53])
+    Psig_value
+    value_description "get_utf_16be_uchar" (stdlib/bytesLabels.mli[513,20985+4]..[513,20985+22]) (stdlib/bytesLabels.mli[513,20985+0]..[513,20985+53])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[514,21039+0]..[515,21107+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[514,21039+0]..[515,21107+18])
+              Pexp_constant PConst_string(" [get_utf_16be_uchar b i] decodes an UTF-16BE character at index\n    [i] in [b]. ",(stdlib/bytesLabels.mli[514,21039+0]..[515,21107+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[513,20985+25]..[513,20985+53])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[513,20985+25]..[513,20985+26])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[513,20985+25]..[513,20985+26])
+          []
+        core_type (stdlib/bytesLabels.mli[513,20985+30]..[513,20985+53])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[513,20985+30]..[513,20985+33])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[513,20985+30]..[513,20985+33])
+            []
+          core_type (stdlib/bytesLabels.mli[513,20985+37]..[513,20985+53])
+            Ptyp_constr "Uchar.utf_decode" (stdlib/bytesLabels.mli[513,20985+37]..[513,20985+53])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[517,21127+0]..[517,21127+51])
+    Psig_value
+    value_description "set_utf_16be_uchar" (stdlib/bytesLabels.mli[517,21127+4]..[517,21127+22]) (stdlib/bytesLabels.mli[517,21127+0]..[517,21127+51])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[518,21179+0]..[522,21454+29])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[518,21179+0]..[522,21454+29])
+              Pexp_constant PConst_string(" [set_utf_16be_uchar b i u] UTF-16BE encodes [u] at index [i] in [b]\n    and returns the number of bytes [n] that were written starting\n    at [i]. If [n] is [0] there was not enough space to encode [u]\n    at [i] and [b] was left untouched. Otherwise a new character can\n    be encoded at [i + n]. ",(stdlib/bytesLabels.mli[518,21179+0]..[522,21454+29]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[517,21127+25]..[517,21127+51])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[517,21127+25]..[517,21127+26])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[517,21127+25]..[517,21127+26])
+          []
+        core_type (stdlib/bytesLabels.mli[517,21127+30]..[517,21127+51])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[517,21127+30]..[517,21127+33])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[517,21127+30]..[517,21127+33])
+            []
+          core_type (stdlib/bytesLabels.mli[517,21127+37]..[517,21127+51])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[517,21127+37]..[517,21127+44])
+              Ptyp_constr "Uchar.t" (stdlib/bytesLabels.mli[517,21127+37]..[517,21127+44])
+              []
+            core_type (stdlib/bytesLabels.mli[517,21127+48]..[517,21127+51])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[517,21127+48]..[517,21127+51])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[524,21485+0]..[524,21485+33])
+    Psig_value
+    value_description "is_valid_utf_16be" (stdlib/bytesLabels.mli[524,21485+4]..[524,21485+21]) (stdlib/bytesLabels.mli[524,21485+0]..[524,21485+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[525,21519+0]..[526,21589+21])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[525,21519+0]..[526,21589+21])
+              Pexp_constant PConst_string(" [is_valid_utf_16be b] is [true] if and only if [b] contains valid\n    UTF-16BE data. ",(stdlib/bytesLabels.mli[525,21519+0]..[526,21589+21]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[524,21485+24]..[524,21485+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[524,21485+24]..[524,21485+25])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[524,21485+24]..[524,21485+25])
+          []
+        core_type (stdlib/bytesLabels.mli[524,21485+29]..[524,21485+33])
+          Ptyp_constr "bool" (stdlib/bytesLabels.mli[524,21485+29]..[524,21485+33])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[528,21612+0]..[528,21612+28])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[528,21612+0]..[528,21612+28])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[528,21612+0]..[528,21612+28])
+          Pexp_constant PConst_string(" {2:utf_16le UTF-16LE} ",(stdlib/bytesLabels.mli[528,21612+0]..[528,21612+28]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[530,21642+0]..[530,21642+53])
+    Psig_value
+    value_description "get_utf_16le_uchar" (stdlib/bytesLabels.mli[530,21642+4]..[530,21642+22]) (stdlib/bytesLabels.mli[530,21642+0]..[530,21642+53])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[531,21696+0]..[532,21764+18])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[531,21696+0]..[532,21764+18])
+              Pexp_constant PConst_string(" [get_utf_16le_uchar b i] decodes an UTF-16LE character at index\n    [i] in [b]. ",(stdlib/bytesLabels.mli[531,21696+0]..[532,21764+18]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[530,21642+25]..[530,21642+53])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[530,21642+25]..[530,21642+26])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[530,21642+25]..[530,21642+26])
+          []
+        core_type (stdlib/bytesLabels.mli[530,21642+30]..[530,21642+53])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[530,21642+30]..[530,21642+33])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[530,21642+30]..[530,21642+33])
+            []
+          core_type (stdlib/bytesLabels.mli[530,21642+37]..[530,21642+53])
+            Ptyp_constr "Uchar.utf_decode" (stdlib/bytesLabels.mli[530,21642+37]..[530,21642+53])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[534,21784+0]..[534,21784+51])
+    Psig_value
+    value_description "set_utf_16le_uchar" (stdlib/bytesLabels.mli[534,21784+4]..[534,21784+22]) (stdlib/bytesLabels.mli[534,21784+0]..[534,21784+51])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[535,21836+0]..[539,22111+29])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[535,21836+0]..[539,22111+29])
+              Pexp_constant PConst_string(" [set_utf_16le_uchar b i u] UTF-16LE encodes [u] at index [i] in [b]\n    and returns the number of bytes [n] that were written starting\n    at [i]. If [n] is [0] there was not enough space to encode [u]\n    at [i] and [b] was left untouched. Otherwise a new character can\n    be encoded at [i + n]. ",(stdlib/bytesLabels.mli[535,21836+0]..[539,22111+29]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[534,21784+25]..[534,21784+51])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[534,21784+25]..[534,21784+26])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[534,21784+25]..[534,21784+26])
+          []
+        core_type (stdlib/bytesLabels.mli[534,21784+30]..[534,21784+51])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[534,21784+30]..[534,21784+33])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[534,21784+30]..[534,21784+33])
+            []
+          core_type (stdlib/bytesLabels.mli[534,21784+37]..[534,21784+51])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[534,21784+37]..[534,21784+44])
+              Ptyp_constr "Uchar.t" (stdlib/bytesLabels.mli[534,21784+37]..[534,21784+44])
+              []
+            core_type (stdlib/bytesLabels.mli[534,21784+48]..[534,21784+51])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[534,21784+48]..[534,21784+51])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[541,22142+0]..[541,22142+33])
+    Psig_value
+    value_description "is_valid_utf_16le" (stdlib/bytesLabels.mli[541,22142+4]..[541,22142+21]) (stdlib/bytesLabels.mli[541,22142+0]..[541,22142+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[542,22176+0]..[543,22246+21])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[542,22176+0]..[543,22246+21])
+              Pexp_constant PConst_string(" [is_valid_utf_16le b] is [true] if and only if [b] contains valid\n    UTF-16LE data. ",(stdlib/bytesLabels.mli[542,22176+0]..[543,22246+21]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[541,22142+24]..[541,22142+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[541,22142+24]..[541,22142+25])
+          Ptyp_constr "t" (stdlib/bytesLabels.mli[541,22142+24]..[541,22142+25])
+          []
+        core_type (stdlib/bytesLabels.mli[541,22142+29]..[541,22142+33])
+          Ptyp_constr "bool" (stdlib/bytesLabels.mli[541,22142+29]..[541,22142+33])
+          []
+      []
+  signature_item (stdlib/bytesLabels.mli[545,22269+0]..[545,22269+47])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[545,22269+0]..[545,22269+47])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[545,22269+0]..[545,22269+47])
+          Pexp_constant PConst_string(" {1 Binary encoding/decoding of integers} ",(stdlib/bytesLabels.mli[545,22269+0]..[545,22269+47]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[547,22318+0]..[573,23474+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[547,22318+0]..[573,23474+2])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[547,22318+0]..[573,23474+2])
+          Pexp_constant PConst_string(" The functions in this section binary encode and decode integers to\n    and from byte sequences.\n\n    All following functions raise [Invalid_argument] if the space\n    needed at index [i] to decode or encode the integer is not\n    available.\n\n    Little-endian (resp. big-endian) encoding means that least\n    (resp. most) significant bytes are stored first.  Big-endian is\n    also known as network byte order.  Native-endian encoding is\n    either little-endian or big-endian depending on {!Sys.big_endian}.\n\n    32-bit and 64-bit integers are represented by the [int32] and\n    [int64] types, which can be interpreted either as signed or\n    unsigned numbers.\n\n    8-bit and 16-bit integers are represented by the [int] type,\n    which has more bits than the binary encoding.  These extra bits\n    are handled as follows:\n    {ul\n    {- Functions that decode signed (resp. unsigned) 8-bit or 16-bit\n       integers represented by [int] values sign-extend\n       (resp. zero-extend) their result.}\n    {- Functions that encode 8-bit or 16-bit integers represented by\n       [int] values truncate their input to their least significant\n       bytes.}}\n",(stdlib/bytesLabels.mli[547,22318+0]..[573,23474+2]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[575,23478+0]..[575,23478+35])
+    Psig_value
+    value_description "get_uint8" (stdlib/bytesLabels.mli[575,23478+4]..[575,23478+13]) (stdlib/bytesLabels.mli[575,23478+0]..[575,23478+35])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[576,23514+0]..[578,23610+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[576,23514+0]..[578,23610+2])
+              Pexp_constant PConst_string(" [get_uint8 b i] is [b]'s unsigned 8-bit integer starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[576,23514+0]..[578,23610+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[575,23478+16]..[575,23478+35])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[575,23478+16]..[575,23478+21])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[575,23478+16]..[575,23478+21])
+          []
+        core_type (stdlib/bytesLabels.mli[575,23478+25]..[575,23478+35])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[575,23478+25]..[575,23478+28])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[575,23478+25]..[575,23478+28])
+            []
+          core_type (stdlib/bytesLabels.mli[575,23478+32]..[575,23478+35])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[575,23478+32]..[575,23478+35])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[580,23614+0]..[580,23614+34])
+    Psig_value
+    value_description "get_int8" (stdlib/bytesLabels.mli[580,23614+4]..[580,23614+12]) (stdlib/bytesLabels.mli[580,23614+0]..[580,23614+34])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[581,23649+0]..[583,23742+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[581,23649+0]..[583,23742+2])
+              Pexp_constant PConst_string(" [get_int8 b i] is [b]'s signed 8-bit integer starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[581,23649+0]..[583,23742+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[580,23614+15]..[580,23614+34])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[580,23614+15]..[580,23614+20])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[580,23614+15]..[580,23614+20])
+          []
+        core_type (stdlib/bytesLabels.mli[580,23614+24]..[580,23614+34])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[580,23614+24]..[580,23614+27])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[580,23614+24]..[580,23614+27])
+            []
+          core_type (stdlib/bytesLabels.mli[580,23614+31]..[580,23614+34])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[580,23614+31]..[580,23614+34])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[585,23746+0]..[585,23746+39])
+    Psig_value
+    value_description "get_uint16_ne" (stdlib/bytesLabels.mli[585,23746+4]..[585,23746+17]) (stdlib/bytesLabels.mli[585,23746+0]..[585,23746+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[586,23786+0]..[589,23905+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[586,23786+0]..[589,23905+2])
+              Pexp_constant PConst_string(" [get_uint16_ne b i] is [b]'s native-endian unsigned 16-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[586,23786+0]..[589,23905+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[585,23746+20]..[585,23746+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[585,23746+20]..[585,23746+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[585,23746+20]..[585,23746+25])
+          []
+        core_type (stdlib/bytesLabels.mli[585,23746+29]..[585,23746+39])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[585,23746+29]..[585,23746+32])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[585,23746+29]..[585,23746+32])
+            []
+          core_type (stdlib/bytesLabels.mli[585,23746+36]..[585,23746+39])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[585,23746+36]..[585,23746+39])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[591,23909+0]..[591,23909+39])
+    Psig_value
+    value_description "get_uint16_be" (stdlib/bytesLabels.mli[591,23909+4]..[591,23909+17]) (stdlib/bytesLabels.mli[591,23909+0]..[591,23909+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[592,23949+0]..[595,24065+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[592,23949+0]..[595,24065+2])
+              Pexp_constant PConst_string(" [get_uint16_be b i] is [b]'s big-endian unsigned 16-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[592,23949+0]..[595,24065+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[591,23909+20]..[591,23909+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[591,23909+20]..[591,23909+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[591,23909+20]..[591,23909+25])
+          []
+        core_type (stdlib/bytesLabels.mli[591,23909+29]..[591,23909+39])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[591,23909+29]..[591,23909+32])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[591,23909+29]..[591,23909+32])
+            []
+          core_type (stdlib/bytesLabels.mli[591,23909+36]..[591,23909+39])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[591,23909+36]..[591,23909+39])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[597,24069+0]..[597,24069+39])
+    Psig_value
+    value_description "get_uint16_le" (stdlib/bytesLabels.mli[597,24069+4]..[597,24069+17]) (stdlib/bytesLabels.mli[597,24069+0]..[597,24069+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[598,24109+0]..[601,24228+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[598,24109+0]..[601,24228+2])
+              Pexp_constant PConst_string(" [get_uint16_le b i] is [b]'s little-endian unsigned 16-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[598,24109+0]..[601,24228+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[597,24069+20]..[597,24069+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[597,24069+20]..[597,24069+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[597,24069+20]..[597,24069+25])
+          []
+        core_type (stdlib/bytesLabels.mli[597,24069+29]..[597,24069+39])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[597,24069+29]..[597,24069+32])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[597,24069+29]..[597,24069+32])
+            []
+          core_type (stdlib/bytesLabels.mli[597,24069+36]..[597,24069+39])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[597,24069+36]..[597,24069+39])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[603,24232+0]..[603,24232+38])
+    Psig_value
+    value_description "get_int16_ne" (stdlib/bytesLabels.mli[603,24232+4]..[603,24232+16]) (stdlib/bytesLabels.mli[603,24232+0]..[603,24232+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[604,24271+0]..[607,24387+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[604,24271+0]..[607,24387+2])
+              Pexp_constant PConst_string(" [get_int16_ne b i] is [b]'s native-endian signed 16-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[604,24271+0]..[607,24387+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[603,24232+19]..[603,24232+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[603,24232+19]..[603,24232+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[603,24232+19]..[603,24232+24])
+          []
+        core_type (stdlib/bytesLabels.mli[603,24232+28]..[603,24232+38])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[603,24232+28]..[603,24232+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[603,24232+28]..[603,24232+31])
+            []
+          core_type (stdlib/bytesLabels.mli[603,24232+35]..[603,24232+38])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[603,24232+35]..[603,24232+38])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[609,24391+0]..[609,24391+38])
+    Psig_value
+    value_description "get_int16_be" (stdlib/bytesLabels.mli[609,24391+4]..[609,24391+16]) (stdlib/bytesLabels.mli[609,24391+0]..[609,24391+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[610,24430+0]..[613,24543+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[610,24430+0]..[613,24543+2])
+              Pexp_constant PConst_string(" [get_int16_be b i] is [b]'s big-endian signed 16-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[610,24430+0]..[613,24543+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[609,24391+19]..[609,24391+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[609,24391+19]..[609,24391+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[609,24391+19]..[609,24391+24])
+          []
+        core_type (stdlib/bytesLabels.mli[609,24391+28]..[609,24391+38])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[609,24391+28]..[609,24391+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[609,24391+28]..[609,24391+31])
+            []
+          core_type (stdlib/bytesLabels.mli[609,24391+35]..[609,24391+38])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[609,24391+35]..[609,24391+38])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[615,24547+0]..[615,24547+38])
+    Psig_value
+    value_description "get_int16_le" (stdlib/bytesLabels.mli[615,24547+4]..[615,24547+16]) (stdlib/bytesLabels.mli[615,24547+0]..[615,24547+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[616,24586+0]..[619,24702+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[616,24586+0]..[619,24702+2])
+              Pexp_constant PConst_string(" [get_int16_le b i] is [b]'s little-endian signed 16-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[616,24586+0]..[619,24702+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[615,24547+19]..[615,24547+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[615,24547+19]..[615,24547+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[615,24547+19]..[615,24547+24])
+          []
+        core_type (stdlib/bytesLabels.mli[615,24547+28]..[615,24547+38])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[615,24547+28]..[615,24547+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[615,24547+28]..[615,24547+31])
+            []
+          core_type (stdlib/bytesLabels.mli[615,24547+35]..[615,24547+38])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[615,24547+35]..[615,24547+38])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[621,24706+0]..[621,24706+40])
+    Psig_value
+    value_description "get_int32_ne" (stdlib/bytesLabels.mli[621,24706+4]..[621,24706+16]) (stdlib/bytesLabels.mli[621,24706+0]..[621,24706+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[622,24747+0]..[625,24856+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[622,24747+0]..[625,24856+2])
+              Pexp_constant PConst_string(" [get_int32_ne b i] is [b]'s native-endian 32-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[622,24747+0]..[625,24856+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[621,24706+19]..[621,24706+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[621,24706+19]..[621,24706+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[621,24706+19]..[621,24706+24])
+          []
+        core_type (stdlib/bytesLabels.mli[621,24706+28]..[621,24706+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[621,24706+28]..[621,24706+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[621,24706+28]..[621,24706+31])
+            []
+          core_type (stdlib/bytesLabels.mli[621,24706+35]..[621,24706+40])
+            Ptyp_constr "int32" (stdlib/bytesLabels.mli[621,24706+35]..[621,24706+40])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[627,24860+0]..[627,24860+40])
+    Psig_value
+    value_description "get_int32_be" (stdlib/bytesLabels.mli[627,24860+4]..[627,24860+16]) (stdlib/bytesLabels.mli[627,24860+0]..[627,24860+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[628,24901+0]..[631,25007+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[628,24901+0]..[631,25007+2])
+              Pexp_constant PConst_string(" [get_int32_be b i] is [b]'s big-endian 32-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[628,24901+0]..[631,25007+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[627,24860+19]..[627,24860+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[627,24860+19]..[627,24860+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[627,24860+19]..[627,24860+24])
+          []
+        core_type (stdlib/bytesLabels.mli[627,24860+28]..[627,24860+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[627,24860+28]..[627,24860+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[627,24860+28]..[627,24860+31])
+            []
+          core_type (stdlib/bytesLabels.mli[627,24860+35]..[627,24860+40])
+            Ptyp_constr "int32" (stdlib/bytesLabels.mli[627,24860+35]..[627,24860+40])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[633,25011+0]..[633,25011+40])
+    Psig_value
+    value_description "get_int32_le" (stdlib/bytesLabels.mli[633,25011+4]..[633,25011+16]) (stdlib/bytesLabels.mli[633,25011+0]..[633,25011+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[634,25052+0]..[637,25161+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[634,25052+0]..[637,25161+2])
+              Pexp_constant PConst_string(" [get_int32_le b i] is [b]'s little-endian 32-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[634,25052+0]..[637,25161+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[633,25011+19]..[633,25011+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[633,25011+19]..[633,25011+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[633,25011+19]..[633,25011+24])
+          []
+        core_type (stdlib/bytesLabels.mli[633,25011+28]..[633,25011+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[633,25011+28]..[633,25011+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[633,25011+28]..[633,25011+31])
+            []
+          core_type (stdlib/bytesLabels.mli[633,25011+35]..[633,25011+40])
+            Ptyp_constr "int32" (stdlib/bytesLabels.mli[633,25011+35]..[633,25011+40])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[639,25165+0]..[639,25165+40])
+    Psig_value
+    value_description "get_int64_ne" (stdlib/bytesLabels.mli[639,25165+4]..[639,25165+16]) (stdlib/bytesLabels.mli[639,25165+0]..[639,25165+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[640,25206+0]..[643,25315+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[640,25206+0]..[643,25315+2])
+              Pexp_constant PConst_string(" [get_int64_ne b i] is [b]'s native-endian 64-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[640,25206+0]..[643,25315+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[639,25165+19]..[639,25165+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[639,25165+19]..[639,25165+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[639,25165+19]..[639,25165+24])
+          []
+        core_type (stdlib/bytesLabels.mli[639,25165+28]..[639,25165+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[639,25165+28]..[639,25165+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[639,25165+28]..[639,25165+31])
+            []
+          core_type (stdlib/bytesLabels.mli[639,25165+35]..[639,25165+40])
+            Ptyp_constr "int64" (stdlib/bytesLabels.mli[639,25165+35]..[639,25165+40])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[645,25319+0]..[645,25319+40])
+    Psig_value
+    value_description "get_int64_be" (stdlib/bytesLabels.mli[645,25319+4]..[645,25319+16]) (stdlib/bytesLabels.mli[645,25319+0]..[645,25319+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[646,25360+0]..[649,25466+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[646,25360+0]..[649,25466+2])
+              Pexp_constant PConst_string(" [get_int64_be b i] is [b]'s big-endian 64-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[646,25360+0]..[649,25466+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[645,25319+19]..[645,25319+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[645,25319+19]..[645,25319+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[645,25319+19]..[645,25319+24])
+          []
+        core_type (stdlib/bytesLabels.mli[645,25319+28]..[645,25319+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[645,25319+28]..[645,25319+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[645,25319+28]..[645,25319+31])
+            []
+          core_type (stdlib/bytesLabels.mli[645,25319+35]..[645,25319+40])
+            Ptyp_constr "int64" (stdlib/bytesLabels.mli[645,25319+35]..[645,25319+40])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[651,25470+0]..[651,25470+40])
+    Psig_value
+    value_description "get_int64_le" (stdlib/bytesLabels.mli[651,25470+4]..[651,25470+16]) (stdlib/bytesLabels.mli[651,25470+0]..[651,25470+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[652,25511+0]..[655,25620+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[652,25511+0]..[655,25620+2])
+              Pexp_constant PConst_string(" [get_int64_le b i] is [b]'s little-endian 64-bit integer\n    starting at byte index [i].\n    @since 4.08\n",(stdlib/bytesLabels.mli[652,25511+0]..[655,25620+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[651,25470+19]..[651,25470+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[651,25470+19]..[651,25470+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[651,25470+19]..[651,25470+24])
+          []
+        core_type (stdlib/bytesLabels.mli[651,25470+28]..[651,25470+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[651,25470+28]..[651,25470+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[651,25470+28]..[651,25470+31])
+            []
+          core_type (stdlib/bytesLabels.mli[651,25470+35]..[651,25470+40])
+            Ptyp_constr "int64" (stdlib/bytesLabels.mli[651,25470+35]..[651,25470+40])
+            []
+      []
+  signature_item (stdlib/bytesLabels.mli[657,25624+0]..[657,25624+43])
+    Psig_value
+    value_description "set_uint8" (stdlib/bytesLabels.mli[657,25624+4]..[657,25624+13]) (stdlib/bytesLabels.mli[657,25624+0]..[657,25624+43])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[658,25668+0]..[661,25779+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[658,25668+0]..[661,25779+2])
+              Pexp_constant PConst_string(" [set_uint8 b i v] sets [b]'s unsigned 8-bit integer starting at byte index\n    [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[658,25668+0]..[661,25779+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[657,25624+16]..[657,25624+43])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[657,25624+16]..[657,25624+21])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[657,25624+16]..[657,25624+21])
+          []
+        core_type (stdlib/bytesLabels.mli[657,25624+25]..[657,25624+43])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[657,25624+25]..[657,25624+28])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[657,25624+25]..[657,25624+28])
+            []
+          core_type (stdlib/bytesLabels.mli[657,25624+32]..[657,25624+43])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[657,25624+32]..[657,25624+35])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[657,25624+32]..[657,25624+35])
+              []
+            core_type (stdlib/bytesLabels.mli[657,25624+39]..[657,25624+43])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[657,25624+39]..[657,25624+43])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[663,25783+0]..[663,25783+42])
+    Psig_value
+    value_description "set_int8" (stdlib/bytesLabels.mli[663,25783+4]..[663,25783+12]) (stdlib/bytesLabels.mli[663,25783+0]..[663,25783+42])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[664,25826+0]..[667,25934+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[664,25826+0]..[667,25934+2])
+              Pexp_constant PConst_string(" [set_int8 b i v] sets [b]'s signed 8-bit integer starting at byte index\n    [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[664,25826+0]..[667,25934+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[663,25783+15]..[663,25783+42])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[663,25783+15]..[663,25783+20])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[663,25783+15]..[663,25783+20])
+          []
+        core_type (stdlib/bytesLabels.mli[663,25783+24]..[663,25783+42])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[663,25783+24]..[663,25783+27])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[663,25783+24]..[663,25783+27])
+            []
+          core_type (stdlib/bytesLabels.mli[663,25783+31]..[663,25783+42])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[663,25783+31]..[663,25783+34])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[663,25783+31]..[663,25783+34])
+              []
+            core_type (stdlib/bytesLabels.mli[663,25783+38]..[663,25783+42])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[663,25783+38]..[663,25783+42])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[669,25938+0]..[669,25938+47])
+    Psig_value
+    value_description "set_uint16_ne" (stdlib/bytesLabels.mli[669,25938+4]..[669,25938+17]) (stdlib/bytesLabels.mli[669,25938+0]..[669,25938+47])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[670,25986+0]..[673,26116+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[670,25986+0]..[673,26116+2])
+              Pexp_constant PConst_string(" [set_uint16_ne b i v] sets [b]'s native-endian unsigned 16-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[670,25986+0]..[673,26116+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[669,25938+20]..[669,25938+47])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[669,25938+20]..[669,25938+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[669,25938+20]..[669,25938+25])
+          []
+        core_type (stdlib/bytesLabels.mli[669,25938+29]..[669,25938+47])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[669,25938+29]..[669,25938+32])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[669,25938+29]..[669,25938+32])
+            []
+          core_type (stdlib/bytesLabels.mli[669,25938+36]..[669,25938+47])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[669,25938+36]..[669,25938+39])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[669,25938+36]..[669,25938+39])
+              []
+            core_type (stdlib/bytesLabels.mli[669,25938+43]..[669,25938+47])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[669,25938+43]..[669,25938+47])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[675,26120+0]..[675,26120+47])
+    Psig_value
+    value_description "set_uint16_be" (stdlib/bytesLabels.mli[675,26120+4]..[675,26120+17]) (stdlib/bytesLabels.mli[675,26120+0]..[675,26120+47])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[676,26168+0]..[679,26295+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[676,26168+0]..[679,26295+2])
+              Pexp_constant PConst_string(" [set_uint16_be b i v] sets [b]'s big-endian unsigned 16-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[676,26168+0]..[679,26295+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[675,26120+20]..[675,26120+47])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[675,26120+20]..[675,26120+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[675,26120+20]..[675,26120+25])
+          []
+        core_type (stdlib/bytesLabels.mli[675,26120+29]..[675,26120+47])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[675,26120+29]..[675,26120+32])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[675,26120+29]..[675,26120+32])
+            []
+          core_type (stdlib/bytesLabels.mli[675,26120+36]..[675,26120+47])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[675,26120+36]..[675,26120+39])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[675,26120+36]..[675,26120+39])
+              []
+            core_type (stdlib/bytesLabels.mli[675,26120+43]..[675,26120+47])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[675,26120+43]..[675,26120+47])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[681,26299+0]..[681,26299+47])
+    Psig_value
+    value_description "set_uint16_le" (stdlib/bytesLabels.mli[681,26299+4]..[681,26299+17]) (stdlib/bytesLabels.mli[681,26299+0]..[681,26299+47])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[682,26347+0]..[685,26477+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[682,26347+0]..[685,26477+2])
+              Pexp_constant PConst_string(" [set_uint16_le b i v] sets [b]'s little-endian unsigned 16-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[682,26347+0]..[685,26477+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[681,26299+20]..[681,26299+47])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[681,26299+20]..[681,26299+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[681,26299+20]..[681,26299+25])
+          []
+        core_type (stdlib/bytesLabels.mli[681,26299+29]..[681,26299+47])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[681,26299+29]..[681,26299+32])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[681,26299+29]..[681,26299+32])
+            []
+          core_type (stdlib/bytesLabels.mli[681,26299+36]..[681,26299+47])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[681,26299+36]..[681,26299+39])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[681,26299+36]..[681,26299+39])
+              []
+            core_type (stdlib/bytesLabels.mli[681,26299+43]..[681,26299+47])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[681,26299+43]..[681,26299+47])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[687,26481+0]..[687,26481+46])
+    Psig_value
+    value_description "set_int16_ne" (stdlib/bytesLabels.mli[687,26481+4]..[687,26481+16]) (stdlib/bytesLabels.mli[687,26481+0]..[687,26481+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[688,26528+0]..[691,26655+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[688,26528+0]..[691,26655+2])
+              Pexp_constant PConst_string(" [set_int16_ne b i v] sets [b]'s native-endian signed 16-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[688,26528+0]..[691,26655+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[687,26481+19]..[687,26481+46])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[687,26481+19]..[687,26481+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[687,26481+19]..[687,26481+24])
+          []
+        core_type (stdlib/bytesLabels.mli[687,26481+28]..[687,26481+46])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[687,26481+28]..[687,26481+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[687,26481+28]..[687,26481+31])
+            []
+          core_type (stdlib/bytesLabels.mli[687,26481+35]..[687,26481+46])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[687,26481+35]..[687,26481+38])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[687,26481+35]..[687,26481+38])
+              []
+            core_type (stdlib/bytesLabels.mli[687,26481+42]..[687,26481+46])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[687,26481+42]..[687,26481+46])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[693,26659+0]..[693,26659+46])
+    Psig_value
+    value_description "set_int16_be" (stdlib/bytesLabels.mli[693,26659+4]..[693,26659+16]) (stdlib/bytesLabels.mli[693,26659+0]..[693,26659+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[694,26706+0]..[697,26830+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[694,26706+0]..[697,26830+2])
+              Pexp_constant PConst_string(" [set_int16_be b i v] sets [b]'s big-endian signed 16-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[694,26706+0]..[697,26830+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[693,26659+19]..[693,26659+46])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[693,26659+19]..[693,26659+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[693,26659+19]..[693,26659+24])
+          []
+        core_type (stdlib/bytesLabels.mli[693,26659+28]..[693,26659+46])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[693,26659+28]..[693,26659+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[693,26659+28]..[693,26659+31])
+            []
+          core_type (stdlib/bytesLabels.mli[693,26659+35]..[693,26659+46])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[693,26659+35]..[693,26659+38])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[693,26659+35]..[693,26659+38])
+              []
+            core_type (stdlib/bytesLabels.mli[693,26659+42]..[693,26659+46])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[693,26659+42]..[693,26659+46])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[699,26834+0]..[699,26834+46])
+    Psig_value
+    value_description "set_int16_le" (stdlib/bytesLabels.mli[699,26834+4]..[699,26834+16]) (stdlib/bytesLabels.mli[699,26834+0]..[699,26834+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[700,26881+0]..[703,27008+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[700,26881+0]..[703,27008+2])
+              Pexp_constant PConst_string(" [set_int16_le b i v] sets [b]'s little-endian signed 16-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[700,26881+0]..[703,27008+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[699,26834+19]..[699,26834+46])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[699,26834+19]..[699,26834+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[699,26834+19]..[699,26834+24])
+          []
+        core_type (stdlib/bytesLabels.mli[699,26834+28]..[699,26834+46])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[699,26834+28]..[699,26834+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[699,26834+28]..[699,26834+31])
+            []
+          core_type (stdlib/bytesLabels.mli[699,26834+35]..[699,26834+46])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[699,26834+35]..[699,26834+38])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[699,26834+35]..[699,26834+38])
+              []
+            core_type (stdlib/bytesLabels.mli[699,26834+42]..[699,26834+46])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[699,26834+42]..[699,26834+46])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[705,27012+0]..[705,27012+48])
+    Psig_value
+    value_description "set_int32_ne" (stdlib/bytesLabels.mli[705,27012+4]..[705,27012+16]) (stdlib/bytesLabels.mli[705,27012+0]..[705,27012+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[706,27061+0]..[709,27181+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[706,27061+0]..[709,27181+2])
+              Pexp_constant PConst_string(" [set_int32_ne b i v] sets [b]'s native-endian 32-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[706,27061+0]..[709,27181+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[705,27012+19]..[705,27012+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[705,27012+19]..[705,27012+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[705,27012+19]..[705,27012+24])
+          []
+        core_type (stdlib/bytesLabels.mli[705,27012+28]..[705,27012+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[705,27012+28]..[705,27012+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[705,27012+28]..[705,27012+31])
+            []
+          core_type (stdlib/bytesLabels.mli[705,27012+35]..[705,27012+48])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[705,27012+35]..[705,27012+40])
+              Ptyp_constr "int32" (stdlib/bytesLabels.mli[705,27012+35]..[705,27012+40])
+              []
+            core_type (stdlib/bytesLabels.mli[705,27012+44]..[705,27012+48])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[705,27012+44]..[705,27012+48])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[711,27185+0]..[711,27185+48])
+    Psig_value
+    value_description "set_int32_be" (stdlib/bytesLabels.mli[711,27185+4]..[711,27185+16]) (stdlib/bytesLabels.mli[711,27185+0]..[711,27185+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[712,27234+0]..[715,27351+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[712,27234+0]..[715,27351+2])
+              Pexp_constant PConst_string(" [set_int32_be b i v] sets [b]'s big-endian 32-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[712,27234+0]..[715,27351+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[711,27185+19]..[711,27185+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[711,27185+19]..[711,27185+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[711,27185+19]..[711,27185+24])
+          []
+        core_type (stdlib/bytesLabels.mli[711,27185+28]..[711,27185+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[711,27185+28]..[711,27185+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[711,27185+28]..[711,27185+31])
+            []
+          core_type (stdlib/bytesLabels.mli[711,27185+35]..[711,27185+48])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[711,27185+35]..[711,27185+40])
+              Ptyp_constr "int32" (stdlib/bytesLabels.mli[711,27185+35]..[711,27185+40])
+              []
+            core_type (stdlib/bytesLabels.mli[711,27185+44]..[711,27185+48])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[711,27185+44]..[711,27185+48])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[717,27355+0]..[717,27355+48])
+    Psig_value
+    value_description "set_int32_le" (stdlib/bytesLabels.mli[717,27355+4]..[717,27355+16]) (stdlib/bytesLabels.mli[717,27355+0]..[717,27355+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[718,27404+0]..[721,27524+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[718,27404+0]..[721,27524+2])
+              Pexp_constant PConst_string(" [set_int32_le b i v] sets [b]'s little-endian 32-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[718,27404+0]..[721,27524+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[717,27355+19]..[717,27355+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[717,27355+19]..[717,27355+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[717,27355+19]..[717,27355+24])
+          []
+        core_type (stdlib/bytesLabels.mli[717,27355+28]..[717,27355+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[717,27355+28]..[717,27355+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[717,27355+28]..[717,27355+31])
+            []
+          core_type (stdlib/bytesLabels.mli[717,27355+35]..[717,27355+48])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[717,27355+35]..[717,27355+40])
+              Ptyp_constr "int32" (stdlib/bytesLabels.mli[717,27355+35]..[717,27355+40])
+              []
+            core_type (stdlib/bytesLabels.mli[717,27355+44]..[717,27355+48])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[717,27355+44]..[717,27355+48])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[723,27528+0]..[723,27528+48])
+    Psig_value
+    value_description "set_int64_ne" (stdlib/bytesLabels.mli[723,27528+4]..[723,27528+16]) (stdlib/bytesLabels.mli[723,27528+0]..[723,27528+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[724,27577+0]..[727,27697+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[724,27577+0]..[727,27697+2])
+              Pexp_constant PConst_string(" [set_int64_ne b i v] sets [b]'s native-endian 64-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[724,27577+0]..[727,27697+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[723,27528+19]..[723,27528+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[723,27528+19]..[723,27528+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[723,27528+19]..[723,27528+24])
+          []
+        core_type (stdlib/bytesLabels.mli[723,27528+28]..[723,27528+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[723,27528+28]..[723,27528+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[723,27528+28]..[723,27528+31])
+            []
+          core_type (stdlib/bytesLabels.mli[723,27528+35]..[723,27528+48])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[723,27528+35]..[723,27528+40])
+              Ptyp_constr "int64" (stdlib/bytesLabels.mli[723,27528+35]..[723,27528+40])
+              []
+            core_type (stdlib/bytesLabels.mli[723,27528+44]..[723,27528+48])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[723,27528+44]..[723,27528+48])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[729,27701+0]..[729,27701+48])
+    Psig_value
+    value_description "set_int64_be" (stdlib/bytesLabels.mli[729,27701+4]..[729,27701+16]) (stdlib/bytesLabels.mli[729,27701+0]..[729,27701+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[730,27750+0]..[733,27867+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[730,27750+0]..[733,27867+2])
+              Pexp_constant PConst_string(" [set_int64_be b i v] sets [b]'s big-endian 64-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[730,27750+0]..[733,27867+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[729,27701+19]..[729,27701+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[729,27701+19]..[729,27701+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[729,27701+19]..[729,27701+24])
+          []
+        core_type (stdlib/bytesLabels.mli[729,27701+28]..[729,27701+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[729,27701+28]..[729,27701+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[729,27701+28]..[729,27701+31])
+            []
+          core_type (stdlib/bytesLabels.mli[729,27701+35]..[729,27701+48])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[729,27701+35]..[729,27701+40])
+              Ptyp_constr "int64" (stdlib/bytesLabels.mli[729,27701+35]..[729,27701+40])
+              []
+            core_type (stdlib/bytesLabels.mli[729,27701+44]..[729,27701+48])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[729,27701+44]..[729,27701+48])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[735,27871+0]..[735,27871+48])
+    Psig_value
+    value_description "set_int64_le" (stdlib/bytesLabels.mli[735,27871+4]..[735,27871+16]) (stdlib/bytesLabels.mli[735,27871+0]..[735,27871+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/bytesLabels.mli[736,27920+0]..[739,28040+2])
+            Pstr_eval
+            expression (stdlib/bytesLabels.mli[736,27920+0]..[739,28040+2])
+              Pexp_constant PConst_string(" [set_int64_le b i v] sets [b]'s little-endian 64-bit integer\n    starting at byte index [i] to [v].\n    @since 4.08\n",(stdlib/bytesLabels.mli[736,27920+0]..[739,28040+2]),None)
+        ]
+      core_type (stdlib/bytesLabels.mli[735,27871+19]..[735,27871+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[735,27871+19]..[735,27871+24])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[735,27871+19]..[735,27871+24])
+          []
+        core_type (stdlib/bytesLabels.mli[735,27871+28]..[735,27871+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[735,27871+28]..[735,27871+31])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[735,27871+28]..[735,27871+31])
+            []
+          core_type (stdlib/bytesLabels.mli[735,27871+35]..[735,27871+48])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[735,27871+35]..[735,27871+40])
+              Ptyp_constr "int64" (stdlib/bytesLabels.mli[735,27871+35]..[735,27871+40])
+              []
+            core_type (stdlib/bytesLabels.mli[735,27871+44]..[735,27871+48])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[735,27871+44]..[735,27871+48])
+              []
+      []
+  signature_item (stdlib/bytesLabels.mli[742,28045+0]..[806,30807+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[742,28045+0]..[806,30807+2])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[742,28045+0]..[806,30807+2])
+          Pexp_constant PConst_string(" {1:bytes_concurrency Byte sequences and concurrency safety}\n\n    Care must be taken when concurrently accessing byte sequences from\n    multiple domains: accessing a byte sequence will never crash a program,\n    but unsynchronized accesses might yield surprising\n    (non-sequentially-consistent) results.\n\n    {2:byte_atomicity Atomicity}\n\n    Every byte sequence operation that accesses more than one byte is not\n    atomic. This includes iteration and scanning.\n\n    For example, consider the following program:\n{[let size = 100_000_000\nlet b = Bytes.make size  ' '\nlet update b f ()  =\n  Bytes.iteri (fun i x -> Bytes.set b i (Char.chr (f (Char.code x)))) b\nlet d1 = Domain.spawn (update b (fun x -> x + 1))\nlet d2 = Domain.spawn (update b (fun x -> 2 * x + 1))\nlet () = Domain.join d1; Domain.join d2\n]}\n    the bytes sequence [b] may contain a non-deterministic mixture\n    of ['!'], ['A'], ['B'], and ['C'] values.\n\n\n    After executing this code, each byte of the sequence [b] is either ['!'],\n    ['A'], ['B'], or ['C']. If atomicity is required, then the user must\n    implement their own synchronization (for example, using {!Mutex.t}).\n\n    {2:bytes_data_race Data races}\n\n    If two domains only access disjoint parts of a byte sequence, then the\n    observed behaviour is the equivalent to some sequential interleaving of the\n    operations from the two domains.\n\n    A data race is said to occur when two domains access the same byte\n    without synchronization and at least one of the accesses is a write.\n    In the absence of data races, the observed behaviour is equivalent to some\n    sequential interleaving of the operations from different domains.\n\n    Whenever possible, data races should be avoided by using synchronization\n    to mediate the accesses to the elements of the sequence.\n\n    Indeed, in the presence of data races, programs will not crash but the\n    observed behaviour may not be equivalent to any sequential interleaving of\n    operations from different domains. Nevertheless, even in the presence of\n    data races, a read operation will return the value of some prior write to\n    that location.\n\n    {2:bytes_mixed_access Mixed-size accesses }\n\n    Another subtle point is that if a data race involves mixed-size writes and\n    reads to the same location, the order in which those writes and reads\n    are observed by domains is not specified.\n    For instance, the following code write sequentially a 32-bit integer and a\n    [char] to the same index\n{[\nlet b = Bytes.make 10 '\\000'\nlet d1 = Domain.spawn (fun () -> Bytes.set_int32_ne b 0 100; b.[0] <- 'd' )\n]}\n\n    In this situation, a domain that observes the write of 'd' to b.[0] is not\n    guaranteed to also observe the write to indices [1], [2], or [3].\n\n",(stdlib/bytesLabels.mli[742,28045+0]..[806,30807+2]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[808,30811+0]..[808,30811+7])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/bytesLabels.mli[808,30811+0]..[808,30811+7])
+        Pstr_eval
+        expression (stdlib/bytesLabels.mli[808,30811+0]..[808,30811+7])
+          Pexp_constant PConst_string("/*",(stdlib/bytesLabels.mli[808,30811+0]..[808,30811+7]),None)
+    ]
+  signature_item (stdlib/bytesLabels.mli[812,30887+0]..[812,30887+64])
+    Psig_value
+    value_description "unsafe_get" (stdlib/bytesLabels.mli[812,30887+9]..[812,30887+19]) (stdlib/bytesLabels.mli[812,30887+0]..[812,30887+64])
+      core_type (stdlib/bytesLabels.mli[812,30887+22]..[812,30887+42])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[812,30887+22]..[812,30887+27])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[812,30887+22]..[812,30887+27])
+          []
+        core_type (stdlib/bytesLabels.mli[812,30887+31]..[812,30887+42])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[812,30887+31]..[812,30887+34])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[812,30887+31]..[812,30887+34])
+            []
+          core_type (stdlib/bytesLabels.mli[812,30887+38]..[812,30887+42])
+            Ptyp_constr "char" (stdlib/bytesLabels.mli[812,30887+38]..[812,30887+42])
+            []
+      [
+        "%bytes_unsafe_get"
+      ]
+  signature_item (stdlib/bytesLabels.mli[813,30952+0]..[813,30952+72])
+    Psig_value
+    value_description "unsafe_set" (stdlib/bytesLabels.mli[813,30952+9]..[813,30952+19]) (stdlib/bytesLabels.mli[813,30952+0]..[813,30952+72])
+      core_type (stdlib/bytesLabels.mli[813,30952+22]..[813,30952+50])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[813,30952+22]..[813,30952+27])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[813,30952+22]..[813,30952+27])
+          []
+        core_type (stdlib/bytesLabels.mli[813,30952+31]..[813,30952+50])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/bytesLabels.mli[813,30952+31]..[813,30952+34])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[813,30952+31]..[813,30952+34])
+            []
+          core_type (stdlib/bytesLabels.mli[813,30952+38]..[813,30952+50])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/bytesLabels.mli[813,30952+38]..[813,30952+42])
+              Ptyp_constr "char" (stdlib/bytesLabels.mli[813,30952+38]..[813,30952+42])
+              []
+            core_type (stdlib/bytesLabels.mli[813,30952+46]..[813,30952+50])
+              Ptyp_constr "unit" (stdlib/bytesLabels.mli[813,30952+46]..[813,30952+50])
+              []
+      [
+        "%bytes_unsafe_set"
+      ]
+  signature_item (stdlib/bytesLabels.mli[814,31025+0]..[816,31117+40])
+    Psig_value
+    value_description "unsafe_blit" (stdlib/bytesLabels.mli[814,31025+9]..[814,31025+20]) (stdlib/bytesLabels.mli[814,31025+0]..[816,31117+40])
+      attribute "noalloc"
+        []
+      core_type (stdlib/bytesLabels.mli[815,31048+2]..[816,31117+8])
+        Ptyp_arrow
+        Labelled "src"
+        core_type (stdlib/bytesLabels.mli[815,31048+6]..[815,31048+11])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[815,31048+6]..[815,31048+11])
+          []
+        core_type (stdlib/bytesLabels.mli[815,31048+15]..[816,31117+8])
+          Ptyp_arrow
+          Labelled "src_pos"
+          core_type (stdlib/bytesLabels.mli[815,31048+23]..[815,31048+26])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[815,31048+23]..[815,31048+26])
+            []
+          core_type (stdlib/bytesLabels.mli[815,31048+30]..[816,31117+8])
+            Ptyp_arrow
+            Labelled "dst"
+            core_type (stdlib/bytesLabels.mli[815,31048+34]..[815,31048+39])
+              Ptyp_constr "bytes" (stdlib/bytesLabels.mli[815,31048+34]..[815,31048+39])
+              []
+            core_type (stdlib/bytesLabels.mli[815,31048+43]..[816,31117+8])
+              Ptyp_arrow
+              Labelled "dst_pos"
+              core_type (stdlib/bytesLabels.mli[815,31048+51]..[815,31048+54])
+                Ptyp_constr "int" (stdlib/bytesLabels.mli[815,31048+51]..[815,31048+54])
+                []
+              core_type (stdlib/bytesLabels.mli[815,31048+58]..[816,31117+8])
+                Ptyp_arrow
+                Labelled "len"
+                core_type (stdlib/bytesLabels.mli[815,31048+62]..[815,31048+65])
+                  Ptyp_constr "int" (stdlib/bytesLabels.mli[815,31048+62]..[815,31048+65])
+                  []
+                core_type (stdlib/bytesLabels.mli[816,31117+4]..[816,31117+8])
+                  Ptyp_constr "unit" (stdlib/bytesLabels.mli[816,31117+4]..[816,31117+8])
+                  []
+      [
+        "caml_blit_bytes"
+      ]
+  signature_item (stdlib/bytesLabels.mli[817,31158+0]..[819,31263+34])
+    Psig_value
+    value_description "unsafe_blit_string" (stdlib/bytesLabels.mli[817,31158+9]..[817,31158+27]) (stdlib/bytesLabels.mli[817,31158+0]..[819,31263+34])
+      attribute "noalloc"
+        []
+      core_type (stdlib/bytesLabels.mli[818,31188+2]..[818,31188+74])
+        Ptyp_arrow
+        Labelled "src"
+        core_type (stdlib/bytesLabels.mli[818,31188+6]..[818,31188+12])
+          Ptyp_constr "string" (stdlib/bytesLabels.mli[818,31188+6]..[818,31188+12])
+          []
+        core_type (stdlib/bytesLabels.mli[818,31188+16]..[818,31188+74])
+          Ptyp_arrow
+          Labelled "src_pos"
+          core_type (stdlib/bytesLabels.mli[818,31188+24]..[818,31188+27])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[818,31188+24]..[818,31188+27])
+            []
+          core_type (stdlib/bytesLabels.mli[818,31188+31]..[818,31188+74])
+            Ptyp_arrow
+            Labelled "dst"
+            core_type (stdlib/bytesLabels.mli[818,31188+35]..[818,31188+40])
+              Ptyp_constr "bytes" (stdlib/bytesLabels.mli[818,31188+35]..[818,31188+40])
+              []
+            core_type (stdlib/bytesLabels.mli[818,31188+44]..[818,31188+74])
+              Ptyp_arrow
+              Labelled "dst_pos"
+              core_type (stdlib/bytesLabels.mli[818,31188+52]..[818,31188+55])
+                Ptyp_constr "int" (stdlib/bytesLabels.mli[818,31188+52]..[818,31188+55])
+                []
+              core_type (stdlib/bytesLabels.mli[818,31188+59]..[818,31188+74])
+                Ptyp_arrow
+                Labelled "len"
+                core_type (stdlib/bytesLabels.mli[818,31188+63]..[818,31188+66])
+                  Ptyp_constr "int" (stdlib/bytesLabels.mli[818,31188+63]..[818,31188+66])
+                  []
+                core_type (stdlib/bytesLabels.mli[818,31188+70]..[818,31188+74])
+                  Ptyp_constr "unit" (stdlib/bytesLabels.mli[818,31188+70]..[818,31188+74])
+                  []
+      [
+        "caml_blit_string"
+      ]
+  signature_item (stdlib/bytesLabels.mli[820,31298+0]..[821,31321+77])
+    Psig_value
+    value_description "unsafe_fill" (stdlib/bytesLabels.mli[820,31298+9]..[820,31298+20]) (stdlib/bytesLabels.mli[820,31298+0]..[821,31321+77])
+      attribute "noalloc"
+        []
+      core_type (stdlib/bytesLabels.mli[821,31321+2]..[821,31321+45])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[821,31321+2]..[821,31321+7])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[821,31321+2]..[821,31321+7])
+          []
+        core_type (stdlib/bytesLabels.mli[821,31321+11]..[821,31321+45])
+          Ptyp_arrow
+          Labelled "pos"
+          core_type (stdlib/bytesLabels.mli[821,31321+15]..[821,31321+18])
+            Ptyp_constr "int" (stdlib/bytesLabels.mli[821,31321+15]..[821,31321+18])
+            []
+          core_type (stdlib/bytesLabels.mli[821,31321+22]..[821,31321+45])
+            Ptyp_arrow
+            Labelled "len"
+            core_type (stdlib/bytesLabels.mli[821,31321+26]..[821,31321+29])
+              Ptyp_constr "int" (stdlib/bytesLabels.mli[821,31321+26]..[821,31321+29])
+              []
+            core_type (stdlib/bytesLabels.mli[821,31321+33]..[821,31321+45])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/bytesLabels.mli[821,31321+33]..[821,31321+37])
+                Ptyp_constr "char" (stdlib/bytesLabels.mli[821,31321+33]..[821,31321+37])
+                []
+              core_type (stdlib/bytesLabels.mli[821,31321+41]..[821,31321+45])
+                Ptyp_constr "unit" (stdlib/bytesLabels.mli[821,31321+41]..[821,31321+45])
+                []
+      [
+        "caml_fill_bytes"
+      ]
+  signature_item (stdlib/bytesLabels.mli[823,31400+0]..[823,31400+34])
+    Psig_value
+    value_description "unsafe_escape" (stdlib/bytesLabels.mli[823,31400+4]..[823,31400+17]) (stdlib/bytesLabels.mli[823,31400+0]..[823,31400+34])
+      core_type (stdlib/bytesLabels.mli[823,31400+20]..[823,31400+34])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/bytesLabels.mli[823,31400+20]..[823,31400+25])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[823,31400+20]..[823,31400+25])
+          []
+        core_type (stdlib/bytesLabels.mli[823,31400+29]..[823,31400+34])
+          Ptyp_constr "bytes" (stdlib/bytesLabels.mli[823,31400+29]..[823,31400+34])
+          []
+      []
+]
+

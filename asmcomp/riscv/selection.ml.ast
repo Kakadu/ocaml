@@ -1,0 +1,1122 @@
+[
+  structure_item (asmcomp/riscv/selection.ml[19,1166+0]..[19,1166+8])
+    Pstr_open Fresh
+    module_expr (asmcomp/riscv/selection.ml[19,1166+5]..[19,1166+8])
+      Pmod_ident "Cmm" (asmcomp/riscv/selection.ml[19,1166+5]..[19,1166+8])
+  structure_item (asmcomp/riscv/selection.ml[20,1175+0]..[20,1175+9])
+    Pstr_open Fresh
+    module_expr (asmcomp/riscv/selection.ml[20,1175+5]..[20,1175+9])
+      Pmod_ident "Arch" (asmcomp/riscv/selection.ml[20,1175+5]..[20,1175+9])
+  structure_item (asmcomp/riscv/selection.ml[21,1185+0]..[21,1185+9])
+    Pstr_open Fresh
+    module_expr (asmcomp/riscv/selection.ml[21,1185+5]..[21,1185+9])
+      Pmod_ident "Mach" (asmcomp/riscv/selection.ml[21,1185+5]..[21,1185+9])
+  structure_item (asmcomp/riscv/selection.ml[25,1225+0]..[66,2840+3])
+    Pstr_class
+    [
+      class_declaration (asmcomp/riscv/selection.ml[25,1225+0]..[66,2840+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "selector" (asmcomp/riscv/selection.ml[25,1225+6]..[25,1225+14])
+        pci_expr =
+          class_expr (asmcomp/riscv/selection.ml[25,1225+17]..[66,2840+3])
+            Pcl_structure
+            class_structure
+              pattern (asmcomp/riscv/selection.ml[25,1225+23]..[25,1225+23]) ghost
+                Ppat_any
+              [
+                class_field (asmcomp/riscv/selection.ml[27,1250+0]..[27,1250+43])
+                  Pcf_inherit Fresh
+                    class_expr (asmcomp/riscv/selection.ml[27,1250+8]..[27,1250+34])
+                      Pcl_constr "Selectgen.selector_generic" (asmcomp/riscv/selection.ml[27,1250+8]..[27,1250+34])
+                      []
+                    Some
+                      "super" (asmcomp/riscv/selection.ml[27,1250+38]..[27,1250+43])
+                class_field (asmcomp/riscv/selection.ml[30,1369+0]..[30,1369+40])
+                  Pcf_method Public
+                    "is_immediate_test" (asmcomp/riscv/selection.ml[30,1369+7]..[30,1369+24])
+                    Concrete Fresh
+                    expression (asmcomp/riscv/selection.ml[30,1369+25]..[30,1369+40]) ghost
+                      Pexp_poly
+                      expression (asmcomp/riscv/selection.ml[30,1369+25]..[30,1369+40]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/riscv/selection.ml[30,1369+25]..[30,1369+29])
+                          Ppat_var "_cmp" (asmcomp/riscv/selection.ml[30,1369+25]..[30,1369+29])
+                        expression (asmcomp/riscv/selection.ml[30,1369+30]..[30,1369+40]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (asmcomp/riscv/selection.ml[30,1369+30]..[30,1369+32])
+                            Ppat_var "_n" (asmcomp/riscv/selection.ml[30,1369+30]..[30,1369+32])
+                          expression (asmcomp/riscv/selection.ml[30,1369+35]..[30,1369+40])
+                            Pexp_construct "false" (asmcomp/riscv/selection.ml[30,1369+35]..[30,1369+40])
+                            None
+                      None
+                class_field (asmcomp/riscv/selection.ml[32,1411+0]..[37,1592+32])
+                  Pcf_method Public
+                    "is_immediate" (asmcomp/riscv/selection.ml[32,1411+8]..[32,1411+20])
+                    Concrete Override
+                    expression (asmcomp/riscv/selection.ml[32,1411+21]..[37,1592+32]) ghost
+                      Pexp_poly
+                      expression (asmcomp/riscv/selection.ml[32,1411+21]..[37,1592+32]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/riscv/selection.ml[32,1411+21]..[32,1411+23])
+                          Ppat_var "op" (asmcomp/riscv/selection.ml[32,1411+21]..[32,1411+23])
+                        expression (asmcomp/riscv/selection.ml[32,1411+24]..[37,1592+32]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (asmcomp/riscv/selection.ml[32,1411+24]..[32,1411+25])
+                            Ppat_var "n" (asmcomp/riscv/selection.ml[32,1411+24]..[32,1411+25])
+                          expression (asmcomp/riscv/selection.ml[33,1439+2]..[37,1592+32])
+                            Pexp_match
+                            expression (asmcomp/riscv/selection.ml[33,1439+8]..[33,1439+10])
+                              Pexp_ident "op" (asmcomp/riscv/selection.ml[33,1439+8]..[33,1439+10])
+                            [
+                              <case>
+                                pattern (asmcomp/riscv/selection.ml[34,1455+4]..[34,1455+28])
+                                  Ppat_or
+                                  pattern (asmcomp/riscv/selection.ml[34,1455+4]..[34,1455+21])
+                                    Ppat_or
+                                    pattern (asmcomp/riscv/selection.ml[34,1455+4]..[34,1455+15])
+                                      Ppat_or
+                                      pattern (asmcomp/riscv/selection.ml[34,1455+4]..[34,1455+8])
+                                        Ppat_construct "Iadd" (asmcomp/riscv/selection.ml[34,1455+4]..[34,1455+8])
+                                        None
+                                      pattern (asmcomp/riscv/selection.ml[34,1455+11]..[34,1455+15])
+                                        Ppat_construct "Iand" (asmcomp/riscv/selection.ml[34,1455+11]..[34,1455+15])
+                                        None
+                                    pattern (asmcomp/riscv/selection.ml[34,1455+18]..[34,1455+21])
+                                      Ppat_construct "Ior" (asmcomp/riscv/selection.ml[34,1455+18]..[34,1455+21])
+                                      None
+                                  pattern (asmcomp/riscv/selection.ml[34,1455+24]..[34,1455+28])
+                                    Ppat_construct "Ixor" (asmcomp/riscv/selection.ml[34,1455+24]..[34,1455+28])
+                                    None
+                                expression (asmcomp/riscv/selection.ml[34,1455+32]..[34,1455+46])
+                                  Pexp_apply
+                                  expression (asmcomp/riscv/selection.ml[34,1455+32]..[34,1455+44])
+                                    Pexp_ident "is_immediate" (asmcomp/riscv/selection.ml[34,1455+32]..[34,1455+44])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/riscv/selection.ml[34,1455+45]..[34,1455+46])
+                                        Pexp_ident "n" (asmcomp/riscv/selection.ml[34,1455+45]..[34,1455+46])
+                                  ]
+                              <case>
+                                pattern (asmcomp/riscv/selection.ml[36,1562+4]..[36,1562+8])
+                                  Ppat_construct "Isub" (asmcomp/riscv/selection.ml[36,1562+4]..[36,1562+8])
+                                  None
+                                expression (asmcomp/riscv/selection.ml[36,1562+12]..[36,1562+29])
+                                  Pexp_apply
+                                  expression (asmcomp/riscv/selection.ml[36,1562+12]..[36,1562+24])
+                                    Pexp_ident "is_immediate" (asmcomp/riscv/selection.ml[36,1562+12]..[36,1562+24])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/riscv/selection.ml[36,1562+25]..[36,1562+29])
+                                        Pexp_apply
+                                        expression (asmcomp/riscv/selection.ml[36,1562+26]..[36,1562+27])
+                                          Pexp_ident "~-" (asmcomp/riscv/selection.ml[36,1562+26]..[36,1562+27])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/riscv/selection.ml[36,1562+27]..[36,1562+28])
+                                              Pexp_ident "n" (asmcomp/riscv/selection.ml[36,1562+27]..[36,1562+28])
+                                        ]
+                                  ]
+                              <case>
+                                pattern (asmcomp/riscv/selection.ml[37,1592+4]..[37,1592+5])
+                                  Ppat_any
+                                expression (asmcomp/riscv/selection.ml[37,1592+9]..[37,1592+32])
+                                  Pexp_apply
+                                  expression (asmcomp/riscv/selection.ml[37,1592+9]..[37,1592+27])
+                                    Pexp_send "is_immediate"
+                                    expression (asmcomp/riscv/selection.ml[37,1592+9]..[37,1592+14])
+                                      Pexp_ident "super" (asmcomp/riscv/selection.ml[37,1592+9]..[37,1592+14])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/riscv/selection.ml[37,1592+28]..[37,1592+30])
+                                        Pexp_ident "op" (asmcomp/riscv/selection.ml[37,1592+28]..[37,1592+30])
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/riscv/selection.ml[37,1592+31]..[37,1592+32])
+                                        Pexp_ident "n" (asmcomp/riscv/selection.ml[37,1592+31]..[37,1592+32])
+                                  ]
+                            ]
+                      None
+                class_field (asmcomp/riscv/selection.ml[39,1626+0]..[46,1913+23])
+                  Pcf_method Public
+                    "select_addressing" (asmcomp/riscv/selection.ml[39,1626+7]..[39,1626+24])
+                    Concrete Fresh
+                    expression (asmcomp/riscv/selection.ml[39,1626+25]..[46,1913+23]) ghost
+                      Pexp_poly
+                      expression (asmcomp/riscv/selection.ml[39,1626+25]..[46,1913+23]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/riscv/selection.ml[39,1626+25]..[39,1626+26])
+                          Ppat_any
+                        expression (asmcomp/riscv/selection.ml[39,1626+29]..[46,1913+23])
+                          Pexp_function
+                          [
+                            <case>
+                              pattern (asmcomp/riscv/selection.ml[40,1664+4]..[40,1664+43])
+                                Ppat_construct "Cop" (asmcomp/riscv/selection.ml[40,1664+4]..[40,1664+7])
+                                Some
+                                  []
+                                  pattern (asmcomp/riscv/selection.ml[40,1664+7]..[40,1664+43])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/riscv/selection.ml[40,1664+8]..[40,1664+13])
+                                        Ppat_construct "Cadda" (asmcomp/riscv/selection.ml[40,1664+8]..[40,1664+13])
+                                        None
+                                      pattern (asmcomp/riscv/selection.ml[40,1664+15]..[40,1664+39])
+                                        Ppat_construct "::" (asmcomp/riscv/selection.ml[40,1664+16]..[40,1664+39]) ghost
+                                        Some
+                                          []
+                                          pattern (asmcomp/riscv/selection.ml[40,1664+16]..[40,1664+39]) ghost
+                                            Ppat_tuple
+                                            [
+                                              pattern (asmcomp/riscv/selection.ml[40,1664+16]..[40,1664+19])
+                                                Ppat_var "arg" (asmcomp/riscv/selection.ml[40,1664+16]..[40,1664+19])
+                                              pattern (asmcomp/riscv/selection.ml[40,1664+21]..[40,1664+39]) ghost
+                                                Ppat_construct "::" (asmcomp/riscv/selection.ml[40,1664+21]..[40,1664+39]) ghost
+                                                Some
+                                                  []
+                                                  pattern (asmcomp/riscv/selection.ml[40,1664+21]..[40,1664+39]) ghost
+                                                    Ppat_tuple
+                                                    [
+                                                      pattern (asmcomp/riscv/selection.ml[40,1664+21]..[40,1664+38])
+                                                        Ppat_construct "Cconst_int" (asmcomp/riscv/selection.ml[40,1664+21]..[40,1664+31])
+                                                        Some
+                                                          []
+                                                          pattern (asmcomp/riscv/selection.ml[40,1664+32]..[40,1664+38])
+                                                            Ppat_tuple
+                                                            [
+                                                              pattern (asmcomp/riscv/selection.ml[40,1664+33]..[40,1664+34])
+                                                                Ppat_var "n" (asmcomp/riscv/selection.ml[40,1664+33]..[40,1664+34])
+                                                              pattern (asmcomp/riscv/selection.ml[40,1664+36]..[40,1664+37])
+                                                                Ppat_any
+                                                            ]
+                                                      pattern (asmcomp/riscv/selection.ml[40,1664+38]..[40,1664+39]) ghost
+                                                        Ppat_construct "[]" (asmcomp/riscv/selection.ml[40,1664+38]..[40,1664+39]) ghost
+                                                        None
+                                                    ]
+                                            ]
+                                      pattern (asmcomp/riscv/selection.ml[40,1664+41]..[40,1664+42])
+                                        Ppat_any
+                                    ]
+                              <when>
+                                expression (asmcomp/riscv/selection.ml[40,1664+49]..[40,1664+63])
+                                  Pexp_apply
+                                  expression (asmcomp/riscv/selection.ml[40,1664+49]..[40,1664+61])
+                                    Pexp_ident "is_immediate" (asmcomp/riscv/selection.ml[40,1664+49]..[40,1664+61])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/riscv/selection.ml[40,1664+62]..[40,1664+63])
+                                        Pexp_ident "n" (asmcomp/riscv/selection.ml[40,1664+62]..[40,1664+63])
+                                  ]
+                              expression (asmcomp/riscv/selection.ml[41,1731+6]..[41,1731+23])
+                                Pexp_tuple
+                                [
+                                  expression (asmcomp/riscv/selection.ml[41,1731+7]..[41,1731+17])
+                                    Pexp_construct "Iindexed" (asmcomp/riscv/selection.ml[41,1731+7]..[41,1731+15])
+                                    Some
+                                      expression (asmcomp/riscv/selection.ml[41,1731+16]..[41,1731+17])
+                                        Pexp_ident "n" (asmcomp/riscv/selection.ml[41,1731+16]..[41,1731+17])
+                                  expression (asmcomp/riscv/selection.ml[41,1731+19]..[41,1731+22])
+                                    Pexp_ident "arg" (asmcomp/riscv/selection.ml[41,1731+19]..[41,1731+22])
+                                ]
+                            <case>
+                              pattern (asmcomp/riscv/selection.ml[42,1755+4]..[42,1755+69])
+                                Ppat_construct "Cop" (asmcomp/riscv/selection.ml[42,1755+4]..[42,1755+7])
+                                Some
+                                  []
+                                  pattern (asmcomp/riscv/selection.ml[42,1755+7]..[42,1755+69])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/riscv/selection.ml[42,1755+8]..[42,1755+13])
+                                        Ppat_construct "Cadda" (asmcomp/riscv/selection.ml[42,1755+8]..[42,1755+13])
+                                        None
+                                      pattern (asmcomp/riscv/selection.ml[42,1755+15]..[42,1755+63])
+                                        Ppat_construct "::" (asmcomp/riscv/selection.ml[42,1755+16]..[42,1755+63]) ghost
+                                        Some
+                                          []
+                                          pattern (asmcomp/riscv/selection.ml[42,1755+16]..[42,1755+63]) ghost
+                                            Ppat_tuple
+                                            [
+                                              pattern (asmcomp/riscv/selection.ml[42,1755+16]..[42,1755+20])
+                                                Ppat_var "arg1" (asmcomp/riscv/selection.ml[42,1755+16]..[42,1755+20])
+                                              pattern (asmcomp/riscv/selection.ml[42,1755+22]..[42,1755+63]) ghost
+                                                Ppat_construct "::" (asmcomp/riscv/selection.ml[42,1755+22]..[42,1755+63]) ghost
+                                                Some
+                                                  []
+                                                  pattern (asmcomp/riscv/selection.ml[42,1755+22]..[42,1755+63]) ghost
+                                                    Ppat_tuple
+                                                    [
+                                                      pattern (asmcomp/riscv/selection.ml[42,1755+22]..[42,1755+62])
+                                                        Ppat_construct "Cop" (asmcomp/riscv/selection.ml[42,1755+22]..[42,1755+25])
+                                                        Some
+                                                          []
+                                                          pattern (asmcomp/riscv/selection.ml[42,1755+25]..[42,1755+62])
+                                                            Ppat_tuple
+                                                            [
+                                                              pattern (asmcomp/riscv/selection.ml[42,1755+26]..[42,1755+31])
+                                                                Ppat_construct "Caddi" (asmcomp/riscv/selection.ml[42,1755+26]..[42,1755+31])
+                                                                None
+                                                              pattern (asmcomp/riscv/selection.ml[42,1755+33]..[42,1755+58])
+                                                                Ppat_construct "::" (asmcomp/riscv/selection.ml[42,1755+34]..[42,1755+58]) ghost
+                                                                Some
+                                                                  []
+                                                                  pattern (asmcomp/riscv/selection.ml[42,1755+34]..[42,1755+58]) ghost
+                                                                    Ppat_tuple
+                                                                    [
+                                                                      pattern (asmcomp/riscv/selection.ml[42,1755+34]..[42,1755+38])
+Ppat_var "arg2" (asmcomp/riscv/selection.ml[42,1755+34]..[42,1755+38])
+                                                                      pattern (asmcomp/riscv/selection.ml[42,1755+40]..[42,1755+58]) ghost
+Ppat_construct "::" (asmcomp/riscv/selection.ml[42,1755+40]..[42,1755+58]) ghost
+Some
+  []
+  pattern (asmcomp/riscv/selection.ml[42,1755+40]..[42,1755+58]) ghost
+    Ppat_tuple
+    [
+      pattern (asmcomp/riscv/selection.ml[42,1755+40]..[42,1755+57])
+        Ppat_construct "Cconst_int" (asmcomp/riscv/selection.ml[42,1755+40]..[42,1755+50])
+        Some
+          []
+          pattern (asmcomp/riscv/selection.ml[42,1755+51]..[42,1755+57])
+            Ppat_tuple
+            [
+              pattern (asmcomp/riscv/selection.ml[42,1755+52]..[42,1755+53])
+                Ppat_var "n" (asmcomp/riscv/selection.ml[42,1755+52]..[42,1755+53])
+              pattern (asmcomp/riscv/selection.ml[42,1755+55]..[42,1755+56])
+                Ppat_any
+            ]
+      pattern (asmcomp/riscv/selection.ml[42,1755+57]..[42,1755+58]) ghost
+        Ppat_construct "[]" (asmcomp/riscv/selection.ml[42,1755+57]..[42,1755+58]) ghost
+        None
+    ]
+                                                                    ]
+                                                              pattern (asmcomp/riscv/selection.ml[42,1755+60]..[42,1755+61])
+                                                                Ppat_any
+                                                            ]
+                                                      pattern (asmcomp/riscv/selection.ml[42,1755+62]..[42,1755+63]) ghost
+                                                        Ppat_construct "[]" (asmcomp/riscv/selection.ml[42,1755+62]..[42,1755+63]) ghost
+                                                        None
+                                                    ]
+                                            ]
+                                      pattern (asmcomp/riscv/selection.ml[42,1755+65]..[42,1755+68])
+                                        Ppat_var "dbg" (asmcomp/riscv/selection.ml[42,1755+65]..[42,1755+68])
+                                    ]
+                              <when>
+                                expression (asmcomp/riscv/selection.ml[43,1825+9]..[43,1825+23])
+                                  Pexp_apply
+                                  expression (asmcomp/riscv/selection.ml[43,1825+9]..[43,1825+21])
+                                    Pexp_ident "is_immediate" (asmcomp/riscv/selection.ml[43,1825+9]..[43,1825+21])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/riscv/selection.ml[43,1825+22]..[43,1825+23])
+                                        Pexp_ident "n" (asmcomp/riscv/selection.ml[43,1825+22]..[43,1825+23])
+                                  ]
+                              expression (asmcomp/riscv/selection.ml[44,1852+6]..[44,1852+49])
+                                Pexp_tuple
+                                [
+                                  expression (asmcomp/riscv/selection.ml[44,1852+7]..[44,1852+17])
+                                    Pexp_construct "Iindexed" (asmcomp/riscv/selection.ml[44,1852+7]..[44,1852+15])
+                                    Some
+                                      expression (asmcomp/riscv/selection.ml[44,1852+16]..[44,1852+17])
+                                        Pexp_ident "n" (asmcomp/riscv/selection.ml[44,1852+16]..[44,1852+17])
+                                  expression (asmcomp/riscv/selection.ml[44,1852+19]..[44,1852+48])
+                                    Pexp_construct "Cop" (asmcomp/riscv/selection.ml[44,1852+19]..[44,1852+22])
+                                    Some
+                                      expression (asmcomp/riscv/selection.ml[44,1852+22]..[44,1852+48])
+                                        Pexp_tuple
+                                        [
+                                          expression (asmcomp/riscv/selection.ml[44,1852+23]..[44,1852+28])
+                                            Pexp_construct "Caddi" (asmcomp/riscv/selection.ml[44,1852+23]..[44,1852+28])
+                                            None
+                                          expression (asmcomp/riscv/selection.ml[44,1852+30]..[44,1852+42])
+                                            Pexp_construct "::" (asmcomp/riscv/selection.ml[44,1852+31]..[44,1852+42]) ghost
+                                            Some
+                                              expression (asmcomp/riscv/selection.ml[44,1852+31]..[44,1852+42]) ghost
+                                                Pexp_tuple
+                                                [
+                                                  expression (asmcomp/riscv/selection.ml[44,1852+31]..[44,1852+35])
+                                                    Pexp_ident "arg1" (asmcomp/riscv/selection.ml[44,1852+31]..[44,1852+35])
+                                                  expression (asmcomp/riscv/selection.ml[44,1852+37]..[44,1852+42]) ghost
+                                                    Pexp_construct "::" (asmcomp/riscv/selection.ml[44,1852+37]..[44,1852+42]) ghost
+                                                    Some
+                                                      expression (asmcomp/riscv/selection.ml[44,1852+37]..[44,1852+42]) ghost
+                                                        Pexp_tuple
+                                                        [
+                                                          expression (asmcomp/riscv/selection.ml[44,1852+37]..[44,1852+41])
+                                                            Pexp_ident "arg2" (asmcomp/riscv/selection.ml[44,1852+37]..[44,1852+41])
+                                                          expression (asmcomp/riscv/selection.ml[44,1852+41]..[44,1852+42]) ghost
+                                                            Pexp_construct "[]" (asmcomp/riscv/selection.ml[44,1852+41]..[44,1852+42]) ghost
+                                                            None
+                                                        ]
+                                                ]
+                                          expression (asmcomp/riscv/selection.ml[44,1852+44]..[44,1852+47])
+                                            Pexp_ident "dbg" (asmcomp/riscv/selection.ml[44,1852+44]..[44,1852+47])
+                                        ]
+                                ]
+                            <case>
+                              pattern (asmcomp/riscv/selection.ml[45,1902+4]..[45,1902+7])
+                                Ppat_var "arg" (asmcomp/riscv/selection.ml[45,1902+4]..[45,1902+7])
+                              expression (asmcomp/riscv/selection.ml[46,1913+6]..[46,1913+23])
+                                Pexp_tuple
+                                [
+                                  expression (asmcomp/riscv/selection.ml[46,1913+7]..[46,1913+17])
+                                    Pexp_construct "Iindexed" (asmcomp/riscv/selection.ml[46,1913+7]..[46,1913+15])
+                                    Some
+                                      expression (asmcomp/riscv/selection.ml[46,1913+16]..[46,1913+17])
+                                        Pexp_constant PConst_int (0,None)
+                                  expression (asmcomp/riscv/selection.ml[46,1913+19]..[46,1913+22])
+                                    Pexp_ident "arg" (asmcomp/riscv/selection.ml[46,1913+19]..[46,1913+22])
+                                ]
+                          ]
+                      None
+                class_field (asmcomp/riscv/selection.ml[48,1938+0]..[64,2798+40])
+                  Pcf_method Public
+                    "select_operation" (asmcomp/riscv/selection.ml[48,1938+8]..[48,1938+24])
+                    Concrete Override
+                    expression (asmcomp/riscv/selection.ml[48,1938+25]..[64,2798+40]) ghost
+                      Pexp_poly
+                      expression (asmcomp/riscv/selection.ml[48,1938+25]..[64,2798+40]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/riscv/selection.ml[48,1938+25]..[48,1938+27])
+                          Ppat_var "op" (asmcomp/riscv/selection.ml[48,1938+25]..[48,1938+27])
+                        expression (asmcomp/riscv/selection.ml[48,1938+28]..[64,2798+40]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (asmcomp/riscv/selection.ml[48,1938+28]..[48,1938+32])
+                            Ppat_var "args" (asmcomp/riscv/selection.ml[48,1938+28]..[48,1938+32])
+                          expression (asmcomp/riscv/selection.ml[48,1938+33]..[64,2798+40]) ghost
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (asmcomp/riscv/selection.ml[48,1938+33]..[48,1938+36])
+                              Ppat_var "dbg" (asmcomp/riscv/selection.ml[48,1938+33]..[48,1938+36])
+                            expression (asmcomp/riscv/selection.ml[49,1977+2]..[64,2798+40])
+                              Pexp_match
+                              expression (asmcomp/riscv/selection.ml[49,1977+8]..[49,1977+18])
+                                Pexp_tuple
+                                [
+                                  expression (asmcomp/riscv/selection.ml[49,1977+9]..[49,1977+11])
+                                    Pexp_ident "op" (asmcomp/riscv/selection.ml[49,1977+9]..[49,1977+11])
+                                  expression (asmcomp/riscv/selection.ml[49,1977+13]..[49,1977+17])
+                                    Pexp_ident "args" (asmcomp/riscv/selection.ml[49,1977+13]..[49,1977+17])
+                                ]
+                              [
+                                <case>
+                                  pattern (asmcomp/riscv/selection.ml[51,2066+4]..[52,2115+48])
+                                    Ppat_or
+                                    pattern (asmcomp/riscv/selection.ml[51,2066+4]..[51,2066+48])
+                                      Ppat_tuple
+                                      [
+                                        pattern (asmcomp/riscv/selection.ml[51,2066+5]..[51,2066+10])
+                                          Ppat_construct "Caddf" (asmcomp/riscv/selection.ml[51,2066+5]..[51,2066+10])
+                                          None
+                                        pattern (asmcomp/riscv/selection.ml[51,2066+12]..[51,2066+47])
+                                          Ppat_construct "::" (asmcomp/riscv/selection.ml[51,2066+13]..[51,2066+47]) ghost
+                                          Some
+                                            []
+                                            pattern (asmcomp/riscv/selection.ml[51,2066+13]..[51,2066+47]) ghost
+                                              Ppat_tuple
+                                              [
+                                                pattern (asmcomp/riscv/selection.ml[51,2066+13]..[51,2066+40])
+                                                  Ppat_construct "Cop" (asmcomp/riscv/selection.ml[51,2066+13]..[51,2066+16])
+                                                  Some
+                                                    []
+                                                    pattern (asmcomp/riscv/selection.ml[51,2066+16]..[51,2066+40])
+                                                      Ppat_tuple
+                                                      [
+                                                        pattern (asmcomp/riscv/selection.ml[51,2066+17]..[51,2066+22])
+                                                          Ppat_construct "Cmulf" (asmcomp/riscv/selection.ml[51,2066+17]..[51,2066+22])
+                                                          None
+                                                        pattern (asmcomp/riscv/selection.ml[51,2066+24]..[51,2066+36])
+                                                          Ppat_construct "::" (asmcomp/riscv/selection.ml[51,2066+25]..[51,2066+36]) ghost
+                                                          Some
+                                                            []
+                                                            pattern (asmcomp/riscv/selection.ml[51,2066+25]..[51,2066+36]) ghost
+                                                              Ppat_tuple
+                                                              [
+                                                                pattern (asmcomp/riscv/selection.ml[51,2066+25]..[51,2066+29])
+                                                                  Ppat_var "arg1" (asmcomp/riscv/selection.ml[51,2066+25]..[51,2066+29])
+                                                                pattern (asmcomp/riscv/selection.ml[51,2066+31]..[51,2066+36]) ghost
+                                                                  Ppat_construct "::" (asmcomp/riscv/selection.ml[51,2066+31]..[51,2066+36]) ghost
+                                                                  Some
+                                                                    []
+                                                                    pattern (asmcomp/riscv/selection.ml[51,2066+31]..[51,2066+36]) ghost
+                                                                      Ppat_tuple
+                                                                      [
+pattern (asmcomp/riscv/selection.ml[51,2066+31]..[51,2066+35])
+  Ppat_var "arg2" (asmcomp/riscv/selection.ml[51,2066+31]..[51,2066+35])
+pattern (asmcomp/riscv/selection.ml[51,2066+35]..[51,2066+36]) ghost
+  Ppat_construct "[]" (asmcomp/riscv/selection.ml[51,2066+35]..[51,2066+36]) ghost
+  None
+                                                                      ]
+                                                              ]
+                                                        pattern (asmcomp/riscv/selection.ml[51,2066+38]..[51,2066+39])
+                                                          Ppat_any
+                                                      ]
+                                                pattern (asmcomp/riscv/selection.ml[51,2066+42]..[51,2066+47]) ghost
+                                                  Ppat_construct "::" (asmcomp/riscv/selection.ml[51,2066+42]..[51,2066+47]) ghost
+                                                  Some
+                                                    []
+                                                    pattern (asmcomp/riscv/selection.ml[51,2066+42]..[51,2066+47]) ghost
+                                                      Ppat_tuple
+                                                      [
+                                                        pattern (asmcomp/riscv/selection.ml[51,2066+42]..[51,2066+46])
+                                                          Ppat_var "arg3" (asmcomp/riscv/selection.ml[51,2066+42]..[51,2066+46])
+                                                        pattern (asmcomp/riscv/selection.ml[51,2066+46]..[51,2066+47]) ghost
+                                                          Ppat_construct "[]" (asmcomp/riscv/selection.ml[51,2066+46]..[51,2066+47]) ghost
+                                                          None
+                                                      ]
+                                              ]
+                                      ]
+                                    pattern (asmcomp/riscv/selection.ml[52,2115+4]..[52,2115+48])
+                                      Ppat_tuple
+                                      [
+                                        pattern (asmcomp/riscv/selection.ml[52,2115+5]..[52,2115+10])
+                                          Ppat_construct "Caddf" (asmcomp/riscv/selection.ml[52,2115+5]..[52,2115+10])
+                                          None
+                                        pattern (asmcomp/riscv/selection.ml[52,2115+12]..[52,2115+47])
+                                          Ppat_construct "::" (asmcomp/riscv/selection.ml[52,2115+13]..[52,2115+47]) ghost
+                                          Some
+                                            []
+                                            pattern (asmcomp/riscv/selection.ml[52,2115+13]..[52,2115+47]) ghost
+                                              Ppat_tuple
+                                              [
+                                                pattern (asmcomp/riscv/selection.ml[52,2115+13]..[52,2115+17])
+                                                  Ppat_var "arg3" (asmcomp/riscv/selection.ml[52,2115+13]..[52,2115+17])
+                                                pattern (asmcomp/riscv/selection.ml[52,2115+19]..[52,2115+47]) ghost
+                                                  Ppat_construct "::" (asmcomp/riscv/selection.ml[52,2115+19]..[52,2115+47]) ghost
+                                                  Some
+                                                    []
+                                                    pattern (asmcomp/riscv/selection.ml[52,2115+19]..[52,2115+47]) ghost
+                                                      Ppat_tuple
+                                                      [
+                                                        pattern (asmcomp/riscv/selection.ml[52,2115+19]..[52,2115+46])
+                                                          Ppat_construct "Cop" (asmcomp/riscv/selection.ml[52,2115+19]..[52,2115+22])
+                                                          Some
+                                                            []
+                                                            pattern (asmcomp/riscv/selection.ml[52,2115+22]..[52,2115+46])
+                                                              Ppat_tuple
+                                                              [
+                                                                pattern (asmcomp/riscv/selection.ml[52,2115+23]..[52,2115+28])
+                                                                  Ppat_construct "Cmulf" (asmcomp/riscv/selection.ml[52,2115+23]..[52,2115+28])
+                                                                  None
+                                                                pattern (asmcomp/riscv/selection.ml[52,2115+30]..[52,2115+42])
+                                                                  Ppat_construct "::" (asmcomp/riscv/selection.ml[52,2115+31]..[52,2115+42]) ghost
+                                                                  Some
+                                                                    []
+                                                                    pattern (asmcomp/riscv/selection.ml[52,2115+31]..[52,2115+42]) ghost
+                                                                      Ppat_tuple
+                                                                      [
+pattern (asmcomp/riscv/selection.ml[52,2115+31]..[52,2115+35])
+  Ppat_var "arg1" (asmcomp/riscv/selection.ml[52,2115+31]..[52,2115+35])
+pattern (asmcomp/riscv/selection.ml[52,2115+37]..[52,2115+42]) ghost
+  Ppat_construct "::" (asmcomp/riscv/selection.ml[52,2115+37]..[52,2115+42]) ghost
+  Some
+    []
+    pattern (asmcomp/riscv/selection.ml[52,2115+37]..[52,2115+42]) ghost
+      Ppat_tuple
+      [
+        pattern (asmcomp/riscv/selection.ml[52,2115+37]..[52,2115+41])
+          Ppat_var "arg2" (asmcomp/riscv/selection.ml[52,2115+37]..[52,2115+41])
+        pattern (asmcomp/riscv/selection.ml[52,2115+41]..[52,2115+42]) ghost
+          Ppat_construct "[]" (asmcomp/riscv/selection.ml[52,2115+41]..[52,2115+42]) ghost
+          None
+      ]
+                                                                      ]
+                                                                pattern (asmcomp/riscv/selection.ml[52,2115+44]..[52,2115+45])
+                                                                  Ppat_any
+                                                              ]
+                                                        pattern (asmcomp/riscv/selection.ml[52,2115+46]..[52,2115+47]) ghost
+                                                          Ppat_construct "[]" (asmcomp/riscv/selection.ml[52,2115+46]..[52,2115+47]) ghost
+                                                          None
+                                                      ]
+                                              ]
+                                      ]
+                                  expression (asmcomp/riscv/selection.ml[53,2167+6]..[53,2167+55])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/riscv/selection.ml[53,2167+7]..[53,2167+34])
+                                        Pexp_construct "Ispecific" (asmcomp/riscv/selection.ml[53,2167+7]..[53,2167+16])
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[53,2167+17]..[53,2167+34])
+                                            Pexp_construct "Imultaddf" (asmcomp/riscv/selection.ml[53,2167+18]..[53,2167+27])
+                                            Some
+                                              expression (asmcomp/riscv/selection.ml[53,2167+28]..[53,2167+33])
+                                                Pexp_construct "false" (asmcomp/riscv/selection.ml[53,2167+28]..[53,2167+33])
+                                                None
+                                      expression (asmcomp/riscv/selection.ml[53,2167+36]..[53,2167+54])
+                                        Pexp_construct "::" (asmcomp/riscv/selection.ml[53,2167+37]..[53,2167+54]) ghost
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[53,2167+37]..[53,2167+54]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (asmcomp/riscv/selection.ml[53,2167+37]..[53,2167+41])
+                                                Pexp_ident "arg1" (asmcomp/riscv/selection.ml[53,2167+37]..[53,2167+41])
+                                              expression (asmcomp/riscv/selection.ml[53,2167+43]..[53,2167+54]) ghost
+                                                Pexp_construct "::" (asmcomp/riscv/selection.ml[53,2167+43]..[53,2167+54]) ghost
+                                                Some
+                                                  expression (asmcomp/riscv/selection.ml[53,2167+43]..[53,2167+54]) ghost
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (asmcomp/riscv/selection.ml[53,2167+43]..[53,2167+47])
+                                                        Pexp_ident "arg2" (asmcomp/riscv/selection.ml[53,2167+43]..[53,2167+47])
+                                                      expression (asmcomp/riscv/selection.ml[53,2167+49]..[53,2167+54]) ghost
+                                                        Pexp_construct "::" (asmcomp/riscv/selection.ml[53,2167+49]..[53,2167+54]) ghost
+                                                        Some
+                                                          expression (asmcomp/riscv/selection.ml[53,2167+49]..[53,2167+54]) ghost
+                                                            Pexp_tuple
+                                                            [
+                                                              expression (asmcomp/riscv/selection.ml[53,2167+49]..[53,2167+53])
+                                                                Pexp_ident "arg3" (asmcomp/riscv/selection.ml[53,2167+49]..[53,2167+53])
+                                                              expression (asmcomp/riscv/selection.ml[53,2167+53]..[53,2167+54]) ghost
+                                                                Pexp_construct "[]" (asmcomp/riscv/selection.ml[53,2167+53]..[53,2167+54]) ghost
+                                                                None
+                                                            ]
+                                                    ]
+                                            ]
+                                    ]
+                                <case>
+                                  pattern (asmcomp/riscv/selection.ml[54,2223+4]..[54,2223+48])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/riscv/selection.ml[54,2223+5]..[54,2223+10])
+                                        Ppat_construct "Csubf" (asmcomp/riscv/selection.ml[54,2223+5]..[54,2223+10])
+                                        None
+                                      pattern (asmcomp/riscv/selection.ml[54,2223+12]..[54,2223+47])
+                                        Ppat_construct "::" (asmcomp/riscv/selection.ml[54,2223+13]..[54,2223+47]) ghost
+                                        Some
+                                          []
+                                          pattern (asmcomp/riscv/selection.ml[54,2223+13]..[54,2223+47]) ghost
+                                            Ppat_tuple
+                                            [
+                                              pattern (asmcomp/riscv/selection.ml[54,2223+13]..[54,2223+40])
+                                                Ppat_construct "Cop" (asmcomp/riscv/selection.ml[54,2223+13]..[54,2223+16])
+                                                Some
+                                                  []
+                                                  pattern (asmcomp/riscv/selection.ml[54,2223+16]..[54,2223+40])
+                                                    Ppat_tuple
+                                                    [
+                                                      pattern (asmcomp/riscv/selection.ml[54,2223+17]..[54,2223+22])
+                                                        Ppat_construct "Cmulf" (asmcomp/riscv/selection.ml[54,2223+17]..[54,2223+22])
+                                                        None
+                                                      pattern (asmcomp/riscv/selection.ml[54,2223+24]..[54,2223+36])
+                                                        Ppat_construct "::" (asmcomp/riscv/selection.ml[54,2223+25]..[54,2223+36]) ghost
+                                                        Some
+                                                          []
+                                                          pattern (asmcomp/riscv/selection.ml[54,2223+25]..[54,2223+36]) ghost
+                                                            Ppat_tuple
+                                                            [
+                                                              pattern (asmcomp/riscv/selection.ml[54,2223+25]..[54,2223+29])
+                                                                Ppat_var "arg1" (asmcomp/riscv/selection.ml[54,2223+25]..[54,2223+29])
+                                                              pattern (asmcomp/riscv/selection.ml[54,2223+31]..[54,2223+36]) ghost
+                                                                Ppat_construct "::" (asmcomp/riscv/selection.ml[54,2223+31]..[54,2223+36]) ghost
+                                                                Some
+                                                                  []
+                                                                  pattern (asmcomp/riscv/selection.ml[54,2223+31]..[54,2223+36]) ghost
+                                                                    Ppat_tuple
+                                                                    [
+                                                                      pattern (asmcomp/riscv/selection.ml[54,2223+31]..[54,2223+35])
+Ppat_var "arg2" (asmcomp/riscv/selection.ml[54,2223+31]..[54,2223+35])
+                                                                      pattern (asmcomp/riscv/selection.ml[54,2223+35]..[54,2223+36]) ghost
+Ppat_construct "[]" (asmcomp/riscv/selection.ml[54,2223+35]..[54,2223+36]) ghost
+None
+                                                                    ]
+                                                            ]
+                                                      pattern (asmcomp/riscv/selection.ml[54,2223+38]..[54,2223+39])
+                                                        Ppat_any
+                                                    ]
+                                              pattern (asmcomp/riscv/selection.ml[54,2223+42]..[54,2223+47]) ghost
+                                                Ppat_construct "::" (asmcomp/riscv/selection.ml[54,2223+42]..[54,2223+47]) ghost
+                                                Some
+                                                  []
+                                                  pattern (asmcomp/riscv/selection.ml[54,2223+42]..[54,2223+47]) ghost
+                                                    Ppat_tuple
+                                                    [
+                                                      pattern (asmcomp/riscv/selection.ml[54,2223+42]..[54,2223+46])
+                                                        Ppat_var "arg3" (asmcomp/riscv/selection.ml[54,2223+42]..[54,2223+46])
+                                                      pattern (asmcomp/riscv/selection.ml[54,2223+46]..[54,2223+47]) ghost
+                                                        Ppat_construct "[]" (asmcomp/riscv/selection.ml[54,2223+46]..[54,2223+47]) ghost
+                                                        None
+                                                    ]
+                                            ]
+                                    ]
+                                  expression (asmcomp/riscv/selection.ml[55,2275+6]..[55,2275+55])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/riscv/selection.ml[55,2275+7]..[55,2275+34])
+                                        Pexp_construct "Ispecific" (asmcomp/riscv/selection.ml[55,2275+7]..[55,2275+16])
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[55,2275+17]..[55,2275+34])
+                                            Pexp_construct "Imultsubf" (asmcomp/riscv/selection.ml[55,2275+18]..[55,2275+27])
+                                            Some
+                                              expression (asmcomp/riscv/selection.ml[55,2275+28]..[55,2275+33])
+                                                Pexp_construct "false" (asmcomp/riscv/selection.ml[55,2275+28]..[55,2275+33])
+                                                None
+                                      expression (asmcomp/riscv/selection.ml[55,2275+36]..[55,2275+54])
+                                        Pexp_construct "::" (asmcomp/riscv/selection.ml[55,2275+37]..[55,2275+54]) ghost
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[55,2275+37]..[55,2275+54]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (asmcomp/riscv/selection.ml[55,2275+37]..[55,2275+41])
+                                                Pexp_ident "arg1" (asmcomp/riscv/selection.ml[55,2275+37]..[55,2275+41])
+                                              expression (asmcomp/riscv/selection.ml[55,2275+43]..[55,2275+54]) ghost
+                                                Pexp_construct "::" (asmcomp/riscv/selection.ml[55,2275+43]..[55,2275+54]) ghost
+                                                Some
+                                                  expression (asmcomp/riscv/selection.ml[55,2275+43]..[55,2275+54]) ghost
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (asmcomp/riscv/selection.ml[55,2275+43]..[55,2275+47])
+                                                        Pexp_ident "arg2" (asmcomp/riscv/selection.ml[55,2275+43]..[55,2275+47])
+                                                      expression (asmcomp/riscv/selection.ml[55,2275+49]..[55,2275+54]) ghost
+                                                        Pexp_construct "::" (asmcomp/riscv/selection.ml[55,2275+49]..[55,2275+54]) ghost
+                                                        Some
+                                                          expression (asmcomp/riscv/selection.ml[55,2275+49]..[55,2275+54]) ghost
+                                                            Pexp_tuple
+                                                            [
+                                                              expression (asmcomp/riscv/selection.ml[55,2275+49]..[55,2275+53])
+                                                                Pexp_ident "arg3" (asmcomp/riscv/selection.ml[55,2275+49]..[55,2275+53])
+                                                              expression (asmcomp/riscv/selection.ml[55,2275+53]..[55,2275+54]) ghost
+                                                                Pexp_construct "[]" (asmcomp/riscv/selection.ml[55,2275+53]..[55,2275+54]) ghost
+                                                                None
+                                                            ]
+                                                    ]
+                                            ]
+                                    ]
+                                <case>
+                                  pattern (asmcomp/riscv/selection.ml[56,2331+4]..[56,2331+65])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/riscv/selection.ml[56,2331+5]..[56,2331+10])
+                                        Ppat_construct "Cnegf" (asmcomp/riscv/selection.ml[56,2331+5]..[56,2331+10])
+                                        None
+                                      pattern (asmcomp/riscv/selection.ml[56,2331+12]..[56,2331+64])
+                                        Ppat_construct "::" (asmcomp/riscv/selection.ml[56,2331+13]..[56,2331+64]) ghost
+                                        Some
+                                          []
+                                          pattern (asmcomp/riscv/selection.ml[56,2331+13]..[56,2331+64]) ghost
+                                            Ppat_tuple
+                                            [
+                                              pattern (asmcomp/riscv/selection.ml[56,2331+13]..[56,2331+63])
+                                                Ppat_construct "Cop" (asmcomp/riscv/selection.ml[56,2331+13]..[56,2331+16])
+                                                Some
+                                                  []
+                                                  pattern (asmcomp/riscv/selection.ml[56,2331+16]..[56,2331+63])
+                                                    Ppat_tuple
+                                                    [
+                                                      pattern (asmcomp/riscv/selection.ml[56,2331+17]..[56,2331+22])
+                                                        Ppat_construct "Csubf" (asmcomp/riscv/selection.ml[56,2331+17]..[56,2331+22])
+                                                        None
+                                                      pattern (asmcomp/riscv/selection.ml[56,2331+24]..[56,2331+59])
+                                                        Ppat_construct "::" (asmcomp/riscv/selection.ml[56,2331+25]..[56,2331+59]) ghost
+                                                        Some
+                                                          []
+                                                          pattern (asmcomp/riscv/selection.ml[56,2331+25]..[56,2331+59]) ghost
+                                                            Ppat_tuple
+                                                            [
+                                                              pattern (asmcomp/riscv/selection.ml[56,2331+25]..[56,2331+52])
+                                                                Ppat_construct "Cop" (asmcomp/riscv/selection.ml[56,2331+25]..[56,2331+28])
+                                                                Some
+                                                                  []
+                                                                  pattern (asmcomp/riscv/selection.ml[56,2331+28]..[56,2331+52])
+                                                                    Ppat_tuple
+                                                                    [
+                                                                      pattern (asmcomp/riscv/selection.ml[56,2331+29]..[56,2331+34])
+Ppat_construct "Cmulf" (asmcomp/riscv/selection.ml[56,2331+29]..[56,2331+34])
+None
+                                                                      pattern (asmcomp/riscv/selection.ml[56,2331+36]..[56,2331+48])
+Ppat_construct "::" (asmcomp/riscv/selection.ml[56,2331+37]..[56,2331+48]) ghost
+Some
+  []
+  pattern (asmcomp/riscv/selection.ml[56,2331+37]..[56,2331+48]) ghost
+    Ppat_tuple
+    [
+      pattern (asmcomp/riscv/selection.ml[56,2331+37]..[56,2331+41])
+        Ppat_var "arg1" (asmcomp/riscv/selection.ml[56,2331+37]..[56,2331+41])
+      pattern (asmcomp/riscv/selection.ml[56,2331+43]..[56,2331+48]) ghost
+        Ppat_construct "::" (asmcomp/riscv/selection.ml[56,2331+43]..[56,2331+48]) ghost
+        Some
+          []
+          pattern (asmcomp/riscv/selection.ml[56,2331+43]..[56,2331+48]) ghost
+            Ppat_tuple
+            [
+              pattern (asmcomp/riscv/selection.ml[56,2331+43]..[56,2331+47])
+                Ppat_var "arg2" (asmcomp/riscv/selection.ml[56,2331+43]..[56,2331+47])
+              pattern (asmcomp/riscv/selection.ml[56,2331+47]..[56,2331+48]) ghost
+                Ppat_construct "[]" (asmcomp/riscv/selection.ml[56,2331+47]..[56,2331+48]) ghost
+                None
+            ]
+    ]
+                                                                      pattern (asmcomp/riscv/selection.ml[56,2331+50]..[56,2331+51])
+Ppat_any
+                                                                    ]
+                                                              pattern (asmcomp/riscv/selection.ml[56,2331+54]..[56,2331+59]) ghost
+                                                                Ppat_construct "::" (asmcomp/riscv/selection.ml[56,2331+54]..[56,2331+59]) ghost
+                                                                Some
+                                                                  []
+                                                                  pattern (asmcomp/riscv/selection.ml[56,2331+54]..[56,2331+59]) ghost
+                                                                    Ppat_tuple
+                                                                    [
+                                                                      pattern (asmcomp/riscv/selection.ml[56,2331+54]..[56,2331+58])
+Ppat_var "arg3" (asmcomp/riscv/selection.ml[56,2331+54]..[56,2331+58])
+                                                                      pattern (asmcomp/riscv/selection.ml[56,2331+58]..[56,2331+59]) ghost
+Ppat_construct "[]" (asmcomp/riscv/selection.ml[56,2331+58]..[56,2331+59]) ghost
+None
+                                                                    ]
+                                                            ]
+                                                      pattern (asmcomp/riscv/selection.ml[56,2331+61]..[56,2331+62])
+                                                        Ppat_any
+                                                    ]
+                                              pattern (asmcomp/riscv/selection.ml[56,2331+63]..[56,2331+64]) ghost
+                                                Ppat_construct "[]" (asmcomp/riscv/selection.ml[56,2331+63]..[56,2331+64]) ghost
+                                                None
+                                            ]
+                                    ]
+                                  expression (asmcomp/riscv/selection.ml[57,2400+6]..[57,2400+54])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/riscv/selection.ml[57,2400+7]..[57,2400+33])
+                                        Pexp_construct "Ispecific" (asmcomp/riscv/selection.ml[57,2400+7]..[57,2400+16])
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[57,2400+17]..[57,2400+33])
+                                            Pexp_construct "Imultsubf" (asmcomp/riscv/selection.ml[57,2400+18]..[57,2400+27])
+                                            Some
+                                              expression (asmcomp/riscv/selection.ml[57,2400+28]..[57,2400+32])
+                                                Pexp_construct "true" (asmcomp/riscv/selection.ml[57,2400+28]..[57,2400+32])
+                                                None
+                                      expression (asmcomp/riscv/selection.ml[57,2400+35]..[57,2400+53])
+                                        Pexp_construct "::" (asmcomp/riscv/selection.ml[57,2400+36]..[57,2400+53]) ghost
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[57,2400+36]..[57,2400+53]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (asmcomp/riscv/selection.ml[57,2400+36]..[57,2400+40])
+                                                Pexp_ident "arg1" (asmcomp/riscv/selection.ml[57,2400+36]..[57,2400+40])
+                                              expression (asmcomp/riscv/selection.ml[57,2400+42]..[57,2400+53]) ghost
+                                                Pexp_construct "::" (asmcomp/riscv/selection.ml[57,2400+42]..[57,2400+53]) ghost
+                                                Some
+                                                  expression (asmcomp/riscv/selection.ml[57,2400+42]..[57,2400+53]) ghost
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (asmcomp/riscv/selection.ml[57,2400+42]..[57,2400+46])
+                                                        Pexp_ident "arg2" (asmcomp/riscv/selection.ml[57,2400+42]..[57,2400+46])
+                                                      expression (asmcomp/riscv/selection.ml[57,2400+48]..[57,2400+53]) ghost
+                                                        Pexp_construct "::" (asmcomp/riscv/selection.ml[57,2400+48]..[57,2400+53]) ghost
+                                                        Some
+                                                          expression (asmcomp/riscv/selection.ml[57,2400+48]..[57,2400+53]) ghost
+                                                            Pexp_tuple
+                                                            [
+                                                              expression (asmcomp/riscv/selection.ml[57,2400+48]..[57,2400+52])
+                                                                Pexp_ident "arg3" (asmcomp/riscv/selection.ml[57,2400+48]..[57,2400+52])
+                                                              expression (asmcomp/riscv/selection.ml[57,2400+52]..[57,2400+53]) ghost
+                                                                Pexp_construct "[]" (asmcomp/riscv/selection.ml[57,2400+52]..[57,2400+53]) ghost
+                                                                None
+                                                            ]
+                                                    ]
+                                            ]
+                                    ]
+                                <case>
+                                  pattern (asmcomp/riscv/selection.ml[58,2455+4]..[58,2455+65])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/riscv/selection.ml[58,2455+5]..[58,2455+10])
+                                        Ppat_construct "Cnegf" (asmcomp/riscv/selection.ml[58,2455+5]..[58,2455+10])
+                                        None
+                                      pattern (asmcomp/riscv/selection.ml[58,2455+12]..[58,2455+64])
+                                        Ppat_construct "::" (asmcomp/riscv/selection.ml[58,2455+13]..[58,2455+64]) ghost
+                                        Some
+                                          []
+                                          pattern (asmcomp/riscv/selection.ml[58,2455+13]..[58,2455+64]) ghost
+                                            Ppat_tuple
+                                            [
+                                              pattern (asmcomp/riscv/selection.ml[58,2455+13]..[58,2455+63])
+                                                Ppat_construct "Cop" (asmcomp/riscv/selection.ml[58,2455+13]..[58,2455+16])
+                                                Some
+                                                  []
+                                                  pattern (asmcomp/riscv/selection.ml[58,2455+16]..[58,2455+63])
+                                                    Ppat_tuple
+                                                    [
+                                                      pattern (asmcomp/riscv/selection.ml[58,2455+17]..[58,2455+22])
+                                                        Ppat_construct "Caddf" (asmcomp/riscv/selection.ml[58,2455+17]..[58,2455+22])
+                                                        None
+                                                      pattern (asmcomp/riscv/selection.ml[58,2455+24]..[58,2455+59])
+                                                        Ppat_construct "::" (asmcomp/riscv/selection.ml[58,2455+25]..[58,2455+59]) ghost
+                                                        Some
+                                                          []
+                                                          pattern (asmcomp/riscv/selection.ml[58,2455+25]..[58,2455+59]) ghost
+                                                            Ppat_tuple
+                                                            [
+                                                              pattern (asmcomp/riscv/selection.ml[58,2455+25]..[58,2455+52])
+                                                                Ppat_construct "Cop" (asmcomp/riscv/selection.ml[58,2455+25]..[58,2455+28])
+                                                                Some
+                                                                  []
+                                                                  pattern (asmcomp/riscv/selection.ml[58,2455+28]..[58,2455+52])
+                                                                    Ppat_tuple
+                                                                    [
+                                                                      pattern (asmcomp/riscv/selection.ml[58,2455+29]..[58,2455+34])
+Ppat_construct "Cmulf" (asmcomp/riscv/selection.ml[58,2455+29]..[58,2455+34])
+None
+                                                                      pattern (asmcomp/riscv/selection.ml[58,2455+36]..[58,2455+48])
+Ppat_construct "::" (asmcomp/riscv/selection.ml[58,2455+37]..[58,2455+48]) ghost
+Some
+  []
+  pattern (asmcomp/riscv/selection.ml[58,2455+37]..[58,2455+48]) ghost
+    Ppat_tuple
+    [
+      pattern (asmcomp/riscv/selection.ml[58,2455+37]..[58,2455+41])
+        Ppat_var "arg1" (asmcomp/riscv/selection.ml[58,2455+37]..[58,2455+41])
+      pattern (asmcomp/riscv/selection.ml[58,2455+43]..[58,2455+48]) ghost
+        Ppat_construct "::" (asmcomp/riscv/selection.ml[58,2455+43]..[58,2455+48]) ghost
+        Some
+          []
+          pattern (asmcomp/riscv/selection.ml[58,2455+43]..[58,2455+48]) ghost
+            Ppat_tuple
+            [
+              pattern (asmcomp/riscv/selection.ml[58,2455+43]..[58,2455+47])
+                Ppat_var "arg2" (asmcomp/riscv/selection.ml[58,2455+43]..[58,2455+47])
+              pattern (asmcomp/riscv/selection.ml[58,2455+47]..[58,2455+48]) ghost
+                Ppat_construct "[]" (asmcomp/riscv/selection.ml[58,2455+47]..[58,2455+48]) ghost
+                None
+            ]
+    ]
+                                                                      pattern (asmcomp/riscv/selection.ml[58,2455+50]..[58,2455+51])
+Ppat_any
+                                                                    ]
+                                                              pattern (asmcomp/riscv/selection.ml[58,2455+54]..[58,2455+59]) ghost
+                                                                Ppat_construct "::" (asmcomp/riscv/selection.ml[58,2455+54]..[58,2455+59]) ghost
+                                                                Some
+                                                                  []
+                                                                  pattern (asmcomp/riscv/selection.ml[58,2455+54]..[58,2455+59]) ghost
+                                                                    Ppat_tuple
+                                                                    [
+                                                                      pattern (asmcomp/riscv/selection.ml[58,2455+54]..[58,2455+58])
+Ppat_var "arg3" (asmcomp/riscv/selection.ml[58,2455+54]..[58,2455+58])
+                                                                      pattern (asmcomp/riscv/selection.ml[58,2455+58]..[58,2455+59]) ghost
+Ppat_construct "[]" (asmcomp/riscv/selection.ml[58,2455+58]..[58,2455+59]) ghost
+None
+                                                                    ]
+                                                            ]
+                                                      pattern (asmcomp/riscv/selection.ml[58,2455+61]..[58,2455+62])
+                                                        Ppat_any
+                                                    ]
+                                              pattern (asmcomp/riscv/selection.ml[58,2455+63]..[58,2455+64]) ghost
+                                                Ppat_construct "[]" (asmcomp/riscv/selection.ml[58,2455+63]..[58,2455+64]) ghost
+                                                None
+                                            ]
+                                    ]
+                                  expression (asmcomp/riscv/selection.ml[59,2524+6]..[59,2524+54])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/riscv/selection.ml[59,2524+7]..[59,2524+33])
+                                        Pexp_construct "Ispecific" (asmcomp/riscv/selection.ml[59,2524+7]..[59,2524+16])
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[59,2524+17]..[59,2524+33])
+                                            Pexp_construct "Imultaddf" (asmcomp/riscv/selection.ml[59,2524+18]..[59,2524+27])
+                                            Some
+                                              expression (asmcomp/riscv/selection.ml[59,2524+28]..[59,2524+32])
+                                                Pexp_construct "true" (asmcomp/riscv/selection.ml[59,2524+28]..[59,2524+32])
+                                                None
+                                      expression (asmcomp/riscv/selection.ml[59,2524+35]..[59,2524+53])
+                                        Pexp_construct "::" (asmcomp/riscv/selection.ml[59,2524+36]..[59,2524+53]) ghost
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[59,2524+36]..[59,2524+53]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (asmcomp/riscv/selection.ml[59,2524+36]..[59,2524+40])
+                                                Pexp_ident "arg1" (asmcomp/riscv/selection.ml[59,2524+36]..[59,2524+40])
+                                              expression (asmcomp/riscv/selection.ml[59,2524+42]..[59,2524+53]) ghost
+                                                Pexp_construct "::" (asmcomp/riscv/selection.ml[59,2524+42]..[59,2524+53]) ghost
+                                                Some
+                                                  expression (asmcomp/riscv/selection.ml[59,2524+42]..[59,2524+53]) ghost
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (asmcomp/riscv/selection.ml[59,2524+42]..[59,2524+46])
+                                                        Pexp_ident "arg2" (asmcomp/riscv/selection.ml[59,2524+42]..[59,2524+46])
+                                                      expression (asmcomp/riscv/selection.ml[59,2524+48]..[59,2524+53]) ghost
+                                                        Pexp_construct "::" (asmcomp/riscv/selection.ml[59,2524+48]..[59,2524+53]) ghost
+                                                        Some
+                                                          expression (asmcomp/riscv/selection.ml[59,2524+48]..[59,2524+53]) ghost
+                                                            Pexp_tuple
+                                                            [
+                                                              expression (asmcomp/riscv/selection.ml[59,2524+48]..[59,2524+52])
+                                                                Pexp_ident "arg3" (asmcomp/riscv/selection.ml[59,2524+48]..[59,2524+52])
+                                                              expression (asmcomp/riscv/selection.ml[59,2524+52]..[59,2524+53]) ghost
+                                                                Pexp_construct "[]" (asmcomp/riscv/selection.ml[59,2524+52]..[59,2524+53]) ghost
+                                                                None
+                                                            ]
+                                                    ]
+                                            ]
+                                    ]
+                                <case>
+                                  pattern (asmcomp/riscv/selection.ml[60,2579+4]..[60,2579+76])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/riscv/selection.ml[60,2579+5]..[60,2579+61])
+                                        Ppat_construct "Cstore" (asmcomp/riscv/selection.ml[60,2579+5]..[60,2579+11])
+                                        Some
+                                          []
+                                          pattern (asmcomp/riscv/selection.ml[60,2579+12]..[60,2579+61])
+                                            Ppat_tuple
+                                            [
+                                              pattern (asmcomp/riscv/selection.ml[60,2579+13]..[60,2579+48])
+                                                Ppat_alias "memory_chunk" (asmcomp/riscv/selection.ml[60,2579+36]..[60,2579+48])
+                                                pattern (asmcomp/riscv/selection.ml[60,2579+13]..[60,2579+32])
+                                                  Ppat_or
+                                                  pattern (asmcomp/riscv/selection.ml[60,2579+13]..[60,2579+21])
+                                                    Ppat_construct "Word_int" (asmcomp/riscv/selection.ml[60,2579+13]..[60,2579+21])
+                                                    None
+                                                  pattern (asmcomp/riscv/selection.ml[60,2579+24]..[60,2579+32])
+                                                    Ppat_construct "Word_val" (asmcomp/riscv/selection.ml[60,2579+24]..[60,2579+32])
+                                                    None
+                                              pattern (asmcomp/riscv/selection.ml[60,2579+50]..[60,2579+60])
+                                                Ppat_construct "Assignment" (asmcomp/riscv/selection.ml[60,2579+50]..[60,2579+60])
+                                                None
+                                            ]
+                                      pattern (asmcomp/riscv/selection.ml[60,2579+63]..[60,2579+75])
+                                        Ppat_construct "::" (asmcomp/riscv/selection.ml[60,2579+64]..[60,2579+75]) ghost
+                                        Some
+                                          []
+                                          pattern (asmcomp/riscv/selection.ml[60,2579+64]..[60,2579+75]) ghost
+                                            Ppat_tuple
+                                            [
+                                              pattern (asmcomp/riscv/selection.ml[60,2579+64]..[60,2579+68])
+                                                Ppat_var "arg1" (asmcomp/riscv/selection.ml[60,2579+64]..[60,2579+68])
+                                              pattern (asmcomp/riscv/selection.ml[60,2579+70]..[60,2579+75]) ghost
+                                                Ppat_construct "::" (asmcomp/riscv/selection.ml[60,2579+70]..[60,2579+75]) ghost
+                                                Some
+                                                  []
+                                                  pattern (asmcomp/riscv/selection.ml[60,2579+70]..[60,2579+75]) ghost
+                                                    Ppat_tuple
+                                                    [
+                                                      pattern (asmcomp/riscv/selection.ml[60,2579+70]..[60,2579+74])
+                                                        Ppat_var "arg2" (asmcomp/riscv/selection.ml[60,2579+70]..[60,2579+74])
+                                                      pattern (asmcomp/riscv/selection.ml[60,2579+74]..[60,2579+75]) ghost
+                                                        Ppat_construct "[]" (asmcomp/riscv/selection.ml[60,2579+74]..[60,2579+75]) ghost
+                                                        None
+                                                    ]
+                                            ]
+                                    ]
+                                  expression (asmcomp/riscv/selection.ml[62,2727+6]..[62,2727+61])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/riscv/selection.ml[62,2727+7]..[62,2727+46])
+                                        Pexp_construct "Istore" (asmcomp/riscv/selection.ml[62,2727+7]..[62,2727+13])
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[62,2727+14]..[62,2727+46])
+                                            Pexp_tuple
+                                            [
+                                              expression (asmcomp/riscv/selection.ml[62,2727+15]..[62,2727+27])
+                                                Pexp_ident "memory_chunk" (asmcomp/riscv/selection.ml[62,2727+15]..[62,2727+27])
+                                              expression (asmcomp/riscv/selection.ml[62,2727+29]..[62,2727+39])
+                                                Pexp_construct "Iindexed" (asmcomp/riscv/selection.ml[62,2727+29]..[62,2727+37])
+                                                Some
+                                                  expression (asmcomp/riscv/selection.ml[62,2727+38]..[62,2727+39])
+                                                    Pexp_constant PConst_int (0,None)
+                                              expression (asmcomp/riscv/selection.ml[62,2727+41]..[62,2727+45])
+                                                Pexp_construct "true" (asmcomp/riscv/selection.ml[62,2727+41]..[62,2727+45])
+                                                None
+                                            ]
+                                      expression (asmcomp/riscv/selection.ml[62,2727+48]..[62,2727+60])
+                                        Pexp_construct "::" (asmcomp/riscv/selection.ml[62,2727+49]..[62,2727+60]) ghost
+                                        Some
+                                          expression (asmcomp/riscv/selection.ml[62,2727+49]..[62,2727+60]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (asmcomp/riscv/selection.ml[62,2727+49]..[62,2727+53])
+                                                Pexp_ident "arg2" (asmcomp/riscv/selection.ml[62,2727+49]..[62,2727+53])
+                                              expression (asmcomp/riscv/selection.ml[62,2727+55]..[62,2727+60]) ghost
+                                                Pexp_construct "::" (asmcomp/riscv/selection.ml[62,2727+55]..[62,2727+60]) ghost
+                                                Some
+                                                  expression (asmcomp/riscv/selection.ml[62,2727+55]..[62,2727+60]) ghost
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (asmcomp/riscv/selection.ml[62,2727+55]..[62,2727+59])
+                                                        Pexp_ident "arg1" (asmcomp/riscv/selection.ml[62,2727+55]..[62,2727+59])
+                                                      expression (asmcomp/riscv/selection.ml[62,2727+59]..[62,2727+60]) ghost
+                                                        Pexp_construct "[]" (asmcomp/riscv/selection.ml[62,2727+59]..[62,2727+60]) ghost
+                                                        None
+                                                    ]
+                                            ]
+                                    ]
+                                <case>
+                                  pattern (asmcomp/riscv/selection.ml[63,2789+4]..[63,2789+5])
+                                    Ppat_any
+                                  expression (asmcomp/riscv/selection.ml[64,2798+6]..[64,2798+40])
+                                    Pexp_apply
+                                    expression (asmcomp/riscv/selection.ml[64,2798+6]..[64,2798+28])
+                                      Pexp_send "select_operation"
+                                      expression (asmcomp/riscv/selection.ml[64,2798+6]..[64,2798+11])
+                                        Pexp_ident "super" (asmcomp/riscv/selection.ml[64,2798+6]..[64,2798+11])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/riscv/selection.ml[64,2798+29]..[64,2798+31])
+                                          Pexp_ident "op" (asmcomp/riscv/selection.ml[64,2798+29]..[64,2798+31])
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/riscv/selection.ml[64,2798+32]..[64,2798+36])
+                                          Pexp_ident "args" (asmcomp/riscv/selection.ml[64,2798+32]..[64,2798+36])
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/riscv/selection.ml[64,2798+37]..[64,2798+40])
+                                          Pexp_ident "dbg" (asmcomp/riscv/selection.ml[64,2798+37]..[64,2798+40])
+                                    ]
+                              ]
+                      None
+              ]
+    ]
+  structure_item (asmcomp/riscv/selection.ml[68,2845+0]..[69,2879+49])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/selection.ml[68,2845+4]..[68,2845+11])
+          Ppat_var "fundecl" (asmcomp/riscv/selection.ml[68,2845+4]..[68,2845+11])
+        expression (asmcomp/riscv/selection.ml[68,2845+12]..[69,2879+49]) ghost
+          Pexp_fun
+          Labelled "future_funcnames"
+          None
+          pattern (asmcomp/riscv/selection.ml[68,2845+13]..[68,2845+29])
+            Ppat_var "future_funcnames" (asmcomp/riscv/selection.ml[68,2845+13]..[68,2845+29])
+          expression (asmcomp/riscv/selection.ml[68,2845+30]..[69,2879+49]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/riscv/selection.ml[68,2845+30]..[68,2845+31])
+              Ppat_var "f" (asmcomp/riscv/selection.ml[68,2845+30]..[68,2845+31])
+            expression (asmcomp/riscv/selection.ml[69,2879+2]..[69,2879+49])
+              Pexp_apply
+              expression (asmcomp/riscv/selection.ml[69,2879+2]..[69,2879+29])
+                Pexp_send "emit_fundecl"
+                expression (asmcomp/riscv/selection.ml[69,2879+2]..[69,2879+16])
+                  Pexp_new "selector" (asmcomp/riscv/selection.ml[69,2879+7]..[69,2879+15])
+              [
+                <arg>
+                Labelled "future_funcnames"
+                  expression (asmcomp/riscv/selection.ml[69,2879+31]..[69,2879+47])
+                    Pexp_ident "future_funcnames" (asmcomp/riscv/selection.ml[69,2879+31]..[69,2879+47])
+                <arg>
+                Nolabel
+                  expression (asmcomp/riscv/selection.ml[69,2879+48]..[69,2879+49])
+                    Pexp_ident "f" (asmcomp/riscv/selection.ml[69,2879+48]..[69,2879+49])
+              ]
+    ]
+]
+

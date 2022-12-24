@@ -1,0 +1,312 @@
+[
+  structure_item (testsuite/tests/effects/partial.ml[4,13+0]..[4,13+11])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/effects/partial.ml[4,13+5]..[4,13+11])
+      Pmod_ident "Effect" (testsuite/tests/effects/partial.ml[4,13+5]..[4,13+11])
+  structure_item (testsuite/tests/effects/partial.ml[5,25+0]..[5,25+16])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/effects/partial.ml[5,25+5]..[5,25+16])
+      Pmod_ident "Effect.Deep" (testsuite/tests/effects/partial.ml[5,25+5]..[5,25+16])
+  structure_item (testsuite/tests/effects/partial.ml[7,43+0]..[7,43+22])
+    Pstr_typext
+    type_extension
+      ptyext_path = "t" (testsuite/tests/effects/partial.ml[7,43+7]..[7,43+8])
+      ptyext_params =
+        [
+          core_type (testsuite/tests/effects/partial.ml[7,43+5]..[7,43+6])
+            Ptyp_any
+        ]
+      ptyext_constructors =
+        [
+          extension_constructor (testsuite/tests/effects/partial.ml[7,43+12]..[7,43+22])
+            pext_name = "E"
+            pext_kind =
+              Pext_decl
+                []
+                Some
+                  core_type (testsuite/tests/effects/partial.ml[7,43+16]..[7,43+22])
+                    Ptyp_constr "t" (testsuite/tests/effects/partial.ml[7,43+21]..[7,43+22])
+                    [
+                      core_type (testsuite/tests/effects/partial.ml[7,43+16]..[7,43+20])
+                        Ptyp_constr "unit" (testsuite/tests/effects/partial.ml[7,43+16]..[7,43+20])
+                        []
+                    ]
+        ]
+      ptyext_private = Public
+  structure_item (testsuite/tests/effects/partial.ml[8,66+0]..[8,66+14])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (testsuite/tests/effects/partial.ml[8,66+0]..[8,66+14])
+          pext_name = "Done"
+          pext_kind =
+            Pext_decl
+              []
+              None
+  structure_item (testsuite/tests/effects/partial.ml[10,82+0]..[15,219+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/effects/partial.ml[10,82+4]..[10,82+18])
+          Ppat_var "handle_partial" (testsuite/tests/effects/partial.ml[10,82+4]..[10,82+18])
+        expression (testsuite/tests/effects/partial.ml[10,82+19]..[15,219+19]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/effects/partial.ml[10,82+19]..[10,82+20])
+            Ppat_var "f" (testsuite/tests/effects/partial.ml[10,82+19]..[10,82+20])
+          expression (testsuite/tests/effects/partial.ml[11,105+2]..[15,219+19])
+            Pexp_apply
+            expression (testsuite/tests/effects/partial.ml[11,105+2]..[11,105+10])
+              Pexp_ident "try_with" (testsuite/tests/effects/partial.ml[11,105+2]..[11,105+10])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/effects/partial.ml[11,105+11]..[11,105+12])
+                  Pexp_ident "f" (testsuite/tests/effects/partial.ml[11,105+11]..[11,105+12])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/effects/partial.ml[11,105+13]..[11,105+15])
+                  Pexp_construct "()" (testsuite/tests/effects/partial.ml[11,105+13]..[11,105+15])
+                  None
+              <arg>
+              Nolabel
+                expression (testsuite/tests/effects/partial.ml[12,121+2]..[15,219+19])
+                  Pexp_record
+                  [
+                    "effc" (testsuite/tests/effects/partial.ml[12,121+4]..[12,121+8])
+                      expression (testsuite/tests/effects/partial.ml[12,121+11]..[15,219+17])
+                        Pexp_newtype "a"
+                        expression (testsuite/tests/effects/partial.ml[12,121+24]..[15,219+17]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/effects/partial.ml[12,121+24]..[12,121+33])
+                            Ppat_constraint
+                            pattern (testsuite/tests/effects/partial.ml[12,121+25]..[12,121+26])
+                              Ppat_var "e" (testsuite/tests/effects/partial.ml[12,121+25]..[12,121+26])
+                            core_type (testsuite/tests/effects/partial.ml[12,121+29]..[12,121+32])
+                              Ptyp_constr "t" (testsuite/tests/effects/partial.ml[12,121+31]..[12,121+32])
+                              [
+                                core_type (testsuite/tests/effects/partial.ml[12,121+29]..[12,121+30])
+                                  Ptyp_constr "a" (testsuite/tests/effects/partial.ml[12,121+29]..[12,121+30])
+                                  []
+                              ]
+                          expression (testsuite/tests/effects/partial.ml[13,158+6]..[15,219+17])
+                            Pexp_match
+                            expression (testsuite/tests/effects/partial.ml[13,158+12]..[13,158+13])
+                              Pexp_ident "e" (testsuite/tests/effects/partial.ml[13,158+12]..[13,158+13])
+                            [
+                              <case>
+                                pattern (testsuite/tests/effects/partial.ml[14,177+8]..[14,177+9])
+                                  Ppat_construct "E" (testsuite/tests/effects/partial.ml[14,177+8]..[14,177+9])
+                                  None
+                                expression (testsuite/tests/effects/partial.ml[14,177+13]..[14,177+41])
+                                  Pexp_construct "Some" (testsuite/tests/effects/partial.ml[14,177+13]..[14,177+17])
+                                  Some
+                                    expression (testsuite/tests/effects/partial.ml[14,177+18]..[14,177+41])
+                                      Pexp_fun
+                                      Nolabel
+                                      None
+                                      pattern (testsuite/tests/effects/partial.ml[14,177+23]..[14,177+24])
+                                        Ppat_var "k" (testsuite/tests/effects/partial.ml[14,177+23]..[14,177+24])
+                                      expression (testsuite/tests/effects/partial.ml[14,177+28]..[14,177+40])
+                                        Pexp_assert
+                                        expression (testsuite/tests/effects/partial.ml[14,177+35]..[14,177+40])
+                                          Pexp_construct "false" (testsuite/tests/effects/partial.ml[14,177+35]..[14,177+40])
+                                          None
+                              <case>
+                                pattern (testsuite/tests/effects/partial.ml[15,219+8]..[15,219+9])
+                                  Ppat_any
+                                expression (testsuite/tests/effects/partial.ml[15,219+13]..[15,219+17])
+                                  Pexp_construct "None" (testsuite/tests/effects/partial.ml[15,219+13]..[15,219+17])
+                                  None
+                            ]
+                  ]
+                  None
+            ]
+    ]
+  structure_item (testsuite/tests/effects/partial.ml[17,240+0]..[17,240+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/effects/partial.ml[17,240+4]..[17,240+5])
+          Ppat_var "f" (testsuite/tests/effects/partial.ml[17,240+4]..[17,240+5])
+        expression (testsuite/tests/effects/partial.ml[17,240+6]..[17,240+22]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/effects/partial.ml[17,240+6]..[17,240+8])
+            Ppat_construct "()" (testsuite/tests/effects/partial.ml[17,240+6]..[17,240+8])
+            None
+          expression (testsuite/tests/effects/partial.ml[17,240+9]..[17,240+22]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/effects/partial.ml[17,240+9]..[17,240+10])
+              Ppat_var "x" (testsuite/tests/effects/partial.ml[17,240+9]..[17,240+10])
+            expression (testsuite/tests/effects/partial.ml[17,240+13]..[17,240+22])
+              Pexp_apply
+              expression (testsuite/tests/effects/partial.ml[17,240+13]..[17,240+20])
+                Pexp_ident "perform" (testsuite/tests/effects/partial.ml[17,240+13]..[17,240+20])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/effects/partial.ml[17,240+21]..[17,240+22])
+                    Pexp_construct "E" (testsuite/tests/effects/partial.ml[17,240+21]..[17,240+22])
+                    None
+              ]
+    ]
+  structure_item (testsuite/tests/effects/partial.ml[19,264+0]..[28,552+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/effects/partial.ml[19,264+4]..[19,264+6])
+          Ppat_construct "()" (testsuite/tests/effects/partial.ml[19,264+4]..[19,264+6])
+          None
+        expression (testsuite/tests/effects/partial.ml[20,273+2]..[28,552+19])
+          Pexp_apply
+          expression (testsuite/tests/effects/partial.ml[20,273+2]..[20,273+12])
+            Pexp_ident "match_with" (testsuite/tests/effects/partial.ml[20,273+2]..[20,273+12])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/effects/partial.ml[20,273+13]..[20,273+31])
+                Pexp_apply
+                expression (testsuite/tests/effects/partial.ml[20,273+14]..[20,273+28])
+                  Pexp_ident "handle_partial" (testsuite/tests/effects/partial.ml[20,273+14]..[20,273+28])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/effects/partial.ml[20,273+29]..[20,273+30])
+                      Pexp_ident "f" (testsuite/tests/effects/partial.ml[20,273+29]..[20,273+30])
+                ]
+            <arg>
+            Nolabel
+              expression (testsuite/tests/effects/partial.ml[20,273+32]..[20,273+34])
+                Pexp_construct "()" (testsuite/tests/effects/partial.ml[20,273+32]..[20,273+34])
+                None
+            <arg>
+            Nolabel
+              expression (testsuite/tests/effects/partial.ml[21,308+2]..[28,552+19])
+                Pexp_record
+                [
+                  "retc" (testsuite/tests/effects/partial.ml[21,308+4]..[21,308+8])
+                    expression (testsuite/tests/effects/partial.ml[21,308+11]..[21,308+34])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/effects/partial.ml[21,308+16]..[21,308+17])
+                        Ppat_var "x" (testsuite/tests/effects/partial.ml[21,308+16]..[21,308+17])
+                      expression (testsuite/tests/effects/partial.ml[21,308+21]..[21,308+33])
+                        Pexp_assert
+                        expression (testsuite/tests/effects/partial.ml[21,308+28]..[21,308+33])
+                          Pexp_construct "false" (testsuite/tests/effects/partial.ml[21,308+28]..[21,308+33])
+                          None
+                  "exnc" (testsuite/tests/effects/partial.ml[22,344+4]..[22,344+8])
+                    expression (testsuite/tests/effects/partial.ml[22,344+11]..[24,401+21])
+                      Pexp_function
+                      [
+                        <case>
+                          pattern (testsuite/tests/effects/partial.ml[23,365+8]..[23,365+12])
+                            Ppat_construct "Done" (testsuite/tests/effects/partial.ml[23,365+8]..[23,365+12])
+                            None
+                          expression (testsuite/tests/effects/partial.ml[23,365+16]..[23,365+35])
+                            Pexp_apply
+                            expression (testsuite/tests/effects/partial.ml[23,365+16]..[23,365+28])
+                              Pexp_ident "print_string" (testsuite/tests/effects/partial.ml[23,365+16]..[23,365+28])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/effects/partial.ml[23,365+29]..[23,365+35])
+                                  Pexp_constant PConst_string("ok\n",(testsuite/tests/effects/partial.ml[23,365+30]..[23,365+34]),None)
+                            ]
+                        <case>
+                          pattern (testsuite/tests/effects/partial.ml[24,401+8]..[24,401+9])
+                            Ppat_var "e" (testsuite/tests/effects/partial.ml[24,401+8]..[24,401+9])
+                          expression (testsuite/tests/effects/partial.ml[24,401+13]..[24,401+20])
+                            Pexp_apply
+                            expression (testsuite/tests/effects/partial.ml[24,401+13]..[24,401+18])
+                              Pexp_ident "raise" (testsuite/tests/effects/partial.ml[24,401+13]..[24,401+18])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/effects/partial.ml[24,401+19]..[24,401+20])
+                                  Pexp_ident "e" (testsuite/tests/effects/partial.ml[24,401+19]..[24,401+20])
+                            ]
+                      ]
+                  "effc" (testsuite/tests/effects/partial.ml[25,424+4]..[25,424+8])
+                    expression (testsuite/tests/effects/partial.ml[25,424+11]..[28,552+17])
+                      Pexp_newtype "a"
+                      expression (testsuite/tests/effects/partial.ml[25,424+24]..[28,552+17]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/effects/partial.ml[25,424+24]..[25,424+33])
+                          Ppat_constraint
+                          pattern (testsuite/tests/effects/partial.ml[25,424+25]..[25,424+26])
+                            Ppat_var "e" (testsuite/tests/effects/partial.ml[25,424+25]..[25,424+26])
+                          core_type (testsuite/tests/effects/partial.ml[25,424+29]..[25,424+32])
+                            Ptyp_constr "t" (testsuite/tests/effects/partial.ml[25,424+31]..[25,424+32])
+                            [
+                              core_type (testsuite/tests/effects/partial.ml[25,424+29]..[25,424+30])
+                                Ptyp_constr "a" (testsuite/tests/effects/partial.ml[25,424+29]..[25,424+30])
+                                []
+                            ]
+                        expression (testsuite/tests/effects/partial.ml[26,461+6]..[28,552+17])
+                          Pexp_match
+                          expression (testsuite/tests/effects/partial.ml[26,461+12]..[26,461+13])
+                            Pexp_ident "e" (testsuite/tests/effects/partial.ml[26,461+12]..[26,461+13])
+                          [
+                            <case>
+                              pattern (testsuite/tests/effects/partial.ml[27,480+8]..[27,480+9])
+                                Ppat_construct "E" (testsuite/tests/effects/partial.ml[27,480+8]..[27,480+9])
+                                None
+                              expression (testsuite/tests/effects/partial.ml[27,480+13]..[27,480+71])
+                                Pexp_construct "Some" (testsuite/tests/effects/partial.ml[27,480+13]..[27,480+17])
+                                Some
+                                  expression (testsuite/tests/effects/partial.ml[27,480+18]..[27,480+71])
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (testsuite/tests/effects/partial.ml[27,480+23]..[27,480+48])
+                                      Ppat_constraint
+                                      pattern (testsuite/tests/effects/partial.ml[27,480+24]..[27,480+25])
+                                        Ppat_var "k" (testsuite/tests/effects/partial.ml[27,480+24]..[27,480+25])
+                                      core_type (testsuite/tests/effects/partial.ml[27,480+28]..[27,480+47])
+                                        Ptyp_constr "continuation" (testsuite/tests/effects/partial.ml[27,480+35]..[27,480+47])
+                                        [
+                                          core_type (testsuite/tests/effects/partial.ml[27,480+29]..[27,480+30])
+                                            Ptyp_constr "a" (testsuite/tests/effects/partial.ml[27,480+29]..[27,480+30])
+                                            []
+                                          core_type (testsuite/tests/effects/partial.ml[27,480+32]..[27,480+33])
+                                            Ptyp_any
+                                        ]
+                                    expression (testsuite/tests/effects/partial.ml[27,480+52]..[27,480+70])
+                                      Pexp_apply
+                                      expression (testsuite/tests/effects/partial.ml[27,480+52]..[27,480+63])
+                                        Pexp_ident "discontinue" (testsuite/tests/effects/partial.ml[27,480+52]..[27,480+63])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/effects/partial.ml[27,480+64]..[27,480+65])
+                                            Pexp_ident "k" (testsuite/tests/effects/partial.ml[27,480+64]..[27,480+65])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/effects/partial.ml[27,480+66]..[27,480+70])
+                                            Pexp_construct "Done" (testsuite/tests/effects/partial.ml[27,480+66]..[27,480+70])
+                                            None
+                                      ]
+                            <case>
+                              pattern (testsuite/tests/effects/partial.ml[28,552+8]..[28,552+9])
+                                Ppat_any
+                              expression (testsuite/tests/effects/partial.ml[28,552+13]..[28,552+17])
+                                Pexp_construct "None" (testsuite/tests/effects/partial.ml[28,552+13]..[28,552+17])
+                                None
+                          ]
+                ]
+                None
+          ]
+    ]
+]
+

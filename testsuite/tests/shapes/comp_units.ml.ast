@@ -1,0 +1,253 @@
+[
+  structure_item (testsuite/tests/shapes/comp_units.ml[9,151+0]..[9,151+29])
+    Pstr_module
+    "Mdirect" (testsuite/tests/shapes/comp_units.ml[9,151+7]..[9,151+14])
+      module_expr (testsuite/tests/shapes/comp_units.ml[9,151+17]..[9,151+29])
+        Pmod_ident "Stdlib__Unit" (testsuite/tests/shapes/comp_units.ml[9,151+17]..[9,151+29])
+  structure_item (testsuite/tests/shapes/comp_units.ml[10,181+0]..[15,259+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[10,181+9]..[15,259+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[10,181+9]..[15,259+2])
+          Pexp_constant PConst_string ("\n{\n \"Mdirect\"[module] -> CU Stdlib__Unit;\n }\nmodule Mdirect = Unit\n",(testsuite/tests/shapes/comp_units.ml[10,181+11]..[15,259+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[17,264+0]..[17,264+26])
+    Pstr_module
+    "Mproj" (testsuite/tests/shapes/comp_units.ml[17,264+7]..[17,264+12])
+      module_expr (testsuite/tests/shapes/comp_units.ml[17,264+15]..[17,264+26])
+        Pmod_ident "Stdlib.Unit" (testsuite/tests/shapes/comp_units.ml[17,264+15]..[17,264+26])
+  structure_item (testsuite/tests/shapes/comp_units.ml[18,291+0]..[23,382+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[18,291+9]..[23,382+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[18,291+9]..[23,382+2])
+          Pexp_constant PConst_string ("\n{\n \"Mproj\"[module] -> (CU Stdlib . \"Unit\"[module])<.1>;\n }\nmodule Mproj = Unit\n",(testsuite/tests/shapes/comp_units.ml[18,291+11]..[23,382+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[25,387+0]..[25,387+33])
+    Pstr_module
+    "F" (testsuite/tests/shapes/comp_units.ml[25,387+7]..[25,387+8])
+      module_expr (testsuite/tests/shapes/comp_units.ml[25,387+9]..[25,387+33])
+        Pmod_functor "X" (testsuite/tests/shapes/comp_units.ml[25,387+10]..[25,387+11])
+        module_type (testsuite/tests/shapes/comp_units.ml[25,387+14]..[25,387+28])
+          Pmty_signature
+          [
+            signature_item (testsuite/tests/shapes/comp_units.ml[25,387+18]..[25,387+24])
+              Psig_type Rec
+              [
+                type_declaration "t" (testsuite/tests/shapes/comp_units.ml[25,387+23]..[25,387+24]) (testsuite/tests/shapes/comp_units.ml[25,387+18]..[25,387+24])
+                  ptype_params =
+                    []
+                  ptype_cstrs =
+                    []
+                  ptype_kind =
+                    Ptype_abstract
+                  ptype_private = Public
+                  ptype_manifest =
+                    None
+              ]
+          ]
+        module_expr (testsuite/tests/shapes/comp_units.ml[25,387+32]..[25,387+33])
+          Pmod_ident "X" (testsuite/tests/shapes/comp_units.ml[25,387+32]..[25,387+33])
+  structure_item (testsuite/tests/shapes/comp_units.ml[26,421+0]..[31,545+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[26,421+9]..[31,545+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[26,421+9]..[31,545+2])
+          Pexp_constant PConst_string ("\n{\n \"F\"[module] -> Abs<.4>(X/279, X/279<.3>);\n }\nmodule F : functor (X : sig type t end) -> sig type t = X.t end\n",(testsuite/tests/shapes/comp_units.ml[26,421+11]..[31,545+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[33,550+0]..[33,550+36])
+    Pstr_module
+    "App_direct" (testsuite/tests/shapes/comp_units.ml[33,550+7]..[33,550+17])
+      module_expr (testsuite/tests/shapes/comp_units.ml[33,550+20]..[33,550+36])
+        Pmod_apply
+        module_expr (testsuite/tests/shapes/comp_units.ml[33,550+20]..[33,550+21])
+          Pmod_ident "F" (testsuite/tests/shapes/comp_units.ml[33,550+20]..[33,550+21])
+        module_expr (testsuite/tests/shapes/comp_units.ml[33,550+23]..[33,550+35])
+          Pmod_ident "Stdlib__Unit" (testsuite/tests/shapes/comp_units.ml[33,550+23]..[33,550+35])
+  structure_item (testsuite/tests/shapes/comp_units.ml[34,587+0]..[39,690+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[34,587+9]..[39,690+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[34,587+9]..[39,690+2])
+          Pexp_constant PConst_string ("\n{\n \"App_direct\"[module] -> CU Stdlib__Unit;\n }\nmodule App_direct : sig type t = Unit.t end\n",(testsuite/tests/shapes/comp_units.ml[34,587+11]..[39,690+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[41,695+0]..[41,695+33])
+    Pstr_module
+    "App_proj" (testsuite/tests/shapes/comp_units.ml[41,695+7]..[41,695+15])
+      module_expr (testsuite/tests/shapes/comp_units.ml[41,695+18]..[41,695+33])
+        Pmod_apply
+        module_expr (testsuite/tests/shapes/comp_units.ml[41,695+18]..[41,695+19])
+          Pmod_ident "F" (testsuite/tests/shapes/comp_units.ml[41,695+18]..[41,695+19])
+        module_expr (testsuite/tests/shapes/comp_units.ml[41,695+21]..[41,695+32])
+          Pmod_ident "Stdlib.Unit" (testsuite/tests/shapes/comp_units.ml[41,695+21]..[41,695+32])
+  structure_item (testsuite/tests/shapes/comp_units.ml[42,729+0]..[47,845+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[42,729+9]..[47,845+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[42,729+9]..[47,845+2])
+          Pexp_constant PConst_string ("\n{\n \"App_proj\"[module] -> (CU Stdlib . \"Unit\"[module])<.6>;\n }\nmodule App_proj : sig type t = Unit.t end\n",(testsuite/tests/shapes/comp_units.ml[42,729+11]..[47,845+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[49,850+0]..[49,850+37])
+    Pstr_module
+    "App_direct_indir" (testsuite/tests/shapes/comp_units.ml[49,850+7]..[49,850+23])
+      module_expr (testsuite/tests/shapes/comp_units.ml[49,850+26]..[49,850+37])
+        Pmod_apply
+        module_expr (testsuite/tests/shapes/comp_units.ml[49,850+26]..[49,850+27])
+          Pmod_ident "F" (testsuite/tests/shapes/comp_units.ml[49,850+26]..[49,850+27])
+        module_expr (testsuite/tests/shapes/comp_units.ml[49,850+29]..[49,850+36])
+          Pmod_ident "Mdirect" (testsuite/tests/shapes/comp_units.ml[49,850+29]..[49,850+36])
+  structure_item (testsuite/tests/shapes/comp_units.ml[50,888+0]..[55,1006+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[50,888+9]..[55,1006+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[50,888+9]..[55,1006+2])
+          Pexp_constant PConst_string ("\n{\n \"App_direct_indir\"[module] -> CU Stdlib__Unit;\n }\nmodule App_direct_indir : sig type t = Mdirect.t end\n",(testsuite/tests/shapes/comp_units.ml[50,888+11]..[55,1006+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[57,1011+0]..[57,1011+33])
+    Pstr_module
+    "App_proj_indir" (testsuite/tests/shapes/comp_units.ml[57,1011+7]..[57,1011+21])
+      module_expr (testsuite/tests/shapes/comp_units.ml[57,1011+24]..[57,1011+33])
+        Pmod_apply
+        module_expr (testsuite/tests/shapes/comp_units.ml[57,1011+24]..[57,1011+25])
+          Pmod_ident "F" (testsuite/tests/shapes/comp_units.ml[57,1011+24]..[57,1011+25])
+        module_expr (testsuite/tests/shapes/comp_units.ml[57,1011+27]..[57,1011+32])
+          Pmod_ident "Mproj" (testsuite/tests/shapes/comp_units.ml[57,1011+27]..[57,1011+32])
+  structure_item (testsuite/tests/shapes/comp_units.ml[58,1045+0]..[63,1174+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[58,1045+9]..[63,1174+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[58,1045+9]..[63,1174+2])
+          Pexp_constant PConst_string ("\n{\n \"App_proj_indir\"[module] -> (CU Stdlib . \"Unit\"[module])<.1>;\n }\nmodule App_proj_indir : sig type t = Mproj.t end\n",(testsuite/tests/shapes/comp_units.ml[58,1045+11]..[63,1174+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[68,1296+0]..[68,1296+20])
+    Pstr_include    module_expr (testsuite/tests/shapes/comp_units.ml[68,1296+8]..[68,1296+20])
+      Pmod_ident "Stdlib__Unit" (testsuite/tests/shapes/comp_units.ml[68,1296+8]..[68,1296+20])
+  structure_item (testsuite/tests/shapes/comp_units.ml[69,1317+0]..[80,1674+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[69,1317+9]..[80,1674+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[69,1317+9]..[80,1674+2])
+          Pexp_constant PConst_string ("\n{\n \"compare\"[value] -> CU Stdlib__Unit . \"compare\"[value];\n \"equal\"[value] -> CU Stdlib__Unit . \"equal\"[value];\n \"t\"[type] -> CU Stdlib__Unit . \"t\"[type];\n \"to_string\"[value] -> CU Stdlib__Unit . \"to_string\"[value];\n }\ntype t = unit = ()\nval equal : t -> t -> bool = <fun>\nval compare : t -> t -> int = <fun>\nval to_string : t -> string = <fun>\n",(testsuite/tests/shapes/comp_units.ml[69,1317+11]..[80,1674+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[82,1679+0]..[82,1679+19])
+    Pstr_include    module_expr (testsuite/tests/shapes/comp_units.ml[82,1679+8]..[82,1679+19])
+      Pmod_ident "Stdlib.Unit" (testsuite/tests/shapes/comp_units.ml[82,1679+8]..[82,1679+19])
+  structure_item (testsuite/tests/shapes/comp_units.ml[83,1699+0]..[94,2100+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[83,1699+9]..[94,2100+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[83,1699+9]..[94,2100+2])
+          Pexp_constant PConst_string ("\n{\n \"compare\"[value] -> CU Stdlib . \"Unit\"[module] . \"compare\"[value];\n \"equal\"[value] -> CU Stdlib . \"Unit\"[module] . \"equal\"[value];\n \"t\"[type] -> CU Stdlib . \"Unit\"[module] . \"t\"[type];\n \"to_string\"[value] -> CU Stdlib . \"Unit\"[module] . \"to_string\"[value];\n }\ntype t = unit = ()\nval equal : t -> t -> bool = <fun>\nval compare : t -> t -> int = <fun>\nval to_string : t -> string = <fun>\n",(testsuite/tests/shapes/comp_units.ml[83,1699+11]..[94,2100+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[96,2105+0]..[96,2105+41])
+    Pstr_module
+    "Without_constraint" (testsuite/tests/shapes/comp_units.ml[96,2105+7]..[96,2105+25])
+      module_expr (testsuite/tests/shapes/comp_units.ml[96,2105+28]..[96,2105+41])
+        Pmod_apply
+        module_expr (testsuite/tests/shapes/comp_units.ml[96,2105+28]..[96,2105+36])
+          Pmod_ident "Set.Make" (testsuite/tests/shapes/comp_units.ml[96,2105+28]..[96,2105+36])
+        module_expr (testsuite/tests/shapes/comp_units.ml[96,2105+37]..[96,2105+40])
+          Pmod_ident "Int" (testsuite/tests/shapes/comp_units.ml[96,2105+37]..[96,2105+40])
+  structure_item (testsuite/tests/shapes/comp_units.ml[97,2147+0]..[150,3923+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[97,2147+9]..[150,3923+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[97,2147+9]..[150,3923+2])
+          Pexp_constant PConst_string ("\n{\n \"Without_constraint\"[module] ->\n   CU Stdlib . \"Set\"[module] . \"Make\"[module](CU Stdlib . \"Int\"[module])<.9>;\n }\nmodule Without_constraint :\n  sig\n    type elt = Int.t\n    type t = Set.Make(Int).t\n    val empty : t\n    val add : elt -> t -> t\n    val singleton : elt -> t\n    val remove : elt -> t -> t\n    val union : t -> t -> t\n    val inter : t -> t -> t\n    val disjoint : t -> t -> bool\n    val diff : t -> t -> t\n    val cardinal : t -> int\n    val elements : t -> elt list\n    val min_elt : t -> elt\n    val min_elt_opt : t -> elt option\n    val max_elt : t -> elt\n    val max_elt_opt : t -> elt option\n    val choose : t -> elt\n    val choose_opt : t -> elt option\n    val find : elt -> t -> elt\n    val find_opt : elt -> t -> elt option\n    val find_first : (elt -> bool) -> t -> elt\n    val find_first_opt : (elt -> bool) -> t -> elt option\n    val find_last : (elt -> bool) -> t -> elt\n    val find_last_opt : (elt -> bool) -> t -> elt option\n    val iter : (elt -> unit) -> t -> unit\n    val fold : (elt -> 'a -> 'a) -> t -> 'a -> 'a\n    val map : (elt -> elt) -> t -> t\n    val filter : (elt -> bool) -> t -> t\n    val filter_map : (elt -> elt option) -> t -> t\n    val partition : (elt -> bool) -> t -> t * t\n    val split : elt -> t -> t * bool * t\n    val is_empty : t -> bool\n    val mem : elt -> t -> bool\n    val equal : t -> t -> bool\n    val compare : t -> t -> int\n    val subset : t -> t -> bool\n    val for_all : (elt -> bool) -> t -> bool\n    val exists : (elt -> bool) -> t -> bool\n    val to_list : t -> elt list\n    val of_list : elt list -> t\n    val to_seq_from : elt -> t -> elt Seq.t\n    val to_seq : t -> elt Seq.t\n    val to_rev_seq : t -> elt Seq.t\n    val add_seq : elt Seq.t -> t -> t\n    val of_seq : elt Seq.t -> t\n  end\n",(testsuite/tests/shapes/comp_units.ml[97,2147+11]..[150,3923+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[152,3928+0]..[156,4025+3])
+    Pstr_module
+    "With_identity_constraint" (testsuite/tests/shapes/comp_units.ml[152,3928+7]..[152,3928+31])
+      module_expr (testsuite/tests/shapes/comp_units.ml[152,3928+32]..[156,4025+3])
+        Pmod_constraint
+        module_expr (testsuite/tests/shapes/comp_units.ml[154,3985+6]..[156,4025+3])
+          Pmod_structure
+          [
+            structure_item (testsuite/tests/shapes/comp_units.ml[155,3998+2]..[155,3998+26])
+              Pstr_module
+              "M" (testsuite/tests/shapes/comp_units.ml[155,3998+9]..[155,3998+10])
+                module_expr (testsuite/tests/shapes/comp_units.ml[155,3998+13]..[155,3998+26])
+                  Pmod_apply
+                  module_expr (testsuite/tests/shapes/comp_units.ml[155,3998+13]..[155,3998+21])
+                    Pmod_ident "Set.Make" (testsuite/tests/shapes/comp_units.ml[155,3998+13]..[155,3998+21])
+                  module_expr (testsuite/tests/shapes/comp_units.ml[155,3998+22]..[155,3998+25])
+                    Pmod_ident "Int" (testsuite/tests/shapes/comp_units.ml[155,3998+22]..[155,3998+25])
+          ]
+        module_type (testsuite/tests/shapes/comp_units.ml[152,3928+34]..[154,3985+3])
+          Pmty_signature
+          [
+            signature_item (testsuite/tests/shapes/comp_units.ml[153,3966+2]..[153,3966+18])
+              Psig_module "M" (testsuite/tests/shapes/comp_units.ml[153,3966+9]..[153,3966+10])
+              module_type (testsuite/tests/shapes/comp_units.ml[153,3966+13]..[153,3966+18])
+                Pmty_ident "Set.S" (testsuite/tests/shapes/comp_units.ml[153,3966+13]..[153,3966+18])
+          ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[157,4029+0]..[167,4269+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[157,4029+9]..[167,4269+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[157,4029+9]..[167,4269+2])
+          Pexp_constant PConst_string ("\n{\n \"With_identity_constraint\"[module] ->\n   {<.12>\n    \"M\"[module] ->\n      CU Stdlib . \"Set\"[module] . \"Make\"[module](\n      CU Stdlib . \"Int\"[module])<.10>;\n    };\n }\nmodule With_identity_constraint : sig module M : Set.S end\n",(testsuite/tests/shapes/comp_units.ml[157,4029+11]..[167,4269+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[169,4274+0]..[173,4384+3])
+    Pstr_module
+    "With_constraining_constraint" (testsuite/tests/shapes/comp_units.ml[169,4274+7]..[169,4274+35])
+      module_expr (testsuite/tests/shapes/comp_units.ml[169,4274+36]..[173,4384+3])
+        Pmod_constraint
+        module_expr (testsuite/tests/shapes/comp_units.ml[171,4344+6]..[173,4384+3])
+          Pmod_structure
+          [
+            structure_item (testsuite/tests/shapes/comp_units.ml[172,4357+2]..[172,4357+26])
+              Pstr_module
+              "M" (testsuite/tests/shapes/comp_units.ml[172,4357+9]..[172,4357+10])
+                module_expr (testsuite/tests/shapes/comp_units.ml[172,4357+13]..[172,4357+26])
+                  Pmod_apply
+                  module_expr (testsuite/tests/shapes/comp_units.ml[172,4357+13]..[172,4357+21])
+                    Pmod_ident "Set.Make" (testsuite/tests/shapes/comp_units.ml[172,4357+13]..[172,4357+21])
+                  module_expr (testsuite/tests/shapes/comp_units.ml[172,4357+22]..[172,4357+25])
+                    Pmod_ident "Int" (testsuite/tests/shapes/comp_units.ml[172,4357+22]..[172,4357+25])
+          ]
+        module_type (testsuite/tests/shapes/comp_units.ml[169,4274+38]..[171,4344+3])
+          Pmty_signature
+          [
+            signature_item (testsuite/tests/shapes/comp_units.ml[170,4316+2]..[170,4316+27])
+              Psig_module "M" (testsuite/tests/shapes/comp_units.ml[170,4316+9]..[170,4316+10])
+              module_type (testsuite/tests/shapes/comp_units.ml[170,4316+13]..[170,4316+27])
+                Pmty_signature
+                [
+                  signature_item (testsuite/tests/shapes/comp_units.ml[170,4316+17]..[170,4316+23])
+                    Psig_type Rec
+                    [
+                      type_declaration "t" (testsuite/tests/shapes/comp_units.ml[170,4316+22]..[170,4316+23]) (testsuite/tests/shapes/comp_units.ml[170,4316+17]..[170,4316+23])
+                        ptype_params =
+                          []
+                        ptype_cstrs =
+                          []
+                        ptype_kind =
+                          Ptype_abstract
+                        ptype_private = Public
+                        ptype_manifest =
+                          None
+                    ]
+                ]
+          ]
+  structure_item (testsuite/tests/shapes/comp_units.ml[174,4388+0]..[187,4706+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/comp_units.ml[174,4388+9]..[187,4706+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/comp_units.ml[174,4388+9]..[187,4706+2])
+          Pexp_constant PConst_string ("\n{\n \"With_constraining_constraint\"[module] ->\n   {<.16>\n    \"M\"[module] ->\n      {<.13>\n       \"t\"[type] ->\n         CU Stdlib . \"Set\"[module] . \"Make\"[module](\n         CU Stdlib . \"Int\"[module])<.13> . \"t\"[type];\n       };\n    };\n }\nmodule With_constraining_constraint : sig module M : sig type t end end\n",(testsuite/tests/shapes/comp_units.ml[174,4388+11]..[187,4706+0]),Some "")
+    ]
+]
+

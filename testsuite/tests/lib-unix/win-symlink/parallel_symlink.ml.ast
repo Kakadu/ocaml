@@ -1,0 +1,560 @@
+[
+  structure_item (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+0]..[11,180+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+4]..[9,79+18])
+          Ppat_var "create_symlink" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+4]..[9,79+18])
+        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+19]..[11,180+36]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+19]..[9,79+26])
+            Ppat_var "barrier" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+19]..[9,79+26])
+          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+27]..[11,180+36]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+27]..[9,79+30])
+              Ppat_var "src" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+27]..[9,79+30])
+            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+31]..[11,180+36]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+31]..[9,79+34])
+                Ppat_var "dst" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+31]..[9,79+34])
+              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+35]..[11,180+36]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+35]..[9,79+37])
+                  Ppat_construct "()" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[9,79+35]..[9,79+37])
+                  None
+                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+2]..[11,180+36])
+                  Pexp_sequence
+                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+2]..[10,119+59])
+                    Pexp_while
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+8]..[10,119+32])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+8]..[10,119+11])
+                        Pexp_ident "not" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+8]..[10,119+11])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+12]..[10,119+32])
+                            Pexp_apply
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+13]..[10,119+23])
+                              Pexp_ident "Atomic.get" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+13]..[10,119+23])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+24]..[10,119+31])
+                                  Pexp_ident "barrier" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+24]..[10,119+31])
+                            ]
+                      ]
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+36]..[10,119+54])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+36]..[10,119+52])
+                        Pexp_ident "Domain.cpu_relax" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+36]..[10,119+52])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+52]..[10,119+54])
+                            Pexp_construct "()" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[10,119+52]..[10,119+54])
+                            None
+                      ]
+                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[11,180+2]..[11,180+36])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[11,180+2]..[11,180+14])
+                      Pexp_ident "Unix.symlink" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[11,180+2]..[11,180+14])
+                    [
+                      <arg>
+                      Labelled "to_dir"
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[11,180+23]..[11,180+28])
+                          Pexp_construct "false" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[11,180+23]..[11,180+28])
+                          None
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[11,180+29]..[11,180+32])
+                          Pexp_ident "src" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[11,180+29]..[11,180+32])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[11,180+33]..[11,180+36])
+                          Pexp_ident "dst" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[11,180+33]..[11,180+36])
+                    ]
+    ]
+  structure_item (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+0]..[20,487+16])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+4]..[13,218+27])
+          Ppat_var "create_symlink_parallel" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+4]..[13,218+27])
+        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+28]..[20,487+16]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+28]..[13,218+31])
+            Ppat_var "src" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+28]..[13,218+31])
+          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+32]..[20,487+16]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+32]..[13,218+37])
+              Ppat_var "name1" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+32]..[13,218+37])
+            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+38]..[20,487+16]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+38]..[13,218+43])
+                Ppat_var "name2" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[13,218+38]..[13,218+43])
+              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[14,264+2]..[20,487+16])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[14,264+6]..[14,264+13])
+                      Ppat_var "barrier" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[14,264+6]..[14,264+13])
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[14,264+16]..[14,264+33])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[14,264+16]..[14,264+27])
+                        Pexp_ident "Atomic.make" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[14,264+16]..[14,264+27])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[14,264+28]..[14,264+33])
+                            Pexp_construct "false" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[14,264+28]..[14,264+33])
+                            None
+                      ]
+                ]
+                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+2]..[20,487+16])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+6]..[15,301+8])
+                        Ppat_var "d1" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+6]..[15,301+8])
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+11]..[15,301+58])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+11]..[15,301+23])
+                          Pexp_ident "Domain.spawn" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+11]..[15,301+23])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+24]..[15,301+58])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+25]..[15,301+39])
+                                Pexp_ident "create_symlink" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+25]..[15,301+39])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+40]..[15,301+47])
+                                    Pexp_ident "barrier" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+40]..[15,301+47])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+48]..[15,301+51])
+                                    Pexp_ident "src" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+48]..[15,301+51])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+52]..[15,301+57])
+                                    Pexp_ident "name1" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[15,301+52]..[15,301+57])
+                              ]
+                        ]
+                    <def>
+                      pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+6]..[16,360+8])
+                        Ppat_var "d2" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+6]..[16,360+8])
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+11]..[16,360+58])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+11]..[16,360+23])
+                          Pexp_ident "Domain.spawn" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+11]..[16,360+23])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+24]..[16,360+58])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+25]..[16,360+39])
+                                Pexp_ident "create_symlink" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+25]..[16,360+39])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+40]..[16,360+47])
+                                    Pexp_ident "barrier" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+40]..[16,360+47])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+48]..[16,360+51])
+                                    Pexp_ident "src" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+48]..[16,360+51])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+52]..[16,360+57])
+                                    Pexp_ident "name2" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[16,360+52]..[16,360+57])
+                              ]
+                        ]
+                  ]
+                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[17,422+2]..[20,487+16])
+                    Pexp_sequence
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[17,422+2]..[17,422+18])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[17,422+2]..[17,422+13])
+                        Pexp_ident "Unix.sleepf" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[17,422+2]..[17,422+13])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[17,422+14]..[17,422+18])
+                            Pexp_constant PConst_float (0.05,None)
+                      ]
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[18,442+2]..[20,487+16])
+                      Pexp_sequence
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[18,442+2]..[18,442+25])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[18,442+2]..[18,442+12])
+                          Pexp_ident "Atomic.set" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[18,442+2]..[18,442+12])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[18,442+13]..[18,442+20])
+                              Pexp_ident "barrier" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[18,442+13]..[18,442+20])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[18,442+21]..[18,442+25])
+                              Pexp_construct "true" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[18,442+21]..[18,442+25])
+                              None
+                        ]
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[19,469+2]..[20,487+16])
+                        Pexp_sequence
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[19,469+2]..[19,469+16])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[19,469+2]..[19,469+13])
+                            Pexp_ident "Domain.join" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[19,469+2]..[19,469+13])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[19,469+14]..[19,469+16])
+                                Pexp_ident "d1" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[19,469+14]..[19,469+16])
+                          ]
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[20,487+2]..[20,487+16])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[20,487+2]..[20,487+13])
+                            Pexp_ident "Domain.join" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[20,487+2]..[20,487+13])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[20,487+14]..[20,487+16])
+                                Pexp_ident "d2" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[20,487+14]..[20,487+16])
+                          ]
+    ]
+  structure_item (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[22,505+0]..[35,1011+25])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[22,505+4]..[22,505+8])
+          Ppat_var "test" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[22,505+4]..[22,505+8])
+        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[22,505+9]..[35,1011+25]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[22,505+9]..[22,505+11])
+            Ppat_construct "()" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[22,505+9]..[22,505+11])
+            None
+          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+2]..[35,1011+25])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+6]..[23,519+11])
+                  Ppat_var "descr" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+6]..[23,519+11])
+                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+14]..[23,519+72])
+                  Pexp_open Fresh
+                  module_expr (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+14]..[23,519+18])
+                    Pmod_ident "Unix" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+14]..[23,519+18])
+                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+20]..[23,519+71])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+20]..[23,519+28])
+                      Pexp_ident "openfile" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+20]..[23,519+28])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+29]..[23,519+38])
+                          Pexp_constant PConst_string("tmp.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+30]..[23,519+37]),None)
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+39]..[23,519+65])
+                          Pexp_construct "::" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+40]..[23,519+65]) ghost
+                          Some
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+40]..[23,519+65]) ghost
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+40]..[23,519+46])
+                                  Pexp_construct "O_RDWR" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+40]..[23,519+46])
+                                  None
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+48]..[23,519+65]) ghost
+                                  Pexp_construct "::" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+48]..[23,519+65]) ghost
+                                  Some
+                                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+48]..[23,519+65]) ghost
+                                      Pexp_tuple
+                                      [
+                                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+48]..[23,519+55])
+                                          Pexp_construct "O_CREAT" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+48]..[23,519+55])
+                                          None
+                                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+57]..[23,519+65]) ghost
+                                          Pexp_construct "::" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+57]..[23,519+65]) ghost
+                                          Some
+                                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+57]..[23,519+65]) ghost
+                                              Pexp_tuple
+                                              [
+                                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+57]..[23,519+64])
+                                                  Pexp_construct "O_TRUNC" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+57]..[23,519+64])
+                                                  None
+                                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+64]..[23,519+65]) ghost
+                                                  Pexp_construct "[]" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+64]..[23,519+65]) ghost
+                                                  None
+                                              ]
+                                      ]
+                              ]
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[23,519+66]..[23,519+71])
+                          Pexp_constant PConst_int (0o600,None)
+                    ]
+            ]
+            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+2]..[35,1011+25])
+              Pexp_sequence
+              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+2]..[24,595+59])
+                Pexp_apply
+                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+2]..[24,595+25])
+                  Pexp_ident "create_symlink_parallel" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+2]..[24,595+25])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+26]..[24,595+35])
+                      Pexp_constant PConst_string("tmp.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+27]..[24,595+34]),None)
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+36]..[24,595+47])
+                      Pexp_constant PConst_string("link1.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+37]..[24,595+46]),None)
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+48]..[24,595+59])
+                      Pexp_constant PConst_string("link2.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[24,595+49]..[24,595+58]),None)
+                ]
+              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+2]..[35,1011+25])
+                Pexp_sequence
+                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+2]..[25,656+59])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+2]..[25,656+25])
+                    Pexp_ident "create_symlink_parallel" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+2]..[25,656+25])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+26]..[25,656+35])
+                        Pexp_constant PConst_string("tmp.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+27]..[25,656+34]),None)
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+36]..[25,656+47])
+                        Pexp_constant PConst_string("link3.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+37]..[25,656+46]),None)
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+48]..[25,656+59])
+                        Pexp_constant PConst_string("link4.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[25,656+49]..[25,656+58]),None)
+                  ]
+                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+2]..[35,1011+25])
+                  Pexp_sequence
+                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+2]..[26,717+52])
+                    Pexp_assert
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+9]..[26,717+52])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+48]..[26,717+49])
+                        Pexp_ident "=" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+48]..[26,717+49])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+10]..[26,717+47])
+                            Pexp_apply
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+10]..[26,717+30])
+                              Pexp_ident "Unix.write_substring" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+10]..[26,717+30])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+31]..[26,717+36])
+                                  Pexp_ident "descr" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+31]..[26,717+36])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+37]..[26,717+43])
+                                  Pexp_constant PConst_string("test",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+38]..[26,717+42]),None)
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+44]..[26,717+45])
+                                  Pexp_constant PConst_int (0,None)
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+46]..[26,717+47])
+                                  Pexp_constant PConst_int (4,None)
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[26,717+50]..[26,717+51])
+                            Pexp_constant PConst_int (4,None)
+                      ]
+                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[27,771+2]..[35,1011+25])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[27,771+6]..[27,771+9])
+                          Ppat_var "in_" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[27,771+6]..[27,771+9])
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[27,771+12]..[27,771+44])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[27,771+12]..[27,771+32])
+                            Pexp_ident "In_channel.open_text" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[27,771+12]..[27,771+32])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[27,771+33]..[27,771+44])
+                                Pexp_constant PConst_string("link4.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[27,771+34]..[27,771+43]),None)
+                          ]
+                    ]
+                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+2]..[35,1011+25])
+                      Pexp_sequence
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+2]..[28,819+44])
+                        Pexp_assert
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+9]..[28,819+44])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+35]..[28,819+36])
+                            Pexp_ident "=" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+35]..[28,819+36])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+10]..[28,819+34])
+                                Pexp_apply
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+10]..[28,819+30])
+                                  Pexp_ident "In_channel.input_all" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+10]..[28,819+30])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+31]..[28,819+34])
+                                      Pexp_ident "in_" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+31]..[28,819+34])
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+37]..[28,819+43])
+                                Pexp_constant PConst_string("test",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[28,819+38]..[28,819+42]),None)
+                          ]
+                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[29,865+2]..[35,1011+25])
+                        Pexp_sequence
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[29,865+2]..[29,865+22])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[29,865+2]..[29,865+18])
+                            Pexp_ident "In_channel.close" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[29,865+2]..[29,865+18])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[29,865+19]..[29,865+22])
+                                Pexp_ident "in_" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[29,865+19]..[29,865+22])
+                          ]
+                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[30,889+2]..[35,1011+25])
+                          Pexp_sequence
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[30,889+2]..[30,889+18])
+                            Pexp_apply
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[30,889+2]..[30,889+12])
+                              Pexp_ident "Unix.close" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[30,889+2]..[30,889+12])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[30,889+13]..[30,889+18])
+                                  Pexp_ident "descr" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[30,889+13]..[30,889+18])
+                            ]
+                          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[31,909+2]..[35,1011+25])
+                            Pexp_sequence
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[31,909+2]..[31,909+22])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[31,909+2]..[31,909+12])
+                                Pexp_ident "Sys.remove" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[31,909+2]..[31,909+12])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[31,909+13]..[31,909+22])
+                                    Pexp_constant PConst_string("tmp.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[31,909+14]..[31,909+21]),None)
+                              ]
+                            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[32,933+2]..[35,1011+25])
+                              Pexp_sequence
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[32,933+2]..[32,933+24])
+                                Pexp_apply
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[32,933+2]..[32,933+12])
+                                  Pexp_ident "Sys.remove" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[32,933+2]..[32,933+12])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[32,933+13]..[32,933+24])
+                                      Pexp_constant PConst_string("link1.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[32,933+14]..[32,933+23]),None)
+                                ]
+                              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[33,959+2]..[35,1011+25])
+                                Pexp_sequence
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[33,959+2]..[33,959+24])
+                                  Pexp_apply
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[33,959+2]..[33,959+12])
+                                    Pexp_ident "Sys.remove" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[33,959+2]..[33,959+12])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[33,959+13]..[33,959+24])
+                                        Pexp_constant PConst_string("link2.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[33,959+14]..[33,959+23]),None)
+                                  ]
+                                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[34,985+2]..[35,1011+25])
+                                  Pexp_sequence
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[34,985+2]..[34,985+24])
+                                    Pexp_apply
+                                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[34,985+2]..[34,985+12])
+                                      Pexp_ident "Sys.remove" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[34,985+2]..[34,985+12])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[34,985+13]..[34,985+24])
+                                          Pexp_constant PConst_string("link3.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[34,985+14]..[34,985+23]),None)
+                                    ]
+                                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[35,1011+2]..[35,1011+24])
+                                    Pexp_apply
+                                    expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[35,1011+2]..[35,1011+12])
+                                      Pexp_ident "Sys.remove" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[35,1011+2]..[35,1011+12])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[35,1011+13]..[35,1011+24])
+                                          Pexp_constant PConst_string("link4.txt",(testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[35,1011+14]..[35,1011+23]),None)
+                                    ]
+    ]
+  structure_item (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[38,1041+0]..[40,1079+35])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[38,1041+4]..[38,1041+5])
+          Ppat_any
+        expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[39,1049+2]..[40,1079+35])
+          Pexp_ifthenelse
+          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[39,1049+5]..[39,1049+24])
+            Pexp_apply
+            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[39,1049+5]..[39,1049+21])
+              Pexp_ident "Unix.has_symlink" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[39,1049+5]..[39,1049+21])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[39,1049+22]..[39,1049+24])
+                  Pexp_construct "()" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[39,1049+22]..[39,1049+24])
+                  None
+            ]
+          expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[40,1079+4]..[40,1079+35])
+            Pexp_for Up
+            pattern (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[40,1079+8]..[40,1079+9])
+              Ppat_any
+            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[40,1079+12]..[40,1079+13])
+              Pexp_constant PConst_int (1,None)
+            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[40,1079+17]..[40,1079+19])
+              Pexp_constant PConst_int (50,None)
+            expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[40,1079+23]..[40,1079+30])
+              Pexp_apply
+              expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[40,1079+23]..[40,1079+27])
+                Pexp_ident "test" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[40,1079+23]..[40,1079+27])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[40,1079+28]..[40,1079+30])
+                    Pexp_construct "()" (testsuite/tests/lib-unix/win-symlink/parallel_symlink.ml[40,1079+28]..[40,1079+30])
+                    None
+              ]
+          None
+    ]
+]
+

@@ -1,0 +1,2535 @@
+[
+  structure_item (ocamldoc/odoc_comments.ml[16,1079+0]..[16,1079+28])
+    Pstr_attribute "ocaml.text"
+    [
+      structure_item (ocamldoc/odoc_comments.ml[16,1079+0]..[16,1079+28])
+        Pstr_eval
+        expression (ocamldoc/odoc_comments.ml[16,1079+0]..[16,1079+28])
+          Pexp_constant PConst_string(" Analysis of comments. ",(ocamldoc/odoc_comments.ml[16,1079+0]..[16,1079+28]),None)
+    ]
+  structure_item (ocamldoc/odoc_comments.ml[18,1109+0]..[18,1109+15])
+    Pstr_open Fresh
+    module_expr (ocamldoc/odoc_comments.ml[18,1109+5]..[18,1109+15])
+      Pmod_ident "Odoc_types" (ocamldoc/odoc_comments.ml[18,1109+5]..[18,1109+15])
+  structure_item (ocamldoc/odoc_comments.ml[21,1215+0]..[21,1215+36])
+    Pstr_value Nonrec
+    [
+      <def>
+          attribute "ocaml.doc"
+            [
+              structure_item (ocamldoc/odoc_comments.ml[20,1126+0]..[20,1126+88])
+                Pstr_eval
+                expression (ocamldoc/odoc_comments.ml[20,1126+0]..[20,1126+88])
+                  Pexp_constant PConst_string(" This variable contains the regular expression representing a blank but not a '\\n'.",(ocamldoc/odoc_comments.ml[20,1126+0]..[20,1126+88]),None)
+            ]
+        pattern (ocamldoc/odoc_comments.ml[21,1215+4]..[21,1215+16])
+          Ppat_var "simple_blank" (ocamldoc/odoc_comments.ml[21,1215+4]..[21,1215+16])
+        expression (ocamldoc/odoc_comments.ml[21,1215+19]..[21,1215+36])
+          Pexp_constant PConst_string("[ \r\t\012]",(ocamldoc/odoc_comments.ml[21,1215+20]..[21,1215+35]),None)
+    ]
+  structure_item (ocamldoc/odoc_comments.ml[23,1253+0]..[27,1376+7])
+    Pstr_modtype "Texter" (ocamldoc/odoc_comments.ml[23,1253+12]..[23,1253+18])
+      module_type (ocamldoc/odoc_comments.ml[24,1274+4]..[27,1376+7])
+        Pmty_signature
+        [
+          signature_item (ocamldoc/odoc_comments.ml[26,1334+6]..[26,1334+41])
+            Psig_value
+            value_description "text_of_string" (ocamldoc/odoc_comments.ml[26,1334+10]..[26,1334+24]) (ocamldoc/odoc_comments.ml[26,1334+6]..[26,1334+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (ocamldoc/odoc_comments.ml[25,1282+6]..[25,1282+51])
+                    Pstr_eval
+                    expression (ocamldoc/odoc_comments.ml[25,1282+6]..[25,1282+51])
+                      Pexp_constant PConst_string(" Return a text structure from a string. ",(ocamldoc/odoc_comments.ml[25,1282+6]..[25,1282+51]),None)
+                ]
+              core_type (ocamldoc/odoc_comments.ml[26,1334+27]..[26,1334+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (ocamldoc/odoc_comments.ml[26,1334+27]..[26,1334+33])
+                  Ptyp_constr "string" (ocamldoc/odoc_comments.ml[26,1334+27]..[26,1334+33])
+                  []
+                core_type (ocamldoc/odoc_comments.ml[26,1334+37]..[26,1334+41])
+                  Ptyp_constr "text" (ocamldoc/odoc_comments.ml[26,1334+37]..[26,1334+41])
+                  []
+              []
+        ]
+  structure_item (ocamldoc/odoc_comments.ml[29,1385+0]..[216,8355+5])
+    Pstr_module
+    "Info_retriever" (ocamldoc/odoc_comments.ml[29,1385+7]..[29,1385+21])
+      module_expr (ocamldoc/odoc_comments.ml[30,1409+10]..[216,8355+5])
+        Pmod_functor "MyTexter" (ocamldoc/odoc_comments.ml[30,1409+11]..[30,1409+19])
+        module_type (ocamldoc/odoc_comments.ml[30,1409+22]..[30,1409+28])
+          Pmty_ident "Texter" (ocamldoc/odoc_comments.ml[30,1409+22]..[30,1409+28])
+        module_expr (ocamldoc/odoc_comments.ml[31,1442+2]..[216,8355+5])
+          Pmod_structure
+          [
+            structure_item (ocamldoc/odoc_comments.ml[32,1451+4]..[41,1790+70])
+              Pstr_value Nonrec
+              [
+                <def>
+                  pattern (ocamldoc/odoc_comments.ml[32,1451+8]..[32,1451+18])
+                    Ppat_var "create_see" (ocamldoc/odoc_comments.ml[32,1451+8]..[32,1451+18])
+                  expression (ocamldoc/odoc_comments.ml[32,1451+19]..[41,1790+70]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[32,1451+19]..[32,1451+24])
+                      Ppat_var "_file" (ocamldoc/odoc_comments.ml[32,1451+19]..[32,1451+24])
+                    expression (ocamldoc/odoc_comments.ml[32,1451+25]..[41,1790+70]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (ocamldoc/odoc_comments.ml[32,1451+25]..[32,1451+26])
+                        Ppat_var "s" (ocamldoc/odoc_comments.ml[32,1451+25]..[32,1451+26])
+                      expression (ocamldoc/odoc_comments.ml[33,1480+6]..[41,1790+70])
+                        Pexp_try
+                        expression (ocamldoc/odoc_comments.ml[34,1490+8]..[36,1613+44])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (ocamldoc/odoc_comments.ml[34,1490+12]..[34,1490+18])
+                                Ppat_var "lexbuf" (ocamldoc/odoc_comments.ml[34,1490+12]..[34,1490+18])
+                              expression (ocamldoc/odoc_comments.ml[34,1490+21]..[34,1490+41])
+                                Pexp_apply
+                                expression (ocamldoc/odoc_comments.ml[34,1490+21]..[34,1490+39])
+                                  Pexp_ident "Lexing.from_string" (ocamldoc/odoc_comments.ml[34,1490+21]..[34,1490+39])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (ocamldoc/odoc_comments.ml[34,1490+40]..[34,1490+41])
+                                      Pexp_ident "s" (ocamldoc/odoc_comments.ml[34,1490+40]..[34,1490+41])
+                                ]
+                          ]
+                          expression (ocamldoc/odoc_comments.ml[35,1535+8]..[36,1613+44])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (ocamldoc/odoc_comments.ml[35,1535+12]..[35,1535+24])
+                                  Ppat_tuple
+                                  [
+                                    pattern (ocamldoc/odoc_comments.ml[35,1535+13]..[35,1535+20])
+                                      Ppat_var "see_ref" (ocamldoc/odoc_comments.ml[35,1535+13]..[35,1535+20])
+                                    pattern (ocamldoc/odoc_comments.ml[35,1535+22]..[35,1535+23])
+                                      Ppat_var "s" (ocamldoc/odoc_comments.ml[35,1535+22]..[35,1535+23])
+                                  ]
+                                expression (ocamldoc/odoc_comments.ml[35,1535+27]..[35,1535+74])
+                                  Pexp_apply
+                                  expression (ocamldoc/odoc_comments.ml[35,1535+27]..[35,1535+47])
+                                    Pexp_ident "Odoc_parser.see_info" (ocamldoc/odoc_comments.ml[35,1535+27]..[35,1535+47])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/odoc_comments.ml[35,1535+48]..[35,1535+67])
+                                        Pexp_ident "Odoc_see_lexer.main" (ocamldoc/odoc_comments.ml[35,1535+48]..[35,1535+67])
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/odoc_comments.ml[35,1535+68]..[35,1535+74])
+                                        Pexp_ident "lexbuf" (ocamldoc/odoc_comments.ml[35,1535+68]..[35,1535+74])
+                                  ]
+                            ]
+                            expression (ocamldoc/odoc_comments.ml[36,1613+8]..[36,1613+44])
+                              Pexp_tuple
+                              [
+                                expression (ocamldoc/odoc_comments.ml[36,1613+9]..[36,1613+16])
+                                  Pexp_ident "see_ref" (ocamldoc/odoc_comments.ml[36,1613+9]..[36,1613+16])
+                                expression (ocamldoc/odoc_comments.ml[36,1613+18]..[36,1613+43])
+                                  Pexp_apply
+                                  expression (ocamldoc/odoc_comments.ml[36,1613+18]..[36,1613+41])
+                                    Pexp_ident "MyTexter.text_of_string" (ocamldoc/odoc_comments.ml[36,1613+18]..[36,1613+41])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/odoc_comments.ml[36,1613+42]..[36,1613+43])
+                                        Pexp_ident "s" (ocamldoc/odoc_comments.ml[36,1613+42]..[36,1613+43])
+                                  ]
+                              ]
+                        [
+                          <case>
+                            pattern (ocamldoc/odoc_comments.ml[38,1669+8]..[38,1669+39])
+                              Ppat_construct "Odoc_text.Text_syntax" (ocamldoc/odoc_comments.ml[38,1669+8]..[38,1669+29])
+                              Some
+                                []
+                                pattern (ocamldoc/odoc_comments.ml[38,1669+30]..[38,1669+39])
+                                  Ppat_tuple
+                                  [
+                                    pattern (ocamldoc/odoc_comments.ml[38,1669+31]..[38,1669+32])
+                                      Ppat_var "l" (ocamldoc/odoc_comments.ml[38,1669+31]..[38,1669+32])
+                                    pattern (ocamldoc/odoc_comments.ml[38,1669+34]..[38,1669+35])
+                                      Ppat_var "c" (ocamldoc/odoc_comments.ml[38,1669+34]..[38,1669+35])
+                                    pattern (ocamldoc/odoc_comments.ml[38,1669+37]..[38,1669+38])
+                                      Ppat_var "s" (ocamldoc/odoc_comments.ml[38,1669+37]..[38,1669+38])
+                                  ]
+                            expression (ocamldoc/odoc_comments.ml[39,1712+10]..[39,1712+64])
+                              Pexp_apply
+                              expression (ocamldoc/odoc_comments.ml[39,1712+10]..[39,1712+15])
+                                Pexp_ident "raise" (ocamldoc/odoc_comments.ml[39,1712+10]..[39,1712+15])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (ocamldoc/odoc_comments.ml[39,1712+16]..[39,1712+64])
+                                    Pexp_construct "Failure" (ocamldoc/odoc_comments.ml[39,1712+17]..[39,1712+24])
+                                    Some
+                                      expression (ocamldoc/odoc_comments.ml[39,1712+25]..[39,1712+63])
+                                        Pexp_apply
+                                        expression (ocamldoc/odoc_comments.ml[39,1712+26]..[39,1712+56])
+                                          Pexp_ident "Odoc_messages.text_parse_error" (ocamldoc/odoc_comments.ml[39,1712+26]..[39,1712+56])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (ocamldoc/odoc_comments.ml[39,1712+57]..[39,1712+58])
+                                              Pexp_ident "l" (ocamldoc/odoc_comments.ml[39,1712+57]..[39,1712+58])
+                                          <arg>
+                                          Nolabel
+                                            expression (ocamldoc/odoc_comments.ml[39,1712+59]..[39,1712+60])
+                                              Pexp_ident "c" (ocamldoc/odoc_comments.ml[39,1712+59]..[39,1712+60])
+                                          <arg>
+                                          Nolabel
+                                            expression (ocamldoc/odoc_comments.ml[39,1712+61]..[39,1712+62])
+                                              Pexp_ident "s" (ocamldoc/odoc_comments.ml[39,1712+61]..[39,1712+62])
+                                        ]
+                              ]
+                          <case>
+                            pattern (ocamldoc/odoc_comments.ml[40,1777+8]..[40,1777+9])
+                              Ppat_any
+                            expression (ocamldoc/odoc_comments.ml[41,1790+10]..[41,1790+70])
+                              Pexp_apply
+                              expression (ocamldoc/odoc_comments.ml[41,1790+10]..[41,1790+15])
+                                Pexp_ident "raise" (ocamldoc/odoc_comments.ml[41,1790+10]..[41,1790+15])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (ocamldoc/odoc_comments.ml[41,1790+16]..[41,1790+70])
+                                    Pexp_construct "Failure" (ocamldoc/odoc_comments.ml[41,1790+17]..[41,1790+24])
+                                    Some
+                                      expression (ocamldoc/odoc_comments.ml[41,1790+25]..[41,1790+69])
+                                        Pexp_apply
+                                        expression (ocamldoc/odoc_comments.ml[41,1790+66]..[41,1790+67])
+                                          Pexp_ident "^" (ocamldoc/odoc_comments.ml[41,1790+66]..[41,1790+67])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (ocamldoc/odoc_comments.ml[41,1790+26]..[41,1790+66])
+                                              Pexp_constant PConst_string("Unknown error while parsing @see tag: ",(ocamldoc/odoc_comments.ml[41,1790+27]..[41,1790+65]),None)
+                                          <arg>
+                                          Nolabel
+                                            expression (ocamldoc/odoc_comments.ml[41,1790+67]..[41,1790+68])
+                                              Pexp_ident "s" (ocamldoc/odoc_comments.ml[41,1790+67]..[41,1790+68])
+                                        ]
+                              ]
+                        ]
+              ]
+            structure_item (ocamldoc/odoc_comments.ml[43,1862+4]..[99,4463+11])
+              Pstr_value Nonrec
+              [
+                <def>
+                  pattern (ocamldoc/odoc_comments.ml[43,1862+8]..[43,1862+21])
+                    Ppat_var "retrieve_info" (ocamldoc/odoc_comments.ml[43,1862+8]..[43,1862+21])
+                  expression (ocamldoc/odoc_comments.ml[43,1862+22]..[99,4463+11]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[43,1862+22]..[43,1862+29])
+                      Ppat_var "fun_lex" (ocamldoc/odoc_comments.ml[43,1862+22]..[43,1862+29])
+                    expression (ocamldoc/odoc_comments.ml[43,1862+30]..[99,4463+11]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (ocamldoc/odoc_comments.ml[43,1862+30]..[43,1862+34])
+                        Ppat_var "file" (ocamldoc/odoc_comments.ml[43,1862+30]..[43,1862+34])
+                      expression (ocamldoc/odoc_comments.ml[43,1862+35]..[99,4463+11]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (ocamldoc/odoc_comments.ml[43,1862+35]..[43,1862+47])
+                          Ppat_constraint
+                          pattern (ocamldoc/odoc_comments.ml[43,1862+36]..[43,1862+37])
+                            Ppat_var "s" (ocamldoc/odoc_comments.ml[43,1862+36]..[43,1862+37])
+                          core_type (ocamldoc/odoc_comments.ml[43,1862+40]..[43,1862+46])
+                            Ptyp_constr "string" (ocamldoc/odoc_comments.ml[43,1862+40]..[43,1862+46])
+                            []
+                        expression (ocamldoc/odoc_comments.ml[44,1912+6]..[99,4463+11])
+                          Pexp_try
+                          expression (ocamldoc/odoc_comments.ml[45,1922+8]..[89,4034+13])
+                            Pexp_sequence
+                            expression (ocamldoc/odoc_comments.ml[45,1922+8]..[45,1922+36])
+                              Pexp_apply
+                              expression (ocamldoc/odoc_comments.ml[45,1922+8]..[45,1922+33])
+                                Pexp_ident "Odoc_comments_global.init" (ocamldoc/odoc_comments.ml[45,1922+8]..[45,1922+33])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (ocamldoc/odoc_comments.ml[45,1922+34]..[45,1922+36])
+                                    Pexp_construct "()" (ocamldoc/odoc_comments.ml[45,1922+34]..[45,1922+36])
+                                    None
+                              ]
+                            expression (ocamldoc/odoc_comments.ml[46,1960+8]..[89,4034+13])
+                              Pexp_sequence
+                              expression (ocamldoc/odoc_comments.ml[46,1960+8]..[46,1960+38])
+                                Pexp_apply
+                                expression (ocamldoc/odoc_comments.ml[46,1960+34]..[46,1960+36])
+                                  Pexp_ident ":=" (ocamldoc/odoc_comments.ml[46,1960+34]..[46,1960+36])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (ocamldoc/odoc_comments.ml[46,1960+8]..[46,1960+33])
+                                      Pexp_ident "Odoc_lexer.comments_level" (ocamldoc/odoc_comments.ml[46,1960+8]..[46,1960+33])
+                                  <arg>
+                                  Nolabel
+                                    expression (ocamldoc/odoc_comments.ml[46,1960+37]..[46,1960+38])
+                                      Pexp_constant PConst_int (0,None)
+                                ]
+                              expression (ocamldoc/odoc_comments.ml[47,2000+8]..[89,4034+13])
+                                Pexp_let Nonrec
+                                [
+                                  <def>
+                                    pattern (ocamldoc/odoc_comments.ml[47,2000+12]..[47,2000+18])
+                                      Ppat_var "lexbuf" (ocamldoc/odoc_comments.ml[47,2000+12]..[47,2000+18])
+                                    expression (ocamldoc/odoc_comments.ml[47,2000+21]..[47,2000+41])
+                                      Pexp_apply
+                                      expression (ocamldoc/odoc_comments.ml[47,2000+21]..[47,2000+39])
+                                        Pexp_ident "Lexing.from_string" (ocamldoc/odoc_comments.ml[47,2000+21]..[47,2000+39])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[47,2000+40]..[47,2000+41])
+                                            Pexp_ident "s" (ocamldoc/odoc_comments.ml[47,2000+40]..[47,2000+41])
+                                      ]
+                                ]
+                                expression (ocamldoc/odoc_comments.ml[48,2045+8]..[89,4034+13])
+                                  Pexp_match
+                                  expression (ocamldoc/odoc_comments.ml[48,2045+14]..[48,2045+45])
+                                    Pexp_apply
+                                    expression (ocamldoc/odoc_comments.ml[48,2045+14]..[48,2045+30])
+                                      Pexp_ident "Odoc_parser.main" (ocamldoc/odoc_comments.ml[48,2045+14]..[48,2045+30])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/odoc_comments.ml[48,2045+31]..[48,2045+38])
+                                          Pexp_ident "fun_lex" (ocamldoc/odoc_comments.ml[48,2045+31]..[48,2045+38])
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/odoc_comments.ml[48,2045+39]..[48,2045+45])
+                                          Pexp_ident "lexbuf" (ocamldoc/odoc_comments.ml[48,2045+39]..[48,2045+45])
+                                    ]
+                                  [
+                                    <case>
+                                      pattern (ocamldoc/odoc_comments.ml[49,2096+10]..[49,2096+14])
+                                        Ppat_construct "None" (ocamldoc/odoc_comments.ml[49,2096+10]..[49,2096+14])
+                                        None
+                                      expression (ocamldoc/odoc_comments.ml[50,2114+12]..[50,2114+21])
+                                        Pexp_tuple
+                                        [
+                                          expression (ocamldoc/odoc_comments.ml[50,2114+13]..[50,2114+14])
+                                            Pexp_constant PConst_int (0,None)
+                                          expression (ocamldoc/odoc_comments.ml[50,2114+16]..[50,2114+20])
+                                            Pexp_construct "None" (ocamldoc/odoc_comments.ml[50,2114+16]..[50,2114+20])
+                                            None
+                                        ]
+                                    <case>
+                                      pattern (ocamldoc/odoc_comments.ml[51,2136+10]..[51,2136+33])
+                                        Ppat_construct "Some" (ocamldoc/odoc_comments.ml[51,2136+10]..[51,2136+14])
+                                        Some
+                                          []
+                                          pattern (ocamldoc/odoc_comments.ml[51,2136+15]..[51,2136+33])
+                                            Ppat_tuple
+                                            [
+                                              pattern (ocamldoc/odoc_comments.ml[51,2136+16]..[51,2136+20])
+                                                Ppat_var "desc" (ocamldoc/odoc_comments.ml[51,2136+16]..[51,2136+20])
+                                              pattern (ocamldoc/odoc_comments.ml[51,2136+22]..[51,2136+32])
+                                                Ppat_var "remain_opt" (ocamldoc/odoc_comments.ml[51,2136+22]..[51,2136+32])
+                                            ]
+                                      expression (ocamldoc/odoc_comments.ml[52,2173+12]..[89,4034+13])
+                                        Pexp_let Nonrec
+                                        [
+                                          <def>
+                                            pattern (ocamldoc/odoc_comments.ml[52,2173+16]..[52,2173+28])
+                                              Ppat_var "mem_nb_chars" (ocamldoc/odoc_comments.ml[52,2173+16]..[52,2173+28])
+                                            expression (ocamldoc/odoc_comments.ml[52,2173+31]..[52,2173+61])
+                                              Pexp_apply
+                                              expression (ocamldoc/odoc_comments.ml[52,2173+31]..[52,2173+32])
+                                                Pexp_ident "!" (ocamldoc/odoc_comments.ml[52,2173+31]..[52,2173+32])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (ocamldoc/odoc_comments.ml[52,2173+32]..[52,2173+61])
+                                                    Pexp_ident "Odoc_comments_global.nb_chars" (ocamldoc/odoc_comments.ml[52,2173+32]..[52,2173+61])
+                                              ]
+                                        ]
+                                        expression (ocamldoc/odoc_comments.ml[53,2238+12]..[89,4034+13])
+                                          Pexp_sequence
+                                          expression (ocamldoc/odoc_comments.ml[53,2238+12]..[59,2474+15])
+                                            Pexp_match
+                                            expression (ocamldoc/odoc_comments.ml[53,2238+24]..[53,2238+34])
+                                              Pexp_ident "remain_opt" (ocamldoc/odoc_comments.ml[53,2238+24]..[53,2238+34])
+                                            [
+                                              <case>
+                                                pattern (ocamldoc/odoc_comments.ml[54,2278+16]..[54,2278+20])
+                                                  Ppat_construct "None" (ocamldoc/odoc_comments.ml[54,2278+16]..[54,2278+20])
+                                                  None
+                                                expression (ocamldoc/odoc_comments.ml[55,2302+18]..[55,2302+20])
+                                                  Pexp_construct "()" (ocamldoc/odoc_comments.ml[55,2302+18]..[55,2302+20])
+                                                  None
+                                              <case>
+                                                pattern (ocamldoc/odoc_comments.ml[56,2323+16]..[56,2323+22])
+                                                  Ppat_construct "Some" (ocamldoc/odoc_comments.ml[56,2323+16]..[56,2323+20])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/odoc_comments.ml[56,2323+21]..[56,2323+22])
+                                                      Ppat_var "s" (ocamldoc/odoc_comments.ml[56,2323+21]..[56,2323+22])
+                                                expression (ocamldoc/odoc_comments.ml[57,2349+18]..[58,2405+68])
+                                                  Pexp_let Nonrec
+                                                  [
+                                                    <def>
+                                                      pattern (ocamldoc/odoc_comments.ml[57,2349+22]..[57,2349+29])
+                                                        Ppat_var "lexbuf2" (ocamldoc/odoc_comments.ml[57,2349+22]..[57,2349+29])
+                                                      expression (ocamldoc/odoc_comments.ml[57,2349+32]..[57,2349+52])
+                                                        Pexp_apply
+                                                        expression (ocamldoc/odoc_comments.ml[57,2349+32]..[57,2349+50])
+                                                          Pexp_ident "Lexing.from_string" (ocamldoc/odoc_comments.ml[57,2349+32]..[57,2349+50])
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (ocamldoc/odoc_comments.ml[57,2349+51]..[57,2349+52])
+                                                              Pexp_ident "s" (ocamldoc/odoc_comments.ml[57,2349+51]..[57,2349+52])
+                                                        ]
+                                                  ]
+                                                  expression (ocamldoc/odoc_comments.ml[58,2405+18]..[58,2405+68])
+                                                    Pexp_apply
+                                                    expression (ocamldoc/odoc_comments.ml[58,2405+18]..[58,2405+40])
+                                                      Pexp_ident "Odoc_parser.info_part2" (ocamldoc/odoc_comments.ml[58,2405+18]..[58,2405+40])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (ocamldoc/odoc_comments.ml[58,2405+41]..[58,2405+60])
+                                                          Pexp_ident "Odoc_lexer.elements" (ocamldoc/odoc_comments.ml[58,2405+41]..[58,2405+60])
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (ocamldoc/odoc_comments.ml[58,2405+61]..[58,2405+68])
+                                                          Pexp_ident "lexbuf2" (ocamldoc/odoc_comments.ml[58,2405+61]..[58,2405+68])
+                                                    ]
+                                            ]
+                                          expression (ocamldoc/odoc_comments.ml[60,2491+12]..[89,4034+13])
+                                            Pexp_tuple
+                                            [
+                                              expression (ocamldoc/odoc_comments.ml[60,2491+13]..[60,2491+25])
+                                                Pexp_ident "mem_nb_chars" (ocamldoc/odoc_comments.ml[60,2491+13]..[60,2491+25])
+                                              expression (ocamldoc/odoc_comments.ml[61,2518+13]..[88,4017+16])
+                                                Pexp_construct "Some" (ocamldoc/odoc_comments.ml[61,2518+13]..[61,2518+17])
+                                                Some
+                                                  expression (ocamldoc/odoc_comments.ml[62,2536+15]..[88,4017+16])
+                                                    Pexp_record
+                                                    [
+                                                      "i_desc" (ocamldoc/odoc_comments.ml[63,2553+17]..[63,2553+23])
+                                                        expression (ocamldoc/odoc_comments.ml[63,2553+26]..[63,2553+97])
+                                                          Pexp_match
+                                                          expression (ocamldoc/odoc_comments.ml[63,2553+33]..[63,2553+37])
+                                                            Pexp_ident "desc" (ocamldoc/odoc_comments.ml[63,2553+33]..[63,2553+37])
+                                                          [
+                                                            <case>
+                                                              pattern (ocamldoc/odoc_comments.ml[63,2553+43]..[63,2553+45])
+                                                                Ppat_constant PConst_string("",(ocamldoc/odoc_comments.ml[63,2553+44]..[63,2553+44]),None)
+                                                              expression (ocamldoc/odoc_comments.ml[63,2553+49]..[63,2553+53])
+                                                                Pexp_construct "None" (ocamldoc/odoc_comments.ml[63,2553+49]..[63,2553+53])
+                                                                None
+                                                            <case>
+                                                              pattern (ocamldoc/odoc_comments.ml[63,2553+56]..[63,2553+57])
+                                                                Ppat_any
+                                                              expression (ocamldoc/odoc_comments.ml[63,2553+61]..[63,2553+96])
+                                                                Pexp_construct "Some" (ocamldoc/odoc_comments.ml[63,2553+61]..[63,2553+65])
+                                                                Some
+                                                                  expression (ocamldoc/odoc_comments.ml[63,2553+66]..[63,2553+96])
+                                                                    Pexp_apply
+                                                                    expression (ocamldoc/odoc_comments.ml[63,2553+67]..[63,2553+90])
+                                                                      Pexp_ident "MyTexter.text_of_string" (ocamldoc/odoc_comments.ml[63,2553+67]..[63,2553+90])
+                                                                    [
+                                                                      <arg>
+                                                                      Nolabel
+expression (ocamldoc/odoc_comments.ml[63,2553+91]..[63,2553+95])
+  Pexp_ident "desc" (ocamldoc/odoc_comments.ml[63,2553+91]..[63,2553+95])
+                                                                    ]
+                                                          ]
+                                                      "i_authors" (ocamldoc/odoc_comments.ml[64,2652+17]..[64,2652+26])
+                                                        expression (ocamldoc/odoc_comments.ml[64,2652+29]..[64,2652+58])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/odoc_comments.ml[64,2652+29]..[64,2652+30])
+                                                            Pexp_ident "!" (ocamldoc/odoc_comments.ml[64,2652+29]..[64,2652+30])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[64,2652+30]..[64,2652+58])
+                                                                Pexp_ident "Odoc_comments_global.authors" (ocamldoc/odoc_comments.ml[64,2652+30]..[64,2652+58])
+                                                          ]
+                                                      "i_version" (ocamldoc/odoc_comments.ml[65,2712+17]..[65,2712+26])
+                                                        expression (ocamldoc/odoc_comments.ml[65,2712+29]..[65,2712+58])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/odoc_comments.ml[65,2712+29]..[65,2712+30])
+                                                            Pexp_ident "!" (ocamldoc/odoc_comments.ml[65,2712+29]..[65,2712+30])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[65,2712+30]..[65,2712+58])
+                                                                Pexp_ident "Odoc_comments_global.version" (ocamldoc/odoc_comments.ml[65,2712+30]..[65,2712+58])
+                                                          ]
+                                                      "i_sees" (ocamldoc/odoc_comments.ml[66,2772+17]..[66,2772+23])
+                                                        expression (ocamldoc/odoc_comments.ml[66,2772+26]..[66,2772+81])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/odoc_comments.ml[66,2772+27]..[66,2772+35])
+                                                            Pexp_ident "List.map" (ocamldoc/odoc_comments.ml[66,2772+27]..[66,2772+35])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[66,2772+36]..[66,2772+53])
+                                                                Pexp_apply
+                                                                expression (ocamldoc/odoc_comments.ml[66,2772+37]..[66,2772+47])
+                                                                  Pexp_ident "create_see" (ocamldoc/odoc_comments.ml[66,2772+37]..[66,2772+47])
+                                                                [
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (ocamldoc/odoc_comments.ml[66,2772+48]..[66,2772+52])
+                                                                      Pexp_ident "file" (ocamldoc/odoc_comments.ml[66,2772+48]..[66,2772+52])
+                                                                ]
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[66,2772+54]..[66,2772+80])
+                                                                Pexp_apply
+                                                                expression (ocamldoc/odoc_comments.ml[66,2772+54]..[66,2772+55])
+                                                                  Pexp_ident "!" (ocamldoc/odoc_comments.ml[66,2772+54]..[66,2772+55])
+                                                                [
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (ocamldoc/odoc_comments.ml[66,2772+55]..[66,2772+80])
+                                                                      Pexp_ident "Odoc_comments_global.sees" (ocamldoc/odoc_comments.ml[66,2772+55]..[66,2772+80])
+                                                                ]
+                                                          ]
+                                                      "i_since" (ocamldoc/odoc_comments.ml[67,2856+17]..[67,2856+24])
+                                                        expression (ocamldoc/odoc_comments.ml[67,2856+27]..[67,2856+54])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/odoc_comments.ml[67,2856+27]..[67,2856+28])
+                                                            Pexp_ident "!" (ocamldoc/odoc_comments.ml[67,2856+27]..[67,2856+28])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[67,2856+28]..[67,2856+54])
+                                                                Pexp_ident "Odoc_comments_global.since" (ocamldoc/odoc_comments.ml[67,2856+28]..[67,2856+54])
+                                                          ]
+                                                      "i_before" (ocamldoc/odoc_comments.ml[68,2912+17]..[68,2912+25])
+                                                        expression (ocamldoc/odoc_comments.ml[68,2912+28]..[70,3015+86])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/odoc_comments.ml[68,2912+28]..[68,2912+56])
+                                                            Pexp_ident "Odoc_merge.merge_before_tags" (ocamldoc/odoc_comments.ml[68,2912+28]..[68,2912+56])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[69,2969+21]..[70,3015+86])
+                                                                Pexp_apply
+                                                                expression (ocamldoc/odoc_comments.ml[69,2969+22]..[69,2969+30])
+                                                                  Pexp_ident "List.map" (ocamldoc/odoc_comments.ml[69,2969+22]..[69,2969+30])
+                                                                [
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (ocamldoc/odoc_comments.ml[69,2969+31]..[70,3015+56])
+                                                                      Pexp_fun
+                                                                      Nolabel
+                                                                      None
+                                                                      pattern (ocamldoc/odoc_comments.ml[69,2969+36]..[69,2969+42])
+Ppat_tuple
+[
+  pattern (ocamldoc/odoc_comments.ml[69,2969+37]..[69,2969+38])
+    Ppat_var "n" (ocamldoc/odoc_comments.ml[69,2969+37]..[69,2969+38])
+  pattern (ocamldoc/odoc_comments.ml[69,2969+40]..[69,2969+41])
+    Ppat_var "s" (ocamldoc/odoc_comments.ml[69,2969+40]..[69,2969+41])
+]
+                                                                      expression (ocamldoc/odoc_comments.ml[70,3015+25]..[70,3015+55])
+Pexp_tuple
+[
+  expression (ocamldoc/odoc_comments.ml[70,3015+26]..[70,3015+27])
+    Pexp_ident "n" (ocamldoc/odoc_comments.ml[70,3015+26]..[70,3015+27])
+  expression (ocamldoc/odoc_comments.ml[70,3015+29]..[70,3015+54])
+    Pexp_apply
+    expression (ocamldoc/odoc_comments.ml[70,3015+29]..[70,3015+52])
+      Pexp_ident "MyTexter.text_of_string" (ocamldoc/odoc_comments.ml[70,3015+29]..[70,3015+52])
+    [
+      <arg>
+      Nolabel
+        expression (ocamldoc/odoc_comments.ml[70,3015+53]..[70,3015+54])
+          Pexp_ident "s" (ocamldoc/odoc_comments.ml[70,3015+53]..[70,3015+54])
+    ]
+]
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (ocamldoc/odoc_comments.ml[70,3015+57]..[70,3015+85])
+                                                                      Pexp_apply
+                                                                      expression (ocamldoc/odoc_comments.ml[70,3015+57]..[70,3015+58])
+Pexp_ident "!" (ocamldoc/odoc_comments.ml[70,3015+57]..[70,3015+58])
+                                                                      [
+<arg>
+Nolabel
+  expression (ocamldoc/odoc_comments.ml[70,3015+58]..[70,3015+85])
+    Pexp_ident "Odoc_comments_global.before" (ocamldoc/odoc_comments.ml[70,3015+58]..[70,3015+85])
+                                                                      ]
+                                                                ]
+                                                          ]
+                                                      "i_deprecated" (ocamldoc/odoc_comments.ml[72,3123+17]..[72,3123+29])
+                                                        expression (ocamldoc/odoc_comments.ml[73,3155+17]..[74,3217+77])
+                                                          Pexp_match
+                                                          expression (ocamldoc/odoc_comments.ml[73,3155+24]..[73,3155+56])
+                                                            Pexp_apply
+                                                            expression (ocamldoc/odoc_comments.ml[73,3155+24]..[73,3155+25])
+                                                              Pexp_ident "!" (ocamldoc/odoc_comments.ml[73,3155+24]..[73,3155+25])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (ocamldoc/odoc_comments.ml[73,3155+25]..[73,3155+56])
+                                                                  Pexp_ident "Odoc_comments_global.deprecated" (ocamldoc/odoc_comments.ml[73,3155+25]..[73,3155+56])
+                                                            ]
+                                                          [
+                                                            <case>
+                                                              pattern (ocamldoc/odoc_comments.ml[74,3217+19]..[74,3217+23])
+                                                                Ppat_construct "None" (ocamldoc/odoc_comments.ml[74,3217+19]..[74,3217+23])
+                                                                None
+                                                              expression (ocamldoc/odoc_comments.ml[74,3217+27]..[74,3217+31])
+                                                                Pexp_construct "None" (ocamldoc/odoc_comments.ml[74,3217+27]..[74,3217+31])
+                                                                None
+                                                            <case>
+                                                              pattern (ocamldoc/odoc_comments.ml[74,3217+34]..[74,3217+40])
+                                                                Ppat_construct "Some" (ocamldoc/odoc_comments.ml[74,3217+34]..[74,3217+38])
+                                                                Some
+                                                                  []
+                                                                  pattern (ocamldoc/odoc_comments.ml[74,3217+39]..[74,3217+40])
+                                                                    Ppat_var "s" (ocamldoc/odoc_comments.ml[74,3217+39]..[74,3217+40])
+                                                              expression (ocamldoc/odoc_comments.ml[74,3217+44]..[74,3217+76])
+                                                                Pexp_construct "Some" (ocamldoc/odoc_comments.ml[74,3217+44]..[74,3217+48])
+                                                                Some
+                                                                  expression (ocamldoc/odoc_comments.ml[74,3217+49]..[74,3217+76])
+                                                                    Pexp_apply
+                                                                    expression (ocamldoc/odoc_comments.ml[74,3217+50]..[74,3217+73])
+                                                                      Pexp_ident "MyTexter.text_of_string" (ocamldoc/odoc_comments.ml[74,3217+50]..[74,3217+73])
+                                                                    [
+                                                                      <arg>
+                                                                      Nolabel
+expression (ocamldoc/odoc_comments.ml[74,3217+74]..[74,3217+75])
+  Pexp_ident "s" (ocamldoc/odoc_comments.ml[74,3217+74]..[74,3217+75])
+                                                                    ]
+                                                          ]
+                                                      "i_params" (ocamldoc/odoc_comments.ml[75,3296+17]..[75,3296+25])
+                                                        expression (ocamldoc/odoc_comments.ml[76,3324+17]..[77,3366+80])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/odoc_comments.ml[76,3324+18]..[76,3324+26])
+                                                            Pexp_ident "List.map" (ocamldoc/odoc_comments.ml[76,3324+18]..[76,3324+26])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[76,3324+27]..[77,3366+50])
+                                                                Pexp_fun
+                                                                Nolabel
+                                                                None
+                                                                pattern (ocamldoc/odoc_comments.ml[76,3324+32]..[76,3324+38])
+                                                                  Ppat_tuple
+                                                                  [
+                                                                    pattern (ocamldoc/odoc_comments.ml[76,3324+33]..[76,3324+34])
+                                                                      Ppat_var "n" (ocamldoc/odoc_comments.ml[76,3324+33]..[76,3324+34])
+                                                                    pattern (ocamldoc/odoc_comments.ml[76,3324+36]..[76,3324+37])
+                                                                      Ppat_var "s" (ocamldoc/odoc_comments.ml[76,3324+36]..[76,3324+37])
+                                                                  ]
+                                                                expression (ocamldoc/odoc_comments.ml[77,3366+19]..[77,3366+49])
+                                                                  Pexp_tuple
+                                                                  [
+                                                                    expression (ocamldoc/odoc_comments.ml[77,3366+20]..[77,3366+21])
+                                                                      Pexp_ident "n" (ocamldoc/odoc_comments.ml[77,3366+20]..[77,3366+21])
+                                                                    expression (ocamldoc/odoc_comments.ml[77,3366+23]..[77,3366+48])
+                                                                      Pexp_apply
+                                                                      expression (ocamldoc/odoc_comments.ml[77,3366+23]..[77,3366+46])
+Pexp_ident "MyTexter.text_of_string" (ocamldoc/odoc_comments.ml[77,3366+23]..[77,3366+46])
+                                                                      [
+<arg>
+Nolabel
+  expression (ocamldoc/odoc_comments.ml[77,3366+47]..[77,3366+48])
+    Pexp_ident "s" (ocamldoc/odoc_comments.ml[77,3366+47]..[77,3366+48])
+                                                                      ]
+                                                                  ]
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[77,3366+51]..[77,3366+79])
+                                                                Pexp_apply
+                                                                expression (ocamldoc/odoc_comments.ml[77,3366+51]..[77,3366+52])
+                                                                  Pexp_ident "!" (ocamldoc/odoc_comments.ml[77,3366+51]..[77,3366+52])
+                                                                [
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (ocamldoc/odoc_comments.ml[77,3366+52]..[77,3366+79])
+                                                                      Pexp_ident "Odoc_comments_global.params" (ocamldoc/odoc_comments.ml[77,3366+52]..[77,3366+79])
+                                                                ]
+                                                          ]
+                                                      "i_raised_exceptions" (ocamldoc/odoc_comments.ml[78,3448+17]..[78,3448+36])
+                                                        expression (ocamldoc/odoc_comments.ml[79,3487+17]..[80,3529+91])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/odoc_comments.ml[79,3487+18]..[79,3487+26])
+                                                            Pexp_ident "List.map" (ocamldoc/odoc_comments.ml[79,3487+18]..[79,3487+26])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[79,3487+27]..[80,3529+50])
+                                                                Pexp_fun
+                                                                Nolabel
+                                                                None
+                                                                pattern (ocamldoc/odoc_comments.ml[79,3487+32]..[79,3487+38])
+                                                                  Ppat_tuple
+                                                                  [
+                                                                    pattern (ocamldoc/odoc_comments.ml[79,3487+33]..[79,3487+34])
+                                                                      Ppat_var "n" (ocamldoc/odoc_comments.ml[79,3487+33]..[79,3487+34])
+                                                                    pattern (ocamldoc/odoc_comments.ml[79,3487+36]..[79,3487+37])
+                                                                      Ppat_var "s" (ocamldoc/odoc_comments.ml[79,3487+36]..[79,3487+37])
+                                                                  ]
+                                                                expression (ocamldoc/odoc_comments.ml[80,3529+19]..[80,3529+49])
+                                                                  Pexp_tuple
+                                                                  [
+                                                                    expression (ocamldoc/odoc_comments.ml[80,3529+20]..[80,3529+21])
+                                                                      Pexp_ident "n" (ocamldoc/odoc_comments.ml[80,3529+20]..[80,3529+21])
+                                                                    expression (ocamldoc/odoc_comments.ml[80,3529+23]..[80,3529+48])
+                                                                      Pexp_apply
+                                                                      expression (ocamldoc/odoc_comments.ml[80,3529+23]..[80,3529+46])
+Pexp_ident "MyTexter.text_of_string" (ocamldoc/odoc_comments.ml[80,3529+23]..[80,3529+46])
+                                                                      [
+<arg>
+Nolabel
+  expression (ocamldoc/odoc_comments.ml[80,3529+47]..[80,3529+48])
+    Pexp_ident "s" (ocamldoc/odoc_comments.ml[80,3529+47]..[80,3529+48])
+                                                                      ]
+                                                                  ]
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[80,3529+51]..[80,3529+90])
+                                                                Pexp_apply
+                                                                expression (ocamldoc/odoc_comments.ml[80,3529+51]..[80,3529+52])
+                                                                  Pexp_ident "!" (ocamldoc/odoc_comments.ml[80,3529+51]..[80,3529+52])
+                                                                [
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (ocamldoc/odoc_comments.ml[80,3529+52]..[80,3529+90])
+                                                                      Pexp_ident "Odoc_comments_global.raised_exceptions" (ocamldoc/odoc_comments.ml[80,3529+52]..[80,3529+90])
+                                                                ]
+                                                          ]
+                                                      "i_return_value" (ocamldoc/odoc_comments.ml[81,3622+17]..[81,3622+31])
+                                                        expression (ocamldoc/odoc_comments.ml[82,3656+17]..[83,3720+77])
+                                                          Pexp_match
+                                                          expression (ocamldoc/odoc_comments.ml[82,3656+24]..[82,3656+58])
+                                                            Pexp_apply
+                                                            expression (ocamldoc/odoc_comments.ml[82,3656+24]..[82,3656+25])
+                                                              Pexp_ident "!" (ocamldoc/odoc_comments.ml[82,3656+24]..[82,3656+25])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (ocamldoc/odoc_comments.ml[82,3656+25]..[82,3656+58])
+                                                                  Pexp_ident "Odoc_comments_global.return_value" (ocamldoc/odoc_comments.ml[82,3656+25]..[82,3656+58])
+                                                            ]
+                                                          [
+                                                            <case>
+                                                              pattern (ocamldoc/odoc_comments.ml[83,3720+19]..[83,3720+23])
+                                                                Ppat_construct "None" (ocamldoc/odoc_comments.ml[83,3720+19]..[83,3720+23])
+                                                                None
+                                                              expression (ocamldoc/odoc_comments.ml[83,3720+27]..[83,3720+31])
+                                                                Pexp_construct "None" (ocamldoc/odoc_comments.ml[83,3720+27]..[83,3720+31])
+                                                                None
+                                                            <case>
+                                                              pattern (ocamldoc/odoc_comments.ml[83,3720+34]..[83,3720+40])
+                                                                Ppat_construct "Some" (ocamldoc/odoc_comments.ml[83,3720+34]..[83,3720+38])
+                                                                Some
+                                                                  []
+                                                                  pattern (ocamldoc/odoc_comments.ml[83,3720+39]..[83,3720+40])
+                                                                    Ppat_var "s" (ocamldoc/odoc_comments.ml[83,3720+39]..[83,3720+40])
+                                                              expression (ocamldoc/odoc_comments.ml[83,3720+44]..[83,3720+76])
+                                                                Pexp_construct "Some" (ocamldoc/odoc_comments.ml[83,3720+44]..[83,3720+48])
+                                                                Some
+                                                                  expression (ocamldoc/odoc_comments.ml[83,3720+49]..[83,3720+76])
+                                                                    Pexp_apply
+                                                                    expression (ocamldoc/odoc_comments.ml[83,3720+50]..[83,3720+73])
+                                                                      Pexp_ident "MyTexter.text_of_string" (ocamldoc/odoc_comments.ml[83,3720+50]..[83,3720+73])
+                                                                    [
+                                                                      <arg>
+                                                                      Nolabel
+expression (ocamldoc/odoc_comments.ml[83,3720+74]..[83,3720+75])
+  Pexp_ident "s" (ocamldoc/odoc_comments.ml[83,3720+74]..[83,3720+75])
+                                                                    ]
+                                                          ]
+                                                      "i_custom" (ocamldoc/odoc_comments.ml[84,3800+17]..[84,3800+25])
+                                                        expression (ocamldoc/odoc_comments.ml[84,3800+28]..[86,3920+61])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/odoc_comments.ml[84,3800+29]..[84,3800+37])
+                                                            Pexp_ident "List.map" (ocamldoc/odoc_comments.ml[84,3800+29]..[84,3800+37])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[85,3838+31]..[85,3838+81])
+                                                                Pexp_fun
+                                                                Nolabel
+                                                                None
+                                                                pattern (ocamldoc/odoc_comments.ml[85,3838+36]..[85,3838+44])
+                                                                  Ppat_tuple
+                                                                  [
+                                                                    pattern (ocamldoc/odoc_comments.ml[85,3838+37]..[85,3838+40])
+                                                                      Ppat_var "tag" (ocamldoc/odoc_comments.ml[85,3838+37]..[85,3838+40])
+                                                                    pattern (ocamldoc/odoc_comments.ml[85,3838+42]..[85,3838+43])
+                                                                      Ppat_var "s" (ocamldoc/odoc_comments.ml[85,3838+42]..[85,3838+43])
+                                                                  ]
+                                                                expression (ocamldoc/odoc_comments.ml[85,3838+48]..[85,3838+80])
+                                                                  Pexp_tuple
+                                                                  [
+                                                                    expression (ocamldoc/odoc_comments.ml[85,3838+49]..[85,3838+52])
+                                                                      Pexp_ident "tag" (ocamldoc/odoc_comments.ml[85,3838+49]..[85,3838+52])
+                                                                    expression (ocamldoc/odoc_comments.ml[85,3838+54]..[85,3838+79])
+                                                                      Pexp_apply
+                                                                      expression (ocamldoc/odoc_comments.ml[85,3838+54]..[85,3838+77])
+Pexp_ident "MyTexter.text_of_string" (ocamldoc/odoc_comments.ml[85,3838+54]..[85,3838+77])
+                                                                      [
+<arg>
+Nolabel
+  expression (ocamldoc/odoc_comments.ml[85,3838+78]..[85,3838+79])
+    Pexp_ident "s" (ocamldoc/odoc_comments.ml[85,3838+78]..[85,3838+79])
+                                                                      ]
+                                                                  ]
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/odoc_comments.ml[86,3920+31]..[86,3920+60])
+                                                                Pexp_apply
+                                                                expression (ocamldoc/odoc_comments.ml[86,3920+31]..[86,3920+32])
+                                                                  Pexp_ident "!" (ocamldoc/odoc_comments.ml[86,3920+31]..[86,3920+32])
+                                                                [
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (ocamldoc/odoc_comments.ml[86,3920+32]..[86,3920+60])
+                                                                      Pexp_ident "Odoc_comments_global.customs" (ocamldoc/odoc_comments.ml[86,3920+32]..[86,3920+60])
+                                                                ]
+                                                          ]
+                                                      "i_alerts" (ocamldoc/odoc_comments.ml[87,3984+17]..[87,3984+25])
+                                                        expression (ocamldoc/odoc_comments.ml[87,3984+28]..[87,3984+30])
+                                                          Pexp_construct "[]" (ocamldoc/odoc_comments.ml[87,3984+28]..[87,3984+30])
+                                                          None
+                                                    ]
+                                                    None
+                                            ]
+                                  ]
+                          [
+                            <case>
+                              pattern (ocamldoc/odoc_comments.ml[90,4048+11]..[90,4048+12])
+                                Ppat_var "e" (ocamldoc/odoc_comments.ml[90,4048+11]..[90,4048+12])
+                              expression (ocamldoc/odoc_comments.ml[91,4064+8]..[99,4463+11])
+                                Pexp_let Nonrec
+                                [
+                                  <def>
+                                    pattern (ocamldoc/odoc_comments.ml[91,4064+12]..[91,4064+27])
+                                      Ppat_tuple
+                                      [
+                                        pattern (ocamldoc/odoc_comments.ml[91,4064+13]..[91,4064+14])
+                                          Ppat_var "l" (ocamldoc/odoc_comments.ml[91,4064+13]..[91,4064+14])
+                                        pattern (ocamldoc/odoc_comments.ml[91,4064+16]..[91,4064+17])
+                                          Ppat_var "c" (ocamldoc/odoc_comments.ml[91,4064+16]..[91,4064+17])
+                                        pattern (ocamldoc/odoc_comments.ml[91,4064+19]..[91,4064+26])
+                                          Ppat_var "message" (ocamldoc/odoc_comments.ml[91,4064+19]..[91,4064+26])
+                                      ]
+                                    expression (ocamldoc/odoc_comments.ml[91,4064+30]..[94,4260+55])
+                                      Pexp_match
+                                      expression (ocamldoc/odoc_comments.ml[91,4064+36]..[91,4064+37])
+                                        Pexp_ident "e" (ocamldoc/odoc_comments.ml[91,4064+36]..[91,4064+37])
+                                      [
+                                        <case>
+                                          pattern (ocamldoc/odoc_comments.ml[92,4107+12]..[92,4107+21])
+                                            Ppat_construct "Failure" (ocamldoc/odoc_comments.ml[92,4107+12]..[92,4107+19])
+                                            Some
+                                              []
+                                              pattern (ocamldoc/odoc_comments.ml[92,4107+20]..[92,4107+21])
+                                                Ppat_var "s" (ocamldoc/odoc_comments.ml[92,4107+20]..[92,4107+21])
+                                          expression (ocamldoc/odoc_comments.ml[92,4107+25]..[92,4107+60])
+                                            Pexp_tuple
+                                            [
+                                              expression (ocamldoc/odoc_comments.ml[92,4107+26]..[92,4107+53])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[92,4107+50]..[92,4107+51])
+                                                  Pexp_ident "+" (ocamldoc/odoc_comments.ml[92,4107+50]..[92,4107+51])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[92,4107+26]..[92,4107+49])
+                                                      Pexp_apply
+                                                      expression (ocamldoc/odoc_comments.ml[92,4107+26]..[92,4107+27])
+                                                        Pexp_ident "!" (ocamldoc/odoc_comments.ml[92,4107+26]..[92,4107+27])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/odoc_comments.ml[92,4107+27]..[92,4107+49])
+                                                            Pexp_ident "Odoc_lexer.line_number" (ocamldoc/odoc_comments.ml[92,4107+27]..[92,4107+49])
+                                                      ]
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[92,4107+52]..[92,4107+53])
+                                                      Pexp_constant PConst_int (1,None)
+                                                ]
+                                              expression (ocamldoc/odoc_comments.ml[92,4107+55]..[92,4107+56])
+                                                Pexp_constant PConst_int (0,None)
+                                              expression (ocamldoc/odoc_comments.ml[92,4107+58]..[92,4107+59])
+                                                Pexp_ident "s" (ocamldoc/odoc_comments.ml[92,4107+58]..[92,4107+59])
+                                            ]
+                                        <case>
+                                          pattern (ocamldoc/odoc_comments.ml[93,4168+12]..[93,4168+43])
+                                            Ppat_construct "Odoc_text.Text_syntax" (ocamldoc/odoc_comments.ml[93,4168+12]..[93,4168+33])
+                                            Some
+                                              []
+                                              pattern (ocamldoc/odoc_comments.ml[93,4168+34]..[93,4168+43])
+                                                Ppat_tuple
+                                                [
+                                                  pattern (ocamldoc/odoc_comments.ml[93,4168+35]..[93,4168+36])
+                                                    Ppat_var "l" (ocamldoc/odoc_comments.ml[93,4168+35]..[93,4168+36])
+                                                  pattern (ocamldoc/odoc_comments.ml[93,4168+38]..[93,4168+39])
+                                                    Ppat_var "c" (ocamldoc/odoc_comments.ml[93,4168+38]..[93,4168+39])
+                                                  pattern (ocamldoc/odoc_comments.ml[93,4168+41]..[93,4168+42])
+                                                    Ppat_var "s" (ocamldoc/odoc_comments.ml[93,4168+41]..[93,4168+42])
+                                                ]
+                                          expression (ocamldoc/odoc_comments.ml[93,4168+47]..[93,4168+91])
+                                            Pexp_tuple
+                                            [
+                                              expression (ocamldoc/odoc_comments.ml[93,4168+48]..[93,4168+49])
+                                                Pexp_ident "l" (ocamldoc/odoc_comments.ml[93,4168+48]..[93,4168+49])
+                                              expression (ocamldoc/odoc_comments.ml[93,4168+51]..[93,4168+52])
+                                                Pexp_ident "c" (ocamldoc/odoc_comments.ml[93,4168+51]..[93,4168+52])
+                                              expression (ocamldoc/odoc_comments.ml[93,4168+54]..[93,4168+90])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[93,4168+54]..[93,4168+84])
+                                                  Pexp_ident "Odoc_messages.text_parse_error" (ocamldoc/odoc_comments.ml[93,4168+54]..[93,4168+84])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[93,4168+85]..[93,4168+86])
+                                                      Pexp_ident "l" (ocamldoc/odoc_comments.ml[93,4168+85]..[93,4168+86])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[93,4168+87]..[93,4168+88])
+                                                      Pexp_ident "c" (ocamldoc/odoc_comments.ml[93,4168+87]..[93,4168+88])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[93,4168+89]..[93,4168+90])
+                                                      Pexp_ident "s" (ocamldoc/odoc_comments.ml[93,4168+89]..[93,4168+90])
+                                                ]
+                                            ]
+                                        <case>
+                                          pattern (ocamldoc/odoc_comments.ml[94,4260+12]..[94,4260+18])
+                                            Ppat_var "_other" (ocamldoc/odoc_comments.ml[94,4260+12]..[94,4260+18])
+                                          expression (ocamldoc/odoc_comments.ml[94,4260+22]..[94,4260+55])
+                                            Pexp_tuple
+                                            [
+                                              expression (ocamldoc/odoc_comments.ml[94,4260+23]..[94,4260+24])
+                                                Pexp_constant PConst_int (0,None)
+                                              expression (ocamldoc/odoc_comments.ml[94,4260+26]..[94,4260+27])
+                                                Pexp_constant PConst_int (0,None)
+                                              expression (ocamldoc/odoc_comments.ml[94,4260+29]..[94,4260+54])
+                                                Pexp_ident "Odoc_messages.parse_error" (ocamldoc/odoc_comments.ml[94,4260+29]..[94,4260+54])
+                                            ]
+                                      ]
+                                ]
+                                expression (ocamldoc/odoc_comments.ml[95,4316+11]..[99,4463+11])
+                                  Pexp_sequence
+                                  expression (ocamldoc/odoc_comments.ml[96,4333+10]..[96,4333+33])
+                                    Pexp_apply
+                                    expression (ocamldoc/odoc_comments.ml[96,4333+10]..[96,4333+14])
+                                      Pexp_ident "incr" (ocamldoc/odoc_comments.ml[96,4333+10]..[96,4333+14])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/odoc_comments.ml[96,4333+15]..[96,4333+33])
+                                          Pexp_ident "Odoc_global.errors" (ocamldoc/odoc_comments.ml[96,4333+15]..[96,4333+33])
+                                    ]
+                                  expression (ocamldoc/odoc_comments.ml[97,4368+10]..[98,4443+19])
+                                    Pexp_sequence
+                                    expression (ocamldoc/odoc_comments.ml[97,4368+10]..[97,4368+73])
+                                      Pexp_apply
+                                      expression (ocamldoc/odoc_comments.ml[97,4368+10]..[97,4368+23])
+                                        Pexp_ident "prerr_endline" (ocamldoc/odoc_comments.ml[97,4368+10]..[97,4368+23])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[97,4368+24]..[97,4368+73])
+                                            Pexp_apply
+                                            expression (ocamldoc/odoc_comments.ml[97,4368+63]..[97,4368+64])
+                                              Pexp_ident "^" (ocamldoc/odoc_comments.ml[97,4368+63]..[97,4368+64])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/odoc_comments.ml[97,4368+25]..[97,4368+62])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/odoc_comments.ml[97,4368+25]..[97,4368+53])
+                                                    Pexp_ident "Odoc_messages.error_location" (ocamldoc/odoc_comments.ml[97,4368+25]..[97,4368+53])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[97,4368+54]..[97,4368+58])
+                                                        Pexp_ident "file" (ocamldoc/odoc_comments.ml[97,4368+54]..[97,4368+58])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[97,4368+59]..[97,4368+60])
+                                                        Pexp_ident "l" (ocamldoc/odoc_comments.ml[97,4368+59]..[97,4368+60])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[97,4368+61]..[97,4368+62])
+                                                        Pexp_ident "c" (ocamldoc/odoc_comments.ml[97,4368+61]..[97,4368+62])
+                                                  ]
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/odoc_comments.ml[97,4368+65]..[97,4368+72])
+                                                  Pexp_ident "message" (ocamldoc/odoc_comments.ml[97,4368+65]..[97,4368+72])
+                                            ]
+                                      ]
+                                    expression (ocamldoc/odoc_comments.ml[98,4443+10]..[98,4443+19])
+                                      Pexp_tuple
+                                      [
+                                        expression (ocamldoc/odoc_comments.ml[98,4443+11]..[98,4443+12])
+                                          Pexp_constant PConst_int (0,None)
+                                        expression (ocamldoc/odoc_comments.ml[98,4443+14]..[98,4443+18])
+                                          Pexp_construct "None" (ocamldoc/odoc_comments.ml[98,4443+14]..[98,4443+18])
+                                          None
+                                      ]
+                          ]
+              ]
+            structure_item (ocamldoc/odoc_comments.ml[103,4543+4]..[110,4760+15])
+              Pstr_value Nonrec
+              [
+                <def>
+                    attribute "ocaml.doc"
+                      [
+                        structure_item (ocamldoc/odoc_comments.ml[102,4477+4]..[102,4477+65])
+                          Pstr_eval
+                          expression (ocamldoc/odoc_comments.ml[102,4477+4]..[102,4477+65])
+                            Pexp_constant PConst_string(" Return true if the given string contains a blank line. ",(ocamldoc/odoc_comments.ml[102,4477+4]..[102,4477+65]),None)
+                      ]
+                  pattern (ocamldoc/odoc_comments.ml[103,4543+8]..[103,4543+18])
+                    Ppat_var "blank_line" (ocamldoc/odoc_comments.ml[103,4543+8]..[103,4543+18])
+                  expression (ocamldoc/odoc_comments.ml[103,4543+19]..[110,4760+15]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[103,4543+19]..[103,4543+20])
+                      Ppat_var "s" (ocamldoc/odoc_comments.ml[103,4543+19]..[103,4543+20])
+                    expression (ocamldoc/odoc_comments.ml[104,4566+6]..[110,4760+15])
+                      Pexp_try
+                      expression (ocamldoc/odoc_comments.ml[105,4576+8]..[107,4715+12])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (ocamldoc/odoc_comments.ml[105,4576+12]..[105,4576+13])
+                              Ppat_any
+                            expression (ocamldoc/odoc_comments.ml[105,4576+16]..[105,4576+85])
+                              Pexp_apply
+                              expression (ocamldoc/odoc_comments.ml[105,4576+16]..[105,4576+34])
+                                Pexp_ident "Str.search_forward" (ocamldoc/odoc_comments.ml[105,4576+16]..[105,4576+34])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (ocamldoc/odoc_comments.ml[105,4576+35]..[105,4576+81])
+                                    Pexp_apply
+                                    expression (ocamldoc/odoc_comments.ml[105,4576+36]..[105,4576+46])
+                                      Pexp_ident "Str.regexp" (ocamldoc/odoc_comments.ml[105,4576+36]..[105,4576+46])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/odoc_comments.ml[105,4576+47]..[105,4576+80])
+                                          Pexp_apply
+                                          expression (ocamldoc/odoc_comments.ml[105,4576+56]..[105,4576+57])
+                                            Pexp_ident "^" (ocamldoc/odoc_comments.ml[105,4576+56]..[105,4576+57])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/odoc_comments.ml[105,4576+48]..[105,4576+56])
+                                                Pexp_constant PConst_string("['\n']",(ocamldoc/odoc_comments.ml[105,4576+49]..[105,4576+55]),None)
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/odoc_comments.ml[105,4576+57]..[105,4576+79])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[105,4576+69]..[105,4576+70])
+                                                  Pexp_ident "^" (ocamldoc/odoc_comments.ml[105,4576+69]..[105,4576+70])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[105,4576+57]..[105,4576+69])
+                                                      Pexp_ident "simple_blank" (ocamldoc/odoc_comments.ml[105,4576+57]..[105,4576+69])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[105,4576+70]..[105,4576+79])
+                                                      Pexp_constant PConst_string("*['\n']",(ocamldoc/odoc_comments.ml[105,4576+71]..[105,4576+78]),None)
+                                                ]
+                                          ]
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (ocamldoc/odoc_comments.ml[105,4576+82]..[105,4576+83])
+                                    Pexp_ident "s" (ocamldoc/odoc_comments.ml[105,4576+82]..[105,4576+83])
+                                <arg>
+                                Nolabel
+                                  expression (ocamldoc/odoc_comments.ml[105,4576+84]..[105,4576+85])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                        ]
+                        expression (ocamldoc/odoc_comments.ml[107,4715+8]..[107,4715+12])
+                          Pexp_construct "true" (ocamldoc/odoc_comments.ml[107,4715+8]..[107,4715+12])
+                          None
+                      [
+                        <case>
+                          pattern (ocamldoc/odoc_comments.ml[109,4739+8]..[109,4739+17])
+                            Ppat_construct "Not_found" (ocamldoc/odoc_comments.ml[109,4739+8]..[109,4739+17])
+                            None
+                          expression (ocamldoc/odoc_comments.ml[110,4760+10]..[110,4760+15])
+                            Pexp_construct "false" (ocamldoc/odoc_comments.ml[110,4760+10]..[110,4760+15])
+                            None
+                      ]
+              ]
+            structure_item (ocamldoc/odoc_comments.ml[112,4777+4]..[113,4827+42])
+              Pstr_value Nonrec
+              [
+                <def>
+                  pattern (ocamldoc/odoc_comments.ml[112,4777+8]..[112,4777+29])
+                    Ppat_var "retrieve_info_special" (ocamldoc/odoc_comments.ml[112,4777+8]..[112,4777+29])
+                  expression (ocamldoc/odoc_comments.ml[112,4777+30]..[113,4827+42]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[112,4777+30]..[112,4777+34])
+                      Ppat_var "file" (ocamldoc/odoc_comments.ml[112,4777+30]..[112,4777+34])
+                    expression (ocamldoc/odoc_comments.ml[112,4777+35]..[113,4827+42]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (ocamldoc/odoc_comments.ml[112,4777+35]..[112,4777+47])
+                        Ppat_constraint
+                        pattern (ocamldoc/odoc_comments.ml[112,4777+36]..[112,4777+37])
+                          Ppat_var "s" (ocamldoc/odoc_comments.ml[112,4777+36]..[112,4777+37])
+                        core_type (ocamldoc/odoc_comments.ml[112,4777+40]..[112,4777+46])
+                          Ptyp_constr "string" (ocamldoc/odoc_comments.ml[112,4777+40]..[112,4777+46])
+                          []
+                      expression (ocamldoc/odoc_comments.ml[113,4827+6]..[113,4827+42])
+                        Pexp_apply
+                        expression (ocamldoc/odoc_comments.ml[113,4827+6]..[113,4827+19])
+                          Pexp_ident "retrieve_info" (ocamldoc/odoc_comments.ml[113,4827+6]..[113,4827+19])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (ocamldoc/odoc_comments.ml[113,4827+20]..[113,4827+35])
+                              Pexp_ident "Odoc_lexer.main" (ocamldoc/odoc_comments.ml[113,4827+20]..[113,4827+35])
+                          <arg>
+                          Nolabel
+                            expression (ocamldoc/odoc_comments.ml[113,4827+36]..[113,4827+40])
+                              Pexp_ident "file" (ocamldoc/odoc_comments.ml[113,4827+36]..[113,4827+40])
+                          <arg>
+                          Nolabel
+                            expression (ocamldoc/odoc_comments.ml[113,4827+41]..[113,4827+42])
+                              Pexp_ident "s" (ocamldoc/odoc_comments.ml[113,4827+41]..[113,4827+42])
+                        ]
+              ]
+            structure_item (ocamldoc/odoc_comments.ml[115,4871+4]..[123,5151+70])
+              Pstr_value Nonrec
+              [
+                <def>
+                  pattern (ocamldoc/odoc_comments.ml[115,4871+8]..[115,4871+28])
+                    Ppat_var "retrieve_info_simple" (ocamldoc/odoc_comments.ml[115,4871+8]..[115,4871+28])
+                  expression (ocamldoc/odoc_comments.ml[115,4871+29]..[123,5151+70]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[115,4871+29]..[115,4871+34])
+                      Ppat_var "_file" (ocamldoc/odoc_comments.ml[115,4871+29]..[115,4871+34])
+                    expression (ocamldoc/odoc_comments.ml[115,4871+35]..[123,5151+70]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (ocamldoc/odoc_comments.ml[115,4871+35]..[115,4871+47])
+                        Ppat_constraint
+                        pattern (ocamldoc/odoc_comments.ml[115,4871+36]..[115,4871+37])
+                          Ppat_var "s" (ocamldoc/odoc_comments.ml[115,4871+36]..[115,4871+37])
+                        core_type (ocamldoc/odoc_comments.ml[115,4871+40]..[115,4871+46])
+                          Ptyp_constr "string" (ocamldoc/odoc_comments.ml[115,4871+40]..[115,4871+46])
+                          []
+                      expression (ocamldoc/odoc_comments.ml[116,4921+6]..[123,5151+70])
+                        Pexp_sequence
+                        expression (ocamldoc/odoc_comments.ml[116,4921+6]..[116,4921+34])
+                          Pexp_apply
+                          expression (ocamldoc/odoc_comments.ml[116,4921+6]..[116,4921+31])
+                            Pexp_ident "Odoc_comments_global.init" (ocamldoc/odoc_comments.ml[116,4921+6]..[116,4921+31])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (ocamldoc/odoc_comments.ml[116,4921+32]..[116,4921+34])
+                                Pexp_construct "()" (ocamldoc/odoc_comments.ml[116,4921+32]..[116,4921+34])
+                                None
+                          ]
+                        expression (ocamldoc/odoc_comments.ml[117,4957+6]..[123,5151+70])
+                          Pexp_sequence
+                          expression (ocamldoc/odoc_comments.ml[117,4957+6]..[117,4957+36])
+                            Pexp_apply
+                            expression (ocamldoc/odoc_comments.ml[117,4957+32]..[117,4957+34])
+                              Pexp_ident ":=" (ocamldoc/odoc_comments.ml[117,4957+32]..[117,4957+34])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (ocamldoc/odoc_comments.ml[117,4957+6]..[117,4957+31])
+                                  Pexp_ident "Odoc_lexer.comments_level" (ocamldoc/odoc_comments.ml[117,4957+6]..[117,4957+31])
+                              <arg>
+                              Nolabel
+                                expression (ocamldoc/odoc_comments.ml[117,4957+35]..[117,4957+36])
+                                  Pexp_constant PConst_int (0,None)
+                            ]
+                          expression (ocamldoc/odoc_comments.ml[118,4995+6]..[123,5151+70])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (ocamldoc/odoc_comments.ml[118,4995+10]..[118,4995+16])
+                                  Ppat_var "lexbuf" (ocamldoc/odoc_comments.ml[118,4995+10]..[118,4995+16])
+                                expression (ocamldoc/odoc_comments.ml[118,4995+19]..[118,4995+39])
+                                  Pexp_apply
+                                  expression (ocamldoc/odoc_comments.ml[118,4995+19]..[118,4995+37])
+                                    Pexp_ident "Lexing.from_string" (ocamldoc/odoc_comments.ml[118,4995+19]..[118,4995+37])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/odoc_comments.ml[118,4995+38]..[118,4995+39])
+                                        Pexp_ident "s" (ocamldoc/odoc_comments.ml[118,4995+38]..[118,4995+39])
+                                  ]
+                            ]
+                            expression (ocamldoc/odoc_comments.ml[119,5038+6]..[123,5151+70])
+                              Pexp_match
+                              expression (ocamldoc/odoc_comments.ml[119,5038+12]..[119,5038+53])
+                                Pexp_apply
+                                expression (ocamldoc/odoc_comments.ml[119,5038+12]..[119,5038+28])
+                                  Pexp_ident "Odoc_parser.main" (ocamldoc/odoc_comments.ml[119,5038+12]..[119,5038+28])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (ocamldoc/odoc_comments.ml[119,5038+29]..[119,5038+46])
+                                      Pexp_ident "Odoc_lexer.simple" (ocamldoc/odoc_comments.ml[119,5038+29]..[119,5038+46])
+                                  <arg>
+                                  Nolabel
+                                    expression (ocamldoc/odoc_comments.ml[119,5038+47]..[119,5038+53])
+                                      Pexp_ident "lexbuf" (ocamldoc/odoc_comments.ml[119,5038+47]..[119,5038+53])
+                                ]
+                              [
+                                <case>
+                                  pattern (ocamldoc/odoc_comments.ml[120,5097+8]..[120,5097+12])
+                                    Ppat_construct "None" (ocamldoc/odoc_comments.ml[120,5097+8]..[120,5097+12])
+                                    None
+                                  expression (ocamldoc/odoc_comments.ml[121,5113+10]..[121,5113+19])
+                                    Pexp_tuple
+                                    [
+                                      expression (ocamldoc/odoc_comments.ml[121,5113+11]..[121,5113+12])
+                                        Pexp_constant PConst_int (0,None)
+                                      expression (ocamldoc/odoc_comments.ml[121,5113+14]..[121,5113+18])
+                                        Pexp_construct "None" (ocamldoc/odoc_comments.ml[121,5113+14]..[121,5113+18])
+                                        None
+                                    ]
+                                <case>
+                                  pattern (ocamldoc/odoc_comments.ml[122,5133+8]..[122,5133+14])
+                                    Ppat_construct "Some" (ocamldoc/odoc_comments.ml[122,5133+8]..[122,5133+12])
+                                    Some
+                                      []
+                                      pattern (ocamldoc/odoc_comments.ml[122,5133+13]..[122,5133+14])
+                                        Ppat_any
+                                  expression (ocamldoc/odoc_comments.ml[123,5151+10]..[123,5151+70])
+                                    Pexp_tuple
+                                    [
+                                      expression (ocamldoc/odoc_comments.ml[123,5151+11]..[123,5151+41])
+                                        Pexp_apply
+                                        expression (ocamldoc/odoc_comments.ml[123,5151+11]..[123,5151+12])
+                                          Pexp_ident "!" (ocamldoc/odoc_comments.ml[123,5151+11]..[123,5151+12])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (ocamldoc/odoc_comments.ml[123,5151+12]..[123,5151+41])
+                                              Pexp_ident "Odoc_comments_global.nb_chars" (ocamldoc/odoc_comments.ml[123,5151+12]..[123,5151+41])
+                                        ]
+                                      expression (ocamldoc/odoc_comments.ml[123,5151+43]..[123,5151+69])
+                                        Pexp_construct "Some" (ocamldoc/odoc_comments.ml[123,5151+43]..[123,5151+47])
+                                        Some
+                                          expression (ocamldoc/odoc_comments.ml[123,5151+48]..[123,5151+69])
+                                            Pexp_ident "Odoc_types.dummy_info" (ocamldoc/odoc_comments.ml[123,5151+48]..[123,5151+69])
+                                    ]
+                              ]
+              ]
+            structure_item (ocamldoc/odoc_comments.ml[126,5314+4]..[142,5898+12])
+              Pstr_value Nonrec
+              [
+                <def>
+                    attribute "ocaml.doc"
+                      [
+                        structure_item (ocamldoc/odoc_comments.ml[125,5223+4]..[125,5223+90])
+                          Pstr_eval
+                          expression (ocamldoc/odoc_comments.ml[125,5223+4]..[125,5223+90])
+                            Pexp_constant PConst_string(" Return true if the given string contains a blank line outside a simple comment. ",(ocamldoc/odoc_comments.ml[125,5223+4]..[125,5223+90]),None)
+                      ]
+                  pattern (ocamldoc/odoc_comments.ml[126,5314+8]..[126,5314+33])
+                    Ppat_var "blank_line_outside_simple" (ocamldoc/odoc_comments.ml[126,5314+8]..[126,5314+33])
+                  expression (ocamldoc/odoc_comments.ml[126,5314+34]..[142,5898+12]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[126,5314+34]..[126,5314+38])
+                      Ppat_var "file" (ocamldoc/odoc_comments.ml[126,5314+34]..[126,5314+38])
+                    expression (ocamldoc/odoc_comments.ml[126,5314+39]..[142,5898+12]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (ocamldoc/odoc_comments.ml[126,5314+39]..[126,5314+40])
+                        Ppat_var "s" (ocamldoc/odoc_comments.ml[126,5314+39]..[126,5314+40])
+                      expression (ocamldoc/odoc_comments.ml[127,5357+6]..[142,5898+12])
+                        Pexp_let Rec
+                        [
+                          <def>
+                            pattern (ocamldoc/odoc_comments.ml[127,5357+14]..[127,5357+18])
+                              Ppat_var "iter" (ocamldoc/odoc_comments.ml[127,5357+14]..[127,5357+18])
+                            expression (ocamldoc/odoc_comments.ml[127,5357+19]..[140,5867+21]) ghost
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (ocamldoc/odoc_comments.ml[127,5357+19]..[127,5357+21])
+                                Ppat_var "s2" (ocamldoc/odoc_comments.ml[127,5357+19]..[127,5357+21])
+                              expression (ocamldoc/odoc_comments.ml[128,5381+8]..[140,5867+21])
+                                Pexp_match
+                                expression (ocamldoc/odoc_comments.ml[128,5381+14]..[128,5381+42])
+                                  Pexp_apply
+                                  expression (ocamldoc/odoc_comments.ml[128,5381+14]..[128,5381+34])
+                                    Pexp_ident "retrieve_info_simple" (ocamldoc/odoc_comments.ml[128,5381+14]..[128,5381+34])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/odoc_comments.ml[128,5381+35]..[128,5381+39])
+                                        Pexp_ident "file" (ocamldoc/odoc_comments.ml[128,5381+35]..[128,5381+39])
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/odoc_comments.ml[128,5381+40]..[128,5381+42])
+                                        Pexp_ident "s2" (ocamldoc/odoc_comments.ml[128,5381+40]..[128,5381+42])
+                                  ]
+                                [
+                                  <case>
+                                    pattern (ocamldoc/odoc_comments.ml[129,5429+10]..[129,5429+19])
+                                      Ppat_tuple
+                                      [
+                                        pattern (ocamldoc/odoc_comments.ml[129,5429+11]..[129,5429+12])
+                                          Ppat_any
+                                        pattern (ocamldoc/odoc_comments.ml[129,5429+14]..[129,5429+18])
+                                          Ppat_construct "None" (ocamldoc/odoc_comments.ml[129,5429+14]..[129,5429+18])
+                                          None
+                                      ]
+                                    expression (ocamldoc/odoc_comments.ml[130,5452+12]..[130,5452+25])
+                                      Pexp_apply
+                                      expression (ocamldoc/odoc_comments.ml[130,5452+12]..[130,5452+22])
+                                        Pexp_ident "blank_line" (ocamldoc/odoc_comments.ml[130,5452+12]..[130,5452+22])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[130,5452+23]..[130,5452+25])
+                                            Pexp_ident "s2" (ocamldoc/odoc_comments.ml[130,5452+23]..[130,5452+25])
+                                      ]
+                                  <case>
+                                    pattern (ocamldoc/odoc_comments.ml[131,5478+10]..[131,5478+23])
+                                      Ppat_tuple
+                                      [
+                                        pattern (ocamldoc/odoc_comments.ml[131,5478+11]..[131,5478+14])
+                                          Ppat_var "len" (ocamldoc/odoc_comments.ml[131,5478+11]..[131,5478+14])
+                                        pattern (ocamldoc/odoc_comments.ml[131,5478+16]..[131,5478+22])
+                                          Ppat_construct "Some" (ocamldoc/odoc_comments.ml[131,5478+16]..[131,5478+20])
+                                          Some
+                                            []
+                                            pattern (ocamldoc/odoc_comments.ml[131,5478+21]..[131,5478+22])
+                                              Ppat_any
+                                      ]
+                                    expression (ocamldoc/odoc_comments.ml[132,5505+12]..[140,5867+21])
+                                      Pexp_try
+                                      expression (ocamldoc/odoc_comments.ml[133,5521+14]..[136,5725+53])
+                                        Pexp_let Nonrec
+                                        [
+                                          <def>
+                                            pattern (ocamldoc/odoc_comments.ml[133,5521+18]..[133,5521+21])
+                                              Ppat_var "pos" (ocamldoc/odoc_comments.ml[133,5521+18]..[133,5521+21])
+                                            expression (ocamldoc/odoc_comments.ml[133,5521+24]..[133,5521+72])
+                                              Pexp_apply
+                                              expression (ocamldoc/odoc_comments.ml[133,5521+24]..[133,5521+42])
+                                                Pexp_ident "Str.search_forward" (ocamldoc/odoc_comments.ml[133,5521+24]..[133,5521+42])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (ocamldoc/odoc_comments.ml[133,5521+43]..[133,5521+67])
+                                                    Pexp_apply
+                                                    expression (ocamldoc/odoc_comments.ml[133,5521+44]..[133,5521+61])
+                                                      Pexp_ident "Str.regexp_string" (ocamldoc/odoc_comments.ml[133,5521+44]..[133,5521+61])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (ocamldoc/odoc_comments.ml[133,5521+62]..[133,5521+66])
+                                                          Pexp_constant PConst_string("(*",(ocamldoc/odoc_comments.ml[133,5521+63]..[133,5521+65]),None)
+                                                    ]
+                                                <arg>
+                                                Nolabel
+                                                  expression (ocamldoc/odoc_comments.ml[133,5521+68]..[133,5521+70])
+                                                    Pexp_ident "s2" (ocamldoc/odoc_comments.ml[133,5521+68]..[133,5521+70])
+                                                <arg>
+                                                Nolabel
+                                                  expression (ocamldoc/odoc_comments.ml[133,5521+71]..[133,5521+72])
+                                                    Pexp_constant PConst_int (0,None)
+                                              ]
+                                        ]
+                                        expression (ocamldoc/odoc_comments.ml[134,5597+14]..[136,5725+53])
+                                          Pexp_let Nonrec
+                                          [
+                                            <def>
+                                              pattern (ocamldoc/odoc_comments.ml[134,5597+18]..[134,5597+26])
+                                                Ppat_var "s_before" (ocamldoc/odoc_comments.ml[134,5597+18]..[134,5597+26])
+                                              expression (ocamldoc/odoc_comments.ml[134,5597+29]..[134,5597+48])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[134,5597+29]..[134,5597+39])
+                                                  Pexp_ident "String.sub" (ocamldoc/odoc_comments.ml[134,5597+29]..[134,5597+39])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[134,5597+40]..[134,5597+42])
+                                                      Pexp_ident "s2" (ocamldoc/odoc_comments.ml[134,5597+40]..[134,5597+42])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[134,5597+43]..[134,5597+44])
+                                                      Pexp_constant PConst_int (0,None)
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[134,5597+45]..[134,5597+48])
+                                                      Pexp_ident "pos" (ocamldoc/odoc_comments.ml[134,5597+45]..[134,5597+48])
+                                                ]
+                                          ]
+                                          expression (ocamldoc/odoc_comments.ml[135,5649+14]..[136,5725+53])
+                                            Pexp_let Nonrec
+                                            [
+                                              <def>
+                                                pattern (ocamldoc/odoc_comments.ml[135,5649+18]..[135,5649+25])
+                                                  Ppat_var "s_after" (ocamldoc/odoc_comments.ml[135,5649+18]..[135,5649+25])
+                                                expression (ocamldoc/odoc_comments.ml[135,5649+28]..[135,5649+72])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/odoc_comments.ml[135,5649+28]..[135,5649+38])
+                                                    Pexp_ident "String.sub" (ocamldoc/odoc_comments.ml[135,5649+28]..[135,5649+38])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[135,5649+39]..[135,5649+41])
+                                                        Pexp_ident "s2" (ocamldoc/odoc_comments.ml[135,5649+39]..[135,5649+41])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[135,5649+42]..[135,5649+45])
+                                                        Pexp_ident "len" (ocamldoc/odoc_comments.ml[135,5649+42]..[135,5649+45])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[135,5649+46]..[135,5649+72])
+                                                        Pexp_apply
+                                                        expression (ocamldoc/odoc_comments.ml[135,5649+66]..[135,5649+67])
+                                                          Pexp_ident "-" (ocamldoc/odoc_comments.ml[135,5649+66]..[135,5649+67])
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (ocamldoc/odoc_comments.ml[135,5649+47]..[135,5649+65])
+                                                              Pexp_apply
+                                                              expression (ocamldoc/odoc_comments.ml[135,5649+48]..[135,5649+61])
+                                                                Pexp_ident "String.length" (ocamldoc/odoc_comments.ml[135,5649+48]..[135,5649+61])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (ocamldoc/odoc_comments.ml[135,5649+62]..[135,5649+64])
+                                                                    Pexp_ident "s2" (ocamldoc/odoc_comments.ml[135,5649+62]..[135,5649+64])
+                                                              ]
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (ocamldoc/odoc_comments.ml[135,5649+68]..[135,5649+71])
+                                                              Pexp_ident "len" (ocamldoc/odoc_comments.ml[135,5649+68]..[135,5649+71])
+                                                        ]
+                                                  ]
+                                            ]
+                                            expression (ocamldoc/odoc_comments.ml[136,5725+14]..[136,5725+53])
+                                              Pexp_apply
+                                              expression (ocamldoc/odoc_comments.ml[136,5725+36]..[136,5725+38])
+                                                Pexp_ident "||" (ocamldoc/odoc_comments.ml[136,5725+36]..[136,5725+38])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (ocamldoc/odoc_comments.ml[136,5725+14]..[136,5725+35])
+                                                    Pexp_apply
+                                                    expression (ocamldoc/odoc_comments.ml[136,5725+15]..[136,5725+25])
+                                                      Pexp_ident "blank_line" (ocamldoc/odoc_comments.ml[136,5725+15]..[136,5725+25])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (ocamldoc/odoc_comments.ml[136,5725+26]..[136,5725+34])
+                                                          Pexp_ident "s_before" (ocamldoc/odoc_comments.ml[136,5725+26]..[136,5725+34])
+                                                    ]
+                                                <arg>
+                                                Nolabel
+                                                  expression (ocamldoc/odoc_comments.ml[136,5725+39]..[136,5725+53])
+                                                    Pexp_apply
+                                                    expression (ocamldoc/odoc_comments.ml[136,5725+40]..[136,5725+44])
+                                                      Pexp_ident "iter" (ocamldoc/odoc_comments.ml[136,5725+40]..[136,5725+44])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (ocamldoc/odoc_comments.ml[136,5725+45]..[136,5725+52])
+                                                          Pexp_ident "s_after" (ocamldoc/odoc_comments.ml[136,5725+45]..[136,5725+52])
+                                                    ]
+                                              ]
+                                      [
+                                        <case>
+                                          pattern (ocamldoc/odoc_comments.ml[138,5796+14]..[138,5796+23])
+                                            Ppat_construct "Not_found" (ocamldoc/odoc_comments.ml[138,5796+14]..[138,5796+23])
+                                            None
+                                          expression (ocamldoc/odoc_comments.ml[140,5867+16]..[140,5867+21])
+                                            Pexp_construct "false" (ocamldoc/odoc_comments.ml[140,5867+16]..[140,5867+21])
+                                            None
+                                      ]
+                                ]
+                        ]
+                        expression (ocamldoc/odoc_comments.ml[142,5898+6]..[142,5898+12])
+                          Pexp_apply
+                          expression (ocamldoc/odoc_comments.ml[142,5898+6]..[142,5898+10])
+                            Pexp_ident "iter" (ocamldoc/odoc_comments.ml[142,5898+6]..[142,5898+10])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (ocamldoc/odoc_comments.ml[142,5898+11]..[142,5898+12])
+                                Pexp_ident "s" (ocamldoc/odoc_comments.ml[142,5898+11]..[142,5898+12])
+                          ]
+              ]
+            structure_item (ocamldoc/odoc_comments.ml[144,5912+4]..[153,6213+17])
+              Pstr_value Nonrec
+              [
+                <def>
+                  pattern (ocamldoc/odoc_comments.ml[144,5912+8]..[144,5912+19])
+                    Ppat_var "all_special" (ocamldoc/odoc_comments.ml[144,5912+8]..[144,5912+19])
+                  expression (ocamldoc/odoc_comments.ml[144,5912+20]..[153,6213+17]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[144,5912+20]..[144,5912+24])
+                      Ppat_var "file" (ocamldoc/odoc_comments.ml[144,5912+20]..[144,5912+24])
+                    expression (ocamldoc/odoc_comments.ml[144,5912+25]..[153,6213+17]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (ocamldoc/odoc_comments.ml[144,5912+25]..[144,5912+26])
+                        Ppat_var "s" (ocamldoc/odoc_comments.ml[144,5912+25]..[144,5912+26])
+                      expression (ocamldoc/odoc_comments.ml[145,5941+6]..[153,6213+17])
+                        Pexp_let Rec
+                        [
+                          <def>
+                            pattern (ocamldoc/odoc_comments.ml[145,5941+14]..[145,5941+18])
+                              Ppat_var "iter" (ocamldoc/odoc_comments.ml[145,5941+14]..[145,5941+18])
+                            expression (ocamldoc/odoc_comments.ml[145,5941+19]..[151,6160+43]) ghost
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (ocamldoc/odoc_comments.ml[145,5941+19]..[145,5941+22])
+                                Ppat_var "acc" (ocamldoc/odoc_comments.ml[145,5941+19]..[145,5941+22])
+                              expression (ocamldoc/odoc_comments.ml[145,5941+23]..[151,6160+43]) ghost
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (ocamldoc/odoc_comments.ml[145,5941+23]..[145,5941+24])
+                                  Ppat_var "n" (ocamldoc/odoc_comments.ml[145,5941+23]..[145,5941+24])
+                                expression (ocamldoc/odoc_comments.ml[145,5941+25]..[151,6160+43]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/odoc_comments.ml[145,5941+25]..[145,5941+27])
+                                    Ppat_var "s2" (ocamldoc/odoc_comments.ml[145,5941+25]..[145,5941+27])
+                                  expression (ocamldoc/odoc_comments.ml[146,5971+8]..[151,6160+43])
+                                    Pexp_match
+                                    expression (ocamldoc/odoc_comments.ml[146,5971+14]..[146,5971+43])
+                                      Pexp_apply
+                                      expression (ocamldoc/odoc_comments.ml[146,5971+14]..[146,5971+35])
+                                        Pexp_ident "retrieve_info_special" (ocamldoc/odoc_comments.ml[146,5971+14]..[146,5971+35])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[146,5971+36]..[146,5971+40])
+                                            Pexp_ident "file" (ocamldoc/odoc_comments.ml[146,5971+36]..[146,5971+40])
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[146,5971+41]..[146,5971+43])
+                                            Pexp_ident "s2" (ocamldoc/odoc_comments.ml[146,5971+41]..[146,5971+43])
+                                      ]
+                                    [
+                                      <case>
+                                        pattern (ocamldoc/odoc_comments.ml[147,6020+10]..[147,6020+19])
+                                          Ppat_tuple
+                                          [
+                                            pattern (ocamldoc/odoc_comments.ml[147,6020+11]..[147,6020+12])
+                                              Ppat_any
+                                            pattern (ocamldoc/odoc_comments.ml[147,6020+14]..[147,6020+18])
+                                              Ppat_construct "None" (ocamldoc/odoc_comments.ml[147,6020+14]..[147,6020+18])
+                                              None
+                                          ]
+                                        expression (ocamldoc/odoc_comments.ml[148,6043+12]..[148,6043+20])
+                                          Pexp_tuple
+                                          [
+                                            expression (ocamldoc/odoc_comments.ml[148,6043+13]..[148,6043+14])
+                                              Pexp_ident "n" (ocamldoc/odoc_comments.ml[148,6043+13]..[148,6043+14])
+                                            expression (ocamldoc/odoc_comments.ml[148,6043+16]..[148,6043+19])
+                                              Pexp_ident "acc" (ocamldoc/odoc_comments.ml[148,6043+16]..[148,6043+19])
+                                          ]
+                                      <case>
+                                        pattern (ocamldoc/odoc_comments.ml[149,6064+10]..[149,6064+22])
+                                          Ppat_tuple
+                                          [
+                                            pattern (ocamldoc/odoc_comments.ml[149,6064+11]..[149,6064+13])
+                                              Ppat_var "n2" (ocamldoc/odoc_comments.ml[149,6064+11]..[149,6064+13])
+                                            pattern (ocamldoc/odoc_comments.ml[149,6064+15]..[149,6064+21])
+                                              Ppat_construct "Some" (ocamldoc/odoc_comments.ml[149,6064+15]..[149,6064+19])
+                                              Some
+                                                []
+                                                pattern (ocamldoc/odoc_comments.ml[149,6064+20]..[149,6064+21])
+                                                  Ppat_var "i" (ocamldoc/odoc_comments.ml[149,6064+20]..[149,6064+21])
+                                          ]
+                                        expression (ocamldoc/odoc_comments.ml[150,6090+12]..[151,6160+43])
+                                          Pexp_let Nonrec
+                                          [
+                                            <def>
+                                              pattern (ocamldoc/odoc_comments.ml[150,6090+16]..[150,6090+21])
+                                                Ppat_var "new_s" (ocamldoc/odoc_comments.ml[150,6090+16]..[150,6090+21])
+                                              expression (ocamldoc/odoc_comments.ml[150,6090+24]..[150,6090+66])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[150,6090+24]..[150,6090+34])
+                                                  Pexp_ident "String.sub" (ocamldoc/odoc_comments.ml[150,6090+24]..[150,6090+34])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[150,6090+35]..[150,6090+37])
+                                                      Pexp_ident "s2" (ocamldoc/odoc_comments.ml[150,6090+35]..[150,6090+37])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[150,6090+38]..[150,6090+40])
+                                                      Pexp_ident "n2" (ocamldoc/odoc_comments.ml[150,6090+38]..[150,6090+40])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[150,6090+41]..[150,6090+66])
+                                                      Pexp_apply
+                                                      expression (ocamldoc/odoc_comments.ml[150,6090+61]..[150,6090+62])
+                                                        Pexp_ident "-" (ocamldoc/odoc_comments.ml[150,6090+61]..[150,6090+62])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/odoc_comments.ml[150,6090+42]..[150,6090+60])
+                                                            Pexp_apply
+                                                            expression (ocamldoc/odoc_comments.ml[150,6090+43]..[150,6090+56])
+                                                              Pexp_ident "String.length" (ocamldoc/odoc_comments.ml[150,6090+43]..[150,6090+56])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (ocamldoc/odoc_comments.ml[150,6090+57]..[150,6090+59])
+                                                                  Pexp_ident "s2" (ocamldoc/odoc_comments.ml[150,6090+57]..[150,6090+59])
+                                                            ]
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/odoc_comments.ml[150,6090+63]..[150,6090+65])
+                                                            Pexp_ident "n2" (ocamldoc/odoc_comments.ml[150,6090+63]..[150,6090+65])
+                                                      ]
+                                                ]
+                                          ]
+                                          expression (ocamldoc/odoc_comments.ml[151,6160+12]..[151,6160+43])
+                                            Pexp_apply
+                                            expression (ocamldoc/odoc_comments.ml[151,6160+12]..[151,6160+16])
+                                              Pexp_ident "iter" (ocamldoc/odoc_comments.ml[151,6160+12]..[151,6160+16])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/odoc_comments.ml[151,6160+17]..[151,6160+28])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/odoc_comments.ml[151,6160+22]..[151,6160+23])
+                                                    Pexp_ident "@" (ocamldoc/odoc_comments.ml[151,6160+22]..[151,6160+23])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[151,6160+18]..[151,6160+21])
+                                                        Pexp_ident "acc" (ocamldoc/odoc_comments.ml[151,6160+18]..[151,6160+21])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[151,6160+24]..[151,6160+27])
+                                                        Pexp_construct "::" (ocamldoc/odoc_comments.ml[151,6160+25]..[151,6160+27]) ghost
+                                                        Some
+                                                          expression (ocamldoc/odoc_comments.ml[151,6160+25]..[151,6160+27]) ghost
+                                                            Pexp_tuple
+                                                            [
+                                                              expression (ocamldoc/odoc_comments.ml[151,6160+25]..[151,6160+26])
+                                                                Pexp_ident "i" (ocamldoc/odoc_comments.ml[151,6160+25]..[151,6160+26])
+                                                              expression (ocamldoc/odoc_comments.ml[151,6160+26]..[151,6160+27]) ghost
+                                                                Pexp_construct "[]" (ocamldoc/odoc_comments.ml[151,6160+26]..[151,6160+27]) ghost
+                                                                None
+                                                            ]
+                                                  ]
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/odoc_comments.ml[151,6160+29]..[151,6160+37])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/odoc_comments.ml[151,6160+32]..[151,6160+33])
+                                                    Pexp_ident "+" (ocamldoc/odoc_comments.ml[151,6160+32]..[151,6160+33])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[151,6160+30]..[151,6160+31])
+                                                        Pexp_ident "n" (ocamldoc/odoc_comments.ml[151,6160+30]..[151,6160+31])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[151,6160+34]..[151,6160+36])
+                                                        Pexp_ident "n2" (ocamldoc/odoc_comments.ml[151,6160+34]..[151,6160+36])
+                                                  ]
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/odoc_comments.ml[151,6160+38]..[151,6160+43])
+                                                  Pexp_ident "new_s" (ocamldoc/odoc_comments.ml[151,6160+38]..[151,6160+43])
+                                            ]
+                                    ]
+                        ]
+                        expression (ocamldoc/odoc_comments.ml[153,6213+6]..[153,6213+17])
+                          Pexp_apply
+                          expression (ocamldoc/odoc_comments.ml[153,6213+6]..[153,6213+10])
+                            Pexp_ident "iter" (ocamldoc/odoc_comments.ml[153,6213+6]..[153,6213+10])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (ocamldoc/odoc_comments.ml[153,6213+11]..[153,6213+13])
+                                Pexp_construct "[]" (ocamldoc/odoc_comments.ml[153,6213+11]..[153,6213+13])
+                                None
+                            <arg>
+                            Nolabel
+                              expression (ocamldoc/odoc_comments.ml[153,6213+14]..[153,6213+15])
+                                Pexp_constant PConst_int (0,None)
+                            <arg>
+                            Nolabel
+                              expression (ocamldoc/odoc_comments.ml[153,6213+16]..[153,6213+17])
+                                Pexp_ident "s" (ocamldoc/odoc_comments.ml[153,6213+16]..[153,6213+17])
+                          ]
+              ]
+            structure_item (ocamldoc/odoc_comments.ml[155,6232+4]..[180,7180+23])
+              Pstr_value Nonrec
+              [
+                <def>
+                  pattern (ocamldoc/odoc_comments.ml[155,6232+8]..[155,6232+26])
+                    Ppat_var "just_after_special" (ocamldoc/odoc_comments.ml[155,6232+8]..[155,6232+26])
+                  expression (ocamldoc/odoc_comments.ml[155,6232+27]..[180,7180+23]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[155,6232+27]..[155,6232+31])
+                      Ppat_var "file" (ocamldoc/odoc_comments.ml[155,6232+27]..[155,6232+31])
+                    expression (ocamldoc/odoc_comments.ml[155,6232+32]..[180,7180+23]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (ocamldoc/odoc_comments.ml[155,6232+32]..[155,6232+33])
+                        Ppat_var "s" (ocamldoc/odoc_comments.ml[155,6232+32]..[155,6232+33])
+                      expression (ocamldoc/odoc_comments.ml[156,6268+6]..[180,7180+23])
+                        Pexp_match
+                        expression (ocamldoc/odoc_comments.ml[156,6268+12]..[156,6268+40])
+                          Pexp_apply
+                          expression (ocamldoc/odoc_comments.ml[156,6268+12]..[156,6268+33])
+                            Pexp_ident "retrieve_info_special" (ocamldoc/odoc_comments.ml[156,6268+12]..[156,6268+33])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (ocamldoc/odoc_comments.ml[156,6268+34]..[156,6268+38])
+                                Pexp_ident "file" (ocamldoc/odoc_comments.ml[156,6268+34]..[156,6268+38])
+                            <arg>
+                            Nolabel
+                              expression (ocamldoc/odoc_comments.ml[156,6268+39]..[156,6268+40])
+                                Pexp_ident "s" (ocamldoc/odoc_comments.ml[156,6268+39]..[156,6268+40])
+                          ]
+                        [
+                          <case>
+                            pattern (ocamldoc/odoc_comments.ml[157,6314+8]..[157,6314+17])
+                              Ppat_tuple
+                              [
+                                pattern (ocamldoc/odoc_comments.ml[157,6314+9]..[157,6314+10])
+                                  Ppat_any
+                                pattern (ocamldoc/odoc_comments.ml[157,6314+12]..[157,6314+16])
+                                  Ppat_construct "None" (ocamldoc/odoc_comments.ml[157,6314+12]..[157,6314+16])
+                                  None
+                              ]
+                            expression (ocamldoc/odoc_comments.ml[158,6335+10]..[158,6335+19])
+                              Pexp_tuple
+                              [
+                                expression (ocamldoc/odoc_comments.ml[158,6335+11]..[158,6335+12])
+                                  Pexp_constant PConst_int (0,None)
+                                expression (ocamldoc/odoc_comments.ml[158,6335+14]..[158,6335+18])
+                                  Pexp_construct "None" (ocamldoc/odoc_comments.ml[158,6335+14]..[158,6335+18])
+                                  None
+                              ]
+                          <case>
+                            pattern (ocamldoc/odoc_comments.ml[159,6355+8]..[159,6355+21])
+                              Ppat_tuple
+                              [
+                                pattern (ocamldoc/odoc_comments.ml[159,6355+9]..[159,6355+12])
+                                  Ppat_var "len" (ocamldoc/odoc_comments.ml[159,6355+9]..[159,6355+12])
+                                pattern (ocamldoc/odoc_comments.ml[159,6355+14]..[159,6355+20])
+                                  Ppat_construct "Some" (ocamldoc/odoc_comments.ml[159,6355+14]..[159,6355+18])
+                                  Some
+                                    []
+                                    pattern (ocamldoc/odoc_comments.ml[159,6355+19]..[159,6355+20])
+                                      Ppat_var "d" (ocamldoc/odoc_comments.ml[159,6355+19]..[159,6355+20])
+                              ]
+                            expression (ocamldoc/odoc_comments.ml[161,6454+10]..[180,7180+23])
+                              Pexp_match
+                              expression (ocamldoc/odoc_comments.ml[161,6454+16]..[161,6454+62])
+                                Pexp_apply
+                                expression (ocamldoc/odoc_comments.ml[161,6454+16]..[161,6454+36])
+                                  Pexp_ident "retrieve_info_simple" (ocamldoc/odoc_comments.ml[161,6454+16]..[161,6454+36])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (ocamldoc/odoc_comments.ml[161,6454+37]..[161,6454+41])
+                                      Pexp_ident "file" (ocamldoc/odoc_comments.ml[161,6454+37]..[161,6454+41])
+                                  <arg>
+                                  Nolabel
+                                    expression (ocamldoc/odoc_comments.ml[161,6454+42]..[161,6454+62])
+                                      Pexp_apply
+                                      expression (ocamldoc/odoc_comments.ml[161,6454+43]..[161,6454+53])
+                                        Pexp_ident "String.sub" (ocamldoc/odoc_comments.ml[161,6454+43]..[161,6454+53])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[161,6454+54]..[161,6454+55])
+                                            Pexp_ident "s" (ocamldoc/odoc_comments.ml[161,6454+54]..[161,6454+55])
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[161,6454+56]..[161,6454+57])
+                                            Pexp_constant PConst_int (0,None)
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[161,6454+58]..[161,6454+61])
+                                            Pexp_ident "len" (ocamldoc/odoc_comments.ml[161,6454+58]..[161,6454+61])
+                                      ]
+                                ]
+                              [
+                                <case>
+                                  pattern (ocamldoc/odoc_comments.ml[162,6522+12]..[162,6522+21])
+                                    Ppat_tuple
+                                    [
+                                      pattern (ocamldoc/odoc_comments.ml[162,6522+13]..[162,6522+14])
+                                        Ppat_any
+                                      pattern (ocamldoc/odoc_comments.ml[162,6522+16]..[162,6522+20])
+                                        Ppat_construct "None" (ocamldoc/odoc_comments.ml[162,6522+16]..[162,6522+20])
+                                        None
+                                    ]
+                                  expression (ocamldoc/odoc_comments.ml[163,6547+14]..[178,7137+15])
+                                    Pexp_try
+                                    expression (ocamldoc/odoc_comments.ml[167,6708+17]..[173,6983+32])
+                                      Pexp_let Nonrec
+                                      [
+                                        <def>
+                                          pattern (ocamldoc/odoc_comments.ml[167,6708+21]..[167,6708+24])
+                                            Ppat_var "pos" (ocamldoc/odoc_comments.ml[167,6708+21]..[167,6708+24])
+                                          expression (ocamldoc/odoc_comments.ml[167,6708+27]..[167,6708+75])
+                                            Pexp_apply
+                                            expression (ocamldoc/odoc_comments.ml[167,6708+27]..[167,6708+45])
+                                              Pexp_ident "Str.search_forward" (ocamldoc/odoc_comments.ml[167,6708+27]..[167,6708+45])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/odoc_comments.ml[167,6708+46]..[167,6708+71])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/odoc_comments.ml[167,6708+47]..[167,6708+64])
+                                                    Pexp_ident "Str.regexp_string" (ocamldoc/odoc_comments.ml[167,6708+47]..[167,6708+64])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[167,6708+65]..[167,6708+70])
+                                                        Pexp_constant PConst_string("(**",(ocamldoc/odoc_comments.ml[167,6708+66]..[167,6708+69]),None)
+                                                  ]
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/odoc_comments.ml[167,6708+72]..[167,6708+73])
+                                                  Pexp_ident "s" (ocamldoc/odoc_comments.ml[167,6708+72]..[167,6708+73])
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/odoc_comments.ml[167,6708+74]..[167,6708+75])
+                                                  Pexp_constant PConst_int (0,None)
+                                            ]
+                                      ]
+                                      expression (ocamldoc/odoc_comments.ml[168,6787+17]..[173,6983+32])
+                                        Pexp_ifthenelse
+                                        expression (ocamldoc/odoc_comments.ml[168,6787+20]..[169,6842+67])
+                                          Pexp_apply
+                                          expression (ocamldoc/odoc_comments.ml[168,6787+52]..[168,6787+54])
+                                            Pexp_ident "||" (ocamldoc/odoc_comments.ml[168,6787+52]..[168,6787+54])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/odoc_comments.ml[168,6787+20]..[168,6787+51])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[168,6787+20]..[168,6787+30])
+                                                  Pexp_ident "blank_line" (ocamldoc/odoc_comments.ml[168,6787+20]..[168,6787+30])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[168,6787+31]..[168,6787+51])
+                                                      Pexp_apply
+                                                      expression (ocamldoc/odoc_comments.ml[168,6787+32]..[168,6787+42])
+                                                        Pexp_ident "String.sub" (ocamldoc/odoc_comments.ml[168,6787+32]..[168,6787+42])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/odoc_comments.ml[168,6787+43]..[168,6787+44])
+                                                            Pexp_ident "s" (ocamldoc/odoc_comments.ml[168,6787+43]..[168,6787+44])
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/odoc_comments.ml[168,6787+45]..[168,6787+46])
+                                                            Pexp_constant PConst_int (0,None)
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/odoc_comments.ml[168,6787+47]..[168,6787+50])
+                                                            Pexp_ident "pos" (ocamldoc/odoc_comments.ml[168,6787+47]..[168,6787+50])
+                                                      ]
+                                                ]
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/odoc_comments.ml[169,6842+19]..[169,6842+67])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[169,6842+39]..[169,6842+40])
+                                                  Pexp_ident "=" (ocamldoc/odoc_comments.ml[169,6842+39]..[169,6842+40])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[169,6842+19]..[169,6842+38])
+                                                      Pexp_field
+                                                      expression (ocamldoc/odoc_comments.ml[169,6842+19]..[169,6842+20])
+                                                        Pexp_ident "d" (ocamldoc/odoc_comments.ml[169,6842+19]..[169,6842+20])
+                                                      "Odoc_types.i_desc" (ocamldoc/odoc_comments.ml[169,6842+21]..[169,6842+38])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[169,6842+41]..[169,6842+67])
+                                                      Pexp_construct "Some" (ocamldoc/odoc_comments.ml[169,6842+41]..[169,6842+45])
+                                                      Some
+                                                        expression (ocamldoc/odoc_comments.ml[169,6842+46]..[169,6842+67])
+                                                          Pexp_construct "::" (ocamldoc/odoc_comments.ml[169,6842+47]..[169,6842+67]) ghost
+                                                          Some
+                                                            expression (ocamldoc/odoc_comments.ml[169,6842+47]..[169,6842+67]) ghost
+                                                              Pexp_tuple
+                                                              [
+                                                                expression (ocamldoc/odoc_comments.ml[169,6842+47]..[169,6842+66])
+                                                                  Pexp_construct "Odoc_types.Raw" (ocamldoc/odoc_comments.ml[169,6842+47]..[169,6842+61])
+                                                                  Some
+                                                                    expression (ocamldoc/odoc_comments.ml[169,6842+62]..[169,6842+66])
+                                                                      Pexp_constant PConst_string("/*",(ocamldoc/odoc_comments.ml[169,6842+63]..[169,6842+65]),None)
+                                                                expression (ocamldoc/odoc_comments.ml[169,6842+66]..[169,6842+67]) ghost
+                                                                  Pexp_construct "[]" (ocamldoc/odoc_comments.ml[169,6842+66]..[169,6842+67]) ghost
+                                                                  None
+                                                              ]
+                                                ]
+                                          ]
+                                        expression (ocamldoc/odoc_comments.ml[171,6932+19]..[171,6932+28])
+                                          Pexp_tuple
+                                          [
+                                            expression (ocamldoc/odoc_comments.ml[171,6932+20]..[171,6932+21])
+                                              Pexp_constant PConst_int (0,None)
+                                            expression (ocamldoc/odoc_comments.ml[171,6932+23]..[171,6932+27])
+                                              Pexp_construct "None" (ocamldoc/odoc_comments.ml[171,6932+23]..[171,6932+27])
+                                              None
+                                          ]
+                                        Some
+                                          expression (ocamldoc/odoc_comments.ml[173,6983+19]..[173,6983+32])
+                                            Pexp_tuple
+                                            [
+                                              expression (ocamldoc/odoc_comments.ml[173,6983+20]..[173,6983+23])
+                                                Pexp_ident "len" (ocamldoc/odoc_comments.ml[173,6983+20]..[173,6983+23])
+                                              expression (ocamldoc/odoc_comments.ml[173,6983+25]..[173,6983+31])
+                                                Pexp_construct "Some" (ocamldoc/odoc_comments.ml[173,6983+25]..[173,6983+29])
+                                                Some
+                                                  expression (ocamldoc/odoc_comments.ml[173,6983+30]..[173,6983+31])
+                                                    Pexp_ident "d" (ocamldoc/odoc_comments.ml[173,6983+30]..[173,6983+31])
+                                            ]
+                                    [
+                                      <case>
+                                        pattern (ocamldoc/odoc_comments.ml[175,7036+17]..[175,7036+26])
+                                          Ppat_construct "Not_found" (ocamldoc/odoc_comments.ml[175,7036+17]..[175,7036+26])
+                                          None
+                                        expression (ocamldoc/odoc_comments.ml[177,7108+19]..[177,7108+28])
+                                          Pexp_tuple
+                                          [
+                                            expression (ocamldoc/odoc_comments.ml[177,7108+20]..[177,7108+21])
+                                              Pexp_constant PConst_int (0,None)
+                                            expression (ocamldoc/odoc_comments.ml[177,7108+23]..[177,7108+27])
+                                              Pexp_construct "None" (ocamldoc/odoc_comments.ml[177,7108+23]..[177,7108+27])
+                                              None
+                                          ]
+                                    ]
+                                <case>
+                                  pattern (ocamldoc/odoc_comments.ml[179,7153+12]..[179,7153+23])
+                                    Ppat_tuple
+                                    [
+                                      pattern (ocamldoc/odoc_comments.ml[179,7153+13]..[179,7153+14])
+                                        Ppat_any
+                                      pattern (ocamldoc/odoc_comments.ml[179,7153+16]..[179,7153+22])
+                                        Ppat_construct "Some" (ocamldoc/odoc_comments.ml[179,7153+16]..[179,7153+20])
+                                        Some
+                                          []
+                                          pattern (ocamldoc/odoc_comments.ml[179,7153+21]..[179,7153+22])
+                                            Ppat_any
+                                    ]
+                                  expression (ocamldoc/odoc_comments.ml[180,7180+14]..[180,7180+23])
+                                    Pexp_tuple
+                                    [
+                                      expression (ocamldoc/odoc_comments.ml[180,7180+15]..[180,7180+16])
+                                        Pexp_constant PConst_int (0,None)
+                                      expression (ocamldoc/odoc_comments.ml[180,7180+18]..[180,7180+22])
+                                        Pexp_construct "None" (ocamldoc/odoc_comments.ml[180,7180+18]..[180,7180+22])
+                                        None
+                                    ]
+                              ]
+                        ]
+              ]
+            structure_item (ocamldoc/odoc_comments.ml[182,7205+4]..[183,7236+34])
+              Pstr_value Nonrec
+              [
+                <def>
+                  pattern (ocamldoc/odoc_comments.ml[182,7205+8]..[182,7205+21])
+                    Ppat_var "first_special" (ocamldoc/odoc_comments.ml[182,7205+8]..[182,7205+21])
+                  expression (ocamldoc/odoc_comments.ml[182,7205+22]..[183,7236+34]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[182,7205+22]..[182,7205+26])
+                      Ppat_var "file" (ocamldoc/odoc_comments.ml[182,7205+22]..[182,7205+26])
+                    expression (ocamldoc/odoc_comments.ml[182,7205+27]..[183,7236+34]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (ocamldoc/odoc_comments.ml[182,7205+27]..[182,7205+28])
+                        Ppat_var "s" (ocamldoc/odoc_comments.ml[182,7205+27]..[182,7205+28])
+                      expression (ocamldoc/odoc_comments.ml[183,7236+6]..[183,7236+34])
+                        Pexp_apply
+                        expression (ocamldoc/odoc_comments.ml[183,7236+6]..[183,7236+27])
+                          Pexp_ident "retrieve_info_special" (ocamldoc/odoc_comments.ml[183,7236+6]..[183,7236+27])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (ocamldoc/odoc_comments.ml[183,7236+28]..[183,7236+32])
+                              Pexp_ident "file" (ocamldoc/odoc_comments.ml[183,7236+28]..[183,7236+32])
+                          <arg>
+                          Nolabel
+                            expression (ocamldoc/odoc_comments.ml[183,7236+33]..[183,7236+34])
+                              Pexp_ident "s" (ocamldoc/odoc_comments.ml[183,7236+33]..[183,7236+34])
+                        ]
+              ]
+            structure_item (ocamldoc/odoc_comments.ml[185,7272+4]..[215,8323+31])
+              Pstr_value Nonrec
+              [
+                <def>
+                  pattern (ocamldoc/odoc_comments.ml[185,7272+8]..[185,7272+20])
+                    Ppat_var "get_comments" (ocamldoc/odoc_comments.ml[185,7272+8]..[185,7272+20])
+                  expression (ocamldoc/odoc_comments.ml[185,7272+21]..[215,8323+31]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/odoc_comments.ml[185,7272+21]..[185,7272+33])
+                      Ppat_var "f_create_ele" (ocamldoc/odoc_comments.ml[185,7272+21]..[185,7272+33])
+                    expression (ocamldoc/odoc_comments.ml[185,7272+34]..[215,8323+31]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (ocamldoc/odoc_comments.ml[185,7272+34]..[185,7272+38])
+                        Ppat_var "file" (ocamldoc/odoc_comments.ml[185,7272+34]..[185,7272+38])
+                      expression (ocamldoc/odoc_comments.ml[185,7272+39]..[215,8323+31]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (ocamldoc/odoc_comments.ml[185,7272+39]..[185,7272+40])
+                          Ppat_var "s" (ocamldoc/odoc_comments.ml[185,7272+39]..[185,7272+40])
+                        expression (ocamldoc/odoc_comments.ml[186,7315+6]..[215,8323+31])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (ocamldoc/odoc_comments.ml[186,7315+10]..[186,7315+31])
+                                Ppat_tuple
+                                [
+                                  pattern (ocamldoc/odoc_comments.ml[186,7315+11]..[186,7315+20])
+                                    Ppat_var "assoc_com" (ocamldoc/odoc_comments.ml[186,7315+11]..[186,7315+20])
+                                  pattern (ocamldoc/odoc_comments.ml[186,7315+22]..[186,7315+30])
+                                    Ppat_var "ele_coms" (ocamldoc/odoc_comments.ml[186,7315+22]..[186,7315+30])
+                                ]
+                              expression (ocamldoc/odoc_comments.ml[188,7380+8]..[202,8008+34])
+                                Pexp_let Nonrec
+                                [
+                                  <def>
+                                    pattern (ocamldoc/odoc_comments.ml[188,7380+12]..[188,7380+31])
+                                      Ppat_tuple
+                                      [
+                                        pattern (ocamldoc/odoc_comments.ml[188,7380+13]..[188,7380+16])
+                                          Ppat_var "len" (ocamldoc/odoc_comments.ml[188,7380+13]..[188,7380+16])
+                                        pattern (ocamldoc/odoc_comments.ml[188,7380+18]..[188,7380+30])
+                                          Ppat_var "special_coms" (ocamldoc/odoc_comments.ml[188,7380+18]..[188,7380+30])
+                                      ]
+                                    expression (ocamldoc/odoc_comments.ml[188,7380+35]..[188,7380+53])
+                                      Pexp_apply
+                                      expression (ocamldoc/odoc_comments.ml[188,7380+35]..[188,7380+46])
+                                        Pexp_ident "all_special" (ocamldoc/odoc_comments.ml[188,7380+35]..[188,7380+46])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[188,7380+47]..[188,7380+51])
+                                            Pexp_ident "file" (ocamldoc/odoc_comments.ml[188,7380+47]..[188,7380+51])
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/odoc_comments.ml[188,7380+52]..[188,7380+53])
+                                            Pexp_ident "s" (ocamldoc/odoc_comments.ml[188,7380+52]..[188,7380+53])
+                                      ]
+                                ]
+                                expression (ocamldoc/odoc_comments.ml[192,7658+8]..[202,8008+34])
+                                  Pexp_match
+                                  expression (ocamldoc/odoc_comments.ml[192,7658+14]..[192,7658+35])
+                                    Pexp_apply
+                                    expression (ocamldoc/odoc_comments.ml[192,7658+14]..[192,7658+22])
+                                      Pexp_ident "List.rev" (ocamldoc/odoc_comments.ml[192,7658+14]..[192,7658+22])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/odoc_comments.ml[192,7658+23]..[192,7658+35])
+                                          Pexp_ident "special_coms" (ocamldoc/odoc_comments.ml[192,7658+23]..[192,7658+35])
+                                    ]
+                                  [
+                                    <case>
+                                      pattern (ocamldoc/odoc_comments.ml[193,7699+10]..[193,7699+12])
+                                        Ppat_construct "[]" (ocamldoc/odoc_comments.ml[193,7699+10]..[193,7699+12])
+                                        None
+                                      expression (ocamldoc/odoc_comments.ml[194,7715+12]..[194,7715+22])
+                                        Pexp_tuple
+                                        [
+                                          expression (ocamldoc/odoc_comments.ml[194,7715+13]..[194,7715+17])
+                                            Pexp_construct "None" (ocamldoc/odoc_comments.ml[194,7715+13]..[194,7715+17])
+                                            None
+                                          expression (ocamldoc/odoc_comments.ml[194,7715+19]..[194,7715+21])
+                                            Pexp_construct "[]" (ocamldoc/odoc_comments.ml[194,7715+19]..[194,7715+21])
+                                            None
+                                        ]
+                                    <case>
+                                      pattern (ocamldoc/odoc_comments.ml[195,7738+11]..[195,7738+17])
+                                        Ppat_construct "::" (ocamldoc/odoc_comments.ml[195,7738+13]..[195,7738+15])
+                                        Some
+                                          []
+                                          pattern (ocamldoc/odoc_comments.ml[195,7738+11]..[195,7738+17]) ghost
+                                            Ppat_tuple
+                                            [
+                                              pattern (ocamldoc/odoc_comments.ml[195,7738+11]..[195,7738+12])
+                                                Ppat_var "h" (ocamldoc/odoc_comments.ml[195,7738+11]..[195,7738+12])
+                                              pattern (ocamldoc/odoc_comments.ml[195,7738+16]..[195,7738+17])
+                                                Ppat_var "q" (ocamldoc/odoc_comments.ml[195,7738+16]..[195,7738+17])
+                                            ]
+                                      expression (ocamldoc/odoc_comments.ml[196,7759+12]..[202,8008+34])
+                                        Pexp_ifthenelse
+                                        expression (ocamldoc/odoc_comments.ml[196,7759+15]..[198,7871+67])
+                                          Pexp_apply
+                                          expression (ocamldoc/odoc_comments.ml[198,7871+16]..[198,7871+18])
+                                            Pexp_ident "||" (ocamldoc/odoc_comments.ml[198,7871+16]..[198,7871+18])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/odoc_comments.ml[196,7759+15]..[197,7806+64])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[196,7759+16]..[196,7759+41])
+                                                  Pexp_ident "blank_line_outside_simple" (ocamldoc/odoc_comments.ml[196,7759+16]..[196,7759+41])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[196,7759+42]..[196,7759+46])
+                                                      Pexp_ident "file" (ocamldoc/odoc_comments.ml[196,7759+42]..[196,7759+46])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[197,7806+18]..[197,7806+62])
+                                                      Pexp_apply
+                                                      expression (ocamldoc/odoc_comments.ml[197,7806+19]..[197,7806+29])
+                                                        Pexp_ident "String.sub" (ocamldoc/odoc_comments.ml[197,7806+19]..[197,7806+29])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/odoc_comments.ml[197,7806+30]..[197,7806+31])
+                                                            Pexp_ident "s" (ocamldoc/odoc_comments.ml[197,7806+30]..[197,7806+31])
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/odoc_comments.ml[197,7806+32]..[197,7806+35])
+                                                            Pexp_ident "len" (ocamldoc/odoc_comments.ml[197,7806+32]..[197,7806+35])
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/odoc_comments.ml[197,7806+36]..[197,7806+61])
+                                                            Pexp_apply
+                                                            expression (ocamldoc/odoc_comments.ml[197,7806+55]..[197,7806+56])
+                                                              Pexp_ident "-" (ocamldoc/odoc_comments.ml[197,7806+55]..[197,7806+56])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (ocamldoc/odoc_comments.ml[197,7806+37]..[197,7806+54])
+                                                                  Pexp_apply
+                                                                  expression (ocamldoc/odoc_comments.ml[197,7806+38]..[197,7806+51])
+                                                                    Pexp_ident "String.length" (ocamldoc/odoc_comments.ml[197,7806+38]..[197,7806+51])
+                                                                  [
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (ocamldoc/odoc_comments.ml[197,7806+52]..[197,7806+53])
+Pexp_ident "s" (ocamldoc/odoc_comments.ml[197,7806+52]..[197,7806+53])
+                                                                  ]
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (ocamldoc/odoc_comments.ml[197,7806+57]..[197,7806+60])
+                                                                  Pexp_ident "len" (ocamldoc/odoc_comments.ml[197,7806+57]..[197,7806+60])
+                                                            ]
+                                                      ]
+                                                ]
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/odoc_comments.ml[198,7871+19]..[198,7871+67])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[198,7871+39]..[198,7871+40])
+                                                  Pexp_ident "=" (ocamldoc/odoc_comments.ml[198,7871+39]..[198,7871+40])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[198,7871+19]..[198,7871+38])
+                                                      Pexp_field
+                                                      expression (ocamldoc/odoc_comments.ml[198,7871+19]..[198,7871+20])
+                                                        Pexp_ident "h" (ocamldoc/odoc_comments.ml[198,7871+19]..[198,7871+20])
+                                                      "Odoc_types.i_desc" (ocamldoc/odoc_comments.ml[198,7871+21]..[198,7871+38])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[198,7871+41]..[198,7871+67])
+                                                      Pexp_construct "Some" (ocamldoc/odoc_comments.ml[198,7871+41]..[198,7871+45])
+                                                      Some
+                                                        expression (ocamldoc/odoc_comments.ml[198,7871+46]..[198,7871+67])
+                                                          Pexp_construct "::" (ocamldoc/odoc_comments.ml[198,7871+47]..[198,7871+67]) ghost
+                                                          Some
+                                                            expression (ocamldoc/odoc_comments.ml[198,7871+47]..[198,7871+67]) ghost
+                                                              Pexp_tuple
+                                                              [
+                                                                expression (ocamldoc/odoc_comments.ml[198,7871+47]..[198,7871+66])
+                                                                  Pexp_construct "Odoc_types.Raw" (ocamldoc/odoc_comments.ml[198,7871+47]..[198,7871+61])
+                                                                  Some
+                                                                    expression (ocamldoc/odoc_comments.ml[198,7871+62]..[198,7871+66])
+                                                                      Pexp_constant PConst_string("/*",(ocamldoc/odoc_comments.ml[198,7871+63]..[198,7871+65]),None)
+                                                                expression (ocamldoc/odoc_comments.ml[198,7871+66]..[198,7871+67]) ghost
+                                                                  Pexp_construct "[]" (ocamldoc/odoc_comments.ml[198,7871+66]..[198,7871+67]) ghost
+                                                                  None
+                                                              ]
+                                                ]
+                                          ]
+                                        expression (ocamldoc/odoc_comments.ml[200,7956+14]..[200,7956+34])
+                                          Pexp_tuple
+                                          [
+                                            expression (ocamldoc/odoc_comments.ml[200,7956+15]..[200,7956+19])
+                                              Pexp_construct "None" (ocamldoc/odoc_comments.ml[200,7956+15]..[200,7956+19])
+                                              None
+                                            expression (ocamldoc/odoc_comments.ml[200,7956+21]..[200,7956+33])
+                                              Pexp_ident "special_coms" (ocamldoc/odoc_comments.ml[200,7956+21]..[200,7956+33])
+                                          ]
+                                        Some
+                                          expression (ocamldoc/odoc_comments.ml[202,8008+14]..[202,8008+34])
+                                            Pexp_tuple
+                                            [
+                                              expression (ocamldoc/odoc_comments.ml[202,8008+15]..[202,8008+21])
+                                                Pexp_construct "Some" (ocamldoc/odoc_comments.ml[202,8008+15]..[202,8008+19])
+                                                Some
+                                                  expression (ocamldoc/odoc_comments.ml[202,8008+20]..[202,8008+21])
+                                                    Pexp_ident "h" (ocamldoc/odoc_comments.ml[202,8008+20]..[202,8008+21])
+                                              expression (ocamldoc/odoc_comments.ml[202,8008+23]..[202,8008+33])
+                                                Pexp_apply
+                                                expression (ocamldoc/odoc_comments.ml[202,8008+23]..[202,8008+31])
+                                                  Pexp_ident "List.rev" (ocamldoc/odoc_comments.ml[202,8008+23]..[202,8008+31])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/odoc_comments.ml[202,8008+32]..[202,8008+33])
+                                                      Pexp_ident "q" (ocamldoc/odoc_comments.ml[202,8008+32]..[202,8008+33])
+                                                ]
+                                            ]
+                                  ]
+                          ]
+                          expression (ocamldoc/odoc_comments.ml[204,8052+6]..[215,8323+31])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (ocamldoc/odoc_comments.ml[204,8052+10]..[204,8052+22])
+                                  Ppat_var "ele_comments" (ocamldoc/odoc_comments.ml[204,8052+10]..[204,8052+22])
+                                expression (ocamldoc/odoc_comments.ml[205,8077+8]..[213,8295+18])
+                                  Pexp_apply
+                                  expression (ocamldoc/odoc_comments.ml[205,8077+8]..[205,8077+22])
+                                    Pexp_ident "List.fold_left" (ocamldoc/odoc_comments.ml[205,8077+8]..[205,8077+22])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/odoc_comments.ml[206,8100+10]..[211,8242+39])
+                                        Pexp_fun
+                                        Nolabel
+                                        None
+                                        pattern (ocamldoc/odoc_comments.ml[206,8100+15]..[206,8100+18])
+                                          Ppat_var "acc" (ocamldoc/odoc_comments.ml[206,8100+15]..[206,8100+18])
+                                        expression (ocamldoc/odoc_comments.ml[206,8100+22]..[211,8242+38])
+                                          Pexp_fun
+                                          Nolabel
+                                          None
+                                          pattern (ocamldoc/odoc_comments.ml[206,8100+26]..[206,8100+28])
+                                            Ppat_var "sc" (ocamldoc/odoc_comments.ml[206,8100+26]..[206,8100+28])
+                                          expression (ocamldoc/odoc_comments.ml[207,8132+12]..[211,8242+38])
+                                            Pexp_match
+                                            expression (ocamldoc/odoc_comments.ml[207,8132+18]..[207,8132+38])
+                                              Pexp_field
+                                              expression (ocamldoc/odoc_comments.ml[207,8132+18]..[207,8132+20])
+                                                Pexp_ident "sc" (ocamldoc/odoc_comments.ml[207,8132+18]..[207,8132+20])
+                                              "Odoc_types.i_desc" (ocamldoc/odoc_comments.ml[207,8132+21]..[207,8132+38])
+                                            [
+                                              <case>
+                                                pattern (ocamldoc/odoc_comments.ml[208,8176+14]..[208,8176+18])
+                                                  Ppat_construct "None" (ocamldoc/odoc_comments.ml[208,8176+14]..[208,8176+18])
+                                                  None
+                                                expression (ocamldoc/odoc_comments.ml[209,8198+16]..[209,8198+19])
+                                                  Pexp_ident "acc" (ocamldoc/odoc_comments.ml[209,8198+16]..[209,8198+19])
+                                              <case>
+                                                pattern (ocamldoc/odoc_comments.ml[210,8218+14]..[210,8218+20])
+                                                  Ppat_construct "Some" (ocamldoc/odoc_comments.ml[210,8218+14]..[210,8218+18])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/odoc_comments.ml[210,8218+19]..[210,8218+20])
+                                                      Ppat_var "t" (ocamldoc/odoc_comments.ml[210,8218+19]..[210,8218+20])
+                                                expression (ocamldoc/odoc_comments.ml[211,8242+16]..[211,8242+38])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/odoc_comments.ml[211,8242+20]..[211,8242+21])
+                                                    Pexp_ident "@" (ocamldoc/odoc_comments.ml[211,8242+20]..[211,8242+21])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[211,8242+16]..[211,8242+19])
+                                                        Pexp_ident "acc" (ocamldoc/odoc_comments.ml[211,8242+16]..[211,8242+19])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/odoc_comments.ml[211,8242+22]..[211,8242+38])
+                                                        Pexp_construct "::" (ocamldoc/odoc_comments.ml[211,8242+23]..[211,8242+38]) ghost
+                                                        Some
+                                                          expression (ocamldoc/odoc_comments.ml[211,8242+23]..[211,8242+38]) ghost
+                                                            Pexp_tuple
+                                                            [
+                                                              expression (ocamldoc/odoc_comments.ml[211,8242+23]..[211,8242+37])
+                                                                Pexp_apply
+                                                                expression (ocamldoc/odoc_comments.ml[211,8242+23]..[211,8242+35])
+                                                                  Pexp_ident "f_create_ele" (ocamldoc/odoc_comments.ml[211,8242+23]..[211,8242+35])
+                                                                [
+                                                                  <arg>
+                                                                  Nolabel
+                                                                    expression (ocamldoc/odoc_comments.ml[211,8242+36]..[211,8242+37])
+                                                                      Pexp_ident "t" (ocamldoc/odoc_comments.ml[211,8242+36]..[211,8242+37])
+                                                                ]
+                                                              expression (ocamldoc/odoc_comments.ml[211,8242+37]..[211,8242+38]) ghost
+                                                                Pexp_construct "[]" (ocamldoc/odoc_comments.ml[211,8242+37]..[211,8242+38]) ghost
+                                                                None
+                                                            ]
+                                                  ]
+                                            ]
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/odoc_comments.ml[212,8282+10]..[212,8282+12])
+                                        Pexp_construct "[]" (ocamldoc/odoc_comments.ml[212,8282+10]..[212,8282+12])
+                                        None
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/odoc_comments.ml[213,8295+10]..[213,8295+18])
+                                        Pexp_ident "ele_coms" (ocamldoc/odoc_comments.ml[213,8295+10]..[213,8295+18])
+                                  ]
+                            ]
+                            expression (ocamldoc/odoc_comments.ml[215,8323+6]..[215,8323+31])
+                              Pexp_tuple
+                              [
+                                expression (ocamldoc/odoc_comments.ml[215,8323+7]..[215,8323+16])
+                                  Pexp_ident "assoc_com" (ocamldoc/odoc_comments.ml[215,8323+7]..[215,8323+16])
+                                expression (ocamldoc/odoc_comments.ml[215,8323+18]..[215,8323+30])
+                                  Pexp_ident "ele_comments" (ocamldoc/odoc_comments.ml[215,8323+18]..[215,8323+30])
+                              ]
+              ]
+          ]
+  structure_item (ocamldoc/odoc_comments.ml[218,8362+0]..[218,8362+63])
+    Pstr_module
+    "Basic_info_retriever" (ocamldoc/odoc_comments.ml[218,8362+7]..[218,8362+27])
+      module_expr (ocamldoc/odoc_comments.ml[218,8362+30]..[218,8362+63])
+        Pmod_apply
+        module_expr (ocamldoc/odoc_comments.ml[218,8362+30]..[218,8362+44])
+          Pmod_ident "Info_retriever" (ocamldoc/odoc_comments.ml[218,8362+30]..[218,8362+44])
+        module_expr (ocamldoc/odoc_comments.ml[218,8362+46]..[218,8362+62])
+          Pmod_ident "Odoc_text.Texter" (ocamldoc/odoc_comments.ml[218,8362+46]..[218,8362+62])
+  structure_item (ocamldoc/odoc_comments.ml[220,8427+0]..[226,8633+15])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (ocamldoc/odoc_comments.ml[220,8427+4]..[220,8427+18])
+          Ppat_var "info_of_string" (ocamldoc/odoc_comments.ml[220,8427+4]..[220,8427+18])
+        expression (ocamldoc/odoc_comments.ml[220,8427+19]..[226,8633+15]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (ocamldoc/odoc_comments.ml[220,8427+19]..[220,8427+20])
+            Ppat_var "s" (ocamldoc/odoc_comments.ml[220,8427+19]..[220,8427+20])
+          expression (ocamldoc/odoc_comments.ml[221,8450+2]..[226,8633+15])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (ocamldoc/odoc_comments.ml[221,8450+6]..[221,8450+11])
+                  Ppat_var "dummy" (ocamldoc/odoc_comments.ml[221,8450+6]..[221,8450+11])
+                expression (ocamldoc/odoc_comments.ml[221,8450+14]..[221,8450+35])
+                  Pexp_ident "Odoc_types.dummy_info" (ocamldoc/odoc_comments.ml[221,8450+14]..[221,8450+35])
+            ]
+            expression (ocamldoc/odoc_comments.ml[222,8489+2]..[226,8633+15])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (ocamldoc/odoc_comments.ml[222,8489+6]..[222,8489+8])
+                    Ppat_var "s2" (ocamldoc/odoc_comments.ml[222,8489+6]..[222,8489+8])
+                  expression (ocamldoc/odoc_comments.ml[222,8489+11]..[222,8489+39])
+                    Pexp_apply
+                    expression (ocamldoc/odoc_comments.ml[222,8489+11]..[222,8489+25])
+                      Pexp_ident "Printf.sprintf" (ocamldoc/odoc_comments.ml[222,8489+11]..[222,8489+25])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (ocamldoc/odoc_comments.ml[222,8489+26]..[222,8489+37])
+                          Pexp_constant PConst_string("(** %s *)",(ocamldoc/odoc_comments.ml[222,8489+27]..[222,8489+36]),None)
+                      <arg>
+                      Nolabel
+                        expression (ocamldoc/odoc_comments.ml[222,8489+38]..[222,8489+39])
+                          Pexp_ident "s" (ocamldoc/odoc_comments.ml[222,8489+38]..[222,8489+39])
+                    ]
+              ]
+              expression (ocamldoc/odoc_comments.ml[223,8532+2]..[226,8633+15])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (ocamldoc/odoc_comments.ml[223,8532+6]..[223,8532+16])
+                      Ppat_tuple
+                      [
+                        pattern (ocamldoc/odoc_comments.ml[223,8532+7]..[223,8532+8])
+                          Ppat_any
+                        pattern (ocamldoc/odoc_comments.ml[223,8532+10]..[223,8532+15])
+                          Ppat_var "i_opt" (ocamldoc/odoc_comments.ml[223,8532+10]..[223,8532+15])
+                      ]
+                    expression (ocamldoc/odoc_comments.ml[223,8532+19]..[223,8532+60])
+                      Pexp_apply
+                      expression (ocamldoc/odoc_comments.ml[223,8532+19]..[223,8532+53])
+                        Pexp_ident "Basic_info_retriever.first_special" (ocamldoc/odoc_comments.ml[223,8532+19]..[223,8532+53])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (ocamldoc/odoc_comments.ml[223,8532+54]..[223,8532+57])
+                            Pexp_constant PConst_string("-",(ocamldoc/odoc_comments.ml[223,8532+55]..[223,8532+56]),None)
+                        <arg>
+                        Nolabel
+                          expression (ocamldoc/odoc_comments.ml[223,8532+58]..[223,8532+60])
+                            Pexp_ident "s2" (ocamldoc/odoc_comments.ml[223,8532+58]..[223,8532+60])
+                      ]
+                ]
+                expression (ocamldoc/odoc_comments.ml[224,8596+2]..[226,8633+15])
+                  Pexp_match
+                  expression (ocamldoc/odoc_comments.ml[224,8596+8]..[224,8596+13])
+                    Pexp_ident "i_opt" (ocamldoc/odoc_comments.ml[224,8596+8]..[224,8596+13])
+                  [
+                    <case>
+                      pattern (ocamldoc/odoc_comments.ml[225,8615+4]..[225,8615+8])
+                        Ppat_construct "None" (ocamldoc/odoc_comments.ml[225,8615+4]..[225,8615+8])
+                        None
+                      expression (ocamldoc/odoc_comments.ml[225,8615+12]..[225,8615+17])
+                        Pexp_ident "dummy" (ocamldoc/odoc_comments.ml[225,8615+12]..[225,8615+17])
+                    <case>
+                      pattern (ocamldoc/odoc_comments.ml[226,8633+4]..[226,8633+10])
+                        Ppat_construct "Some" (ocamldoc/odoc_comments.ml[226,8633+4]..[226,8633+8])
+                        Some
+                          []
+                          pattern (ocamldoc/odoc_comments.ml[226,8633+9]..[226,8633+10])
+                            Ppat_var "i" (ocamldoc/odoc_comments.ml[226,8633+9]..[226,8633+10])
+                      expression (ocamldoc/odoc_comments.ml[226,8633+14]..[226,8633+15])
+                        Pexp_ident "i" (ocamldoc/odoc_comments.ml[226,8633+14]..[226,8633+15])
+                  ]
+    ]
+  structure_item (ocamldoc/odoc_comments.ml[228,8650+0]..[235,8847+16])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (ocamldoc/odoc_comments.ml[228,8650+4]..[228,8650+24])
+          Ppat_var "info_of_comment_file" (ocamldoc/odoc_comments.ml[228,8650+4]..[228,8650+24])
+        expression (ocamldoc/odoc_comments.ml[228,8650+25]..[235,8847+16]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (ocamldoc/odoc_comments.ml[228,8650+25]..[228,8650+32])
+            Ppat_var "modlist" (ocamldoc/odoc_comments.ml[228,8650+25]..[228,8650+32])
+          expression (ocamldoc/odoc_comments.ml[228,8650+33]..[235,8847+16]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (ocamldoc/odoc_comments.ml[228,8650+33]..[228,8650+34])
+              Ppat_var "f" (ocamldoc/odoc_comments.ml[228,8650+33]..[228,8650+34])
+            expression (ocamldoc/odoc_comments.ml[229,8687+2]..[235,8847+16])
+              Pexp_try
+              expression (ocamldoc/odoc_comments.ml[230,8693+4]..[232,8773+47])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (ocamldoc/odoc_comments.ml[230,8693+8]..[230,8693+9])
+                      Ppat_var "s" (ocamldoc/odoc_comments.ml[230,8693+8]..[230,8693+9])
+                    expression (ocamldoc/odoc_comments.ml[230,8693+12]..[230,8693+44])
+                      Pexp_apply
+                      expression (ocamldoc/odoc_comments.ml[230,8693+12]..[230,8693+42])
+                        Pexp_ident "Odoc_misc.input_file_as_string" (ocamldoc/odoc_comments.ml[230,8693+12]..[230,8693+42])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (ocamldoc/odoc_comments.ml[230,8693+43]..[230,8693+44])
+                            Pexp_ident "f" (ocamldoc/odoc_comments.ml[230,8693+43]..[230,8693+44])
+                      ]
+                ]
+                expression (ocamldoc/odoc_comments.ml[231,8741+4]..[232,8773+47])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (ocamldoc/odoc_comments.ml[231,8741+8]..[231,8741+9])
+                        Ppat_var "i" (ocamldoc/odoc_comments.ml[231,8741+8]..[231,8741+9])
+                      expression (ocamldoc/odoc_comments.ml[231,8741+12]..[231,8741+28])
+                        Pexp_apply
+                        expression (ocamldoc/odoc_comments.ml[231,8741+12]..[231,8741+26])
+                          Pexp_ident "info_of_string" (ocamldoc/odoc_comments.ml[231,8741+12]..[231,8741+26])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (ocamldoc/odoc_comments.ml[231,8741+27]..[231,8741+28])
+                              Pexp_ident "s" (ocamldoc/odoc_comments.ml[231,8741+27]..[231,8741+28])
+                        ]
+                  ]
+                  expression (ocamldoc/odoc_comments.ml[232,8773+4]..[232,8773+47])
+                    Pexp_apply
+                    expression (ocamldoc/odoc_comments.ml[232,8773+4]..[232,8773+34])
+                      Pexp_ident "Odoc_cross.assoc_comments_info" (ocamldoc/odoc_comments.ml[232,8773+4]..[232,8773+34])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (ocamldoc/odoc_comments.ml[232,8773+35]..[232,8773+37])
+                          Pexp_constant PConst_string("",(ocamldoc/odoc_comments.ml[232,8773+36]..[232,8773+36]),None)
+                      <arg>
+                      Nolabel
+                        expression (ocamldoc/odoc_comments.ml[232,8773+38]..[232,8773+45])
+                          Pexp_ident "modlist" (ocamldoc/odoc_comments.ml[232,8773+38]..[232,8773+45])
+                      <arg>
+                      Nolabel
+                        expression (ocamldoc/odoc_comments.ml[232,8773+46]..[232,8773+47])
+                          Pexp_ident "i" (ocamldoc/odoc_comments.ml[232,8773+46]..[232,8773+47])
+                    ]
+              [
+                <case>
+                  pattern (ocamldoc/odoc_comments.ml[234,8828+4]..[234,8828+15])
+                    Ppat_construct "Sys_error" (ocamldoc/odoc_comments.ml[234,8828+4]..[234,8828+13])
+                    Some
+                      []
+                      pattern (ocamldoc/odoc_comments.ml[234,8828+14]..[234,8828+15])
+                        Ppat_var "s" (ocamldoc/odoc_comments.ml[234,8828+14]..[234,8828+15])
+                  expression (ocamldoc/odoc_comments.ml[235,8847+6]..[235,8847+16])
+                    Pexp_apply
+                    expression (ocamldoc/odoc_comments.ml[235,8847+6]..[235,8847+14])
+                      Pexp_ident "failwith" (ocamldoc/odoc_comments.ml[235,8847+6]..[235,8847+14])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (ocamldoc/odoc_comments.ml[235,8847+15]..[235,8847+16])
+                          Pexp_ident "s" (ocamldoc/odoc_comments.ml[235,8847+15]..[235,8847+16])
+                    ]
+              ]
+    ]
+]
+

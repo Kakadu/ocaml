@@ -1,0 +1,701 @@
+[
+  structure_item (typing/typedecl_immediacy.ml[17,1156+0]..[17,1156+10])
+    Pstr_open Fresh
+    module_expr (typing/typedecl_immediacy.ml[17,1156+5]..[17,1156+10])
+      Pmod_ident "Types" (typing/typedecl_immediacy.ml[17,1156+5]..[17,1156+10])
+  structure_item (typing/typedecl_immediacy.ml[19,1168+0]..[19,1168+66])
+    Pstr_type Rec
+    [
+      type_declaration "error" (typing/typedecl_immediacy.ml[19,1168+5]..[19,1168+10]) (typing/typedecl_immediacy.ml[19,1168+0]..[19,1168+66])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (typing/typedecl_immediacy.ml[19,1168+13]..[19,1168+66])
+                "Bad_immediacy_attribute" (typing/typedecl_immediacy.ml[19,1168+13]..[19,1168+36])
+                [
+                  core_type (typing/typedecl_immediacy.ml[19,1168+40]..[19,1168+66])
+                    Ptyp_constr "Type_immediacy.Violation.t" (typing/typedecl_immediacy.ml[19,1168+40]..[19,1168+66])
+                    []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (typing/typedecl_immediacy.ml[20,1235+0]..[20,1235+37])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (typing/typedecl_immediacy.ml[20,1235+0]..[20,1235+37])
+          pext_name = "Error"
+          pext_kind =
+            Pext_decl
+              [
+                core_type (typing/typedecl_immediacy.ml[20,1235+19]..[20,1235+29])
+                  Ptyp_constr "Location.t" (typing/typedecl_immediacy.ml[20,1235+19]..[20,1235+29])
+                  []
+                core_type (typing/typedecl_immediacy.ml[20,1235+32]..[20,1235+37])
+                  Ptyp_constr "error" (typing/typedecl_immediacy.ml[20,1235+32]..[20,1235+37])
+                  []
+              ]
+              None
+  structure_item (typing/typedecl_immediacy.ml[22,1274+0]..[40,2077+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typedecl_immediacy.ml[22,1274+4]..[22,1274+16])
+          Ppat_var "compute_decl" (typing/typedecl_immediacy.ml[22,1274+4]..[22,1274+16])
+        expression (typing/typedecl_immediacy.ml[22,1274+17]..[40,2077+31]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typedecl_immediacy.ml[22,1274+17]..[22,1274+20])
+            Ppat_var "env" (typing/typedecl_immediacy.ml[22,1274+17]..[22,1274+20])
+          expression (typing/typedecl_immediacy.ml[22,1274+21]..[40,2077+31]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typedecl_immediacy.ml[22,1274+21]..[22,1274+26])
+              Ppat_var "tdecl" (typing/typedecl_immediacy.ml[22,1274+21]..[22,1274+26])
+            expression (typing/typedecl_immediacy.ml[23,1303+2]..[40,2077+31])
+              Pexp_match
+              expression (typing/typedecl_immediacy.ml[23,1303+8]..[23,1303+46])
+                Pexp_tuple
+                [
+                  expression (typing/typedecl_immediacy.ml[23,1303+9]..[23,1303+24])
+                    Pexp_field
+                    expression (typing/typedecl_immediacy.ml[23,1303+9]..[23,1303+14])
+                      Pexp_ident "tdecl" (typing/typedecl_immediacy.ml[23,1303+9]..[23,1303+14])
+                    "type_kind" (typing/typedecl_immediacy.ml[23,1303+15]..[23,1303+24])
+                  expression (typing/typedecl_immediacy.ml[23,1303+26]..[23,1303+45])
+                    Pexp_field
+                    expression (typing/typedecl_immediacy.ml[23,1303+26]..[23,1303+31])
+                      Pexp_ident "tdecl" (typing/typedecl_immediacy.ml[23,1303+26]..[23,1303+31])
+                    "type_manifest" (typing/typedecl_immediacy.ml[23,1303+32]..[23,1303+45])
+                ]
+              [
+                <case>
+                  pattern (typing/typedecl_immediacy.ml[24,1355+4]..[27,1508+62])
+                    Ppat_tuple
+                    [
+                      pattern (typing/typedecl_immediacy.ml[24,1355+4]..[27,1508+59])
+                        Ppat_or
+                        pattern (typing/typedecl_immediacy.ml[24,1355+5]..[26,1472+35])
+                          Ppat_construct "Type_variant" (typing/typedecl_immediacy.ml[24,1355+5]..[24,1355+17])
+                          Some
+                            []
+                            pattern (typing/typedecl_immediacy.ml[24,1355+18]..[26,1472+35])
+                              Ppat_tuple
+                              [
+                                pattern (typing/typedecl_immediacy.ml[24,1355+19]..[25,1403+67])
+                                  Ppat_construct "::" (typing/typedecl_immediacy.ml[24,1355+20]..[25,1403+67]) ghost
+                                  Some
+                                    []
+                                    pattern (typing/typedecl_immediacy.ml[24,1355+20]..[25,1403+67]) ghost
+                                      Ppat_tuple
+                                      [
+                                        pattern (typing/typedecl_immediacy.ml[24,1355+20]..[25,1403+66])
+                                          Ppat_record Open
+                                          [
+                                            "cd_args" (typing/typedecl_immediacy.ml[24,1355+21]..[24,1355+28])
+                                              pattern (typing/typedecl_immediacy.ml[24,1355+31]..[25,1403+62])
+                                                Ppat_or
+                                                pattern (typing/typedecl_immediacy.ml[24,1355+31]..[24,1355+47])
+                                                  Ppat_construct "Cstr_tuple" (typing/typedecl_immediacy.ml[24,1355+31]..[24,1355+41])
+                                                  Some
+                                                    []
+                                                    pattern (typing/typedecl_immediacy.ml[24,1355+42]..[24,1355+47])
+                                                      Ppat_construct "::" (typing/typedecl_immediacy.ml[24,1355+43]..[24,1355+47]) ghost
+                                                      Some
+                                                        []
+                                                        pattern (typing/typedecl_immediacy.ml[24,1355+43]..[24,1355+47]) ghost
+                                                          Ppat_tuple
+                                                          [
+                                                            pattern (typing/typedecl_immediacy.ml[24,1355+43]..[24,1355+46])
+                                                              Ppat_var "arg" (typing/typedecl_immediacy.ml[24,1355+43]..[24,1355+46])
+                                                            pattern (typing/typedecl_immediacy.ml[24,1355+46]..[24,1355+47]) ghost
+                                                              Ppat_construct "[]" (typing/typedecl_immediacy.ml[24,1355+46]..[24,1355+47]) ghost
+                                                              None
+                                                          ]
+                                                pattern (typing/typedecl_immediacy.ml[25,1403+30]..[25,1403+62])
+                                                  Ppat_construct "Cstr_record" (typing/typedecl_immediacy.ml[25,1403+30]..[25,1403+41])
+                                                  Some
+                                                    []
+                                                    pattern (typing/typedecl_immediacy.ml[25,1403+42]..[25,1403+62])
+                                                      Ppat_construct "::" (typing/typedecl_immediacy.ml[25,1403+43]..[25,1403+62]) ghost
+                                                      Some
+                                                        []
+                                                        pattern (typing/typedecl_immediacy.ml[25,1403+43]..[25,1403+62]) ghost
+                                                          Ppat_tuple
+                                                          [
+                                                            pattern (typing/typedecl_immediacy.ml[25,1403+43]..[25,1403+61])
+                                                              Ppat_record Open
+                                                              [
+                                                                "ld_type" (typing/typedecl_immediacy.ml[25,1403+44]..[25,1403+51])
+                                                                  pattern (typing/typedecl_immediacy.ml[25,1403+54]..[25,1403+57])
+                                                                    Ppat_var "arg" (typing/typedecl_immediacy.ml[25,1403+54]..[25,1403+57])
+                                                              ]
+                                                            pattern (typing/typedecl_immediacy.ml[25,1403+61]..[25,1403+62]) ghost
+                                                              Ppat_construct "[]" (typing/typedecl_immediacy.ml[25,1403+61]..[25,1403+62]) ghost
+                                                              None
+                                                          ]
+                                          ]
+                                        pattern (typing/typedecl_immediacy.ml[25,1403+66]..[25,1403+67]) ghost
+                                          Ppat_construct "[]" (typing/typedecl_immediacy.ml[25,1403+66]..[25,1403+67]) ghost
+                                          None
+                                      ]
+                                pattern (typing/typedecl_immediacy.ml[26,1472+19]..[26,1472+34])
+                                  Ppat_construct "Variant_unboxed" (typing/typedecl_immediacy.ml[26,1472+19]..[26,1472+34])
+                                  None
+                              ]
+                        pattern (typing/typedecl_immediacy.ml[27,1508+6]..[27,1508+58])
+                          Ppat_construct "Type_record" (typing/typedecl_immediacy.ml[27,1508+6]..[27,1508+17])
+                          Some
+                            []
+                            pattern (typing/typedecl_immediacy.ml[27,1508+18]..[27,1508+58])
+                              Ppat_tuple
+                              [
+                                pattern (typing/typedecl_immediacy.ml[27,1508+19]..[27,1508+39])
+                                  Ppat_construct "::" (typing/typedecl_immediacy.ml[27,1508+20]..[27,1508+39]) ghost
+                                  Some
+                                    []
+                                    pattern (typing/typedecl_immediacy.ml[27,1508+20]..[27,1508+39]) ghost
+                                      Ppat_tuple
+                                      [
+                                        pattern (typing/typedecl_immediacy.ml[27,1508+20]..[27,1508+38])
+                                          Ppat_record Open
+                                          [
+                                            "ld_type" (typing/typedecl_immediacy.ml[27,1508+21]..[27,1508+28])
+                                              pattern (typing/typedecl_immediacy.ml[27,1508+31]..[27,1508+34])
+                                                Ppat_var "arg" (typing/typedecl_immediacy.ml[27,1508+31]..[27,1508+34])
+                                          ]
+                                        pattern (typing/typedecl_immediacy.ml[27,1508+38]..[27,1508+39]) ghost
+                                          Ppat_construct "[]" (typing/typedecl_immediacy.ml[27,1508+38]..[27,1508+39]) ghost
+                                          None
+                                      ]
+                                pattern (typing/typedecl_immediacy.ml[27,1508+41]..[27,1508+57])
+                                  Ppat_construct "Record_unboxed" (typing/typedecl_immediacy.ml[27,1508+41]..[27,1508+55])
+                                  Some
+                                    []
+                                    pattern (typing/typedecl_immediacy.ml[27,1508+56]..[27,1508+57])
+                                      Ppat_any
+                              ]
+                      pattern (typing/typedecl_immediacy.ml[27,1508+61]..[27,1508+62])
+                        Ppat_any
+                    ]
+                  expression (typing/typedecl_immediacy.ml[28,1574+4]..[31,1739+7])
+                    Pexp_match
+                    expression (typing/typedecl_immediacy.ml[28,1574+16]..[28,1574+72])
+                      Pexp_apply
+                      expression (typing/typedecl_immediacy.ml[28,1574+16]..[28,1574+64])
+                        Pexp_ident "Typedecl_unboxed.get_unboxed_type_representation" (typing/typedecl_immediacy.ml[28,1574+16]..[28,1574+64])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typedecl_immediacy.ml[28,1574+65]..[28,1574+68])
+                            Pexp_ident "env" (typing/typedecl_immediacy.ml[28,1574+65]..[28,1574+68])
+                        <arg>
+                        Nolabel
+                          expression (typing/typedecl_immediacy.ml[28,1574+69]..[28,1574+72])
+                            Pexp_ident "arg" (typing/typedecl_immediacy.ml[28,1574+69]..[28,1574+72])
+                      ]
+                    [
+                      <case>
+                        pattern (typing/typedecl_immediacy.ml[29,1652+6]..[29,1652+10])
+                          Ppat_construct "None" (typing/typedecl_immediacy.ml[29,1652+6]..[29,1652+10])
+                          None
+                        expression (typing/typedecl_immediacy.ml[29,1652+14]..[29,1652+36])
+                          Pexp_construct "Type_immediacy.Unknown" (typing/typedecl_immediacy.ml[29,1652+14]..[29,1652+36])
+                          None
+                      <case>
+                        pattern (typing/typedecl_immediacy.ml[30,1689+6]..[30,1689+18])
+                          Ppat_construct "Some" (typing/typedecl_immediacy.ml[30,1689+6]..[30,1689+10])
+                          Some
+                            []
+                            pattern (typing/typedecl_immediacy.ml[30,1689+11]..[30,1689+18])
+                              Ppat_var "argrepr" (typing/typedecl_immediacy.ml[30,1689+11]..[30,1689+18])
+                        expression (typing/typedecl_immediacy.ml[30,1689+22]..[30,1689+49])
+                          Pexp_apply
+                          expression (typing/typedecl_immediacy.ml[30,1689+22]..[30,1689+37])
+                            Pexp_ident "Ctype.immediacy" (typing/typedecl_immediacy.ml[30,1689+22]..[30,1689+37])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/typedecl_immediacy.ml[30,1689+38]..[30,1689+41])
+                                Pexp_ident "env" (typing/typedecl_immediacy.ml[30,1689+38]..[30,1689+41])
+                            <arg>
+                            Nolabel
+                              expression (typing/typedecl_immediacy.ml[30,1689+42]..[30,1689+49])
+                                Pexp_ident "argrepr" (typing/typedecl_immediacy.ml[30,1689+42]..[30,1689+49])
+                          ]
+                    ]
+                <case>
+                  pattern (typing/typedecl_immediacy.ml[32,1747+4]..[32,1747+32])
+                    Ppat_tuple
+                    [
+                      pattern (typing/typedecl_immediacy.ml[32,1747+5]..[32,1747+28])
+                        Ppat_construct "Type_variant" (typing/typedecl_immediacy.ml[32,1747+5]..[32,1747+17])
+                        Some
+                          []
+                          pattern (typing/typedecl_immediacy.ml[32,1747+18]..[32,1747+28])
+                            Ppat_tuple
+                            [
+                              pattern (typing/typedecl_immediacy.ml[32,1747+19]..[32,1747+24])
+                                Ppat_var "cstrs" (typing/typedecl_immediacy.ml[32,1747+19]..[32,1747+24])
+                              pattern (typing/typedecl_immediacy.ml[32,1747+26]..[32,1747+27])
+                                Ppat_any
+                            ]
+                      pattern (typing/typedecl_immediacy.ml[32,1747+30]..[32,1747+31])
+                        Ppat_any
+                    ]
+                  expression (typing/typedecl_immediacy.ml[33,1783+4]..[37,1910+28])
+                    Pexp_ifthenelse
+                    expression (typing/typedecl_immediacy.ml[33,1783+7]..[33,1783+80])
+                      Pexp_apply
+                      expression (typing/typedecl_immediacy.ml[33,1783+7]..[33,1783+10])
+                        Pexp_ident "not" (typing/typedecl_immediacy.ml[33,1783+7]..[33,1783+10])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typedecl_immediacy.ml[33,1783+11]..[33,1783+80])
+                            Pexp_apply
+                            expression (typing/typedecl_immediacy.ml[33,1783+12]..[33,1783+23])
+                              Pexp_ident "List.exists" (typing/typedecl_immediacy.ml[33,1783+12]..[33,1783+23])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/typedecl_immediacy.ml[33,1783+24]..[33,1783+73])
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (typing/typedecl_immediacy.ml[33,1783+29]..[33,1783+30])
+                                    Ppat_var "c" (typing/typedecl_immediacy.ml[33,1783+29]..[33,1783+30])
+                                  expression (typing/typedecl_immediacy.ml[33,1783+34]..[33,1783+72])
+                                    Pexp_apply
+                                    expression (typing/typedecl_immediacy.ml[33,1783+50]..[33,1783+52])
+                                      Pexp_ident "<>" (typing/typedecl_immediacy.ml[33,1783+50]..[33,1783+52])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/typedecl_immediacy.ml[33,1783+34]..[33,1783+49])
+                                          Pexp_field
+                                          expression (typing/typedecl_immediacy.ml[33,1783+34]..[33,1783+35])
+                                            Pexp_ident "c" (typing/typedecl_immediacy.ml[33,1783+34]..[33,1783+35])
+                                          "Types.cd_args" (typing/typedecl_immediacy.ml[33,1783+36]..[33,1783+49])
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/typedecl_immediacy.ml[33,1783+53]..[33,1783+72])
+                                          Pexp_construct "Types.Cstr_tuple" (typing/typedecl_immediacy.ml[33,1783+53]..[33,1783+69])
+                                          Some
+                                            expression (typing/typedecl_immediacy.ml[33,1783+70]..[33,1783+72])
+                                              Pexp_construct "[]" (typing/typedecl_immediacy.ml[33,1783+70]..[33,1783+72])
+                                              None
+                                    ]
+                              <arg>
+                              Nolabel
+                                expression (typing/typedecl_immediacy.ml[33,1783+74]..[33,1783+79])
+                                  Pexp_ident "cstrs" (typing/typedecl_immediacy.ml[33,1783+74]..[33,1783+79])
+                            ]
+                      ]
+                    expression (typing/typedecl_immediacy.ml[35,1873+6]..[35,1873+27])
+                      Pexp_construct "Type_immediacy.Always" (typing/typedecl_immediacy.ml[35,1873+6]..[35,1873+27])
+                      None
+                    Some
+                      expression (typing/typedecl_immediacy.ml[37,1910+6]..[37,1910+28])
+                        Pexp_construct "Type_immediacy.Unknown" (typing/typedecl_immediacy.ml[37,1910+6]..[37,1910+28])
+                        None
+                <case>
+                  pattern (typing/typedecl_immediacy.ml[38,1939+4]..[38,1939+30])
+                    Ppat_tuple
+                    [
+                      pattern (typing/typedecl_immediacy.ml[38,1939+5]..[38,1939+18])
+                        Ppat_construct "Type_abstract" (typing/typedecl_immediacy.ml[38,1939+5]..[38,1939+18])
+                        None
+                      pattern (typing/typedecl_immediacy.ml[38,1939+20]..[38,1939+29])
+                        Ppat_construct "Some" (typing/typedecl_immediacy.ml[38,1939+20]..[38,1939+24])
+                        Some
+                          []
+                          pattern (typing/typedecl_immediacy.ml[38,1939+24]..[38,1939+29])
+                            Ppat_var "typ" (typing/typedecl_immediacy.ml[38,1939+25]..[38,1939+28])
+                    ]
+                  expression (typing/typedecl_immediacy.ml[38,1939+34]..[38,1939+57])
+                    Pexp_apply
+                    expression (typing/typedecl_immediacy.ml[38,1939+34]..[38,1939+49])
+                      Pexp_ident "Ctype.immediacy" (typing/typedecl_immediacy.ml[38,1939+34]..[38,1939+49])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/typedecl_immediacy.ml[38,1939+50]..[38,1939+53])
+                          Pexp_ident "env" (typing/typedecl_immediacy.ml[38,1939+50]..[38,1939+53])
+                      <arg>
+                      Nolabel
+                        expression (typing/typedecl_immediacy.ml[38,1939+54]..[38,1939+57])
+                          Pexp_ident "typ" (typing/typedecl_immediacy.ml[38,1939+54]..[38,1939+57])
+                    ]
+                <case>
+                  pattern (typing/typedecl_immediacy.ml[39,1997+4]..[39,1997+25])
+                    Ppat_tuple
+                    [
+                      pattern (typing/typedecl_immediacy.ml[39,1997+5]..[39,1997+18])
+                        Ppat_construct "Type_abstract" (typing/typedecl_immediacy.ml[39,1997+5]..[39,1997+18])
+                        None
+                      pattern (typing/typedecl_immediacy.ml[39,1997+20]..[39,1997+24])
+                        Ppat_construct "None" (typing/typedecl_immediacy.ml[39,1997+20]..[39,1997+24])
+                        None
+                    ]
+                  expression (typing/typedecl_immediacy.ml[39,1997+29]..[39,1997+79])
+                    Pexp_apply
+                    expression (typing/typedecl_immediacy.ml[39,1997+29]..[39,1997+57])
+                      Pexp_ident "Type_immediacy.of_attributes" (typing/typedecl_immediacy.ml[39,1997+29]..[39,1997+57])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/typedecl_immediacy.ml[39,1997+58]..[39,1997+79])
+                          Pexp_field
+                          expression (typing/typedecl_immediacy.ml[39,1997+58]..[39,1997+63])
+                            Pexp_ident "tdecl" (typing/typedecl_immediacy.ml[39,1997+58]..[39,1997+63])
+                          "type_attributes" (typing/typedecl_immediacy.ml[39,1997+64]..[39,1997+79])
+                    ]
+                <case>
+                  pattern (typing/typedecl_immediacy.ml[40,2077+4]..[40,2077+5])
+                    Ppat_any
+                  expression (typing/typedecl_immediacy.ml[40,2077+9]..[40,2077+31])
+                    Pexp_construct "Type_immediacy.Unknown" (typing/typedecl_immediacy.ml[40,2077+9]..[40,2077+31])
+                    None
+              ]
+    ]
+  structure_item (typing/typedecl_immediacy.ml[42,2110+0]..[64,2865+3])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typedecl_immediacy.ml[42,2110+4]..[42,2110+68]) ghost
+          Ppat_constraint
+          pattern (typing/typedecl_immediacy.ml[42,2110+4]..[42,2110+12])
+            Ppat_var "property" (typing/typedecl_immediacy.ml[42,2110+4]..[42,2110+12])
+          core_type (typing/typedecl_immediacy.ml[42,2110+15]..[42,2110+68]) ghost
+            Ptyp_poly
+            core_type (typing/typedecl_immediacy.ml[42,2110+15]..[42,2110+68])
+              Ptyp_constr "Typedecl_properties.property" (typing/typedecl_immediacy.ml[42,2110+40]..[42,2110+68])
+              [
+                core_type (typing/typedecl_immediacy.ml[42,2110+16]..[42,2110+32])
+                  Ptyp_constr "Type_immediacy.t" (typing/typedecl_immediacy.ml[42,2110+16]..[42,2110+32])
+                  []
+                core_type (typing/typedecl_immediacy.ml[42,2110+34]..[42,2110+38])
+                  Ptyp_constr "unit" (typing/typedecl_immediacy.ml[42,2110+34]..[42,2110+38])
+                  []
+              ]
+        expression (typing/typedecl_immediacy.ml[42,2110+4]..[64,2865+3])
+          Pexp_constraint
+          expression (typing/typedecl_immediacy.ml[43,2181+2]..[64,2865+3])
+            Pexp_open Fresh
+            module_expr (typing/typedecl_immediacy.ml[43,2181+11]..[43,2181+30])
+              Pmod_ident "Typedecl_properties" (typing/typedecl_immediacy.ml[43,2181+11]..[43,2181+30])
+            expression (typing/typedecl_immediacy.ml[44,2215+2]..[64,2865+3])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (typing/typedecl_immediacy.ml[44,2215+6]..[44,2215+8])
+                    Ppat_var "eq" (typing/typedecl_immediacy.ml[44,2215+6]..[44,2215+8])
+                  expression (typing/typedecl_immediacy.ml[44,2215+11]..[44,2215+14])
+                    Pexp_ident "=" (typing/typedecl_immediacy.ml[44,2215+11]..[44,2215+14])
+              ]
+              expression (typing/typedecl_immediacy.ml[45,2233+2]..[64,2865+3])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (typing/typedecl_immediacy.ml[45,2233+6]..[45,2233+11])
+                      Ppat_var "merge" (typing/typedecl_immediacy.ml[45,2233+6]..[45,2233+11])
+                    expression (typing/typedecl_immediacy.ml[45,2233+12]..[45,2233+40]) ghost
+                      Pexp_fun
+                      Labelled "prop"
+                      None
+                      pattern (typing/typedecl_immediacy.ml[45,2233+18]..[45,2233+19])
+                        Ppat_any
+                      expression (typing/typedecl_immediacy.ml[45,2233+20]..[45,2233+40]) ghost
+                        Pexp_fun
+                        Labelled "new_prop"
+                        None
+                        pattern (typing/typedecl_immediacy.ml[45,2233+21]..[45,2233+29])
+                          Ppat_var "new_prop" (typing/typedecl_immediacy.ml[45,2233+21]..[45,2233+29])
+                        expression (typing/typedecl_immediacy.ml[45,2233+32]..[45,2233+40])
+                          Pexp_ident "new_prop" (typing/typedecl_immediacy.ml[45,2233+32]..[45,2233+40])
+                ]
+                expression (typing/typedecl_immediacy.ml[46,2277+2]..[64,2865+3])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (typing/typedecl_immediacy.ml[46,2277+6]..[46,2277+13])
+                        Ppat_var "default" (typing/typedecl_immediacy.ml[46,2277+6]..[46,2277+13])
+                      expression (typing/typedecl_immediacy.ml[46,2277+14]..[46,2277+44]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (typing/typedecl_immediacy.ml[46,2277+14]..[46,2277+19])
+                          Ppat_var "_decl" (typing/typedecl_immediacy.ml[46,2277+14]..[46,2277+19])
+                        expression (typing/typedecl_immediacy.ml[46,2277+22]..[46,2277+44])
+                          Pexp_construct "Type_immediacy.Unknown" (typing/typedecl_immediacy.ml[46,2277+22]..[46,2277+44])
+                          None
+                  ]
+                  expression (typing/typedecl_immediacy.ml[47,2325+2]..[64,2865+3])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (typing/typedecl_immediacy.ml[47,2325+6]..[47,2325+13])
+                          Ppat_var "compute" (typing/typedecl_immediacy.ml[47,2325+6]..[47,2325+13])
+                        expression (typing/typedecl_immediacy.ml[47,2325+14]..[47,2325+49]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (typing/typedecl_immediacy.ml[47,2325+14]..[47,2325+17])
+                            Ppat_var "env" (typing/typedecl_immediacy.ml[47,2325+14]..[47,2325+17])
+                          expression (typing/typedecl_immediacy.ml[47,2325+18]..[47,2325+49]) ghost
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (typing/typedecl_immediacy.ml[47,2325+18]..[47,2325+22])
+                              Ppat_var "decl" (typing/typedecl_immediacy.ml[47,2325+18]..[47,2325+22])
+                            expression (typing/typedecl_immediacy.ml[47,2325+23]..[47,2325+49]) ghost
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (typing/typedecl_immediacy.ml[47,2325+23]..[47,2325+25])
+                                Ppat_construct "()" (typing/typedecl_immediacy.ml[47,2325+23]..[47,2325+25])
+                                None
+                              expression (typing/typedecl_immediacy.ml[47,2325+28]..[47,2325+49])
+                                Pexp_apply
+                                expression (typing/typedecl_immediacy.ml[47,2325+28]..[47,2325+40])
+                                  Pexp_ident "compute_decl" (typing/typedecl_immediacy.ml[47,2325+28]..[47,2325+40])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/typedecl_immediacy.ml[47,2325+41]..[47,2325+44])
+                                      Pexp_ident "env" (typing/typedecl_immediacy.ml[47,2325+41]..[47,2325+44])
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/typedecl_immediacy.ml[47,2325+45]..[47,2325+49])
+                                      Pexp_ident "decl" (typing/typedecl_immediacy.ml[47,2325+45]..[47,2325+49])
+                                ]
+                    ]
+                    expression (typing/typedecl_immediacy.ml[48,2378+2]..[64,2865+3])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (typing/typedecl_immediacy.ml[48,2378+6]..[48,2378+17])
+                            Ppat_var "update_decl" (typing/typedecl_immediacy.ml[48,2378+6]..[48,2378+17])
+                          expression (typing/typedecl_immediacy.ml[48,2378+18]..[48,2378+75]) ghost
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (typing/typedecl_immediacy.ml[48,2378+18]..[48,2378+22])
+                              Ppat_var "decl" (typing/typedecl_immediacy.ml[48,2378+18]..[48,2378+22])
+                            expression (typing/typedecl_immediacy.ml[48,2378+23]..[48,2378+75]) ghost
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (typing/typedecl_immediacy.ml[48,2378+23]..[48,2378+32])
+                                Ppat_var "immediacy" (typing/typedecl_immediacy.ml[48,2378+23]..[48,2378+32])
+                              expression (typing/typedecl_immediacy.ml[48,2378+35]..[48,2378+75])
+                                Pexp_record
+                                [
+                                  "type_immediate" (typing/typedecl_immediacy.ml[48,2378+47]..[48,2378+61])
+                                    expression (typing/typedecl_immediacy.ml[48,2378+64]..[48,2378+73])
+                                      Pexp_ident "immediacy" (typing/typedecl_immediacy.ml[48,2378+64]..[48,2378+73])
+                                ]
+                                Some
+                                  expression (typing/typedecl_immediacy.ml[48,2378+37]..[48,2378+41])
+                                    Pexp_ident "decl" (typing/typedecl_immediacy.ml[48,2378+37]..[48,2378+41])
+                      ]
+                      expression (typing/typedecl_immediacy.ml[49,2457+2]..[64,2865+3])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (typing/typedecl_immediacy.ml[49,2457+6]..[49,2457+11])
+                              Ppat_var "check" (typing/typedecl_immediacy.ml[49,2457+6]..[49,2457+11])
+                            expression (typing/typedecl_immediacy.ml[49,2457+12]..[55,2725+57]) ghost
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (typing/typedecl_immediacy.ml[49,2457+12]..[49,2457+16])
+                                Ppat_var "_env" (typing/typedecl_immediacy.ml[49,2457+12]..[49,2457+16])
+                              expression (typing/typedecl_immediacy.ml[49,2457+17]..[55,2725+57]) ghost
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (typing/typedecl_immediacy.ml[49,2457+17]..[49,2457+20])
+                                  Ppat_var "_id" (typing/typedecl_immediacy.ml[49,2457+17]..[49,2457+20])
+                                expression (typing/typedecl_immediacy.ml[49,2457+21]..[55,2725+57]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (typing/typedecl_immediacy.ml[49,2457+21]..[49,2457+25])
+                                    Ppat_var "decl" (typing/typedecl_immediacy.ml[49,2457+21]..[49,2457+25])
+                                  expression (typing/typedecl_immediacy.ml[49,2457+26]..[55,2725+57]) ghost
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (typing/typedecl_immediacy.ml[49,2457+26]..[49,2457+28])
+                                      Ppat_construct "()" (typing/typedecl_immediacy.ml[49,2457+26]..[49,2457+28])
+                                      None
+                                    expression (typing/typedecl_immediacy.ml[50,2488+4]..[55,2725+57])
+                                      Pexp_let Nonrec
+                                      [
+                                        <def>
+                                          pattern (typing/typedecl_immediacy.ml[50,2488+8]..[50,2488+23])
+                                            Ppat_var "written_by_user" (typing/typedecl_immediacy.ml[50,2488+8]..[50,2488+23])
+                                          expression (typing/typedecl_immediacy.ml[50,2488+26]..[50,2488+75])
+                                            Pexp_apply
+                                            expression (typing/typedecl_immediacy.ml[50,2488+26]..[50,2488+54])
+                                              Pexp_ident "Type_immediacy.of_attributes" (typing/typedecl_immediacy.ml[50,2488+26]..[50,2488+54])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (typing/typedecl_immediacy.ml[50,2488+55]..[50,2488+75])
+                                                  Pexp_field
+                                                  expression (typing/typedecl_immediacy.ml[50,2488+55]..[50,2488+59])
+                                                    Pexp_ident "decl" (typing/typedecl_immediacy.ml[50,2488+55]..[50,2488+59])
+                                                  "type_attributes" (typing/typedecl_immediacy.ml[50,2488+60]..[50,2488+75])
+                                            ]
+                                      ]
+                                      expression (typing/typedecl_immediacy.ml[51,2567+4]..[55,2725+57])
+                                        Pexp_match
+                                        expression (typing/typedecl_immediacy.ml[51,2567+10]..[51,2567+72])
+                                          Pexp_apply
+                                          expression (typing/typedecl_immediacy.ml[51,2567+10]..[51,2567+31])
+                                            Pexp_ident "Type_immediacy.coerce" (typing/typedecl_immediacy.ml[51,2567+10]..[51,2567+31])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/typedecl_immediacy.ml[51,2567+32]..[51,2567+51])
+                                                Pexp_field
+                                                expression (typing/typedecl_immediacy.ml[51,2567+32]..[51,2567+36])
+                                                  Pexp_ident "decl" (typing/typedecl_immediacy.ml[51,2567+32]..[51,2567+36])
+                                                "type_immediate" (typing/typedecl_immediacy.ml[51,2567+37]..[51,2567+51])
+                                            <arg>
+                                            Labelled "as_"
+                                              expression (typing/typedecl_immediacy.ml[51,2567+57]..[51,2567+72])
+                                                Pexp_ident "written_by_user" (typing/typedecl_immediacy.ml[51,2567+57]..[51,2567+72])
+                                          ]
+                                        [
+                                          <case>
+                                            pattern (typing/typedecl_immediacy.ml[52,2645+6]..[52,2645+11])
+                                              Ppat_construct "Ok" (typing/typedecl_immediacy.ml[52,2645+6]..[52,2645+8])
+                                              Some
+                                                []
+                                                pattern (typing/typedecl_immediacy.ml[52,2645+9]..[52,2645+11])
+                                                  Ppat_construct "()" (typing/typedecl_immediacy.ml[52,2645+9]..[52,2645+11])
+                                                  None
+                                            expression (typing/typedecl_immediacy.ml[52,2645+15]..[52,2645+17])
+                                              Pexp_construct "()" (typing/typedecl_immediacy.ml[52,2645+15]..[52,2645+17])
+                                              None
+                                          <case>
+                                            pattern (typing/typedecl_immediacy.ml[53,2663+6]..[53,2663+21])
+                                              Ppat_construct "Error" (typing/typedecl_immediacy.ml[53,2663+6]..[53,2663+11])
+                                              Some
+                                                []
+                                                pattern (typing/typedecl_immediacy.ml[53,2663+12]..[53,2663+21])
+                                                  Ppat_var "violation" (typing/typedecl_immediacy.ml[53,2663+12]..[53,2663+21])
+                                            expression (typing/typedecl_immediacy.ml[54,2688+8]..[55,2725+57])
+                                              Pexp_apply
+                                              expression (typing/typedecl_immediacy.ml[54,2688+8]..[54,2688+13])
+                                                Pexp_ident "raise" (typing/typedecl_immediacy.ml[54,2688+8]..[54,2688+13])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (typing/typedecl_immediacy.ml[54,2688+14]..[55,2725+57])
+                                                    Pexp_construct "Error" (typing/typedecl_immediacy.ml[54,2688+15]..[54,2688+20])
+                                                    Some
+                                                      expression (typing/typedecl_immediacy.ml[54,2688+21]..[55,2725+56])
+                                                        Pexp_tuple
+                                                        [
+                                                          expression (typing/typedecl_immediacy.ml[54,2688+22]..[54,2688+35])
+                                                            Pexp_field
+                                                            expression (typing/typedecl_immediacy.ml[54,2688+22]..[54,2688+26])
+                                                              Pexp_ident "decl" (typing/typedecl_immediacy.ml[54,2688+22]..[54,2688+26])
+                                                            "type_loc" (typing/typedecl_immediacy.ml[54,2688+27]..[54,2688+35])
+                                                          expression (typing/typedecl_immediacy.ml[55,2725+22]..[55,2725+55])
+                                                            Pexp_construct "Bad_immediacy_attribute" (typing/typedecl_immediacy.ml[55,2725+22]..[55,2725+45])
+                                                            Some
+                                                              expression (typing/typedecl_immediacy.ml[55,2725+46]..[55,2725+55])
+                                                                Pexp_ident "violation" (typing/typedecl_immediacy.ml[55,2725+46]..[55,2725+55])
+                                                        ]
+                                              ]
+                                        ]
+                        ]
+                        expression (typing/typedecl_immediacy.ml[57,2788+2]..[64,2865+3])
+                          Pexp_record
+                          [
+                            "eq" (typing/typedecl_immediacy.ml[58,2792+4]..[58,2792+6]) ghost
+                              expression (typing/typedecl_immediacy.ml[58,2792+4]..[58,2792+6])
+                                Pexp_ident "eq" (typing/typedecl_immediacy.ml[58,2792+4]..[58,2792+6])
+                            "merge" (typing/typedecl_immediacy.ml[59,2800+4]..[59,2800+9]) ghost
+                              expression (typing/typedecl_immediacy.ml[59,2800+4]..[59,2800+9])
+                                Pexp_ident "merge" (typing/typedecl_immediacy.ml[59,2800+4]..[59,2800+9])
+                            "default" (typing/typedecl_immediacy.ml[60,2811+4]..[60,2811+11]) ghost
+                              expression (typing/typedecl_immediacy.ml[60,2811+4]..[60,2811+11])
+                                Pexp_ident "default" (typing/typedecl_immediacy.ml[60,2811+4]..[60,2811+11])
+                            "compute" (typing/typedecl_immediacy.ml[61,2824+4]..[61,2824+11]) ghost
+                              expression (typing/typedecl_immediacy.ml[61,2824+4]..[61,2824+11])
+                                Pexp_ident "compute" (typing/typedecl_immediacy.ml[61,2824+4]..[61,2824+11])
+                            "update_decl" (typing/typedecl_immediacy.ml[62,2837+4]..[62,2837+15]) ghost
+                              expression (typing/typedecl_immediacy.ml[62,2837+4]..[62,2837+15])
+                                Pexp_ident "update_decl" (typing/typedecl_immediacy.ml[62,2837+4]..[62,2837+15])
+                            "check" (typing/typedecl_immediacy.ml[63,2854+4]..[63,2854+9]) ghost
+                              expression (typing/typedecl_immediacy.ml[63,2854+4]..[63,2854+9])
+                                Pexp_ident "check" (typing/typedecl_immediacy.ml[63,2854+4]..[63,2854+9])
+                          ]
+                          None
+          core_type (typing/typedecl_immediacy.ml[42,2110+15]..[42,2110+68])
+            Ptyp_constr "Typedecl_properties.property" (typing/typedecl_immediacy.ml[42,2110+40]..[42,2110+68])
+            [
+              core_type (typing/typedecl_immediacy.ml[42,2110+16]..[42,2110+32])
+                Ptyp_constr "Type_immediacy.t" (typing/typedecl_immediacy.ml[42,2110+16]..[42,2110+32])
+                []
+              core_type (typing/typedecl_immediacy.ml[42,2110+34]..[42,2110+38])
+                Ptyp_constr "unit" (typing/typedecl_immediacy.ml[42,2110+34]..[42,2110+38])
+                []
+            ]
+    ]
+  structure_item (typing/typedecl_immediacy.ml[66,2870+0]..[67,2899+63])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typedecl_immediacy.ml[66,2870+4]..[66,2870+16])
+          Ppat_var "update_decls" (typing/typedecl_immediacy.ml[66,2870+4]..[66,2870+16])
+        expression (typing/typedecl_immediacy.ml[66,2870+17]..[67,2899+63]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typedecl_immediacy.ml[66,2870+17]..[66,2870+20])
+            Ppat_var "env" (typing/typedecl_immediacy.ml[66,2870+17]..[66,2870+20])
+          expression (typing/typedecl_immediacy.ml[66,2870+21]..[67,2899+63]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typedecl_immediacy.ml[66,2870+21]..[66,2870+26])
+              Ppat_var "decls" (typing/typedecl_immediacy.ml[66,2870+21]..[66,2870+26])
+            expression (typing/typedecl_immediacy.ml[67,2899+2]..[67,2899+63])
+              Pexp_apply
+              expression (typing/typedecl_immediacy.ml[67,2899+2]..[67,2899+44])
+                Pexp_ident "Typedecl_properties.compute_property_noreq" (typing/typedecl_immediacy.ml[67,2899+2]..[67,2899+44])
+              [
+                <arg>
+                Nolabel
+                  expression (typing/typedecl_immediacy.ml[67,2899+45]..[67,2899+53])
+                    Pexp_ident "property" (typing/typedecl_immediacy.ml[67,2899+45]..[67,2899+53])
+                <arg>
+                Nolabel
+                  expression (typing/typedecl_immediacy.ml[67,2899+54]..[67,2899+57])
+                    Pexp_ident "env" (typing/typedecl_immediacy.ml[67,2899+54]..[67,2899+57])
+                <arg>
+                Nolabel
+                  expression (typing/typedecl_immediacy.ml[67,2899+58]..[67,2899+63])
+                    Pexp_ident "decls" (typing/typedecl_immediacy.ml[67,2899+58]..[67,2899+63])
+              ]
+    ]
+]
+

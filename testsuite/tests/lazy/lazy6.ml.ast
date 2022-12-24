@@ -1,0 +1,339 @@
+[
+  structure_item (testsuite/tests/lazy/lazy6.ml[5,41+0]..[5,41+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lazy/lazy6.ml[5,41+4]..[5,41+9])
+          Ppat_var "flag1" (testsuite/tests/lazy/lazy6.ml[5,41+4]..[5,41+9])
+        expression (testsuite/tests/lazy/lazy6.ml[5,41+12]..[5,41+29])
+          Pexp_apply
+          expression (testsuite/tests/lazy/lazy6.ml[5,41+12]..[5,41+23])
+            Pexp_ident "Atomic.make" (testsuite/tests/lazy/lazy6.ml[5,41+12]..[5,41+23])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lazy/lazy6.ml[5,41+24]..[5,41+29])
+                Pexp_construct "false" (testsuite/tests/lazy/lazy6.ml[5,41+24]..[5,41+29])
+                None
+          ]
+    ]
+  structure_item (testsuite/tests/lazy/lazy6.ml[6,71+0]..[6,71+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lazy/lazy6.ml[6,71+4]..[6,71+9])
+          Ppat_var "flag2" (testsuite/tests/lazy/lazy6.ml[6,71+4]..[6,71+9])
+        expression (testsuite/tests/lazy/lazy6.ml[6,71+12]..[6,71+29])
+          Pexp_apply
+          expression (testsuite/tests/lazy/lazy6.ml[6,71+12]..[6,71+23])
+            Pexp_ident "Atomic.make" (testsuite/tests/lazy/lazy6.ml[6,71+12]..[6,71+23])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lazy/lazy6.ml[6,71+24]..[6,71+29])
+                Pexp_construct "false" (testsuite/tests/lazy/lazy6.ml[6,71+24]..[6,71+29])
+                None
+          ]
+    ]
+  structure_item (testsuite/tests/lazy/lazy6.ml[8,102+0]..[10,154+45])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/lazy/lazy6.ml[8,102+8]..[8,102+21])
+          Ppat_var "wait_for_flag" (testsuite/tests/lazy/lazy6.ml[8,102+8]..[8,102+21])
+        expression (testsuite/tests/lazy/lazy6.ml[8,102+22]..[10,154+45]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lazy/lazy6.ml[8,102+22]..[8,102+23])
+            Ppat_var "f" (testsuite/tests/lazy/lazy6.ml[8,102+22]..[8,102+23])
+          expression (testsuite/tests/lazy/lazy6.ml[9,128+2]..[10,154+45])
+            Pexp_ifthenelse
+            expression (testsuite/tests/lazy/lazy6.ml[9,128+5]..[9,128+17])
+              Pexp_apply
+              expression (testsuite/tests/lazy/lazy6.ml[9,128+5]..[9,128+15])
+                Pexp_ident "Atomic.get" (testsuite/tests/lazy/lazy6.ml[9,128+5]..[9,128+15])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/lazy/lazy6.ml[9,128+16]..[9,128+17])
+                    Pexp_ident "f" (testsuite/tests/lazy/lazy6.ml[9,128+16]..[9,128+17])
+              ]
+            expression (testsuite/tests/lazy/lazy6.ml[9,128+23]..[9,128+25])
+              Pexp_construct "()" (testsuite/tests/lazy/lazy6.ml[9,128+23]..[9,128+25])
+              None
+            Some
+              expression (testsuite/tests/lazy/lazy6.ml[10,154+7]..[10,154+45])
+                Pexp_sequence
+                expression (testsuite/tests/lazy/lazy6.ml[10,154+8]..[10,154+27])
+                  Pexp_apply
+                  expression (testsuite/tests/lazy/lazy6.ml[10,154+8]..[10,154+24])
+                    Pexp_ident "Domain.cpu_relax" (testsuite/tests/lazy/lazy6.ml[10,154+8]..[10,154+24])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lazy/lazy6.ml[10,154+25]..[10,154+27])
+                        Pexp_construct "()" (testsuite/tests/lazy/lazy6.ml[10,154+25]..[10,154+27])
+                        None
+                  ]
+                expression (testsuite/tests/lazy/lazy6.ml[10,154+29]..[10,154+44])
+                  Pexp_apply
+                  expression (testsuite/tests/lazy/lazy6.ml[10,154+29]..[10,154+42])
+                    Pexp_ident "wait_for_flag" (testsuite/tests/lazy/lazy6.ml[10,154+29]..[10,154+42])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lazy/lazy6.ml[10,154+43]..[10,154+44])
+                        Pexp_ident "f" (testsuite/tests/lazy/lazy6.ml[10,154+43]..[10,154+44])
+                  ]
+    ]
+  structure_item (testsuite/tests/lazy/lazy6.ml[12,201+0]..[14,260+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lazy/lazy6.ml[12,201+4]..[12,201+6])
+          Ppat_var "l1" (testsuite/tests/lazy/lazy6.ml[12,201+4]..[12,201+6])
+        expression (testsuite/tests/lazy/lazy6.ml[12,201+9]..[14,260+22])
+          Pexp_apply
+          expression (testsuite/tests/lazy/lazy6.ml[12,201+9]..[12,201+22])
+            Pexp_ident "Lazy.from_fun" (testsuite/tests/lazy/lazy6.ml[12,201+9]..[12,201+22])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lazy/lazy6.ml[12,201+23]..[14,260+22])
+                Pexp_fun
+                Nolabel
+                None
+                pattern (testsuite/tests/lazy/lazy6.ml[12,201+28]..[12,201+30])
+                  Ppat_construct "()" (testsuite/tests/lazy/lazy6.ml[12,201+28]..[12,201+30])
+                  None
+                expression (testsuite/tests/lazy/lazy6.ml[13,235+2]..[14,260+21])
+                  Pexp_sequence
+                  expression (testsuite/tests/lazy/lazy6.ml[13,235+2]..[13,235+23])
+                    Pexp_apply
+                    expression (testsuite/tests/lazy/lazy6.ml[13,235+2]..[13,235+12])
+                      Pexp_ident "Atomic.set" (testsuite/tests/lazy/lazy6.ml[13,235+2]..[13,235+12])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lazy/lazy6.ml[13,235+13]..[13,235+18])
+                          Pexp_ident "flag1" (testsuite/tests/lazy/lazy6.ml[13,235+13]..[13,235+18])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lazy/lazy6.ml[13,235+19]..[13,235+23])
+                          Pexp_construct "true" (testsuite/tests/lazy/lazy6.ml[13,235+19]..[13,235+23])
+                          None
+                    ]
+                  expression (testsuite/tests/lazy/lazy6.ml[14,260+2]..[14,260+21])
+                    Pexp_apply
+                    expression (testsuite/tests/lazy/lazy6.ml[14,260+2]..[14,260+15])
+                      Pexp_ident "wait_for_flag" (testsuite/tests/lazy/lazy6.ml[14,260+2]..[14,260+15])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lazy/lazy6.ml[14,260+16]..[14,260+21])
+                          Pexp_ident "flag2" (testsuite/tests/lazy/lazy6.ml[14,260+16]..[14,260+21])
+                    ]
+          ]
+    ]
+  structure_item (testsuite/tests/lazy/lazy6.ml[16,284+0]..[17,306+15])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lazy/lazy6.ml[16,284+4]..[16,284+16])
+          Ppat_var "first_domain" (testsuite/tests/lazy/lazy6.ml[16,284+4]..[16,284+16])
+        expression (testsuite/tests/lazy/lazy6.ml[16,284+17]..[17,306+15]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lazy/lazy6.ml[16,284+17]..[16,284+19])
+            Ppat_construct "()" (testsuite/tests/lazy/lazy6.ml[16,284+17]..[16,284+19])
+            None
+          expression (testsuite/tests/lazy/lazy6.ml[17,306+2]..[17,306+15])
+            Pexp_apply
+            expression (testsuite/tests/lazy/lazy6.ml[17,306+2]..[17,306+12])
+              Pexp_ident "Lazy.force" (testsuite/tests/lazy/lazy6.ml[17,306+2]..[17,306+12])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/lazy/lazy6.ml[17,306+13]..[17,306+15])
+                  Pexp_ident "l1" (testsuite/tests/lazy/lazy6.ml[17,306+13]..[17,306+15])
+            ]
+    ]
+  structure_item (testsuite/tests/lazy/lazy6.ml[19,323+0]..[26,521+9])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lazy/lazy6.ml[19,323+4]..[19,323+17])
+          Ppat_var "second_domain" (testsuite/tests/lazy/lazy6.ml[19,323+4]..[19,323+17])
+        expression (testsuite/tests/lazy/lazy6.ml[19,323+18]..[26,521+9]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lazy/lazy6.ml[19,323+18]..[19,323+20])
+            Ppat_construct "()" (testsuite/tests/lazy/lazy6.ml[19,323+18]..[19,323+20])
+            None
+          expression (testsuite/tests/lazy/lazy6.ml[20,346+2]..[26,521+9])
+            Pexp_sequence
+            expression (testsuite/tests/lazy/lazy6.ml[20,346+2]..[20,346+21])
+              Pexp_apply
+              expression (testsuite/tests/lazy/lazy6.ml[20,346+2]..[20,346+15])
+                Pexp_ident "wait_for_flag" (testsuite/tests/lazy/lazy6.ml[20,346+2]..[20,346+15])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/lazy/lazy6.ml[20,346+16]..[20,346+21])
+                    Pexp_ident "flag1" (testsuite/tests/lazy/lazy6.ml[20,346+16]..[20,346+21])
+              ]
+            expression (testsuite/tests/lazy/lazy6.ml[21,369+2]..[26,521+9])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/lazy/lazy6.ml[21,369+6]..[21,369+8])
+                    Ppat_var "l2" (testsuite/tests/lazy/lazy6.ml[21,369+6]..[21,369+8])
+                  expression (testsuite/tests/lazy/lazy6.ml[21,369+11]..[21,369+50])
+                    Pexp_apply
+                    expression (testsuite/tests/lazy/lazy6.ml[21,369+11]..[21,369+24])
+                      Pexp_ident "Lazy.from_fun" (testsuite/tests/lazy/lazy6.ml[21,369+11]..[21,369+24])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lazy/lazy6.ml[21,369+25]..[21,369+50])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/lazy/lazy6.ml[21,369+30]..[21,369+32])
+                            Ppat_construct "()" (testsuite/tests/lazy/lazy6.ml[21,369+30]..[21,369+32])
+                            None
+                          expression (testsuite/tests/lazy/lazy6.ml[21,369+36]..[21,369+49])
+                            Pexp_apply
+                            expression (testsuite/tests/lazy/lazy6.ml[21,369+36]..[21,369+46])
+                              Pexp_ident "Lazy.force" (testsuite/tests/lazy/lazy6.ml[21,369+36]..[21,369+46])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lazy/lazy6.ml[21,369+47]..[21,369+49])
+                                  Pexp_ident "l1" (testsuite/tests/lazy/lazy6.ml[21,369+47]..[21,369+49])
+                            ]
+                    ]
+              ]
+              expression (testsuite/tests/lazy/lazy6.ml[22,423+2]..[26,521+9])
+                Pexp_let Rec
+                [
+                  <def>
+                    pattern (testsuite/tests/lazy/lazy6.ml[22,423+10]..[22,423+14])
+                      Ppat_var "loop" (testsuite/tests/lazy/lazy6.ml[22,423+10]..[22,423+14])
+                    expression (testsuite/tests/lazy/lazy6.ml[22,423+15]..[24,470+45]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/lazy/lazy6.ml[22,423+15]..[22,423+17])
+                        Ppat_construct "()" (testsuite/tests/lazy/lazy6.ml[22,423+15]..[22,423+17])
+                        None
+                      expression (testsuite/tests/lazy/lazy6.ml[23,443+4]..[24,470+45])
+                        Pexp_try
+                        expression (testsuite/tests/lazy/lazy6.ml[23,443+8]..[23,443+21])
+                          Pexp_apply
+                          expression (testsuite/tests/lazy/lazy6.ml[23,443+8]..[23,443+18])
+                            Pexp_ident "Lazy.force" (testsuite/tests/lazy/lazy6.ml[23,443+8]..[23,443+18])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lazy/lazy6.ml[23,443+19]..[23,443+21])
+                                Pexp_ident "l2" (testsuite/tests/lazy/lazy6.ml[23,443+19]..[23,443+21])
+                          ]
+                        [
+                          <case>
+                            pattern (testsuite/tests/lazy/lazy6.ml[24,470+6]..[24,470+20])
+                              Ppat_construct "Lazy.Undefined" (testsuite/tests/lazy/lazy6.ml[24,470+6]..[24,470+20])
+                              None
+                            expression (testsuite/tests/lazy/lazy6.ml[24,470+24]..[24,470+45])
+                              Pexp_apply
+                              expression (testsuite/tests/lazy/lazy6.ml[24,470+24]..[24,470+34])
+                                Pexp_ident "Atomic.set" (testsuite/tests/lazy/lazy6.ml[24,470+24]..[24,470+34])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lazy/lazy6.ml[24,470+35]..[24,470+40])
+                                    Pexp_ident "flag2" (testsuite/tests/lazy/lazy6.ml[24,470+35]..[24,470+40])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lazy/lazy6.ml[24,470+41]..[24,470+45])
+                                    Pexp_construct "true" (testsuite/tests/lazy/lazy6.ml[24,470+41]..[24,470+45])
+                                    None
+                              ]
+                        ]
+                ]
+                expression (testsuite/tests/lazy/lazy6.ml[26,521+2]..[26,521+9])
+                  Pexp_apply
+                  expression (testsuite/tests/lazy/lazy6.ml[26,521+2]..[26,521+6])
+                    Pexp_ident "loop" (testsuite/tests/lazy/lazy6.ml[26,521+2]..[26,521+6])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lazy/lazy6.ml[26,521+7]..[26,521+9])
+                        Pexp_construct "()" (testsuite/tests/lazy/lazy6.ml[26,521+7]..[26,521+9])
+                        None
+                  ]
+    ]
+  structure_item (testsuite/tests/lazy/lazy6.ml[28,532+0]..[32,616+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lazy/lazy6.ml[28,532+4]..[28,532+5])
+          Ppat_any
+        expression (testsuite/tests/lazy/lazy6.ml[29,540+2]..[32,616+20])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/lazy/lazy6.ml[29,540+6]..[29,540+7])
+                Ppat_var "d" (testsuite/tests/lazy/lazy6.ml[29,540+6]..[29,540+7])
+              expression (testsuite/tests/lazy/lazy6.ml[29,540+10]..[29,540+35])
+                Pexp_apply
+                expression (testsuite/tests/lazy/lazy6.ml[29,540+10]..[29,540+22])
+                  Pexp_ident "Domain.spawn" (testsuite/tests/lazy/lazy6.ml[29,540+10]..[29,540+22])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lazy/lazy6.ml[29,540+23]..[29,540+35])
+                      Pexp_ident "first_domain" (testsuite/tests/lazy/lazy6.ml[29,540+23]..[29,540+35])
+                ]
+          ]
+          expression (testsuite/tests/lazy/lazy6.ml[30,579+2]..[32,616+20])
+            Pexp_sequence
+            expression (testsuite/tests/lazy/lazy6.ml[30,579+2]..[30,579+18])
+              Pexp_apply
+              expression (testsuite/tests/lazy/lazy6.ml[30,579+2]..[30,579+15])
+                Pexp_ident "second_domain" (testsuite/tests/lazy/lazy6.ml[30,579+2]..[30,579+15])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/lazy/lazy6.ml[30,579+16]..[30,579+18])
+                    Pexp_construct "()" (testsuite/tests/lazy/lazy6.ml[30,579+16]..[30,579+18])
+                    None
+              ]
+            expression (testsuite/tests/lazy/lazy6.ml[31,599+2]..[32,616+20])
+              Pexp_sequence
+              expression (testsuite/tests/lazy/lazy6.ml[31,599+2]..[31,599+15])
+                Pexp_apply
+                expression (testsuite/tests/lazy/lazy6.ml[31,599+2]..[31,599+13])
+                  Pexp_ident "Domain.join" (testsuite/tests/lazy/lazy6.ml[31,599+2]..[31,599+13])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lazy/lazy6.ml[31,599+14]..[31,599+15])
+                      Pexp_ident "d" (testsuite/tests/lazy/lazy6.ml[31,599+14]..[31,599+15])
+                ]
+              expression (testsuite/tests/lazy/lazy6.ml[32,616+2]..[32,616+20])
+                Pexp_apply
+                expression (testsuite/tests/lazy/lazy6.ml[32,616+2]..[32,616+15])
+                  Pexp_ident "print_endline" (testsuite/tests/lazy/lazy6.ml[32,616+2]..[32,616+15])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lazy/lazy6.ml[32,616+16]..[32,616+20])
+                      Pexp_constant PConst_string("OK",(testsuite/tests/lazy/lazy6.ml[32,616+17]..[32,616+19]),None)
+                ]
+    ]
+]
+

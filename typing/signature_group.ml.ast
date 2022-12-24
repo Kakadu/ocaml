@@ -1,0 +1,2024 @@
+[
+  structure_item (typing/signature_group.ml[16,1079+0]..[16,1079+54])
+    Pstr_attribute "ocaml.text"
+    [
+      structure_item (typing/signature_group.ml[16,1079+0]..[16,1079+54])
+        Pstr_eval
+        expression (typing/signature_group.ml[16,1079+0]..[16,1079+54])
+          Pexp_constant PConst_string(" Fold on a signature by syntactic group of items ",(typing/signature_group.ml[16,1079+0]..[16,1079+54]),None)
+    ]
+  structure_item (typing/signature_group.ml[20,1242+0]..[25,1386+3])
+    Pstr_type Rec
+    [
+      type_declaration "sig_item" (typing/signature_group.ml[20,1242+5]..[20,1242+13]) (typing/signature_group.ml[20,1242+0]..[25,1386+3])
+        attribute "ocaml.doc"
+          [
+            structure_item (typing/signature_group.ml[18,1135+0]..[19,1210+31])
+              Pstr_eval
+              expression (typing/signature_group.ml[18,1135+0]..[19,1210+31])
+                Pexp_constant PConst_string(" Classes and class types generate ghosts signature items, we group them\n    together before printing ",(typing/signature_group.ml[18,1135+0]..[19,1210+31]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_record
+            [
+              (typing/signature_group.ml[22,1262+4]..[22,1262+30])
+                Immutable
+                "src" (typing/signature_group.ml[22,1262+4]..[22,1262+7])                core_type (typing/signature_group.ml[22,1262+9]..[22,1262+29])
+                  Ptyp_constr "Types.signature_item" (typing/signature_group.ml[22,1262+9]..[22,1262+29])
+                  []
+              (typing/signature_group.ml[23,1293+4]..[24,1336+49])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (typing/signature_group.ml[24,1336+4]..[24,1336+48])
+                      Pstr_eval
+                      expression (typing/signature_group.ml[24,1336+4]..[24,1336+48])
+                        Pexp_constant PConst_string(" ghost classes types are post-declared ",(typing/signature_group.ml[24,1336+4]..[24,1336+48]),None)
+                  ]
+                Immutable
+                "post_ghosts" (typing/signature_group.ml[23,1293+4]..[23,1293+15])                core_type (typing/signature_group.ml[23,1293+17]..[23,1293+42])
+                  Ptyp_constr "list" (typing/signature_group.ml[23,1293+38]..[23,1293+42])
+                  [
+                    core_type (typing/signature_group.ml[23,1293+17]..[23,1293+37])
+                      Ptyp_constr "Types.signature_item" (typing/signature_group.ml[23,1293+17]..[23,1293+37])
+                      []
+                  ]
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (typing/signature_group.ml[26,1390+0]..[26,1390+38])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[26,1390+4]..[26,1390+11])
+          Ppat_var "flatten" (typing/signature_group.ml[26,1390+4]..[26,1390+11])
+        expression (typing/signature_group.ml[26,1390+12]..[26,1390+38]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/signature_group.ml[26,1390+12]..[26,1390+13])
+            Ppat_var "x" (typing/signature_group.ml[26,1390+12]..[26,1390+13])
+          expression (typing/signature_group.ml[26,1390+16]..[26,1390+38])
+            Pexp_construct "::" (typing/signature_group.ml[26,1390+22]..[26,1390+24])
+            Some
+              expression (typing/signature_group.ml[26,1390+16]..[26,1390+38]) ghost
+                Pexp_tuple
+                [
+                  expression (typing/signature_group.ml[26,1390+16]..[26,1390+21])
+                    Pexp_field
+                    expression (typing/signature_group.ml[26,1390+16]..[26,1390+17])
+                      Pexp_ident "x" (typing/signature_group.ml[26,1390+16]..[26,1390+17])
+                    "src" (typing/signature_group.ml[26,1390+18]..[26,1390+21])
+                  expression (typing/signature_group.ml[26,1390+25]..[26,1390+38])
+                    Pexp_field
+                    expression (typing/signature_group.ml[26,1390+25]..[26,1390+26])
+                      Pexp_ident "x" (typing/signature_group.ml[26,1390+25]..[26,1390+26])
+                    "post_ghosts" (typing/signature_group.ml[26,1390+27]..[26,1390+38])
+                ]
+    ]
+  structure_item (typing/signature_group.ml[28,1430+0]..[30,1476+30])
+    Pstr_type Rec
+    [
+      type_declaration "core_rec_group" (typing/signature_group.ml[28,1430+5]..[28,1430+19]) (typing/signature_group.ml[28,1430+0]..[30,1476+30])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (typing/signature_group.ml[29,1452+2]..[29,1452+23])
+                "Not_rec" (typing/signature_group.ml[29,1452+4]..[29,1452+11])
+                [
+                  core_type (typing/signature_group.ml[29,1452+15]..[29,1452+23])
+                    Ptyp_constr "sig_item" (typing/signature_group.ml[29,1452+15]..[29,1452+23])
+                    []
+                ]
+                None
+              (typing/signature_group.ml[30,1476+2]..[30,1476+30])
+                "Rec_group" (typing/signature_group.ml[30,1476+4]..[30,1476+13])
+                [
+                  core_type (typing/signature_group.ml[30,1476+17]..[30,1476+30])
+                    Ptyp_constr "list" (typing/signature_group.ml[30,1476+26]..[30,1476+30])
+                    [
+                      core_type (typing/signature_group.ml[30,1476+17]..[30,1476+25])
+                        Ptyp_constr "sig_item" (typing/signature_group.ml[30,1476+17]..[30,1476+25])
+                        []
+                    ]
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (typing/signature_group.ml[32,1508+0]..[34,1554+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[32,1508+4]..[32,1508+13])
+          Ppat_var "rec_items" (typing/signature_group.ml[32,1508+4]..[32,1508+13])
+        expression (typing/signature_group.ml[32,1508+16]..[34,1554+20])
+          Pexp_function
+          [
+            <case>
+              pattern (typing/signature_group.ml[33,1533+4]..[33,1533+13])
+                Ppat_construct "Not_rec" (typing/signature_group.ml[33,1533+4]..[33,1533+11])
+                Some
+                  []
+                  pattern (typing/signature_group.ml[33,1533+12]..[33,1533+13])
+                    Ppat_var "x" (typing/signature_group.ml[33,1533+12]..[33,1533+13])
+              expression (typing/signature_group.ml[33,1533+17]..[33,1533+20])
+                Pexp_construct "::" (typing/signature_group.ml[33,1533+18]..[33,1533+20]) ghost
+                Some
+                  expression (typing/signature_group.ml[33,1533+18]..[33,1533+20]) ghost
+                    Pexp_tuple
+                    [
+                      expression (typing/signature_group.ml[33,1533+18]..[33,1533+19])
+                        Pexp_ident "x" (typing/signature_group.ml[33,1533+18]..[33,1533+19])
+                      expression (typing/signature_group.ml[33,1533+19]..[33,1533+20]) ghost
+                        Pexp_construct "[]" (typing/signature_group.ml[33,1533+19]..[33,1533+20]) ghost
+                        None
+                    ]
+            <case>
+              pattern (typing/signature_group.ml[34,1554+4]..[34,1554+15])
+                Ppat_construct "Rec_group" (typing/signature_group.ml[34,1554+4]..[34,1554+13])
+                Some
+                  []
+                  pattern (typing/signature_group.ml[34,1554+14]..[34,1554+15])
+                    Ppat_var "x" (typing/signature_group.ml[34,1554+14]..[34,1554+15])
+              expression (typing/signature_group.ml[34,1554+19]..[34,1554+20])
+                Pexp_ident "x" (typing/signature_group.ml[34,1554+19]..[34,1554+20])
+          ]
+    ]
+  structure_item (typing/signature_group.ml[39,1752+0]..[40,1769+65])
+    Pstr_type Rec
+    [
+      type_declaration "rec_group" (typing/signature_group.ml[39,1752+5]..[39,1752+14]) (typing/signature_group.ml[39,1752+0]..[40,1769+65])
+        attribute "ocaml.doc"
+          [
+            structure_item (typing/signature_group.ml[36,1576+0]..[38,1718+33])
+              Pstr_eval
+              expression (typing/signature_group.ml[36,1576+0]..[38,1718+33])
+                Pexp_constant PConst_string(" Private row types are manifested as a sequence of definitions\n    preceding a recursive group, we collect them and separate them from the\n    syntactic recursive group. ",(typing/signature_group.ml[36,1576+0]..[38,1718+33]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_record
+            [
+              (typing/signature_group.ml[40,1769+4]..[40,1769+42])
+                Immutable
+                "pre_ghosts" (typing/signature_group.ml[40,1769+4]..[40,1769+14])                core_type (typing/signature_group.ml[40,1769+16]..[40,1769+41])
+                  Ptyp_constr "list" (typing/signature_group.ml[40,1769+37]..[40,1769+41])
+                  [
+                    core_type (typing/signature_group.ml[40,1769+16]..[40,1769+36])
+                      Ptyp_constr "Types.signature_item" (typing/signature_group.ml[40,1769+16]..[40,1769+36])
+                      []
+                  ]
+              (typing/signature_group.ml[40,1769+43]..[40,1769+63])
+                Immutable
+                "group" (typing/signature_group.ml[40,1769+43]..[40,1769+48])                core_type (typing/signature_group.ml[40,1769+49]..[40,1769+63])
+                  Ptyp_constr "core_rec_group" (typing/signature_group.ml[40,1769+49]..[40,1769+63])
+                  []
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (typing/signature_group.ml[42,1836+0]..[65,2609+40])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[42,1836+4]..[42,1836+14])
+          Ppat_var "next_group" (typing/signature_group.ml[42,1836+4]..[42,1836+14])
+        expression (typing/signature_group.ml[42,1836+17]..[65,2609+40])
+          Pexp_function
+          [
+            <case>
+              pattern (typing/signature_group.ml[43,1862+4]..[43,1862+6])
+                Ppat_construct "[]" (typing/signature_group.ml[43,1862+4]..[43,1862+6])
+                None
+              expression (typing/signature_group.ml[43,1862+10]..[43,1862+14])
+                Pexp_construct "None" (typing/signature_group.ml[43,1862+10]..[43,1862+14])
+                None
+            <case>
+              pattern (typing/signature_group.ml[44,1877+4]..[44,1877+12])
+                Ppat_construct "::" (typing/signature_group.ml[44,1877+8]..[44,1877+10])
+                Some
+                  []
+                  pattern (typing/signature_group.ml[44,1877+4]..[44,1877+12]) ghost
+                    Ppat_tuple
+                    [
+                      pattern (typing/signature_group.ml[44,1877+4]..[44,1877+7])
+                        Ppat_var "src" (typing/signature_group.ml[44,1877+4]..[44,1877+7])
+                      pattern (typing/signature_group.ml[44,1877+11]..[44,1877+12])
+                        Ppat_var "q" (typing/signature_group.ml[44,1877+11]..[44,1877+12])
+                    ]
+              expression (typing/signature_group.ml[45,1893+6]..[65,2609+40])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (typing/signature_group.ml[45,1893+10]..[45,1893+19])
+                      Ppat_tuple
+                      [
+                        pattern (typing/signature_group.ml[45,1893+10]..[45,1893+16])
+                          Ppat_var "ghosts" (typing/signature_group.ml[45,1893+10]..[45,1893+16])
+                        pattern (typing/signature_group.ml[45,1893+18]..[45,1893+19])
+                          Ppat_var "q" (typing/signature_group.ml[45,1893+18]..[45,1893+19])
+                      ]
+                    expression (typing/signature_group.ml[46,1915+8]..[63,2583+16])
+                      Pexp_match
+                      expression (typing/signature_group.ml[46,1915+14]..[46,1915+17])
+                        Pexp_ident "src" (typing/signature_group.ml[46,1915+14]..[46,1915+17])
+                      [
+                        <case>
+                          pattern (typing/signature_group.ml[47,1938+10]..[47,1938+27])
+                            Ppat_construct "Types.Sig_class" (typing/signature_group.ml[47,1938+10]..[47,1938+25])
+                            Some
+                              []
+                              pattern (typing/signature_group.ml[47,1938+26]..[47,1938+27])
+                                Ppat_any
+                          expression (typing/signature_group.ml[50,2100+12]..[53,2199+15])
+                            Pexp_match
+                            expression (typing/signature_group.ml[50,2100+24]..[50,2100+25])
+                              Pexp_ident "q" (typing/signature_group.ml[50,2100+24]..[50,2100+25])
+                            [
+                              <case>
+                                pattern (typing/signature_group.ml[51,2131+14]..[51,2131+22])
+                                  Ppat_construct "::" (typing/signature_group.ml[51,2131+16]..[51,2131+18])
+                                  Some
+                                    []
+                                    pattern (typing/signature_group.ml[51,2131+14]..[51,2131+22]) ghost
+                                      Ppat_tuple
+                                      [
+                                        pattern (typing/signature_group.ml[51,2131+14]..[51,2131+16])
+                                          Ppat_var "ct" (typing/signature_group.ml[51,2131+14]..[51,2131+16])
+                                        pattern (typing/signature_group.ml[51,2131+18]..[51,2131+22])
+                                          Ppat_construct "::" (typing/signature_group.ml[51,2131+19]..[51,2131+21])
+                                          Some
+                                            []
+                                            pattern (typing/signature_group.ml[51,2131+18]..[51,2131+22]) ghost
+                                              Ppat_tuple
+                                              [
+                                                pattern (typing/signature_group.ml[51,2131+18]..[51,2131+19])
+                                                  Ppat_var "t" (typing/signature_group.ml[51,2131+18]..[51,2131+19])
+                                                pattern (typing/signature_group.ml[51,2131+21]..[51,2131+22])
+                                                  Ppat_var "q" (typing/signature_group.ml[51,2131+21]..[51,2131+22])
+                                              ]
+                                      ]
+                                expression (typing/signature_group.ml[51,2131+26]..[51,2131+35])
+                                  Pexp_tuple
+                                  [
+                                    expression (typing/signature_group.ml[51,2131+26]..[51,2131+32])
+                                      Pexp_construct "::" (typing/signature_group.ml[51,2131+27]..[51,2131+32]) ghost
+                                      Some
+                                        expression (typing/signature_group.ml[51,2131+27]..[51,2131+32]) ghost
+                                          Pexp_tuple
+                                          [
+                                            expression (typing/signature_group.ml[51,2131+27]..[51,2131+29])
+                                              Pexp_ident "ct" (typing/signature_group.ml[51,2131+27]..[51,2131+29])
+                                            expression (typing/signature_group.ml[51,2131+30]..[51,2131+32]) ghost
+                                              Pexp_construct "::" (typing/signature_group.ml[51,2131+30]..[51,2131+32]) ghost
+                                              Some
+                                                expression (typing/signature_group.ml[51,2131+30]..[51,2131+32]) ghost
+                                                  Pexp_tuple
+                                                  [
+                                                    expression (typing/signature_group.ml[51,2131+30]..[51,2131+31])
+                                                      Pexp_ident "t" (typing/signature_group.ml[51,2131+30]..[51,2131+31])
+                                                    expression (typing/signature_group.ml[51,2131+31]..[51,2131+32]) ghost
+                                                      Pexp_construct "[]" (typing/signature_group.ml[51,2131+31]..[51,2131+32]) ghost
+                                                      None
+                                                  ]
+                                          ]
+                                    expression (typing/signature_group.ml[51,2131+34]..[51,2131+35])
+                                      Pexp_ident "q" (typing/signature_group.ml[51,2131+34]..[51,2131+35])
+                                  ]
+                              <case>
+                                pattern (typing/signature_group.ml[52,2167+14]..[52,2167+15])
+                                  Ppat_any
+                                expression (typing/signature_group.ml[52,2167+19]..[52,2167+31])
+                                  Pexp_assert
+                                  expression (typing/signature_group.ml[52,2167+26]..[52,2167+31])
+                                    Pexp_construct "false" (typing/signature_group.ml[52,2167+26]..[52,2167+31])
+                                    None
+                            ]
+                        <case>
+                          pattern (typing/signature_group.ml[54,2215+10]..[54,2215+32])
+                            Ppat_construct "Types.Sig_class_type" (typing/signature_group.ml[54,2215+10]..[54,2215+30])
+                            Some
+                              []
+                              pattern (typing/signature_group.ml[54,2215+31]..[54,2215+32])
+                                Ppat_any
+                          expression (typing/signature_group.ml[57,2369+11]..[60,2460+14])
+                            Pexp_match
+                            expression (typing/signature_group.ml[57,2369+23]..[57,2369+24])
+                              Pexp_ident "q" (typing/signature_group.ml[57,2369+23]..[57,2369+24])
+                            [
+                              <case>
+                                pattern (typing/signature_group.ml[58,2399+14]..[58,2399+18])
+                                  Ppat_construct "::" (typing/signature_group.ml[58,2399+15]..[58,2399+17])
+                                  Some
+                                    []
+                                    pattern (typing/signature_group.ml[58,2399+14]..[58,2399+18]) ghost
+                                      Ppat_tuple
+                                      [
+                                        pattern (typing/signature_group.ml[58,2399+14]..[58,2399+15])
+                                          Ppat_var "t" (typing/signature_group.ml[58,2399+14]..[58,2399+15])
+                                        pattern (typing/signature_group.ml[58,2399+17]..[58,2399+18])
+                                          Ppat_var "q" (typing/signature_group.ml[58,2399+17]..[58,2399+18])
+                                      ]
+                                expression (typing/signature_group.ml[58,2399+22]..[58,2399+28])
+                                  Pexp_tuple
+                                  [
+                                    expression (typing/signature_group.ml[58,2399+22]..[58,2399+25])
+                                      Pexp_construct "::" (typing/signature_group.ml[58,2399+23]..[58,2399+25]) ghost
+                                      Some
+                                        expression (typing/signature_group.ml[58,2399+23]..[58,2399+25]) ghost
+                                          Pexp_tuple
+                                          [
+                                            expression (typing/signature_group.ml[58,2399+23]..[58,2399+24])
+                                              Pexp_ident "t" (typing/signature_group.ml[58,2399+23]..[58,2399+24])
+                                            expression (typing/signature_group.ml[58,2399+24]..[58,2399+25]) ghost
+                                              Pexp_construct "[]" (typing/signature_group.ml[58,2399+24]..[58,2399+25]) ghost
+                                              None
+                                          ]
+                                    expression (typing/signature_group.ml[58,2399+27]..[58,2399+28])
+                                      Pexp_ident "q" (typing/signature_group.ml[58,2399+27]..[58,2399+28])
+                                  ]
+                              <case>
+                                pattern (typing/signature_group.ml[59,2428+14]..[59,2428+15])
+                                  Ppat_any
+                                expression (typing/signature_group.ml[59,2428+19]..[59,2428+31])
+                                  Pexp_assert
+                                  expression (typing/signature_group.ml[59,2428+26]..[59,2428+31])
+                                    Pexp_construct "false" (typing/signature_group.ml[59,2428+26]..[59,2428+31])
+                                    None
+                            ]
+                        <case>
+                          pattern (typing/signature_group.ml[61,2475+10]..[62,2547+32])
+                            Ppat_open ""Types" (typing/signature_group.ml[61,2475+10]..[61,2475+15])"
+                            pattern (typing/signature_group.ml[61,2475+17]..[62,2547+31])
+                              Ppat_or
+                              pattern (typing/signature_group.ml[61,2475+17]..[61,2475+71])
+                                Ppat_or
+                                pattern (typing/signature_group.ml[61,2475+17]..[61,2475+56])
+                                  Ppat_or
+                                  pattern (typing/signature_group.ml[61,2475+17]..[61,2475+43])
+                                    Ppat_or
+                                    pattern (typing/signature_group.ml[61,2475+17]..[61,2475+29])
+                                      Ppat_construct "Sig_module" (typing/signature_group.ml[61,2475+17]..[61,2475+27])
+                                      Some
+                                        []
+                                        pattern (typing/signature_group.ml[61,2475+28]..[61,2475+29])
+                                          Ppat_any
+                                    pattern (typing/signature_group.ml[61,2475+32]..[61,2475+43])
+                                      Ppat_construct "Sig_value" (typing/signature_group.ml[61,2475+32]..[61,2475+41])
+                                      Some
+                                        []
+                                        pattern (typing/signature_group.ml[61,2475+42]..[61,2475+43])
+                                          Ppat_any
+                                  pattern (typing/signature_group.ml[61,2475+46]..[61,2475+56])
+                                    Ppat_construct "Sig_type" (typing/signature_group.ml[61,2475+46]..[61,2475+54])
+                                    Some
+                                      []
+                                      pattern (typing/signature_group.ml[61,2475+55]..[61,2475+56])
+                                        Ppat_any
+                                pattern (typing/signature_group.ml[61,2475+59]..[61,2475+71])
+                                  Ppat_construct "Sig_typext" (typing/signature_group.ml[61,2475+59]..[61,2475+69])
+                                  Some
+                                    []
+                                    pattern (typing/signature_group.ml[61,2475+70]..[61,2475+71])
+                                      Ppat_any
+                              pattern (typing/signature_group.ml[62,2547+18]..[62,2547+31])
+                                Ppat_construct "Sig_modtype" (typing/signature_group.ml[62,2547+18]..[62,2547+29])
+                                Some
+                                  []
+                                  pattern (typing/signature_group.ml[62,2547+30]..[62,2547+31])
+                                    Ppat_any
+                          expression (typing/signature_group.ml[63,2583+12]..[63,2583+16])
+                            Pexp_tuple
+                            [
+                              expression (typing/signature_group.ml[63,2583+12]..[63,2583+14])
+                                Pexp_construct "[]" (typing/signature_group.ml[63,2583+12]..[63,2583+14])
+                                None
+                              expression (typing/signature_group.ml[63,2583+15]..[63,2583+16])
+                                Pexp_ident "q" (typing/signature_group.ml[63,2583+15]..[63,2583+16])
+                            ]
+                      ]
+                ]
+                expression (typing/signature_group.ml[65,2609+6]..[65,2609+40])
+                  Pexp_construct "Some" (typing/signature_group.ml[65,2609+6]..[65,2609+10])
+                  Some
+                    expression (typing/signature_group.ml[65,2609+10]..[65,2609+40])
+                      Pexp_tuple
+                      [
+                        expression (typing/signature_group.ml[65,2609+11]..[65,2609+36])
+                          Pexp_record
+                          [
+                            "src" (typing/signature_group.ml[65,2609+12]..[65,2609+15]) ghost
+                              expression (typing/signature_group.ml[65,2609+12]..[65,2609+15])
+                                Pexp_ident "src" (typing/signature_group.ml[65,2609+12]..[65,2609+15])
+                            "post_ghosts" (typing/signature_group.ml[65,2609+17]..[65,2609+28])
+                              expression (typing/signature_group.ml[65,2609+29]..[65,2609+35])
+                                Pexp_ident "ghosts" (typing/signature_group.ml[65,2609+29]..[65,2609+35])
+                          ]
+                          None
+                        expression (typing/signature_group.ml[65,2609+38]..[65,2609+39])
+                          Pexp_ident "q" (typing/signature_group.ml[65,2609+38]..[65,2609+39])
+                      ]
+          ]
+    ]
+  structure_item (typing/signature_group.ml[67,2651+0]..[72,2854+64])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[67,2651+4]..[67,2651+21])
+          Ppat_var "recursive_sigitem" (typing/signature_group.ml[67,2651+4]..[67,2651+21])
+        expression (typing/signature_group.ml[67,2651+24]..[72,2854+64])
+          Pexp_function
+          [
+            <case>
+              pattern (typing/signature_group.ml[68,2684+4]..[71,2794+40])
+                Ppat_or
+                pattern (typing/signature_group.ml[68,2684+4]..[70,2754+39])
+                  Ppat_or
+                  pattern (typing/signature_group.ml[68,2684+4]..[69,2720+33])
+                    Ppat_or
+                    pattern (typing/signature_group.ml[68,2684+4]..[68,2684+35])
+                      Ppat_construct "Types.Sig_type" (typing/signature_group.ml[68,2684+4]..[68,2684+18])
+                      Some
+                        []
+                        pattern (typing/signature_group.ml[68,2684+18]..[68,2684+35])
+                          Ppat_tuple
+                          [
+                            pattern (typing/signature_group.ml[68,2684+19]..[68,2684+24])
+                              Ppat_var "ident" (typing/signature_group.ml[68,2684+19]..[68,2684+24])
+                            pattern (typing/signature_group.ml[68,2684+26]..[68,2684+27])
+                              Ppat_any
+                            pattern (typing/signature_group.ml[68,2684+29]..[68,2684+31])
+                              Ppat_var "rs" (typing/signature_group.ml[68,2684+29]..[68,2684+31])
+                            pattern (typing/signature_group.ml[68,2684+33]..[68,2684+34])
+                              Ppat_any
+                          ]
+                    pattern (typing/signature_group.ml[69,2720+4]..[69,2720+33])
+                      Ppat_construct "Types.Sig_class" (typing/signature_group.ml[69,2720+4]..[69,2720+19])
+                      Some
+                        []
+                        pattern (typing/signature_group.ml[69,2720+19]..[69,2720+33])
+                          Ppat_tuple
+                          [
+                            pattern (typing/signature_group.ml[69,2720+20]..[69,2720+25])
+                              Ppat_var "ident" (typing/signature_group.ml[69,2720+20]..[69,2720+25])
+                            pattern (typing/signature_group.ml[69,2720+26]..[69,2720+27])
+                              Ppat_any
+                            pattern (typing/signature_group.ml[69,2720+28]..[69,2720+30])
+                              Ppat_var "rs" (typing/signature_group.ml[69,2720+28]..[69,2720+30])
+                            pattern (typing/signature_group.ml[69,2720+31]..[69,2720+32])
+                              Ppat_any
+                          ]
+                  pattern (typing/signature_group.ml[70,2754+4]..[70,2754+39])
+                    Ppat_construct "Types.Sig_class_type" (typing/signature_group.ml[70,2754+4]..[70,2754+24])
+                    Some
+                      []
+                      pattern (typing/signature_group.ml[70,2754+25]..[70,2754+39])
+                        Ppat_tuple
+                        [
+                          pattern (typing/signature_group.ml[70,2754+26]..[70,2754+31])
+                            Ppat_var "ident" (typing/signature_group.ml[70,2754+26]..[70,2754+31])
+                          pattern (typing/signature_group.ml[70,2754+32]..[70,2754+33])
+                            Ppat_any
+                          pattern (typing/signature_group.ml[70,2754+34]..[70,2754+36])
+                            Ppat_var "rs" (typing/signature_group.ml[70,2754+34]..[70,2754+36])
+                          pattern (typing/signature_group.ml[70,2754+37]..[70,2754+38])
+                            Ppat_any
+                        ]
+                pattern (typing/signature_group.ml[71,2794+4]..[71,2794+40])
+                  Ppat_construct "Types.Sig_module" (typing/signature_group.ml[71,2794+4]..[71,2794+20])
+                  Some
+                    []
+                    pattern (typing/signature_group.ml[71,2794+20]..[71,2794+40])
+                      Ppat_tuple
+                      [
+                        pattern (typing/signature_group.ml[71,2794+21]..[71,2794+26])
+                          Ppat_var "ident" (typing/signature_group.ml[71,2794+21]..[71,2794+26])
+                        pattern (typing/signature_group.ml[71,2794+28]..[71,2794+29])
+                          Ppat_any
+                        pattern (typing/signature_group.ml[71,2794+31]..[71,2794+32])
+                          Ppat_any
+                        pattern (typing/signature_group.ml[71,2794+34]..[71,2794+36])
+                          Ppat_var "rs" (typing/signature_group.ml[71,2794+34]..[71,2794+36])
+                        pattern (typing/signature_group.ml[71,2794+38]..[71,2794+39])
+                          Ppat_any
+                      ]
+              expression (typing/signature_group.ml[71,2794+44]..[71,2794+59])
+                Pexp_construct "Some" (typing/signature_group.ml[71,2794+44]..[71,2794+48])
+                Some
+                  expression (typing/signature_group.ml[71,2794+49]..[71,2794+59])
+                    Pexp_tuple
+                    [
+                      expression (typing/signature_group.ml[71,2794+50]..[71,2794+55])
+                        Pexp_ident "ident" (typing/signature_group.ml[71,2794+50]..[71,2794+55])
+                      expression (typing/signature_group.ml[71,2794+56]..[71,2794+58])
+                        Pexp_ident "rs" (typing/signature_group.ml[71,2794+56]..[71,2794+58])
+                    ]
+            <case>
+              pattern (typing/signature_group.ml[72,2854+4]..[72,2854+55])
+                Ppat_open ""Types" (typing/signature_group.ml[72,2854+4]..[72,2854+9])"
+                pattern (typing/signature_group.ml[72,2854+11]..[72,2854+53])
+                  Ppat_or
+                  pattern (typing/signature_group.ml[72,2854+11]..[72,2854+38])
+                    Ppat_or
+                    pattern (typing/signature_group.ml[72,2854+11]..[72,2854+22])
+                      Ppat_construct "Sig_value" (typing/signature_group.ml[72,2854+11]..[72,2854+20])
+                      Some
+                        []
+                        pattern (typing/signature_group.ml[72,2854+21]..[72,2854+22])
+                          Ppat_any
+                    pattern (typing/signature_group.ml[72,2854+25]..[72,2854+38])
+                      Ppat_construct "Sig_modtype" (typing/signature_group.ml[72,2854+25]..[72,2854+36])
+                      Some
+                        []
+                        pattern (typing/signature_group.ml[72,2854+37]..[72,2854+38])
+                          Ppat_any
+                  pattern (typing/signature_group.ml[72,2854+41]..[72,2854+53])
+                    Ppat_construct "Sig_typext" (typing/signature_group.ml[72,2854+41]..[72,2854+51])
+                    Some
+                      []
+                      pattern (typing/signature_group.ml[72,2854+52]..[72,2854+53])
+                        Ppat_any
+              expression (typing/signature_group.ml[72,2854+60]..[72,2854+64])
+                Pexp_construct "None" (typing/signature_group.ml[72,2854+60]..[72,2854+64])
+                None
+          ]
+    ]
+  structure_item (typing/signature_group.ml[74,2920+0]..[101,3978+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[74,2920+4]..[74,2920+8])
+          Ppat_var "next" (typing/signature_group.ml[74,2920+4]..[74,2920+8])
+        expression (typing/signature_group.ml[74,2920+9]..[101,3978+19]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/signature_group.ml[74,2920+9]..[74,2920+10])
+            Ppat_var "x" (typing/signature_group.ml[74,2920+9]..[74,2920+10])
+          expression (typing/signature_group.ml[75,2933+2]..[101,3978+19])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (typing/signature_group.ml[75,2933+6]..[75,2933+16])
+                  Ppat_var "cons_group" (typing/signature_group.ml[75,2933+6]..[75,2933+16])
+                expression (typing/signature_group.ml[75,2933+17]..[77,3010+46]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (typing/signature_group.ml[75,2933+17]..[75,2933+20])
+                    Ppat_var "pre" (typing/signature_group.ml[75,2933+17]..[75,2933+20])
+                  expression (typing/signature_group.ml[75,2933+21]..[77,3010+46]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (typing/signature_group.ml[75,2933+21]..[75,2933+26])
+                      Ppat_var "group" (typing/signature_group.ml[75,2933+21]..[75,2933+26])
+                    expression (typing/signature_group.ml[75,2933+27]..[77,3010+46]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (typing/signature_group.ml[75,2933+27]..[75,2933+28])
+                        Ppat_var "q" (typing/signature_group.ml[75,2933+27]..[75,2933+28])
+                      expression (typing/signature_group.ml[76,2964+4]..[77,3010+46])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (typing/signature_group.ml[76,2964+8]..[76,2964+13])
+                              Ppat_var "group" (typing/signature_group.ml[76,2964+8]..[76,2964+13])
+                            expression (typing/signature_group.ml[76,2964+16]..[76,2964+42])
+                              Pexp_construct "Rec_group" (typing/signature_group.ml[76,2964+16]..[76,2964+25])
+                              Some
+                                expression (typing/signature_group.ml[76,2964+26]..[76,2964+42])
+                                  Pexp_apply
+                                  expression (typing/signature_group.ml[76,2964+27]..[76,2964+35])
+                                    Pexp_ident "List.rev" (typing/signature_group.ml[76,2964+27]..[76,2964+35])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/signature_group.ml[76,2964+36]..[76,2964+41])
+                                        Pexp_ident "group" (typing/signature_group.ml[76,2964+36]..[76,2964+41])
+                                  ]
+                        ]
+                        expression (typing/signature_group.ml[77,3010+4]..[77,3010+46])
+                          Pexp_construct "Some" (typing/signature_group.ml[77,3010+4]..[77,3010+8])
+                          Some
+                            expression (typing/signature_group.ml[77,3010+8]..[77,3010+46])
+                              Pexp_tuple
+                              [
+                                expression (typing/signature_group.ml[77,3010+9]..[77,3010+43])
+                                  Pexp_record
+                                  [
+                                    "pre_ghosts" (typing/signature_group.ml[77,3010+11]..[77,3010+21])
+                                      expression (typing/signature_group.ml[77,3010+22]..[77,3010+34])
+                                        Pexp_apply
+                                        expression (typing/signature_group.ml[77,3010+22]..[77,3010+30])
+                                          Pexp_ident "List.rev" (typing/signature_group.ml[77,3010+22]..[77,3010+30])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[77,3010+31]..[77,3010+34])
+                                              Pexp_ident "pre" (typing/signature_group.ml[77,3010+31]..[77,3010+34])
+                                        ]
+                                    "group" (typing/signature_group.ml[77,3010+36]..[77,3010+41]) ghost
+                                      expression (typing/signature_group.ml[77,3010+36]..[77,3010+41])
+                                        Pexp_ident "group" (typing/signature_group.ml[77,3010+36]..[77,3010+41])
+                                  ]
+                                  None
+                                expression (typing/signature_group.ml[77,3010+44]..[77,3010+45])
+                                  Pexp_ident "q" (typing/signature_group.ml[77,3010+44]..[77,3010+45])
+                              ]
+            ]
+            expression (typing/signature_group.ml[79,3062+2]..[101,3978+19])
+              Pexp_let Rec
+              [
+                <def>
+                  pattern (typing/signature_group.ml[79,3062+10]..[79,3062+22])
+                    Ppat_var "not_in_group" (typing/signature_group.ml[79,3062+10]..[79,3062+22])
+                  expression (typing/signature_group.ml[79,3062+23]..[91,3549+50]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (typing/signature_group.ml[79,3062+23]..[79,3062+26])
+                      Ppat_var "pre" (typing/signature_group.ml[79,3062+23]..[79,3062+26])
+                    expression (typing/signature_group.ml[79,3062+27]..[91,3549+50]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (typing/signature_group.ml[79,3062+27]..[79,3062+28])
+                        Ppat_var "l" (typing/signature_group.ml[79,3062+27]..[79,3062+28])
+                      expression (typing/signature_group.ml[79,3062+31]..[91,3549+50])
+                        Pexp_match
+                        expression (typing/signature_group.ml[79,3062+37]..[79,3062+49])
+                          Pexp_apply
+                          expression (typing/signature_group.ml[79,3062+37]..[79,3062+47])
+                            Pexp_ident "next_group" (typing/signature_group.ml[79,3062+37]..[79,3062+47])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/signature_group.ml[79,3062+48]..[79,3062+49])
+                                Pexp_ident "l" (typing/signature_group.ml[79,3062+48]..[79,3062+49])
+                          ]
+                        [
+                          <case>
+                            pattern (typing/signature_group.ml[80,3117+6]..[80,3117+10])
+                              Ppat_construct "None" (typing/signature_group.ml[80,3117+6]..[80,3117+10])
+                              None
+                            expression (typing/signature_group.ml[81,3131+8]..[82,3156+12])
+                              Pexp_sequence
+                              expression (typing/signature_group.ml[81,3131+8]..[81,3131+23])
+                                Pexp_assert
+                                expression (typing/signature_group.ml[81,3131+15]..[81,3131+23])
+                                  Pexp_apply
+                                  expression (typing/signature_group.ml[81,3131+19]..[81,3131+20])
+                                    Pexp_ident "=" (typing/signature_group.ml[81,3131+19]..[81,3131+20])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/signature_group.ml[81,3131+16]..[81,3131+19])
+                                        Pexp_ident "pre" (typing/signature_group.ml[81,3131+16]..[81,3131+19])
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/signature_group.ml[81,3131+20]..[81,3131+22])
+                                        Pexp_construct "[]" (typing/signature_group.ml[81,3131+20]..[81,3131+22])
+                                        None
+                                  ]
+                              expression (typing/signature_group.ml[82,3156+8]..[82,3156+12])
+                                Pexp_construct "None" (typing/signature_group.ml[82,3156+8]..[82,3156+12])
+                                None
+                          <case>
+                            pattern (typing/signature_group.ml[83,3169+6]..[83,3169+18])
+                              Ppat_construct "Some" (typing/signature_group.ml[83,3169+6]..[83,3169+10])
+                              Some
+                                []
+                                pattern (typing/signature_group.ml[83,3169+10]..[83,3169+18])
+                                  Ppat_tuple
+                                  [
+                                    pattern (typing/signature_group.ml[83,3169+11]..[83,3169+14])
+                                      Ppat_var "elt" (typing/signature_group.ml[83,3169+11]..[83,3169+14])
+                                    pattern (typing/signature_group.ml[83,3169+16]..[83,3169+17])
+                                      Ppat_var "q" (typing/signature_group.ml[83,3169+16]..[83,3169+17])
+                                  ]
+                            expression (typing/signature_group.ml[84,3192+8]..[91,3549+50])
+                              Pexp_match
+                              expression (typing/signature_group.ml[84,3192+14]..[84,3192+39])
+                                Pexp_apply
+                                expression (typing/signature_group.ml[84,3192+14]..[84,3192+31])
+                                  Pexp_ident "recursive_sigitem" (typing/signature_group.ml[84,3192+14]..[84,3192+31])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/signature_group.ml[84,3192+32]..[84,3192+39])
+                                      Pexp_field
+                                      expression (typing/signature_group.ml[84,3192+32]..[84,3192+35])
+                                        Pexp_ident "elt" (typing/signature_group.ml[84,3192+32]..[84,3192+35])
+                                      "src" (typing/signature_group.ml[84,3192+36]..[84,3192+39])
+                                ]
+                              [
+                                <case>
+                                  pattern (typing/signature_group.ml[85,3237+10]..[85,3237+22])
+                                    Ppat_construct "Some" (typing/signature_group.ml[85,3237+10]..[85,3237+14])
+                                    Some
+                                      []
+                                      pattern (typing/signature_group.ml[85,3237+15]..[85,3237+22])
+                                        Ppat_tuple
+                                        [
+                                          pattern (typing/signature_group.ml[85,3237+16]..[85,3237+18])
+                                            Ppat_var "id" (typing/signature_group.ml[85,3237+16]..[85,3237+18])
+                                          pattern (typing/signature_group.ml[85,3237+20]..[85,3237+21])
+                                            Ppat_any
+                                        ]
+                                  <when>
+                                    expression (typing/signature_group.ml[85,3237+28]..[85,3237+61])
+                                      Pexp_apply
+                                      expression (typing/signature_group.ml[85,3237+28]..[85,3237+45])
+                                        Pexp_ident "Btype.is_row_name" (typing/signature_group.ml[85,3237+28]..[85,3237+45])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/signature_group.ml[85,3237+46]..[85,3237+61])
+                                            Pexp_apply
+                                            expression (typing/signature_group.ml[85,3237+47]..[85,3237+57])
+                                              Pexp_ident "Ident.name" (typing/signature_group.ml[85,3237+47]..[85,3237+57])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (typing/signature_group.ml[85,3237+58]..[85,3237+60])
+                                                  Pexp_ident "id" (typing/signature_group.ml[85,3237+58]..[85,3237+60])
+                                            ]
+                                      ]
+                                  expression (typing/signature_group.ml[86,3302+12]..[86,3302+41])
+                                    Pexp_apply
+                                    expression (typing/signature_group.ml[86,3302+12]..[86,3302+24])
+                                      Pexp_ident "not_in_group" (typing/signature_group.ml[86,3302+12]..[86,3302+24])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/signature_group.ml[86,3302+25]..[86,3302+39])
+                                          Pexp_construct "::" (typing/signature_group.ml[86,3302+33]..[86,3302+35])
+                                          Some
+                                            expression (typing/signature_group.ml[86,3302+26]..[86,3302+38]) ghost
+                                              Pexp_tuple
+                                              [
+                                                expression (typing/signature_group.ml[86,3302+26]..[86,3302+33])
+                                                  Pexp_field
+                                                  expression (typing/signature_group.ml[86,3302+26]..[86,3302+29])
+                                                    Pexp_ident "elt" (typing/signature_group.ml[86,3302+26]..[86,3302+29])
+                                                  "src" (typing/signature_group.ml[86,3302+30]..[86,3302+33])
+                                                expression (typing/signature_group.ml[86,3302+35]..[86,3302+38])
+                                                  Pexp_ident "pre" (typing/signature_group.ml[86,3302+35]..[86,3302+38])
+                                              ]
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/signature_group.ml[86,3302+40]..[86,3302+41])
+                                          Pexp_ident "q" (typing/signature_group.ml[86,3302+40]..[86,3302+41])
+                                    ]
+                                <case>
+                                  pattern (typing/signature_group.ml[87,3344+10]..[87,3344+41])
+                                    Ppat_or
+                                    pattern (typing/signature_group.ml[87,3344+10]..[87,3344+14])
+                                      Ppat_construct "None" (typing/signature_group.ml[87,3344+10]..[87,3344+14])
+                                      None
+                                    pattern (typing/signature_group.ml[87,3344+17]..[87,3344+41])
+                                      Ppat_construct "Some" (typing/signature_group.ml[87,3344+17]..[87,3344+21])
+                                      Some
+                                        []
+                                        pattern (typing/signature_group.ml[87,3344+22]..[87,3344+41])
+                                          Ppat_tuple
+                                          [
+                                            pattern (typing/signature_group.ml[87,3344+23]..[87,3344+24])
+                                              Ppat_any
+                                            pattern (typing/signature_group.ml[87,3344+26]..[87,3344+40])
+                                              Ppat_construct "Types.Trec_not" (typing/signature_group.ml[87,3344+26]..[87,3344+40])
+                                              None
+                                          ]
+                                  expression (typing/signature_group.ml[88,3389+12]..[89,3464+27])
+                                    Pexp_let Nonrec
+                                    [
+                                      <def>
+                                        pattern (typing/signature_group.ml[88,3389+16]..[88,3389+22])
+                                          Ppat_var "sgroup" (typing/signature_group.ml[88,3389+16]..[88,3389+22])
+                                        expression (typing/signature_group.ml[88,3389+25]..[88,3389+71])
+                                          Pexp_record
+                                          [
+                                            "pre_ghosts" (typing/signature_group.ml[88,3389+27]..[88,3389+37])
+                                              expression (typing/signature_group.ml[88,3389+38]..[88,3389+50])
+                                                Pexp_apply
+                                                expression (typing/signature_group.ml[88,3389+38]..[88,3389+46])
+                                                  Pexp_ident "List.rev" (typing/signature_group.ml[88,3389+38]..[88,3389+46])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/signature_group.ml[88,3389+47]..[88,3389+50])
+                                                      Pexp_ident "pre" (typing/signature_group.ml[88,3389+47]..[88,3389+50])
+                                                ]
+                                            "group" (typing/signature_group.ml[88,3389+52]..[88,3389+57])
+                                              expression (typing/signature_group.ml[88,3389+58]..[88,3389+69])
+                                                Pexp_construct "Not_rec" (typing/signature_group.ml[88,3389+58]..[88,3389+65])
+                                                Some
+                                                  expression (typing/signature_group.ml[88,3389+66]..[88,3389+69])
+                                                    Pexp_ident "elt" (typing/signature_group.ml[88,3389+66]..[88,3389+69])
+                                          ]
+                                          None
+                                    ]
+                                    expression (typing/signature_group.ml[89,3464+12]..[89,3464+27])
+                                      Pexp_construct "Some" (typing/signature_group.ml[89,3464+12]..[89,3464+16])
+                                      Some
+                                        expression (typing/signature_group.ml[89,3464+17]..[89,3464+27])
+                                          Pexp_tuple
+                                          [
+                                            expression (typing/signature_group.ml[89,3464+18]..[89,3464+24])
+                                              Pexp_ident "sgroup" (typing/signature_group.ml[89,3464+18]..[89,3464+24])
+                                            expression (typing/signature_group.ml[89,3464+25]..[89,3464+26])
+                                              Pexp_ident "q" (typing/signature_group.ml[89,3464+25]..[89,3464+26])
+                                          ]
+                                <case>
+                                  pattern (typing/signature_group.ml[90,3492+10]..[90,3492+52])
+                                    Ppat_construct "Some" (typing/signature_group.ml[90,3492+10]..[90,3492+14])
+                                    Some
+                                      []
+                                      pattern (typing/signature_group.ml[90,3492+15]..[90,3492+52])
+                                        Ppat_tuple
+                                        [
+                                          pattern (typing/signature_group.ml[90,3492+16]..[90,3492+18])
+                                            Ppat_var "id" (typing/signature_group.ml[90,3492+16]..[90,3492+18])
+                                          pattern (typing/signature_group.ml[90,3492+20]..[90,3492+50])
+                                            Ppat_open ""Types" (typing/signature_group.ml[90,3492+20]..[90,3492+25])"
+                                            pattern (typing/signature_group.ml[90,3492+27]..[90,3492+49])
+                                              Ppat_or
+                                              pattern (typing/signature_group.ml[90,3492+27]..[90,3492+37])
+                                                Ppat_construct "Trec_first" (typing/signature_group.ml[90,3492+27]..[90,3492+37])
+                                                None
+                                              pattern (typing/signature_group.ml[90,3492+40]..[90,3492+49])
+                                                Ppat_construct "Trec_next" (typing/signature_group.ml[90,3492+40]..[90,3492+49])
+                                                None
+                                        ]
+                                  expression (typing/signature_group.ml[91,3549+12]..[91,3549+50])
+                                    Pexp_apply
+                                    expression (typing/signature_group.ml[91,3549+12]..[91,3549+20])
+                                      Pexp_ident "in_group" (typing/signature_group.ml[91,3549+12]..[91,3549+20])
+                                    [
+                                      <arg>
+                                      Labelled "pre"
+                                        expression (typing/signature_group.ml[91,3549+22]..[91,3549+25])
+                                          Pexp_ident "pre" (typing/signature_group.ml[91,3549+22]..[91,3549+25])
+                                      <arg>
+                                      Labelled "ids"
+                                        expression (typing/signature_group.ml[91,3549+31]..[91,3549+35])
+                                          Pexp_construct "::" (typing/signature_group.ml[91,3549+32]..[91,3549+35]) ghost
+                                          Some
+                                            expression (typing/signature_group.ml[91,3549+32]..[91,3549+35]) ghost
+                                              Pexp_tuple
+                                              [
+                                                expression (typing/signature_group.ml[91,3549+32]..[91,3549+34])
+                                                  Pexp_ident "id" (typing/signature_group.ml[91,3549+32]..[91,3549+34])
+                                                expression (typing/signature_group.ml[91,3549+34]..[91,3549+35]) ghost
+                                                  Pexp_construct "[]" (typing/signature_group.ml[91,3549+34]..[91,3549+35]) ghost
+                                                  None
+                                              ]
+                                      <arg>
+                                      Labelled "group"
+                                        expression (typing/signature_group.ml[91,3549+43]..[91,3549+48])
+                                          Pexp_construct "::" (typing/signature_group.ml[91,3549+44]..[91,3549+48]) ghost
+                                          Some
+                                            expression (typing/signature_group.ml[91,3549+44]..[91,3549+48]) ghost
+                                              Pexp_tuple
+                                              [
+                                                expression (typing/signature_group.ml[91,3549+44]..[91,3549+47])
+                                                  Pexp_ident "elt" (typing/signature_group.ml[91,3549+44]..[91,3549+47])
+                                                expression (typing/signature_group.ml[91,3549+47]..[91,3549+48]) ghost
+                                                  Pexp_construct "[]" (typing/signature_group.ml[91,3549+47]..[91,3549+48]) ghost
+                                                  None
+                                              ]
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/signature_group.ml[91,3549+49]..[91,3549+50])
+                                          Pexp_ident "q" (typing/signature_group.ml[91,3549+49]..[91,3549+50])
+                                    ]
+                              ]
+                        ]
+                <def>
+                  pattern (typing/signature_group.ml[92,3600+6]..[92,3600+14])
+                    Ppat_var "in_group" (typing/signature_group.ml[92,3600+6]..[92,3600+14])
+                  expression (typing/signature_group.ml[92,3600+15]..[99,3936+36]) ghost
+                    Pexp_fun
+                    Labelled "pre"
+                    None
+                    pattern (typing/signature_group.ml[92,3600+16]..[92,3600+19])
+                      Ppat_var "pre" (typing/signature_group.ml[92,3600+16]..[92,3600+19])
+                    expression (typing/signature_group.ml[92,3600+20]..[99,3936+36]) ghost
+                      Pexp_fun
+                      Labelled "ids"
+                      None
+                      pattern (typing/signature_group.ml[92,3600+21]..[92,3600+24])
+                        Ppat_var "ids" (typing/signature_group.ml[92,3600+21]..[92,3600+24])
+                      expression (typing/signature_group.ml[92,3600+25]..[99,3936+36]) ghost
+                        Pexp_fun
+                        Labelled "group"
+                        None
+                        pattern (typing/signature_group.ml[92,3600+26]..[92,3600+31])
+                          Ppat_var "group" (typing/signature_group.ml[92,3600+26]..[92,3600+31])
+                        expression (typing/signature_group.ml[92,3600+32]..[99,3936+36]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (typing/signature_group.ml[92,3600+32]..[92,3600+35])
+                            Ppat_var "rem" (typing/signature_group.ml[92,3600+32]..[92,3600+35])
+                          expression (typing/signature_group.ml[92,3600+38]..[99,3936+36])
+                            Pexp_match
+                            expression (typing/signature_group.ml[92,3600+44]..[92,3600+58])
+                              Pexp_apply
+                              expression (typing/signature_group.ml[92,3600+44]..[92,3600+54])
+                                Pexp_ident "next_group" (typing/signature_group.ml[92,3600+44]..[92,3600+54])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (typing/signature_group.ml[92,3600+55]..[92,3600+58])
+                                    Pexp_ident "rem" (typing/signature_group.ml[92,3600+55]..[92,3600+58])
+                              ]
+                            [
+                              <case>
+                                pattern (typing/signature_group.ml[93,3664+6]..[93,3664+10])
+                                  Ppat_construct "None" (typing/signature_group.ml[93,3664+6]..[93,3664+10])
+                                  None
+                                expression (typing/signature_group.ml[93,3664+14]..[93,3664+37])
+                                  Pexp_apply
+                                  expression (typing/signature_group.ml[93,3664+14]..[93,3664+24])
+                                    Pexp_ident "cons_group" (typing/signature_group.ml[93,3664+14]..[93,3664+24])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/signature_group.ml[93,3664+25]..[93,3664+28])
+                                        Pexp_ident "pre" (typing/signature_group.ml[93,3664+25]..[93,3664+28])
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/signature_group.ml[93,3664+29]..[93,3664+34])
+                                        Pexp_ident "group" (typing/signature_group.ml[93,3664+29]..[93,3664+34])
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/signature_group.ml[93,3664+35]..[93,3664+37])
+                                        Pexp_construct "[]" (typing/signature_group.ml[93,3664+35]..[93,3664+37])
+                                        None
+                                  ]
+                              <case>
+                                pattern (typing/signature_group.ml[94,3702+6]..[94,3702+21])
+                                  Ppat_construct "Some" (typing/signature_group.ml[94,3702+6]..[94,3702+10])
+                                  Some
+                                    []
+                                    pattern (typing/signature_group.ml[94,3702+11]..[94,3702+21])
+                                      Ppat_tuple
+                                      [
+                                        pattern (typing/signature_group.ml[94,3702+12]..[94,3702+15])
+                                          Ppat_var "elt" (typing/signature_group.ml[94,3702+12]..[94,3702+15])
+                                        pattern (typing/signature_group.ml[94,3702+16]..[94,3702+20])
+                                          Ppat_var "next" (typing/signature_group.ml[94,3702+16]..[94,3702+20])
+                                      ]
+                                expression (typing/signature_group.ml[95,3727+8]..[99,3936+36])
+                                  Pexp_match
+                                  expression (typing/signature_group.ml[95,3727+14]..[95,3727+39])
+                                    Pexp_apply
+                                    expression (typing/signature_group.ml[95,3727+14]..[95,3727+31])
+                                      Pexp_ident "recursive_sigitem" (typing/signature_group.ml[95,3727+14]..[95,3727+31])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/signature_group.ml[95,3727+32]..[95,3727+39])
+                                          Pexp_field
+                                          expression (typing/signature_group.ml[95,3727+32]..[95,3727+35])
+                                            Pexp_ident "elt" (typing/signature_group.ml[95,3727+32]..[95,3727+35])
+                                          "src" (typing/signature_group.ml[95,3727+36]..[95,3727+39])
+                                    ]
+                                  [
+                                    <case>
+                                      pattern (typing/signature_group.ml[96,3772+10]..[96,3772+36])
+                                        Ppat_construct "Some" (typing/signature_group.ml[96,3772+10]..[96,3772+14])
+                                        Some
+                                          []
+                                          pattern (typing/signature_group.ml[96,3772+15]..[96,3772+36])
+                                            Ppat_tuple
+                                            [
+                                              pattern (typing/signature_group.ml[96,3772+16]..[96,3772+18])
+                                                Ppat_var "id" (typing/signature_group.ml[96,3772+16]..[96,3772+18])
+                                              pattern (typing/signature_group.ml[96,3772+20]..[96,3772+35])
+                                                Ppat_construct "Types.Trec_next" (typing/signature_group.ml[96,3772+20]..[96,3772+35])
+                                                None
+                                            ]
+                                      expression (typing/signature_group.ml[97,3812+12]..[97,3812+65])
+                                        Pexp_apply
+                                        expression (typing/signature_group.ml[97,3812+12]..[97,3812+20])
+                                          Pexp_ident "in_group" (typing/signature_group.ml[97,3812+12]..[97,3812+20])
+                                        [
+                                          <arg>
+                                          Labelled "pre"
+                                            expression (typing/signature_group.ml[97,3812+22]..[97,3812+25])
+                                              Pexp_ident "pre" (typing/signature_group.ml[97,3812+22]..[97,3812+25])
+                                          <arg>
+                                          Labelled "ids"
+                                            expression (typing/signature_group.ml[97,3812+31]..[97,3812+40])
+                                              Pexp_construct "::" (typing/signature_group.ml[97,3812+34]..[97,3812+36])
+                                              Some
+                                                expression (typing/signature_group.ml[97,3812+32]..[97,3812+39]) ghost
+                                                  Pexp_tuple
+                                                  [
+                                                    expression (typing/signature_group.ml[97,3812+32]..[97,3812+34])
+                                                      Pexp_ident "id" (typing/signature_group.ml[97,3812+32]..[97,3812+34])
+                                                    expression (typing/signature_group.ml[97,3812+36]..[97,3812+39])
+                                                      Pexp_ident "ids" (typing/signature_group.ml[97,3812+36]..[97,3812+39])
+                                                  ]
+                                          <arg>
+                                          Labelled "group"
+                                            expression (typing/signature_group.ml[97,3812+48]..[97,3812+60])
+                                              Pexp_construct "::" (typing/signature_group.ml[97,3812+52]..[97,3812+54])
+                                              Some
+                                                expression (typing/signature_group.ml[97,3812+49]..[97,3812+59]) ghost
+                                                  Pexp_tuple
+                                                  [
+                                                    expression (typing/signature_group.ml[97,3812+49]..[97,3812+52])
+                                                      Pexp_ident "elt" (typing/signature_group.ml[97,3812+49]..[97,3812+52])
+                                                    expression (typing/signature_group.ml[97,3812+54]..[97,3812+59])
+                                                      Pexp_ident "group" (typing/signature_group.ml[97,3812+54]..[97,3812+59])
+                                                  ]
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[97,3812+61]..[97,3812+65])
+                                              Pexp_ident "next" (typing/signature_group.ml[97,3812+61]..[97,3812+65])
+                                        ]
+                                    <case>
+                                      pattern (typing/signature_group.ml[98,3878+10]..[98,3878+54])
+                                        Ppat_or
+                                        pattern (typing/signature_group.ml[98,3878+10]..[98,3878+14])
+                                          Ppat_construct "None" (typing/signature_group.ml[98,3878+10]..[98,3878+14])
+                                          None
+                                        pattern (typing/signature_group.ml[98,3878+17]..[98,3878+54])
+                                          Ppat_construct "Some" (typing/signature_group.ml[98,3878+17]..[98,3878+21])
+                                          Some
+                                            []
+                                            pattern (typing/signature_group.ml[98,3878+22]..[98,3878+54])
+                                              Ppat_tuple
+                                              [
+                                                pattern (typing/signature_group.ml[98,3878+23]..[98,3878+24])
+                                                  Ppat_any
+                                                pattern (typing/signature_group.ml[98,3878+26]..[98,3878+53])
+                                                  Ppat_open ""Types" (typing/signature_group.ml[98,3878+26]..[98,3878+31])"
+                                                  pattern (typing/signature_group.ml[98,3878+33]..[98,3878+52])
+                                                    Ppat_or
+                                                    pattern (typing/signature_group.ml[98,3878+33]..[98,3878+41])
+                                                      Ppat_construct "Trec_not" (typing/signature_group.ml[98,3878+33]..[98,3878+41])
+                                                      None
+                                                    pattern (typing/signature_group.ml[98,3878+42]..[98,3878+52])
+                                                      Ppat_construct "Trec_first" (typing/signature_group.ml[98,3878+42]..[98,3878+52])
+                                                      None
+                                              ]
+                                      expression (typing/signature_group.ml[99,3936+12]..[99,3936+36])
+                                        Pexp_apply
+                                        expression (typing/signature_group.ml[99,3936+12]..[99,3936+22])
+                                          Pexp_ident "cons_group" (typing/signature_group.ml[99,3936+12]..[99,3936+22])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[99,3936+23]..[99,3936+26])
+                                              Pexp_ident "pre" (typing/signature_group.ml[99,3936+23]..[99,3936+26])
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[99,3936+27]..[99,3936+32])
+                                              Pexp_ident "group" (typing/signature_group.ml[99,3936+27]..[99,3936+32])
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[99,3936+33]..[99,3936+36])
+                                              Pexp_ident "rem" (typing/signature_group.ml[99,3936+33]..[99,3936+36])
+                                        ]
+                                  ]
+                            ]
+              ]
+              expression (typing/signature_group.ml[101,3978+2]..[101,3978+19])
+                Pexp_apply
+                expression (typing/signature_group.ml[101,3978+2]..[101,3978+14])
+                  Pexp_ident "not_in_group" (typing/signature_group.ml[101,3978+2]..[101,3978+14])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/signature_group.ml[101,3978+15]..[101,3978+17])
+                      Pexp_construct "[]" (typing/signature_group.ml[101,3978+15]..[101,3978+17])
+                      None
+                  <arg>
+                  Nolabel
+                    expression (typing/signature_group.ml[101,3978+18]..[101,3978+19])
+                      Pexp_ident "x" (typing/signature_group.ml[101,3978+18]..[101,3978+19])
+                ]
+    ]
+  structure_item (typing/signature_group.ml[103,3999+0]..[103,3999+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[103,3999+4]..[103,3999+7])
+          Ppat_var "seq" (typing/signature_group.ml[103,3999+4]..[103,3999+7])
+        expression (typing/signature_group.ml[103,3999+8]..[103,3999+29]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/signature_group.ml[103,3999+8]..[103,3999+9])
+            Ppat_var "l" (typing/signature_group.ml[103,3999+8]..[103,3999+9])
+          expression (typing/signature_group.ml[103,3999+12]..[103,3999+29])
+            Pexp_apply
+            expression (typing/signature_group.ml[103,3999+12]..[103,3999+22])
+              Pexp_ident "Seq.unfold" (typing/signature_group.ml[103,3999+12]..[103,3999+22])
+            [
+              <arg>
+              Nolabel
+                expression (typing/signature_group.ml[103,3999+23]..[103,3999+27])
+                  Pexp_ident "next" (typing/signature_group.ml[103,3999+23]..[103,3999+27])
+              <arg>
+              Nolabel
+                expression (typing/signature_group.ml[103,3999+28]..[103,3999+29])
+                  Pexp_ident "l" (typing/signature_group.ml[103,3999+28]..[103,3999+29])
+            ]
+    ]
+  structure_item (typing/signature_group.ml[104,4029+0]..[104,4029+33])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[104,4029+4]..[104,4029+8])
+          Ppat_var "iter" (typing/signature_group.ml[104,4029+4]..[104,4029+8])
+        expression (typing/signature_group.ml[104,4029+9]..[104,4029+33]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/signature_group.ml[104,4029+9]..[104,4029+10])
+            Ppat_var "f" (typing/signature_group.ml[104,4029+9]..[104,4029+10])
+          expression (typing/signature_group.ml[104,4029+11]..[104,4029+33]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/signature_group.ml[104,4029+11]..[104,4029+12])
+              Ppat_var "l" (typing/signature_group.ml[104,4029+11]..[104,4029+12])
+            expression (typing/signature_group.ml[104,4029+15]..[104,4029+33])
+              Pexp_apply
+              expression (typing/signature_group.ml[104,4029+15]..[104,4029+23])
+                Pexp_ident "Seq.iter" (typing/signature_group.ml[104,4029+15]..[104,4029+23])
+              [
+                <arg>
+                Nolabel
+                  expression (typing/signature_group.ml[104,4029+24]..[104,4029+25])
+                    Pexp_ident "f" (typing/signature_group.ml[104,4029+24]..[104,4029+25])
+                <arg>
+                Nolabel
+                  expression (typing/signature_group.ml[104,4029+26]..[104,4029+33])
+                    Pexp_apply
+                    expression (typing/signature_group.ml[104,4029+27]..[104,4029+30])
+                      Pexp_ident "seq" (typing/signature_group.ml[104,4029+27]..[104,4029+30])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/signature_group.ml[104,4029+31]..[104,4029+32])
+                          Pexp_ident "l" (typing/signature_group.ml[104,4029+31]..[104,4029+32])
+                    ]
+              ]
+    ]
+  structure_item (typing/signature_group.ml[105,4063+0]..[105,4063+46])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[105,4063+4]..[105,4063+8])
+          Ppat_var "fold" (typing/signature_group.ml[105,4063+4]..[105,4063+8])
+        expression (typing/signature_group.ml[105,4063+9]..[105,4063+46]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/signature_group.ml[105,4063+9]..[105,4063+10])
+            Ppat_var "f" (typing/signature_group.ml[105,4063+9]..[105,4063+10])
+          expression (typing/signature_group.ml[105,4063+11]..[105,4063+46]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/signature_group.ml[105,4063+11]..[105,4063+14])
+              Ppat_var "acc" (typing/signature_group.ml[105,4063+11]..[105,4063+14])
+            expression (typing/signature_group.ml[105,4063+15]..[105,4063+46]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (typing/signature_group.ml[105,4063+15]..[105,4063+16])
+                Ppat_var "l" (typing/signature_group.ml[105,4063+15]..[105,4063+16])
+              expression (typing/signature_group.ml[105,4063+19]..[105,4063+46])
+                Pexp_apply
+                expression (typing/signature_group.ml[105,4063+19]..[105,4063+32])
+                  Pexp_ident "Seq.fold_left" (typing/signature_group.ml[105,4063+19]..[105,4063+32])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/signature_group.ml[105,4063+33]..[105,4063+34])
+                      Pexp_ident "f" (typing/signature_group.ml[105,4063+33]..[105,4063+34])
+                  <arg>
+                  Nolabel
+                    expression (typing/signature_group.ml[105,4063+35]..[105,4063+38])
+                      Pexp_ident "acc" (typing/signature_group.ml[105,4063+35]..[105,4063+38])
+                  <arg>
+                  Nolabel
+                    expression (typing/signature_group.ml[105,4063+39]..[105,4063+46])
+                      Pexp_apply
+                      expression (typing/signature_group.ml[105,4063+40]..[105,4063+43])
+                        Pexp_ident "seq" (typing/signature_group.ml[105,4063+40]..[105,4063+43])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/signature_group.ml[105,4063+44]..[105,4063+45])
+                            Pexp_ident "l" (typing/signature_group.ml[105,4063+44]..[105,4063+45])
+                      ]
+                ]
+    ]
+  structure_item (typing/signature_group.ml[107,4111+0]..[116,4483+16])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[107,4111+4]..[107,4111+19])
+          Ppat_var "update_rec_next" (typing/signature_group.ml[107,4111+4]..[107,4111+19])
+        expression (typing/signature_group.ml[107,4111+20]..[116,4483+16]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/signature_group.ml[107,4111+20]..[107,4111+22])
+            Ppat_var "rs" (typing/signature_group.ml[107,4111+20]..[107,4111+22])
+          expression (typing/signature_group.ml[107,4111+23]..[116,4483+16]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/signature_group.ml[107,4111+23]..[107,4111+26])
+              Ppat_var "rem" (typing/signature_group.ml[107,4111+23]..[107,4111+26])
+            expression (typing/signature_group.ml[108,4140+2]..[116,4483+16])
+              Pexp_match
+              expression (typing/signature_group.ml[108,4140+8]..[108,4140+10])
+                Pexp_ident "rs" (typing/signature_group.ml[108,4140+8]..[108,4140+10])
+              [
+                <case>
+                  pattern (typing/signature_group.ml[109,4156+4]..[109,4156+19])
+                    Ppat_construct "Types.Trec_next" (typing/signature_group.ml[109,4156+4]..[109,4156+19])
+                    None
+                  expression (typing/signature_group.ml[109,4156+23]..[109,4156+26])
+                    Pexp_ident "rem" (typing/signature_group.ml[109,4156+23]..[109,4156+26])
+                <case>
+                  pattern (typing/signature_group.ml[110,4183+4]..[110,4183+33])
+                    Ppat_open ""Types" (typing/signature_group.ml[110,4183+4]..[110,4183+9])"
+                    pattern (typing/signature_group.ml[110,4183+11]..[110,4183+32])
+                      Ppat_or
+                      pattern (typing/signature_group.ml[110,4183+11]..[110,4183+21])
+                        Ppat_construct "Trec_first" (typing/signature_group.ml[110,4183+11]..[110,4183+21])
+                        None
+                      pattern (typing/signature_group.ml[110,4183+24]..[110,4183+32])
+                        Ppat_construct "Trec_not" (typing/signature_group.ml[110,4183+24]..[110,4183+32])
+                        None
+                  expression (typing/signature_group.ml[111,4220+6]..[116,4483+16])
+                    Pexp_match
+                    expression (typing/signature_group.ml[111,4220+12]..[111,4220+15])
+                      Pexp_ident "rem" (typing/signature_group.ml[111,4220+12]..[111,4220+15])
+                    [
+                      <case>
+                        pattern (typing/signature_group.ml[112,4241+8]..[112,4241+57])
+                          Ppat_construct "::" (typing/signature_group.ml[112,4241+51]..[112,4241+53])
+                          Some
+                            []
+                            pattern (typing/signature_group.ml[112,4241+8]..[112,4241+57]) ghost
+                              Ppat_tuple
+                              [
+                                pattern (typing/signature_group.ml[112,4241+8]..[112,4241+50])
+                                  Ppat_construct "Types.Sig_type" (typing/signature_group.ml[112,4241+8]..[112,4241+22])
+                                  Some
+                                    []
+                                    pattern (typing/signature_group.ml[112,4241+23]..[112,4241+50])
+                                      Ppat_tuple
+                                      [
+                                        pattern (typing/signature_group.ml[112,4241+24]..[112,4241+26])
+                                          Ppat_var "id" (typing/signature_group.ml[112,4241+24]..[112,4241+26])
+                                        pattern (typing/signature_group.ml[112,4241+28]..[112,4241+32])
+                                          Ppat_var "decl" (typing/signature_group.ml[112,4241+28]..[112,4241+32])
+                                        pattern (typing/signature_group.ml[112,4241+34]..[112,4241+43])
+                                          Ppat_construct "Trec_next" (typing/signature_group.ml[112,4241+34]..[112,4241+43])
+                                          None
+                                        pattern (typing/signature_group.ml[112,4241+45]..[112,4241+49])
+                                          Ppat_var "priv" (typing/signature_group.ml[112,4241+45]..[112,4241+49])
+                                      ]
+                                pattern (typing/signature_group.ml[112,4241+54]..[112,4241+57])
+                                  Ppat_var "rem" (typing/signature_group.ml[112,4241+54]..[112,4241+57])
+                              ]
+                        expression (typing/signature_group.ml[113,4302+10]..[113,4302+52])
+                          Pexp_construct "::" (typing/signature_group.ml[113,4302+46]..[113,4302+48])
+                          Some
+                            expression (typing/signature_group.ml[113,4302+10]..[113,4302+52]) ghost
+                              Pexp_tuple
+                              [
+                                expression (typing/signature_group.ml[113,4302+10]..[113,4302+45])
+                                  Pexp_construct "Types.Sig_type" (typing/signature_group.ml[113,4302+10]..[113,4302+24])
+                                  Some
+                                    expression (typing/signature_group.ml[113,4302+25]..[113,4302+45])
+                                      Pexp_tuple
+                                      [
+                                        expression (typing/signature_group.ml[113,4302+26]..[113,4302+28])
+                                          Pexp_ident "id" (typing/signature_group.ml[113,4302+26]..[113,4302+28])
+                                        expression (typing/signature_group.ml[113,4302+30]..[113,4302+34])
+                                          Pexp_ident "decl" (typing/signature_group.ml[113,4302+30]..[113,4302+34])
+                                        expression (typing/signature_group.ml[113,4302+36]..[113,4302+38])
+                                          Pexp_ident "rs" (typing/signature_group.ml[113,4302+36]..[113,4302+38])
+                                        expression (typing/signature_group.ml[113,4302+40]..[113,4302+44])
+                                          Pexp_ident "priv" (typing/signature_group.ml[113,4302+40]..[113,4302+44])
+                                      ]
+                                expression (typing/signature_group.ml[113,4302+49]..[113,4302+52])
+                                  Pexp_ident "rem" (typing/signature_group.ml[113,4302+49]..[113,4302+52])
+                              ]
+                      <case>
+                        pattern (typing/signature_group.ml[114,4355+8]..[114,4355+64])
+                          Ppat_construct "::" (typing/signature_group.ml[114,4355+58]..[114,4355+60])
+                          Some
+                            []
+                            pattern (typing/signature_group.ml[114,4355+8]..[114,4355+64]) ghost
+                              Ppat_tuple
+                              [
+                                pattern (typing/signature_group.ml[114,4355+8]..[114,4355+57])
+                                  Ppat_construct "Types.Sig_module" (typing/signature_group.ml[114,4355+8]..[114,4355+24])
+                                  Some
+                                    []
+                                    pattern (typing/signature_group.ml[114,4355+25]..[114,4355+57])
+                                      Ppat_tuple
+                                      [
+                                        pattern (typing/signature_group.ml[114,4355+26]..[114,4355+28])
+                                          Ppat_var "id" (typing/signature_group.ml[114,4355+26]..[114,4355+28])
+                                        pattern (typing/signature_group.ml[114,4355+30]..[114,4355+34])
+                                          Ppat_var "pres" (typing/signature_group.ml[114,4355+30]..[114,4355+34])
+                                        pattern (typing/signature_group.ml[114,4355+36]..[114,4355+39])
+                                          Ppat_var "mty" (typing/signature_group.ml[114,4355+36]..[114,4355+39])
+                                        pattern (typing/signature_group.ml[114,4355+41]..[114,4355+50])
+                                          Ppat_construct "Trec_next" (typing/signature_group.ml[114,4355+41]..[114,4355+50])
+                                          None
+                                        pattern (typing/signature_group.ml[114,4355+52]..[114,4355+56])
+                                          Ppat_var "priv" (typing/signature_group.ml[114,4355+52]..[114,4355+56])
+                                      ]
+                                pattern (typing/signature_group.ml[114,4355+61]..[114,4355+64])
+                                  Ppat_var "rem" (typing/signature_group.ml[114,4355+61]..[114,4355+64])
+                              ]
+                        expression (typing/signature_group.ml[115,4423+10]..[115,4423+59])
+                          Pexp_construct "::" (typing/signature_group.ml[115,4423+53]..[115,4423+55])
+                          Some
+                            expression (typing/signature_group.ml[115,4423+10]..[115,4423+59]) ghost
+                              Pexp_tuple
+                              [
+                                expression (typing/signature_group.ml[115,4423+10]..[115,4423+52])
+                                  Pexp_construct "Types.Sig_module" (typing/signature_group.ml[115,4423+10]..[115,4423+26])
+                                  Some
+                                    expression (typing/signature_group.ml[115,4423+27]..[115,4423+52])
+                                      Pexp_tuple
+                                      [
+                                        expression (typing/signature_group.ml[115,4423+28]..[115,4423+30])
+                                          Pexp_ident "id" (typing/signature_group.ml[115,4423+28]..[115,4423+30])
+                                        expression (typing/signature_group.ml[115,4423+32]..[115,4423+36])
+                                          Pexp_ident "pres" (typing/signature_group.ml[115,4423+32]..[115,4423+36])
+                                        expression (typing/signature_group.ml[115,4423+38]..[115,4423+41])
+                                          Pexp_ident "mty" (typing/signature_group.ml[115,4423+38]..[115,4423+41])
+                                        expression (typing/signature_group.ml[115,4423+43]..[115,4423+45])
+                                          Pexp_ident "rs" (typing/signature_group.ml[115,4423+43]..[115,4423+45])
+                                        expression (typing/signature_group.ml[115,4423+47]..[115,4423+51])
+                                          Pexp_ident "priv" (typing/signature_group.ml[115,4423+47]..[115,4423+51])
+                                      ]
+                                expression (typing/signature_group.ml[115,4423+56]..[115,4423+59])
+                                  Pexp_ident "rem" (typing/signature_group.ml[115,4423+56]..[115,4423+59])
+                              ]
+                      <case>
+                        pattern (typing/signature_group.ml[116,4483+8]..[116,4483+9])
+                          Ppat_any
+                        expression (typing/signature_group.ml[116,4483+13]..[116,4483+16])
+                          Pexp_ident "rem" (typing/signature_group.ml[116,4483+13]..[116,4483+16])
+                    ]
+              ]
+    ]
+  structure_item (typing/signature_group.ml[118,4501+0]..[121,4595+1])
+    Pstr_type Rec
+    [
+      type_declaration "in_place_patch" (typing/signature_group.ml[118,4501+5]..[118,4501+19]) (typing/signature_group.ml[118,4501+0]..[121,4595+1])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_record
+            [
+              (typing/signature_group.ml[119,4525+2]..[119,4525+26])
+                Immutable
+                "ghosts" (typing/signature_group.ml[119,4525+2]..[119,4525+8])                core_type (typing/signature_group.ml[119,4525+10]..[119,4525+25])
+                  Ptyp_constr "Types.signature" (typing/signature_group.ml[119,4525+10]..[119,4525+25])
+                  []
+              (typing/signature_group.ml[120,4552+2]..[120,4552+42])
+                Immutable
+                "replace_by" (typing/signature_group.ml[120,4552+2]..[120,4552+12])                core_type (typing/signature_group.ml[120,4552+14]..[120,4552+41])
+                  Ptyp_constr "option" (typing/signature_group.ml[120,4552+35]..[120,4552+41])
+                  [
+                    core_type (typing/signature_group.ml[120,4552+14]..[120,4552+34])
+                      Ptyp_constr "Types.signature_item" (typing/signature_group.ml[120,4552+14]..[120,4552+34])
+                      []
+                  ]
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (typing/signature_group.ml[124,4599+0]..[155,5822+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/signature_group.ml[124,4599+4]..[124,4599+20])
+          Ppat_var "replace_in_place" (typing/signature_group.ml[124,4599+4]..[124,4599+20])
+        expression (typing/signature_group.ml[124,4599+21]..[155,5822+20]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/signature_group.ml[124,4599+21]..[124,4599+22])
+            Ppat_var "f" (typing/signature_group.ml[124,4599+21]..[124,4599+22])
+          expression (typing/signature_group.ml[124,4599+23]..[155,5822+20]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/signature_group.ml[124,4599+23]..[124,4599+25])
+              Ppat_var "sg" (typing/signature_group.ml[124,4599+23]..[124,4599+25])
+            expression (typing/signature_group.ml[125,4627+2]..[155,5822+20])
+              Pexp_let Rec
+              [
+                <def>
+                  pattern (typing/signature_group.ml[125,4627+10]..[125,4627+20])
+                    Ppat_var "next_group" (typing/signature_group.ml[125,4627+10]..[125,4627+20])
+                  expression (typing/signature_group.ml[125,4627+21]..[130,4811+36]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (typing/signature_group.ml[125,4627+21]..[125,4627+22])
+                      Ppat_var "f" (typing/signature_group.ml[125,4627+21]..[125,4627+22])
+                    expression (typing/signature_group.ml[125,4627+23]..[130,4811+36]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (typing/signature_group.ml[125,4627+23]..[125,4627+29])
+                        Ppat_var "before" (typing/signature_group.ml[125,4627+23]..[125,4627+29])
+                      expression (typing/signature_group.ml[125,4627+30]..[130,4811+36]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (typing/signature_group.ml[125,4627+30]..[125,4627+39])
+                          Ppat_var "signature" (typing/signature_group.ml[125,4627+30]..[125,4627+39])
+                        expression (typing/signature_group.ml[126,4669+4]..[130,4811+36])
+                          Pexp_match
+                          expression (typing/signature_group.ml[126,4669+10]..[126,4669+24])
+                            Pexp_apply
+                            expression (typing/signature_group.ml[126,4669+10]..[126,4669+14])
+                              Pexp_ident "next" (typing/signature_group.ml[126,4669+10]..[126,4669+14])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/signature_group.ml[126,4669+15]..[126,4669+24])
+                                  Pexp_ident "signature" (typing/signature_group.ml[126,4669+15]..[126,4669+24])
+                            ]
+                          [
+                            <case>
+                              pattern (typing/signature_group.ml[127,4699+6]..[127,4699+10])
+                                Ppat_construct "None" (typing/signature_group.ml[127,4699+6]..[127,4699+10])
+                                None
+                              expression (typing/signature_group.ml[127,4699+14]..[127,4699+18])
+                                Pexp_construct "None" (typing/signature_group.ml[127,4699+14]..[127,4699+18])
+                                None
+                            <case>
+                              pattern (typing/signature_group.ml[128,4718+6]..[128,4718+19])
+                                Ppat_construct "Some" (typing/signature_group.ml[128,4718+6]..[128,4718+10])
+                                Some
+                                  []
+                                  pattern (typing/signature_group.ml[128,4718+10]..[128,4718+19])
+                                    Ppat_tuple
+                                    [
+                                      pattern (typing/signature_group.ml[128,4718+11]..[128,4718+15])
+                                        Ppat_var "item" (typing/signature_group.ml[128,4718+11]..[128,4718+15])
+                                      pattern (typing/signature_group.ml[128,4718+16]..[128,4718+18])
+                                        Ppat_var "sg" (typing/signature_group.ml[128,4718+16]..[128,4718+18])
+                                    ]
+                              expression (typing/signature_group.ml[129,4741+8]..[130,4811+36])
+                                Pexp_apply
+                                expression (typing/signature_group.ml[129,4741+8]..[129,4741+18])
+                                  Pexp_ident "core_group" (typing/signature_group.ml[129,4741+8]..[129,4741+18])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/signature_group.ml[129,4741+19]..[129,4741+20])
+                                      Pexp_ident "f" (typing/signature_group.ml[129,4741+19]..[129,4741+20])
+                                  <arg>
+                                  Labelled "before"
+                                    expression (typing/signature_group.ml[129,4741+22]..[129,4741+28])
+                                      Pexp_ident "before" (typing/signature_group.ml[129,4741+22]..[129,4741+28])
+                                  <arg>
+                                  Labelled "ghosts"
+                                    expression (typing/signature_group.ml[129,4741+37]..[129,4741+52])
+                                      Pexp_field
+                                      expression (typing/signature_group.ml[129,4741+37]..[129,4741+41])
+                                        Pexp_ident "item" (typing/signature_group.ml[129,4741+37]..[129,4741+41])
+                                      "pre_ghosts" (typing/signature_group.ml[129,4741+42]..[129,4741+52])
+                                  <arg>
+                                  Labelled "before_group"
+                                    expression (typing/signature_group.ml[129,4741+67]..[129,4741+69])
+                                      Pexp_construct "[]" (typing/signature_group.ml[129,4741+67]..[129,4741+69])
+                                      None
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/signature_group.ml[130,4811+10]..[130,4811+32])
+                                      Pexp_apply
+                                      expression (typing/signature_group.ml[130,4811+11]..[130,4811+20])
+                                        Pexp_ident "rec_items" (typing/signature_group.ml[130,4811+11]..[130,4811+20])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/signature_group.ml[130,4811+21]..[130,4811+31])
+                                            Pexp_field
+                                            expression (typing/signature_group.ml[130,4811+21]..[130,4811+25])
+                                              Pexp_ident "item" (typing/signature_group.ml[130,4811+21]..[130,4811+25])
+                                            "group" (typing/signature_group.ml[130,4811+26]..[130,4811+31])
+                                      ]
+                                  <arg>
+                                  Labelled "sg"
+                                    expression (typing/signature_group.ml[130,4811+34]..[130,4811+36])
+                                      Pexp_ident "sg" (typing/signature_group.ml[130,4811+34]..[130,4811+36])
+                                ]
+                          ]
+                <def>
+                  pattern (typing/signature_group.ml[131,4848+6]..[131,4848+16])
+                    Ppat_var "core_group" (typing/signature_group.ml[131,4848+6]..[131,4848+16])
+                  expression (typing/signature_group.ml[131,4848+17]..[153,5756+60]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (typing/signature_group.ml[131,4848+17]..[131,4848+18])
+                      Ppat_var "f" (typing/signature_group.ml[131,4848+17]..[131,4848+18])
+                    expression (typing/signature_group.ml[131,4848+19]..[153,5756+60]) ghost
+                      Pexp_fun
+                      Labelled "before"
+                      None
+                      pattern (typing/signature_group.ml[131,4848+20]..[131,4848+26])
+                        Ppat_var "before" (typing/signature_group.ml[131,4848+20]..[131,4848+26])
+                      expression (typing/signature_group.ml[131,4848+27]..[153,5756+60]) ghost
+                        Pexp_fun
+                        Labelled "ghosts"
+                        None
+                        pattern (typing/signature_group.ml[131,4848+28]..[131,4848+34])
+                          Ppat_var "ghosts" (typing/signature_group.ml[131,4848+28]..[131,4848+34])
+                        expression (typing/signature_group.ml[131,4848+35]..[153,5756+60]) ghost
+                          Pexp_fun
+                          Labelled "before_group"
+                          None
+                          pattern (typing/signature_group.ml[131,4848+36]..[131,4848+48])
+                            Ppat_var "before_group" (typing/signature_group.ml[131,4848+36]..[131,4848+48])
+                          expression (typing/signature_group.ml[131,4848+49]..[153,5756+60]) ghost
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (typing/signature_group.ml[131,4848+49]..[131,4848+56])
+                              Ppat_var "current" (typing/signature_group.ml[131,4848+49]..[131,4848+56])
+                            expression (typing/signature_group.ml[131,4848+57]..[153,5756+60]) ghost
+                              Pexp_fun
+                              Labelled "sg"
+                              None
+                              pattern (typing/signature_group.ml[131,4848+58]..[131,4848+60])
+                                Ppat_var "sg" (typing/signature_group.ml[131,4848+58]..[131,4848+60])
+                              expression (typing/signature_group.ml[132,4911+4]..[153,5756+60])
+                                Pexp_let Nonrec
+                                [
+                                  <def>
+                                    pattern (typing/signature_group.ml[132,4911+8]..[132,4911+14])
+                                      Ppat_var "commit" (typing/signature_group.ml[132,4911+8]..[132,4911+14])
+                                    expression (typing/signature_group.ml[132,4911+15]..[132,4911+68]) ghost
+                                      Pexp_fun
+                                      Nolabel
+                                      None
+                                      pattern (typing/signature_group.ml[132,4911+15]..[132,4911+21])
+                                        Ppat_var "ghosts" (typing/signature_group.ml[132,4911+15]..[132,4911+21])
+                                      expression (typing/signature_group.ml[132,4911+24]..[132,4911+68])
+                                        Pexp_apply
+                                        expression (typing/signature_group.ml[132,4911+37]..[132,4911+38])
+                                          Pexp_ident "@" (typing/signature_group.ml[132,4911+37]..[132,4911+38])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[132,4911+24]..[132,4911+36])
+                                              Pexp_ident "before_group" (typing/signature_group.ml[132,4911+24]..[132,4911+36])
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[132,4911+39]..[132,4911+68])
+                                              Pexp_apply
+                                              expression (typing/signature_group.ml[132,4911+39]..[132,4911+54])
+                                                Pexp_ident "List.rev_append" (typing/signature_group.ml[132,4911+39]..[132,4911+54])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (typing/signature_group.ml[132,4911+55]..[132,4911+61])
+                                                    Pexp_ident "ghosts" (typing/signature_group.ml[132,4911+55]..[132,4911+61])
+                                                <arg>
+                                                Nolabel
+                                                  expression (typing/signature_group.ml[132,4911+62]..[132,4911+68])
+                                                    Pexp_ident "before" (typing/signature_group.ml[132,4911+62]..[132,4911+68])
+                                              ]
+                                        ]
+                                ]
+                                expression (typing/signature_group.ml[133,4983+4]..[153,5756+60])
+                                  Pexp_match
+                                  expression (typing/signature_group.ml[133,4983+10]..[133,4983+17])
+                                    Pexp_ident "current" (typing/signature_group.ml[133,4983+10]..[133,4983+17])
+                                  [
+                                    <case>
+                                      pattern (typing/signature_group.ml[134,5006+6]..[134,5006+8])
+                                        Ppat_construct "[]" (typing/signature_group.ml[134,5006+6]..[134,5006+8])
+                                        None
+                                      expression (typing/signature_group.ml[134,5006+12]..[134,5006+43])
+                                        Pexp_apply
+                                        expression (typing/signature_group.ml[134,5006+12]..[134,5006+22])
+                                          Pexp_ident "next_group" (typing/signature_group.ml[134,5006+12]..[134,5006+22])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[134,5006+23]..[134,5006+24])
+                                              Pexp_ident "f" (typing/signature_group.ml[134,5006+23]..[134,5006+24])
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[134,5006+25]..[134,5006+40])
+                                              Pexp_apply
+                                              expression (typing/signature_group.ml[134,5006+26]..[134,5006+32])
+                                                Pexp_ident "commit" (typing/signature_group.ml[134,5006+26]..[134,5006+32])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (typing/signature_group.ml[134,5006+33]..[134,5006+39])
+                                                    Pexp_ident "ghosts" (typing/signature_group.ml[134,5006+33]..[134,5006+39])
+                                              ]
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/signature_group.ml[134,5006+41]..[134,5006+43])
+                                              Pexp_ident "sg" (typing/signature_group.ml[134,5006+41]..[134,5006+43])
+                                        ]
+                                    <case>
+                                      pattern (typing/signature_group.ml[135,5050+6]..[135,5050+12])
+                                        Ppat_construct "::" (typing/signature_group.ml[135,5050+8]..[135,5050+10])
+                                        Some
+                                          []
+                                          pattern (typing/signature_group.ml[135,5050+6]..[135,5050+12]) ghost
+                                            Ppat_tuple
+                                            [
+                                              pattern (typing/signature_group.ml[135,5050+6]..[135,5050+7])
+                                                Ppat_var "a" (typing/signature_group.ml[135,5050+6]..[135,5050+7])
+                                              pattern (typing/signature_group.ml[135,5050+11]..[135,5050+12])
+                                                Ppat_var "q" (typing/signature_group.ml[135,5050+11]..[135,5050+12])
+                                            ]
+                                      expression (typing/signature_group.ml[136,5066+8]..[153,5756+60])
+                                        Pexp_match
+                                        expression (typing/signature_group.ml[136,5066+14]..[136,5066+29])
+                                          Pexp_apply
+                                          expression (typing/signature_group.ml[136,5066+14]..[136,5066+15])
+                                            Pexp_ident "f" (typing/signature_group.ml[136,5066+14]..[136,5066+15])
+                                          [
+                                            <arg>
+                                            Labelled "ghosts"
+                                              expression (typing/signature_group.ml[136,5066+17]..[136,5066+23])
+                                                Pexp_ident "ghosts" (typing/signature_group.ml[136,5066+17]..[136,5066+23])
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/signature_group.ml[136,5066+24]..[136,5066+29])
+                                                Pexp_field
+                                                expression (typing/signature_group.ml[136,5066+24]..[136,5066+25])
+                                                  Pexp_ident "a" (typing/signature_group.ml[136,5066+24]..[136,5066+25])
+                                                "src" (typing/signature_group.ml[136,5066+26]..[136,5066+29])
+                                          ]
+                                        [
+                                          <case>
+                                            pattern (typing/signature_group.ml[137,5101+10]..[137,5101+43])
+                                              Ppat_construct "Some" (typing/signature_group.ml[137,5101+10]..[137,5101+14])
+                                              Some
+                                                []
+                                                pattern (typing/signature_group.ml[137,5101+15]..[137,5101+43])
+                                                  Ppat_tuple
+                                                  [
+                                                    pattern (typing/signature_group.ml[137,5101+16]..[137,5101+20])
+                                                      Ppat_var "info" (typing/signature_group.ml[137,5101+16]..[137,5101+20])
+                                                    pattern (typing/signature_group.ml[137,5101+22]..[137,5101+42])
+                                                      Ppat_record Closed
+                                                      [
+                                                        "ghosts" (typing/signature_group.ml[137,5101+23]..[137,5101+29]) ghost
+                                                          pattern (typing/signature_group.ml[137,5101+23]..[137,5101+29])
+                                                            Ppat_var "ghosts" (typing/signature_group.ml[137,5101+23]..[137,5101+29])
+                                                        "replace_by" (typing/signature_group.ml[137,5101+31]..[137,5101+41]) ghost
+                                                          pattern (typing/signature_group.ml[137,5101+31]..[137,5101+41])
+                                                            Ppat_var "replace_by" (typing/signature_group.ml[137,5101+31]..[137,5101+41])
+                                                      ]
+                                                  ]
+                                            expression (typing/signature_group.ml[138,5148+12]..[148,5597+26])
+                                              Pexp_let Nonrec
+                                              [
+                                                <def>
+                                                  pattern (typing/signature_group.ml[138,5148+16]..[138,5148+21])
+                                                    Ppat_var "after" (typing/signature_group.ml[138,5148+16]..[138,5148+21])
+                                                  expression (typing/signature_group.ml[138,5148+24]..[138,5148+54])
+                                                    Pexp_apply
+                                                    expression (typing/signature_group.ml[138,5148+50]..[138,5148+51])
+                                                      Pexp_ident "@" (typing/signature_group.ml[138,5148+50]..[138,5148+51])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (typing/signature_group.ml[138,5148+24]..[138,5148+49])
+                                                          Pexp_apply
+                                                          expression (typing/signature_group.ml[138,5148+24]..[138,5148+39])
+                                                            Pexp_ident "List.concat_map" (typing/signature_group.ml[138,5148+24]..[138,5148+39])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (typing/signature_group.ml[138,5148+40]..[138,5148+47])
+                                                                Pexp_ident "flatten" (typing/signature_group.ml[138,5148+40]..[138,5148+47])
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (typing/signature_group.ml[138,5148+48]..[138,5148+49])
+                                                                Pexp_ident "q" (typing/signature_group.ml[138,5148+48]..[138,5148+49])
+                                                          ]
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (typing/signature_group.ml[138,5148+52]..[138,5148+54])
+                                                          Pexp_ident "sg" (typing/signature_group.ml[138,5148+52]..[138,5148+54])
+                                                    ]
+                                              ]
+                                              expression (typing/signature_group.ml[139,5206+12]..[148,5597+26])
+                                                Pexp_let Nonrec
+                                                [
+                                                  <def>
+                                                    pattern (typing/signature_group.ml[139,5206+16]..[139,5206+21])
+                                                      Ppat_var "after" (typing/signature_group.ml[139,5206+16]..[139,5206+21])
+                                                    expression (typing/signature_group.ml[139,5206+24]..[141,5322+61])
+                                                      Pexp_match
+                                                      expression (typing/signature_group.ml[139,5206+30]..[139,5206+65])
+                                                        Pexp_tuple
+                                                        [
+                                                          expression (typing/signature_group.ml[139,5206+30]..[139,5206+53])
+                                                            Pexp_apply
+                                                            expression (typing/signature_group.ml[139,5206+30]..[139,5206+47])
+                                                              Pexp_ident "recursive_sigitem" (typing/signature_group.ml[139,5206+30]..[139,5206+47])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/signature_group.ml[139,5206+48]..[139,5206+53])
+                                                                  Pexp_field
+                                                                  expression (typing/signature_group.ml[139,5206+48]..[139,5206+49])
+                                                                    Pexp_ident "a" (typing/signature_group.ml[139,5206+48]..[139,5206+49])
+                                                                  "src" (typing/signature_group.ml[139,5206+50]..[139,5206+53])
+                                                            ]
+                                                          expression (typing/signature_group.ml[139,5206+55]..[139,5206+65])
+                                                            Pexp_ident "replace_by" (typing/signature_group.ml[139,5206+55]..[139,5206+65])
+                                                        ]
+                                                      [
+                                                        <case>
+                                                          pattern (typing/signature_group.ml[140,5277+16]..[140,5277+35])
+                                                            Ppat_or
+                                                            pattern (typing/signature_group.ml[140,5277+16]..[140,5277+23])
+                                                              Ppat_tuple
+                                                              [
+                                                                pattern (typing/signature_group.ml[140,5277+16]..[140,5277+20])
+                                                                  Ppat_construct "None" (typing/signature_group.ml[140,5277+16]..[140,5277+20])
+                                                                  None
+                                                                pattern (typing/signature_group.ml[140,5277+22]..[140,5277+23])
+                                                                  Ppat_any
+                                                              ]
+                                                            pattern (typing/signature_group.ml[140,5277+26]..[140,5277+35])
+                                                              Ppat_tuple
+                                                              [
+                                                                pattern (typing/signature_group.ml[140,5277+26]..[140,5277+27])
+                                                                  Ppat_any
+                                                                pattern (typing/signature_group.ml[140,5277+29]..[140,5277+35])
+                                                                  Ppat_construct "Some" (typing/signature_group.ml[140,5277+29]..[140,5277+33])
+                                                                  Some
+                                                                    []
+                                                                    pattern (typing/signature_group.ml[140,5277+34]..[140,5277+35])
+                                                                      Ppat_any
+                                                              ]
+                                                          expression (typing/signature_group.ml[140,5277+39]..[140,5277+44])
+                                                            Pexp_ident "after" (typing/signature_group.ml[140,5277+39]..[140,5277+44])
+                                                        <case>
+                                                          pattern (typing/signature_group.ml[141,5322+16]..[141,5322+33])
+                                                            Ppat_tuple
+                                                            [
+                                                              pattern (typing/signature_group.ml[141,5322+16]..[141,5322+27])
+                                                                Ppat_construct "Some" (typing/signature_group.ml[141,5322+16]..[141,5322+20])
+                                                                Some
+                                                                  []
+                                                                  pattern (typing/signature_group.ml[141,5322+21]..[141,5322+27])
+                                                                    Ppat_tuple
+                                                                    [
+                                                                      pattern (typing/signature_group.ml[141,5322+22]..[141,5322+23])
+Ppat_any
+                                                                      pattern (typing/signature_group.ml[141,5322+24]..[141,5322+26])
+Ppat_var "rs" (typing/signature_group.ml[141,5322+24]..[141,5322+26])
+                                                                    ]
+                                                              pattern (typing/signature_group.ml[141,5322+29]..[141,5322+33])
+                                                                Ppat_construct "None" (typing/signature_group.ml[141,5322+29]..[141,5322+33])
+                                                                None
+                                                            ]
+                                                          expression (typing/signature_group.ml[141,5322+37]..[141,5322+61])
+                                                            Pexp_apply
+                                                            expression (typing/signature_group.ml[141,5322+37]..[141,5322+52])
+                                                              Pexp_ident "update_rec_next" (typing/signature_group.ml[141,5322+37]..[141,5322+52])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/signature_group.ml[141,5322+53]..[141,5322+55])
+                                                                  Pexp_ident "rs" (typing/signature_group.ml[141,5322+53]..[141,5322+55])
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/signature_group.ml[141,5322+56]..[141,5322+61])
+                                                                  Pexp_ident "after" (typing/signature_group.ml[141,5322+56]..[141,5322+61])
+                                                            ]
+                                                      ]
+                                                ]
+                                                expression (typing/signature_group.ml[143,5399+12]..[148,5597+26])
+                                                  Pexp_let Nonrec
+                                                  [
+                                                    <def>
+                                                      pattern (typing/signature_group.ml[143,5399+16]..[143,5399+22])
+                                                        Ppat_var "before" (typing/signature_group.ml[143,5399+16]..[143,5399+22])
+                                                      expression (typing/signature_group.ml[143,5399+25]..[145,5484+44])
+                                                        Pexp_match
+                                                        expression (typing/signature_group.ml[143,5399+31]..[143,5399+41])
+                                                          Pexp_ident "replace_by" (typing/signature_group.ml[143,5399+31]..[143,5399+41])
+                                                        [
+                                                          <case>
+                                                            pattern (typing/signature_group.ml[144,5446+16]..[144,5446+20])
+                                                              Ppat_construct "None" (typing/signature_group.ml[144,5446+16]..[144,5446+20])
+                                                              None
+                                                            expression (typing/signature_group.ml[144,5446+24]..[144,5446+37])
+                                                              Pexp_apply
+                                                              expression (typing/signature_group.ml[144,5446+24]..[144,5446+30])
+                                                                Pexp_ident "commit" (typing/signature_group.ml[144,5446+24]..[144,5446+30])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (typing/signature_group.ml[144,5446+31]..[144,5446+37])
+                                                                    Pexp_ident "ghosts" (typing/signature_group.ml[144,5446+31]..[144,5446+37])
+                                                              ]
+                                                          <case>
+                                                            pattern (typing/signature_group.ml[145,5484+16]..[145,5484+22])
+                                                              Ppat_construct "Some" (typing/signature_group.ml[145,5484+16]..[145,5484+20])
+                                                              Some
+                                                                []
+                                                                pattern (typing/signature_group.ml[145,5484+21]..[145,5484+22])
+                                                                  Ppat_var "x" (typing/signature_group.ml[145,5484+21]..[145,5484+22])
+                                                            expression (typing/signature_group.ml[145,5484+26]..[145,5484+44])
+                                                              Pexp_construct "::" (typing/signature_group.ml[145,5484+28]..[145,5484+30])
+                                                              Some
+                                                                expression (typing/signature_group.ml[145,5484+26]..[145,5484+44]) ghost
+                                                                  Pexp_tuple
+                                                                  [
+                                                                    expression (typing/signature_group.ml[145,5484+26]..[145,5484+27])
+                                                                      Pexp_ident "x" (typing/signature_group.ml[145,5484+26]..[145,5484+27])
+                                                                    expression (typing/signature_group.ml[145,5484+31]..[145,5484+44])
+                                                                      Pexp_apply
+                                                                      expression (typing/signature_group.ml[145,5484+31]..[145,5484+37])
+Pexp_ident "commit" (typing/signature_group.ml[145,5484+31]..[145,5484+37])
+                                                                      [
+<arg>
+Nolabel
+  expression (typing/signature_group.ml[145,5484+38]..[145,5484+44])
+    Pexp_ident "ghosts" (typing/signature_group.ml[145,5484+38]..[145,5484+44])
+                                                                      ]
+                                                                  ]
+                                                        ]
+                                                  ]
+                                                  expression (typing/signature_group.ml[147,5544+12]..[148,5597+26])
+                                                    Pexp_let Nonrec
+                                                    [
+                                                      <def>
+                                                        pattern (typing/signature_group.ml[147,5544+16]..[147,5544+18])
+                                                          Ppat_var "sg" (typing/signature_group.ml[147,5544+16]..[147,5544+18])
+                                                        expression (typing/signature_group.ml[147,5544+21]..[147,5544+49])
+                                                          Pexp_apply
+                                                          expression (typing/signature_group.ml[147,5544+21]..[147,5544+36])
+                                                            Pexp_ident "List.rev_append" (typing/signature_group.ml[147,5544+21]..[147,5544+36])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (typing/signature_group.ml[147,5544+37]..[147,5544+43])
+                                                                Pexp_ident "before" (typing/signature_group.ml[147,5544+37]..[147,5544+43])
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (typing/signature_group.ml[147,5544+44]..[147,5544+49])
+                                                                Pexp_ident "after" (typing/signature_group.ml[147,5544+44]..[147,5544+49])
+                                                          ]
+                                                    ]
+                                                    expression (typing/signature_group.ml[148,5597+12]..[148,5597+26])
+                                                      Pexp_construct "Some" (typing/signature_group.ml[148,5597+12]..[148,5597+16])
+                                                      Some
+                                                        expression (typing/signature_group.ml[148,5597+16]..[148,5597+26])
+                                                          Pexp_tuple
+                                                          [
+                                                            expression (typing/signature_group.ml[148,5597+17]..[148,5597+21])
+                                                              Pexp_ident "info" (typing/signature_group.ml[148,5597+17]..[148,5597+21])
+                                                            expression (typing/signature_group.ml[148,5597+23]..[148,5597+25])
+                                                              Pexp_ident "sg" (typing/signature_group.ml[148,5597+23]..[148,5597+25])
+                                                          ]
+                                          <case>
+                                            pattern (typing/signature_group.ml[149,5624+10]..[149,5624+14])
+                                              Ppat_construct "None" (typing/signature_group.ml[149,5624+10]..[149,5624+14])
+                                              None
+                                            expression (typing/signature_group.ml[150,5642+12]..[153,5756+60])
+                                              Pexp_let Nonrec
+                                              [
+                                                <def>
+                                                  pattern (typing/signature_group.ml[150,5642+16]..[150,5642+28])
+                                                    Ppat_var "before_group" (typing/signature_group.ml[150,5642+16]..[150,5642+28])
+                                                  expression (typing/signature_group.ml[151,5673+14]..[151,5673+67])
+                                                    Pexp_apply
+                                                    expression (typing/signature_group.ml[151,5673+14]..[151,5673+29])
+                                                      Pexp_ident "List.rev_append" (typing/signature_group.ml[151,5673+14]..[151,5673+29])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (typing/signature_group.ml[151,5673+30]..[151,5673+43])
+                                                          Pexp_field
+                                                          expression (typing/signature_group.ml[151,5673+30]..[151,5673+31])
+                                                            Pexp_ident "a" (typing/signature_group.ml[151,5673+30]..[151,5673+31])
+                                                          "post_ghosts" (typing/signature_group.ml[151,5673+32]..[151,5673+43])
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (typing/signature_group.ml[151,5673+44]..[151,5673+67])
+                                                          Pexp_construct "::" (typing/signature_group.ml[151,5673+51]..[151,5673+53])
+                                                          Some
+                                                            expression (typing/signature_group.ml[151,5673+45]..[151,5673+66]) ghost
+                                                              Pexp_tuple
+                                                              [
+                                                                expression (typing/signature_group.ml[151,5673+45]..[151,5673+50])
+                                                                  Pexp_field
+                                                                  expression (typing/signature_group.ml[151,5673+45]..[151,5673+46])
+                                                                    Pexp_ident "a" (typing/signature_group.ml[151,5673+45]..[151,5673+46])
+                                                                  "src" (typing/signature_group.ml[151,5673+47]..[151,5673+50])
+                                                                expression (typing/signature_group.ml[151,5673+54]..[151,5673+66])
+                                                                  Pexp_ident "before_group" (typing/signature_group.ml[151,5673+54]..[151,5673+66])
+                                                              ]
+                                                    ]
+                                              ]
+                                              expression (typing/signature_group.ml[153,5756+12]..[153,5756+60])
+                                                Pexp_apply
+                                                expression (typing/signature_group.ml[153,5756+12]..[153,5756+22])
+                                                  Pexp_ident "core_group" (typing/signature_group.ml[153,5756+12]..[153,5756+22])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/signature_group.ml[153,5756+23]..[153,5756+24])
+                                                      Pexp_ident "f" (typing/signature_group.ml[153,5756+23]..[153,5756+24])
+                                                  <arg>
+                                                  Labelled "before"
+                                                    expression (typing/signature_group.ml[153,5756+26]..[153,5756+32])
+                                                      Pexp_ident "before" (typing/signature_group.ml[153,5756+26]..[153,5756+32])
+                                                  <arg>
+                                                  Labelled "ghosts"
+                                                    expression (typing/signature_group.ml[153,5756+34]..[153,5756+40])
+                                                      Pexp_ident "ghosts" (typing/signature_group.ml[153,5756+34]..[153,5756+40])
+                                                  <arg>
+                                                  Labelled "before_group"
+                                                    expression (typing/signature_group.ml[153,5756+42]..[153,5756+54])
+                                                      Pexp_ident "before_group" (typing/signature_group.ml[153,5756+42]..[153,5756+54])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/signature_group.ml[153,5756+55]..[153,5756+56])
+                                                      Pexp_ident "q" (typing/signature_group.ml[153,5756+55]..[153,5756+56])
+                                                  <arg>
+                                                  Labelled "sg"
+                                                    expression (typing/signature_group.ml[153,5756+58]..[153,5756+60])
+                                                      Pexp_ident "sg" (typing/signature_group.ml[153,5756+58]..[153,5756+60])
+                                                ]
+                                        ]
+                                  ]
+              ]
+              expression (typing/signature_group.ml[155,5822+2]..[155,5822+20])
+                Pexp_apply
+                expression (typing/signature_group.ml[155,5822+2]..[155,5822+12])
+                  Pexp_ident "next_group" (typing/signature_group.ml[155,5822+2]..[155,5822+12])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/signature_group.ml[155,5822+13]..[155,5822+14])
+                      Pexp_ident "f" (typing/signature_group.ml[155,5822+13]..[155,5822+14])
+                  <arg>
+                  Nolabel
+                    expression (typing/signature_group.ml[155,5822+15]..[155,5822+17])
+                      Pexp_construct "[]" (typing/signature_group.ml[155,5822+15]..[155,5822+17])
+                      None
+                  <arg>
+                  Nolabel
+                    expression (typing/signature_group.ml[155,5822+18]..[155,5822+20])
+                      Pexp_ident "sg" (typing/signature_group.ml[155,5822+18]..[155,5822+20])
+                ]
+    ]
+]
+

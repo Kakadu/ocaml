@@ -1,0 +1,270 @@
+[
+  structure_item (asmcomp/s390x/scheduling.ml[21,1317+0]..[21,1317+9])
+    Pstr_open Fresh
+    module_expr (asmcomp/s390x/scheduling.ml[21,1317+5]..[21,1317+9])
+      Pmod_ident "Arch" (asmcomp/s390x/scheduling.ml[21,1317+5]..[21,1317+9])
+  structure_item (asmcomp/s390x/scheduling.ml[22,1327+0]..[22,1327+9])
+    Pstr_open Fresh
+    module_expr (asmcomp/s390x/scheduling.ml[22,1327+5]..[22,1327+9])
+      Pmod_ident "Mach" (asmcomp/s390x/scheduling.ml[22,1327+5]..[22,1327+9])
+  structure_item (asmcomp/s390x/scheduling.ml[30,1609+0]..[62,2345+3])
+    Pstr_class
+    [
+      class_declaration (asmcomp/s390x/scheduling.ml[30,1609+0]..[62,2345+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "scheduler" (asmcomp/s390x/scheduling.ml[30,1609+6]..[30,1609+15])
+        pci_expr =
+          class_expr (asmcomp/s390x/scheduling.ml[30,1609+18]..[62,2345+3])
+            Pcl_structure
+            class_structure
+              pattern (asmcomp/s390x/scheduling.ml[30,1609+24]..[30,1609+24]) ghost
+                Ppat_any
+              [
+                class_field (asmcomp/s390x/scheduling.ml[32,1635+0]..[32,1635+34])
+                  Pcf_inherit Fresh
+                    class_expr (asmcomp/s390x/scheduling.ml[32,1635+8]..[32,1635+34])
+                      Pcl_constr "Schedgen.scheduler_generic" (asmcomp/s390x/scheduling.ml[32,1635+8]..[32,1635+34])
+                      []
+                    None
+                class_field (asmcomp/s390x/scheduling.ml[37,1771+0]..[46,2027+10])
+                  Pcf_method Public
+                    "oper_latency" (asmcomp/s390x/scheduling.ml[37,1771+7]..[37,1771+19])
+                    Concrete Fresh
+                    expression (asmcomp/s390x/scheduling.ml[37,1771+22]..[46,2027+10]) ghost
+                      Pexp_poly
+                      expression (asmcomp/s390x/scheduling.ml[37,1771+22]..[46,2027+10])
+                        Pexp_function
+                        [
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[38,1802+4]..[38,1802+11])
+                              Ppat_construct "Ireload" (asmcomp/s390x/scheduling.ml[38,1802+4]..[38,1802+11])
+                              None
+                            expression (asmcomp/s390x/scheduling.ml[38,1802+15]..[38,1802+16])
+                              Pexp_constant PConst_int (4,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[39,1819+4]..[39,1819+11])
+                              Ppat_construct "Iload" (asmcomp/s390x/scheduling.ml[39,1819+4]..[39,1819+9])
+                              Some
+                                []
+                                pattern (asmcomp/s390x/scheduling.ml[39,1819+10]..[39,1819+11])
+                                  Ppat_any
+                            expression (asmcomp/s390x/scheduling.ml[39,1819+15]..[39,1819+16])
+                              Pexp_constant PConst_int (4,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[40,1836+4]..[40,1836+18])
+                              Ppat_construct "Iconst_float" (asmcomp/s390x/scheduling.ml[40,1836+4]..[40,1836+16])
+                              Some
+                                []
+                                pattern (asmcomp/s390x/scheduling.ml[40,1836+17]..[40,1836+18])
+                                  Ppat_any
+                            expression (asmcomp/s390x/scheduling.ml[40,1836+22]..[40,1836+23])
+                              Pexp_constant PConst_int (4,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[41,1885+4]..[41,1885+16])
+                              Ppat_construct "Iintop" (asmcomp/s390x/scheduling.ml[41,1885+4]..[41,1885+10])
+                              Some
+                                []
+                                pattern (asmcomp/s390x/scheduling.ml[41,1885+10]..[41,1885+16])
+                                  Ppat_construct "Imul" (asmcomp/s390x/scheduling.ml[41,1885+11]..[41,1885+15])
+                                  None
+                            expression (asmcomp/s390x/scheduling.ml[41,1885+20]..[41,1885+22])
+                              Pexp_constant PConst_int (10,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[42,1908+4]..[42,1908+23])
+                              Ppat_construct "Iintop_imm" (asmcomp/s390x/scheduling.ml[42,1908+4]..[42,1908+14])
+                              Some
+                                []
+                                pattern (asmcomp/s390x/scheduling.ml[42,1908+14]..[42,1908+23])
+                                  Ppat_tuple
+                                  [
+                                    pattern (asmcomp/s390x/scheduling.ml[42,1908+15]..[42,1908+19])
+                                      Ppat_construct "Imul" (asmcomp/s390x/scheduling.ml[42,1908+15]..[42,1908+19])
+                                      None
+                                    pattern (asmcomp/s390x/scheduling.ml[42,1908+21]..[42,1908+22])
+                                      Ppat_any
+                                  ]
+                            expression (asmcomp/s390x/scheduling.ml[42,1908+27]..[42,1908+29])
+                              Pexp_constant PConst_int (10,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[43,1938+4]..[43,1938+25])
+                              Ppat_or
+                              pattern (asmcomp/s390x/scheduling.ml[43,1938+4]..[43,1938+17])
+                                Ppat_or
+                                pattern (asmcomp/s390x/scheduling.ml[43,1938+4]..[43,1938+9])
+                                  Ppat_construct "Iaddf" (asmcomp/s390x/scheduling.ml[43,1938+4]..[43,1938+9])
+                                  None
+                                pattern (asmcomp/s390x/scheduling.ml[43,1938+12]..[43,1938+17])
+                                  Ppat_construct "Isubf" (asmcomp/s390x/scheduling.ml[43,1938+12]..[43,1938+17])
+                                  None
+                              pattern (asmcomp/s390x/scheduling.ml[43,1938+20]..[43,1938+25])
+                                Ppat_construct "Imulf" (asmcomp/s390x/scheduling.ml[43,1938+20]..[43,1938+25])
+                                None
+                            expression (asmcomp/s390x/scheduling.ml[43,1938+29]..[43,1938+30])
+                              Pexp_constant PConst_int (8,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[44,1969+4]..[44,1969+9])
+                              Ppat_construct "Idivf" (asmcomp/s390x/scheduling.ml[44,1969+4]..[44,1969+9])
+                              None
+                            expression (asmcomp/s390x/scheduling.ml[44,1969+13]..[44,1969+15])
+                              Pexp_constant PConst_int (40,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[45,1985+4]..[45,1985+36])
+                              Ppat_construct "Ispecific" (asmcomp/s390x/scheduling.ml[45,1985+4]..[45,1985+13])
+                              Some
+                                []
+                                pattern (asmcomp/s390x/scheduling.ml[45,1985+13]..[45,1985+36])
+                                  Ppat_or
+                                  pattern (asmcomp/s390x/scheduling.ml[45,1985+14]..[45,1985+23])
+                                    Ppat_construct "Imultaddf" (asmcomp/s390x/scheduling.ml[45,1985+14]..[45,1985+23])
+                                    None
+                                  pattern (asmcomp/s390x/scheduling.ml[45,1985+26]..[45,1985+35])
+                                    Ppat_construct "Imultsubf" (asmcomp/s390x/scheduling.ml[45,1985+26]..[45,1985+35])
+                                    None
+                            expression (asmcomp/s390x/scheduling.ml[45,1985+40]..[45,1985+41])
+                              Pexp_constant PConst_int (8,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[46,2027+4]..[46,2027+5])
+                              Ppat_any
+                            expression (asmcomp/s390x/scheduling.ml[46,2027+9]..[46,2027+10])
+                              Pexp_constant PConst_int (2,None)
+                        ]
+                      None
+                class_field (asmcomp/s390x/scheduling.ml[48,2039+0]..[48,2039+34])
+                  Pcf_method Public
+                    "reload_retaddr_latency" (asmcomp/s390x/scheduling.ml[48,2039+8]..[48,2039+30])
+                    Concrete Override
+                    expression (asmcomp/s390x/scheduling.ml[48,2039+33]..[48,2039+34]) ghost
+                      Pexp_poly
+                      expression (asmcomp/s390x/scheduling.ml[48,2039+33]..[48,2039+34])
+                        Pexp_constant PConst_int (4,None)
+                      None
+                class_field (asmcomp/s390x/scheduling.ml[52,2119+0]..[58,2292+10])
+                  Pcf_method Public
+                    "oper_issue_cycles" (asmcomp/s390x/scheduling.ml[52,2119+7]..[52,2119+24])
+                    Concrete Fresh
+                    expression (asmcomp/s390x/scheduling.ml[52,2119+27]..[58,2292+10]) ghost
+                      Pexp_poly
+                      expression (asmcomp/s390x/scheduling.ml[52,2119+27]..[58,2292+10])
+                        Pexp_function
+                        [
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[53,2155+4]..[53,2155+22])
+                              Ppat_or
+                              pattern (asmcomp/s390x/scheduling.ml[53,2155+4]..[53,2155+12])
+                                Ppat_construct "Ialloc" (asmcomp/s390x/scheduling.ml[53,2155+4]..[53,2155+10])
+                                Some
+                                  []
+                                  pattern (asmcomp/s390x/scheduling.ml[53,2155+11]..[53,2155+12])
+                                    Ppat_any
+                              pattern (asmcomp/s390x/scheduling.ml[53,2155+15]..[53,2155+22])
+                                Ppat_construct "Ipoll" (asmcomp/s390x/scheduling.ml[53,2155+15]..[53,2155+20])
+                                Some
+                                  []
+                                  pattern (asmcomp/s390x/scheduling.ml[53,2155+21]..[53,2155+22])
+                                    Ppat_any
+                            expression (asmcomp/s390x/scheduling.ml[53,2155+26]..[53,2155+27])
+                              Pexp_constant PConst_int (4,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[54,2183+4]..[54,2183+17])
+                              Ppat_construct "Iintop" (asmcomp/s390x/scheduling.ml[54,2183+4]..[54,2183+10])
+                              Some
+                                []
+                                pattern (asmcomp/s390x/scheduling.ml[54,2183+10]..[54,2183+17])
+                                  Ppat_construct "Imulh" (asmcomp/s390x/scheduling.ml[54,2183+11]..[54,2183+16])
+                                  None
+                            expression (asmcomp/s390x/scheduling.ml[54,2183+21]..[54,2183+23])
+                              Pexp_constant PConst_int (15,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[55,2207+4]..[55,2207+21])
+                              Ppat_construct "Iintop" (asmcomp/s390x/scheduling.ml[55,2207+4]..[55,2207+10])
+                              Some
+                                []
+                                pattern (asmcomp/s390x/scheduling.ml[55,2207+10]..[55,2207+21])
+                                  Ppat_or
+                                  pattern (asmcomp/s390x/scheduling.ml[55,2207+11]..[55,2207+15])
+                                    Ppat_construct "Idiv" (asmcomp/s390x/scheduling.ml[55,2207+11]..[55,2207+15])
+                                    None
+                                  pattern (asmcomp/s390x/scheduling.ml[55,2207+16]..[55,2207+20])
+                                    Ppat_construct "Imod" (asmcomp/s390x/scheduling.ml[55,2207+16]..[55,2207+20])
+                                    None
+                            expression (asmcomp/s390x/scheduling.ml[55,2207+25]..[55,2207+27])
+                              Pexp_constant PConst_int (20,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[56,2235+4]..[56,2235+19])
+                              Ppat_construct "Iintop" (asmcomp/s390x/scheduling.ml[56,2235+4]..[56,2235+10])
+                              Some
+                                []
+                                pattern (asmcomp/s390x/scheduling.ml[56,2235+10]..[56,2235+19])
+                                  Ppat_construct "Icomp" (asmcomp/s390x/scheduling.ml[56,2235+11]..[56,2235+16])
+                                  Some
+                                    []
+                                    pattern (asmcomp/s390x/scheduling.ml[56,2235+17]..[56,2235+18])
+                                      Ppat_any
+                            expression (asmcomp/s390x/scheduling.ml[56,2235+23]..[56,2235+24])
+                              Pexp_constant PConst_int (4,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[57,2260+4]..[57,2260+26])
+                              Ppat_construct "Iintop_imm" (asmcomp/s390x/scheduling.ml[57,2260+4]..[57,2260+14])
+                              Some
+                                []
+                                pattern (asmcomp/s390x/scheduling.ml[57,2260+14]..[57,2260+26])
+                                  Ppat_tuple
+                                  [
+                                    pattern (asmcomp/s390x/scheduling.ml[57,2260+15]..[57,2260+22])
+                                      Ppat_construct "Icomp" (asmcomp/s390x/scheduling.ml[57,2260+15]..[57,2260+20])
+                                      Some
+                                        []
+                                        pattern (asmcomp/s390x/scheduling.ml[57,2260+21]..[57,2260+22])
+                                          Ppat_any
+                                    pattern (asmcomp/s390x/scheduling.ml[57,2260+24]..[57,2260+25])
+                                      Ppat_any
+                                  ]
+                            expression (asmcomp/s390x/scheduling.ml[57,2260+30]..[57,2260+31])
+                              Pexp_constant PConst_int (4,None)
+                          <case>
+                            pattern (asmcomp/s390x/scheduling.ml[58,2292+4]..[58,2292+5])
+                              Ppat_any
+                            expression (asmcomp/s390x/scheduling.ml[58,2292+9]..[58,2292+10])
+                              Pexp_constant PConst_int (1,None)
+                        ]
+                      None
+                class_field (asmcomp/s390x/scheduling.ml[60,2304+0]..[60,2304+39])
+                  Pcf_method Public
+                    "reload_retaddr_issue_cycles" (asmcomp/s390x/scheduling.ml[60,2304+8]..[60,2304+35])
+                    Concrete Override
+                    expression (asmcomp/s390x/scheduling.ml[60,2304+38]..[60,2304+39]) ghost
+                      Pexp_poly
+                      expression (asmcomp/s390x/scheduling.ml[60,2304+38]..[60,2304+39])
+                        Pexp_constant PConst_int (1,None)
+                      None
+              ]
+    ]
+  structure_item (asmcomp/s390x/scheduling.ml[64,2350+0]..[64,2350+50])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/s390x/scheduling.ml[64,2350+4]..[64,2350+11])
+          Ppat_var "fundecl" (asmcomp/s390x/scheduling.ml[64,2350+4]..[64,2350+11])
+        expression (asmcomp/s390x/scheduling.ml[64,2350+12]..[64,2350+50]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/s390x/scheduling.ml[64,2350+12]..[64,2350+13])
+            Ppat_var "f" (asmcomp/s390x/scheduling.ml[64,2350+12]..[64,2350+13])
+          expression (asmcomp/s390x/scheduling.ml[64,2350+16]..[64,2350+50])
+            Pexp_apply
+            expression (asmcomp/s390x/scheduling.ml[64,2350+16]..[64,2350+48])
+              Pexp_send "schedule_fundecl"
+              expression (asmcomp/s390x/scheduling.ml[64,2350+16]..[64,2350+31])
+                Pexp_new "scheduler" (asmcomp/s390x/scheduling.ml[64,2350+21]..[64,2350+30])
+            [
+              <arg>
+              Nolabel
+                expression (asmcomp/s390x/scheduling.ml[64,2350+49]..[64,2350+50])
+                  Pexp_ident "f" (asmcomp/s390x/scheduling.ml[64,2350+49]..[64,2350+50])
+            ]
+    ]
+]
+

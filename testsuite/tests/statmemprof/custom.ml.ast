@@ -1,0 +1,744 @@
+[
+  structure_item (testsuite/tests/statmemprof/custom.ml[6,92+0]..[6,92+15])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/statmemprof/custom.ml[6,92+5]..[6,92+15])
+      Pmod_ident "Gc.Memprof" (testsuite/tests/statmemprof/custom.ml[6,92+5]..[6,92+15])
+  structure_item (testsuite/tests/statmemprof/custom.ml[8,109+0]..[9,135+59])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/statmemprof/custom.ml[8,109+4]..[8,109+20])
+          Ppat_var "bigstring_create" (testsuite/tests/statmemprof/custom.ml[8,109+4]..[8,109+20])
+        expression (testsuite/tests/statmemprof/custom.ml[8,109+21]..[9,135+59]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/statmemprof/custom.ml[8,109+21]..[8,109+23])
+            Ppat_var "sz" (testsuite/tests/statmemprof/custom.ml[8,109+21]..[8,109+23])
+          expression (testsuite/tests/statmemprof/custom.ml[9,135+2]..[9,135+59])
+            Pexp_apply
+            expression (testsuite/tests/statmemprof/custom.ml[9,135+2]..[9,135+24])
+              Pexp_ident "Bigarray.Array1.create" (testsuite/tests/statmemprof/custom.ml[9,135+2]..[9,135+24])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/statmemprof/custom.ml[9,135+25]..[9,135+38])
+                  Pexp_ident "Bigarray.char" (testsuite/tests/statmemprof/custom.ml[9,135+25]..[9,135+38])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/statmemprof/custom.ml[9,135+39]..[9,135+56])
+                  Pexp_ident "Bigarray.c_layout" (testsuite/tests/statmemprof/custom.ml[9,135+39]..[9,135+56])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/statmemprof/custom.ml[9,135+57]..[9,135+59])
+                  Pexp_ident "sz" (testsuite/tests/statmemprof/custom.ml[9,135+57]..[9,135+59])
+            ]
+    ]
+  structure_item (testsuite/tests/statmemprof/custom.ml[11,196+0]..[11,196+17])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/statmemprof/custom.ml[11,196+4]..[11,196+8])
+          Ppat_var "keep" (testsuite/tests/statmemprof/custom.ml[11,196+4]..[11,196+8])
+        expression (testsuite/tests/statmemprof/custom.ml[11,196+11]..[11,196+17])
+          Pexp_apply
+          expression (testsuite/tests/statmemprof/custom.ml[11,196+11]..[11,196+14])
+            Pexp_ident "ref" (testsuite/tests/statmemprof/custom.ml[11,196+11]..[11,196+14])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/statmemprof/custom.ml[11,196+15]..[11,196+17])
+                Pexp_construct "[]" (testsuite/tests/statmemprof/custom.ml[11,196+15]..[11,196+17])
+                None
+          ]
+    ]
+  structure_item (testsuite/tests/statmemprof/custom.ml[13,215+0]..[43,1221+59])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/statmemprof/custom.ml[13,215+4]..[13,215+8])
+          Ppat_var "test" (testsuite/tests/statmemprof/custom.ml[13,215+4]..[13,215+8])
+        expression (testsuite/tests/statmemprof/custom.ml[13,215+9]..[43,1221+59]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/statmemprof/custom.ml[13,215+9]..[13,215+22])
+            Ppat_var "sampling_rate" (testsuite/tests/statmemprof/custom.ml[13,215+9]..[13,215+22])
+          expression (testsuite/tests/statmemprof/custom.ml[14,240+2]..[43,1221+59])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/statmemprof/custom.ml[14,240+6]..[14,240+10])
+                  Ppat_var "size" (testsuite/tests/statmemprof/custom.ml[14,240+6]..[14,240+10])
+                expression (testsuite/tests/statmemprof/custom.ml[14,240+13]..[14,240+16])
+                  Pexp_constant PConst_int (256,None)
+            ]
+            expression (testsuite/tests/statmemprof/custom.ml[15,260+2]..[43,1221+59])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/statmemprof/custom.ml[15,260+6]..[15,260+11])
+                    Ppat_var "iters" (testsuite/tests/statmemprof/custom.ml[15,260+6]..[15,260+11])
+                  expression (testsuite/tests/statmemprof/custom.ml[15,260+14]..[15,260+21])
+                    Pexp_constant PConst_int (100_000,None)
+              ]
+              expression (testsuite/tests/statmemprof/custom.ml[16,285+2]..[43,1221+59])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/statmemprof/custom.ml[16,285+6]..[16,285+16])
+                      Ppat_var "size_words" (testsuite/tests/statmemprof/custom.ml[16,285+6]..[16,285+16])
+                    expression (testsuite/tests/statmemprof/custom.ml[16,285+19]..[16,285+45])
+                      Pexp_apply
+                      expression (testsuite/tests/statmemprof/custom.ml[16,285+24]..[16,285+25])
+                        Pexp_ident "/" (testsuite/tests/statmemprof/custom.ml[16,285+24]..[16,285+25])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/statmemprof/custom.ml[16,285+19]..[16,285+23])
+                            Pexp_ident "size" (testsuite/tests/statmemprof/custom.ml[16,285+19]..[16,285+23])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/statmemprof/custom.ml[16,285+26]..[16,285+45])
+                            Pexp_apply
+                            expression (testsuite/tests/statmemprof/custom.ml[16,285+41]..[16,285+42])
+                              Pexp_ident "/" (testsuite/tests/statmemprof/custom.ml[16,285+41]..[16,285+42])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/statmemprof/custom.ml[16,285+27]..[16,285+40])
+                                  Pexp_ident "Sys.word_size" (testsuite/tests/statmemprof/custom.ml[16,285+27]..[16,285+40])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/statmemprof/custom.ml[16,285+43]..[16,285+44])
+                                  Pexp_constant PConst_int (8,None)
+                            ]
+                      ]
+                ]
+                expression (testsuite/tests/statmemprof/custom.ml[17,334+2]..[43,1221+59])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (testsuite/tests/statmemprof/custom.ml[17,334+6]..[17,334+11])
+                        Ppat_var "alloc" (testsuite/tests/statmemprof/custom.ml[17,334+6]..[17,334+11])
+                      expression (testsuite/tests/statmemprof/custom.ml[17,334+14]..[17,334+19])
+                        Pexp_apply
+                        expression (testsuite/tests/statmemprof/custom.ml[17,334+14]..[17,334+17])
+                          Pexp_ident "ref" (testsuite/tests/statmemprof/custom.ml[17,334+14]..[17,334+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/statmemprof/custom.ml[17,334+18]..[17,334+19])
+                              Pexp_constant PConst_int (0,None)
+                        ]
+                    <def>
+                      pattern (testsuite/tests/statmemprof/custom.ml[17,334+24]..[17,334+31])
+                        Ppat_var "collect" (testsuite/tests/statmemprof/custom.ml[17,334+24]..[17,334+31])
+                      expression (testsuite/tests/statmemprof/custom.ml[17,334+34]..[17,334+39])
+                        Pexp_apply
+                        expression (testsuite/tests/statmemprof/custom.ml[17,334+34]..[17,334+37])
+                          Pexp_ident "ref" (testsuite/tests/statmemprof/custom.ml[17,334+34]..[17,334+37])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/statmemprof/custom.ml[17,334+38]..[17,334+39])
+                              Pexp_constant PConst_int (0,None)
+                        ]
+                    <def>
+                      pattern (testsuite/tests/statmemprof/custom.ml[17,334+44]..[17,334+51])
+                        Ppat_var "promote" (testsuite/tests/statmemprof/custom.ml[17,334+44]..[17,334+51])
+                      expression (testsuite/tests/statmemprof/custom.ml[17,334+54]..[17,334+59])
+                        Pexp_apply
+                        expression (testsuite/tests/statmemprof/custom.ml[17,334+54]..[17,334+57])
+                          Pexp_ident "ref" (testsuite/tests/statmemprof/custom.ml[17,334+54]..[17,334+57])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/statmemprof/custom.ml[17,334+58]..[17,334+59])
+                              Pexp_constant PConst_int (0,None)
+                        ]
+                  ]
+                  expression (testsuite/tests/statmemprof/custom.ml[18,397+2]..[43,1221+59])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (testsuite/tests/statmemprof/custom.ml[18,397+6]..[18,397+13])
+                          Ppat_var "tracker" (testsuite/tests/statmemprof/custom.ml[18,397+6]..[18,397+13])
+                        expression (testsuite/tests/statmemprof/custom.ml[19,413+4]..[29,721+35])
+                          Pexp_record
+                          [
+                            "alloc_minor" (testsuite/tests/statmemprof/custom.ml[20,437+6]..[20,437+17])
+                              expression (testsuite/tests/statmemprof/custom.ml[20,437+20]..[25,606+12])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (testsuite/tests/statmemprof/custom.ml[20,437+25]..[20,437+29])
+                                  Ppat_var "info" (testsuite/tests/statmemprof/custom.ml[20,437+25]..[20,437+29])
+                                expression (testsuite/tests/statmemprof/custom.ml[21,470+8]..[25,606+11])
+                                  Pexp_ifthenelse
+                                  expression (testsuite/tests/statmemprof/custom.ml[21,470+11]..[21,470+32])
+                                    Pexp_apply
+                                    expression (testsuite/tests/statmemprof/custom.ml[21,470+23]..[21,470+25])
+                                      Pexp_ident "<>" (testsuite/tests/statmemprof/custom.ml[21,470+23]..[21,470+25])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/custom.ml[21,470+11]..[21,470+22])
+                                          Pexp_field
+                                          expression (testsuite/tests/statmemprof/custom.ml[21,470+11]..[21,470+15])
+                                            Pexp_ident "info" (testsuite/tests/statmemprof/custom.ml[21,470+11]..[21,470+15])
+                                          "source" (testsuite/tests/statmemprof/custom.ml[21,470+16]..[21,470+22])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/custom.ml[21,470+26]..[21,470+32])
+                                          Pexp_construct "Custom" (testsuite/tests/statmemprof/custom.ml[21,470+26]..[21,470+32])
+                                          None
+                                    ]
+                                  expression (testsuite/tests/statmemprof/custom.ml[21,470+38]..[21,470+42])
+                                    Pexp_construct "None" (testsuite/tests/statmemprof/custom.ml[21,470+38]..[21,470+42])
+                                    None
+                                  Some
+                                    expression (testsuite/tests/statmemprof/custom.ml[22,513+13]..[25,606+11])
+                                      Pexp_sequence
+                                      expression (testsuite/tests/statmemprof/custom.ml[23,532+10]..[23,532+42])
+                                        Pexp_apply
+                                        expression (testsuite/tests/statmemprof/custom.ml[23,532+16]..[23,532+18])
+                                          Pexp_ident ":=" (testsuite/tests/statmemprof/custom.ml[23,532+16]..[23,532+18])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/statmemprof/custom.ml[23,532+10]..[23,532+15])
+                                              Pexp_ident "alloc" (testsuite/tests/statmemprof/custom.ml[23,532+10]..[23,532+15])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/statmemprof/custom.ml[23,532+19]..[23,532+42])
+                                              Pexp_apply
+                                              expression (testsuite/tests/statmemprof/custom.ml[23,532+26]..[23,532+27])
+                                                Pexp_ident "+" (testsuite/tests/statmemprof/custom.ml[23,532+26]..[23,532+27])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/statmemprof/custom.ml[23,532+19]..[23,532+25])
+                                                    Pexp_apply
+                                                    expression (testsuite/tests/statmemprof/custom.ml[23,532+19]..[23,532+20])
+                                                      Pexp_ident "!" (testsuite/tests/statmemprof/custom.ml[23,532+19]..[23,532+20])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (testsuite/tests/statmemprof/custom.ml[23,532+20]..[23,532+25])
+                                                          Pexp_ident "alloc" (testsuite/tests/statmemprof/custom.ml[23,532+20]..[23,532+25])
+                                                    ]
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/statmemprof/custom.ml[23,532+28]..[23,532+42])
+                                                    Pexp_field
+                                                    expression (testsuite/tests/statmemprof/custom.ml[23,532+28]..[23,532+32])
+                                                      Pexp_ident "info" (testsuite/tests/statmemprof/custom.ml[23,532+28]..[23,532+32])
+                                                    "n_samples" (testsuite/tests/statmemprof/custom.ml[23,532+33]..[23,532+42])
+                                              ]
+                                        ]
+                                      expression (testsuite/tests/statmemprof/custom.ml[24,576+10]..[24,576+29])
+                                        Pexp_construct "Some" (testsuite/tests/statmemprof/custom.ml[24,576+10]..[24,576+14])
+                                        Some
+                                          expression (testsuite/tests/statmemprof/custom.ml[24,576+15]..[24,576+29])
+                                            Pexp_field
+                                            expression (testsuite/tests/statmemprof/custom.ml[24,576+15]..[24,576+19])
+                                              Pexp_ident "info" (testsuite/tests/statmemprof/custom.ml[24,576+15]..[24,576+19])
+                                            "n_samples" (testsuite/tests/statmemprof/custom.ml[24,576+20]..[24,576+29])
+                            "promote" (testsuite/tests/statmemprof/custom.ml[26,620+6]..[26,620+13])
+                              expression (testsuite/tests/statmemprof/custom.ml[26,620+16]..[27,647+39])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (testsuite/tests/statmemprof/custom.ml[26,620+21]..[26,620+23])
+                                  Ppat_var "ns" (testsuite/tests/statmemprof/custom.ml[26,620+21]..[26,620+23])
+                                expression (testsuite/tests/statmemprof/custom.ml[27,647+8]..[27,647+38])
+                                  Pexp_sequence
+                                  expression (testsuite/tests/statmemprof/custom.ml[27,647+8]..[27,647+32])
+                                    Pexp_apply
+                                    expression (testsuite/tests/statmemprof/custom.ml[27,647+16]..[27,647+18])
+                                      Pexp_ident ":=" (testsuite/tests/statmemprof/custom.ml[27,647+16]..[27,647+18])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/custom.ml[27,647+8]..[27,647+15])
+                                          Pexp_ident "promote" (testsuite/tests/statmemprof/custom.ml[27,647+8]..[27,647+15])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/custom.ml[27,647+19]..[27,647+32])
+                                          Pexp_apply
+                                          expression (testsuite/tests/statmemprof/custom.ml[27,647+28]..[27,647+29])
+                                            Pexp_ident "+" (testsuite/tests/statmemprof/custom.ml[27,647+28]..[27,647+29])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/custom.ml[27,647+19]..[27,647+27])
+                                                Pexp_apply
+                                                expression (testsuite/tests/statmemprof/custom.ml[27,647+19]..[27,647+20])
+                                                  Pexp_ident "!" (testsuite/tests/statmemprof/custom.ml[27,647+19]..[27,647+20])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/statmemprof/custom.ml[27,647+20]..[27,647+27])
+                                                      Pexp_ident "promote" (testsuite/tests/statmemprof/custom.ml[27,647+20]..[27,647+27])
+                                                ]
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/custom.ml[27,647+30]..[27,647+32])
+                                                Pexp_ident "ns" (testsuite/tests/statmemprof/custom.ml[27,647+30]..[27,647+32])
+                                          ]
+                                    ]
+                                  expression (testsuite/tests/statmemprof/custom.ml[27,647+34]..[27,647+38])
+                                    Pexp_construct "None" (testsuite/tests/statmemprof/custom.ml[27,647+34]..[27,647+38])
+                                    None
+                            "dealloc_minor" (testsuite/tests/statmemprof/custom.ml[28,688+6]..[28,688+19])
+                              expression (testsuite/tests/statmemprof/custom.ml[28,688+22]..[29,721+33])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (testsuite/tests/statmemprof/custom.ml[28,688+27]..[28,688+29])
+                                  Ppat_var "ns" (testsuite/tests/statmemprof/custom.ml[28,688+27]..[28,688+29])
+                                expression (testsuite/tests/statmemprof/custom.ml[29,721+8]..[29,721+32])
+                                  Pexp_apply
+                                  expression (testsuite/tests/statmemprof/custom.ml[29,721+16]..[29,721+18])
+                                    Pexp_ident ":=" (testsuite/tests/statmemprof/custom.ml[29,721+16]..[29,721+18])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/statmemprof/custom.ml[29,721+8]..[29,721+15])
+                                        Pexp_ident "collect" (testsuite/tests/statmemprof/custom.ml[29,721+8]..[29,721+15])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/statmemprof/custom.ml[29,721+19]..[29,721+32])
+                                        Pexp_apply
+                                        expression (testsuite/tests/statmemprof/custom.ml[29,721+28]..[29,721+29])
+                                          Pexp_ident "+" (testsuite/tests/statmemprof/custom.ml[29,721+28]..[29,721+29])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/statmemprof/custom.ml[29,721+19]..[29,721+27])
+                                              Pexp_apply
+                                              expression (testsuite/tests/statmemprof/custom.ml[29,721+19]..[29,721+20])
+                                                Pexp_ident "!" (testsuite/tests/statmemprof/custom.ml[29,721+19]..[29,721+20])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/statmemprof/custom.ml[29,721+20]..[29,721+27])
+                                                    Pexp_ident "collect" (testsuite/tests/statmemprof/custom.ml[29,721+20]..[29,721+27])
+                                              ]
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/statmemprof/custom.ml[29,721+30]..[29,721+32])
+                                              Pexp_ident "ns" (testsuite/tests/statmemprof/custom.ml[29,721+30]..[29,721+32])
+                                        ]
+                                  ]
+                          ]
+                          Some
+                            expression (testsuite/tests/statmemprof/custom.ml[19,413+6]..[19,413+18])
+                              Pexp_ident "null_tracker" (testsuite/tests/statmemprof/custom.ml[19,413+6]..[19,413+18])
+                    ]
+                    expression (testsuite/tests/statmemprof/custom.ml[30,760+2]..[43,1221+59])
+                      Pexp_sequence
+                      expression (testsuite/tests/statmemprof/custom.ml[30,760+2]..[30,760+30])
+                        Pexp_apply
+                        expression (testsuite/tests/statmemprof/custom.ml[30,760+2]..[30,760+7])
+                          Pexp_ident "start" (testsuite/tests/statmemprof/custom.ml[30,760+2]..[30,760+7])
+                        [
+                          <arg>
+                          Labelled "sampling_rate"
+                            expression (testsuite/tests/statmemprof/custom.ml[30,760+9]..[30,760+22])
+                              Pexp_ident "sampling_rate" (testsuite/tests/statmemprof/custom.ml[30,760+9]..[30,760+22])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/statmemprof/custom.ml[30,760+23]..[30,760+30])
+                              Pexp_ident "tracker" (testsuite/tests/statmemprof/custom.ml[30,760+23]..[30,760+30])
+                        ]
+                      expression (testsuite/tests/statmemprof/custom.ml[31,792+2]..[43,1221+59])
+                        Pexp_sequence
+                        expression (testsuite/tests/statmemprof/custom.ml[31,792+2]..[34,921+6])
+                          Pexp_for Up
+                          pattern (testsuite/tests/statmemprof/custom.ml[31,792+6]..[31,792+7])
+                            Ppat_var "i" (testsuite/tests/statmemprof/custom.ml[31,792+6]..[31,792+7])
+                          expression (testsuite/tests/statmemprof/custom.ml[31,792+10]..[31,792+11])
+                            Pexp_constant PConst_int (1,None)
+                          expression (testsuite/tests/statmemprof/custom.ml[31,792+15]..[31,792+20])
+                            Pexp_ident "iters" (testsuite/tests/statmemprof/custom.ml[31,792+15]..[31,792+20])
+                          expression (testsuite/tests/statmemprof/custom.ml[32,816+4]..[33,875+45])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (testsuite/tests/statmemprof/custom.ml[32,816+8]..[32,816+11])
+                                  Ppat_var "str" (testsuite/tests/statmemprof/custom.ml[32,816+8]..[32,816+11])
+                                expression (testsuite/tests/statmemprof/custom.ml[32,816+14]..[32,816+55])
+                                  Pexp_apply
+                                  expression (testsuite/tests/statmemprof/custom.ml[32,816+14]..[32,816+33])
+                                    Pexp_ident "Sys.opaque_identity" (testsuite/tests/statmemprof/custom.ml[32,816+14]..[32,816+33])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/statmemprof/custom.ml[32,816+34]..[32,816+50])
+                                        Pexp_ident "bigstring_create" (testsuite/tests/statmemprof/custom.ml[32,816+34]..[32,816+50])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/statmemprof/custom.ml[32,816+51]..[32,816+55])
+                                        Pexp_ident "size" (testsuite/tests/statmemprof/custom.ml[32,816+51]..[32,816+55])
+                                  ]
+                            ]
+                            expression (testsuite/tests/statmemprof/custom.ml[33,875+4]..[33,875+45])
+                              Pexp_ifthenelse
+                              expression (testsuite/tests/statmemprof/custom.ml[33,875+7]..[33,875+19])
+                                Pexp_apply
+                                expression (testsuite/tests/statmemprof/custom.ml[33,875+16]..[33,875+17])
+                                  Pexp_ident "=" (testsuite/tests/statmemprof/custom.ml[33,875+16]..[33,875+17])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/statmemprof/custom.ml[33,875+7]..[33,875+15])
+                                      Pexp_apply
+                                      expression (testsuite/tests/statmemprof/custom.ml[33,875+9]..[33,875+12])
+                                        Pexp_ident "mod" (testsuite/tests/statmemprof/custom.ml[33,875+9]..[33,875+12])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/statmemprof/custom.ml[33,875+7]..[33,875+8])
+                                            Pexp_ident "i" (testsuite/tests/statmemprof/custom.ml[33,875+7]..[33,875+8])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/statmemprof/custom.ml[33,875+13]..[33,875+15])
+                                            Pexp_constant PConst_int (10,None)
+                                      ]
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/statmemprof/custom.ml[33,875+18]..[33,875+19])
+                                      Pexp_constant PConst_int (0,None)
+                                ]
+                              expression (testsuite/tests/statmemprof/custom.ml[33,875+25]..[33,875+45])
+                                Pexp_apply
+                                expression (testsuite/tests/statmemprof/custom.ml[33,875+30]..[33,875+32])
+                                  Pexp_ident ":=" (testsuite/tests/statmemprof/custom.ml[33,875+30]..[33,875+32])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/statmemprof/custom.ml[33,875+25]..[33,875+29])
+                                      Pexp_ident "keep" (testsuite/tests/statmemprof/custom.ml[33,875+25]..[33,875+29])
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/statmemprof/custom.ml[33,875+33]..[33,875+45])
+                                      Pexp_construct "::" (testsuite/tests/statmemprof/custom.ml[33,875+37]..[33,875+39])
+                                      Some
+                                        expression (testsuite/tests/statmemprof/custom.ml[33,875+33]..[33,875+45]) ghost
+                                          Pexp_tuple
+                                          [
+                                            expression (testsuite/tests/statmemprof/custom.ml[33,875+33]..[33,875+36])
+                                              Pexp_ident "str" (testsuite/tests/statmemprof/custom.ml[33,875+33]..[33,875+36])
+                                            expression (testsuite/tests/statmemprof/custom.ml[33,875+40]..[33,875+45])
+                                              Pexp_apply
+                                              expression (testsuite/tests/statmemprof/custom.ml[33,875+40]..[33,875+41])
+                                                Pexp_ident "!" (testsuite/tests/statmemprof/custom.ml[33,875+40]..[33,875+41])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/statmemprof/custom.ml[33,875+41]..[33,875+45])
+                                                    Pexp_ident "keep" (testsuite/tests/statmemprof/custom.ml[33,875+41]..[33,875+45])
+                                              ]
+                                          ]
+                                ]
+                              None
+                        expression (testsuite/tests/statmemprof/custom.ml[35,929+2]..[43,1221+59])
+                          Pexp_sequence
+                          expression (testsuite/tests/statmemprof/custom.ml[35,929+2]..[35,929+12])
+                            Pexp_apply
+                            expression (testsuite/tests/statmemprof/custom.ml[35,929+7]..[35,929+9])
+                              Pexp_ident ":=" (testsuite/tests/statmemprof/custom.ml[35,929+7]..[35,929+9])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/statmemprof/custom.ml[35,929+2]..[35,929+6])
+                                  Pexp_ident "keep" (testsuite/tests/statmemprof/custom.ml[35,929+2]..[35,929+6])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/statmemprof/custom.ml[35,929+10]..[35,929+12])
+                                  Pexp_construct "[]" (testsuite/tests/statmemprof/custom.ml[35,929+10]..[35,929+12])
+                                  None
+                            ]
+                          expression (testsuite/tests/statmemprof/custom.ml[36,943+2]..[43,1221+59])
+                            Pexp_sequence
+                            expression (testsuite/tests/statmemprof/custom.ml[36,943+2]..[36,943+18])
+                              Pexp_apply
+                              expression (testsuite/tests/statmemprof/custom.ml[36,943+2]..[36,943+15])
+                                Pexp_ident "Gc.full_major" (testsuite/tests/statmemprof/custom.ml[36,943+2]..[36,943+15])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/statmemprof/custom.ml[36,943+16]..[36,943+18])
+                                    Pexp_construct "()" (testsuite/tests/statmemprof/custom.ml[36,943+16]..[36,943+18])
+                                    None
+                              ]
+                            expression (testsuite/tests/statmemprof/custom.ml[37,963+2]..[43,1221+59])
+                              Pexp_sequence
+                              expression (testsuite/tests/statmemprof/custom.ml[37,963+2]..[37,963+9])
+                                Pexp_apply
+                                expression (testsuite/tests/statmemprof/custom.ml[37,963+2]..[37,963+6])
+                                  Pexp_ident "stop" (testsuite/tests/statmemprof/custom.ml[37,963+2]..[37,963+6])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/statmemprof/custom.ml[37,963+7]..[37,963+9])
+                                      Pexp_construct "()" (testsuite/tests/statmemprof/custom.ml[37,963+7]..[37,963+9])
+                                      None
+                                ]
+                              expression (testsuite/tests/statmemprof/custom.ml[38,974+2]..[43,1221+59])
+                                Pexp_sequence
+                                expression (testsuite/tests/statmemprof/custom.ml[38,974+2]..[38,974+39])
+                                  Pexp_assert
+                                  expression (testsuite/tests/statmemprof/custom.ml[38,974+9]..[38,974+39])
+                                    Pexp_apply
+                                    expression (testsuite/tests/statmemprof/custom.ml[38,974+17]..[38,974+18])
+                                      Pexp_ident "=" (testsuite/tests/statmemprof/custom.ml[38,974+17]..[38,974+18])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/custom.ml[38,974+10]..[38,974+16])
+                                          Pexp_apply
+                                          expression (testsuite/tests/statmemprof/custom.ml[38,974+10]..[38,974+11])
+                                            Pexp_ident "!" (testsuite/tests/statmemprof/custom.ml[38,974+10]..[38,974+11])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/custom.ml[38,974+11]..[38,974+16])
+                                                Pexp_ident "alloc" (testsuite/tests/statmemprof/custom.ml[38,974+11]..[38,974+16])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/custom.ml[38,974+19]..[38,974+38])
+                                          Pexp_apply
+                                          expression (testsuite/tests/statmemprof/custom.ml[38,974+28]..[38,974+29])
+                                            Pexp_ident "+" (testsuite/tests/statmemprof/custom.ml[38,974+28]..[38,974+29])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/custom.ml[38,974+19]..[38,974+27])
+                                                Pexp_apply
+                                                expression (testsuite/tests/statmemprof/custom.ml[38,974+19]..[38,974+20])
+                                                  Pexp_ident "!" (testsuite/tests/statmemprof/custom.ml[38,974+19]..[38,974+20])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/statmemprof/custom.ml[38,974+20]..[38,974+27])
+                                                      Pexp_ident "promote" (testsuite/tests/statmemprof/custom.ml[38,974+20]..[38,974+27])
+                                                ]
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/custom.ml[38,974+30]..[38,974+38])
+                                                Pexp_apply
+                                                expression (testsuite/tests/statmemprof/custom.ml[38,974+30]..[38,974+31])
+                                                  Pexp_ident "!" (testsuite/tests/statmemprof/custom.ml[38,974+30]..[38,974+31])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/statmemprof/custom.ml[38,974+31]..[38,974+38])
+                                                      Pexp_ident "collect" (testsuite/tests/statmemprof/custom.ml[38,974+31]..[38,974+38])
+                                                ]
+                                          ]
+                                    ]
+                                expression (testsuite/tests/statmemprof/custom.ml[39,1015+2]..[43,1221+59])
+                                  Pexp_let Nonrec
+                                  [
+                                    <def>
+                                      pattern (testsuite/tests/statmemprof/custom.ml[39,1015+6]..[39,1015+11])
+                                        Ppat_var "iters" (testsuite/tests/statmemprof/custom.ml[39,1015+6]..[39,1015+11])
+                                      expression (testsuite/tests/statmemprof/custom.ml[39,1015+14]..[39,1015+32])
+                                        Pexp_apply
+                                        expression (testsuite/tests/statmemprof/custom.ml[39,1015+14]..[39,1015+26])
+                                          Pexp_ident "float_of_int" (testsuite/tests/statmemprof/custom.ml[39,1015+14]..[39,1015+26])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/statmemprof/custom.ml[39,1015+27]..[39,1015+32])
+                                              Pexp_ident "iters" (testsuite/tests/statmemprof/custom.ml[39,1015+27]..[39,1015+32])
+                                        ]
+                                    <def>
+                                      pattern (testsuite/tests/statmemprof/custom.ml[39,1015+37]..[39,1015+47])
+                                        Ppat_var "size_words" (testsuite/tests/statmemprof/custom.ml[39,1015+37]..[39,1015+47])
+                                      expression (testsuite/tests/statmemprof/custom.ml[39,1015+50]..[39,1015+73])
+                                        Pexp_apply
+                                        expression (testsuite/tests/statmemprof/custom.ml[39,1015+50]..[39,1015+62])
+                                          Pexp_ident "float_of_int" (testsuite/tests/statmemprof/custom.ml[39,1015+50]..[39,1015+62])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/statmemprof/custom.ml[39,1015+63]..[39,1015+73])
+                                              Pexp_ident "size_words" (testsuite/tests/statmemprof/custom.ml[39,1015+63]..[39,1015+73])
+                                        ]
+                                  ]
+                                  expression (testsuite/tests/statmemprof/custom.ml[41,1140+2]..[43,1221+59])
+                                    Pexp_apply
+                                    expression (testsuite/tests/statmemprof/custom.ml[41,1140+2]..[41,1140+15])
+                                      Pexp_ident "Printf.printf" (testsuite/tests/statmemprof/custom.ml[41,1140+2]..[41,1140+15])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/custom.ml[41,1140+16]..[41,1140+29])
+                                          Pexp_constant PConst_string("%.2f %.1f\n",(testsuite/tests/statmemprof/custom.ml[41,1140+17]..[41,1140+28]),None)
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/custom.ml[42,1170+4]..[42,1170+50])
+                                          Pexp_apply
+                                          expression (testsuite/tests/statmemprof/custom.ml[42,1170+36]..[42,1170+38])
+                                            Pexp_ident "/." (testsuite/tests/statmemprof/custom.ml[42,1170+36]..[42,1170+38])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/custom.ml[42,1170+5]..[42,1170+35])
+                                                Pexp_apply
+                                                expression (testsuite/tests/statmemprof/custom.ml[42,1170+26]..[42,1170+28])
+                                                  Pexp_ident "/." (testsuite/tests/statmemprof/custom.ml[42,1170+26]..[42,1170+28])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/statmemprof/custom.ml[42,1170+6]..[42,1170+25])
+                                                      Pexp_apply
+                                                      expression (testsuite/tests/statmemprof/custom.ml[42,1170+6]..[42,1170+18])
+                                                        Pexp_ident "float_of_int" (testsuite/tests/statmemprof/custom.ml[42,1170+6]..[42,1170+18])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (testsuite/tests/statmemprof/custom.ml[42,1170+19]..[42,1170+25])
+                                                            Pexp_apply
+                                                            expression (testsuite/tests/statmemprof/custom.ml[42,1170+19]..[42,1170+20])
+                                                              Pexp_ident "!" (testsuite/tests/statmemprof/custom.ml[42,1170+19]..[42,1170+20])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (testsuite/tests/statmemprof/custom.ml[42,1170+20]..[42,1170+25])
+                                                                  Pexp_ident "alloc" (testsuite/tests/statmemprof/custom.ml[42,1170+20]..[42,1170+25])
+                                                            ]
+                                                      ]
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/statmemprof/custom.ml[42,1170+29]..[42,1170+34])
+                                                      Pexp_ident "iters" (testsuite/tests/statmemprof/custom.ml[42,1170+29]..[42,1170+34])
+                                                ]
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/custom.ml[42,1170+39]..[42,1170+49])
+                                                Pexp_ident "size_words" (testsuite/tests/statmemprof/custom.ml[42,1170+39]..[42,1170+49])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/custom.ml[43,1221+4]..[43,1221+59])
+                                          Pexp_apply
+                                          expression (testsuite/tests/statmemprof/custom.ml[43,1221+52]..[43,1221+54])
+                                            Pexp_ident "*." (testsuite/tests/statmemprof/custom.ml[43,1221+52]..[43,1221+54])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/custom.ml[43,1221+5]..[43,1221+51])
+                                                Pexp_apply
+                                                expression (testsuite/tests/statmemprof/custom.ml[43,1221+38]..[43,1221+40])
+                                                  Pexp_ident "/." (testsuite/tests/statmemprof/custom.ml[43,1221+38]..[43,1221+40])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/statmemprof/custom.ml[43,1221+5]..[43,1221+37])
+                                                      Pexp_apply
+                                                      expression (testsuite/tests/statmemprof/custom.ml[43,1221+28]..[43,1221+30])
+                                                        Pexp_ident "/." (testsuite/tests/statmemprof/custom.ml[43,1221+28]..[43,1221+30])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (testsuite/tests/statmemprof/custom.ml[43,1221+6]..[43,1221+27])
+                                                            Pexp_apply
+                                                            expression (testsuite/tests/statmemprof/custom.ml[43,1221+6]..[43,1221+18])
+                                                              Pexp_ident "float_of_int" (testsuite/tests/statmemprof/custom.ml[43,1221+6]..[43,1221+18])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (testsuite/tests/statmemprof/custom.ml[43,1221+19]..[43,1221+27])
+                                                                  Pexp_apply
+                                                                  expression (testsuite/tests/statmemprof/custom.ml[43,1221+19]..[43,1221+20])
+                                                                    Pexp_ident "!" (testsuite/tests/statmemprof/custom.ml[43,1221+19]..[43,1221+20])
+                                                                  [
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (testsuite/tests/statmemprof/custom.ml[43,1221+20]..[43,1221+27])
+Pexp_ident "promote" (testsuite/tests/statmemprof/custom.ml[43,1221+20]..[43,1221+27])
+                                                                  ]
+                                                            ]
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (testsuite/tests/statmemprof/custom.ml[43,1221+31]..[43,1221+36])
+                                                            Pexp_ident "iters" (testsuite/tests/statmemprof/custom.ml[43,1221+31]..[43,1221+36])
+                                                      ]
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/statmemprof/custom.ml[43,1221+41]..[43,1221+51])
+                                                      Pexp_ident "size_words" (testsuite/tests/statmemprof/custom.ml[43,1221+41]..[43,1221+51])
+                                                ]
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/custom.ml[43,1221+55]..[43,1221+58])
+                                                Pexp_constant PConst_float (10.,None)
+                                          ]
+                                    ]
+    ]
+  structure_item (testsuite/tests/statmemprof/custom.ml[46,1283+0]..[47,1292+37])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/statmemprof/custom.ml[46,1283+4]..[46,1283+6])
+          Ppat_construct "()" (testsuite/tests/statmemprof/custom.ml[46,1283+4]..[46,1283+6])
+          None
+        expression (testsuite/tests/statmemprof/custom.ml[47,1292+2]..[47,1292+37])
+          Pexp_apply
+          expression (testsuite/tests/statmemprof/custom.ml[47,1292+20]..[47,1292+22])
+            Pexp_ident "|>" (testsuite/tests/statmemprof/custom.ml[47,1292+20]..[47,1292+22])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/statmemprof/custom.ml[47,1292+2]..[47,1292+19])
+                Pexp_construct "::" (testsuite/tests/statmemprof/custom.ml[47,1292+3]..[47,1292+19]) ghost
+                Some
+                  expression (testsuite/tests/statmemprof/custom.ml[47,1292+3]..[47,1292+19]) ghost
+                    Pexp_tuple
+                    [
+                      expression (testsuite/tests/statmemprof/custom.ml[47,1292+3]..[47,1292+7])
+                        Pexp_constant PConst_float (0.01,None)
+                      expression (testsuite/tests/statmemprof/custom.ml[47,1292+9]..[47,1292+19]) ghost
+                        Pexp_construct "::" (testsuite/tests/statmemprof/custom.ml[47,1292+9]..[47,1292+19]) ghost
+                        Some
+                          expression (testsuite/tests/statmemprof/custom.ml[47,1292+9]..[47,1292+19]) ghost
+                            Pexp_tuple
+                            [
+                              expression (testsuite/tests/statmemprof/custom.ml[47,1292+9]..[47,1292+12])
+                                Pexp_constant PConst_float (0.5,None)
+                              expression (testsuite/tests/statmemprof/custom.ml[47,1292+14]..[47,1292+19]) ghost
+                                Pexp_construct "::" (testsuite/tests/statmemprof/custom.ml[47,1292+14]..[47,1292+19]) ghost
+                                Some
+                                  expression (testsuite/tests/statmemprof/custom.ml[47,1292+14]..[47,1292+19]) ghost
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/statmemprof/custom.ml[47,1292+14]..[47,1292+18])
+                                        Pexp_constant PConst_float (0.17,None)
+                                      expression (testsuite/tests/statmemprof/custom.ml[47,1292+18]..[47,1292+19]) ghost
+                                        Pexp_construct "[]" (testsuite/tests/statmemprof/custom.ml[47,1292+18]..[47,1292+19]) ghost
+                                        None
+                                    ]
+                            ]
+                    ]
+            <arg>
+            Nolabel
+              expression (testsuite/tests/statmemprof/custom.ml[47,1292+23]..[47,1292+37])
+                Pexp_apply
+                expression (testsuite/tests/statmemprof/custom.ml[47,1292+23]..[47,1292+32])
+                  Pexp_ident "List.iter" (testsuite/tests/statmemprof/custom.ml[47,1292+23]..[47,1292+32])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/statmemprof/custom.ml[47,1292+33]..[47,1292+37])
+                      Pexp_ident "test" (testsuite/tests/statmemprof/custom.ml[47,1292+33]..[47,1292+37])
+                ]
+          ]
+    ]
+]
+

@@ -1,0 +1,1378 @@
+[
+  structure_item (testsuite/tests/lib-channels/input_all.ml[11,103+0]..[12,119+12])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[11,103+4]..[11,103+13])
+          Ppat_var "data_file" (testsuite/tests/lib-channels/input_all.ml[11,103+4]..[11,103+13])
+        expression (testsuite/tests/lib-channels/input_all.ml[12,119+2]..[12,119+12])
+          Pexp_constant PConst_string("data.txt",(testsuite/tests/lib-channels/input_all.ml[12,119+3]..[12,119+11]),None)
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[14,133+0]..[15,158+55])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[14,133+4]..[14,133+17])
+          Ppat_var "random_string" (testsuite/tests/lib-channels/input_all.ml[14,133+4]..[14,133+17])
+        expression (testsuite/tests/lib-channels/input_all.ml[14,133+18]..[15,158+55]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-channels/input_all.ml[14,133+18]..[14,133+22])
+            Ppat_var "size" (testsuite/tests/lib-channels/input_all.ml[14,133+18]..[14,133+22])
+          expression (testsuite/tests/lib-channels/input_all.ml[15,158+2]..[15,158+55])
+            Pexp_apply
+            expression (testsuite/tests/lib-channels/input_all.ml[15,158+2]..[15,158+13])
+              Pexp_ident "String.init" (testsuite/tests/lib-channels/input_all.ml[15,158+2]..[15,158+13])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/lib-channels/input_all.ml[15,158+14]..[15,158+18])
+                  Pexp_ident "size" (testsuite/tests/lib-channels/input_all.ml[15,158+14]..[15,158+18])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/lib-channels/input_all.ml[15,158+19]..[15,158+55])
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/lib-channels/input_all.ml[15,158+24]..[15,158+25])
+                    Ppat_any
+                  expression (testsuite/tests/lib-channels/input_all.ml[15,158+29]..[15,158+54])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-channels/input_all.ml[15,158+29]..[15,158+37])
+                      Pexp_ident "Char.chr" (testsuite/tests/lib-channels/input_all.ml[15,158+29]..[15,158+37])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[15,158+38]..[15,158+54])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-channels/input_all.ml[15,158+39]..[15,158+49])
+                            Pexp_ident "Random.int" (testsuite/tests/lib-channels/input_all.ml[15,158+39]..[15,158+49])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-channels/input_all.ml[15,158+50]..[15,158+53])
+                                Pexp_constant PConst_int (256,None)
+                          ]
+                    ]
+            ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[19,249+0]..[23,463+27])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[19,249+4]..[19,249+9])
+          Ppat_var "check" (testsuite/tests/lib-channels/input_all.ml[19,249+4]..[19,249+9])
+        expression (testsuite/tests/lib-channels/input_all.ml[19,249+10]..[23,463+27]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-channels/input_all.ml[19,249+10]..[19,249+14])
+            Ppat_var "size" (testsuite/tests/lib-channels/input_all.ml[19,249+10]..[19,249+14])
+          expression (testsuite/tests/lib-channels/input_all.ml[20,266+2]..[23,463+27])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/lib-channels/input_all.ml[20,266+6]..[20,266+10])
+                  Ppat_var "data" (testsuite/tests/lib-channels/input_all.ml[20,266+6]..[20,266+10])
+                expression (testsuite/tests/lib-channels/input_all.ml[20,266+13]..[20,266+31])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-channels/input_all.ml[20,266+13]..[20,266+26])
+                    Pexp_ident "random_string" (testsuite/tests/lib-channels/input_all.ml[20,266+13]..[20,266+26])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-channels/input_all.ml[20,266+27]..[20,266+31])
+                        Pexp_ident "size" (testsuite/tests/lib-channels/input_all.ml[20,266+27]..[20,266+31])
+                  ]
+            ]
+            expression (testsuite/tests/lib-channels/input_all.ml[21,301+2]..[23,463+27])
+              Pexp_sequence
+              expression (testsuite/tests/lib-channels/input_all.ml[21,301+2]..[21,301+83])
+                Pexp_apply
+                expression (testsuite/tests/lib-channels/input_all.ml[21,301+2]..[21,301+27])
+                  Pexp_ident "Out_channel.with_open_bin" (testsuite/tests/lib-channels/input_all.ml[21,301+2]..[21,301+27])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[21,301+28]..[21,301+37])
+                      Pexp_ident "data_file" (testsuite/tests/lib-channels/input_all.ml[21,301+28]..[21,301+37])
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[21,301+38]..[21,301+83])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/lib-channels/input_all.ml[21,301+43]..[21,301+45])
+                        Ppat_var "oc" (testsuite/tests/lib-channels/input_all.ml[21,301+43]..[21,301+45])
+                      expression (testsuite/tests/lib-channels/input_all.ml[21,301+49]..[21,301+82])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-channels/input_all.ml[21,301+49]..[21,301+74])
+                          Pexp_ident "Out_channel.output_string" (testsuite/tests/lib-channels/input_all.ml[21,301+49]..[21,301+74])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[21,301+75]..[21,301+77])
+                              Pexp_ident "oc" (testsuite/tests/lib-channels/input_all.ml[21,301+75]..[21,301+77])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[21,301+78]..[21,301+82])
+                              Pexp_ident "data" (testsuite/tests/lib-channels/input_all.ml[21,301+78]..[21,301+82])
+                        ]
+                ]
+              expression (testsuite/tests/lib-channels/input_all.ml[22,386+2]..[23,463+27])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/lib-channels/input_all.ml[22,386+6]..[22,386+15])
+                      Ppat_var "read_data" (testsuite/tests/lib-channels/input_all.ml[22,386+6]..[22,386+15])
+                    expression (testsuite/tests/lib-channels/input_all.ml[22,386+18]..[22,386+73])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-channels/input_all.ml[22,386+18]..[22,386+42])
+                        Pexp_ident "In_channel.with_open_bin" (testsuite/tests/lib-channels/input_all.ml[22,386+18]..[22,386+42])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-channels/input_all.ml[22,386+43]..[22,386+52])
+                            Pexp_ident "data_file" (testsuite/tests/lib-channels/input_all.ml[22,386+43]..[22,386+52])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-channels/input_all.ml[22,386+53]..[22,386+73])
+                            Pexp_ident "In_channel.input_all" (testsuite/tests/lib-channels/input_all.ml[22,386+53]..[22,386+73])
+                      ]
+                ]
+                expression (testsuite/tests/lib-channels/input_all.ml[23,463+2]..[23,463+27])
+                  Pexp_assert
+                  expression (testsuite/tests/lib-channels/input_all.ml[23,463+9]..[23,463+27])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-channels/input_all.ml[23,463+15]..[23,463+16])
+                      Pexp_ident "=" (testsuite/tests/lib-channels/input_all.ml[23,463+15]..[23,463+16])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[23,463+10]..[23,463+14])
+                          Pexp_ident "data" (testsuite/tests/lib-channels/input_all.ml[23,463+10]..[23,463+14])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[23,463+17]..[23,463+26])
+                          Pexp_ident "read_data" (testsuite/tests/lib-channels/input_all.ml[23,463+17]..[23,463+26])
+                    ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[25,492+0]..[26,501+55])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[25,492+4]..[25,492+6])
+          Ppat_construct "()" (testsuite/tests/lib-channels/input_all.ml[25,492+4]..[25,492+6])
+          None
+        expression (testsuite/tests/lib-channels/input_all.ml[26,501+2]..[26,501+55])
+          Pexp_apply
+          expression (testsuite/tests/lib-channels/input_all.ml[26,501+2]..[26,501+11])
+            Pexp_ident "List.iter" (testsuite/tests/lib-channels/input_all.ml[26,501+2]..[26,501+11])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[26,501+12]..[26,501+17])
+                Pexp_ident "check" (testsuite/tests/lib-channels/input_all.ml[26,501+12]..[26,501+17])
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[26,501+18]..[26,501+55])
+                Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[26,501+20]..[26,501+55]) ghost
+                Some
+                  expression (testsuite/tests/lib-channels/input_all.ml[26,501+20]..[26,501+55]) ghost
+                    Pexp_tuple
+                    [
+                      expression (testsuite/tests/lib-channels/input_all.ml[26,501+20]..[26,501+21])
+                        Pexp_constant PConst_int (0,None)
+                      expression (testsuite/tests/lib-channels/input_all.ml[26,501+23]..[26,501+55]) ghost
+                        Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[26,501+23]..[26,501+55]) ghost
+                        Some
+                          expression (testsuite/tests/lib-channels/input_all.ml[26,501+23]..[26,501+55]) ghost
+                            Pexp_tuple
+                            [
+                              expression (testsuite/tests/lib-channels/input_all.ml[26,501+23]..[26,501+24])
+                                Pexp_constant PConst_int (1,None)
+                              expression (testsuite/tests/lib-channels/input_all.ml[26,501+26]..[26,501+55]) ghost
+                                Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[26,501+26]..[26,501+55]) ghost
+                                Some
+                                  expression (testsuite/tests/lib-channels/input_all.ml[26,501+26]..[26,501+55]) ghost
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/lib-channels/input_all.ml[26,501+26]..[26,501+31])
+                                        Pexp_constant PConst_int (65536,None)
+                                      expression (testsuite/tests/lib-channels/input_all.ml[26,501+33]..[26,501+55]) ghost
+                                        Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[26,501+33]..[26,501+55]) ghost
+                                        Some
+                                          expression (testsuite/tests/lib-channels/input_all.ml[26,501+33]..[26,501+55]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (testsuite/tests/lib-channels/input_all.ml[26,501+33]..[26,501+42])
+                                                Pexp_apply
+                                                expression (testsuite/tests/lib-channels/input_all.ml[26,501+39]..[26,501+40])
+                                                  Pexp_ident "+" (testsuite/tests/lib-channels/input_all.ml[26,501+39]..[26,501+40])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/lib-channels/input_all.ml[26,501+33]..[26,501+38])
+                                                      Pexp_constant PConst_int (65536,None)
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/lib-channels/input_all.ml[26,501+41]..[26,501+42])
+                                                      Pexp_constant PConst_int (1,None)
+                                                ]
+                                              expression (testsuite/tests/lib-channels/input_all.ml[26,501+44]..[26,501+55]) ghost
+                                                Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[26,501+44]..[26,501+55]) ghost
+                                                Some
+                                                  expression (testsuite/tests/lib-channels/input_all.ml[26,501+44]..[26,501+55]) ghost
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (testsuite/tests/lib-channels/input_all.ml[26,501+44]..[26,501+53])
+                                                        Pexp_apply
+                                                        expression (testsuite/tests/lib-channels/input_all.ml[26,501+46]..[26,501+47])
+                                                          Pexp_ident "*" (testsuite/tests/lib-channels/input_all.ml[26,501+46]..[26,501+47])
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (testsuite/tests/lib-channels/input_all.ml[26,501+44]..[26,501+45])
+                                                              Pexp_constant PConst_int (2,None)
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (testsuite/tests/lib-channels/input_all.ml[26,501+48]..[26,501+53])
+                                                              Pexp_constant PConst_int (65536,None)
+                                                        ]
+                                                      expression (testsuite/tests/lib-channels/input_all.ml[26,501+54]..[26,501+55]) ghost
+                                                        Pexp_construct "[]" (testsuite/tests/lib-channels/input_all.ml[26,501+54]..[26,501+55]) ghost
+                                                        None
+                                                    ]
+                                            ]
+                                    ]
+                            ]
+                    ]
+          ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[30,605+0]..[30,605+21])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[30,605+4]..[30,605+13])
+          Ppat_var "data_size" (testsuite/tests/lib-channels/input_all.ml[30,605+4]..[30,605+13])
+        expression (testsuite/tests/lib-channels/input_all.ml[30,605+16]..[30,605+21])
+          Pexp_constant PConst_int (65536,None)
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[32,628+0]..[44,1003+26])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[32,628+4]..[32,628+9])
+          Ppat_var "check" (testsuite/tests/lib-channels/input_all.ml[32,628+4]..[32,628+9])
+        expression (testsuite/tests/lib-channels/input_all.ml[32,628+10]..[44,1003+26]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-channels/input_all.ml[32,628+10]..[32,628+18])
+            Ppat_var "midpoint" (testsuite/tests/lib-channels/input_all.ml[32,628+10]..[32,628+18])
+          expression (testsuite/tests/lib-channels/input_all.ml[33,649+2]..[44,1003+26])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/lib-channels/input_all.ml[33,649+6]..[33,649+10])
+                  Ppat_var "data" (testsuite/tests/lib-channels/input_all.ml[33,649+6]..[33,649+10])
+                expression (testsuite/tests/lib-channels/input_all.ml[33,649+13]..[33,649+36])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-channels/input_all.ml[33,649+13]..[33,649+26])
+                    Pexp_ident "random_string" (testsuite/tests/lib-channels/input_all.ml[33,649+13]..[33,649+26])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-channels/input_all.ml[33,649+27]..[33,649+36])
+                        Pexp_ident "data_size" (testsuite/tests/lib-channels/input_all.ml[33,649+27]..[33,649+36])
+                  ]
+            ]
+            expression (testsuite/tests/lib-channels/input_all.ml[34,689+2]..[44,1003+26])
+              Pexp_sequence
+              expression (testsuite/tests/lib-channels/input_all.ml[34,689+2]..[35,727+49])
+                Pexp_apply
+                expression (testsuite/tests/lib-channels/input_all.ml[34,689+2]..[34,689+27])
+                  Pexp_ident "Out_channel.with_open_bin" (testsuite/tests/lib-channels/input_all.ml[34,689+2]..[34,689+27])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[34,689+28]..[34,689+37])
+                      Pexp_ident "data_file" (testsuite/tests/lib-channels/input_all.ml[34,689+28]..[34,689+37])
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[35,727+4]..[35,727+49])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/lib-channels/input_all.ml[35,727+9]..[35,727+11])
+                        Ppat_var "oc" (testsuite/tests/lib-channels/input_all.ml[35,727+9]..[35,727+11])
+                      expression (testsuite/tests/lib-channels/input_all.ml[35,727+15]..[35,727+48])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-channels/input_all.ml[35,727+15]..[35,727+40])
+                          Pexp_ident "Out_channel.output_string" (testsuite/tests/lib-channels/input_all.ml[35,727+15]..[35,727+40])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[35,727+41]..[35,727+43])
+                              Pexp_ident "oc" (testsuite/tests/lib-channels/input_all.ml[35,727+41]..[35,727+43])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[35,727+44]..[35,727+48])
+                              Pexp_ident "data" (testsuite/tests/lib-channels/input_all.ml[35,727+44]..[35,727+48])
+                        ]
+                ]
+              expression (testsuite/tests/lib-channels/input_all.ml[36,778+2]..[44,1003+26])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/lib-channels/input_all.ml[36,778+6]..[36,778+14])
+                      Ppat_var "contents" (testsuite/tests/lib-channels/input_all.ml[36,778+6]..[36,778+14])
+                    expression (testsuite/tests/lib-channels/input_all.ml[37,795+4]..[42,990+7])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-channels/input_all.ml[37,795+4]..[37,795+28])
+                        Pexp_ident "In_channel.with_open_bin" (testsuite/tests/lib-channels/input_all.ml[37,795+4]..[37,795+28])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-channels/input_all.ml[37,795+29]..[37,795+38])
+                            Pexp_ident "data_file" (testsuite/tests/lib-channels/input_all.ml[37,795+29]..[37,795+38])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-channels/input_all.ml[38,834+6]..[42,990+7])
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (testsuite/tests/lib-channels/input_all.ml[38,834+11]..[38,834+13])
+                              Ppat_var "ic" (testsuite/tests/lib-channels/input_all.ml[38,834+11]..[38,834+13])
+                            expression (testsuite/tests/lib-channels/input_all.ml[39,851+9]..[41,973+16])
+                              Pexp_let Nonrec
+                              [
+                                <def>
+                                  pattern (testsuite/tests/lib-channels/input_all.ml[39,851+13]..[39,851+15])
+                                    Ppat_var "s1" (testsuite/tests/lib-channels/input_all.ml[39,851+13]..[39,851+15])
+                                  expression (testsuite/tests/lib-channels/input_all.ml[39,851+18]..[39,851+73])
+                                    Pexp_apply
+                                    expression (testsuite/tests/lib-channels/input_all.ml[39,851+18]..[39,851+28])
+                                      Pexp_ident "Option.get" (testsuite/tests/lib-channels/input_all.ml[39,851+18]..[39,851+28])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/lib-channels/input_all.ml[39,851+29]..[39,851+73])
+                                          Pexp_apply
+                                          expression (testsuite/tests/lib-channels/input_all.ml[39,851+30]..[39,851+60])
+                                            Pexp_ident "In_channel.really_input_string" (testsuite/tests/lib-channels/input_all.ml[39,851+30]..[39,851+60])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/lib-channels/input_all.ml[39,851+61]..[39,851+63])
+                                                Pexp_ident "ic" (testsuite/tests/lib-channels/input_all.ml[39,851+61]..[39,851+63])
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/lib-channels/input_all.ml[39,851+64]..[39,851+72])
+                                                Pexp_ident "midpoint" (testsuite/tests/lib-channels/input_all.ml[39,851+64]..[39,851+72])
+                                          ]
+                                    ]
+                              ]
+                              expression (testsuite/tests/lib-channels/input_all.ml[40,928+9]..[41,973+16])
+                                Pexp_let Nonrec
+                                [
+                                  <def>
+                                    pattern (testsuite/tests/lib-channels/input_all.ml[40,928+13]..[40,928+15])
+                                      Ppat_var "s2" (testsuite/tests/lib-channels/input_all.ml[40,928+13]..[40,928+15])
+                                    expression (testsuite/tests/lib-channels/input_all.ml[40,928+18]..[40,928+41])
+                                      Pexp_apply
+                                      expression (testsuite/tests/lib-channels/input_all.ml[40,928+18]..[40,928+38])
+                                        Pexp_ident "In_channel.input_all" (testsuite/tests/lib-channels/input_all.ml[40,928+18]..[40,928+38])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/lib-channels/input_all.ml[40,928+39]..[40,928+41])
+                                            Pexp_ident "ic" (testsuite/tests/lib-channels/input_all.ml[40,928+39]..[40,928+41])
+                                      ]
+                                ]
+                                expression (testsuite/tests/lib-channels/input_all.ml[41,973+9]..[41,973+16])
+                                  Pexp_apply
+                                  expression (testsuite/tests/lib-channels/input_all.ml[41,973+12]..[41,973+13])
+                                    Pexp_ident "^" (testsuite/tests/lib-channels/input_all.ml[41,973+12]..[41,973+13])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-channels/input_all.ml[41,973+9]..[41,973+11])
+                                        Pexp_ident "s1" (testsuite/tests/lib-channels/input_all.ml[41,973+9]..[41,973+11])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-channels/input_all.ml[41,973+14]..[41,973+16])
+                                        Pexp_ident "s2" (testsuite/tests/lib-channels/input_all.ml[41,973+14]..[41,973+16])
+                                  ]
+                      ]
+                ]
+                expression (testsuite/tests/lib-channels/input_all.ml[44,1003+2]..[44,1003+26])
+                  Pexp_assert
+                  expression (testsuite/tests/lib-channels/input_all.ml[44,1003+9]..[44,1003+26])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-channels/input_all.ml[44,1003+19]..[44,1003+20])
+                      Pexp_ident "=" (testsuite/tests/lib-channels/input_all.ml[44,1003+19]..[44,1003+20])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[44,1003+10]..[44,1003+18])
+                          Pexp_ident "contents" (testsuite/tests/lib-channels/input_all.ml[44,1003+10]..[44,1003+18])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[44,1003+21]..[44,1003+25])
+                          Pexp_ident "data" (testsuite/tests/lib-channels/input_all.ml[44,1003+21]..[44,1003+25])
+                    ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[46,1031+0]..[47,1040+40])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[46,1031+4]..[46,1031+6])
+          Ppat_construct "()" (testsuite/tests/lib-channels/input_all.ml[46,1031+4]..[46,1031+6])
+          None
+        expression (testsuite/tests/lib-channels/input_all.ml[47,1040+2]..[47,1040+40])
+          Pexp_apply
+          expression (testsuite/tests/lib-channels/input_all.ml[47,1040+2]..[47,1040+11])
+            Pexp_ident "List.iter" (testsuite/tests/lib-channels/input_all.ml[47,1040+2]..[47,1040+11])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[47,1040+12]..[47,1040+17])
+                Pexp_ident "check" (testsuite/tests/lib-channels/input_all.ml[47,1040+12]..[47,1040+17])
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[47,1040+18]..[47,1040+40])
+                Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[47,1040+19]..[47,1040+40]) ghost
+                Some
+                  expression (testsuite/tests/lib-channels/input_all.ml[47,1040+19]..[47,1040+40]) ghost
+                    Pexp_tuple
+                    [
+                      expression (testsuite/tests/lib-channels/input_all.ml[47,1040+19]..[47,1040+20])
+                        Pexp_constant PConst_int (0,None)
+                      expression (testsuite/tests/lib-channels/input_all.ml[47,1040+22]..[47,1040+40]) ghost
+                        Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[47,1040+22]..[47,1040+40]) ghost
+                        Some
+                          expression (testsuite/tests/lib-channels/input_all.ml[47,1040+22]..[47,1040+40]) ghost
+                            Pexp_tuple
+                            [
+                              expression (testsuite/tests/lib-channels/input_all.ml[47,1040+22]..[47,1040+23])
+                                Pexp_constant PConst_int (1,None)
+                              expression (testsuite/tests/lib-channels/input_all.ml[47,1040+25]..[47,1040+40]) ghost
+                                Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[47,1040+25]..[47,1040+40]) ghost
+                                Some
+                                  expression (testsuite/tests/lib-channels/input_all.ml[47,1040+25]..[47,1040+40]) ghost
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/lib-channels/input_all.ml[47,1040+25]..[47,1040+28])
+                                        Pexp_constant PConst_int (100,None)
+                                      expression (testsuite/tests/lib-channels/input_all.ml[47,1040+30]..[47,1040+40]) ghost
+                                        Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[47,1040+30]..[47,1040+40]) ghost
+                                        Some
+                                          expression (testsuite/tests/lib-channels/input_all.ml[47,1040+30]..[47,1040+40]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (testsuite/tests/lib-channels/input_all.ml[47,1040+30]..[47,1040+39])
+                                                Pexp_ident "data_size" (testsuite/tests/lib-channels/input_all.ml[47,1040+30]..[47,1040+39])
+                                              expression (testsuite/tests/lib-channels/input_all.ml[47,1040+39]..[47,1040+40]) ghost
+                                                Pexp_construct "[]" (testsuite/tests/lib-channels/input_all.ml[47,1040+39]..[47,1040+40]) ghost
+                                                None
+                                            ]
+                                    ]
+                            ]
+                    ]
+          ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[52,1124+0]..[55,1243+46])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[52,1124+4]..[52,1124+12])
+          Ppat_var "dos2unix" (testsuite/tests/lib-channels/input_all.ml[52,1124+4]..[52,1124+12])
+        expression (testsuite/tests/lib-channels/input_all.ml[52,1124+13]..[55,1243+46]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-channels/input_all.ml[52,1124+13]..[52,1124+16])
+            Ppat_var "inp" (testsuite/tests/lib-channels/input_all.ml[52,1124+13]..[52,1124+16])
+          expression (testsuite/tests/lib-channels/input_all.ml[52,1124+17]..[55,1243+46]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/lib-channels/input_all.ml[52,1124+17]..[52,1124+20])
+              Ppat_var "out" (testsuite/tests/lib-channels/input_all.ml[52,1124+17]..[52,1124+20])
+            expression (testsuite/tests/lib-channels/input_all.ml[53,1147+2]..[55,1243+46])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/lib-channels/input_all.ml[53,1147+6]..[53,1147+7])
+                    Ppat_var "s" (testsuite/tests/lib-channels/input_all.ml[53,1147+6]..[53,1147+7])
+                  expression (testsuite/tests/lib-channels/input_all.ml[53,1147+10]..[53,1147+60])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-channels/input_all.ml[53,1147+10]..[53,1147+35])
+                      Pexp_ident "In_channel.with_open_text" (testsuite/tests/lib-channels/input_all.ml[53,1147+10]..[53,1147+35])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[53,1147+36]..[53,1147+39])
+                          Pexp_ident "inp" (testsuite/tests/lib-channels/input_all.ml[53,1147+36]..[53,1147+39])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[53,1147+40]..[53,1147+60])
+                          Pexp_ident "In_channel.input_all" (testsuite/tests/lib-channels/input_all.ml[53,1147+40]..[53,1147+60])
+                    ]
+              ]
+              expression (testsuite/tests/lib-channels/input_all.ml[54,1211+2]..[55,1243+46])
+                Pexp_apply
+                expression (testsuite/tests/lib-channels/input_all.ml[54,1211+2]..[54,1211+27])
+                  Pexp_ident "Out_channel.with_open_bin" (testsuite/tests/lib-channels/input_all.ml[54,1211+2]..[54,1211+27])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[54,1211+28]..[54,1211+31])
+                      Pexp_ident "out" (testsuite/tests/lib-channels/input_all.ml[54,1211+28]..[54,1211+31])
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[55,1243+4]..[55,1243+46])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/lib-channels/input_all.ml[55,1243+9]..[55,1243+11])
+                        Ppat_var "oc" (testsuite/tests/lib-channels/input_all.ml[55,1243+9]..[55,1243+11])
+                      expression (testsuite/tests/lib-channels/input_all.ml[55,1243+15]..[55,1243+45])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-channels/input_all.ml[55,1243+15]..[55,1243+40])
+                          Pexp_ident "Out_channel.output_string" (testsuite/tests/lib-channels/input_all.ml[55,1243+15]..[55,1243+40])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[55,1243+41]..[55,1243+43])
+                              Pexp_ident "oc" (testsuite/tests/lib-channels/input_all.ml[55,1243+41]..[55,1243+43])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[55,1243+44]..[55,1243+45])
+                              Pexp_ident "s" (testsuite/tests/lib-channels/input_all.ml[55,1243+44]..[55,1243+45])
+                        ]
+                ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[58,1318+0]..[61,1438+46])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[58,1318+4]..[58,1318+12])
+          Ppat_var "unix2dos" (testsuite/tests/lib-channels/input_all.ml[58,1318+4]..[58,1318+12])
+        expression (testsuite/tests/lib-channels/input_all.ml[58,1318+13]..[61,1438+46]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-channels/input_all.ml[58,1318+13]..[58,1318+16])
+            Ppat_var "inp" (testsuite/tests/lib-channels/input_all.ml[58,1318+13]..[58,1318+16])
+          expression (testsuite/tests/lib-channels/input_all.ml[58,1318+17]..[61,1438+46]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/lib-channels/input_all.ml[58,1318+17]..[58,1318+20])
+              Ppat_var "out" (testsuite/tests/lib-channels/input_all.ml[58,1318+17]..[58,1318+20])
+            expression (testsuite/tests/lib-channels/input_all.ml[59,1341+2]..[61,1438+46])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/lib-channels/input_all.ml[59,1341+6]..[59,1341+7])
+                    Ppat_var "s" (testsuite/tests/lib-channels/input_all.ml[59,1341+6]..[59,1341+7])
+                  expression (testsuite/tests/lib-channels/input_all.ml[59,1341+10]..[59,1341+60])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-channels/input_all.ml[59,1341+10]..[59,1341+35])
+                      Pexp_ident "In_channel.with_open_text" (testsuite/tests/lib-channels/input_all.ml[59,1341+10]..[59,1341+35])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[59,1341+36]..[59,1341+39])
+                          Pexp_ident "inp" (testsuite/tests/lib-channels/input_all.ml[59,1341+36]..[59,1341+39])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[59,1341+40]..[59,1341+60])
+                          Pexp_ident "In_channel.input_all" (testsuite/tests/lib-channels/input_all.ml[59,1341+40]..[59,1341+60])
+                    ]
+              ]
+              expression (testsuite/tests/lib-channels/input_all.ml[60,1405+2]..[61,1438+46])
+                Pexp_apply
+                expression (testsuite/tests/lib-channels/input_all.ml[60,1405+2]..[60,1405+28])
+                  Pexp_ident "Out_channel.with_open_text" (testsuite/tests/lib-channels/input_all.ml[60,1405+2]..[60,1405+28])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[60,1405+29]..[60,1405+32])
+                      Pexp_ident "out" (testsuite/tests/lib-channels/input_all.ml[60,1405+29]..[60,1405+32])
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[61,1438+4]..[61,1438+46])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/lib-channels/input_all.ml[61,1438+9]..[61,1438+11])
+                        Ppat_var "oc" (testsuite/tests/lib-channels/input_all.ml[61,1438+9]..[61,1438+11])
+                      expression (testsuite/tests/lib-channels/input_all.ml[61,1438+15]..[61,1438+45])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-channels/input_all.ml[61,1438+15]..[61,1438+40])
+                          Pexp_ident "Out_channel.output_string" (testsuite/tests/lib-channels/input_all.ml[61,1438+15]..[61,1438+40])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[61,1438+41]..[61,1438+43])
+                              Pexp_ident "oc" (testsuite/tests/lib-channels/input_all.ml[61,1438+41]..[61,1438+43])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[61,1438+44]..[61,1438+45])
+                              Pexp_ident "s" (testsuite/tests/lib-channels/input_all.ml[61,1438+44]..[61,1438+45])
+                        ]
+                ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[63,1486+0]..[64,1502+16])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[63,1486+4]..[63,1486+13])
+          Ppat_var "source_fn" (testsuite/tests/lib-channels/input_all.ml[63,1486+4]..[63,1486+13])
+        expression (testsuite/tests/lib-channels/input_all.ml[64,1502+2]..[64,1502+16])
+          Pexp_constant PConst_string("input_all.ml",(testsuite/tests/lib-channels/input_all.ml[64,1502+3]..[64,1502+15]),None)
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[66,1520+0]..[67,1539+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[66,1520+4]..[66,1520+16])
+          Ppat_var "source_fn_lf" (testsuite/tests/lib-channels/input_all.ml[66,1520+4]..[66,1520+16])
+        expression (testsuite/tests/lib-channels/input_all.ml[67,1539+2]..[67,1539+19])
+          Pexp_apply
+          expression (testsuite/tests/lib-channels/input_all.ml[67,1539+12]..[67,1539+13])
+            Pexp_ident "^" (testsuite/tests/lib-channels/input_all.ml[67,1539+12]..[67,1539+13])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[67,1539+2]..[67,1539+11])
+                Pexp_ident "source_fn" (testsuite/tests/lib-channels/input_all.ml[67,1539+2]..[67,1539+11])
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[67,1539+14]..[67,1539+19])
+                Pexp_constant PConst_string(".lf",(testsuite/tests/lib-channels/input_all.ml[67,1539+15]..[67,1539+18]),None)
+          ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[69,1560+0]..[70,1581+21])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[69,1560+4]..[69,1560+18])
+          Ppat_var "source_fn_crlf" (testsuite/tests/lib-channels/input_all.ml[69,1560+4]..[69,1560+18])
+        expression (testsuite/tests/lib-channels/input_all.ml[70,1581+2]..[70,1581+21])
+          Pexp_apply
+          expression (testsuite/tests/lib-channels/input_all.ml[70,1581+12]..[70,1581+13])
+            Pexp_ident "^" (testsuite/tests/lib-channels/input_all.ml[70,1581+12]..[70,1581+13])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[70,1581+2]..[70,1581+11])
+                Pexp_ident "source_fn" (testsuite/tests/lib-channels/input_all.ml[70,1581+2]..[70,1581+11])
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[70,1581+14]..[70,1581+21])
+                Pexp_constant PConst_string(".crlf",(testsuite/tests/lib-channels/input_all.ml[70,1581+15]..[70,1581+20]),None)
+          ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[72,1604+0]..[73,1613+33])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[72,1604+4]..[72,1604+6])
+          Ppat_construct "()" (testsuite/tests/lib-channels/input_all.ml[72,1604+4]..[72,1604+6])
+          None
+        expression (testsuite/tests/lib-channels/input_all.ml[73,1613+2]..[73,1613+33])
+          Pexp_apply
+          expression (testsuite/tests/lib-channels/input_all.ml[73,1613+2]..[73,1613+10])
+            Pexp_ident "dos2unix" (testsuite/tests/lib-channels/input_all.ml[73,1613+2]..[73,1613+10])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[73,1613+11]..[73,1613+20])
+                Pexp_ident "source_fn" (testsuite/tests/lib-channels/input_all.ml[73,1613+11]..[73,1613+20])
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[73,1613+21]..[73,1613+33])
+                Pexp_ident "source_fn_lf" (testsuite/tests/lib-channels/input_all.ml[73,1613+21]..[73,1613+33])
+          ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[75,1648+0]..[76,1657+35])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[75,1648+4]..[75,1648+6])
+          Ppat_construct "()" (testsuite/tests/lib-channels/input_all.ml[75,1648+4]..[75,1648+6])
+          None
+        expression (testsuite/tests/lib-channels/input_all.ml[76,1657+2]..[76,1657+35])
+          Pexp_apply
+          expression (testsuite/tests/lib-channels/input_all.ml[76,1657+2]..[76,1657+10])
+            Pexp_ident "unix2dos" (testsuite/tests/lib-channels/input_all.ml[76,1657+2]..[76,1657+10])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[76,1657+11]..[76,1657+20])
+                Pexp_ident "source_fn" (testsuite/tests/lib-channels/input_all.ml[76,1657+11]..[76,1657+20])
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[76,1657+21]..[76,1657+35])
+                Pexp_ident "source_fn_crlf" (testsuite/tests/lib-channels/input_all.ml[76,1657+21]..[76,1657+35])
+          ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[78,1694+0]..[80,1753+75])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[78,1694+4]..[78,1694+16])
+          Ppat_var "raw_contents" (testsuite/tests/lib-channels/input_all.ml[78,1694+4]..[78,1694+16])
+        expression (testsuite/tests/lib-channels/input_all.ml[79,1713+2]..[80,1753+75])
+          Pexp_apply
+          expression (testsuite/tests/lib-channels/input_all.ml[79,1713+2]..[79,1713+26])
+            Pexp_ident "In_channel.with_open_bin" (testsuite/tests/lib-channels/input_all.ml[79,1713+2]..[79,1713+26])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[79,1713+27]..[79,1713+39])
+                Pexp_ident "source_fn_lf" (testsuite/tests/lib-channels/input_all.ml[79,1713+27]..[79,1713+39])
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[80,1753+4]..[80,1753+75])
+                Pexp_fun
+                Nolabel
+                None
+                pattern (testsuite/tests/lib-channels/input_all.ml[80,1753+9]..[80,1753+11])
+                  Ppat_var "ic" (testsuite/tests/lib-channels/input_all.ml[80,1753+9]..[80,1753+11])
+                expression (testsuite/tests/lib-channels/input_all.ml[80,1753+15]..[80,1753+74])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-channels/input_all.ml[80,1753+15]..[80,1753+41])
+                    Pexp_ident "Stdlib.really_input_string" (testsuite/tests/lib-channels/input_all.ml[80,1753+15]..[80,1753+41])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-channels/input_all.ml[80,1753+42]..[80,1753+44])
+                        Pexp_ident "ic" (testsuite/tests/lib-channels/input_all.ml[80,1753+42]..[80,1753+44])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-channels/input_all.ml[80,1753+45]..[80,1753+74])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-channels/input_all.ml[80,1753+46]..[80,1753+70])
+                          Pexp_ident "Stdlib.in_channel_length" (testsuite/tests/lib-channels/input_all.ml[80,1753+46]..[80,1753+70])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[80,1753+71]..[80,1753+73])
+                              Pexp_ident "ic" (testsuite/tests/lib-channels/input_all.ml[80,1753+71]..[80,1753+73])
+                        ]
+                  ]
+          ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[82,1830+0]..[91,2082+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[82,1830+4]..[82,1830+9])
+          Ppat_var "check" (testsuite/tests/lib-channels/input_all.ml[82,1830+4]..[82,1830+9])
+        expression (testsuite/tests/lib-channels/input_all.ml[82,1830+10]..[91,2082+34]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-channels/input_all.ml[82,1830+10]..[82,1830+18])
+            Ppat_var "midpoint" (testsuite/tests/lib-channels/input_all.ml[82,1830+10]..[82,1830+18])
+          expression (testsuite/tests/lib-channels/input_all.ml[83,1851+2]..[91,2082+34])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/lib-channels/input_all.ml[83,1851+6]..[83,1851+14])
+                  Ppat_var "contents" (testsuite/tests/lib-channels/input_all.ml[83,1851+6]..[83,1851+14])
+                expression (testsuite/tests/lib-channels/input_all.ml[84,1868+4]..[89,2069+7])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-channels/input_all.ml[84,1868+4]..[84,1868+29])
+                    Pexp_ident "In_channel.with_open_text" (testsuite/tests/lib-channels/input_all.ml[84,1868+4]..[84,1868+29])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-channels/input_all.ml[84,1868+30]..[84,1868+44])
+                        Pexp_ident "source_fn_crlf" (testsuite/tests/lib-channels/input_all.ml[84,1868+30]..[84,1868+44])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-channels/input_all.ml[85,1913+6]..[89,2069+7])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/lib-channels/input_all.ml[85,1913+11]..[85,1913+13])
+                          Ppat_var "ic" (testsuite/tests/lib-channels/input_all.ml[85,1913+11]..[85,1913+13])
+                        expression (testsuite/tests/lib-channels/input_all.ml[86,1930+9]..[88,2052+16])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (testsuite/tests/lib-channels/input_all.ml[86,1930+13]..[86,1930+15])
+                                Ppat_var "s1" (testsuite/tests/lib-channels/input_all.ml[86,1930+13]..[86,1930+15])
+                              expression (testsuite/tests/lib-channels/input_all.ml[86,1930+18]..[86,1930+73])
+                                Pexp_apply
+                                expression (testsuite/tests/lib-channels/input_all.ml[86,1930+18]..[86,1930+28])
+                                  Pexp_ident "Option.get" (testsuite/tests/lib-channels/input_all.ml[86,1930+18]..[86,1930+28])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-channels/input_all.ml[86,1930+29]..[86,1930+73])
+                                      Pexp_apply
+                                      expression (testsuite/tests/lib-channels/input_all.ml[86,1930+30]..[86,1930+60])
+                                        Pexp_ident "In_channel.really_input_string" (testsuite/tests/lib-channels/input_all.ml[86,1930+30]..[86,1930+60])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/lib-channels/input_all.ml[86,1930+61]..[86,1930+63])
+                                            Pexp_ident "ic" (testsuite/tests/lib-channels/input_all.ml[86,1930+61]..[86,1930+63])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/lib-channels/input_all.ml[86,1930+64]..[86,1930+72])
+                                            Pexp_ident "midpoint" (testsuite/tests/lib-channels/input_all.ml[86,1930+64]..[86,1930+72])
+                                      ]
+                                ]
+                          ]
+                          expression (testsuite/tests/lib-channels/input_all.ml[87,2007+9]..[88,2052+16])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (testsuite/tests/lib-channels/input_all.ml[87,2007+13]..[87,2007+15])
+                                  Ppat_var "s2" (testsuite/tests/lib-channels/input_all.ml[87,2007+13]..[87,2007+15])
+                                expression (testsuite/tests/lib-channels/input_all.ml[87,2007+18]..[87,2007+41])
+                                  Pexp_apply
+                                  expression (testsuite/tests/lib-channels/input_all.ml[87,2007+18]..[87,2007+38])
+                                    Pexp_ident "In_channel.input_all" (testsuite/tests/lib-channels/input_all.ml[87,2007+18]..[87,2007+38])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-channels/input_all.ml[87,2007+39]..[87,2007+41])
+                                        Pexp_ident "ic" (testsuite/tests/lib-channels/input_all.ml[87,2007+39]..[87,2007+41])
+                                  ]
+                            ]
+                            expression (testsuite/tests/lib-channels/input_all.ml[88,2052+9]..[88,2052+16])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-channels/input_all.ml[88,2052+12]..[88,2052+13])
+                                Pexp_ident "^" (testsuite/tests/lib-channels/input_all.ml[88,2052+12]..[88,2052+13])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-channels/input_all.ml[88,2052+9]..[88,2052+11])
+                                    Pexp_ident "s1" (testsuite/tests/lib-channels/input_all.ml[88,2052+9]..[88,2052+11])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-channels/input_all.ml[88,2052+14]..[88,2052+16])
+                                    Pexp_ident "s2" (testsuite/tests/lib-channels/input_all.ml[88,2052+14]..[88,2052+16])
+                              ]
+                  ]
+            ]
+            expression (testsuite/tests/lib-channels/input_all.ml[91,2082+2]..[91,2082+34])
+              Pexp_assert
+              expression (testsuite/tests/lib-channels/input_all.ml[91,2082+9]..[91,2082+34])
+                Pexp_apply
+                expression (testsuite/tests/lib-channels/input_all.ml[91,2082+19]..[91,2082+20])
+                  Pexp_ident "=" (testsuite/tests/lib-channels/input_all.ml[91,2082+19]..[91,2082+20])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[91,2082+10]..[91,2082+18])
+                      Pexp_ident "contents" (testsuite/tests/lib-channels/input_all.ml[91,2082+10]..[91,2082+18])
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-channels/input_all.ml[91,2082+21]..[91,2082+33])
+                      Pexp_ident "raw_contents" (testsuite/tests/lib-channels/input_all.ml[91,2082+21]..[91,2082+33])
+                ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[93,2118+0]..[94,2127+52])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[93,2118+4]..[93,2118+6])
+          Ppat_construct "()" (testsuite/tests/lib-channels/input_all.ml[93,2118+4]..[93,2118+6])
+          None
+        expression (testsuite/tests/lib-channels/input_all.ml[94,2127+2]..[94,2127+52])
+          Pexp_apply
+          expression (testsuite/tests/lib-channels/input_all.ml[94,2127+2]..[94,2127+11])
+            Pexp_ident "List.iter" (testsuite/tests/lib-channels/input_all.ml[94,2127+2]..[94,2127+11])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[94,2127+12]..[94,2127+17])
+                Pexp_ident "check" (testsuite/tests/lib-channels/input_all.ml[94,2127+12]..[94,2127+17])
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[94,2127+18]..[94,2127+52])
+                Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[94,2127+19]..[94,2127+52]) ghost
+                Some
+                  expression (testsuite/tests/lib-channels/input_all.ml[94,2127+19]..[94,2127+52]) ghost
+                    Pexp_tuple
+                    [
+                      expression (testsuite/tests/lib-channels/input_all.ml[94,2127+19]..[94,2127+20])
+                        Pexp_constant PConst_int (0,None)
+                      expression (testsuite/tests/lib-channels/input_all.ml[94,2127+22]..[94,2127+52]) ghost
+                        Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[94,2127+22]..[94,2127+52]) ghost
+                        Some
+                          expression (testsuite/tests/lib-channels/input_all.ml[94,2127+22]..[94,2127+52]) ghost
+                            Pexp_tuple
+                            [
+                              expression (testsuite/tests/lib-channels/input_all.ml[94,2127+22]..[94,2127+23])
+                                Pexp_constant PConst_int (1,None)
+                              expression (testsuite/tests/lib-channels/input_all.ml[94,2127+25]..[94,2127+52]) ghost
+                                Pexp_construct "::" (testsuite/tests/lib-channels/input_all.ml[94,2127+25]..[94,2127+52]) ghost
+                                Some
+                                  expression (testsuite/tests/lib-channels/input_all.ml[94,2127+25]..[94,2127+52]) ghost
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/lib-channels/input_all.ml[94,2127+25]..[94,2127+51])
+                                        Pexp_apply
+                                        expression (testsuite/tests/lib-channels/input_all.ml[94,2127+25]..[94,2127+38])
+                                          Pexp_ident "String.length" (testsuite/tests/lib-channels/input_all.ml[94,2127+25]..[94,2127+38])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/lib-channels/input_all.ml[94,2127+39]..[94,2127+51])
+                                              Pexp_ident "raw_contents" (testsuite/tests/lib-channels/input_all.ml[94,2127+39]..[94,2127+51])
+                                        ]
+                                      expression (testsuite/tests/lib-channels/input_all.ml[94,2127+51]..[94,2127+52]) ghost
+                                        Pexp_construct "[]" (testsuite/tests/lib-channels/input_all.ml[94,2127+51]..[94,2127+52]) ghost
+                                        None
+                                    ]
+                            ]
+                    ]
+          ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[96,2181+0]..[97,2202+27])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[96,2181+4]..[96,2181+15])
+          Ppat_var "random_char" (testsuite/tests/lib-channels/input_all.ml[96,2181+4]..[96,2181+15])
+        expression (testsuite/tests/lib-channels/input_all.ml[96,2181+16]..[97,2202+27]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-channels/input_all.ml[96,2181+16]..[96,2181+18])
+            Ppat_construct "()" (testsuite/tests/lib-channels/input_all.ml[96,2181+16]..[96,2181+18])
+            None
+          expression (testsuite/tests/lib-channels/input_all.ml[97,2202+2]..[97,2202+27])
+            Pexp_apply
+            expression (testsuite/tests/lib-channels/input_all.ml[97,2202+2]..[97,2202+10])
+              Pexp_ident "Char.chr" (testsuite/tests/lib-channels/input_all.ml[97,2202+2]..[97,2202+10])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/lib-channels/input_all.ml[97,2202+11]..[97,2202+27])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-channels/input_all.ml[97,2202+12]..[97,2202+22])
+                    Pexp_ident "Random.int" (testsuite/tests/lib-channels/input_all.ml[97,2202+12]..[97,2202+22])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-channels/input_all.ml[97,2202+23]..[97,2202+26])
+                        Pexp_constant PConst_int (256,None)
+                  ]
+            ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[99,2231+0]..[116,2814+49])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[99,2231+4]..[99,2231+13])
+          Ppat_var "test_pipe" (testsuite/tests/lib-channels/input_all.ml[99,2231+4]..[99,2231+13])
+        expression (testsuite/tests/lib-channels/input_all.ml[99,2231+14]..[116,2814+49]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-channels/input_all.ml[99,2231+14]..[99,2231+15])
+            Ppat_var "n" (testsuite/tests/lib-channels/input_all.ml[99,2231+14]..[99,2231+15])
+          expression (testsuite/tests/lib-channels/input_all.ml[100,2249+2]..[116,2814+49])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/lib-channels/input_all.ml[100,2249+6]..[100,2249+9])
+                  Ppat_var "buf" (testsuite/tests/lib-channels/input_all.ml[100,2249+6]..[100,2249+9])
+                expression (testsuite/tests/lib-channels/input_all.ml[100,2249+12]..[100,2249+50])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-channels/input_all.ml[100,2249+12]..[100,2249+22])
+                    Pexp_ident "Bytes.init" (testsuite/tests/lib-channels/input_all.ml[100,2249+12]..[100,2249+22])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-channels/input_all.ml[100,2249+23]..[100,2249+24])
+                        Pexp_ident "n" (testsuite/tests/lib-channels/input_all.ml[100,2249+23]..[100,2249+24])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-channels/input_all.ml[100,2249+25]..[100,2249+50])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/lib-channels/input_all.ml[100,2249+30]..[100,2249+31])
+                          Ppat_any
+                        expression (testsuite/tests/lib-channels/input_all.ml[100,2249+35]..[100,2249+49])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-channels/input_all.ml[100,2249+35]..[100,2249+46])
+                            Pexp_ident "random_char" (testsuite/tests/lib-channels/input_all.ml[100,2249+35]..[100,2249+46])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-channels/input_all.ml[100,2249+47]..[100,2249+49])
+                                Pexp_construct "()" (testsuite/tests/lib-channels/input_all.ml[100,2249+47]..[100,2249+49])
+                                None
+                          ]
+                  ]
+            ]
+            expression (testsuite/tests/lib-channels/input_all.ml[101,2303+2]..[116,2814+49])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/lib-channels/input_all.ml[101,2303+6]..[101,2303+21])
+                    Ppat_tuple
+                    [
+                      pattern (testsuite/tests/lib-channels/input_all.ml[101,2303+6]..[101,2303+12])
+                        Ppat_var "toread" (testsuite/tests/lib-channels/input_all.ml[101,2303+6]..[101,2303+12])
+                      pattern (testsuite/tests/lib-channels/input_all.ml[101,2303+14]..[101,2303+21])
+                        Ppat_var "towrite" (testsuite/tests/lib-channels/input_all.ml[101,2303+14]..[101,2303+21])
+                    ]
+                  expression (testsuite/tests/lib-channels/input_all.ml[101,2303+24]..[101,2303+36])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-channels/input_all.ml[101,2303+24]..[101,2303+33])
+                      Pexp_ident "Unix.pipe" (testsuite/tests/lib-channels/input_all.ml[101,2303+24]..[101,2303+33])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-channels/input_all.ml[101,2303+34]..[101,2303+36])
+                          Pexp_construct "()" (testsuite/tests/lib-channels/input_all.ml[101,2303+34]..[101,2303+36])
+                          None
+                    ]
+              ]
+              expression (testsuite/tests/lib-channels/input_all.ml[102,2343+2]..[116,2814+49])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/lib-channels/input_all.ml[102,2343+6]..[102,2343+14])
+                      Ppat_var "producer" (testsuite/tests/lib-channels/input_all.ml[102,2343+6]..[102,2343+14])
+                    expression (testsuite/tests/lib-channels/input_all.ml[102,2343+15]..[108,2522+29]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/lib-channels/input_all.ml[102,2343+15]..[102,2343+17])
+                        Ppat_construct "()" (testsuite/tests/lib-channels/input_all.ml[102,2343+15]..[102,2343+17])
+                        None
+                      expression (testsuite/tests/lib-channels/input_all.ml[103,2363+4]..[108,2522+29])
+                        Pexp_let Rec
+                        [
+                          <def>
+                            pattern (testsuite/tests/lib-channels/input_all.ml[103,2363+12]..[103,2363+16])
+                              Ppat_var "loop" (testsuite/tests/lib-channels/input_all.ml[103,2363+12]..[103,2363+16])
+                            expression (testsuite/tests/lib-channels/input_all.ml[103,2363+17]..[106,2479+35]) ghost
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (testsuite/tests/lib-channels/input_all.ml[103,2363+17]..[103,2363+20])
+                                Ppat_var "pos" (testsuite/tests/lib-channels/input_all.ml[103,2363+17]..[103,2363+20])
+                              expression (testsuite/tests/lib-channels/input_all.ml[103,2363+21]..[106,2479+35]) ghost
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (testsuite/tests/lib-channels/input_all.ml[103,2363+21]..[103,2363+24])
+                                  Ppat_var "rem" (testsuite/tests/lib-channels/input_all.ml[103,2363+21]..[103,2363+24])
+                                expression (testsuite/tests/lib-channels/input_all.ml[104,2390+6]..[106,2479+35])
+                                  Pexp_let Nonrec
+                                  [
+                                    <def>
+                                      pattern (testsuite/tests/lib-channels/input_all.ml[104,2390+10]..[104,2390+11])
+                                        Ppat_var "n" (testsuite/tests/lib-channels/input_all.ml[104,2390+10]..[104,2390+11])
+                                      expression (testsuite/tests/lib-channels/input_all.ml[104,2390+14]..[104,2390+44])
+                                        Pexp_apply
+                                        expression (testsuite/tests/lib-channels/input_all.ml[104,2390+14]..[104,2390+24])
+                                          Pexp_ident "Unix.write" (testsuite/tests/lib-channels/input_all.ml[104,2390+14]..[104,2390+24])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/lib-channels/input_all.ml[104,2390+25]..[104,2390+32])
+                                              Pexp_ident "towrite" (testsuite/tests/lib-channels/input_all.ml[104,2390+25]..[104,2390+32])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/lib-channels/input_all.ml[104,2390+33]..[104,2390+36])
+                                              Pexp_ident "buf" (testsuite/tests/lib-channels/input_all.ml[104,2390+33]..[104,2390+36])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/lib-channels/input_all.ml[104,2390+37]..[104,2390+40])
+                                              Pexp_ident "pos" (testsuite/tests/lib-channels/input_all.ml[104,2390+37]..[104,2390+40])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/lib-channels/input_all.ml[104,2390+41]..[104,2390+44])
+                                              Pexp_ident "rem" (testsuite/tests/lib-channels/input_all.ml[104,2390+41]..[104,2390+44])
+                                        ]
+                                  ]
+                                  expression (testsuite/tests/lib-channels/input_all.ml[105,2438+6]..[106,2479+35])
+                                    Pexp_ifthenelse
+                                    expression (testsuite/tests/lib-channels/input_all.ml[105,2438+9]..[105,2438+16])
+                                      Pexp_apply
+                                      expression (testsuite/tests/lib-channels/input_all.ml[105,2438+11]..[105,2438+12])
+                                        Pexp_ident "=" (testsuite/tests/lib-channels/input_all.ml[105,2438+11]..[105,2438+12])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/lib-channels/input_all.ml[105,2438+9]..[105,2438+10])
+                                            Pexp_ident "n" (testsuite/tests/lib-channels/input_all.ml[105,2438+9]..[105,2438+10])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/lib-channels/input_all.ml[105,2438+13]..[105,2438+16])
+                                            Pexp_ident "rem" (testsuite/tests/lib-channels/input_all.ml[105,2438+13]..[105,2438+16])
+                                      ]
+                                    expression (testsuite/tests/lib-channels/input_all.ml[105,2438+22]..[105,2438+40])
+                                      Pexp_apply
+                                      expression (testsuite/tests/lib-channels/input_all.ml[105,2438+22]..[105,2438+32])
+                                        Pexp_ident "Unix.close" (testsuite/tests/lib-channels/input_all.ml[105,2438+22]..[105,2438+32])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/lib-channels/input_all.ml[105,2438+33]..[105,2438+40])
+                                            Pexp_ident "towrite" (testsuite/tests/lib-channels/input_all.ml[105,2438+33]..[105,2438+40])
+                                      ]
+                                    Some
+                                      expression (testsuite/tests/lib-channels/input_all.ml[106,2479+11]..[106,2479+35])
+                                        Pexp_apply
+                                        expression (testsuite/tests/lib-channels/input_all.ml[106,2479+11]..[106,2479+15])
+                                          Pexp_ident "loop" (testsuite/tests/lib-channels/input_all.ml[106,2479+11]..[106,2479+15])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/lib-channels/input_all.ml[106,2479+16]..[106,2479+25])
+                                              Pexp_apply
+                                              expression (testsuite/tests/lib-channels/input_all.ml[106,2479+21]..[106,2479+22])
+                                                Pexp_ident "+" (testsuite/tests/lib-channels/input_all.ml[106,2479+21]..[106,2479+22])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/lib-channels/input_all.ml[106,2479+17]..[106,2479+20])
+                                                    Pexp_ident "pos" (testsuite/tests/lib-channels/input_all.ml[106,2479+17]..[106,2479+20])
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/lib-channels/input_all.ml[106,2479+23]..[106,2479+24])
+                                                    Pexp_ident "n" (testsuite/tests/lib-channels/input_all.ml[106,2479+23]..[106,2479+24])
+                                              ]
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/lib-channels/input_all.ml[106,2479+26]..[106,2479+35])
+                                              Pexp_apply
+                                              expression (testsuite/tests/lib-channels/input_all.ml[106,2479+31]..[106,2479+32])
+                                                Pexp_ident "-" (testsuite/tests/lib-channels/input_all.ml[106,2479+31]..[106,2479+32])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/lib-channels/input_all.ml[106,2479+27]..[106,2479+30])
+                                                    Pexp_ident "rem" (testsuite/tests/lib-channels/input_all.ml[106,2479+27]..[106,2479+30])
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/lib-channels/input_all.ml[106,2479+33]..[106,2479+34])
+                                                    Pexp_ident "n" (testsuite/tests/lib-channels/input_all.ml[106,2479+33]..[106,2479+34])
+                                              ]
+                                        ]
+                        ]
+                        expression (testsuite/tests/lib-channels/input_all.ml[108,2522+4]..[108,2522+29])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-channels/input_all.ml[108,2522+4]..[108,2522+8])
+                            Pexp_ident "loop" (testsuite/tests/lib-channels/input_all.ml[108,2522+4]..[108,2522+8])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-channels/input_all.ml[108,2522+9]..[108,2522+10])
+                                Pexp_constant PConst_int (0,None)
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-channels/input_all.ml[108,2522+11]..[108,2522+29])
+                                Pexp_apply
+                                expression (testsuite/tests/lib-channels/input_all.ml[108,2522+12]..[108,2522+24])
+                                  Pexp_ident "Bytes.length" (testsuite/tests/lib-channels/input_all.ml[108,2522+12]..[108,2522+24])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-channels/input_all.ml[108,2522+25]..[108,2522+28])
+                                      Pexp_ident "buf" (testsuite/tests/lib-channels/input_all.ml[108,2522+25]..[108,2522+28])
+                                ]
+                          ]
+                ]
+                expression (testsuite/tests/lib-channels/input_all.ml[110,2557+2]..[116,2814+49])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (testsuite/tests/lib-channels/input_all.ml[110,2557+6]..[110,2557+14])
+                        Ppat_var "read_buf" (testsuite/tests/lib-channels/input_all.ml[110,2557+6]..[110,2557+14])
+                      expression (testsuite/tests/lib-channels/input_all.ml[110,2557+17]..[110,2557+23])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-channels/input_all.ml[110,2557+17]..[110,2557+20])
+                          Pexp_ident "ref" (testsuite/tests/lib-channels/input_all.ml[110,2557+17]..[110,2557+20])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-channels/input_all.ml[110,2557+21]..[110,2557+23])
+                              Pexp_constant PConst_string("",(testsuite/tests/lib-channels/input_all.ml[110,2557+22]..[110,2557+22]),None)
+                        ]
+                  ]
+                  expression (testsuite/tests/lib-channels/input_all.ml[111,2584+2]..[116,2814+49])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (testsuite/tests/lib-channels/input_all.ml[111,2584+6]..[111,2584+14])
+                          Ppat_var "consumer" (testsuite/tests/lib-channels/input_all.ml[111,2584+6]..[111,2584+14])
+                        expression (testsuite/tests/lib-channels/input_all.ml[111,2584+15]..[111,2584+86]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/lib-channels/input_all.ml[111,2584+15]..[111,2584+17])
+                            Ppat_construct "()" (testsuite/tests/lib-channels/input_all.ml[111,2584+15]..[111,2584+17])
+                            None
+                          expression (testsuite/tests/lib-channels/input_all.ml[111,2584+20]..[111,2584+86])
+                            Pexp_apply
+                            expression (testsuite/tests/lib-channels/input_all.ml[111,2584+29]..[111,2584+31])
+                              Pexp_ident ":=" (testsuite/tests/lib-channels/input_all.ml[111,2584+29]..[111,2584+31])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-channels/input_all.ml[111,2584+20]..[111,2584+28])
+                                  Pexp_ident "read_buf" (testsuite/tests/lib-channels/input_all.ml[111,2584+20]..[111,2584+28])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-channels/input_all.ml[111,2584+32]..[111,2584+86])
+                                  Pexp_apply
+                                  expression (testsuite/tests/lib-channels/input_all.ml[111,2584+32]..[111,2584+52])
+                                    Pexp_ident "In_channel.input_all" (testsuite/tests/lib-channels/input_all.ml[111,2584+32]..[111,2584+52])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-channels/input_all.ml[111,2584+53]..[111,2584+86])
+                                        Pexp_apply
+                                        expression (testsuite/tests/lib-channels/input_all.ml[111,2584+54]..[111,2584+78])
+                                          Pexp_ident "Unix.in_channel_of_descr" (testsuite/tests/lib-channels/input_all.ml[111,2584+54]..[111,2584+78])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/lib-channels/input_all.ml[111,2584+79]..[111,2584+85])
+                                              Pexp_ident "toread" (testsuite/tests/lib-channels/input_all.ml[111,2584+79]..[111,2584+85])
+                                        ]
+                                  ]
+                            ]
+                    ]
+                    expression (testsuite/tests/lib-channels/input_all.ml[112,2674+2]..[116,2814+49])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (testsuite/tests/lib-channels/input_all.ml[112,2674+6]..[112,2674+14])
+                            Ppat_var "producer" (testsuite/tests/lib-channels/input_all.ml[112,2674+6]..[112,2674+14])
+                          expression (testsuite/tests/lib-channels/input_all.ml[112,2674+17]..[112,2674+42])
+                            Pexp_apply
+                            expression (testsuite/tests/lib-channels/input_all.ml[112,2674+17]..[112,2674+30])
+                              Pexp_ident "Thread.create" (testsuite/tests/lib-channels/input_all.ml[112,2674+17]..[112,2674+30])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-channels/input_all.ml[112,2674+31]..[112,2674+39])
+                                  Pexp_ident "producer" (testsuite/tests/lib-channels/input_all.ml[112,2674+31]..[112,2674+39])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-channels/input_all.ml[112,2674+40]..[112,2674+42])
+                                  Pexp_construct "()" (testsuite/tests/lib-channels/input_all.ml[112,2674+40]..[112,2674+42])
+                                  None
+                            ]
+                      ]
+                      expression (testsuite/tests/lib-channels/input_all.ml[113,2720+2]..[116,2814+49])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (testsuite/tests/lib-channels/input_all.ml[113,2720+6]..[113,2720+14])
+                              Ppat_var "consumer" (testsuite/tests/lib-channels/input_all.ml[113,2720+6]..[113,2720+14])
+                            expression (testsuite/tests/lib-channels/input_all.ml[113,2720+17]..[113,2720+42])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-channels/input_all.ml[113,2720+17]..[113,2720+30])
+                                Pexp_ident "Thread.create" (testsuite/tests/lib-channels/input_all.ml[113,2720+17]..[113,2720+30])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-channels/input_all.ml[113,2720+31]..[113,2720+39])
+                                    Pexp_ident "consumer" (testsuite/tests/lib-channels/input_all.ml[113,2720+31]..[113,2720+39])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-channels/input_all.ml[113,2720+40]..[113,2720+42])
+                                    Pexp_construct "()" (testsuite/tests/lib-channels/input_all.ml[113,2720+40]..[113,2720+42])
+                                    None
+                              ]
+                        ]
+                        expression (testsuite/tests/lib-channels/input_all.ml[114,2766+2]..[116,2814+49])
+                          Pexp_sequence
+                          expression (testsuite/tests/lib-channels/input_all.ml[114,2766+2]..[114,2766+22])
+                            Pexp_apply
+                            expression (testsuite/tests/lib-channels/input_all.ml[114,2766+2]..[114,2766+13])
+                              Pexp_ident "Thread.join" (testsuite/tests/lib-channels/input_all.ml[114,2766+2]..[114,2766+13])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-channels/input_all.ml[114,2766+14]..[114,2766+22])
+                                  Pexp_ident "producer" (testsuite/tests/lib-channels/input_all.ml[114,2766+14]..[114,2766+22])
+                            ]
+                          expression (testsuite/tests/lib-channels/input_all.ml[115,2790+2]..[116,2814+49])
+                            Pexp_sequence
+                            expression (testsuite/tests/lib-channels/input_all.ml[115,2790+2]..[115,2790+22])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-channels/input_all.ml[115,2790+2]..[115,2790+13])
+                                Pexp_ident "Thread.join" (testsuite/tests/lib-channels/input_all.ml[115,2790+2]..[115,2790+13])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-channels/input_all.ml[115,2790+14]..[115,2790+22])
+                                    Pexp_ident "consumer" (testsuite/tests/lib-channels/input_all.ml[115,2790+14]..[115,2790+22])
+                              ]
+                            expression (testsuite/tests/lib-channels/input_all.ml[116,2814+2]..[116,2814+49])
+                              Pexp_assert
+                              expression (testsuite/tests/lib-channels/input_all.ml[116,2814+9]..[116,2814+49])
+                                Pexp_apply
+                                expression (testsuite/tests/lib-channels/input_all.ml[116,2814+20]..[116,2814+21])
+                                  Pexp_ident "=" (testsuite/tests/lib-channels/input_all.ml[116,2814+20]..[116,2814+21])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-channels/input_all.ml[116,2814+10]..[116,2814+19])
+                                      Pexp_apply
+                                      expression (testsuite/tests/lib-channels/input_all.ml[116,2814+10]..[116,2814+11])
+                                        Pexp_ident "!" (testsuite/tests/lib-channels/input_all.ml[116,2814+10]..[116,2814+11])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/lib-channels/input_all.ml[116,2814+11]..[116,2814+19])
+                                            Pexp_ident "read_buf" (testsuite/tests/lib-channels/input_all.ml[116,2814+11]..[116,2814+19])
+                                      ]
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-channels/input_all.ml[116,2814+22]..[116,2814+48])
+                                      Pexp_apply
+                                      expression (testsuite/tests/lib-channels/input_all.ml[116,2814+22]..[116,2814+44])
+                                        Pexp_ident "Bytes.unsafe_to_string" (testsuite/tests/lib-channels/input_all.ml[116,2814+22]..[116,2814+44])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/lib-channels/input_all.ml[116,2814+45]..[116,2814+48])
+                                            Pexp_ident "buf" (testsuite/tests/lib-channels/input_all.ml[116,2814+45]..[116,2814+48])
+                                      ]
+                                ]
+    ]
+  structure_item (testsuite/tests/lib-channels/input_all.ml[118,2865+0]..[119,2874+18])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-channels/input_all.ml[118,2865+4]..[118,2865+6])
+          Ppat_construct "()" (testsuite/tests/lib-channels/input_all.ml[118,2865+4]..[118,2865+6])
+          None
+        expression (testsuite/tests/lib-channels/input_all.ml[119,2874+2]..[119,2874+18])
+          Pexp_apply
+          expression (testsuite/tests/lib-channels/input_all.ml[119,2874+2]..[119,2874+11])
+            Pexp_ident "test_pipe" (testsuite/tests/lib-channels/input_all.ml[119,2874+2]..[119,2874+11])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-channels/input_all.ml[119,2874+12]..[119,2874+18])
+                Pexp_constant PConst_int (655397,None)
+          ]
+    ]
+]
+

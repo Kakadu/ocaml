@@ -1,0 +1,1026 @@
+[
+  structure_item (testsuite/tests/parallel/prodcons_domains.ml[6,45+0]..[12,185+26])
+    Pstr_type Rec
+    [
+      type_declaration "prodcons" (testsuite/tests/parallel/prodcons_domains.ml[6,45+8]..[6,45+16]) (testsuite/tests/parallel/prodcons_domains.ml[6,45+0]..[12,185+26])
+        ptype_params =
+          [
+            core_type (testsuite/tests/parallel/prodcons_domains.ml[6,45+5]..[6,45+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_record
+            [
+              (testsuite/tests/parallel/prodcons_domains.ml[7,64+4]..[7,64+21])
+                Immutable
+                "buffer" (testsuite/tests/parallel/prodcons_domains.ml[7,64+4]..[7,64+10])                core_type (testsuite/tests/parallel/prodcons_domains.ml[7,64+12]..[7,64+20])
+                  Ptyp_constr "array" (testsuite/tests/parallel/prodcons_domains.ml[7,64+15]..[7,64+20])
+                  [
+                    core_type (testsuite/tests/parallel/prodcons_domains.ml[7,64+12]..[7,64+14])
+                      Ptyp_var a
+                  ]
+              (testsuite/tests/parallel/prodcons_domains.ml[8,86+4]..[8,86+18])
+                Immutable
+                "lock" (testsuite/tests/parallel/prodcons_domains.ml[8,86+4]..[8,86+8])                core_type (testsuite/tests/parallel/prodcons_domains.ml[8,86+10]..[8,86+17])
+                  Ptyp_constr "Mutex.t" (testsuite/tests/parallel/prodcons_domains.ml[8,86+10]..[8,86+17])
+                  []
+              (testsuite/tests/parallel/prodcons_domains.ml[9,105+4]..[9,105+25])
+                Mutable
+                "readpos" (testsuite/tests/parallel/prodcons_domains.ml[9,105+12]..[9,105+19])                core_type (testsuite/tests/parallel/prodcons_domains.ml[9,105+21]..[9,105+24])
+                  Ptyp_constr "int" (testsuite/tests/parallel/prodcons_domains.ml[9,105+21]..[9,105+24])
+                  []
+              (testsuite/tests/parallel/prodcons_domains.ml[10,131+4]..[10,131+26])
+                Mutable
+                "writepos" (testsuite/tests/parallel/prodcons_domains.ml[10,131+12]..[10,131+20])                core_type (testsuite/tests/parallel/prodcons_domains.ml[10,131+22]..[10,131+25])
+                  Ptyp_constr "int" (testsuite/tests/parallel/prodcons_domains.ml[10,131+22]..[10,131+25])
+                  []
+              (testsuite/tests/parallel/prodcons_domains.ml[11,158+4]..[11,158+26])
+                Immutable
+                "notempty" (testsuite/tests/parallel/prodcons_domains.ml[11,158+4]..[11,158+12])                core_type (testsuite/tests/parallel/prodcons_domains.ml[11,158+14]..[11,158+25])
+                  Ptyp_constr "Condition.t" (testsuite/tests/parallel/prodcons_domains.ml[11,158+14]..[11,158+25])
+                  []
+              (testsuite/tests/parallel/prodcons_domains.ml[12,185+4]..[12,185+24])
+                Immutable
+                "notfull" (testsuite/tests/parallel/prodcons_domains.ml[12,185+4]..[12,185+11])                core_type (testsuite/tests/parallel/prodcons_domains.ml[12,185+13]..[12,185+24])
+                  Ptyp_constr "Condition.t" (testsuite/tests/parallel/prodcons_domains.ml[12,185+13]..[12,185+24])
+                  []
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/parallel/prodcons_domains.ml[14,213+0]..[20,368+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/prodcons_domains.ml[14,213+4]..[14,213+10])
+          Ppat_var "create" (testsuite/tests/parallel/prodcons_domains.ml[14,213+4]..[14,213+10])
+        expression (testsuite/tests/parallel/prodcons_domains.ml[14,213+11]..[20,368+34]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/prodcons_domains.ml[14,213+11]..[14,213+15])
+            Ppat_var "size" (testsuite/tests/parallel/prodcons_domains.ml[14,213+11]..[14,213+15])
+          expression (testsuite/tests/parallel/prodcons_domains.ml[14,213+16]..[20,368+34]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/parallel/prodcons_domains.ml[14,213+16]..[14,213+20])
+              Ppat_var "init" (testsuite/tests/parallel/prodcons_domains.ml[14,213+16]..[14,213+20])
+            expression (testsuite/tests/parallel/prodcons_domains.ml[15,236+2]..[20,368+34])
+              Pexp_record
+              [
+                "buffer" (testsuite/tests/parallel/prodcons_domains.ml[15,236+4]..[15,236+10])
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[15,236+13]..[15,236+33])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[15,236+13]..[15,236+23])
+                      Pexp_ident "Array.make" (testsuite/tests/parallel/prodcons_domains.ml[15,236+13]..[15,236+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[15,236+24]..[15,236+28])
+                          Pexp_ident "size" (testsuite/tests/parallel/prodcons_domains.ml[15,236+24]..[15,236+28])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[15,236+29]..[15,236+33])
+                          Pexp_ident "init" (testsuite/tests/parallel/prodcons_domains.ml[15,236+29]..[15,236+33])
+                    ]
+                "lock" (testsuite/tests/parallel/prodcons_domains.ml[16,271+4]..[16,271+8])
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[16,271+11]..[16,271+25])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[16,271+11]..[16,271+23])
+                      Pexp_ident "Mutex.create" (testsuite/tests/parallel/prodcons_domains.ml[16,271+11]..[16,271+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[16,271+23]..[16,271+25])
+                          Pexp_construct "()" (testsuite/tests/parallel/prodcons_domains.ml[16,271+23]..[16,271+25])
+                          None
+                    ]
+                "readpos" (testsuite/tests/parallel/prodcons_domains.ml[17,298+4]..[17,298+11])
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[17,298+14]..[17,298+15])
+                    Pexp_constant PConst_int (0,None)
+                "writepos" (testsuite/tests/parallel/prodcons_domains.ml[18,315+4]..[18,315+12])
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[18,315+15]..[18,315+16])
+                    Pexp_constant PConst_int (0,None)
+                "notempty" (testsuite/tests/parallel/prodcons_domains.ml[19,333+4]..[19,333+12])
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[19,333+15]..[19,333+33])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[19,333+15]..[19,333+31])
+                      Pexp_ident "Condition.create" (testsuite/tests/parallel/prodcons_domains.ml[19,333+15]..[19,333+31])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[19,333+31]..[19,333+33])
+                          Pexp_construct "()" (testsuite/tests/parallel/prodcons_domains.ml[19,333+31]..[19,333+33])
+                          None
+                    ]
+                "notfull" (testsuite/tests/parallel/prodcons_domains.ml[20,368+4]..[20,368+11])
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[20,368+14]..[20,368+32])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[20,368+14]..[20,368+30])
+                      Pexp_ident "Condition.create" (testsuite/tests/parallel/prodcons_domains.ml[20,368+14]..[20,368+30])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[20,368+30]..[20,368+32])
+                          Pexp_construct "()" (testsuite/tests/parallel/prodcons_domains.ml[20,368+30]..[20,368+32])
+                          None
+                    ]
+              ]
+              None
+    ]
+  structure_item (testsuite/tests/parallel/prodcons_domains.ml[22,404+0]..[30,676+21])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/prodcons_domains.ml[22,404+4]..[22,404+7])
+          Ppat_var "put" (testsuite/tests/parallel/prodcons_domains.ml[22,404+4]..[22,404+7])
+        expression (testsuite/tests/parallel/prodcons_domains.ml[22,404+8]..[30,676+21]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/prodcons_domains.ml[22,404+8]..[22,404+9])
+            Ppat_var "p" (testsuite/tests/parallel/prodcons_domains.ml[22,404+8]..[22,404+9])
+          expression (testsuite/tests/parallel/prodcons_domains.ml[22,404+10]..[30,676+21]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/parallel/prodcons_domains.ml[22,404+10]..[22,404+14])
+              Ppat_var "data" (testsuite/tests/parallel/prodcons_domains.ml[22,404+10]..[22,404+14])
+            expression (testsuite/tests/parallel/prodcons_domains.ml[23,421+2]..[30,676+21])
+              Pexp_sequence
+              expression (testsuite/tests/parallel/prodcons_domains.ml[23,421+2]..[23,421+19])
+                Pexp_apply
+                expression (testsuite/tests/parallel/prodcons_domains.ml[23,421+2]..[23,421+12])
+                  Pexp_ident "Mutex.lock" (testsuite/tests/parallel/prodcons_domains.ml[23,421+2]..[23,421+12])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[23,421+13]..[23,421+19])
+                      Pexp_field
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[23,421+13]..[23,421+14])
+                        Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[23,421+13]..[23,421+14])
+                      "lock" (testsuite/tests/parallel/prodcons_domains.ml[23,421+15]..[23,421+19])
+                ]
+              expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+2]..[30,676+21])
+                Pexp_sequence
+                expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+2]..[26,544+6])
+                  Pexp_while
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+8]..[24,442+62])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+51]..[24,442+52])
+                      Pexp_ident "=" (testsuite/tests/parallel/prodcons_domains.ml[24,442+51]..[24,442+52])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+8]..[24,442+50])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+25]..[24,442+28])
+                            Pexp_ident "mod" (testsuite/tests/parallel/prodcons_domains.ml[24,442+25]..[24,442+28])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+8]..[24,442+24])
+                                Pexp_apply
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+20]..[24,442+21])
+                                  Pexp_ident "+" (testsuite/tests/parallel/prodcons_domains.ml[24,442+20]..[24,442+21])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+9]..[24,442+19])
+                                      Pexp_field
+                                      expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+9]..[24,442+10])
+                                        Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[24,442+9]..[24,442+10])
+                                      "writepos" (testsuite/tests/parallel/prodcons_domains.ml[24,442+11]..[24,442+19])
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+22]..[24,442+23])
+                                      Pexp_constant PConst_int (1,None)
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+29]..[24,442+50])
+                                Pexp_apply
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+29]..[24,442+41])
+                                  Pexp_ident "Array.length" (testsuite/tests/parallel/prodcons_domains.ml[24,442+29]..[24,442+41])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+42]..[24,442+50])
+                                      Pexp_field
+                                      expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+42]..[24,442+43])
+                                        Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[24,442+42]..[24,442+43])
+                                      "buffer" (testsuite/tests/parallel/prodcons_domains.ml[24,442+44]..[24,442+50])
+                                ]
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+53]..[24,442+62])
+                          Pexp_field
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[24,442+53]..[24,442+54])
+                            Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[24,442+53]..[24,442+54])
+                          "readpos" (testsuite/tests/parallel/prodcons_domains.ml[24,442+55]..[24,442+62])
+                    ]
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[25,508+4]..[25,508+35])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[25,508+4]..[25,508+18])
+                      Pexp_ident "Condition.wait" (testsuite/tests/parallel/prodcons_domains.ml[25,508+4]..[25,508+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[25,508+19]..[25,508+28])
+                          Pexp_field
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[25,508+19]..[25,508+20])
+                            Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[25,508+19]..[25,508+20])
+                          "notfull" (testsuite/tests/parallel/prodcons_domains.ml[25,508+21]..[25,508+28])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[25,508+29]..[25,508+35])
+                          Pexp_field
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[25,508+29]..[25,508+30])
+                            Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[25,508+29]..[25,508+30])
+                          "lock" (testsuite/tests/parallel/prodcons_domains.ml[25,508+31]..[25,508+35])
+                    ]
+                expression (testsuite/tests/parallel/prodcons_domains.ml[27,552+2]..[30,676+21])
+                  Pexp_sequence
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[27,552+2]..[27,552+31])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[27,552+2]..[27,552+31]) ghost
+                      Pexp_ident "Array.set" (testsuite/tests/parallel/prodcons_domains.ml[27,552+2]..[27,552+31]) ghost
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[27,552+2]..[27,552+10])
+                          Pexp_field
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[27,552+2]..[27,552+3])
+                            Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[27,552+2]..[27,552+3])
+                          "buffer" (testsuite/tests/parallel/prodcons_domains.ml[27,552+4]..[27,552+10])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[27,552+12]..[27,552+22])
+                          Pexp_field
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[27,552+12]..[27,552+13])
+                            Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[27,552+12]..[27,552+13])
+                          "writepos" (testsuite/tests/parallel/prodcons_domains.ml[27,552+14]..[27,552+22])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[27,552+27]..[27,552+31])
+                          Pexp_ident "data" (testsuite/tests/parallel/prodcons_domains.ml[27,552+27]..[27,552+31])
+                    ]
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+2]..[30,676+21])
+                    Pexp_sequence
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+2]..[28,585+58])
+                      Pexp_setfield
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+2]..[28,585+3])
+                        Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[28,585+2]..[28,585+3])
+                      "writepos" (testsuite/tests/parallel/prodcons_domains.ml[28,585+4]..[28,585+12])
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+16]..[28,585+58])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+33]..[28,585+36])
+                          Pexp_ident "mod" (testsuite/tests/parallel/prodcons_domains.ml[28,585+33]..[28,585+36])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+16]..[28,585+32])
+                              Pexp_apply
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+28]..[28,585+29])
+                                Pexp_ident "+" (testsuite/tests/parallel/prodcons_domains.ml[28,585+28]..[28,585+29])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+17]..[28,585+27])
+                                    Pexp_field
+                                    expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+17]..[28,585+18])
+                                      Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[28,585+17]..[28,585+18])
+                                    "writepos" (testsuite/tests/parallel/prodcons_domains.ml[28,585+19]..[28,585+27])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+30]..[28,585+31])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+37]..[28,585+58])
+                              Pexp_apply
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+37]..[28,585+49])
+                                Pexp_ident "Array.length" (testsuite/tests/parallel/prodcons_domains.ml[28,585+37]..[28,585+49])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+50]..[28,585+58])
+                                    Pexp_field
+                                    expression (testsuite/tests/parallel/prodcons_domains.ml[28,585+50]..[28,585+51])
+                                      Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[28,585+50]..[28,585+51])
+                                    "buffer" (testsuite/tests/parallel/prodcons_domains.ml[28,585+52]..[28,585+58])
+                              ]
+                        ]
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[29,645+2]..[30,676+21])
+                      Pexp_sequence
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[29,645+2]..[29,645+29])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[29,645+2]..[29,645+18])
+                          Pexp_ident "Condition.signal" (testsuite/tests/parallel/prodcons_domains.ml[29,645+2]..[29,645+18])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[29,645+19]..[29,645+29])
+                              Pexp_field
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[29,645+19]..[29,645+20])
+                                Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[29,645+19]..[29,645+20])
+                              "notempty" (testsuite/tests/parallel/prodcons_domains.ml[29,645+21]..[29,645+29])
+                        ]
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[30,676+2]..[30,676+21])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[30,676+2]..[30,676+14])
+                          Pexp_ident "Mutex.unlock" (testsuite/tests/parallel/prodcons_domains.ml[30,676+2]..[30,676+14])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[30,676+15]..[30,676+21])
+                              Pexp_field
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[30,676+15]..[30,676+16])
+                                Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[30,676+15]..[30,676+16])
+                              "lock" (testsuite/tests/parallel/prodcons_domains.ml[30,676+17]..[30,676+21])
+                        ]
+    ]
+  structure_item (testsuite/tests/parallel/prodcons_domains.ml[32,699+0]..[41,959+6])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/prodcons_domains.ml[32,699+4]..[32,699+7])
+          Ppat_var "get" (testsuite/tests/parallel/prodcons_domains.ml[32,699+4]..[32,699+7])
+        expression (testsuite/tests/parallel/prodcons_domains.ml[32,699+8]..[41,959+6]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/prodcons_domains.ml[32,699+8]..[32,699+9])
+            Ppat_var "p" (testsuite/tests/parallel/prodcons_domains.ml[32,699+8]..[32,699+9])
+          expression (testsuite/tests/parallel/prodcons_domains.ml[33,711+2]..[41,959+6])
+            Pexp_sequence
+            expression (testsuite/tests/parallel/prodcons_domains.ml[33,711+2]..[33,711+19])
+              Pexp_apply
+              expression (testsuite/tests/parallel/prodcons_domains.ml[33,711+2]..[33,711+12])
+                Pexp_ident "Mutex.lock" (testsuite/tests/parallel/prodcons_domains.ml[33,711+2]..[33,711+12])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[33,711+13]..[33,711+19])
+                    Pexp_field
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[33,711+13]..[33,711+14])
+                      Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[33,711+13]..[33,711+14])
+                    "lock" (testsuite/tests/parallel/prodcons_domains.ml[33,711+15]..[33,711+19])
+              ]
+            expression (testsuite/tests/parallel/prodcons_domains.ml[34,732+2]..[41,959+6])
+              Pexp_sequence
+              expression (testsuite/tests/parallel/prodcons_domains.ml[34,732+2]..[36,803+6])
+                Pexp_while
+                expression (testsuite/tests/parallel/prodcons_domains.ml[34,732+8]..[34,732+30])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[34,732+19]..[34,732+20])
+                    Pexp_ident "=" (testsuite/tests/parallel/prodcons_domains.ml[34,732+19]..[34,732+20])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[34,732+8]..[34,732+18])
+                        Pexp_field
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[34,732+8]..[34,732+9])
+                          Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[34,732+8]..[34,732+9])
+                        "writepos" (testsuite/tests/parallel/prodcons_domains.ml[34,732+10]..[34,732+18])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[34,732+21]..[34,732+30])
+                        Pexp_field
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[34,732+21]..[34,732+22])
+                          Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[34,732+21]..[34,732+22])
+                        "readpos" (testsuite/tests/parallel/prodcons_domains.ml[34,732+23]..[34,732+30])
+                  ]
+                expression (testsuite/tests/parallel/prodcons_domains.ml[35,766+4]..[35,766+36])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[35,766+4]..[35,766+18])
+                    Pexp_ident "Condition.wait" (testsuite/tests/parallel/prodcons_domains.ml[35,766+4]..[35,766+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[35,766+19]..[35,766+29])
+                        Pexp_field
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[35,766+19]..[35,766+20])
+                          Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[35,766+19]..[35,766+20])
+                        "notempty" (testsuite/tests/parallel/prodcons_domains.ml[35,766+21]..[35,766+29])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[35,766+30]..[35,766+36])
+                        Pexp_field
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[35,766+30]..[35,766+31])
+                          Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[35,766+30]..[35,766+31])
+                        "lock" (testsuite/tests/parallel/prodcons_domains.ml[35,766+32]..[35,766+36])
+                  ]
+              expression (testsuite/tests/parallel/prodcons_domains.ml[37,811+2]..[41,959+6])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/parallel/prodcons_domains.ml[37,811+6]..[37,811+10])
+                      Ppat_var "data" (testsuite/tests/parallel/prodcons_domains.ml[37,811+6]..[37,811+10])
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[37,811+13]..[37,811+33])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[37,811+13]..[37,811+33]) ghost
+                        Pexp_ident "Array.get" (testsuite/tests/parallel/prodcons_domains.ml[37,811+13]..[37,811+33]) ghost
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[37,811+13]..[37,811+21])
+                            Pexp_field
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[37,811+13]..[37,811+14])
+                              Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[37,811+13]..[37,811+14])
+                            "buffer" (testsuite/tests/parallel/prodcons_domains.ml[37,811+15]..[37,811+21])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[37,811+23]..[37,811+32])
+                            Pexp_field
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[37,811+23]..[37,811+24])
+                              Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[37,811+23]..[37,811+24])
+                            "readpos" (testsuite/tests/parallel/prodcons_domains.ml[37,811+25]..[37,811+32])
+                      ]
+                ]
+                expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+2]..[41,959+6])
+                  Pexp_sequence
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+2]..[38,848+56])
+                    Pexp_setfield
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+2]..[38,848+3])
+                      Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[38,848+2]..[38,848+3])
+                    "readpos" (testsuite/tests/parallel/prodcons_domains.ml[38,848+4]..[38,848+11])
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+15]..[38,848+56])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+31]..[38,848+34])
+                        Pexp_ident "mod" (testsuite/tests/parallel/prodcons_domains.ml[38,848+31]..[38,848+34])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+15]..[38,848+30])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+26]..[38,848+27])
+                              Pexp_ident "+" (testsuite/tests/parallel/prodcons_domains.ml[38,848+26]..[38,848+27])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+16]..[38,848+25])
+                                  Pexp_field
+                                  expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+16]..[38,848+17])
+                                    Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[38,848+16]..[38,848+17])
+                                  "readpos" (testsuite/tests/parallel/prodcons_domains.ml[38,848+18]..[38,848+25])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+28]..[38,848+29])
+                                  Pexp_constant PConst_int (1,None)
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+35]..[38,848+56])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+35]..[38,848+47])
+                              Pexp_ident "Array.length" (testsuite/tests/parallel/prodcons_domains.ml[38,848+35]..[38,848+47])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+48]..[38,848+56])
+                                  Pexp_field
+                                  expression (testsuite/tests/parallel/prodcons_domains.ml[38,848+48]..[38,848+49])
+                                    Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[38,848+48]..[38,848+49])
+                                  "buffer" (testsuite/tests/parallel/prodcons_domains.ml[38,848+50]..[38,848+56])
+                            ]
+                      ]
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[39,906+2]..[41,959+6])
+                    Pexp_sequence
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[39,906+2]..[39,906+28])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[39,906+2]..[39,906+18])
+                        Pexp_ident "Condition.signal" (testsuite/tests/parallel/prodcons_domains.ml[39,906+2]..[39,906+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[39,906+19]..[39,906+28])
+                            Pexp_field
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[39,906+19]..[39,906+20])
+                              Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[39,906+19]..[39,906+20])
+                            "notfull" (testsuite/tests/parallel/prodcons_domains.ml[39,906+21]..[39,906+28])
+                      ]
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[40,936+2]..[41,959+6])
+                      Pexp_sequence
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[40,936+2]..[40,936+21])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[40,936+2]..[40,936+14])
+                          Pexp_ident "Mutex.unlock" (testsuite/tests/parallel/prodcons_domains.ml[40,936+2]..[40,936+14])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[40,936+15]..[40,936+21])
+                              Pexp_field
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[40,936+15]..[40,936+16])
+                                Pexp_ident "p" (testsuite/tests/parallel/prodcons_domains.ml[40,936+15]..[40,936+16])
+                              "lock" (testsuite/tests/parallel/prodcons_domains.ml[40,936+17]..[40,936+21])
+                        ]
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[41,959+2]..[41,959+6])
+                        Pexp_ident "data" (testsuite/tests/parallel/prodcons_domains.ml[41,959+2]..[41,959+6])
+    ]
+  structure_item (testsuite/tests/parallel/prodcons_domains.ml[45,979+0]..[47,1022+40])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/prodcons_domains.ml[45,979+8]..[45,979+15])
+          Ppat_var "produce" (testsuite/tests/parallel/prodcons_domains.ml[45,979+8]..[45,979+15])
+        expression (testsuite/tests/parallel/prodcons_domains.ml[45,979+16]..[47,1022+40]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/prodcons_domains.ml[45,979+16]..[45,979+20])
+            Ppat_var "buff" (testsuite/tests/parallel/prodcons_domains.ml[45,979+16]..[45,979+20])
+          expression (testsuite/tests/parallel/prodcons_domains.ml[45,979+21]..[47,1022+40]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/parallel/prodcons_domains.ml[45,979+21]..[45,979+22])
+              Ppat_var "n" (testsuite/tests/parallel/prodcons_domains.ml[45,979+21]..[45,979+22])
+            expression (testsuite/tests/parallel/prodcons_domains.ml[45,979+23]..[47,1022+40]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (testsuite/tests/parallel/prodcons_domains.ml[45,979+23]..[45,979+26])
+                Ppat_var "max" (testsuite/tests/parallel/prodcons_domains.ml[45,979+23]..[45,979+26])
+              expression (testsuite/tests/parallel/prodcons_domains.ml[46,1008+2]..[47,1022+40])
+                Pexp_sequence
+                expression (testsuite/tests/parallel/prodcons_domains.ml[46,1008+2]..[46,1008+12])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[46,1008+2]..[46,1008+5])
+                    Pexp_ident "put" (testsuite/tests/parallel/prodcons_domains.ml[46,1008+2]..[46,1008+5])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[46,1008+6]..[46,1008+10])
+                        Pexp_ident "buff" (testsuite/tests/parallel/prodcons_domains.ml[46,1008+6]..[46,1008+10])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[46,1008+11]..[46,1008+12])
+                        Pexp_ident "n" (testsuite/tests/parallel/prodcons_domains.ml[46,1008+11]..[46,1008+12])
+                  ]
+                expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+2]..[47,1022+40])
+                  Pexp_ifthenelse
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+5]..[47,1022+12])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+7]..[47,1022+8])
+                      Pexp_ident "<" (testsuite/tests/parallel/prodcons_domains.ml[47,1022+7]..[47,1022+8])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+5]..[47,1022+6])
+                          Pexp_ident "n" (testsuite/tests/parallel/prodcons_domains.ml[47,1022+5]..[47,1022+6])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+9]..[47,1022+12])
+                          Pexp_ident "max" (testsuite/tests/parallel/prodcons_domains.ml[47,1022+9]..[47,1022+12])
+                    ]
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+18]..[47,1022+40])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+18]..[47,1022+25])
+                      Pexp_ident "produce" (testsuite/tests/parallel/prodcons_domains.ml[47,1022+18]..[47,1022+25])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+26]..[47,1022+30])
+                          Pexp_ident "buff" (testsuite/tests/parallel/prodcons_domains.ml[47,1022+26]..[47,1022+30])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+31]..[47,1022+36])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+33]..[47,1022+34])
+                            Pexp_ident "+" (testsuite/tests/parallel/prodcons_domains.ml[47,1022+33]..[47,1022+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+32]..[47,1022+33])
+                                Pexp_ident "n" (testsuite/tests/parallel/prodcons_domains.ml[47,1022+32]..[47,1022+33])
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+34]..[47,1022+35])
+                                Pexp_constant PConst_int (1,None)
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[47,1022+37]..[47,1022+40])
+                          Pexp_ident "max" (testsuite/tests/parallel/prodcons_domains.ml[47,1022+37]..[47,1022+40])
+                    ]
+                  None
+    ]
+  structure_item (testsuite/tests/parallel/prodcons_domains.ml[49,1064+0]..[53,1170+33])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/prodcons_domains.ml[49,1064+8]..[49,1064+15])
+          Ppat_var "consume" (testsuite/tests/parallel/prodcons_domains.ml[49,1064+8]..[49,1064+15])
+        expression (testsuite/tests/parallel/prodcons_domains.ml[49,1064+16]..[53,1170+33]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/prodcons_domains.ml[49,1064+16]..[49,1064+20])
+            Ppat_var "buff" (testsuite/tests/parallel/prodcons_domains.ml[49,1064+16]..[49,1064+20])
+          expression (testsuite/tests/parallel/prodcons_domains.ml[49,1064+21]..[53,1170+33]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/parallel/prodcons_domains.ml[49,1064+21]..[49,1064+24])
+              Ppat_var "cur" (testsuite/tests/parallel/prodcons_domains.ml[49,1064+21]..[49,1064+24])
+            expression (testsuite/tests/parallel/prodcons_domains.ml[49,1064+25]..[53,1170+33]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (testsuite/tests/parallel/prodcons_domains.ml[49,1064+25]..[49,1064+28])
+                Ppat_var "max" (testsuite/tests/parallel/prodcons_domains.ml[49,1064+25]..[49,1064+28])
+              expression (testsuite/tests/parallel/prodcons_domains.ml[50,1095+2]..[53,1170+33])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/parallel/prodcons_domains.ml[50,1095+6]..[50,1095+7])
+                      Ppat_var "n" (testsuite/tests/parallel/prodcons_domains.ml[50,1095+6]..[50,1095+7])
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[50,1095+10]..[50,1095+18])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[50,1095+10]..[50,1095+13])
+                        Pexp_ident "get" (testsuite/tests/parallel/prodcons_domains.ml[50,1095+10]..[50,1095+13])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[50,1095+14]..[50,1095+18])
+                            Pexp_ident "buff" (testsuite/tests/parallel/prodcons_domains.ml[50,1095+14]..[50,1095+18])
+                      ]
+                ]
+                expression (testsuite/tests/parallel/prodcons_domains.ml[51,1117+2]..[53,1170+33])
+                  Pexp_ifthenelse
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[51,1117+5]..[51,1117+13])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[51,1117+7]..[51,1117+9])
+                      Pexp_ident "<>" (testsuite/tests/parallel/prodcons_domains.ml[51,1117+7]..[51,1117+9])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[51,1117+5]..[51,1117+6])
+                          Pexp_ident "n" (testsuite/tests/parallel/prodcons_domains.ml[51,1117+5]..[51,1117+6])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[51,1117+10]..[51,1117+13])
+                          Pexp_ident "cur" (testsuite/tests/parallel/prodcons_domains.ml[51,1117+10]..[51,1117+13])
+                    ]
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[51,1117+19]..[51,1117+24])
+                    Pexp_construct "false" (testsuite/tests/parallel/prodcons_domains.ml[51,1117+19]..[51,1117+24])
+                    None
+                  Some
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[52,1142+7]..[53,1170+33])
+                      Pexp_ifthenelse
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[52,1142+10]..[52,1142+17])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[52,1142+12]..[52,1142+13])
+                          Pexp_ident "=" (testsuite/tests/parallel/prodcons_domains.ml[52,1142+12]..[52,1142+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[52,1142+10]..[52,1142+11])
+                              Pexp_ident "n" (testsuite/tests/parallel/prodcons_domains.ml[52,1142+10]..[52,1142+11])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[52,1142+14]..[52,1142+17])
+                              Pexp_ident "max" (testsuite/tests/parallel/prodcons_domains.ml[52,1142+14]..[52,1142+17])
+                        ]
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[52,1142+23]..[52,1142+27])
+                        Pexp_construct "true" (testsuite/tests/parallel/prodcons_domains.ml[52,1142+23]..[52,1142+27])
+                        None
+                      Some
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[53,1170+7]..[53,1170+33])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[53,1170+7]..[53,1170+14])
+                            Pexp_ident "consume" (testsuite/tests/parallel/prodcons_domains.ml[53,1170+7]..[53,1170+14])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[53,1170+15]..[53,1170+19])
+                                Pexp_ident "buff" (testsuite/tests/parallel/prodcons_domains.ml[53,1170+15]..[53,1170+19])
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[53,1170+20]..[53,1170+29])
+                                Pexp_apply
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[53,1170+25]..[53,1170+26])
+                                  Pexp_ident "+" (testsuite/tests/parallel/prodcons_domains.ml[53,1170+25]..[53,1170+26])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/parallel/prodcons_domains.ml[53,1170+21]..[53,1170+24])
+                                      Pexp_ident "cur" (testsuite/tests/parallel/prodcons_domains.ml[53,1170+21]..[53,1170+24])
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/parallel/prodcons_domains.ml[53,1170+27]..[53,1170+28])
+                                      Pexp_constant PConst_int (1,None)
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/prodcons_domains.ml[53,1170+30]..[53,1170+33])
+                                Pexp_ident "max" (testsuite/tests/parallel/prodcons_domains.ml[53,1170+30]..[53,1170+33])
+                          ]
+    ]
+  structure_item (testsuite/tests/parallel/prodcons_domains.ml[55,1205+0]..[65,1594+30])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/prodcons_domains.ml[55,1205+4]..[55,1205+5])
+          Ppat_any
+        expression (testsuite/tests/parallel/prodcons_domains.ml[56,1213+2]..[65,1594+30])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/parallel/prodcons_domains.ml[56,1213+6]..[56,1213+11])
+                Ppat_var "buff1" (testsuite/tests/parallel/prodcons_domains.ml[56,1213+6]..[56,1213+11])
+              expression (testsuite/tests/parallel/prodcons_domains.ml[56,1213+14]..[56,1213+25])
+                Pexp_apply
+                expression (testsuite/tests/parallel/prodcons_domains.ml[56,1213+14]..[56,1213+20])
+                  Pexp_ident "create" (testsuite/tests/parallel/prodcons_domains.ml[56,1213+14]..[56,1213+20])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[56,1213+21]..[56,1213+23])
+                      Pexp_constant PConst_int (20,None)
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[56,1213+24]..[56,1213+25])
+                      Pexp_constant PConst_int (0,None)
+                ]
+            <def>
+              pattern (testsuite/tests/parallel/prodcons_domains.ml[56,1213+30]..[56,1213+35])
+                Ppat_var "buff2" (testsuite/tests/parallel/prodcons_domains.ml[56,1213+30]..[56,1213+35])
+              expression (testsuite/tests/parallel/prodcons_domains.ml[56,1213+38]..[56,1213+49])
+                Pexp_apply
+                expression (testsuite/tests/parallel/prodcons_domains.ml[56,1213+38]..[56,1213+44])
+                  Pexp_ident "create" (testsuite/tests/parallel/prodcons_domains.ml[56,1213+38]..[56,1213+44])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[56,1213+45]..[56,1213+47])
+                      Pexp_constant PConst_int (30,None)
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[56,1213+48]..[56,1213+49])
+                      Pexp_constant PConst_int (0,None)
+                ]
+          ]
+          expression (testsuite/tests/parallel/prodcons_domains.ml[57,1266+2]..[65,1594+30])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/parallel/prodcons_domains.ml[57,1266+6]..[57,1266+9])
+                  Ppat_var "ok1" (testsuite/tests/parallel/prodcons_domains.ml[57,1266+6]..[57,1266+9])
+                expression (testsuite/tests/parallel/prodcons_domains.ml[57,1266+12]..[57,1266+21])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[57,1266+12]..[57,1266+15])
+                    Pexp_ident "ref" (testsuite/tests/parallel/prodcons_domains.ml[57,1266+12]..[57,1266+15])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[57,1266+16]..[57,1266+21])
+                        Pexp_construct "false" (testsuite/tests/parallel/prodcons_domains.ml[57,1266+16]..[57,1266+21])
+                        None
+                  ]
+              <def>
+                pattern (testsuite/tests/parallel/prodcons_domains.ml[57,1266+26]..[57,1266+29])
+                  Ppat_var "ok2" (testsuite/tests/parallel/prodcons_domains.ml[57,1266+26]..[57,1266+29])
+                expression (testsuite/tests/parallel/prodcons_domains.ml[57,1266+32]..[57,1266+41])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[57,1266+32]..[57,1266+35])
+                    Pexp_ident "ref" (testsuite/tests/parallel/prodcons_domains.ml[57,1266+32]..[57,1266+35])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[57,1266+36]..[57,1266+41])
+                        Pexp_construct "false" (testsuite/tests/parallel/prodcons_domains.ml[57,1266+36]..[57,1266+41])
+                        None
+                  ]
+            ]
+            expression (testsuite/tests/parallel/prodcons_domains.ml[58,1311+2]..[65,1594+30])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/parallel/prodcons_domains.ml[58,1311+6]..[58,1311+9])
+                    Ppat_var "_p1" (testsuite/tests/parallel/prodcons_domains.ml[58,1311+6]..[58,1311+9])
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[58,1311+12]..[58,1311+58])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[58,1311+12]..[58,1311+24])
+                      Pexp_ident "Domain.spawn" (testsuite/tests/parallel/prodcons_domains.ml[58,1311+12]..[58,1311+24])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[58,1311+25]..[58,1311+58])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/parallel/prodcons_domains.ml[58,1311+30]..[58,1311+32])
+                            Ppat_construct "()" (testsuite/tests/parallel/prodcons_domains.ml[58,1311+30]..[58,1311+32])
+                            None
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[58,1311+36]..[58,1311+57])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[58,1311+36]..[58,1311+43])
+                              Pexp_ident "produce" (testsuite/tests/parallel/prodcons_domains.ml[58,1311+36]..[58,1311+43])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[58,1311+44]..[58,1311+49])
+                                  Pexp_ident "buff1" (testsuite/tests/parallel/prodcons_domains.ml[58,1311+44]..[58,1311+49])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[58,1311+50]..[58,1311+51])
+                                  Pexp_constant PConst_int (0,None)
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[58,1311+52]..[58,1311+57])
+                                  Pexp_constant PConst_int (10000,None)
+                            ]
+                    ]
+                <def>
+                  pattern (testsuite/tests/parallel/prodcons_domains.ml[59,1370+6]..[59,1370+9])
+                    Ppat_var "_p2" (testsuite/tests/parallel/prodcons_domains.ml[59,1370+6]..[59,1370+9])
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[59,1370+12]..[59,1370+57])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[59,1370+12]..[59,1370+24])
+                      Pexp_ident "Domain.spawn" (testsuite/tests/parallel/prodcons_domains.ml[59,1370+12]..[59,1370+24])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[59,1370+25]..[59,1370+57])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/parallel/prodcons_domains.ml[59,1370+30]..[59,1370+32])
+                            Ppat_construct "()" (testsuite/tests/parallel/prodcons_domains.ml[59,1370+30]..[59,1370+32])
+                            None
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[59,1370+36]..[59,1370+56])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[59,1370+36]..[59,1370+43])
+                              Pexp_ident "produce" (testsuite/tests/parallel/prodcons_domains.ml[59,1370+36]..[59,1370+43])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[59,1370+44]..[59,1370+49])
+                                  Pexp_ident "buff2" (testsuite/tests/parallel/prodcons_domains.ml[59,1370+44]..[59,1370+49])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[59,1370+50]..[59,1370+51])
+                                  Pexp_constant PConst_int (0,None)
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[59,1370+52]..[59,1370+56])
+                                  Pexp_constant PConst_int (8000,None)
+                            ]
+                    ]
+                <def>
+                  pattern (testsuite/tests/parallel/prodcons_domains.ml[60,1428+6]..[60,1428+8])
+                    Ppat_var "c1" (testsuite/tests/parallel/prodcons_domains.ml[60,1428+6]..[60,1428+8])
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+11]..[60,1428+64])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+11]..[60,1428+23])
+                      Pexp_ident "Domain.spawn" (testsuite/tests/parallel/prodcons_domains.ml[60,1428+11]..[60,1428+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+24]..[60,1428+64])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/parallel/prodcons_domains.ml[60,1428+29]..[60,1428+31])
+                            Ppat_construct "()" (testsuite/tests/parallel/prodcons_domains.ml[60,1428+29]..[60,1428+31])
+                            None
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+35]..[60,1428+63])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+39]..[60,1428+41])
+                              Pexp_ident ":=" (testsuite/tests/parallel/prodcons_domains.ml[60,1428+39]..[60,1428+41])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+35]..[60,1428+38])
+                                  Pexp_ident "ok1" (testsuite/tests/parallel/prodcons_domains.ml[60,1428+35]..[60,1428+38])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+42]..[60,1428+63])
+                                  Pexp_apply
+                                  expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+42]..[60,1428+49])
+                                    Pexp_ident "consume" (testsuite/tests/parallel/prodcons_domains.ml[60,1428+42]..[60,1428+49])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+50]..[60,1428+55])
+                                        Pexp_ident "buff1" (testsuite/tests/parallel/prodcons_domains.ml[60,1428+50]..[60,1428+55])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+56]..[60,1428+57])
+                                        Pexp_constant PConst_int (0,None)
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/parallel/prodcons_domains.ml[60,1428+58]..[60,1428+63])
+                                        Pexp_constant PConst_int (10000,None)
+                                  ]
+                            ]
+                    ]
+              ]
+              expression (testsuite/tests/parallel/prodcons_domains.ml[61,1496+2]..[65,1594+30])
+                Pexp_sequence
+                expression (testsuite/tests/parallel/prodcons_domains.ml[61,1496+2]..[61,1496+29])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[61,1496+6]..[61,1496+8])
+                    Pexp_ident ":=" (testsuite/tests/parallel/prodcons_domains.ml[61,1496+6]..[61,1496+8])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[61,1496+2]..[61,1496+5])
+                        Pexp_ident "ok2" (testsuite/tests/parallel/prodcons_domains.ml[61,1496+2]..[61,1496+5])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[61,1496+9]..[61,1496+29])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[61,1496+9]..[61,1496+16])
+                          Pexp_ident "consume" (testsuite/tests/parallel/prodcons_domains.ml[61,1496+9]..[61,1496+16])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[61,1496+17]..[61,1496+22])
+                              Pexp_ident "buff2" (testsuite/tests/parallel/prodcons_domains.ml[61,1496+17]..[61,1496+22])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[61,1496+23]..[61,1496+24])
+                              Pexp_constant PConst_int (0,None)
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[61,1496+25]..[61,1496+29])
+                              Pexp_constant PConst_int (8000,None)
+                        ]
+                  ]
+                expression (testsuite/tests/parallel/prodcons_domains.ml[62,1527+2]..[65,1594+30])
+                  Pexp_sequence
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[62,1527+2]..[62,1527+16])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[62,1527+2]..[62,1527+13])
+                      Pexp_ident "Domain.join" (testsuite/tests/parallel/prodcons_domains.ml[62,1527+2]..[62,1527+13])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[62,1527+14]..[62,1527+16])
+                          Pexp_ident "c1" (testsuite/tests/parallel/prodcons_domains.ml[62,1527+14]..[62,1527+16])
+                    ]
+                  expression (testsuite/tests/parallel/prodcons_domains.ml[63,1545+2]..[65,1594+30])
+                    Pexp_ifthenelse
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[63,1545+5]..[63,1545+17])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[63,1545+10]..[63,1545+12])
+                        Pexp_ident "&&" (testsuite/tests/parallel/prodcons_domains.ml[63,1545+10]..[63,1545+12])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[63,1545+5]..[63,1545+9])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[63,1545+5]..[63,1545+6])
+                              Pexp_ident "!" (testsuite/tests/parallel/prodcons_domains.ml[63,1545+5]..[63,1545+6])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[63,1545+6]..[63,1545+9])
+                                  Pexp_ident "ok1" (testsuite/tests/parallel/prodcons_domains.ml[63,1545+6]..[63,1545+9])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[63,1545+13]..[63,1545+17])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[63,1545+13]..[63,1545+14])
+                              Pexp_ident "!" (testsuite/tests/parallel/prodcons_domains.ml[63,1545+13]..[63,1545+14])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/prodcons_domains.ml[63,1545+14]..[63,1545+17])
+                                  Pexp_ident "ok2" (testsuite/tests/parallel/prodcons_domains.ml[63,1545+14]..[63,1545+17])
+                            ]
+                      ]
+                    expression (testsuite/tests/parallel/prodcons_domains.ml[64,1563+7]..[64,1563+30])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[64,1563+7]..[64,1563+19])
+                        Pexp_ident "print_string" (testsuite/tests/parallel/prodcons_domains.ml[64,1563+7]..[64,1563+19])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/prodcons_domains.ml[64,1563+20]..[64,1563+30])
+                            Pexp_constant PConst_string("passed\n",(testsuite/tests/parallel/prodcons_domains.ml[64,1563+21]..[64,1563+29]),None)
+                      ]
+                    Some
+                      expression (testsuite/tests/parallel/prodcons_domains.ml[65,1594+7]..[65,1594+30])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/prodcons_domains.ml[65,1594+7]..[65,1594+19])
+                          Pexp_ident "print_string" (testsuite/tests/parallel/prodcons_domains.ml[65,1594+7]..[65,1594+19])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/prodcons_domains.ml[65,1594+20]..[65,1594+30])
+                              Pexp_constant PConst_string("FAILED\n",(testsuite/tests/parallel/prodcons_domains.ml[65,1594+21]..[65,1594+29]),None)
+                        ]
+    ]
+]
+

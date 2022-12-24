@@ -1,0 +1,176 @@
+[
+  structure_item (testsuite/tests/lazy/lazy8.ml[5,41+0]..[5,41+11])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (testsuite/tests/lazy/lazy8.ml[5,41+0]..[5,41+11])
+          pext_name = "E"
+          pext_kind =
+            Pext_decl
+              []
+              None
+  structure_item (testsuite/tests/lazy/lazy8.ml[7,54+0]..[24,346+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lazy/lazy8.ml[7,54+4]..[7,54+8])
+          Ppat_var "main" (testsuite/tests/lazy/lazy8.ml[7,54+4]..[7,54+8])
+        expression (testsuite/tests/lazy/lazy8.ml[7,54+9]..[24,346+20]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lazy/lazy8.ml[7,54+9]..[7,54+11])
+            Ppat_construct "()" (testsuite/tests/lazy/lazy8.ml[7,54+9]..[7,54+11])
+            None
+          expression (testsuite/tests/lazy/lazy8.ml[8,68+2]..[24,346+20])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/lazy/lazy8.ml[8,68+6]..[8,68+7])
+                  Ppat_var "l" (testsuite/tests/lazy/lazy8.ml[8,68+6]..[8,68+7])
+                expression (testsuite/tests/lazy/lazy8.ml[8,68+10]..[8,68+24])
+                  Pexp_lazy
+                  expression (testsuite/tests/lazy/lazy8.ml[8,68+15]..[8,68+24])
+                    Pexp_apply
+                    expression (testsuite/tests/lazy/lazy8.ml[8,68+16]..[8,68+21])
+                      Pexp_ident "raise" (testsuite/tests/lazy/lazy8.ml[8,68+16]..[8,68+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lazy/lazy8.ml[8,68+22]..[8,68+23])
+                          Pexp_construct "E" (testsuite/tests/lazy/lazy8.ml[8,68+22]..[8,68+23])
+                          None
+                    ]
+            ]
+            expression (testsuite/tests/lazy/lazy8.ml[10,97+2]..[24,346+20])
+              Pexp_sequence
+              expression (testsuite/tests/lazy/lazy8.ml[10,97+2]..[12,143+5])
+                Pexp_try
+                expression (testsuite/tests/lazy/lazy8.ml[10,97+12]..[10,97+28])
+                  Pexp_apply
+                  expression (testsuite/tests/lazy/lazy8.ml[10,97+12]..[10,97+26])
+                    Pexp_ident "Lazy.force_val" (testsuite/tests/lazy/lazy8.ml[10,97+12]..[10,97+26])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lazy/lazy8.ml[10,97+27]..[10,97+28])
+                        Pexp_ident "l" (testsuite/tests/lazy/lazy8.ml[10,97+27]..[10,97+28])
+                  ]
+                [
+                  <case>
+                    pattern (testsuite/tests/lazy/lazy8.ml[11,131+4]..[11,131+5])
+                      Ppat_construct "E" (testsuite/tests/lazy/lazy8.ml[11,131+4]..[11,131+5])
+                      None
+                    expression (testsuite/tests/lazy/lazy8.ml[11,131+9]..[11,131+11])
+                      Pexp_construct "()" (testsuite/tests/lazy/lazy8.ml[11,131+9]..[11,131+11])
+                      None
+                ]
+              expression (testsuite/tests/lazy/lazy8.ml[14,151+2]..[24,346+20])
+                Pexp_sequence
+                expression (testsuite/tests/lazy/lazy8.ml[14,151+2]..[16,210+5])
+                  Pexp_try
+                  expression (testsuite/tests/lazy/lazy8.ml[14,151+12]..[14,151+28])
+                    Pexp_apply
+                    expression (testsuite/tests/lazy/lazy8.ml[14,151+12]..[14,151+26])
+                      Pexp_ident "Lazy.force_val" (testsuite/tests/lazy/lazy8.ml[14,151+12]..[14,151+26])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lazy/lazy8.ml[14,151+27]..[14,151+28])
+                          Pexp_ident "l" (testsuite/tests/lazy/lazy8.ml[14,151+27]..[14,151+28])
+                    ]
+                  [
+                    <case>
+                      pattern (testsuite/tests/lazy/lazy8.ml[15,185+4]..[15,185+18])
+                        Ppat_construct "Lazy.Undefined" (testsuite/tests/lazy/lazy8.ml[15,185+4]..[15,185+18])
+                        None
+                      expression (testsuite/tests/lazy/lazy8.ml[15,185+22]..[15,185+24])
+                        Pexp_construct "()" (testsuite/tests/lazy/lazy8.ml[15,185+22]..[15,185+24])
+                        None
+                  ]
+                expression (testsuite/tests/lazy/lazy8.ml[18,218+2]..[24,346+20])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (testsuite/tests/lazy/lazy8.ml[18,218+6]..[18,218+7])
+                        Ppat_var "d" (testsuite/tests/lazy/lazy8.ml[18,218+6]..[18,218+7])
+                      expression (testsuite/tests/lazy/lazy8.ml[18,218+10]..[21,315+8])
+                        Pexp_apply
+                        expression (testsuite/tests/lazy/lazy8.ml[18,218+10]..[18,218+22])
+                          Pexp_ident "Domain.spawn" (testsuite/tests/lazy/lazy8.ml[18,218+10]..[18,218+22])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lazy/lazy8.ml[18,218+23]..[21,315+8])
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (testsuite/tests/lazy/lazy8.ml[18,218+28]..[18,218+30])
+                                Ppat_construct "()" (testsuite/tests/lazy/lazy8.ml[18,218+28]..[18,218+30])
+                                None
+                              expression (testsuite/tests/lazy/lazy8.ml[19,252+4]..[21,315+7])
+                                Pexp_try
+                                expression (testsuite/tests/lazy/lazy8.ml[19,252+14]..[19,252+30])
+                                  Pexp_apply
+                                  expression (testsuite/tests/lazy/lazy8.ml[19,252+14]..[19,252+28])
+                                    Pexp_ident "Lazy.force_val" (testsuite/tests/lazy/lazy8.ml[19,252+14]..[19,252+28])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lazy/lazy8.ml[19,252+29]..[19,252+30])
+                                        Pexp_ident "l" (testsuite/tests/lazy/lazy8.ml[19,252+29]..[19,252+30])
+                                  ]
+                                [
+                                  <case>
+                                    pattern (testsuite/tests/lazy/lazy8.ml[20,288+6]..[20,288+20])
+                                      Ppat_construct "Lazy.Undefined" (testsuite/tests/lazy/lazy8.ml[20,288+6]..[20,288+20])
+                                      None
+                                    expression (testsuite/tests/lazy/lazy8.ml[20,288+24]..[20,288+26])
+                                      Pexp_construct "()" (testsuite/tests/lazy/lazy8.ml[20,288+24]..[20,288+26])
+                                      None
+                                ]
+                        ]
+                  ]
+                  expression (testsuite/tests/lazy/lazy8.ml[23,329+2]..[24,346+20])
+                    Pexp_sequence
+                    expression (testsuite/tests/lazy/lazy8.ml[23,329+2]..[23,329+15])
+                      Pexp_apply
+                      expression (testsuite/tests/lazy/lazy8.ml[23,329+2]..[23,329+13])
+                        Pexp_ident "Domain.join" (testsuite/tests/lazy/lazy8.ml[23,329+2]..[23,329+13])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lazy/lazy8.ml[23,329+14]..[23,329+15])
+                            Pexp_ident "d" (testsuite/tests/lazy/lazy8.ml[23,329+14]..[23,329+15])
+                      ]
+                    expression (testsuite/tests/lazy/lazy8.ml[24,346+2]..[24,346+20])
+                      Pexp_apply
+                      expression (testsuite/tests/lazy/lazy8.ml[24,346+2]..[24,346+15])
+                        Pexp_ident "print_endline" (testsuite/tests/lazy/lazy8.ml[24,346+2]..[24,346+15])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lazy/lazy8.ml[24,346+16]..[24,346+20])
+                            Pexp_constant PConst_string("OK",(testsuite/tests/lazy/lazy8.ml[24,346+17]..[24,346+19]),None)
+                      ]
+    ]
+  structure_item (testsuite/tests/lazy/lazy8.ml[26,368+0]..[26,368+15])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lazy/lazy8.ml[26,368+4]..[26,368+5])
+          Ppat_any
+        expression (testsuite/tests/lazy/lazy8.ml[26,368+8]..[26,368+15])
+          Pexp_apply
+          expression (testsuite/tests/lazy/lazy8.ml[26,368+8]..[26,368+12])
+            Pexp_ident "main" (testsuite/tests/lazy/lazy8.ml[26,368+8]..[26,368+12])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lazy/lazy8.ml[26,368+13]..[26,368+15])
+                Pexp_construct "()" (testsuite/tests/lazy/lazy8.ml[26,368+13]..[26,368+15])
+                None
+          ]
+    ]
+]
+

@@ -1,0 +1,146 @@
+[
+  structure_item (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[12,230+0]..[12,230+78])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[12,230+4]..[12,230+14])
+          Ppat_var "expect_exn" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[12,230+4]..[12,230+14])
+        expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[12,230+16]..[12,230+78])
+          Pexp_constant PConst_string("Unix.fork may not be called while other domains were created",(testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[12,230+17]..[12,230+77]),None)
+    ]
+  structure_item (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[14,310+0]..[24,621+15])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[14,310+4]..[14,310+6])
+          Ppat_construct "()" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[14,310+4]..[14,310+6])
+          None
+        expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+2]..[24,621+15])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+6]..[15,319+7])
+                Ppat_var "d" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+6]..[15,319+7])
+              expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+10]..[15,319+47])
+                Pexp_apply
+                expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+10]..[15,319+22])
+                  Pexp_ident "Domain.spawn" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+10]..[15,319+22])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+23]..[15,319+47])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+28]..[15,319+30])
+                        Ppat_construct "()" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+28]..[15,319+30])
+                        None
+                      expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+34]..[15,319+46])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+34]..[15,319+44])
+                          Pexp_ident "Unix.sleep" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+34]..[15,319+44])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[15,319+45]..[15,319+46])
+                              Pexp_constant PConst_int (1,None)
+                        ]
+                ]
+          ]
+          expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[16,370+2]..[24,621+15])
+            Pexp_sequence
+            expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[16,370+2]..[23,614+5])
+              Pexp_match
+              expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[16,370+14]..[16,370+26])
+                Pexp_apply
+                expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[16,370+14]..[16,370+23])
+                  Pexp_ident "Unix.fork" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[16,370+14]..[16,370+23])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[16,370+24]..[16,370+26])
+                      Pexp_construct "()" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[16,370+24]..[16,370+26])
+                      None
+                ]
+              [
+                <case>
+                  pattern (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[17,402+4]..[17,402+25])
+                    Ppat_exception
+                    pattern (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[17,402+14]..[17,402+25])
+                      Ppat_construct "Failure" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[17,402+14]..[17,402+21])
+                      Some
+                        []
+                        pattern (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[17,402+22]..[17,402+25])
+                          Ppat_var "msg" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[17,402+22]..[17,402+25])
+                  expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[18,431+5]..[21,508+76])
+                    Pexp_ifthenelse
+                    expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[18,431+8]..[18,431+35])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[18,431+8]..[18,431+20])
+                        Pexp_ident "String.equal" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[18,431+8]..[18,431+20])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[18,431+21]..[18,431+24])
+                            Pexp_ident "msg" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[18,431+21]..[18,431+24])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[18,431+25]..[18,431+35])
+                            Pexp_ident "expect_exn" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[18,431+25]..[18,431+35])
+                      ]
+                    expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[19,472+7]..[19,472+25])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[19,472+7]..[19,472+20])
+                        Pexp_ident "print_endline" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[19,472+7]..[19,472+20])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[19,472+21]..[19,472+25])
+                            Pexp_constant PConst_string("OK",(testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[19,472+22]..[19,472+24]),None)
+                      ]
+                    Some
+                      expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[21,508+7]..[21,508+76])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[21,508+7]..[21,508+20])
+                          Pexp_ident "Printf.printf" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[21,508+7]..[21,508+20])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[21,508+21]..[21,508+61])
+                              Pexp_constant PConst_string("failed: expected Failure: %s, got %s\n",(testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[21,508+22]..[21,508+60]),None)
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[21,508+62]..[21,508+72])
+                              Pexp_ident "expect_exn" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[21,508+62]..[21,508+72])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[21,508+73]..[21,508+76])
+                              Pexp_ident "msg" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[21,508+73]..[21,508+76])
+                        ]
+                <case>
+                  pattern (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[22,585+4]..[22,585+5])
+                    Ppat_any
+                  expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[22,585+9]..[22,585+28])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[22,585+9]..[22,585+22])
+                      Pexp_ident "print_endline" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[22,585+9]..[22,585+22])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[22,585+23]..[22,585+28])
+                          Pexp_constant PConst_string("NOK",(testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[22,585+24]..[22,585+27]),None)
+                    ]
+              ]
+            expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[24,621+2]..[24,621+15])
+              Pexp_apply
+              expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[24,621+2]..[24,621+13])
+                Pexp_ident "Domain.join" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[24,621+2]..[24,621+13])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[24,621+14]..[24,621+15])
+                    Pexp_ident "d" (testsuite/tests/lib-unix/common/multicore_fork_domain_alone.ml[24,621+14]..[24,621+15])
+              ]
+    ]
+]
+

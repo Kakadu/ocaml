@@ -1,0 +1,251 @@
+[
+  structure_item (asmcomp/arm64/reload.ml[19,1146+0]..[19,1146+8])
+    Pstr_open Fresh
+    module_expr (asmcomp/arm64/reload.ml[19,1146+5]..[19,1146+8])
+      Pmod_ident "Reg" (asmcomp/arm64/reload.ml[19,1146+5]..[19,1146+8])
+  structure_item (asmcomp/arm64/reload.ml[21,1156+0]..[38,1619+3])
+    Pstr_class
+    [
+      class_declaration (asmcomp/arm64/reload.ml[21,1156+0]..[38,1619+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "reload" (asmcomp/arm64/reload.ml[21,1156+6]..[21,1156+12])
+        pci_expr =
+          class_expr (asmcomp/arm64/reload.ml[21,1156+15]..[38,1619+3])
+            Pcl_structure
+            class_structure
+              pattern (asmcomp/arm64/reload.ml[21,1156+22]..[21,1156+28])
+                Ppat_var "self" (asmcomp/arm64/reload.ml[21,1156+23]..[21,1156+27])
+              [
+                class_field (asmcomp/arm64/reload.ml[23,1186+0]..[23,1186+41])
+                  Pcf_inherit Fresh
+                    class_expr (asmcomp/arm64/reload.ml[23,1186+8]..[23,1186+32])
+                      Pcl_constr "Reloadgen.reload_generic" (asmcomp/arm64/reload.ml[23,1186+8]..[23,1186+32])
+                      []
+                    Some
+                      "super" (asmcomp/arm64/reload.ml[23,1186+36]..[23,1186+41])
+                class_field (asmcomp/arm64/reload.ml[25,1229+0]..[36,1578+39])
+                  Pcf_method Public
+                    "reload_operation" (asmcomp/arm64/reload.ml[25,1229+8]..[25,1229+24])
+                    Concrete Override
+                    expression (asmcomp/arm64/reload.ml[25,1229+25]..[36,1578+39]) ghost
+                      Pexp_poly
+                      expression (asmcomp/arm64/reload.ml[25,1229+25]..[36,1578+39]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/arm64/reload.ml[25,1229+25]..[25,1229+27])
+                          Ppat_var "op" (asmcomp/arm64/reload.ml[25,1229+25]..[25,1229+27])
+                        expression (asmcomp/arm64/reload.ml[25,1229+28]..[36,1578+39]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (asmcomp/arm64/reload.ml[25,1229+28]..[25,1229+31])
+                            Ppat_var "arg" (asmcomp/arm64/reload.ml[25,1229+28]..[25,1229+31])
+                          expression (asmcomp/arm64/reload.ml[25,1229+32]..[36,1578+39]) ghost
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (asmcomp/arm64/reload.ml[25,1229+32]..[25,1229+35])
+                              Ppat_var "res" (asmcomp/arm64/reload.ml[25,1229+32]..[25,1229+35])
+                            expression (asmcomp/arm64/reload.ml[26,1267+2]..[36,1578+39])
+                              Pexp_match
+                              expression (asmcomp/arm64/reload.ml[26,1267+8]..[26,1267+10])
+                                Pexp_ident "op" (asmcomp/arm64/reload.ml[26,1267+8]..[26,1267+10])
+                              [
+                                <case>
+                                  pattern (asmcomp/arm64/reload.ml[27,1283+4]..[27,1283+21])
+                                    Ppat_construct "Ispecific" (asmcomp/arm64/reload.ml[27,1283+4]..[27,1283+13])
+                                    Some
+                                      []
+                                      pattern (asmcomp/arm64/reload.ml[27,1283+14]..[27,1283+21])
+                                        Ppat_construct "Imove32" (asmcomp/arm64/reload.ml[27,1283+14]..[27,1283+21])
+                                        None
+                                  expression (asmcomp/arm64/reload.ml[29,1380+6]..[34,1558+9])
+                                    Pexp_match
+                                    expression (asmcomp/arm64/reload.ml[29,1380+18]..[29,1380+34])
+                                      Pexp_tuple
+                                      [
+                                        expression (asmcomp/arm64/reload.ml[29,1380+18]..[29,1380+25])
+                                          Pexp_apply
+                                          expression (asmcomp/arm64/reload.ml[29,1380+18]..[29,1380+25]) ghost
+                                            Pexp_ident "Array.get" (asmcomp/arm64/reload.ml[29,1380+18]..[29,1380+25]) ghost
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/arm64/reload.ml[29,1380+18]..[29,1380+21])
+                                                Pexp_ident "arg" (asmcomp/arm64/reload.ml[29,1380+18]..[29,1380+21])
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/arm64/reload.ml[29,1380+23]..[29,1380+24])
+                                                Pexp_constant PConst_int (0,None)
+                                          ]
+                                        expression (asmcomp/arm64/reload.ml[29,1380+27]..[29,1380+34])
+                                          Pexp_apply
+                                          expression (asmcomp/arm64/reload.ml[29,1380+27]..[29,1380+34]) ghost
+                                            Pexp_ident "Array.get" (asmcomp/arm64/reload.ml[29,1380+27]..[29,1380+34]) ghost
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/arm64/reload.ml[29,1380+27]..[29,1380+30])
+                                                Pexp_ident "res" (asmcomp/arm64/reload.ml[29,1380+27]..[29,1380+30])
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/arm64/reload.ml[29,1380+32]..[29,1380+33])
+                                                Pexp_constant PConst_int (0,None)
+                                          ]
+                                      ]
+                                    [
+                                      <case>
+                                        pattern (asmcomp/arm64/reload.ml[30,1420+8]..[30,1420+42])
+                                          Ppat_tuple
+                                          [
+                                            pattern (asmcomp/arm64/reload.ml[30,1420+8]..[30,1420+24])
+                                              Ppat_record Closed
+                                              [
+                                                "loc" (asmcomp/arm64/reload.ml[30,1420+9]..[30,1420+12])
+                                                  pattern (asmcomp/arm64/reload.ml[30,1420+15]..[30,1420+23])
+                                                    Ppat_construct "Stack" (asmcomp/arm64/reload.ml[30,1420+15]..[30,1420+20])
+                                                    Some
+                                                      []
+                                                      pattern (asmcomp/arm64/reload.ml[30,1420+21]..[30,1420+23])
+                                                        Ppat_var "s1" (asmcomp/arm64/reload.ml[30,1420+21]..[30,1420+23])
+                                              ]
+                                            pattern (asmcomp/arm64/reload.ml[30,1420+26]..[30,1420+42])
+                                              Ppat_record Closed
+                                              [
+                                                "loc" (asmcomp/arm64/reload.ml[30,1420+27]..[30,1420+30])
+                                                  pattern (asmcomp/arm64/reload.ml[30,1420+33]..[30,1420+41])
+                                                    Ppat_construct "Stack" (asmcomp/arm64/reload.ml[30,1420+33]..[30,1420+38])
+                                                    Some
+                                                      []
+                                                      pattern (asmcomp/arm64/reload.ml[30,1420+39]..[30,1420+41])
+                                                        Ppat_var "s2" (asmcomp/arm64/reload.ml[30,1420+39]..[30,1420+41])
+                                              ]
+                                          ]
+                                        <when>
+                                          expression (asmcomp/arm64/reload.ml[30,1420+48]..[30,1420+56])
+                                            Pexp_apply
+                                            expression (asmcomp/arm64/reload.ml[30,1420+51]..[30,1420+53])
+                                              Pexp_ident "<>" (asmcomp/arm64/reload.ml[30,1420+51]..[30,1420+53])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (asmcomp/arm64/reload.ml[30,1420+48]..[30,1420+50])
+                                                  Pexp_ident "s1" (asmcomp/arm64/reload.ml[30,1420+48]..[30,1420+50])
+                                              <arg>
+                                              Nolabel
+                                                expression (asmcomp/arm64/reload.ml[30,1420+54]..[30,1420+56])
+                                                  Pexp_ident "s2" (asmcomp/arm64/reload.ml[30,1420+54]..[30,1420+56])
+                                            ]
+                                        expression (asmcomp/arm64/reload.ml[31,1480+10]..[31,1480+43])
+                                          Pexp_tuple
+                                          [
+                                            expression (asmcomp/arm64/reload.ml[31,1480+11]..[31,1480+37])
+                                              Pexp_array
+                                              [
+                                                expression (asmcomp/arm64/reload.ml[31,1480+14]..[31,1480+34])
+                                                  Pexp_apply
+                                                  expression (asmcomp/arm64/reload.ml[31,1480+14]..[31,1480+26])
+                                                    Pexp_send "makereg"
+                                                    expression (asmcomp/arm64/reload.ml[31,1480+14]..[31,1480+18])
+                                                      Pexp_ident "self" (asmcomp/arm64/reload.ml[31,1480+14]..[31,1480+18])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (asmcomp/arm64/reload.ml[31,1480+27]..[31,1480+34])
+                                                        Pexp_apply
+                                                        expression (asmcomp/arm64/reload.ml[31,1480+27]..[31,1480+34]) ghost
+                                                          Pexp_ident "Array.get" (asmcomp/arm64/reload.ml[31,1480+27]..[31,1480+34]) ghost
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (asmcomp/arm64/reload.ml[31,1480+27]..[31,1480+30])
+                                                              Pexp_ident "arg" (asmcomp/arm64/reload.ml[31,1480+27]..[31,1480+30])
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (asmcomp/arm64/reload.ml[31,1480+32]..[31,1480+33])
+                                                              Pexp_constant PConst_int (0,None)
+                                                        ]
+                                                  ]
+                                              ]
+                                            expression (asmcomp/arm64/reload.ml[31,1480+39]..[31,1480+42])
+                                              Pexp_ident "res" (asmcomp/arm64/reload.ml[31,1480+39]..[31,1480+42])
+                                          ]
+                                      <case>
+                                        pattern (asmcomp/arm64/reload.ml[32,1524+8]..[32,1524+9])
+                                          Ppat_any
+                                        expression (asmcomp/arm64/reload.ml[33,1537+10]..[33,1537+20])
+                                          Pexp_tuple
+                                          [
+                                            expression (asmcomp/arm64/reload.ml[33,1537+11]..[33,1537+14])
+                                              Pexp_ident "arg" (asmcomp/arm64/reload.ml[33,1537+11]..[33,1537+14])
+                                            expression (asmcomp/arm64/reload.ml[33,1537+16]..[33,1537+19])
+                                              Pexp_ident "res" (asmcomp/arm64/reload.ml[33,1537+16]..[33,1537+19])
+                                          ]
+                                    ]
+                                <case>
+                                  pattern (asmcomp/arm64/reload.ml[35,1568+5]..[35,1568+6])
+                                    Ppat_any
+                                  expression (asmcomp/arm64/reload.ml[36,1578+6]..[36,1578+39])
+                                    Pexp_apply
+                                    expression (asmcomp/arm64/reload.ml[36,1578+6]..[36,1578+28])
+                                      Pexp_send "reload_operation"
+                                      expression (asmcomp/arm64/reload.ml[36,1578+6]..[36,1578+11])
+                                        Pexp_ident "super" (asmcomp/arm64/reload.ml[36,1578+6]..[36,1578+11])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm64/reload.ml[36,1578+29]..[36,1578+31])
+                                          Pexp_ident "op" (asmcomp/arm64/reload.ml[36,1578+29]..[36,1578+31])
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm64/reload.ml[36,1578+32]..[36,1578+35])
+                                          Pexp_ident "arg" (asmcomp/arm64/reload.ml[36,1578+32]..[36,1578+35])
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm64/reload.ml[36,1578+36]..[36,1578+39])
+                                          Pexp_ident "res" (asmcomp/arm64/reload.ml[36,1578+36]..[36,1578+39])
+                                    ]
+                              ]
+                      None
+              ]
+    ]
+  structure_item (asmcomp/arm64/reload.ml[40,1624+0]..[41,1656+40])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm64/reload.ml[40,1624+4]..[40,1624+11])
+          Ppat_var "fundecl" (asmcomp/arm64/reload.ml[40,1624+4]..[40,1624+11])
+        expression (asmcomp/arm64/reload.ml[40,1624+12]..[41,1656+40]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/arm64/reload.ml[40,1624+12]..[40,1624+13])
+            Ppat_var "f" (asmcomp/arm64/reload.ml[40,1624+12]..[40,1624+13])
+          expression (asmcomp/arm64/reload.ml[40,1624+14]..[41,1656+40]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/arm64/reload.ml[40,1624+14]..[40,1624+29])
+              Ppat_var "num_stack_slots" (asmcomp/arm64/reload.ml[40,1624+14]..[40,1624+29])
+            expression (asmcomp/arm64/reload.ml[41,1656+2]..[41,1656+40])
+              Pexp_apply
+              expression (asmcomp/arm64/reload.ml[41,1656+2]..[41,1656+22])
+                Pexp_send "fundecl"
+                expression (asmcomp/arm64/reload.ml[41,1656+2]..[41,1656+14])
+                  Pexp_new "reload" (asmcomp/arm64/reload.ml[41,1656+7]..[41,1656+13])
+              [
+                <arg>
+                Nolabel
+                  expression (asmcomp/arm64/reload.ml[41,1656+23]..[41,1656+24])
+                    Pexp_ident "f" (asmcomp/arm64/reload.ml[41,1656+23]..[41,1656+24])
+                <arg>
+                Nolabel
+                  expression (asmcomp/arm64/reload.ml[41,1656+25]..[41,1656+40])
+                    Pexp_ident "num_stack_slots" (asmcomp/arm64/reload.ml[41,1656+25]..[41,1656+40])
+              ]
+    ]
+]
+

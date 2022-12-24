@@ -1,0 +1,1590 @@
+[
+  structure_item (middle_end/convert_primitives.ml[17,1156+0]..[17,1156+39])
+    Pstr_attribute "ocaml.warning"
+    [
+      structure_item (middle_end/convert_primitives.ml[17,1156+18]..[17,1156+38])
+        Pstr_eval
+        expression (middle_end/convert_primitives.ml[17,1156+18]..[17,1156+38])
+          Pexp_constant PConst_string("+a-4-9-30-40-41-42",(middle_end/convert_primitives.ml[17,1156+19]..[17,1156+37]),None)
+    ]
+  structure_item (middle_end/convert_primitives.ml[19,1197+0]..[23,1297+8])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (middle_end/convert_primitives.ml[19,1197+4]..[19,1197+20])
+          Ppat_var "convert_unsafety" (middle_end/convert_primitives.ml[19,1197+4]..[19,1197+20])
+        expression (middle_end/convert_primitives.ml[19,1197+21]..[23,1297+8]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (middle_end/convert_primitives.ml[19,1197+21]..[19,1197+30])
+            Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[19,1197+21]..[19,1197+30])
+          expression (middle_end/convert_primitives.ml[19,1197+31]..[23,1297+8])
+            Pexp_constraint
+            expression (middle_end/convert_primitives.ml[20,1259+2]..[23,1297+8])
+              Pexp_ifthenelse
+              expression (middle_end/convert_primitives.ml[20,1259+5]..[20,1259+14])
+                Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[20,1259+5]..[20,1259+14])
+              expression (middle_end/convert_primitives.ml[21,1279+4]..[21,1279+10])
+                Pexp_construct "Unsafe" (middle_end/convert_primitives.ml[21,1279+4]..[21,1279+10])
+                None
+              Some
+                expression (middle_end/convert_primitives.ml[23,1297+4]..[23,1297+8])
+                  Pexp_construct "Safe" (middle_end/convert_primitives.ml[23,1297+4]..[23,1297+8])
+                  None
+            core_type (middle_end/convert_primitives.ml[19,1197+33]..[19,1197+59])
+              Ptyp_constr "Clambda_primitives.is_safe" (middle_end/convert_primitives.ml[19,1197+33]..[19,1197+59])
+              []
+    ]
+  structure_item (middle_end/convert_primitives.ml[25,1307+0]..[163,6480+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (middle_end/convert_primitives.ml[25,1307+4]..[25,1307+11])
+          Ppat_var "convert" (middle_end/convert_primitives.ml[25,1307+4]..[25,1307+11])
+        expression (middle_end/convert_primitives.ml[25,1307+12]..[163,6480+34]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (middle_end/convert_primitives.ml[25,1307+12]..[25,1307+37])
+            Ppat_constraint
+            pattern (middle_end/convert_primitives.ml[25,1307+13]..[25,1307+17])
+              Ppat_var "prim" (middle_end/convert_primitives.ml[25,1307+13]..[25,1307+17])
+            core_type (middle_end/convert_primitives.ml[25,1307+20]..[25,1307+36])
+              Ptyp_constr "Lambda.primitive" (middle_end/convert_primitives.ml[25,1307+20]..[25,1307+36])
+              []
+          expression (middle_end/convert_primitives.ml[25,1307+38]..[163,6480+34])
+            Pexp_constraint
+            expression (middle_end/convert_primitives.ml[26,1378+2]..[163,6480+34])
+              Pexp_match
+              expression (middle_end/convert_primitives.ml[26,1378+8]..[26,1378+12])
+                Pexp_ident "prim" (middle_end/convert_primitives.ml[26,1378+8]..[26,1378+12])
+              [
+                <case>
+                  pattern (middle_end/convert_primitives.ml[27,1396+4]..[27,1396+39])
+                    Ppat_construct "Pmakeblock" (middle_end/convert_primitives.ml[27,1396+4]..[27,1396+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[27,1396+15]..[27,1396+39])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[27,1396+16]..[27,1396+19])
+                            Ppat_var "tag" (middle_end/convert_primitives.ml[27,1396+16]..[27,1396+19])
+                          pattern (middle_end/convert_primitives.ml[27,1396+21]..[27,1396+31])
+                            Ppat_var "mutability" (middle_end/convert_primitives.ml[27,1396+21]..[27,1396+31])
+                          pattern (middle_end/convert_primitives.ml[27,1396+33]..[27,1396+38])
+                            Ppat_var "shape" (middle_end/convert_primitives.ml[27,1396+33]..[27,1396+38])
+                        ]
+                  expression (middle_end/convert_primitives.ml[28,1439+6]..[28,1439+41])
+                    Pexp_construct "Pmakeblock" (middle_end/convert_primitives.ml[28,1439+6]..[28,1439+16])
+                    Some
+                      expression (middle_end/convert_primitives.ml[28,1439+17]..[28,1439+41])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[28,1439+18]..[28,1439+21])
+                            Pexp_ident "tag" (middle_end/convert_primitives.ml[28,1439+18]..[28,1439+21])
+                          expression (middle_end/convert_primitives.ml[28,1439+23]..[28,1439+33])
+                            Pexp_ident "mutability" (middle_end/convert_primitives.ml[28,1439+23]..[28,1439+33])
+                          expression (middle_end/convert_primitives.ml[28,1439+35]..[28,1439+40])
+                            Pexp_ident "shape" (middle_end/convert_primitives.ml[28,1439+35]..[28,1439+40])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[29,1481+4]..[29,1481+46])
+                    Ppat_construct "Pfield" (middle_end/convert_primitives.ml[29,1481+4]..[29,1481+10])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[29,1481+11]..[29,1481+46])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[29,1481+12]..[29,1481+17])
+                            Ppat_var "field" (middle_end/convert_primitives.ml[29,1481+12]..[29,1481+17])
+                          pattern (middle_end/convert_primitives.ml[29,1481+19]..[29,1481+33])
+                            Ppat_var "imm_or_pointer" (middle_end/convert_primitives.ml[29,1481+19]..[29,1481+33])
+                          pattern (middle_end/convert_primitives.ml[29,1481+35]..[29,1481+45])
+                            Ppat_var "mutability" (middle_end/convert_primitives.ml[29,1481+35]..[29,1481+45])
+                        ]
+                  expression (middle_end/convert_primitives.ml[30,1531+6]..[30,1531+48])
+                    Pexp_construct "Pfield" (middle_end/convert_primitives.ml[30,1531+6]..[30,1531+12])
+                    Some
+                      expression (middle_end/convert_primitives.ml[30,1531+13]..[30,1531+48])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[30,1531+14]..[30,1531+19])
+                            Pexp_ident "field" (middle_end/convert_primitives.ml[30,1531+14]..[30,1531+19])
+                          expression (middle_end/convert_primitives.ml[30,1531+21]..[30,1531+35])
+                            Pexp_ident "imm_or_pointer" (middle_end/convert_primitives.ml[30,1531+21]..[30,1531+35])
+                          expression (middle_end/convert_primitives.ml[30,1531+37]..[30,1531+47])
+                            Pexp_ident "mutability" (middle_end/convert_primitives.ml[30,1531+37]..[30,1531+47])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[31,1580+4]..[31,1580+19])
+                    Ppat_construct "Pfield_computed" (middle_end/convert_primitives.ml[31,1580+4]..[31,1580+19])
+                    None
+                  expression (middle_end/convert_primitives.ml[31,1580+23]..[31,1580+38])
+                    Pexp_construct "Pfield_computed" (middle_end/convert_primitives.ml[31,1580+23]..[31,1580+38])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[32,1619+4]..[32,1619+53])
+                    Ppat_construct "Psetfield" (middle_end/convert_primitives.ml[32,1619+4]..[32,1619+13])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[32,1619+14]..[32,1619+53])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[32,1619+15]..[32,1619+20])
+                            Ppat_var "field" (middle_end/convert_primitives.ml[32,1619+15]..[32,1619+20])
+                          pattern (middle_end/convert_primitives.ml[32,1619+22]..[32,1619+36])
+                            Ppat_var "imm_or_pointer" (middle_end/convert_primitives.ml[32,1619+22]..[32,1619+36])
+                          pattern (middle_end/convert_primitives.ml[32,1619+38]..[32,1619+52])
+                            Ppat_var "init_or_assign" (middle_end/convert_primitives.ml[32,1619+38]..[32,1619+52])
+                        ]
+                  expression (middle_end/convert_primitives.ml[33,1676+6]..[33,1676+55])
+                    Pexp_construct "Psetfield" (middle_end/convert_primitives.ml[33,1676+6]..[33,1676+15])
+                    Some
+                      expression (middle_end/convert_primitives.ml[33,1676+16]..[33,1676+55])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[33,1676+17]..[33,1676+22])
+                            Pexp_ident "field" (middle_end/convert_primitives.ml[33,1676+17]..[33,1676+22])
+                          expression (middle_end/convert_primitives.ml[33,1676+24]..[33,1676+38])
+                            Pexp_ident "imm_or_pointer" (middle_end/convert_primitives.ml[33,1676+24]..[33,1676+38])
+                          expression (middle_end/convert_primitives.ml[33,1676+40]..[33,1676+54])
+                            Pexp_ident "init_or_assign" (middle_end/convert_primitives.ml[33,1676+40]..[33,1676+54])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[34,1732+4]..[34,1732+55])
+                    Ppat_construct "Psetfield_computed" (middle_end/convert_primitives.ml[34,1732+4]..[34,1732+22])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[34,1732+23]..[34,1732+55])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[34,1732+24]..[34,1732+38])
+                            Ppat_var "imm_or_pointer" (middle_end/convert_primitives.ml[34,1732+24]..[34,1732+38])
+                          pattern (middle_end/convert_primitives.ml[34,1732+40]..[34,1732+54])
+                            Ppat_var "init_or_assign" (middle_end/convert_primitives.ml[34,1732+40]..[34,1732+54])
+                        ]
+                  expression (middle_end/convert_primitives.ml[35,1791+6]..[35,1791+57])
+                    Pexp_construct "Psetfield_computed" (middle_end/convert_primitives.ml[35,1791+6]..[35,1791+24])
+                    Some
+                      expression (middle_end/convert_primitives.ml[35,1791+25]..[35,1791+57])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[35,1791+26]..[35,1791+40])
+                            Pexp_ident "imm_or_pointer" (middle_end/convert_primitives.ml[35,1791+26]..[35,1791+40])
+                          expression (middle_end/convert_primitives.ml[35,1791+42]..[35,1791+56])
+                            Pexp_ident "init_or_assign" (middle_end/convert_primitives.ml[35,1791+42]..[35,1791+56])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[36,1849+4]..[36,1849+21])
+                    Ppat_construct "Pfloatfield" (middle_end/convert_primitives.ml[36,1849+4]..[36,1849+15])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[36,1849+16]..[36,1849+21])
+                        Ppat_var "field" (middle_end/convert_primitives.ml[36,1849+16]..[36,1849+21])
+                  expression (middle_end/convert_primitives.ml[36,1849+25]..[36,1849+42])
+                    Pexp_construct "Pfloatfield" (middle_end/convert_primitives.ml[36,1849+25]..[36,1849+36])
+                    Some
+                      expression (middle_end/convert_primitives.ml[36,1849+37]..[36,1849+42])
+                        Pexp_ident "field" (middle_end/convert_primitives.ml[36,1849+37]..[36,1849+42])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[37,1892+4]..[37,1892+42])
+                    Ppat_construct "Psetfloatfield" (middle_end/convert_primitives.ml[37,1892+4]..[37,1892+18])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[37,1892+19]..[37,1892+42])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[37,1892+20]..[37,1892+25])
+                            Ppat_var "field" (middle_end/convert_primitives.ml[37,1892+20]..[37,1892+25])
+                          pattern (middle_end/convert_primitives.ml[37,1892+27]..[37,1892+41])
+                            Ppat_var "init_or_assign" (middle_end/convert_primitives.ml[37,1892+27]..[37,1892+41])
+                        ]
+                  expression (middle_end/convert_primitives.ml[38,1938+6]..[38,1938+44])
+                    Pexp_construct "Psetfloatfield" (middle_end/convert_primitives.ml[38,1938+6]..[38,1938+20])
+                    Some
+                      expression (middle_end/convert_primitives.ml[38,1938+21]..[38,1938+44])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[38,1938+22]..[38,1938+27])
+                            Pexp_ident "field" (middle_end/convert_primitives.ml[38,1938+22]..[38,1938+27])
+                          expression (middle_end/convert_primitives.ml[38,1938+29]..[38,1938+43])
+                            Pexp_ident "init_or_assign" (middle_end/convert_primitives.ml[38,1938+29]..[38,1938+43])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[39,1983+4]..[39,1983+27])
+                    Ppat_construct "Pduprecord" (middle_end/convert_primitives.ml[39,1983+4]..[39,1983+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[39,1983+15]..[39,1983+27])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[39,1983+16]..[39,1983+20])
+                            Ppat_var "repr" (middle_end/convert_primitives.ml[39,1983+16]..[39,1983+20])
+                          pattern (middle_end/convert_primitives.ml[39,1983+22]..[39,1983+26])
+                            Ppat_var "size" (middle_end/convert_primitives.ml[39,1983+22]..[39,1983+26])
+                        ]
+                  expression (middle_end/convert_primitives.ml[39,1983+31]..[39,1983+54])
+                    Pexp_construct "Pduprecord" (middle_end/convert_primitives.ml[39,1983+31]..[39,1983+41])
+                    Some
+                      expression (middle_end/convert_primitives.ml[39,1983+42]..[39,1983+54])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[39,1983+43]..[39,1983+47])
+                            Pexp_ident "repr" (middle_end/convert_primitives.ml[39,1983+43]..[39,1983+47])
+                          expression (middle_end/convert_primitives.ml[39,1983+49]..[39,1983+53])
+                            Pexp_ident "size" (middle_end/convert_primitives.ml[39,1983+49]..[39,1983+53])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[40,2038+4]..[40,2038+13])
+                    Ppat_construct "Prunstack" (middle_end/convert_primitives.ml[40,2038+4]..[40,2038+13])
+                    None
+                  expression (middle_end/convert_primitives.ml[40,2038+17]..[40,2038+26])
+                    Pexp_construct "Prunstack" (middle_end/convert_primitives.ml[40,2038+17]..[40,2038+26])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[41,2065+4]..[41,2065+12])
+                    Ppat_construct "Pperform" (middle_end/convert_primitives.ml[41,2065+4]..[41,2065+12])
+                    None
+                  expression (middle_end/convert_primitives.ml[41,2065+16]..[41,2065+24])
+                    Pexp_construct "Pperform" (middle_end/convert_primitives.ml[41,2065+16]..[41,2065+24])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[42,2090+4]..[42,2090+11])
+                    Ppat_construct "Presume" (middle_end/convert_primitives.ml[42,2090+4]..[42,2090+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[42,2090+15]..[42,2090+22])
+                    Pexp_construct "Presume" (middle_end/convert_primitives.ml[42,2090+15]..[42,2090+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[43,2113+4]..[43,2113+14])
+                    Ppat_construct "Preperform" (middle_end/convert_primitives.ml[43,2113+4]..[43,2113+14])
+                    None
+                  expression (middle_end/convert_primitives.ml[43,2113+18]..[43,2113+28])
+                    Pexp_construct "Preperform" (middle_end/convert_primitives.ml[43,2113+18]..[43,2113+28])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[44,2142+4]..[44,2142+15])
+                    Ppat_construct "Pccall" (middle_end/convert_primitives.ml[44,2142+4]..[44,2142+10])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[44,2142+11]..[44,2142+15])
+                        Ppat_var "prim" (middle_end/convert_primitives.ml[44,2142+11]..[44,2142+15])
+                  expression (middle_end/convert_primitives.ml[44,2142+19]..[44,2142+30])
+                    Pexp_construct "Pccall" (middle_end/convert_primitives.ml[44,2142+19]..[44,2142+25])
+                    Some
+                      expression (middle_end/convert_primitives.ml[44,2142+26]..[44,2142+30])
+                        Pexp_ident "prim" (middle_end/convert_primitives.ml[44,2142+26]..[44,2142+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[45,2173+4]..[45,2173+15])
+                    Ppat_construct "Praise" (middle_end/convert_primitives.ml[45,2173+4]..[45,2173+10])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[45,2173+11]..[45,2173+15])
+                        Ppat_var "kind" (middle_end/convert_primitives.ml[45,2173+11]..[45,2173+15])
+                  expression (middle_end/convert_primitives.ml[45,2173+19]..[45,2173+30])
+                    Pexp_construct "Praise" (middle_end/convert_primitives.ml[45,2173+19]..[45,2173+25])
+                    Some
+                      expression (middle_end/convert_primitives.ml[45,2173+26]..[45,2173+30])
+                        Pexp_ident "kind" (middle_end/convert_primitives.ml[45,2173+26]..[45,2173+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[46,2204+4]..[46,2204+12])
+                    Ppat_construct "Psequand" (middle_end/convert_primitives.ml[46,2204+4]..[46,2204+12])
+                    None
+                  expression (middle_end/convert_primitives.ml[46,2204+16]..[46,2204+24])
+                    Pexp_construct "Psequand" (middle_end/convert_primitives.ml[46,2204+16]..[46,2204+24])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[47,2229+4]..[47,2229+11])
+                    Ppat_construct "Psequor" (middle_end/convert_primitives.ml[47,2229+4]..[47,2229+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[47,2229+15]..[47,2229+22])
+                    Pexp_construct "Psequor" (middle_end/convert_primitives.ml[47,2229+15]..[47,2229+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[48,2252+4]..[48,2252+8])
+                    Ppat_construct "Pnot" (middle_end/convert_primitives.ml[48,2252+4]..[48,2252+8])
+                    None
+                  expression (middle_end/convert_primitives.ml[48,2252+12]..[48,2252+16])
+                    Pexp_construct "Pnot" (middle_end/convert_primitives.ml[48,2252+12]..[48,2252+16])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[49,2269+4]..[49,2269+11])
+                    Ppat_construct "Pnegint" (middle_end/convert_primitives.ml[49,2269+4]..[49,2269+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[49,2269+15]..[49,2269+22])
+                    Pexp_construct "Pnegint" (middle_end/convert_primitives.ml[49,2269+15]..[49,2269+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[50,2292+4]..[50,2292+11])
+                    Ppat_construct "Paddint" (middle_end/convert_primitives.ml[50,2292+4]..[50,2292+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[50,2292+15]..[50,2292+22])
+                    Pexp_construct "Paddint" (middle_end/convert_primitives.ml[50,2292+15]..[50,2292+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[51,2315+4]..[51,2315+11])
+                    Ppat_construct "Psubint" (middle_end/convert_primitives.ml[51,2315+4]..[51,2315+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[51,2315+15]..[51,2315+22])
+                    Pexp_construct "Psubint" (middle_end/convert_primitives.ml[51,2315+15]..[51,2315+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[52,2338+4]..[52,2338+11])
+                    Ppat_construct "Pmulint" (middle_end/convert_primitives.ml[52,2338+4]..[52,2338+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[52,2338+15]..[52,2338+22])
+                    Pexp_construct "Pmulint" (middle_end/convert_primitives.ml[52,2338+15]..[52,2338+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[53,2361+4]..[53,2361+19])
+                    Ppat_construct "Pdivint" (middle_end/convert_primitives.ml[53,2361+4]..[53,2361+11])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[53,2361+12]..[53,2361+19])
+                        Ppat_var "is_safe" (middle_end/convert_primitives.ml[53,2361+12]..[53,2361+19])
+                  expression (middle_end/convert_primitives.ml[53,2361+23]..[53,2361+38])
+                    Pexp_construct "Pdivint" (middle_end/convert_primitives.ml[53,2361+23]..[53,2361+30])
+                    Some
+                      expression (middle_end/convert_primitives.ml[53,2361+31]..[53,2361+38])
+                        Pexp_ident "is_safe" (middle_end/convert_primitives.ml[53,2361+31]..[53,2361+38])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[54,2400+4]..[54,2400+19])
+                    Ppat_construct "Pmodint" (middle_end/convert_primitives.ml[54,2400+4]..[54,2400+11])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[54,2400+12]..[54,2400+19])
+                        Ppat_var "is_safe" (middle_end/convert_primitives.ml[54,2400+12]..[54,2400+19])
+                  expression (middle_end/convert_primitives.ml[54,2400+23]..[54,2400+38])
+                    Pexp_construct "Pmodint" (middle_end/convert_primitives.ml[54,2400+23]..[54,2400+30])
+                    Some
+                      expression (middle_end/convert_primitives.ml[54,2400+31]..[54,2400+38])
+                        Pexp_ident "is_safe" (middle_end/convert_primitives.ml[54,2400+31]..[54,2400+38])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[55,2439+4]..[55,2439+11])
+                    Ppat_construct "Pandint" (middle_end/convert_primitives.ml[55,2439+4]..[55,2439+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[55,2439+15]..[55,2439+22])
+                    Pexp_construct "Pandint" (middle_end/convert_primitives.ml[55,2439+15]..[55,2439+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[56,2462+4]..[56,2462+10])
+                    Ppat_construct "Porint" (middle_end/convert_primitives.ml[56,2462+4]..[56,2462+10])
+                    None
+                  expression (middle_end/convert_primitives.ml[56,2462+14]..[56,2462+20])
+                    Pexp_construct "Porint" (middle_end/convert_primitives.ml[56,2462+14]..[56,2462+20])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[57,2483+4]..[57,2483+11])
+                    Ppat_construct "Pxorint" (middle_end/convert_primitives.ml[57,2483+4]..[57,2483+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[57,2483+15]..[57,2483+22])
+                    Pexp_construct "Pxorint" (middle_end/convert_primitives.ml[57,2483+15]..[57,2483+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[58,2506+4]..[58,2506+11])
+                    Ppat_construct "Plslint" (middle_end/convert_primitives.ml[58,2506+4]..[58,2506+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[58,2506+15]..[58,2506+22])
+                    Pexp_construct "Plslint" (middle_end/convert_primitives.ml[58,2506+15]..[58,2506+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[59,2529+4]..[59,2529+11])
+                    Ppat_construct "Plsrint" (middle_end/convert_primitives.ml[59,2529+4]..[59,2529+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[59,2529+15]..[59,2529+22])
+                    Pexp_construct "Plsrint" (middle_end/convert_primitives.ml[59,2529+15]..[59,2529+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[60,2552+4]..[60,2552+11])
+                    Ppat_construct "Pasrint" (middle_end/convert_primitives.ml[60,2552+4]..[60,2552+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[60,2552+15]..[60,2552+22])
+                    Pexp_construct "Pasrint" (middle_end/convert_primitives.ml[60,2552+15]..[60,2552+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[61,2575+4]..[61,2575+17])
+                    Ppat_construct "Pintcomp" (middle_end/convert_primitives.ml[61,2575+4]..[61,2575+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[61,2575+13]..[61,2575+17])
+                        Ppat_var "comp" (middle_end/convert_primitives.ml[61,2575+13]..[61,2575+17])
+                  expression (middle_end/convert_primitives.ml[61,2575+21]..[61,2575+34])
+                    Pexp_construct "Pintcomp" (middle_end/convert_primitives.ml[61,2575+21]..[61,2575+29])
+                    Some
+                      expression (middle_end/convert_primitives.ml[61,2575+30]..[61,2575+34])
+                        Pexp_ident "comp" (middle_end/convert_primitives.ml[61,2575+30]..[61,2575+34])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[62,2610+4]..[62,2610+17])
+                    Ppat_construct "Pcompare_ints" (middle_end/convert_primitives.ml[62,2610+4]..[62,2610+17])
+                    None
+                  expression (middle_end/convert_primitives.ml[62,2610+21]..[62,2610+34])
+                    Pexp_construct "Pcompare_ints" (middle_end/convert_primitives.ml[62,2610+21]..[62,2610+34])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[63,2645+4]..[63,2645+19])
+                    Ppat_construct "Pcompare_floats" (middle_end/convert_primitives.ml[63,2645+4]..[63,2645+19])
+                    None
+                  expression (middle_end/convert_primitives.ml[63,2645+23]..[63,2645+38])
+                    Pexp_construct "Pcompare_floats" (middle_end/convert_primitives.ml[63,2645+23]..[63,2645+38])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[64,2684+4]..[64,2684+21])
+                    Ppat_construct "Pcompare_bints" (middle_end/convert_primitives.ml[64,2684+4]..[64,2684+18])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[64,2684+19]..[64,2684+21])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[64,2684+19]..[64,2684+21])
+                  expression (middle_end/convert_primitives.ml[64,2684+25]..[64,2684+42])
+                    Pexp_construct "Pcompare_bints" (middle_end/convert_primitives.ml[64,2684+25]..[64,2684+39])
+                    Some
+                      expression (middle_end/convert_primitives.ml[64,2684+40]..[64,2684+42])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[64,2684+40]..[64,2684+42])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[65,2727+4]..[65,2727+21])
+                    Ppat_construct "Poffsetint" (middle_end/convert_primitives.ml[65,2727+4]..[65,2727+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[65,2727+15]..[65,2727+21])
+                        Ppat_var "offset" (middle_end/convert_primitives.ml[65,2727+15]..[65,2727+21])
+                  expression (middle_end/convert_primitives.ml[65,2727+25]..[65,2727+42])
+                    Pexp_construct "Poffsetint" (middle_end/convert_primitives.ml[65,2727+25]..[65,2727+35])
+                    Some
+                      expression (middle_end/convert_primitives.ml[65,2727+36]..[65,2727+42])
+                        Pexp_ident "offset" (middle_end/convert_primitives.ml[65,2727+36]..[65,2727+42])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[66,2770+4]..[66,2770+21])
+                    Ppat_construct "Poffsetref" (middle_end/convert_primitives.ml[66,2770+4]..[66,2770+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[66,2770+15]..[66,2770+21])
+                        Ppat_var "offset" (middle_end/convert_primitives.ml[66,2770+15]..[66,2770+21])
+                  expression (middle_end/convert_primitives.ml[66,2770+25]..[66,2770+42])
+                    Pexp_construct "Poffsetref" (middle_end/convert_primitives.ml[66,2770+25]..[66,2770+35])
+                    Some
+                      expression (middle_end/convert_primitives.ml[66,2770+36]..[66,2770+42])
+                        Pexp_ident "offset" (middle_end/convert_primitives.ml[66,2770+36]..[66,2770+42])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[67,2813+4]..[67,2813+15])
+                    Ppat_construct "Pintoffloat" (middle_end/convert_primitives.ml[67,2813+4]..[67,2813+15])
+                    None
+                  expression (middle_end/convert_primitives.ml[67,2813+19]..[67,2813+30])
+                    Pexp_construct "Pintoffloat" (middle_end/convert_primitives.ml[67,2813+19]..[67,2813+30])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[68,2844+4]..[68,2844+15])
+                    Ppat_construct "Pfloatofint" (middle_end/convert_primitives.ml[68,2844+4]..[68,2844+15])
+                    None
+                  expression (middle_end/convert_primitives.ml[68,2844+19]..[68,2844+30])
+                    Pexp_construct "Pfloatofint" (middle_end/convert_primitives.ml[68,2844+19]..[68,2844+30])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[69,2875+4]..[69,2875+13])
+                    Ppat_construct "Pnegfloat" (middle_end/convert_primitives.ml[69,2875+4]..[69,2875+13])
+                    None
+                  expression (middle_end/convert_primitives.ml[69,2875+17]..[69,2875+26])
+                    Pexp_construct "Pnegfloat" (middle_end/convert_primitives.ml[69,2875+17]..[69,2875+26])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[70,2902+4]..[70,2902+13])
+                    Ppat_construct "Pabsfloat" (middle_end/convert_primitives.ml[70,2902+4]..[70,2902+13])
+                    None
+                  expression (middle_end/convert_primitives.ml[70,2902+17]..[70,2902+26])
+                    Pexp_construct "Pabsfloat" (middle_end/convert_primitives.ml[70,2902+17]..[70,2902+26])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[71,2929+4]..[71,2929+13])
+                    Ppat_construct "Paddfloat" (middle_end/convert_primitives.ml[71,2929+4]..[71,2929+13])
+                    None
+                  expression (middle_end/convert_primitives.ml[71,2929+17]..[71,2929+26])
+                    Pexp_construct "Paddfloat" (middle_end/convert_primitives.ml[71,2929+17]..[71,2929+26])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[72,2956+4]..[72,2956+13])
+                    Ppat_construct "Psubfloat" (middle_end/convert_primitives.ml[72,2956+4]..[72,2956+13])
+                    None
+                  expression (middle_end/convert_primitives.ml[72,2956+17]..[72,2956+26])
+                    Pexp_construct "Psubfloat" (middle_end/convert_primitives.ml[72,2956+17]..[72,2956+26])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[73,2983+4]..[73,2983+13])
+                    Ppat_construct "Pmulfloat" (middle_end/convert_primitives.ml[73,2983+4]..[73,2983+13])
+                    None
+                  expression (middle_end/convert_primitives.ml[73,2983+17]..[73,2983+26])
+                    Pexp_construct "Pmulfloat" (middle_end/convert_primitives.ml[73,2983+17]..[73,2983+26])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[74,3010+4]..[74,3010+13])
+                    Ppat_construct "Pdivfloat" (middle_end/convert_primitives.ml[74,3010+4]..[74,3010+13])
+                    None
+                  expression (middle_end/convert_primitives.ml[74,3010+17]..[74,3010+26])
+                    Pexp_construct "Pdivfloat" (middle_end/convert_primitives.ml[74,3010+17]..[74,3010+26])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[75,3037+4]..[75,3037+19])
+                    Ppat_construct "Pfloatcomp" (middle_end/convert_primitives.ml[75,3037+4]..[75,3037+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[75,3037+15]..[75,3037+19])
+                        Ppat_var "comp" (middle_end/convert_primitives.ml[75,3037+15]..[75,3037+19])
+                  expression (middle_end/convert_primitives.ml[75,3037+23]..[75,3037+38])
+                    Pexp_construct "Pfloatcomp" (middle_end/convert_primitives.ml[75,3037+23]..[75,3037+33])
+                    Some
+                      expression (middle_end/convert_primitives.ml[75,3037+34]..[75,3037+38])
+                        Pexp_ident "comp" (middle_end/convert_primitives.ml[75,3037+34]..[75,3037+38])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[76,3076+4]..[76,3076+17])
+                    Ppat_construct "Pstringlength" (middle_end/convert_primitives.ml[76,3076+4]..[76,3076+17])
+                    None
+                  expression (middle_end/convert_primitives.ml[76,3076+21]..[76,3076+34])
+                    Pexp_construct "Pstringlength" (middle_end/convert_primitives.ml[76,3076+21]..[76,3076+34])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[77,3111+4]..[77,3111+15])
+                    Ppat_construct "Pstringrefu" (middle_end/convert_primitives.ml[77,3111+4]..[77,3111+15])
+                    None
+                  expression (middle_end/convert_primitives.ml[77,3111+19]..[77,3111+30])
+                    Pexp_construct "Pstringrefu" (middle_end/convert_primitives.ml[77,3111+19]..[77,3111+30])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[78,3142+4]..[78,3142+15])
+                    Ppat_construct "Pstringrefs" (middle_end/convert_primitives.ml[78,3142+4]..[78,3142+15])
+                    None
+                  expression (middle_end/convert_primitives.ml[78,3142+19]..[78,3142+30])
+                    Pexp_construct "Pstringrefs" (middle_end/convert_primitives.ml[78,3142+19]..[78,3142+30])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[79,3173+4]..[79,3173+16])
+                    Ppat_construct "Pbyteslength" (middle_end/convert_primitives.ml[79,3173+4]..[79,3173+16])
+                    None
+                  expression (middle_end/convert_primitives.ml[79,3173+20]..[79,3173+32])
+                    Pexp_construct "Pbyteslength" (middle_end/convert_primitives.ml[79,3173+20]..[79,3173+32])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[80,3206+4]..[80,3206+14])
+                    Ppat_construct "Pbytesrefu" (middle_end/convert_primitives.ml[80,3206+4]..[80,3206+14])
+                    None
+                  expression (middle_end/convert_primitives.ml[80,3206+18]..[80,3206+28])
+                    Pexp_construct "Pbytesrefu" (middle_end/convert_primitives.ml[80,3206+18]..[80,3206+28])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[81,3235+4]..[81,3235+14])
+                    Ppat_construct "Pbytessetu" (middle_end/convert_primitives.ml[81,3235+4]..[81,3235+14])
+                    None
+                  expression (middle_end/convert_primitives.ml[81,3235+18]..[81,3235+28])
+                    Pexp_construct "Pbytessetu" (middle_end/convert_primitives.ml[81,3235+18]..[81,3235+28])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[82,3264+4]..[82,3264+14])
+                    Ppat_construct "Pbytesrefs" (middle_end/convert_primitives.ml[82,3264+4]..[82,3264+14])
+                    None
+                  expression (middle_end/convert_primitives.ml[82,3264+18]..[82,3264+28])
+                    Pexp_construct "Pbytesrefs" (middle_end/convert_primitives.ml[82,3264+18]..[82,3264+28])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[83,3293+4]..[83,3293+14])
+                    Ppat_construct "Pbytessets" (middle_end/convert_primitives.ml[83,3293+4]..[83,3293+14])
+                    None
+                  expression (middle_end/convert_primitives.ml[83,3293+18]..[83,3293+28])
+                    Pexp_construct "Pbytessets" (middle_end/convert_primitives.ml[83,3293+18]..[83,3293+28])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[84,3322+4]..[84,3322+33])
+                    Ppat_construct "Pmakearray" (middle_end/convert_primitives.ml[84,3322+4]..[84,3322+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[84,3322+15]..[84,3322+33])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[84,3322+16]..[84,3322+20])
+                            Ppat_var "kind" (middle_end/convert_primitives.ml[84,3322+16]..[84,3322+20])
+                          pattern (middle_end/convert_primitives.ml[84,3322+22]..[84,3322+32])
+                            Ppat_var "mutability" (middle_end/convert_primitives.ml[84,3322+22]..[84,3322+32])
+                        ]
+                  expression (middle_end/convert_primitives.ml[84,3322+37]..[84,3322+66])
+                    Pexp_construct "Pmakearray" (middle_end/convert_primitives.ml[84,3322+37]..[84,3322+47])
+                    Some
+                      expression (middle_end/convert_primitives.ml[84,3322+48]..[84,3322+66])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[84,3322+49]..[84,3322+53])
+                            Pexp_ident "kind" (middle_end/convert_primitives.ml[84,3322+49]..[84,3322+53])
+                          expression (middle_end/convert_primitives.ml[84,3322+55]..[84,3322+65])
+                            Pexp_ident "mutability" (middle_end/convert_primitives.ml[84,3322+55]..[84,3322+65])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[85,3389+4]..[85,3389+32])
+                    Ppat_construct "Pduparray" (middle_end/convert_primitives.ml[85,3389+4]..[85,3389+13])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[85,3389+14]..[85,3389+32])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[85,3389+15]..[85,3389+19])
+                            Ppat_var "kind" (middle_end/convert_primitives.ml[85,3389+15]..[85,3389+19])
+                          pattern (middle_end/convert_primitives.ml[85,3389+21]..[85,3389+31])
+                            Ppat_var "mutability" (middle_end/convert_primitives.ml[85,3389+21]..[85,3389+31])
+                        ]
+                  expression (middle_end/convert_primitives.ml[85,3389+36]..[85,3389+64])
+                    Pexp_construct "Pduparray" (middle_end/convert_primitives.ml[85,3389+36]..[85,3389+45])
+                    Some
+                      expression (middle_end/convert_primitives.ml[85,3389+46]..[85,3389+64])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[85,3389+47]..[85,3389+51])
+                            Pexp_ident "kind" (middle_end/convert_primitives.ml[85,3389+47]..[85,3389+51])
+                          expression (middle_end/convert_primitives.ml[85,3389+53]..[85,3389+63])
+                            Pexp_ident "mutability" (middle_end/convert_primitives.ml[85,3389+53]..[85,3389+63])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[86,3454+4]..[86,3454+21])
+                    Ppat_construct "Parraylength" (middle_end/convert_primitives.ml[86,3454+4]..[86,3454+16])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[86,3454+17]..[86,3454+21])
+                        Ppat_var "kind" (middle_end/convert_primitives.ml[86,3454+17]..[86,3454+21])
+                  expression (middle_end/convert_primitives.ml[86,3454+25]..[86,3454+42])
+                    Pexp_construct "Parraylength" (middle_end/convert_primitives.ml[86,3454+25]..[86,3454+37])
+                    Some
+                      expression (middle_end/convert_primitives.ml[86,3454+38]..[86,3454+42])
+                        Pexp_ident "kind" (middle_end/convert_primitives.ml[86,3454+38]..[86,3454+42])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[87,3497+4]..[87,3497+19])
+                    Ppat_construct "Parrayrefu" (middle_end/convert_primitives.ml[87,3497+4]..[87,3497+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[87,3497+15]..[87,3497+19])
+                        Ppat_var "kind" (middle_end/convert_primitives.ml[87,3497+15]..[87,3497+19])
+                  expression (middle_end/convert_primitives.ml[87,3497+23]..[87,3497+38])
+                    Pexp_construct "Parrayrefu" (middle_end/convert_primitives.ml[87,3497+23]..[87,3497+33])
+                    Some
+                      expression (middle_end/convert_primitives.ml[87,3497+34]..[87,3497+38])
+                        Pexp_ident "kind" (middle_end/convert_primitives.ml[87,3497+34]..[87,3497+38])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[88,3536+4]..[88,3536+19])
+                    Ppat_construct "Parraysetu" (middle_end/convert_primitives.ml[88,3536+4]..[88,3536+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[88,3536+15]..[88,3536+19])
+                        Ppat_var "kind" (middle_end/convert_primitives.ml[88,3536+15]..[88,3536+19])
+                  expression (middle_end/convert_primitives.ml[88,3536+23]..[88,3536+38])
+                    Pexp_construct "Parraysetu" (middle_end/convert_primitives.ml[88,3536+23]..[88,3536+33])
+                    Some
+                      expression (middle_end/convert_primitives.ml[88,3536+34]..[88,3536+38])
+                        Pexp_ident "kind" (middle_end/convert_primitives.ml[88,3536+34]..[88,3536+38])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[89,3575+4]..[89,3575+19])
+                    Ppat_construct "Parrayrefs" (middle_end/convert_primitives.ml[89,3575+4]..[89,3575+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[89,3575+15]..[89,3575+19])
+                        Ppat_var "kind" (middle_end/convert_primitives.ml[89,3575+15]..[89,3575+19])
+                  expression (middle_end/convert_primitives.ml[89,3575+23]..[89,3575+38])
+                    Pexp_construct "Parrayrefs" (middle_end/convert_primitives.ml[89,3575+23]..[89,3575+33])
+                    Some
+                      expression (middle_end/convert_primitives.ml[89,3575+34]..[89,3575+38])
+                        Pexp_ident "kind" (middle_end/convert_primitives.ml[89,3575+34]..[89,3575+38])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[90,3614+4]..[90,3614+19])
+                    Ppat_construct "Parraysets" (middle_end/convert_primitives.ml[90,3614+4]..[90,3614+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[90,3614+15]..[90,3614+19])
+                        Ppat_var "kind" (middle_end/convert_primitives.ml[90,3614+15]..[90,3614+19])
+                  expression (middle_end/convert_primitives.ml[90,3614+23]..[90,3614+38])
+                    Pexp_construct "Parraysets" (middle_end/convert_primitives.ml[90,3614+23]..[90,3614+33])
+                    Some
+                      expression (middle_end/convert_primitives.ml[90,3614+34]..[90,3614+38])
+                        Pexp_ident "kind" (middle_end/convert_primitives.ml[90,3614+34]..[90,3614+38])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[91,3653+4]..[91,3653+10])
+                    Ppat_construct "Pisint" (middle_end/convert_primitives.ml[91,3653+4]..[91,3653+10])
+                    None
+                  expression (middle_end/convert_primitives.ml[91,3653+14]..[91,3653+20])
+                    Pexp_construct "Pisint" (middle_end/convert_primitives.ml[91,3653+14]..[91,3653+20])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[92,3674+4]..[92,3674+10])
+                    Ppat_construct "Pisout" (middle_end/convert_primitives.ml[92,3674+4]..[92,3674+10])
+                    None
+                  expression (middle_end/convert_primitives.ml[92,3674+14]..[92,3674+20])
+                    Pexp_construct "Pisout" (middle_end/convert_primitives.ml[92,3674+14]..[92,3674+20])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[93,3695+4]..[93,3695+24])
+                    Ppat_construct "Pcvtbint" (middle_end/convert_primitives.ml[93,3695+4]..[93,3695+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[93,3695+13]..[93,3695+24])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[93,3695+14]..[93,3695+17])
+                            Ppat_var "src" (middle_end/convert_primitives.ml[93,3695+14]..[93,3695+17])
+                          pattern (middle_end/convert_primitives.ml[93,3695+19]..[93,3695+23])
+                            Ppat_var "dest" (middle_end/convert_primitives.ml[93,3695+19]..[93,3695+23])
+                        ]
+                  expression (middle_end/convert_primitives.ml[93,3695+28]..[93,3695+48])
+                    Pexp_construct "Pcvtbint" (middle_end/convert_primitives.ml[93,3695+28]..[93,3695+36])
+                    Some
+                      expression (middle_end/convert_primitives.ml[93,3695+37]..[93,3695+48])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[93,3695+38]..[93,3695+41])
+                            Pexp_ident "src" (middle_end/convert_primitives.ml[93,3695+38]..[93,3695+41])
+                          expression (middle_end/convert_primitives.ml[93,3695+43]..[93,3695+47])
+                            Pexp_ident "dest" (middle_end/convert_primitives.ml[93,3695+43]..[93,3695+47])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[94,3744+4]..[94,3744+15])
+                    Ppat_construct "Pnegbint" (middle_end/convert_primitives.ml[94,3744+4]..[94,3744+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[94,3744+13]..[94,3744+15])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[94,3744+13]..[94,3744+15])
+                  expression (middle_end/convert_primitives.ml[94,3744+19]..[94,3744+30])
+                    Pexp_construct "Pnegbint" (middle_end/convert_primitives.ml[94,3744+19]..[94,3744+27])
+                    Some
+                      expression (middle_end/convert_primitives.ml[94,3744+28]..[94,3744+30])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[94,3744+28]..[94,3744+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[95,3775+4]..[95,3775+15])
+                    Ppat_construct "Paddbint" (middle_end/convert_primitives.ml[95,3775+4]..[95,3775+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[95,3775+13]..[95,3775+15])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[95,3775+13]..[95,3775+15])
+                  expression (middle_end/convert_primitives.ml[95,3775+19]..[95,3775+30])
+                    Pexp_construct "Paddbint" (middle_end/convert_primitives.ml[95,3775+19]..[95,3775+27])
+                    Some
+                      expression (middle_end/convert_primitives.ml[95,3775+28]..[95,3775+30])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[95,3775+28]..[95,3775+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[96,3806+4]..[96,3806+15])
+                    Ppat_construct "Psubbint" (middle_end/convert_primitives.ml[96,3806+4]..[96,3806+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[96,3806+13]..[96,3806+15])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[96,3806+13]..[96,3806+15])
+                  expression (middle_end/convert_primitives.ml[96,3806+19]..[96,3806+30])
+                    Pexp_construct "Psubbint" (middle_end/convert_primitives.ml[96,3806+19]..[96,3806+27])
+                    Some
+                      expression (middle_end/convert_primitives.ml[96,3806+28]..[96,3806+30])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[96,3806+28]..[96,3806+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[97,3837+4]..[97,3837+15])
+                    Ppat_construct "Pmulbint" (middle_end/convert_primitives.ml[97,3837+4]..[97,3837+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[97,3837+13]..[97,3837+15])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[97,3837+13]..[97,3837+15])
+                  expression (middle_end/convert_primitives.ml[97,3837+19]..[97,3837+30])
+                    Pexp_construct "Pmulbint" (middle_end/convert_primitives.ml[97,3837+19]..[97,3837+27])
+                    Some
+                      expression (middle_end/convert_primitives.ml[97,3837+28]..[97,3837+30])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[97,3837+28]..[97,3837+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[98,3868+4]..[98,3868+17])
+                    Ppat_construct "Pbintofint" (middle_end/convert_primitives.ml[98,3868+4]..[98,3868+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[98,3868+15]..[98,3868+17])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[98,3868+15]..[98,3868+17])
+                  expression (middle_end/convert_primitives.ml[98,3868+21]..[98,3868+34])
+                    Pexp_construct "Pbintofint" (middle_end/convert_primitives.ml[98,3868+21]..[98,3868+31])
+                    Some
+                      expression (middle_end/convert_primitives.ml[98,3868+32]..[98,3868+34])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[98,3868+32]..[98,3868+34])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[99,3903+4]..[99,3903+17])
+                    Ppat_construct "Pintofbint" (middle_end/convert_primitives.ml[99,3903+4]..[99,3903+14])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[99,3903+15]..[99,3903+17])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[99,3903+15]..[99,3903+17])
+                  expression (middle_end/convert_primitives.ml[99,3903+21]..[99,3903+34])
+                    Pexp_construct "Pintofbint" (middle_end/convert_primitives.ml[99,3903+21]..[99,3903+31])
+                    Some
+                      expression (middle_end/convert_primitives.ml[99,3903+32]..[99,3903+34])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[99,3903+32]..[99,3903+34])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[100,3938+4]..[100,3938+15])
+                    Ppat_construct "Pandbint" (middle_end/convert_primitives.ml[100,3938+4]..[100,3938+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[100,3938+13]..[100,3938+15])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[100,3938+13]..[100,3938+15])
+                  expression (middle_end/convert_primitives.ml[100,3938+19]..[100,3938+30])
+                    Pexp_construct "Pandbint" (middle_end/convert_primitives.ml[100,3938+19]..[100,3938+27])
+                    Some
+                      expression (middle_end/convert_primitives.ml[100,3938+28]..[100,3938+30])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[100,3938+28]..[100,3938+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[101,3969+4]..[101,3969+14])
+                    Ppat_construct "Porbint" (middle_end/convert_primitives.ml[101,3969+4]..[101,3969+11])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[101,3969+12]..[101,3969+14])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[101,3969+12]..[101,3969+14])
+                  expression (middle_end/convert_primitives.ml[101,3969+18]..[101,3969+28])
+                    Pexp_construct "Porbint" (middle_end/convert_primitives.ml[101,3969+18]..[101,3969+25])
+                    Some
+                      expression (middle_end/convert_primitives.ml[101,3969+26]..[101,3969+28])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[101,3969+26]..[101,3969+28])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[102,3998+4]..[102,3998+15])
+                    Ppat_construct "Pxorbint" (middle_end/convert_primitives.ml[102,3998+4]..[102,3998+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[102,3998+13]..[102,3998+15])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[102,3998+13]..[102,3998+15])
+                  expression (middle_end/convert_primitives.ml[102,3998+19]..[102,3998+30])
+                    Pexp_construct "Pxorbint" (middle_end/convert_primitives.ml[102,3998+19]..[102,3998+27])
+                    Some
+                      expression (middle_end/convert_primitives.ml[102,3998+28]..[102,3998+30])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[102,3998+28]..[102,3998+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[103,4029+4]..[103,4029+15])
+                    Ppat_construct "Plslbint" (middle_end/convert_primitives.ml[103,4029+4]..[103,4029+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[103,4029+13]..[103,4029+15])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[103,4029+13]..[103,4029+15])
+                  expression (middle_end/convert_primitives.ml[103,4029+19]..[103,4029+30])
+                    Pexp_construct "Plslbint" (middle_end/convert_primitives.ml[103,4029+19]..[103,4029+27])
+                    Some
+                      expression (middle_end/convert_primitives.ml[103,4029+28]..[103,4029+30])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[103,4029+28]..[103,4029+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[104,4060+4]..[104,4060+15])
+                    Ppat_construct "Plsrbint" (middle_end/convert_primitives.ml[104,4060+4]..[104,4060+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[104,4060+13]..[104,4060+15])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[104,4060+13]..[104,4060+15])
+                  expression (middle_end/convert_primitives.ml[104,4060+19]..[104,4060+30])
+                    Pexp_construct "Plsrbint" (middle_end/convert_primitives.ml[104,4060+19]..[104,4060+27])
+                    Some
+                      expression (middle_end/convert_primitives.ml[104,4060+28]..[104,4060+30])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[104,4060+28]..[104,4060+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[105,4091+4]..[105,4091+15])
+                    Ppat_construct "Pasrbint" (middle_end/convert_primitives.ml[105,4091+4]..[105,4091+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[105,4091+13]..[105,4091+15])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[105,4091+13]..[105,4091+15])
+                  expression (middle_end/convert_primitives.ml[105,4091+19]..[105,4091+30])
+                    Pexp_construct "Pasrbint" (middle_end/convert_primitives.ml[105,4091+19]..[105,4091+27])
+                    Some
+                      expression (middle_end/convert_primitives.ml[105,4091+28]..[105,4091+30])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[105,4091+28]..[105,4091+30])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[106,4122+4]..[106,4122+14])
+                    Ppat_construct "Pbbswap" (middle_end/convert_primitives.ml[106,4122+4]..[106,4122+11])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[106,4122+12]..[106,4122+14])
+                        Ppat_var "bi" (middle_end/convert_primitives.ml[106,4122+12]..[106,4122+14])
+                  expression (middle_end/convert_primitives.ml[106,4122+18]..[106,4122+28])
+                    Pexp_construct "Pbbswap" (middle_end/convert_primitives.ml[106,4122+18]..[106,4122+25])
+                    Some
+                      expression (middle_end/convert_primitives.ml[106,4122+26]..[106,4122+28])
+                        Pexp_ident "bi" (middle_end/convert_primitives.ml[106,4122+26]..[106,4122+28])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[107,4151+4]..[107,4151+30])
+                    Ppat_construct "Pdivbint" (middle_end/convert_primitives.ml[107,4151+4]..[107,4151+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[107,4151+13]..[107,4151+30])
+                        Ppat_record Closed
+                        [
+                          "size" (middle_end/convert_primitives.ml[107,4151+15]..[107,4151+19]) ghost
+                            pattern (middle_end/convert_primitives.ml[107,4151+15]..[107,4151+19])
+                              Ppat_var "size" (middle_end/convert_primitives.ml[107,4151+15]..[107,4151+19])
+                          "is_safe" (middle_end/convert_primitives.ml[107,4151+21]..[107,4151+28]) ghost
+                            pattern (middle_end/convert_primitives.ml[107,4151+21]..[107,4151+28])
+                              Ppat_var "is_safe" (middle_end/convert_primitives.ml[107,4151+21]..[107,4151+28])
+                        ]
+                  expression (middle_end/convert_primitives.ml[107,4151+34]..[107,4151+60])
+                    Pexp_construct "Pdivbint" (middle_end/convert_primitives.ml[107,4151+34]..[107,4151+42])
+                    Some
+                      expression (middle_end/convert_primitives.ml[107,4151+43]..[107,4151+60])
+                        Pexp_record
+                        [
+                          "size" (middle_end/convert_primitives.ml[107,4151+45]..[107,4151+49]) ghost
+                            expression (middle_end/convert_primitives.ml[107,4151+45]..[107,4151+49])
+                              Pexp_ident "size" (middle_end/convert_primitives.ml[107,4151+45]..[107,4151+49])
+                          "is_safe" (middle_end/convert_primitives.ml[107,4151+51]..[107,4151+58]) ghost
+                            expression (middle_end/convert_primitives.ml[107,4151+51]..[107,4151+58])
+                              Pexp_ident "is_safe" (middle_end/convert_primitives.ml[107,4151+51]..[107,4151+58])
+                        ]
+                        None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[108,4212+4]..[108,4212+30])
+                    Ppat_construct "Pmodbint" (middle_end/convert_primitives.ml[108,4212+4]..[108,4212+12])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[108,4212+13]..[108,4212+30])
+                        Ppat_record Closed
+                        [
+                          "size" (middle_end/convert_primitives.ml[108,4212+15]..[108,4212+19]) ghost
+                            pattern (middle_end/convert_primitives.ml[108,4212+15]..[108,4212+19])
+                              Ppat_var "size" (middle_end/convert_primitives.ml[108,4212+15]..[108,4212+19])
+                          "is_safe" (middle_end/convert_primitives.ml[108,4212+21]..[108,4212+28]) ghost
+                            pattern (middle_end/convert_primitives.ml[108,4212+21]..[108,4212+28])
+                              Ppat_var "is_safe" (middle_end/convert_primitives.ml[108,4212+21]..[108,4212+28])
+                        ]
+                  expression (middle_end/convert_primitives.ml[108,4212+34]..[108,4212+60])
+                    Pexp_construct "Pmodbint" (middle_end/convert_primitives.ml[108,4212+34]..[108,4212+42])
+                    Some
+                      expression (middle_end/convert_primitives.ml[108,4212+43]..[108,4212+60])
+                        Pexp_record
+                        [
+                          "size" (middle_end/convert_primitives.ml[108,4212+45]..[108,4212+49]) ghost
+                            expression (middle_end/convert_primitives.ml[108,4212+45]..[108,4212+49])
+                              Pexp_ident "size" (middle_end/convert_primitives.ml[108,4212+45]..[108,4212+49])
+                          "is_safe" (middle_end/convert_primitives.ml[108,4212+51]..[108,4212+58]) ghost
+                            expression (middle_end/convert_primitives.ml[108,4212+51]..[108,4212+58])
+                              Pexp_ident "is_safe" (middle_end/convert_primitives.ml[108,4212+51]..[108,4212+58])
+                        ]
+                        None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[109,4273+4]..[109,4273+24])
+                    Ppat_construct "Pbintcomp" (middle_end/convert_primitives.ml[109,4273+4]..[109,4273+13])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[109,4273+14]..[109,4273+24])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[109,4273+15]..[109,4273+17])
+                            Ppat_var "bi" (middle_end/convert_primitives.ml[109,4273+15]..[109,4273+17])
+                          pattern (middle_end/convert_primitives.ml[109,4273+19]..[109,4273+23])
+                            Ppat_var "comp" (middle_end/convert_primitives.ml[109,4273+19]..[109,4273+23])
+                        ]
+                  expression (middle_end/convert_primitives.ml[109,4273+28]..[109,4273+48])
+                    Pexp_construct "Pbintcomp" (middle_end/convert_primitives.ml[109,4273+28]..[109,4273+37])
+                    Some
+                      expression (middle_end/convert_primitives.ml[109,4273+38]..[109,4273+48])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[109,4273+39]..[109,4273+41])
+                            Pexp_ident "bi" (middle_end/convert_primitives.ml[109,4273+39]..[109,4273+41])
+                          expression (middle_end/convert_primitives.ml[109,4273+43]..[109,4273+47])
+                            Pexp_ident "comp" (middle_end/convert_primitives.ml[109,4273+43]..[109,4273+47])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[110,4322+4]..[110,4322+43])
+                    Ppat_construct "Pbigarrayref" (middle_end/convert_primitives.ml[110,4322+4]..[110,4322+16])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[110,4322+17]..[110,4322+43])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[110,4322+18]..[110,4322+22])
+                            Ppat_var "safe" (middle_end/convert_primitives.ml[110,4322+18]..[110,4322+22])
+                          pattern (middle_end/convert_primitives.ml[110,4322+24]..[110,4322+28])
+                            Ppat_var "dims" (middle_end/convert_primitives.ml[110,4322+24]..[110,4322+28])
+                          pattern (middle_end/convert_primitives.ml[110,4322+30]..[110,4322+34])
+                            Ppat_var "kind" (middle_end/convert_primitives.ml[110,4322+30]..[110,4322+34])
+                          pattern (middle_end/convert_primitives.ml[110,4322+36]..[110,4322+42])
+                            Ppat_var "layout" (middle_end/convert_primitives.ml[110,4322+36]..[110,4322+42])
+                        ]
+                  expression (middle_end/convert_primitives.ml[111,4369+6]..[111,4369+45])
+                    Pexp_construct "Pbigarrayref" (middle_end/convert_primitives.ml[111,4369+6]..[111,4369+18])
+                    Some
+                      expression (middle_end/convert_primitives.ml[111,4369+19]..[111,4369+45])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[111,4369+20]..[111,4369+24])
+                            Pexp_ident "safe" (middle_end/convert_primitives.ml[111,4369+20]..[111,4369+24])
+                          expression (middle_end/convert_primitives.ml[111,4369+26]..[111,4369+30])
+                            Pexp_ident "dims" (middle_end/convert_primitives.ml[111,4369+26]..[111,4369+30])
+                          expression (middle_end/convert_primitives.ml[111,4369+32]..[111,4369+36])
+                            Pexp_ident "kind" (middle_end/convert_primitives.ml[111,4369+32]..[111,4369+36])
+                          expression (middle_end/convert_primitives.ml[111,4369+38]..[111,4369+44])
+                            Pexp_ident "layout" (middle_end/convert_primitives.ml[111,4369+38]..[111,4369+44])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[112,4415+4]..[112,4415+43])
+                    Ppat_construct "Pbigarrayset" (middle_end/convert_primitives.ml[112,4415+4]..[112,4415+16])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[112,4415+17]..[112,4415+43])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/convert_primitives.ml[112,4415+18]..[112,4415+22])
+                            Ppat_var "safe" (middle_end/convert_primitives.ml[112,4415+18]..[112,4415+22])
+                          pattern (middle_end/convert_primitives.ml[112,4415+24]..[112,4415+28])
+                            Ppat_var "dims" (middle_end/convert_primitives.ml[112,4415+24]..[112,4415+28])
+                          pattern (middle_end/convert_primitives.ml[112,4415+30]..[112,4415+34])
+                            Ppat_var "kind" (middle_end/convert_primitives.ml[112,4415+30]..[112,4415+34])
+                          pattern (middle_end/convert_primitives.ml[112,4415+36]..[112,4415+42])
+                            Ppat_var "layout" (middle_end/convert_primitives.ml[112,4415+36]..[112,4415+42])
+                        ]
+                  expression (middle_end/convert_primitives.ml[113,4462+6]..[113,4462+45])
+                    Pexp_construct "Pbigarrayset" (middle_end/convert_primitives.ml[113,4462+6]..[113,4462+18])
+                    Some
+                      expression (middle_end/convert_primitives.ml[113,4462+19]..[113,4462+45])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[113,4462+20]..[113,4462+24])
+                            Pexp_ident "safe" (middle_end/convert_primitives.ml[113,4462+20]..[113,4462+24])
+                          expression (middle_end/convert_primitives.ml[113,4462+26]..[113,4462+30])
+                            Pexp_ident "dims" (middle_end/convert_primitives.ml[113,4462+26]..[113,4462+30])
+                          expression (middle_end/convert_primitives.ml[113,4462+32]..[113,4462+36])
+                            Pexp_ident "kind" (middle_end/convert_primitives.ml[113,4462+32]..[113,4462+36])
+                          expression (middle_end/convert_primitives.ml[113,4462+38]..[113,4462+44])
+                            Pexp_ident "layout" (middle_end/convert_primitives.ml[113,4462+38]..[113,4462+44])
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[114,4508+4]..[114,4508+29])
+                    Ppat_construct "Pstring_load_16" (middle_end/convert_primitives.ml[114,4508+4]..[114,4508+19])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[114,4508+20]..[114,4508+29])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[114,4508+20]..[114,4508+29])
+                  expression (middle_end/convert_primitives.ml[115,4541+6]..[115,4541+56])
+                    Pexp_construct "Pstring_load" (middle_end/convert_primitives.ml[115,4541+6]..[115,4541+18])
+                    Some
+                      expression (middle_end/convert_primitives.ml[115,4541+19]..[115,4541+56])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[115,4541+20]..[115,4541+27])
+                            Pexp_construct "Sixteen" (middle_end/convert_primitives.ml[115,4541+20]..[115,4541+27])
+                            None
+                          expression (middle_end/convert_primitives.ml[115,4541+29]..[115,4541+55])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[115,4541+29]..[115,4541+45])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[115,4541+29]..[115,4541+45])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[115,4541+46]..[115,4541+55])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[115,4541+46]..[115,4541+55])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[116,4598+4]..[116,4598+29])
+                    Ppat_construct "Pstring_load_32" (middle_end/convert_primitives.ml[116,4598+4]..[116,4598+19])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[116,4598+20]..[116,4598+29])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[116,4598+20]..[116,4598+29])
+                  expression (middle_end/convert_primitives.ml[117,4631+6]..[117,4631+59])
+                    Pexp_construct "Pstring_load" (middle_end/convert_primitives.ml[117,4631+6]..[117,4631+18])
+                    Some
+                      expression (middle_end/convert_primitives.ml[117,4631+19]..[117,4631+59])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[117,4631+20]..[117,4631+30])
+                            Pexp_construct "Thirty_two" (middle_end/convert_primitives.ml[117,4631+20]..[117,4631+30])
+                            None
+                          expression (middle_end/convert_primitives.ml[117,4631+32]..[117,4631+58])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[117,4631+32]..[117,4631+48])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[117,4631+32]..[117,4631+48])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[117,4631+49]..[117,4631+58])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[117,4631+49]..[117,4631+58])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[118,4691+4]..[118,4691+29])
+                    Ppat_construct "Pstring_load_64" (middle_end/convert_primitives.ml[118,4691+4]..[118,4691+19])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[118,4691+20]..[118,4691+29])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[118,4691+20]..[118,4691+29])
+                  expression (middle_end/convert_primitives.ml[119,4724+6]..[119,4724+59])
+                    Pexp_construct "Pstring_load" (middle_end/convert_primitives.ml[119,4724+6]..[119,4724+18])
+                    Some
+                      expression (middle_end/convert_primitives.ml[119,4724+19]..[119,4724+59])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[119,4724+20]..[119,4724+30])
+                            Pexp_construct "Sixty_four" (middle_end/convert_primitives.ml[119,4724+20]..[119,4724+30])
+                            None
+                          expression (middle_end/convert_primitives.ml[119,4724+32]..[119,4724+58])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[119,4724+32]..[119,4724+48])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[119,4724+32]..[119,4724+48])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[119,4724+49]..[119,4724+58])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[119,4724+49]..[119,4724+58])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[120,4784+4]..[120,4784+28])
+                    Ppat_construct "Pbytes_load_16" (middle_end/convert_primitives.ml[120,4784+4]..[120,4784+18])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[120,4784+19]..[120,4784+28])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[120,4784+19]..[120,4784+28])
+                  expression (middle_end/convert_primitives.ml[121,4816+6]..[121,4816+55])
+                    Pexp_construct "Pbytes_load" (middle_end/convert_primitives.ml[121,4816+6]..[121,4816+17])
+                    Some
+                      expression (middle_end/convert_primitives.ml[121,4816+18]..[121,4816+55])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[121,4816+19]..[121,4816+26])
+                            Pexp_construct "Sixteen" (middle_end/convert_primitives.ml[121,4816+19]..[121,4816+26])
+                            None
+                          expression (middle_end/convert_primitives.ml[121,4816+28]..[121,4816+54])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[121,4816+28]..[121,4816+44])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[121,4816+28]..[121,4816+44])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[121,4816+45]..[121,4816+54])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[121,4816+45]..[121,4816+54])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[122,4872+4]..[122,4872+28])
+                    Ppat_construct "Pbytes_load_32" (middle_end/convert_primitives.ml[122,4872+4]..[122,4872+18])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[122,4872+19]..[122,4872+28])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[122,4872+19]..[122,4872+28])
+                  expression (middle_end/convert_primitives.ml[123,4904+6]..[123,4904+58])
+                    Pexp_construct "Pbytes_load" (middle_end/convert_primitives.ml[123,4904+6]..[123,4904+17])
+                    Some
+                      expression (middle_end/convert_primitives.ml[123,4904+18]..[123,4904+58])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[123,4904+19]..[123,4904+29])
+                            Pexp_construct "Thirty_two" (middle_end/convert_primitives.ml[123,4904+19]..[123,4904+29])
+                            None
+                          expression (middle_end/convert_primitives.ml[123,4904+31]..[123,4904+57])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[123,4904+31]..[123,4904+47])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[123,4904+31]..[123,4904+47])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[123,4904+48]..[123,4904+57])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[123,4904+48]..[123,4904+57])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[124,4963+4]..[124,4963+28])
+                    Ppat_construct "Pbytes_load_64" (middle_end/convert_primitives.ml[124,4963+4]..[124,4963+18])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[124,4963+19]..[124,4963+28])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[124,4963+19]..[124,4963+28])
+                  expression (middle_end/convert_primitives.ml[125,4995+6]..[125,4995+58])
+                    Pexp_construct "Pbytes_load" (middle_end/convert_primitives.ml[125,4995+6]..[125,4995+17])
+                    Some
+                      expression (middle_end/convert_primitives.ml[125,4995+18]..[125,4995+58])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[125,4995+19]..[125,4995+29])
+                            Pexp_construct "Sixty_four" (middle_end/convert_primitives.ml[125,4995+19]..[125,4995+29])
+                            None
+                          expression (middle_end/convert_primitives.ml[125,4995+31]..[125,4995+57])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[125,4995+31]..[125,4995+47])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[125,4995+31]..[125,4995+47])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[125,4995+48]..[125,4995+57])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[125,4995+48]..[125,4995+57])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[126,5054+4]..[126,5054+27])
+                    Ppat_construct "Pbytes_set_16" (middle_end/convert_primitives.ml[126,5054+4]..[126,5054+17])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[126,5054+18]..[126,5054+27])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[126,5054+18]..[126,5054+27])
+                  expression (middle_end/convert_primitives.ml[127,5085+6]..[127,5085+54])
+                    Pexp_construct "Pbytes_set" (middle_end/convert_primitives.ml[127,5085+6]..[127,5085+16])
+                    Some
+                      expression (middle_end/convert_primitives.ml[127,5085+17]..[127,5085+54])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[127,5085+18]..[127,5085+25])
+                            Pexp_construct "Sixteen" (middle_end/convert_primitives.ml[127,5085+18]..[127,5085+25])
+                            None
+                          expression (middle_end/convert_primitives.ml[127,5085+27]..[127,5085+53])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[127,5085+27]..[127,5085+43])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[127,5085+27]..[127,5085+43])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[127,5085+44]..[127,5085+53])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[127,5085+44]..[127,5085+53])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[128,5140+4]..[128,5140+27])
+                    Ppat_construct "Pbytes_set_32" (middle_end/convert_primitives.ml[128,5140+4]..[128,5140+17])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[128,5140+18]..[128,5140+27])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[128,5140+18]..[128,5140+27])
+                  expression (middle_end/convert_primitives.ml[129,5171+6]..[129,5171+57])
+                    Pexp_construct "Pbytes_set" (middle_end/convert_primitives.ml[129,5171+6]..[129,5171+16])
+                    Some
+                      expression (middle_end/convert_primitives.ml[129,5171+17]..[129,5171+57])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[129,5171+18]..[129,5171+28])
+                            Pexp_construct "Thirty_two" (middle_end/convert_primitives.ml[129,5171+18]..[129,5171+28])
+                            None
+                          expression (middle_end/convert_primitives.ml[129,5171+30]..[129,5171+56])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[129,5171+30]..[129,5171+46])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[129,5171+30]..[129,5171+46])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[129,5171+47]..[129,5171+56])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[129,5171+47]..[129,5171+56])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[130,5229+4]..[130,5229+27])
+                    Ppat_construct "Pbytes_set_64" (middle_end/convert_primitives.ml[130,5229+4]..[130,5229+17])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[130,5229+18]..[130,5229+27])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[130,5229+18]..[130,5229+27])
+                  expression (middle_end/convert_primitives.ml[131,5260+6]..[131,5260+57])
+                    Pexp_construct "Pbytes_set" (middle_end/convert_primitives.ml[131,5260+6]..[131,5260+16])
+                    Some
+                      expression (middle_end/convert_primitives.ml[131,5260+17]..[131,5260+57])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[131,5260+18]..[131,5260+28])
+                            Pexp_construct "Sixty_four" (middle_end/convert_primitives.ml[131,5260+18]..[131,5260+28])
+                            None
+                          expression (middle_end/convert_primitives.ml[131,5260+30]..[131,5260+56])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[131,5260+30]..[131,5260+46])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[131,5260+30]..[131,5260+46])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[131,5260+47]..[131,5260+56])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[131,5260+47]..[131,5260+56])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[132,5318+4]..[132,5318+32])
+                    Ppat_construct "Pbigstring_load_16" (middle_end/convert_primitives.ml[132,5318+4]..[132,5318+22])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[132,5318+23]..[132,5318+32])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[132,5318+23]..[132,5318+32])
+                  expression (middle_end/convert_primitives.ml[133,5354+6]..[133,5354+59])
+                    Pexp_construct "Pbigstring_load" (middle_end/convert_primitives.ml[133,5354+6]..[133,5354+21])
+                    Some
+                      expression (middle_end/convert_primitives.ml[133,5354+22]..[133,5354+59])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[133,5354+23]..[133,5354+30])
+                            Pexp_construct "Sixteen" (middle_end/convert_primitives.ml[133,5354+23]..[133,5354+30])
+                            None
+                          expression (middle_end/convert_primitives.ml[133,5354+32]..[133,5354+58])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[133,5354+32]..[133,5354+48])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[133,5354+32]..[133,5354+48])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[133,5354+49]..[133,5354+58])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[133,5354+49]..[133,5354+58])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[134,5414+4]..[134,5414+32])
+                    Ppat_construct "Pbigstring_load_32" (middle_end/convert_primitives.ml[134,5414+4]..[134,5414+22])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[134,5414+23]..[134,5414+32])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[134,5414+23]..[134,5414+32])
+                  expression (middle_end/convert_primitives.ml[135,5450+6]..[135,5450+62])
+                    Pexp_construct "Pbigstring_load" (middle_end/convert_primitives.ml[135,5450+6]..[135,5450+21])
+                    Some
+                      expression (middle_end/convert_primitives.ml[135,5450+22]..[135,5450+62])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[135,5450+23]..[135,5450+33])
+                            Pexp_construct "Thirty_two" (middle_end/convert_primitives.ml[135,5450+23]..[135,5450+33])
+                            None
+                          expression (middle_end/convert_primitives.ml[135,5450+35]..[135,5450+61])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[135,5450+35]..[135,5450+51])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[135,5450+35]..[135,5450+51])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[135,5450+52]..[135,5450+61])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[135,5450+52]..[135,5450+61])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[136,5513+4]..[136,5513+32])
+                    Ppat_construct "Pbigstring_load_64" (middle_end/convert_primitives.ml[136,5513+4]..[136,5513+22])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[136,5513+23]..[136,5513+32])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[136,5513+23]..[136,5513+32])
+                  expression (middle_end/convert_primitives.ml[137,5549+6]..[137,5549+62])
+                    Pexp_construct "Pbigstring_load" (middle_end/convert_primitives.ml[137,5549+6]..[137,5549+21])
+                    Some
+                      expression (middle_end/convert_primitives.ml[137,5549+22]..[137,5549+62])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[137,5549+23]..[137,5549+33])
+                            Pexp_construct "Sixty_four" (middle_end/convert_primitives.ml[137,5549+23]..[137,5549+33])
+                            None
+                          expression (middle_end/convert_primitives.ml[137,5549+35]..[137,5549+61])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[137,5549+35]..[137,5549+51])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[137,5549+35]..[137,5549+51])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[137,5549+52]..[137,5549+61])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[137,5549+52]..[137,5549+61])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[138,5612+4]..[138,5612+31])
+                    Ppat_construct "Pbigstring_set_16" (middle_end/convert_primitives.ml[138,5612+4]..[138,5612+21])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[138,5612+22]..[138,5612+31])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[138,5612+22]..[138,5612+31])
+                  expression (middle_end/convert_primitives.ml[139,5647+6]..[139,5647+58])
+                    Pexp_construct "Pbigstring_set" (middle_end/convert_primitives.ml[139,5647+6]..[139,5647+20])
+                    Some
+                      expression (middle_end/convert_primitives.ml[139,5647+21]..[139,5647+58])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[139,5647+22]..[139,5647+29])
+                            Pexp_construct "Sixteen" (middle_end/convert_primitives.ml[139,5647+22]..[139,5647+29])
+                            None
+                          expression (middle_end/convert_primitives.ml[139,5647+31]..[139,5647+57])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[139,5647+31]..[139,5647+47])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[139,5647+31]..[139,5647+47])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[139,5647+48]..[139,5647+57])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[139,5647+48]..[139,5647+57])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[140,5706+4]..[140,5706+31])
+                    Ppat_construct "Pbigstring_set_32" (middle_end/convert_primitives.ml[140,5706+4]..[140,5706+21])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[140,5706+22]..[140,5706+31])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[140,5706+22]..[140,5706+31])
+                  expression (middle_end/convert_primitives.ml[141,5741+6]..[141,5741+61])
+                    Pexp_construct "Pbigstring_set" (middle_end/convert_primitives.ml[141,5741+6]..[141,5741+20])
+                    Some
+                      expression (middle_end/convert_primitives.ml[141,5741+21]..[141,5741+61])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[141,5741+22]..[141,5741+32])
+                            Pexp_construct "Thirty_two" (middle_end/convert_primitives.ml[141,5741+22]..[141,5741+32])
+                            None
+                          expression (middle_end/convert_primitives.ml[141,5741+34]..[141,5741+60])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[141,5741+34]..[141,5741+50])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[141,5741+34]..[141,5741+50])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[141,5741+51]..[141,5741+60])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[141,5741+51]..[141,5741+60])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[142,5803+4]..[142,5803+31])
+                    Ppat_construct "Pbigstring_set_64" (middle_end/convert_primitives.ml[142,5803+4]..[142,5803+21])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[142,5803+22]..[142,5803+31])
+                        Ppat_var "is_unsafe" (middle_end/convert_primitives.ml[142,5803+22]..[142,5803+31])
+                  expression (middle_end/convert_primitives.ml[143,5838+6]..[143,5838+61])
+                    Pexp_construct "Pbigstring_set" (middle_end/convert_primitives.ml[143,5838+6]..[143,5838+20])
+                    Some
+                      expression (middle_end/convert_primitives.ml[143,5838+21]..[143,5838+61])
+                        Pexp_tuple
+                        [
+                          expression (middle_end/convert_primitives.ml[143,5838+22]..[143,5838+32])
+                            Pexp_construct "Sixty_four" (middle_end/convert_primitives.ml[143,5838+22]..[143,5838+32])
+                            None
+                          expression (middle_end/convert_primitives.ml[143,5838+34]..[143,5838+60])
+                            Pexp_apply
+                            expression (middle_end/convert_primitives.ml[143,5838+34]..[143,5838+50])
+                              Pexp_ident "convert_unsafety" (middle_end/convert_primitives.ml[143,5838+34]..[143,5838+50])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (middle_end/convert_primitives.ml[143,5838+51]..[143,5838+60])
+                                  Pexp_ident "is_unsafe" (middle_end/convert_primitives.ml[143,5838+51]..[143,5838+60])
+                            ]
+                        ]
+                <case>
+                  pattern (middle_end/convert_primitives.ml[144,5900+4]..[144,5900+20])
+                    Ppat_construct "Pbigarraydim" (middle_end/convert_primitives.ml[144,5900+4]..[144,5900+16])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[144,5900+17]..[144,5900+20])
+                        Ppat_var "dim" (middle_end/convert_primitives.ml[144,5900+17]..[144,5900+20])
+                  expression (middle_end/convert_primitives.ml[144,5900+24]..[144,5900+40])
+                    Pexp_construct "Pbigarraydim" (middle_end/convert_primitives.ml[144,5900+24]..[144,5900+36])
+                    Some
+                      expression (middle_end/convert_primitives.ml[144,5900+37]..[144,5900+40])
+                        Pexp_ident "dim" (middle_end/convert_primitives.ml[144,5900+37]..[144,5900+40])
+                <case>
+                  pattern (middle_end/convert_primitives.ml[145,5941+4]..[145,5941+12])
+                    Ppat_construct "Pbswap16" (middle_end/convert_primitives.ml[145,5941+4]..[145,5941+12])
+                    None
+                  expression (middle_end/convert_primitives.ml[145,5941+16]..[145,5941+24])
+                    Pexp_construct "Pbswap16" (middle_end/convert_primitives.ml[145,5941+16]..[145,5941+24])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[146,5966+4]..[146,5966+19])
+                    Ppat_construct "Pint_as_pointer" (middle_end/convert_primitives.ml[146,5966+4]..[146,5966+19])
+                    None
+                  expression (middle_end/convert_primitives.ml[146,5966+23]..[146,5966+38])
+                    Pexp_construct "Pint_as_pointer" (middle_end/convert_primitives.ml[146,5966+23]..[146,5966+38])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[147,6005+4]..[147,6005+41])
+                    Ppat_construct "Patomic_load" (middle_end/convert_primitives.ml[147,6005+4]..[147,6005+16])
+                    Some
+                      []
+                      pattern (middle_end/convert_primitives.ml[147,6005+17]..[147,6005+41])
+                        Ppat_record Closed
+                        [
+                          "immediate_or_pointer" (middle_end/convert_primitives.ml[147,6005+19]..[147,6005+39]) ghost
+                            pattern (middle_end/convert_primitives.ml[147,6005+19]..[147,6005+39])
+                              Ppat_var "immediate_or_pointer" (middle_end/convert_primitives.ml[147,6005+19]..[147,6005+39])
+                        ]
+                  expression (middle_end/convert_primitives.ml[148,6050+6]..[148,6050+43])
+                    Pexp_construct "Patomic_load" (middle_end/convert_primitives.ml[148,6050+6]..[148,6050+18])
+                    Some
+                      expression (middle_end/convert_primitives.ml[148,6050+19]..[148,6050+43])
+                        Pexp_record
+                        [
+                          "immediate_or_pointer" (middle_end/convert_primitives.ml[148,6050+21]..[148,6050+41]) ghost
+                            expression (middle_end/convert_primitives.ml[148,6050+21]..[148,6050+41])
+                              Pexp_ident "immediate_or_pointer" (middle_end/convert_primitives.ml[148,6050+21]..[148,6050+41])
+                        ]
+                        None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[149,6094+4]..[149,6094+20])
+                    Ppat_construct "Patomic_exchange" (middle_end/convert_primitives.ml[149,6094+4]..[149,6094+20])
+                    None
+                  expression (middle_end/convert_primitives.ml[149,6094+24]..[149,6094+40])
+                    Pexp_construct "Patomic_exchange" (middle_end/convert_primitives.ml[149,6094+24]..[149,6094+40])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[150,6135+4]..[150,6135+15])
+                    Ppat_construct "Patomic_cas" (middle_end/convert_primitives.ml[150,6135+4]..[150,6135+15])
+                    None
+                  expression (middle_end/convert_primitives.ml[150,6135+19]..[150,6135+30])
+                    Pexp_construct "Patomic_cas" (middle_end/convert_primitives.ml[150,6135+19]..[150,6135+30])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[151,6166+4]..[151,6166+21])
+                    Ppat_construct "Patomic_fetch_add" (middle_end/convert_primitives.ml[151,6166+4]..[151,6166+21])
+                    None
+                  expression (middle_end/convert_primitives.ml[151,6166+25]..[151,6166+42])
+                    Pexp_construct "Patomic_fetch_add" (middle_end/convert_primitives.ml[151,6166+25]..[151,6166+42])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[152,6209+4]..[152,6209+11])
+                    Ppat_construct "Popaque" (middle_end/convert_primitives.ml[152,6209+4]..[152,6209+11])
+                    None
+                  expression (middle_end/convert_primitives.ml[152,6209+15]..[152,6209+22])
+                    Pexp_construct "Popaque" (middle_end/convert_primitives.ml[152,6209+15]..[152,6209+22])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[153,6232+4]..[153,6232+12])
+                    Ppat_construct "Pdls_get" (middle_end/convert_primitives.ml[153,6232+4]..[153,6232+12])
+                    None
+                  expression (middle_end/convert_primitives.ml[153,6232+16]..[153,6232+24])
+                    Pexp_construct "Pdls_get" (middle_end/convert_primitives.ml[153,6232+16]..[153,6232+24])
+                    None
+                <case>
+                  pattern (middle_end/convert_primitives.ml[154,6257+4]..[159,6343+16])
+                    Ppat_or
+                    pattern (middle_end/convert_primitives.ml[154,6257+4]..[158,6326+16])
+                      Ppat_or
+                      pattern (middle_end/convert_primitives.ml[154,6257+4]..[157,6314+11])
+                        Ppat_or
+                        pattern (middle_end/convert_primitives.ml[154,6257+4]..[156,6299+14])
+                          Ppat_or
+                          pattern (middle_end/convert_primitives.ml[154,6257+4]..[155,6278+20])
+                            Ppat_or
+                            pattern (middle_end/convert_primitives.ml[154,6257+4]..[154,6257+20])
+                              Ppat_construct "Pbytes_to_string" (middle_end/convert_primitives.ml[154,6257+4]..[154,6257+20])
+                              None
+                            pattern (middle_end/convert_primitives.ml[155,6278+4]..[155,6278+20])
+                              Ppat_construct "Pbytes_of_string" (middle_end/convert_primitives.ml[155,6278+4]..[155,6278+20])
+                              None
+                          pattern (middle_end/convert_primitives.ml[156,6299+4]..[156,6299+14])
+                            Ppat_construct "Pctconst" (middle_end/convert_primitives.ml[156,6299+4]..[156,6299+12])
+                            Some
+                              []
+                              pattern (middle_end/convert_primitives.ml[156,6299+13]..[156,6299+14])
+                                Ppat_any
+                        pattern (middle_end/convert_primitives.ml[157,6314+4]..[157,6314+11])
+                          Ppat_construct "Pignore" (middle_end/convert_primitives.ml[157,6314+4]..[157,6314+11])
+                          None
+                      pattern (middle_end/convert_primitives.ml[158,6326+4]..[158,6326+16])
+                        Ppat_construct "Pgetglobal" (middle_end/convert_primitives.ml[158,6326+4]..[158,6326+14])
+                        Some
+                          []
+                          pattern (middle_end/convert_primitives.ml[158,6326+15]..[158,6326+16])
+                            Ppat_any
+                    pattern (middle_end/convert_primitives.ml[159,6343+4]..[159,6343+16])
+                      Ppat_construct "Psetglobal" (middle_end/convert_primitives.ml[159,6343+4]..[159,6343+14])
+                      Some
+                        []
+                        pattern (middle_end/convert_primitives.ml[159,6343+15]..[159,6343+16])
+                          Ppat_any
+                  expression (middle_end/convert_primitives.ml[161,6367+6]..[163,6480+34])
+                    Pexp_apply
+                    expression (middle_end/convert_primitives.ml[161,6367+6]..[161,6367+23])
+                      Pexp_ident "Misc.fatal_errorf" (middle_end/convert_primitives.ml[161,6367+6]..[161,6367+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (middle_end/convert_primitives.ml[161,6367+24]..[162,6436+43])
+                          Pexp_constant PConst_string("lambda primitive %a can't be converted to clambda primitive",(middle_end/convert_primitives.ml[161,6367+25]..[162,6436+42]),None)
+                      <arg>
+                      Nolabel
+                        expression (middle_end/convert_primitives.ml[163,6480+8]..[163,6480+29])
+                          Pexp_ident "Printlambda.primitive" (middle_end/convert_primitives.ml[163,6480+8]..[163,6480+29])
+                      <arg>
+                      Nolabel
+                        expression (middle_end/convert_primitives.ml[163,6480+30]..[163,6480+34])
+                          Pexp_ident "prim" (middle_end/convert_primitives.ml[163,6480+30]..[163,6480+34])
+                    ]
+              ]
+            core_type (middle_end/convert_primitives.ml[25,1307+40]..[25,1307+68])
+              Ptyp_constr "Clambda_primitives.primitive" (middle_end/convert_primitives.ml[25,1307+40]..[25,1307+68])
+              []
+    ]
+]
+

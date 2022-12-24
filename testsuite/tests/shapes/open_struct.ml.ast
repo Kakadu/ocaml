@@ -1,0 +1,187 @@
+[
+  structure_item (testsuite/tests/shapes/open_struct.ml[8,95+0]..[12,148+3])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/shapes/open_struct.ml[8,95+5]..[12,148+3])
+      Pmod_structure
+      [
+        structure_item (testsuite/tests/shapes/open_struct.ml[9,107+2]..[11,142+5])
+          Pstr_module
+          "M" (testsuite/tests/shapes/open_struct.ml[9,107+9]..[9,107+10])
+            module_expr (testsuite/tests/shapes/open_struct.ml[9,107+13]..[11,142+5])
+              Pmod_structure
+              [
+                structure_item (testsuite/tests/shapes/open_struct.ml[10,127+4]..[10,127+14])
+                  Pstr_type Rec
+                  [
+                    type_declaration "t" (testsuite/tests/shapes/open_struct.ml[10,127+9]..[10,127+10]) (testsuite/tests/shapes/open_struct.ml[10,127+4]..[10,127+14])
+                      ptype_params =
+                        []
+                      ptype_cstrs =
+                        []
+                      ptype_kind =
+                        Ptype_variant
+                          [
+                            (testsuite/tests/shapes/open_struct.ml[10,127+13]..[10,127+14])
+                              "A" (testsuite/tests/shapes/open_struct.ml[10,127+13]..[10,127+14])
+                              []
+                              None
+                          ]
+                      ptype_private = Public
+                      ptype_manifest =
+                        None
+                  ]
+              ]
+      ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[13,152+0]..[17,199+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/open_struct.ml[13,152+9]..[17,199+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/open_struct.ml[13,152+9]..[17,199+2])
+          Pexp_constant PConst_string ("\n{\n }\nmodule M : sig type t = A end\n",(testsuite/tests/shapes/open_struct.ml[13,152+11]..[17,199+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[19,204+0]..[19,204+9])
+    Pstr_include    module_expr (testsuite/tests/shapes/open_struct.ml[19,204+8]..[19,204+9])
+      Pmod_ident "M" (testsuite/tests/shapes/open_struct.ml[19,204+8]..[19,204+9])
+  structure_item (testsuite/tests/shapes/open_struct.ml[20,214+0]..[25,268+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/open_struct.ml[20,214+9]..[25,268+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/open_struct.ml[20,214+9]..[25,268+2])
+          Pexp_constant PConst_string ("\n{\n \"t\"[type] -> <.0>;\n }\ntype t = M.t = A\n",(testsuite/tests/shapes/open_struct.ml[20,214+11]..[25,268+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[27,273+0]..[27,273+12])
+    Pstr_module
+    "N" (testsuite/tests/shapes/open_struct.ml[27,273+7]..[27,273+8])
+      module_expr (testsuite/tests/shapes/open_struct.ml[27,273+11]..[27,273+12])
+        Pmod_ident "M" (testsuite/tests/shapes/open_struct.ml[27,273+11]..[27,273+12])
+  structure_item (testsuite/tests/shapes/open_struct.ml[28,286+0]..[35,394+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/open_struct.ml[28,286+9]..[35,394+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/open_struct.ml[28,286+9]..[35,394+2])
+          Pexp_constant PConst_string ("\n{\n \"N\"[module] -> {<.2>\n                 \"t\"[type] -> <.0>;\n                 };\n }\nmodule N = M\n",(testsuite/tests/shapes/open_struct.ml[28,286+11]..[35,394+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[41,612+0]..[45,669+3])
+    Pstr_include    module_expr (testsuite/tests/shapes/open_struct.ml[41,612+8]..[45,669+3])
+      Pmod_structure
+      [
+        structure_item (testsuite/tests/shapes/open_struct.ml[42,627+2]..[44,663+5])
+          Pstr_module
+          "M'" (testsuite/tests/shapes/open_struct.ml[42,627+9]..[42,627+11])
+            module_expr (testsuite/tests/shapes/open_struct.ml[42,627+14]..[44,663+5])
+              Pmod_structure
+              [
+                structure_item (testsuite/tests/shapes/open_struct.ml[43,648+4]..[43,648+14])
+                  Pstr_type Rec
+                  [
+                    type_declaration "t" (testsuite/tests/shapes/open_struct.ml[43,648+9]..[43,648+10]) (testsuite/tests/shapes/open_struct.ml[43,648+4]..[43,648+14])
+                      ptype_params =
+                        []
+                      ptype_cstrs =
+                        []
+                      ptype_kind =
+                        Ptype_variant
+                          [
+                            (testsuite/tests/shapes/open_struct.ml[43,648+13]..[43,648+14])
+                              "A" (testsuite/tests/shapes/open_struct.ml[43,648+13]..[43,648+14])
+                              []
+                              None
+                          ]
+                      ptype_private = Public
+                      ptype_manifest =
+                        None
+                  ]
+              ]
+      ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[46,673+0]..[53,802+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/open_struct.ml[46,673+9]..[53,802+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/open_struct.ml[46,673+9]..[53,802+2])
+          Pexp_constant PConst_string ("\n{\n \"M'\"[module] -> {<.6>\n                  \"t\"[type] -> <.4>;\n                  };\n }\nmodule M' : sig type t = A end\n",(testsuite/tests/shapes/open_struct.ml[46,673+11]..[53,802+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[55,807+0]..[55,807+14])
+    Pstr_module
+    "N'" (testsuite/tests/shapes/open_struct.ml[55,807+7]..[55,807+9])
+      module_expr (testsuite/tests/shapes/open_struct.ml[55,807+12]..[55,807+14])
+        Pmod_ident "M'" (testsuite/tests/shapes/open_struct.ml[55,807+12]..[55,807+14])
+  structure_item (testsuite/tests/shapes/open_struct.ml[56,822+0]..[63,935+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/open_struct.ml[56,822+9]..[63,935+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/open_struct.ml[56,822+9]..[63,935+2])
+          Pexp_constant PConst_string ("\n{\n \"N'\"[module] -> {<.6>\n                  \"t\"[type] -> <.4>;\n                  };\n }\nmodule N' = M'\n",(testsuite/tests/shapes/open_struct.ml[56,822+11]..[63,935+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[65,940+0]..[69,1002+3])
+    Pstr_module
+    "Test" (testsuite/tests/shapes/open_struct.ml[65,940+7]..[65,940+11])
+      module_expr (testsuite/tests/shapes/open_struct.ml[65,940+14]..[69,1002+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/shapes/open_struct.ml[66,961+2]..[68,996+5])
+            Pstr_module
+            "M" (testsuite/tests/shapes/open_struct.ml[66,961+9]..[66,961+10])
+              module_expr (testsuite/tests/shapes/open_struct.ml[66,961+13]..[68,996+5])
+                Pmod_structure
+                [
+                  structure_item (testsuite/tests/shapes/open_struct.ml[67,981+4]..[67,981+14])
+                    Pstr_type Rec
+                    [
+                      type_declaration "t" (testsuite/tests/shapes/open_struct.ml[67,981+9]..[67,981+10]) (testsuite/tests/shapes/open_struct.ml[67,981+4]..[67,981+14])
+                        ptype_params =
+                          []
+                        ptype_cstrs =
+                          []
+                        ptype_kind =
+                          Ptype_variant
+                            [
+                              (testsuite/tests/shapes/open_struct.ml[67,981+13]..[67,981+14])
+                                "A" (testsuite/tests/shapes/open_struct.ml[67,981+13]..[67,981+14])
+                                []
+                                None
+                            ]
+                        ptype_private = Public
+                        ptype_manifest =
+                          None
+                    ]
+                ]
+        ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[70,1006+0]..[79,1260+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/open_struct.ml[70,1006+9]..[79,1260+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/open_struct.ml[70,1006+9]..[79,1260+2])
+          Pexp_constant PConst_string ("\n{\n \"Test\"[module] -> {<.11>\n                    \"M\"[module] -> {<.10>\n                                    \"t\"[type] -> <.8>;\n                                    };\n                    };\n }\nmodule Test : sig module M : sig type t = A end end\n",(testsuite/tests/shapes/open_struct.ml[70,1006+11]..[79,1260+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[81,1265+0]..[81,1265+12])
+    Pstr_include    module_expr (testsuite/tests/shapes/open_struct.ml[81,1265+8]..[81,1265+12])
+      Pmod_ident "Test" (testsuite/tests/shapes/open_struct.ml[81,1265+8]..[81,1265+12])
+  structure_item (testsuite/tests/shapes/open_struct.ml[82,1278+0]..[89,1392+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/open_struct.ml[82,1278+9]..[89,1392+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/open_struct.ml[82,1278+9]..[89,1392+2])
+          Pexp_constant PConst_string ("\n{\n \"M\"[module] -> {<.10>\n                 \"t\"[type] -> <.8>;\n                 };\n }\nmodule M = Test.M\n",(testsuite/tests/shapes/open_struct.ml[82,1278+11]..[89,1392+0]),Some "")
+    ]
+  structure_item (testsuite/tests/shapes/open_struct.ml[91,1397+0]..[91,1397+12])
+    Pstr_module
+    "N" (testsuite/tests/shapes/open_struct.ml[91,1397+7]..[91,1397+8])
+      module_expr (testsuite/tests/shapes/open_struct.ml[91,1397+11]..[91,1397+12])
+        Pmod_ident "M" (testsuite/tests/shapes/open_struct.ml[91,1397+11]..[91,1397+12])
+  structure_item (testsuite/tests/shapes/open_struct.ml[92,1410+0]..[99,1519+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/shapes/open_struct.ml[92,1410+9]..[99,1519+2])
+        Pstr_eval
+        expression (testsuite/tests/shapes/open_struct.ml[92,1410+9]..[99,1519+2])
+          Pexp_constant PConst_string ("\n{\n \"N\"[module] -> {<.10>\n                 \"t\"[type] -> <.8>;\n                 };\n }\nmodule N = M\n",(testsuite/tests/shapes/open_struct.ml[92,1410+11]..[99,1519+0]),Some "")
+    ]
+]
+

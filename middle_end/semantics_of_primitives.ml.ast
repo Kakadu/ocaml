@@ -1,0 +1,1292 @@
+[
+  structure_item (middle_end/semantics_of_primitives.ml[17,1156+0]..[17,1156+39])
+    Pstr_attribute "ocaml.warning"
+    [
+      structure_item (middle_end/semantics_of_primitives.ml[17,1156+18]..[17,1156+38])
+        Pstr_eval
+        expression (middle_end/semantics_of_primitives.ml[17,1156+18]..[17,1156+38])
+          Pexp_constant PConst_string("+a-4-9-30-40-41-42",(middle_end/semantics_of_primitives.ml[17,1156+19]..[17,1156+37]),None)
+    ]
+  structure_item (middle_end/semantics_of_primitives.ml[19,1197+0]..[19,1197+71])
+    Pstr_type Rec
+    [
+      type_declaration "effects" (middle_end/semantics_of_primitives.ml[19,1197+5]..[19,1197+12]) (middle_end/semantics_of_primitives.ml[19,1197+0]..[19,1197+71])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (middle_end/semantics_of_primitives.ml[19,1197+15]..[19,1197+25])
+                "No_effects" (middle_end/semantics_of_primitives.ml[19,1197+15]..[19,1197+25])
+                []
+                None
+              (middle_end/semantics_of_primitives.ml[19,1197+26]..[19,1197+51])
+                "Only_generative_effects" (middle_end/semantics_of_primitives.ml[19,1197+28]..[19,1197+51])
+                []
+                None
+              (middle_end/semantics_of_primitives.ml[19,1197+52]..[19,1197+71])
+                "Arbitrary_effects" (middle_end/semantics_of_primitives.ml[19,1197+54]..[19,1197+71])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (middle_end/semantics_of_primitives.ml[20,1269+0]..[20,1269+45])
+    Pstr_type Rec
+    [
+      type_declaration "coeffects" (middle_end/semantics_of_primitives.ml[20,1269+5]..[20,1269+14]) (middle_end/semantics_of_primitives.ml[20,1269+0]..[20,1269+45])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (middle_end/semantics_of_primitives.ml[20,1269+17]..[20,1269+29])
+                "No_coeffects" (middle_end/semantics_of_primitives.ml[20,1269+17]..[20,1269+29])
+                []
+                None
+              (middle_end/semantics_of_primitives.ml[20,1269+30]..[20,1269+45])
+                "Has_coeffects" (middle_end/semantics_of_primitives.ml[20,1269+32]..[20,1269+45])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (middle_end/semantics_of_primitives.ml[22,1316+0]..[144,4773+30])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (middle_end/semantics_of_primitives.ml[22,1316+4]..[22,1316+17])
+          Ppat_var "for_primitive" (middle_end/semantics_of_primitives.ml[22,1316+4]..[22,1316+17])
+        expression (middle_end/semantics_of_primitives.ml[22,1316+18]..[144,4773+30]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (middle_end/semantics_of_primitives.ml[22,1316+18]..[22,1316+55])
+            Ppat_constraint
+            pattern (middle_end/semantics_of_primitives.ml[22,1316+19]..[22,1316+23])
+              Ppat_var "prim" (middle_end/semantics_of_primitives.ml[22,1316+19]..[22,1316+23])
+            core_type (middle_end/semantics_of_primitives.ml[22,1316+26]..[22,1316+54])
+              Ptyp_constr "Clambda_primitives.primitive" (middle_end/semantics_of_primitives.ml[22,1316+26]..[22,1316+54])
+              []
+          expression (middle_end/semantics_of_primitives.ml[23,1374+2]..[144,4773+30])
+            Pexp_match
+            expression (middle_end/semantics_of_primitives.ml[23,1374+8]..[23,1374+12])
+              Pexp_ident "prim" (middle_end/semantics_of_primitives.ml[23,1374+8]..[23,1374+12])
+            [
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[24,1392+4]..[25,1409+27])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[24,1392+4]..[24,1392+16])
+                    Ppat_construct "Pmakeblock" (middle_end/semantics_of_primitives.ml[24,1392+4]..[24,1392+14])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[24,1392+15]..[24,1392+16])
+                        Ppat_any
+                  pattern (middle_end/semantics_of_primitives.ml[25,1409+4]..[25,1409+27])
+                    Ppat_construct "Pmakearray" (middle_end/semantics_of_primitives.ml[25,1409+4]..[25,1409+14])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[25,1409+15]..[25,1409+27])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/semantics_of_primitives.ml[25,1409+16]..[25,1409+17])
+                            Ppat_any
+                          pattern (middle_end/semantics_of_primitives.ml[25,1409+19]..[25,1409+26])
+                            Ppat_construct "Mutable" (middle_end/semantics_of_primitives.ml[25,1409+19]..[25,1409+26])
+                            None
+                        ]
+                expression (middle_end/semantics_of_primitives.ml[25,1409+31]..[25,1409+68])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[25,1409+31]..[25,1409+54])
+                      Pexp_construct "Only_generative_effects" (middle_end/semantics_of_primitives.ml[25,1409+31]..[25,1409+54])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[25,1409+56]..[25,1409+68])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[25,1409+56]..[25,1409+68])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[26,1478+4]..[26,1478+29])
+                  Ppat_construct "Pmakearray" (middle_end/semantics_of_primitives.ml[26,1478+4]..[26,1478+14])
+                  Some
+                    []
+                    pattern (middle_end/semantics_of_primitives.ml[26,1478+15]..[26,1478+29])
+                      Ppat_tuple
+                      [
+                        pattern (middle_end/semantics_of_primitives.ml[26,1478+16]..[26,1478+17])
+                          Ppat_any
+                        pattern (middle_end/semantics_of_primitives.ml[26,1478+19]..[26,1478+28])
+                          Ppat_construct "Immutable" (middle_end/semantics_of_primitives.ml[26,1478+19]..[26,1478+28])
+                          None
+                      ]
+                expression (middle_end/semantics_of_primitives.ml[26,1478+33]..[26,1478+57])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[26,1478+33]..[26,1478+43])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[26,1478+33]..[26,1478+43])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[26,1478+45]..[26,1478+57])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[26,1478+45]..[26,1478+57])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[27,1536+4]..[27,1536+28])
+                  Ppat_construct "Pduparray" (middle_end/semantics_of_primitives.ml[27,1536+4]..[27,1536+13])
+                  Some
+                    []
+                    pattern (middle_end/semantics_of_primitives.ml[27,1536+14]..[27,1536+28])
+                      Ppat_tuple
+                      [
+                        pattern (middle_end/semantics_of_primitives.ml[27,1536+15]..[27,1536+16])
+                          Ppat_any
+                        pattern (middle_end/semantics_of_primitives.ml[27,1536+18]..[27,1536+27])
+                          Ppat_construct "Immutable" (middle_end/semantics_of_primitives.ml[27,1536+18]..[27,1536+27])
+                          None
+                      ]
+                expression (middle_end/semantics_of_primitives.ml[28,1568+6]..[28,1568+30])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[28,1568+6]..[28,1568+16])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[28,1568+6]..[28,1568+16])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[28,1568+18]..[28,1568+30])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[28,1568+18]..[28,1568+30])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[30,1703+4]..[30,1703+41])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[30,1703+4]..[30,1703+26])
+                    Ppat_construct "Pduparray" (middle_end/semantics_of_primitives.ml[30,1703+4]..[30,1703+13])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[30,1703+14]..[30,1703+26])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/semantics_of_primitives.ml[30,1703+15]..[30,1703+16])
+                            Ppat_any
+                          pattern (middle_end/semantics_of_primitives.ml[30,1703+18]..[30,1703+25])
+                            Ppat_construct "Mutable" (middle_end/semantics_of_primitives.ml[30,1703+18]..[30,1703+25])
+                            None
+                        ]
+                  pattern (middle_end/semantics_of_primitives.ml[30,1703+29]..[30,1703+41])
+                    Ppat_construct "Pduprecord" (middle_end/semantics_of_primitives.ml[30,1703+29]..[30,1703+39])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[30,1703+40]..[30,1703+41])
+                        Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[31,1748+6]..[31,1748+44])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[31,1748+6]..[31,1748+29])
+                      Pexp_construct "Only_generative_effects" (middle_end/semantics_of_primitives.ml[31,1748+6]..[31,1748+29])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[31,1748+31]..[31,1748+44])
+                      Pexp_construct "Has_coeffects" (middle_end/semantics_of_primitives.ml[31,1748+31]..[31,1748+44])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[32,1793+4]..[34,1897+66])
+                  Ppat_construct "Pccall" (middle_end/semantics_of_primitives.ml[32,1793+4]..[32,1793+10])
+                  Some
+                    []
+                    pattern (middle_end/semantics_of_primitives.ml[32,1793+11]..[34,1897+66])
+                      Ppat_record Closed
+                      [
+                        "prim_name" (middle_end/semantics_of_primitives.ml[32,1793+13]..[32,1793+22])
+                          pattern (middle_end/semantics_of_primitives.ml[33,1818+15]..[34,1897+64])
+                            Ppat_or
+                            pattern (middle_end/semantics_of_primitives.ml[33,1818+17]..[34,1897+40])
+                              Ppat_or
+                              pattern (middle_end/semantics_of_primitives.ml[33,1818+17]..[33,1818+78])
+                                Ppat_or
+                                pattern (middle_end/semantics_of_primitives.ml[33,1818+17]..[33,1818+56])
+                                  Ppat_or
+                                  pattern (middle_end/semantics_of_primitives.ml[33,1818+17]..[33,1818+36])
+                                    Ppat_constant PConst_string("caml_format_float",(middle_end/semantics_of_primitives.ml[33,1818+18]..[33,1818+35]),None)
+                                  pattern (middle_end/semantics_of_primitives.ml[33,1818+39]..[33,1818+56])
+                                    Ppat_constant PConst_string("caml_format_int",(middle_end/semantics_of_primitives.ml[33,1818+40]..[33,1818+55]),None)
+                                pattern (middle_end/semantics_of_primitives.ml[33,1818+59]..[33,1818+78])
+                                  Ppat_constant PConst_string("caml_int32_format",(middle_end/semantics_of_primitives.ml[33,1818+60]..[33,1818+77]),None)
+                              pattern (middle_end/semantics_of_primitives.ml[34,1897+17]..[34,1897+40])
+                                Ppat_constant PConst_string("caml_nativeint_format",(middle_end/semantics_of_primitives.ml[34,1897+18]..[34,1897+39]),None)
+                            pattern (middle_end/semantics_of_primitives.ml[34,1897+43]..[34,1897+62])
+                              Ppat_constant PConst_string("caml_int64_format",(middle_end/semantics_of_primitives.ml[34,1897+44]..[34,1897+61]),None)
+                      ]
+                expression (middle_end/semantics_of_primitives.ml[35,1967+6]..[35,1967+30])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[35,1967+6]..[35,1967+16])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[35,1967+6]..[35,1967+16])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[35,1967+18]..[35,1967+30])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[35,1967+18]..[35,1967+30])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[36,1998+4]..[36,1998+12])
+                  Ppat_construct "Pccall" (middle_end/semantics_of_primitives.ml[36,1998+4]..[36,1998+10])
+                  Some
+                    []
+                    pattern (middle_end/semantics_of_primitives.ml[36,1998+11]..[36,1998+12])
+                      Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[36,1998+16]..[36,1998+48])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[36,1998+16]..[36,1998+33])
+                      Pexp_construct "Arbitrary_effects" (middle_end/semantics_of_primitives.ml[36,1998+16]..[36,1998+33])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[36,1998+35]..[36,1998+48])
+                      Pexp_construct "Has_coeffects" (middle_end/semantics_of_primitives.ml[36,1998+35]..[36,1998+48])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[37,2047+4]..[37,2047+12])
+                  Ppat_construct "Praise" (middle_end/semantics_of_primitives.ml[37,2047+4]..[37,2047+10])
+                  Some
+                    []
+                    pattern (middle_end/semantics_of_primitives.ml[37,2047+11]..[37,2047+12])
+                      Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[37,2047+16]..[37,2047+47])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[37,2047+16]..[37,2047+33])
+                      Pexp_construct "Arbitrary_effects" (middle_end/semantics_of_primitives.ml[37,2047+16]..[37,2047+33])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[37,2047+35]..[37,2047+47])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[37,2047+35]..[37,2047+47])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[38,2095+4]..[38,2095+47])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[38,2095+4]..[38,2095+34])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[38,2095+4]..[38,2095+24])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[38,2095+4]..[38,2095+13])
+                        Ppat_construct "Prunstack" (middle_end/semantics_of_primitives.ml[38,2095+4]..[38,2095+13])
+                        None
+                      pattern (middle_end/semantics_of_primitives.ml[38,2095+16]..[38,2095+24])
+                        Ppat_construct "Pperform" (middle_end/semantics_of_primitives.ml[38,2095+16]..[38,2095+24])
+                        None
+                    pattern (middle_end/semantics_of_primitives.ml[38,2095+27]..[38,2095+34])
+                      Ppat_construct "Presume" (middle_end/semantics_of_primitives.ml[38,2095+27]..[38,2095+34])
+                      None
+                  pattern (middle_end/semantics_of_primitives.ml[38,2095+37]..[38,2095+47])
+                    Ppat_construct "Preperform" (middle_end/semantics_of_primitives.ml[38,2095+37]..[38,2095+47])
+                    None
+                expression (middle_end/semantics_of_primitives.ml[39,2146+6]..[39,2146+38])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[39,2146+6]..[39,2146+23])
+                      Pexp_construct "Arbitrary_effects" (middle_end/semantics_of_primitives.ml[39,2146+6]..[39,2146+23])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[39,2146+25]..[39,2146+38])
+                      Pexp_construct "Has_coeffects" (middle_end/semantics_of_primitives.ml[39,2146+25]..[39,2146+38])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[51,2313+14])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[50,2301+11])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[49,2289+11])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[48,2277+11])
+                        Ppat_or
+                        pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[47,2265+11])
+                          Ppat_or
+                          pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[46,2254+10])
+                            Ppat_or
+                            pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[45,2242+11])
+                              Ppat_or
+                              pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[44,2230+11])
+                                Ppat_or
+                                pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[43,2218+11])
+                                  Ppat_or
+                                  pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[42,2206+11])
+                                    Ppat_or
+                                    pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[41,2194+11])
+                                      Ppat_or
+                                      pattern (middle_end/semantics_of_primitives.ml[40,2185+4]..[40,2185+8])
+                                        Ppat_construct "Pnot" (middle_end/semantics_of_primitives.ml[40,2185+4]..[40,2185+8])
+                                        None
+                                      pattern (middle_end/semantics_of_primitives.ml[41,2194+4]..[41,2194+11])
+                                        Ppat_construct "Pnegint" (middle_end/semantics_of_primitives.ml[41,2194+4]..[41,2194+11])
+                                        None
+                                    pattern (middle_end/semantics_of_primitives.ml[42,2206+4]..[42,2206+11])
+                                      Ppat_construct "Paddint" (middle_end/semantics_of_primitives.ml[42,2206+4]..[42,2206+11])
+                                      None
+                                  pattern (middle_end/semantics_of_primitives.ml[43,2218+4]..[43,2218+11])
+                                    Ppat_construct "Psubint" (middle_end/semantics_of_primitives.ml[43,2218+4]..[43,2218+11])
+                                    None
+                                pattern (middle_end/semantics_of_primitives.ml[44,2230+4]..[44,2230+11])
+                                  Ppat_construct "Pmulint" (middle_end/semantics_of_primitives.ml[44,2230+4]..[44,2230+11])
+                                  None
+                              pattern (middle_end/semantics_of_primitives.ml[45,2242+4]..[45,2242+11])
+                                Ppat_construct "Pandint" (middle_end/semantics_of_primitives.ml[45,2242+4]..[45,2242+11])
+                                None
+                            pattern (middle_end/semantics_of_primitives.ml[46,2254+4]..[46,2254+10])
+                              Ppat_construct "Porint" (middle_end/semantics_of_primitives.ml[46,2254+4]..[46,2254+10])
+                              None
+                          pattern (middle_end/semantics_of_primitives.ml[47,2265+4]..[47,2265+11])
+                            Ppat_construct "Pxorint" (middle_end/semantics_of_primitives.ml[47,2265+4]..[47,2265+11])
+                            None
+                        pattern (middle_end/semantics_of_primitives.ml[48,2277+4]..[48,2277+11])
+                          Ppat_construct "Plslint" (middle_end/semantics_of_primitives.ml[48,2277+4]..[48,2277+11])
+                          None
+                      pattern (middle_end/semantics_of_primitives.ml[49,2289+4]..[49,2289+11])
+                        Ppat_construct "Plsrint" (middle_end/semantics_of_primitives.ml[49,2289+4]..[49,2289+11])
+                        None
+                    pattern (middle_end/semantics_of_primitives.ml[50,2301+4]..[50,2301+11])
+                      Ppat_construct "Pasrint" (middle_end/semantics_of_primitives.ml[50,2301+4]..[50,2301+11])
+                      None
+                  pattern (middle_end/semantics_of_primitives.ml[51,2313+4]..[51,2313+14])
+                    Ppat_construct "Pintcomp" (middle_end/semantics_of_primitives.ml[51,2313+4]..[51,2313+12])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[51,2313+13]..[51,2313+14])
+                        Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[51,2313+18]..[51,2313+42])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[51,2313+18]..[51,2313+28])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[51,2313+18]..[51,2313+28])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[51,2313+30]..[51,2313+42])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[51,2313+30]..[51,2313+42])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[52,2356+4]..[52,2356+54])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[52,2356+4]..[52,2356+35])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[52,2356+4]..[52,2356+17])
+                      Ppat_construct "Pcompare_ints" (middle_end/semantics_of_primitives.ml[52,2356+4]..[52,2356+17])
+                      None
+                    pattern (middle_end/semantics_of_primitives.ml[52,2356+20]..[52,2356+35])
+                      Ppat_construct "Pcompare_floats" (middle_end/semantics_of_primitives.ml[52,2356+20]..[52,2356+35])
+                      None
+                  pattern (middle_end/semantics_of_primitives.ml[52,2356+38]..[52,2356+54])
+                    Ppat_construct "Pcompare_bints" (middle_end/semantics_of_primitives.ml[52,2356+38]..[52,2356+52])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[52,2356+53]..[52,2356+54])
+                        Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[53,2411+7]..[53,2411+31])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[53,2411+7]..[53,2411+17])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[53,2411+7]..[53,2411+17])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[53,2411+19]..[53,2411+31])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[53,2411+19]..[53,2411+31])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[54,2443+4]..[57,2530+18])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[54,2443+4]..[56,2511+18])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[54,2443+4]..[55,2477+33])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[54,2443+4]..[54,2443+33])
+                        Ppat_construct "Pdivbint" (middle_end/semantics_of_primitives.ml[54,2443+4]..[54,2443+12])
+                        Some
+                          []
+                          pattern (middle_end/semantics_of_primitives.ml[54,2443+13]..[54,2443+33])
+                            Ppat_record Closed
+                            [
+                              "is_safe" (middle_end/semantics_of_primitives.ml[54,2443+15]..[54,2443+22])
+                                pattern (middle_end/semantics_of_primitives.ml[54,2443+25]..[54,2443+31])
+                                  Ppat_construct "Unsafe" (middle_end/semantics_of_primitives.ml[54,2443+25]..[54,2443+31])
+                                  None
+                            ]
+                      pattern (middle_end/semantics_of_primitives.ml[55,2477+4]..[55,2477+33])
+                        Ppat_construct "Pmodbint" (middle_end/semantics_of_primitives.ml[55,2477+4]..[55,2477+12])
+                        Some
+                          []
+                          pattern (middle_end/semantics_of_primitives.ml[55,2477+13]..[55,2477+33])
+                            Ppat_record Closed
+                            [
+                              "is_safe" (middle_end/semantics_of_primitives.ml[55,2477+15]..[55,2477+22])
+                                pattern (middle_end/semantics_of_primitives.ml[55,2477+25]..[55,2477+31])
+                                  Ppat_construct "Unsafe" (middle_end/semantics_of_primitives.ml[55,2477+25]..[55,2477+31])
+                                  None
+                            ]
+                    pattern (middle_end/semantics_of_primitives.ml[56,2511+4]..[56,2511+18])
+                      Ppat_construct "Pdivint" (middle_end/semantics_of_primitives.ml[56,2511+4]..[56,2511+11])
+                      Some
+                        []
+                        pattern (middle_end/semantics_of_primitives.ml[56,2511+12]..[56,2511+18])
+                          Ppat_construct "Unsafe" (middle_end/semantics_of_primitives.ml[56,2511+12]..[56,2511+18])
+                          None
+                  pattern (middle_end/semantics_of_primitives.ml[57,2530+4]..[57,2530+18])
+                    Ppat_construct "Pmodint" (middle_end/semantics_of_primitives.ml[57,2530+4]..[57,2530+11])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[57,2530+12]..[57,2530+18])
+                        Ppat_construct "Unsafe" (middle_end/semantics_of_primitives.ml[57,2530+12]..[57,2530+18])
+                        None
+                expression (middle_end/semantics_of_primitives.ml[58,2552+6]..[58,2552+30])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[58,2552+6]..[58,2552+16])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[58,2552+6]..[58,2552+16])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[58,2552+18]..[58,2552+30])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[58,2552+18]..[58,2552+30])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[59,2625+4]..[62,2706+16])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[59,2625+4]..[61,2689+16])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[59,2625+4]..[60,2657+31])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[59,2625+4]..[59,2625+31])
+                        Ppat_construct "Pdivbint" (middle_end/semantics_of_primitives.ml[59,2625+4]..[59,2625+12])
+                        Some
+                          []
+                          pattern (middle_end/semantics_of_primitives.ml[59,2625+13]..[59,2625+31])
+                            Ppat_record Closed
+                            [
+                              "is_safe" (middle_end/semantics_of_primitives.ml[59,2625+15]..[59,2625+22])
+                                pattern (middle_end/semantics_of_primitives.ml[59,2625+25]..[59,2625+29])
+                                  Ppat_construct "Safe" (middle_end/semantics_of_primitives.ml[59,2625+25]..[59,2625+29])
+                                  None
+                            ]
+                      pattern (middle_end/semantics_of_primitives.ml[60,2657+4]..[60,2657+31])
+                        Ppat_construct "Pmodbint" (middle_end/semantics_of_primitives.ml[60,2657+4]..[60,2657+12])
+                        Some
+                          []
+                          pattern (middle_end/semantics_of_primitives.ml[60,2657+13]..[60,2657+31])
+                            Ppat_record Closed
+                            [
+                              "is_safe" (middle_end/semantics_of_primitives.ml[60,2657+15]..[60,2657+22])
+                                pattern (middle_end/semantics_of_primitives.ml[60,2657+25]..[60,2657+29])
+                                  Ppat_construct "Safe" (middle_end/semantics_of_primitives.ml[60,2657+25]..[60,2657+29])
+                                  None
+                            ]
+                    pattern (middle_end/semantics_of_primitives.ml[61,2689+4]..[61,2689+16])
+                      Ppat_construct "Pdivint" (middle_end/semantics_of_primitives.ml[61,2689+4]..[61,2689+11])
+                      Some
+                        []
+                        pattern (middle_end/semantics_of_primitives.ml[61,2689+12]..[61,2689+16])
+                          Ppat_construct "Safe" (middle_end/semantics_of_primitives.ml[61,2689+12]..[61,2689+16])
+                          None
+                  pattern (middle_end/semantics_of_primitives.ml[62,2706+4]..[62,2706+16])
+                    Ppat_construct "Pmodint" (middle_end/semantics_of_primitives.ml[62,2706+4]..[62,2706+11])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[62,2706+12]..[62,2706+16])
+                        Ppat_construct "Safe" (middle_end/semantics_of_primitives.ml[62,2706+12]..[62,2706+16])
+                        None
+                expression (middle_end/semantics_of_primitives.ml[63,2726+6]..[63,2726+37])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[63,2726+6]..[63,2726+23])
+                      Pexp_construct "Arbitrary_effects" (middle_end/semantics_of_primitives.ml[63,2726+6]..[63,2726+23])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[63,2726+25]..[63,2726+37])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[63,2726+25]..[63,2726+37])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[64,2764+4]..[64,2764+16])
+                  Ppat_construct "Poffsetint" (middle_end/semantics_of_primitives.ml[64,2764+4]..[64,2764+14])
+                  Some
+                    []
+                    pattern (middle_end/semantics_of_primitives.ml[64,2764+15]..[64,2764+16])
+                      Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[64,2764+20]..[64,2764+44])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[64,2764+20]..[64,2764+30])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[64,2764+20]..[64,2764+30])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[64,2764+32]..[64,2764+44])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[64,2764+32]..[64,2764+44])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[65,2809+4]..[65,2809+16])
+                  Ppat_construct "Poffsetref" (middle_end/semantics_of_primitives.ml[65,2809+4]..[65,2809+14])
+                  Some
+                    []
+                    pattern (middle_end/semantics_of_primitives.ml[65,2809+15]..[65,2809+16])
+                      Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[65,2809+20]..[65,2809+52])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[65,2809+20]..[65,2809+37])
+                      Pexp_construct "Arbitrary_effects" (middle_end/semantics_of_primitives.ml[65,2809+20]..[65,2809+37])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[65,2809+39]..[65,2809+52])
+                      Pexp_construct "Has_coeffects" (middle_end/semantics_of_primitives.ml[65,2809+39]..[65,2809+52])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[66,2862+4]..[74,2978+16])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[66,2862+4]..[73,2964+13])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[66,2862+4]..[72,2950+13])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[66,2862+4]..[71,2936+13])
+                        Ppat_or
+                        pattern (middle_end/semantics_of_primitives.ml[66,2862+4]..[70,2922+13])
+                          Ppat_or
+                          pattern (middle_end/semantics_of_primitives.ml[66,2862+4]..[69,2908+13])
+                            Ppat_or
+                            pattern (middle_end/semantics_of_primitives.ml[66,2862+4]..[68,2894+13])
+                              Ppat_or
+                              pattern (middle_end/semantics_of_primitives.ml[66,2862+4]..[67,2878+15])
+                                Ppat_or
+                                pattern (middle_end/semantics_of_primitives.ml[66,2862+4]..[66,2862+15])
+                                  Ppat_construct "Pintoffloat" (middle_end/semantics_of_primitives.ml[66,2862+4]..[66,2862+15])
+                                  None
+                                pattern (middle_end/semantics_of_primitives.ml[67,2878+4]..[67,2878+15])
+                                  Ppat_construct "Pfloatofint" (middle_end/semantics_of_primitives.ml[67,2878+4]..[67,2878+15])
+                                  None
+                              pattern (middle_end/semantics_of_primitives.ml[68,2894+4]..[68,2894+13])
+                                Ppat_construct "Pnegfloat" (middle_end/semantics_of_primitives.ml[68,2894+4]..[68,2894+13])
+                                None
+                            pattern (middle_end/semantics_of_primitives.ml[69,2908+4]..[69,2908+13])
+                              Ppat_construct "Pabsfloat" (middle_end/semantics_of_primitives.ml[69,2908+4]..[69,2908+13])
+                              None
+                          pattern (middle_end/semantics_of_primitives.ml[70,2922+4]..[70,2922+13])
+                            Ppat_construct "Paddfloat" (middle_end/semantics_of_primitives.ml[70,2922+4]..[70,2922+13])
+                            None
+                        pattern (middle_end/semantics_of_primitives.ml[71,2936+4]..[71,2936+13])
+                          Ppat_construct "Psubfloat" (middle_end/semantics_of_primitives.ml[71,2936+4]..[71,2936+13])
+                          None
+                      pattern (middle_end/semantics_of_primitives.ml[72,2950+4]..[72,2950+13])
+                        Ppat_construct "Pmulfloat" (middle_end/semantics_of_primitives.ml[72,2950+4]..[72,2950+13])
+                        None
+                    pattern (middle_end/semantics_of_primitives.ml[73,2964+4]..[73,2964+13])
+                      Ppat_construct "Pdivfloat" (middle_end/semantics_of_primitives.ml[73,2964+4]..[73,2964+13])
+                      None
+                  pattern (middle_end/semantics_of_primitives.ml[74,2978+4]..[74,2978+16])
+                    Ppat_construct "Pfloatcomp" (middle_end/semantics_of_primitives.ml[74,2978+4]..[74,2978+14])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[74,2978+15]..[74,2978+16])
+                        Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[74,2978+20]..[74,2978+44])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[74,2978+20]..[74,2978+30])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[74,2978+20]..[74,2978+30])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[74,2978+32]..[74,2978+44])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[74,2978+32]..[74,2978+44])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[75,3023+4]..[76,3056+18])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[75,3023+4]..[75,3023+32])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[75,3023+4]..[75,3023+17])
+                      Ppat_construct "Pstringlength" (middle_end/semantics_of_primitives.ml[75,3023+4]..[75,3023+17])
+                      None
+                    pattern (middle_end/semantics_of_primitives.ml[75,3023+20]..[75,3023+32])
+                      Ppat_construct "Pbyteslength" (middle_end/semantics_of_primitives.ml[75,3023+20]..[75,3023+32])
+                      None
+                  pattern (middle_end/semantics_of_primitives.ml[76,3056+4]..[76,3056+18])
+                    Ppat_construct "Parraylength" (middle_end/semantics_of_primitives.ml[76,3056+4]..[76,3056+16])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[76,3056+17]..[76,3056+18])
+                        Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[77,3078+6]..[77,3078+31])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[77,3078+6]..[77,3078+16])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[77,3078+6]..[77,3078+16])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[77,3078+18]..[77,3078+31])
+                      Pexp_construct "Has_coeffects" (middle_end/semantics_of_primitives.ml[77,3078+18]..[77,3078+31])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[93,3372+15])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[92,3357+14])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[91,3342+14])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[90,3327+14])
+                        Ppat_or
+                        pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[89,3312+14])
+                          Ppat_or
+                          pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[88,3298+13])
+                            Ppat_or
+                            pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[87,3283+14])
+                              Ppat_or
+                              pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[86,3268+14])
+                                Ppat_or
+                                pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[85,3253+14])
+                                  Ppat_or
+                                  pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[84,3238+14])
+                                    Ppat_or
+                                    pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[83,3223+14])
+                                      Ppat_or
+                                      pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[82,3208+14])
+                                        Ppat_or
+                                        pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[81,3191+16])
+                                          Ppat_or
+                                          pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[80,3174+16])
+                                            Ppat_or
+                                            pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[79,3163+10])
+                                              Ppat_or
+                                              pattern (middle_end/semantics_of_primitives.ml[78,3152+4]..[78,3152+10])
+                                                Ppat_construct "Pisint" (middle_end/semantics_of_primitives.ml[78,3152+4]..[78,3152+10])
+                                                None
+                                              pattern (middle_end/semantics_of_primitives.ml[79,3163+4]..[79,3163+10])
+                                                Ppat_construct "Pisout" (middle_end/semantics_of_primitives.ml[79,3163+4]..[79,3163+10])
+                                                None
+                                            pattern (middle_end/semantics_of_primitives.ml[80,3174+4]..[80,3174+16])
+                                              Ppat_construct "Pbintofint" (middle_end/semantics_of_primitives.ml[80,3174+4]..[80,3174+14])
+                                              Some
+                                                []
+                                                pattern (middle_end/semantics_of_primitives.ml[80,3174+15]..[80,3174+16])
+                                                  Ppat_any
+                                          pattern (middle_end/semantics_of_primitives.ml[81,3191+4]..[81,3191+16])
+                                            Ppat_construct "Pintofbint" (middle_end/semantics_of_primitives.ml[81,3191+4]..[81,3191+14])
+                                            Some
+                                              []
+                                              pattern (middle_end/semantics_of_primitives.ml[81,3191+15]..[81,3191+16])
+                                                Ppat_any
+                                        pattern (middle_end/semantics_of_primitives.ml[82,3208+4]..[82,3208+14])
+                                          Ppat_construct "Pcvtbint" (middle_end/semantics_of_primitives.ml[82,3208+4]..[82,3208+12])
+                                          Some
+                                            []
+                                            pattern (middle_end/semantics_of_primitives.ml[82,3208+13]..[82,3208+14])
+                                              Ppat_any
+                                      pattern (middle_end/semantics_of_primitives.ml[83,3223+4]..[83,3223+14])
+                                        Ppat_construct "Pnegbint" (middle_end/semantics_of_primitives.ml[83,3223+4]..[83,3223+12])
+                                        Some
+                                          []
+                                          pattern (middle_end/semantics_of_primitives.ml[83,3223+13]..[83,3223+14])
+                                            Ppat_any
+                                    pattern (middle_end/semantics_of_primitives.ml[84,3238+4]..[84,3238+14])
+                                      Ppat_construct "Paddbint" (middle_end/semantics_of_primitives.ml[84,3238+4]..[84,3238+12])
+                                      Some
+                                        []
+                                        pattern (middle_end/semantics_of_primitives.ml[84,3238+13]..[84,3238+14])
+                                          Ppat_any
+                                  pattern (middle_end/semantics_of_primitives.ml[85,3253+4]..[85,3253+14])
+                                    Ppat_construct "Psubbint" (middle_end/semantics_of_primitives.ml[85,3253+4]..[85,3253+12])
+                                    Some
+                                      []
+                                      pattern (middle_end/semantics_of_primitives.ml[85,3253+13]..[85,3253+14])
+                                        Ppat_any
+                                pattern (middle_end/semantics_of_primitives.ml[86,3268+4]..[86,3268+14])
+                                  Ppat_construct "Pmulbint" (middle_end/semantics_of_primitives.ml[86,3268+4]..[86,3268+12])
+                                  Some
+                                    []
+                                    pattern (middle_end/semantics_of_primitives.ml[86,3268+13]..[86,3268+14])
+                                      Ppat_any
+                              pattern (middle_end/semantics_of_primitives.ml[87,3283+4]..[87,3283+14])
+                                Ppat_construct "Pandbint" (middle_end/semantics_of_primitives.ml[87,3283+4]..[87,3283+12])
+                                Some
+                                  []
+                                  pattern (middle_end/semantics_of_primitives.ml[87,3283+13]..[87,3283+14])
+                                    Ppat_any
+                            pattern (middle_end/semantics_of_primitives.ml[88,3298+4]..[88,3298+13])
+                              Ppat_construct "Porbint" (middle_end/semantics_of_primitives.ml[88,3298+4]..[88,3298+11])
+                              Some
+                                []
+                                pattern (middle_end/semantics_of_primitives.ml[88,3298+12]..[88,3298+13])
+                                  Ppat_any
+                          pattern (middle_end/semantics_of_primitives.ml[89,3312+4]..[89,3312+14])
+                            Ppat_construct "Pxorbint" (middle_end/semantics_of_primitives.ml[89,3312+4]..[89,3312+12])
+                            Some
+                              []
+                              pattern (middle_end/semantics_of_primitives.ml[89,3312+13]..[89,3312+14])
+                                Ppat_any
+                        pattern (middle_end/semantics_of_primitives.ml[90,3327+4]..[90,3327+14])
+                          Ppat_construct "Plslbint" (middle_end/semantics_of_primitives.ml[90,3327+4]..[90,3327+12])
+                          Some
+                            []
+                            pattern (middle_end/semantics_of_primitives.ml[90,3327+13]..[90,3327+14])
+                              Ppat_any
+                      pattern (middle_end/semantics_of_primitives.ml[91,3342+4]..[91,3342+14])
+                        Ppat_construct "Plsrbint" (middle_end/semantics_of_primitives.ml[91,3342+4]..[91,3342+12])
+                        Some
+                          []
+                          pattern (middle_end/semantics_of_primitives.ml[91,3342+13]..[91,3342+14])
+                            Ppat_any
+                    pattern (middle_end/semantics_of_primitives.ml[92,3357+4]..[92,3357+14])
+                      Ppat_construct "Pasrbint" (middle_end/semantics_of_primitives.ml[92,3357+4]..[92,3357+12])
+                      Some
+                        []
+                        pattern (middle_end/semantics_of_primitives.ml[92,3357+13]..[92,3357+14])
+                          Ppat_any
+                  pattern (middle_end/semantics_of_primitives.ml[93,3372+4]..[93,3372+15])
+                    Ppat_construct "Pbintcomp" (middle_end/semantics_of_primitives.ml[93,3372+4]..[93,3372+13])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[93,3372+14]..[93,3372+15])
+                        Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[93,3372+19]..[93,3372+43])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[93,3372+19]..[93,3372+29])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[93,3372+19]..[93,3372+29])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[93,3372+31]..[93,3372+43])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[93,3372+31]..[93,3372+43])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[94,3416+4]..[94,3416+18])
+                  Ppat_construct "Pbigarraydim" (middle_end/semantics_of_primitives.ml[94,3416+4]..[94,3416+16])
+                  Some
+                    []
+                    pattern (middle_end/semantics_of_primitives.ml[94,3416+17]..[94,3416+18])
+                      Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[95,3438+6]..[95,3438+31])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[95,3438+6]..[95,3438+16])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[95,3438+6]..[95,3438+16])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[95,3438+18]..[95,3438+31])
+                      Pexp_construct "Has_coeffects" (middle_end/semantics_of_primitives.ml[95,3438+18]..[95,3438+31])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[106,3724+31])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[105,3691+32])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[104,3663+27])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[103,3634+28])
+                        Ppat_or
+                        pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[102,3619+14])
+                          Ppat_or
+                          pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[101,3603+15])
+                            Ppat_or
+                            pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[100,3586+16])
+                              Ppat_or
+                              pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[99,3568+17])
+                                Ppat_or
+                                pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[98,3548+19])
+                                  Ppat_or
+                                  pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[97,3535+12])
+                                    Ppat_or
+                                    pattern (middle_end/semantics_of_primitives.ml[96,3516+4]..[96,3516+18])
+                                      Ppat_construct "Pread_symbol" (middle_end/semantics_of_primitives.ml[96,3516+4]..[96,3516+16])
+                                      Some
+                                        []
+                                        pattern (middle_end/semantics_of_primitives.ml[96,3516+17]..[96,3516+18])
+                                          Ppat_any
+                                    pattern (middle_end/semantics_of_primitives.ml[97,3535+4]..[97,3535+12])
+                                      Ppat_construct "Pfield" (middle_end/semantics_of_primitives.ml[97,3535+4]..[97,3535+10])
+                                      Some
+                                        []
+                                        pattern (middle_end/semantics_of_primitives.ml[97,3535+11]..[97,3535+12])
+                                          Ppat_any
+                                  pattern (middle_end/semantics_of_primitives.ml[98,3548+4]..[98,3548+19])
+                                    Ppat_construct "Pfield_computed" (middle_end/semantics_of_primitives.ml[98,3548+4]..[98,3548+19])
+                                    None
+                                pattern (middle_end/semantics_of_primitives.ml[99,3568+4]..[99,3568+17])
+                                  Ppat_construct "Pfloatfield" (middle_end/semantics_of_primitives.ml[99,3568+4]..[99,3568+15])
+                                  Some
+                                    []
+                                    pattern (middle_end/semantics_of_primitives.ml[99,3568+16]..[99,3568+17])
+                                      Ppat_any
+                              pattern (middle_end/semantics_of_primitives.ml[100,3586+4]..[100,3586+16])
+                                Ppat_construct "Parrayrefu" (middle_end/semantics_of_primitives.ml[100,3586+4]..[100,3586+14])
+                                Some
+                                  []
+                                  pattern (middle_end/semantics_of_primitives.ml[100,3586+15]..[100,3586+16])
+                                    Ppat_any
+                            pattern (middle_end/semantics_of_primitives.ml[101,3603+4]..[101,3603+15])
+                              Ppat_construct "Pstringrefu" (middle_end/semantics_of_primitives.ml[101,3603+4]..[101,3603+15])
+                              None
+                          pattern (middle_end/semantics_of_primitives.ml[102,3619+4]..[102,3619+14])
+                            Ppat_construct "Pbytesrefu" (middle_end/semantics_of_primitives.ml[102,3619+4]..[102,3619+14])
+                            None
+                        pattern (middle_end/semantics_of_primitives.ml[103,3634+4]..[103,3634+28])
+                          Ppat_construct "Pstring_load" (middle_end/semantics_of_primitives.ml[103,3634+4]..[103,3634+16])
+                          Some
+                            []
+                            pattern (middle_end/semantics_of_primitives.ml[103,3634+17]..[103,3634+28])
+                              Ppat_tuple
+                              [
+                                pattern (middle_end/semantics_of_primitives.ml[103,3634+18]..[103,3634+19])
+                                  Ppat_any
+                                pattern (middle_end/semantics_of_primitives.ml[103,3634+21]..[103,3634+27])
+                                  Ppat_construct "Unsafe" (middle_end/semantics_of_primitives.ml[103,3634+21]..[103,3634+27])
+                                  None
+                              ]
+                      pattern (middle_end/semantics_of_primitives.ml[104,3663+4]..[104,3663+27])
+                        Ppat_construct "Pbytes_load" (middle_end/semantics_of_primitives.ml[104,3663+4]..[104,3663+15])
+                        Some
+                          []
+                          pattern (middle_end/semantics_of_primitives.ml[104,3663+16]..[104,3663+27])
+                            Ppat_tuple
+                            [
+                              pattern (middle_end/semantics_of_primitives.ml[104,3663+17]..[104,3663+18])
+                                Ppat_any
+                              pattern (middle_end/semantics_of_primitives.ml[104,3663+20]..[104,3663+26])
+                                Ppat_construct "Unsafe" (middle_end/semantics_of_primitives.ml[104,3663+20]..[104,3663+26])
+                                None
+                            ]
+                    pattern (middle_end/semantics_of_primitives.ml[105,3691+4]..[105,3691+32])
+                      Ppat_construct "Pbigarrayref" (middle_end/semantics_of_primitives.ml[105,3691+4]..[105,3691+16])
+                      Some
+                        []
+                        pattern (middle_end/semantics_of_primitives.ml[105,3691+17]..[105,3691+32])
+                          Ppat_tuple
+                          [
+                            pattern (middle_end/semantics_of_primitives.ml[105,3691+18]..[105,3691+22])
+                              Ppat_construct "true" (middle_end/semantics_of_primitives.ml[105,3691+18]..[105,3691+22])
+                              None
+                            pattern (middle_end/semantics_of_primitives.ml[105,3691+24]..[105,3691+25])
+                              Ppat_any
+                            pattern (middle_end/semantics_of_primitives.ml[105,3691+27]..[105,3691+28])
+                              Ppat_any
+                            pattern (middle_end/semantics_of_primitives.ml[105,3691+30]..[105,3691+31])
+                              Ppat_any
+                          ]
+                  pattern (middle_end/semantics_of_primitives.ml[106,3724+4]..[106,3724+31])
+                    Ppat_construct "Pbigstring_load" (middle_end/semantics_of_primitives.ml[106,3724+4]..[106,3724+19])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[106,3724+20]..[106,3724+31])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/semantics_of_primitives.ml[106,3724+21]..[106,3724+22])
+                            Ppat_any
+                          pattern (middle_end/semantics_of_primitives.ml[106,3724+24]..[106,3724+30])
+                            Ppat_construct "Unsafe" (middle_end/semantics_of_primitives.ml[106,3724+24]..[106,3724+30])
+                            None
+                        ]
+                expression (middle_end/semantics_of_primitives.ml[107,3759+6]..[107,3759+31])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[107,3759+6]..[107,3759+16])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[107,3759+6]..[107,3759+16])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[107,3759+18]..[107,3759+31])
+                      Pexp_construct "Has_coeffects" (middle_end/semantics_of_primitives.ml[107,3759+18]..[107,3759+31])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[108,3791+4]..[114,3926+29])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[108,3791+4]..[113,3892+33])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[108,3791+4]..[112,3866+25])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[108,3791+4]..[111,3839+26])
+                        Ppat_or
+                        pattern (middle_end/semantics_of_primitives.ml[108,3791+4]..[110,3824+14])
+                          Ppat_or
+                          pattern (middle_end/semantics_of_primitives.ml[108,3791+4]..[109,3808+15])
+                            Ppat_or
+                            pattern (middle_end/semantics_of_primitives.ml[108,3791+4]..[108,3791+16])
+                              Ppat_construct "Parrayrefs" (middle_end/semantics_of_primitives.ml[108,3791+4]..[108,3791+14])
+                              Some
+                                []
+                                pattern (middle_end/semantics_of_primitives.ml[108,3791+15]..[108,3791+16])
+                                  Ppat_any
+                            pattern (middle_end/semantics_of_primitives.ml[109,3808+4]..[109,3808+15])
+                              Ppat_construct "Pstringrefs" (middle_end/semantics_of_primitives.ml[109,3808+4]..[109,3808+15])
+                              None
+                          pattern (middle_end/semantics_of_primitives.ml[110,3824+4]..[110,3824+14])
+                            Ppat_construct "Pbytesrefs" (middle_end/semantics_of_primitives.ml[110,3824+4]..[110,3824+14])
+                            None
+                        pattern (middle_end/semantics_of_primitives.ml[111,3839+4]..[111,3839+26])
+                          Ppat_construct "Pstring_load" (middle_end/semantics_of_primitives.ml[111,3839+4]..[111,3839+16])
+                          Some
+                            []
+                            pattern (middle_end/semantics_of_primitives.ml[111,3839+17]..[111,3839+26])
+                              Ppat_tuple
+                              [
+                                pattern (middle_end/semantics_of_primitives.ml[111,3839+18]..[111,3839+19])
+                                  Ppat_any
+                                pattern (middle_end/semantics_of_primitives.ml[111,3839+21]..[111,3839+25])
+                                  Ppat_construct "Safe" (middle_end/semantics_of_primitives.ml[111,3839+21]..[111,3839+25])
+                                  None
+                              ]
+                      pattern (middle_end/semantics_of_primitives.ml[112,3866+4]..[112,3866+25])
+                        Ppat_construct "Pbytes_load" (middle_end/semantics_of_primitives.ml[112,3866+4]..[112,3866+15])
+                        Some
+                          []
+                          pattern (middle_end/semantics_of_primitives.ml[112,3866+16]..[112,3866+25])
+                            Ppat_tuple
+                            [
+                              pattern (middle_end/semantics_of_primitives.ml[112,3866+17]..[112,3866+18])
+                                Ppat_any
+                              pattern (middle_end/semantics_of_primitives.ml[112,3866+20]..[112,3866+24])
+                                Ppat_construct "Safe" (middle_end/semantics_of_primitives.ml[112,3866+20]..[112,3866+24])
+                                None
+                            ]
+                    pattern (middle_end/semantics_of_primitives.ml[113,3892+4]..[113,3892+33])
+                      Ppat_construct "Pbigarrayref" (middle_end/semantics_of_primitives.ml[113,3892+4]..[113,3892+16])
+                      Some
+                        []
+                        pattern (middle_end/semantics_of_primitives.ml[113,3892+17]..[113,3892+33])
+                          Ppat_tuple
+                          [
+                            pattern (middle_end/semantics_of_primitives.ml[113,3892+18]..[113,3892+23])
+                              Ppat_construct "false" (middle_end/semantics_of_primitives.ml[113,3892+18]..[113,3892+23])
+                              None
+                            pattern (middle_end/semantics_of_primitives.ml[113,3892+25]..[113,3892+26])
+                              Ppat_any
+                            pattern (middle_end/semantics_of_primitives.ml[113,3892+28]..[113,3892+29])
+                              Ppat_any
+                            pattern (middle_end/semantics_of_primitives.ml[113,3892+31]..[113,3892+32])
+                              Ppat_any
+                          ]
+                  pattern (middle_end/semantics_of_primitives.ml[114,3926+4]..[114,3926+29])
+                    Ppat_construct "Pbigstring_load" (middle_end/semantics_of_primitives.ml[114,3926+4]..[114,3926+19])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[114,3926+20]..[114,3926+29])
+                        Ppat_tuple
+                        [
+                          pattern (middle_end/semantics_of_primitives.ml[114,3926+21]..[114,3926+22])
+                            Ppat_any
+                          pattern (middle_end/semantics_of_primitives.ml[114,3926+24]..[114,3926+28])
+                            Ppat_construct "Safe" (middle_end/semantics_of_primitives.ml[114,3926+24]..[114,3926+28])
+                            None
+                        ]
+                expression (middle_end/semantics_of_primitives.ml[116,4009+6]..[116,4009+38])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[116,4009+6]..[116,4009+23])
+                      Pexp_construct "Arbitrary_effects" (middle_end/semantics_of_primitives.ml[116,4009+6]..[116,4009+23])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[116,4009+25]..[116,4009+38])
+                      Pexp_construct "Has_coeffects" (middle_end/semantics_of_primitives.ml[116,4009+25]..[116,4009+38])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[130,4288+20])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[129,4269+18])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[128,4252+16])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[127,4237+14])
+                        Ppat_or
+                        pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[126,4222+14])
+                          Ppat_or
+                          pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[125,4205+16])
+                            Ppat_or
+                            pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[124,4188+16])
+                              Ppat_or
+                              pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[123,4166+21])
+                                Ppat_or
+                                pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[122,4150+15])
+                                  Ppat_or
+                                  pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[121,4129+20])
+                                    Ppat_or
+                                    pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[120,4110+18])
+                                      Ppat_or
+                                      pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[119,4089+20])
+                                        Ppat_or
+                                        pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[118,4064+24])
+                                          Ppat_or
+                                          pattern (middle_end/semantics_of_primitives.ml[117,4048+4]..[117,4048+15])
+                                            Ppat_construct "Psetfield" (middle_end/semantics_of_primitives.ml[117,4048+4]..[117,4048+13])
+                                            Some
+                                              []
+                                              pattern (middle_end/semantics_of_primitives.ml[117,4048+14]..[117,4048+15])
+                                                Ppat_any
+                                          pattern (middle_end/semantics_of_primitives.ml[118,4064+4]..[118,4064+24])
+                                            Ppat_construct "Psetfield_computed" (middle_end/semantics_of_primitives.ml[118,4064+4]..[118,4064+22])
+                                            Some
+                                              []
+                                              pattern (middle_end/semantics_of_primitives.ml[118,4064+23]..[118,4064+24])
+                                                Ppat_any
+                                        pattern (middle_end/semantics_of_primitives.ml[119,4089+4]..[119,4089+20])
+                                          Ppat_construct "Psetfloatfield" (middle_end/semantics_of_primitives.ml[119,4089+4]..[119,4089+18])
+                                          Some
+                                            []
+                                            pattern (middle_end/semantics_of_primitives.ml[119,4089+19]..[119,4089+20])
+                                              Ppat_any
+                                      pattern (middle_end/semantics_of_primitives.ml[120,4110+4]..[120,4110+18])
+                                        Ppat_construct "Patomic_load" (middle_end/semantics_of_primitives.ml[120,4110+4]..[120,4110+16])
+                                        Some
+                                          []
+                                          pattern (middle_end/semantics_of_primitives.ml[120,4110+17]..[120,4110+18])
+                                            Ppat_any
+                                    pattern (middle_end/semantics_of_primitives.ml[121,4129+4]..[121,4129+20])
+                                      Ppat_construct "Patomic_exchange" (middle_end/semantics_of_primitives.ml[121,4129+4]..[121,4129+20])
+                                      None
+                                  pattern (middle_end/semantics_of_primitives.ml[122,4150+4]..[122,4150+15])
+                                    Ppat_construct "Patomic_cas" (middle_end/semantics_of_primitives.ml[122,4150+4]..[122,4150+15])
+                                    None
+                                pattern (middle_end/semantics_of_primitives.ml[123,4166+4]..[123,4166+21])
+                                  Ppat_construct "Patomic_fetch_add" (middle_end/semantics_of_primitives.ml[123,4166+4]..[123,4166+21])
+                                  None
+                              pattern (middle_end/semantics_of_primitives.ml[124,4188+4]..[124,4188+16])
+                                Ppat_construct "Parraysetu" (middle_end/semantics_of_primitives.ml[124,4188+4]..[124,4188+14])
+                                Some
+                                  []
+                                  pattern (middle_end/semantics_of_primitives.ml[124,4188+15]..[124,4188+16])
+                                    Ppat_any
+                            pattern (middle_end/semantics_of_primitives.ml[125,4205+4]..[125,4205+16])
+                              Ppat_construct "Parraysets" (middle_end/semantics_of_primitives.ml[125,4205+4]..[125,4205+14])
+                              Some
+                                []
+                                pattern (middle_end/semantics_of_primitives.ml[125,4205+15]..[125,4205+16])
+                                  Ppat_any
+                          pattern (middle_end/semantics_of_primitives.ml[126,4222+4]..[126,4222+14])
+                            Ppat_construct "Pbytessetu" (middle_end/semantics_of_primitives.ml[126,4222+4]..[126,4222+14])
+                            None
+                        pattern (middle_end/semantics_of_primitives.ml[127,4237+4]..[127,4237+14])
+                          Ppat_construct "Pbytessets" (middle_end/semantics_of_primitives.ml[127,4237+4]..[127,4237+14])
+                          None
+                      pattern (middle_end/semantics_of_primitives.ml[128,4252+4]..[128,4252+16])
+                        Ppat_construct "Pbytes_set" (middle_end/semantics_of_primitives.ml[128,4252+4]..[128,4252+14])
+                        Some
+                          []
+                          pattern (middle_end/semantics_of_primitives.ml[128,4252+15]..[128,4252+16])
+                            Ppat_any
+                    pattern (middle_end/semantics_of_primitives.ml[129,4269+4]..[129,4269+18])
+                      Ppat_construct "Pbigarrayset" (middle_end/semantics_of_primitives.ml[129,4269+4]..[129,4269+16])
+                      Some
+                        []
+                        pattern (middle_end/semantics_of_primitives.ml[129,4269+17]..[129,4269+18])
+                          Ppat_any
+                  pattern (middle_end/semantics_of_primitives.ml[130,4288+4]..[130,4288+20])
+                    Ppat_construct "Pbigstring_set" (middle_end/semantics_of_primitives.ml[130,4288+4]..[130,4288+18])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[130,4288+19]..[130,4288+20])
+                        Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[133,4418+6]..[133,4418+37])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[133,4418+6]..[133,4418+23])
+                      Pexp_construct "Arbitrary_effects" (middle_end/semantics_of_primitives.ml[133,4418+6]..[133,4418+23])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[133,4418+25]..[133,4418+37])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[133,4418+25]..[133,4418+37])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[134,4456+4]..[135,4469+13])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[134,4456+4]..[134,4456+12])
+                    Ppat_construct "Pbswap16" (middle_end/semantics_of_primitives.ml[134,4456+4]..[134,4456+12])
+                    None
+                  pattern (middle_end/semantics_of_primitives.ml[135,4469+4]..[135,4469+13])
+                    Ppat_construct "Pbbswap" (middle_end/semantics_of_primitives.ml[135,4469+4]..[135,4469+11])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[135,4469+12]..[135,4469+13])
+                        Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[135,4469+17]..[135,4469+41])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[135,4469+17]..[135,4469+27])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[135,4469+17]..[135,4469+27])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[135,4469+29]..[135,4469+41])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[135,4469+29]..[135,4469+41])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[136,4511+4]..[136,4511+19])
+                  Ppat_construct "Pint_as_pointer" (middle_end/semantics_of_primitives.ml[136,4511+4]..[136,4511+19])
+                  None
+                expression (middle_end/semantics_of_primitives.ml[136,4511+23]..[136,4511+47])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[136,4511+23]..[136,4511+33])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[136,4511+23]..[136,4511+33])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[136,4511+35]..[136,4511+47])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[136,4511+35]..[136,4511+47])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[137,4559+4]..[137,4559+11])
+                  Ppat_construct "Popaque" (middle_end/semantics_of_primitives.ml[137,4559+4]..[137,4559+11])
+                  None
+                expression (middle_end/semantics_of_primitives.ml[137,4559+15]..[137,4559+47])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[137,4559+15]..[137,4559+32])
+                      Pexp_construct "Arbitrary_effects" (middle_end/semantics_of_primitives.ml[137,4559+15]..[137,4559+32])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[137,4559+34]..[137,4559+47])
+                      Pexp_construct "Has_coeffects" (middle_end/semantics_of_primitives.ml[137,4559+34]..[137,4559+47])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[138,4607+4]..[139,4620+11])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[138,4607+4]..[138,4607+12])
+                    Ppat_construct "Psequand" (middle_end/semantics_of_primitives.ml[138,4607+4]..[138,4607+12])
+                    None
+                  pattern (middle_end/semantics_of_primitives.ml[139,4620+4]..[139,4620+11])
+                    Ppat_construct "Psequor" (middle_end/semantics_of_primitives.ml[139,4620+4]..[139,4620+11])
+                    None
+                expression (middle_end/semantics_of_primitives.ml[141,4704+6]..[141,4704+30])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[141,4704+6]..[141,4704+16])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[141,4704+6]..[141,4704+16])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[141,4704+18]..[141,4704+30])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[141,4704+18]..[141,4704+30])
+                      None
+                  ]
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[142,4735+4]..[142,4735+12])
+                  Ppat_construct "Pdls_get" (middle_end/semantics_of_primitives.ml[142,4735+4]..[142,4735+12])
+                  None
+                expression (middle_end/semantics_of_primitives.ml[144,4773+6]..[144,4773+30])
+                  Pexp_tuple
+                  [
+                    expression (middle_end/semantics_of_primitives.ml[144,4773+6]..[144,4773+16])
+                      Pexp_construct "No_effects" (middle_end/semantics_of_primitives.ml[144,4773+6]..[144,4773+16])
+                      None
+                    expression (middle_end/semantics_of_primitives.ml[144,4773+18]..[144,4773+30])
+                      Pexp_construct "No_coeffects" (middle_end/semantics_of_primitives.ml[144,4773+18]..[144,4773+30])
+                      None
+                  ]
+            ]
+    ]
+  structure_item (middle_end/semantics_of_primitives.ml[146,4805+0]..[148,4834+9])
+    Pstr_type Rec
+    [
+      type_declaration "return_type" (middle_end/semantics_of_primitives.ml[146,4805+5]..[146,4805+16]) (middle_end/semantics_of_primitives.ml[146,4805+0]..[148,4834+9])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (middle_end/semantics_of_primitives.ml[147,4824+2]..[147,4824+9])
+                "Float" (middle_end/semantics_of_primitives.ml[147,4824+4]..[147,4824+9])
+                []
+                None
+              (middle_end/semantics_of_primitives.ml[148,4834+2]..[148,4834+9])
+                "Other" (middle_end/semantics_of_primitives.ml[148,4834+4]..[148,4834+9])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (middle_end/semantics_of_primitives.ml[150,4845+0]..[164,5126+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (middle_end/semantics_of_primitives.ml[150,4845+4]..[150,4845+28])
+          Ppat_var "return_type_of_primitive" (middle_end/semantics_of_primitives.ml[150,4845+4]..[150,4845+28])
+        expression (middle_end/semantics_of_primitives.ml[150,4845+29]..[164,5126+11]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (middle_end/semantics_of_primitives.ml[150,4845+29]..[150,4845+64])
+            Ppat_constraint
+            pattern (middle_end/semantics_of_primitives.ml[150,4845+30]..[150,4845+34])
+              Ppat_var "prim" (middle_end/semantics_of_primitives.ml[150,4845+30]..[150,4845+34])
+            core_type (middle_end/semantics_of_primitives.ml[150,4845+35]..[150,4845+63])
+              Ptyp_constr "Clambda_primitives.primitive" (middle_end/semantics_of_primitives.ml[150,4845+35]..[150,4845+63])
+              []
+          expression (middle_end/semantics_of_primitives.ml[151,4912+2]..[164,5126+11])
+            Pexp_match
+            expression (middle_end/semantics_of_primitives.ml[151,4912+8]..[151,4912+12])
+              Pexp_ident "prim" (middle_end/semantics_of_primitives.ml[151,4912+8]..[151,4912+12])
+            [
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[161,5075+26])
+                  Ppat_or
+                  pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[160,5048+26])
+                    Ppat_or
+                    pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[159,5030+17])
+                      Ppat_or
+                      pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[158,5016+13])
+                        Ppat_or
+                        pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[157,5002+13])
+                          Ppat_or
+                          pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[156,4988+13])
+                            Ppat_or
+                            pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[155,4974+13])
+                              Ppat_or
+                              pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[154,4960+13])
+                                Ppat_or
+                                pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[153,4946+13])
+                                  Ppat_or
+                                  pattern (middle_end/semantics_of_primitives.ml[152,4930+4]..[152,4930+15])
+                                    Ppat_construct "Pfloatofint" (middle_end/semantics_of_primitives.ml[152,4930+4]..[152,4930+15])
+                                    None
+                                  pattern (middle_end/semantics_of_primitives.ml[153,4946+4]..[153,4946+13])
+                                    Ppat_construct "Pnegfloat" (middle_end/semantics_of_primitives.ml[153,4946+4]..[153,4946+13])
+                                    None
+                                pattern (middle_end/semantics_of_primitives.ml[154,4960+4]..[154,4960+13])
+                                  Ppat_construct "Pabsfloat" (middle_end/semantics_of_primitives.ml[154,4960+4]..[154,4960+13])
+                                  None
+                              pattern (middle_end/semantics_of_primitives.ml[155,4974+4]..[155,4974+13])
+                                Ppat_construct "Paddfloat" (middle_end/semantics_of_primitives.ml[155,4974+4]..[155,4974+13])
+                                None
+                            pattern (middle_end/semantics_of_primitives.ml[156,4988+4]..[156,4988+13])
+                              Ppat_construct "Psubfloat" (middle_end/semantics_of_primitives.ml[156,4988+4]..[156,4988+13])
+                              None
+                          pattern (middle_end/semantics_of_primitives.ml[157,5002+4]..[157,5002+13])
+                            Ppat_construct "Pmulfloat" (middle_end/semantics_of_primitives.ml[157,5002+4]..[157,5002+13])
+                            None
+                        pattern (middle_end/semantics_of_primitives.ml[158,5016+4]..[158,5016+13])
+                          Ppat_construct "Pdivfloat" (middle_end/semantics_of_primitives.ml[158,5016+4]..[158,5016+13])
+                          None
+                      pattern (middle_end/semantics_of_primitives.ml[159,5030+4]..[159,5030+17])
+                        Ppat_construct "Pfloatfield" (middle_end/semantics_of_primitives.ml[159,5030+4]..[159,5030+15])
+                        Some
+                          []
+                          pattern (middle_end/semantics_of_primitives.ml[159,5030+16]..[159,5030+17])
+                            Ppat_any
+                    pattern (middle_end/semantics_of_primitives.ml[160,5048+4]..[160,5048+26])
+                      Ppat_construct "Parrayrefu" (middle_end/semantics_of_primitives.ml[160,5048+4]..[160,5048+14])
+                      Some
+                        []
+                        pattern (middle_end/semantics_of_primitives.ml[160,5048+15]..[160,5048+26])
+                          Ppat_construct "Pfloatarray" (middle_end/semantics_of_primitives.ml[160,5048+15]..[160,5048+26])
+                          None
+                  pattern (middle_end/semantics_of_primitives.ml[161,5075+4]..[161,5075+26])
+                    Ppat_construct "Parrayrefs" (middle_end/semantics_of_primitives.ml[161,5075+4]..[161,5075+14])
+                    Some
+                      []
+                      pattern (middle_end/semantics_of_primitives.ml[161,5075+15]..[161,5075+26])
+                        Ppat_construct "Pfloatarray" (middle_end/semantics_of_primitives.ml[161,5075+15]..[161,5075+26])
+                        None
+                expression (middle_end/semantics_of_primitives.ml[162,5105+6]..[162,5105+11])
+                  Pexp_construct "Float" (middle_end/semantics_of_primitives.ml[162,5105+6]..[162,5105+11])
+                  None
+              <case>
+                pattern (middle_end/semantics_of_primitives.ml[163,5117+4]..[163,5117+5])
+                  Ppat_any
+                expression (middle_end/semantics_of_primitives.ml[164,5126+6]..[164,5126+11])
+                  Pexp_construct "Other" (middle_end/semantics_of_primitives.ml[164,5126+6]..[164,5126+11])
+                  None
+            ]
+    ]
+]
+

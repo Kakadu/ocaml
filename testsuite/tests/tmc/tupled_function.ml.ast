@@ -1,0 +1,266 @@
+[
+  structure_item (testsuite/tests/tmc/tupled_function.ml[5,37+0]..[7,61+20])
+    Pstr_type Rec
+    [
+      type_declaration "t" (testsuite/tests/tmc/tupled_function.ml[5,37+8]..[5,37+9]) (testsuite/tests/tmc/tupled_function.ml[5,37+0]..[7,61+20])
+        ptype_params =
+          [
+            core_type (testsuite/tests/tmc/tupled_function.ml[5,37+5]..[5,37+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (testsuite/tests/tmc/tupled_function.ml[6,49+2]..[6,49+11])
+                "N" (testsuite/tests/tmc/tupled_function.ml[6,49+4]..[6,49+5])
+                [
+                  core_type (testsuite/tests/tmc/tupled_function.ml[6,49+9]..[6,49+11])
+                    Ptyp_var a
+                ]
+                None
+              (testsuite/tests/tmc/tupled_function.ml[7,61+2]..[7,61+20])
+                "C" (testsuite/tests/tmc/tupled_function.ml[7,61+4]..[7,61+5])
+                [
+                  core_type (testsuite/tests/tmc/tupled_function.ml[7,61+9]..[7,61+13])
+                    Ptyp_constr "t" (testsuite/tests/tmc/tupled_function.ml[7,61+12]..[7,61+13])
+                    [
+                      core_type (testsuite/tests/tmc/tupled_function.ml[7,61+9]..[7,61+11])
+                        Ptyp_var a
+                    ]
+                  core_type (testsuite/tests/tmc/tupled_function.ml[7,61+16]..[7,61+20])
+                    Ptyp_constr "t" (testsuite/tests/tmc/tupled_function.ml[7,61+19]..[7,61+20])
+                    [
+                      core_type (testsuite/tests/tmc/tupled_function.ml[7,61+16]..[7,61+18])
+                        Ptyp_var a
+                    ]
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/tmc/tupled_function.ml[15,410+0]..[19,497+46])
+    Pstr_value Rec
+    [
+      <def>
+          attribute "tail_mod_cons"
+            []
+        pattern (testsuite/tests/tmc/tupled_function.ml[15,410+24]..[15,410+27])
+          Ppat_var "map" (testsuite/tests/tmc/tupled_function.ml[15,410+24]..[15,410+27])
+        expression (testsuite/tests/tmc/tupled_function.ml[15,410+28]..[19,497+46]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/tmc/tupled_function.ml[15,410+28]..[15,410+34])
+            Ppat_tuple
+            [
+              pattern (testsuite/tests/tmc/tupled_function.ml[15,410+29]..[15,410+30])
+                Ppat_var "f" (testsuite/tests/tmc/tupled_function.ml[15,410+29]..[15,410+30])
+              pattern (testsuite/tests/tmc/tupled_function.ml[15,410+32]..[15,410+33])
+                Ppat_var "l" (testsuite/tests/tmc/tupled_function.ml[15,410+32]..[15,410+33])
+            ]
+          expression (testsuite/tests/tmc/tupled_function.ml[16,447+2]..[19,497+46])
+            Pexp_match
+            expression (testsuite/tests/tmc/tupled_function.ml[16,447+8]..[16,447+9])
+              Pexp_ident "l" (testsuite/tests/tmc/tupled_function.ml[16,447+8]..[16,447+9])
+            [
+              <case>
+                pattern (testsuite/tests/tmc/tupled_function.ml[17,462+4]..[17,462+7])
+                  Ppat_construct "N" (testsuite/tests/tmc/tupled_function.ml[17,462+4]..[17,462+5])
+                  Some
+                    []
+                    pattern (testsuite/tests/tmc/tupled_function.ml[17,462+6]..[17,462+7])
+                      Ppat_var "v" (testsuite/tests/tmc/tupled_function.ml[17,462+6]..[17,462+7])
+                expression (testsuite/tests/tmc/tupled_function.ml[17,462+11]..[17,462+18])
+                  Pexp_construct "N" (testsuite/tests/tmc/tupled_function.ml[17,462+11]..[17,462+12])
+                  Some
+                    expression (testsuite/tests/tmc/tupled_function.ml[17,462+13]..[17,462+18])
+                      Pexp_apply
+                      expression (testsuite/tests/tmc/tupled_function.ml[17,462+14]..[17,462+15])
+                        Pexp_ident "f" (testsuite/tests/tmc/tupled_function.ml[17,462+14]..[17,462+15])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/tmc/tupled_function.ml[17,462+16]..[17,462+17])
+                            Pexp_ident "v" (testsuite/tests/tmc/tupled_function.ml[17,462+16]..[17,462+17])
+                      ]
+              <case>
+                pattern (testsuite/tests/tmc/tupled_function.ml[18,481+4]..[18,481+12])
+                  Ppat_construct "C" (testsuite/tests/tmc/tupled_function.ml[18,481+4]..[18,481+5])
+                  Some
+                    []
+                    pattern (testsuite/tests/tmc/tupled_function.ml[18,481+6]..[18,481+12])
+                      Ppat_tuple
+                      [
+                        pattern (testsuite/tests/tmc/tupled_function.ml[18,481+7]..[18,481+8])
+                          Ppat_var "a" (testsuite/tests/tmc/tupled_function.ml[18,481+7]..[18,481+8])
+                        pattern (testsuite/tests/tmc/tupled_function.ml[18,481+10]..[18,481+11])
+                          Ppat_var "b" (testsuite/tests/tmc/tupled_function.ml[18,481+10]..[18,481+11])
+                      ]
+                expression (testsuite/tests/tmc/tupled_function.ml[19,497+6]..[19,497+46])
+                  Pexp_construct "C" (testsuite/tests/tmc/tupled_function.ml[19,497+6]..[19,497+7])
+                  Some
+                    expression (testsuite/tests/tmc/tupled_function.ml[19,497+8]..[19,497+46])
+                      Pexp_tuple
+                      [
+                        expression (testsuite/tests/tmc/tupled_function.ml[19,497+9]..[19,497+19])
+                          Pexp_apply
+                          expression (testsuite/tests/tmc/tupled_function.ml[19,497+9]..[19,497+12])
+                            Pexp_ident "map" (testsuite/tests/tmc/tupled_function.ml[19,497+9]..[19,497+12])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/tmc/tupled_function.ml[19,497+13]..[19,497+19])
+                                Pexp_tuple
+                                [
+                                  expression (testsuite/tests/tmc/tupled_function.ml[19,497+14]..[19,497+15])
+                                    Pexp_ident "f" (testsuite/tests/tmc/tupled_function.ml[19,497+14]..[19,497+15])
+                                  expression (testsuite/tests/tmc/tupled_function.ml[19,497+17]..[19,497+18])
+                                    Pexp_ident "a" (testsuite/tests/tmc/tupled_function.ml[19,497+17]..[19,497+18])
+                                ]
+                          ]
+                        expression (testsuite/tests/tmc/tupled_function.ml[19,497+21]..[19,497+45])
+                          Pexp_apply
+                          expression (testsuite/tests/tmc/tupled_function.ml[19,497+21]..[19,497+38])
+                            attribute "tailcall"
+                              []
+                            Pexp_ident "map" (testsuite/tests/tmc/tupled_function.ml[19,497+22]..[19,497+25])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/tmc/tupled_function.ml[19,497+39]..[19,497+45])
+                                Pexp_tuple
+                                [
+                                  expression (testsuite/tests/tmc/tupled_function.ml[19,497+40]..[19,497+41])
+                                    Pexp_ident "f" (testsuite/tests/tmc/tupled_function.ml[19,497+40]..[19,497+41])
+                                  expression (testsuite/tests/tmc/tupled_function.ml[19,497+43]..[19,497+44])
+                                    Pexp_ident "b" (testsuite/tests/tmc/tupled_function.ml[19,497+43]..[19,497+44])
+                                ]
+                          ]
+                      ]
+            ]
+    ]
+  structure_item (testsuite/tests/tmc/tupled_function.ml[21,545+0]..[21,545+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/tmc/tupled_function.ml[21,545+4]..[21,545+5])
+          Ppat_var "v" (testsuite/tests/tmc/tupled_function.ml[21,545+4]..[21,545+5])
+        expression (testsuite/tests/tmc/tupled_function.ml[21,545+8]..[21,545+29])
+          Pexp_construct "C" (testsuite/tests/tmc/tupled_function.ml[21,545+8]..[21,545+9])
+          Some
+            expression (testsuite/tests/tmc/tupled_function.ml[21,545+10]..[21,545+29])
+              Pexp_tuple
+              [
+                expression (testsuite/tests/tmc/tupled_function.ml[21,545+11]..[21,545+23])
+                  Pexp_construct "C" (testsuite/tests/tmc/tupled_function.ml[21,545+11]..[21,545+12])
+                  Some
+                    expression (testsuite/tests/tmc/tupled_function.ml[21,545+13]..[21,545+23])
+                      Pexp_tuple
+                      [
+                        expression (testsuite/tests/tmc/tupled_function.ml[21,545+14]..[21,545+17])
+                          Pexp_construct "N" (testsuite/tests/tmc/tupled_function.ml[21,545+14]..[21,545+15])
+                          Some
+                            expression (testsuite/tests/tmc/tupled_function.ml[21,545+16]..[21,545+17])
+                              Pexp_constant PConst_int (1,None)
+                        expression (testsuite/tests/tmc/tupled_function.ml[21,545+19]..[21,545+22])
+                          Pexp_construct "N" (testsuite/tests/tmc/tupled_function.ml[21,545+19]..[21,545+20])
+                          Some
+                            expression (testsuite/tests/tmc/tupled_function.ml[21,545+21]..[21,545+22])
+                              Pexp_constant PConst_int (2,None)
+                      ]
+                expression (testsuite/tests/tmc/tupled_function.ml[21,545+25]..[21,545+28])
+                  Pexp_construct "N" (testsuite/tests/tmc/tupled_function.ml[21,545+25]..[21,545+26])
+                  Some
+                    expression (testsuite/tests/tmc/tupled_function.ml[21,545+27]..[21,545+28])
+                      Pexp_constant PConst_int (3,None)
+              ]
+    ]
+  structure_item (testsuite/tests/tmc/tupled_function.ml[23,576+0]..[25,610+9])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/tmc/tupled_function.ml[23,576+4]..[23,576+6])
+          Ppat_var "v'" (testsuite/tests/tmc/tupled_function.ml[23,576+4]..[23,576+6])
+        expression (testsuite/tests/tmc/tupled_function.ml[24,585+2]..[25,610+9])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/tmc/tupled_function.ml[24,585+6]..[24,585+9])
+                Ppat_var "arg" (testsuite/tests/tmc/tupled_function.ml[24,585+6]..[24,585+9])
+              expression (testsuite/tests/tmc/tupled_function.ml[24,585+12]..[24,585+21])
+                Pexp_tuple
+                [
+                  expression (testsuite/tests/tmc/tupled_function.ml[24,585+13]..[24,585+17])
+                    Pexp_ident "succ" (testsuite/tests/tmc/tupled_function.ml[24,585+13]..[24,585+17])
+                  expression (testsuite/tests/tmc/tupled_function.ml[24,585+19]..[24,585+20])
+                    Pexp_ident "v" (testsuite/tests/tmc/tupled_function.ml[24,585+19]..[24,585+20])
+                ]
+          ]
+          expression (testsuite/tests/tmc/tupled_function.ml[25,610+2]..[25,610+9])
+            Pexp_apply
+            expression (testsuite/tests/tmc/tupled_function.ml[25,610+2]..[25,610+5])
+              Pexp_ident "map" (testsuite/tests/tmc/tupled_function.ml[25,610+2]..[25,610+5])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/tmc/tupled_function.ml[25,610+6]..[25,610+9])
+                  Pexp_ident "arg" (testsuite/tests/tmc/tupled_function.ml[25,610+6]..[25,610+9])
+            ]
+    ]
+  structure_item (testsuite/tests/tmc/tupled_function.ml[27,621+0]..[28,630+37])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/tmc/tupled_function.ml[27,621+4]..[27,621+6])
+          Ppat_construct "()" (testsuite/tests/tmc/tupled_function.ml[27,621+4]..[27,621+6])
+          None
+        expression (testsuite/tests/tmc/tupled_function.ml[28,630+2]..[28,630+37])
+          Pexp_assert
+          expression (testsuite/tests/tmc/tupled_function.ml[28,630+9]..[28,630+37])
+            Pexp_apply
+            expression (testsuite/tests/tmc/tupled_function.ml[28,630+13]..[28,630+14])
+              Pexp_ident "=" (testsuite/tests/tmc/tupled_function.ml[28,630+13]..[28,630+14])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/tmc/tupled_function.ml[28,630+10]..[28,630+12])
+                  Pexp_ident "v'" (testsuite/tests/tmc/tupled_function.ml[28,630+10]..[28,630+12])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/tmc/tupled_function.ml[28,630+15]..[28,630+36])
+                  Pexp_construct "C" (testsuite/tests/tmc/tupled_function.ml[28,630+15]..[28,630+16])
+                  Some
+                    expression (testsuite/tests/tmc/tupled_function.ml[28,630+17]..[28,630+36])
+                      Pexp_tuple
+                      [
+                        expression (testsuite/tests/tmc/tupled_function.ml[28,630+18]..[28,630+30])
+                          Pexp_construct "C" (testsuite/tests/tmc/tupled_function.ml[28,630+18]..[28,630+19])
+                          Some
+                            expression (testsuite/tests/tmc/tupled_function.ml[28,630+20]..[28,630+30])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/tupled_function.ml[28,630+21]..[28,630+24])
+                                  Pexp_construct "N" (testsuite/tests/tmc/tupled_function.ml[28,630+21]..[28,630+22])
+                                  Some
+                                    expression (testsuite/tests/tmc/tupled_function.ml[28,630+23]..[28,630+24])
+                                      Pexp_constant PConst_int (2,None)
+                                expression (testsuite/tests/tmc/tupled_function.ml[28,630+26]..[28,630+29])
+                                  Pexp_construct "N" (testsuite/tests/tmc/tupled_function.ml[28,630+26]..[28,630+27])
+                                  Some
+                                    expression (testsuite/tests/tmc/tupled_function.ml[28,630+28]..[28,630+29])
+                                      Pexp_constant PConst_int (3,None)
+                              ]
+                        expression (testsuite/tests/tmc/tupled_function.ml[28,630+32]..[28,630+35])
+                          Pexp_construct "N" (testsuite/tests/tmc/tupled_function.ml[28,630+32]..[28,630+33])
+                          Some
+                            expression (testsuite/tests/tmc/tupled_function.ml[28,630+34]..[28,630+35])
+                              Pexp_constant PConst_int (4,None)
+                      ]
+            ]
+    ]
+]
+

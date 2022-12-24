@@ -1,0 +1,167 @@
+[
+  structure_item (testsuite/tests/callback/test4.ml[13,313+0]..[13,313+11])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (testsuite/tests/callback/test4.ml[13,313+0]..[13,313+11])
+          pext_name = "E"
+          pext_kind =
+            Pext_decl
+              []
+              None
+  structure_item (testsuite/tests/callback/test4.ml[15,326+0]..[15,326+26])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/callback/test4.ml[15,326+4]..[15,326+10])
+          Ppat_var "printf" (testsuite/tests/callback/test4.ml[15,326+4]..[15,326+10])
+        expression (testsuite/tests/callback/test4.ml[15,326+13]..[15,326+26])
+          Pexp_ident "Printf.printf" (testsuite/tests/callback/test4.ml[15,326+13]..[15,326+26])
+    ]
+  structure_item (testsuite/tests/callback/test4.ml[17,354+0]..[20,462+9])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/callback/test4.ml[17,354+4]..[17,354+13])
+          Ppat_var "c_to_caml" (testsuite/tests/callback/test4.ml[17,354+4]..[17,354+13])
+        expression (testsuite/tests/callback/test4.ml[17,354+14]..[20,462+9]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/callback/test4.ml[17,354+14]..[17,354+16])
+            Ppat_construct "()" (testsuite/tests/callback/test4.ml[17,354+14]..[17,354+16])
+            None
+          expression (testsuite/tests/callback/test4.ml[18,373+2]..[20,462+9])
+            Pexp_sequence
+            expression (testsuite/tests/callback/test4.ml[18,373+2]..[18,373+37])
+              Pexp_apply
+              expression (testsuite/tests/callback/test4.ml[18,373+2]..[18,373+8])
+                Pexp_ident "printf" (testsuite/tests/callback/test4.ml[18,373+2]..[18,373+8])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/callback/test4.ml[18,373+9]..[18,373+37])
+                    Pexp_constant PConst_string("[Caml] Enter c_to_caml\n%!",(testsuite/tests/callback/test4.ml[18,373+10]..[18,373+36]),None)
+              ]
+            expression (testsuite/tests/callback/test4.ml[19,412+2]..[20,462+9])
+              Pexp_sequence
+              expression (testsuite/tests/callback/test4.ml[19,412+2]..[19,412+48])
+                Pexp_apply
+                expression (testsuite/tests/callback/test4.ml[19,412+2]..[19,412+8])
+                  Pexp_ident "printf" (testsuite/tests/callback/test4.ml[19,412+2]..[19,412+8])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/callback/test4.ml[19,412+9]..[19,412+48])
+                      Pexp_constant PConst_string("[Caml] c_to_caml: raise exception\n%!",(testsuite/tests/callback/test4.ml[19,412+10]..[19,412+47]),None)
+                ]
+              expression (testsuite/tests/callback/test4.ml[20,462+2]..[20,462+9])
+                Pexp_apply
+                expression (testsuite/tests/callback/test4.ml[20,462+2]..[20,462+7])
+                  Pexp_ident "raise" (testsuite/tests/callback/test4.ml[20,462+2]..[20,462+7])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/callback/test4.ml[20,462+8]..[20,462+9])
+                      Pexp_construct "E" (testsuite/tests/callback/test4.ml[20,462+8]..[20,462+9])
+                      None
+                ]
+    ]
+  structure_item (testsuite/tests/callback/test4.ml[22,473+0]..[22,473+47])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/callback/test4.ml[22,473+4]..[22,473+5])
+          Ppat_any
+        expression (testsuite/tests/callback/test4.ml[22,473+8]..[22,473+47])
+          Pexp_apply
+          expression (testsuite/tests/callback/test4.ml[22,473+8]..[22,473+25])
+            Pexp_ident "Callback.register" (testsuite/tests/callback/test4.ml[22,473+8]..[22,473+25])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/callback/test4.ml[22,473+26]..[22,473+37])
+                Pexp_constant PConst_string("c_to_caml",(testsuite/tests/callback/test4.ml[22,473+27]..[22,473+36]),None)
+            <arg>
+            Nolabel
+              expression (testsuite/tests/callback/test4.ml[22,473+38]..[22,473+47])
+                Pexp_ident "c_to_caml" (testsuite/tests/callback/test4.ml[22,473+38]..[22,473+47])
+          ]
+    ]
+  structure_item (testsuite/tests/callback/test4.ml[24,522+0]..[24,522+47])
+    Pstr_primitive
+    value_description "caml_to_c" (testsuite/tests/callback/test4.ml[24,522+9]..[24,522+18]) (testsuite/tests/callback/test4.ml[24,522+0]..[24,522+47])
+      core_type (testsuite/tests/callback/test4.ml[24,522+21]..[24,522+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (testsuite/tests/callback/test4.ml[24,522+21]..[24,522+25])
+          Ptyp_constr "unit" (testsuite/tests/callback/test4.ml[24,522+21]..[24,522+25])
+          []
+        core_type (testsuite/tests/callback/test4.ml[24,522+29]..[24,522+33])
+          Ptyp_constr "unit" (testsuite/tests/callback/test4.ml[24,522+29]..[24,522+33])
+          []
+      [
+        "caml_to_c"
+      ]
+  structure_item (testsuite/tests/callback/test4.ml[26,571+0]..[31,689+48])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/callback/test4.ml[26,571+4]..[26,571+5])
+          Ppat_any
+        expression (testsuite/tests/callback/test4.ml[27,579+2]..[31,689+48])
+          Pexp_try
+          expression (testsuite/tests/callback/test4.ml[28,585+4]..[30,643+45])
+            Pexp_sequence
+            expression (testsuite/tests/callback/test4.ml[28,585+4]..[28,585+38])
+              Pexp_apply
+              expression (testsuite/tests/callback/test4.ml[28,585+4]..[28,585+10])
+                Pexp_ident "printf" (testsuite/tests/callback/test4.ml[28,585+4]..[28,585+10])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/callback/test4.ml[28,585+11]..[28,585+38])
+                    Pexp_constant PConst_string("[Caml] Call caml_to_c\n%!",(testsuite/tests/callback/test4.ml[28,585+12]..[28,585+37]),None)
+              ]
+            expression (testsuite/tests/callback/test4.ml[29,625+4]..[30,643+45])
+              Pexp_sequence
+              expression (testsuite/tests/callback/test4.ml[29,625+4]..[29,625+16])
+                Pexp_apply
+                expression (testsuite/tests/callback/test4.ml[29,625+4]..[29,625+13])
+                  Pexp_ident "caml_to_c" (testsuite/tests/callback/test4.ml[29,625+4]..[29,625+13])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/callback/test4.ml[29,625+14]..[29,625+16])
+                      Pexp_construct "()" (testsuite/tests/callback/test4.ml[29,625+14]..[29,625+16])
+                      None
+                ]
+              expression (testsuite/tests/callback/test4.ml[30,643+4]..[30,643+45])
+                Pexp_apply
+                expression (testsuite/tests/callback/test4.ml[30,643+4]..[30,643+10])
+                  Pexp_ident "printf" (testsuite/tests/callback/test4.ml[30,643+4]..[30,643+10])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/callback/test4.ml[30,643+11]..[30,643+45])
+                      Pexp_constant PConst_string("[Caml] Return from caml_to_c\n%!",(testsuite/tests/callback/test4.ml[30,643+12]..[30,643+44]),None)
+                ]
+          [
+            <case>
+              pattern (testsuite/tests/callback/test4.ml[31,689+7]..[31,689+8])
+                Ppat_construct "E" (testsuite/tests/callback/test4.ml[31,689+7]..[31,689+8])
+                None
+              expression (testsuite/tests/callback/test4.ml[31,689+12]..[31,689+48])
+                Pexp_apply
+                expression (testsuite/tests/callback/test4.ml[31,689+12]..[31,689+18])
+                  Pexp_ident "printf" (testsuite/tests/callback/test4.ml[31,689+12]..[31,689+18])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/callback/test4.ml[31,689+19]..[31,689+48])
+                      Pexp_constant PConst_string("[Caml] Caught exception\n%!",(testsuite/tests/callback/test4.ml[31,689+20]..[31,689+47]),None)
+                ]
+          ]
+    ]
+]
+

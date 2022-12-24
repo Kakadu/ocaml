@@ -1,0 +1,2547 @@
+[
+  structure_item (typing/datarepr.ml[19,1190+0]..[19,1190+13])
+    Pstr_open Fresh
+    module_expr (typing/datarepr.ml[19,1190+5]..[19,1190+13])
+      Pmod_ident "Asttypes" (typing/datarepr.ml[19,1190+5]..[19,1190+13])
+  structure_item (typing/datarepr.ml[20,1204+0]..[20,1204+10])
+    Pstr_open Fresh
+    module_expr (typing/datarepr.ml[20,1204+5]..[20,1204+10])
+      Pmod_ident "Types" (typing/datarepr.ml[20,1204+5]..[20,1204+10])
+  structure_item (typing/datarepr.ml[21,1215+0]..[21,1215+10])
+    Pstr_open Fresh
+    module_expr (typing/datarepr.ml[21,1215+5]..[21,1215+10])
+      Pmod_ident "Btype" (typing/datarepr.ml[21,1215+5]..[21,1215+10])
+  structure_item (typing/datarepr.ml[24,1271+0]..[44,1849+6])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[24,1271+4]..[24,1271+13])
+          Ppat_var "free_vars" (typing/datarepr.ml[24,1271+4]..[24,1271+13])
+        expression (typing/datarepr.ml[24,1271+14]..[44,1849+6]) ghost
+          Pexp_fun
+          Optional "param"
+          Some
+            expression (typing/datarepr.ml[24,1271+22]..[24,1271+27])
+              Pexp_construct "false" (typing/datarepr.ml[24,1271+22]..[24,1271+27])
+              None
+          pattern (typing/datarepr.ml[24,1271+16]..[24,1271+21])
+            Ppat_var "param" (typing/datarepr.ml[24,1271+16]..[24,1271+21])
+          expression (typing/datarepr.ml[24,1271+29]..[44,1849+6]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[24,1271+29]..[24,1271+31])
+              Ppat_var "ty" (typing/datarepr.ml[24,1271+29]..[24,1271+31])
+            expression (typing/datarepr.ml[25,1305+2]..[44,1849+6])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (typing/datarepr.ml[25,1305+6]..[25,1305+9])
+                    Ppat_var "ret" (typing/datarepr.ml[25,1305+6]..[25,1305+9])
+                  expression (typing/datarepr.ml[25,1305+12]..[25,1305+29])
+                    Pexp_apply
+                    expression (typing/datarepr.ml[25,1305+12]..[25,1305+15])
+                      Pexp_ident "ref" (typing/datarepr.ml[25,1305+12]..[25,1305+15])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/datarepr.ml[25,1305+16]..[25,1305+29])
+                          Pexp_ident "TypeSet.empty" (typing/datarepr.ml[25,1305+16]..[25,1305+29])
+                    ]
+              ]
+              expression (typing/datarepr.ml[26,1338+2]..[44,1849+6])
+                Pexp_let Rec
+                [
+                  <def>
+                    pattern (typing/datarepr.ml[26,1338+10]..[26,1338+14])
+                      Ppat_var "loop" (typing/datarepr.ml[26,1338+10]..[26,1338+14])
+                    expression (typing/datarepr.ml[26,1338+15]..[40,1782+32]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (typing/datarepr.ml[26,1338+15]..[26,1338+17])
+                        Ppat_var "ty" (typing/datarepr.ml[26,1338+15]..[26,1338+17])
+                      expression (typing/datarepr.ml[27,1358+4]..[40,1782+32])
+                        Pexp_ifthenelse
+                        expression (typing/datarepr.ml[27,1358+7]..[27,1358+23])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[27,1358+7]..[27,1358+20])
+                            Pexp_ident "try_mark_node" (typing/datarepr.ml[27,1358+7]..[27,1358+20])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[27,1358+21]..[27,1358+23])
+                                Pexp_ident "ty" (typing/datarepr.ml[27,1358+21]..[27,1358+23])
+                          ]
+                        expression (typing/datarepr.ml[28,1387+6]..[40,1782+32])
+                          Pexp_match
+                          expression (typing/datarepr.ml[28,1387+12]..[28,1387+23])
+                            Pexp_apply
+                            expression (typing/datarepr.ml[28,1387+12]..[28,1387+20])
+                              Pexp_ident "get_desc" (typing/datarepr.ml[28,1387+12]..[28,1387+20])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[28,1387+21]..[28,1387+23])
+                                  Pexp_ident "ty" (typing/datarepr.ml[28,1387+21]..[28,1387+23])
+                            ]
+                          [
+                            <case>
+                              pattern (typing/datarepr.ml[29,1416+8]..[29,1416+14])
+                                Ppat_construct "Tvar" (typing/datarepr.ml[29,1416+8]..[29,1416+12])
+                                Some
+                                  []
+                                  pattern (typing/datarepr.ml[29,1416+13]..[29,1416+14])
+                                    Ppat_any
+                              expression (typing/datarepr.ml[30,1434+10]..[30,1434+36])
+                                Pexp_apply
+                                expression (typing/datarepr.ml[30,1434+14]..[30,1434+16])
+                                  Pexp_ident ":=" (typing/datarepr.ml[30,1434+14]..[30,1434+16])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/datarepr.ml[30,1434+10]..[30,1434+13])
+                                      Pexp_ident "ret" (typing/datarepr.ml[30,1434+10]..[30,1434+13])
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/datarepr.ml[30,1434+17]..[30,1434+36])
+                                      Pexp_apply
+                                      expression (typing/datarepr.ml[30,1434+17]..[30,1434+28])
+                                        Pexp_ident "TypeSet.add" (typing/datarepr.ml[30,1434+17]..[30,1434+28])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[30,1434+29]..[30,1434+31])
+                                            Pexp_ident "ty" (typing/datarepr.ml[30,1434+29]..[30,1434+31])
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[30,1434+32]..[30,1434+36])
+                                            Pexp_apply
+                                            expression (typing/datarepr.ml[30,1434+32]..[30,1434+33])
+                                              Pexp_ident "!" (typing/datarepr.ml[30,1434+32]..[30,1434+33])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (typing/datarepr.ml[30,1434+33]..[30,1434+36])
+                                                  Pexp_ident "ret" (typing/datarepr.ml[30,1434+33]..[30,1434+36])
+                                            ]
+                                      ]
+                                ]
+                            <case>
+                              pattern (typing/datarepr.ml[31,1471+8]..[31,1471+20])
+                                Ppat_construct "Tvariant" (typing/datarepr.ml[31,1471+8]..[31,1471+16])
+                                Some
+                                  []
+                                  pattern (typing/datarepr.ml[31,1471+17]..[31,1471+20])
+                                    Ppat_var "row" (typing/datarepr.ml[31,1471+17]..[31,1471+20])
+                              expression (typing/datarepr.ml[32,1495+10]..[37,1717+13])
+                                Pexp_sequence
+                                expression (typing/datarepr.ml[32,1495+10]..[32,1495+27])
+                                  Pexp_apply
+                                  expression (typing/datarepr.ml[32,1495+10]..[32,1495+18])
+                                    Pexp_ident "iter_row" (typing/datarepr.ml[32,1495+10]..[32,1495+18])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/datarepr.ml[32,1495+19]..[32,1495+23])
+                                        Pexp_ident "loop" (typing/datarepr.ml[32,1495+19]..[32,1495+23])
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/datarepr.ml[32,1495+24]..[32,1495+27])
+                                        Pexp_ident "row" (typing/datarepr.ml[32,1495+24]..[32,1495+27])
+                                  ]
+                                expression (typing/datarepr.ml[33,1524+10]..[37,1717+13])
+                                  Pexp_ifthenelse
+                                  expression (typing/datarepr.ml[33,1524+13]..[33,1524+33])
+                                    Pexp_apply
+                                    expression (typing/datarepr.ml[33,1524+13]..[33,1524+16])
+                                      Pexp_ident "not" (typing/datarepr.ml[33,1524+13]..[33,1524+16])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/datarepr.ml[33,1524+17]..[33,1524+33])
+                                          Pexp_apply
+                                          expression (typing/datarepr.ml[33,1524+18]..[33,1524+28])
+                                            Pexp_ident "static_row" (typing/datarepr.ml[33,1524+18]..[33,1524+28])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/datarepr.ml[33,1524+29]..[33,1524+32])
+                                                Pexp_ident "row" (typing/datarepr.ml[33,1524+29]..[33,1524+32])
+                                          ]
+                                    ]
+                                  expression (typing/datarepr.ml[33,1524+39]..[37,1717+13])
+                                    Pexp_match
+                                    expression (typing/datarepr.ml[34,1569+18]..[34,1569+41])
+                                      Pexp_apply
+                                      expression (typing/datarepr.ml[34,1569+18]..[34,1569+26])
+                                        Pexp_ident "get_desc" (typing/datarepr.ml[34,1569+18]..[34,1569+26])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[34,1569+27]..[34,1569+41])
+                                            Pexp_apply
+                                            expression (typing/datarepr.ml[34,1569+28]..[34,1569+36])
+                                              Pexp_ident "row_more" (typing/datarepr.ml[34,1569+28]..[34,1569+36])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (typing/datarepr.ml[34,1569+37]..[34,1569+40])
+                                                  Pexp_ident "row" (typing/datarepr.ml[34,1569+37]..[34,1569+40])
+                                            ]
+                                      ]
+                                    [
+                                      <case>
+                                        pattern (typing/datarepr.ml[35,1616+14]..[35,1616+20])
+                                          Ppat_construct "Tvar" (typing/datarepr.ml[35,1616+14]..[35,1616+18])
+                                          Some
+                                            []
+                                            pattern (typing/datarepr.ml[35,1616+19]..[35,1616+20])
+                                              Ppat_any
+                                        <when>
+                                          expression (typing/datarepr.ml[35,1616+26]..[35,1616+31])
+                                            Pexp_ident "param" (typing/datarepr.ml[35,1616+26]..[35,1616+31])
+                                        expression (typing/datarepr.ml[35,1616+35]..[35,1616+61])
+                                          Pexp_apply
+                                          expression (typing/datarepr.ml[35,1616+39]..[35,1616+41])
+                                            Pexp_ident ":=" (typing/datarepr.ml[35,1616+39]..[35,1616+41])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/datarepr.ml[35,1616+35]..[35,1616+38])
+                                                Pexp_ident "ret" (typing/datarepr.ml[35,1616+35]..[35,1616+38])
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/datarepr.ml[35,1616+42]..[35,1616+61])
+                                                Pexp_apply
+                                                expression (typing/datarepr.ml[35,1616+42]..[35,1616+53])
+                                                  Pexp_ident "TypeSet.add" (typing/datarepr.ml[35,1616+42]..[35,1616+53])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/datarepr.ml[35,1616+54]..[35,1616+56])
+                                                      Pexp_ident "ty" (typing/datarepr.ml[35,1616+54]..[35,1616+56])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/datarepr.ml[35,1616+57]..[35,1616+61])
+                                                      Pexp_apply
+                                                      expression (typing/datarepr.ml[35,1616+57]..[35,1616+58])
+                                                        Pexp_ident "!" (typing/datarepr.ml[35,1616+57]..[35,1616+58])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (typing/datarepr.ml[35,1616+58]..[35,1616+61])
+                                                            Pexp_ident "ret" (typing/datarepr.ml[35,1616+58]..[35,1616+61])
+                                                      ]
+                                                ]
+                                          ]
+                                      <case>
+                                        pattern (typing/datarepr.ml[36,1678+14]..[36,1678+15])
+                                          Ppat_any
+                                        expression (typing/datarepr.ml[36,1678+19]..[36,1678+38])
+                                          Pexp_apply
+                                          expression (typing/datarepr.ml[36,1678+19]..[36,1678+23])
+                                            Pexp_ident "loop" (typing/datarepr.ml[36,1678+19]..[36,1678+23])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/datarepr.ml[36,1678+24]..[36,1678+38])
+                                                Pexp_apply
+                                                expression (typing/datarepr.ml[36,1678+25]..[36,1678+33])
+                                                  Pexp_ident "row_more" (typing/datarepr.ml[36,1678+25]..[36,1678+33])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/datarepr.ml[36,1678+34]..[36,1678+37])
+                                                      Pexp_ident "row" (typing/datarepr.ml[36,1678+34]..[36,1678+37])
+                                                ]
+                                          ]
+                                    ]
+                                  None
+                            <case>
+                              pattern (typing/datarepr.ml[39,1769+8]..[39,1769+9])
+                                Ppat_any
+                              expression (typing/datarepr.ml[40,1782+10]..[40,1782+32])
+                                Pexp_apply
+                                expression (typing/datarepr.ml[40,1782+10]..[40,1782+24])
+                                  Pexp_ident "iter_type_expr" (typing/datarepr.ml[40,1782+10]..[40,1782+24])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/datarepr.ml[40,1782+25]..[40,1782+29])
+                                      Pexp_ident "loop" (typing/datarepr.ml[40,1782+25]..[40,1782+29])
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/datarepr.ml[40,1782+30]..[40,1782+32])
+                                      Pexp_ident "ty" (typing/datarepr.ml[40,1782+30]..[40,1782+32])
+                                ]
+                          ]
+                        None
+                ]
+                expression (typing/datarepr.ml[42,1820+2]..[44,1849+6])
+                  Pexp_sequence
+                  expression (typing/datarepr.ml[42,1820+2]..[42,1820+9])
+                    Pexp_apply
+                    expression (typing/datarepr.ml[42,1820+2]..[42,1820+6])
+                      Pexp_ident "loop" (typing/datarepr.ml[42,1820+2]..[42,1820+6])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/datarepr.ml[42,1820+7]..[42,1820+9])
+                          Pexp_ident "ty" (typing/datarepr.ml[42,1820+7]..[42,1820+9])
+                    ]
+                  expression (typing/datarepr.ml[43,1831+2]..[44,1849+6])
+                    Pexp_sequence
+                    expression (typing/datarepr.ml[43,1831+2]..[43,1831+16])
+                      Pexp_apply
+                      expression (typing/datarepr.ml[43,1831+2]..[43,1831+13])
+                        Pexp_ident "unmark_type" (typing/datarepr.ml[43,1831+2]..[43,1831+13])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/datarepr.ml[43,1831+14]..[43,1831+16])
+                            Pexp_ident "ty" (typing/datarepr.ml[43,1831+14]..[43,1831+16])
+                      ]
+                    expression (typing/datarepr.ml[44,1849+2]..[44,1849+6])
+                      Pexp_apply
+                      expression (typing/datarepr.ml[44,1849+2]..[44,1849+3])
+                        Pexp_ident "!" (typing/datarepr.ml[44,1849+2]..[44,1849+3])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/datarepr.ml[44,1849+3]..[44,1849+6])
+                            Pexp_ident "ret" (typing/datarepr.ml[44,1849+3]..[44,1849+6])
+                      ]
+    ]
+  structure_item (typing/datarepr.ml[46,1857+0]..[46,1857+68])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[46,1857+4]..[46,1857+16])
+          Ppat_var "newgenconstr" (typing/datarepr.ml[46,1857+4]..[46,1857+16])
+        expression (typing/datarepr.ml[46,1857+17]..[46,1857+68]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/datarepr.ml[46,1857+17]..[46,1857+21])
+            Ppat_var "path" (typing/datarepr.ml[46,1857+17]..[46,1857+21])
+          expression (typing/datarepr.ml[46,1857+22]..[46,1857+68]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[46,1857+22]..[46,1857+25])
+              Ppat_var "tyl" (typing/datarepr.ml[46,1857+22]..[46,1857+25])
+            expression (typing/datarepr.ml[46,1857+28]..[46,1857+68])
+              Pexp_apply
+              expression (typing/datarepr.ml[46,1857+28]..[46,1857+36])
+                Pexp_ident "newgenty" (typing/datarepr.ml[46,1857+28]..[46,1857+36])
+              [
+                <arg>
+                Nolabel
+                  expression (typing/datarepr.ml[46,1857+37]..[46,1857+68])
+                    Pexp_construct "Tconstr" (typing/datarepr.ml[46,1857+38]..[46,1857+45])
+                    Some
+                      expression (typing/datarepr.ml[46,1857+46]..[46,1857+67])
+                        Pexp_tuple
+                        [
+                          expression (typing/datarepr.ml[46,1857+47]..[46,1857+51])
+                            Pexp_ident "path" (typing/datarepr.ml[46,1857+47]..[46,1857+51])
+                          expression (typing/datarepr.ml[46,1857+53]..[46,1857+56])
+                            Pexp_ident "tyl" (typing/datarepr.ml[46,1857+53]..[46,1857+56])
+                          expression (typing/datarepr.ml[46,1857+58]..[46,1857+66])
+                            Pexp_apply
+                            expression (typing/datarepr.ml[46,1857+58]..[46,1857+61])
+                              Pexp_ident "ref" (typing/datarepr.ml[46,1857+58]..[46,1857+61])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[46,1857+62]..[46,1857+66])
+                                  Pexp_construct "Mnil" (typing/datarepr.ml[46,1857+62]..[46,1857+66])
+                                  None
+                            ]
+                        ]
+              ]
+    ]
+  structure_item (typing/datarepr.ml[48,1927+0]..[62,2351+21])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[48,1927+4]..[48,1927+28])
+          Ppat_var "constructor_existentials" (typing/datarepr.ml[48,1927+4]..[48,1927+28])
+        expression (typing/datarepr.ml[48,1927+29]..[62,2351+21]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/datarepr.ml[48,1927+29]..[48,1927+36])
+            Ppat_var "cd_args" (typing/datarepr.ml[48,1927+29]..[48,1927+36])
+          expression (typing/datarepr.ml[48,1927+37]..[62,2351+21]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[48,1927+37]..[48,1927+43])
+              Ppat_var "cd_res" (typing/datarepr.ml[48,1927+37]..[48,1927+43])
+            expression (typing/datarepr.ml[49,1973+2]..[62,2351+21])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (typing/datarepr.ml[49,1973+6]..[49,1973+9])
+                    Ppat_var "tyl" (typing/datarepr.ml[49,1973+6]..[49,1973+9])
+                  expression (typing/datarepr.ml[50,1985+4]..[52,2032+54])
+                    Pexp_match
+                    expression (typing/datarepr.ml[50,1985+10]..[50,1985+17])
+                      Pexp_ident "cd_args" (typing/datarepr.ml[50,1985+10]..[50,1985+17])
+                    [
+                      <case>
+                        pattern (typing/datarepr.ml[51,2008+6]..[51,2008+18])
+                          Ppat_construct "Cstr_tuple" (typing/datarepr.ml[51,2008+6]..[51,2008+16])
+                          Some
+                            []
+                            pattern (typing/datarepr.ml[51,2008+17]..[51,2008+18])
+                              Ppat_var "l" (typing/datarepr.ml[51,2008+17]..[51,2008+18])
+                        expression (typing/datarepr.ml[51,2008+22]..[51,2008+23])
+                          Pexp_ident "l" (typing/datarepr.ml[51,2008+22]..[51,2008+23])
+                      <case>
+                        pattern (typing/datarepr.ml[52,2032+6]..[52,2032+19])
+                          Ppat_construct "Cstr_record" (typing/datarepr.ml[52,2032+6]..[52,2032+17])
+                          Some
+                            []
+                            pattern (typing/datarepr.ml[52,2032+18]..[52,2032+19])
+                              Ppat_var "l" (typing/datarepr.ml[52,2032+18]..[52,2032+19])
+                        expression (typing/datarepr.ml[52,2032+23]..[52,2032+54])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[52,2032+23]..[52,2032+31])
+                            Pexp_ident "List.map" (typing/datarepr.ml[52,2032+23]..[52,2032+31])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[52,2032+32]..[52,2032+52])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (typing/datarepr.ml[52,2032+37]..[52,2032+38])
+                                  Ppat_var "l" (typing/datarepr.ml[52,2032+37]..[52,2032+38])
+                                expression (typing/datarepr.ml[52,2032+42]..[52,2032+51])
+                                  Pexp_field
+                                  expression (typing/datarepr.ml[52,2032+42]..[52,2032+43])
+                                    Pexp_ident "l" (typing/datarepr.ml[52,2032+42]..[52,2032+43])
+                                  "ld_type" (typing/datarepr.ml[52,2032+44]..[52,2032+51])
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[52,2032+53]..[52,2032+54])
+                                Pexp_ident "l" (typing/datarepr.ml[52,2032+53]..[52,2032+54])
+                          ]
+                    ]
+              ]
+              expression (typing/datarepr.ml[54,2092+2]..[62,2351+21])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (typing/datarepr.ml[54,2092+6]..[54,2092+18])
+                      Ppat_var "existentials" (typing/datarepr.ml[54,2092+6]..[54,2092+18])
+                    expression (typing/datarepr.ml[55,2113+4]..[60,2284+61])
+                      Pexp_match
+                      expression (typing/datarepr.ml[55,2113+10]..[55,2113+16])
+                        Pexp_ident "cd_res" (typing/datarepr.ml[55,2113+10]..[55,2113+16])
+                      [
+                        <case>
+                          pattern (typing/datarepr.ml[56,2135+6]..[56,2135+10])
+                            Ppat_construct "None" (typing/datarepr.ml[56,2135+6]..[56,2135+10])
+                            None
+                          expression (typing/datarepr.ml[56,2135+14]..[56,2135+16])
+                            Pexp_construct "[]" (typing/datarepr.ml[56,2135+14]..[56,2135+16])
+                            None
+                        <case>
+                          pattern (typing/datarepr.ml[57,2152+6]..[57,2152+19])
+                            Ppat_construct "Some" (typing/datarepr.ml[57,2152+6]..[57,2152+10])
+                            Some
+                              []
+                              pattern (typing/datarepr.ml[57,2152+11]..[57,2152+19])
+                                Ppat_var "type_ret" (typing/datarepr.ml[57,2152+11]..[57,2152+19])
+                          expression (typing/datarepr.ml[58,2175+8]..[60,2284+61])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (typing/datarepr.ml[58,2175+12]..[58,2175+24])
+                                  Ppat_var "arg_vars_set" (typing/datarepr.ml[58,2175+12]..[58,2175+24])
+                                expression (typing/datarepr.ml[58,2175+27]..[58,2175+60])
+                                  Pexp_apply
+                                  expression (typing/datarepr.ml[58,2175+27]..[58,2175+36])
+                                    Pexp_ident "free_vars" (typing/datarepr.ml[58,2175+27]..[58,2175+36])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/datarepr.ml[58,2175+37]..[58,2175+60])
+                                        Pexp_apply
+                                        expression (typing/datarepr.ml[58,2175+38]..[58,2175+46])
+                                          Pexp_ident "newgenty" (typing/datarepr.ml[58,2175+38]..[58,2175+46])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/datarepr.ml[58,2175+47]..[58,2175+59])
+                                              Pexp_construct "Ttuple" (typing/datarepr.ml[58,2175+48]..[58,2175+54])
+                                              Some
+                                                expression (typing/datarepr.ml[58,2175+55]..[58,2175+58])
+                                                  Pexp_ident "tyl" (typing/datarepr.ml[58,2175+55]..[58,2175+58])
+                                        ]
+                                  ]
+                            ]
+                            expression (typing/datarepr.ml[59,2239+8]..[60,2284+61])
+                              Pexp_let Nonrec
+                              [
+                                <def>
+                                  pattern (typing/datarepr.ml[59,2239+12]..[59,2239+20])
+                                    Ppat_var "res_vars" (typing/datarepr.ml[59,2239+12]..[59,2239+20])
+                                  expression (typing/datarepr.ml[59,2239+23]..[59,2239+41])
+                                    Pexp_apply
+                                    expression (typing/datarepr.ml[59,2239+23]..[59,2239+32])
+                                      Pexp_ident "free_vars" (typing/datarepr.ml[59,2239+23]..[59,2239+32])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/datarepr.ml[59,2239+33]..[59,2239+41])
+                                          Pexp_ident "type_ret" (typing/datarepr.ml[59,2239+33]..[59,2239+41])
+                                    ]
+                              ]
+                              expression (typing/datarepr.ml[60,2284+8]..[60,2284+61])
+                                Pexp_apply
+                                expression (typing/datarepr.ml[60,2284+8]..[60,2284+24])
+                                  Pexp_ident "TypeSet.elements" (typing/datarepr.ml[60,2284+8]..[60,2284+24])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/datarepr.ml[60,2284+25]..[60,2284+61])
+                                      Pexp_apply
+                                      expression (typing/datarepr.ml[60,2284+26]..[60,2284+38])
+                                        Pexp_ident "TypeSet.diff" (typing/datarepr.ml[60,2284+26]..[60,2284+38])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[60,2284+39]..[60,2284+51])
+                                            Pexp_ident "arg_vars_set" (typing/datarepr.ml[60,2284+39]..[60,2284+51])
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[60,2284+52]..[60,2284+60])
+                                            Pexp_ident "res_vars" (typing/datarepr.ml[60,2284+52]..[60,2284+60])
+                                      ]
+                                ]
+                      ]
+                ]
+                expression (typing/datarepr.ml[62,2351+2]..[62,2351+21])
+                  Pexp_tuple
+                  [
+                    expression (typing/datarepr.ml[62,2351+3]..[62,2351+6])
+                      Pexp_ident "tyl" (typing/datarepr.ml[62,2351+3]..[62,2351+6])
+                    expression (typing/datarepr.ml[62,2351+8]..[62,2351+20])
+                      Pexp_ident "existentials" (typing/datarepr.ml[62,2351+8]..[62,2351+20])
+                  ]
+    ]
+  structure_item (typing/datarepr.ml[64,2374+0]..[92,3470+16])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[64,2374+4]..[64,2374+20])
+          Ppat_var "constructor_args" (typing/datarepr.ml[64,2374+4]..[64,2374+20])
+        expression (typing/datarepr.ml[64,2374+21]..[92,3470+16]) ghost
+          Pexp_fun
+          Labelled "current_unit"
+          None
+          pattern (typing/datarepr.ml[64,2374+22]..[64,2374+34])
+            Ppat_var "current_unit" (typing/datarepr.ml[64,2374+22]..[64,2374+34])
+          expression (typing/datarepr.ml[64,2374+35]..[92,3470+16]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[64,2374+35]..[64,2374+39])
+              Ppat_var "priv" (typing/datarepr.ml[64,2374+35]..[64,2374+39])
+            expression (typing/datarepr.ml[64,2374+40]..[92,3470+16]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (typing/datarepr.ml[64,2374+40]..[64,2374+47])
+                Ppat_var "cd_args" (typing/datarepr.ml[64,2374+40]..[64,2374+47])
+              expression (typing/datarepr.ml[64,2374+48]..[92,3470+16]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (typing/datarepr.ml[64,2374+48]..[64,2374+54])
+                  Ppat_var "cd_res" (typing/datarepr.ml[64,2374+48]..[64,2374+54])
+                expression (typing/datarepr.ml[64,2374+55]..[92,3470+16]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (typing/datarepr.ml[64,2374+55]..[64,2374+59])
+                    Ppat_var "path" (typing/datarepr.ml[64,2374+55]..[64,2374+59])
+                  expression (typing/datarepr.ml[64,2374+60]..[92,3470+16]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (typing/datarepr.ml[64,2374+60]..[64,2374+63])
+                      Ppat_var "rep" (typing/datarepr.ml[64,2374+60]..[64,2374+63])
+                    expression (typing/datarepr.ml[65,2440+2]..[92,3470+16])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (typing/datarepr.ml[65,2440+6]..[65,2440+23])
+                            Ppat_tuple
+                            [
+                              pattern (typing/datarepr.ml[65,2440+6]..[65,2440+9])
+                                Ppat_var "tyl" (typing/datarepr.ml[65,2440+6]..[65,2440+9])
+                              pattern (typing/datarepr.ml[65,2440+11]..[65,2440+23])
+                                Ppat_var "existentials" (typing/datarepr.ml[65,2440+11]..[65,2440+23])
+                            ]
+                          expression (typing/datarepr.ml[65,2440+26]..[65,2440+65])
+                            Pexp_apply
+                            expression (typing/datarepr.ml[65,2440+26]..[65,2440+50])
+                              Pexp_ident "constructor_existentials" (typing/datarepr.ml[65,2440+26]..[65,2440+50])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[65,2440+51]..[65,2440+58])
+                                  Pexp_ident "cd_args" (typing/datarepr.ml[65,2440+51]..[65,2440+58])
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[65,2440+59]..[65,2440+65])
+                                  Pexp_ident "cd_res" (typing/datarepr.ml[65,2440+59]..[65,2440+65])
+                            ]
+                      ]
+                      expression (typing/datarepr.ml[66,2509+2]..[92,3470+16])
+                        Pexp_match
+                        expression (typing/datarepr.ml[66,2509+8]..[66,2509+15])
+                          Pexp_ident "cd_args" (typing/datarepr.ml[66,2509+8]..[66,2509+15])
+                        [
+                          <case>
+                            pattern (typing/datarepr.ml[67,2530+4]..[67,2530+16])
+                              Ppat_construct "Cstr_tuple" (typing/datarepr.ml[67,2530+4]..[67,2530+14])
+                              Some
+                                []
+                                pattern (typing/datarepr.ml[67,2530+15]..[67,2530+16])
+                                  Ppat_var "l" (typing/datarepr.ml[67,2530+15]..[67,2530+16])
+                            expression (typing/datarepr.ml[67,2530+20]..[67,2530+41])
+                              Pexp_tuple
+                              [
+                                expression (typing/datarepr.ml[67,2530+20]..[67,2530+32])
+                                  Pexp_ident "existentials" (typing/datarepr.ml[67,2530+20]..[67,2530+32])
+                                expression (typing/datarepr.ml[67,2530+34]..[67,2530+35])
+                                  Pexp_ident "l" (typing/datarepr.ml[67,2530+34]..[67,2530+35])
+                                expression (typing/datarepr.ml[67,2530+37]..[67,2530+41])
+                                  Pexp_construct "None" (typing/datarepr.ml[67,2530+37]..[67,2530+41])
+                                  None
+                              ]
+                          <case>
+                            pattern (typing/datarepr.ml[68,2572+4]..[68,2572+20])
+                              Ppat_construct "Cstr_record" (typing/datarepr.ml[68,2572+4]..[68,2572+15])
+                              Some
+                                []
+                                pattern (typing/datarepr.ml[68,2572+16]..[68,2572+20])
+                                  Ppat_var "lbls" (typing/datarepr.ml[68,2572+16]..[68,2572+20])
+                            expression (typing/datarepr.ml[69,2596+6]..[92,3470+16])
+                              Pexp_let Nonrec
+                              [
+                                <def>
+                                  pattern (typing/datarepr.ml[69,2596+10]..[69,2596+22])
+                                    Ppat_var "arg_vars_set" (typing/datarepr.ml[69,2596+10]..[69,2596+22])
+                                  expression (typing/datarepr.ml[69,2596+25]..[69,2596+70])
+                                    Pexp_apply
+                                    expression (typing/datarepr.ml[69,2596+25]..[69,2596+34])
+                                      Pexp_ident "free_vars" (typing/datarepr.ml[69,2596+25]..[69,2596+34])
+                                    [
+                                      <arg>
+                                      Labelled "param"
+                                        expression (typing/datarepr.ml[69,2596+42]..[69,2596+46])
+                                          Pexp_construct "true" (typing/datarepr.ml[69,2596+42]..[69,2596+46])
+                                          None
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/datarepr.ml[69,2596+47]..[69,2596+70])
+                                          Pexp_apply
+                                          expression (typing/datarepr.ml[69,2596+48]..[69,2596+56])
+                                            Pexp_ident "newgenty" (typing/datarepr.ml[69,2596+48]..[69,2596+56])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/datarepr.ml[69,2596+57]..[69,2596+69])
+                                                Pexp_construct "Ttuple" (typing/datarepr.ml[69,2596+58]..[69,2596+64])
+                                                Some
+                                                  expression (typing/datarepr.ml[69,2596+65]..[69,2596+68])
+                                                    Pexp_ident "tyl" (typing/datarepr.ml[69,2596+65]..[69,2596+68])
+                                          ]
+                                    ]
+                              ]
+                              expression (typing/datarepr.ml[70,2670+6]..[92,3470+16])
+                                Pexp_let Nonrec
+                                [
+                                  <def>
+                                    pattern (typing/datarepr.ml[70,2670+10]..[70,2670+21])
+                                      Ppat_var "type_params" (typing/datarepr.ml[70,2670+10]..[70,2670+21])
+                                    expression (typing/datarepr.ml[70,2670+24]..[70,2670+53])
+                                      Pexp_apply
+                                      expression (typing/datarepr.ml[70,2670+24]..[70,2670+40])
+                                        Pexp_ident "TypeSet.elements" (typing/datarepr.ml[70,2670+24]..[70,2670+40])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[70,2670+41]..[70,2670+53])
+                                            Pexp_ident "arg_vars_set" (typing/datarepr.ml[70,2670+41]..[70,2670+53])
+                                      ]
+                                ]
+                                expression (typing/datarepr.ml[71,2727+6]..[92,3470+16])
+                                  Pexp_let Nonrec
+                                  [
+                                    <def>
+                                      pattern (typing/datarepr.ml[71,2727+10]..[71,2727+15])
+                                        Ppat_var "arity" (typing/datarepr.ml[71,2727+10]..[71,2727+15])
+                                      expression (typing/datarepr.ml[71,2727+18]..[71,2727+41])
+                                        Pexp_apply
+                                        expression (typing/datarepr.ml[71,2727+18]..[71,2727+29])
+                                          Pexp_ident "List.length" (typing/datarepr.ml[71,2727+18]..[71,2727+29])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (typing/datarepr.ml[71,2727+30]..[71,2727+41])
+                                              Pexp_ident "type_params" (typing/datarepr.ml[71,2727+30]..[71,2727+41])
+                                        ]
+                                  ]
+                                  expression (typing/datarepr.ml[72,2772+6]..[92,3470+16])
+                                    Pexp_let Nonrec
+                                    [
+                                      <def>
+                                        pattern (typing/datarepr.ml[72,2772+10]..[72,2772+15])
+                                          Ppat_var "tdecl" (typing/datarepr.ml[72,2772+10]..[72,2772+15])
+                                        expression (typing/datarepr.ml[73,2790+8]..[88,3390+9])
+                                          Pexp_record
+                                          [
+                                            "type_params" (typing/datarepr.ml[74,2800+10]..[74,2800+21]) ghost
+                                              expression (typing/datarepr.ml[74,2800+10]..[74,2800+21])
+                                                Pexp_ident "type_params" (typing/datarepr.ml[74,2800+10]..[74,2800+21])
+                                            "type_arity" (typing/datarepr.ml[75,2823+10]..[75,2823+20])
+                                              expression (typing/datarepr.ml[75,2823+23]..[75,2823+28])
+                                                Pexp_ident "arity" (typing/datarepr.ml[75,2823+23]..[75,2823+28])
+                                            "type_kind" (typing/datarepr.ml[76,2853+10]..[76,2853+19])
+                                              expression (typing/datarepr.ml[76,2853+22]..[76,2853+45])
+                                                Pexp_construct "Type_record" (typing/datarepr.ml[76,2853+22]..[76,2853+33])
+                                                Some
+                                                  expression (typing/datarepr.ml[76,2853+34]..[76,2853+45])
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (typing/datarepr.ml[76,2853+35]..[76,2853+39])
+                                                        Pexp_ident "lbls" (typing/datarepr.ml[76,2853+35]..[76,2853+39])
+                                                      expression (typing/datarepr.ml[76,2853+41]..[76,2853+44])
+                                                        Pexp_ident "rep" (typing/datarepr.ml[76,2853+41]..[76,2853+44])
+                                                    ]
+                                            "type_private" (typing/datarepr.ml[77,2900+10]..[77,2900+22])
+                                              expression (typing/datarepr.ml[77,2900+25]..[77,2900+29])
+                                                Pexp_ident "priv" (typing/datarepr.ml[77,2900+25]..[77,2900+29])
+                                            "type_manifest" (typing/datarepr.ml[78,2931+10]..[78,2931+23])
+                                              expression (typing/datarepr.ml[78,2931+26]..[78,2931+30])
+                                                Pexp_construct "None" (typing/datarepr.ml[78,2931+26]..[78,2931+30])
+                                                None
+                                            "type_variance" (typing/datarepr.ml[79,2963+10]..[79,2963+23])
+                                              expression (typing/datarepr.ml[79,2963+26]..[79,2963+75])
+                                                Pexp_apply
+                                                expression (typing/datarepr.ml[79,2963+26]..[79,2963+52])
+                                                  Pexp_ident "Variance.unknown_signature" (typing/datarepr.ml[79,2963+26]..[79,2963+52])
+                                                [
+                                                  <arg>
+                                                  Labelled "injective"
+                                                    expression (typing/datarepr.ml[79,2963+64]..[79,2963+68])
+                                                      Pexp_construct "true" (typing/datarepr.ml[79,2963+64]..[79,2963+68])
+                                                      None
+                                                  <arg>
+                                                  Labelled "arity"
+                                                    expression (typing/datarepr.ml[79,2963+70]..[79,2963+75])
+                                                      Pexp_ident "arity" (typing/datarepr.ml[79,2963+70]..[79,2963+75])
+                                                ]
+                                            "type_separability" (typing/datarepr.ml[80,3040+10]..[80,3040+27])
+                                              expression (typing/datarepr.ml[80,3040+30]..[80,3040+73])
+                                                Pexp_apply
+                                                expression (typing/datarepr.ml[80,3040+30]..[80,3040+66])
+                                                  Pexp_ident "Types.Separability.default_signature" (typing/datarepr.ml[80,3040+30]..[80,3040+66])
+                                                [
+                                                  <arg>
+                                                  Labelled "arity"
+                                                    expression (typing/datarepr.ml[80,3040+68]..[80,3040+73])
+                                                      Pexp_ident "arity" (typing/datarepr.ml[80,3040+68]..[80,3040+73])
+                                                ]
+                                            "type_is_newtype" (typing/datarepr.ml[81,3115+10]..[81,3115+25])
+                                              expression (typing/datarepr.ml[81,3115+28]..[81,3115+33])
+                                                Pexp_construct "false" (typing/datarepr.ml[81,3115+28]..[81,3115+33])
+                                                None
+                                            "type_expansion_scope" (typing/datarepr.ml[82,3150+10]..[82,3150+30])
+                                              expression (typing/datarepr.ml[82,3150+33]..[82,3150+51])
+                                                Pexp_ident "Btype.lowest_level" (typing/datarepr.ml[82,3150+33]..[82,3150+51])
+                                            "type_loc" (typing/datarepr.ml[83,3203+10]..[83,3203+18])
+                                              expression (typing/datarepr.ml[83,3203+21]..[83,3203+34])
+                                                Pexp_ident "Location.none" (typing/datarepr.ml[83,3203+21]..[83,3203+34])
+                                            "type_attributes" (typing/datarepr.ml[84,3239+10]..[84,3239+25])
+                                              expression (typing/datarepr.ml[84,3239+28]..[84,3239+30])
+                                                Pexp_construct "[]" (typing/datarepr.ml[84,3239+28]..[84,3239+30])
+                                                None
+                                            "type_immediate" (typing/datarepr.ml[85,3271+10]..[85,3271+24])
+                                              expression (typing/datarepr.ml[85,3271+27]..[85,3271+34])
+                                                Pexp_construct "Unknown" (typing/datarepr.ml[85,3271+27]..[85,3271+34])
+                                                None
+                                            "type_unboxed_default" (typing/datarepr.ml[86,3307+10]..[86,3307+30])
+                                              expression (typing/datarepr.ml[86,3307+33]..[86,3307+38])
+                                                Pexp_construct "false" (typing/datarepr.ml[86,3307+33]..[86,3307+38])
+                                                None
+                                            "type_uid" (typing/datarepr.ml[87,3347+10]..[87,3347+18])
+                                              expression (typing/datarepr.ml[87,3347+21]..[87,3347+41])
+                                                Pexp_apply
+                                                expression (typing/datarepr.ml[87,3347+21]..[87,3347+27])
+                                                  Pexp_ident "Uid.mk" (typing/datarepr.ml[87,3347+21]..[87,3347+27])
+                                                [
+                                                  <arg>
+                                                  Labelled "current_unit"
+                                                    expression (typing/datarepr.ml[87,3347+29]..[87,3347+41])
+                                                      Pexp_ident "current_unit" (typing/datarepr.ml[87,3347+29]..[87,3347+41])
+                                                ]
+                                          ]
+                                          None
+                                    ]
+                                    expression (typing/datarepr.ml[90,3409+6]..[92,3470+16])
+                                      Pexp_tuple
+                                      [
+                                        expression (typing/datarepr.ml[90,3409+6]..[90,3409+18])
+                                          Pexp_ident "existentials" (typing/datarepr.ml[90,3409+6]..[90,3409+18])
+                                        expression (typing/datarepr.ml[91,3429+6]..[91,3429+39])
+                                          Pexp_construct "::" (typing/datarepr.ml[91,3429+8]..[91,3429+39]) ghost
+                                          Some
+                                            expression (typing/datarepr.ml[91,3429+8]..[91,3429+39]) ghost
+                                              Pexp_tuple
+                                              [
+                                                expression (typing/datarepr.ml[91,3429+8]..[91,3429+37])
+                                                  Pexp_apply
+                                                  expression (typing/datarepr.ml[91,3429+8]..[91,3429+20])
+                                                    Pexp_ident "newgenconstr" (typing/datarepr.ml[91,3429+8]..[91,3429+20])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (typing/datarepr.ml[91,3429+21]..[91,3429+25])
+                                                        Pexp_ident "path" (typing/datarepr.ml[91,3429+21]..[91,3429+25])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (typing/datarepr.ml[91,3429+26]..[91,3429+37])
+                                                        Pexp_ident "type_params" (typing/datarepr.ml[91,3429+26]..[91,3429+37])
+                                                  ]
+                                                expression (typing/datarepr.ml[91,3429+38]..[91,3429+39]) ghost
+                                                  Pexp_construct "[]" (typing/datarepr.ml[91,3429+38]..[91,3429+39]) ghost
+                                                  None
+                                              ]
+                                        expression (typing/datarepr.ml[92,3470+6]..[92,3470+16])
+                                          Pexp_construct "Some" (typing/datarepr.ml[92,3470+6]..[92,3470+10])
+                                          Some
+                                            expression (typing/datarepr.ml[92,3470+11]..[92,3470+16])
+                                              Pexp_ident "tdecl" (typing/datarepr.ml[92,3470+11]..[92,3470+16])
+                                      ]
+                        ]
+    ]
+  structure_item (typing/datarepr.ml[94,3488+0]..[147,5543+33])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[94,3488+4]..[94,3488+22])
+          Ppat_var "constructor_descrs" (typing/datarepr.ml[94,3488+4]..[94,3488+22])
+        expression (typing/datarepr.ml[94,3488+23]..[147,5543+33]) ghost
+          Pexp_fun
+          Labelled "current_unit"
+          None
+          pattern (typing/datarepr.ml[94,3488+24]..[94,3488+36])
+            Ppat_var "current_unit" (typing/datarepr.ml[94,3488+24]..[94,3488+36])
+          expression (typing/datarepr.ml[94,3488+37]..[147,5543+33]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[94,3488+37]..[94,3488+44])
+              Ppat_var "ty_path" (typing/datarepr.ml[94,3488+37]..[94,3488+44])
+            expression (typing/datarepr.ml[94,3488+45]..[147,5543+33]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (typing/datarepr.ml[94,3488+45]..[94,3488+49])
+                Ppat_var "decl" (typing/datarepr.ml[94,3488+45]..[94,3488+49])
+              expression (typing/datarepr.ml[94,3488+50]..[147,5543+33]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (typing/datarepr.ml[94,3488+50]..[94,3488+55])
+                  Ppat_var "cstrs" (typing/datarepr.ml[94,3488+50]..[94,3488+55])
+                expression (typing/datarepr.ml[94,3488+56]..[147,5543+33]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (typing/datarepr.ml[94,3488+56]..[94,3488+59])
+                    Ppat_var "rep" (typing/datarepr.ml[94,3488+56]..[94,3488+59])
+                  expression (typing/datarepr.ml[95,3550+2]..[147,5543+33])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (typing/datarepr.ml[95,3550+6]..[95,3550+12])
+                          Ppat_var "ty_res" (typing/datarepr.ml[95,3550+6]..[95,3550+12])
+                        expression (typing/datarepr.ml[95,3550+15]..[95,3550+52])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[95,3550+15]..[95,3550+27])
+                            Pexp_ident "newgenconstr" (typing/datarepr.ml[95,3550+15]..[95,3550+27])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[95,3550+28]..[95,3550+35])
+                                Pexp_ident "ty_path" (typing/datarepr.ml[95,3550+28]..[95,3550+35])
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[95,3550+36]..[95,3550+52])
+                                Pexp_field
+                                expression (typing/datarepr.ml[95,3550+36]..[95,3550+40])
+                                  Pexp_ident "decl" (typing/datarepr.ml[95,3550+36]..[95,3550+40])
+                                "type_params" (typing/datarepr.ml[95,3550+41]..[95,3550+52])
+                          ]
+                    ]
+                    expression (typing/datarepr.ml[96,3606+2]..[147,5543+33])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (typing/datarepr.ml[96,3606+6]..[96,3606+16])
+                            Ppat_var "num_consts" (typing/datarepr.ml[96,3606+6]..[96,3606+16])
+                          expression (typing/datarepr.ml[96,3606+19]..[96,3606+24])
+                            Pexp_apply
+                            expression (typing/datarepr.ml[96,3606+19]..[96,3606+22])
+                              Pexp_ident "ref" (typing/datarepr.ml[96,3606+19]..[96,3606+22])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[96,3606+23]..[96,3606+24])
+                                  Pexp_constant PConst_int (0,None)
+                            ]
+                        <def>
+                          pattern (typing/datarepr.ml[96,3606+29]..[96,3606+42])
+                            Ppat_var "num_nonconsts" (typing/datarepr.ml[96,3606+29]..[96,3606+42])
+                          expression (typing/datarepr.ml[96,3606+45]..[96,3606+50])
+                            Pexp_apply
+                            expression (typing/datarepr.ml[96,3606+45]..[96,3606+48])
+                              Pexp_ident "ref" (typing/datarepr.ml[96,3606+45]..[96,3606+48])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[96,3606+49]..[96,3606+50])
+                                  Pexp_constant PConst_int (0,None)
+                            ]
+                      ]
+                      expression (typing/datarepr.ml[97,3660+2]..[147,5543+33])
+                        Pexp_sequence
+                        expression (typing/datarepr.ml[97,3660+2]..[100,3776+9])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[97,3660+2]..[97,3660+11])
+                            Pexp_ident "List.iter" (typing/datarepr.ml[97,3660+2]..[97,3660+11])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[98,3672+4]..[99,3697+78])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (typing/datarepr.ml[98,3672+9]..[98,3672+21])
+                                  Ppat_record Open
+                                  [
+                                    "cd_args" (typing/datarepr.ml[98,3672+10]..[98,3672+17]) ghost
+                                      pattern (typing/datarepr.ml[98,3672+10]..[98,3672+17])
+                                        Ppat_var "cd_args" (typing/datarepr.ml[98,3672+10]..[98,3672+17])
+                                  ]
+                                expression (typing/datarepr.ml[99,3697+6]..[99,3697+77])
+                                  Pexp_ifthenelse
+                                  expression (typing/datarepr.ml[99,3697+9]..[99,3697+32])
+                                    Pexp_apply
+                                    expression (typing/datarepr.ml[99,3697+17]..[99,3697+18])
+                                      Pexp_ident "=" (typing/datarepr.ml[99,3697+17]..[99,3697+18])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/datarepr.ml[99,3697+9]..[99,3697+16])
+                                          Pexp_ident "cd_args" (typing/datarepr.ml[99,3697+9]..[99,3697+16])
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/datarepr.ml[99,3697+19]..[99,3697+32])
+                                          Pexp_construct "Cstr_tuple" (typing/datarepr.ml[99,3697+19]..[99,3697+29])
+                                          Some
+                                            expression (typing/datarepr.ml[99,3697+30]..[99,3697+32])
+                                              Pexp_construct "[]" (typing/datarepr.ml[99,3697+30]..[99,3697+32])
+                                              None
+                                    ]
+                                  expression (typing/datarepr.ml[99,3697+38]..[99,3697+53])
+                                    Pexp_apply
+                                    expression (typing/datarepr.ml[99,3697+38]..[99,3697+42])
+                                      Pexp_ident "incr" (typing/datarepr.ml[99,3697+38]..[99,3697+42])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/datarepr.ml[99,3697+43]..[99,3697+53])
+                                          Pexp_ident "num_consts" (typing/datarepr.ml[99,3697+43]..[99,3697+53])
+                                    ]
+                                  Some
+                                    expression (typing/datarepr.ml[99,3697+59]..[99,3697+77])
+                                      Pexp_apply
+                                      expression (typing/datarepr.ml[99,3697+59]..[99,3697+63])
+                                        Pexp_ident "incr" (typing/datarepr.ml[99,3697+59]..[99,3697+63])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[99,3697+64]..[99,3697+77])
+                                            Pexp_ident "num_nonconsts" (typing/datarepr.ml[99,3697+64]..[99,3697+77])
+                                      ]
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[100,3776+4]..[100,3776+9])
+                                Pexp_ident "cstrs" (typing/datarepr.ml[100,3776+4]..[100,3776+9])
+                          ]
+                        expression (typing/datarepr.ml[101,3787+2]..[147,5543+33])
+                          Pexp_let Rec
+                          [
+                            <def>
+                              pattern (typing/datarepr.ml[101,3787+10]..[101,3787+31])
+                                Ppat_var "describe_constructors" (typing/datarepr.ml[101,3787+10]..[101,3787+31])
+                              expression (typing/datarepr.ml[101,3787+32]..[146,5505+34]) ghost
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (typing/datarepr.ml[101,3787+32]..[101,3787+41])
+                                  Ppat_var "idx_const" (typing/datarepr.ml[101,3787+32]..[101,3787+41])
+                                expression (typing/datarepr.ml[101,3787+42]..[146,5505+34]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (typing/datarepr.ml[101,3787+42]..[101,3787+54])
+                                    Ppat_var "idx_nonconst" (typing/datarepr.ml[101,3787+42]..[101,3787+54])
+                                  expression (typing/datarepr.ml[101,3787+57]..[146,5505+34])
+                                    Pexp_function
+                                    [
+                                      <case>
+                                        pattern (typing/datarepr.ml[102,3853+6]..[102,3853+8])
+                                          Ppat_construct "[]" (typing/datarepr.ml[102,3853+6]..[102,3853+8])
+                                          None
+                                        expression (typing/datarepr.ml[102,3853+12]..[102,3853+14])
+                                          Pexp_construct "[]" (typing/datarepr.ml[102,3853+12]..[102,3853+14])
+                                          None
+                                      <case>
+                                        pattern (typing/datarepr.ml[103,3868+6]..[103,3868+68])
+                                          Ppat_construct "::" (typing/datarepr.ml[103,3868+62]..[103,3868+64])
+                                          Some
+                                            []
+                                            pattern (typing/datarepr.ml[103,3868+6]..[103,3868+68]) ghost
+                                              Ppat_tuple
+                                              [
+                                                pattern (typing/datarepr.ml[103,3868+6]..[103,3868+61])
+                                                  Ppat_record Closed
+                                                  [
+                                                    "cd_id" (typing/datarepr.ml[103,3868+7]..[103,3868+12]) ghost
+                                                      pattern (typing/datarepr.ml[103,3868+7]..[103,3868+12])
+                                                        Ppat_var "cd_id" (typing/datarepr.ml[103,3868+7]..[103,3868+12])
+                                                    "cd_args" (typing/datarepr.ml[103,3868+14]..[103,3868+21]) ghost
+                                                      pattern (typing/datarepr.ml[103,3868+14]..[103,3868+21])
+                                                        Ppat_var "cd_args" (typing/datarepr.ml[103,3868+14]..[103,3868+21])
+                                                    "cd_res" (typing/datarepr.ml[103,3868+23]..[103,3868+29]) ghost
+                                                      pattern (typing/datarepr.ml[103,3868+23]..[103,3868+29])
+                                                        Ppat_var "cd_res" (typing/datarepr.ml[103,3868+23]..[103,3868+29])
+                                                    "cd_loc" (typing/datarepr.ml[103,3868+31]..[103,3868+37]) ghost
+                                                      pattern (typing/datarepr.ml[103,3868+31]..[103,3868+37])
+                                                        Ppat_var "cd_loc" (typing/datarepr.ml[103,3868+31]..[103,3868+37])
+                                                    "cd_attributes" (typing/datarepr.ml[103,3868+39]..[103,3868+52]) ghost
+                                                      pattern (typing/datarepr.ml[103,3868+39]..[103,3868+52])
+                                                        Ppat_var "cd_attributes" (typing/datarepr.ml[103,3868+39]..[103,3868+52])
+                                                    "cd_uid" (typing/datarepr.ml[103,3868+54]..[103,3868+60]) ghost
+                                                      pattern (typing/datarepr.ml[103,3868+54]..[103,3868+60])
+                                                        Ppat_var "cd_uid" (typing/datarepr.ml[103,3868+54]..[103,3868+60])
+                                                  ]
+                                                pattern (typing/datarepr.ml[103,3868+65]..[103,3868+68])
+                                                  Ppat_var "rem" (typing/datarepr.ml[103,3868+65]..[103,3868+68])
+                                              ]
+                                        expression (typing/datarepr.ml[104,3940+8]..[146,5505+34])
+                                          Pexp_let Nonrec
+                                          [
+                                            <def>
+                                              pattern (typing/datarepr.ml[104,3940+12]..[104,3940+18])
+                                                Ppat_var "ty_res" (typing/datarepr.ml[104,3940+12]..[104,3940+18])
+                                              expression (typing/datarepr.ml[105,3961+10]..[107,4025+26])
+                                                Pexp_match
+                                                expression (typing/datarepr.ml[105,3961+16]..[105,3961+22])
+                                                  Pexp_ident "cd_res" (typing/datarepr.ml[105,3961+16]..[105,3961+22])
+                                                [
+                                                  <case>
+                                                    pattern (typing/datarepr.ml[106,3989+12]..[106,3989+24])
+                                                      Ppat_construct "Some" (typing/datarepr.ml[106,3989+12]..[106,3989+16])
+                                                      Some
+                                                        []
+                                                        pattern (typing/datarepr.ml[106,3989+17]..[106,3989+24])
+                                                          Ppat_var "ty_res'" (typing/datarepr.ml[106,3989+17]..[106,3989+24])
+                                                    expression (typing/datarepr.ml[106,3989+28]..[106,3989+35])
+                                                      Pexp_ident "ty_res'" (typing/datarepr.ml[106,3989+28]..[106,3989+35])
+                                                  <case>
+                                                    pattern (typing/datarepr.ml[107,4025+12]..[107,4025+16])
+                                                      Ppat_construct "None" (typing/datarepr.ml[107,4025+12]..[107,4025+16])
+                                                      None
+                                                    expression (typing/datarepr.ml[107,4025+20]..[107,4025+26])
+                                                      Pexp_ident "ty_res" (typing/datarepr.ml[107,4025+20]..[107,4025+26])
+                                                ]
+                                          ]
+                                          expression (typing/datarepr.ml[109,4063+8]..[146,5505+34])
+                                            Pexp_let Nonrec
+                                            [
+                                              <def>
+                                                pattern (typing/datarepr.ml[109,4063+12]..[109,4063+28])
+                                                  Ppat_tuple
+                                                  [
+                                                    pattern (typing/datarepr.ml[109,4063+13]..[109,4063+16])
+                                                      Ppat_var "tag" (typing/datarepr.ml[109,4063+13]..[109,4063+16])
+                                                    pattern (typing/datarepr.ml[109,4063+18]..[109,4063+27])
+                                                      Ppat_var "descr_rem" (typing/datarepr.ml[109,4063+18]..[109,4063+27])
+                                                  ]
+                                                expression (typing/datarepr.ml[110,4094+10]..[119,4451+67])
+                                                  Pexp_match
+                                                  expression (typing/datarepr.ml[110,4094+16]..[110,4094+28])
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (typing/datarepr.ml[110,4094+16]..[110,4094+23])
+                                                        Pexp_ident "cd_args" (typing/datarepr.ml[110,4094+16]..[110,4094+23])
+                                                      expression (typing/datarepr.ml[110,4094+25]..[110,4094+28])
+                                                        Pexp_ident "rep" (typing/datarepr.ml[110,4094+25]..[110,4094+28])
+                                                    ]
+                                                  [
+                                                    <case>
+                                                      pattern (typing/datarepr.ml[111,4128+12]..[111,4128+30])
+                                                        Ppat_tuple
+                                                        [
+                                                          pattern (typing/datarepr.ml[111,4128+12]..[111,4128+13])
+                                                            Ppat_any
+                                                          pattern (typing/datarepr.ml[111,4128+15]..[111,4128+30])
+                                                            Ppat_construct "Variant_unboxed" (typing/datarepr.ml[111,4128+15]..[111,4128+30])
+                                                            None
+                                                        ]
+                                                      expression (typing/datarepr.ml[112,4162+12]..[113,4193+30])
+                                                        Pexp_sequence
+                                                        expression (typing/datarepr.ml[112,4162+12]..[112,4162+29])
+                                                          Pexp_assert
+                                                          expression (typing/datarepr.ml[112,4162+19]..[112,4162+29])
+                                                            Pexp_apply
+                                                            expression (typing/datarepr.ml[112,4162+24]..[112,4162+25])
+                                                              Pexp_ident "=" (typing/datarepr.ml[112,4162+24]..[112,4162+25])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/datarepr.ml[112,4162+20]..[112,4162+23])
+                                                                  Pexp_ident "rem" (typing/datarepr.ml[112,4162+20]..[112,4162+23])
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/datarepr.ml[112,4162+26]..[112,4162+28])
+                                                                  Pexp_construct "[]" (typing/datarepr.ml[112,4162+26]..[112,4162+28])
+                                                                  None
+                                                            ]
+                                                        expression (typing/datarepr.ml[113,4193+12]..[113,4193+30])
+                                                          Pexp_tuple
+                                                          [
+                                                            expression (typing/datarepr.ml[113,4193+13]..[113,4193+25])
+                                                              Pexp_construct "Cstr_unboxed" (typing/datarepr.ml[113,4193+13]..[113,4193+25])
+                                                              None
+                                                            expression (typing/datarepr.ml[113,4193+27]..[113,4193+29])
+                                                              Pexp_construct "[]" (typing/datarepr.ml[113,4193+27]..[113,4193+29])
+                                                              None
+                                                          ]
+                                                    <case>
+                                                      pattern (typing/datarepr.ml[114,4224+12]..[114,4224+42])
+                                                        Ppat_tuple
+                                                        [
+                                                          pattern (typing/datarepr.ml[114,4224+12]..[114,4224+25])
+                                                            Ppat_construct "Cstr_tuple" (typing/datarepr.ml[114,4224+12]..[114,4224+22])
+                                                            Some
+                                                              []
+                                                              pattern (typing/datarepr.ml[114,4224+23]..[114,4224+25])
+                                                                Ppat_construct "[]" (typing/datarepr.ml[114,4224+23]..[114,4224+25])
+                                                                None
+                                                          pattern (typing/datarepr.ml[114,4224+27]..[114,4224+42])
+                                                            Ppat_construct "Variant_regular" (typing/datarepr.ml[114,4224+27]..[114,4224+42])
+                                                            None
+                                                        ]
+                                                      expression (typing/datarepr.ml[115,4270+13]..[116,4309+67])
+                                                        Pexp_tuple
+                                                        [
+                                                          expression (typing/datarepr.ml[115,4270+14]..[115,4270+37])
+                                                            Pexp_construct "Cstr_constant" (typing/datarepr.ml[115,4270+14]..[115,4270+27])
+                                                            Some
+                                                              expression (typing/datarepr.ml[115,4270+28]..[115,4270+37])
+                                                                Pexp_ident "idx_const" (typing/datarepr.ml[115,4270+28]..[115,4270+37])
+                                                          expression (typing/datarepr.ml[116,4309+14]..[116,4309+66])
+                                                            Pexp_apply
+                                                            expression (typing/datarepr.ml[116,4309+14]..[116,4309+35])
+                                                              Pexp_ident "describe_constructors" (typing/datarepr.ml[116,4309+14]..[116,4309+35])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/datarepr.ml[116,4309+36]..[116,4309+49])
+                                                                  Pexp_apply
+                                                                  expression (typing/datarepr.ml[116,4309+46]..[116,4309+47])
+                                                                    Pexp_ident "+" (typing/datarepr.ml[116,4309+46]..[116,4309+47])
+                                                                  [
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (typing/datarepr.ml[116,4309+37]..[116,4309+46])
+Pexp_ident "idx_const" (typing/datarepr.ml[116,4309+37]..[116,4309+46])
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (typing/datarepr.ml[116,4309+47]..[116,4309+48])
+Pexp_constant PConst_int (1,None)
+                                                                  ]
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/datarepr.ml[116,4309+50]..[116,4309+62])
+                                                                  Pexp_ident "idx_nonconst" (typing/datarepr.ml[116,4309+50]..[116,4309+62])
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/datarepr.ml[116,4309+63]..[116,4309+66])
+                                                                  Pexp_ident "rem" (typing/datarepr.ml[116,4309+63]..[116,4309+66])
+                                                            ]
+                                                        ]
+                                                    <case>
+                                                      pattern (typing/datarepr.ml[117,4377+12]..[117,4377+30])
+                                                        Ppat_tuple
+                                                        [
+                                                          pattern (typing/datarepr.ml[117,4377+12]..[117,4377+13])
+                                                            Ppat_any
+                                                          pattern (typing/datarepr.ml[117,4377+15]..[117,4377+30])
+                                                            Ppat_construct "Variant_regular" (typing/datarepr.ml[117,4377+15]..[117,4377+30])
+                                                            None
+                                                        ]
+                                                      expression (typing/datarepr.ml[118,4412+13]..[119,4451+67])
+                                                        Pexp_tuple
+                                                        [
+                                                          expression (typing/datarepr.ml[118,4412+14]..[118,4412+37])
+                                                            Pexp_construct "Cstr_block" (typing/datarepr.ml[118,4412+14]..[118,4412+24])
+                                                            Some
+                                                              expression (typing/datarepr.ml[118,4412+25]..[118,4412+37])
+                                                                Pexp_ident "idx_nonconst" (typing/datarepr.ml[118,4412+25]..[118,4412+37])
+                                                          expression (typing/datarepr.ml[119,4451+14]..[119,4451+66])
+                                                            Pexp_apply
+                                                            expression (typing/datarepr.ml[119,4451+14]..[119,4451+35])
+                                                              Pexp_ident "describe_constructors" (typing/datarepr.ml[119,4451+14]..[119,4451+35])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/datarepr.ml[119,4451+36]..[119,4451+45])
+                                                                  Pexp_ident "idx_const" (typing/datarepr.ml[119,4451+36]..[119,4451+45])
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/datarepr.ml[119,4451+46]..[119,4451+62])
+                                                                  Pexp_apply
+                                                                  expression (typing/datarepr.ml[119,4451+59]..[119,4451+60])
+                                                                    Pexp_ident "+" (typing/datarepr.ml[119,4451+59]..[119,4451+60])
+                                                                  [
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (typing/datarepr.ml[119,4451+47]..[119,4451+59])
+Pexp_ident "idx_nonconst" (typing/datarepr.ml[119,4451+47]..[119,4451+59])
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (typing/datarepr.ml[119,4451+60]..[119,4451+61])
+Pexp_constant PConst_int (1,None)
+                                                                  ]
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/datarepr.ml[119,4451+63]..[119,4451+66])
+                                                                  Pexp_ident "rem" (typing/datarepr.ml[119,4451+63]..[119,4451+66])
+                                                            ]
+                                                        ]
+                                                  ]
+                                            ]
+                                            expression (typing/datarepr.ml[120,4522+8]..[146,5505+34])
+                                              Pexp_let Nonrec
+                                              [
+                                                <def>
+                                                  pattern (typing/datarepr.ml[120,4522+12]..[120,4522+21])
+                                                    Ppat_var "cstr_name" (typing/datarepr.ml[120,4522+12]..[120,4522+21])
+                                                  expression (typing/datarepr.ml[120,4522+24]..[120,4522+40])
+                                                    Pexp_apply
+                                                    expression (typing/datarepr.ml[120,4522+24]..[120,4522+34])
+                                                      Pexp_ident "Ident.name" (typing/datarepr.ml[120,4522+24]..[120,4522+34])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (typing/datarepr.ml[120,4522+35]..[120,4522+40])
+                                                          Pexp_ident "cd_id" (typing/datarepr.ml[120,4522+35]..[120,4522+40])
+                                                    ]
+                                              ]
+                                              expression (typing/datarepr.ml[121,4566+8]..[146,5505+34])
+                                                Pexp_let Nonrec
+                                                [
+                                                  <def>
+                                                    pattern (typing/datarepr.ml[121,4566+12]..[121,4566+49])
+                                                      Ppat_tuple
+                                                      [
+                                                        pattern (typing/datarepr.ml[121,4566+12]..[121,4566+24])
+                                                          Ppat_var "existentials" (typing/datarepr.ml[121,4566+12]..[121,4566+24])
+                                                        pattern (typing/datarepr.ml[121,4566+26]..[121,4566+35])
+                                                          Ppat_var "cstr_args" (typing/datarepr.ml[121,4566+26]..[121,4566+35])
+                                                        pattern (typing/datarepr.ml[121,4566+37]..[121,4566+49])
+                                                          Ppat_var "cstr_inlined" (typing/datarepr.ml[121,4566+37]..[121,4566+49])
+                                                      ]
+                                                    expression (typing/datarepr.ml[122,4618+10]..[128,4877+73])
+                                                      Pexp_let Nonrec
+                                                      [
+                                                        <def>
+                                                          pattern (typing/datarepr.ml[122,4618+14]..[122,4618+28])
+                                                            Ppat_var "representation" (typing/datarepr.ml[122,4618+14]..[122,4618+28])
+                                                          expression (typing/datarepr.ml[123,4649+12]..[125,4729+60])
+                                                            Pexp_match
+                                                            expression (typing/datarepr.ml[123,4649+18]..[123,4649+21])
+                                                              Pexp_ident "rep" (typing/datarepr.ml[123,4649+18]..[123,4649+21])
+                                                            [
+                                                              <case>
+                                                                pattern (typing/datarepr.ml[124,4676+14]..[124,4676+29])
+                                                                  Ppat_construct "Variant_unboxed" (typing/datarepr.ml[124,4676+14]..[124,4676+29])
+                                                                  None
+                                                                expression (typing/datarepr.ml[124,4676+33]..[124,4676+52])
+                                                                  Pexp_construct "Record_unboxed" (typing/datarepr.ml[124,4676+33]..[124,4676+47])
+                                                                  Some
+                                                                    expression (typing/datarepr.ml[124,4676+48]..[124,4676+52])
+                                                                      Pexp_construct "true" (typing/datarepr.ml[124,4676+48]..[124,4676+52])
+                                                                      None
+                                                              <case>
+                                                                pattern (typing/datarepr.ml[125,4729+14]..[125,4729+29])
+                                                                  Ppat_construct "Variant_regular" (typing/datarepr.ml[125,4729+14]..[125,4729+29])
+                                                                  None
+                                                                expression (typing/datarepr.ml[125,4729+33]..[125,4729+60])
+                                                                  Pexp_construct "Record_inlined" (typing/datarepr.ml[125,4729+33]..[125,4729+47])
+                                                                  Some
+                                                                    expression (typing/datarepr.ml[125,4729+48]..[125,4729+60])
+                                                                      Pexp_ident "idx_nonconst" (typing/datarepr.ml[125,4729+48]..[125,4729+60])
+                                                            ]
+                                                      ]
+                                                      expression (typing/datarepr.ml[127,4803+10]..[128,4877+73])
+                                                        Pexp_apply
+                                                        expression (typing/datarepr.ml[127,4803+10]..[127,4803+26])
+                                                          Pexp_ident "constructor_args" (typing/datarepr.ml[127,4803+10]..[127,4803+26])
+                                                        [
+                                                          <arg>
+                                                          Labelled "current_unit"
+                                                            expression (typing/datarepr.ml[127,4803+28]..[127,4803+40])
+                                                              Pexp_ident "current_unit" (typing/datarepr.ml[127,4803+28]..[127,4803+40])
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (typing/datarepr.ml[127,4803+41]..[127,4803+58])
+                                                              Pexp_field
+                                                              expression (typing/datarepr.ml[127,4803+41]..[127,4803+45])
+                                                                Pexp_ident "decl" (typing/datarepr.ml[127,4803+41]..[127,4803+45])
+                                                              "type_private" (typing/datarepr.ml[127,4803+46]..[127,4803+58])
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (typing/datarepr.ml[127,4803+59]..[127,4803+66])
+                                                              Pexp_ident "cd_args" (typing/datarepr.ml[127,4803+59]..[127,4803+66])
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (typing/datarepr.ml[127,4803+67]..[127,4803+73])
+                                                              Pexp_ident "cd_res" (typing/datarepr.ml[127,4803+67]..[127,4803+73])
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (typing/datarepr.ml[128,4877+12]..[128,4877+58])
+                                                              Pexp_open Fresh
+                                                              module_expr (typing/datarepr.ml[128,4877+12]..[128,4877+16])
+                                                                Pmod_ident "Path" (typing/datarepr.ml[128,4877+12]..[128,4877+16])
+                                                              expression (typing/datarepr.ml[128,4877+18]..[128,4877+57])
+                                                                Pexp_construct "Pextra_ty" (typing/datarepr.ml[128,4877+18]..[128,4877+27])
+                                                                Some
+                                                                  expression (typing/datarepr.ml[128,4877+28]..[128,4877+57])
+                                                                    Pexp_tuple
+                                                                    [
+                                                                      expression (typing/datarepr.ml[128,4877+29]..[128,4877+36])
+Pexp_ident "ty_path" (typing/datarepr.ml[128,4877+29]..[128,4877+36])
+                                                                      expression (typing/datarepr.ml[128,4877+38]..[128,4877+56])
+Pexp_construct "Pcstr_ty" (typing/datarepr.ml[128,4877+38]..[128,4877+46])
+Some
+  expression (typing/datarepr.ml[128,4877+47]..[128,4877+56])
+    Pexp_ident "cstr_name" (typing/datarepr.ml[128,4877+47]..[128,4877+56])
+                                                                    ]
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (typing/datarepr.ml[128,4877+59]..[128,4877+73])
+                                                              Pexp_ident "representation" (typing/datarepr.ml[128,4877+59]..[128,4877+73])
+                                                        ]
+                                                ]
+                                                expression (typing/datarepr.ml[130,4962+8]..[146,5505+34])
+                                                  Pexp_let Nonrec
+                                                  [
+                                                    <def>
+                                                      pattern (typing/datarepr.ml[130,4962+12]..[130,4962+16])
+                                                        Ppat_var "cstr" (typing/datarepr.ml[130,4962+12]..[130,4962+16])
+                                                      expression (typing/datarepr.ml[131,4981+10]..[145,5490+11])
+                                                        Pexp_record
+                                                        [
+                                                          "cstr_name" (typing/datarepr.ml[131,4981+12]..[131,4981+21]) ghost
+                                                            expression (typing/datarepr.ml[131,4981+12]..[131,4981+21])
+                                                              Pexp_ident "cstr_name" (typing/datarepr.ml[131,4981+12]..[131,4981+21])
+                                                          "cstr_res" (typing/datarepr.ml[132,5004+12]..[132,5004+20])
+                                                            expression (typing/datarepr.ml[132,5004+23]..[132,5004+29])
+                                                              Pexp_ident "ty_res" (typing/datarepr.ml[132,5004+23]..[132,5004+29])
+                                                          "cstr_existentials" (typing/datarepr.ml[133,5035+12]..[133,5035+29])
+                                                            expression (typing/datarepr.ml[133,5035+32]..[133,5035+44])
+                                                              Pexp_ident "existentials" (typing/datarepr.ml[133,5035+32]..[133,5035+44])
+                                                          "cstr_args" (typing/datarepr.ml[134,5081+12]..[134,5081+21]) ghost
+                                                            expression (typing/datarepr.ml[134,5081+12]..[134,5081+21])
+                                                              Pexp_ident "cstr_args" (typing/datarepr.ml[134,5081+12]..[134,5081+21])
+                                                          "cstr_arity" (typing/datarepr.ml[135,5104+12]..[135,5104+22])
+                                                            expression (typing/datarepr.ml[135,5104+25]..[135,5104+46])
+                                                              Pexp_apply
+                                                              expression (typing/datarepr.ml[135,5104+25]..[135,5104+36])
+                                                                Pexp_ident "List.length" (typing/datarepr.ml[135,5104+25]..[135,5104+36])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (typing/datarepr.ml[135,5104+37]..[135,5104+46])
+                                                                    Pexp_ident "cstr_args" (typing/datarepr.ml[135,5104+37]..[135,5104+46])
+                                                              ]
+                                                          "cstr_tag" (typing/datarepr.ml[136,5152+12]..[136,5152+20])
+                                                            expression (typing/datarepr.ml[136,5152+23]..[136,5152+26])
+                                                              Pexp_ident "tag" (typing/datarepr.ml[136,5152+23]..[136,5152+26])
+                                                          "cstr_consts" (typing/datarepr.ml[137,5180+12]..[137,5180+23])
+                                                            expression (typing/datarepr.ml[137,5180+26]..[137,5180+37])
+                                                              Pexp_apply
+                                                              expression (typing/datarepr.ml[137,5180+26]..[137,5180+27])
+                                                                Pexp_ident "!" (typing/datarepr.ml[137,5180+26]..[137,5180+27])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (typing/datarepr.ml[137,5180+27]..[137,5180+37])
+                                                                    Pexp_ident "num_consts" (typing/datarepr.ml[137,5180+27]..[137,5180+37])
+                                                              ]
+                                                          "cstr_nonconsts" (typing/datarepr.ml[138,5219+12]..[138,5219+26])
+                                                            expression (typing/datarepr.ml[138,5219+29]..[138,5219+43])
+                                                              Pexp_apply
+                                                              expression (typing/datarepr.ml[138,5219+29]..[138,5219+30])
+                                                                Pexp_ident "!" (typing/datarepr.ml[138,5219+29]..[138,5219+30])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (typing/datarepr.ml[138,5219+30]..[138,5219+43])
+                                                                    Pexp_ident "num_nonconsts" (typing/datarepr.ml[138,5219+30]..[138,5219+43])
+                                                              ]
+                                                          "cstr_private" (typing/datarepr.ml[139,5264+12]..[139,5264+24])
+                                                            expression (typing/datarepr.ml[139,5264+27]..[139,5264+44])
+                                                              Pexp_field
+                                                              expression (typing/datarepr.ml[139,5264+27]..[139,5264+31])
+                                                                Pexp_ident "decl" (typing/datarepr.ml[139,5264+27]..[139,5264+31])
+                                                              "type_private" (typing/datarepr.ml[139,5264+32]..[139,5264+44])
+                                                          "cstr_generalized" (typing/datarepr.ml[140,5310+12]..[140,5310+28])
+                                                            expression (typing/datarepr.ml[140,5310+31]..[140,5310+45])
+                                                              Pexp_apply
+                                                              expression (typing/datarepr.ml[140,5310+38]..[140,5310+40])
+                                                                Pexp_ident "<>" (typing/datarepr.ml[140,5310+38]..[140,5310+40])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (typing/datarepr.ml[140,5310+31]..[140,5310+37])
+                                                                    Pexp_ident "cd_res" (typing/datarepr.ml[140,5310+31]..[140,5310+37])
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (typing/datarepr.ml[140,5310+41]..[140,5310+45])
+                                                                    Pexp_construct "None" (typing/datarepr.ml[140,5310+41]..[140,5310+45])
+                                                                    None
+                                                              ]
+                                                          "cstr_loc" (typing/datarepr.ml[141,5357+12]..[141,5357+20])
+                                                            expression (typing/datarepr.ml[141,5357+23]..[141,5357+29])
+                                                              Pexp_ident "cd_loc" (typing/datarepr.ml[141,5357+23]..[141,5357+29])
+                                                          "cstr_attributes" (typing/datarepr.ml[142,5388+12]..[142,5388+27])
+                                                            expression (typing/datarepr.ml[142,5388+30]..[142,5388+43])
+                                                              Pexp_ident "cd_attributes" (typing/datarepr.ml[142,5388+30]..[142,5388+43])
+                                                          "cstr_inlined" (typing/datarepr.ml[143,5433+12]..[143,5433+24]) ghost
+                                                            expression (typing/datarepr.ml[143,5433+12]..[143,5433+24])
+                                                              Pexp_ident "cstr_inlined" (typing/datarepr.ml[143,5433+12]..[143,5433+24])
+                                                          "cstr_uid" (typing/datarepr.ml[144,5459+12]..[144,5459+20])
+                                                            expression (typing/datarepr.ml[144,5459+23]..[144,5459+29])
+                                                              Pexp_ident "cd_uid" (typing/datarepr.ml[144,5459+23]..[144,5459+29])
+                                                        ]
+                                                        None
+                                                  ]
+                                                  expression (typing/datarepr.ml[146,5505+8]..[146,5505+34])
+                                                    Pexp_construct "::" (typing/datarepr.ml[146,5505+22]..[146,5505+24])
+                                                    Some
+                                                      expression (typing/datarepr.ml[146,5505+8]..[146,5505+34]) ghost
+                                                        Pexp_tuple
+                                                        [
+                                                          expression (typing/datarepr.ml[146,5505+8]..[146,5505+21])
+                                                            Pexp_tuple
+                                                            [
+                                                              expression (typing/datarepr.ml[146,5505+9]..[146,5505+14])
+                                                                Pexp_ident "cd_id" (typing/datarepr.ml[146,5505+9]..[146,5505+14])
+                                                              expression (typing/datarepr.ml[146,5505+16]..[146,5505+20])
+                                                                Pexp_ident "cstr" (typing/datarepr.ml[146,5505+16]..[146,5505+20])
+                                                            ]
+                                                          expression (typing/datarepr.ml[146,5505+25]..[146,5505+34])
+                                                            Pexp_ident "descr_rem" (typing/datarepr.ml[146,5505+25]..[146,5505+34])
+                                                        ]
+                                    ]
+                          ]
+                          expression (typing/datarepr.ml[147,5543+2]..[147,5543+33])
+                            Pexp_apply
+                            expression (typing/datarepr.ml[147,5543+2]..[147,5543+23])
+                              Pexp_ident "describe_constructors" (typing/datarepr.ml[147,5543+2]..[147,5543+23])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[147,5543+24]..[147,5543+25])
+                                  Pexp_constant PConst_int (0,None)
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[147,5543+26]..[147,5543+27])
+                                  Pexp_constant PConst_int (0,None)
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[147,5543+28]..[147,5543+33])
+                                  Pexp_ident "cstrs" (typing/datarepr.ml[147,5543+28]..[147,5543+33])
+                            ]
+    ]
+  structure_item (typing/datarepr.ml[149,5578+0]..[173,6468+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[149,5578+4]..[149,5578+19])
+          Ppat_var "extension_descr" (typing/datarepr.ml[149,5578+4]..[149,5578+19])
+        expression (typing/datarepr.ml[149,5578+20]..[173,6468+5]) ghost
+          Pexp_fun
+          Labelled "current_unit"
+          None
+          pattern (typing/datarepr.ml[149,5578+21]..[149,5578+33])
+            Ppat_var "current_unit" (typing/datarepr.ml[149,5578+21]..[149,5578+33])
+          expression (typing/datarepr.ml[149,5578+34]..[173,6468+5]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[149,5578+34]..[149,5578+42])
+              Ppat_var "path_ext" (typing/datarepr.ml[149,5578+34]..[149,5578+42])
+            expression (typing/datarepr.ml[149,5578+43]..[173,6468+5]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (typing/datarepr.ml[149,5578+43]..[149,5578+46])
+                Ppat_var "ext" (typing/datarepr.ml[149,5578+43]..[149,5578+46])
+              expression (typing/datarepr.ml[150,5627+2]..[173,6468+5])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (typing/datarepr.ml[150,5627+6]..[150,5627+12])
+                      Ppat_var "ty_res" (typing/datarepr.ml[150,5627+6]..[150,5627+12])
+                    expression (typing/datarepr.ml[151,5642+4]..[153,5708+66])
+                      Pexp_match
+                      expression (typing/datarepr.ml[151,5642+10]..[151,5642+26])
+                        Pexp_field
+                        expression (typing/datarepr.ml[151,5642+10]..[151,5642+13])
+                          Pexp_ident "ext" (typing/datarepr.ml[151,5642+10]..[151,5642+13])
+                        "ext_ret_type" (typing/datarepr.ml[151,5642+14]..[151,5642+26])
+                      [
+                        <case>
+                          pattern (typing/datarepr.ml[152,5674+8]..[152,5674+21])
+                            Ppat_construct "Some" (typing/datarepr.ml[152,5674+8]..[152,5674+12])
+                            Some
+                              []
+                              pattern (typing/datarepr.ml[152,5674+13]..[152,5674+21])
+                                Ppat_var "type_ret" (typing/datarepr.ml[152,5674+13]..[152,5674+21])
+                          expression (typing/datarepr.ml[152,5674+25]..[152,5674+33])
+                            Pexp_ident "type_ret" (typing/datarepr.ml[152,5674+25]..[152,5674+33])
+                        <case>
+                          pattern (typing/datarepr.ml[153,5708+8]..[153,5708+12])
+                            Ppat_construct "None" (typing/datarepr.ml[153,5708+8]..[153,5708+12])
+                            None
+                          expression (typing/datarepr.ml[153,5708+16]..[153,5708+66])
+                            Pexp_apply
+                            expression (typing/datarepr.ml[153,5708+16]..[153,5708+28])
+                              Pexp_ident "newgenconstr" (typing/datarepr.ml[153,5708+16]..[153,5708+28])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[153,5708+29]..[153,5708+46])
+                                  Pexp_field
+                                  expression (typing/datarepr.ml[153,5708+29]..[153,5708+32])
+                                    Pexp_ident "ext" (typing/datarepr.ml[153,5708+29]..[153,5708+32])
+                                  "ext_type_path" (typing/datarepr.ml[153,5708+33]..[153,5708+46])
+                              <arg>
+                              Nolabel
+                                expression (typing/datarepr.ml[153,5708+47]..[153,5708+66])
+                                  Pexp_field
+                                  expression (typing/datarepr.ml[153,5708+47]..[153,5708+50])
+                                    Pexp_ident "ext" (typing/datarepr.ml[153,5708+47]..[153,5708+50])
+                                  "ext_type_params" (typing/datarepr.ml[153,5708+51]..[153,5708+66])
+                            ]
+                      ]
+                ]
+                expression (typing/datarepr.ml[155,5780+2]..[173,6468+5])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (typing/datarepr.ml[155,5780+6]..[155,5780+43])
+                        Ppat_tuple
+                        [
+                          pattern (typing/datarepr.ml[155,5780+6]..[155,5780+18])
+                            Ppat_var "existentials" (typing/datarepr.ml[155,5780+6]..[155,5780+18])
+                          pattern (typing/datarepr.ml[155,5780+20]..[155,5780+29])
+                            Ppat_var "cstr_args" (typing/datarepr.ml[155,5780+20]..[155,5780+29])
+                          pattern (typing/datarepr.ml[155,5780+31]..[155,5780+43])
+                            Ppat_var "cstr_inlined" (typing/datarepr.ml[155,5780+31]..[155,5780+43])
+                        ]
+                      expression (typing/datarepr.ml[156,5826+4]..[157,5907+70])
+                        Pexp_apply
+                        expression (typing/datarepr.ml[156,5826+4]..[156,5826+20])
+                          Pexp_ident "constructor_args" (typing/datarepr.ml[156,5826+4]..[156,5826+20])
+                        [
+                          <arg>
+                          Labelled "current_unit"
+                            expression (typing/datarepr.ml[156,5826+22]..[156,5826+34])
+                              Pexp_ident "current_unit" (typing/datarepr.ml[156,5826+22]..[156,5826+34])
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[156,5826+35]..[156,5826+50])
+                              Pexp_field
+                              expression (typing/datarepr.ml[156,5826+35]..[156,5826+38])
+                                Pexp_ident "ext" (typing/datarepr.ml[156,5826+35]..[156,5826+38])
+                              "ext_private" (typing/datarepr.ml[156,5826+39]..[156,5826+50])
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[156,5826+51]..[156,5826+63])
+                              Pexp_field
+                              expression (typing/datarepr.ml[156,5826+51]..[156,5826+54])
+                                Pexp_ident "ext" (typing/datarepr.ml[156,5826+51]..[156,5826+54])
+                              "ext_args" (typing/datarepr.ml[156,5826+55]..[156,5826+63])
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[156,5826+64]..[156,5826+80])
+                              Pexp_field
+                              expression (typing/datarepr.ml[156,5826+64]..[156,5826+67])
+                                Pexp_ident "ext" (typing/datarepr.ml[156,5826+64]..[156,5826+67])
+                              "ext_ret_type" (typing/datarepr.ml[156,5826+68]..[156,5826+80])
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[157,5907+6]..[157,5907+42])
+                              Pexp_open Fresh
+                              module_expr (typing/datarepr.ml[157,5907+6]..[157,5907+10])
+                                Pmod_ident "Path" (typing/datarepr.ml[157,5907+6]..[157,5907+10])
+                              expression (typing/datarepr.ml[157,5907+12]..[157,5907+41])
+                                Pexp_construct "Pextra_ty" (typing/datarepr.ml[157,5907+12]..[157,5907+21])
+                                Some
+                                  expression (typing/datarepr.ml[157,5907+22]..[157,5907+41])
+                                    Pexp_tuple
+                                    [
+                                      expression (typing/datarepr.ml[157,5907+23]..[157,5907+31])
+                                        Pexp_ident "path_ext" (typing/datarepr.ml[157,5907+23]..[157,5907+31])
+                                      expression (typing/datarepr.ml[157,5907+33]..[157,5907+40])
+                                        Pexp_construct "Pext_ty" (typing/datarepr.ml[157,5907+33]..[157,5907+40])
+                                        None
+                                    ]
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[157,5907+43]..[157,5907+70])
+                              Pexp_construct "Record_extension" (typing/datarepr.ml[157,5907+44]..[157,5907+60])
+                              Some
+                                expression (typing/datarepr.ml[157,5907+61]..[157,5907+69])
+                                  Pexp_ident "path_ext" (typing/datarepr.ml[157,5907+61]..[157,5907+69])
+                        ]
+                  ]
+                  expression (typing/datarepr.ml[159,5983+4]..[173,6468+5])
+                    Pexp_record
+                    [
+                      "cstr_name" (typing/datarepr.ml[159,5983+6]..[159,5983+15])
+                        expression (typing/datarepr.ml[159,5983+18]..[159,5983+36])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[159,5983+18]..[159,5983+27])
+                            Pexp_ident "Path.last" (typing/datarepr.ml[159,5983+18]..[159,5983+27])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[159,5983+28]..[159,5983+36])
+                                Pexp_ident "path_ext" (typing/datarepr.ml[159,5983+28]..[159,5983+36])
+                          ]
+                      "cstr_res" (typing/datarepr.ml[160,6021+6]..[160,6021+14])
+                        expression (typing/datarepr.ml[160,6021+17]..[160,6021+23])
+                          Pexp_ident "ty_res" (typing/datarepr.ml[160,6021+17]..[160,6021+23])
+                      "cstr_existentials" (typing/datarepr.ml[161,6046+6]..[161,6046+23])
+                        expression (typing/datarepr.ml[161,6046+26]..[161,6046+38])
+                          Pexp_ident "existentials" (typing/datarepr.ml[161,6046+26]..[161,6046+38])
+                      "cstr_args" (typing/datarepr.ml[162,6086+6]..[162,6086+15]) ghost
+                        expression (typing/datarepr.ml[162,6086+6]..[162,6086+15])
+                          Pexp_ident "cstr_args" (typing/datarepr.ml[162,6086+6]..[162,6086+15])
+                      "cstr_arity" (typing/datarepr.ml[163,6103+6]..[163,6103+16])
+                        expression (typing/datarepr.ml[163,6103+19]..[163,6103+40])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[163,6103+19]..[163,6103+30])
+                            Pexp_ident "List.length" (typing/datarepr.ml[163,6103+19]..[163,6103+30])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[163,6103+31]..[163,6103+40])
+                                Pexp_ident "cstr_args" (typing/datarepr.ml[163,6103+31]..[163,6103+40])
+                          ]
+                      "cstr_tag" (typing/datarepr.ml[164,6145+6]..[164,6145+14])
+                        expression (typing/datarepr.ml[164,6145+17]..[164,6145+57])
+                          Pexp_construct "Cstr_extension" (typing/datarepr.ml[164,6145+17]..[164,6145+31])
+                          Some
+                            expression (typing/datarepr.ml[164,6145+31]..[164,6145+57])
+                              Pexp_tuple
+                              [
+                                expression (typing/datarepr.ml[164,6145+32]..[164,6145+40])
+                                  Pexp_ident "path_ext" (typing/datarepr.ml[164,6145+32]..[164,6145+40])
+                                expression (typing/datarepr.ml[164,6145+42]..[164,6145+56])
+                                  Pexp_apply
+                                  expression (typing/datarepr.ml[164,6145+52]..[164,6145+53])
+                                    Pexp_ident "=" (typing/datarepr.ml[164,6145+52]..[164,6145+53])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/datarepr.ml[164,6145+42]..[164,6145+51])
+                                        Pexp_ident "cstr_args" (typing/datarepr.ml[164,6145+42]..[164,6145+51])
+                                    <arg>
+                                    Nolabel
+                                      expression (typing/datarepr.ml[164,6145+54]..[164,6145+56])
+                                        Pexp_construct "[]" (typing/datarepr.ml[164,6145+54]..[164,6145+56])
+                                        None
+                                  ]
+                              ]
+                      "cstr_consts" (typing/datarepr.ml[165,6204+6]..[165,6204+17])
+                        expression (typing/datarepr.ml[165,6204+20]..[165,6204+22])
+                          Pexp_constant PConst_int (-1,None)
+                      "cstr_nonconsts" (typing/datarepr.ml[166,6228+6]..[166,6228+20])
+                        expression (typing/datarepr.ml[166,6228+23]..[166,6228+25])
+                          Pexp_constant PConst_int (-1,None)
+                      "cstr_private" (typing/datarepr.ml[167,6255+6]..[167,6255+18])
+                        expression (typing/datarepr.ml[167,6255+21]..[167,6255+36])
+                          Pexp_field
+                          expression (typing/datarepr.ml[167,6255+21]..[167,6255+24])
+                            Pexp_ident "ext" (typing/datarepr.ml[167,6255+21]..[167,6255+24])
+                          "ext_private" (typing/datarepr.ml[167,6255+25]..[167,6255+36])
+                      "cstr_generalized" (typing/datarepr.ml[168,6293+6]..[168,6293+22])
+                        expression (typing/datarepr.ml[168,6293+25]..[168,6293+49])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[168,6293+42]..[168,6293+44])
+                            Pexp_ident "<>" (typing/datarepr.ml[168,6293+42]..[168,6293+44])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[168,6293+25]..[168,6293+41])
+                                Pexp_field
+                                expression (typing/datarepr.ml[168,6293+25]..[168,6293+28])
+                                  Pexp_ident "ext" (typing/datarepr.ml[168,6293+25]..[168,6293+28])
+                                "ext_ret_type" (typing/datarepr.ml[168,6293+29]..[168,6293+41])
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[168,6293+45]..[168,6293+49])
+                                Pexp_construct "None" (typing/datarepr.ml[168,6293+45]..[168,6293+49])
+                                None
+                          ]
+                      "cstr_loc" (typing/datarepr.ml[169,6344+6]..[169,6344+14])
+                        expression (typing/datarepr.ml[169,6344+17]..[169,6344+28])
+                          Pexp_field
+                          expression (typing/datarepr.ml[169,6344+17]..[169,6344+20])
+                            Pexp_ident "ext" (typing/datarepr.ml[169,6344+17]..[169,6344+20])
+                          "ext_loc" (typing/datarepr.ml[169,6344+21]..[169,6344+28])
+                      "cstr_attributes" (typing/datarepr.ml[170,6374+6]..[170,6374+21])
+                        expression (typing/datarepr.ml[170,6374+24]..[170,6374+42])
+                          Pexp_field
+                          expression (typing/datarepr.ml[170,6374+24]..[170,6374+27])
+                            Pexp_ident "ext" (typing/datarepr.ml[170,6374+24]..[170,6374+27])
+                          "ext_attributes" (typing/datarepr.ml[170,6374+28]..[170,6374+42])
+                      "cstr_inlined" (typing/datarepr.ml[171,6418+6]..[171,6418+18]) ghost
+                        expression (typing/datarepr.ml[171,6418+6]..[171,6418+18])
+                          Pexp_ident "cstr_inlined" (typing/datarepr.ml[171,6418+6]..[171,6418+18])
+                      "cstr_uid" (typing/datarepr.ml[172,6438+6]..[172,6438+14])
+                        expression (typing/datarepr.ml[172,6438+17]..[172,6438+28])
+                          Pexp_field
+                          expression (typing/datarepr.ml[172,6438+17]..[172,6438+20])
+                            Pexp_ident "ext" (typing/datarepr.ml[172,6438+17]..[172,6438+20])
+                          "ext_uid" (typing/datarepr.ml[172,6438+21]..[172,6438+28])
+                    ]
+                    None
+    ]
+  structure_item (typing/datarepr.ml[175,6475+0]..[176,6486+73])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[175,6475+4]..[175,6475+8])
+          Ppat_var "none" (typing/datarepr.ml[175,6475+4]..[175,6475+8])
+        expression (typing/datarepr.ml[176,6486+2]..[176,6486+73])
+          Pexp_apply
+          expression (typing/datarepr.ml[176,6486+2]..[176,6486+13])
+            Pexp_ident "create_expr" (typing/datarepr.ml[176,6486+2]..[176,6486+13])
+          [
+            <arg>
+            Nolabel
+              expression (typing/datarepr.ml[176,6486+14]..[176,6486+25])
+                Pexp_construct "Ttuple" (typing/datarepr.ml[176,6486+15]..[176,6486+21])
+                Some
+                  expression (typing/datarepr.ml[176,6486+22]..[176,6486+24])
+                    Pexp_construct "[]" (typing/datarepr.ml[176,6486+22]..[176,6486+24])
+                    None
+            <arg>
+            Labelled "level"
+              expression (typing/datarepr.ml[176,6486+33]..[176,6486+37])
+                Pexp_constant PConst_int (-1,None)
+            <arg>
+            Labelled "scope"
+              expression (typing/datarepr.ml[176,6486+45]..[176,6486+64])
+                Pexp_ident "Btype.generic_level" (typing/datarepr.ml[176,6486+45]..[176,6486+64])
+            <arg>
+            Labelled "id"
+              expression (typing/datarepr.ml[176,6486+69]..[176,6486+73])
+                Pexp_constant PConst_int (-1,None)
+          ]
+    ]
+  structure_item (typing/datarepr.ml[179,6595+0]..[186,6878+3])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[179,6595+4]..[179,6595+15])
+          Ppat_var "dummy_label" (typing/datarepr.ml[179,6595+4]..[179,6595+15])
+        expression (typing/datarepr.ml[180,6613+2]..[186,6878+3])
+          Pexp_record
+          [
+            "lbl_name" (typing/datarepr.ml[180,6613+4]..[180,6613+12])
+              expression (typing/datarepr.ml[180,6613+15]..[180,6613+17])
+                Pexp_constant PConst_string("",(typing/datarepr.ml[180,6613+16]..[180,6613+16]),None)
+            "lbl_res" (typing/datarepr.ml[180,6613+19]..[180,6613+26])
+              expression (typing/datarepr.ml[180,6613+29]..[180,6613+33])
+                Pexp_ident "none" (typing/datarepr.ml[180,6613+29]..[180,6613+33])
+            "lbl_arg" (typing/datarepr.ml[180,6613+35]..[180,6613+42])
+              expression (typing/datarepr.ml[180,6613+45]..[180,6613+49])
+                Pexp_ident "none" (typing/datarepr.ml[180,6613+45]..[180,6613+49])
+            "lbl_mut" (typing/datarepr.ml[180,6613+51]..[180,6613+58])
+              expression (typing/datarepr.ml[180,6613+61]..[180,6613+70])
+                Pexp_construct "Immutable" (typing/datarepr.ml[180,6613+61]..[180,6613+70])
+                None
+            "lbl_pos" (typing/datarepr.ml[181,6685+4]..[181,6685+11])
+              expression (typing/datarepr.ml[181,6685+14]..[181,6685+18])
+                Pexp_constant PConst_int (-1,None)
+            "lbl_all" (typing/datarepr.ml[181,6685+20]..[181,6685+27])
+              expression (typing/datarepr.ml[181,6685+30]..[181,6685+34])
+                Pexp_array
+                []
+            "lbl_repres" (typing/datarepr.ml[181,6685+36]..[181,6685+46])
+              expression (typing/datarepr.ml[181,6685+49]..[181,6685+63])
+                Pexp_construct "Record_regular" (typing/datarepr.ml[181,6685+49]..[181,6685+63])
+                None
+            "lbl_private" (typing/datarepr.ml[182,6750+4]..[182,6750+15])
+              expression (typing/datarepr.ml[182,6750+18]..[182,6750+24])
+                Pexp_construct "Public" (typing/datarepr.ml[182,6750+18]..[182,6750+24])
+                None
+            "lbl_loc" (typing/datarepr.ml[183,6776+4]..[183,6776+11])
+              expression (typing/datarepr.ml[183,6776+14]..[183,6776+27])
+                Pexp_ident "Location.none" (typing/datarepr.ml[183,6776+14]..[183,6776+27])
+            "lbl_attributes" (typing/datarepr.ml[184,6805+4]..[184,6805+18])
+              expression (typing/datarepr.ml[184,6805+21]..[184,6805+23])
+                Pexp_construct "[]" (typing/datarepr.ml[184,6805+21]..[184,6805+23])
+                None
+            "lbl_uid" (typing/datarepr.ml[185,6830+4]..[185,6830+11])
+              expression (typing/datarepr.ml[185,6830+14]..[185,6830+46])
+                Pexp_ident "Uid.internal_not_actually_unique" (typing/datarepr.ml[185,6830+14]..[185,6830+46])
+          ]
+          None
+    ]
+  structure_item (typing/datarepr.ml[188,6883+0]..[208,7567+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[188,6883+4]..[188,6883+16])
+          Ppat_var "label_descrs" (typing/datarepr.ml[188,6883+4]..[188,6883+16])
+        expression (typing/datarepr.ml[188,6883+17]..[208,7567+24]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/datarepr.ml[188,6883+17]..[188,6883+23])
+            Ppat_var "ty_res" (typing/datarepr.ml[188,6883+17]..[188,6883+23])
+          expression (typing/datarepr.ml[188,6883+24]..[208,7567+24]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[188,6883+24]..[188,6883+28])
+              Ppat_var "lbls" (typing/datarepr.ml[188,6883+24]..[188,6883+28])
+            expression (typing/datarepr.ml[188,6883+29]..[208,7567+24]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (typing/datarepr.ml[188,6883+29]..[188,6883+35])
+                Ppat_var "repres" (typing/datarepr.ml[188,6883+29]..[188,6883+35])
+              expression (typing/datarepr.ml[188,6883+36]..[208,7567+24]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (typing/datarepr.ml[188,6883+36]..[188,6883+40])
+                  Ppat_var "priv" (typing/datarepr.ml[188,6883+36]..[188,6883+40])
+                expression (typing/datarepr.ml[189,6926+2]..[208,7567+24])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (typing/datarepr.ml[189,6926+6]..[189,6926+16])
+                        Ppat_var "all_labels" (typing/datarepr.ml[189,6926+6]..[189,6926+16])
+                      expression (typing/datarepr.ml[189,6926+19]..[189,6926+60])
+                        Pexp_apply
+                        expression (typing/datarepr.ml[189,6926+19]..[189,6926+29])
+                          Pexp_ident "Array.make" (typing/datarepr.ml[189,6926+19]..[189,6926+29])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[189,6926+30]..[189,6926+48])
+                              Pexp_apply
+                              expression (typing/datarepr.ml[189,6926+31]..[189,6926+42])
+                                Pexp_ident "List.length" (typing/datarepr.ml[189,6926+31]..[189,6926+42])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (typing/datarepr.ml[189,6926+43]..[189,6926+47])
+                                    Pexp_ident "lbls" (typing/datarepr.ml[189,6926+43]..[189,6926+47])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[189,6926+49]..[189,6926+60])
+                              Pexp_ident "dummy_label" (typing/datarepr.ml[189,6926+49]..[189,6926+60])
+                        ]
+                  ]
+                  expression (typing/datarepr.ml[190,6990+2]..[208,7567+24])
+                    Pexp_let Rec
+                    [
+                      <def>
+                        pattern (typing/datarepr.ml[190,6990+10]..[190,6990+25])
+                          Ppat_var "describe_labels" (typing/datarepr.ml[190,6990+10]..[190,6990+25])
+                        expression (typing/datarepr.ml[190,6990+26]..[207,7509+54]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (typing/datarepr.ml[190,6990+26]..[190,6990+29])
+                            Ppat_var "num" (typing/datarepr.ml[190,6990+26]..[190,6990+29])
+                          expression (typing/datarepr.ml[190,6990+32]..[207,7509+54])
+                            Pexp_function
+                            [
+                              <case>
+                                pattern (typing/datarepr.ml[191,7031+6]..[191,7031+8])
+                                  Ppat_construct "[]" (typing/datarepr.ml[191,7031+6]..[191,7031+8])
+                                  None
+                                expression (typing/datarepr.ml[191,7031+12]..[191,7031+14])
+                                  Pexp_construct "[]" (typing/datarepr.ml[191,7031+12]..[191,7031+14])
+                                  None
+                              <case>
+                                pattern (typing/datarepr.ml[192,7046+6]..[192,7046+15])
+                                  Ppat_construct "::" (typing/datarepr.ml[192,7046+8]..[192,7046+10])
+                                  Some
+                                    []
+                                    pattern (typing/datarepr.ml[192,7046+6]..[192,7046+15]) ghost
+                                      Ppat_tuple
+                                      [
+                                        pattern (typing/datarepr.ml[192,7046+6]..[192,7046+7])
+                                          Ppat_var "l" (typing/datarepr.ml[192,7046+6]..[192,7046+7])
+                                        pattern (typing/datarepr.ml[192,7046+11]..[192,7046+15])
+                                          Ppat_var "rest" (typing/datarepr.ml[192,7046+11]..[192,7046+15])
+                                      ]
+                                expression (typing/datarepr.ml[193,7065+8]..[207,7509+54])
+                                  Pexp_let Nonrec
+                                  [
+                                    <def>
+                                      pattern (typing/datarepr.ml[193,7065+12]..[193,7065+15])
+                                        Ppat_var "lbl" (typing/datarepr.ml[193,7065+12]..[193,7065+15])
+                                      expression (typing/datarepr.ml[194,7083+10]..[205,7461+11])
+                                        Pexp_record
+                                        [
+                                          "lbl_name" (typing/datarepr.ml[194,7083+12]..[194,7083+20])
+                                            expression (typing/datarepr.ml[194,7083+23]..[194,7083+41])
+                                              Pexp_apply
+                                              expression (typing/datarepr.ml[194,7083+23]..[194,7083+33])
+                                                Pexp_ident "Ident.name" (typing/datarepr.ml[194,7083+23]..[194,7083+33])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (typing/datarepr.ml[194,7083+34]..[194,7083+41])
+                                                    Pexp_field
+                                                    expression (typing/datarepr.ml[194,7083+34]..[194,7083+35])
+                                                      Pexp_ident "l" (typing/datarepr.ml[194,7083+34]..[194,7083+35])
+                                                    "ld_id" (typing/datarepr.ml[194,7083+36]..[194,7083+41])
+                                              ]
+                                          "lbl_res" (typing/datarepr.ml[195,7126+12]..[195,7126+19])
+                                            expression (typing/datarepr.ml[195,7126+22]..[195,7126+28])
+                                              Pexp_ident "ty_res" (typing/datarepr.ml[195,7126+22]..[195,7126+28])
+                                          "lbl_arg" (typing/datarepr.ml[196,7156+12]..[196,7156+19])
+                                            expression (typing/datarepr.ml[196,7156+22]..[196,7156+31])
+                                              Pexp_field
+                                              expression (typing/datarepr.ml[196,7156+22]..[196,7156+23])
+                                                Pexp_ident "l" (typing/datarepr.ml[196,7156+22]..[196,7156+23])
+                                              "ld_type" (typing/datarepr.ml[196,7156+24]..[196,7156+31])
+                                          "lbl_mut" (typing/datarepr.ml[197,7189+12]..[197,7189+19])
+                                            expression (typing/datarepr.ml[197,7189+22]..[197,7189+34])
+                                              Pexp_field
+                                              expression (typing/datarepr.ml[197,7189+22]..[197,7189+23])
+                                                Pexp_ident "l" (typing/datarepr.ml[197,7189+22]..[197,7189+23])
+                                              "ld_mutable" (typing/datarepr.ml[197,7189+24]..[197,7189+34])
+                                          "lbl_pos" (typing/datarepr.ml[198,7225+12]..[198,7225+19])
+                                            expression (typing/datarepr.ml[198,7225+22]..[198,7225+25])
+                                              Pexp_ident "num" (typing/datarepr.ml[198,7225+22]..[198,7225+25])
+                                          "lbl_all" (typing/datarepr.ml[199,7252+12]..[199,7252+19])
+                                            expression (typing/datarepr.ml[199,7252+22]..[199,7252+32])
+                                              Pexp_ident "all_labels" (typing/datarepr.ml[199,7252+22]..[199,7252+32])
+                                          "lbl_repres" (typing/datarepr.ml[200,7286+12]..[200,7286+22])
+                                            expression (typing/datarepr.ml[200,7286+25]..[200,7286+31])
+                                              Pexp_ident "repres" (typing/datarepr.ml[200,7286+25]..[200,7286+31])
+                                          "lbl_private" (typing/datarepr.ml[201,7319+12]..[201,7319+23])
+                                            expression (typing/datarepr.ml[201,7319+26]..[201,7319+30])
+                                              Pexp_ident "priv" (typing/datarepr.ml[201,7319+26]..[201,7319+30])
+                                          "lbl_loc" (typing/datarepr.ml[202,7351+12]..[202,7351+19])
+                                            expression (typing/datarepr.ml[202,7351+22]..[202,7351+30])
+                                              Pexp_field
+                                              expression (typing/datarepr.ml[202,7351+22]..[202,7351+23])
+                                                Pexp_ident "l" (typing/datarepr.ml[202,7351+22]..[202,7351+23])
+                                              "ld_loc" (typing/datarepr.ml[202,7351+24]..[202,7351+30])
+                                          "lbl_attributes" (typing/datarepr.ml[203,7383+12]..[203,7383+26])
+                                            expression (typing/datarepr.ml[203,7383+29]..[203,7383+44])
+                                              Pexp_field
+                                              expression (typing/datarepr.ml[203,7383+29]..[203,7383+30])
+                                                Pexp_ident "l" (typing/datarepr.ml[203,7383+29]..[203,7383+30])
+                                              "ld_attributes" (typing/datarepr.ml[203,7383+31]..[203,7383+44])
+                                          "lbl_uid" (typing/datarepr.ml[204,7429+12]..[204,7429+19])
+                                            expression (typing/datarepr.ml[204,7429+22]..[204,7429+30])
+                                              Pexp_field
+                                              expression (typing/datarepr.ml[204,7429+22]..[204,7429+23])
+                                                Pexp_ident "l" (typing/datarepr.ml[204,7429+22]..[204,7429+23])
+                                              "ld_uid" (typing/datarepr.ml[204,7429+24]..[204,7429+30])
+                                        ]
+                                        None
+                                  ]
+                                  expression (typing/datarepr.ml[206,7476+8]..[207,7509+54])
+                                    Pexp_sequence
+                                    expression (typing/datarepr.ml[206,7476+8]..[206,7476+31])
+                                      Pexp_apply
+                                      expression (typing/datarepr.ml[206,7476+8]..[206,7476+31]) ghost
+                                        Pexp_ident "Array.set" (typing/datarepr.ml[206,7476+8]..[206,7476+31]) ghost
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[206,7476+8]..[206,7476+18])
+                                            Pexp_ident "all_labels" (typing/datarepr.ml[206,7476+8]..[206,7476+18])
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[206,7476+20]..[206,7476+23])
+                                            Pexp_ident "num" (typing/datarepr.ml[206,7476+20]..[206,7476+23])
+                                        <arg>
+                                        Nolabel
+                                          expression (typing/datarepr.ml[206,7476+28]..[206,7476+31])
+                                            Pexp_ident "lbl" (typing/datarepr.ml[206,7476+28]..[206,7476+31])
+                                      ]
+                                    expression (typing/datarepr.ml[207,7509+8]..[207,7509+54])
+                                      Pexp_construct "::" (typing/datarepr.ml[207,7509+23]..[207,7509+25])
+                                      Some
+                                        expression (typing/datarepr.ml[207,7509+8]..[207,7509+54]) ghost
+                                          Pexp_tuple
+                                          [
+                                            expression (typing/datarepr.ml[207,7509+8]..[207,7509+22])
+                                              Pexp_tuple
+                                              [
+                                                expression (typing/datarepr.ml[207,7509+9]..[207,7509+16])
+                                                  Pexp_field
+                                                  expression (typing/datarepr.ml[207,7509+9]..[207,7509+10])
+                                                    Pexp_ident "l" (typing/datarepr.ml[207,7509+9]..[207,7509+10])
+                                                  "ld_id" (typing/datarepr.ml[207,7509+11]..[207,7509+16])
+                                                expression (typing/datarepr.ml[207,7509+18]..[207,7509+21])
+                                                  Pexp_ident "lbl" (typing/datarepr.ml[207,7509+18]..[207,7509+21])
+                                              ]
+                                            expression (typing/datarepr.ml[207,7509+26]..[207,7509+54])
+                                              Pexp_apply
+                                              expression (typing/datarepr.ml[207,7509+26]..[207,7509+41])
+                                                Pexp_ident "describe_labels" (typing/datarepr.ml[207,7509+26]..[207,7509+41])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (typing/datarepr.ml[207,7509+42]..[207,7509+49])
+                                                    Pexp_apply
+                                                    expression (typing/datarepr.ml[207,7509+46]..[207,7509+47])
+                                                      Pexp_ident "+" (typing/datarepr.ml[207,7509+46]..[207,7509+47])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (typing/datarepr.ml[207,7509+43]..[207,7509+46])
+                                                          Pexp_ident "num" (typing/datarepr.ml[207,7509+43]..[207,7509+46])
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (typing/datarepr.ml[207,7509+47]..[207,7509+48])
+                                                          Pexp_constant PConst_int (1,None)
+                                                    ]
+                                                <arg>
+                                                Nolabel
+                                                  expression (typing/datarepr.ml[207,7509+50]..[207,7509+54])
+                                                    Pexp_ident "rest" (typing/datarepr.ml[207,7509+50]..[207,7509+54])
+                                              ]
+                                          ]
+                            ]
+                    ]
+                    expression (typing/datarepr.ml[208,7567+2]..[208,7567+24])
+                      Pexp_apply
+                      expression (typing/datarepr.ml[208,7567+2]..[208,7567+17])
+                        Pexp_ident "describe_labels" (typing/datarepr.ml[208,7567+2]..[208,7567+17])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/datarepr.ml[208,7567+18]..[208,7567+19])
+                            Pexp_constant PConst_int (0,None)
+                        <arg>
+                        Nolabel
+                          expression (typing/datarepr.ml[208,7567+20]..[208,7567+24])
+                            Pexp_ident "lbls" (typing/datarepr.ml[208,7567+20]..[208,7567+24])
+                      ]
+    ]
+  structure_item (typing/datarepr.ml[210,7593+0]..[210,7593+26])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (typing/datarepr.ml[210,7593+0]..[210,7593+26])
+          pext_name = "Constr_not_found"
+          pext_kind =
+            Pext_decl
+              []
+              None
+  structure_item (typing/datarepr.ml[212,7621+0]..[222,7969+59])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (typing/datarepr.ml[212,7621+8]..[212,7621+19])
+          Ppat_var "find_constr" (typing/datarepr.ml[212,7621+8]..[212,7621+19])
+        expression (typing/datarepr.ml[212,7621+20]..[222,7969+59]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/datarepr.ml[212,7621+20]..[212,7621+23])
+            Ppat_var "tag" (typing/datarepr.ml[212,7621+20]..[212,7621+23])
+          expression (typing/datarepr.ml[212,7621+24]..[222,7969+59]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[212,7621+24]..[212,7621+33])
+              Ppat_var "num_const" (typing/datarepr.ml[212,7621+24]..[212,7621+33])
+            expression (typing/datarepr.ml[212,7621+34]..[222,7969+59]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (typing/datarepr.ml[212,7621+34]..[212,7621+46])
+                Ppat_var "num_nonconst" (typing/datarepr.ml[212,7621+34]..[212,7621+46])
+              expression (typing/datarepr.ml[212,7621+49]..[222,7969+59])
+                Pexp_function
+                [
+                  <case>
+                    pattern (typing/datarepr.ml[213,7679+4]..[213,7679+6])
+                      Ppat_construct "[]" (typing/datarepr.ml[213,7679+4]..[213,7679+6])
+                      None
+                    expression (typing/datarepr.ml[214,7689+6]..[214,7689+28])
+                      Pexp_apply
+                      expression (typing/datarepr.ml[214,7689+6]..[214,7689+11])
+                        Pexp_ident "raise" (typing/datarepr.ml[214,7689+6]..[214,7689+11])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/datarepr.ml[214,7689+12]..[214,7689+28])
+                            Pexp_construct "Constr_not_found" (typing/datarepr.ml[214,7689+12]..[214,7689+28])
+                            None
+                      ]
+                  <case>
+                    pattern (typing/datarepr.ml[215,7718+4]..[215,7718+45])
+                      Ppat_construct "::" (typing/datarepr.ml[215,7718+39]..[215,7718+41])
+                      Some
+                        []
+                        pattern (typing/datarepr.ml[215,7718+4]..[215,7718+45]) ghost
+                          Ppat_tuple
+                          [
+                            pattern (typing/datarepr.ml[215,7718+4]..[215,7718+37])
+                              Ppat_alias "c" (typing/datarepr.ml[215,7718+36]..[215,7718+37])
+                              pattern (typing/datarepr.ml[215,7718+4]..[215,7718+32])
+                                Ppat_record Open
+                                [
+                                  "cd_args" (typing/datarepr.ml[215,7718+5]..[215,7718+12])
+                                    pattern (typing/datarepr.ml[215,7718+15]..[215,7718+28])
+                                      Ppat_construct "Cstr_tuple" (typing/datarepr.ml[215,7718+15]..[215,7718+25])
+                                      Some
+                                        []
+                                        pattern (typing/datarepr.ml[215,7718+26]..[215,7718+28])
+                                          Ppat_construct "[]" (typing/datarepr.ml[215,7718+26]..[215,7718+28])
+                                          None
+                                ]
+                            pattern (typing/datarepr.ml[215,7718+42]..[215,7718+45])
+                              Ppat_var "rem" (typing/datarepr.ml[215,7718+42]..[215,7718+45])
+                          ]
+                    expression (typing/datarepr.ml[216,7767+6]..[218,7819+59])
+                      Pexp_ifthenelse
+                      expression (typing/datarepr.ml[216,7767+9]..[216,7767+38])
+                        Pexp_apply
+                        expression (typing/datarepr.ml[216,7767+13]..[216,7767+14])
+                          Pexp_ident "=" (typing/datarepr.ml[216,7767+13]..[216,7767+14])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[216,7767+9]..[216,7767+12])
+                              Pexp_ident "tag" (typing/datarepr.ml[216,7767+9]..[216,7767+12])
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[216,7767+15]..[216,7767+38])
+                              Pexp_construct "Cstr_constant" (typing/datarepr.ml[216,7767+15]..[216,7767+28])
+                              Some
+                                expression (typing/datarepr.ml[216,7767+29]..[216,7767+38])
+                                  Pexp_ident "num_const" (typing/datarepr.ml[216,7767+29]..[216,7767+38])
+                        ]
+                      expression (typing/datarepr.ml[217,7806+11]..[217,7806+12])
+                        Pexp_ident "c" (typing/datarepr.ml[217,7806+11]..[217,7806+12])
+                      Some
+                        expression (typing/datarepr.ml[218,7819+11]..[218,7819+59])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[218,7819+11]..[218,7819+22])
+                            Pexp_ident "find_constr" (typing/datarepr.ml[218,7819+11]..[218,7819+22])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[218,7819+23]..[218,7819+26])
+                                Pexp_ident "tag" (typing/datarepr.ml[218,7819+23]..[218,7819+26])
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[218,7819+27]..[218,7819+42])
+                                Pexp_apply
+                                expression (typing/datarepr.ml[218,7819+38]..[218,7819+39])
+                                  Pexp_ident "+" (typing/datarepr.ml[218,7819+38]..[218,7819+39])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/datarepr.ml[218,7819+28]..[218,7819+37])
+                                      Pexp_ident "num_const" (typing/datarepr.ml[218,7819+28]..[218,7819+37])
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/datarepr.ml[218,7819+40]..[218,7819+41])
+                                      Pexp_constant PConst_int (1,None)
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[218,7819+43]..[218,7819+55])
+                                Pexp_ident "num_nonconst" (typing/datarepr.ml[218,7819+43]..[218,7819+55])
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[218,7819+56]..[218,7819+59])
+                                Pexp_ident "rem" (typing/datarepr.ml[218,7819+56]..[218,7819+59])
+                          ]
+                  <case>
+                    pattern (typing/datarepr.ml[219,7879+4]..[219,7879+12])
+                      Ppat_construct "::" (typing/datarepr.ml[219,7879+6]..[219,7879+8])
+                      Some
+                        []
+                        pattern (typing/datarepr.ml[219,7879+4]..[219,7879+12]) ghost
+                          Ppat_tuple
+                          [
+                            pattern (typing/datarepr.ml[219,7879+4]..[219,7879+5])
+                              Ppat_var "c" (typing/datarepr.ml[219,7879+4]..[219,7879+5])
+                            pattern (typing/datarepr.ml[219,7879+9]..[219,7879+12])
+                              Ppat_var "rem" (typing/datarepr.ml[219,7879+9]..[219,7879+12])
+                          ]
+                    expression (typing/datarepr.ml[220,7895+6]..[222,7969+59])
+                      Pexp_ifthenelse
+                      expression (typing/datarepr.ml[220,7895+9]..[220,7895+60])
+                        Pexp_apply
+                        expression (typing/datarepr.ml[220,7895+39]..[220,7895+41])
+                          Pexp_ident "||" (typing/datarepr.ml[220,7895+39]..[220,7895+41])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[220,7895+9]..[220,7895+38])
+                              Pexp_apply
+                              expression (typing/datarepr.ml[220,7895+13]..[220,7895+14])
+                                Pexp_ident "=" (typing/datarepr.ml[220,7895+13]..[220,7895+14])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (typing/datarepr.ml[220,7895+9]..[220,7895+12])
+                                    Pexp_ident "tag" (typing/datarepr.ml[220,7895+9]..[220,7895+12])
+                                <arg>
+                                Nolabel
+                                  expression (typing/datarepr.ml[220,7895+15]..[220,7895+38])
+                                    Pexp_construct "Cstr_block" (typing/datarepr.ml[220,7895+15]..[220,7895+25])
+                                    Some
+                                      expression (typing/datarepr.ml[220,7895+26]..[220,7895+38])
+                                        Pexp_ident "num_nonconst" (typing/datarepr.ml[220,7895+26]..[220,7895+38])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (typing/datarepr.ml[220,7895+42]..[220,7895+60])
+                              Pexp_apply
+                              expression (typing/datarepr.ml[220,7895+46]..[220,7895+47])
+                                Pexp_ident "=" (typing/datarepr.ml[220,7895+46]..[220,7895+47])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (typing/datarepr.ml[220,7895+42]..[220,7895+45])
+                                    Pexp_ident "tag" (typing/datarepr.ml[220,7895+42]..[220,7895+45])
+                                <arg>
+                                Nolabel
+                                  expression (typing/datarepr.ml[220,7895+48]..[220,7895+60])
+                                    Pexp_construct "Cstr_unboxed" (typing/datarepr.ml[220,7895+48]..[220,7895+60])
+                                    None
+                              ]
+                        ]
+                      expression (typing/datarepr.ml[221,7956+11]..[221,7956+12])
+                        Pexp_ident "c" (typing/datarepr.ml[221,7956+11]..[221,7956+12])
+                      Some
+                        expression (typing/datarepr.ml[222,7969+11]..[222,7969+59])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[222,7969+11]..[222,7969+22])
+                            Pexp_ident "find_constr" (typing/datarepr.ml[222,7969+11]..[222,7969+22])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[222,7969+23]..[222,7969+26])
+                                Pexp_ident "tag" (typing/datarepr.ml[222,7969+23]..[222,7969+26])
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[222,7969+27]..[222,7969+36])
+                                Pexp_ident "num_const" (typing/datarepr.ml[222,7969+27]..[222,7969+36])
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[222,7969+37]..[222,7969+55])
+                                Pexp_apply
+                                expression (typing/datarepr.ml[222,7969+51]..[222,7969+52])
+                                  Pexp_ident "+" (typing/datarepr.ml[222,7969+51]..[222,7969+52])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/datarepr.ml[222,7969+38]..[222,7969+50])
+                                      Pexp_ident "num_nonconst" (typing/datarepr.ml[222,7969+38]..[222,7969+50])
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/datarepr.ml[222,7969+53]..[222,7969+54])
+                                      Pexp_constant PConst_int (1,None)
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[222,7969+56]..[222,7969+59])
+                                Pexp_ident "rem" (typing/datarepr.ml[222,7969+56]..[222,7969+59])
+                          ]
+                ]
+    ]
+  structure_item (typing/datarepr.ml[224,8030+0]..[225,8068+30])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[224,8030+4]..[224,8030+22])
+          Ppat_var "find_constr_by_tag" (typing/datarepr.ml[224,8030+4]..[224,8030+22])
+        expression (typing/datarepr.ml[224,8030+23]..[225,8068+30]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/datarepr.ml[224,8030+23]..[224,8030+26])
+            Ppat_var "tag" (typing/datarepr.ml[224,8030+23]..[224,8030+26])
+          expression (typing/datarepr.ml[224,8030+27]..[225,8068+30]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[224,8030+27]..[224,8030+35])
+              Ppat_var "cstrlist" (typing/datarepr.ml[224,8030+27]..[224,8030+35])
+            expression (typing/datarepr.ml[225,8068+2]..[225,8068+30])
+              Pexp_apply
+              expression (typing/datarepr.ml[225,8068+2]..[225,8068+13])
+                Pexp_ident "find_constr" (typing/datarepr.ml[225,8068+2]..[225,8068+13])
+              [
+                <arg>
+                Nolabel
+                  expression (typing/datarepr.ml[225,8068+14]..[225,8068+17])
+                    Pexp_ident "tag" (typing/datarepr.ml[225,8068+14]..[225,8068+17])
+                <arg>
+                Nolabel
+                  expression (typing/datarepr.ml[225,8068+18]..[225,8068+19])
+                    Pexp_constant PConst_int (0,None)
+                <arg>
+                Nolabel
+                  expression (typing/datarepr.ml[225,8068+20]..[225,8068+21])
+                    Pexp_constant PConst_int (0,None)
+                <arg>
+                Nolabel
+                  expression (typing/datarepr.ml[225,8068+22]..[225,8068+30])
+                    Pexp_ident "cstrlist" (typing/datarepr.ml[225,8068+22]..[225,8068+30])
+              ]
+    ]
+  structure_item (typing/datarepr.ml[227,8100+0]..[231,8275+51])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[227,8100+4]..[227,8100+24])
+          Ppat_var "constructors_of_type" (typing/datarepr.ml[227,8100+4]..[227,8100+24])
+        expression (typing/datarepr.ml[227,8100+25]..[231,8275+51]) ghost
+          Pexp_fun
+          Labelled "current_unit"
+          None
+          pattern (typing/datarepr.ml[227,8100+26]..[227,8100+38])
+            Ppat_var "current_unit" (typing/datarepr.ml[227,8100+26]..[227,8100+38])
+          expression (typing/datarepr.ml[227,8100+39]..[231,8275+51]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[227,8100+39]..[227,8100+46])
+              Ppat_var "ty_path" (typing/datarepr.ml[227,8100+39]..[227,8100+46])
+            expression (typing/datarepr.ml[227,8100+47]..[231,8275+51]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (typing/datarepr.ml[227,8100+47]..[227,8100+51])
+                Ppat_var "decl" (typing/datarepr.ml[227,8100+47]..[227,8100+51])
+              expression (typing/datarepr.ml[228,8154+2]..[231,8275+51])
+                Pexp_match
+                expression (typing/datarepr.ml[228,8154+8]..[228,8154+22])
+                  Pexp_field
+                  expression (typing/datarepr.ml[228,8154+8]..[228,8154+12])
+                    Pexp_ident "decl" (typing/datarepr.ml[228,8154+8]..[228,8154+12])
+                  "type_kind" (typing/datarepr.ml[228,8154+13]..[228,8154+22])
+                [
+                  <case>
+                    pattern (typing/datarepr.ml[229,8182+4]..[229,8182+28])
+                      Ppat_construct "Type_variant" (typing/datarepr.ml[229,8182+4]..[229,8182+16])
+                      Some
+                        []
+                        pattern (typing/datarepr.ml[229,8182+17]..[229,8182+28])
+                          Ppat_tuple
+                          [
+                            pattern (typing/datarepr.ml[229,8182+18]..[229,8182+23])
+                              Ppat_var "cstrs" (typing/datarepr.ml[229,8182+18]..[229,8182+23])
+                            pattern (typing/datarepr.ml[229,8182+24]..[229,8182+27])
+                              Ppat_var "rep" (typing/datarepr.ml[229,8182+24]..[229,8182+27])
+                          ]
+                    expression (typing/datarepr.ml[230,8214+5]..[230,8214+60])
+                      Pexp_apply
+                      expression (typing/datarepr.ml[230,8214+5]..[230,8214+23])
+                        Pexp_ident "constructor_descrs" (typing/datarepr.ml[230,8214+5]..[230,8214+23])
+                      [
+                        <arg>
+                        Labelled "current_unit"
+                          expression (typing/datarepr.ml[230,8214+25]..[230,8214+37])
+                            Pexp_ident "current_unit" (typing/datarepr.ml[230,8214+25]..[230,8214+37])
+                        <arg>
+                        Nolabel
+                          expression (typing/datarepr.ml[230,8214+38]..[230,8214+45])
+                            Pexp_ident "ty_path" (typing/datarepr.ml[230,8214+38]..[230,8214+45])
+                        <arg>
+                        Nolabel
+                          expression (typing/datarepr.ml[230,8214+46]..[230,8214+50])
+                            Pexp_ident "decl" (typing/datarepr.ml[230,8214+46]..[230,8214+50])
+                        <arg>
+                        Nolabel
+                          expression (typing/datarepr.ml[230,8214+51]..[230,8214+56])
+                            Pexp_ident "cstrs" (typing/datarepr.ml[230,8214+51]..[230,8214+56])
+                        <arg>
+                        Nolabel
+                          expression (typing/datarepr.ml[230,8214+57]..[230,8214+60])
+                            Pexp_ident "rep" (typing/datarepr.ml[230,8214+57]..[230,8214+60])
+                      ]
+                  <case>
+                    pattern (typing/datarepr.ml[231,8275+4]..[231,8275+45])
+                      Ppat_or
+                      pattern (typing/datarepr.ml[231,8275+4]..[231,8275+33])
+                        Ppat_or
+                        pattern (typing/datarepr.ml[231,8275+4]..[231,8275+17])
+                          Ppat_construct "Type_record" (typing/datarepr.ml[231,8275+4]..[231,8275+15])
+                          Some
+                            []
+                            pattern (typing/datarepr.ml[231,8275+16]..[231,8275+17])
+                              Ppat_any
+                        pattern (typing/datarepr.ml[231,8275+20]..[231,8275+33])
+                          Ppat_construct "Type_abstract" (typing/datarepr.ml[231,8275+20]..[231,8275+33])
+                          None
+                      pattern (typing/datarepr.ml[231,8275+36]..[231,8275+45])
+                        Ppat_construct "Type_open" (typing/datarepr.ml[231,8275+36]..[231,8275+45])
+                        None
+                    expression (typing/datarepr.ml[231,8275+49]..[231,8275+51])
+                      Pexp_construct "[]" (typing/datarepr.ml[231,8275+49]..[231,8275+51])
+                      None
+                ]
+    ]
+  structure_item (typing/datarepr.ml[233,8328+0]..[238,8518+52])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/datarepr.ml[233,8328+4]..[233,8328+18])
+          Ppat_var "labels_of_type" (typing/datarepr.ml[233,8328+4]..[233,8328+18])
+        expression (typing/datarepr.ml[233,8328+19]..[238,8518+52]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/datarepr.ml[233,8328+19]..[233,8328+26])
+            Ppat_var "ty_path" (typing/datarepr.ml[233,8328+19]..[233,8328+26])
+          expression (typing/datarepr.ml[233,8328+27]..[238,8518+52]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/datarepr.ml[233,8328+27]..[233,8328+31])
+              Ppat_var "decl" (typing/datarepr.ml[233,8328+27]..[233,8328+31])
+            expression (typing/datarepr.ml[234,8362+2]..[238,8518+52])
+              Pexp_match
+              expression (typing/datarepr.ml[234,8362+8]..[234,8362+22])
+                Pexp_field
+                expression (typing/datarepr.ml[234,8362+8]..[234,8362+12])
+                  Pexp_ident "decl" (typing/datarepr.ml[234,8362+8]..[234,8362+12])
+                "type_kind" (typing/datarepr.ml[234,8362+13]..[234,8362+22])
+              [
+                <case>
+                  pattern (typing/datarepr.ml[235,8390+4]..[235,8390+28])
+                    Ppat_construct "Type_record" (typing/datarepr.ml[235,8390+4]..[235,8390+15])
+                    Some
+                      []
+                      pattern (typing/datarepr.ml[235,8390+15]..[235,8390+28])
+                        Ppat_tuple
+                        [
+                          pattern (typing/datarepr.ml[235,8390+16]..[235,8390+22])
+                            Ppat_var "labels" (typing/datarepr.ml[235,8390+16]..[235,8390+22])
+                          pattern (typing/datarepr.ml[235,8390+24]..[235,8390+27])
+                            Ppat_var "rep" (typing/datarepr.ml[235,8390+24]..[235,8390+27])
+                        ]
+                  expression (typing/datarepr.ml[236,8422+6]..[237,8481+36])
+                    Pexp_apply
+                    expression (typing/datarepr.ml[236,8422+6]..[236,8422+18])
+                      Pexp_ident "label_descrs" (typing/datarepr.ml[236,8422+6]..[236,8422+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/datarepr.ml[236,8422+19]..[236,8422+58])
+                          Pexp_apply
+                          expression (typing/datarepr.ml[236,8422+20]..[236,8422+32])
+                            Pexp_ident "newgenconstr" (typing/datarepr.ml[236,8422+20]..[236,8422+32])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[236,8422+33]..[236,8422+40])
+                                Pexp_ident "ty_path" (typing/datarepr.ml[236,8422+33]..[236,8422+40])
+                            <arg>
+                            Nolabel
+                              expression (typing/datarepr.ml[236,8422+41]..[236,8422+57])
+                                Pexp_field
+                                expression (typing/datarepr.ml[236,8422+41]..[236,8422+45])
+                                  Pexp_ident "decl" (typing/datarepr.ml[236,8422+41]..[236,8422+45])
+                                "type_params" (typing/datarepr.ml[236,8422+46]..[236,8422+57])
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (typing/datarepr.ml[237,8481+8]..[237,8481+14])
+                          Pexp_ident "labels" (typing/datarepr.ml[237,8481+8]..[237,8481+14])
+                      <arg>
+                      Nolabel
+                        expression (typing/datarepr.ml[237,8481+15]..[237,8481+18])
+                          Pexp_ident "rep" (typing/datarepr.ml[237,8481+15]..[237,8481+18])
+                      <arg>
+                      Nolabel
+                        expression (typing/datarepr.ml[237,8481+19]..[237,8481+36])
+                          Pexp_field
+                          expression (typing/datarepr.ml[237,8481+19]..[237,8481+23])
+                            Pexp_ident "decl" (typing/datarepr.ml[237,8481+19]..[237,8481+23])
+                          "type_private" (typing/datarepr.ml[237,8481+24]..[237,8481+36])
+                    ]
+                <case>
+                  pattern (typing/datarepr.ml[238,8518+4]..[238,8518+46])
+                    Ppat_or
+                    pattern (typing/datarepr.ml[238,8518+4]..[238,8518+34])
+                      Ppat_or
+                      pattern (typing/datarepr.ml[238,8518+4]..[238,8518+18])
+                        Ppat_construct "Type_variant" (typing/datarepr.ml[238,8518+4]..[238,8518+16])
+                        Some
+                          []
+                          pattern (typing/datarepr.ml[238,8518+17]..[238,8518+18])
+                            Ppat_any
+                      pattern (typing/datarepr.ml[238,8518+21]..[238,8518+34])
+                        Ppat_construct "Type_abstract" (typing/datarepr.ml[238,8518+21]..[238,8518+34])
+                        None
+                    pattern (typing/datarepr.ml[238,8518+37]..[238,8518+46])
+                      Ppat_construct "Type_open" (typing/datarepr.ml[238,8518+37]..[238,8518+46])
+                      None
+                  expression (typing/datarepr.ml[238,8518+50]..[238,8518+52])
+                    Pexp_construct "[]" (typing/datarepr.ml[238,8518+50]..[238,8518+52])
+                    None
+              ]
+    ]
+]
+

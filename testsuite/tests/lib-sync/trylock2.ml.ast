@@ -1,0 +1,65 @@
+[
+  structure_item (testsuite/tests/lib-sync/trylock2.ml[6,39+0]..[10,124+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-sync/trylock2.ml[6,39+4]..[6,39+6])
+          Ppat_construct "()" (testsuite/tests/lib-sync/trylock2.ml[6,39+4]..[6,39+6])
+          None
+        expression (testsuite/tests/lib-sync/trylock2.ml[7,48+2]..[10,124+24])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/lib-sync/trylock2.ml[7,48+6]..[7,48+7])
+                Ppat_var "m" (testsuite/tests/lib-sync/trylock2.ml[7,48+6]..[7,48+7])
+              expression (testsuite/tests/lib-sync/trylock2.ml[7,48+10]..[7,48+25])
+                Pexp_apply
+                expression (testsuite/tests/lib-sync/trylock2.ml[7,48+10]..[7,48+22])
+                  Pexp_ident "Mutex.create" (testsuite/tests/lib-sync/trylock2.ml[7,48+10]..[7,48+22])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-sync/trylock2.ml[7,48+23]..[7,48+25])
+                      Pexp_construct "()" (testsuite/tests/lib-sync/trylock2.ml[7,48+23]..[7,48+25])
+                      None
+                ]
+          ]
+          expression (testsuite/tests/lib-sync/trylock2.ml[8,77+2]..[10,124+24])
+            Pexp_sequence
+            expression (testsuite/tests/lib-sync/trylock2.ml[8,77+2]..[8,77+27])
+              Pexp_assert
+              expression (testsuite/tests/lib-sync/trylock2.ml[8,77+9]..[8,77+27])
+                Pexp_apply
+                expression (testsuite/tests/lib-sync/trylock2.ml[8,77+10]..[8,77+24])
+                  Pexp_ident "Mutex.try_lock" (testsuite/tests/lib-sync/trylock2.ml[8,77+10]..[8,77+24])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-sync/trylock2.ml[8,77+25]..[8,77+26])
+                      Pexp_ident "m" (testsuite/tests/lib-sync/trylock2.ml[8,77+25]..[8,77+26])
+                ]
+            expression (testsuite/tests/lib-sync/trylock2.ml[9,106+2]..[10,124+24])
+              Pexp_sequence
+              expression (testsuite/tests/lib-sync/trylock2.ml[9,106+2]..[9,106+16])
+                Pexp_apply
+                expression (testsuite/tests/lib-sync/trylock2.ml[9,106+2]..[9,106+14])
+                  Pexp_ident "Mutex.unlock" (testsuite/tests/lib-sync/trylock2.ml[9,106+2]..[9,106+14])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-sync/trylock2.ml[9,106+15]..[9,106+16])
+                      Pexp_ident "m" (testsuite/tests/lib-sync/trylock2.ml[9,106+15]..[9,106+16])
+                ]
+              expression (testsuite/tests/lib-sync/trylock2.ml[10,124+2]..[10,124+24])
+                Pexp_apply
+                expression (testsuite/tests/lib-sync/trylock2.ml[10,124+2]..[10,124+15])
+                  Pexp_ident "print_endline" (testsuite/tests/lib-sync/trylock2.ml[10,124+2]..[10,124+15])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-sync/trylock2.ml[10,124+16]..[10,124+24])
+                      Pexp_constant PConst_string("passed",(testsuite/tests/lib-sync/trylock2.ml[10,124+17]..[10,124+23]),None)
+                ]
+    ]
+]
+

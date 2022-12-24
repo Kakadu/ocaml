@@ -1,0 +1,950 @@
+[
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[5,24+0]..[14,161+3])
+    Pstr_recmodule
+    [
+      "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[5,24+11]..[5,24+12])
+        module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[5,24+13]..[14,161+3])
+          Pmod_constraint
+          module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[7,67+6]..[14,161+3])
+            Pmod_structure
+            [
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[8,80+2]..[8,80+16])
+                Pstr_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[8,80+7]..[8,80+8]) (testsuite/tests/typing-misc/enrich_typedecl.ml[8,80+2]..[8,80+16])
+                    ptype_params =
+                      []
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_variant
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[8,80+11]..[8,80+12])
+                            "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[8,80+11]..[8,80+12])
+                            []
+                            None
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[8,80+13]..[8,80+16])
+                            "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[8,80+15]..[8,80+16])
+                            []
+                            None
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[10,98+2]..[13,147+13])
+                Pstr_value Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[10,98+6]..[10,98+7])
+                      Ppat_var "f" (testsuite/tests/typing-misc/enrich_typedecl.ml[10,98+6]..[10,98+7])
+                    expression (testsuite/tests/typing-misc/enrich_typedecl.ml[10,98+8]..[13,147+13]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[10,98+8]..[10,98+15])
+                        Ppat_constraint
+                        pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[10,98+9]..[10,98+10])
+                          Ppat_var "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[10,98+9]..[10,98+10])
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[10,98+13]..[10,98+14])
+                          Ptyp_constr "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[10,98+13]..[10,98+14])
+                          []
+                      expression (testsuite/tests/typing-misc/enrich_typedecl.ml[11,116+4]..[13,147+13])
+                        Pexp_match
+                        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[11,116+10]..[11,116+11])
+                          Pexp_ident "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[11,116+10]..[11,116+11])
+                        [
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[12,133+6]..[12,133+7])
+                              Ppat_construct "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[12,133+6]..[12,133+7])
+                              None
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[12,133+11]..[12,133+13])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[12,133+11]..[12,133+13])
+                              None
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[13,147+6]..[13,147+7])
+                              Ppat_construct "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[13,147+6]..[13,147+7])
+                              None
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[13,147+11]..[13,147+13])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[13,147+11]..[13,147+13])
+                              None
+                        ]
+                ]
+            ]
+          module_type (testsuite/tests/typing-misc/enrich_typedecl.ml[5,24+15]..[7,67+3])
+            Pmty_signature
+            [
+              signature_item (testsuite/tests/typing-misc/enrich_typedecl.ml[6,43+2]..[6,43+23])
+                Psig_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[6,43+7]..[6,43+8]) (testsuite/tests/typing-misc/enrich_typedecl.ml[6,43+2]..[6,43+23])
+                    ptype_params =
+                      []
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_abstract
+                    ptype_private = Public
+                    ptype_manifest =
+                      Some
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[6,43+11]..[6,43+23])
+                          Ptyp_tuple
+                          [
+                            core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[6,43+11]..[6,43+14])
+                              Ptyp_constr "int" (testsuite/tests/typing-misc/enrich_typedecl.ml[6,43+11]..[6,43+14])
+                              []
+                            core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[6,43+17]..[6,43+23])
+                              Ptyp_constr "string" (testsuite/tests/typing-misc/enrich_typedecl.ml[6,43+17]..[6,43+23])
+                              []
+                          ]
+                ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[15,167+0]..[35,707+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[15,167+9]..[35,707+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[15,167+9]..[35,707+2])
+          Pexp_constant PConst_string ("\nLines 3-10, characters 6-3:\n 3 | ......struct\n 4 |   type t = A | B\n 5 |\n 6 |   let f (x : t) =\n 7 |     match x with\n 8 |     | A -> ()\n 9 |     | B -> ()\n10 | end..\nError: Signature mismatch:\n       Modules do not match:\n         sig type t = A.t = A | B val f : t -> unit end\n       is not included in\n         sig type t = int * string end\n       Type declarations do not match:\n         type t = A.t = A | B\n       is not included in\n         type t = int * string\n       The type A.t is not equal to the type int * string\n",(testsuite/tests/typing-misc/enrich_typedecl.ml[15,167+11]..[35,707+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[37,712+0]..[46,855+3])
+    Pstr_recmodule
+    [
+      "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[37,712+11]..[37,712+12])
+        module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[37,712+13]..[46,855+3])
+          Pmod_constraint
+          module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[39,748+6]..[46,855+3])
+            Pmod_structure
+            [
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[40,761+2]..[40,761+25])
+                Pstr_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[40,761+10]..[40,761+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[40,761+2]..[40,761+25])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[40,761+7]..[40,761+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_variant
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[40,761+14]..[40,761+21])
+                            "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[40,761+14]..[40,761+15])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[40,761+19]..[40,761+21])
+                                Ptyp_var a
+                            ]
+                            None
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[40,761+22]..[40,761+25])
+                            "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[40,761+24]..[40,761+25])
+                            []
+                            None
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+2]..[45,841+13])
+                Pstr_value Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+6]..[42,788+7])
+                      Ppat_var "f" (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+6]..[42,788+7])
+                    expression (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+8]..[45,841+13]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+8]..[42,788+17])
+                        Ppat_constraint
+                        pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+9]..[42,788+10])
+                          Ppat_var "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+9]..[42,788+10])
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+13]..[42,788+16])
+                          Ptyp_constr "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+15]..[42,788+16])
+                          [
+                            core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[42,788+13]..[42,788+14])
+                              Ptyp_any
+                          ]
+                      expression (testsuite/tests/typing-misc/enrich_typedecl.ml[43,808+4]..[45,841+13])
+                        Pexp_match
+                        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[43,808+10]..[43,808+11])
+                          Pexp_ident "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[43,808+10]..[43,808+11])
+                        [
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[44,825+6]..[44,825+9])
+                              Ppat_construct "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[44,825+6]..[44,825+7])
+                              Some
+                                []
+                                pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[44,825+8]..[44,825+9])
+                                  Ppat_any
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[44,825+13]..[44,825+15])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[44,825+13]..[44,825+15])
+                              None
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[45,841+6]..[45,841+7])
+                              Ppat_construct "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[45,841+6]..[45,841+7])
+                              None
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[45,841+11]..[45,841+13])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[45,841+11]..[45,841+13])
+                              None
+                        ]
+                ]
+            ]
+          module_type (testsuite/tests/typing-misc/enrich_typedecl.ml[37,712+15]..[39,748+3])
+            Pmty_signature
+            [
+              signature_item (testsuite/tests/typing-misc/enrich_typedecl.ml[38,731+2]..[38,731+16])
+                Psig_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[38,731+10]..[38,731+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[38,731+2]..[38,731+16])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[38,731+7]..[38,731+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_abstract
+                    ptype_private = Public
+                    ptype_manifest =
+                      Some
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[38,731+14]..[38,731+16])
+                          Ptyp_var a
+                ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[47,861+0]..[67,1420+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[47,861+9]..[67,1420+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[47,861+9]..[67,1420+2])
+          Pexp_constant PConst_string ("\nLines 3-10, characters 6-3:\n 3 | ......struct\n 4 |   type 'a t = A of 'a | B\n 5 |\n 6 |   let f (x : _ t) =\n 7 |     match x with\n 8 |     | A _ -> ()\n 9 |     | B -> ()\n10 | end..\nError: Signature mismatch:\n       Modules do not match:\n         sig type 'a t = 'a B.t = A of 'a | B val f : 'a t -> unit end\n       is not included in\n         sig type 'a t = 'a end\n       Type declarations do not match:\n         type 'a t = 'a B.t = A of 'a | B\n       is not included in\n         type 'a t = 'a\n       The type 'a B.t is not equal to the type 'a\n",(testsuite/tests/typing-misc/enrich_typedecl.ml[47,861+11]..[67,1420+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[69,1427+0]..[78,1578+3])
+    Pstr_recmodule
+    [
+      "C" (testsuite/tests/typing-misc/enrich_typedecl.ml[69,1427+11]..[69,1427+12])
+        module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[69,1427+13]..[78,1578+3])
+          Pmod_constraint
+          module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[71,1471+6]..[78,1578+3])
+            Pmod_structure
+            [
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[72,1484+2]..[72,1484+25])
+                Pstr_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[72,1484+10]..[72,1484+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[72,1484+2]..[72,1484+25])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[72,1484+7]..[72,1484+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_variant
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[72,1484+14]..[72,1484+21])
+                            "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[72,1484+14]..[72,1484+15])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[72,1484+19]..[72,1484+21])
+                                Ptyp_var a
+                            ]
+                            None
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[72,1484+22]..[72,1484+25])
+                            "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[72,1484+24]..[72,1484+25])
+                            []
+                            None
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+2]..[77,1564+13])
+                Pstr_value Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+6]..[74,1511+7])
+                      Ppat_var "f" (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+6]..[74,1511+7])
+                    expression (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+8]..[77,1564+13]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+8]..[74,1511+17])
+                        Ppat_constraint
+                        pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+9]..[74,1511+10])
+                          Ppat_var "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+9]..[74,1511+10])
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+13]..[74,1511+16])
+                          Ptyp_constr "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+15]..[74,1511+16])
+                          [
+                            core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[74,1511+13]..[74,1511+14])
+                              Ptyp_any
+                          ]
+                      expression (testsuite/tests/typing-misc/enrich_typedecl.ml[75,1531+4]..[77,1564+13])
+                        Pexp_match
+                        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[75,1531+10]..[75,1531+11])
+                          Pexp_ident "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[75,1531+10]..[75,1531+11])
+                        [
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[76,1548+6]..[76,1548+9])
+                              Ppat_construct "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[76,1548+6]..[76,1548+7])
+                              Some
+                                []
+                                pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[76,1548+8]..[76,1548+9])
+                                  Ppat_any
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[76,1548+13]..[76,1548+15])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[76,1548+13]..[76,1548+15])
+                              None
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[77,1564+6]..[77,1564+7])
+                              Ppat_construct "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[77,1564+6]..[77,1564+7])
+                              None
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[77,1564+11]..[77,1564+13])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[77,1564+11]..[77,1564+13])
+                              None
+                        ]
+                ]
+            ]
+          module_type (testsuite/tests/typing-misc/enrich_typedecl.ml[69,1427+15]..[71,1471+3])
+            Pmty_signature
+            [
+              signature_item (testsuite/tests/typing-misc/enrich_typedecl.ml[70,1446+2]..[70,1446+24])
+                Psig_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[70,1446+10]..[70,1446+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[70,1446+2]..[70,1446+24])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[70,1446+7]..[70,1446+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_record
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[70,1446+16]..[70,1446+22])
+                            Immutable
+                            "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[70,1446+16]..[70,1446+17])                            core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[70,1446+20]..[70,1446+22])
+                              Ptyp_var a
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[79,1584+0]..[99,2169+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[79,1584+9]..[99,2169+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[79,1584+9]..[99,2169+2])
+          Pexp_constant PConst_string ("\nLines 3-10, characters 6-3:\n 3 | ......struct\n 4 |   type 'a t = A of 'a | B\n 5 |\n 6 |   let f (x : _ t) =\n 7 |     match x with\n 8 |     | A _ -> ()\n 9 |     | B -> ()\n10 | end..\nError: Signature mismatch:\n       Modules do not match:\n         sig type 'a t = 'a C.t = A of 'a | B val f : 'a t -> unit end\n       is not included in\n         sig type 'a t = { x : 'a; } end\n       Type declarations do not match:\n         type 'a t = 'a C.t = A of 'a | B\n       is not included in\n         type 'a t = { x : 'a; }\n       The first is a variant, but the second is a record.\n",(testsuite/tests/typing-misc/enrich_typedecl.ml[79,1584+11]..[99,2169+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[102,2177+0]..[111,2321+3])
+    Pstr_recmodule
+    [
+      "D" (testsuite/tests/typing-misc/enrich_typedecl.ml[102,2177+11]..[102,2177+12])
+        module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[102,2177+13]..[111,2321+3])
+          Pmod_constraint
+          module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[104,2214+6]..[111,2321+3])
+            Pmod_structure
+            [
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[105,2227+2]..[105,2227+25])
+                Pstr_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[105,2227+10]..[105,2227+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[105,2227+2]..[105,2227+25])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[105,2227+7]..[105,2227+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_variant
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[105,2227+14]..[105,2227+21])
+                            "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[105,2227+14]..[105,2227+15])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[105,2227+19]..[105,2227+21])
+                                Ptyp_var a
+                            ]
+                            None
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[105,2227+22]..[105,2227+25])
+                            "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[105,2227+24]..[105,2227+25])
+                            []
+                            None
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+2]..[110,2307+13])
+                Pstr_value Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+6]..[107,2254+7])
+                      Ppat_var "f" (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+6]..[107,2254+7])
+                    expression (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+8]..[110,2307+13]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+8]..[107,2254+17])
+                        Ppat_constraint
+                        pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+9]..[107,2254+10])
+                          Ppat_var "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+9]..[107,2254+10])
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+13]..[107,2254+16])
+                          Ptyp_constr "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+15]..[107,2254+16])
+                          [
+                            core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[107,2254+13]..[107,2254+14])
+                              Ptyp_any
+                          ]
+                      expression (testsuite/tests/typing-misc/enrich_typedecl.ml[108,2274+4]..[110,2307+13])
+                        Pexp_match
+                        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[108,2274+10]..[108,2274+11])
+                          Pexp_ident "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[108,2274+10]..[108,2274+11])
+                        [
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[109,2291+6]..[109,2291+9])
+                              Ppat_construct "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[109,2291+6]..[109,2291+7])
+                              Some
+                                []
+                                pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[109,2291+8]..[109,2291+9])
+                                  Ppat_any
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[109,2291+13]..[109,2291+15])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[109,2291+13]..[109,2291+15])
+                              None
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[110,2307+6]..[110,2307+7])
+                              Ppat_construct "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[110,2307+6]..[110,2307+7])
+                              None
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[110,2307+11]..[110,2307+13])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[110,2307+11]..[110,2307+13])
+                              None
+                        ]
+                ]
+            ]
+          module_type (testsuite/tests/typing-misc/enrich_typedecl.ml[102,2177+15]..[104,2214+3])
+            Pmty_signature
+            [
+              signature_item (testsuite/tests/typing-misc/enrich_typedecl.ml[103,2196+2]..[103,2196+17])
+                Psig_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[103,2196+10]..[103,2196+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[103,2196+2]..[103,2196+17])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[103,2196+7]..[103,2196+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_abstract
+                    ptype_private = Public
+                    ptype_manifest =
+                      Some
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[103,2196+14]..[103,2196+17])
+                          Ptyp_constr "int" (testsuite/tests/typing-misc/enrich_typedecl.ml[103,2196+14]..[103,2196+17])
+                          []
+                ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[112,2327+0]..[132,2889+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[112,2327+9]..[132,2889+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[112,2327+9]..[132,2889+2])
+          Pexp_constant PConst_string ("\nLines 3-10, characters 6-3:\n 3 | ......struct\n 4 |   type 'a t = A of 'a | B\n 5 |\n 6 |   let f (x : _ t) =\n 7 |     match x with\n 8 |     | A _ -> ()\n 9 |     | B -> ()\n10 | end..\nError: Signature mismatch:\n       Modules do not match:\n         sig type 'a t = 'a D.t = A of 'a | B val f : 'a t -> unit end\n       is not included in\n         sig type 'a t = int end\n       Type declarations do not match:\n         type 'a t = 'a D.t = A of 'a | B\n       is not included in\n         type 'a t = int\n       The type 'a D.t is not equal to the type int\n",(testsuite/tests/typing-misc/enrich_typedecl.ml[112,2327+11]..[132,2889+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[134,2896+0]..[143,3052+3])
+    Pstr_recmodule
+    [
+      "E" (testsuite/tests/typing-misc/enrich_typedecl.ml[134,2896+11]..[134,2896+12])
+        module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[134,2896+13]..[143,3052+3])
+          Pmod_constraint
+          module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[136,2945+6]..[143,3052+3])
+            Pmod_structure
+            [
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[137,2958+2]..[137,2958+25])
+                Pstr_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[137,2958+10]..[137,2958+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[137,2958+2]..[137,2958+25])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[137,2958+7]..[137,2958+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_variant
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[137,2958+14]..[137,2958+21])
+                            "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[137,2958+14]..[137,2958+15])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[137,2958+19]..[137,2958+21])
+                                Ptyp_var a
+                            ]
+                            None
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[137,2958+22]..[137,2958+25])
+                            "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[137,2958+24]..[137,2958+25])
+                            []
+                            None
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+2]..[142,3038+13])
+                Pstr_value Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+6]..[139,2985+7])
+                      Ppat_var "f" (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+6]..[139,2985+7])
+                    expression (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+8]..[142,3038+13]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+8]..[139,2985+17])
+                        Ppat_constraint
+                        pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+9]..[139,2985+10])
+                          Ppat_var "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+9]..[139,2985+10])
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+13]..[139,2985+16])
+                          Ptyp_constr "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+15]..[139,2985+16])
+                          [
+                            core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[139,2985+13]..[139,2985+14])
+                              Ptyp_any
+                          ]
+                      expression (testsuite/tests/typing-misc/enrich_typedecl.ml[140,3005+4]..[142,3038+13])
+                        Pexp_match
+                        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[140,3005+10]..[140,3005+11])
+                          Pexp_ident "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[140,3005+10]..[140,3005+11])
+                        [
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[141,3022+6]..[141,3022+9])
+                              Ppat_construct "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[141,3022+6]..[141,3022+7])
+                              Some
+                                []
+                                pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[141,3022+8]..[141,3022+9])
+                                  Ppat_any
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[141,3022+13]..[141,3022+15])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[141,3022+13]..[141,3022+15])
+                              None
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[142,3038+6]..[142,3038+7])
+                              Ppat_construct "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[142,3038+6]..[142,3038+7])
+                              None
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[142,3038+11]..[142,3038+13])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[142,3038+11]..[142,3038+13])
+                              None
+                        ]
+                ]
+            ]
+          module_type (testsuite/tests/typing-misc/enrich_typedecl.ml[134,2896+15]..[136,2945+3])
+            Pmty_signature
+            [
+              signature_item (testsuite/tests/typing-misc/enrich_typedecl.ml[135,2915+2]..[135,2915+29])
+                Psig_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[135,2915+10]..[135,2915+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[135,2915+2]..[135,2915+29])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[135,2915+7]..[135,2915+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_abstract
+                    ptype_private = Public
+                    ptype_manifest =
+                      Some
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[135,2915+14]..[135,2915+29])
+                          Ptyp_alias "a"
+                          core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[135,2915+14]..[135,2915+23])
+                            Ptyp_variant closed=Open
+                            [
+                              Rtag "Foo" true
+                                []
+                            ]
+                            None
+                ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[144,3058+0]..[164,3672+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[144,3058+9]..[164,3672+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[144,3058+9]..[164,3672+2])
+          Pexp_constant PConst_string ("\nLines 3-10, characters 6-3:\n 3 | ......struct\n 4 |   type 'a t = A of 'a | B\n 5 |\n 6 |   let f (x : _ t) =\n 7 |     match x with\n 8 |     | A _ -> ()\n 9 |     | B -> ()\n10 | end..\nError: Signature mismatch:\n       Modules do not match:\n         sig type 'a t = 'a E.t = A of 'a | B val f : 'a t -> unit end\n       is not included in\n         sig type 'a t = 'a constraint 'a = [> `Foo ] end\n       Type declarations do not match:\n         type 'a t = 'a E.t = A of 'a | B\n       is not included in\n         type 'a t = 'a constraint 'a = [> `Foo ]\n       The type 'a is not equal to the type [> `Foo ]\n",(testsuite/tests/typing-misc/enrich_typedecl.ml[144,3058+11]..[164,3672+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[166,3679+0]..[175,3829+3])
+    Pstr_recmodule
+    [
+      "E2" (testsuite/tests/typing-misc/enrich_typedecl.ml[166,3679+11]..[166,3679+13])
+        module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[166,3679+14]..[175,3829+3])
+          Pmod_constraint
+          module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[168,3722+6]..[175,3829+3])
+            Pmod_structure
+            [
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[169,3735+2]..[169,3735+25])
+                Pstr_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[169,3735+10]..[169,3735+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[169,3735+2]..[169,3735+25])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[169,3735+7]..[169,3735+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_variant
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[169,3735+14]..[169,3735+21])
+                            "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[169,3735+14]..[169,3735+15])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[169,3735+19]..[169,3735+21])
+                                Ptyp_var a
+                            ]
+                            None
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[169,3735+22]..[169,3735+25])
+                            "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[169,3735+24]..[169,3735+25])
+                            []
+                            None
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+2]..[174,3815+13])
+                Pstr_value Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+6]..[171,3762+7])
+                      Ppat_var "f" (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+6]..[171,3762+7])
+                    expression (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+8]..[174,3815+13]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+8]..[171,3762+17])
+                        Ppat_constraint
+                        pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+9]..[171,3762+10])
+                          Ppat_var "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+9]..[171,3762+10])
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+13]..[171,3762+16])
+                          Ptyp_constr "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+15]..[171,3762+16])
+                          [
+                            core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[171,3762+13]..[171,3762+14])
+                              Ptyp_any
+                          ]
+                      expression (testsuite/tests/typing-misc/enrich_typedecl.ml[172,3782+4]..[174,3815+13])
+                        Pexp_match
+                        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[172,3782+10]..[172,3782+11])
+                          Pexp_ident "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[172,3782+10]..[172,3782+11])
+                        [
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[173,3799+6]..[173,3799+9])
+                              Ppat_construct "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[173,3799+6]..[173,3799+7])
+                              Some
+                                []
+                                pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[173,3799+8]..[173,3799+9])
+                                  Ppat_any
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[173,3799+13]..[173,3799+15])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[173,3799+13]..[173,3799+15])
+                              None
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[174,3815+6]..[174,3815+7])
+                              Ppat_construct "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[174,3815+6]..[174,3815+7])
+                              None
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[174,3815+11]..[174,3815+13])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[174,3815+11]..[174,3815+13])
+                              None
+                        ]
+                ]
+            ]
+          module_type (testsuite/tests/typing-misc/enrich_typedecl.ml[166,3679+16]..[168,3722+3])
+            Pmty_signature
+            [
+              signature_item (testsuite/tests/typing-misc/enrich_typedecl.ml[167,3699+2]..[167,3699+22])
+                Psig_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[167,3699+10]..[167,3699+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[167,3699+2]..[167,3699+22])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[167,3699+7]..[167,3699+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_abstract
+                    ptype_private = Public
+                    ptype_manifest =
+                      Some
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[167,3699+14]..[167,3699+22])
+                          Ptyp_variant closed=Closed
+                          [
+                            Rtag "Foo" true
+                              []
+                          ]
+                          None
+                ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[176,3835+0]..[196,4415+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[176,3835+9]..[196,4415+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[176,3835+9]..[196,4415+2])
+          Pexp_constant PConst_string ("\nLines 3-10, characters 6-3:\n 3 | ......struct\n 4 |   type 'a t = A of 'a | B\n 5 |\n 6 |   let f (x : _ t) =\n 7 |     match x with\n 8 |     | A _ -> ()\n 9 |     | B -> ()\n10 | end..\nError: Signature mismatch:\n       Modules do not match:\n         sig type 'a t = 'a E2.t = A of 'a | B val f : 'a t -> unit end\n       is not included in\n         sig type 'a t = [ `Foo ] end\n       Type declarations do not match:\n         type 'a t = 'a E2.t = A of 'a | B\n       is not included in\n         type 'a t = [ `Foo ]\n       The type 'a E2.t is not equal to the type [ `Foo ]\n",(testsuite/tests/typing-misc/enrich_typedecl.ml[176,3835+11]..[196,4415+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[198,4422+0]..[207,4579+3])
+    Pstr_recmodule
+    [
+      "E3" (testsuite/tests/typing-misc/enrich_typedecl.ml[198,4422+11]..[198,4422+13])
+        module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[198,4422+14]..[207,4579+3])
+          Pmod_constraint
+          module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[200,4472+6]..[207,4579+3])
+            Pmod_structure
+            [
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[201,4485+2]..[201,4485+25])
+                Pstr_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[201,4485+10]..[201,4485+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[201,4485+2]..[201,4485+25])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[201,4485+7]..[201,4485+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_variant
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[201,4485+14]..[201,4485+21])
+                            "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[201,4485+14]..[201,4485+15])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[201,4485+19]..[201,4485+21])
+                                Ptyp_var a
+                            ]
+                            None
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[201,4485+22]..[201,4485+25])
+                            "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[201,4485+24]..[201,4485+25])
+                            []
+                            None
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+2]..[206,4565+13])
+                Pstr_value Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+6]..[203,4512+7])
+                      Ppat_var "f" (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+6]..[203,4512+7])
+                    expression (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+8]..[206,4565+13]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+8]..[203,4512+17])
+                        Ppat_constraint
+                        pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+9]..[203,4512+10])
+                          Ppat_var "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+9]..[203,4512+10])
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+13]..[203,4512+16])
+                          Ptyp_constr "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+15]..[203,4512+16])
+                          [
+                            core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[203,4512+13]..[203,4512+14])
+                              Ptyp_any
+                          ]
+                      expression (testsuite/tests/typing-misc/enrich_typedecl.ml[204,4532+4]..[206,4565+13])
+                        Pexp_match
+                        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[204,4532+10]..[204,4532+11])
+                          Pexp_ident "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[204,4532+10]..[204,4532+11])
+                        [
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[205,4549+6]..[205,4549+9])
+                              Ppat_construct "A" (testsuite/tests/typing-misc/enrich_typedecl.ml[205,4549+6]..[205,4549+7])
+                              Some
+                                []
+                                pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[205,4549+8]..[205,4549+9])
+                                  Ppat_any
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[205,4549+13]..[205,4549+15])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[205,4549+13]..[205,4549+15])
+                              None
+                          <case>
+                            pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[206,4565+6]..[206,4565+7])
+                              Ppat_construct "B" (testsuite/tests/typing-misc/enrich_typedecl.ml[206,4565+6]..[206,4565+7])
+                              None
+                            expression (testsuite/tests/typing-misc/enrich_typedecl.ml[206,4565+11]..[206,4565+13])
+                              Pexp_construct "()" (testsuite/tests/typing-misc/enrich_typedecl.ml[206,4565+11]..[206,4565+13])
+                              None
+                        ]
+                ]
+            ]
+          module_type (testsuite/tests/typing-misc/enrich_typedecl.ml[198,4422+16]..[200,4472+3])
+            Pmty_signature
+            [
+              signature_item (testsuite/tests/typing-misc/enrich_typedecl.ml[199,4442+2]..[199,4442+29])
+                Psig_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[199,4442+10]..[199,4442+11]) (testsuite/tests/typing-misc/enrich_typedecl.ml[199,4442+2]..[199,4442+29])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[199,4442+7]..[199,4442+9])
+                          Ptyp_var a
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_abstract
+                    ptype_private = Public
+                    ptype_manifest =
+                      Some
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[199,4442+14]..[199,4442+29])
+                          Ptyp_alias "a"
+                          core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[199,4442+14]..[199,4442+23])
+                            Ptyp_variant closed=Closed
+                            [
+                              Rtag "Foo" true
+                                []
+                            ]
+                            Some
+                              []
+                ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[208,4585+0]..[228,5201+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[208,4585+9]..[228,5201+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[208,4585+9]..[228,5201+2])
+          Pexp_constant PConst_string ("\nLines 3-10, characters 6-3:\n 3 | ......struct\n 4 |   type 'a t = A of 'a | B\n 5 |\n 6 |   let f (x : _ t) =\n 7 |     match x with\n 8 |     | A _ -> ()\n 9 |     | B -> ()\n10 | end..\nError: Signature mismatch:\n       Modules do not match:\n         sig type 'a t = 'a E3.t = A of 'a | B val f : 'a t -> unit end\n       is not included in\n         sig type 'a t = 'a constraint 'a = [< `Foo ] end\n       Type declarations do not match:\n         type 'a t = 'a E3.t = A of 'a | B\n       is not included in\n         type 'a t = 'a constraint 'a = [< `Foo ]\n       The type 'a is not equal to the type [< `Foo ]\n",(testsuite/tests/typing-misc/enrich_typedecl.ml[208,4585+11]..[228,5201+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[231,5209+0]..[239,5456+3])
+    Pstr_recmodule
+    [
+      "F" (testsuite/tests/typing-misc/enrich_typedecl.ml[231,5209+11]..[231,5209+12])
+        module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[231,5209+13]..[239,5456+3])
+          Pmod_constraint
+          module_expr (testsuite/tests/typing-misc/enrich_typedecl.ml[233,5258+6]..[239,5456+3])
+            Pmod_structure
+            [
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[234,5271+2]..[234,5271+29])
+                Pstr_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[234,5271+16]..[234,5271+17]) (testsuite/tests/typing-misc/enrich_typedecl.ml[234,5271+2]..[234,5271+29])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[234,5271+8]..[234,5271+10])
+                          Ptyp_var a
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[234,5271+12]..[234,5271+14])
+                          Ptyp_var b
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_variant
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[234,5271+20]..[234,5271+29])
+                            "Foo" (testsuite/tests/typing-misc/enrich_typedecl.ml[234,5271+20]..[234,5271+23])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[234,5271+27]..[234,5271+29])
+                                Ptyp_var b
+                            ]
+                            None
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+              structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+2]..[238,5394+61])
+                Pstr_value Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+6]..[238,5394+48]) ghost
+                      Ppat_constraint
+                      pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+6]..[238,5394+12])
+                        Ppat_var "coerce" (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+6]..[238,5394+12])
+                      core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+15]..[238,5394+48]) ghost
+                        Ptyp_poly 'a 'b
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+22]..[238,5394+48])
+                          Ptyp_arrow
+                          Nolabel
+                          core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+22]..[238,5394+32])
+                            Ptyp_constr "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+31]..[238,5394+32])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+23]..[238,5394+25])
+                                Ptyp_var a
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+27]..[238,5394+29])
+                                Ptyp_var b
+                            ]
+                          core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+36]..[238,5394+48])
+                            Ptyp_constr "F.t" (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+45]..[238,5394+48])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+37]..[238,5394+39])
+                                Ptyp_var a
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+41]..[238,5394+43])
+                                Ptyp_var b
+                            ]
+                    expression (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+51]..[238,5394+61])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+55]..[238,5394+56])
+                        Ppat_var "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+55]..[238,5394+56])
+                      expression (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+60]..[238,5394+61])
+                        Pexp_ident "x" (testsuite/tests/typing-misc/enrich_typedecl.ml[238,5394+60]..[238,5394+61])
+                ]
+            ]
+          module_type (testsuite/tests/typing-misc/enrich_typedecl.ml[231,5209+15]..[233,5258+3])
+            Pmty_signature
+            [
+              signature_item (testsuite/tests/typing-misc/enrich_typedecl.ml[232,5228+2]..[232,5228+29])
+                Psig_type Rec
+                [
+                  type_declaration "t" (testsuite/tests/typing-misc/enrich_typedecl.ml[232,5228+16]..[232,5228+17]) (testsuite/tests/typing-misc/enrich_typedecl.ml[232,5228+2]..[232,5228+29])
+                    ptype_params =
+                      [
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[232,5228+8]..[232,5228+10])
+                          Ptyp_var a
+                        core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[232,5228+12]..[232,5228+14])
+                          Ptyp_var b
+                      ]
+                    ptype_cstrs =
+                      []
+                    ptype_kind =
+                      Ptype_variant
+                        [
+                          (testsuite/tests/typing-misc/enrich_typedecl.ml[232,5228+20]..[232,5228+29])
+                            "Foo" (testsuite/tests/typing-misc/enrich_typedecl.ml[232,5228+20]..[232,5228+23])
+                            [
+                              core_type (testsuite/tests/typing-misc/enrich_typedecl.ml[232,5228+27]..[232,5228+29])
+                                Ptyp_var a
+                            ]
+                            None
+                        ]
+                    ptype_private = Public
+                    ptype_manifest =
+                      None
+                ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[240,5462+0]..[266,6290+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-misc/enrich_typedecl.ml[240,5462+9]..[266,6290+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-misc/enrich_typedecl.ml[240,5462+9]..[266,6290+2])
+          Pexp_constant PConst_string ("\nLines 3-9, characters 6-3:\n3 | ......struct\n4 |   type ('a, 'b) t = Foo of 'b\n5 |\n6 |   (* this function typechecks properly, which means that we've added the\n7 |      manisfest. *)\n8 |   let coerce : 'a 'b. ('a, 'b) t -> ('a, 'b) F.t = fun x -> x\n9 | end..\nError: Signature mismatch:\n       Modules do not match:\n         sig\n           type ('a, 'b) t = ('a, 'b) F.t = Foo of 'b\n           val coerce : ('a, 'b) t -> ('a, 'b) F.t\n         end\n       is not included in\n         sig type ('a, 'b) t = Foo of 'a end\n       Type declarations do not match:\n         type ('a, 'b) t = ('a, 'b) F.t = Foo of 'b\n       is not included in\n         type ('a, 'b) t = Foo of 'a\n       Constructors do not match:\n         Foo of 'b\n       is not the same as:\n         Foo of 'a\n       The type 'b is not equal to the type 'a\n",(testsuite/tests/typing-misc/enrich_typedecl.ml[240,5462+11]..[266,6290+0]),Some "")
+    ]
+]
+

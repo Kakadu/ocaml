@@ -1,0 +1,2942 @@
+[
+  structure_item (asmcomp/arm/arch.ml[20,1231+0]..[20,1231+11])
+    Pstr_open Fresh
+    module_expr (asmcomp/arm/arch.ml[20,1231+5]..[20,1231+11])
+      Pmod_ident "Format" (asmcomp/arm/arch.ml[20,1231+5]..[20,1231+11])
+  structure_item (asmcomp/arm/arch.ml[22,1244+0]..[22,1244+25])
+    Pstr_type Rec
+    [
+      type_declaration "abi" (asmcomp/arm/arch.ml[22,1244+5]..[22,1244+8]) (asmcomp/arm/arch.ml[22,1244+0]..[22,1244+25])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/arm/arch.ml[22,1244+11]..[22,1244+15])
+                "EABI" (asmcomp/arm/arch.ml[22,1244+11]..[22,1244+15])
+                []
+                None
+              (asmcomp/arm/arch.ml[22,1244+16]..[22,1244+25])
+                "EABI_HF" (asmcomp/arm/arch.ml[22,1244+18]..[22,1244+25])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/arm/arch.ml[23,1270+0]..[23,1270+69])
+    Pstr_type Rec
+    [
+      type_declaration "arch" (asmcomp/arm/arch.ml[23,1270+5]..[23,1270+9]) (asmcomp/arm/arch.ml[23,1270+0]..[23,1270+69])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/arm/arch.ml[23,1270+12]..[23,1270+17])
+                "ARMv4" (asmcomp/arm/arch.ml[23,1270+12]..[23,1270+17])
+                []
+                None
+              (asmcomp/arm/arch.ml[23,1270+18]..[23,1270+25])
+                "ARMv5" (asmcomp/arm/arch.ml[23,1270+20]..[23,1270+25])
+                []
+                None
+              (asmcomp/arm/arch.ml[23,1270+26]..[23,1270+35])
+                "ARMv5TE" (asmcomp/arm/arch.ml[23,1270+28]..[23,1270+35])
+                []
+                None
+              (asmcomp/arm/arch.ml[23,1270+36]..[23,1270+43])
+                "ARMv6" (asmcomp/arm/arch.ml[23,1270+38]..[23,1270+43])
+                []
+                None
+              (asmcomp/arm/arch.ml[23,1270+44]..[23,1270+53])
+                "ARMv6T2" (asmcomp/arm/arch.ml[23,1270+46]..[23,1270+53])
+                []
+                None
+              (asmcomp/arm/arch.ml[23,1270+54]..[23,1270+61])
+                "ARMv7" (asmcomp/arm/arch.ml[23,1270+56]..[23,1270+61])
+                []
+                None
+              (asmcomp/arm/arch.ml[23,1270+62]..[23,1270+69])
+                "ARMv8" (asmcomp/arm/arch.ml[23,1270+64]..[23,1270+69])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/arm/arch.ml[24,1340+0]..[24,1340+43])
+    Pstr_type Rec
+    [
+      type_declaration "fpu" (asmcomp/arm/arch.ml[24,1340+5]..[24,1340+8]) (asmcomp/arm/arch.ml[24,1340+0]..[24,1340+43])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/arm/arch.ml[24,1340+11]..[24,1340+15])
+                "Soft" (asmcomp/arm/arch.ml[24,1340+11]..[24,1340+15])
+                []
+                None
+              (asmcomp/arm/arch.ml[24,1340+16]..[24,1340+23])
+                "VFPv2" (asmcomp/arm/arch.ml[24,1340+18]..[24,1340+23])
+                []
+                None
+              (asmcomp/arm/arch.ml[24,1340+24]..[24,1340+35])
+                "VFPv3_D16" (asmcomp/arm/arch.ml[24,1340+26]..[24,1340+35])
+                []
+                None
+              (asmcomp/arm/arch.ml[24,1340+36]..[24,1340+43])
+                "VFPv3" (asmcomp/arm/arch.ml[24,1340+38]..[24,1340+43])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/arm/arch.ml[26,1385+0]..[30,1500+21])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[26,1385+4]..[26,1385+7])
+          Ppat_var "abi" (asmcomp/arm/arch.ml[26,1385+4]..[26,1385+7])
+        expression (asmcomp/arm/arch.ml[27,1395+2]..[30,1500+21])
+          Pexp_match
+          expression (asmcomp/arm/arch.ml[27,1395+8]..[27,1395+21])
+            Pexp_ident "Config.system" (asmcomp/arm/arch.ml[27,1395+8]..[27,1395+21])
+          [
+            <case>
+              pattern (asmcomp/arm/arch.ml[28,1422+4]..[28,1422+28])
+                Ppat_or
+                pattern (asmcomp/arm/arch.ml[28,1422+4]..[28,1422+16])
+                  Ppat_constant PConst_string("linux_eabi",(asmcomp/arm/arch.ml[28,1422+5]..[28,1422+15]),None)
+                pattern (asmcomp/arm/arch.ml[28,1422+19]..[28,1422+28])
+                  Ppat_constant PConst_string("freebsd",(asmcomp/arm/arch.ml[28,1422+20]..[28,1422+27]),None)
+              expression (asmcomp/arm/arch.ml[28,1422+32]..[28,1422+36])
+                Pexp_construct "EABI" (asmcomp/arm/arch.ml[28,1422+32]..[28,1422+36])
+                None
+            <case>
+              pattern (asmcomp/arm/arch.ml[29,1459+4]..[29,1459+29])
+                Ppat_or
+                pattern (asmcomp/arm/arch.ml[29,1459+4]..[29,1459+18])
+                  Ppat_constant PConst_string("linux_eabihf",(asmcomp/arm/arch.ml[29,1459+5]..[29,1459+17]),None)
+                pattern (asmcomp/arm/arch.ml[29,1459+21]..[29,1459+29])
+                  Ppat_constant PConst_string("netbsd",(asmcomp/arm/arch.ml[29,1459+22]..[29,1459+28]),None)
+              expression (asmcomp/arm/arch.ml[29,1459+33]..[29,1459+40])
+                Pexp_construct "EABI_HF" (asmcomp/arm/arch.ml[29,1459+33]..[29,1459+40])
+                None
+            <case>
+              pattern (asmcomp/arm/arch.ml[30,1500+4]..[30,1500+5])
+                Ppat_any
+              expression (asmcomp/arm/arch.ml[30,1500+9]..[30,1500+21])
+                Pexp_assert
+                expression (asmcomp/arm/arch.ml[30,1500+16]..[30,1500+21])
+                  Pexp_construct "false" (asmcomp/arm/arch.ml[30,1500+16]..[30,1500+21])
+                  None
+          ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[32,1523+0]..[39,1695+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[32,1523+4]..[32,1523+18])
+          Ppat_var "string_of_arch" (asmcomp/arm/arch.ml[32,1523+4]..[32,1523+18])
+        expression (asmcomp/arm/arch.ml[32,1523+21]..[39,1695+22])
+          Pexp_function
+          [
+            <case>
+              pattern (asmcomp/arm/arch.ml[33,1553+4]..[33,1553+9])
+                Ppat_construct "ARMv4" (asmcomp/arm/arch.ml[33,1553+4]..[33,1553+9])
+                None
+              expression (asmcomp/arm/arch.ml[33,1553+15]..[33,1553+22])
+                Pexp_constant PConst_string("armv4",(asmcomp/arm/arch.ml[33,1553+16]..[33,1553+21]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[34,1576+4]..[34,1576+9])
+                Ppat_construct "ARMv5" (asmcomp/arm/arch.ml[34,1576+4]..[34,1576+9])
+                None
+              expression (asmcomp/arm/arch.ml[34,1576+15]..[34,1576+22])
+                Pexp_constant PConst_string("armv5",(asmcomp/arm/arch.ml[34,1576+16]..[34,1576+21]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[35,1599+4]..[35,1599+11])
+                Ppat_construct "ARMv5TE" (asmcomp/arm/arch.ml[35,1599+4]..[35,1599+11])
+                None
+              expression (asmcomp/arm/arch.ml[35,1599+15]..[35,1599+24])
+                Pexp_constant PConst_string("armv5te",(asmcomp/arm/arch.ml[35,1599+16]..[35,1599+23]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[36,1624+4]..[36,1624+9])
+                Ppat_construct "ARMv6" (asmcomp/arm/arch.ml[36,1624+4]..[36,1624+9])
+                None
+              expression (asmcomp/arm/arch.ml[36,1624+15]..[36,1624+22])
+                Pexp_constant PConst_string("armv6",(asmcomp/arm/arch.ml[36,1624+16]..[36,1624+21]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[37,1647+4]..[37,1647+11])
+                Ppat_construct "ARMv6T2" (asmcomp/arm/arch.ml[37,1647+4]..[37,1647+11])
+                None
+              expression (asmcomp/arm/arch.ml[37,1647+15]..[37,1647+24])
+                Pexp_constant PConst_string("armv6t2",(asmcomp/arm/arch.ml[37,1647+16]..[37,1647+23]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[38,1672+4]..[38,1672+9])
+                Ppat_construct "ARMv7" (asmcomp/arm/arch.ml[38,1672+4]..[38,1672+9])
+                None
+              expression (asmcomp/arm/arch.ml[38,1672+15]..[38,1672+22])
+                Pexp_constant PConst_string("armv7",(asmcomp/arm/arch.ml[38,1672+16]..[38,1672+21]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[39,1695+4]..[39,1695+9])
+                Ppat_construct "ARMv8" (asmcomp/arm/arch.ml[39,1695+4]..[39,1695+9])
+                None
+              expression (asmcomp/arm/arch.ml[39,1695+15]..[39,1695+22])
+                Pexp_constant PConst_string("armv8",(asmcomp/arm/arch.ml[39,1695+16]..[39,1695+21]),None)
+          ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[41,1719+0]..[45,1826+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[41,1719+4]..[41,1719+17])
+          Ppat_var "string_of_fpu" (asmcomp/arm/arch.ml[41,1719+4]..[41,1719+17])
+        expression (asmcomp/arm/arch.ml[41,1719+20]..[45,1826+24])
+          Pexp_function
+          [
+            <case>
+              pattern (asmcomp/arm/arch.ml[42,1748+4]..[42,1748+8])
+                Ppat_construct "Soft" (asmcomp/arm/arch.ml[42,1748+4]..[42,1748+8])
+                None
+              expression (asmcomp/arm/arch.ml[42,1748+17]..[42,1748+23])
+                Pexp_constant PConst_string("soft",(asmcomp/arm/arch.ml[42,1748+18]..[42,1748+22]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[43,1772+4]..[43,1772+9])
+                Ppat_construct "VFPv2" (asmcomp/arm/arch.ml[43,1772+4]..[43,1772+9])
+                None
+              expression (asmcomp/arm/arch.ml[43,1772+17]..[43,1772+24])
+                Pexp_constant PConst_string("vfpv2",(asmcomp/arm/arch.ml[43,1772+18]..[43,1772+23]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[44,1797+4]..[44,1797+13])
+                Ppat_construct "VFPv3_D16" (asmcomp/arm/arch.ml[44,1797+4]..[44,1797+13])
+                None
+              expression (asmcomp/arm/arch.ml[44,1797+17]..[44,1797+28])
+                Pexp_constant PConst_string("vfpv3-d16",(asmcomp/arm/arch.ml[44,1797+18]..[44,1797+27]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[45,1826+4]..[45,1826+9])
+                Ppat_construct "VFPv3" (asmcomp/arm/arch.ml[45,1826+4]..[45,1826+9])
+                None
+              expression (asmcomp/arm/arch.ml[45,1826+17]..[45,1826+24])
+                Pexp_constant PConst_string("vfpv3",(asmcomp/arm/arch.ml[45,1826+18]..[45,1826+23]),None)
+          ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[49,1897+0]..[64,2580+44])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[49,1897+4]..[49,1897+22])
+          Ppat_tuple
+          [
+            pattern (asmcomp/arm/arch.ml[49,1897+5]..[49,1897+9])
+              Ppat_var "arch" (asmcomp/arm/arch.ml[49,1897+5]..[49,1897+9])
+            pattern (asmcomp/arm/arch.ml[49,1897+11]..[49,1897+14])
+              Ppat_var "fpu" (asmcomp/arm/arch.ml[49,1897+11]..[49,1897+14])
+            pattern (asmcomp/arm/arch.ml[49,1897+16]..[49,1897+21])
+              Ppat_var "thumb" (asmcomp/arm/arch.ml[49,1897+16]..[49,1897+21])
+          ]
+        expression (asmcomp/arm/arch.ml[50,1922+2]..[64,2580+44])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (asmcomp/arm/arch.ml[50,1922+6]..[50,1922+36])
+                Ppat_tuple
+                [
+                  pattern (asmcomp/arm/arch.ml[50,1922+7]..[50,1922+15])
+                    Ppat_var "def_arch" (asmcomp/arm/arch.ml[50,1922+7]..[50,1922+15])
+                  pattern (asmcomp/arm/arch.ml[50,1922+17]..[50,1922+24])
+                    Ppat_var "def_fpu" (asmcomp/arm/arch.ml[50,1922+17]..[50,1922+24])
+                  pattern (asmcomp/arm/arch.ml[50,1922+26]..[50,1922+35])
+                    Ppat_var "def_thumb" (asmcomp/arm/arch.ml[50,1922+26]..[50,1922+35])
+                ]
+              expression (asmcomp/arm/arch.ml[51,1961+4]..[63,2569+7])
+                Pexp_match
+                expression (asmcomp/arm/arch.ml[51,1961+16]..[51,1961+33])
+                  Pexp_tuple
+                  [
+                    expression (asmcomp/arm/arch.ml[51,1961+16]..[51,1961+19])
+                      Pexp_ident "abi" (asmcomp/arm/arch.ml[51,1961+16]..[51,1961+19])
+                    expression (asmcomp/arm/arch.ml[51,1961+21]..[51,1961+33])
+                      Pexp_ident "Config.model" (asmcomp/arm/arch.ml[51,1961+21]..[51,1961+33])
+                  ]
+                [
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[53,2051+6]..[53,2051+19])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[53,2051+6]..[53,2051+10])
+                          Ppat_construct "EABI" (asmcomp/arm/arch.ml[53,2051+6]..[53,2051+10])
+                          None
+                        pattern (asmcomp/arm/arch.ml[53,2051+12]..[53,2051+19])
+                          Ppat_constant PConst_string("armv5",(asmcomp/arm/arch.ml[53,2051+13]..[53,2051+18]),None)
+                      ]
+                    expression (asmcomp/arm/arch.ml[53,2051+26]..[53,2051+51])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[53,2051+26]..[53,2051+31])
+                          Pexp_construct "ARMv5" (asmcomp/arm/arch.ml[53,2051+26]..[53,2051+31])
+                          None
+                        expression (asmcomp/arm/arch.ml[53,2051+35]..[53,2051+39])
+                          Pexp_construct "Soft" (asmcomp/arm/arch.ml[53,2051+35]..[53,2051+39])
+                          None
+                        expression (asmcomp/arm/arch.ml[53,2051+46]..[53,2051+51])
+                          Pexp_construct "false" (asmcomp/arm/arch.ml[53,2051+46]..[53,2051+51])
+                          None
+                      ]
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[54,2103+6]..[54,2103+21])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[54,2103+6]..[54,2103+10])
+                          Ppat_construct "EABI" (asmcomp/arm/arch.ml[54,2103+6]..[54,2103+10])
+                          None
+                        pattern (asmcomp/arm/arch.ml[54,2103+12]..[54,2103+21])
+                          Ppat_constant PConst_string("armv5te",(asmcomp/arm/arch.ml[54,2103+13]..[54,2103+20]),None)
+                      ]
+                    expression (asmcomp/arm/arch.ml[54,2103+26]..[54,2103+51])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[54,2103+26]..[54,2103+33])
+                          Pexp_construct "ARMv5TE" (asmcomp/arm/arch.ml[54,2103+26]..[54,2103+33])
+                          None
+                        expression (asmcomp/arm/arch.ml[54,2103+35]..[54,2103+39])
+                          Pexp_construct "Soft" (asmcomp/arm/arch.ml[54,2103+35]..[54,2103+39])
+                          None
+                        expression (asmcomp/arm/arch.ml[54,2103+46]..[54,2103+51])
+                          Pexp_construct "false" (asmcomp/arm/arch.ml[54,2103+46]..[54,2103+51])
+                          None
+                      ]
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[55,2155+6]..[55,2155+19])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[55,2155+6]..[55,2155+10])
+                          Ppat_construct "EABI" (asmcomp/arm/arch.ml[55,2155+6]..[55,2155+10])
+                          None
+                        pattern (asmcomp/arm/arch.ml[55,2155+12]..[55,2155+19])
+                          Ppat_constant PConst_string("armv6",(asmcomp/arm/arch.ml[55,2155+13]..[55,2155+18]),None)
+                      ]
+                    expression (asmcomp/arm/arch.ml[55,2155+26]..[55,2155+51])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[55,2155+26]..[55,2155+31])
+                          Pexp_construct "ARMv6" (asmcomp/arm/arch.ml[55,2155+26]..[55,2155+31])
+                          None
+                        expression (asmcomp/arm/arch.ml[55,2155+35]..[55,2155+39])
+                          Pexp_construct "Soft" (asmcomp/arm/arch.ml[55,2155+35]..[55,2155+39])
+                          None
+                        expression (asmcomp/arm/arch.ml[55,2155+46]..[55,2155+51])
+                          Pexp_construct "false" (asmcomp/arm/arch.ml[55,2155+46]..[55,2155+51])
+                          None
+                      ]
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[56,2207+6]..[56,2207+21])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[56,2207+6]..[56,2207+10])
+                          Ppat_construct "EABI" (asmcomp/arm/arch.ml[56,2207+6]..[56,2207+10])
+                          None
+                        pattern (asmcomp/arm/arch.ml[56,2207+12]..[56,2207+21])
+                          Ppat_constant PConst_string("armv6t2",(asmcomp/arm/arch.ml[56,2207+13]..[56,2207+20]),None)
+                      ]
+                    expression (asmcomp/arm/arch.ml[56,2207+26]..[56,2207+51])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[56,2207+26]..[56,2207+33])
+                          Pexp_construct "ARMv6T2" (asmcomp/arm/arch.ml[56,2207+26]..[56,2207+33])
+                          None
+                        expression (asmcomp/arm/arch.ml[56,2207+35]..[56,2207+39])
+                          Pexp_construct "Soft" (asmcomp/arm/arch.ml[56,2207+35]..[56,2207+39])
+                          None
+                        expression (asmcomp/arm/arch.ml[56,2207+46]..[56,2207+51])
+                          Pexp_construct "false" (asmcomp/arm/arch.ml[56,2207+46]..[56,2207+51])
+                          None
+                      ]
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[57,2259+6]..[57,2259+19])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[57,2259+6]..[57,2259+10])
+                          Ppat_construct "EABI" (asmcomp/arm/arch.ml[57,2259+6]..[57,2259+10])
+                          None
+                        pattern (asmcomp/arm/arch.ml[57,2259+12]..[57,2259+19])
+                          Ppat_constant PConst_string("armv7",(asmcomp/arm/arch.ml[57,2259+13]..[57,2259+18]),None)
+                      ]
+                    expression (asmcomp/arm/arch.ml[57,2259+26]..[57,2259+51])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[57,2259+26]..[57,2259+31])
+                          Pexp_construct "ARMv7" (asmcomp/arm/arch.ml[57,2259+26]..[57,2259+31])
+                          None
+                        expression (asmcomp/arm/arch.ml[57,2259+35]..[57,2259+39])
+                          Pexp_construct "Soft" (asmcomp/arm/arch.ml[57,2259+35]..[57,2259+39])
+                          None
+                        expression (asmcomp/arm/arch.ml[57,2259+46]..[57,2259+51])
+                          Pexp_construct "false" (asmcomp/arm/arch.ml[57,2259+46]..[57,2259+51])
+                          None
+                      ]
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[58,2311+6]..[58,2311+19])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[58,2311+6]..[58,2311+10])
+                          Ppat_construct "EABI" (asmcomp/arm/arch.ml[58,2311+6]..[58,2311+10])
+                          None
+                        pattern (asmcomp/arm/arch.ml[58,2311+12]..[58,2311+19])
+                          Ppat_constant PConst_string("armv8",(asmcomp/arm/arch.ml[58,2311+13]..[58,2311+18]),None)
+                      ]
+                    expression (asmcomp/arm/arch.ml[58,2311+26]..[58,2311+51])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[58,2311+26]..[58,2311+31])
+                          Pexp_construct "ARMv8" (asmcomp/arm/arch.ml[58,2311+26]..[58,2311+31])
+                          None
+                        expression (asmcomp/arm/arch.ml[58,2311+35]..[58,2311+39])
+                          Pexp_construct "Soft" (asmcomp/arm/arch.ml[58,2311+35]..[58,2311+39])
+                          None
+                        expression (asmcomp/arm/arch.ml[58,2311+46]..[58,2311+51])
+                          Pexp_construct "false" (asmcomp/arm/arch.ml[58,2311+46]..[58,2311+51])
+                          None
+                      ]
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[59,2363+6]..[59,2363+13])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[59,2363+6]..[59,2363+10])
+                          Ppat_construct "EABI" (asmcomp/arm/arch.ml[59,2363+6]..[59,2363+10])
+                          None
+                        pattern (asmcomp/arm/arch.ml[59,2363+12]..[59,2363+13])
+                          Ppat_any
+                      ]
+                    expression (asmcomp/arm/arch.ml[59,2363+26]..[59,2363+51])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[59,2363+26]..[59,2363+31])
+                          Pexp_construct "ARMv4" (asmcomp/arm/arch.ml[59,2363+26]..[59,2363+31])
+                          None
+                        expression (asmcomp/arm/arch.ml[59,2363+35]..[59,2363+39])
+                          Pexp_construct "Soft" (asmcomp/arm/arch.ml[59,2363+35]..[59,2363+39])
+                          None
+                        expression (asmcomp/arm/arch.ml[59,2363+46]..[59,2363+51])
+                          Pexp_construct "false" (asmcomp/arm/arch.ml[59,2363+46]..[59,2363+51])
+                          None
+                      ]
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[60,2415+6]..[60,2415+22])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[60,2415+6]..[60,2415+13])
+                          Ppat_construct "EABI_HF" (asmcomp/arm/arch.ml[60,2415+6]..[60,2415+13])
+                          None
+                        pattern (asmcomp/arm/arch.ml[60,2415+15]..[60,2415+22])
+                          Ppat_constant PConst_string("armv6",(asmcomp/arm/arch.ml[60,2415+16]..[60,2415+21]),None)
+                      ]
+                    expression (asmcomp/arm/arch.ml[60,2415+26]..[60,2415+51])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[60,2415+26]..[60,2415+31])
+                          Pexp_construct "ARMv6" (asmcomp/arm/arch.ml[60,2415+26]..[60,2415+31])
+                          None
+                        expression (asmcomp/arm/arch.ml[60,2415+35]..[60,2415+40])
+                          Pexp_construct "VFPv2" (asmcomp/arm/arch.ml[60,2415+35]..[60,2415+40])
+                          None
+                        expression (asmcomp/arm/arch.ml[60,2415+46]..[60,2415+51])
+                          Pexp_construct "false" (asmcomp/arm/arch.ml[60,2415+46]..[60,2415+51])
+                          None
+                      ]
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[61,2467+6]..[61,2467+22])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[61,2467+6]..[61,2467+13])
+                          Ppat_construct "EABI_HF" (asmcomp/arm/arch.ml[61,2467+6]..[61,2467+13])
+                          None
+                        pattern (asmcomp/arm/arch.ml[61,2467+15]..[61,2467+22])
+                          Ppat_constant PConst_string("armv8",(asmcomp/arm/arch.ml[61,2467+16]..[61,2467+21]),None)
+                      ]
+                    expression (asmcomp/arm/arch.ml[61,2467+26]..[61,2467+50])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[61,2467+26]..[61,2467+31])
+                          Pexp_construct "ARMv8" (asmcomp/arm/arch.ml[61,2467+26]..[61,2467+31])
+                          None
+                        expression (asmcomp/arm/arch.ml[61,2467+35]..[61,2467+40])
+                          Pexp_construct "VFPv3" (asmcomp/arm/arch.ml[61,2467+35]..[61,2467+40])
+                          None
+                        expression (asmcomp/arm/arch.ml[61,2467+46]..[61,2467+50])
+                          Pexp_construct "true" (asmcomp/arm/arch.ml[61,2467+46]..[61,2467+50])
+                          None
+                      ]
+                  <case>
+                    pattern (asmcomp/arm/arch.ml[62,2518+6]..[62,2518+16])
+                      Ppat_tuple
+                      [
+                        pattern (asmcomp/arm/arch.ml[62,2518+6]..[62,2518+13])
+                          Ppat_construct "EABI_HF" (asmcomp/arm/arch.ml[62,2518+6]..[62,2518+13])
+                          None
+                        pattern (asmcomp/arm/arch.ml[62,2518+15]..[62,2518+16])
+                          Ppat_any
+                      ]
+                    expression (asmcomp/arm/arch.ml[62,2518+26]..[62,2518+50])
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[62,2518+26]..[62,2518+31])
+                          Pexp_construct "ARMv7" (asmcomp/arm/arch.ml[62,2518+26]..[62,2518+31])
+                          None
+                        expression (asmcomp/arm/arch.ml[62,2518+35]..[62,2518+44])
+                          Pexp_construct "VFPv3_D16" (asmcomp/arm/arch.ml[62,2518+35]..[62,2518+44])
+                          None
+                        expression (asmcomp/arm/arch.ml[62,2518+46]..[62,2518+50])
+                          Pexp_construct "true" (asmcomp/arm/arch.ml[62,2518+46]..[62,2518+50])
+                          None
+                      ]
+                ]
+          ]
+          expression (asmcomp/arm/arch.ml[64,2580+2]..[64,2580+44])
+            Pexp_tuple
+            [
+              expression (asmcomp/arm/arch.ml[64,2580+3]..[64,2580+15])
+                Pexp_apply
+                expression (asmcomp/arm/arch.ml[64,2580+3]..[64,2580+6])
+                  Pexp_ident "ref" (asmcomp/arm/arch.ml[64,2580+3]..[64,2580+6])
+                [
+                  <arg>
+                  Nolabel
+                    expression (asmcomp/arm/arch.ml[64,2580+7]..[64,2580+15])
+                      Pexp_ident "def_arch" (asmcomp/arm/arch.ml[64,2580+7]..[64,2580+15])
+                ]
+              expression (asmcomp/arm/arch.ml[64,2580+17]..[64,2580+28])
+                Pexp_apply
+                expression (asmcomp/arm/arch.ml[64,2580+17]..[64,2580+20])
+                  Pexp_ident "ref" (asmcomp/arm/arch.ml[64,2580+17]..[64,2580+20])
+                [
+                  <arg>
+                  Nolabel
+                    expression (asmcomp/arm/arch.ml[64,2580+21]..[64,2580+28])
+                      Pexp_ident "def_fpu" (asmcomp/arm/arch.ml[64,2580+21]..[64,2580+28])
+                ]
+              expression (asmcomp/arm/arch.ml[64,2580+30]..[64,2580+43])
+                Pexp_apply
+                expression (asmcomp/arm/arch.ml[64,2580+30]..[64,2580+33])
+                  Pexp_ident "ref" (asmcomp/arm/arch.ml[64,2580+30]..[64,2580+33])
+                [
+                  <arg>
+                  Nolabel
+                    expression (asmcomp/arm/arch.ml[64,2580+34]..[64,2580+43])
+                      Pexp_ident "def_thumb" (asmcomp/arm/arch.ml[64,2580+34]..[64,2580+43])
+                ]
+            ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[66,2626+0]..[76,3115+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[66,2626+4]..[66,2626+9])
+          Ppat_var "farch" (asmcomp/arm/arch.ml[66,2626+4]..[66,2626+9])
+        expression (asmcomp/arm/arch.ml[66,2626+10]..[76,3115+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/arm/arch.ml[66,2626+10]..[66,2626+14])
+            Ppat_var "spec" (asmcomp/arm/arch.ml[66,2626+10]..[66,2626+14])
+          expression (asmcomp/arm/arch.ml[67,2643+2]..[76,3115+5])
+            Pexp_apply
+            expression (asmcomp/arm/arch.ml[67,2643+7]..[67,2643+9])
+              Pexp_ident ":=" (asmcomp/arm/arch.ml[67,2643+7]..[67,2643+9])
+            [
+              <arg>
+              Nolabel
+                expression (asmcomp/arm/arch.ml[67,2643+2]..[67,2643+6])
+                  Pexp_ident "arch" (asmcomp/arm/arch.ml[67,2643+2]..[67,2643+6])
+              <arg>
+              Nolabel
+                expression (asmcomp/arm/arch.ml[67,2643+10]..[76,3115+5])
+                  Pexp_match
+                  expression (asmcomp/arm/arch.ml[67,2643+22]..[67,2643+26])
+                    Pexp_ident "spec" (asmcomp/arm/arch.ml[67,2643+22]..[67,2643+26])
+                  [
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[68,2675+13]..[68,2675+20])
+                        Ppat_constant PConst_string("armv4",(asmcomp/arm/arch.ml[68,2675+14]..[68,2675+19]),None)
+                      <when>
+                        expression (asmcomp/arm/arch.ml[68,2675+26]..[68,2675+40])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[68,2675+30]..[68,2675+32])
+                            Pexp_ident "<>" (asmcomp/arm/arch.ml[68,2675+30]..[68,2675+32])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[68,2675+26]..[68,2675+29])
+                                Pexp_ident "abi" (asmcomp/arm/arch.ml[68,2675+26]..[68,2675+29])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[68,2675+33]..[68,2675+40])
+                                Pexp_construct "EABI_HF" (asmcomp/arm/arch.ml[68,2675+33]..[68,2675+40])
+                                None
+                          ]
+                      expression (asmcomp/arm/arch.ml[68,2675+46]..[68,2675+51])
+                        Pexp_construct "ARMv4" (asmcomp/arm/arch.ml[68,2675+46]..[68,2675+51])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[69,2727+13]..[69,2727+20])
+                        Ppat_constant PConst_string("armv5",(asmcomp/arm/arch.ml[69,2727+14]..[69,2727+19]),None)
+                      <when>
+                        expression (asmcomp/arm/arch.ml[69,2727+26]..[69,2727+40])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[69,2727+30]..[69,2727+32])
+                            Pexp_ident "<>" (asmcomp/arm/arch.ml[69,2727+30]..[69,2727+32])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[69,2727+26]..[69,2727+29])
+                                Pexp_ident "abi" (asmcomp/arm/arch.ml[69,2727+26]..[69,2727+29])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[69,2727+33]..[69,2727+40])
+                                Pexp_construct "EABI_HF" (asmcomp/arm/arch.ml[69,2727+33]..[69,2727+40])
+                                None
+                          ]
+                      expression (asmcomp/arm/arch.ml[69,2727+46]..[69,2727+51])
+                        Pexp_construct "ARMv5" (asmcomp/arm/arch.ml[69,2727+46]..[69,2727+51])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[70,2779+13]..[70,2779+22])
+                        Ppat_constant PConst_string("armv5te",(asmcomp/arm/arch.ml[70,2779+14]..[70,2779+21]),None)
+                      <when>
+                        expression (asmcomp/arm/arch.ml[70,2779+28]..[70,2779+42])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[70,2779+32]..[70,2779+34])
+                            Pexp_ident "<>" (asmcomp/arm/arch.ml[70,2779+32]..[70,2779+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[70,2779+28]..[70,2779+31])
+                                Pexp_ident "abi" (asmcomp/arm/arch.ml[70,2779+28]..[70,2779+31])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[70,2779+35]..[70,2779+42])
+                                Pexp_construct "EABI_HF" (asmcomp/arm/arch.ml[70,2779+35]..[70,2779+42])
+                                None
+                          ]
+                      expression (asmcomp/arm/arch.ml[70,2779+46]..[70,2779+53])
+                        Pexp_construct "ARMv5TE" (asmcomp/arm/arch.ml[70,2779+46]..[70,2779+53])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[71,2833+13]..[71,2833+20])
+                        Ppat_constant PConst_string("armv6",(asmcomp/arm/arch.ml[71,2833+14]..[71,2833+19]),None)
+                      expression (asmcomp/arm/arch.ml[71,2833+46]..[71,2833+51])
+                        Pexp_construct "ARMv6" (asmcomp/arm/arch.ml[71,2833+46]..[71,2833+51])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[72,2885+13]..[72,2885+22])
+                        Ppat_constant PConst_string("armv6t2",(asmcomp/arm/arch.ml[72,2885+14]..[72,2885+21]),None)
+                      expression (asmcomp/arm/arch.ml[72,2885+46]..[72,2885+53])
+                        Pexp_construct "ARMv6T2" (asmcomp/arm/arch.ml[72,2885+46]..[72,2885+53])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[73,2939+13]..[73,2939+20])
+                        Ppat_constant PConst_string("armv7",(asmcomp/arm/arch.ml[73,2939+14]..[73,2939+19]),None)
+                      expression (asmcomp/arm/arch.ml[73,2939+46]..[73,2939+51])
+                        Pexp_construct "ARMv7" (asmcomp/arm/arch.ml[73,2939+46]..[73,2939+51])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[74,2991+13]..[74,2991+20])
+                        Ppat_constant PConst_string("armv8",(asmcomp/arm/arch.ml[74,2991+14]..[74,2991+19]),None)
+                      expression (asmcomp/arm/arch.ml[74,2991+46]..[74,2991+51])
+                        Pexp_construct "ARMv8" (asmcomp/arm/arch.ml[74,2991+46]..[74,2991+51])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[75,3043+13]..[75,3043+17])
+                        Ppat_var "spec" (asmcomp/arm/arch.ml[75,3043+13]..[75,3043+17])
+                      expression (asmcomp/arm/arch.ml[75,3043+21]..[75,3043+71])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[75,3043+21]..[75,3043+26])
+                          Pexp_ident "raise" (asmcomp/arm/arch.ml[75,3043+21]..[75,3043+26])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[75,3043+27]..[75,3043+71])
+                              Pexp_construct "Arg.Bad" (asmcomp/arm/arch.ml[75,3043+28]..[75,3043+35])
+                              Some
+                                expression (asmcomp/arm/arch.ml[75,3043+36]..[75,3043+70])
+                                  Pexp_apply
+                                  expression (asmcomp/arm/arch.ml[75,3043+63]..[75,3043+64])
+                                    Pexp_ident "^" (asmcomp/arm/arch.ml[75,3043+63]..[75,3043+64])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[75,3043+37]..[75,3043+62])
+                                        Pexp_constant PConst_string("wrong '-farch' option: ",(asmcomp/arm/arch.ml[75,3043+38]..[75,3043+61]),None)
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[75,3043+65]..[75,3043+69])
+                                        Pexp_ident "spec" (asmcomp/arm/arch.ml[75,3043+65]..[75,3043+69])
+                                  ]
+                        ]
+                  ]
+            ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[78,3122+0]..[85,3450+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[78,3122+4]..[78,3122+8])
+          Ppat_var "ffpu" (asmcomp/arm/arch.ml[78,3122+4]..[78,3122+8])
+        expression (asmcomp/arm/arch.ml[78,3122+9]..[85,3450+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/arm/arch.ml[78,3122+9]..[78,3122+13])
+            Ppat_var "spec" (asmcomp/arm/arch.ml[78,3122+9]..[78,3122+13])
+          expression (asmcomp/arm/arch.ml[79,3138+2]..[85,3450+5])
+            Pexp_apply
+            expression (asmcomp/arm/arch.ml[79,3138+6]..[79,3138+8])
+              Pexp_ident ":=" (asmcomp/arm/arch.ml[79,3138+6]..[79,3138+8])
+            [
+              <arg>
+              Nolabel
+                expression (asmcomp/arm/arch.ml[79,3138+2]..[79,3138+5])
+                  Pexp_ident "fpu" (asmcomp/arm/arch.ml[79,3138+2]..[79,3138+5])
+              <arg>
+              Nolabel
+                expression (asmcomp/arm/arch.ml[79,3138+9]..[85,3450+5])
+                  Pexp_match
+                  expression (asmcomp/arm/arch.ml[79,3138+21]..[79,3138+25])
+                    Pexp_ident "spec" (asmcomp/arm/arch.ml[79,3138+21]..[79,3138+25])
+                  [
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[80,3169+12]..[80,3169+18])
+                        Ppat_constant PConst_string("soft",(asmcomp/arm/arch.ml[80,3169+13]..[80,3169+17]),None)
+                      <when>
+                        expression (asmcomp/arm/arch.ml[80,3169+24]..[80,3169+38])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[80,3169+28]..[80,3169+30])
+                            Pexp_ident "<>" (asmcomp/arm/arch.ml[80,3169+28]..[80,3169+30])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[80,3169+24]..[80,3169+27])
+                                Pexp_ident "abi" (asmcomp/arm/arch.ml[80,3169+24]..[80,3169+27])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[80,3169+31]..[80,3169+38])
+                                Pexp_construct "EABI_HF" (asmcomp/arm/arch.ml[80,3169+31]..[80,3169+38])
+                                None
+                          ]
+                      expression (asmcomp/arm/arch.ml[80,3169+46]..[80,3169+50])
+                        Pexp_construct "Soft" (asmcomp/arm/arch.ml[80,3169+46]..[80,3169+50])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[81,3220+12]..[81,3220+19])
+                        Ppat_constant PConst_string("vfpv2",(asmcomp/arm/arch.ml[81,3220+13]..[81,3220+18]),None)
+                      <when>
+                        expression (asmcomp/arm/arch.ml[81,3220+25]..[81,3220+38])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[81,3220+29]..[81,3220+30])
+                            Pexp_ident "=" (asmcomp/arm/arch.ml[81,3220+29]..[81,3220+30])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[81,3220+25]..[81,3220+28])
+                                Pexp_ident "abi" (asmcomp/arm/arch.ml[81,3220+25]..[81,3220+28])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[81,3220+31]..[81,3220+38])
+                                Pexp_construct "EABI_HF" (asmcomp/arm/arch.ml[81,3220+31]..[81,3220+38])
+                                None
+                          ]
+                      expression (asmcomp/arm/arch.ml[81,3220+46]..[81,3220+51])
+                        Pexp_construct "VFPv2" (asmcomp/arm/arch.ml[81,3220+46]..[81,3220+51])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[82,3272+12]..[82,3272+23])
+                        Ppat_constant PConst_string("vfpv3-d16",(asmcomp/arm/arch.ml[82,3272+13]..[82,3272+22]),None)
+                      <when>
+                        expression (asmcomp/arm/arch.ml[82,3272+29]..[82,3272+42])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[82,3272+33]..[82,3272+34])
+                            Pexp_ident "=" (asmcomp/arm/arch.ml[82,3272+33]..[82,3272+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[82,3272+29]..[82,3272+32])
+                                Pexp_ident "abi" (asmcomp/arm/arch.ml[82,3272+29]..[82,3272+32])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[82,3272+35]..[82,3272+42])
+                                Pexp_construct "EABI_HF" (asmcomp/arm/arch.ml[82,3272+35]..[82,3272+42])
+                                None
+                          ]
+                      expression (asmcomp/arm/arch.ml[82,3272+46]..[82,3272+55])
+                        Pexp_construct "VFPv3_D16" (asmcomp/arm/arch.ml[82,3272+46]..[82,3272+55])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[83,3328+12]..[83,3328+19])
+                        Ppat_constant PConst_string("vfpv3",(asmcomp/arm/arch.ml[83,3328+13]..[83,3328+18]),None)
+                      <when>
+                        expression (asmcomp/arm/arch.ml[83,3328+25]..[83,3328+38])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[83,3328+29]..[83,3328+30])
+                            Pexp_ident "=" (asmcomp/arm/arch.ml[83,3328+29]..[83,3328+30])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[83,3328+25]..[83,3328+28])
+                                Pexp_ident "abi" (asmcomp/arm/arch.ml[83,3328+25]..[83,3328+28])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[83,3328+31]..[83,3328+38])
+                                Pexp_construct "EABI_HF" (asmcomp/arm/arch.ml[83,3328+31]..[83,3328+38])
+                                None
+                          ]
+                      expression (asmcomp/arm/arch.ml[83,3328+46]..[83,3328+51])
+                        Pexp_construct "VFPv3" (asmcomp/arm/arch.ml[83,3328+46]..[83,3328+51])
+                        None
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[84,3380+12]..[84,3380+16])
+                        Ppat_var "spec" (asmcomp/arm/arch.ml[84,3380+12]..[84,3380+16])
+                      expression (asmcomp/arm/arch.ml[84,3380+20]..[84,3380+69])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[84,3380+20]..[84,3380+25])
+                          Pexp_ident "raise" (asmcomp/arm/arch.ml[84,3380+20]..[84,3380+25])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[84,3380+26]..[84,3380+69])
+                              Pexp_construct "Arg.Bad" (asmcomp/arm/arch.ml[84,3380+27]..[84,3380+34])
+                              Some
+                                expression (asmcomp/arm/arch.ml[84,3380+35]..[84,3380+68])
+                                  Pexp_apply
+                                  expression (asmcomp/arm/arch.ml[84,3380+61]..[84,3380+62])
+                                    Pexp_ident "^" (asmcomp/arm/arch.ml[84,3380+61]..[84,3380+62])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[84,3380+36]..[84,3380+60])
+                                        Pexp_constant PConst_string("wrong '-ffpu' option: ",(asmcomp/arm/arch.ml[84,3380+37]..[84,3380+59]),None)
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[84,3380+63]..[84,3380+67])
+                                        Pexp_ident "spec" (asmcomp/arm/arch.ml[84,3380+63]..[84,3380+67])
+                                  ]
+                        ]
+                  ]
+            ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[87,3457+0]..[103,4145+49])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[87,3457+4]..[87,3457+24])
+          Ppat_var "command_line_options" (asmcomp/arm/arch.ml[87,3457+4]..[87,3457+24])
+        expression (asmcomp/arm/arch.ml[88,3484+2]..[103,4145+49])
+          Pexp_construct "::" (asmcomp/arm/arch.ml[88,3484+4]..[103,4145+49]) ghost
+          Some
+            expression (asmcomp/arm/arch.ml[88,3484+4]..[103,4145+49]) ghost
+              Pexp_tuple
+              [
+                expression (asmcomp/arm/arch.ml[88,3484+4]..[90,3567+52])
+                  Pexp_tuple
+                  [
+                    expression (asmcomp/arm/arch.ml[88,3484+4]..[88,3484+12])
+                      Pexp_constant PConst_string("-farch",(asmcomp/arm/arch.ml[88,3484+5]..[88,3484+11]),None)
+                    expression (asmcomp/arm/arch.ml[88,3484+14]..[88,3484+30])
+                      Pexp_construct "Arg.String" (asmcomp/arm/arch.ml[88,3484+14]..[88,3484+24])
+                      Some
+                        expression (asmcomp/arm/arch.ml[88,3484+25]..[88,3484+30])
+                          Pexp_ident "farch" (asmcomp/arm/arch.ml[88,3484+25]..[88,3484+30])
+                    expression (asmcomp/arm/arch.ml[89,3516+6]..[90,3567+52])
+                      Pexp_apply
+                      expression (asmcomp/arm/arch.ml[90,3567+6]..[90,3567+7])
+                        Pexp_ident "^" (asmcomp/arm/arch.ml[90,3567+6]..[90,3567+7])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (asmcomp/arm/arch.ml[89,3516+6]..[89,3516+50])
+                            Pexp_constant PConst_string("<arch>  Select the ARM target architecture",(asmcomp/arm/arch.ml[89,3516+7]..[89,3516+49]),None)
+                        <arg>
+                        Nolabel
+                          expression (asmcomp/arm/arch.ml[90,3567+8]..[90,3567+52])
+                            Pexp_apply
+                            expression (asmcomp/arm/arch.ml[90,3567+22]..[90,3567+23])
+                              Pexp_ident "^" (asmcomp/arm/arch.ml[90,3567+22]..[90,3567+23])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[90,3567+8]..[90,3567+21])
+                                  Pexp_constant PConst_string(" (default: ",(asmcomp/arm/arch.ml[90,3567+9]..[90,3567+20]),None)
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[90,3567+24]..[90,3567+52])
+                                  Pexp_apply
+                                  expression (asmcomp/arm/arch.ml[90,3567+47]..[90,3567+48])
+                                    Pexp_ident "^" (asmcomp/arm/arch.ml[90,3567+47]..[90,3567+48])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[90,3567+24]..[90,3567+46])
+                                        Pexp_apply
+                                        expression (asmcomp/arm/arch.ml[90,3567+25]..[90,3567+39])
+                                          Pexp_ident "string_of_arch" (asmcomp/arm/arch.ml[90,3567+25]..[90,3567+39])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/arm/arch.ml[90,3567+40]..[90,3567+45])
+                                              Pexp_apply
+                                              expression (asmcomp/arm/arch.ml[90,3567+40]..[90,3567+41])
+                                                Pexp_ident "!" (asmcomp/arm/arch.ml[90,3567+40]..[90,3567+41])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/arm/arch.ml[90,3567+41]..[90,3567+45])
+                                                    Pexp_ident "arch" (asmcomp/arm/arch.ml[90,3567+41]..[90,3567+45])
+                                              ]
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[90,3567+49]..[90,3567+52])
+                                        Pexp_constant PConst_string(")",(asmcomp/arm/arch.ml[90,3567+50]..[90,3567+51]),None)
+                                  ]
+                            ]
+                      ]
+                  ]
+                expression (asmcomp/arm/arch.ml[91,3621+4]..[103,4145+49]) ghost
+                  Pexp_construct "::" (asmcomp/arm/arch.ml[91,3621+4]..[103,4145+49]) ghost
+                  Some
+                    expression (asmcomp/arm/arch.ml[91,3621+4]..[103,4145+49]) ghost
+                      Pexp_tuple
+                      [
+                        expression (asmcomp/arm/arch.ml[91,3621+4]..[93,3701+50])
+                          Pexp_tuple
+                          [
+                            expression (asmcomp/arm/arch.ml[91,3621+4]..[91,3621+11])
+                              Pexp_constant PConst_string("-ffpu",(asmcomp/arm/arch.ml[91,3621+5]..[91,3621+10]),None)
+                            expression (asmcomp/arm/arch.ml[91,3621+13]..[91,3621+28])
+                              Pexp_construct "Arg.String" (asmcomp/arm/arch.ml[91,3621+13]..[91,3621+23])
+                              Some
+                                expression (asmcomp/arm/arch.ml[91,3621+24]..[91,3621+28])
+                                  Pexp_ident "ffpu" (asmcomp/arm/arch.ml[91,3621+24]..[91,3621+28])
+                            expression (asmcomp/arm/arch.ml[92,3651+6]..[93,3701+50])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[93,3701+6]..[93,3701+7])
+                                Pexp_ident "^" (asmcomp/arm/arch.ml[93,3701+6]..[93,3701+7])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[92,3651+6]..[92,3651+49])
+                                    Pexp_constant PConst_string("<fpu>  Select the floating-point hardware",(asmcomp/arm/arch.ml[92,3651+7]..[92,3651+48]),None)
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[93,3701+8]..[93,3701+50])
+                                    Pexp_apply
+                                    expression (asmcomp/arm/arch.ml[93,3701+22]..[93,3701+23])
+                                      Pexp_ident "^" (asmcomp/arm/arch.ml[93,3701+22]..[93,3701+23])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm/arch.ml[93,3701+8]..[93,3701+21])
+                                          Pexp_constant PConst_string(" (default: ",(asmcomp/arm/arch.ml[93,3701+9]..[93,3701+20]),None)
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm/arch.ml[93,3701+24]..[93,3701+50])
+                                          Pexp_apply
+                                          expression (asmcomp/arm/arch.ml[93,3701+45]..[93,3701+46])
+                                            Pexp_ident "^" (asmcomp/arm/arch.ml[93,3701+45]..[93,3701+46])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/arm/arch.ml[93,3701+24]..[93,3701+44])
+                                                Pexp_apply
+                                                expression (asmcomp/arm/arch.ml[93,3701+25]..[93,3701+38])
+                                                  Pexp_ident "string_of_fpu" (asmcomp/arm/arch.ml[93,3701+25]..[93,3701+38])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (asmcomp/arm/arch.ml[93,3701+39]..[93,3701+43])
+                                                      Pexp_apply
+                                                      expression (asmcomp/arm/arch.ml[93,3701+39]..[93,3701+40])
+                                                        Pexp_ident "!" (asmcomp/arm/arch.ml[93,3701+39]..[93,3701+40])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (asmcomp/arm/arch.ml[93,3701+40]..[93,3701+43])
+                                                            Pexp_ident "fpu" (asmcomp/arm/arch.ml[93,3701+40]..[93,3701+43])
+                                                      ]
+                                                ]
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/arm/arch.ml[93,3701+47]..[93,3701+50])
+                                                Pexp_constant PConst_string(")",(asmcomp/arm/arch.ml[93,3701+48]..[93,3701+49]),None)
+                                          ]
+                                    ]
+                              ]
+                          ]
+                        expression (asmcomp/arm/arch.ml[94,3753+4]..[103,4145+49]) ghost
+                          Pexp_construct "::" (asmcomp/arm/arch.ml[94,3753+4]..[103,4145+49]) ghost
+                          Some
+                            expression (asmcomp/arm/arch.ml[94,3753+4]..[103,4145+49]) ghost
+                              Pexp_tuple
+                              [
+                                expression (asmcomp/arm/arch.ml[94,3753+4]..[95,3792+51])
+                                  Pexp_tuple
+                                  [
+                                    expression (asmcomp/arm/arch.ml[94,3753+4]..[94,3753+11])
+                                      Pexp_constant PConst_string("-fPIC",(asmcomp/arm/arch.ml[94,3753+5]..[94,3753+10]),None)
+                                    expression (asmcomp/arm/arch.ml[94,3753+13]..[94,3753+37])
+                                      Pexp_construct "Arg.Set" (asmcomp/arm/arch.ml[94,3753+13]..[94,3753+20])
+                                      Some
+                                        expression (asmcomp/arm/arch.ml[94,3753+21]..[94,3753+37])
+                                          Pexp_ident "Clflags.pic_code" (asmcomp/arm/arch.ml[94,3753+21]..[94,3753+37])
+                                    expression (asmcomp/arm/arch.ml[95,3792+6]..[95,3792+51])
+                                      Pexp_constant PConst_string(" Generate position-independent machine code",(asmcomp/arm/arch.ml[95,3792+7]..[95,3792+50]),None)
+                                  ]
+                                expression (asmcomp/arm/arch.ml[96,3845+4]..[103,4145+49]) ghost
+                                  Pexp_construct "::" (asmcomp/arm/arch.ml[96,3845+4]..[103,4145+49]) ghost
+                                  Some
+                                    expression (asmcomp/arm/arch.ml[96,3845+4]..[103,4145+49]) ghost
+                                      Pexp_tuple
+                                      [
+                                        expression (asmcomp/arm/arch.ml[96,3845+4]..[97,3889+49])
+                                          Pexp_tuple
+                                          [
+                                            expression (asmcomp/arm/arch.ml[96,3845+4]..[96,3845+14])
+                                              Pexp_constant PConst_string("-fno-PIC",(asmcomp/arm/arch.ml[96,3845+5]..[96,3845+13]),None)
+                                            expression (asmcomp/arm/arch.ml[96,3845+16]..[96,3845+42])
+                                              Pexp_construct "Arg.Clear" (asmcomp/arm/arch.ml[96,3845+16]..[96,3845+25])
+                                              Some
+                                                expression (asmcomp/arm/arch.ml[96,3845+26]..[96,3845+42])
+                                                  Pexp_ident "Clflags.pic_code" (asmcomp/arm/arch.ml[96,3845+26]..[96,3845+42])
+                                            expression (asmcomp/arm/arch.ml[97,3889+6]..[97,3889+49])
+                                              Pexp_constant PConst_string(" Generate position-dependent machine code",(asmcomp/arm/arch.ml[97,3889+7]..[97,3889+48]),None)
+                                          ]
+                                        expression (asmcomp/arm/arch.ml[98,3940+4]..[103,4145+49]) ghost
+                                          Pexp_construct "::" (asmcomp/arm/arch.ml[98,3940+4]..[103,4145+49]) ghost
+                                          Some
+                                            expression (asmcomp/arm/arch.ml[98,3940+4]..[103,4145+49]) ghost
+                                              Pexp_tuple
+                                              [
+                                                expression (asmcomp/arm/arch.ml[98,3940+4]..[100,4016+45])
+                                                  Pexp_tuple
+                                                  [
+                                                    expression (asmcomp/arm/arch.ml[98,3940+4]..[98,3940+13])
+                                                      Pexp_constant PConst_string("-fthumb",(asmcomp/arm/arch.ml[98,3940+5]..[98,3940+12]),None)
+                                                    expression (asmcomp/arm/arch.ml[98,3940+15]..[98,3940+28])
+                                                      Pexp_construct "Arg.Set" (asmcomp/arm/arch.ml[98,3940+15]..[98,3940+22])
+                                                      Some
+                                                        expression (asmcomp/arm/arch.ml[98,3940+23]..[98,3940+28])
+                                                          Pexp_ident "thumb" (asmcomp/arm/arch.ml[98,3940+23]..[98,3940+28])
+                                                    expression (asmcomp/arm/arch.ml[99,3970+6]..[100,4016+45])
+                                                      Pexp_apply
+                                                      expression (asmcomp/arm/arch.ml[100,4016+6]..[100,4016+7])
+                                                        Pexp_ident "^" (asmcomp/arm/arch.ml[100,4016+6]..[100,4016+7])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (asmcomp/arm/arch.ml[99,3970+6]..[99,3970+45])
+                                                            Pexp_constant PConst_string(" Enable Thumb/Thumb-2 code generation",(asmcomp/arm/arch.ml[99,3970+7]..[99,3970+44]),None)
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (asmcomp/arm/arch.ml[100,4016+8]..[100,4016+45])
+                                                            Pexp_ifthenelse
+                                                            expression (asmcomp/arm/arch.ml[100,4016+12]..[100,4016+18])
+                                                              Pexp_apply
+                                                              expression (asmcomp/arm/arch.ml[100,4016+12]..[100,4016+13])
+                                                                Pexp_ident "!" (asmcomp/arm/arch.ml[100,4016+12]..[100,4016+13])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (asmcomp/arm/arch.ml[100,4016+13]..[100,4016+18])
+                                                                    Pexp_ident "thumb" (asmcomp/arm/arch.ml[100,4016+13]..[100,4016+18])
+                                                              ]
+                                                            expression (asmcomp/arm/arch.ml[100,4016+24]..[100,4016+36])
+                                                              Pexp_constant PConst_string(" (default)",(asmcomp/arm/arch.ml[100,4016+25]..[100,4016+35]),None)
+                                                            Some
+                                                              expression (asmcomp/arm/arch.ml[100,4016+42]..[100,4016+44])
+                                                                Pexp_constant PConst_string("",(asmcomp/arm/arch.ml[100,4016+43]..[100,4016+43]),None)
+                                                      ]
+                                                  ]
+                                                expression (asmcomp/arm/arch.ml[101,4063+4]..[103,4145+49]) ghost
+                                                  Pexp_construct "::" (asmcomp/arm/arch.ml[101,4063+4]..[103,4145+49]) ghost
+                                                  Some
+                                                    expression (asmcomp/arm/arch.ml[101,4063+4]..[103,4145+49]) ghost
+                                                      Pexp_tuple
+                                                      [
+                                                        expression (asmcomp/arm/arch.ml[101,4063+4]..[103,4145+48])
+                                                          Pexp_tuple
+                                                          [
+                                                            expression (asmcomp/arm/arch.ml[101,4063+4]..[101,4063+16])
+                                                              Pexp_constant PConst_string("-fno-thumb",(asmcomp/arm/arch.ml[101,4063+5]..[101,4063+15]),None)
+                                                            expression (asmcomp/arm/arch.ml[101,4063+18]..[101,4063+33])
+                                                              Pexp_construct "Arg.Clear" (asmcomp/arm/arch.ml[101,4063+18]..[101,4063+27])
+                                                              Some
+                                                                expression (asmcomp/arm/arch.ml[101,4063+28]..[101,4063+33])
+                                                                  Pexp_ident "thumb" (asmcomp/arm/arch.ml[101,4063+28]..[101,4063+33])
+                                                            expression (asmcomp/arm/arch.ml[102,4098+6]..[103,4145+48])
+                                                              Pexp_apply
+                                                              expression (asmcomp/arm/arch.ml[103,4145+6]..[103,4145+7])
+                                                                Pexp_ident "^" (asmcomp/arm/arch.ml[103,4145+6]..[103,4145+7])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (asmcomp/arm/arch.ml[102,4098+6]..[102,4098+46])
+                                                                    Pexp_constant PConst_string(" Disable Thumb/Thumb-2 code generation",(asmcomp/arm/arch.ml[102,4098+7]..[102,4098+45]),None)
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (asmcomp/arm/arch.ml[103,4145+8]..[103,4145+48])
+                                                                    Pexp_ifthenelse
+                                                                    expression (asmcomp/arm/arch.ml[103,4145+12]..[103,4145+22])
+                                                                      Pexp_apply
+                                                                      expression (asmcomp/arm/arch.ml[103,4145+12]..[103,4145+15])
+Pexp_ident "not" (asmcomp/arm/arch.ml[103,4145+12]..[103,4145+15])
+                                                                      [
+<arg>
+Nolabel
+  expression (asmcomp/arm/arch.ml[103,4145+16]..[103,4145+22])
+    Pexp_apply
+    expression (asmcomp/arm/arch.ml[103,4145+16]..[103,4145+17])
+      Pexp_ident "!" (asmcomp/arm/arch.ml[103,4145+16]..[103,4145+17])
+    [
+      <arg>
+      Nolabel
+        expression (asmcomp/arm/arch.ml[103,4145+17]..[103,4145+22])
+          Pexp_ident "thumb" (asmcomp/arm/arch.ml[103,4145+17]..[103,4145+22])
+    ]
+                                                                      ]
+                                                                    expression (asmcomp/arm/arch.ml[103,4145+28]..[103,4145+39])
+                                                                      Pexp_constant PConst_string(" (default",(asmcomp/arm/arch.ml[103,4145+29]..[103,4145+38]),None)
+                                                                    Some
+                                                                      expression (asmcomp/arm/arch.ml[103,4145+45]..[103,4145+47])
+Pexp_constant PConst_string("",(asmcomp/arm/arch.ml[103,4145+46]..[103,4145+46]),None)
+                                                              ]
+                                                          ]
+                                                        expression (asmcomp/arm/arch.ml[103,4145+48]..[103,4145+49]) ghost
+                                                          Pexp_construct "[]" (asmcomp/arm/arch.ml[103,4145+48]..[103,4145+49]) ghost
+                                                          None
+                                                      ]
+                                              ]
+                                      ]
+                              ]
+                      ]
+              ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[107,4220+0]..[108,4243+19])
+    Pstr_type Rec
+    [
+      type_declaration "addressing_mode" (asmcomp/arm/arch.ml[107,4220+5]..[107,4220+20]) (asmcomp/arm/arch.ml[107,4220+0]..[108,4243+19])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/arm/arch.ml[108,4243+4]..[108,4243+19])
+                "Iindexed" (asmcomp/arm/arch.ml[108,4243+4]..[108,4243+12])
+                [
+                  core_type (asmcomp/arm/arch.ml[108,4243+16]..[108,4243+19])
+                    Ptyp_constr "int" (asmcomp/arm/arch.ml[108,4243+16]..[108,4243+19])
+                    []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/arm/arch.ml[117,4560+0]..[143,5429+25])
+    Pstr_type Rec
+    [
+      type_declaration "specific_operation" (asmcomp/arm/arch.ml[117,4560+5]..[117,4560+23]) (asmcomp/arm/arch.ml[117,4560+0]..[130,5206+17])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/arm/arch.ml[118,4586+4]..[118,4586+58])
+                "Ishiftarith" (asmcomp/arm/arch.ml[118,4586+4]..[118,4586+15])
+                [
+                  core_type (asmcomp/arm/arch.ml[118,4586+19]..[118,4586+34])
+                    Ptyp_constr "arith_operation" (asmcomp/arm/arch.ml[118,4586+19]..[118,4586+34])
+                    []
+                  core_type (asmcomp/arm/arch.ml[118,4586+37]..[118,4586+52])
+                    Ptyp_constr "shift_operation" (asmcomp/arm/arch.ml[118,4586+37]..[118,4586+52])
+                    []
+                  core_type (asmcomp/arm/arch.ml[118,4586+55]..[118,4586+58])
+                    Ptyp_constr "int" (asmcomp/arm/arch.ml[118,4586+55]..[118,4586+58])
+                    []
+                ]
+                None
+              (asmcomp/arm/arch.ml[119,4645+2]..[119,4645+45])
+                "Ishiftcheckbound" (asmcomp/arm/arch.ml[119,4645+4]..[119,4645+20])
+                [
+                  core_type (asmcomp/arm/arch.ml[119,4645+24]..[119,4645+39])
+                    Ptyp_constr "shift_operation" (asmcomp/arm/arch.ml[119,4645+24]..[119,4645+39])
+                    []
+                  core_type (asmcomp/arm/arch.ml[119,4645+42]..[119,4645+45])
+                    Ptyp_constr "int" (asmcomp/arm/arch.ml[119,4645+42]..[119,4645+45])
+                    []
+                ]
+                None
+              (asmcomp/arm/arch.ml[120,4691+2]..[120,4691+21])
+                "Irevsubimm" (asmcomp/arm/arch.ml[120,4691+4]..[120,4691+14])
+                [
+                  core_type (asmcomp/arm/arch.ml[120,4691+18]..[120,4691+21])
+                    Ptyp_constr "int" (asmcomp/arm/arch.ml[120,4691+18]..[120,4691+21])
+                    []
+                ]
+                None
+              (asmcomp/arm/arch.ml[121,4713+2]..[121,4713+12])
+                "Imulhadd" (asmcomp/arm/arch.ml[121,4713+4]..[121,4713+12])
+                []
+                None
+              (asmcomp/arm/arch.ml[122,4759+2]..[122,4759+11])
+                "Imuladd" (asmcomp/arm/arch.ml[122,4759+4]..[122,4759+11])
+                []
+                None
+              (asmcomp/arm/arch.ml[123,4800+2]..[123,4800+11])
+                "Imulsub" (asmcomp/arm/arch.ml[123,4800+4]..[123,4800+11])
+                []
+                None
+              (asmcomp/arm/arch.ml[124,4846+2]..[124,4846+12])
+                "Inegmulf" (asmcomp/arm/arch.ml[124,4846+4]..[124,4846+12])
+                []
+                None
+              (asmcomp/arm/arch.ml[125,4905+2]..[125,4905+12])
+                "Imuladdf" (asmcomp/arm/arch.ml[125,4905+4]..[125,4905+12])
+                []
+                None
+              (asmcomp/arm/arch.ml[126,4961+2]..[126,4961+15])
+                "Inegmuladdf" (asmcomp/arm/arch.ml[126,4961+4]..[126,4961+15])
+                []
+                None
+              (asmcomp/arm/arch.ml[127,5025+2]..[127,5025+12])
+                "Imulsubf" (asmcomp/arm/arch.ml[127,5025+4]..[127,5025+12])
+                []
+                None
+              (asmcomp/arm/arch.ml[128,5086+2]..[128,5086+15])
+                "Inegmulsubf" (asmcomp/arm/arch.ml[128,5086+4]..[128,5086+15])
+                []
+                None
+              (asmcomp/arm/arch.ml[129,5155+2]..[129,5155+10])
+                "Isqrtf" (asmcomp/arm/arch.ml[129,5155+4]..[129,5155+10])
+                []
+                None
+              (asmcomp/arm/arch.ml[130,5206+2]..[130,5206+17])
+                "Ibswap" (asmcomp/arm/arch.ml[130,5206+4]..[130,5206+10])
+                [
+                  core_type (asmcomp/arm/arch.ml[130,5206+14]..[130,5206+17])
+                    Ptyp_constr "int" (asmcomp/arm/arch.ml[130,5206+14]..[130,5206+17])
+                    []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+      type_declaration "arith_operation" (asmcomp/arm/arch.ml[132,5253+4]..[132,5253+19]) (asmcomp/arm/arch.ml[132,5253+0]..[138,5347+13])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/arm/arch.ml[133,5275+4]..[133,5275+13])
+                "Ishiftadd" (asmcomp/arm/arch.ml[133,5275+4]..[133,5275+13])
+                []
+                None
+              (asmcomp/arm/arch.ml[134,5289+2]..[134,5289+13])
+                "Ishiftsub" (asmcomp/arm/arch.ml[134,5289+4]..[134,5289+13])
+                []
+                None
+              (asmcomp/arm/arch.ml[135,5303+2]..[135,5303+16])
+                "Ishiftsubrev" (asmcomp/arm/arch.ml[135,5303+4]..[135,5303+16])
+                []
+                None
+              (asmcomp/arm/arch.ml[136,5320+2]..[136,5320+13])
+                "Ishiftand" (asmcomp/arm/arch.ml[136,5320+4]..[136,5320+13])
+                []
+                None
+              (asmcomp/arm/arch.ml[137,5334+2]..[137,5334+12])
+                "Ishiftor" (asmcomp/arm/arch.ml[137,5334+4]..[137,5334+12])
+                []
+                None
+              (asmcomp/arm/arch.ml[138,5347+2]..[138,5347+13])
+                "Ishiftxor" (asmcomp/arm/arch.ml[138,5347+4]..[138,5347+13])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+      type_declaration "shift_operation" (asmcomp/arm/arch.ml[140,5362+4]..[140,5362+19]) (asmcomp/arm/arch.ml[140,5362+0]..[143,5429+25])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/arm/arch.ml[141,5384+4]..[141,5384+21])
+                "Ishiftlogicalleft" (asmcomp/arm/arch.ml[141,5384+4]..[141,5384+21])
+                []
+                None
+              (asmcomp/arm/arch.ml[142,5406+2]..[142,5406+22])
+                "Ishiftlogicalright" (asmcomp/arm/arch.ml[142,5406+4]..[142,5406+22])
+                []
+                None
+              (asmcomp/arm/arch.ml[143,5429+2]..[143,5429+25])
+                "Ishiftarithmeticright" (asmcomp/arm/arch.ml[143,5429+4]..[143,5429+25])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/arm/arch.ml[147,5481+0]..[147,5481+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[147,5481+4]..[147,5481+14])
+          Ppat_var "big_endian" (asmcomp/arm/arch.ml[147,5481+4]..[147,5481+14])
+        expression (asmcomp/arm/arch.ml[147,5481+17]..[147,5481+22])
+          Pexp_construct "false" (asmcomp/arm/arch.ml[147,5481+17]..[147,5481+22])
+          None
+    ]
+  structure_item (asmcomp/arm/arch.ml[149,5505+0]..[149,5505+17])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[149,5505+4]..[149,5505+13])
+          Ppat_var "size_addr" (asmcomp/arm/arch.ml[149,5505+4]..[149,5505+13])
+        expression (asmcomp/arm/arch.ml[149,5505+16]..[149,5505+17])
+          Pexp_constant PConst_int (4,None)
+    ]
+  structure_item (asmcomp/arm/arch.ml[150,5523+0]..[150,5523+16])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[150,5523+4]..[150,5523+12])
+          Ppat_var "size_int" (asmcomp/arm/arch.ml[150,5523+4]..[150,5523+12])
+        expression (asmcomp/arm/arch.ml[150,5523+15]..[150,5523+16])
+          Pexp_constant PConst_int (4,None)
+    ]
+  structure_item (asmcomp/arm/arch.ml[151,5540+0]..[151,5540+18])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[151,5540+4]..[151,5540+14])
+          Ppat_var "size_float" (asmcomp/arm/arch.ml[151,5540+4]..[151,5540+14])
+        expression (asmcomp/arm/arch.ml[151,5540+17]..[151,5540+18])
+          Pexp_constant PConst_int (8,None)
+    ]
+  structure_item (asmcomp/arm/arch.ml[153,5560+0]..[153,5560+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[153,5560+4]..[153,5560+26])
+          Ppat_var "allow_unaligned_access" (asmcomp/arm/arch.ml[153,5560+4]..[153,5560+26])
+        expression (asmcomp/arm/arch.ml[153,5560+29]..[153,5560+34])
+          Pexp_construct "false" (asmcomp/arm/arch.ml[153,5560+29]..[153,5560+34])
+          None
+    ]
+  structure_item (asmcomp/arm/arch.ml[157,5624+0]..[157,5624+40])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[157,5624+4]..[157,5624+32])
+          Ppat_var "division_crashes_on_overflow" (asmcomp/arm/arch.ml[157,5624+4]..[157,5624+32])
+        expression (asmcomp/arm/arch.ml[157,5624+35]..[157,5624+40])
+          Pexp_construct "false" (asmcomp/arm/arch.ml[157,5624+35]..[157,5624+40])
+          None
+    ]
+  structure_item (asmcomp/arm/arch.ml[161,5704+0]..[161,5704+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[161,5704+4]..[161,5704+23])
+          Ppat_var "identity_addressing" (asmcomp/arm/arch.ml[161,5704+4]..[161,5704+23])
+        expression (asmcomp/arm/arch.ml[161,5704+26]..[161,5704+36])
+          Pexp_construct "Iindexed" (asmcomp/arm/arch.ml[161,5704+26]..[161,5704+34])
+          Some
+            expression (asmcomp/arm/arch.ml[161,5704+35]..[161,5704+36])
+              Pexp_constant PConst_int (0,None)
+    ]
+  structure_item (asmcomp/arm/arch.ml[163,5742+0]..[163,5742+62])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[163,5742+4]..[163,5742+21])
+          Ppat_var "offset_addressing" (asmcomp/arm/arch.ml[163,5742+4]..[163,5742+21])
+        expression (asmcomp/arm/arch.ml[163,5742+22]..[163,5742+62]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/arm/arch.ml[163,5742+22]..[163,5742+34])
+            Ppat_construct "Iindexed" (asmcomp/arm/arch.ml[163,5742+23]..[163,5742+31])
+            Some
+              []
+              pattern (asmcomp/arm/arch.ml[163,5742+32]..[163,5742+33])
+                Ppat_var "n" (asmcomp/arm/arch.ml[163,5742+32]..[163,5742+33])
+          expression (asmcomp/arm/arch.ml[163,5742+35]..[163,5742+62]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/arm/arch.ml[163,5742+35]..[163,5742+40])
+              Ppat_var "delta" (asmcomp/arm/arch.ml[163,5742+35]..[163,5742+40])
+            expression (asmcomp/arm/arch.ml[163,5742+43]..[163,5742+62])
+              Pexp_construct "Iindexed" (asmcomp/arm/arch.ml[163,5742+43]..[163,5742+51])
+              Some
+                expression (asmcomp/arm/arch.ml[163,5742+51]..[163,5742+62])
+                  Pexp_apply
+                  expression (asmcomp/arm/arch.ml[163,5742+54]..[163,5742+55])
+                    Pexp_ident "+" (asmcomp/arm/arch.ml[163,5742+54]..[163,5742+55])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/arm/arch.ml[163,5742+52]..[163,5742+53])
+                        Pexp_ident "n" (asmcomp/arm/arch.ml[163,5742+52]..[163,5742+53])
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/arm/arch.ml[163,5742+56]..[163,5742+61])
+                        Pexp_ident "delta" (asmcomp/arm/arch.ml[163,5742+56]..[163,5742+61])
+                  ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[165,5806+0]..[165,5806+40])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[165,5806+4]..[165,5806+23])
+          Ppat_var "num_args_addressing" (asmcomp/arm/arch.ml[165,5806+4]..[165,5806+23])
+        expression (asmcomp/arm/arch.ml[165,5806+24]..[165,5806+40]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/arm/arch.ml[165,5806+24]..[165,5806+36])
+            Ppat_construct "Iindexed" (asmcomp/arm/arch.ml[165,5806+25]..[165,5806+33])
+            Some
+              []
+              pattern (asmcomp/arm/arch.ml[165,5806+34]..[165,5806+35])
+                Ppat_any
+          expression (asmcomp/arm/arch.ml[165,5806+39]..[165,5806+40])
+            Pexp_constant PConst_int (1,None)
+    ]
+  structure_item (asmcomp/arm/arch.ml[169,5896+0]..[173,6005+42])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[169,5896+4]..[169,5896+20])
+          Ppat_var "print_addressing" (asmcomp/arm/arch.ml[169,5896+4]..[169,5896+20])
+        expression (asmcomp/arm/arch.ml[169,5896+21]..[173,6005+42]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/arm/arch.ml[169,5896+21]..[169,5896+29])
+            Ppat_var "printreg" (asmcomp/arm/arch.ml[169,5896+21]..[169,5896+29])
+          expression (asmcomp/arm/arch.ml[169,5896+30]..[173,6005+42]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/arm/arch.ml[169,5896+30]..[169,5896+34])
+              Ppat_var "addr" (asmcomp/arm/arch.ml[169,5896+30]..[169,5896+34])
+            expression (asmcomp/arm/arch.ml[169,5896+35]..[173,6005+42]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (asmcomp/arm/arch.ml[169,5896+35]..[169,5896+38])
+                Ppat_var "ppf" (asmcomp/arm/arch.ml[169,5896+35]..[169,5896+38])
+              expression (asmcomp/arm/arch.ml[169,5896+39]..[173,6005+42]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (asmcomp/arm/arch.ml[169,5896+39]..[169,5896+42])
+                  Ppat_var "arg" (asmcomp/arm/arch.ml[169,5896+39]..[169,5896+42])
+                expression (asmcomp/arm/arch.ml[170,5941+2]..[173,6005+42])
+                  Pexp_match
+                  expression (asmcomp/arm/arch.ml[170,5941+8]..[170,5941+12])
+                    Pexp_ident "addr" (asmcomp/arm/arch.ml[170,5941+8]..[170,5941+12])
+                  [
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[171,5959+4]..[171,5959+14])
+                        Ppat_construct "Iindexed" (asmcomp/arm/arch.ml[171,5959+4]..[171,5959+12])
+                        Some
+                          []
+                          pattern (asmcomp/arm/arch.ml[171,5959+13]..[171,5959+14])
+                            Ppat_var "n" (asmcomp/arm/arch.ml[171,5959+13]..[171,5959+14])
+                      expression (asmcomp/arm/arch.ml[172,5977+6]..[173,6005+42])
+                        Pexp_sequence
+                        expression (asmcomp/arm/arch.ml[172,5977+6]..[172,5977+26])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[172,5977+6]..[172,5977+14])
+                            Pexp_ident "printreg" (asmcomp/arm/arch.ml[172,5977+6]..[172,5977+14])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[172,5977+15]..[172,5977+18])
+                                Pexp_ident "ppf" (asmcomp/arm/arch.ml[172,5977+15]..[172,5977+18])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[172,5977+19]..[172,5977+26])
+                                Pexp_apply
+                                expression (asmcomp/arm/arch.ml[172,5977+19]..[172,5977+26]) ghost
+                                  Pexp_ident "Array.get" (asmcomp/arm/arch.ml[172,5977+19]..[172,5977+26]) ghost
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm/arch.ml[172,5977+19]..[172,5977+22])
+                                      Pexp_ident "arg" (asmcomp/arm/arch.ml[172,5977+19]..[172,5977+22])
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm/arch.ml[172,5977+24]..[172,5977+25])
+                                      Pexp_constant PConst_int (0,None)
+                                ]
+                          ]
+                        expression (asmcomp/arm/arch.ml[173,6005+6]..[173,6005+42])
+                          Pexp_ifthenelse
+                          expression (asmcomp/arm/arch.ml[173,6005+9]..[173,6005+15])
+                            Pexp_apply
+                            expression (asmcomp/arm/arch.ml[173,6005+11]..[173,6005+13])
+                              Pexp_ident "<>" (asmcomp/arm/arch.ml[173,6005+11]..[173,6005+13])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[173,6005+9]..[173,6005+10])
+                                  Pexp_ident "n" (asmcomp/arm/arch.ml[173,6005+9]..[173,6005+10])
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[173,6005+14]..[173,6005+15])
+                                  Pexp_constant PConst_int (0,None)
+                            ]
+                          expression (asmcomp/arm/arch.ml[173,6005+21]..[173,6005+42])
+                            Pexp_apply
+                            expression (asmcomp/arm/arch.ml[173,6005+21]..[173,6005+28])
+                              Pexp_ident "fprintf" (asmcomp/arm/arch.ml[173,6005+21]..[173,6005+28])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[173,6005+29]..[173,6005+32])
+                                  Pexp_ident "ppf" (asmcomp/arm/arch.ml[173,6005+29]..[173,6005+32])
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[173,6005+33]..[173,6005+40])
+                                  Pexp_constant PConst_string(" + %i",(asmcomp/arm/arch.ml[173,6005+34]..[173,6005+39]),None)
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[173,6005+41]..[173,6005+42])
+                                  Pexp_ident "n" (asmcomp/arm/arch.ml[173,6005+41]..[173,6005+42])
+                            ]
+                          None
+                  ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[175,6049+0]..[178,6139+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[175,6049+4]..[175,6049+16])
+          Ppat_var "shiftop_name" (asmcomp/arm/arch.ml[175,6049+4]..[175,6049+16])
+        expression (asmcomp/arm/arch.ml[175,6049+19]..[178,6139+34])
+          Pexp_function
+          [
+            <case>
+              pattern (asmcomp/arm/arch.ml[176,6077+4]..[176,6077+21])
+                Ppat_construct "Ishiftlogicalleft" (asmcomp/arm/arch.ml[176,6077+4]..[176,6077+21])
+                None
+              expression (asmcomp/arm/arch.ml[176,6077+25]..[176,6077+29])
+                Pexp_constant PConst_string("<<",(asmcomp/arm/arch.ml[176,6077+26]..[176,6077+28]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[177,6107+4]..[177,6107+22])
+                Ppat_construct "Ishiftlogicalright" (asmcomp/arm/arch.ml[177,6107+4]..[177,6107+22])
+                None
+              expression (asmcomp/arm/arch.ml[177,6107+26]..[177,6107+31])
+                Pexp_constant PConst_string(">>u",(asmcomp/arm/arch.ml[177,6107+27]..[177,6107+30]),None)
+            <case>
+              pattern (asmcomp/arm/arch.ml[178,6139+4]..[178,6139+25])
+                Ppat_construct "Ishiftarithmeticright" (asmcomp/arm/arch.ml[178,6139+4]..[178,6139+25])
+                None
+              expression (asmcomp/arm/arch.ml[178,6139+29]..[178,6139+34])
+                Pexp_constant PConst_string(">>s",(asmcomp/arm/arch.ml[178,6139+30]..[178,6139+33]),None)
+          ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[180,6175+0]..[249,8075+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[180,6175+4]..[180,6175+28])
+          Ppat_var "print_specific_operation" (asmcomp/arm/arch.ml[180,6175+4]..[180,6175+28])
+        expression (asmcomp/arm/arch.ml[180,6175+29]..[249,8075+24]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/arm/arch.ml[180,6175+29]..[180,6175+37])
+            Ppat_var "printreg" (asmcomp/arm/arch.ml[180,6175+29]..[180,6175+37])
+          expression (asmcomp/arm/arch.ml[180,6175+38]..[249,8075+24]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/arm/arch.ml[180,6175+38]..[180,6175+40])
+              Ppat_var "op" (asmcomp/arm/arch.ml[180,6175+38]..[180,6175+40])
+            expression (asmcomp/arm/arch.ml[180,6175+41]..[249,8075+24]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (asmcomp/arm/arch.ml[180,6175+41]..[180,6175+44])
+                Ppat_var "ppf" (asmcomp/arm/arch.ml[180,6175+41]..[180,6175+44])
+              expression (asmcomp/arm/arch.ml[180,6175+45]..[249,8075+24]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (asmcomp/arm/arch.ml[180,6175+45]..[180,6175+48])
+                  Ppat_var "arg" (asmcomp/arm/arch.ml[180,6175+45]..[180,6175+48])
+                expression (asmcomp/arm/arch.ml[181,6226+2]..[249,8075+24])
+                  Pexp_match
+                  expression (asmcomp/arm/arch.ml[181,6226+8]..[181,6226+10])
+                    Pexp_ident "op" (asmcomp/arm/arch.ml[181,6226+8]..[181,6226+10])
+                  [
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[182,6242+4]..[182,6242+36])
+                        Ppat_construct "Ishiftarith" (asmcomp/arm/arch.ml[182,6242+4]..[182,6242+15])
+                        Some
+                          []
+                          pattern (asmcomp/arm/arch.ml[182,6242+15]..[182,6242+36])
+                            Ppat_tuple
+                            [
+                              pattern (asmcomp/arm/arch.ml[182,6242+16]..[182,6242+18])
+                                Ppat_var "op" (asmcomp/arm/arch.ml[182,6242+16]..[182,6242+18])
+                              pattern (asmcomp/arm/arch.ml[182,6242+20]..[182,6242+27])
+                                Ppat_var "shiftop" (asmcomp/arm/arch.ml[182,6242+20]..[182,6242+27])
+                              pattern (asmcomp/arm/arch.ml[182,6242+29]..[182,6242+35])
+                                Ppat_var "amount" (asmcomp/arm/arch.ml[182,6242+29]..[182,6242+35])
+                            ]
+                      expression (asmcomp/arm/arch.ml[183,6282+6]..[196,6687+14])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (asmcomp/arm/arch.ml[183,6282+10]..[183,6282+30])
+                              Ppat_tuple
+                              [
+                                pattern (asmcomp/arm/arch.ml[183,6282+11]..[183,6282+19])
+                                  Ppat_var "op1_name" (asmcomp/arm/arch.ml[183,6282+11]..[183,6282+19])
+                                pattern (asmcomp/arm/arch.ml[183,6282+21]..[183,6282+29])
+                                  Ppat_var "op2_name" (asmcomp/arm/arch.ml[183,6282+21]..[183,6282+29])
+                              ]
+                            expression (asmcomp/arm/arch.ml[183,6282+33]..[189,6497+32])
+                              Pexp_match
+                              expression (asmcomp/arm/arch.ml[183,6282+39]..[183,6282+41])
+                                Pexp_ident "op" (asmcomp/arm/arch.ml[183,6282+39]..[183,6282+41])
+                              [
+                                <case>
+                                  pattern (asmcomp/arm/arch.ml[184,6329+10]..[184,6329+19])
+                                    Ppat_construct "Ishiftadd" (asmcomp/arm/arch.ml[184,6329+10]..[184,6329+19])
+                                    None
+                                  expression (asmcomp/arm/arch.ml[184,6329+23]..[184,6329+32])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/arm/arch.ml[184,6329+24]..[184,6329+26])
+                                        Pexp_constant PConst_string("",(asmcomp/arm/arch.ml[184,6329+25]..[184,6329+25]),None)
+                                      expression (asmcomp/arm/arch.ml[184,6329+28]..[184,6329+31])
+                                        Pexp_constant PConst_string("+",(asmcomp/arm/arch.ml[184,6329+29]..[184,6329+30]),None)
+                                    ]
+                                <case>
+                                  pattern (asmcomp/arm/arch.ml[185,6362+10]..[185,6362+19])
+                                    Ppat_construct "Ishiftsub" (asmcomp/arm/arch.ml[185,6362+10]..[185,6362+19])
+                                    None
+                                  expression (asmcomp/arm/arch.ml[185,6362+23]..[185,6362+32])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/arm/arch.ml[185,6362+24]..[185,6362+26])
+                                        Pexp_constant PConst_string("",(asmcomp/arm/arch.ml[185,6362+25]..[185,6362+25]),None)
+                                      expression (asmcomp/arm/arch.ml[185,6362+28]..[185,6362+31])
+                                        Pexp_constant PConst_string("-",(asmcomp/arm/arch.ml[185,6362+29]..[185,6362+30]),None)
+                                    ]
+                                <case>
+                                  pattern (asmcomp/arm/arch.ml[186,6395+10]..[186,6395+22])
+                                    Ppat_construct "Ishiftsubrev" (asmcomp/arm/arch.ml[186,6395+10]..[186,6395+22])
+                                    None
+                                  expression (asmcomp/arm/arch.ml[186,6395+26]..[186,6395+36])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/arm/arch.ml[186,6395+27]..[186,6395+30])
+                                        Pexp_constant PConst_string("-",(asmcomp/arm/arch.ml[186,6395+28]..[186,6395+29]),None)
+                                      expression (asmcomp/arm/arch.ml[186,6395+32]..[186,6395+35])
+                                        Pexp_constant PConst_string("+",(asmcomp/arm/arch.ml[186,6395+33]..[186,6395+34]),None)
+                                    ]
+                                <case>
+                                  pattern (asmcomp/arm/arch.ml[187,6432+10]..[187,6432+19])
+                                    Ppat_construct "Ishiftand" (asmcomp/arm/arch.ml[187,6432+10]..[187,6432+19])
+                                    None
+                                  expression (asmcomp/arm/arch.ml[187,6432+23]..[187,6432+32])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/arm/arch.ml[187,6432+24]..[187,6432+26])
+                                        Pexp_constant PConst_string("",(asmcomp/arm/arch.ml[187,6432+25]..[187,6432+25]),None)
+                                      expression (asmcomp/arm/arch.ml[187,6432+28]..[187,6432+31])
+                                        Pexp_constant PConst_string("&",(asmcomp/arm/arch.ml[187,6432+29]..[187,6432+30]),None)
+                                    ]
+                                <case>
+                                  pattern (asmcomp/arm/arch.ml[188,6465+10]..[188,6465+18])
+                                    Ppat_construct "Ishiftor" (asmcomp/arm/arch.ml[188,6465+10]..[188,6465+18])
+                                    None
+                                  expression (asmcomp/arm/arch.ml[188,6465+22]..[188,6465+31])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/arm/arch.ml[188,6465+23]..[188,6465+25])
+                                        Pexp_constant PConst_string("",(asmcomp/arm/arch.ml[188,6465+24]..[188,6465+24]),None)
+                                      expression (asmcomp/arm/arch.ml[188,6465+27]..[188,6465+30])
+                                        Pexp_constant PConst_string("|",(asmcomp/arm/arch.ml[188,6465+28]..[188,6465+29]),None)
+                                    ]
+                                <case>
+                                  pattern (asmcomp/arm/arch.ml[189,6497+10]..[189,6497+19])
+                                    Ppat_construct "Ishiftxor" (asmcomp/arm/arch.ml[189,6497+10]..[189,6497+19])
+                                    None
+                                  expression (asmcomp/arm/arch.ml[189,6497+23]..[189,6497+32])
+                                    Pexp_tuple
+                                    [
+                                      expression (asmcomp/arm/arch.ml[189,6497+24]..[189,6497+26])
+                                        Pexp_constant PConst_string("",(asmcomp/arm/arch.ml[189,6497+25]..[189,6497+25]),None)
+                                      expression (asmcomp/arm/arch.ml[189,6497+28]..[189,6497+31])
+                                        Pexp_constant PConst_string("^",(asmcomp/arm/arch.ml[189,6497+29]..[189,6497+30]),None)
+                                    ]
+                              ]
+                        ]
+                        expression (asmcomp/arm/arch.ml[190,6533+6]..[196,6687+14])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[190,6533+6]..[190,6533+13])
+                            Pexp_ident "fprintf" (asmcomp/arm/arch.ml[190,6533+6]..[190,6533+13])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[190,6533+14]..[190,6533+17])
+                                Pexp_ident "ppf" (asmcomp/arm/arch.ml[190,6533+14]..[190,6533+17])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[190,6533+18]..[190,6533+38])
+                                Pexp_constant PConst_string("%s%a %s (%a %s %i)",(asmcomp/arm/arch.ml[190,6533+19]..[190,6533+37]),None)
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[191,6572+8]..[191,6572+16])
+                                Pexp_ident "op1_name" (asmcomp/arm/arch.ml[191,6572+8]..[191,6572+16])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[192,6589+8]..[192,6589+16])
+                                Pexp_ident "printreg" (asmcomp/arm/arch.ml[192,6589+8]..[192,6589+16])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[192,6589+17]..[192,6589+24])
+                                Pexp_apply
+                                expression (asmcomp/arm/arch.ml[192,6589+17]..[192,6589+24]) ghost
+                                  Pexp_ident "Array.get" (asmcomp/arm/arch.ml[192,6589+17]..[192,6589+24]) ghost
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm/arch.ml[192,6589+17]..[192,6589+20])
+                                      Pexp_ident "arg" (asmcomp/arm/arch.ml[192,6589+17]..[192,6589+20])
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm/arch.ml[192,6589+22]..[192,6589+23])
+                                      Pexp_constant PConst_int (0,None)
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[193,6614+8]..[193,6614+16])
+                                Pexp_ident "op2_name" (asmcomp/arm/arch.ml[193,6614+8]..[193,6614+16])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[194,6631+8]..[194,6631+16])
+                                Pexp_ident "printreg" (asmcomp/arm/arch.ml[194,6631+8]..[194,6631+16])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[194,6631+17]..[194,6631+24])
+                                Pexp_apply
+                                expression (asmcomp/arm/arch.ml[194,6631+17]..[194,6631+24]) ghost
+                                  Pexp_ident "Array.get" (asmcomp/arm/arch.ml[194,6631+17]..[194,6631+24]) ghost
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm/arch.ml[194,6631+17]..[194,6631+20])
+                                      Pexp_ident "arg" (asmcomp/arm/arch.ml[194,6631+17]..[194,6631+20])
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm/arch.ml[194,6631+22]..[194,6631+23])
+                                      Pexp_constant PConst_int (1,None)
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[195,6656+8]..[195,6656+30])
+                                Pexp_apply
+                                expression (asmcomp/arm/arch.ml[195,6656+9]..[195,6656+21])
+                                  Pexp_ident "shiftop_name" (asmcomp/arm/arch.ml[195,6656+9]..[195,6656+21])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm/arch.ml[195,6656+22]..[195,6656+29])
+                                      Pexp_ident "shiftop" (asmcomp/arm/arch.ml[195,6656+22]..[195,6656+29])
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[196,6687+8]..[196,6687+14])
+                                Pexp_ident "amount" (asmcomp/arm/arch.ml[196,6687+8]..[196,6687+14])
+                          ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[197,6702+4]..[197,6702+37])
+                        Ppat_construct "Ishiftcheckbound" (asmcomp/arm/arch.ml[197,6702+4]..[197,6702+20])
+                        Some
+                          []
+                          pattern (asmcomp/arm/arch.ml[197,6702+20]..[197,6702+37])
+                            Ppat_tuple
+                            [
+                              pattern (asmcomp/arm/arch.ml[197,6702+21]..[197,6702+28])
+                                Ppat_var "shiftop" (asmcomp/arm/arch.ml[197,6702+21]..[197,6702+28])
+                              pattern (asmcomp/arm/arch.ml[197,6702+30]..[197,6702+36])
+                                Ppat_var "amount" (asmcomp/arm/arch.ml[197,6702+30]..[197,6702+36])
+                            ]
+                      expression (asmcomp/arm/arch.ml[198,6743+6]..[202,6856+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[198,6743+6]..[198,6743+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[198,6743+6]..[198,6743+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[198,6743+14]..[198,6743+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[198,6743+14]..[198,6743+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[198,6743+18]..[198,6743+41])
+                              Pexp_constant PConst_string("check (%a %s %i) > %a",(asmcomp/arm/arch.ml[198,6743+19]..[198,6743+40]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[199,6785+8]..[199,6785+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[199,6785+8]..[199,6785+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[199,6785+17]..[199,6785+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[199,6785+17]..[199,6785+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[199,6785+17]..[199,6785+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[199,6785+17]..[199,6785+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[199,6785+17]..[199,6785+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[199,6785+22]..[199,6785+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[200,6810+8]..[200,6810+30])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[200,6810+9]..[200,6810+21])
+                                Pexp_ident "shiftop_name" (asmcomp/arm/arch.ml[200,6810+9]..[200,6810+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[200,6810+22]..[200,6810+29])
+                                    Pexp_ident "shiftop" (asmcomp/arm/arch.ml[200,6810+22]..[200,6810+29])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[201,6841+8]..[201,6841+14])
+                              Pexp_ident "amount" (asmcomp/arm/arch.ml[201,6841+8]..[201,6841+14])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[202,6856+8]..[202,6856+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[202,6856+8]..[202,6856+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[202,6856+17]..[202,6856+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[202,6856+17]..[202,6856+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[202,6856+17]..[202,6856+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[202,6856+17]..[202,6856+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[202,6856+17]..[202,6856+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[202,6856+22]..[202,6856+23])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[203,6881+4]..[203,6881+16])
+                        Ppat_construct "Irevsubimm" (asmcomp/arm/arch.ml[203,6881+4]..[203,6881+14])
+                        Some
+                          []
+                          pattern (asmcomp/arm/arch.ml[203,6881+15]..[203,6881+16])
+                            Ppat_var "n" (asmcomp/arm/arch.ml[203,6881+15]..[203,6881+16])
+                      expression (asmcomp/arm/arch.ml[204,6901+6]..[204,6901+51])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[204,6901+6]..[204,6901+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[204,6901+6]..[204,6901+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[204,6901+14]..[204,6901+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[204,6901+14]..[204,6901+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[204,6901+18]..[204,6901+28])
+                              Pexp_constant PConst_string("%i %s %a",(asmcomp/arm/arch.ml[204,6901+19]..[204,6901+27]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[204,6901+29]..[204,6901+30])
+                              Pexp_ident "n" (asmcomp/arm/arch.ml[204,6901+29]..[204,6901+30])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[204,6901+31]..[204,6901+34])
+                              Pexp_constant PConst_string("-",(asmcomp/arm/arch.ml[204,6901+32]..[204,6901+33]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[204,6901+35]..[204,6901+43])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[204,6901+35]..[204,6901+43])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[204,6901+44]..[204,6901+51])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[204,6901+44]..[204,6901+51]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[204,6901+44]..[204,6901+51]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[204,6901+44]..[204,6901+47])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[204,6901+44]..[204,6901+47])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[204,6901+49]..[204,6901+50])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[205,6953+4]..[205,6953+12])
+                        Ppat_construct "Imulhadd" (asmcomp/arm/arch.ml[205,6953+4]..[205,6953+12])
+                        None
+                      expression (asmcomp/arm/arch.ml[206,6969+6]..[209,7054+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[206,6969+6]..[206,6969+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[206,6969+6]..[206,6969+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[206,6969+14]..[206,6969+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[206,6969+14]..[206,6969+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[206,6969+18]..[206,6969+34])
+                              Pexp_constant PConst_string("%a *h %a) + %a",(asmcomp/arm/arch.ml[206,6969+19]..[206,6969+33]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[207,7004+8]..[207,7004+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[207,7004+8]..[207,7004+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[207,7004+17]..[207,7004+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[207,7004+17]..[207,7004+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[207,7004+17]..[207,7004+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[207,7004+17]..[207,7004+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[207,7004+17]..[207,7004+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[207,7004+22]..[207,7004+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[208,7029+8]..[208,7029+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[208,7029+8]..[208,7029+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[208,7029+17]..[208,7029+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[208,7029+17]..[208,7029+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[208,7029+17]..[208,7029+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[208,7029+17]..[208,7029+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[208,7029+17]..[208,7029+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[208,7029+22]..[208,7029+23])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[209,7054+8]..[209,7054+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[209,7054+8]..[209,7054+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[209,7054+17]..[209,7054+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[209,7054+17]..[209,7054+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[209,7054+17]..[209,7054+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[209,7054+17]..[209,7054+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[209,7054+17]..[209,7054+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[209,7054+22]..[209,7054+23])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[210,7079+4]..[210,7079+11])
+                        Ppat_construct "Imuladd" (asmcomp/arm/arch.ml[210,7079+4]..[210,7079+11])
+                        None
+                      expression (asmcomp/arm/arch.ml[211,7094+6]..[214,7179+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[211,7094+6]..[211,7094+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[211,7094+6]..[211,7094+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[211,7094+14]..[211,7094+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[211,7094+14]..[211,7094+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[211,7094+18]..[211,7094+34])
+                              Pexp_constant PConst_string("(%a * %a) + %a",(asmcomp/arm/arch.ml[211,7094+19]..[211,7094+33]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[212,7129+8]..[212,7129+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[212,7129+8]..[212,7129+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[212,7129+17]..[212,7129+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[212,7129+17]..[212,7129+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[212,7129+17]..[212,7129+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[212,7129+17]..[212,7129+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[212,7129+17]..[212,7129+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[212,7129+22]..[212,7129+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[213,7154+8]..[213,7154+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[213,7154+8]..[213,7154+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[213,7154+17]..[213,7154+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[213,7154+17]..[213,7154+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[213,7154+17]..[213,7154+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[213,7154+17]..[213,7154+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[213,7154+17]..[213,7154+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[213,7154+22]..[213,7154+23])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[214,7179+8]..[214,7179+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[214,7179+8]..[214,7179+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[214,7179+17]..[214,7179+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[214,7179+17]..[214,7179+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[214,7179+17]..[214,7179+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[214,7179+17]..[214,7179+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[214,7179+17]..[214,7179+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[214,7179+22]..[214,7179+23])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[215,7204+4]..[215,7204+11])
+                        Ppat_construct "Imulsub" (asmcomp/arm/arch.ml[215,7204+4]..[215,7204+11])
+                        None
+                      expression (asmcomp/arm/arch.ml[216,7219+6]..[219,7305+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[216,7219+6]..[216,7219+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[216,7219+6]..[216,7219+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[216,7219+14]..[216,7219+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[216,7219+14]..[216,7219+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[216,7219+18]..[216,7219+35])
+                              Pexp_constant PConst_string("-(%a * %a) + %a",(asmcomp/arm/arch.ml[216,7219+19]..[216,7219+34]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[217,7255+8]..[217,7255+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[217,7255+8]..[217,7255+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[217,7255+17]..[217,7255+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[217,7255+17]..[217,7255+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[217,7255+17]..[217,7255+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[217,7255+17]..[217,7255+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[217,7255+17]..[217,7255+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[217,7255+22]..[217,7255+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[218,7280+8]..[218,7280+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[218,7280+8]..[218,7280+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[218,7280+17]..[218,7280+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[218,7280+17]..[218,7280+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[218,7280+17]..[218,7280+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[218,7280+17]..[218,7280+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[218,7280+17]..[218,7280+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[218,7280+22]..[218,7280+23])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[219,7305+8]..[219,7305+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[219,7305+8]..[219,7305+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[219,7305+17]..[219,7305+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[219,7305+17]..[219,7305+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[219,7305+17]..[219,7305+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[219,7305+17]..[219,7305+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[219,7305+17]..[219,7305+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[219,7305+22]..[219,7305+23])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[220,7330+4]..[220,7330+12])
+                        Ppat_construct "Inegmulf" (asmcomp/arm/arch.ml[220,7330+4]..[220,7330+12])
+                        None
+                      expression (asmcomp/arm/arch.ml[221,7346+6]..[223,7405+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[221,7346+6]..[221,7346+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[221,7346+6]..[221,7346+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[221,7346+14]..[221,7346+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[221,7346+14]..[221,7346+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[221,7346+18]..[221,7346+33])
+                              Pexp_constant PConst_string("-f (%a *f %a)",(asmcomp/arm/arch.ml[221,7346+19]..[221,7346+32]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[222,7380+8]..[222,7380+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[222,7380+8]..[222,7380+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[222,7380+17]..[222,7380+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[222,7380+17]..[222,7380+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[222,7380+17]..[222,7380+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[222,7380+17]..[222,7380+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[222,7380+17]..[222,7380+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[222,7380+22]..[222,7380+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[223,7405+8]..[223,7405+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[223,7405+8]..[223,7405+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[223,7405+17]..[223,7405+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[223,7405+17]..[223,7405+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[223,7405+17]..[223,7405+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[223,7405+17]..[223,7405+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[223,7405+17]..[223,7405+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[223,7405+22]..[223,7405+23])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[224,7430+4]..[224,7430+12])
+                        Ppat_construct "Imuladdf" (asmcomp/arm/arch.ml[224,7430+4]..[224,7430+12])
+                        None
+                      expression (asmcomp/arm/arch.ml[225,7446+6]..[228,7533+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[225,7446+6]..[225,7446+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[225,7446+6]..[225,7446+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[225,7446+14]..[225,7446+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[225,7446+14]..[225,7446+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[225,7446+18]..[225,7446+36])
+                              Pexp_constant PConst_string("%a +f (%a *f %a)",(asmcomp/arm/arch.ml[225,7446+19]..[225,7446+35]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[226,7483+8]..[226,7483+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[226,7483+8]..[226,7483+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[226,7483+17]..[226,7483+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[226,7483+17]..[226,7483+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[226,7483+17]..[226,7483+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[226,7483+17]..[226,7483+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[226,7483+17]..[226,7483+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[226,7483+22]..[226,7483+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[227,7508+8]..[227,7508+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[227,7508+8]..[227,7508+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[227,7508+17]..[227,7508+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[227,7508+17]..[227,7508+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[227,7508+17]..[227,7508+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[227,7508+17]..[227,7508+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[227,7508+17]..[227,7508+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[227,7508+22]..[227,7508+23])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[228,7533+8]..[228,7533+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[228,7533+8]..[228,7533+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[228,7533+17]..[228,7533+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[228,7533+17]..[228,7533+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[228,7533+17]..[228,7533+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[228,7533+17]..[228,7533+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[228,7533+17]..[228,7533+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[228,7533+22]..[228,7533+23])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[229,7558+4]..[229,7558+15])
+                        Ppat_construct "Inegmuladdf" (asmcomp/arm/arch.ml[229,7558+4]..[229,7558+15])
+                        None
+                      expression (asmcomp/arm/arch.ml[230,7577+6]..[233,7664+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[230,7577+6]..[230,7577+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[230,7577+6]..[230,7577+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[230,7577+14]..[230,7577+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[230,7577+14]..[230,7577+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[230,7577+18]..[230,7577+36])
+                              Pexp_constant PConst_string("%a -f (%a *f %a)",(asmcomp/arm/arch.ml[230,7577+19]..[230,7577+35]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[231,7614+8]..[231,7614+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[231,7614+8]..[231,7614+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[231,7614+17]..[231,7614+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[231,7614+17]..[231,7614+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[231,7614+17]..[231,7614+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[231,7614+17]..[231,7614+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[231,7614+17]..[231,7614+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[231,7614+22]..[231,7614+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[232,7639+8]..[232,7639+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[232,7639+8]..[232,7639+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[232,7639+17]..[232,7639+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[232,7639+17]..[232,7639+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[232,7639+17]..[232,7639+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[232,7639+17]..[232,7639+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[232,7639+17]..[232,7639+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[232,7639+22]..[232,7639+23])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[233,7664+8]..[233,7664+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[233,7664+8]..[233,7664+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[233,7664+17]..[233,7664+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[233,7664+17]..[233,7664+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[233,7664+17]..[233,7664+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[233,7664+17]..[233,7664+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[233,7664+17]..[233,7664+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[233,7664+22]..[233,7664+23])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[234,7689+4]..[234,7689+12])
+                        Ppat_construct "Imulsubf" (asmcomp/arm/arch.ml[234,7689+4]..[234,7689+12])
+                        None
+                      expression (asmcomp/arm/arch.ml[235,7705+6]..[238,7797+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[235,7705+6]..[235,7705+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[235,7705+6]..[235,7705+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[235,7705+14]..[235,7705+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[235,7705+14]..[235,7705+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[235,7705+18]..[235,7705+41])
+                              Pexp_constant PConst_string("(-f %a) +f (%a *f %a)",(asmcomp/arm/arch.ml[235,7705+19]..[235,7705+40]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[236,7747+8]..[236,7747+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[236,7747+8]..[236,7747+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[236,7747+17]..[236,7747+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[236,7747+17]..[236,7747+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[236,7747+17]..[236,7747+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[236,7747+17]..[236,7747+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[236,7747+17]..[236,7747+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[236,7747+22]..[236,7747+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[237,7772+8]..[237,7772+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[237,7772+8]..[237,7772+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[237,7772+17]..[237,7772+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[237,7772+17]..[237,7772+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[237,7772+17]..[237,7772+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[237,7772+17]..[237,7772+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[237,7772+17]..[237,7772+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[237,7772+22]..[237,7772+23])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[238,7797+8]..[238,7797+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[238,7797+8]..[238,7797+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[238,7797+17]..[238,7797+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[238,7797+17]..[238,7797+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[238,7797+17]..[238,7797+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[238,7797+17]..[238,7797+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[238,7797+17]..[238,7797+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[238,7797+22]..[238,7797+23])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[239,7822+4]..[239,7822+15])
+                        Ppat_construct "Inegmulsubf" (asmcomp/arm/arch.ml[239,7822+4]..[239,7822+15])
+                        None
+                      expression (asmcomp/arm/arch.ml[240,7841+6]..[243,7933+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[240,7841+6]..[240,7841+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[240,7841+6]..[240,7841+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[240,7841+14]..[240,7841+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[240,7841+14]..[240,7841+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[240,7841+18]..[240,7841+41])
+                              Pexp_constant PConst_string("(-f %a) -f (%a *f %a)",(asmcomp/arm/arch.ml[240,7841+19]..[240,7841+40]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[241,7883+8]..[241,7883+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[241,7883+8]..[241,7883+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[241,7883+17]..[241,7883+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[241,7883+17]..[241,7883+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[241,7883+17]..[241,7883+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[241,7883+17]..[241,7883+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[241,7883+17]..[241,7883+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[241,7883+22]..[241,7883+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[242,7908+8]..[242,7908+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[242,7908+8]..[242,7908+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[242,7908+17]..[242,7908+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[242,7908+17]..[242,7908+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[242,7908+17]..[242,7908+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[242,7908+17]..[242,7908+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[242,7908+17]..[242,7908+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[242,7908+22]..[242,7908+23])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[243,7933+8]..[243,7933+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[243,7933+8]..[243,7933+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[243,7933+17]..[243,7933+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[243,7933+17]..[243,7933+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[243,7933+17]..[243,7933+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[243,7933+17]..[243,7933+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[243,7933+17]..[243,7933+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[243,7933+22]..[243,7933+23])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[244,7958+4]..[244,7958+10])
+                        Ppat_construct "Isqrtf" (asmcomp/arm/arch.ml[244,7958+4]..[244,7958+10])
+                        None
+                      expression (asmcomp/arm/arch.ml[245,7972+6]..[246,8001+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[245,7972+6]..[245,7972+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[245,7972+6]..[245,7972+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[245,7972+14]..[245,7972+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[245,7972+14]..[245,7972+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[245,7972+18]..[245,7972+28])
+                              Pexp_constant PConst_string("sqrtf %a",(asmcomp/arm/arch.ml[245,7972+19]..[245,7972+27]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[246,8001+8]..[246,8001+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[246,8001+8]..[246,8001+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[246,8001+17]..[246,8001+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[246,8001+17]..[246,8001+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[246,8001+17]..[246,8001+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[246,8001+17]..[246,8001+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[246,8001+17]..[246,8001+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[246,8001+22]..[246,8001+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/arm/arch.ml[247,8026+4]..[247,8026+12])
+                        Ppat_construct "Ibswap" (asmcomp/arm/arch.ml[247,8026+4]..[247,8026+10])
+                        Some
+                          []
+                          pattern (asmcomp/arm/arch.ml[247,8026+11]..[247,8026+12])
+                            Ppat_var "n" (asmcomp/arm/arch.ml[247,8026+11]..[247,8026+12])
+                      expression (asmcomp/arm/arch.ml[248,8042+6]..[249,8075+24])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[248,8042+6]..[248,8042+13])
+                          Pexp_ident "fprintf" (asmcomp/arm/arch.ml[248,8042+6]..[248,8042+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[248,8042+14]..[248,8042+17])
+                              Pexp_ident "ppf" (asmcomp/arm/arch.ml[248,8042+14]..[248,8042+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[248,8042+18]..[248,8042+30])
+                              Pexp_constant PConst_string("bswap%i %a",(asmcomp/arm/arch.ml[248,8042+19]..[248,8042+29]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[248,8042+31]..[248,8042+32])
+                              Pexp_ident "n" (asmcomp/arm/arch.ml[248,8042+31]..[248,8042+32])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[249,8075+8]..[249,8075+16])
+                              Pexp_ident "printreg" (asmcomp/arm/arch.ml[249,8075+8]..[249,8075+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[249,8075+17]..[249,8075+24])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[249,8075+17]..[249,8075+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/arm/arch.ml[249,8075+17]..[249,8075+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[249,8075+17]..[249,8075+20])
+                                    Pexp_ident "arg" (asmcomp/arm/arch.ml[249,8075+17]..[249,8075+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[249,8075+22]..[249,8075+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                        ]
+                  ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[257,8292+0]..[265,8546+9])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[257,8292+4]..[257,8292+16])
+          Ppat_var "is_immediate" (asmcomp/arm/arch.ml[257,8292+4]..[257,8292+16])
+        expression (asmcomp/arm/arch.ml[257,8292+17]..[265,8546+9]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/arm/arch.ml[257,8292+17]..[257,8292+18])
+            Ppat_var "n" (asmcomp/arm/arch.ml[257,8292+17]..[257,8292+18])
+          expression (asmcomp/arm/arch.ml[258,8313+2]..[265,8546+9])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (asmcomp/arm/arch.ml[258,8313+6]..[258,8313+7])
+                  Ppat_var "n" (asmcomp/arm/arch.ml[258,8313+6]..[258,8313+7])
+                expression (asmcomp/arm/arch.ml[258,8313+10]..[258,8313+15])
+                  Pexp_apply
+                  expression (asmcomp/arm/arch.ml[258,8313+10]..[258,8313+13])
+                    Pexp_ident "ref" (asmcomp/arm/arch.ml[258,8313+10]..[258,8313+13])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/arm/arch.ml[258,8313+14]..[258,8313+15])
+                        Pexp_ident "n" (asmcomp/arm/arch.ml[258,8313+14]..[258,8313+15])
+                  ]
+            ]
+            expression (asmcomp/arm/arch.ml[259,8332+2]..[265,8546+9])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (asmcomp/arm/arch.ml[259,8332+6]..[259,8332+7])
+                    Ppat_var "s" (asmcomp/arm/arch.ml[259,8332+6]..[259,8332+7])
+                  expression (asmcomp/arm/arch.ml[259,8332+10]..[259,8332+15])
+                    Pexp_apply
+                    expression (asmcomp/arm/arch.ml[259,8332+10]..[259,8332+13])
+                      Pexp_ident "ref" (asmcomp/arm/arch.ml[259,8332+10]..[259,8332+13])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (asmcomp/arm/arch.ml[259,8332+14]..[259,8332+15])
+                          Pexp_constant PConst_int (0,None)
+                    ]
+              ]
+              expression (asmcomp/arm/arch.ml[260,8351+2]..[265,8546+9])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (asmcomp/arm/arch.ml[260,8351+6]..[260,8351+7])
+                      Ppat_var "m" (asmcomp/arm/arch.ml[260,8351+6]..[260,8351+7])
+                    expression (asmcomp/arm/arch.ml[260,8351+10]..[260,8351+35])
+                      Pexp_ifthenelse
+                      expression (asmcomp/arm/arch.ml[260,8351+13]..[260,8351+19])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[260,8351+13]..[260,8351+14])
+                          Pexp_ident "!" (asmcomp/arm/arch.ml[260,8351+13]..[260,8351+14])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[260,8351+14]..[260,8351+19])
+                              Pexp_ident "thumb" (asmcomp/arm/arch.ml[260,8351+14]..[260,8351+19])
+                        ]
+                      expression (asmcomp/arm/arch.ml[260,8351+25]..[260,8351+27])
+                        Pexp_constant PConst_int (24,None)
+                      Some
+                        expression (asmcomp/arm/arch.ml[260,8351+33]..[260,8351+35])
+                          Pexp_constant PConst_int (30,None)
+                ]
+                expression (asmcomp/arm/arch.ml[261,8390+2]..[265,8546+9])
+                  Pexp_sequence
+                  expression (asmcomp/arm/arch.ml[261,8390+2]..[264,8538+6])
+                    Pexp_while
+                    expression (asmcomp/arm/arch.ml[261,8390+8]..[261,8390+48])
+                      Pexp_apply
+                      expression (asmcomp/arm/arch.ml[261,8390+17]..[261,8390+19])
+                        Pexp_ident "&&" (asmcomp/arm/arch.ml[261,8390+17]..[261,8390+19])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (asmcomp/arm/arch.ml[261,8390+9]..[261,8390+16])
+                            Pexp_apply
+                            expression (asmcomp/arm/arch.ml[261,8390+12]..[261,8390+14])
+                              Pexp_ident "<=" (asmcomp/arm/arch.ml[261,8390+12]..[261,8390+14])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[261,8390+9]..[261,8390+11])
+                                  Pexp_apply
+                                  expression (asmcomp/arm/arch.ml[261,8390+9]..[261,8390+10])
+                                    Pexp_ident "!" (asmcomp/arm/arch.ml[261,8390+9]..[261,8390+10])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[261,8390+10]..[261,8390+11])
+                                        Pexp_ident "s" (asmcomp/arm/arch.ml[261,8390+10]..[261,8390+11])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[261,8390+15]..[261,8390+16])
+                                  Pexp_ident "m" (asmcomp/arm/arch.ml[261,8390+15]..[261,8390+16])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (asmcomp/arm/arch.ml[261,8390+20]..[261,8390+47])
+                            Pexp_apply
+                            expression (asmcomp/arm/arch.ml[261,8390+42]..[261,8390+44])
+                              Pexp_ident "<>" (asmcomp/arm/arch.ml[261,8390+42]..[261,8390+44])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[261,8390+20]..[261,8390+41])
+                                  Pexp_apply
+                                  expression (asmcomp/arm/arch.ml[261,8390+20]..[261,8390+32])
+                                    Pexp_ident "Int32.logand" (asmcomp/arm/arch.ml[261,8390+20]..[261,8390+32])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[261,8390+33]..[261,8390+35])
+                                        Pexp_apply
+                                        expression (asmcomp/arm/arch.ml[261,8390+33]..[261,8390+34])
+                                          Pexp_ident "!" (asmcomp/arm/arch.ml[261,8390+33]..[261,8390+34])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/arm/arch.ml[261,8390+34]..[261,8390+35])
+                                              Pexp_ident "n" (asmcomp/arm/arch.ml[261,8390+34]..[261,8390+35])
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[261,8390+36]..[261,8390+41])
+                                        Pexp_constant PConst_int (0xff,Some l)
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/arm/arch.ml[261,8390+45]..[261,8390+47])
+                                  Pexp_apply
+                                  expression (asmcomp/arm/arch.ml[261,8390+45]..[261,8390+46])
+                                    Pexp_ident "!" (asmcomp/arm/arch.ml[261,8390+45]..[261,8390+46])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/arm/arch.ml[261,8390+46]..[261,8390+47])
+                                        Pexp_ident "n" (asmcomp/arm/arch.ml[261,8390+46]..[261,8390+47])
+                                  ]
+                            ]
+                      ]
+                    expression (asmcomp/arm/arch.ml[262,8442+4]..[263,8522+15])
+                      Pexp_sequence
+                      expression (asmcomp/arm/arch.ml[262,8442+4]..[262,8442+78])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[262,8442+6]..[262,8442+8])
+                          Pexp_ident ":=" (asmcomp/arm/arch.ml[262,8442+6]..[262,8442+8])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[262,8442+4]..[262,8442+5])
+                              Pexp_ident "n" (asmcomp/arm/arch.ml[262,8442+4]..[262,8442+5])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[262,8442+9]..[262,8442+78])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[262,8442+9]..[262,8442+20])
+                                Pexp_ident "Int32.logor" (asmcomp/arm/arch.ml[262,8442+9]..[262,8442+20])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[262,8442+21]..[262,8442+53])
+                                    Pexp_apply
+                                    expression (asmcomp/arm/arch.ml[262,8442+22]..[262,8442+47])
+                                      Pexp_ident "Int32.shift_right_logical" (asmcomp/arm/arch.ml[262,8442+22]..[262,8442+47])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm/arch.ml[262,8442+48]..[262,8442+50])
+                                          Pexp_apply
+                                          expression (asmcomp/arm/arch.ml[262,8442+48]..[262,8442+49])
+                                            Pexp_ident "!" (asmcomp/arm/arch.ml[262,8442+48]..[262,8442+49])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/arm/arch.ml[262,8442+49]..[262,8442+50])
+                                                Pexp_ident "n" (asmcomp/arm/arch.ml[262,8442+49]..[262,8442+50])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm/arch.ml[262,8442+51]..[262,8442+52])
+                                          Pexp_constant PConst_int (2,None)
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[262,8442+54]..[262,8442+78])
+                                    Pexp_apply
+                                    expression (asmcomp/arm/arch.ml[262,8442+55]..[262,8442+71])
+                                      Pexp_ident "Int32.shift_left" (asmcomp/arm/arch.ml[262,8442+55]..[262,8442+71])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm/arch.ml[262,8442+72]..[262,8442+74])
+                                          Pexp_apply
+                                          expression (asmcomp/arm/arch.ml[262,8442+72]..[262,8442+73])
+                                            Pexp_ident "!" (asmcomp/arm/arch.ml[262,8442+72]..[262,8442+73])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/arm/arch.ml[262,8442+73]..[262,8442+74])
+                                                Pexp_ident "n" (asmcomp/arm/arch.ml[262,8442+73]..[262,8442+74])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm/arch.ml[262,8442+75]..[262,8442+77])
+                                          Pexp_constant PConst_int (30,None)
+                                    ]
+                              ]
+                        ]
+                      expression (asmcomp/arm/arch.ml[263,8522+4]..[263,8522+15])
+                        Pexp_apply
+                        expression (asmcomp/arm/arch.ml[263,8522+6]..[263,8522+8])
+                          Pexp_ident ":=" (asmcomp/arm/arch.ml[263,8522+6]..[263,8522+8])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[263,8522+4]..[263,8522+5])
+                              Pexp_ident "s" (asmcomp/arm/arch.ml[263,8522+4]..[263,8522+5])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/arm/arch.ml[263,8522+9]..[263,8522+15])
+                              Pexp_apply
+                              expression (asmcomp/arm/arch.ml[263,8522+12]..[263,8522+13])
+                                Pexp_ident "+" (asmcomp/arm/arch.ml[263,8522+12]..[263,8522+13])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[263,8522+9]..[263,8522+11])
+                                    Pexp_apply
+                                    expression (asmcomp/arm/arch.ml[263,8522+9]..[263,8522+10])
+                                      Pexp_ident "!" (asmcomp/arm/arch.ml[263,8522+9]..[263,8522+10])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/arm/arch.ml[263,8522+10]..[263,8522+11])
+                                          Pexp_ident "s" (asmcomp/arm/arch.ml[263,8522+10]..[263,8522+11])
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/arm/arch.ml[263,8522+14]..[263,8522+15])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                  expression (asmcomp/arm/arch.ml[265,8546+2]..[265,8546+9])
+                    Pexp_apply
+                    expression (asmcomp/arm/arch.ml[265,8546+5]..[265,8546+7])
+                      Pexp_ident "<=" (asmcomp/arm/arch.ml[265,8546+5]..[265,8546+7])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (asmcomp/arm/arch.ml[265,8546+2]..[265,8546+4])
+                          Pexp_apply
+                          expression (asmcomp/arm/arch.ml[265,8546+2]..[265,8546+3])
+                            Pexp_ident "!" (asmcomp/arm/arch.ml[265,8546+2]..[265,8546+3])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/arm/arch.ml[265,8546+3]..[265,8546+4])
+                                Pexp_ident "s" (asmcomp/arm/arch.ml[265,8546+3]..[265,8546+4])
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (asmcomp/arm/arch.ml[265,8546+8]..[265,8546+9])
+                          Pexp_ident "m" (asmcomp/arm/arch.ml[265,8546+8]..[265,8546+9])
+                    ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[269,8598+0]..[271,8663+13])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[269,8598+4]..[269,8598+21])
+          Ppat_var "operation_is_pure" (asmcomp/arm/arch.ml[269,8598+4]..[269,8598+21])
+        expression (asmcomp/arm/arch.ml[269,8598+24]..[271,8663+13])
+          Pexp_function
+          [
+            <case>
+              pattern (asmcomp/arm/arch.ml[270,8631+4]..[270,8631+22])
+                Ppat_construct "Ishiftcheckbound" (asmcomp/arm/arch.ml[270,8631+4]..[270,8631+20])
+                Some
+                  []
+                  pattern (asmcomp/arm/arch.ml[270,8631+21]..[270,8631+22])
+                    Ppat_any
+              expression (asmcomp/arm/arch.ml[270,8631+26]..[270,8631+31])
+                Pexp_construct "false" (asmcomp/arm/arch.ml[270,8631+26]..[270,8631+31])
+                None
+            <case>
+              pattern (asmcomp/arm/arch.ml[271,8663+4]..[271,8663+5])
+                Ppat_any
+              expression (asmcomp/arm/arch.ml[271,8663+9]..[271,8663+13])
+                Pexp_construct "true" (asmcomp/arm/arch.ml[271,8663+9]..[271,8663+13])
+                None
+          ]
+    ]
+  structure_item (asmcomp/arm/arch.ml[275,8720+0]..[277,8786+14])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm/arch.ml[275,8720+4]..[275,8720+23])
+          Ppat_var "operation_can_raise" (asmcomp/arm/arch.ml[275,8720+4]..[275,8720+23])
+        expression (asmcomp/arm/arch.ml[275,8720+26]..[277,8786+14])
+          Pexp_function
+          [
+            <case>
+              pattern (asmcomp/arm/arch.ml[276,8755+4]..[276,8755+22])
+                Ppat_construct "Ishiftcheckbound" (asmcomp/arm/arch.ml[276,8755+4]..[276,8755+20])
+                Some
+                  []
+                  pattern (asmcomp/arm/arch.ml[276,8755+21]..[276,8755+22])
+                    Ppat_any
+              expression (asmcomp/arm/arch.ml[276,8755+26]..[276,8755+30])
+                Pexp_construct "true" (asmcomp/arm/arch.ml[276,8755+26]..[276,8755+30])
+                None
+            <case>
+              pattern (asmcomp/arm/arch.ml[277,8786+4]..[277,8786+5])
+                Ppat_any
+              expression (asmcomp/arm/arch.ml[277,8786+9]..[277,8786+14])
+                Pexp_construct "false" (asmcomp/arm/arch.ml[277,8786+9]..[277,8786+14])
+                None
+          ]
+    ]
+]
+

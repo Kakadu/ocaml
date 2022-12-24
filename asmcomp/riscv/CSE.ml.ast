@@ -1,0 +1,190 @@
+[
+  structure_item (asmcomp/riscv/CSE.ml[19,1132+0]..[19,1132+9])
+    Pstr_open Fresh
+    module_expr (asmcomp/riscv/CSE.ml[19,1132+5]..[19,1132+9])
+      Pmod_ident "Arch" (asmcomp/riscv/CSE.ml[19,1132+5]..[19,1132+9])
+  structure_item (asmcomp/riscv/CSE.ml[20,1142+0]..[20,1142+9])
+    Pstr_open Fresh
+    module_expr (asmcomp/riscv/CSE.ml[20,1142+5]..[20,1142+9])
+      Pmod_ident "Mach" (asmcomp/riscv/CSE.ml[20,1142+5]..[20,1142+9])
+  structure_item (asmcomp/riscv/CSE.ml[21,1152+0]..[21,1152+11])
+    Pstr_open Fresh
+    module_expr (asmcomp/riscv/CSE.ml[21,1152+5]..[21,1152+11])
+      Pmod_ident "CSEgen" (asmcomp/riscv/CSE.ml[21,1152+5]..[21,1152+11])
+  structure_item (asmcomp/riscv/CSE.ml[23,1165+0]..[37,1485+3])
+    Pstr_class
+    [
+      class_declaration (asmcomp/riscv/CSE.ml[23,1165+0]..[37,1485+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "cse" (asmcomp/riscv/CSE.ml[23,1165+6]..[23,1165+9])
+        pci_expr =
+          class_expr (asmcomp/riscv/CSE.ml[23,1165+12]..[37,1485+3])
+            Pcl_structure
+            class_structure
+              pattern (asmcomp/riscv/CSE.ml[23,1165+19]..[23,1165+26])
+                Ppat_var "_self" (asmcomp/riscv/CSE.ml[23,1165+20]..[23,1165+25])
+              [
+                class_field (asmcomp/riscv/CSE.ml[25,1193+0]..[25,1193+28])
+                  Pcf_inherit Fresh
+                    class_expr (asmcomp/riscv/CSE.ml[25,1193+8]..[25,1193+19])
+                      Pcl_constr "cse_generic" (asmcomp/riscv/CSE.ml[25,1193+8]..[25,1193+19])
+                      []
+                    Some
+                      "super" (asmcomp/riscv/CSE.ml[25,1193+23]..[25,1193+28])
+                class_field (asmcomp/riscv/CSE.ml[27,1223+0]..[30,1323+36])
+                  Pcf_method Public
+                    "class_of_operation" (asmcomp/riscv/CSE.ml[27,1223+8]..[27,1223+26])
+                    Concrete Override
+                    expression (asmcomp/riscv/CSE.ml[27,1223+27]..[30,1323+36]) ghost
+                      Pexp_poly
+                      expression (asmcomp/riscv/CSE.ml[27,1223+27]..[30,1323+36]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/riscv/CSE.ml[27,1223+27]..[27,1223+29])
+                          Ppat_var "op" (asmcomp/riscv/CSE.ml[27,1223+27]..[27,1223+29])
+                        expression (asmcomp/riscv/CSE.ml[28,1255+2]..[30,1323+36])
+                          Pexp_match
+                          expression (asmcomp/riscv/CSE.ml[28,1255+8]..[28,1255+10])
+                            Pexp_ident "op" (asmcomp/riscv/CSE.ml[28,1255+8]..[28,1255+10])
+                          [
+                            <case>
+                              pattern (asmcomp/riscv/CSE.ml[29,1271+4]..[29,1271+40])
+                                Ppat_construct "Ispecific" (asmcomp/riscv/CSE.ml[29,1271+4]..[29,1271+13])
+                                Some
+                                  []
+                                  pattern (asmcomp/riscv/CSE.ml[29,1271+13]..[29,1271+40])
+                                    Ppat_or
+                                    pattern (asmcomp/riscv/CSE.ml[29,1271+14]..[29,1271+25])
+                                      Ppat_construct "Imultaddf" (asmcomp/riscv/CSE.ml[29,1271+14]..[29,1271+23])
+                                      Some
+                                        []
+                                        pattern (asmcomp/riscv/CSE.ml[29,1271+24]..[29,1271+25])
+                                          Ppat_any
+                                    pattern (asmcomp/riscv/CSE.ml[29,1271+28]..[29,1271+39])
+                                      Ppat_construct "Imultsubf" (asmcomp/riscv/CSE.ml[29,1271+28]..[29,1271+37])
+                                      Some
+                                        []
+                                        pattern (asmcomp/riscv/CSE.ml[29,1271+38]..[29,1271+39])
+                                          Ppat_any
+                              expression (asmcomp/riscv/CSE.ml[29,1271+44]..[29,1271+51])
+                                Pexp_construct "Op_pure" (asmcomp/riscv/CSE.ml[29,1271+44]..[29,1271+51])
+                                None
+                            <case>
+                              pattern (asmcomp/riscv/CSE.ml[30,1323+4]..[30,1323+5])
+                                Ppat_any
+                              expression (asmcomp/riscv/CSE.ml[30,1323+9]..[30,1323+36])
+                                Pexp_apply
+                                expression (asmcomp/riscv/CSE.ml[30,1323+9]..[30,1323+33])
+                                  Pexp_send "class_of_operation"
+                                  expression (asmcomp/riscv/CSE.ml[30,1323+9]..[30,1323+14])
+                                    Pexp_ident "super" (asmcomp/riscv/CSE.ml[30,1323+9]..[30,1323+14])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/riscv/CSE.ml[30,1323+34]..[30,1323+36])
+                                      Pexp_ident "op" (asmcomp/riscv/CSE.ml[30,1323+34]..[30,1323+36])
+                                ]
+                          ]
+                      None
+                class_field (asmcomp/riscv/CSE.ml[32,1361+0]..[35,1469+14])
+                  Pcf_method Public
+                    "is_cheap_operation" (asmcomp/riscv/CSE.ml[32,1361+8]..[32,1361+26])
+                    Concrete Override
+                    expression (asmcomp/riscv/CSE.ml[32,1361+27]..[35,1469+14]) ghost
+                      Pexp_poly
+                      expression (asmcomp/riscv/CSE.ml[32,1361+27]..[35,1469+14]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/riscv/CSE.ml[32,1361+27]..[32,1361+29])
+                          Ppat_var "op" (asmcomp/riscv/CSE.ml[32,1361+27]..[32,1361+29])
+                        expression (asmcomp/riscv/CSE.ml[33,1393+2]..[35,1469+14])
+                          Pexp_match
+                          expression (asmcomp/riscv/CSE.ml[33,1393+8]..[33,1393+10])
+                            Pexp_ident "op" (asmcomp/riscv/CSE.ml[33,1393+8]..[33,1393+10])
+                          [
+                            <case>
+                              pattern (asmcomp/riscv/CSE.ml[34,1409+4]..[34,1409+16])
+                                Ppat_construct "Iconst_int" (asmcomp/riscv/CSE.ml[34,1409+4]..[34,1409+14])
+                                Some
+                                  []
+                                  pattern (asmcomp/riscv/CSE.ml[34,1409+15]..[34,1409+16])
+                                    Ppat_var "n" (asmcomp/riscv/CSE.ml[34,1409+15]..[34,1409+16])
+                              expression (asmcomp/riscv/CSE.ml[34,1409+20]..[34,1409+59])
+                                Pexp_apply
+                                expression (asmcomp/riscv/CSE.ml[34,1409+38]..[34,1409+40])
+                                  Pexp_ident "&&" (asmcomp/riscv/CSE.ml[34,1409+38]..[34,1409+40])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/riscv/CSE.ml[34,1409+20]..[34,1409+37])
+                                      Pexp_apply
+                                      expression (asmcomp/riscv/CSE.ml[34,1409+22]..[34,1409+24])
+                                        Pexp_ident "<=" (asmcomp/riscv/CSE.ml[34,1409+22]..[34,1409+24])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/riscv/CSE.ml[34,1409+20]..[34,1409+21])
+                                            Pexp_ident "n" (asmcomp/riscv/CSE.ml[34,1409+20]..[34,1409+21])
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/riscv/CSE.ml[34,1409+25]..[34,1409+37])
+                                            Pexp_constant PConst_int (0x7FFF_FFFF,Some n)
+                                      ]
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/riscv/CSE.ml[34,1409+41]..[34,1409+59])
+                                      Pexp_apply
+                                      expression (asmcomp/riscv/CSE.ml[34,1409+43]..[34,1409+45])
+                                        Pexp_ident ">=" (asmcomp/riscv/CSE.ml[34,1409+43]..[34,1409+45])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/riscv/CSE.ml[34,1409+41]..[34,1409+42])
+                                            Pexp_ident "n" (asmcomp/riscv/CSE.ml[34,1409+41]..[34,1409+42])
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/riscv/CSE.ml[34,1409+46]..[34,1409+59])
+                                            Pexp_constant PConst_int (-0x8000_0000,Some n)
+                                      ]
+                                ]
+                            <case>
+                              pattern (asmcomp/riscv/CSE.ml[35,1469+4]..[35,1469+5])
+                                Ppat_any
+                              expression (asmcomp/riscv/CSE.ml[35,1469+9]..[35,1469+14])
+                                Pexp_construct "false" (asmcomp/riscv/CSE.ml[35,1469+9]..[35,1469+14])
+                                None
+                          ]
+                      None
+              ]
+    ]
+  structure_item (asmcomp/riscv/CSE.ml[39,1490+0]..[40,1506+21])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/CSE.ml[39,1490+4]..[39,1490+11])
+          Ppat_var "fundecl" (asmcomp/riscv/CSE.ml[39,1490+4]..[39,1490+11])
+        expression (asmcomp/riscv/CSE.ml[39,1490+12]..[40,1506+21]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/riscv/CSE.ml[39,1490+12]..[39,1490+13])
+            Ppat_var "f" (asmcomp/riscv/CSE.ml[39,1490+12]..[39,1490+13])
+          expression (asmcomp/riscv/CSE.ml[40,1506+2]..[40,1506+21])
+            Pexp_apply
+            expression (asmcomp/riscv/CSE.ml[40,1506+2]..[40,1506+19])
+              Pexp_send "fundecl"
+              expression (asmcomp/riscv/CSE.ml[40,1506+2]..[40,1506+11])
+                Pexp_new "cse" (asmcomp/riscv/CSE.ml[40,1506+7]..[40,1506+10])
+            [
+              <arg>
+              Nolabel
+                expression (asmcomp/riscv/CSE.ml[40,1506+20]..[40,1506+21])
+                  Pexp_ident "f" (asmcomp/riscv/CSE.ml[40,1506+20]..[40,1506+21])
+            ]
+    ]
+]
+

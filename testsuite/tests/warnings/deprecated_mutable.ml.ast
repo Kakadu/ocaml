@@ -1,0 +1,68 @@
+[
+  structure_item (testsuite/tests/warnings/deprecated_mutable.ml[9,45+0]..[9,45+48])
+    Pstr_type Rec
+    [
+      type_declaration "t" (testsuite/tests/warnings/deprecated_mutable.ml[9,45+5]..[9,45+6]) (testsuite/tests/warnings/deprecated_mutable.ml[9,45+0]..[9,45+48])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_record
+            [
+              (testsuite/tests/warnings/deprecated_mutable.ml[9,45+10]..[9,45+47])
+                attribute "deprecated_mutable"
+                  []
+                Mutable
+                "x" (testsuite/tests/warnings/deprecated_mutable.ml[9,45+18]..[9,45+19])                core_type (testsuite/tests/warnings/deprecated_mutable.ml[9,45+22]..[9,45+25])
+                  Ptyp_constr "int" (testsuite/tests/warnings/deprecated_mutable.ml[9,45+22]..[9,45+25])
+                  []
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/warnings/deprecated_mutable.ml[11,95+0]..[11,95+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/warnings/deprecated_mutable.ml[11,95+4]..[11,95+9]) ghost
+          Ppat_constraint
+          pattern (testsuite/tests/warnings/deprecated_mutable.ml[11,95+4]..[11,95+5])
+            Ppat_var "y" (testsuite/tests/warnings/deprecated_mutable.ml[11,95+4]..[11,95+5])
+          core_type (testsuite/tests/warnings/deprecated_mutable.ml[11,95+8]..[11,95+9]) ghost
+            Ptyp_poly
+            core_type (testsuite/tests/warnings/deprecated_mutable.ml[11,95+8]..[11,95+9])
+              Ptyp_constr "t" (testsuite/tests/warnings/deprecated_mutable.ml[11,95+8]..[11,95+9])
+              []
+        expression (testsuite/tests/warnings/deprecated_mutable.ml[11,95+4]..[11,95+19])
+          Pexp_constraint
+          expression (testsuite/tests/warnings/deprecated_mutable.ml[11,95+12]..[11,95+19])
+            Pexp_record
+            [
+              "x" (testsuite/tests/warnings/deprecated_mutable.ml[11,95+13]..[11,95+14])
+                expression (testsuite/tests/warnings/deprecated_mutable.ml[11,95+17]..[11,95+18])
+                  Pexp_constant PConst_int (5,None)
+            ]
+            None
+          core_type (testsuite/tests/warnings/deprecated_mutable.ml[11,95+8]..[11,95+9])
+            Ptyp_constr "t" (testsuite/tests/warnings/deprecated_mutable.ml[11,95+8]..[11,95+9])
+            []
+    ]
+  structure_item (testsuite/tests/warnings/deprecated_mutable.ml[13,116+0]..[13,116+18])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/warnings/deprecated_mutable.ml[13,116+4]..[13,116+6])
+          Ppat_construct "()" (testsuite/tests/warnings/deprecated_mutable.ml[13,116+4]..[13,116+6])
+          None
+        expression (testsuite/tests/warnings/deprecated_mutable.ml[13,116+9]..[13,116+18])
+          Pexp_setfield
+          expression (testsuite/tests/warnings/deprecated_mutable.ml[13,116+9]..[13,116+10])
+            Pexp_ident "y" (testsuite/tests/warnings/deprecated_mutable.ml[13,116+9]..[13,116+10])
+          "x" (testsuite/tests/warnings/deprecated_mutable.ml[13,116+11]..[13,116+12])
+          expression (testsuite/tests/warnings/deprecated_mutable.ml[13,116+16]..[13,116+18])
+            Pexp_constant PConst_int (42,None)
+    ]
+]
+

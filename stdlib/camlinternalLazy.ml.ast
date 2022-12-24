@@ -1,0 +1,789 @@
+[
+  structure_item (stdlib/camlinternalLazy.ml[18,1120+0]..[18,1120+21])
+    Pstr_type Rec
+    [
+      type_declaration "t" (stdlib/camlinternalLazy.ml[18,1120+8]..[18,1120+9]) (stdlib/camlinternalLazy.ml[18,1120+0]..[18,1120+21])
+        ptype_params =
+          [
+            core_type (stdlib/camlinternalLazy.ml[18,1120+5]..[18,1120+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (stdlib/camlinternalLazy.ml[18,1120+12]..[18,1120+21])
+              Ptyp_constr "lazy_t" (stdlib/camlinternalLazy.ml[18,1120+15]..[18,1120+21])
+              [
+                core_type (stdlib/camlinternalLazy.ml[18,1120+12]..[18,1120+14])
+                  Ptyp_var a
+              ]
+    ]
+  structure_item (stdlib/camlinternalLazy.ml[20,1143+0]..[20,1143+19])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (stdlib/camlinternalLazy.ml[20,1143+0]..[20,1143+19])
+          pext_name = "Undefined"
+          pext_kind =
+            Pext_decl
+              []
+              None
+  structure_item (stdlib/camlinternalLazy.ml[28,1572+0]..[29,1616+43])
+    Pstr_primitive
+    value_description "update_to_forcing" (stdlib/camlinternalLazy.ml[28,1572+9]..[28,1572+26]) (stdlib/camlinternalLazy.ml[28,1572+0]..[29,1616+43])
+      attribute "noalloc"
+        []
+      core_type (stdlib/camlinternalLazy.ml[28,1572+29]..[28,1572+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/camlinternalLazy.ml[28,1572+29]..[28,1572+34])
+          Ptyp_constr "Obj.t" (stdlib/camlinternalLazy.ml[28,1572+29]..[28,1572+34])
+          []
+        core_type (stdlib/camlinternalLazy.ml[28,1572+38]..[28,1572+41])
+          Ptyp_constr "int" (stdlib/camlinternalLazy.ml[28,1572+38]..[28,1572+41])
+          []
+      [
+        "caml_lazy_update_to_forcing"
+      ]
+  structure_item (stdlib/camlinternalLazy.ml[34,1881+0]..[34,1881+78])
+    Pstr_primitive
+    value_description "reset_to_lazy" (stdlib/camlinternalLazy.ml[34,1881+9]..[34,1881+22]) (stdlib/camlinternalLazy.ml[34,1881+0]..[34,1881+78])
+      attribute "noalloc"
+        []
+      core_type (stdlib/camlinternalLazy.ml[34,1881+25]..[34,1881+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/camlinternalLazy.ml[34,1881+25]..[34,1881+30])
+          Ptyp_constr "Obj.t" (stdlib/camlinternalLazy.ml[34,1881+25]..[34,1881+30])
+          []
+        core_type (stdlib/camlinternalLazy.ml[34,1881+34]..[34,1881+38])
+          Ptyp_constr "unit" (stdlib/camlinternalLazy.ml[34,1881+34]..[34,1881+38])
+          []
+      [
+        "caml_lazy_reset_to_lazy"
+      ]
+  structure_item (stdlib/camlinternalLazy.ml[40,2189+0]..[41,2234+43])
+    Pstr_primitive
+    value_description "update_to_forward" (stdlib/camlinternalLazy.ml[40,2189+9]..[40,2189+26]) (stdlib/camlinternalLazy.ml[40,2189+0]..[41,2234+43])
+      attribute "noalloc"
+        []
+      core_type (stdlib/camlinternalLazy.ml[40,2189+29]..[40,2189+42])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/camlinternalLazy.ml[40,2189+29]..[40,2189+34])
+          Ptyp_constr "Obj.t" (stdlib/camlinternalLazy.ml[40,2189+29]..[40,2189+34])
+          []
+        core_type (stdlib/camlinternalLazy.ml[40,2189+38]..[40,2189+42])
+          Ptyp_constr "unit" (stdlib/camlinternalLazy.ml[40,2189+38]..[40,2189+42])
+          []
+      [
+        "caml_lazy_update_to_forward"
+      ]
+  structure_item (stdlib/camlinternalLazy.ml[44,2327+0]..[56,2700+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/camlinternalLazy.ml[44,2327+4]..[44,2327+18])
+          Ppat_var "do_force_block" (stdlib/camlinternalLazy.ml[44,2327+4]..[44,2327+18])
+        expression (stdlib/camlinternalLazy.ml[44,2327+19]..[56,2700+11]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/camlinternalLazy.ml[44,2327+19]..[44,2327+22])
+            Ppat_var "blk" (stdlib/camlinternalLazy.ml[44,2327+19]..[44,2327+22])
+          expression (stdlib/camlinternalLazy.ml[45,2352+2]..[56,2700+11])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (stdlib/camlinternalLazy.ml[45,2352+6]..[45,2352+7])
+                  Ppat_var "b" (stdlib/camlinternalLazy.ml[45,2352+6]..[45,2352+7])
+                expression (stdlib/camlinternalLazy.ml[45,2352+10]..[45,2352+22])
+                  Pexp_apply
+                  expression (stdlib/camlinternalLazy.ml[45,2352+10]..[45,2352+18])
+                    Pexp_ident "Obj.repr" (stdlib/camlinternalLazy.ml[45,2352+10]..[45,2352+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/camlinternalLazy.ml[45,2352+19]..[45,2352+22])
+                        Pexp_ident "blk" (stdlib/camlinternalLazy.ml[45,2352+19]..[45,2352+22])
+                  ]
+            ]
+            expression (stdlib/camlinternalLazy.ml[46,2378+2]..[56,2700+11])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (stdlib/camlinternalLazy.ml[46,2378+6]..[46,2378+13])
+                    Ppat_var "closure" (stdlib/camlinternalLazy.ml[46,2378+6]..[46,2378+13])
+                  expression (stdlib/camlinternalLazy.ml[46,2378+16]..[46,2378+56])
+                    Pexp_constraint
+                    expression (stdlib/camlinternalLazy.ml[46,2378+17]..[46,2378+40])
+                      Pexp_apply
+                      expression (stdlib/camlinternalLazy.ml[46,2378+17]..[46,2378+24])
+                        Pexp_ident "Obj.obj" (stdlib/camlinternalLazy.ml[46,2378+17]..[46,2378+24])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/camlinternalLazy.ml[46,2378+25]..[46,2378+40])
+                            Pexp_apply
+                            expression (stdlib/camlinternalLazy.ml[46,2378+26]..[46,2378+35])
+                              Pexp_ident "Obj.field" (stdlib/camlinternalLazy.ml[46,2378+26]..[46,2378+35])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/camlinternalLazy.ml[46,2378+36]..[46,2378+37])
+                                  Pexp_ident "b" (stdlib/camlinternalLazy.ml[46,2378+36]..[46,2378+37])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/camlinternalLazy.ml[46,2378+38]..[46,2378+39])
+                                  Pexp_constant PConst_int (0,None)
+                            ]
+                      ]
+                    core_type (stdlib/camlinternalLazy.ml[46,2378+43]..[46,2378+55])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (stdlib/camlinternalLazy.ml[46,2378+43]..[46,2378+47])
+                        Ptyp_constr "unit" (stdlib/camlinternalLazy.ml[46,2378+43]..[46,2378+47])
+                        []
+                      core_type (stdlib/camlinternalLazy.ml[46,2378+51]..[46,2378+55])
+                        Ptyp_var arg
+              ]
+              expression (stdlib/camlinternalLazy.ml[47,2438+2]..[56,2700+11])
+                Pexp_sequence
+                expression (stdlib/camlinternalLazy.ml[47,2438+2]..[47,2438+33])
+                  Pexp_apply
+                  expression (stdlib/camlinternalLazy.ml[47,2438+2]..[47,2438+15])
+                    Pexp_ident "Obj.set_field" (stdlib/camlinternalLazy.ml[47,2438+2]..[47,2438+15])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/camlinternalLazy.ml[47,2438+16]..[47,2438+17])
+                        Pexp_ident "b" (stdlib/camlinternalLazy.ml[47,2438+16]..[47,2438+17])
+                    <arg>
+                    Nolabel
+                      expression (stdlib/camlinternalLazy.ml[47,2438+18]..[47,2438+19])
+                        Pexp_constant PConst_int (0,None)
+                    <arg>
+                    Nolabel
+                      expression (stdlib/camlinternalLazy.ml[47,2438+20]..[47,2438+33])
+                        Pexp_apply
+                        expression (stdlib/camlinternalLazy.ml[47,2438+21]..[47,2438+29])
+                          Pexp_ident "Obj.repr" (stdlib/camlinternalLazy.ml[47,2438+21]..[47,2438+29])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/camlinternalLazy.ml[47,2438+30]..[47,2438+32])
+                              Pexp_construct "()" (stdlib/camlinternalLazy.ml[47,2438+30]..[47,2438+32])
+                              None
+                        ]
+                  ]
+                expression (stdlib/camlinternalLazy.ml[48,2499+2]..[56,2700+11])
+                  Pexp_try
+                  expression (stdlib/camlinternalLazy.ml[49,2505+4]..[52,2602+10])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (stdlib/camlinternalLazy.ml[49,2505+8]..[49,2505+14])
+                          Ppat_var "result" (stdlib/camlinternalLazy.ml[49,2505+8]..[49,2505+14])
+                        expression (stdlib/camlinternalLazy.ml[49,2505+17]..[49,2505+27])
+                          Pexp_apply
+                          expression (stdlib/camlinternalLazy.ml[49,2505+17]..[49,2505+24])
+                            Pexp_ident "closure" (stdlib/camlinternalLazy.ml[49,2505+17]..[49,2505+24])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/camlinternalLazy.ml[49,2505+25]..[49,2505+27])
+                                Pexp_construct "()" (stdlib/camlinternalLazy.ml[49,2505+25]..[49,2505+27])
+                                None
+                          ]
+                    ]
+                    expression (stdlib/camlinternalLazy.ml[50,2536+4]..[52,2602+10])
+                      Pexp_sequence
+                      expression (stdlib/camlinternalLazy.ml[50,2536+4]..[50,2536+39])
+                        Pexp_apply
+                        expression (stdlib/camlinternalLazy.ml[50,2536+4]..[50,2536+17])
+                          Pexp_ident "Obj.set_field" (stdlib/camlinternalLazy.ml[50,2536+4]..[50,2536+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/camlinternalLazy.ml[50,2536+18]..[50,2536+19])
+                              Pexp_ident "b" (stdlib/camlinternalLazy.ml[50,2536+18]..[50,2536+19])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/camlinternalLazy.ml[50,2536+20]..[50,2536+21])
+                              Pexp_constant PConst_int (0,None)
+                          <arg>
+                          Nolabel
+                            expression (stdlib/camlinternalLazy.ml[50,2536+22]..[50,2536+39])
+                              Pexp_apply
+                              expression (stdlib/camlinternalLazy.ml[50,2536+23]..[50,2536+31])
+                                Pexp_ident "Obj.repr" (stdlib/camlinternalLazy.ml[50,2536+23]..[50,2536+31])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/camlinternalLazy.ml[50,2536+32]..[50,2536+38])
+                                    Pexp_ident "result" (stdlib/camlinternalLazy.ml[50,2536+32]..[50,2536+38])
+                              ]
+                        ]
+                      expression (stdlib/camlinternalLazy.ml[51,2577+4]..[52,2602+10])
+                        Pexp_sequence
+                        expression (stdlib/camlinternalLazy.ml[51,2577+4]..[51,2577+23])
+                          Pexp_apply
+                          expression (stdlib/camlinternalLazy.ml[51,2577+4]..[51,2577+21])
+                            Pexp_ident "update_to_forward" (stdlib/camlinternalLazy.ml[51,2577+4]..[51,2577+21])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/camlinternalLazy.ml[51,2577+22]..[51,2577+23])
+                                Pexp_ident "b" (stdlib/camlinternalLazy.ml[51,2577+22]..[51,2577+23])
+                          ]
+                        expression (stdlib/camlinternalLazy.ml[52,2602+4]..[52,2602+10])
+                          Pexp_ident "result" (stdlib/camlinternalLazy.ml[52,2602+4]..[52,2602+10])
+                  [
+                    <case>
+                      pattern (stdlib/camlinternalLazy.ml[53,2613+7]..[53,2613+8])
+                        Ppat_var "e" (stdlib/camlinternalLazy.ml[53,2613+7]..[53,2613+8])
+                      expression (stdlib/camlinternalLazy.ml[54,2625+4]..[56,2700+11])
+                        Pexp_sequence
+                        expression (stdlib/camlinternalLazy.ml[54,2625+4]..[54,2625+52])
+                          Pexp_apply
+                          expression (stdlib/camlinternalLazy.ml[54,2625+4]..[54,2625+17])
+                            Pexp_ident "Obj.set_field" (stdlib/camlinternalLazy.ml[54,2625+4]..[54,2625+17])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/camlinternalLazy.ml[54,2625+18]..[54,2625+19])
+                                Pexp_ident "b" (stdlib/camlinternalLazy.ml[54,2625+18]..[54,2625+19])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/camlinternalLazy.ml[54,2625+20]..[54,2625+21])
+                                Pexp_constant PConst_int (0,None)
+                            <arg>
+                            Nolabel
+                              expression (stdlib/camlinternalLazy.ml[54,2625+22]..[54,2625+52])
+                                Pexp_apply
+                                expression (stdlib/camlinternalLazy.ml[54,2625+23]..[54,2625+31])
+                                  Pexp_ident "Obj.repr" (stdlib/camlinternalLazy.ml[54,2625+23]..[54,2625+31])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/camlinternalLazy.ml[54,2625+32]..[54,2625+51])
+                                      Pexp_fun
+                                      Nolabel
+                                      None
+                                      pattern (stdlib/camlinternalLazy.ml[54,2625+37]..[54,2625+39])
+                                        Ppat_construct "()" (stdlib/camlinternalLazy.ml[54,2625+37]..[54,2625+39])
+                                        None
+                                      expression (stdlib/camlinternalLazy.ml[54,2625+43]..[54,2625+50])
+                                        Pexp_apply
+                                        expression (stdlib/camlinternalLazy.ml[54,2625+43]..[54,2625+48])
+                                          Pexp_ident "raise" (stdlib/camlinternalLazy.ml[54,2625+43]..[54,2625+48])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/camlinternalLazy.ml[54,2625+49]..[54,2625+50])
+                                              Pexp_ident "e" (stdlib/camlinternalLazy.ml[54,2625+49]..[54,2625+50])
+                                        ]
+                                ]
+                          ]
+                        expression (stdlib/camlinternalLazy.ml[55,2679+4]..[56,2700+11])
+                          Pexp_sequence
+                          expression (stdlib/camlinternalLazy.ml[55,2679+4]..[55,2679+19])
+                            Pexp_apply
+                            expression (stdlib/camlinternalLazy.ml[55,2679+4]..[55,2679+17])
+                              Pexp_ident "reset_to_lazy" (stdlib/camlinternalLazy.ml[55,2679+4]..[55,2679+17])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/camlinternalLazy.ml[55,2679+18]..[55,2679+19])
+                                  Pexp_ident "b" (stdlib/camlinternalLazy.ml[55,2679+18]..[55,2679+19])
+                            ]
+                          expression (stdlib/camlinternalLazy.ml[56,2700+4]..[56,2700+11])
+                            Pexp_apply
+                            expression (stdlib/camlinternalLazy.ml[56,2700+4]..[56,2700+9])
+                              Pexp_ident "raise" (stdlib/camlinternalLazy.ml[56,2700+4]..[56,2700+9])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/camlinternalLazy.ml[56,2700+10]..[56,2700+11])
+                                  Pexp_ident "e" (stdlib/camlinternalLazy.ml[56,2700+10]..[56,2700+11])
+                            ]
+                  ]
+    ]
+  structure_item (stdlib/camlinternalLazy.ml[59,2761+0]..[66,3028+8])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/camlinternalLazy.ml[59,2761+4]..[59,2761+22])
+          Ppat_var "do_force_val_block" (stdlib/camlinternalLazy.ml[59,2761+4]..[59,2761+22])
+        expression (stdlib/camlinternalLazy.ml[59,2761+23]..[66,3028+8]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/camlinternalLazy.ml[59,2761+23]..[59,2761+26])
+            Ppat_var "blk" (stdlib/camlinternalLazy.ml[59,2761+23]..[59,2761+26])
+          expression (stdlib/camlinternalLazy.ml[60,2790+2]..[66,3028+8])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (stdlib/camlinternalLazy.ml[60,2790+6]..[60,2790+7])
+                  Ppat_var "b" (stdlib/camlinternalLazy.ml[60,2790+6]..[60,2790+7])
+                expression (stdlib/camlinternalLazy.ml[60,2790+10]..[60,2790+22])
+                  Pexp_apply
+                  expression (stdlib/camlinternalLazy.ml[60,2790+10]..[60,2790+18])
+                    Pexp_ident "Obj.repr" (stdlib/camlinternalLazy.ml[60,2790+10]..[60,2790+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/camlinternalLazy.ml[60,2790+19]..[60,2790+22])
+                        Pexp_ident "blk" (stdlib/camlinternalLazy.ml[60,2790+19]..[60,2790+22])
+                  ]
+            ]
+            expression (stdlib/camlinternalLazy.ml[61,2816+2]..[66,3028+8])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (stdlib/camlinternalLazy.ml[61,2816+6]..[61,2816+13])
+                    Ppat_var "closure" (stdlib/camlinternalLazy.ml[61,2816+6]..[61,2816+13])
+                  expression (stdlib/camlinternalLazy.ml[61,2816+16]..[61,2816+56])
+                    Pexp_constraint
+                    expression (stdlib/camlinternalLazy.ml[61,2816+17]..[61,2816+40])
+                      Pexp_apply
+                      expression (stdlib/camlinternalLazy.ml[61,2816+17]..[61,2816+24])
+                        Pexp_ident "Obj.obj" (stdlib/camlinternalLazy.ml[61,2816+17]..[61,2816+24])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/camlinternalLazy.ml[61,2816+25]..[61,2816+40])
+                            Pexp_apply
+                            expression (stdlib/camlinternalLazy.ml[61,2816+26]..[61,2816+35])
+                              Pexp_ident "Obj.field" (stdlib/camlinternalLazy.ml[61,2816+26]..[61,2816+35])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/camlinternalLazy.ml[61,2816+36]..[61,2816+37])
+                                  Pexp_ident "b" (stdlib/camlinternalLazy.ml[61,2816+36]..[61,2816+37])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/camlinternalLazy.ml[61,2816+38]..[61,2816+39])
+                                  Pexp_constant PConst_int (0,None)
+                            ]
+                      ]
+                    core_type (stdlib/camlinternalLazy.ml[61,2816+43]..[61,2816+55])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (stdlib/camlinternalLazy.ml[61,2816+43]..[61,2816+47])
+                        Ptyp_constr "unit" (stdlib/camlinternalLazy.ml[61,2816+43]..[61,2816+47])
+                        []
+                      core_type (stdlib/camlinternalLazy.ml[61,2816+51]..[61,2816+55])
+                        Ptyp_var arg
+              ]
+              expression (stdlib/camlinternalLazy.ml[62,2876+2]..[66,3028+8])
+                Pexp_sequence
+                expression (stdlib/camlinternalLazy.ml[62,2876+2]..[62,2876+33])
+                  Pexp_apply
+                  expression (stdlib/camlinternalLazy.ml[62,2876+2]..[62,2876+15])
+                    Pexp_ident "Obj.set_field" (stdlib/camlinternalLazy.ml[62,2876+2]..[62,2876+15])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/camlinternalLazy.ml[62,2876+16]..[62,2876+17])
+                        Pexp_ident "b" (stdlib/camlinternalLazy.ml[62,2876+16]..[62,2876+17])
+                    <arg>
+                    Nolabel
+                      expression (stdlib/camlinternalLazy.ml[62,2876+18]..[62,2876+19])
+                        Pexp_constant PConst_int (0,None)
+                    <arg>
+                    Nolabel
+                      expression (stdlib/camlinternalLazy.ml[62,2876+20]..[62,2876+33])
+                        Pexp_apply
+                        expression (stdlib/camlinternalLazy.ml[62,2876+21]..[62,2876+29])
+                          Pexp_ident "Obj.repr" (stdlib/camlinternalLazy.ml[62,2876+21]..[62,2876+29])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/camlinternalLazy.ml[62,2876+30]..[62,2876+32])
+                              Pexp_construct "()" (stdlib/camlinternalLazy.ml[62,2876+30]..[62,2876+32])
+                              None
+                        ]
+                  ]
+                expression (stdlib/camlinternalLazy.ml[63,2937+2]..[66,3028+8])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (stdlib/camlinternalLazy.ml[63,2937+6]..[63,2937+12])
+                        Ppat_var "result" (stdlib/camlinternalLazy.ml[63,2937+6]..[63,2937+12])
+                      expression (stdlib/camlinternalLazy.ml[63,2937+15]..[63,2937+25])
+                        Pexp_apply
+                        expression (stdlib/camlinternalLazy.ml[63,2937+15]..[63,2937+22])
+                          Pexp_ident "closure" (stdlib/camlinternalLazy.ml[63,2937+15]..[63,2937+22])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/camlinternalLazy.ml[63,2937+23]..[63,2937+25])
+                              Pexp_construct "()" (stdlib/camlinternalLazy.ml[63,2937+23]..[63,2937+25])
+                              None
+                        ]
+                  ]
+                  expression (stdlib/camlinternalLazy.ml[64,2966+2]..[66,3028+8])
+                    Pexp_sequence
+                    expression (stdlib/camlinternalLazy.ml[64,2966+2]..[64,2966+37])
+                      Pexp_apply
+                      expression (stdlib/camlinternalLazy.ml[64,2966+2]..[64,2966+15])
+                        Pexp_ident "Obj.set_field" (stdlib/camlinternalLazy.ml[64,2966+2]..[64,2966+15])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/camlinternalLazy.ml[64,2966+16]..[64,2966+17])
+                            Pexp_ident "b" (stdlib/camlinternalLazy.ml[64,2966+16]..[64,2966+17])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/camlinternalLazy.ml[64,2966+18]..[64,2966+19])
+                            Pexp_constant PConst_int (0,None)
+                        <arg>
+                        Nolabel
+                          expression (stdlib/camlinternalLazy.ml[64,2966+20]..[64,2966+37])
+                            Pexp_apply
+                            expression (stdlib/camlinternalLazy.ml[64,2966+21]..[64,2966+29])
+                              Pexp_ident "Obj.repr" (stdlib/camlinternalLazy.ml[64,2966+21]..[64,2966+29])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/camlinternalLazy.ml[64,2966+30]..[64,2966+36])
+                                  Pexp_ident "result" (stdlib/camlinternalLazy.ml[64,2966+30]..[64,2966+36])
+                            ]
+                      ]
+                    expression (stdlib/camlinternalLazy.ml[65,3005+2]..[66,3028+8])
+                      Pexp_sequence
+                      expression (stdlib/camlinternalLazy.ml[65,3005+2]..[65,3005+21])
+                        Pexp_apply
+                        expression (stdlib/camlinternalLazy.ml[65,3005+2]..[65,3005+19])
+                          Pexp_ident "update_to_forward" (stdlib/camlinternalLazy.ml[65,3005+2]..[65,3005+19])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/camlinternalLazy.ml[65,3005+20]..[65,3005+21])
+                              Pexp_ident "b" (stdlib/camlinternalLazy.ml[65,3005+20]..[65,3005+21])
+                        ]
+                      expression (stdlib/camlinternalLazy.ml[66,3028+2]..[66,3028+8])
+                        Pexp_ident "result" (stdlib/camlinternalLazy.ml[66,3028+2]..[66,3028+8])
+    ]
+  structure_item (stdlib/camlinternalLazy.ml[69,3066+0]..[75,3356+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/camlinternalLazy.ml[69,3066+4]..[69,3066+24])
+          Ppat_var "force_gen_lazy_block" (stdlib/camlinternalLazy.ml[69,3066+4]..[69,3066+24])
+        expression (stdlib/camlinternalLazy.ml[69,3066+25]..[75,3356+24]) ghost
+          Pexp_fun
+          Labelled "only_val"
+          None
+          pattern (stdlib/camlinternalLazy.ml[69,3066+26]..[69,3066+34])
+            Ppat_var "only_val" (stdlib/camlinternalLazy.ml[69,3066+26]..[69,3066+34])
+          expression (stdlib/camlinternalLazy.ml[69,3066+35]..[75,3356+24]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/camlinternalLazy.ml[69,3066+35]..[69,3066+54])
+              Ppat_constraint
+              pattern (stdlib/camlinternalLazy.ml[69,3066+36]..[69,3066+39])
+                Ppat_var "blk" (stdlib/camlinternalLazy.ml[69,3066+36]..[69,3066+39])
+              core_type (stdlib/camlinternalLazy.ml[69,3066+42]..[69,3066+53])
+                Ptyp_constr "lazy_t" (stdlib/camlinternalLazy.ml[69,3066+47]..[69,3066+53])
+                [
+                  core_type (stdlib/camlinternalLazy.ml[69,3066+42]..[69,3066+46])
+                    Ptyp_var arg
+                ]
+            expression (stdlib/camlinternalLazy.ml[72,3236+2]..[75,3356+24])
+              Pexp_match
+              expression (stdlib/camlinternalLazy.ml[72,3236+8]..[72,3236+40])
+                Pexp_apply
+                expression (stdlib/camlinternalLazy.ml[72,3236+8]..[72,3236+25])
+                  Pexp_ident "update_to_forcing" (stdlib/camlinternalLazy.ml[72,3236+8]..[72,3236+25])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/camlinternalLazy.ml[72,3236+26]..[72,3236+40])
+                      Pexp_apply
+                      expression (stdlib/camlinternalLazy.ml[72,3236+27]..[72,3236+35])
+                        Pexp_ident "Obj.repr" (stdlib/camlinternalLazy.ml[72,3236+27]..[72,3236+35])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/camlinternalLazy.ml[72,3236+36]..[72,3236+39])
+                            Pexp_ident "blk" (stdlib/camlinternalLazy.ml[72,3236+36]..[72,3236+39])
+                      ]
+                ]
+              [
+                <case>
+                  pattern (stdlib/camlinternalLazy.ml[73,3282+4]..[73,3282+5])
+                    Ppat_constant PConst_int (0,None)
+                  <when>
+                    expression (stdlib/camlinternalLazy.ml[73,3282+11]..[73,3282+19])
+                      Pexp_ident "only_val" (stdlib/camlinternalLazy.ml[73,3282+11]..[73,3282+19])
+                  expression (stdlib/camlinternalLazy.ml[73,3282+23]..[73,3282+45])
+                    Pexp_apply
+                    expression (stdlib/camlinternalLazy.ml[73,3282+23]..[73,3282+41])
+                      Pexp_ident "do_force_val_block" (stdlib/camlinternalLazy.ml[73,3282+23]..[73,3282+41])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/camlinternalLazy.ml[73,3282+42]..[73,3282+45])
+                          Pexp_ident "blk" (stdlib/camlinternalLazy.ml[73,3282+42]..[73,3282+45])
+                    ]
+                <case>
+                  pattern (stdlib/camlinternalLazy.ml[74,3328+4]..[74,3328+5])
+                    Ppat_constant PConst_int (0,None)
+                  expression (stdlib/camlinternalLazy.ml[74,3328+9]..[74,3328+27])
+                    Pexp_apply
+                    expression (stdlib/camlinternalLazy.ml[74,3328+9]..[74,3328+23])
+                      Pexp_ident "do_force_block" (stdlib/camlinternalLazy.ml[74,3328+9]..[74,3328+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/camlinternalLazy.ml[74,3328+24]..[74,3328+27])
+                          Pexp_ident "blk" (stdlib/camlinternalLazy.ml[74,3328+24]..[74,3328+27])
+                    ]
+                <case>
+                  pattern (stdlib/camlinternalLazy.ml[75,3356+4]..[75,3356+5])
+                    Ppat_any
+                  expression (stdlib/camlinternalLazy.ml[75,3356+9]..[75,3356+24])
+                    Pexp_apply
+                    expression (stdlib/camlinternalLazy.ml[75,3356+9]..[75,3356+14])
+                      Pexp_ident "raise" (stdlib/camlinternalLazy.ml[75,3356+9]..[75,3356+14])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/camlinternalLazy.ml[75,3356+15]..[75,3356+24])
+                          Pexp_construct "Undefined" (stdlib/camlinternalLazy.ml[75,3356+15]..[75,3356+24])
+                          None
+                    ]
+              ]
+    ]
+  structure_item (stdlib/camlinternalLazy.ml[78,3422+0]..[78,3422+67])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/camlinternalLazy.ml[78,3422+4]..[78,3422+20])
+          Ppat_var "force_lazy_block" (stdlib/camlinternalLazy.ml[78,3422+4]..[78,3422+20])
+        expression (stdlib/camlinternalLazy.ml[78,3422+21]..[78,3422+67]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/camlinternalLazy.ml[78,3422+21]..[78,3422+24])
+            Ppat_var "blk" (stdlib/camlinternalLazy.ml[78,3422+21]..[78,3422+24])
+          expression (stdlib/camlinternalLazy.ml[78,3422+27]..[78,3422+67])
+            Pexp_apply
+            expression (stdlib/camlinternalLazy.ml[78,3422+27]..[78,3422+47])
+              Pexp_ident "force_gen_lazy_block" (stdlib/camlinternalLazy.ml[78,3422+27]..[78,3422+47])
+            [
+              <arg>
+              Labelled "only_val"
+                expression (stdlib/camlinternalLazy.ml[78,3422+58]..[78,3422+63])
+                  Pexp_construct "false" (stdlib/camlinternalLazy.ml[78,3422+58]..[78,3422+63])
+                  None
+              <arg>
+              Nolabel
+                expression (stdlib/camlinternalLazy.ml[78,3422+64]..[78,3422+67])
+                  Pexp_ident "blk" (stdlib/camlinternalLazy.ml[78,3422+64]..[78,3422+67])
+            ]
+    ]
+  structure_item (stdlib/camlinternalLazy.ml[83,3686+0]..[105,4890+41])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/camlinternalLazy.ml[83,3686+4]..[83,3686+13])
+          Ppat_var "force_gen" (stdlib/camlinternalLazy.ml[83,3686+4]..[83,3686+13])
+        expression (stdlib/camlinternalLazy.ml[83,3686+14]..[105,4890+41]) ghost
+          Pexp_fun
+          Labelled "only_val"
+          None
+          pattern (stdlib/camlinternalLazy.ml[83,3686+15]..[83,3686+23])
+            Ppat_var "only_val" (stdlib/camlinternalLazy.ml[83,3686+15]..[83,3686+23])
+          expression (stdlib/camlinternalLazy.ml[83,3686+24]..[105,4890+41]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/camlinternalLazy.ml[83,3686+24]..[83,3686+43])
+              Ppat_constraint
+              pattern (stdlib/camlinternalLazy.ml[83,3686+25]..[83,3686+28])
+                Ppat_var "lzv" (stdlib/camlinternalLazy.ml[83,3686+25]..[83,3686+28])
+              core_type (stdlib/camlinternalLazy.ml[83,3686+31]..[83,3686+42])
+                Ptyp_constr "lazy_t" (stdlib/camlinternalLazy.ml[83,3686+36]..[83,3686+42])
+                [
+                  core_type (stdlib/camlinternalLazy.ml[83,3686+31]..[83,3686+35])
+                    Ptyp_var arg
+                ]
+            expression (stdlib/camlinternalLazy.ml[93,4349+2]..[105,4890+41])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (stdlib/camlinternalLazy.ml[93,4349+6]..[93,4349+9])
+                    Ppat_var "lzv" (stdlib/camlinternalLazy.ml[93,4349+6]..[93,4349+9])
+                  expression (stdlib/camlinternalLazy.ml[93,4349+12]..[93,4349+35])
+                    Pexp_apply
+                    expression (stdlib/camlinternalLazy.ml[93,4349+12]..[93,4349+31])
+                      Pexp_ident "Sys.opaque_identity" (stdlib/camlinternalLazy.ml[93,4349+12]..[93,4349+31])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/camlinternalLazy.ml[93,4349+32]..[93,4349+35])
+                          Pexp_ident "lzv" (stdlib/camlinternalLazy.ml[93,4349+32]..[93,4349+35])
+                    ]
+              ]
+              expression (stdlib/camlinternalLazy.ml[94,4388+2]..[105,4890+41])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (stdlib/camlinternalLazy.ml[94,4388+6]..[94,4388+7])
+                      Ppat_var "x" (stdlib/camlinternalLazy.ml[94,4388+6]..[94,4388+7])
+                    expression (stdlib/camlinternalLazy.ml[94,4388+10]..[94,4388+22])
+                      Pexp_apply
+                      expression (stdlib/camlinternalLazy.ml[94,4388+10]..[94,4388+18])
+                        Pexp_ident "Obj.repr" (stdlib/camlinternalLazy.ml[94,4388+10]..[94,4388+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/camlinternalLazy.ml[94,4388+19]..[94,4388+22])
+                            Pexp_ident "lzv" (stdlib/camlinternalLazy.ml[94,4388+19]..[94,4388+22])
+                      ]
+                ]
+                expression (stdlib/camlinternalLazy.ml[99,4670+2]..[105,4890+41])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (stdlib/camlinternalLazy.ml[99,4670+6]..[99,4670+7])
+                        Ppat_var "t" (stdlib/camlinternalLazy.ml[99,4670+6]..[99,4670+7])
+                      expression (stdlib/camlinternalLazy.ml[99,4670+10]..[99,4670+19])
+                        Pexp_apply
+                        expression (stdlib/camlinternalLazy.ml[99,4670+10]..[99,4670+17])
+                          Pexp_ident "Obj.tag" (stdlib/camlinternalLazy.ml[99,4670+10]..[99,4670+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/camlinternalLazy.ml[99,4670+18]..[99,4670+19])
+                              Pexp_ident "x" (stdlib/camlinternalLazy.ml[99,4670+18]..[99,4670+19])
+                        ]
+                  ]
+                  expression (stdlib/camlinternalLazy.ml[100,4693+2]..[105,4890+41])
+                    Pexp_ifthenelse
+                    expression (stdlib/camlinternalLazy.ml[100,4693+5]..[100,4693+24])
+                      Pexp_apply
+                      expression (stdlib/camlinternalLazy.ml[100,4693+7]..[100,4693+8])
+                        Pexp_ident "=" (stdlib/camlinternalLazy.ml[100,4693+7]..[100,4693+8])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/camlinternalLazy.ml[100,4693+5]..[100,4693+6])
+                            Pexp_ident "t" (stdlib/camlinternalLazy.ml[100,4693+5]..[100,4693+6])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/camlinternalLazy.ml[100,4693+9]..[100,4693+24])
+                            Pexp_ident "Obj.forward_tag" (stdlib/camlinternalLazy.ml[100,4693+9]..[100,4693+24])
+                      ]
+                    expression (stdlib/camlinternalLazy.ml[101,4723+4]..[101,4723+36])
+                      Pexp_constraint
+                      expression (stdlib/camlinternalLazy.ml[101,4723+5]..[101,4723+28])
+                        Pexp_apply
+                        expression (stdlib/camlinternalLazy.ml[101,4723+5]..[101,4723+12])
+                          Pexp_ident "Obj.obj" (stdlib/camlinternalLazy.ml[101,4723+5]..[101,4723+12])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/camlinternalLazy.ml[101,4723+13]..[101,4723+28])
+                              Pexp_apply
+                              expression (stdlib/camlinternalLazy.ml[101,4723+14]..[101,4723+23])
+                                Pexp_ident "Obj.field" (stdlib/camlinternalLazy.ml[101,4723+14]..[101,4723+23])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/camlinternalLazy.ml[101,4723+24]..[101,4723+25])
+                                    Pexp_ident "x" (stdlib/camlinternalLazy.ml[101,4723+24]..[101,4723+25])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/camlinternalLazy.ml[101,4723+26]..[101,4723+27])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                        ]
+                      core_type (stdlib/camlinternalLazy.ml[101,4723+31]..[101,4723+35])
+                        Ptyp_var arg
+                    Some
+                      expression (stdlib/camlinternalLazy.ml[103,4787+7]..[105,4890+41])
+                        Pexp_ifthenelse
+                        expression (stdlib/camlinternalLazy.ml[103,4787+10]..[103,4787+29])
+                          Pexp_apply
+                          expression (stdlib/camlinternalLazy.ml[103,4787+12]..[103,4787+13])
+                            Pexp_ident "=" (stdlib/camlinternalLazy.ml[103,4787+12]..[103,4787+13])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/camlinternalLazy.ml[103,4787+10]..[103,4787+11])
+                                Pexp_ident "t" (stdlib/camlinternalLazy.ml[103,4787+10]..[103,4787+11])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/camlinternalLazy.ml[103,4787+14]..[103,4787+29])
+                                Pexp_ident "Obj.forcing_tag" (stdlib/camlinternalLazy.ml[103,4787+14]..[103,4787+29])
+                          ]
+                        expression (stdlib/camlinternalLazy.ml[103,4787+35]..[103,4787+50])
+                          Pexp_apply
+                          expression (stdlib/camlinternalLazy.ml[103,4787+35]..[103,4787+40])
+                            Pexp_ident "raise" (stdlib/camlinternalLazy.ml[103,4787+35]..[103,4787+40])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/camlinternalLazy.ml[103,4787+41]..[103,4787+50])
+                                Pexp_construct "Undefined" (stdlib/camlinternalLazy.ml[103,4787+41]..[103,4787+50])
+                                None
+                          ]
+                        Some
+                          expression (stdlib/camlinternalLazy.ml[104,4838+7]..[105,4890+41])
+                            Pexp_ifthenelse
+                            expression (stdlib/camlinternalLazy.ml[104,4838+10]..[104,4838+27])
+                              Pexp_apply
+                              expression (stdlib/camlinternalLazy.ml[104,4838+12]..[104,4838+14])
+                                Pexp_ident "<>" (stdlib/camlinternalLazy.ml[104,4838+12]..[104,4838+14])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/camlinternalLazy.ml[104,4838+10]..[104,4838+11])
+                                    Pexp_ident "t" (stdlib/camlinternalLazy.ml[104,4838+10]..[104,4838+11])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/camlinternalLazy.ml[104,4838+15]..[104,4838+27])
+                                    Pexp_ident "Obj.lazy_tag" (stdlib/camlinternalLazy.ml[104,4838+15]..[104,4838+27])
+                              ]
+                            expression (stdlib/camlinternalLazy.ml[104,4838+33]..[104,4838+51])
+                              Pexp_constraint
+                              expression (stdlib/camlinternalLazy.ml[104,4838+34]..[104,4838+43])
+                                Pexp_apply
+                                expression (stdlib/camlinternalLazy.ml[104,4838+34]..[104,4838+41])
+                                  Pexp_ident "Obj.obj" (stdlib/camlinternalLazy.ml[104,4838+34]..[104,4838+41])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/camlinternalLazy.ml[104,4838+42]..[104,4838+43])
+                                      Pexp_ident "x" (stdlib/camlinternalLazy.ml[104,4838+42]..[104,4838+43])
+                                ]
+                              core_type (stdlib/camlinternalLazy.ml[104,4838+46]..[104,4838+50])
+                                Ptyp_var arg
+                            Some
+                              expression (stdlib/camlinternalLazy.ml[105,4890+7]..[105,4890+41])
+                                Pexp_apply
+                                expression (stdlib/camlinternalLazy.ml[105,4890+7]..[105,4890+27])
+                                  Pexp_ident "force_gen_lazy_block" (stdlib/camlinternalLazy.ml[105,4890+7]..[105,4890+27])
+                                [
+                                  <arg>
+                                  Labelled "only_val"
+                                    expression (stdlib/camlinternalLazy.ml[105,4890+29]..[105,4890+37])
+                                      Pexp_ident "only_val" (stdlib/camlinternalLazy.ml[105,4890+29]..[105,4890+37])
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/camlinternalLazy.ml[105,4890+38]..[105,4890+41])
+                                      Pexp_ident "lzv" (stdlib/camlinternalLazy.ml[105,4890+38]..[105,4890+41])
+                                ]
+    ]
+]
+

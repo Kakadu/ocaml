@@ -1,0 +1,2003 @@
+[
+  structure_item (file_formats/cmt_format.ml[16,1079+0]..[16,1079+15])
+    Pstr_open Fresh
+    module_expr (file_formats/cmt_format.ml[16,1079+5]..[16,1079+15])
+      Pmod_ident "Cmi_format" (file_formats/cmt_format.ml[16,1079+5]..[16,1079+15])
+  structure_item (file_formats/cmt_format.ml[17,1095+0]..[17,1095+14])
+    Pstr_open Fresh
+    module_expr (file_formats/cmt_format.ml[17,1095+5]..[17,1095+14])
+      Pmod_ident "Typedtree" (file_formats/cmt_format.ml[17,1095+5]..[17,1095+14])
+  structure_item (file_formats/cmt_format.ml[27,1352+0]..[29,1445+41])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[27,1352+4]..[27,1352+21])
+          Ppat_var "read_magic_number" (file_formats/cmt_format.ml[27,1352+4]..[27,1352+21])
+        expression (file_formats/cmt_format.ml[27,1352+22]..[29,1445+41]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[27,1352+22]..[27,1352+24])
+            Ppat_var "ic" (file_formats/cmt_format.ml[27,1352+22]..[27,1352+24])
+          expression (file_formats/cmt_format.ml[28,1379+2]..[29,1445+41])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (file_formats/cmt_format.ml[28,1379+6]..[28,1379+22])
+                  Ppat_var "len_magic_number" (file_formats/cmt_format.ml[28,1379+6]..[28,1379+22])
+                expression (file_formats/cmt_format.ml[28,1379+25]..[28,1379+62])
+                  Pexp_apply
+                  expression (file_formats/cmt_format.ml[28,1379+25]..[28,1379+38])
+                    Pexp_ident "String.length" (file_formats/cmt_format.ml[28,1379+25]..[28,1379+38])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (file_formats/cmt_format.ml[28,1379+39]..[28,1379+62])
+                        Pexp_ident "Config.cmt_magic_number" (file_formats/cmt_format.ml[28,1379+39]..[28,1379+62])
+                  ]
+            ]
+            expression (file_formats/cmt_format.ml[29,1445+2]..[29,1445+41])
+              Pexp_apply
+              expression (file_formats/cmt_format.ml[29,1445+2]..[29,1445+21])
+                Pexp_ident "really_input_string" (file_formats/cmt_format.ml[29,1445+2]..[29,1445+21])
+              [
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[29,1445+22]..[29,1445+24])
+                    Pexp_ident "ic" (file_formats/cmt_format.ml[29,1445+22]..[29,1445+24])
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[29,1445+25]..[29,1445+41])
+                    Pexp_ident "len_magic_number" (file_formats/cmt_format.ml[29,1445+25]..[29,1445+41])
+              ]
+    ]
+  structure_item (file_formats/cmt_format.ml[31,1488+0]..[46,2020+36])
+    Pstr_type Rec
+    [
+      type_declaration "binary_annots" (file_formats/cmt_format.ml[31,1488+5]..[31,1488+18]) (file_formats/cmt_format.ml[31,1488+0]..[36,1660+42])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (file_formats/cmt_format.ml[32,1509+2]..[32,1509+43])
+                "Packed" (file_formats/cmt_format.ml[32,1509+4]..[32,1509+10])
+                [
+                  core_type (file_formats/cmt_format.ml[32,1509+14]..[32,1509+29])
+                    Ptyp_constr "Types.signature" (file_formats/cmt_format.ml[32,1509+14]..[32,1509+29])
+                    []
+                  core_type (file_formats/cmt_format.ml[32,1509+32]..[32,1509+43])
+                    Ptyp_constr "list" (file_formats/cmt_format.ml[32,1509+39]..[32,1509+43])
+                    [
+                      core_type (file_formats/cmt_format.ml[32,1509+32]..[32,1509+38])
+                        Ptyp_constr "string" (file_formats/cmt_format.ml[32,1509+32]..[32,1509+38])
+                        []
+                    ]
+                ]
+                None
+              (file_formats/cmt_format.ml[33,1553+2]..[33,1553+31])
+                "Implementation" (file_formats/cmt_format.ml[33,1553+4]..[33,1553+18])
+                [
+                  core_type (file_formats/cmt_format.ml[33,1553+22]..[33,1553+31])
+                    Ptyp_constr "structure" (file_formats/cmt_format.ml[33,1553+22]..[33,1553+31])
+                    []
+                ]
+                None
+              (file_formats/cmt_format.ml[34,1585+2]..[34,1585+26])
+                "Interface" (file_formats/cmt_format.ml[34,1585+4]..[34,1585+13])
+                [
+                  core_type (file_formats/cmt_format.ml[34,1585+17]..[34,1585+26])
+                    Ptyp_constr "signature" (file_formats/cmt_format.ml[34,1585+17]..[34,1585+26])
+                    []
+                ]
+                None
+              (file_formats/cmt_format.ml[35,1612+2]..[35,1612+47])
+                "Partial_implementation" (file_formats/cmt_format.ml[35,1612+4]..[35,1612+26])
+                [
+                  core_type (file_formats/cmt_format.ml[35,1612+30]..[35,1612+47])
+                    Ptyp_constr "array" (file_formats/cmt_format.ml[35,1612+42]..[35,1612+47])
+                    [
+                      core_type (file_formats/cmt_format.ml[35,1612+30]..[35,1612+41])
+                        Ptyp_constr "binary_part" (file_formats/cmt_format.ml[35,1612+30]..[35,1612+41])
+                        []
+                    ]
+                ]
+                None
+              (file_formats/cmt_format.ml[36,1660+2]..[36,1660+42])
+                "Partial_interface" (file_formats/cmt_format.ml[36,1660+4]..[36,1660+21])
+                [
+                  core_type (file_formats/cmt_format.ml[36,1660+25]..[36,1660+42])
+                    Ptyp_constr "array" (file_formats/cmt_format.ml[36,1660+37]..[36,1660+42])
+                    [
+                      core_type (file_formats/cmt_format.ml[36,1660+25]..[36,1660+36])
+                        Ptyp_constr "binary_part" (file_formats/cmt_format.ml[36,1660+25]..[36,1660+36])
+                        []
+                    ]
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+      type_declaration "binary_part" (file_formats/cmt_format.ml[38,1704+4]..[38,1704+15]) (file_formats/cmt_format.ml[38,1704+0]..[46,2020+36])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (file_formats/cmt_format.ml[39,1722+0]..[39,1722+32])
+                "Partial_structure" (file_formats/cmt_format.ml[39,1722+2]..[39,1722+19])
+                [
+                  core_type (file_formats/cmt_format.ml[39,1722+23]..[39,1722+32])
+                    Ptyp_constr "structure" (file_formats/cmt_format.ml[39,1722+23]..[39,1722+32])
+                    []
+                ]
+                None
+              (file_formats/cmt_format.ml[40,1755+0]..[40,1755+42])
+                "Partial_structure_item" (file_formats/cmt_format.ml[40,1755+2]..[40,1755+24])
+                [
+                  core_type (file_formats/cmt_format.ml[40,1755+28]..[40,1755+42])
+                    Ptyp_constr "structure_item" (file_formats/cmt_format.ml[40,1755+28]..[40,1755+42])
+                    []
+                ]
+                None
+              (file_formats/cmt_format.ml[41,1798+0]..[41,1798+34])
+                "Partial_expression" (file_formats/cmt_format.ml[41,1798+2]..[41,1798+20])
+                [
+                  core_type (file_formats/cmt_format.ml[41,1798+24]..[41,1798+34])
+                    Ptyp_constr "expression" (file_formats/cmt_format.ml[41,1798+24]..[41,1798+34])
+                    []
+                ]
+                None
+              (file_formats/cmt_format.ml[42,1833+0]..[42,1833+75])
+                "Partial_pattern" (file_formats/cmt_format.ml[42,1833+2]..[42,1833+17])
+                [
+                  core_type (file_formats/cmt_format.ml[42,1833+20]..[42,1833+39])
+                    Ptyp_constr "pattern_category" (file_formats/cmt_format.ml[42,1833+23]..[42,1833+39])
+                    [
+                      core_type (file_formats/cmt_format.ml[42,1833+20]..[42,1833+22])
+                        Ptyp_var k
+                    ]
+                  core_type (file_formats/cmt_format.ml[42,1833+42]..[42,1833+60])
+                    Ptyp_constr "general_pattern" (file_formats/cmt_format.ml[42,1833+45]..[42,1833+60])
+                    [
+                      core_type (file_formats/cmt_format.ml[42,1833+42]..[42,1833+44])
+                        Ptyp_var k
+                    ]
+                ]
+                Some
+                  core_type (file_formats/cmt_format.ml[42,1833+64]..[42,1833+75])
+                    Ptyp_constr "binary_part" (file_formats/cmt_format.ml[42,1833+64]..[42,1833+75])
+                    []
+              (file_formats/cmt_format.ml[43,1909+0]..[43,1909+34])
+                "Partial_class_expr" (file_formats/cmt_format.ml[43,1909+2]..[43,1909+20])
+                [
+                  core_type (file_formats/cmt_format.ml[43,1909+24]..[43,1909+34])
+                    Ptyp_constr "class_expr" (file_formats/cmt_format.ml[43,1909+24]..[43,1909+34])
+                    []
+                ]
+                None
+              (file_formats/cmt_format.ml[44,1944+0]..[44,1944+32])
+                "Partial_signature" (file_formats/cmt_format.ml[44,1944+2]..[44,1944+19])
+                [
+                  core_type (file_formats/cmt_format.ml[44,1944+23]..[44,1944+32])
+                    Ptyp_constr "signature" (file_formats/cmt_format.ml[44,1944+23]..[44,1944+32])
+                    []
+                ]
+                None
+              (file_formats/cmt_format.ml[45,1977+0]..[45,1977+42])
+                "Partial_signature_item" (file_formats/cmt_format.ml[45,1977+2]..[45,1977+24])
+                [
+                  core_type (file_formats/cmt_format.ml[45,1977+28]..[45,1977+42])
+                    Ptyp_constr "signature_item" (file_formats/cmt_format.ml[45,1977+28]..[45,1977+42])
+                    []
+                ]
+                None
+              (file_formats/cmt_format.ml[46,2020+0]..[46,2020+36])
+                "Partial_module_type" (file_formats/cmt_format.ml[46,2020+2]..[46,2020+21])
+                [
+                  core_type (file_formats/cmt_format.ml[46,2020+25]..[46,2020+36])
+                    Ptyp_constr "module_type" (file_formats/cmt_format.ml[46,2020+25]..[46,2020+36])
+                    []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (file_formats/cmt_format.ml[48,2058+0]..[65,2667+1])
+    Pstr_type Rec
+    [
+      type_declaration "cmt_infos" (file_formats/cmt_format.ml[48,2058+5]..[48,2058+14]) (file_formats/cmt_format.ml[48,2058+0]..[65,2667+1])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_record
+            [
+              (file_formats/cmt_format.ml[49,2077+2]..[49,2077+23])
+                Immutable
+                "cmt_modname" (file_formats/cmt_format.ml[49,2077+2]..[49,2077+13])                core_type (file_formats/cmt_format.ml[49,2077+16]..[49,2077+22])
+                  Ptyp_constr "string" (file_formats/cmt_format.ml[49,2077+16]..[49,2077+22])
+                  []
+              (file_formats/cmt_format.ml[50,2101+2]..[50,2101+29])
+                Immutable
+                "cmt_annots" (file_formats/cmt_format.ml[50,2101+2]..[50,2101+12])                core_type (file_formats/cmt_format.ml[50,2101+15]..[50,2101+28])
+                  Ptyp_constr "binary_annots" (file_formats/cmt_format.ml[50,2101+15]..[50,2101+28])
+                  []
+              (file_formats/cmt_format.ml[51,2131+2]..[52,2158+61])
+                Immutable
+                "cmt_value_dependencies" (file_formats/cmt_format.ml[51,2131+2]..[51,2131+24])                core_type (file_formats/cmt_format.ml[52,2158+4]..[52,2158+60])
+                  Ptyp_constr "list" (file_formats/cmt_format.ml[52,2158+56]..[52,2158+60])
+                  [
+                    core_type (file_formats/cmt_format.ml[52,2158+5]..[52,2158+54])
+                      Ptyp_tuple
+                      [
+                        core_type (file_formats/cmt_format.ml[52,2158+5]..[52,2158+28])
+                          Ptyp_constr "Types.value_description" (file_formats/cmt_format.ml[52,2158+5]..[52,2158+28])
+                          []
+                        core_type (file_formats/cmt_format.ml[52,2158+31]..[52,2158+54])
+                          Ptyp_constr "Types.value_description" (file_formats/cmt_format.ml[52,2158+31]..[52,2158+54])
+                          []
+                      ]
+                  ]
+              (file_formats/cmt_format.ml[53,2220+2]..[53,2220+44])
+                Immutable
+                "cmt_comments" (file_formats/cmt_format.ml[53,2220+2]..[53,2220+14])                core_type (file_formats/cmt_format.ml[53,2220+17]..[53,2220+43])
+                  Ptyp_constr "list" (file_formats/cmt_format.ml[53,2220+39]..[53,2220+43])
+                  [
+                    core_type (file_formats/cmt_format.ml[53,2220+18]..[53,2220+37])
+                      Ptyp_tuple
+                      [
+                        core_type (file_formats/cmt_format.ml[53,2220+18]..[53,2220+24])
+                          Ptyp_constr "string" (file_formats/cmt_format.ml[53,2220+18]..[53,2220+24])
+                          []
+                        core_type (file_formats/cmt_format.ml[53,2220+27]..[53,2220+37])
+                          Ptyp_constr "Location.t" (file_formats/cmt_format.ml[53,2220+27]..[53,2220+37])
+                          []
+                      ]
+                  ]
+              (file_formats/cmt_format.ml[54,2265+2]..[54,2265+26])
+                Immutable
+                "cmt_args" (file_formats/cmt_format.ml[54,2265+2]..[54,2265+10])                core_type (file_formats/cmt_format.ml[54,2265+13]..[54,2265+25])
+                  Ptyp_constr "array" (file_formats/cmt_format.ml[54,2265+20]..[54,2265+25])
+                  [
+                    core_type (file_formats/cmt_format.ml[54,2265+13]..[54,2265+19])
+                      Ptyp_constr "string" (file_formats/cmt_format.ml[54,2265+13]..[54,2265+19])
+                      []
+                  ]
+              (file_formats/cmt_format.ml[55,2292+2]..[55,2292+33])
+                Immutable
+                "cmt_sourcefile" (file_formats/cmt_format.ml[55,2292+2]..[55,2292+16])                core_type (file_formats/cmt_format.ml[55,2292+19]..[55,2292+32])
+                  Ptyp_constr "option" (file_formats/cmt_format.ml[55,2292+26]..[55,2292+32])
+                  [
+                    core_type (file_formats/cmt_format.ml[55,2292+19]..[55,2292+25])
+                      Ptyp_constr "string" (file_formats/cmt_format.ml[55,2292+19]..[55,2292+25])
+                      []
+                  ]
+              (file_formats/cmt_format.ml[56,2326+2]..[56,2326+24])
+                Immutable
+                "cmt_builddir" (file_formats/cmt_format.ml[56,2326+2]..[56,2326+14])                core_type (file_formats/cmt_format.ml[56,2326+17]..[56,2326+23])
+                  Ptyp_constr "string" (file_formats/cmt_format.ml[56,2326+17]..[56,2326+23])
+                  []
+              (file_formats/cmt_format.ml[57,2351+2]..[57,2351+29])
+                Immutable
+                "cmt_loadpath" (file_formats/cmt_format.ml[57,2351+2]..[57,2351+14])                core_type (file_formats/cmt_format.ml[57,2351+17]..[57,2351+28])
+                  Ptyp_constr "list" (file_formats/cmt_format.ml[57,2351+24]..[57,2351+28])
+                  [
+                    core_type (file_formats/cmt_format.ml[57,2351+17]..[57,2351+23])
+                      Ptyp_constr "string" (file_formats/cmt_format.ml[57,2351+17]..[57,2351+23])
+                      []
+                  ]
+              (file_formats/cmt_format.ml[58,2381+2]..[58,2381+38])
+                Immutable
+                "cmt_source_digest" (file_formats/cmt_format.ml[58,2381+2]..[58,2381+19])                core_type (file_formats/cmt_format.ml[58,2381+22]..[58,2381+37])
+                  Ptyp_constr "option" (file_formats/cmt_format.ml[58,2381+31]..[58,2381+37])
+                  [
+                    core_type (file_formats/cmt_format.ml[58,2381+22]..[58,2381+30])
+                      Ptyp_constr "Digest.t" (file_formats/cmt_format.ml[58,2381+22]..[58,2381+30])
+                      []
+                  ]
+              (file_formats/cmt_format.ml[59,2420+2]..[59,2420+26])
+                Immutable
+                "cmt_initial_env" (file_formats/cmt_format.ml[59,2420+2]..[59,2420+17])                core_type (file_formats/cmt_format.ml[59,2420+20]..[59,2420+25])
+                  Ptyp_constr "Env.t" (file_formats/cmt_format.ml[59,2420+20]..[59,2420+25])
+                  []
+              (file_formats/cmt_format.ml[60,2447+2]..[60,2447+48])
+                Immutable
+                "cmt_imports" (file_formats/cmt_format.ml[60,2447+2]..[60,2447+13])                core_type (file_formats/cmt_format.ml[60,2447+16]..[60,2447+47])
+                  Ptyp_constr "list" (file_formats/cmt_format.ml[60,2447+43]..[60,2447+47])
+                  [
+                    core_type (file_formats/cmt_format.ml[60,2447+17]..[60,2447+41])
+                      Ptyp_tuple
+                      [
+                        core_type (file_formats/cmt_format.ml[60,2447+17]..[60,2447+23])
+                          Ptyp_constr "string" (file_formats/cmt_format.ml[60,2447+17]..[60,2447+23])
+                          []
+                        core_type (file_formats/cmt_format.ml[60,2447+26]..[60,2447+41])
+                          Ptyp_constr "option" (file_formats/cmt_format.ml[60,2447+35]..[60,2447+41])
+                          [
+                            core_type (file_formats/cmt_format.ml[60,2447+26]..[60,2447+34])
+                              Ptyp_constr "Digest.t" (file_formats/cmt_format.ml[60,2447+26]..[60,2447+34])
+                              []
+                          ]
+                      ]
+                  ]
+              (file_formats/cmt_format.ml[61,2496+2]..[61,2496+41])
+                Immutable
+                "cmt_interface_digest" (file_formats/cmt_format.ml[61,2496+2]..[61,2496+22])                core_type (file_formats/cmt_format.ml[61,2496+25]..[61,2496+40])
+                  Ptyp_constr "option" (file_formats/cmt_format.ml[61,2496+34]..[61,2496+40])
+                  [
+                    core_type (file_formats/cmt_format.ml[61,2496+25]..[61,2496+33])
+                      Ptyp_constr "Digest.t" (file_formats/cmt_format.ml[61,2496+25]..[61,2496+33])
+                      []
+                  ]
+              (file_formats/cmt_format.ml[62,2538+2]..[62,2538+27])
+                Immutable
+                "cmt_use_summaries" (file_formats/cmt_format.ml[62,2538+2]..[62,2538+19])                core_type (file_formats/cmt_format.ml[62,2538+22]..[62,2538+26])
+                  Ptyp_constr "bool" (file_formats/cmt_format.ml[62,2538+22]..[62,2538+26])
+                  []
+              (file_formats/cmt_format.ml[63,2566+2]..[63,2566+46])
+                Immutable
+                "cmt_uid_to_loc" (file_formats/cmt_format.ml[63,2566+2]..[63,2566+16])                core_type (file_formats/cmt_format.ml[63,2566+19]..[63,2566+45])
+                  Ptyp_constr "Shape.Uid.Tbl.t" (file_formats/cmt_format.ml[63,2566+30]..[63,2566+45])
+                  [
+                    core_type (file_formats/cmt_format.ml[63,2566+19]..[63,2566+29])
+                      Ptyp_constr "Location.t" (file_formats/cmt_format.ml[63,2566+19]..[63,2566+29])
+                      []
+                  ]
+              (file_formats/cmt_format.ml[64,2613+2]..[64,2613+34])
+                Immutable
+                "cmt_impl_shape" (file_formats/cmt_format.ml[64,2613+2]..[64,2613+16])                core_type (file_formats/cmt_format.ml[64,2613+19]..[64,2613+33])
+                  Ptyp_constr "option" (file_formats/cmt_format.ml[64,2613+27]..[64,2613+33])
+                  [
+                    core_type (file_formats/cmt_format.ml[64,2613+19]..[64,2613+26])
+                      Ptyp_constr "Shape.t" (file_formats/cmt_format.ml[64,2613+19]..[64,2613+26])
+                      []
+                  ]
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (file_formats/cmt_format.ml[67,2670+0]..[68,2683+29])
+    Pstr_type Rec
+    [
+      type_declaration "error" (file_formats/cmt_format.ml[67,2670+5]..[67,2670+10]) (file_formats/cmt_format.ml[67,2670+0]..[68,2683+29])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (file_formats/cmt_format.ml[68,2683+4]..[68,2683+29])
+                "Not_a_typedtree" (file_formats/cmt_format.ml[68,2683+4]..[68,2683+19])
+                [
+                  core_type (file_formats/cmt_format.ml[68,2683+23]..[68,2683+29])
+                    Ptyp_constr "string" (file_formats/cmt_format.ml[68,2683+23]..[68,2683+29])
+                    []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (file_formats/cmt_format.ml[70,2714+0]..[72,2796+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[70,2714+4]..[70,2714+21])
+          Ppat_var "need_to_clear_env" (file_formats/cmt_format.ml[70,2714+4]..[70,2714+21])
+        expression (file_formats/cmt_format.ml[71,2738+2]..[72,2796+24])
+          Pexp_try
+          expression (file_formats/cmt_format.ml[71,2738+6]..[71,2738+57])
+            Pexp_sequence
+            expression (file_formats/cmt_format.ml[71,2738+6]..[71,2738+50])
+              Pexp_apply
+              expression (file_formats/cmt_format.ml[71,2738+6]..[71,2738+12])
+                Pexp_ident "ignore" (file_formats/cmt_format.ml[71,2738+6]..[71,2738+12])
+              [
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[71,2738+13]..[71,2738+50])
+                    Pexp_apply
+                    expression (file_formats/cmt_format.ml[71,2738+14]..[71,2738+24])
+                      Pexp_ident "Sys.getenv" (file_formats/cmt_format.ml[71,2738+14]..[71,2738+24])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[71,2738+25]..[71,2738+49])
+                          Pexp_constant PConst_string("OCAML_BINANNOT_WITHENV",(file_formats/cmt_format.ml[71,2738+26]..[71,2738+48]),None)
+                    ]
+              ]
+            expression (file_formats/cmt_format.ml[71,2738+52]..[71,2738+57])
+              Pexp_construct "false" (file_formats/cmt_format.ml[71,2738+52]..[71,2738+57])
+              None
+          [
+            <case>
+              pattern (file_formats/cmt_format.ml[72,2796+7]..[72,2796+16])
+                Ppat_construct "Not_found" (file_formats/cmt_format.ml[72,2796+7]..[72,2796+16])
+                None
+              expression (file_formats/cmt_format.ml[72,2796+20]..[72,2796+24])
+                Pexp_construct "true" (file_formats/cmt_format.ml[72,2796+20]..[72,2796+24])
+                None
+          ]
+    ]
+  structure_item (file_formats/cmt_format.ml[74,2822+0]..[74,2822+45])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[74,2822+4]..[74,2822+21])
+          Ppat_var "keep_only_summary" (file_formats/cmt_format.ml[74,2822+4]..[74,2822+21])
+        expression (file_formats/cmt_format.ml[74,2822+24]..[74,2822+45])
+          Pexp_ident "Env.keep_only_summary" (file_formats/cmt_format.ml[74,2822+24]..[74,2822+45])
+    ]
+  structure_item (file_formats/cmt_format.ml[76,2869+0]..[76,2869+16])
+    Pstr_open Fresh
+    module_expr (file_formats/cmt_format.ml[76,2869+5]..[76,2869+16])
+      Pmod_ident "Tast_mapper" (file_formats/cmt_format.ml[76,2869+5]..[76,2869+16])
+  structure_item (file_formats/cmt_format.ml[78,2887+0]..[79,2898+72])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[78,2887+4]..[78,2887+8])
+          Ppat_var "cenv" (file_formats/cmt_format.ml[78,2887+4]..[78,2887+8])
+        expression (file_formats/cmt_format.ml[79,2898+2]..[79,2898+72])
+          Pexp_record
+          [
+            "env" (file_formats/cmt_format.ml[79,2898+28]..[79,2898+31])
+              expression (file_formats/cmt_format.ml[79,2898+34]..[79,2898+71])
+                Pexp_fun
+                Nolabel
+                None
+                pattern (file_formats/cmt_format.ml[79,2898+38]..[79,2898+42])
+                  Ppat_var "_sub" (file_formats/cmt_format.ml[79,2898+38]..[79,2898+42])
+                expression (file_formats/cmt_format.ml[79,2898+43]..[79,2898+71]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (file_formats/cmt_format.ml[79,2898+43]..[79,2898+46])
+                    Ppat_var "env" (file_formats/cmt_format.ml[79,2898+43]..[79,2898+46])
+                  expression (file_formats/cmt_format.ml[79,2898+50]..[79,2898+71])
+                    Pexp_apply
+                    expression (file_formats/cmt_format.ml[79,2898+50]..[79,2898+67])
+                      Pexp_ident "keep_only_summary" (file_formats/cmt_format.ml[79,2898+50]..[79,2898+67])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[79,2898+68]..[79,2898+71])
+                          Pexp_ident "env" (file_formats/cmt_format.ml[79,2898+68]..[79,2898+71])
+                    ]
+          ]
+          Some
+            expression (file_formats/cmt_format.ml[79,2898+3]..[79,2898+22])
+              Pexp_ident "Tast_mapper.default" (file_formats/cmt_format.ml[79,2898+3]..[79,2898+22])
+    ]
+  structure_item (file_formats/cmt_format.ml[81,2972+0]..[91,3537+74])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[81,2972+4]..[81,2972+14])
+          Ppat_var "clear_part" (file_formats/cmt_format.ml[81,2972+4]..[81,2972+14])
+        expression (file_formats/cmt_format.ml[81,2972+17]..[91,3537+74])
+          Pexp_function
+          [
+            <case>
+              pattern (file_formats/cmt_format.ml[82,2998+4]..[82,2998+23])
+                Ppat_construct "Partial_structure" (file_formats/cmt_format.ml[82,2998+4]..[82,2998+21])
+                Some
+                  []
+                  pattern (file_formats/cmt_format.ml[82,2998+22]..[82,2998+23])
+                    Ppat_var "s" (file_formats/cmt_format.ml[82,2998+22]..[82,2998+23])
+              expression (file_formats/cmt_format.ml[82,2998+27]..[82,2998+68])
+                Pexp_construct "Partial_structure" (file_formats/cmt_format.ml[82,2998+27]..[82,2998+44])
+                Some
+                  expression (file_formats/cmt_format.ml[82,2998+45]..[82,2998+68])
+                    Pexp_apply
+                    expression (file_formats/cmt_format.ml[82,2998+46]..[82,2998+60])
+                      Pexp_field
+                      expression (file_formats/cmt_format.ml[82,2998+46]..[82,2998+50])
+                        Pexp_ident "cenv" (file_formats/cmt_format.ml[82,2998+46]..[82,2998+50])
+                      "structure" (file_formats/cmt_format.ml[82,2998+51]..[82,2998+60])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[82,2998+61]..[82,2998+65])
+                          Pexp_ident "cenv" (file_formats/cmt_format.ml[82,2998+61]..[82,2998+65])
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[82,2998+66]..[82,2998+67])
+                          Pexp_ident "s" (file_formats/cmt_format.ml[82,2998+66]..[82,2998+67])
+                    ]
+            <case>
+              pattern (file_formats/cmt_format.ml[83,3067+4]..[83,3067+28])
+                Ppat_construct "Partial_structure_item" (file_formats/cmt_format.ml[83,3067+4]..[83,3067+26])
+                Some
+                  []
+                  pattern (file_formats/cmt_format.ml[83,3067+27]..[83,3067+28])
+                    Ppat_var "s" (file_formats/cmt_format.ml[83,3067+27]..[83,3067+28])
+              expression (file_formats/cmt_format.ml[84,3099+6]..[84,3099+57])
+                Pexp_construct "Partial_structure_item" (file_formats/cmt_format.ml[84,3099+6]..[84,3099+28])
+                Some
+                  expression (file_formats/cmt_format.ml[84,3099+29]..[84,3099+57])
+                    Pexp_apply
+                    expression (file_formats/cmt_format.ml[84,3099+30]..[84,3099+49])
+                      Pexp_field
+                      expression (file_formats/cmt_format.ml[84,3099+30]..[84,3099+34])
+                        Pexp_ident "cenv" (file_formats/cmt_format.ml[84,3099+30]..[84,3099+34])
+                      "structure_item" (file_formats/cmt_format.ml[84,3099+35]..[84,3099+49])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[84,3099+50]..[84,3099+54])
+                          Pexp_ident "cenv" (file_formats/cmt_format.ml[84,3099+50]..[84,3099+54])
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[84,3099+55]..[84,3099+56])
+                          Pexp_ident "s" (file_formats/cmt_format.ml[84,3099+55]..[84,3099+56])
+                    ]
+            <case>
+              pattern (file_formats/cmt_format.ml[85,3157+4]..[85,3157+24])
+                Ppat_construct "Partial_expression" (file_formats/cmt_format.ml[85,3157+4]..[85,3157+22])
+                Some
+                  []
+                  pattern (file_formats/cmt_format.ml[85,3157+23]..[85,3157+24])
+                    Ppat_var "e" (file_formats/cmt_format.ml[85,3157+23]..[85,3157+24])
+              expression (file_formats/cmt_format.ml[85,3157+28]..[85,3157+65])
+                Pexp_construct "Partial_expression" (file_formats/cmt_format.ml[85,3157+28]..[85,3157+46])
+                Some
+                  expression (file_formats/cmt_format.ml[85,3157+47]..[85,3157+65])
+                    Pexp_apply
+                    expression (file_formats/cmt_format.ml[85,3157+48]..[85,3157+57])
+                      Pexp_field
+                      expression (file_formats/cmt_format.ml[85,3157+48]..[85,3157+52])
+                        Pexp_ident "cenv" (file_formats/cmt_format.ml[85,3157+48]..[85,3157+52])
+                      "expr" (file_formats/cmt_format.ml[85,3157+53]..[85,3157+57])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[85,3157+58]..[85,3157+62])
+                          Pexp_ident "cenv" (file_formats/cmt_format.ml[85,3157+58]..[85,3157+62])
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[85,3157+63]..[85,3157+64])
+                          Pexp_ident "e" (file_formats/cmt_format.ml[85,3157+63]..[85,3157+64])
+                    ]
+            <case>
+              pattern (file_formats/cmt_format.ml[86,3223+4]..[86,3223+33])
+                Ppat_construct "Partial_pattern" (file_formats/cmt_format.ml[86,3223+4]..[86,3223+19])
+                Some
+                  []
+                  pattern (file_formats/cmt_format.ml[86,3223+20]..[86,3223+33])
+                    Ppat_tuple
+                    [
+                      pattern (file_formats/cmt_format.ml[86,3223+21]..[86,3223+29])
+                        Ppat_var "category" (file_formats/cmt_format.ml[86,3223+21]..[86,3223+29])
+                      pattern (file_formats/cmt_format.ml[86,3223+31]..[86,3223+32])
+                        Ppat_var "p" (file_formats/cmt_format.ml[86,3223+31]..[86,3223+32])
+                    ]
+              expression (file_formats/cmt_format.ml[86,3223+37]..[86,3223+80])
+                Pexp_construct "Partial_pattern" (file_formats/cmt_format.ml[86,3223+37]..[86,3223+52])
+                Some
+                  expression (file_formats/cmt_format.ml[86,3223+53]..[86,3223+80])
+                    Pexp_tuple
+                    [
+                      expression (file_formats/cmt_format.ml[86,3223+54]..[86,3223+62])
+                        Pexp_ident "category" (file_formats/cmt_format.ml[86,3223+54]..[86,3223+62])
+                      expression (file_formats/cmt_format.ml[86,3223+64]..[86,3223+79])
+                        Pexp_apply
+                        expression (file_formats/cmt_format.ml[86,3223+64]..[86,3223+72])
+                          Pexp_field
+                          expression (file_formats/cmt_format.ml[86,3223+64]..[86,3223+68])
+                            Pexp_ident "cenv" (file_formats/cmt_format.ml[86,3223+64]..[86,3223+68])
+                          "pat" (file_formats/cmt_format.ml[86,3223+69]..[86,3223+72])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[86,3223+73]..[86,3223+77])
+                              Pexp_ident "cenv" (file_formats/cmt_format.ml[86,3223+73]..[86,3223+77])
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[86,3223+78]..[86,3223+79])
+                              Pexp_ident "p" (file_formats/cmt_format.ml[86,3223+78]..[86,3223+79])
+                        ]
+                    ]
+            <case>
+              pattern (file_formats/cmt_format.ml[87,3304+4]..[87,3304+25])
+                Ppat_construct "Partial_class_expr" (file_formats/cmt_format.ml[87,3304+4]..[87,3304+22])
+                Some
+                  []
+                  pattern (file_formats/cmt_format.ml[87,3304+23]..[87,3304+25])
+                    Ppat_var "ce" (file_formats/cmt_format.ml[87,3304+23]..[87,3304+25])
+              expression (file_formats/cmt_format.ml[87,3304+29]..[87,3304+73])
+                Pexp_construct "Partial_class_expr" (file_formats/cmt_format.ml[87,3304+29]..[87,3304+47])
+                Some
+                  expression (file_formats/cmt_format.ml[87,3304+48]..[87,3304+73])
+                    Pexp_apply
+                    expression (file_formats/cmt_format.ml[87,3304+49]..[87,3304+64])
+                      Pexp_field
+                      expression (file_formats/cmt_format.ml[87,3304+49]..[87,3304+53])
+                        Pexp_ident "cenv" (file_formats/cmt_format.ml[87,3304+49]..[87,3304+53])
+                      "class_expr" (file_formats/cmt_format.ml[87,3304+54]..[87,3304+64])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[87,3304+65]..[87,3304+69])
+                          Pexp_ident "cenv" (file_formats/cmt_format.ml[87,3304+65]..[87,3304+69])
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[87,3304+70]..[87,3304+72])
+                          Pexp_ident "ce" (file_formats/cmt_format.ml[87,3304+70]..[87,3304+72])
+                    ]
+            <case>
+              pattern (file_formats/cmt_format.ml[88,3378+4]..[88,3378+23])
+                Ppat_construct "Partial_signature" (file_formats/cmt_format.ml[88,3378+4]..[88,3378+21])
+                Some
+                  []
+                  pattern (file_formats/cmt_format.ml[88,3378+22]..[88,3378+23])
+                    Ppat_var "s" (file_formats/cmt_format.ml[88,3378+22]..[88,3378+23])
+              expression (file_formats/cmt_format.ml[88,3378+27]..[88,3378+68])
+                Pexp_construct "Partial_signature" (file_formats/cmt_format.ml[88,3378+27]..[88,3378+44])
+                Some
+                  expression (file_formats/cmt_format.ml[88,3378+45]..[88,3378+68])
+                    Pexp_apply
+                    expression (file_formats/cmt_format.ml[88,3378+46]..[88,3378+60])
+                      Pexp_field
+                      expression (file_formats/cmt_format.ml[88,3378+46]..[88,3378+50])
+                        Pexp_ident "cenv" (file_formats/cmt_format.ml[88,3378+46]..[88,3378+50])
+                      "signature" (file_formats/cmt_format.ml[88,3378+51]..[88,3378+60])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[88,3378+61]..[88,3378+65])
+                          Pexp_ident "cenv" (file_formats/cmt_format.ml[88,3378+61]..[88,3378+65])
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[88,3378+66]..[88,3378+67])
+                          Pexp_ident "s" (file_formats/cmt_format.ml[88,3378+66]..[88,3378+67])
+                    ]
+            <case>
+              pattern (file_formats/cmt_format.ml[89,3447+4]..[89,3447+28])
+                Ppat_construct "Partial_signature_item" (file_formats/cmt_format.ml[89,3447+4]..[89,3447+26])
+                Some
+                  []
+                  pattern (file_formats/cmt_format.ml[89,3447+27]..[89,3447+28])
+                    Ppat_var "s" (file_formats/cmt_format.ml[89,3447+27]..[89,3447+28])
+              expression (file_formats/cmt_format.ml[90,3479+6]..[90,3479+57])
+                Pexp_construct "Partial_signature_item" (file_formats/cmt_format.ml[90,3479+6]..[90,3479+28])
+                Some
+                  expression (file_formats/cmt_format.ml[90,3479+29]..[90,3479+57])
+                    Pexp_apply
+                    expression (file_formats/cmt_format.ml[90,3479+30]..[90,3479+49])
+                      Pexp_field
+                      expression (file_formats/cmt_format.ml[90,3479+30]..[90,3479+34])
+                        Pexp_ident "cenv" (file_formats/cmt_format.ml[90,3479+30]..[90,3479+34])
+                      "signature_item" (file_formats/cmt_format.ml[90,3479+35]..[90,3479+49])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[90,3479+50]..[90,3479+54])
+                          Pexp_ident "cenv" (file_formats/cmt_format.ml[90,3479+50]..[90,3479+54])
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[90,3479+55]..[90,3479+56])
+                          Pexp_ident "s" (file_formats/cmt_format.ml[90,3479+55]..[90,3479+56])
+                    ]
+            <case>
+              pattern (file_formats/cmt_format.ml[91,3537+4]..[91,3537+25])
+                Ppat_construct "Partial_module_type" (file_formats/cmt_format.ml[91,3537+4]..[91,3537+23])
+                Some
+                  []
+                  pattern (file_formats/cmt_format.ml[91,3537+24]..[91,3537+25])
+                    Ppat_var "s" (file_formats/cmt_format.ml[91,3537+24]..[91,3537+25])
+              expression (file_formats/cmt_format.ml[91,3537+29]..[91,3537+74])
+                Pexp_construct "Partial_module_type" (file_formats/cmt_format.ml[91,3537+29]..[91,3537+48])
+                Some
+                  expression (file_formats/cmt_format.ml[91,3537+49]..[91,3537+74])
+                    Pexp_apply
+                    expression (file_formats/cmt_format.ml[91,3537+50]..[91,3537+66])
+                      Pexp_field
+                      expression (file_formats/cmt_format.ml[91,3537+50]..[91,3537+54])
+                        Pexp_ident "cenv" (file_formats/cmt_format.ml[91,3537+50]..[91,3537+54])
+                      "module_type" (file_formats/cmt_format.ml[91,3537+55]..[91,3537+66])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[91,3537+67]..[91,3537+71])
+                          Pexp_ident "cenv" (file_formats/cmt_format.ml[91,3537+67]..[91,3537+71])
+                      <arg>
+                      Nolabel
+                        expression (file_formats/cmt_format.ml[91,3537+72]..[91,3537+73])
+                          Pexp_ident "s" (file_formats/cmt_format.ml[91,3537+72]..[91,3537+73])
+                    ]
+          ]
+    ]
+  structure_item (file_formats/cmt_format.ml[93,3613+0]..[104,4039+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[93,3613+4]..[93,3613+13])
+          Ppat_var "clear_env" (file_formats/cmt_format.ml[93,3613+4]..[93,3613+13])
+        expression (file_formats/cmt_format.ml[93,3613+14]..[104,4039+20]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[93,3613+14]..[93,3613+27])
+            Ppat_var "binary_annots" (file_formats/cmt_format.ml[93,3613+14]..[93,3613+27])
+          expression (file_formats/cmt_format.ml[94,3643+2]..[104,4039+20])
+            Pexp_ifthenelse
+            expression (file_formats/cmt_format.ml[94,3643+5]..[94,3643+22])
+              Pexp_ident "need_to_clear_env" (file_formats/cmt_format.ml[94,3643+5]..[94,3643+22])
+            expression (file_formats/cmt_format.ml[95,3671+4]..[102,3983+54])
+              Pexp_match
+              expression (file_formats/cmt_format.ml[95,3671+10]..[95,3671+23])
+                Pexp_ident "binary_annots" (file_formats/cmt_format.ml[95,3671+10]..[95,3671+23])
+              [
+                <case>
+                  pattern (file_formats/cmt_format.ml[96,3700+6]..[96,3700+22])
+                    Ppat_construct "Implementation" (file_formats/cmt_format.ml[96,3700+6]..[96,3700+20])
+                    Some
+                      []
+                      pattern (file_formats/cmt_format.ml[96,3700+21]..[96,3700+22])
+                        Ppat_var "s" (file_formats/cmt_format.ml[96,3700+21]..[96,3700+22])
+                  expression (file_formats/cmt_format.ml[96,3700+26]..[96,3700+64])
+                    Pexp_construct "Implementation" (file_formats/cmt_format.ml[96,3700+26]..[96,3700+40])
+                    Some
+                      expression (file_formats/cmt_format.ml[96,3700+41]..[96,3700+64])
+                        Pexp_apply
+                        expression (file_formats/cmt_format.ml[96,3700+42]..[96,3700+56])
+                          Pexp_field
+                          expression (file_formats/cmt_format.ml[96,3700+42]..[96,3700+46])
+                            Pexp_ident "cenv" (file_formats/cmt_format.ml[96,3700+42]..[96,3700+46])
+                          "structure" (file_formats/cmt_format.ml[96,3700+47]..[96,3700+56])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[96,3700+57]..[96,3700+61])
+                              Pexp_ident "cenv" (file_formats/cmt_format.ml[96,3700+57]..[96,3700+61])
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[96,3700+62]..[96,3700+63])
+                              Pexp_ident "s" (file_formats/cmt_format.ml[96,3700+62]..[96,3700+63])
+                        ]
+                <case>
+                  pattern (file_formats/cmt_format.ml[97,3765+6]..[97,3765+17])
+                    Ppat_construct "Interface" (file_formats/cmt_format.ml[97,3765+6]..[97,3765+15])
+                    Some
+                      []
+                      pattern (file_formats/cmt_format.ml[97,3765+16]..[97,3765+17])
+                        Ppat_var "s" (file_formats/cmt_format.ml[97,3765+16]..[97,3765+17])
+                  expression (file_formats/cmt_format.ml[97,3765+21]..[97,3765+54])
+                    Pexp_construct "Interface" (file_formats/cmt_format.ml[97,3765+21]..[97,3765+30])
+                    Some
+                      expression (file_formats/cmt_format.ml[97,3765+31]..[97,3765+54])
+                        Pexp_apply
+                        expression (file_formats/cmt_format.ml[97,3765+32]..[97,3765+46])
+                          Pexp_field
+                          expression (file_formats/cmt_format.ml[97,3765+32]..[97,3765+36])
+                            Pexp_ident "cenv" (file_formats/cmt_format.ml[97,3765+32]..[97,3765+36])
+                          "signature" (file_formats/cmt_format.ml[97,3765+37]..[97,3765+46])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[97,3765+47]..[97,3765+51])
+                              Pexp_ident "cenv" (file_formats/cmt_format.ml[97,3765+47]..[97,3765+51])
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[97,3765+52]..[97,3765+53])
+                              Pexp_ident "s" (file_formats/cmt_format.ml[97,3765+52]..[97,3765+53])
+                        ]
+                <case>
+                  pattern (file_formats/cmt_format.ml[98,3820+6]..[98,3820+14])
+                    Ppat_construct "Packed" (file_formats/cmt_format.ml[98,3820+6]..[98,3820+12])
+                    Some
+                      []
+                      pattern (file_formats/cmt_format.ml[98,3820+13]..[98,3820+14])
+                        Ppat_any
+                  expression (file_formats/cmt_format.ml[98,3820+18]..[98,3820+31])
+                    Pexp_ident "binary_annots" (file_formats/cmt_format.ml[98,3820+18]..[98,3820+31])
+                <case>
+                  pattern (file_formats/cmt_format.ml[99,3852+6]..[99,3852+34])
+                    Ppat_construct "Partial_implementation" (file_formats/cmt_format.ml[99,3852+6]..[99,3852+28])
+                    Some
+                      []
+                      pattern (file_formats/cmt_format.ml[99,3852+29]..[99,3852+34])
+                        Ppat_var "array" (file_formats/cmt_format.ml[99,3852+29]..[99,3852+34])
+                  expression (file_formats/cmt_format.ml[100,3890+8]..[100,3890+59])
+                    Pexp_construct "Partial_implementation" (file_formats/cmt_format.ml[100,3890+8]..[100,3890+30])
+                    Some
+                      expression (file_formats/cmt_format.ml[100,3890+31]..[100,3890+59])
+                        Pexp_apply
+                        expression (file_formats/cmt_format.ml[100,3890+32]..[100,3890+41])
+                          Pexp_ident "Array.map" (file_formats/cmt_format.ml[100,3890+32]..[100,3890+41])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[100,3890+42]..[100,3890+52])
+                              Pexp_ident "clear_part" (file_formats/cmt_format.ml[100,3890+42]..[100,3890+52])
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[100,3890+53]..[100,3890+58])
+                              Pexp_ident "array" (file_formats/cmt_format.ml[100,3890+53]..[100,3890+58])
+                        ]
+                <case>
+                  pattern (file_formats/cmt_format.ml[101,3950+6]..[101,3950+29])
+                    Ppat_construct "Partial_interface" (file_formats/cmt_format.ml[101,3950+6]..[101,3950+23])
+                    Some
+                      []
+                      pattern (file_formats/cmt_format.ml[101,3950+24]..[101,3950+29])
+                        Ppat_var "array" (file_formats/cmt_format.ml[101,3950+24]..[101,3950+29])
+                  expression (file_formats/cmt_format.ml[102,3983+8]..[102,3983+54])
+                    Pexp_construct "Partial_interface" (file_formats/cmt_format.ml[102,3983+8]..[102,3983+25])
+                    Some
+                      expression (file_formats/cmt_format.ml[102,3983+26]..[102,3983+54])
+                        Pexp_apply
+                        expression (file_formats/cmt_format.ml[102,3983+27]..[102,3983+36])
+                          Pexp_ident "Array.map" (file_formats/cmt_format.ml[102,3983+27]..[102,3983+36])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[102,3983+37]..[102,3983+47])
+                              Pexp_ident "clear_part" (file_formats/cmt_format.ml[102,3983+37]..[102,3983+47])
+                          <arg>
+                          Nolabel
+                            expression (file_formats/cmt_format.ml[102,3983+48]..[102,3983+53])
+                              Pexp_ident "array" (file_formats/cmt_format.ml[102,3983+48]..[102,3983+53])
+                        ]
+              ]
+            Some
+              expression (file_formats/cmt_format.ml[104,4039+7]..[104,4039+20])
+                Pexp_ident "binary_annots" (file_formats/cmt_format.ml[104,4039+7]..[104,4039+20])
+    ]
+  structure_item (file_formats/cmt_format.ml[106,4061+0]..[106,4061+24])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (file_formats/cmt_format.ml[106,4061+0]..[106,4061+24])
+          pext_name = "Error"
+          pext_kind =
+            Pext_decl
+              [
+                core_type (file_formats/cmt_format.ml[106,4061+19]..[106,4061+24])
+                  Ptyp_constr "error" (file_formats/cmt_format.ml[106,4061+19]..[106,4061+24])
+                  []
+              ]
+              None
+  structure_item (file_formats/cmt_format.ml[108,4087+0]..[108,4087+47])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[108,4087+4]..[108,4087+13])
+          Ppat_var "input_cmt" (file_formats/cmt_format.ml[108,4087+4]..[108,4087+13])
+        expression (file_formats/cmt_format.ml[108,4087+14]..[108,4087+47]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[108,4087+14]..[108,4087+16])
+            Ppat_var "ic" (file_formats/cmt_format.ml[108,4087+14]..[108,4087+16])
+          expression (file_formats/cmt_format.ml[108,4087+19]..[108,4087+47])
+            Pexp_constraint
+            expression (file_formats/cmt_format.ml[108,4087+20]..[108,4087+34])
+              Pexp_apply
+              expression (file_formats/cmt_format.ml[108,4087+20]..[108,4087+31])
+                Pexp_ident "input_value" (file_formats/cmt_format.ml[108,4087+20]..[108,4087+31])
+              [
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[108,4087+32]..[108,4087+34])
+                    Pexp_ident "ic" (file_formats/cmt_format.ml[108,4087+32]..[108,4087+34])
+              ]
+            core_type (file_formats/cmt_format.ml[108,4087+37]..[108,4087+46])
+              Ptyp_constr "cmt_infos" (file_formats/cmt_format.ml[108,4087+37]..[108,4087+46])
+              []
+    ]
+  structure_item (file_formats/cmt_format.ml[110,4136+0]..[112,4204+35])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[110,4136+4]..[110,4136+14])
+          Ppat_var "output_cmt" (file_formats/cmt_format.ml[110,4136+4]..[110,4136+14])
+        expression (file_formats/cmt_format.ml[110,4136+15]..[112,4204+35]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[110,4136+15]..[110,4136+17])
+            Ppat_var "oc" (file_formats/cmt_format.ml[110,4136+15]..[110,4136+17])
+          expression (file_formats/cmt_format.ml[110,4136+18]..[112,4204+35]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (file_formats/cmt_format.ml[110,4136+18]..[110,4136+21])
+              Ppat_var "cmt" (file_formats/cmt_format.ml[110,4136+18]..[110,4136+21])
+            expression (file_formats/cmt_format.ml[111,4160+2]..[112,4204+35])
+              Pexp_sequence
+              expression (file_formats/cmt_format.ml[111,4160+2]..[111,4160+42])
+                Pexp_apply
+                expression (file_formats/cmt_format.ml[111,4160+2]..[111,4160+15])
+                  Pexp_ident "output_string" (file_formats/cmt_format.ml[111,4160+2]..[111,4160+15])
+                [
+                  <arg>
+                  Nolabel
+                    expression (file_formats/cmt_format.ml[111,4160+16]..[111,4160+18])
+                      Pexp_ident "oc" (file_formats/cmt_format.ml[111,4160+16]..[111,4160+18])
+                  <arg>
+                  Nolabel
+                    expression (file_formats/cmt_format.ml[111,4160+19]..[111,4160+42])
+                      Pexp_ident "Config.cmt_magic_number" (file_formats/cmt_format.ml[111,4160+19]..[111,4160+42])
+                ]
+              expression (file_formats/cmt_format.ml[112,4204+2]..[112,4204+35])
+                Pexp_apply
+                expression (file_formats/cmt_format.ml[112,4204+2]..[112,4204+14])
+                  Pexp_ident "output_value" (file_formats/cmt_format.ml[112,4204+2]..[112,4204+14])
+                [
+                  <arg>
+                  Nolabel
+                    expression (file_formats/cmt_format.ml[112,4204+15]..[112,4204+17])
+                      Pexp_ident "oc" (file_formats/cmt_format.ml[112,4204+15]..[112,4204+17])
+                  <arg>
+                  Nolabel
+                    expression (file_formats/cmt_format.ml[112,4204+18]..[112,4204+35])
+                      Pexp_constraint
+                      expression (file_formats/cmt_format.ml[112,4204+19]..[112,4204+22])
+                        Pexp_ident "cmt" (file_formats/cmt_format.ml[112,4204+19]..[112,4204+22])
+                      core_type (file_formats/cmt_format.ml[112,4204+25]..[112,4204+34])
+                        Ptyp_constr "cmt_infos" (file_formats/cmt_format.ml[112,4204+25]..[112,4204+34])
+                        []
+                ]
+    ]
+  structure_item (file_formats/cmt_format.ml[114,4241+0]..[139,5123+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[114,4241+4]..[114,4241+8])
+          Ppat_var "read" (file_formats/cmt_format.ml[114,4241+4]..[114,4241+8])
+        expression (file_formats/cmt_format.ml[114,4241+9]..[139,5123+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[114,4241+9]..[114,4241+17])
+            Ppat_var "filename" (file_formats/cmt_format.ml[114,4241+9]..[114,4241+17])
+          expression (file_formats/cmt_format.ml[116,4325+2]..[139,5123+5])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (file_formats/cmt_format.ml[116,4325+6]..[116,4325+8])
+                  Ppat_var "ic" (file_formats/cmt_format.ml[116,4325+6]..[116,4325+8])
+                expression (file_formats/cmt_format.ml[116,4325+11]..[116,4325+31])
+                  Pexp_apply
+                  expression (file_formats/cmt_format.ml[116,4325+11]..[116,4325+22])
+                    Pexp_ident "open_in_bin" (file_formats/cmt_format.ml[116,4325+11]..[116,4325+22])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (file_formats/cmt_format.ml[116,4325+23]..[116,4325+31])
+                        Pexp_ident "filename" (file_formats/cmt_format.ml[116,4325+23]..[116,4325+31])
+                  ]
+            ]
+            expression (file_formats/cmt_format.ml[117,4360+2]..[139,5123+5])
+              Pexp_apply
+              expression (file_formats/cmt_format.ml[117,4360+2]..[117,4360+18])
+                Pexp_ident "Misc.try_finally" (file_formats/cmt_format.ml[117,4360+2]..[117,4360+18])
+              [
+                <arg>
+                Labelled "always"
+                  expression (file_formats/cmt_format.ml[118,4379+12]..[118,4379+35])
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (file_formats/cmt_format.ml[118,4379+17]..[118,4379+19])
+                      Ppat_construct "()" (file_formats/cmt_format.ml[118,4379+17]..[118,4379+19])
+                      None
+                    expression (file_formats/cmt_format.ml[118,4379+23]..[118,4379+34])
+                      Pexp_apply
+                      expression (file_formats/cmt_format.ml[118,4379+23]..[118,4379+31])
+                        Pexp_ident "close_in" (file_formats/cmt_format.ml[118,4379+23]..[118,4379+31])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (file_formats/cmt_format.ml[118,4379+32]..[118,4379+34])
+                            Pexp_ident "ic" (file_formats/cmt_format.ml[118,4379+32]..[118,4379+34])
+                      ]
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[119,4415+4]..[139,5123+5])
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (file_formats/cmt_format.ml[119,4415+9]..[119,4415+11])
+                      Ppat_construct "()" (file_formats/cmt_format.ml[119,4415+9]..[119,4415+11])
+                      None
+                    expression (file_formats/cmt_format.ml[120,4430+7]..[138,5107+15])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (file_formats/cmt_format.ml[120,4430+11]..[120,4430+23])
+                            Ppat_var "magic_number" (file_formats/cmt_format.ml[120,4430+11]..[120,4430+23])
+                          expression (file_formats/cmt_format.ml[120,4430+26]..[120,4430+46])
+                            Pexp_apply
+                            expression (file_formats/cmt_format.ml[120,4430+26]..[120,4430+43])
+                              Pexp_ident "read_magic_number" (file_formats/cmt_format.ml[120,4430+26]..[120,4430+43])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (file_formats/cmt_format.ml[120,4430+44]..[120,4430+46])
+                                  Pexp_ident "ic" (file_formats/cmt_format.ml[120,4430+44]..[120,4430+46])
+                            ]
+                      ]
+                      expression (file_formats/cmt_format.ml[121,4480+7]..[138,5107+15])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (file_formats/cmt_format.ml[121,4480+11]..[121,4480+19])
+                              Ppat_tuple
+                              [
+                                pattern (file_formats/cmt_format.ml[121,4480+11]..[121,4480+14])
+                                  Ppat_var "cmi" (file_formats/cmt_format.ml[121,4480+11]..[121,4480+14])
+                                pattern (file_formats/cmt_format.ml[121,4480+16]..[121,4480+19])
+                                  Ppat_var "cmt" (file_formats/cmt_format.ml[121,4480+16]..[121,4480+19])
+                              ]
+                            expression (file_formats/cmt_format.ml[122,4502+9]..[136,5024+72])
+                              Pexp_ifthenelse
+                              expression (file_formats/cmt_format.ml[122,4502+12]..[122,4502+50])
+                                Pexp_apply
+                                expression (file_formats/cmt_format.ml[122,4502+25]..[122,4502+26])
+                                  Pexp_ident "=" (file_formats/cmt_format.ml[122,4502+25]..[122,4502+26])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (file_formats/cmt_format.ml[122,4502+12]..[122,4502+24])
+                                      Pexp_ident "magic_number" (file_formats/cmt_format.ml[122,4502+12]..[122,4502+24])
+                                  <arg>
+                                  Nolabel
+                                    expression (file_formats/cmt_format.ml[122,4502+27]..[122,4502+50])
+                                      Pexp_ident "Config.cmt_magic_number" (file_formats/cmt_format.ml[122,4502+27]..[122,4502+50])
+                                ]
+                              expression (file_formats/cmt_format.ml[123,4558+11]..[123,4558+36])
+                                Pexp_tuple
+                                [
+                                  expression (file_formats/cmt_format.ml[123,4558+11]..[123,4558+15])
+                                    Pexp_construct "None" (file_formats/cmt_format.ml[123,4558+11]..[123,4558+15])
+                                    None
+                                  expression (file_formats/cmt_format.ml[123,4558+17]..[123,4558+36])
+                                    Pexp_construct "Some" (file_formats/cmt_format.ml[123,4558+17]..[123,4558+21])
+                                    Some
+                                      expression (file_formats/cmt_format.ml[123,4558+22]..[123,4558+36])
+                                        Pexp_apply
+                                        expression (file_formats/cmt_format.ml[123,4558+23]..[123,4558+32])
+                                          Pexp_ident "input_cmt" (file_formats/cmt_format.ml[123,4558+23]..[123,4558+32])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (file_formats/cmt_format.ml[123,4558+33]..[123,4558+35])
+                                              Pexp_ident "ic" (file_formats/cmt_format.ml[123,4558+33]..[123,4558+35])
+                                        ]
+                                ]
+                              Some
+                                expression (file_formats/cmt_format.ml[124,4595+14]..[136,5024+72])
+                                  Pexp_ifthenelse
+                                  expression (file_formats/cmt_format.ml[124,4595+17]..[124,4595+55])
+                                    Pexp_apply
+                                    expression (file_formats/cmt_format.ml[124,4595+30]..[124,4595+31])
+                                      Pexp_ident "=" (file_formats/cmt_format.ml[124,4595+30]..[124,4595+31])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (file_formats/cmt_format.ml[124,4595+17]..[124,4595+29])
+                                          Pexp_ident "magic_number" (file_formats/cmt_format.ml[124,4595+17]..[124,4595+29])
+                                      <arg>
+                                      Nolabel
+                                        expression (file_formats/cmt_format.ml[124,4595+32]..[124,4595+55])
+                                          Pexp_ident "Config.cmi_magic_number" (file_formats/cmt_format.ml[124,4595+32]..[124,4595+55])
+                                    ]
+                                  expression (file_formats/cmt_format.ml[125,4656+11]..[134,4985+24])
+                                    Pexp_let Nonrec
+                                    [
+                                      <def>
+                                        pattern (file_formats/cmt_format.ml[125,4656+15]..[125,4656+18])
+                                          Ppat_var "cmi" (file_formats/cmt_format.ml[125,4656+15]..[125,4656+18])
+                                        expression (file_formats/cmt_format.ml[125,4656+21]..[125,4656+44])
+                                          Pexp_apply
+                                          expression (file_formats/cmt_format.ml[125,4656+21]..[125,4656+41])
+                                            Pexp_ident "Cmi_format.input_cmi" (file_formats/cmt_format.ml[125,4656+21]..[125,4656+41])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (file_formats/cmt_format.ml[125,4656+42]..[125,4656+44])
+                                                Pexp_ident "ic" (file_formats/cmt_format.ml[125,4656+42]..[125,4656+44])
+                                          ]
+                                    ]
+                                    expression (file_formats/cmt_format.ml[126,4704+11]..[134,4985+24])
+                                      Pexp_let Nonrec
+                                      [
+                                        <def>
+                                          pattern (file_formats/cmt_format.ml[126,4704+15]..[126,4704+18])
+                                            Ppat_var "cmt" (file_formats/cmt_format.ml[126,4704+15]..[126,4704+18])
+                                          expression (file_formats/cmt_format.ml[126,4704+21]..[132,4943+27])
+                                            Pexp_try
+                                            expression (file_formats/cmt_format.ml[127,4729+15]..[131,4918+24])
+                                              Pexp_let Nonrec
+                                              [
+                                                <def>
+                                                  pattern (file_formats/cmt_format.ml[127,4729+19]..[127,4729+31])
+                                                    Ppat_var "magic_number" (file_formats/cmt_format.ml[127,4729+19]..[127,4729+31])
+                                                  expression (file_formats/cmt_format.ml[127,4729+34]..[127,4729+54])
+                                                    Pexp_apply
+                                                    expression (file_formats/cmt_format.ml[127,4729+34]..[127,4729+51])
+                                                      Pexp_ident "read_magic_number" (file_formats/cmt_format.ml[127,4729+34]..[127,4729+51])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (file_formats/cmt_format.ml[127,4729+52]..[127,4729+54])
+                                                          Pexp_ident "ic" (file_formats/cmt_format.ml[127,4729+52]..[127,4729+54])
+                                                    ]
+                                              ]
+                                              expression (file_formats/cmt_format.ml[128,4787+15]..[131,4918+24])
+                                                Pexp_ifthenelse
+                                                expression (file_formats/cmt_format.ml[128,4787+18]..[128,4787+56])
+                                                  Pexp_apply
+                                                  expression (file_formats/cmt_format.ml[128,4787+31]..[128,4787+32])
+                                                    Pexp_ident "=" (file_formats/cmt_format.ml[128,4787+31]..[128,4787+32])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (file_formats/cmt_format.ml[128,4787+18]..[128,4787+30])
+                                                        Pexp_ident "magic_number" (file_formats/cmt_format.ml[128,4787+18]..[128,4787+30])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (file_formats/cmt_format.ml[128,4787+33]..[128,4787+56])
+                                                        Pexp_ident "Config.cmt_magic_number" (file_formats/cmt_format.ml[128,4787+33]..[128,4787+56])
+                                                  ]
+                                                expression (file_formats/cmt_format.ml[129,4849+17]..[130,4892+25])
+                                                  Pexp_let Nonrec
+                                                  [
+                                                    <def>
+                                                      pattern (file_formats/cmt_format.ml[129,4849+21]..[129,4849+24])
+                                                        Ppat_var "cmt" (file_formats/cmt_format.ml[129,4849+21]..[129,4849+24])
+                                                      expression (file_formats/cmt_format.ml[129,4849+27]..[129,4849+39])
+                                                        Pexp_apply
+                                                        expression (file_formats/cmt_format.ml[129,4849+27]..[129,4849+36])
+                                                          Pexp_ident "input_cmt" (file_formats/cmt_format.ml[129,4849+27]..[129,4849+36])
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (file_formats/cmt_format.ml[129,4849+37]..[129,4849+39])
+                                                              Pexp_ident "ic" (file_formats/cmt_format.ml[129,4849+37]..[129,4849+39])
+                                                        ]
+                                                  ]
+                                                  expression (file_formats/cmt_format.ml[130,4892+17]..[130,4892+25])
+                                                    Pexp_construct "Some" (file_formats/cmt_format.ml[130,4892+17]..[130,4892+21])
+                                                    Some
+                                                      expression (file_formats/cmt_format.ml[130,4892+22]..[130,4892+25])
+                                                        Pexp_ident "cmt" (file_formats/cmt_format.ml[130,4892+22]..[130,4892+25])
+                                                Some
+                                                  expression (file_formats/cmt_format.ml[131,4918+20]..[131,4918+24])
+                                                    Pexp_construct "None" (file_formats/cmt_format.ml[131,4918+20]..[131,4918+24])
+                                                    None
+                                            [
+                                              <case>
+                                                pattern (file_formats/cmt_format.ml[132,4943+18]..[132,4943+19])
+                                                  Ppat_any
+                                                expression (file_formats/cmt_format.ml[132,4943+23]..[132,4943+27])
+                                                  Pexp_construct "None" (file_formats/cmt_format.ml[132,4943+23]..[132,4943+27])
+                                                  None
+                                            ]
+                                      ]
+                                      expression (file_formats/cmt_format.ml[134,4985+11]..[134,4985+24])
+                                        Pexp_tuple
+                                        [
+                                          expression (file_formats/cmt_format.ml[134,4985+11]..[134,4985+19])
+                                            Pexp_construct "Some" (file_formats/cmt_format.ml[134,4985+11]..[134,4985+15])
+                                            Some
+                                              expression (file_formats/cmt_format.ml[134,4985+16]..[134,4985+19])
+                                                Pexp_ident "cmi" (file_formats/cmt_format.ml[134,4985+16]..[134,4985+19])
+                                          expression (file_formats/cmt_format.ml[134,4985+21]..[134,4985+24])
+                                            Pexp_ident "cmt" (file_formats/cmt_format.ml[134,4985+21]..[134,4985+24])
+                                        ]
+                                  Some
+                                    expression (file_formats/cmt_format.ml[136,5024+11]..[136,5024+72])
+                                      Pexp_apply
+                                      expression (file_formats/cmt_format.ml[136,5024+11]..[136,5024+16])
+                                        Pexp_ident "raise" (file_formats/cmt_format.ml[136,5024+11]..[136,5024+16])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (file_formats/cmt_format.ml[136,5024+16]..[136,5024+72])
+                                            Pexp_construct "Cmi_format.Error" (file_formats/cmt_format.ml[136,5024+17]..[136,5024+33])
+                                            Some
+                                              expression (file_formats/cmt_format.ml[136,5024+33]..[136,5024+71])
+                                                Pexp_construct "Cmi_format.Not_an_interface" (file_formats/cmt_format.ml[136,5024+34]..[136,5024+61])
+                                                Some
+                                                  expression (file_formats/cmt_format.ml[136,5024+62]..[136,5024+70])
+                                                    Pexp_ident "filename" (file_formats/cmt_format.ml[136,5024+62]..[136,5024+70])
+                                      ]
+                        ]
+                        expression (file_formats/cmt_format.ml[138,5107+7]..[138,5107+15])
+                          Pexp_tuple
+                          [
+                            expression (file_formats/cmt_format.ml[138,5107+7]..[138,5107+10])
+                              Pexp_ident "cmi" (file_formats/cmt_format.ml[138,5107+7]..[138,5107+10])
+                            expression (file_formats/cmt_format.ml[138,5107+12]..[138,5107+15])
+                              Pexp_ident "cmt" (file_formats/cmt_format.ml[138,5107+12]..[138,5107+15])
+                          ]
+              ]
+    ]
+  structure_item (file_formats/cmt_format.ml[141,5130+0]..[144,5239+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[141,5130+4]..[141,5130+12])
+          Ppat_var "read_cmt" (file_formats/cmt_format.ml[141,5130+4]..[141,5130+12])
+        expression (file_formats/cmt_format.ml[141,5130+13]..[144,5239+24]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[141,5130+13]..[141,5130+21])
+            Ppat_var "filename" (file_formats/cmt_format.ml[141,5130+13]..[141,5130+21])
+          expression (file_formats/cmt_format.ml[142,5154+2]..[144,5239+24])
+            Pexp_match
+            expression (file_formats/cmt_format.ml[142,5154+8]..[142,5154+21])
+              Pexp_apply
+              expression (file_formats/cmt_format.ml[142,5154+8]..[142,5154+12])
+                Pexp_ident "read" (file_formats/cmt_format.ml[142,5154+8]..[142,5154+12])
+              [
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[142,5154+13]..[142,5154+21])
+                    Pexp_ident "filename" (file_formats/cmt_format.ml[142,5154+13]..[142,5154+21])
+              ]
+            [
+              <case>
+                pattern (file_formats/cmt_format.ml[143,5181+6]..[143,5181+13])
+                  Ppat_tuple
+                  [
+                    pattern (file_formats/cmt_format.ml[143,5181+6]..[143,5181+7])
+                      Ppat_any
+                    pattern (file_formats/cmt_format.ml[143,5181+9]..[143,5181+13])
+                      Ppat_construct "None" (file_formats/cmt_format.ml[143,5181+9]..[143,5181+13])
+                      None
+                  ]
+                expression (file_formats/cmt_format.ml[143,5181+17]..[143,5181+57])
+                  Pexp_apply
+                  expression (file_formats/cmt_format.ml[143,5181+17]..[143,5181+22])
+                    Pexp_ident "raise" (file_formats/cmt_format.ml[143,5181+17]..[143,5181+22])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (file_formats/cmt_format.ml[143,5181+23]..[143,5181+57])
+                        Pexp_construct "Error" (file_formats/cmt_format.ml[143,5181+24]..[143,5181+29])
+                        Some
+                          expression (file_formats/cmt_format.ml[143,5181+30]..[143,5181+56])
+                            Pexp_construct "Not_a_typedtree" (file_formats/cmt_format.ml[143,5181+31]..[143,5181+46])
+                            Some
+                              expression (file_formats/cmt_format.ml[143,5181+47]..[143,5181+55])
+                                Pexp_ident "filename" (file_formats/cmt_format.ml[143,5181+47]..[143,5181+55])
+                  ]
+              <case>
+                pattern (file_formats/cmt_format.ml[144,5239+6]..[144,5239+17])
+                  Ppat_tuple
+                  [
+                    pattern (file_formats/cmt_format.ml[144,5239+6]..[144,5239+7])
+                      Ppat_any
+                    pattern (file_formats/cmt_format.ml[144,5239+9]..[144,5239+17])
+                      Ppat_construct "Some" (file_formats/cmt_format.ml[144,5239+9]..[144,5239+13])
+                      Some
+                        []
+                        pattern (file_formats/cmt_format.ml[144,5239+14]..[144,5239+17])
+                          Ppat_var "cmt" (file_formats/cmt_format.ml[144,5239+14]..[144,5239+17])
+                  ]
+                expression (file_formats/cmt_format.ml[144,5239+21]..[144,5239+24])
+                  Pexp_ident "cmt" (file_formats/cmt_format.ml[144,5239+21]..[144,5239+24])
+            ]
+    ]
+  structure_item (file_formats/cmt_format.ml[146,5265+0]..[150,5405+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[146,5265+4]..[146,5265+12])
+          Ppat_var "read_cmi" (file_formats/cmt_format.ml[146,5265+4]..[146,5265+12])
+        expression (file_formats/cmt_format.ml[146,5265+13]..[150,5405+24]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[146,5265+13]..[146,5265+21])
+            Ppat_var "filename" (file_formats/cmt_format.ml[146,5265+13]..[146,5265+21])
+          expression (file_formats/cmt_format.ml[147,5289+2]..[150,5405+24])
+            Pexp_match
+            expression (file_formats/cmt_format.ml[147,5289+8]..[147,5289+21])
+              Pexp_apply
+              expression (file_formats/cmt_format.ml[147,5289+8]..[147,5289+12])
+                Pexp_ident "read" (file_formats/cmt_format.ml[147,5289+8]..[147,5289+12])
+              [
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[147,5289+13]..[147,5289+21])
+                    Pexp_ident "filename" (file_formats/cmt_format.ml[147,5289+13]..[147,5289+21])
+              ]
+            [
+              <case>
+                pattern (file_formats/cmt_format.ml[148,5316+6]..[148,5316+13])
+                  Ppat_tuple
+                  [
+                    pattern (file_formats/cmt_format.ml[148,5316+6]..[148,5316+10])
+                      Ppat_construct "None" (file_formats/cmt_format.ml[148,5316+6]..[148,5316+10])
+                      None
+                    pattern (file_formats/cmt_format.ml[148,5316+12]..[148,5316+13])
+                      Ppat_any
+                  ]
+                expression (file_formats/cmt_format.ml[149,5333+8]..[149,5333+71])
+                  Pexp_apply
+                  expression (file_formats/cmt_format.ml[149,5333+8]..[149,5333+13])
+                    Pexp_ident "raise" (file_formats/cmt_format.ml[149,5333+8]..[149,5333+13])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (file_formats/cmt_format.ml[149,5333+14]..[149,5333+71])
+                        Pexp_construct "Cmi_format.Error" (file_formats/cmt_format.ml[149,5333+15]..[149,5333+31])
+                        Some
+                          expression (file_formats/cmt_format.ml[149,5333+32]..[149,5333+70])
+                            Pexp_construct "Cmi_format.Not_an_interface" (file_formats/cmt_format.ml[149,5333+33]..[149,5333+60])
+                            Some
+                              expression (file_formats/cmt_format.ml[149,5333+61]..[149,5333+69])
+                                Pexp_ident "filename" (file_formats/cmt_format.ml[149,5333+61]..[149,5333+69])
+                  ]
+              <case>
+                pattern (file_formats/cmt_format.ml[150,5405+6]..[150,5405+17])
+                  Ppat_tuple
+                  [
+                    pattern (file_formats/cmt_format.ml[150,5405+6]..[150,5405+14])
+                      Ppat_construct "Some" (file_formats/cmt_format.ml[150,5405+6]..[150,5405+10])
+                      Some
+                        []
+                        pattern (file_formats/cmt_format.ml[150,5405+11]..[150,5405+14])
+                          Ppat_var "cmi" (file_formats/cmt_format.ml[150,5405+11]..[150,5405+14])
+                    pattern (file_formats/cmt_format.ml[150,5405+16]..[150,5405+17])
+                      Ppat_any
+                  ]
+                expression (file_formats/cmt_format.ml[150,5405+21]..[150,5405+24])
+                  Pexp_ident "cmi" (file_formats/cmt_format.ml[150,5405+21]..[150,5405+24])
+            ]
+    ]
+  structure_item (file_formats/cmt_format.ml[152,5431+0]..[152,5431+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[152,5431+4]..[152,5431+15])
+          Ppat_var "saved_types" (file_formats/cmt_format.ml[152,5431+4]..[152,5431+15])
+        expression (file_formats/cmt_format.ml[152,5431+18]..[152,5431+24])
+          Pexp_apply
+          expression (file_formats/cmt_format.ml[152,5431+18]..[152,5431+21])
+            Pexp_ident "ref" (file_formats/cmt_format.ml[152,5431+18]..[152,5431+21])
+          [
+            <arg>
+            Nolabel
+              expression (file_formats/cmt_format.ml[152,5431+22]..[152,5431+24])
+                Pexp_construct "[]" (file_formats/cmt_format.ml[152,5431+22]..[152,5431+24])
+                None
+          ]
+    ]
+  structure_item (file_formats/cmt_format.ml[153,5456+0]..[153,5456+23])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[153,5456+4]..[153,5456+14])
+          Ppat_var "value_deps" (file_formats/cmt_format.ml[153,5456+4]..[153,5456+14])
+        expression (file_formats/cmt_format.ml[153,5456+17]..[153,5456+23])
+          Pexp_apply
+          expression (file_formats/cmt_format.ml[153,5456+17]..[153,5456+20])
+            Pexp_ident "ref" (file_formats/cmt_format.ml[153,5456+17]..[153,5456+20])
+          [
+            <arg>
+            Nolabel
+              expression (file_formats/cmt_format.ml[153,5456+21]..[153,5456+23])
+                Pexp_construct "[]" (file_formats/cmt_format.ml[153,5456+21]..[153,5456+23])
+                None
+          ]
+    ]
+  structure_item (file_formats/cmt_format.ml[155,5481+0]..[157,5517+18])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[155,5481+4]..[155,5481+9])
+          Ppat_var "clear" (file_formats/cmt_format.ml[155,5481+4]..[155,5481+9])
+        expression (file_formats/cmt_format.ml[155,5481+10]..[157,5517+18]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[155,5481+10]..[155,5481+12])
+            Ppat_construct "()" (file_formats/cmt_format.ml[155,5481+10]..[155,5481+12])
+            None
+          expression (file_formats/cmt_format.ml[156,5496+2]..[157,5517+18])
+            Pexp_sequence
+            expression (file_formats/cmt_format.ml[156,5496+2]..[156,5496+19])
+              Pexp_apply
+              expression (file_formats/cmt_format.ml[156,5496+14]..[156,5496+16])
+                Pexp_ident ":=" (file_formats/cmt_format.ml[156,5496+14]..[156,5496+16])
+              [
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[156,5496+2]..[156,5496+13])
+                    Pexp_ident "saved_types" (file_formats/cmt_format.ml[156,5496+2]..[156,5496+13])
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[156,5496+17]..[156,5496+19])
+                    Pexp_construct "[]" (file_formats/cmt_format.ml[156,5496+17]..[156,5496+19])
+                    None
+              ]
+            expression (file_formats/cmt_format.ml[157,5517+2]..[157,5517+18])
+              Pexp_apply
+              expression (file_formats/cmt_format.ml[157,5517+13]..[157,5517+15])
+                Pexp_ident ":=" (file_formats/cmt_format.ml[157,5517+13]..[157,5517+15])
+              [
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[157,5517+2]..[157,5517+12])
+                    Pexp_ident "value_deps" (file_formats/cmt_format.ml[157,5517+2]..[157,5517+12])
+                <arg>
+                Nolabel
+                  expression (file_formats/cmt_format.ml[157,5517+16]..[157,5517+18])
+                    Pexp_construct "[]" (file_formats/cmt_format.ml[157,5517+16]..[157,5517+18])
+                    None
+              ]
+    ]
+  structure_item (file_formats/cmt_format.ml[159,5537+0]..[159,5537+55])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[159,5537+4]..[159,5537+18])
+          Ppat_var "add_saved_type" (file_formats/cmt_format.ml[159,5537+4]..[159,5537+18])
+        expression (file_formats/cmt_format.ml[159,5537+19]..[159,5537+55]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[159,5537+19]..[159,5537+20])
+            Ppat_var "b" (file_formats/cmt_format.ml[159,5537+19]..[159,5537+20])
+          expression (file_formats/cmt_format.ml[159,5537+23]..[159,5537+55])
+            Pexp_apply
+            expression (file_formats/cmt_format.ml[159,5537+35]..[159,5537+37])
+              Pexp_ident ":=" (file_formats/cmt_format.ml[159,5537+35]..[159,5537+37])
+            [
+              <arg>
+              Nolabel
+                expression (file_formats/cmt_format.ml[159,5537+23]..[159,5537+34])
+                  Pexp_ident "saved_types" (file_formats/cmt_format.ml[159,5537+23]..[159,5537+34])
+              <arg>
+              Nolabel
+                expression (file_formats/cmt_format.ml[159,5537+38]..[159,5537+55])
+                  Pexp_construct "::" (file_formats/cmt_format.ml[159,5537+40]..[159,5537+42])
+                  Some
+                    expression (file_formats/cmt_format.ml[159,5537+38]..[159,5537+55]) ghost
+                      Pexp_tuple
+                      [
+                        expression (file_formats/cmt_format.ml[159,5537+38]..[159,5537+39])
+                          Pexp_ident "b" (file_formats/cmt_format.ml[159,5537+38]..[159,5537+39])
+                        expression (file_formats/cmt_format.ml[159,5537+43]..[159,5537+55])
+                          Pexp_apply
+                          expression (file_formats/cmt_format.ml[159,5537+43]..[159,5537+44])
+                            Pexp_ident "!" (file_formats/cmt_format.ml[159,5537+43]..[159,5537+44])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (file_formats/cmt_format.ml[159,5537+44]..[159,5537+55])
+                                Pexp_ident "saved_types" (file_formats/cmt_format.ml[159,5537+44]..[159,5537+55])
+                          ]
+                      ]
+            ]
+    ]
+  structure_item (file_formats/cmt_format.ml[160,5593+0]..[160,5593+37])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[160,5593+4]..[160,5593+19])
+          Ppat_var "get_saved_types" (file_formats/cmt_format.ml[160,5593+4]..[160,5593+19])
+        expression (file_formats/cmt_format.ml[160,5593+20]..[160,5593+37]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[160,5593+20]..[160,5593+22])
+            Ppat_construct "()" (file_formats/cmt_format.ml[160,5593+20]..[160,5593+22])
+            None
+          expression (file_formats/cmt_format.ml[160,5593+25]..[160,5593+37])
+            Pexp_apply
+            expression (file_formats/cmt_format.ml[160,5593+25]..[160,5593+26])
+              Pexp_ident "!" (file_formats/cmt_format.ml[160,5593+25]..[160,5593+26])
+            [
+              <arg>
+              Nolabel
+                expression (file_formats/cmt_format.ml[160,5593+26]..[160,5593+37])
+                  Pexp_ident "saved_types" (file_formats/cmt_format.ml[160,5593+26]..[160,5593+37])
+            ]
+    ]
+  structure_item (file_formats/cmt_format.ml[161,5631+0]..[161,5631+40])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[161,5631+4]..[161,5631+19])
+          Ppat_var "set_saved_types" (file_formats/cmt_format.ml[161,5631+4]..[161,5631+19])
+        expression (file_formats/cmt_format.ml[161,5631+20]..[161,5631+40]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[161,5631+20]..[161,5631+21])
+            Ppat_var "l" (file_formats/cmt_format.ml[161,5631+20]..[161,5631+21])
+          expression (file_formats/cmt_format.ml[161,5631+24]..[161,5631+40])
+            Pexp_apply
+            expression (file_formats/cmt_format.ml[161,5631+36]..[161,5631+38])
+              Pexp_ident ":=" (file_formats/cmt_format.ml[161,5631+36]..[161,5631+38])
+            [
+              <arg>
+              Nolabel
+                expression (file_formats/cmt_format.ml[161,5631+24]..[161,5631+35])
+                  Pexp_ident "saved_types" (file_formats/cmt_format.ml[161,5631+24]..[161,5631+35])
+              <arg>
+              Nolabel
+                expression (file_formats/cmt_format.ml[161,5631+39]..[161,5631+40])
+                  Pexp_ident "l" (file_formats/cmt_format.ml[161,5631+39]..[161,5631+40])
+            ]
+    ]
+  structure_item (file_formats/cmt_format.ml[163,5673+0]..[165,5760+43])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[163,5673+4]..[163,5673+27])
+          Ppat_var "record_value_dependency" (file_formats/cmt_format.ml[163,5673+4]..[163,5673+27])
+        expression (file_formats/cmt_format.ml[163,5673+28]..[165,5760+43]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[163,5673+28]..[163,5673+31])
+            Ppat_var "vd1" (file_formats/cmt_format.ml[163,5673+28]..[163,5673+31])
+          expression (file_formats/cmt_format.ml[163,5673+32]..[165,5760+43]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (file_formats/cmt_format.ml[163,5673+32]..[163,5673+35])
+              Ppat_var "vd2" (file_formats/cmt_format.ml[163,5673+32]..[163,5673+35])
+            expression (file_formats/cmt_format.ml[164,5711+2]..[165,5760+43])
+              Pexp_ifthenelse
+              expression (file_formats/cmt_format.ml[164,5711+5]..[164,5711+43])
+                Pexp_apply
+                expression (file_formats/cmt_format.ml[164,5711+23]..[164,5711+25])
+                  Pexp_ident "<>" (file_formats/cmt_format.ml[164,5711+23]..[164,5711+25])
+                [
+                  <arg>
+                  Nolabel
+                    expression (file_formats/cmt_format.ml[164,5711+5]..[164,5711+22])
+                      Pexp_field
+                      expression (file_formats/cmt_format.ml[164,5711+5]..[164,5711+8])
+                        Pexp_ident "vd1" (file_formats/cmt_format.ml[164,5711+5]..[164,5711+8])
+                      "Types.val_loc" (file_formats/cmt_format.ml[164,5711+9]..[164,5711+22])
+                  <arg>
+                  Nolabel
+                    expression (file_formats/cmt_format.ml[164,5711+26]..[164,5711+43])
+                      Pexp_field
+                      expression (file_formats/cmt_format.ml[164,5711+26]..[164,5711+29])
+                        Pexp_ident "vd2" (file_formats/cmt_format.ml[164,5711+26]..[164,5711+29])
+                      "Types.val_loc" (file_formats/cmt_format.ml[164,5711+30]..[164,5711+43])
+                ]
+              expression (file_formats/cmt_format.ml[165,5760+4]..[165,5760+43])
+                Pexp_apply
+                expression (file_formats/cmt_format.ml[165,5760+15]..[165,5760+17])
+                  Pexp_ident ":=" (file_formats/cmt_format.ml[165,5760+15]..[165,5760+17])
+                [
+                  <arg>
+                  Nolabel
+                    expression (file_formats/cmt_format.ml[165,5760+4]..[165,5760+14])
+                      Pexp_ident "value_deps" (file_formats/cmt_format.ml[165,5760+4]..[165,5760+14])
+                  <arg>
+                  Nolabel
+                    expression (file_formats/cmt_format.ml[165,5760+18]..[165,5760+43])
+                      Pexp_construct "::" (file_formats/cmt_format.ml[165,5760+29]..[165,5760+31])
+                      Some
+                        expression (file_formats/cmt_format.ml[165,5760+18]..[165,5760+43]) ghost
+                          Pexp_tuple
+                          [
+                            expression (file_formats/cmt_format.ml[165,5760+18]..[165,5760+28])
+                              Pexp_tuple
+                              [
+                                expression (file_formats/cmt_format.ml[165,5760+19]..[165,5760+22])
+                                  Pexp_ident "vd1" (file_formats/cmt_format.ml[165,5760+19]..[165,5760+22])
+                                expression (file_formats/cmt_format.ml[165,5760+24]..[165,5760+27])
+                                  Pexp_ident "vd2" (file_formats/cmt_format.ml[165,5760+24]..[165,5760+27])
+                              ]
+                            expression (file_formats/cmt_format.ml[165,5760+32]..[165,5760+43])
+                              Pexp_apply
+                              expression (file_formats/cmt_format.ml[165,5760+32]..[165,5760+33])
+                                Pexp_ident "!" (file_formats/cmt_format.ml[165,5760+32]..[165,5760+33])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (file_formats/cmt_format.ml[165,5760+33]..[165,5760+43])
+                                    Pexp_ident "value_deps" (file_formats/cmt_format.ml[165,5760+33]..[165,5760+43])
+                              ]
+                          ]
+                ]
+              None
+    ]
+  structure_item (file_formats/cmt_format.ml[167,5805+0]..[198,7134+10])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (file_formats/cmt_format.ml[167,5805+4]..[167,5805+12])
+          Ppat_var "save_cmt" (file_formats/cmt_format.ml[167,5805+4]..[167,5805+12])
+        expression (file_formats/cmt_format.ml[167,5805+13]..[198,7134+10]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (file_formats/cmt_format.ml[167,5805+13]..[167,5805+21])
+            Ppat_var "filename" (file_formats/cmt_format.ml[167,5805+13]..[167,5805+21])
+          expression (file_formats/cmt_format.ml[167,5805+22]..[198,7134+10]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (file_formats/cmt_format.ml[167,5805+22]..[167,5805+29])
+              Ppat_var "modname" (file_formats/cmt_format.ml[167,5805+22]..[167,5805+29])
+            expression (file_formats/cmt_format.ml[167,5805+30]..[198,7134+10]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (file_formats/cmt_format.ml[167,5805+30]..[167,5805+43])
+                Ppat_var "binary_annots" (file_formats/cmt_format.ml[167,5805+30]..[167,5805+43])
+              expression (file_formats/cmt_format.ml[167,5805+44]..[198,7134+10]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (file_formats/cmt_format.ml[167,5805+44]..[167,5805+54])
+                  Ppat_var "sourcefile" (file_formats/cmt_format.ml[167,5805+44]..[167,5805+54])
+                expression (file_formats/cmt_format.ml[167,5805+55]..[198,7134+10]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (file_formats/cmt_format.ml[167,5805+55]..[167,5805+66])
+                    Ppat_var "initial_env" (file_formats/cmt_format.ml[167,5805+55]..[167,5805+66])
+                  expression (file_formats/cmt_format.ml[167,5805+67]..[198,7134+10]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (file_formats/cmt_format.ml[167,5805+67]..[167,5805+70])
+                      Ppat_var "cmi" (file_formats/cmt_format.ml[167,5805+67]..[167,5805+70])
+                    expression (file_formats/cmt_format.ml[167,5805+71]..[198,7134+10]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (file_formats/cmt_format.ml[167,5805+71]..[167,5805+76])
+                        Ppat_var "shape" (file_formats/cmt_format.ml[167,5805+71]..[167,5805+76])
+                      expression (file_formats/cmt_format.ml[168,5884+2]..[198,7134+10])
+                        Pexp_sequence
+                        expression (file_formats/cmt_format.ml[168,5884+2]..[197,7127+5])
+                          Pexp_ifthenelse
+                          expression (file_formats/cmt_format.ml[168,5884+5]..[168,5884+60])
+                            Pexp_apply
+                            expression (file_formats/cmt_format.ml[168,5884+33]..[168,5884+35])
+                              Pexp_ident "&&" (file_formats/cmt_format.ml[168,5884+33]..[168,5884+35])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (file_formats/cmt_format.ml[168,5884+5]..[168,5884+32])
+                                  Pexp_apply
+                                  expression (file_formats/cmt_format.ml[168,5884+5]..[168,5884+6])
+                                    Pexp_ident "!" (file_formats/cmt_format.ml[168,5884+5]..[168,5884+6])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (file_formats/cmt_format.ml[168,5884+6]..[168,5884+32])
+                                        Pexp_ident "Clflags.binary_annotations" (file_formats/cmt_format.ml[168,5884+6]..[168,5884+32])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (file_formats/cmt_format.ml[168,5884+36]..[168,5884+60])
+                                  Pexp_apply
+                                  expression (file_formats/cmt_format.ml[168,5884+36]..[168,5884+39])
+                                    Pexp_ident "not" (file_formats/cmt_format.ml[168,5884+36]..[168,5884+39])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (file_formats/cmt_format.ml[168,5884+40]..[168,5884+60])
+                                        Pexp_apply
+                                        expression (file_formats/cmt_format.ml[168,5884+40]..[168,5884+41])
+                                          Pexp_ident "!" (file_formats/cmt_format.ml[168,5884+40]..[168,5884+41])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (file_formats/cmt_format.ml[168,5884+41]..[168,5884+60])
+                                              Pexp_ident "Clflags.print_types" (file_formats/cmt_format.ml[168,5884+41]..[168,5884+60])
+                                        ]
+                                  ]
+                            ]
+                          expression (file_formats/cmt_format.ml[168,5884+66]..[197,7127+5])
+                            Pexp_apply
+                            expression (file_formats/cmt_format.ml[169,5956+4]..[169,5956+37])
+                              Pexp_ident "Misc.output_to_file_via_temporary" (file_formats/cmt_format.ml[169,5956+4]..[169,5956+37])
+                            [
+                              <arg>
+                              Labelled "mode"
+                                expression (file_formats/cmt_format.ml[170,5994+13]..[170,5994+26])
+                                  Pexp_construct "::" (file_formats/cmt_format.ml[170,5994+14]..[170,5994+26]) ghost
+                                  Some
+                                    expression (file_formats/cmt_format.ml[170,5994+14]..[170,5994+26]) ghost
+                                      Pexp_tuple
+                                      [
+                                        expression (file_formats/cmt_format.ml[170,5994+14]..[170,5994+25])
+                                          Pexp_construct "Open_binary" (file_formats/cmt_format.ml[170,5994+14]..[170,5994+25])
+                                          None
+                                        expression (file_formats/cmt_format.ml[170,5994+25]..[170,5994+26]) ghost
+                                          Pexp_construct "[]" (file_formats/cmt_format.ml[170,5994+25]..[170,5994+26]) ghost
+                                          None
+                                      ]
+                              <arg>
+                              Nolabel
+                                expression (file_formats/cmt_format.ml[170,5994+27]..[170,5994+35])
+                                  Pexp_ident "filename" (file_formats/cmt_format.ml[170,5994+27]..[170,5994+35])
+                              <arg>
+                              Nolabel
+                                expression (file_formats/cmt_format.ml[171,6030+7]..[196,7099+27])
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (file_formats/cmt_format.ml[171,6030+12]..[171,6030+26])
+                                    Ppat_var "temp_file_name" (file_formats/cmt_format.ml[171,6030+12]..[171,6030+26])
+                                  expression (file_formats/cmt_format.ml[171,6030+27]..[196,7099+26]) ghost
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (file_formats/cmt_format.ml[171,6030+27]..[171,6030+29])
+                                      Ppat_var "oc" (file_formats/cmt_format.ml[171,6030+27]..[171,6030+29])
+                                    expression (file_formats/cmt_format.ml[172,6063+9]..[196,7099+26])
+                                      Pexp_let Nonrec
+                                      [
+                                        <def>
+                                          pattern (file_formats/cmt_format.ml[172,6063+13]..[172,6063+21])
+                                            Ppat_var "this_crc" (file_formats/cmt_format.ml[172,6063+13]..[172,6063+21])
+                                          expression (file_formats/cmt_format.ml[173,6087+11]..[175,6139+64])
+                                            Pexp_match
+                                            expression (file_formats/cmt_format.ml[173,6087+17]..[173,6087+20])
+                                              Pexp_ident "cmi" (file_formats/cmt_format.ml[173,6087+17]..[173,6087+20])
+                                            [
+                                              <case>
+                                                pattern (file_formats/cmt_format.ml[174,6113+13]..[174,6113+17])
+                                                  Ppat_construct "None" (file_formats/cmt_format.ml[174,6113+13]..[174,6113+17])
+                                                  None
+                                                expression (file_formats/cmt_format.ml[174,6113+21]..[174,6113+25])
+                                                  Pexp_construct "None" (file_formats/cmt_format.ml[174,6113+21]..[174,6113+25])
+                                                  None
+                                              <case>
+                                                pattern (file_formats/cmt_format.ml[175,6139+13]..[175,6139+21])
+                                                  Ppat_construct "Some" (file_formats/cmt_format.ml[175,6139+13]..[175,6139+17])
+                                                  Some
+                                                    []
+                                                    pattern (file_formats/cmt_format.ml[175,6139+18]..[175,6139+21])
+                                                      Ppat_var "cmi" (file_formats/cmt_format.ml[175,6139+18]..[175,6139+21])
+                                                expression (file_formats/cmt_format.ml[175,6139+25]..[175,6139+64])
+                                                  Pexp_construct "Some" (file_formats/cmt_format.ml[175,6139+25]..[175,6139+29])
+                                                  Some
+                                                    expression (file_formats/cmt_format.ml[175,6139+30]..[175,6139+64])
+                                                      Pexp_apply
+                                                      expression (file_formats/cmt_format.ml[175,6139+31]..[175,6139+41])
+                                                        Pexp_ident "output_cmi" (file_formats/cmt_format.ml[175,6139+31]..[175,6139+41])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[175,6139+42]..[175,6139+56])
+                                                            Pexp_ident "temp_file_name" (file_formats/cmt_format.ml[175,6139+42]..[175,6139+56])
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[175,6139+57]..[175,6139+59])
+                                                            Pexp_ident "oc" (file_formats/cmt_format.ml[175,6139+57]..[175,6139+59])
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[175,6139+60]..[175,6139+63])
+                                                            Pexp_ident "cmi" (file_formats/cmt_format.ml[175,6139+60]..[175,6139+63])
+                                                      ]
+                                            ]
+                                      ]
+                                      expression (file_formats/cmt_format.ml[177,6216+9]..[196,7099+26])
+                                        Pexp_let Nonrec
+                                        [
+                                          <def>
+                                            pattern (file_formats/cmt_format.ml[177,6216+13]..[177,6216+26])
+                                              Ppat_var "source_digest" (file_formats/cmt_format.ml[177,6216+13]..[177,6216+26])
+                                            expression (file_formats/cmt_format.ml[177,6216+29]..[177,6216+62])
+                                              Pexp_apply
+                                              expression (file_formats/cmt_format.ml[177,6216+29]..[177,6216+39])
+                                                Pexp_ident "Option.map" (file_formats/cmt_format.ml[177,6216+29]..[177,6216+39])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (file_formats/cmt_format.ml[177,6216+40]..[177,6216+51])
+                                                    Pexp_ident "Digest.file" (file_formats/cmt_format.ml[177,6216+40]..[177,6216+51])
+                                                <arg>
+                                                Nolabel
+                                                  expression (file_formats/cmt_format.ml[177,6216+52]..[177,6216+62])
+                                                    Pexp_ident "sourcefile" (file_formats/cmt_format.ml[177,6216+52]..[177,6216+62])
+                                              ]
+                                        ]
+                                        expression (file_formats/cmt_format.ml[178,6282+9]..[196,7099+26])
+                                          Pexp_let Nonrec
+                                          [
+                                            <def>
+                                              pattern (file_formats/cmt_format.ml[178,6282+13]..[178,6282+16])
+                                                Ppat_var "cmt" (file_formats/cmt_format.ml[178,6282+13]..[178,6282+16])
+                                              expression (file_formats/cmt_format.ml[178,6282+19]..[195,7085+10])
+                                                Pexp_record
+                                                [
+                                                  "cmt_modname" (file_formats/cmt_format.ml[179,6303+11]..[179,6303+22])
+                                                    expression (file_formats/cmt_format.ml[179,6303+25]..[179,6303+32])
+                                                      Pexp_ident "modname" (file_formats/cmt_format.ml[179,6303+25]..[179,6303+32])
+                                                  "cmt_annots" (file_formats/cmt_format.ml[180,6337+11]..[180,6337+21])
+                                                    expression (file_formats/cmt_format.ml[180,6337+24]..[180,6337+47])
+                                                      Pexp_apply
+                                                      expression (file_formats/cmt_format.ml[180,6337+24]..[180,6337+33])
+                                                        Pexp_ident "clear_env" (file_formats/cmt_format.ml[180,6337+24]..[180,6337+33])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[180,6337+34]..[180,6337+47])
+                                                            Pexp_ident "binary_annots" (file_formats/cmt_format.ml[180,6337+34]..[180,6337+47])
+                                                      ]
+                                                  "cmt_value_dependencies" (file_formats/cmt_format.ml[181,6386+11]..[181,6386+33])
+                                                    expression (file_formats/cmt_format.ml[181,6386+36]..[181,6386+47])
+                                                      Pexp_apply
+                                                      expression (file_formats/cmt_format.ml[181,6386+36]..[181,6386+37])
+                                                        Pexp_ident "!" (file_formats/cmt_format.ml[181,6386+36]..[181,6386+37])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[181,6386+37]..[181,6386+47])
+                                                            Pexp_ident "value_deps" (file_formats/cmt_format.ml[181,6386+37]..[181,6386+47])
+                                                      ]
+                                                  "cmt_comments" (file_formats/cmt_format.ml[182,6435+11]..[182,6435+23])
+                                                    expression (file_formats/cmt_format.ml[182,6435+26]..[182,6435+43])
+                                                      Pexp_apply
+                                                      expression (file_formats/cmt_format.ml[182,6435+26]..[182,6435+40])
+                                                        Pexp_ident "Lexer.comments" (file_formats/cmt_format.ml[182,6435+26]..[182,6435+40])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[182,6435+41]..[182,6435+43])
+                                                            Pexp_construct "()" (file_formats/cmt_format.ml[182,6435+41]..[182,6435+43])
+                                                            None
+                                                      ]
+                                                  "cmt_args" (file_formats/cmt_format.ml[183,6480+11]..[183,6480+19])
+                                                    expression (file_formats/cmt_format.ml[183,6480+22]..[183,6480+30])
+                                                      Pexp_ident "Sys.argv" (file_formats/cmt_format.ml[183,6480+22]..[183,6480+30])
+                                                  "cmt_sourcefile" (file_formats/cmt_format.ml[184,6512+11]..[184,6512+25])
+                                                    expression (file_formats/cmt_format.ml[184,6512+28]..[184,6512+38])
+                                                      Pexp_ident "sourcefile" (file_formats/cmt_format.ml[184,6512+28]..[184,6512+38])
+                                                  "cmt_builddir" (file_formats/cmt_format.ml[185,6552+11]..[185,6552+23])
+                                                    expression (file_formats/cmt_format.ml[185,6552+26]..[185,6552+72])
+                                                      Pexp_apply
+                                                      expression (file_formats/cmt_format.ml[185,6552+26]..[185,6552+56])
+                                                        Pexp_ident "Location.rewrite_absolute_path" (file_formats/cmt_format.ml[185,6552+26]..[185,6552+56])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[185,6552+57]..[185,6552+72])
+                                                            Pexp_apply
+                                                            expression (file_formats/cmt_format.ml[185,6552+58]..[185,6552+68])
+                                                              Pexp_ident "Sys.getcwd" (file_formats/cmt_format.ml[185,6552+58]..[185,6552+68])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (file_formats/cmt_format.ml[185,6552+69]..[185,6552+71])
+                                                                  Pexp_construct "()" (file_formats/cmt_format.ml[185,6552+69]..[185,6552+71])
+                                                                  None
+                                                            ]
+                                                      ]
+                                                  "cmt_loadpath" (file_formats/cmt_format.ml[186,6626+11]..[186,6626+23])
+                                                    expression (file_formats/cmt_format.ml[186,6626+26]..[186,6626+48])
+                                                      Pexp_apply
+                                                      expression (file_formats/cmt_format.ml[186,6626+26]..[186,6626+45])
+                                                        Pexp_ident "Load_path.get_paths" (file_formats/cmt_format.ml[186,6626+26]..[186,6626+45])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[186,6626+46]..[186,6626+48])
+                                                            Pexp_construct "()" (file_formats/cmt_format.ml[186,6626+46]..[186,6626+48])
+                                                            None
+                                                      ]
+                                                  "cmt_source_digest" (file_formats/cmt_format.ml[187,6676+11]..[187,6676+28])
+                                                    expression (file_formats/cmt_format.ml[187,6676+31]..[187,6676+44])
+                                                      Pexp_ident "source_digest" (file_formats/cmt_format.ml[187,6676+31]..[187,6676+44])
+                                                  "cmt_initial_env" (file_formats/cmt_format.ml[188,6722+11]..[188,6722+26])
+                                                    expression (file_formats/cmt_format.ml[188,6722+29]..[189,6777+61])
+                                                      Pexp_ifthenelse
+                                                      expression (file_formats/cmt_format.ml[188,6722+32]..[188,6722+49])
+                                                        Pexp_ident "need_to_clear_env" (file_formats/cmt_format.ml[188,6722+32]..[188,6722+49])
+                                                      expression (file_formats/cmt_format.ml[189,6777+15]..[189,6777+44])
+                                                        Pexp_apply
+                                                        expression (file_formats/cmt_format.ml[189,6777+15]..[189,6777+32])
+                                                          Pexp_ident "keep_only_summary" (file_formats/cmt_format.ml[189,6777+15]..[189,6777+32])
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (file_formats/cmt_format.ml[189,6777+33]..[189,6777+44])
+                                                              Pexp_ident "initial_env" (file_formats/cmt_format.ml[189,6777+33]..[189,6777+44])
+                                                        ]
+                                                      Some
+                                                        expression (file_formats/cmt_format.ml[189,6777+50]..[189,6777+61])
+                                                          Pexp_ident "initial_env" (file_formats/cmt_format.ml[189,6777+50]..[189,6777+61])
+                                                  "cmt_imports" (file_formats/cmt_format.ml[190,6840+11]..[190,6840+22])
+                                                    expression (file_formats/cmt_format.ml[190,6840+25]..[190,6840+59])
+                                                      Pexp_apply
+                                                      expression (file_formats/cmt_format.ml[190,6840+25]..[190,6840+34])
+                                                        Pexp_ident "List.sort" (file_formats/cmt_format.ml[190,6840+25]..[190,6840+34])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[190,6840+35]..[190,6840+42])
+                                                            Pexp_ident "compare" (file_formats/cmt_format.ml[190,6840+35]..[190,6840+42])
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[190,6840+43]..[190,6840+59])
+                                                            Pexp_apply
+                                                            expression (file_formats/cmt_format.ml[190,6840+44]..[190,6840+55])
+                                                              Pexp_ident "Env.imports" (file_formats/cmt_format.ml[190,6840+44]..[190,6840+55])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (file_formats/cmt_format.ml[190,6840+56]..[190,6840+58])
+                                                                  Pexp_construct "()" (file_formats/cmt_format.ml[190,6840+56]..[190,6840+58])
+                                                                  None
+                                                            ]
+                                                      ]
+                                                  "cmt_interface_digest" (file_formats/cmt_format.ml[191,6901+11]..[191,6901+31])
+                                                    expression (file_formats/cmt_format.ml[191,6901+34]..[191,6901+42])
+                                                      Pexp_ident "this_crc" (file_formats/cmt_format.ml[191,6901+34]..[191,6901+42])
+                                                  "cmt_use_summaries" (file_formats/cmt_format.ml[192,6945+11]..[192,6945+28])
+                                                    expression (file_formats/cmt_format.ml[192,6945+31]..[192,6945+48])
+                                                      Pexp_ident "need_to_clear_env" (file_formats/cmt_format.ml[192,6945+31]..[192,6945+48])
+                                                  "cmt_uid_to_loc" (file_formats/cmt_format.ml[193,6995+11]..[193,6995+25])
+                                                    expression (file_formats/cmt_format.ml[193,6995+28]..[193,6995+53])
+                                                      Pexp_apply
+                                                      expression (file_formats/cmt_format.ml[193,6995+28]..[193,6995+50])
+                                                        Pexp_ident "Env.get_uid_to_loc_tbl" (file_formats/cmt_format.ml[193,6995+28]..[193,6995+50])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (file_formats/cmt_format.ml[193,6995+51]..[193,6995+53])
+                                                            Pexp_construct "()" (file_formats/cmt_format.ml[193,6995+51]..[193,6995+53])
+                                                            None
+                                                      ]
+                                                  "cmt_impl_shape" (file_formats/cmt_format.ml[194,7050+11]..[194,7050+25])
+                                                    expression (file_formats/cmt_format.ml[194,7050+28]..[194,7050+33])
+                                                      Pexp_ident "shape" (file_formats/cmt_format.ml[194,7050+28]..[194,7050+33])
+                                                ]
+                                                None
+                                          ]
+                                          expression (file_formats/cmt_format.ml[196,7099+9]..[196,7099+26])
+                                            Pexp_apply
+                                            expression (file_formats/cmt_format.ml[196,7099+9]..[196,7099+19])
+                                              Pexp_ident "output_cmt" (file_formats/cmt_format.ml[196,7099+9]..[196,7099+19])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (file_formats/cmt_format.ml[196,7099+20]..[196,7099+22])
+                                                  Pexp_ident "oc" (file_formats/cmt_format.ml[196,7099+20]..[196,7099+22])
+                                              <arg>
+                                              Nolabel
+                                                expression (file_formats/cmt_format.ml[196,7099+23]..[196,7099+26])
+                                                  Pexp_ident "cmt" (file_formats/cmt_format.ml[196,7099+23]..[196,7099+26])
+                                            ]
+                            ]
+                          None
+                        expression (file_formats/cmt_format.ml[198,7134+2]..[198,7134+10])
+                          Pexp_apply
+                          expression (file_formats/cmt_format.ml[198,7134+2]..[198,7134+7])
+                            Pexp_ident "clear" (file_formats/cmt_format.ml[198,7134+2]..[198,7134+7])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (file_formats/cmt_format.ml[198,7134+8]..[198,7134+10])
+                                Pexp_construct "()" (file_formats/cmt_format.ml[198,7134+8]..[198,7134+10])
+                                None
+                          ]
+    ]
+]
+

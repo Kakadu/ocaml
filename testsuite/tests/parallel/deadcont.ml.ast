@@ -1,0 +1,500 @@
+[
+  structure_item (testsuite/tests/parallel/deadcont.ml[10,207+0]..[10,207+11])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/parallel/deadcont.ml[10,207+5]..[10,207+11])
+      Pmod_ident "Effect" (testsuite/tests/parallel/deadcont.ml[10,207+5]..[10,207+11])
+  structure_item (testsuite/tests/parallel/deadcont.ml[11,219+0]..[11,219+16])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/parallel/deadcont.ml[11,219+5]..[11,219+16])
+      Pmod_ident "Effect.Deep" (testsuite/tests/parallel/deadcont.ml[11,219+5]..[11,219+16])
+  structure_item (testsuite/tests/parallel/deadcont.ml[13,237+0]..[13,237+25])
+    Pstr_typext
+    type_extension
+      ptyext_path = "t" (testsuite/tests/parallel/deadcont.ml[13,237+7]..[13,237+8])
+      ptyext_params =
+        [
+          core_type (testsuite/tests/parallel/deadcont.ml[13,237+5]..[13,237+6])
+            Ptyp_any
+        ]
+      ptyext_constructors =
+        [
+          extension_constructor (testsuite/tests/parallel/deadcont.ml[13,237+12]..[13,237+25])
+            pext_name = "Poke"
+            pext_kind =
+              Pext_decl
+                []
+                Some
+                  core_type (testsuite/tests/parallel/deadcont.ml[13,237+19]..[13,237+25])
+                    Ptyp_constr "t" (testsuite/tests/parallel/deadcont.ml[13,237+24]..[13,237+25])
+                    [
+                      core_type (testsuite/tests/parallel/deadcont.ml[13,237+19]..[13,237+23])
+                        Ptyp_constr "unit" (testsuite/tests/parallel/deadcont.ml[13,237+19]..[13,237+23])
+                        []
+                    ]
+        ]
+      ptyext_private = Public
+  structure_item (testsuite/tests/parallel/deadcont.ml[15,264+0]..[15,264+47])
+    Pstr_type Rec
+    [
+      type_declaration "result" (testsuite/tests/parallel/deadcont.ml[15,264+5]..[15,264+11]) (testsuite/tests/parallel/deadcont.ml[15,264+0]..[15,264+47])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (testsuite/tests/parallel/deadcont.ml[15,264+14]..[15,264+18])
+                "Done" (testsuite/tests/parallel/deadcont.ml[15,264+14]..[15,264+18])
+                []
+                None
+              (testsuite/tests/parallel/deadcont.ml[15,264+19]..[15,264+47])
+                "Poking" (testsuite/tests/parallel/deadcont.ml[15,264+21]..[15,264+27])
+                [
+                  core_type (testsuite/tests/parallel/deadcont.ml[15,264+32]..[15,264+46])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (testsuite/tests/parallel/deadcont.ml[15,264+32]..[15,264+36])
+                      Ptyp_constr "unit" (testsuite/tests/parallel/deadcont.ml[15,264+32]..[15,264+36])
+                      []
+                    core_type (testsuite/tests/parallel/deadcont.ml[15,264+40]..[15,264+46])
+                      Ptyp_constr "result" (testsuite/tests/parallel/deadcont.ml[15,264+40]..[15,264+46])
+                      []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/parallel/deadcont.ml[18,331+0]..[18,331+75])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/deadcont.ml[18,331+4]..[18,331+9])
+          Ppat_var "print" (testsuite/tests/parallel/deadcont.ml[18,331+4]..[18,331+9])
+        expression (testsuite/tests/parallel/deadcont.ml[18,331+10]..[18,331+75]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/deadcont.ml[18,331+10]..[18,331+11])
+            Ppat_var "s" (testsuite/tests/parallel/deadcont.ml[18,331+10]..[18,331+11])
+          expression (testsuite/tests/parallel/deadcont.ml[18,331+14]..[18,331+75])
+            Pexp_sequence
+            expression (testsuite/tests/parallel/deadcont.ml[18,331+14]..[18,331+28])
+              Pexp_apply
+              expression (testsuite/tests/parallel/deadcont.ml[18,331+14]..[18,331+26])
+                Pexp_ident "print_string" (testsuite/tests/parallel/deadcont.ml[18,331+14]..[18,331+26])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/deadcont.ml[18,331+27]..[18,331+28])
+                    Pexp_ident "s" (testsuite/tests/parallel/deadcont.ml[18,331+27]..[18,331+28])
+              ]
+            expression (testsuite/tests/parallel/deadcont.ml[18,331+30]..[18,331+75])
+              Pexp_apply
+              expression (testsuite/tests/parallel/deadcont.ml[18,331+30]..[18,331+51])
+                Pexp_ident "Format.pp_print_flush" (testsuite/tests/parallel/deadcont.ml[18,331+30]..[18,331+51])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/deadcont.ml[18,331+52]..[18,331+72])
+                    Pexp_ident "Format.std_formatter" (testsuite/tests/parallel/deadcont.ml[18,331+52]..[18,331+72])
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/deadcont.ml[18,331+73]..[18,331+75])
+                    Pexp_construct "()" (testsuite/tests/parallel/deadcont.ml[18,331+73]..[18,331+75])
+                    None
+              ]
+    ]
+  structure_item (testsuite/tests/parallel/deadcont.ml[21,445+0]..[23,481+33])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/deadcont.ml[21,445+8]..[21,445+12])
+          Ppat_var "poke" (testsuite/tests/parallel/deadcont.ml[21,445+8]..[21,445+12])
+        expression (testsuite/tests/parallel/deadcont.ml[21,445+15]..[23,481+33])
+          Pexp_function
+          [
+            <case>
+              pattern (testsuite/tests/parallel/deadcont.ml[22,469+4]..[22,469+5])
+                Ppat_constant PConst_int (0,None)
+              expression (testsuite/tests/parallel/deadcont.ml[22,469+9]..[22,469+11])
+                Pexp_construct "()" (testsuite/tests/parallel/deadcont.ml[22,469+9]..[22,469+11])
+                None
+            <case>
+              pattern (testsuite/tests/parallel/deadcont.ml[23,481+4]..[23,481+5])
+                Ppat_var "n" (testsuite/tests/parallel/deadcont.ml[23,481+4]..[23,481+5])
+              expression (testsuite/tests/parallel/deadcont.ml[23,481+9]..[23,481+33])
+                Pexp_sequence
+                expression (testsuite/tests/parallel/deadcont.ml[23,481+9]..[23,481+21])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/deadcont.ml[23,481+9]..[23,481+16])
+                    Pexp_ident "perform" (testsuite/tests/parallel/deadcont.ml[23,481+9]..[23,481+16])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/deadcont.ml[23,481+17]..[23,481+21])
+                        Pexp_construct "Poke" (testsuite/tests/parallel/deadcont.ml[23,481+17]..[23,481+21])
+                        None
+                  ]
+                expression (testsuite/tests/parallel/deadcont.ml[23,481+23]..[23,481+33])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/deadcont.ml[23,481+23]..[23,481+27])
+                    Pexp_ident "poke" (testsuite/tests/parallel/deadcont.ml[23,481+23]..[23,481+27])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/deadcont.ml[23,481+28]..[23,481+33])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/deadcont.ml[23,481+30]..[23,481+31])
+                          Pexp_ident "-" (testsuite/tests/parallel/deadcont.ml[23,481+30]..[23,481+31])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/deadcont.ml[23,481+29]..[23,481+30])
+                              Pexp_ident "n" (testsuite/tests/parallel/deadcont.ml[23,481+29]..[23,481+30])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/deadcont.ml[23,481+31]..[23,481+32])
+                              Pexp_constant PConst_int (1,None)
+                        ]
+                  ]
+          ]
+    ]
+  structure_item (testsuite/tests/parallel/deadcont.ml[27,612+0]..[39,991+23])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/deadcont.ml[27,612+4]..[27,612+18])
+          Ppat_var "domain_handler" (testsuite/tests/parallel/deadcont.ml[27,612+4]..[27,612+18])
+        expression (testsuite/tests/parallel/deadcont.ml[27,612+19]..[39,991+23]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/deadcont.ml[27,612+19]..[27,612+20])
+            Ppat_var "f" (testsuite/tests/parallel/deadcont.ml[27,612+19]..[27,612+20])
+          expression (testsuite/tests/parallel/deadcont.ml[28,635+2]..[39,991+23])
+            Pexp_apply
+            expression (testsuite/tests/parallel/deadcont.ml[28,635+2]..[28,635+12])
+              Pexp_ident "match_with" (testsuite/tests/parallel/deadcont.ml[28,635+2]..[28,635+12])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/deadcont.ml[28,635+13]..[28,635+14])
+                  Pexp_ident "f" (testsuite/tests/parallel/deadcont.ml[28,635+13]..[28,635+14])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/deadcont.ml[28,635+15]..[28,635+17])
+                  Pexp_construct "()" (testsuite/tests/parallel/deadcont.ml[28,635+15]..[28,635+17])
+                  None
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/deadcont.ml[29,653+2]..[39,991+23])
+                  Pexp_record
+                  [
+                    "retc" (testsuite/tests/parallel/deadcont.ml[29,653+4]..[29,653+8])
+                      expression (testsuite/tests/parallel/deadcont.ml[29,653+11]..[29,653+27])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/parallel/deadcont.ml[29,653+16]..[29,653+18])
+                          Ppat_construct "()" (testsuite/tests/parallel/deadcont.ml[29,653+16]..[29,653+18])
+                          None
+                        expression (testsuite/tests/parallel/deadcont.ml[29,653+22]..[29,653+26])
+                          Pexp_construct "Done" (testsuite/tests/parallel/deadcont.ml[29,653+22]..[29,653+26])
+                          None
+                    "exnc" (testsuite/tests/parallel/deadcont.ml[30,682+4]..[30,682+8])
+                      expression (testsuite/tests/parallel/deadcont.ml[30,682+11]..[30,682+29])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/parallel/deadcont.ml[30,682+16]..[30,682+17])
+                          Ppat_var "e" (testsuite/tests/parallel/deadcont.ml[30,682+16]..[30,682+17])
+                        expression (testsuite/tests/parallel/deadcont.ml[30,682+21]..[30,682+28])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/deadcont.ml[30,682+21]..[30,682+26])
+                            Pexp_ident "raise" (testsuite/tests/parallel/deadcont.ml[30,682+21]..[30,682+26])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/deadcont.ml[30,682+27]..[30,682+28])
+                                Pexp_ident "e" (testsuite/tests/parallel/deadcont.ml[30,682+27]..[30,682+28])
+                          ]
+                    "effc" (testsuite/tests/parallel/deadcont.ml[31,713+4]..[31,713+8])
+                      expression (testsuite/tests/parallel/deadcont.ml[31,713+11]..[39,991+21])
+                        Pexp_newtype "a"
+                        expression (testsuite/tests/parallel/deadcont.ml[31,713+24]..[39,991+21]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/parallel/deadcont.ml[31,713+24]..[31,713+33])
+                            Ppat_constraint
+                            pattern (testsuite/tests/parallel/deadcont.ml[31,713+25]..[31,713+26])
+                              Ppat_var "e" (testsuite/tests/parallel/deadcont.ml[31,713+25]..[31,713+26])
+                            core_type (testsuite/tests/parallel/deadcont.ml[31,713+29]..[31,713+32])
+                              Ptyp_constr "t" (testsuite/tests/parallel/deadcont.ml[31,713+31]..[31,713+32])
+                              [
+                                core_type (testsuite/tests/parallel/deadcont.ml[31,713+29]..[31,713+30])
+                                  Ptyp_constr "a" (testsuite/tests/parallel/deadcont.ml[31,713+29]..[31,713+30])
+                                  []
+                              ]
+                          expression (testsuite/tests/parallel/deadcont.ml[32,750+10]..[39,991+21])
+                            Pexp_match
+                            expression (testsuite/tests/parallel/deadcont.ml[32,750+16]..[32,750+17])
+                              Pexp_ident "e" (testsuite/tests/parallel/deadcont.ml[32,750+16]..[32,750+17])
+                            [
+                              <case>
+                                pattern (testsuite/tests/parallel/deadcont.ml[33,773+12]..[33,773+16])
+                                  Ppat_construct "Poke" (testsuite/tests/parallel/deadcont.ml[33,773+12]..[33,773+16])
+                                  None
+                                expression (testsuite/tests/parallel/deadcont.ml[33,773+20]..[38,968+22])
+                                  Pexp_construct "Some" (testsuite/tests/parallel/deadcont.ml[33,773+20]..[33,773+24])
+                                  Some
+                                    expression (testsuite/tests/parallel/deadcont.ml[33,773+25]..[38,968+22])
+                                      Pexp_fun
+                                      Nolabel
+                                      None
+                                      pattern (testsuite/tests/parallel/deadcont.ml[33,773+30]..[33,773+55])
+                                        Ppat_constraint
+                                        pattern (testsuite/tests/parallel/deadcont.ml[33,773+31]..[33,773+32])
+                                          Ppat_var "k" (testsuite/tests/parallel/deadcont.ml[33,773+31]..[33,773+32])
+                                        core_type (testsuite/tests/parallel/deadcont.ml[33,773+35]..[33,773+54])
+                                          Ptyp_constr "continuation" (testsuite/tests/parallel/deadcont.ml[33,773+42]..[33,773+54])
+                                          [
+                                            core_type (testsuite/tests/parallel/deadcont.ml[33,773+36]..[33,773+37])
+                                              Ptyp_constr "a" (testsuite/tests/parallel/deadcont.ml[33,773+36]..[33,773+37])
+                                              []
+                                            core_type (testsuite/tests/parallel/deadcont.ml[33,773+39]..[33,773+40])
+                                              Ptyp_any
+                                          ]
+                                      expression (testsuite/tests/parallel/deadcont.ml[34,832+14]..[38,968+21])
+                                        Pexp_construct "Poking" (testsuite/tests/parallel/deadcont.ml[34,832+14]..[34,832+20])
+                                        Some
+                                          expression (testsuite/tests/parallel/deadcont.ml[34,832+21]..[38,968+21])
+                                            Pexp_fun
+                                            Nolabel
+                                            None
+                                            pattern (testsuite/tests/parallel/deadcont.ml[34,832+26]..[34,832+28])
+                                              Ppat_construct "()" (testsuite/tests/parallel/deadcont.ml[34,832+26]..[34,832+28])
+                                              None
+                                            expression (testsuite/tests/parallel/deadcont.ml[35,864+16]..[38,968+20])
+                                              Pexp_sequence
+                                              expression (testsuite/tests/parallel/deadcont.ml[35,864+16]..[35,864+27])
+                                                Pexp_apply
+                                                expression (testsuite/tests/parallel/deadcont.ml[35,864+16]..[35,864+21])
+                                                  Pexp_ident "print" (testsuite/tests/parallel/deadcont.ml[35,864+16]..[35,864+21])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/parallel/deadcont.ml[35,864+22]..[35,864+27])
+                                                      Pexp_constant PConst_string("...",(testsuite/tests/parallel/deadcont.ml[35,864+23]..[35,864+26]),None)
+                                                ]
+                                              expression (testsuite/tests/parallel/deadcont.ml[36,893+16]..[38,968+20])
+                                                Pexp_sequence
+                                                expression (testsuite/tests/parallel/deadcont.ml[36,893+16]..[36,893+38])
+                                                  Pexp_apply
+                                                  expression (testsuite/tests/parallel/deadcont.ml[36,893+16]..[36,893+22])
+                                                    Pexp_ident "ignore" (testsuite/tests/parallel/deadcont.ml[36,893+16]..[36,893+22])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (testsuite/tests/parallel/deadcont.ml[36,893+23]..[36,893+38])
+                                                        Pexp_apply
+                                                        expression (testsuite/tests/parallel/deadcont.ml[36,893+24]..[36,893+32])
+                                                          Pexp_ident "continue" (testsuite/tests/parallel/deadcont.ml[36,893+24]..[36,893+32])
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (testsuite/tests/parallel/deadcont.ml[36,893+33]..[36,893+34])
+                                                              Pexp_ident "k" (testsuite/tests/parallel/deadcont.ml[36,893+33]..[36,893+34])
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (testsuite/tests/parallel/deadcont.ml[36,893+35]..[36,893+37])
+                                                              Pexp_construct "()" (testsuite/tests/parallel/deadcont.ml[36,893+35]..[36,893+37])
+                                                              None
+                                                        ]
+                                                  ]
+                                                expression (testsuite/tests/parallel/deadcont.ml[37,933+16]..[38,968+20])
+                                                  Pexp_sequence
+                                                  expression (testsuite/tests/parallel/deadcont.ml[37,933+16]..[37,933+33])
+                                                    Pexp_apply
+                                                    expression (testsuite/tests/parallel/deadcont.ml[37,933+16]..[37,933+21])
+                                                      Pexp_ident "print" (testsuite/tests/parallel/deadcont.ml[37,933+16]..[37,933+21])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (testsuite/tests/parallel/deadcont.ml[37,933+22]..[37,933+33])
+                                                          Pexp_constant PConst_string("success\n",(testsuite/tests/parallel/deadcont.ml[37,933+23]..[37,933+32]),None)
+                                                    ]
+                                                  expression (testsuite/tests/parallel/deadcont.ml[38,968+16]..[38,968+20])
+                                                    Pexp_construct "Done" (testsuite/tests/parallel/deadcont.ml[38,968+16]..[38,968+20])
+                                                    None
+                              <case>
+                                pattern (testsuite/tests/parallel/deadcont.ml[39,991+12]..[39,991+13])
+                                  Ppat_any
+                                expression (testsuite/tests/parallel/deadcont.ml[39,991+17]..[39,991+21])
+                                  Pexp_construct "None" (testsuite/tests/parallel/deadcont.ml[39,991+17]..[39,991+21])
+                                  None
+                            ]
+                  ]
+                  None
+            ]
+    ]
+  structure_item (testsuite/tests/parallel/deadcont.ml[42,1071+0]..[44,1141+16])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/deadcont.ml[42,1071+4]..[42,1071+12])
+          Ppat_var "rerunner" (testsuite/tests/parallel/deadcont.ml[42,1071+4]..[42,1071+12])
+        expression (testsuite/tests/parallel/deadcont.ml[42,1071+15]..[44,1141+16])
+          Pexp_function
+          [
+            <case>
+              pattern (testsuite/tests/parallel/deadcont.ml[43,1095+4]..[43,1095+12])
+                Ppat_construct "Poking" (testsuite/tests/parallel/deadcont.ml[43,1095+4]..[43,1095+10])
+                Some
+                  []
+                  pattern (testsuite/tests/parallel/deadcont.ml[43,1095+11]..[43,1095+12])
+                    Ppat_var "f" (testsuite/tests/parallel/deadcont.ml[43,1095+11]..[43,1095+12])
+              expression (testsuite/tests/parallel/deadcont.ml[43,1095+16]..[43,1095+20])
+                Pexp_apply
+                expression (testsuite/tests/parallel/deadcont.ml[43,1095+16]..[43,1095+17])
+                  Pexp_ident "f" (testsuite/tests/parallel/deadcont.ml[43,1095+16]..[43,1095+17])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/deadcont.ml[43,1095+18]..[43,1095+20])
+                      Pexp_construct "()" (testsuite/tests/parallel/deadcont.ml[43,1095+18]..[43,1095+20])
+                      None
+                ]
+            <case>
+              pattern (testsuite/tests/parallel/deadcont.ml[44,1141+4]..[44,1141+8])
+                Ppat_construct "Done" (testsuite/tests/parallel/deadcont.ml[44,1141+4]..[44,1141+8])
+                None
+              expression (testsuite/tests/parallel/deadcont.ml[44,1141+12]..[44,1141+16])
+                Pexp_construct "Done" (testsuite/tests/parallel/deadcont.ml[44,1141+12]..[44,1141+16])
+                None
+          ]
+    ]
+  structure_item (testsuite/tests/parallel/deadcont.ml[47,1171+0]..[50,1270+45])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/deadcont.ml[47,1171+4]..[47,1171+8])
+          Ppat_var "test" (testsuite/tests/parallel/deadcont.ml[47,1171+4]..[47,1171+8])
+        expression (testsuite/tests/parallel/deadcont.ml[47,1171+9]..[50,1270+45]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/deadcont.ml[47,1171+9]..[47,1171+10])
+            Ppat_var "n" (testsuite/tests/parallel/deadcont.ml[47,1171+9]..[47,1171+10])
+          expression (testsuite/tests/parallel/deadcont.ml[49,1216+2]..[50,1270+45])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/parallel/deadcont.ml[49,1216+6]..[49,1216+11])
+                  Ppat_var "inner" (testsuite/tests/parallel/deadcont.ml[49,1216+6]..[49,1216+11])
+                expression (testsuite/tests/parallel/deadcont.ml[49,1216+12]..[49,1216+50]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/parallel/deadcont.ml[49,1216+12]..[49,1216+14])
+                    Ppat_construct "()" (testsuite/tests/parallel/deadcont.ml[49,1216+12]..[49,1216+14])
+                    None
+                  expression (testsuite/tests/parallel/deadcont.ml[49,1216+17]..[49,1216+50])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/deadcont.ml[49,1216+17]..[49,1216+31])
+                      Pexp_ident "domain_handler" (testsuite/tests/parallel/deadcont.ml[49,1216+17]..[49,1216+31])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/deadcont.ml[49,1216+32]..[49,1216+50])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/parallel/deadcont.ml[49,1216+37]..[49,1216+39])
+                            Ppat_construct "()" (testsuite/tests/parallel/deadcont.ml[49,1216+37]..[49,1216+39])
+                            None
+                          expression (testsuite/tests/parallel/deadcont.ml[49,1216+43]..[49,1216+49])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/deadcont.ml[49,1216+43]..[49,1216+47])
+                              Pexp_ident "poke" (testsuite/tests/parallel/deadcont.ml[49,1216+43]..[49,1216+47])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/deadcont.ml[49,1216+48]..[49,1216+49])
+                                  Pexp_ident "n" (testsuite/tests/parallel/deadcont.ml[49,1216+48]..[49,1216+49])
+                            ]
+                    ]
+            ]
+            expression (testsuite/tests/parallel/deadcont.ml[50,1270+2]..[50,1270+45])
+              Pexp_apply
+              expression (testsuite/tests/parallel/deadcont.ml[50,1270+2]..[50,1270+10])
+                Pexp_ident "rerunner" (testsuite/tests/parallel/deadcont.ml[50,1270+2]..[50,1270+10])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/deadcont.ml[50,1270+11]..[50,1270+45])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/deadcont.ml[50,1270+12]..[50,1270+23])
+                      Pexp_ident "Domain.join" (testsuite/tests/parallel/deadcont.ml[50,1270+12]..[50,1270+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/deadcont.ml[50,1270+24]..[50,1270+44])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/deadcont.ml[50,1270+25]..[50,1270+37])
+                            Pexp_ident "Domain.spawn" (testsuite/tests/parallel/deadcont.ml[50,1270+25]..[50,1270+37])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/deadcont.ml[50,1270+38]..[50,1270+43])
+                                Pexp_ident "inner" (testsuite/tests/parallel/deadcont.ml[50,1270+38]..[50,1270+43])
+                          ]
+                    ]
+              ]
+    ]
+  structure_item (testsuite/tests/parallel/deadcont.ml[52,1317+0]..[52,1317+48])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/deadcont.ml[52,1317+4]..[52,1317+5])
+          Ppat_any
+        expression (testsuite/tests/parallel/deadcont.ml[52,1317+8]..[52,1317+48])
+          Pexp_sequence
+          expression (testsuite/tests/parallel/deadcont.ml[52,1317+8]..[52,1317+26])
+            Pexp_apply
+            expression (testsuite/tests/parallel/deadcont.ml[52,1317+17]..[52,1317+19])
+              Pexp_ident "|>" (testsuite/tests/parallel/deadcont.ml[52,1317+17]..[52,1317+19])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/deadcont.ml[52,1317+8]..[52,1317+16])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/deadcont.ml[52,1317+8]..[52,1317+12])
+                    Pexp_ident "test" (testsuite/tests/parallel/deadcont.ml[52,1317+8]..[52,1317+12])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/deadcont.ml[52,1317+13]..[52,1317+16])
+                        Pexp_constant PConst_int (100,None)
+                  ]
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/deadcont.ml[52,1317+20]..[52,1317+26])
+                  Pexp_ident "ignore" (testsuite/tests/parallel/deadcont.ml[52,1317+20]..[52,1317+26])
+            ]
+          expression (testsuite/tests/parallel/deadcont.ml[52,1317+28]..[52,1317+48])
+            Pexp_apply
+            expression (testsuite/tests/parallel/deadcont.ml[52,1317+28]..[52,1317+41])
+              Pexp_ident "print_endline" (testsuite/tests/parallel/deadcont.ml[52,1317+28]..[52,1317+41])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/deadcont.ml[52,1317+42]..[52,1317+48])
+                  Pexp_constant PConst_string("done",(testsuite/tests/parallel/deadcont.ml[52,1317+43]..[52,1317+47]),None)
+            ]
+    ]
+]
+

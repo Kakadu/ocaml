@@ -1,0 +1,2886 @@
+[
+  structure_item (stdlib/random.ml[19,1194+0]..[19,1194+64])
+    Pstr_primitive
+    value_description "random_seed" (stdlib/random.ml[19,1194+9]..[19,1194+20]) (stdlib/random.ml[19,1194+0]..[19,1194+64])
+      core_type (stdlib/random.ml[19,1194+22]..[19,1194+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/random.ml[19,1194+22]..[19,1194+26])
+          Ptyp_constr "unit" (stdlib/random.ml[19,1194+22]..[19,1194+26])
+          []
+        core_type (stdlib/random.ml[19,1194+30]..[19,1194+39])
+          Ptyp_constr "array" (stdlib/random.ml[19,1194+34]..[19,1194+39])
+          [
+            core_type (stdlib/random.ml[19,1194+30]..[19,1194+33])
+              Ptyp_constr "int" (stdlib/random.ml[19,1194+30]..[19,1194+33])
+              []
+          ]
+      [
+        "caml_sys_random_seed"
+      ]
+  structure_item (stdlib/random.ml[21,1260+0]..[169,5700+3])
+    Pstr_module
+    "State" (stdlib/random.ml[21,1260+7]..[21,1260+12])
+      module_expr (stdlib/random.ml[21,1260+15]..[169,5700+3])
+        Pmod_structure
+        [
+          structure_item (stdlib/random.ml[23,1283+2]..[23,1283+15])
+            Pstr_open Fresh
+            module_expr (stdlib/random.ml[23,1283+7]..[23,1283+15])
+              Pmod_ident "Bigarray" (stdlib/random.ml[23,1283+7]..[23,1283+15])
+          structure_item (stdlib/random.ml[25,1300+2]..[25,1300+48])
+            Pstr_type Rec
+            [
+              type_declaration "t" (stdlib/random.ml[25,1300+7]..[25,1300+8]) (stdlib/random.ml[25,1300+2]..[25,1300+48])
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  Some
+                    core_type (stdlib/random.ml[25,1300+11]..[25,1300+48])
+                      Ptyp_constr "Array1.t" (stdlib/random.ml[25,1300+40]..[25,1300+48])
+                      [
+                        core_type (stdlib/random.ml[25,1300+12]..[25,1300+17])
+                          Ptyp_constr "int64" (stdlib/random.ml[25,1300+12]..[25,1300+17])
+                          []
+                        core_type (stdlib/random.ml[25,1300+19]..[25,1300+28])
+                          Ptyp_constr "int64_elt" (stdlib/random.ml[25,1300+19]..[25,1300+28])
+                          []
+                        core_type (stdlib/random.ml[25,1300+30]..[25,1300+38])
+                          Ptyp_constr "c_layout" (stdlib/random.ml[25,1300+30]..[25,1300+38])
+                          []
+                      ]
+            ]
+          structure_item (stdlib/random.ml[27,1350+2]..[28,1390+59])
+            Pstr_primitive
+            value_description "next" (stdlib/random.ml[27,1350+11]..[27,1350+15]) (stdlib/random.ml[27,1350+2]..[28,1390+59])
+              attribute "noalloc"
+                []
+              core_type (stdlib/random.ml[27,1350+17]..[27,1350+39])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/random.ml[27,1350+17]..[27,1350+18])
+                  Ptyp_constr "t" (stdlib/random.ml[27,1350+17]..[27,1350+18])
+                  []
+                core_type (stdlib/random.ml[27,1350+23]..[27,1350+28])
+                  attribute "unboxed"
+                    []
+                  Ptyp_constr "int64" (stdlib/random.ml[27,1350+23]..[27,1350+28])
+                  []
+              [
+                "caml_lxm_next"
+                "caml_lxm_next_unboxed"
+              ]
+          structure_item (stdlib/random.ml[30,1451+2]..[31,1473+34])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[30,1451+6]..[30,1451+12])
+                  Ppat_var "create" (stdlib/random.ml[30,1451+6]..[30,1451+12])
+                expression (stdlib/random.ml[30,1451+13]..[31,1473+34]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[30,1451+13]..[30,1451+15])
+                    Ppat_construct "()" (stdlib/random.ml[30,1451+13]..[30,1451+15])
+                    None
+                  expression (stdlib/random.ml[30,1451+16]..[31,1473+34])
+                    Pexp_constraint
+                    expression (stdlib/random.ml[31,1473+4]..[31,1473+34])
+                      Pexp_apply
+                      expression (stdlib/random.ml[31,1473+4]..[31,1473+17])
+                        Pexp_ident "Array1.create" (stdlib/random.ml[31,1473+4]..[31,1473+17])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/random.ml[31,1473+18]..[31,1473+23])
+                            Pexp_construct "Int64" (stdlib/random.ml[31,1473+18]..[31,1473+23])
+                            None
+                        <arg>
+                        Nolabel
+                          expression (stdlib/random.ml[31,1473+24]..[31,1473+32])
+                            Pexp_construct "C_layout" (stdlib/random.ml[31,1473+24]..[31,1473+32])
+                            None
+                        <arg>
+                        Nolabel
+                          expression (stdlib/random.ml[31,1473+33]..[31,1473+34])
+                            Pexp_constant PConst_int (4,None)
+                      ]
+                    core_type (stdlib/random.ml[30,1451+18]..[30,1451+19])
+                      Ptyp_constr "t" (stdlib/random.ml[30,1451+18]..[30,1451+19])
+                      []
+            ]
+          structure_item (stdlib/random.ml[33,1509+2]..[37,1707+55])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[33,1509+6]..[33,1509+9])
+                  Ppat_var "set" (stdlib/random.ml[33,1509+6]..[33,1509+9])
+                expression (stdlib/random.ml[33,1509+10]..[37,1707+55]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[33,1509+10]..[33,1509+11])
+                    Ppat_var "s" (stdlib/random.ml[33,1509+10]..[33,1509+11])
+                  expression (stdlib/random.ml[33,1509+12]..[37,1707+55]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[33,1509+12]..[33,1509+14])
+                      Ppat_var "i1" (stdlib/random.ml[33,1509+12]..[33,1509+14])
+                    expression (stdlib/random.ml[33,1509+15]..[37,1707+55]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (stdlib/random.ml[33,1509+15]..[33,1509+17])
+                        Ppat_var "i2" (stdlib/random.ml[33,1509+15]..[33,1509+17])
+                      expression (stdlib/random.ml[33,1509+18]..[37,1707+55]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (stdlib/random.ml[33,1509+18]..[33,1509+20])
+                          Ppat_var "i3" (stdlib/random.ml[33,1509+18]..[33,1509+20])
+                        expression (stdlib/random.ml[33,1509+21]..[37,1707+55]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (stdlib/random.ml[33,1509+21]..[33,1509+23])
+                            Ppat_var "i4" (stdlib/random.ml[33,1509+21]..[33,1509+23])
+                          expression (stdlib/random.ml[34,1535+4]..[37,1707+55])
+                            Pexp_sequence
+                            expression (stdlib/random.ml[34,1535+4]..[34,1535+45])
+                              Pexp_apply
+                              expression (stdlib/random.ml[34,1535+4]..[34,1535+21])
+                                Pexp_ident "Array1.unsafe_set" (stdlib/random.ml[34,1535+4]..[34,1535+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[34,1535+22]..[34,1535+23])
+                                    Pexp_ident "s" (stdlib/random.ml[34,1535+22]..[34,1535+23])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[34,1535+24]..[34,1535+25])
+                                    Pexp_constant PConst_int (0,None)
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[34,1535+26]..[34,1535+45])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[34,1535+27]..[34,1535+38])
+                                      Pexp_ident "Int64.logor" (stdlib/random.ml[34,1535+27]..[34,1535+38])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[34,1535+39]..[34,1535+41])
+                                          Pexp_ident "i1" (stdlib/random.ml[34,1535+39]..[34,1535+41])
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[34,1535+42]..[34,1535+44])
+                                          Pexp_constant PConst_int (1,Some L)
+                                    ]
+                              ]
+                            expression (stdlib/random.ml[35,1600+4]..[37,1707+55])
+                              Pexp_sequence
+                              expression (stdlib/random.ml[35,1600+4]..[35,1600+28])
+                                Pexp_apply
+                                expression (stdlib/random.ml[35,1600+4]..[35,1600+21])
+                                  Pexp_ident "Array1.unsafe_set" (stdlib/random.ml[35,1600+4]..[35,1600+21])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/random.ml[35,1600+22]..[35,1600+23])
+                                      Pexp_ident "s" (stdlib/random.ml[35,1600+22]..[35,1600+23])
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/random.ml[35,1600+24]..[35,1600+25])
+                                      Pexp_constant PConst_int (1,None)
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/random.ml[35,1600+26]..[35,1600+28])
+                                      Pexp_ident "i2" (stdlib/random.ml[35,1600+26]..[35,1600+28])
+                                ]
+                              expression (stdlib/random.ml[36,1630+4]..[37,1707+55])
+                                Pexp_sequence
+                                expression (stdlib/random.ml[36,1630+4]..[36,1630+55])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[36,1630+4]..[36,1630+21])
+                                    Pexp_ident "Array1.unsafe_set" (stdlib/random.ml[36,1630+4]..[36,1630+21])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[36,1630+22]..[36,1630+23])
+                                        Pexp_ident "s" (stdlib/random.ml[36,1630+22]..[36,1630+23])
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[36,1630+24]..[36,1630+25])
+                                        Pexp_constant PConst_int (2,None)
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[36,1630+26]..[36,1630+55])
+                                        Pexp_ifthenelse
+                                        expression (stdlib/random.ml[36,1630+30]..[36,1630+38])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[36,1630+33]..[36,1630+35])
+                                            Pexp_ident "<>" (stdlib/random.ml[36,1630+33]..[36,1630+35])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[36,1630+30]..[36,1630+32])
+                                                Pexp_ident "i3" (stdlib/random.ml[36,1630+30]..[36,1630+32])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[36,1630+36]..[36,1630+38])
+                                                Pexp_constant PConst_int (0,Some L)
+                                          ]
+                                        expression (stdlib/random.ml[36,1630+44]..[36,1630+46])
+                                          Pexp_ident "i3" (stdlib/random.ml[36,1630+44]..[36,1630+46])
+                                        Some
+                                          expression (stdlib/random.ml[36,1630+52]..[36,1630+54])
+                                            Pexp_constant PConst_int (1,Some L)
+                                  ]
+                                expression (stdlib/random.ml[37,1707+4]..[37,1707+55])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[37,1707+4]..[37,1707+21])
+                                    Pexp_ident "Array1.unsafe_set" (stdlib/random.ml[37,1707+4]..[37,1707+21])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[37,1707+22]..[37,1707+23])
+                                        Pexp_ident "s" (stdlib/random.ml[37,1707+22]..[37,1707+23])
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[37,1707+24]..[37,1707+25])
+                                        Pexp_constant PConst_int (3,None)
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[37,1707+26]..[37,1707+55])
+                                        Pexp_ifthenelse
+                                        expression (stdlib/random.ml[37,1707+30]..[37,1707+38])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[37,1707+33]..[37,1707+35])
+                                            Pexp_ident "<>" (stdlib/random.ml[37,1707+33]..[37,1707+35])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[37,1707+30]..[37,1707+32])
+                                                Pexp_ident "i4" (stdlib/random.ml[37,1707+30]..[37,1707+32])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[37,1707+36]..[37,1707+38])
+                                                Pexp_constant PConst_int (0,Some L)
+                                          ]
+                                        expression (stdlib/random.ml[37,1707+44]..[37,1707+46])
+                                          Pexp_ident "i4" (stdlib/random.ml[37,1707+44]..[37,1707+46])
+                                        Some
+                                          expression (stdlib/random.ml[37,1707+52]..[37,1707+54])
+                                            Pexp_constant PConst_int (2,Some L)
+                                  ]
+            ]
+          structure_item (stdlib/random.ml[39,1784+2]..[41,1832+24])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[39,1784+6]..[39,1784+8])
+                  Ppat_var "mk" (stdlib/random.ml[39,1784+6]..[39,1784+8])
+                expression (stdlib/random.ml[39,1784+9]..[41,1832+24]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[39,1784+9]..[39,1784+11])
+                    Ppat_var "i1" (stdlib/random.ml[39,1784+9]..[39,1784+11])
+                  expression (stdlib/random.ml[39,1784+12]..[41,1832+24]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[39,1784+12]..[39,1784+14])
+                      Ppat_var "i2" (stdlib/random.ml[39,1784+12]..[39,1784+14])
+                    expression (stdlib/random.ml[39,1784+15]..[41,1832+24]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (stdlib/random.ml[39,1784+15]..[39,1784+17])
+                        Ppat_var "i3" (stdlib/random.ml[39,1784+15]..[39,1784+17])
+                      expression (stdlib/random.ml[39,1784+18]..[41,1832+24]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (stdlib/random.ml[39,1784+18]..[39,1784+20])
+                          Ppat_var "i4" (stdlib/random.ml[39,1784+18]..[39,1784+20])
+                        expression (stdlib/random.ml[40,1807+4]..[41,1832+24])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (stdlib/random.ml[40,1807+8]..[40,1807+9])
+                                Ppat_var "s" (stdlib/random.ml[40,1807+8]..[40,1807+9])
+                              expression (stdlib/random.ml[40,1807+12]..[40,1807+21])
+                                Pexp_apply
+                                expression (stdlib/random.ml[40,1807+12]..[40,1807+18])
+                                  Pexp_ident "create" (stdlib/random.ml[40,1807+12]..[40,1807+18])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/random.ml[40,1807+19]..[40,1807+21])
+                                      Pexp_construct "()" (stdlib/random.ml[40,1807+19]..[40,1807+21])
+                                      None
+                                ]
+                          ]
+                          expression (stdlib/random.ml[41,1832+4]..[41,1832+24])
+                            Pexp_sequence
+                            expression (stdlib/random.ml[41,1832+4]..[41,1832+21])
+                              Pexp_apply
+                              expression (stdlib/random.ml[41,1832+4]..[41,1832+7])
+                                Pexp_ident "set" (stdlib/random.ml[41,1832+4]..[41,1832+7])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[41,1832+8]..[41,1832+9])
+                                    Pexp_ident "s" (stdlib/random.ml[41,1832+8]..[41,1832+9])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[41,1832+10]..[41,1832+12])
+                                    Pexp_ident "i1" (stdlib/random.ml[41,1832+10]..[41,1832+12])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[41,1832+13]..[41,1832+15])
+                                    Pexp_ident "i2" (stdlib/random.ml[41,1832+13]..[41,1832+15])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[41,1832+16]..[41,1832+18])
+                                    Pexp_ident "i3" (stdlib/random.ml[41,1832+16]..[41,1832+18])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[41,1832+19]..[41,1832+21])
+                                    Pexp_ident "i4" (stdlib/random.ml[41,1832+19]..[41,1832+21])
+                              ]
+                            expression (stdlib/random.ml[41,1832+23]..[41,1832+24])
+                              Pexp_ident "s" (stdlib/random.ml[41,1832+23]..[41,1832+24])
+            ]
+          structure_item (stdlib/random.ml[43,1858+2]..[44,1891+23])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[43,1858+6]..[43,1858+12])
+                  Ppat_var "assign" (stdlib/random.ml[43,1858+6]..[43,1858+12])
+                expression (stdlib/random.ml[43,1858+13]..[44,1891+23]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[43,1858+13]..[43,1858+21])
+                    Ppat_constraint
+                    pattern (stdlib/random.ml[43,1858+14]..[43,1858+17])
+                      Ppat_var "dst" (stdlib/random.ml[43,1858+14]..[43,1858+17])
+                    core_type (stdlib/random.ml[43,1858+19]..[43,1858+20])
+                      Ptyp_constr "t" (stdlib/random.ml[43,1858+19]..[43,1858+20])
+                      []
+                  expression (stdlib/random.ml[43,1858+22]..[44,1891+23]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[43,1858+22]..[43,1858+30])
+                      Ppat_constraint
+                      pattern (stdlib/random.ml[43,1858+23]..[43,1858+26])
+                        Ppat_var "src" (stdlib/random.ml[43,1858+23]..[43,1858+26])
+                      core_type (stdlib/random.ml[43,1858+28]..[43,1858+29])
+                        Ptyp_constr "t" (stdlib/random.ml[43,1858+28]..[43,1858+29])
+                        []
+                    expression (stdlib/random.ml[44,1891+4]..[44,1891+23])
+                      Pexp_apply
+                      expression (stdlib/random.ml[44,1891+4]..[44,1891+15])
+                        Pexp_ident "Array1.blit" (stdlib/random.ml[44,1891+4]..[44,1891+15])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/random.ml[44,1891+16]..[44,1891+19])
+                            Pexp_ident "src" (stdlib/random.ml[44,1891+16]..[44,1891+19])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/random.ml[44,1891+20]..[44,1891+23])
+                            Pexp_ident "dst" (stdlib/random.ml[44,1891+20]..[44,1891+23])
+                      ]
+            ]
+          structure_item (stdlib/random.ml[46,1916+2]..[47,1931+40])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[46,1916+6]..[46,1916+10])
+                  Ppat_var "copy" (stdlib/random.ml[46,1916+6]..[46,1916+10])
+                expression (stdlib/random.ml[46,1916+11]..[47,1931+40]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[46,1916+11]..[46,1916+12])
+                    Ppat_var "s" (stdlib/random.ml[46,1916+11]..[46,1916+12])
+                  expression (stdlib/random.ml[47,1931+4]..[47,1931+40])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (stdlib/random.ml[47,1931+8]..[47,1931+10])
+                          Ppat_var "s'" (stdlib/random.ml[47,1931+8]..[47,1931+10])
+                        expression (stdlib/random.ml[47,1931+13]..[47,1931+21])
+                          Pexp_apply
+                          expression (stdlib/random.ml[47,1931+13]..[47,1931+19])
+                            Pexp_ident "create" (stdlib/random.ml[47,1931+13]..[47,1931+19])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[47,1931+19]..[47,1931+21])
+                                Pexp_construct "()" (stdlib/random.ml[47,1931+19]..[47,1931+21])
+                                None
+                          ]
+                    ]
+                    expression (stdlib/random.ml[47,1931+25]..[47,1931+40])
+                      Pexp_sequence
+                      expression (stdlib/random.ml[47,1931+25]..[47,1931+36])
+                        Pexp_apply
+                        expression (stdlib/random.ml[47,1931+25]..[47,1931+31])
+                          Pexp_ident "assign" (stdlib/random.ml[47,1931+25]..[47,1931+31])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[47,1931+32]..[47,1931+34])
+                              Pexp_ident "s'" (stdlib/random.ml[47,1931+32]..[47,1931+34])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[47,1931+35]..[47,1931+36])
+                              Pexp_ident "s" (stdlib/random.ml[47,1931+35]..[47,1931+36])
+                        ]
+                      expression (stdlib/random.ml[47,1931+38]..[47,1931+40])
+                        Pexp_ident "s'" (stdlib/random.ml[47,1931+38]..[47,1931+40])
+            ]
+          structure_item (stdlib/random.ml[54,2312+2]..[67,2737+36])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[54,2312+6]..[54,2312+12])
+                  Ppat_var "reinit" (stdlib/random.ml[54,2312+6]..[54,2312+12])
+                expression (stdlib/random.ml[54,2312+13]..[67,2737+36]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[54,2312+13]..[54,2312+14])
+                    Ppat_var "s" (stdlib/random.ml[54,2312+13]..[54,2312+14])
+                  expression (stdlib/random.ml[54,2312+15]..[67,2737+36]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[54,2312+15]..[54,2312+19])
+                      Ppat_var "seed" (stdlib/random.ml[54,2312+15]..[54,2312+19])
+                    expression (stdlib/random.ml[55,2334+4]..[67,2737+36])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (stdlib/random.ml[55,2334+8]..[55,2334+9])
+                            Ppat_var "n" (stdlib/random.ml[55,2334+8]..[55,2334+9])
+                          expression (stdlib/random.ml[55,2334+12]..[55,2334+29])
+                            Pexp_apply
+                            expression (stdlib/random.ml[55,2334+12]..[55,2334+24])
+                              Pexp_ident "Array.length" (stdlib/random.ml[55,2334+12]..[55,2334+24])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[55,2334+25]..[55,2334+29])
+                                  Pexp_ident "seed" (stdlib/random.ml[55,2334+25]..[55,2334+29])
+                            ]
+                      ]
+                      expression (stdlib/random.ml[56,2367+4]..[67,2737+36])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (stdlib/random.ml[56,2367+8]..[56,2367+9])
+                              Ppat_var "b" (stdlib/random.ml[56,2367+8]..[56,2367+9])
+                            expression (stdlib/random.ml[56,2367+12]..[56,2367+36])
+                              Pexp_apply
+                              expression (stdlib/random.ml[56,2367+12]..[56,2367+24])
+                                Pexp_ident "Bytes.create" (stdlib/random.ml[56,2367+12]..[56,2367+24])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[56,2367+25]..[56,2367+36])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[56,2367+32]..[56,2367+33])
+                                      Pexp_ident "+" (stdlib/random.ml[56,2367+32]..[56,2367+33])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[56,2367+26]..[56,2367+31])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[56,2367+28]..[56,2367+29])
+                                            Pexp_ident "*" (stdlib/random.ml[56,2367+28]..[56,2367+29])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[56,2367+26]..[56,2367+27])
+                                                Pexp_ident "n" (stdlib/random.ml[56,2367+26]..[56,2367+27])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[56,2367+30]..[56,2367+31])
+                                                Pexp_constant PConst_int (8,None)
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[56,2367+34]..[56,2367+35])
+                                          Pexp_constant PConst_int (1,None)
+                                    ]
+                              ]
+                        ]
+                        expression (stdlib/random.ml[57,2407+4]..[67,2737+36])
+                          Pexp_sequence
+                          expression (stdlib/random.ml[57,2407+4]..[59,2490+8])
+                            Pexp_for Up
+                            pattern (stdlib/random.ml[57,2407+8]..[57,2407+9])
+                              Ppat_var "i" (stdlib/random.ml[57,2407+8]..[57,2407+9])
+                            expression (stdlib/random.ml[57,2407+12]..[57,2407+13])
+                              Pexp_constant PConst_int (0,None)
+                            expression (stdlib/random.ml[57,2407+17]..[57,2407+20])
+                              Pexp_apply
+                              expression (stdlib/random.ml[57,2407+18]..[57,2407+19])
+                                Pexp_ident "-" (stdlib/random.ml[57,2407+18]..[57,2407+19])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[57,2407+17]..[57,2407+18])
+                                    Pexp_ident "n" (stdlib/random.ml[57,2407+17]..[57,2407+18])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[57,2407+19]..[57,2407+20])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                            expression (stdlib/random.ml[58,2431+6]..[58,2431+58])
+                              Pexp_apply
+                              expression (stdlib/random.ml[58,2431+6]..[58,2431+24])
+                                Pexp_ident "Bytes.set_int64_le" (stdlib/random.ml[58,2431+6]..[58,2431+24])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[58,2431+25]..[58,2431+26])
+                                    Pexp_ident "b" (stdlib/random.ml[58,2431+25]..[58,2431+26])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[58,2431+27]..[58,2431+34])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[58,2431+30]..[58,2431+31])
+                                      Pexp_ident "*" (stdlib/random.ml[58,2431+30]..[58,2431+31])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[58,2431+28]..[58,2431+29])
+                                          Pexp_ident "i" (stdlib/random.ml[58,2431+28]..[58,2431+29])
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[58,2431+32]..[58,2431+33])
+                                          Pexp_constant PConst_int (8,None)
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[58,2431+35]..[58,2431+58])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[58,2431+36]..[58,2431+48])
+                                      Pexp_ident "Int64.of_int" (stdlib/random.ml[58,2431+36]..[58,2431+48])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[58,2431+49]..[58,2431+57])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[58,2431+49]..[58,2431+57]) ghost
+                                            Pexp_ident "Array.get" (stdlib/random.ml[58,2431+49]..[58,2431+57]) ghost
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[58,2431+49]..[58,2431+53])
+                                                Pexp_ident "seed" (stdlib/random.ml[58,2431+49]..[58,2431+53])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[58,2431+55]..[58,2431+56])
+                                                Pexp_ident "i" (stdlib/random.ml[58,2431+55]..[58,2431+56])
+                                          ]
+                                    ]
+                              ]
+                          expression (stdlib/random.ml[60,2500+4]..[67,2737+36])
+                            Pexp_sequence
+                            expression (stdlib/random.ml[60,2500+4]..[60,2500+30])
+                              Pexp_apply
+                              expression (stdlib/random.ml[60,2500+4]..[60,2500+13])
+                                Pexp_ident "Bytes.set" (stdlib/random.ml[60,2500+4]..[60,2500+13])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[60,2500+14]..[60,2500+15])
+                                    Pexp_ident "b" (stdlib/random.ml[60,2500+14]..[60,2500+15])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[60,2500+16]..[60,2500+23])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[60,2500+19]..[60,2500+20])
+                                      Pexp_ident "*" (stdlib/random.ml[60,2500+19]..[60,2500+20])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[60,2500+17]..[60,2500+18])
+                                          Pexp_ident "n" (stdlib/random.ml[60,2500+17]..[60,2500+18])
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[60,2500+21]..[60,2500+22])
+                                          Pexp_constant PConst_int (8,None)
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[60,2500+24]..[60,2500+30])
+                                    Pexp_constant PConst_char 01
+                              ]
+                            expression (stdlib/random.ml[61,2532+4]..[67,2737+36])
+                              Pexp_let Nonrec
+                              [
+                                <def>
+                                  pattern (stdlib/random.ml[61,2532+8]..[61,2532+10])
+                                    Ppat_var "d1" (stdlib/random.ml[61,2532+8]..[61,2532+10])
+                                  expression (stdlib/random.ml[61,2532+13]..[61,2532+27])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[61,2532+13]..[61,2532+25])
+                                      Pexp_ident "Digest.bytes" (stdlib/random.ml[61,2532+13]..[61,2532+25])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[61,2532+26]..[61,2532+27])
+                                          Pexp_ident "b" (stdlib/random.ml[61,2532+26]..[61,2532+27])
+                                    ]
+                              ]
+                              expression (stdlib/random.ml[62,2563+4]..[67,2737+36])
+                                Pexp_sequence
+                                expression (stdlib/random.ml[62,2563+4]..[62,2563+30])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[62,2563+4]..[62,2563+13])
+                                    Pexp_ident "Bytes.set" (stdlib/random.ml[62,2563+4]..[62,2563+13])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[62,2563+14]..[62,2563+15])
+                                        Pexp_ident "b" (stdlib/random.ml[62,2563+14]..[62,2563+15])
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[62,2563+16]..[62,2563+23])
+                                        Pexp_apply
+                                        expression (stdlib/random.ml[62,2563+19]..[62,2563+20])
+                                          Pexp_ident "*" (stdlib/random.ml[62,2563+19]..[62,2563+20])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/random.ml[62,2563+17]..[62,2563+18])
+                                              Pexp_ident "n" (stdlib/random.ml[62,2563+17]..[62,2563+18])
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/random.ml[62,2563+21]..[62,2563+22])
+                                              Pexp_constant PConst_int (8,None)
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[62,2563+24]..[62,2563+30])
+                                        Pexp_constant PConst_char 02
+                                  ]
+                                expression (stdlib/random.ml[63,2595+4]..[67,2737+36])
+                                  Pexp_let Nonrec
+                                  [
+                                    <def>
+                                      pattern (stdlib/random.ml[63,2595+8]..[63,2595+10])
+                                        Ppat_var "d2" (stdlib/random.ml[63,2595+8]..[63,2595+10])
+                                      expression (stdlib/random.ml[63,2595+13]..[63,2595+27])
+                                        Pexp_apply
+                                        expression (stdlib/random.ml[63,2595+13]..[63,2595+25])
+                                          Pexp_ident "Digest.bytes" (stdlib/random.ml[63,2595+13]..[63,2595+25])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/random.ml[63,2595+26]..[63,2595+27])
+                                              Pexp_ident "b" (stdlib/random.ml[63,2595+26]..[63,2595+27])
+                                        ]
+                                  ]
+                                  expression (stdlib/random.ml[64,2626+4]..[67,2737+36])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[64,2626+4]..[64,2626+7])
+                                      Pexp_ident "set" (stdlib/random.ml[64,2626+4]..[64,2626+7])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[64,2626+8]..[64,2626+9])
+                                          Pexp_ident "s" (stdlib/random.ml[64,2626+8]..[64,2626+9])
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[64,2626+10]..[64,2626+36])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[64,2626+11]..[64,2626+30])
+                                            Pexp_ident "String.get_int64_le" (stdlib/random.ml[64,2626+11]..[64,2626+30])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[64,2626+31]..[64,2626+33])
+                                                Pexp_ident "d1" (stdlib/random.ml[64,2626+31]..[64,2626+33])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[64,2626+34]..[64,2626+35])
+                                                Pexp_constant PConst_int (0,None)
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[65,2663+10]..[65,2663+36])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[65,2663+11]..[65,2663+30])
+                                            Pexp_ident "String.get_int64_le" (stdlib/random.ml[65,2663+11]..[65,2663+30])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[65,2663+31]..[65,2663+33])
+                                                Pexp_ident "d1" (stdlib/random.ml[65,2663+31]..[65,2663+33])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[65,2663+34]..[65,2663+35])
+                                                Pexp_constant PConst_int (8,None)
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[66,2700+10]..[66,2700+36])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[66,2700+11]..[66,2700+30])
+                                            Pexp_ident "String.get_int64_le" (stdlib/random.ml[66,2700+11]..[66,2700+30])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[66,2700+31]..[66,2700+33])
+                                                Pexp_ident "d2" (stdlib/random.ml[66,2700+31]..[66,2700+33])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[66,2700+34]..[66,2700+35])
+                                                Pexp_constant PConst_int (0,None)
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[67,2737+10]..[67,2737+36])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[67,2737+11]..[67,2737+30])
+                                            Pexp_ident "String.get_int64_le" (stdlib/random.ml[67,2737+11]..[67,2737+30])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[67,2737+31]..[67,2737+33])
+                                                Pexp_ident "d2" (stdlib/random.ml[67,2737+31]..[67,2737+33])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[67,2737+34]..[67,2737+35])
+                                                Pexp_constant PConst_int (8,None)
+                                          ]
+                                    ]
+            ]
+          structure_item (stdlib/random.ml[69,2775+2]..[70,2793+40])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[69,2775+6]..[69,2775+10])
+                  Ppat_var "make" (stdlib/random.ml[69,2775+6]..[69,2775+10])
+                expression (stdlib/random.ml[69,2775+11]..[70,2793+40]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[69,2775+11]..[69,2775+15])
+                    Ppat_var "seed" (stdlib/random.ml[69,2775+11]..[69,2775+15])
+                  expression (stdlib/random.ml[70,2793+4]..[70,2793+40])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (stdlib/random.ml[70,2793+8]..[70,2793+9])
+                          Ppat_var "s" (stdlib/random.ml[70,2793+8]..[70,2793+9])
+                        expression (stdlib/random.ml[70,2793+12]..[70,2793+20])
+                          Pexp_apply
+                          expression (stdlib/random.ml[70,2793+12]..[70,2793+18])
+                            Pexp_ident "create" (stdlib/random.ml[70,2793+12]..[70,2793+18])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[70,2793+18]..[70,2793+20])
+                                Pexp_construct "()" (stdlib/random.ml[70,2793+18]..[70,2793+20])
+                                None
+                          ]
+                    ]
+                    expression (stdlib/random.ml[70,2793+24]..[70,2793+40])
+                      Pexp_sequence
+                      expression (stdlib/random.ml[70,2793+24]..[70,2793+37])
+                        Pexp_apply
+                        expression (stdlib/random.ml[70,2793+24]..[70,2793+30])
+                          Pexp_ident "reinit" (stdlib/random.ml[70,2793+24]..[70,2793+30])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[70,2793+31]..[70,2793+32])
+                              Pexp_ident "s" (stdlib/random.ml[70,2793+31]..[70,2793+32])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[70,2793+33]..[70,2793+37])
+                              Pexp_ident "seed" (stdlib/random.ml[70,2793+33]..[70,2793+37])
+                        ]
+                      expression (stdlib/random.ml[70,2793+39]..[70,2793+40])
+                        Pexp_ident "s" (stdlib/random.ml[70,2793+39]..[70,2793+40])
+            ]
+          structure_item (stdlib/random.ml[72,2835+2]..[73,2861+25])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[72,2835+6]..[72,2835+20])
+                  Ppat_var "make_self_init" (stdlib/random.ml[72,2835+6]..[72,2835+20])
+                expression (stdlib/random.ml[72,2835+21]..[73,2861+25]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[72,2835+21]..[72,2835+23])
+                    Ppat_construct "()" (stdlib/random.ml[72,2835+21]..[72,2835+23])
+                    None
+                  expression (stdlib/random.ml[73,2861+4]..[73,2861+25])
+                    Pexp_apply
+                    expression (stdlib/random.ml[73,2861+4]..[73,2861+8])
+                      Pexp_ident "make" (stdlib/random.ml[73,2861+4]..[73,2861+8])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[73,2861+9]..[73,2861+25])
+                          Pexp_apply
+                          expression (stdlib/random.ml[73,2861+10]..[73,2861+21])
+                            Pexp_ident "random_seed" (stdlib/random.ml[73,2861+10]..[73,2861+21])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[73,2861+22]..[73,2861+24])
+                                Pexp_construct "()" (stdlib/random.ml[73,2861+22]..[73,2861+24])
+                                None
+                          ]
+                    ]
+            ]
+          structure_item (stdlib/random.ml[76,2952+2]..[77,2967+42])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[76,2952+6]..[76,2952+10])
+                  Ppat_var "bits" (stdlib/random.ml[76,2952+6]..[76,2952+10])
+                expression (stdlib/random.ml[76,2952+11]..[77,2967+42]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[76,2952+11]..[76,2952+12])
+                    Ppat_var "s" (stdlib/random.ml[76,2952+11]..[76,2952+12])
+                  expression (stdlib/random.ml[77,2967+4]..[77,2967+42])
+                    Pexp_apply
+                    expression (stdlib/random.ml[77,2967+26]..[77,2967+30])
+                      Pexp_ident "land" (stdlib/random.ml[77,2967+26]..[77,2967+30])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[77,2967+4]..[77,2967+25])
+                          Pexp_apply
+                          expression (stdlib/random.ml[77,2967+4]..[77,2967+16])
+                            Pexp_ident "Int64.to_int" (stdlib/random.ml[77,2967+4]..[77,2967+16])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[77,2967+17]..[77,2967+25])
+                                Pexp_apply
+                                expression (stdlib/random.ml[77,2967+18]..[77,2967+22])
+                                  Pexp_ident "next" (stdlib/random.ml[77,2967+18]..[77,2967+22])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/random.ml[77,2967+23]..[77,2967+24])
+                                      Pexp_ident "s" (stdlib/random.ml[77,2967+23]..[77,2967+24])
+                                ]
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[77,2967+31]..[77,2967+42])
+                          Pexp_constant PConst_int (0x3FFF_FFFF,None)
+                    ]
+            ]
+          structure_item (stdlib/random.ml[80,3081+2]..[83,3149+56])
+            Pstr_value Rec
+            [
+              <def>
+                pattern (stdlib/random.ml[80,3081+10]..[80,3081+16])
+                  Ppat_var "intaux" (stdlib/random.ml[80,3081+10]..[80,3081+16])
+                expression (stdlib/random.ml[80,3081+17]..[83,3149+56]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[80,3081+17]..[80,3081+18])
+                    Ppat_var "s" (stdlib/random.ml[80,3081+17]..[80,3081+18])
+                  expression (stdlib/random.ml[80,3081+19]..[83,3149+56]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[80,3081+19]..[80,3081+20])
+                      Ppat_var "n" (stdlib/random.ml[80,3081+19]..[80,3081+20])
+                    expression (stdlib/random.ml[81,3104+4]..[83,3149+56])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (stdlib/random.ml[81,3104+8]..[81,3104+9])
+                            Ppat_var "r" (stdlib/random.ml[81,3104+8]..[81,3104+9])
+                          expression (stdlib/random.ml[81,3104+12]..[81,3104+18])
+                            Pexp_apply
+                            expression (stdlib/random.ml[81,3104+12]..[81,3104+16])
+                              Pexp_ident "bits" (stdlib/random.ml[81,3104+12]..[81,3104+16])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[81,3104+17]..[81,3104+18])
+                                  Pexp_ident "s" (stdlib/random.ml[81,3104+17]..[81,3104+18])
+                            ]
+                      ]
+                      expression (stdlib/random.ml[82,3126+4]..[83,3149+56])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (stdlib/random.ml[82,3126+8]..[82,3126+9])
+                              Ppat_var "v" (stdlib/random.ml[82,3126+8]..[82,3126+9])
+                            expression (stdlib/random.ml[82,3126+12]..[82,3126+19])
+                              Pexp_apply
+                              expression (stdlib/random.ml[82,3126+14]..[82,3126+17])
+                                Pexp_ident "mod" (stdlib/random.ml[82,3126+14]..[82,3126+17])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[82,3126+12]..[82,3126+13])
+                                    Pexp_ident "r" (stdlib/random.ml[82,3126+12]..[82,3126+13])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[82,3126+18]..[82,3126+19])
+                                    Pexp_ident "n" (stdlib/random.ml[82,3126+18]..[82,3126+19])
+                              ]
+                        ]
+                        expression (stdlib/random.ml[83,3149+4]..[83,3149+56])
+                          Pexp_ifthenelse
+                          expression (stdlib/random.ml[83,3149+7]..[83,3149+33])
+                            Pexp_apply
+                            expression (stdlib/random.ml[83,3149+13]..[83,3149+14])
+                              Pexp_ident ">" (stdlib/random.ml[83,3149+13]..[83,3149+14])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[83,3149+7]..[83,3149+12])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[83,3149+9]..[83,3149+10])
+                                    Pexp_ident "-" (stdlib/random.ml[83,3149+9]..[83,3149+10])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[83,3149+7]..[83,3149+8])
+                                        Pexp_ident "r" (stdlib/random.ml[83,3149+7]..[83,3149+8])
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[83,3149+11]..[83,3149+12])
+                                        Pexp_ident "v" (stdlib/random.ml[83,3149+11]..[83,3149+12])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[83,3149+15]..[83,3149+33])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[83,3149+30]..[83,3149+31])
+                                    Pexp_ident "+" (stdlib/random.ml[83,3149+30]..[83,3149+31])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[83,3149+15]..[83,3149+29])
+                                        Pexp_apply
+                                        expression (stdlib/random.ml[83,3149+26]..[83,3149+27])
+                                          Pexp_ident "-" (stdlib/random.ml[83,3149+26]..[83,3149+27])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/random.ml[83,3149+15]..[83,3149+25])
+                                              Pexp_constant PConst_int (0x3FFFFFFF,None)
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/random.ml[83,3149+28]..[83,3149+29])
+                                              Pexp_ident "n" (stdlib/random.ml[83,3149+28]..[83,3149+29])
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[83,3149+32]..[83,3149+33])
+                                        Pexp_constant PConst_int (1,None)
+                                  ]
+                            ]
+                          expression (stdlib/random.ml[83,3149+39]..[83,3149+49])
+                            Pexp_apply
+                            expression (stdlib/random.ml[83,3149+39]..[83,3149+45])
+                              Pexp_ident "intaux" (stdlib/random.ml[83,3149+39]..[83,3149+45])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[83,3149+46]..[83,3149+47])
+                                  Pexp_ident "s" (stdlib/random.ml[83,3149+46]..[83,3149+47])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[83,3149+48]..[83,3149+49])
+                                  Pexp_ident "n" (stdlib/random.ml[83,3149+48]..[83,3149+49])
+                            ]
+                          Some
+                            expression (stdlib/random.ml[83,3149+55]..[83,3149+56])
+                              Pexp_ident "v" (stdlib/random.ml[83,3149+55]..[83,3149+56])
+            ]
+          structure_item (stdlib/random.ml[85,3207+2]..[88,3301+23])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[85,3207+6]..[85,3207+9])
+                  Ppat_var "int" (stdlib/random.ml[85,3207+6]..[85,3207+9])
+                expression (stdlib/random.ml[85,3207+10]..[88,3301+23]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[85,3207+10]..[85,3207+11])
+                    Ppat_var "s" (stdlib/random.ml[85,3207+10]..[85,3207+11])
+                  expression (stdlib/random.ml[85,3207+12]..[88,3301+23]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[85,3207+12]..[85,3207+17])
+                      Ppat_var "bound" (stdlib/random.ml[85,3207+12]..[85,3207+17])
+                    expression (stdlib/random.ml[86,3227+4]..[88,3301+23])
+                      Pexp_ifthenelse
+                      expression (stdlib/random.ml[86,3227+7]..[86,3227+39])
+                        Pexp_apply
+                        expression (stdlib/random.ml[86,3227+26]..[86,3227+28])
+                          Pexp_ident "||" (stdlib/random.ml[86,3227+26]..[86,3227+28])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[86,3227+7]..[86,3227+25])
+                              Pexp_apply
+                              expression (stdlib/random.ml[86,3227+13]..[86,3227+14])
+                                Pexp_ident ">" (stdlib/random.ml[86,3227+13]..[86,3227+14])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[86,3227+7]..[86,3227+12])
+                                    Pexp_ident "bound" (stdlib/random.ml[86,3227+7]..[86,3227+12])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[86,3227+15]..[86,3227+25])
+                                    Pexp_constant PConst_int (0x3FFFFFFF,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[86,3227+29]..[86,3227+39])
+                              Pexp_apply
+                              expression (stdlib/random.ml[86,3227+35]..[86,3227+37])
+                                Pexp_ident "<=" (stdlib/random.ml[86,3227+35]..[86,3227+37])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[86,3227+29]..[86,3227+34])
+                                    Pexp_ident "bound" (stdlib/random.ml[86,3227+29]..[86,3227+34])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[86,3227+38]..[86,3227+39])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                        ]
+                      expression (stdlib/random.ml[87,3267+9]..[87,3267+33])
+                        Pexp_apply
+                        expression (stdlib/random.ml[87,3267+9]..[87,3267+20])
+                          Pexp_ident "invalid_arg" (stdlib/random.ml[87,3267+9]..[87,3267+20])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[87,3267+21]..[87,3267+33])
+                              Pexp_constant PConst_string("Random.int",(stdlib/random.ml[87,3267+22]..[87,3267+32]),None)
+                        ]
+                      Some
+                        expression (stdlib/random.ml[88,3301+9]..[88,3301+23])
+                          Pexp_apply
+                          expression (stdlib/random.ml[88,3301+9]..[88,3301+15])
+                            Pexp_ident "intaux" (stdlib/random.ml[88,3301+9]..[88,3301+15])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[88,3301+16]..[88,3301+17])
+                                Pexp_ident "s" (stdlib/random.ml[88,3301+16]..[88,3301+17])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[88,3301+18]..[88,3301+23])
+                                Pexp_ident "bound" (stdlib/random.ml[88,3301+18]..[88,3301+23])
+                          ]
+            ]
+          structure_item (stdlib/random.ml[92,3437+2]..[95,3535+55])
+            Pstr_value Rec
+            [
+              <def>
+                pattern (stdlib/random.ml[92,3437+10]..[92,3437+18])
+                  Ppat_var "int63aux" (stdlib/random.ml[92,3437+10]..[92,3437+18])
+                expression (stdlib/random.ml[92,3437+19]..[95,3535+55]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[92,3437+19]..[92,3437+20])
+                    Ppat_var "s" (stdlib/random.ml[92,3437+19]..[92,3437+20])
+                  expression (stdlib/random.ml[92,3437+21]..[95,3535+55]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[92,3437+21]..[92,3437+22])
+                      Ppat_var "n" (stdlib/random.ml[92,3437+21]..[92,3437+22])
+                    expression (stdlib/random.ml[93,3462+4]..[95,3535+55])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (stdlib/random.ml[93,3462+8]..[93,3462+9])
+                            Ppat_var "r" (stdlib/random.ml[93,3462+8]..[93,3462+9])
+                          expression (stdlib/random.ml[93,3462+12]..[93,3462+46])
+                            Pexp_apply
+                            expression (stdlib/random.ml[93,3462+34]..[93,3462+38])
+                              Pexp_ident "land" (stdlib/random.ml[93,3462+34]..[93,3462+38])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[93,3462+12]..[93,3462+33])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[93,3462+12]..[93,3462+24])
+                                    Pexp_ident "Int64.to_int" (stdlib/random.ml[93,3462+12]..[93,3462+24])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[93,3462+25]..[93,3462+33])
+                                        Pexp_apply
+                                        expression (stdlib/random.ml[93,3462+26]..[93,3462+30])
+                                          Pexp_ident "next" (stdlib/random.ml[93,3462+26]..[93,3462+30])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/random.ml[93,3462+31]..[93,3462+32])
+                                              Pexp_ident "s" (stdlib/random.ml[93,3462+31]..[93,3462+32])
+                                        ]
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[93,3462+39]..[93,3462+46])
+                                  Pexp_ident "max_int" (stdlib/random.ml[93,3462+39]..[93,3462+46])
+                            ]
+                      ]
+                      expression (stdlib/random.ml[94,3512+4]..[95,3535+55])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (stdlib/random.ml[94,3512+8]..[94,3512+9])
+                              Ppat_var "v" (stdlib/random.ml[94,3512+8]..[94,3512+9])
+                            expression (stdlib/random.ml[94,3512+12]..[94,3512+19])
+                              Pexp_apply
+                              expression (stdlib/random.ml[94,3512+14]..[94,3512+17])
+                                Pexp_ident "mod" (stdlib/random.ml[94,3512+14]..[94,3512+17])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[94,3512+12]..[94,3512+13])
+                                    Pexp_ident "r" (stdlib/random.ml[94,3512+12]..[94,3512+13])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[94,3512+18]..[94,3512+19])
+                                    Pexp_ident "n" (stdlib/random.ml[94,3512+18]..[94,3512+19])
+                              ]
+                        ]
+                        expression (stdlib/random.ml[95,3535+4]..[95,3535+55])
+                          Pexp_ifthenelse
+                          expression (stdlib/random.ml[95,3535+7]..[95,3535+30])
+                            Pexp_apply
+                            expression (stdlib/random.ml[95,3535+13]..[95,3535+14])
+                              Pexp_ident ">" (stdlib/random.ml[95,3535+13]..[95,3535+14])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[95,3535+7]..[95,3535+12])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[95,3535+9]..[95,3535+10])
+                                    Pexp_ident "-" (stdlib/random.ml[95,3535+9]..[95,3535+10])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[95,3535+7]..[95,3535+8])
+                                        Pexp_ident "r" (stdlib/random.ml[95,3535+7]..[95,3535+8])
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[95,3535+11]..[95,3535+12])
+                                        Pexp_ident "v" (stdlib/random.ml[95,3535+11]..[95,3535+12])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[95,3535+15]..[95,3535+30])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[95,3535+27]..[95,3535+28])
+                                    Pexp_ident "+" (stdlib/random.ml[95,3535+27]..[95,3535+28])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[95,3535+15]..[95,3535+26])
+                                        Pexp_apply
+                                        expression (stdlib/random.ml[95,3535+23]..[95,3535+24])
+                                          Pexp_ident "-" (stdlib/random.ml[95,3535+23]..[95,3535+24])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/random.ml[95,3535+15]..[95,3535+22])
+                                              Pexp_ident "max_int" (stdlib/random.ml[95,3535+15]..[95,3535+22])
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/random.ml[95,3535+25]..[95,3535+26])
+                                              Pexp_ident "n" (stdlib/random.ml[95,3535+25]..[95,3535+26])
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[95,3535+29]..[95,3535+30])
+                                        Pexp_constant PConst_int (1,None)
+                                  ]
+                            ]
+                          expression (stdlib/random.ml[95,3535+36]..[95,3535+48])
+                            Pexp_apply
+                            expression (stdlib/random.ml[95,3535+36]..[95,3535+44])
+                              Pexp_ident "int63aux" (stdlib/random.ml[95,3535+36]..[95,3535+44])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[95,3535+45]..[95,3535+46])
+                                  Pexp_ident "s" (stdlib/random.ml[95,3535+45]..[95,3535+46])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[95,3535+47]..[95,3535+48])
+                                  Pexp_ident "n" (stdlib/random.ml[95,3535+47]..[95,3535+48])
+                            ]
+                          Some
+                            expression (stdlib/random.ml[95,3535+54]..[95,3535+55])
+                              Pexp_ident "v" (stdlib/random.ml[95,3535+54]..[95,3535+55])
+            ]
+          structure_item (stdlib/random.ml[97,3592+2]..[103,3744+20])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[97,3592+6]..[97,3592+14])
+                  Ppat_var "full_int" (stdlib/random.ml[97,3592+6]..[97,3592+14])
+                expression (stdlib/random.ml[97,3592+15]..[103,3744+20]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[97,3592+15]..[97,3592+16])
+                    Ppat_var "s" (stdlib/random.ml[97,3592+15]..[97,3592+16])
+                  expression (stdlib/random.ml[97,3592+17]..[103,3744+20]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[97,3592+17]..[97,3592+22])
+                      Ppat_var "bound" (stdlib/random.ml[97,3592+17]..[97,3592+22])
+                    expression (stdlib/random.ml[98,3617+4]..[103,3744+20])
+                      Pexp_ifthenelse
+                      expression (stdlib/random.ml[98,3617+7]..[98,3617+17])
+                        Pexp_apply
+                        expression (stdlib/random.ml[98,3617+13]..[98,3617+15])
+                          Pexp_ident "<=" (stdlib/random.ml[98,3617+13]..[98,3617+15])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[98,3617+7]..[98,3617+12])
+                              Pexp_ident "bound" (stdlib/random.ml[98,3617+7]..[98,3617+12])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[98,3617+16]..[98,3617+17])
+                              Pexp_constant PConst_int (0,None)
+                        ]
+                      expression (stdlib/random.ml[99,3640+6]..[99,3640+35])
+                        Pexp_apply
+                        expression (stdlib/random.ml[99,3640+6]..[99,3640+17])
+                          Pexp_ident "invalid_arg" (stdlib/random.ml[99,3640+6]..[99,3640+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[99,3640+18]..[99,3640+35])
+                              Pexp_constant PConst_string("Random.full_int",(stdlib/random.ml[99,3640+19]..[99,3640+34]),None)
+                        ]
+                      Some
+                        expression (stdlib/random.ml[100,3676+9]..[103,3744+20])
+                          Pexp_ifthenelse
+                          expression (stdlib/random.ml[100,3676+12]..[100,3676+30])
+                            Pexp_apply
+                            expression (stdlib/random.ml[100,3676+18]..[100,3676+19])
+                              Pexp_ident ">" (stdlib/random.ml[100,3676+18]..[100,3676+19])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[100,3676+12]..[100,3676+17])
+                                  Pexp_ident "bound" (stdlib/random.ml[100,3676+12]..[100,3676+17])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[100,3676+20]..[100,3676+30])
+                                  Pexp_constant PConst_int (0x3FFFFFFF,None)
+                            ]
+                          expression (stdlib/random.ml[101,3712+6]..[101,3712+22])
+                            Pexp_apply
+                            expression (stdlib/random.ml[101,3712+6]..[101,3712+14])
+                              Pexp_ident "int63aux" (stdlib/random.ml[101,3712+6]..[101,3712+14])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[101,3712+15]..[101,3712+16])
+                                  Pexp_ident "s" (stdlib/random.ml[101,3712+15]..[101,3712+16])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[101,3712+17]..[101,3712+22])
+                                  Pexp_ident "bound" (stdlib/random.ml[101,3712+17]..[101,3712+22])
+                            ]
+                          Some
+                            expression (stdlib/random.ml[103,3744+6]..[103,3744+20])
+                              Pexp_apply
+                              expression (stdlib/random.ml[103,3744+6]..[103,3744+12])
+                                Pexp_ident "intaux" (stdlib/random.ml[103,3744+6]..[103,3744+12])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[103,3744+13]..[103,3744+14])
+                                    Pexp_ident "s" (stdlib/random.ml[103,3744+13]..[103,3744+14])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[103,3744+15]..[103,3744+20])
+                                    Pexp_ident "bound" (stdlib/random.ml[103,3744+15]..[103,3744+20])
+                              ]
+            ]
+          structure_item (stdlib/random.ml[106,3810+2]..[107,3827+27])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[106,3810+6]..[106,3810+12])
+                  Ppat_var "bits32" (stdlib/random.ml[106,3810+6]..[106,3810+12])
+                expression (stdlib/random.ml[106,3810+13]..[107,3827+27]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[106,3810+13]..[106,3810+14])
+                    Ppat_var "s" (stdlib/random.ml[106,3810+13]..[106,3810+14])
+                  expression (stdlib/random.ml[107,3827+4]..[107,3827+27])
+                    Pexp_apply
+                    expression (stdlib/random.ml[107,3827+4]..[107,3827+18])
+                      Pexp_ident "Int64.to_int32" (stdlib/random.ml[107,3827+4]..[107,3827+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[107,3827+19]..[107,3827+27])
+                          Pexp_apply
+                          expression (stdlib/random.ml[107,3827+20]..[107,3827+24])
+                            Pexp_ident "next" (stdlib/random.ml[107,3827+20]..[107,3827+24])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[107,3827+25]..[107,3827+26])
+                                Pexp_ident "s" (stdlib/random.ml[107,3827+25]..[107,3827+26])
+                          ]
+                    ]
+            ]
+          structure_item (stdlib/random.ml[110,3927+2]..[115,4105+10])
+            Pstr_value Rec
+            [
+              <def>
+                pattern (stdlib/random.ml[110,3927+10]..[110,3927+18])
+                  Ppat_var "int32aux" (stdlib/random.ml[110,3927+10]..[110,3927+18])
+                expression (stdlib/random.ml[110,3927+19]..[115,4105+10]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[110,3927+19]..[110,3927+20])
+                    Ppat_var "s" (stdlib/random.ml[110,3927+19]..[110,3927+20])
+                  expression (stdlib/random.ml[110,3927+21]..[115,4105+10]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[110,3927+21]..[110,3927+22])
+                      Ppat_var "n" (stdlib/random.ml[110,3927+21]..[110,3927+22])
+                    expression (stdlib/random.ml[111,3952+4]..[115,4105+10])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (stdlib/random.ml[111,3952+8]..[111,3952+9])
+                            Ppat_var "r" (stdlib/random.ml[111,3952+8]..[111,3952+9])
+                          expression (stdlib/random.ml[111,3952+12]..[111,3952+50])
+                            Pexp_apply
+                            expression (stdlib/random.ml[111,3952+12]..[111,3952+37])
+                              Pexp_ident "Int32.shift_right_logical" (stdlib/random.ml[111,3952+12]..[111,3952+37])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[111,3952+38]..[111,3952+48])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[111,3952+39]..[111,3952+45])
+                                    Pexp_ident "bits32" (stdlib/random.ml[111,3952+39]..[111,3952+45])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[111,3952+46]..[111,3952+47])
+                                        Pexp_ident "s" (stdlib/random.ml[111,3952+46]..[111,3952+47])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[111,3952+49]..[111,3952+50])
+                                  Pexp_constant PConst_int (1,None)
+                            ]
+                      ]
+                      expression (stdlib/random.ml[112,4006+4]..[115,4105+10])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (stdlib/random.ml[112,4006+8]..[112,4006+9])
+                              Ppat_var "v" (stdlib/random.ml[112,4006+8]..[112,4006+9])
+                            expression (stdlib/random.ml[112,4006+12]..[112,4006+25])
+                              Pexp_apply
+                              expression (stdlib/random.ml[112,4006+12]..[112,4006+21])
+                                Pexp_ident "Int32.rem" (stdlib/random.ml[112,4006+12]..[112,4006+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[112,4006+22]..[112,4006+23])
+                                    Pexp_ident "r" (stdlib/random.ml[112,4006+22]..[112,4006+23])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[112,4006+24]..[112,4006+25])
+                                    Pexp_ident "n" (stdlib/random.ml[112,4006+24]..[112,4006+25])
+                              ]
+                        ]
+                        expression (stdlib/random.ml[113,4035+4]..[115,4105+10])
+                          Pexp_ifthenelse
+                          expression (stdlib/random.ml[113,4035+7]..[113,4035+47])
+                            Pexp_open Fresh
+                            module_expr (stdlib/random.ml[113,4035+7]..[113,4035+12])
+                              Pmod_ident "Int32" (stdlib/random.ml[113,4035+7]..[113,4035+12])
+                            expression (stdlib/random.ml[113,4035+14]..[113,4035+46])
+                              Pexp_apply
+                              expression (stdlib/random.ml[113,4035+22]..[113,4035+23])
+                                Pexp_ident ">" (stdlib/random.ml[113,4035+22]..[113,4035+23])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[113,4035+14]..[113,4035+21])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[113,4035+14]..[113,4035+17])
+                                      Pexp_ident "sub" (stdlib/random.ml[113,4035+14]..[113,4035+17])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[113,4035+18]..[113,4035+19])
+                                          Pexp_ident "r" (stdlib/random.ml[113,4035+18]..[113,4035+19])
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[113,4035+20]..[113,4035+21])
+                                          Pexp_ident "v" (stdlib/random.ml[113,4035+20]..[113,4035+21])
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[113,4035+24]..[113,4035+46])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[113,4035+24]..[113,4035+27])
+                                      Pexp_ident "add" (stdlib/random.ml[113,4035+24]..[113,4035+27])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[113,4035+28]..[113,4035+43])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[113,4035+29]..[113,4035+32])
+                                            Pexp_ident "sub" (stdlib/random.ml[113,4035+29]..[113,4035+32])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[113,4035+33]..[113,4035+40])
+                                                Pexp_ident "max_int" (stdlib/random.ml[113,4035+33]..[113,4035+40])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[113,4035+41]..[113,4035+42])
+                                                Pexp_ident "n" (stdlib/random.ml[113,4035+41]..[113,4035+42])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[113,4035+44]..[113,4035+46])
+                                          Pexp_constant PConst_int (1,Some l)
+                                    ]
+                              ]
+                          expression (stdlib/random.ml[114,4083+9]..[114,4083+21])
+                            Pexp_apply
+                            expression (stdlib/random.ml[114,4083+9]..[114,4083+17])
+                              Pexp_ident "int32aux" (stdlib/random.ml[114,4083+9]..[114,4083+17])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[114,4083+18]..[114,4083+19])
+                                  Pexp_ident "s" (stdlib/random.ml[114,4083+18]..[114,4083+19])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[114,4083+20]..[114,4083+21])
+                                  Pexp_ident "n" (stdlib/random.ml[114,4083+20]..[114,4083+21])
+                            ]
+                          Some
+                            expression (stdlib/random.ml[115,4105+9]..[115,4105+10])
+                              Pexp_ident "v" (stdlib/random.ml[115,4105+9]..[115,4105+10])
+            ]
+          structure_item (stdlib/random.ml[117,4117+2]..[120,4194+25])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[117,4117+6]..[117,4117+11])
+                  Ppat_var "int32" (stdlib/random.ml[117,4117+6]..[117,4117+11])
+                expression (stdlib/random.ml[117,4117+12]..[120,4194+25]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[117,4117+12]..[117,4117+13])
+                    Ppat_var "s" (stdlib/random.ml[117,4117+12]..[117,4117+13])
+                  expression (stdlib/random.ml[117,4117+14]..[120,4194+25]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[117,4117+14]..[117,4117+19])
+                      Ppat_var "bound" (stdlib/random.ml[117,4117+14]..[117,4117+19])
+                    expression (stdlib/random.ml[118,4139+4]..[120,4194+25])
+                      Pexp_ifthenelse
+                      expression (stdlib/random.ml[118,4139+7]..[118,4139+18])
+                        Pexp_apply
+                        expression (stdlib/random.ml[118,4139+13]..[118,4139+15])
+                          Pexp_ident "<=" (stdlib/random.ml[118,4139+13]..[118,4139+15])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[118,4139+7]..[118,4139+12])
+                              Pexp_ident "bound" (stdlib/random.ml[118,4139+7]..[118,4139+12])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[118,4139+16]..[118,4139+18])
+                              Pexp_constant PConst_int (0,Some l)
+                        ]
+                      expression (stdlib/random.ml[119,4158+9]..[119,4158+35])
+                        Pexp_apply
+                        expression (stdlib/random.ml[119,4158+9]..[119,4158+20])
+                          Pexp_ident "invalid_arg" (stdlib/random.ml[119,4158+9]..[119,4158+20])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[119,4158+21]..[119,4158+35])
+                              Pexp_constant PConst_string("Random.int32",(stdlib/random.ml[119,4158+22]..[119,4158+34]),None)
+                        ]
+                      Some
+                        expression (stdlib/random.ml[120,4194+9]..[120,4194+25])
+                          Pexp_apply
+                          expression (stdlib/random.ml[120,4194+9]..[120,4194+17])
+                            Pexp_ident "int32aux" (stdlib/random.ml[120,4194+9]..[120,4194+17])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[120,4194+18]..[120,4194+19])
+                                Pexp_ident "s" (stdlib/random.ml[120,4194+18]..[120,4194+19])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[120,4194+20]..[120,4194+25])
+                                Pexp_ident "bound" (stdlib/random.ml[120,4194+20]..[120,4194+25])
+                          ]
+            ]
+          structure_item (stdlib/random.ml[123,4265+2]..[124,4282+10])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[123,4265+6]..[123,4265+12])
+                  Ppat_var "bits64" (stdlib/random.ml[123,4265+6]..[123,4265+12])
+                expression (stdlib/random.ml[123,4265+13]..[124,4282+10]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[123,4265+13]..[123,4265+14])
+                    Ppat_var "s" (stdlib/random.ml[123,4265+13]..[123,4265+14])
+                  expression (stdlib/random.ml[124,4282+4]..[124,4282+10])
+                    Pexp_apply
+                    expression (stdlib/random.ml[124,4282+4]..[124,4282+8])
+                      Pexp_ident "next" (stdlib/random.ml[124,4282+4]..[124,4282+8])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[124,4282+9]..[124,4282+10])
+                          Pexp_ident "s" (stdlib/random.ml[124,4282+9]..[124,4282+10])
+                    ]
+            ]
+          structure_item (stdlib/random.ml[127,4365+2]..[132,4543+10])
+            Pstr_value Rec
+            [
+              <def>
+                pattern (stdlib/random.ml[127,4365+10]..[127,4365+18])
+                  Ppat_var "int64aux" (stdlib/random.ml[127,4365+10]..[127,4365+18])
+                expression (stdlib/random.ml[127,4365+19]..[132,4543+10]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[127,4365+19]..[127,4365+20])
+                    Ppat_var "s" (stdlib/random.ml[127,4365+19]..[127,4365+20])
+                  expression (stdlib/random.ml[127,4365+21]..[132,4543+10]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[127,4365+21]..[127,4365+22])
+                      Ppat_var "n" (stdlib/random.ml[127,4365+21]..[127,4365+22])
+                    expression (stdlib/random.ml[128,4390+4]..[132,4543+10])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (stdlib/random.ml[128,4390+8]..[128,4390+9])
+                            Ppat_var "r" (stdlib/random.ml[128,4390+8]..[128,4390+9])
+                          expression (stdlib/random.ml[128,4390+12]..[128,4390+50])
+                            Pexp_apply
+                            expression (stdlib/random.ml[128,4390+12]..[128,4390+37])
+                              Pexp_ident "Int64.shift_right_logical" (stdlib/random.ml[128,4390+12]..[128,4390+37])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[128,4390+38]..[128,4390+48])
+                                  Pexp_apply
+                                  expression (stdlib/random.ml[128,4390+39]..[128,4390+45])
+                                    Pexp_ident "bits64" (stdlib/random.ml[128,4390+39]..[128,4390+45])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/random.ml[128,4390+46]..[128,4390+47])
+                                        Pexp_ident "s" (stdlib/random.ml[128,4390+46]..[128,4390+47])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[128,4390+49]..[128,4390+50])
+                                  Pexp_constant PConst_int (1,None)
+                            ]
+                      ]
+                      expression (stdlib/random.ml[129,4444+4]..[132,4543+10])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (stdlib/random.ml[129,4444+8]..[129,4444+9])
+                              Ppat_var "v" (stdlib/random.ml[129,4444+8]..[129,4444+9])
+                            expression (stdlib/random.ml[129,4444+12]..[129,4444+25])
+                              Pexp_apply
+                              expression (stdlib/random.ml[129,4444+12]..[129,4444+21])
+                                Pexp_ident "Int64.rem" (stdlib/random.ml[129,4444+12]..[129,4444+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[129,4444+22]..[129,4444+23])
+                                    Pexp_ident "r" (stdlib/random.ml[129,4444+22]..[129,4444+23])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[129,4444+24]..[129,4444+25])
+                                    Pexp_ident "n" (stdlib/random.ml[129,4444+24]..[129,4444+25])
+                              ]
+                        ]
+                        expression (stdlib/random.ml[130,4473+4]..[132,4543+10])
+                          Pexp_ifthenelse
+                          expression (stdlib/random.ml[130,4473+7]..[130,4473+47])
+                            Pexp_open Fresh
+                            module_expr (stdlib/random.ml[130,4473+7]..[130,4473+12])
+                              Pmod_ident "Int64" (stdlib/random.ml[130,4473+7]..[130,4473+12])
+                            expression (stdlib/random.ml[130,4473+14]..[130,4473+46])
+                              Pexp_apply
+                              expression (stdlib/random.ml[130,4473+22]..[130,4473+23])
+                                Pexp_ident ">" (stdlib/random.ml[130,4473+22]..[130,4473+23])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[130,4473+14]..[130,4473+21])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[130,4473+14]..[130,4473+17])
+                                      Pexp_ident "sub" (stdlib/random.ml[130,4473+14]..[130,4473+17])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[130,4473+18]..[130,4473+19])
+                                          Pexp_ident "r" (stdlib/random.ml[130,4473+18]..[130,4473+19])
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[130,4473+20]..[130,4473+21])
+                                          Pexp_ident "v" (stdlib/random.ml[130,4473+20]..[130,4473+21])
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[130,4473+24]..[130,4473+46])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[130,4473+24]..[130,4473+27])
+                                      Pexp_ident "add" (stdlib/random.ml[130,4473+24]..[130,4473+27])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[130,4473+28]..[130,4473+43])
+                                          Pexp_apply
+                                          expression (stdlib/random.ml[130,4473+29]..[130,4473+32])
+                                            Pexp_ident "sub" (stdlib/random.ml[130,4473+29]..[130,4473+32])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[130,4473+33]..[130,4473+40])
+                                                Pexp_ident "max_int" (stdlib/random.ml[130,4473+33]..[130,4473+40])
+                                            <arg>
+                                            Nolabel
+                                              expression (stdlib/random.ml[130,4473+41]..[130,4473+42])
+                                                Pexp_ident "n" (stdlib/random.ml[130,4473+41]..[130,4473+42])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[130,4473+44]..[130,4473+46])
+                                          Pexp_constant PConst_int (1,Some L)
+                                    ]
+                              ]
+                          expression (stdlib/random.ml[131,4521+9]..[131,4521+21])
+                            Pexp_apply
+                            expression (stdlib/random.ml[131,4521+9]..[131,4521+17])
+                              Pexp_ident "int64aux" (stdlib/random.ml[131,4521+9]..[131,4521+17])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[131,4521+18]..[131,4521+19])
+                                  Pexp_ident "s" (stdlib/random.ml[131,4521+18]..[131,4521+19])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[131,4521+20]..[131,4521+21])
+                                  Pexp_ident "n" (stdlib/random.ml[131,4521+20]..[131,4521+21])
+                            ]
+                          Some
+                            expression (stdlib/random.ml[132,4543+9]..[132,4543+10])
+                              Pexp_ident "v" (stdlib/random.ml[132,4543+9]..[132,4543+10])
+            ]
+          structure_item (stdlib/random.ml[134,4555+2]..[137,4632+25])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[134,4555+6]..[134,4555+11])
+                  Ppat_var "int64" (stdlib/random.ml[134,4555+6]..[134,4555+11])
+                expression (stdlib/random.ml[134,4555+12]..[137,4632+25]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[134,4555+12]..[134,4555+13])
+                    Ppat_var "s" (stdlib/random.ml[134,4555+12]..[134,4555+13])
+                  expression (stdlib/random.ml[134,4555+14]..[137,4632+25]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[134,4555+14]..[134,4555+19])
+                      Ppat_var "bound" (stdlib/random.ml[134,4555+14]..[134,4555+19])
+                    expression (stdlib/random.ml[135,4577+4]..[137,4632+25])
+                      Pexp_ifthenelse
+                      expression (stdlib/random.ml[135,4577+7]..[135,4577+18])
+                        Pexp_apply
+                        expression (stdlib/random.ml[135,4577+13]..[135,4577+15])
+                          Pexp_ident "<=" (stdlib/random.ml[135,4577+13]..[135,4577+15])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[135,4577+7]..[135,4577+12])
+                              Pexp_ident "bound" (stdlib/random.ml[135,4577+7]..[135,4577+12])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[135,4577+16]..[135,4577+18])
+                              Pexp_constant PConst_int (0,Some L)
+                        ]
+                      expression (stdlib/random.ml[136,4596+9]..[136,4596+35])
+                        Pexp_apply
+                        expression (stdlib/random.ml[136,4596+9]..[136,4596+20])
+                          Pexp_ident "invalid_arg" (stdlib/random.ml[136,4596+9]..[136,4596+20])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[136,4596+21]..[136,4596+35])
+                              Pexp_constant PConst_string("Random.int64",(stdlib/random.ml[136,4596+22]..[136,4596+34]),None)
+                        ]
+                      Some
+                        expression (stdlib/random.ml[137,4632+9]..[137,4632+25])
+                          Pexp_apply
+                          expression (stdlib/random.ml[137,4632+9]..[137,4632+17])
+                            Pexp_ident "int64aux" (stdlib/random.ml[137,4632+9]..[137,4632+17])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[137,4632+18]..[137,4632+19])
+                                Pexp_ident "s" (stdlib/random.ml[137,4632+18]..[137,4632+19])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[137,4632+20]..[137,4632+25])
+                                Pexp_ident "bound" (stdlib/random.ml[137,4632+20]..[137,4632+25])
+                          ]
+            ]
+          structure_item (stdlib/random.ml[140,4712+2]..[143,4806+47])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[140,4712+6]..[140,4712+16])
+                  Ppat_var "nativebits" (stdlib/random.ml[140,4712+6]..[140,4712+16])
+                expression (stdlib/random.ml[141,4731+4]..[143,4806+47])
+                  Pexp_ifthenelse
+                  expression (stdlib/random.ml[141,4731+7]..[141,4731+26])
+                    Pexp_apply
+                    expression (stdlib/random.ml[141,4731+22]..[141,4731+23])
+                      Pexp_ident "=" (stdlib/random.ml[141,4731+22]..[141,4731+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[141,4731+7]..[141,4731+21])
+                          Pexp_ident "Nativeint.size" (stdlib/random.ml[141,4731+7]..[141,4731+21])
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[141,4731+24]..[141,4731+26])
+                          Pexp_constant PConst_int (32,None)
+                    ]
+                  expression (stdlib/random.ml[142,4758+9]..[142,4758+47])
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[142,4758+13]..[142,4758+14])
+                      Ppat_var "s" (stdlib/random.ml[142,4758+13]..[142,4758+14])
+                    expression (stdlib/random.ml[142,4758+18]..[142,4758+47])
+                      Pexp_apply
+                      expression (stdlib/random.ml[142,4758+18]..[142,4758+36])
+                        Pexp_ident "Nativeint.of_int32" (stdlib/random.ml[142,4758+18]..[142,4758+36])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/random.ml[142,4758+37]..[142,4758+47])
+                            Pexp_apply
+                            expression (stdlib/random.ml[142,4758+38]..[142,4758+44])
+                              Pexp_ident "bits32" (stdlib/random.ml[142,4758+38]..[142,4758+44])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[142,4758+45]..[142,4758+46])
+                                  Pexp_ident "s" (stdlib/random.ml[142,4758+45]..[142,4758+46])
+                            ]
+                      ]
+                  Some
+                    expression (stdlib/random.ml[143,4806+9]..[143,4806+47])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (stdlib/random.ml[143,4806+13]..[143,4806+14])
+                        Ppat_var "s" (stdlib/random.ml[143,4806+13]..[143,4806+14])
+                      expression (stdlib/random.ml[143,4806+18]..[143,4806+47])
+                        Pexp_apply
+                        expression (stdlib/random.ml[143,4806+18]..[143,4806+36])
+                          Pexp_ident "Int64.to_nativeint" (stdlib/random.ml[143,4806+18]..[143,4806+36])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[143,4806+37]..[143,4806+47])
+                              Pexp_apply
+                              expression (stdlib/random.ml[143,4806+38]..[143,4806+44])
+                                Pexp_ident "bits64" (stdlib/random.ml[143,4806+38]..[143,4806+44])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[143,4806+45]..[143,4806+46])
+                                    Pexp_ident "s" (stdlib/random.ml[143,4806+45]..[143,4806+46])
+                              ]
+                        ]
+            ]
+          structure_item (stdlib/random.ml[146,4929+2]..[149,5054+79])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[146,4929+6]..[146,4929+15])
+                  Ppat_var "nativeint" (stdlib/random.ml[146,4929+6]..[146,4929+15])
+                expression (stdlib/random.ml[147,4947+4]..[149,5054+79])
+                  Pexp_ifthenelse
+                  expression (stdlib/random.ml[147,4947+7]..[147,4947+26])
+                    Pexp_apply
+                    expression (stdlib/random.ml[147,4947+22]..[147,4947+23])
+                      Pexp_ident "=" (stdlib/random.ml[147,4947+22]..[147,4947+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[147,4947+7]..[147,4947+21])
+                          Pexp_ident "Nativeint.size" (stdlib/random.ml[147,4947+7]..[147,4947+21])
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[147,4947+24]..[147,4947+26])
+                          Pexp_constant PConst_int (32,None)
+                    ]
+                  expression (stdlib/random.ml[148,4974+9]..[148,4974+79])
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[148,4974+13]..[148,4974+14])
+                      Ppat_var "s" (stdlib/random.ml[148,4974+13]..[148,4974+14])
+                    expression (stdlib/random.ml[148,4974+15]..[148,4974+79]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (stdlib/random.ml[148,4974+15]..[148,4974+20])
+                        Ppat_var "bound" (stdlib/random.ml[148,4974+15]..[148,4974+20])
+                      expression (stdlib/random.ml[148,4974+24]..[148,4974+79])
+                        Pexp_apply
+                        expression (stdlib/random.ml[148,4974+24]..[148,4974+42])
+                          Pexp_ident "Nativeint.of_int32" (stdlib/random.ml[148,4974+24]..[148,4974+42])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/random.ml[148,4974+43]..[148,4974+79])
+                              Pexp_apply
+                              expression (stdlib/random.ml[148,4974+44]..[148,4974+49])
+                                Pexp_ident "int32" (stdlib/random.ml[148,4974+44]..[148,4974+49])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[148,4974+50]..[148,4974+51])
+                                    Pexp_ident "s" (stdlib/random.ml[148,4974+50]..[148,4974+51])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[148,4974+52]..[148,4974+78])
+                                    Pexp_apply
+                                    expression (stdlib/random.ml[148,4974+53]..[148,4974+71])
+                                      Pexp_ident "Nativeint.to_int32" (stdlib/random.ml[148,4974+53]..[148,4974+71])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/random.ml[148,4974+72]..[148,4974+77])
+                                          Pexp_ident "bound" (stdlib/random.ml[148,4974+72]..[148,4974+77])
+                                    ]
+                              ]
+                        ]
+                  Some
+                    expression (stdlib/random.ml[149,5054+9]..[149,5054+79])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (stdlib/random.ml[149,5054+13]..[149,5054+14])
+                        Ppat_var "s" (stdlib/random.ml[149,5054+13]..[149,5054+14])
+                      expression (stdlib/random.ml[149,5054+15]..[149,5054+79]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (stdlib/random.ml[149,5054+15]..[149,5054+20])
+                          Ppat_var "bound" (stdlib/random.ml[149,5054+15]..[149,5054+20])
+                        expression (stdlib/random.ml[149,5054+24]..[149,5054+79])
+                          Pexp_apply
+                          expression (stdlib/random.ml[149,5054+24]..[149,5054+42])
+                            Pexp_ident "Int64.to_nativeint" (stdlib/random.ml[149,5054+24]..[149,5054+42])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[149,5054+43]..[149,5054+79])
+                                Pexp_apply
+                                expression (stdlib/random.ml[149,5054+44]..[149,5054+49])
+                                  Pexp_ident "int64" (stdlib/random.ml[149,5054+44]..[149,5054+49])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/random.ml[149,5054+50]..[149,5054+51])
+                                      Pexp_ident "s" (stdlib/random.ml[149,5054+50]..[149,5054+51])
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/random.ml[149,5054+52]..[149,5054+78])
+                                      Pexp_apply
+                                      expression (stdlib/random.ml[149,5054+53]..[149,5054+71])
+                                        Pexp_ident "Int64.of_nativeint" (stdlib/random.ml[149,5054+53]..[149,5054+71])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (stdlib/random.ml[149,5054+72]..[149,5054+77])
+                                            Pexp_ident "bound" (stdlib/random.ml[149,5054+72]..[149,5054+77])
+                                      ]
+                                ]
+                          ]
+            ]
+          structure_item (stdlib/random.ml[153,5224+2]..[156,5315+64])
+            Pstr_value Rec
+            [
+              <def>
+                pattern (stdlib/random.ml[153,5224+10]..[153,5224+18])
+                  Ppat_var "rawfloat" (stdlib/random.ml[153,5224+10]..[153,5224+18])
+                expression (stdlib/random.ml[153,5224+19]..[156,5315+64]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[153,5224+19]..[153,5224+20])
+                    Ppat_var "s" (stdlib/random.ml[153,5224+19]..[153,5224+20])
+                  expression (stdlib/random.ml[154,5247+4]..[156,5315+64])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (stdlib/random.ml[154,5247+8]..[154,5247+9])
+                          Ppat_var "b" (stdlib/random.ml[154,5247+8]..[154,5247+9])
+                        expression (stdlib/random.ml[154,5247+12]..[154,5247+18])
+                          Pexp_apply
+                          expression (stdlib/random.ml[154,5247+12]..[154,5247+16])
+                            Pexp_ident "next" (stdlib/random.ml[154,5247+12]..[154,5247+16])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[154,5247+17]..[154,5247+18])
+                                Pexp_ident "s" (stdlib/random.ml[154,5247+17]..[154,5247+18])
+                          ]
+                    ]
+                    expression (stdlib/random.ml[155,5269+4]..[156,5315+64])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (stdlib/random.ml[155,5269+8]..[155,5269+9])
+                            Ppat_var "n" (stdlib/random.ml[155,5269+8]..[155,5269+9])
+                          expression (stdlib/random.ml[155,5269+12]..[155,5269+42])
+                            Pexp_apply
+                            expression (stdlib/random.ml[155,5269+12]..[155,5269+37])
+                              Pexp_ident "Int64.shift_right_logical" (stdlib/random.ml[155,5269+12]..[155,5269+37])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[155,5269+38]..[155,5269+39])
+                                  Pexp_ident "b" (stdlib/random.ml[155,5269+38]..[155,5269+39])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[155,5269+40]..[155,5269+42])
+                                  Pexp_constant PConst_int (11,None)
+                            ]
+                      ]
+                      expression (stdlib/random.ml[156,5315+4]..[156,5315+64])
+                        Pexp_ifthenelse
+                        expression (stdlib/random.ml[156,5315+7]..[156,5315+14])
+                          Pexp_apply
+                          expression (stdlib/random.ml[156,5315+9]..[156,5315+11])
+                            Pexp_ident "<>" (stdlib/random.ml[156,5315+9]..[156,5315+11])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[156,5315+7]..[156,5315+8])
+                                Pexp_ident "n" (stdlib/random.ml[156,5315+7]..[156,5315+8])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[156,5315+12]..[156,5315+14])
+                                Pexp_constant PConst_int (0,Some L)
+                          ]
+                        expression (stdlib/random.ml[156,5315+20]..[156,5315+48])
+                          Pexp_apply
+                          expression (stdlib/random.ml[156,5315+37]..[156,5315+39])
+                            Pexp_ident "*." (stdlib/random.ml[156,5315+37]..[156,5315+39])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[156,5315+20]..[156,5315+36])
+                                Pexp_apply
+                                expression (stdlib/random.ml[156,5315+20]..[156,5315+34])
+                                  Pexp_ident "Int64.to_float" (stdlib/random.ml[156,5315+20]..[156,5315+34])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/random.ml[156,5315+35]..[156,5315+36])
+                                      Pexp_ident "n" (stdlib/random.ml[156,5315+35]..[156,5315+36])
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[156,5315+40]..[156,5315+48])
+                                Pexp_constant PConst_float (0x1.p-53,None)
+                          ]
+                        Some
+                          expression (stdlib/random.ml[156,5315+54]..[156,5315+64])
+                            Pexp_apply
+                            expression (stdlib/random.ml[156,5315+54]..[156,5315+62])
+                              Pexp_ident "rawfloat" (stdlib/random.ml[156,5315+54]..[156,5315+62])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[156,5315+63]..[156,5315+64])
+                                  Pexp_ident "s" (stdlib/random.ml[156,5315+63]..[156,5315+64])
+                            ]
+            ]
+          structure_item (stdlib/random.ml[159,5426+2]..[159,5426+41])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[159,5426+6]..[159,5426+11])
+                  Ppat_var "float" (stdlib/random.ml[159,5426+6]..[159,5426+11])
+                expression (stdlib/random.ml[159,5426+12]..[159,5426+41]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[159,5426+12]..[159,5426+13])
+                    Ppat_var "s" (stdlib/random.ml[159,5426+12]..[159,5426+13])
+                  expression (stdlib/random.ml[159,5426+14]..[159,5426+41]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/random.ml[159,5426+14]..[159,5426+19])
+                      Ppat_var "bound" (stdlib/random.ml[159,5426+14]..[159,5426+19])
+                    expression (stdlib/random.ml[159,5426+22]..[159,5426+41])
+                      Pexp_apply
+                      expression (stdlib/random.ml[159,5426+33]..[159,5426+35])
+                        Pexp_ident "*." (stdlib/random.ml[159,5426+33]..[159,5426+35])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/random.ml[159,5426+22]..[159,5426+32])
+                            Pexp_apply
+                            expression (stdlib/random.ml[159,5426+22]..[159,5426+30])
+                              Pexp_ident "rawfloat" (stdlib/random.ml[159,5426+22]..[159,5426+30])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[159,5426+31]..[159,5426+32])
+                                  Pexp_ident "s" (stdlib/random.ml[159,5426+31]..[159,5426+32])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (stdlib/random.ml[159,5426+36]..[159,5426+41])
+                            Pexp_ident "bound" (stdlib/random.ml[159,5426+36]..[159,5426+41])
+                      ]
+            ]
+          structure_item (stdlib/random.ml[162,5501+2]..[162,5501+26])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[162,5501+6]..[162,5501+10])
+                  Ppat_var "bool" (stdlib/random.ml[162,5501+6]..[162,5501+10])
+                expression (stdlib/random.ml[162,5501+11]..[162,5501+26]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[162,5501+11]..[162,5501+12])
+                    Ppat_var "s" (stdlib/random.ml[162,5501+11]..[162,5501+12])
+                  expression (stdlib/random.ml[162,5501+15]..[162,5501+26])
+                    Pexp_apply
+                    expression (stdlib/random.ml[162,5501+22]..[162,5501+23])
+                      Pexp_ident "<" (stdlib/random.ml[162,5501+22]..[162,5501+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[162,5501+15]..[162,5501+21])
+                          Pexp_apply
+                          expression (stdlib/random.ml[162,5501+15]..[162,5501+19])
+                            Pexp_ident "next" (stdlib/random.ml[162,5501+15]..[162,5501+19])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[162,5501+20]..[162,5501+21])
+                                Pexp_ident "s" (stdlib/random.ml[162,5501+20]..[162,5501+21])
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (stdlib/random.ml[162,5501+24]..[162,5501+26])
+                          Pexp_constant PConst_int (0,Some L)
+                    ]
+            ]
+          structure_item (stdlib/random.ml[165,5573+2]..[168,5681+18])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/random.ml[165,5573+6]..[165,5573+11])
+                  Ppat_var "split" (stdlib/random.ml[165,5573+6]..[165,5573+11])
+                expression (stdlib/random.ml[165,5573+12]..[168,5681+18]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (stdlib/random.ml[165,5573+12]..[165,5573+13])
+                    Ppat_var "s" (stdlib/random.ml[165,5573+12]..[165,5573+13])
+                  expression (stdlib/random.ml[166,5589+4]..[168,5681+18])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (stdlib/random.ml[166,5589+8]..[166,5589+10])
+                          Ppat_var "i1" (stdlib/random.ml[166,5589+8]..[166,5589+10])
+                        expression (stdlib/random.ml[166,5589+13]..[166,5589+21])
+                          Pexp_apply
+                          expression (stdlib/random.ml[166,5589+13]..[166,5589+19])
+                            Pexp_ident "bits64" (stdlib/random.ml[166,5589+13]..[166,5589+19])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/random.ml[166,5589+20]..[166,5589+21])
+                                Pexp_ident "s" (stdlib/random.ml[166,5589+20]..[166,5589+21])
+                          ]
+                    ]
+                    expression (stdlib/random.ml[166,5589+25]..[168,5681+18])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (stdlib/random.ml[166,5589+29]..[166,5589+31])
+                            Ppat_var "i2" (stdlib/random.ml[166,5589+29]..[166,5589+31])
+                          expression (stdlib/random.ml[166,5589+34]..[166,5589+42])
+                            Pexp_apply
+                            expression (stdlib/random.ml[166,5589+34]..[166,5589+40])
+                              Pexp_ident "bits64" (stdlib/random.ml[166,5589+34]..[166,5589+40])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[166,5589+41]..[166,5589+42])
+                                  Pexp_ident "s" (stdlib/random.ml[166,5589+41]..[166,5589+42])
+                            ]
+                      ]
+                      expression (stdlib/random.ml[167,5635+4]..[168,5681+18])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (stdlib/random.ml[167,5635+8]..[167,5635+10])
+                              Ppat_var "i3" (stdlib/random.ml[167,5635+8]..[167,5635+10])
+                            expression (stdlib/random.ml[167,5635+13]..[167,5635+21])
+                              Pexp_apply
+                              expression (stdlib/random.ml[167,5635+13]..[167,5635+19])
+                                Pexp_ident "bits64" (stdlib/random.ml[167,5635+13]..[167,5635+19])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/random.ml[167,5635+20]..[167,5635+21])
+                                    Pexp_ident "s" (stdlib/random.ml[167,5635+20]..[167,5635+21])
+                              ]
+                        ]
+                        expression (stdlib/random.ml[167,5635+25]..[168,5681+18])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (stdlib/random.ml[167,5635+29]..[167,5635+31])
+                                Ppat_var "i4" (stdlib/random.ml[167,5635+29]..[167,5635+31])
+                              expression (stdlib/random.ml[167,5635+34]..[167,5635+42])
+                                Pexp_apply
+                                expression (stdlib/random.ml[167,5635+34]..[167,5635+40])
+                                  Pexp_ident "bits64" (stdlib/random.ml[167,5635+34]..[167,5635+40])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/random.ml[167,5635+41]..[167,5635+42])
+                                      Pexp_ident "s" (stdlib/random.ml[167,5635+41]..[167,5635+42])
+                                ]
+                          ]
+                          expression (stdlib/random.ml[168,5681+4]..[168,5681+18])
+                            Pexp_apply
+                            expression (stdlib/random.ml[168,5681+4]..[168,5681+6])
+                              Pexp_ident "mk" (stdlib/random.ml[168,5681+4]..[168,5681+6])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[168,5681+7]..[168,5681+9])
+                                  Pexp_ident "i1" (stdlib/random.ml[168,5681+7]..[168,5681+9])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[168,5681+10]..[168,5681+12])
+                                  Pexp_ident "i2" (stdlib/random.ml[168,5681+10]..[168,5681+12])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[168,5681+13]..[168,5681+15])
+                                  Pexp_ident "i3" (stdlib/random.ml[168,5681+13]..[168,5681+15])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/random.ml[168,5681+16]..[168,5681+18])
+                                  Pexp_ident "i4" (stdlib/random.ml[168,5681+16]..[168,5681+18])
+                            ]
+            ]
+        ]
+  structure_item (stdlib/random.ml[171,5705+0]..[176,5896+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[171,5705+4]..[171,5705+14])
+          Ppat_var "mk_default" (stdlib/random.ml[171,5705+4]..[171,5705+14])
+        expression (stdlib/random.ml[171,5705+15]..[176,5896+31]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[171,5705+15]..[171,5705+17])
+            Ppat_construct "()" (stdlib/random.ml[171,5705+15]..[171,5705+17])
+            None
+          expression (stdlib/random.ml[173,5795+2]..[176,5896+31])
+            Pexp_apply
+            expression (stdlib/random.ml[173,5795+2]..[173,5795+10])
+              Pexp_ident "State.mk" (stdlib/random.ml[173,5795+2]..[173,5795+10])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[173,5795+11]..[173,5795+34])
+                  Pexp_constant PConst_int (-6196874289567705097,Some L)
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[174,5830+11]..[174,5830+30])
+                  Pexp_constant PConst_int (586573249833713189,Some L)
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[175,5861+11]..[175,5861+34])
+                  Pexp_constant PConst_int (-8591268803865043407,Some L)
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[176,5896+11]..[176,5896+31])
+                  Pexp_constant PConst_int (6388613595849772044,Some L)
+            ]
+    ]
+  structure_item (stdlib/random.ml[178,5929+0]..[179,5946+62])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[178,5929+4]..[178,5929+14])
+          Ppat_var "random_key" (stdlib/random.ml[178,5929+4]..[178,5929+14])
+        expression (stdlib/random.ml[179,5946+2]..[179,5946+62])
+          Pexp_apply
+          expression (stdlib/random.ml[179,5946+2]..[179,5946+20])
+            Pexp_ident "Domain.DLS.new_key" (stdlib/random.ml[179,5946+2]..[179,5946+20])
+          [
+            <arg>
+            Labelled "split_from_parent"
+              expression (stdlib/random.ml[179,5946+40]..[179,5946+51])
+                Pexp_ident "State.split" (stdlib/random.ml[179,5946+40]..[179,5946+51])
+            <arg>
+            Nolabel
+              expression (stdlib/random.ml[179,5946+52]..[179,5946+62])
+                Pexp_ident "mk_default" (stdlib/random.ml[179,5946+52]..[179,5946+62])
+          ]
+    ]
+  structure_item (stdlib/random.ml[181,6010+0]..[181,6010+52])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[181,6010+4]..[181,6010+8])
+          Ppat_var "bits" (stdlib/random.ml[181,6010+4]..[181,6010+8])
+        expression (stdlib/random.ml[181,6010+9]..[181,6010+52]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[181,6010+9]..[181,6010+11])
+            Ppat_construct "()" (stdlib/random.ml[181,6010+9]..[181,6010+11])
+            None
+          expression (stdlib/random.ml[181,6010+14]..[181,6010+52])
+            Pexp_apply
+            expression (stdlib/random.ml[181,6010+14]..[181,6010+24])
+              Pexp_ident "State.bits" (stdlib/random.ml[181,6010+14]..[181,6010+24])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[181,6010+25]..[181,6010+52])
+                  Pexp_apply
+                  expression (stdlib/random.ml[181,6010+26]..[181,6010+40])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[181,6010+26]..[181,6010+40])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[181,6010+41]..[181,6010+51])
+                        Pexp_ident "random_key" (stdlib/random.ml[181,6010+41]..[181,6010+51])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/random.ml[182,6063+0]..[182,6063+59])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[182,6063+4]..[182,6063+7])
+          Ppat_var "int" (stdlib/random.ml[182,6063+4]..[182,6063+7])
+        expression (stdlib/random.ml[182,6063+8]..[182,6063+59]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[182,6063+8]..[182,6063+13])
+            Ppat_var "bound" (stdlib/random.ml[182,6063+8]..[182,6063+13])
+          expression (stdlib/random.ml[182,6063+16]..[182,6063+59])
+            Pexp_apply
+            expression (stdlib/random.ml[182,6063+16]..[182,6063+25])
+              Pexp_ident "State.int" (stdlib/random.ml[182,6063+16]..[182,6063+25])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[182,6063+26]..[182,6063+53])
+                  Pexp_apply
+                  expression (stdlib/random.ml[182,6063+27]..[182,6063+41])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[182,6063+27]..[182,6063+41])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[182,6063+42]..[182,6063+52])
+                        Pexp_ident "random_key" (stdlib/random.ml[182,6063+42]..[182,6063+52])
+                  ]
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[182,6063+54]..[182,6063+59])
+                  Pexp_ident "bound" (stdlib/random.ml[182,6063+54]..[182,6063+59])
+            ]
+    ]
+  structure_item (stdlib/random.ml[183,6123+0]..[183,6123+69])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[183,6123+4]..[183,6123+12])
+          Ppat_var "full_int" (stdlib/random.ml[183,6123+4]..[183,6123+12])
+        expression (stdlib/random.ml[183,6123+13]..[183,6123+69]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[183,6123+13]..[183,6123+18])
+            Ppat_var "bound" (stdlib/random.ml[183,6123+13]..[183,6123+18])
+          expression (stdlib/random.ml[183,6123+21]..[183,6123+69])
+            Pexp_apply
+            expression (stdlib/random.ml[183,6123+21]..[183,6123+35])
+              Pexp_ident "State.full_int" (stdlib/random.ml[183,6123+21]..[183,6123+35])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[183,6123+36]..[183,6123+63])
+                  Pexp_apply
+                  expression (stdlib/random.ml[183,6123+37]..[183,6123+51])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[183,6123+37]..[183,6123+51])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[183,6123+52]..[183,6123+62])
+                        Pexp_ident "random_key" (stdlib/random.ml[183,6123+52]..[183,6123+62])
+                  ]
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[183,6123+64]..[183,6123+69])
+                  Pexp_ident "bound" (stdlib/random.ml[183,6123+64]..[183,6123+69])
+            ]
+    ]
+  structure_item (stdlib/random.ml[184,6193+0]..[184,6193+63])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[184,6193+4]..[184,6193+9])
+          Ppat_var "int32" (stdlib/random.ml[184,6193+4]..[184,6193+9])
+        expression (stdlib/random.ml[184,6193+10]..[184,6193+63]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[184,6193+10]..[184,6193+15])
+            Ppat_var "bound" (stdlib/random.ml[184,6193+10]..[184,6193+15])
+          expression (stdlib/random.ml[184,6193+18]..[184,6193+63])
+            Pexp_apply
+            expression (stdlib/random.ml[184,6193+18]..[184,6193+29])
+              Pexp_ident "State.int32" (stdlib/random.ml[184,6193+18]..[184,6193+29])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[184,6193+30]..[184,6193+57])
+                  Pexp_apply
+                  expression (stdlib/random.ml[184,6193+31]..[184,6193+45])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[184,6193+31]..[184,6193+45])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[184,6193+46]..[184,6193+56])
+                        Pexp_ident "random_key" (stdlib/random.ml[184,6193+46]..[184,6193+56])
+                  ]
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[184,6193+58]..[184,6193+63])
+                  Pexp_ident "bound" (stdlib/random.ml[184,6193+58]..[184,6193+63])
+            ]
+    ]
+  structure_item (stdlib/random.ml[185,6257+0]..[185,6257+71])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[185,6257+4]..[185,6257+13])
+          Ppat_var "nativeint" (stdlib/random.ml[185,6257+4]..[185,6257+13])
+        expression (stdlib/random.ml[185,6257+14]..[185,6257+71]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[185,6257+14]..[185,6257+19])
+            Ppat_var "bound" (stdlib/random.ml[185,6257+14]..[185,6257+19])
+          expression (stdlib/random.ml[185,6257+22]..[185,6257+71])
+            Pexp_apply
+            expression (stdlib/random.ml[185,6257+22]..[185,6257+37])
+              Pexp_ident "State.nativeint" (stdlib/random.ml[185,6257+22]..[185,6257+37])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[185,6257+38]..[185,6257+65])
+                  Pexp_apply
+                  expression (stdlib/random.ml[185,6257+39]..[185,6257+53])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[185,6257+39]..[185,6257+53])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[185,6257+54]..[185,6257+64])
+                        Pexp_ident "random_key" (stdlib/random.ml[185,6257+54]..[185,6257+64])
+                  ]
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[185,6257+66]..[185,6257+71])
+                  Pexp_ident "bound" (stdlib/random.ml[185,6257+66]..[185,6257+71])
+            ]
+    ]
+  structure_item (stdlib/random.ml[186,6329+0]..[186,6329+63])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[186,6329+4]..[186,6329+9])
+          Ppat_var "int64" (stdlib/random.ml[186,6329+4]..[186,6329+9])
+        expression (stdlib/random.ml[186,6329+10]..[186,6329+63]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[186,6329+10]..[186,6329+15])
+            Ppat_var "bound" (stdlib/random.ml[186,6329+10]..[186,6329+15])
+          expression (stdlib/random.ml[186,6329+18]..[186,6329+63])
+            Pexp_apply
+            expression (stdlib/random.ml[186,6329+18]..[186,6329+29])
+              Pexp_ident "State.int64" (stdlib/random.ml[186,6329+18]..[186,6329+29])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[186,6329+30]..[186,6329+57])
+                  Pexp_apply
+                  expression (stdlib/random.ml[186,6329+31]..[186,6329+45])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[186,6329+31]..[186,6329+45])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[186,6329+46]..[186,6329+56])
+                        Pexp_ident "random_key" (stdlib/random.ml[186,6329+46]..[186,6329+56])
+                  ]
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[186,6329+58]..[186,6329+63])
+                  Pexp_ident "bound" (stdlib/random.ml[186,6329+58]..[186,6329+63])
+            ]
+    ]
+  structure_item (stdlib/random.ml[187,6393+0]..[187,6393+63])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[187,6393+4]..[187,6393+9])
+          Ppat_var "float" (stdlib/random.ml[187,6393+4]..[187,6393+9])
+        expression (stdlib/random.ml[187,6393+10]..[187,6393+63]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[187,6393+10]..[187,6393+15])
+            Ppat_var "scale" (stdlib/random.ml[187,6393+10]..[187,6393+15])
+          expression (stdlib/random.ml[187,6393+18]..[187,6393+63])
+            Pexp_apply
+            expression (stdlib/random.ml[187,6393+18]..[187,6393+29])
+              Pexp_ident "State.float" (stdlib/random.ml[187,6393+18]..[187,6393+29])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[187,6393+30]..[187,6393+57])
+                  Pexp_apply
+                  expression (stdlib/random.ml[187,6393+31]..[187,6393+45])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[187,6393+31]..[187,6393+45])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[187,6393+46]..[187,6393+56])
+                        Pexp_ident "random_key" (stdlib/random.ml[187,6393+46]..[187,6393+56])
+                  ]
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[187,6393+58]..[187,6393+63])
+                  Pexp_ident "scale" (stdlib/random.ml[187,6393+58]..[187,6393+63])
+            ]
+    ]
+  structure_item (stdlib/random.ml[188,6457+0]..[188,6457+52])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[188,6457+4]..[188,6457+8])
+          Ppat_var "bool" (stdlib/random.ml[188,6457+4]..[188,6457+8])
+        expression (stdlib/random.ml[188,6457+9]..[188,6457+52]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[188,6457+9]..[188,6457+11])
+            Ppat_construct "()" (stdlib/random.ml[188,6457+9]..[188,6457+11])
+            None
+          expression (stdlib/random.ml[188,6457+14]..[188,6457+52])
+            Pexp_apply
+            expression (stdlib/random.ml[188,6457+14]..[188,6457+24])
+              Pexp_ident "State.bool" (stdlib/random.ml[188,6457+14]..[188,6457+24])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[188,6457+25]..[188,6457+52])
+                  Pexp_apply
+                  expression (stdlib/random.ml[188,6457+26]..[188,6457+40])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[188,6457+26]..[188,6457+40])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[188,6457+41]..[188,6457+51])
+                        Pexp_ident "random_key" (stdlib/random.ml[188,6457+41]..[188,6457+51])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/random.ml[189,6510+0]..[189,6510+56])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[189,6510+4]..[189,6510+10])
+          Ppat_var "bits32" (stdlib/random.ml[189,6510+4]..[189,6510+10])
+        expression (stdlib/random.ml[189,6510+11]..[189,6510+56]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[189,6510+11]..[189,6510+13])
+            Ppat_construct "()" (stdlib/random.ml[189,6510+11]..[189,6510+13])
+            None
+          expression (stdlib/random.ml[189,6510+16]..[189,6510+56])
+            Pexp_apply
+            expression (stdlib/random.ml[189,6510+16]..[189,6510+28])
+              Pexp_ident "State.bits32" (stdlib/random.ml[189,6510+16]..[189,6510+28])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[189,6510+29]..[189,6510+56])
+                  Pexp_apply
+                  expression (stdlib/random.ml[189,6510+30]..[189,6510+44])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[189,6510+30]..[189,6510+44])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[189,6510+45]..[189,6510+55])
+                        Pexp_ident "random_key" (stdlib/random.ml[189,6510+45]..[189,6510+55])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/random.ml[190,6567+0]..[190,6567+56])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[190,6567+4]..[190,6567+10])
+          Ppat_var "bits64" (stdlib/random.ml[190,6567+4]..[190,6567+10])
+        expression (stdlib/random.ml[190,6567+11]..[190,6567+56]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[190,6567+11]..[190,6567+13])
+            Ppat_construct "()" (stdlib/random.ml[190,6567+11]..[190,6567+13])
+            None
+          expression (stdlib/random.ml[190,6567+16]..[190,6567+56])
+            Pexp_apply
+            expression (stdlib/random.ml[190,6567+16]..[190,6567+28])
+              Pexp_ident "State.bits64" (stdlib/random.ml[190,6567+16]..[190,6567+28])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[190,6567+29]..[190,6567+56])
+                  Pexp_apply
+                  expression (stdlib/random.ml[190,6567+30]..[190,6567+44])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[190,6567+30]..[190,6567+44])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[190,6567+45]..[190,6567+55])
+                        Pexp_ident "random_key" (stdlib/random.ml[190,6567+45]..[190,6567+55])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/random.ml[191,6624+0]..[191,6624+64])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[191,6624+4]..[191,6624+14])
+          Ppat_var "nativebits" (stdlib/random.ml[191,6624+4]..[191,6624+14])
+        expression (stdlib/random.ml[191,6624+15]..[191,6624+64]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[191,6624+15]..[191,6624+17])
+            Ppat_construct "()" (stdlib/random.ml[191,6624+15]..[191,6624+17])
+            None
+          expression (stdlib/random.ml[191,6624+20]..[191,6624+64])
+            Pexp_apply
+            expression (stdlib/random.ml[191,6624+20]..[191,6624+36])
+              Pexp_ident "State.nativebits" (stdlib/random.ml[191,6624+20]..[191,6624+36])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[191,6624+37]..[191,6624+64])
+                  Pexp_apply
+                  expression (stdlib/random.ml[191,6624+38]..[191,6624+52])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[191,6624+38]..[191,6624+52])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[191,6624+53]..[191,6624+63])
+                        Pexp_ident "random_key" (stdlib/random.ml[191,6624+53]..[191,6624+63])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/random.ml[193,6690+0]..[193,6690+66])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[193,6690+4]..[193,6690+13])
+          Ppat_var "full_init" (stdlib/random.ml[193,6690+4]..[193,6690+13])
+        expression (stdlib/random.ml[193,6690+14]..[193,6690+66]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[193,6690+14]..[193,6690+18])
+            Ppat_var "seed" (stdlib/random.ml[193,6690+14]..[193,6690+18])
+          expression (stdlib/random.ml[193,6690+21]..[193,6690+66])
+            Pexp_apply
+            expression (stdlib/random.ml[193,6690+21]..[193,6690+33])
+              Pexp_ident "State.reinit" (stdlib/random.ml[193,6690+21]..[193,6690+33])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[193,6690+34]..[193,6690+61])
+                  Pexp_apply
+                  expression (stdlib/random.ml[193,6690+35]..[193,6690+49])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[193,6690+35]..[193,6690+49])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[193,6690+50]..[193,6690+60])
+                        Pexp_ident "random_key" (stdlib/random.ml[193,6690+50]..[193,6690+60])
+                  ]
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[193,6690+62]..[193,6690+66])
+                  Pexp_ident "seed" (stdlib/random.ml[193,6690+62]..[193,6690+66])
+            ]
+    ]
+  structure_item (stdlib/random.ml[194,6757+0]..[194,6757+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[194,6757+4]..[194,6757+8])
+          Ppat_var "init" (stdlib/random.ml[194,6757+4]..[194,6757+8])
+        expression (stdlib/random.ml[194,6757+9]..[194,6757+36]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[194,6757+9]..[194,6757+13])
+            Ppat_var "seed" (stdlib/random.ml[194,6757+9]..[194,6757+13])
+          expression (stdlib/random.ml[194,6757+16]..[194,6757+36])
+            Pexp_apply
+            expression (stdlib/random.ml[194,6757+16]..[194,6757+25])
+              Pexp_ident "full_init" (stdlib/random.ml[194,6757+16]..[194,6757+25])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[194,6757+26]..[194,6757+36])
+                  Pexp_array
+                  [
+                    expression (stdlib/random.ml[194,6757+29]..[194,6757+33])
+                      Pexp_ident "seed" (stdlib/random.ml[194,6757+29]..[194,6757+33])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/random.ml[195,6794+0]..[195,6794+44])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[195,6794+4]..[195,6794+13])
+          Ppat_var "self_init" (stdlib/random.ml[195,6794+4]..[195,6794+13])
+        expression (stdlib/random.ml[195,6794+14]..[195,6794+44]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[195,6794+14]..[195,6794+16])
+            Ppat_construct "()" (stdlib/random.ml[195,6794+14]..[195,6794+16])
+            None
+          expression (stdlib/random.ml[195,6794+19]..[195,6794+44])
+            Pexp_apply
+            expression (stdlib/random.ml[195,6794+19]..[195,6794+28])
+              Pexp_ident "full_init" (stdlib/random.ml[195,6794+19]..[195,6794+28])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[195,6794+29]..[195,6794+44])
+                  Pexp_apply
+                  expression (stdlib/random.ml[195,6794+30]..[195,6794+41])
+                    Pexp_ident "random_seed" (stdlib/random.ml[195,6794+30]..[195,6794+41])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[195,6794+41]..[195,6794+43])
+                        Pexp_construct "()" (stdlib/random.ml[195,6794+41]..[195,6794+43])
+                        None
+                  ]
+            ]
+    ]
+  structure_item (stdlib/random.ml[199,6857+0]..[199,6857+54])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[199,6857+4]..[199,6857+9])
+          Ppat_var "split" (stdlib/random.ml[199,6857+4]..[199,6857+9])
+        expression (stdlib/random.ml[199,6857+10]..[199,6857+54]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[199,6857+10]..[199,6857+12])
+            Ppat_construct "()" (stdlib/random.ml[199,6857+10]..[199,6857+12])
+            None
+          expression (stdlib/random.ml[199,6857+15]..[199,6857+54])
+            Pexp_apply
+            expression (stdlib/random.ml[199,6857+15]..[199,6857+26])
+              Pexp_ident "State.split" (stdlib/random.ml[199,6857+15]..[199,6857+26])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[199,6857+27]..[199,6857+54])
+                  Pexp_apply
+                  expression (stdlib/random.ml[199,6857+28]..[199,6857+42])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[199,6857+28]..[199,6857+42])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[199,6857+43]..[199,6857+53])
+                        Pexp_ident "random_key" (stdlib/random.ml[199,6857+43]..[199,6857+53])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/random.ml[203,6952+0]..[203,6952+57])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[203,6952+4]..[203,6952+13])
+          Ppat_var "get_state" (stdlib/random.ml[203,6952+4]..[203,6952+13])
+        expression (stdlib/random.ml[203,6952+14]..[203,6952+57]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[203,6952+14]..[203,6952+16])
+            Ppat_construct "()" (stdlib/random.ml[203,6952+14]..[203,6952+16])
+            None
+          expression (stdlib/random.ml[203,6952+19]..[203,6952+57])
+            Pexp_apply
+            expression (stdlib/random.ml[203,6952+19]..[203,6952+29])
+              Pexp_ident "State.copy" (stdlib/random.ml[203,6952+19]..[203,6952+29])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[203,6952+30]..[203,6952+57])
+                  Pexp_apply
+                  expression (stdlib/random.ml[203,6952+31]..[203,6952+45])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[203,6952+31]..[203,6952+45])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[203,6952+46]..[203,6952+56])
+                        Pexp_ident "random_key" (stdlib/random.ml[203,6952+46]..[203,6952+56])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/random.ml[204,7010+0]..[204,7010+60])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/random.ml[204,7010+4]..[204,7010+13])
+          Ppat_var "set_state" (stdlib/random.ml[204,7010+4]..[204,7010+13])
+        expression (stdlib/random.ml[204,7010+14]..[204,7010+60]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/random.ml[204,7010+14]..[204,7010+15])
+            Ppat_var "s" (stdlib/random.ml[204,7010+14]..[204,7010+15])
+          expression (stdlib/random.ml[204,7010+18]..[204,7010+60])
+            Pexp_apply
+            expression (stdlib/random.ml[204,7010+18]..[204,7010+30])
+              Pexp_ident "State.assign" (stdlib/random.ml[204,7010+18]..[204,7010+30])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[204,7010+31]..[204,7010+58])
+                  Pexp_apply
+                  expression (stdlib/random.ml[204,7010+32]..[204,7010+46])
+                    Pexp_ident "Domain.DLS.get" (stdlib/random.ml[204,7010+32]..[204,7010+46])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/random.ml[204,7010+47]..[204,7010+57])
+                        Pexp_ident "random_key" (stdlib/random.ml[204,7010+47]..[204,7010+57])
+                  ]
+              <arg>
+              Nolabel
+                expression (stdlib/random.ml[204,7010+59]..[204,7010+60])
+                  Pexp_ident "s" (stdlib/random.ml[204,7010+59]..[204,7010+60])
+            ]
+    ]
+]
+

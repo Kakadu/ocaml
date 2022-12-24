@@ -1,0 +1,514 @@
+[
+  structure_item (stdlib/lazy.ml[50,2292+0]..[50,2292+33])
+    Pstr_type Rec
+    [
+      type_declaration "t" (stdlib/lazy.ml[50,2292+8]..[50,2292+9]) (stdlib/lazy.ml[50,2292+0]..[50,2292+33])
+        ptype_params =
+          [
+            core_type (stdlib/lazy.ml[50,2292+5]..[50,2292+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (stdlib/lazy.ml[50,2292+12]..[50,2292+33])
+              Ptyp_constr "CamlinternalLazy.t" (stdlib/lazy.ml[50,2292+15]..[50,2292+33])
+              [
+                core_type (stdlib/lazy.ml[50,2292+12]..[50,2292+14])
+                  Ptyp_var a
+              ]
+    ]
+  structure_item (stdlib/lazy.ml[52,2327+0]..[52,2327+48])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (stdlib/lazy.ml[52,2327+0]..[52,2327+48])
+          pext_name = "Undefined"
+          pext_kind =
+            Pext_rebind
+              "CamlinternalLazy.Undefined" (stdlib/lazy.ml[52,2327+22]..[52,2327+48])
+  structure_item (stdlib/lazy.ml[53,2376+0]..[53,2376+66])
+    Pstr_primitive
+    value_description "make_forward" (stdlib/lazy.ml[53,2376+9]..[53,2376+21]) (stdlib/lazy.ml[53,2376+0]..[53,2376+66])
+      core_type (stdlib/lazy.ml[53,2376+24]..[53,2376+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/lazy.ml[53,2376+24]..[53,2376+26])
+          Ptyp_var a
+        core_type (stdlib/lazy.ml[53,2376+30]..[53,2376+39])
+          Ptyp_constr "lazy_t" (stdlib/lazy.ml[53,2376+33]..[53,2376+39])
+          [
+            core_type (stdlib/lazy.ml[53,2376+30]..[53,2376+32])
+              Ptyp_var a
+          ]
+      [
+        "caml_lazy_make_forward"
+      ]
+  structure_item (stdlib/lazy.ml[54,2443+0]..[54,2443+43])
+    Pstr_primitive
+    value_description "force" (stdlib/lazy.ml[54,2443+9]..[54,2443+14]) (stdlib/lazy.ml[54,2443+0]..[54,2443+43])
+      core_type (stdlib/lazy.ml[54,2443+17]..[54,2443+27])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/lazy.ml[54,2443+17]..[54,2443+21])
+          Ptyp_constr "t" (stdlib/lazy.ml[54,2443+20]..[54,2443+21])
+          [
+            core_type (stdlib/lazy.ml[54,2443+17]..[54,2443+19])
+              Ptyp_var a
+          ]
+        core_type (stdlib/lazy.ml[54,2443+25]..[54,2443+27])
+          Ptyp_var a
+      [
+        "%lazy_force"
+      ]
+  structure_item (stdlib/lazy.ml[56,2488+0]..[56,2488+61])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/lazy.ml[56,2488+4]..[56,2488+13])
+          Ppat_var "force_val" (stdlib/lazy.ml[56,2488+4]..[56,2488+13])
+        expression (stdlib/lazy.ml[56,2488+14]..[56,2488+61]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/lazy.ml[56,2488+14]..[56,2488+15])
+            Ppat_var "l" (stdlib/lazy.ml[56,2488+14]..[56,2488+15])
+          expression (stdlib/lazy.ml[56,2488+18]..[56,2488+61])
+            Pexp_apply
+            expression (stdlib/lazy.ml[56,2488+18]..[56,2488+44])
+              Pexp_ident "CamlinternalLazy.force_gen" (stdlib/lazy.ml[56,2488+18]..[56,2488+44])
+            [
+              <arg>
+              Labelled "only_val"
+                expression (stdlib/lazy.ml[56,2488+55]..[56,2488+59])
+                  Pexp_construct "true" (stdlib/lazy.ml[56,2488+55]..[56,2488+59])
+                  None
+              <arg>
+              Nolabel
+                expression (stdlib/lazy.ml[56,2488+60]..[56,2488+61])
+                  Pexp_ident "l" (stdlib/lazy.ml[56,2488+60]..[56,2488+61])
+            ]
+    ]
+  structure_item (stdlib/lazy.ml[58,2551+0]..[61,2661+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/lazy.ml[58,2551+4]..[58,2551+12])
+          Ppat_var "from_fun" (stdlib/lazy.ml[58,2551+4]..[58,2551+12])
+        expression (stdlib/lazy.ml[58,2551+13]..[61,2661+22]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/lazy.ml[58,2551+13]..[58,2551+31])
+            Ppat_constraint
+            pattern (stdlib/lazy.ml[58,2551+14]..[58,2551+15])
+              Ppat_var "f" (stdlib/lazy.ml[58,2551+14]..[58,2551+15])
+            core_type (stdlib/lazy.ml[58,2551+18]..[58,2551+30])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/lazy.ml[58,2551+18]..[58,2551+22])
+                Ptyp_constr "unit" (stdlib/lazy.ml[58,2551+18]..[58,2551+22])
+                []
+              core_type (stdlib/lazy.ml[58,2551+26]..[58,2551+30])
+                Ptyp_var arg
+          expression (stdlib/lazy.ml[59,2585+2]..[61,2661+22])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (stdlib/lazy.ml[59,2585+6]..[59,2585+7])
+                  Ppat_var "x" (stdlib/lazy.ml[59,2585+6]..[59,2585+7])
+                expression (stdlib/lazy.ml[59,2585+10]..[59,2585+38])
+                  Pexp_apply
+                  expression (stdlib/lazy.ml[59,2585+10]..[59,2585+23])
+                    Pexp_ident "Obj.new_block" (stdlib/lazy.ml[59,2585+10]..[59,2585+23])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/lazy.ml[59,2585+24]..[59,2585+36])
+                        Pexp_ident "Obj.lazy_tag" (stdlib/lazy.ml[59,2585+24]..[59,2585+36])
+                    <arg>
+                    Nolabel
+                      expression (stdlib/lazy.ml[59,2585+37]..[59,2585+38])
+                        Pexp_constant PConst_int (1,None)
+                  ]
+            ]
+            expression (stdlib/lazy.ml[60,2627+2]..[61,2661+22])
+              Pexp_sequence
+              expression (stdlib/lazy.ml[60,2627+2]..[60,2627+32])
+                Pexp_apply
+                expression (stdlib/lazy.ml[60,2627+2]..[60,2627+15])
+                  Pexp_ident "Obj.set_field" (stdlib/lazy.ml[60,2627+2]..[60,2627+15])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/lazy.ml[60,2627+16]..[60,2627+17])
+                      Pexp_ident "x" (stdlib/lazy.ml[60,2627+16]..[60,2627+17])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/lazy.ml[60,2627+18]..[60,2627+19])
+                      Pexp_constant PConst_int (0,None)
+                  <arg>
+                  Nolabel
+                    expression (stdlib/lazy.ml[60,2627+20]..[60,2627+32])
+                      Pexp_apply
+                      expression (stdlib/lazy.ml[60,2627+21]..[60,2627+29])
+                        Pexp_ident "Obj.repr" (stdlib/lazy.ml[60,2627+21]..[60,2627+29])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/lazy.ml[60,2627+30]..[60,2627+31])
+                            Pexp_ident "f" (stdlib/lazy.ml[60,2627+30]..[60,2627+31])
+                      ]
+                ]
+              expression (stdlib/lazy.ml[61,2661+2]..[61,2661+22])
+                Pexp_constraint
+                expression (stdlib/lazy.ml[61,2661+3]..[61,2661+12])
+                  Pexp_apply
+                  expression (stdlib/lazy.ml[61,2661+3]..[61,2661+10])
+                    Pexp_ident "Obj.obj" (stdlib/lazy.ml[61,2661+3]..[61,2661+10])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/lazy.ml[61,2661+11]..[61,2661+12])
+                        Pexp_ident "x" (stdlib/lazy.ml[61,2661+11]..[61,2661+12])
+                  ]
+                core_type (stdlib/lazy.ml[61,2661+15]..[61,2661+21])
+                  Ptyp_constr "t" (stdlib/lazy.ml[61,2661+20]..[61,2661+21])
+                  [
+                    core_type (stdlib/lazy.ml[61,2661+15]..[61,2661+19])
+                      Ptyp_var arg
+                  ]
+    ]
+  structure_item (stdlib/lazy.ml[63,2685+0]..[70,2914+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/lazy.ml[63,2685+4]..[63,2685+12])
+          Ppat_var "from_val" (stdlib/lazy.ml[63,2685+4]..[63,2685+12])
+        expression (stdlib/lazy.ml[63,2685+13]..[70,2914+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/lazy.ml[63,2685+13]..[63,2685+23])
+            Ppat_constraint
+            pattern (stdlib/lazy.ml[63,2685+14]..[63,2685+15])
+              Ppat_var "v" (stdlib/lazy.ml[63,2685+14]..[63,2685+15])
+            core_type (stdlib/lazy.ml[63,2685+18]..[63,2685+22])
+              Ptyp_var arg
+          expression (stdlib/lazy.ml[64,2711+2]..[70,2914+5])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (stdlib/lazy.ml[64,2711+6]..[64,2711+7])
+                  Ppat_var "t" (stdlib/lazy.ml[64,2711+6]..[64,2711+7])
+                expression (stdlib/lazy.ml[64,2711+10]..[64,2711+30])
+                  Pexp_apply
+                  expression (stdlib/lazy.ml[64,2711+10]..[64,2711+17])
+                    Pexp_ident "Obj.tag" (stdlib/lazy.ml[64,2711+10]..[64,2711+17])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/lazy.ml[64,2711+18]..[64,2711+30])
+                        Pexp_apply
+                        expression (stdlib/lazy.ml[64,2711+19]..[64,2711+27])
+                          Pexp_ident "Obj.repr" (stdlib/lazy.ml[64,2711+19]..[64,2711+27])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/lazy.ml[64,2711+28]..[64,2711+29])
+                              Pexp_ident "v" (stdlib/lazy.ml[64,2711+28]..[64,2711+29])
+                        ]
+                  ]
+            ]
+            expression (stdlib/lazy.ml[65,2745+2]..[70,2914+5])
+              Pexp_ifthenelse
+              expression (stdlib/lazy.ml[65,2745+5]..[66,2793+46])
+                Pexp_apply
+                expression (stdlib/lazy.ml[65,2745+25]..[65,2745+27])
+                  Pexp_ident "||" (stdlib/lazy.ml[65,2745+25]..[65,2745+27])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/lazy.ml[65,2745+5]..[65,2745+24])
+                      Pexp_apply
+                      expression (stdlib/lazy.ml[65,2745+7]..[65,2745+8])
+                        Pexp_ident "=" (stdlib/lazy.ml[65,2745+7]..[65,2745+8])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/lazy.ml[65,2745+5]..[65,2745+6])
+                            Pexp_ident "t" (stdlib/lazy.ml[65,2745+5]..[65,2745+6])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/lazy.ml[65,2745+9]..[65,2745+24])
+                            Pexp_ident "Obj.forward_tag" (stdlib/lazy.ml[65,2745+9]..[65,2745+24])
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (stdlib/lazy.ml[65,2745+28]..[66,2793+46])
+                      Pexp_apply
+                      expression (stdlib/lazy.ml[65,2745+45]..[65,2745+47])
+                        Pexp_ident "||" (stdlib/lazy.ml[65,2745+45]..[65,2745+47])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/lazy.ml[65,2745+28]..[65,2745+44])
+                            Pexp_apply
+                            expression (stdlib/lazy.ml[65,2745+30]..[65,2745+31])
+                              Pexp_ident "=" (stdlib/lazy.ml[65,2745+30]..[65,2745+31])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/lazy.ml[65,2745+28]..[65,2745+29])
+                                  Pexp_ident "t" (stdlib/lazy.ml[65,2745+28]..[65,2745+29])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/lazy.ml[65,2745+32]..[65,2745+44])
+                                  Pexp_ident "Obj.lazy_tag" (stdlib/lazy.ml[65,2745+32]..[65,2745+44])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (stdlib/lazy.ml[66,2793+5]..[66,2793+46])
+                            Pexp_apply
+                            expression (stdlib/lazy.ml[66,2793+25]..[66,2793+27])
+                              Pexp_ident "||" (stdlib/lazy.ml[66,2793+25]..[66,2793+27])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/lazy.ml[66,2793+5]..[66,2793+24])
+                                  Pexp_apply
+                                  expression (stdlib/lazy.ml[66,2793+7]..[66,2793+8])
+                                    Pexp_ident "=" (stdlib/lazy.ml[66,2793+7]..[66,2793+8])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/lazy.ml[66,2793+5]..[66,2793+6])
+                                        Pexp_ident "t" (stdlib/lazy.ml[66,2793+5]..[66,2793+6])
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/lazy.ml[66,2793+9]..[66,2793+24])
+                                        Pexp_ident "Obj.forcing_tag" (stdlib/lazy.ml[66,2793+9]..[66,2793+24])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (stdlib/lazy.ml[66,2793+28]..[66,2793+46])
+                                  Pexp_apply
+                                  expression (stdlib/lazy.ml[66,2793+30]..[66,2793+31])
+                                    Pexp_ident "=" (stdlib/lazy.ml[66,2793+30]..[66,2793+31])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/lazy.ml[66,2793+28]..[66,2793+29])
+                                        Pexp_ident "t" (stdlib/lazy.ml[66,2793+28]..[66,2793+29])
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/lazy.ml[66,2793+32]..[66,2793+46])
+                                        Pexp_ident "Obj.double_tag" (stdlib/lazy.ml[66,2793+32]..[66,2793+46])
+                                  ]
+                            ]
+                      ]
+                ]
+              expression (stdlib/lazy.ml[66,2793+52]..[68,2870+5])
+                Pexp_apply
+                expression (stdlib/lazy.ml[67,2851+4]..[67,2851+16])
+                  Pexp_ident "make_forward" (stdlib/lazy.ml[67,2851+4]..[67,2851+16])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/lazy.ml[67,2851+17]..[67,2851+18])
+                      Pexp_ident "v" (stdlib/lazy.ml[67,2851+17]..[67,2851+18])
+                ]
+              Some
+                expression (stdlib/lazy.ml[68,2870+11]..[70,2914+5])
+                  Pexp_constraint
+                  expression (stdlib/lazy.ml[69,2887+5]..[69,2887+16])
+                    Pexp_apply
+                    expression (stdlib/lazy.ml[69,2887+5]..[69,2887+14])
+                      Pexp_ident "Obj.magic" (stdlib/lazy.ml[69,2887+5]..[69,2887+14])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/lazy.ml[69,2887+15]..[69,2887+16])
+                          Pexp_ident "v" (stdlib/lazy.ml[69,2887+15]..[69,2887+16])
+                    ]
+                  core_type (stdlib/lazy.ml[69,2887+19]..[69,2887+25])
+                    Ptyp_constr "t" (stdlib/lazy.ml[69,2887+24]..[69,2887+25])
+                    [
+                      core_type (stdlib/lazy.ml[69,2887+19]..[69,2887+23])
+                        Ptyp_var arg
+                    ]
+    ]
+  structure_item (stdlib/lazy.ml[72,2921+0]..[72,2921+62])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/lazy.ml[72,2921+4]..[72,2921+10])
+          Ppat_var "is_val" (stdlib/lazy.ml[72,2921+4]..[72,2921+10])
+        expression (stdlib/lazy.ml[72,2921+11]..[72,2921+62]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/lazy.ml[72,2921+11]..[72,2921+23])
+            Ppat_constraint
+            pattern (stdlib/lazy.ml[72,2921+12]..[72,2921+13])
+              Ppat_var "l" (stdlib/lazy.ml[72,2921+12]..[72,2921+13])
+            core_type (stdlib/lazy.ml[72,2921+16]..[72,2921+22])
+              Ptyp_constr "t" (stdlib/lazy.ml[72,2921+21]..[72,2921+22])
+              [
+                core_type (stdlib/lazy.ml[72,2921+16]..[72,2921+20])
+                  Ptyp_var arg
+              ]
+          expression (stdlib/lazy.ml[72,2921+26]..[72,2921+62])
+            Pexp_apply
+            expression (stdlib/lazy.ml[72,2921+47]..[72,2921+49])
+              Pexp_ident "<>" (stdlib/lazy.ml[72,2921+47]..[72,2921+49])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/lazy.ml[72,2921+26]..[72,2921+46])
+                  Pexp_apply
+                  expression (stdlib/lazy.ml[72,2921+26]..[72,2921+33])
+                    Pexp_ident "Obj.tag" (stdlib/lazy.ml[72,2921+26]..[72,2921+33])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/lazy.ml[72,2921+34]..[72,2921+46])
+                        Pexp_apply
+                        expression (stdlib/lazy.ml[72,2921+35]..[72,2921+43])
+                          Pexp_ident "Obj.repr" (stdlib/lazy.ml[72,2921+35]..[72,2921+43])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/lazy.ml[72,2921+44]..[72,2921+45])
+                              Pexp_ident "l" (stdlib/lazy.ml[72,2921+44]..[72,2921+45])
+                        ]
+                  ]
+              <arg>
+              Nolabel
+                expression (stdlib/lazy.ml[72,2921+50]..[72,2921+62])
+                  Pexp_ident "Obj.lazy_tag" (stdlib/lazy.ml[72,2921+50]..[72,2921+62])
+            ]
+    ]
+  structure_item (stdlib/lazy.ml[74,2985+0]..[75,2999+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/lazy.ml[74,2985+4]..[74,2985+7])
+          Ppat_var "map" (stdlib/lazy.ml[74,2985+4]..[74,2985+7])
+        expression (stdlib/lazy.ml[74,2985+8]..[75,2999+20]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/lazy.ml[74,2985+8]..[74,2985+9])
+            Ppat_var "f" (stdlib/lazy.ml[74,2985+8]..[74,2985+9])
+          expression (stdlib/lazy.ml[74,2985+10]..[75,2999+20]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/lazy.ml[74,2985+10]..[74,2985+11])
+              Ppat_var "x" (stdlib/lazy.ml[74,2985+10]..[74,2985+11])
+            expression (stdlib/lazy.ml[75,2999+2]..[75,2999+20])
+              Pexp_lazy
+              expression (stdlib/lazy.ml[75,2999+7]..[75,2999+20])
+                Pexp_apply
+                expression (stdlib/lazy.ml[75,2999+8]..[75,2999+9])
+                  Pexp_ident "f" (stdlib/lazy.ml[75,2999+8]..[75,2999+9])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/lazy.ml[75,2999+10]..[75,2999+19])
+                      Pexp_apply
+                      expression (stdlib/lazy.ml[75,2999+11]..[75,2999+16])
+                        Pexp_ident "force" (stdlib/lazy.ml[75,2999+11]..[75,2999+16])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/lazy.ml[75,2999+17]..[75,2999+18])
+                            Pexp_ident "x" (stdlib/lazy.ml[75,2999+17]..[75,2999+18])
+                      ]
+                ]
+    ]
+  structure_item (stdlib/lazy.ml[77,3021+0]..[80,3083+25])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/lazy.ml[77,3021+4]..[77,3021+11])
+          Ppat_var "map_val" (stdlib/lazy.ml[77,3021+4]..[77,3021+11])
+        expression (stdlib/lazy.ml[77,3021+12]..[80,3083+25]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/lazy.ml[77,3021+12]..[77,3021+13])
+            Ppat_var "f" (stdlib/lazy.ml[77,3021+12]..[77,3021+13])
+          expression (stdlib/lazy.ml[77,3021+14]..[80,3083+25]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/lazy.ml[77,3021+14]..[77,3021+15])
+              Ppat_var "x" (stdlib/lazy.ml[77,3021+14]..[77,3021+15])
+            expression (stdlib/lazy.ml[78,3039+2]..[80,3083+25])
+              Pexp_ifthenelse
+              expression (stdlib/lazy.ml[78,3039+5]..[78,3039+13])
+                Pexp_apply
+                expression (stdlib/lazy.ml[78,3039+5]..[78,3039+11])
+                  Pexp_ident "is_val" (stdlib/lazy.ml[78,3039+5]..[78,3039+11])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/lazy.ml[78,3039+12]..[78,3039+13])
+                      Pexp_ident "x" (stdlib/lazy.ml[78,3039+12]..[78,3039+13])
+                ]
+              expression (stdlib/lazy.ml[79,3053+7]..[79,3053+29])
+                Pexp_apply
+                expression (stdlib/lazy.ml[79,3053+7]..[79,3053+15])
+                  Pexp_ident "from_val" (stdlib/lazy.ml[79,3053+7]..[79,3053+15])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/lazy.ml[79,3053+16]..[79,3053+29])
+                      Pexp_apply
+                      expression (stdlib/lazy.ml[79,3053+17]..[79,3053+18])
+                        Pexp_ident "f" (stdlib/lazy.ml[79,3053+17]..[79,3053+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/lazy.ml[79,3053+19]..[79,3053+28])
+                            Pexp_apply
+                            expression (stdlib/lazy.ml[79,3053+20]..[79,3053+25])
+                              Pexp_ident "force" (stdlib/lazy.ml[79,3053+20]..[79,3053+25])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/lazy.ml[79,3053+26]..[79,3053+27])
+                                  Pexp_ident "x" (stdlib/lazy.ml[79,3053+26]..[79,3053+27])
+                            ]
+                      ]
+                ]
+              Some
+                expression (stdlib/lazy.ml[80,3083+7]..[80,3083+25])
+                  Pexp_lazy
+                  expression (stdlib/lazy.ml[80,3083+12]..[80,3083+25])
+                    Pexp_apply
+                    expression (stdlib/lazy.ml[80,3083+13]..[80,3083+14])
+                      Pexp_ident "f" (stdlib/lazy.ml[80,3083+13]..[80,3083+14])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/lazy.ml[80,3083+15]..[80,3083+24])
+                          Pexp_apply
+                          expression (stdlib/lazy.ml[80,3083+16]..[80,3083+21])
+                            Pexp_ident "force" (stdlib/lazy.ml[80,3083+16]..[80,3083+21])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/lazy.ml[80,3083+22]..[80,3083+23])
+                                Pexp_ident "x" (stdlib/lazy.ml[80,3083+22]..[80,3083+23])
+                          ]
+                    ]
+    ]
+]
+

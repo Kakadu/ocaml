@@ -1,0 +1,380 @@
+[
+  structure_item (testsuite/tests/lib-str/parallel.ml[8,55+0]..[8,55+25])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-str/parallel.ml[8,55+4]..[8,55+9])
+          Ppat_var "total" (testsuite/tests/lib-str/parallel.ml[8,55+4]..[8,55+9])
+        expression (testsuite/tests/lib-str/parallel.ml[8,55+12]..[8,55+25])
+          Pexp_apply
+          expression (testsuite/tests/lib-str/parallel.ml[8,55+12]..[8,55+23])
+            Pexp_ident "Atomic.make" (testsuite/tests/lib-str/parallel.ml[8,55+12]..[8,55+23])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-str/parallel.ml[8,55+24]..[8,55+25])
+                Pexp_constant PConst_int (0,None)
+          ]
+    ]
+  structure_item (testsuite/tests/lib-str/parallel.ml[10,82+0]..[20,406+25])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-str/parallel.ml[10,82+4]..[10,82+7])
+          Ppat_var "run" (testsuite/tests/lib-str/parallel.ml[10,82+4]..[10,82+7])
+        expression (testsuite/tests/lib-str/parallel.ml[10,82+8]..[20,406+25]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-str/parallel.ml[10,82+8]..[10,82+11])
+            Ppat_var "str" (testsuite/tests/lib-str/parallel.ml[10,82+8]..[10,82+11])
+          expression (testsuite/tests/lib-str/parallel.ml[10,82+12]..[20,406+25]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/lib-str/parallel.ml[10,82+12]..[10,82+14])
+              Ppat_construct "()" (testsuite/tests/lib-str/parallel.ml[10,82+12]..[10,82+14])
+              None
+            expression (testsuite/tests/lib-str/parallel.ml[11,99+2]..[20,406+25])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/lib-str/parallel.ml[11,99+6]..[11,99+8])
+                    Ppat_var "re" (testsuite/tests/lib-str/parallel.ml[11,99+6]..[11,99+8])
+                  expression (testsuite/tests/lib-str/parallel.ml[11,99+11]..[11,99+25])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-str/parallel.ml[11,99+11]..[11,99+21])
+                      Pexp_ident "Str.regexp" (testsuite/tests/lib-str/parallel.ml[11,99+11]..[11,99+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[11,99+22]..[11,99+25])
+                          Pexp_ident "str" (testsuite/tests/lib-str/parallel.ml[11,99+22]..[11,99+25])
+                    ]
+              ]
+              expression (testsuite/tests/lib-str/parallel.ml[12,128+2]..[20,406+25])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/lib-str/parallel.ml[12,128+6]..[12,128+11])
+                      Ppat_var "input" (testsuite/tests/lib-str/parallel.ml[12,128+6]..[12,128+11])
+                    expression (testsuite/tests/lib-str/parallel.ml[12,128+14]..[12,128+58])
+                      Pexp_constant PConst_string("The quick brown fox jumped over the lazy_t",(testsuite/tests/lib-str/parallel.ml[12,128+15]..[12,128+57]),None)
+                ]
+                expression (testsuite/tests/lib-str/parallel.ml[13,190+2]..[20,406+25])
+                  Pexp_match
+                  expression (testsuite/tests/lib-str/parallel.ml[13,190+8]..[13,190+37])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-str/parallel.ml[13,190+8]..[13,190+26])
+                      Pexp_ident "Str.search_forward" (testsuite/tests/lib-str/parallel.ml[13,190+8]..[13,190+26])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[13,190+27]..[13,190+29])
+                          Pexp_ident "re" (testsuite/tests/lib-str/parallel.ml[13,190+27]..[13,190+29])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[13,190+30]..[13,190+35])
+                          Pexp_ident "input" (testsuite/tests/lib-str/parallel.ml[13,190+30]..[13,190+35])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[13,190+36]..[13,190+37])
+                          Pexp_constant PConst_int (0,None)
+                    ]
+                  [
+                    <case>
+                      pattern (testsuite/tests/lib-str/parallel.ml[14,233+4]..[14,233+23])
+                        Ppat_exception
+                        pattern (testsuite/tests/lib-str/parallel.ml[14,233+14]..[14,233+23])
+                          Ppat_construct "Not_found" (testsuite/tests/lib-str/parallel.ml[14,233+14]..[14,233+23])
+                          None
+                      expression (testsuite/tests/lib-str/parallel.ml[14,233+27]..[14,233+44])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-str/parallel.ml[14,233+27]..[14,233+38])
+                          Pexp_ident "Atomic.decr" (testsuite/tests/lib-str/parallel.ml[14,233+27]..[14,233+38])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-str/parallel.ml[14,233+39]..[14,233+44])
+                              Pexp_ident "total" (testsuite/tests/lib-str/parallel.ml[14,233+39]..[14,233+44])
+                        ]
+                    <case>
+                      pattern (testsuite/tests/lib-str/parallel.ml[15,278+4]..[15,278+5])
+                        Ppat_any
+                      expression (testsuite/tests/lib-str/parallel.ml[16,287+6]..[20,406+25])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (testsuite/tests/lib-str/parallel.ml[16,287+10]..[16,287+11])
+                              Ppat_var "s" (testsuite/tests/lib-str/parallel.ml[16,287+10]..[16,287+11])
+                            expression (testsuite/tests/lib-str/parallel.ml[16,287+14]..[16,287+39])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-str/parallel.ml[16,287+14]..[16,287+31])
+                                Pexp_ident "Str.matched_group" (testsuite/tests/lib-str/parallel.ml[16,287+14]..[16,287+31])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-str/parallel.ml[16,287+32]..[16,287+33])
+                                    Pexp_constant PConst_int (0,None)
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-str/parallel.ml[16,287+34]..[16,287+39])
+                                    Pexp_ident "input" (testsuite/tests/lib-str/parallel.ml[16,287+34]..[16,287+39])
+                              ]
+                        ]
+                        expression (testsuite/tests/lib-str/parallel.ml[17,330+6]..[20,406+25])
+                          Pexp_ifthenelse
+                          expression (testsuite/tests/lib-str/parallel.ml[17,330+9]..[17,330+33])
+                            Pexp_apply
+                            expression (testsuite/tests/lib-str/parallel.ml[17,330+9]..[17,330+12])
+                              Pexp_ident "not" (testsuite/tests/lib-str/parallel.ml[17,330+9]..[17,330+12])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-str/parallel.ml[17,330+13]..[17,330+33])
+                                  Pexp_apply
+                                  expression (testsuite/tests/lib-str/parallel.ml[17,330+14]..[17,330+26])
+                                    Pexp_ident "String.equal" (testsuite/tests/lib-str/parallel.ml[17,330+14]..[17,330+26])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-str/parallel.ml[17,330+27]..[17,330+28])
+                                        Pexp_ident "s" (testsuite/tests/lib-str/parallel.ml[17,330+27]..[17,330+28])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-str/parallel.ml[17,330+29]..[17,330+32])
+                                        Pexp_ident "str" (testsuite/tests/lib-str/parallel.ml[17,330+29]..[17,330+32])
+                                  ]
+                            ]
+                          expression (testsuite/tests/lib-str/parallel.ml[18,369+8]..[18,369+25])
+                            Pexp_apply
+                            expression (testsuite/tests/lib-str/parallel.ml[18,369+8]..[18,369+19])
+                              Pexp_ident "Atomic.decr" (testsuite/tests/lib-str/parallel.ml[18,369+8]..[18,369+19])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/lib-str/parallel.ml[18,369+20]..[18,369+25])
+                                  Pexp_ident "total" (testsuite/tests/lib-str/parallel.ml[18,369+20]..[18,369+25])
+                            ]
+                          Some
+                            expression (testsuite/tests/lib-str/parallel.ml[20,406+8]..[20,406+25])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-str/parallel.ml[20,406+8]..[20,406+19])
+                                Pexp_ident "Atomic.incr" (testsuite/tests/lib-str/parallel.ml[20,406+8]..[20,406+19])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-str/parallel.ml[20,406+20]..[20,406+25])
+                                    Pexp_ident "total" (testsuite/tests/lib-str/parallel.ml[20,406+20]..[20,406+25])
+                              ]
+                  ]
+    ]
+  structure_item (testsuite/tests/lib-str/parallel.ml[22,433+0]..[39,1003+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-str/parallel.ml[22,433+4]..[22,433+5])
+          Ppat_any
+        expression (testsuite/tests/lib-str/parallel.ml[24,510+2]..[39,1003+22])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/lib-str/parallel.ml[24,510+6]..[24,510+19])
+                Ppat_var "domain_params" (testsuite/tests/lib-str/parallel.ml[24,510+6]..[24,510+19])
+              expression (testsuite/tests/lib-str/parallel.ml[24,510+22]..[25,544+68])
+                Pexp_apply
+                expression (testsuite/tests/lib-str/parallel.ml[24,510+22]..[24,510+31])
+                  Pexp_ident "List.init" (testsuite/tests/lib-str/parallel.ml[24,510+22]..[24,510+31])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-str/parallel.ml[24,510+32]..[24,510+33])
+                      Pexp_constant PConst_int (7,None)
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-str/parallel.ml[25,544+4]..[25,544+68])
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (testsuite/tests/lib-str/parallel.ml[25,544+9]..[25,544+10])
+                        Ppat_var "i" (testsuite/tests/lib-str/parallel.ml[25,544+9]..[25,544+10])
+                      expression (testsuite/tests/lib-str/parallel.ml[25,544+14]..[25,544+67])
+                        Pexp_ifthenelse
+                        expression (testsuite/tests/lib-str/parallel.ml[25,544+17]..[25,544+29])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-str/parallel.ml[25,544+25]..[25,544+27])
+                            Pexp_ident "==" (testsuite/tests/lib-str/parallel.ml[25,544+25]..[25,544+27])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-str/parallel.ml[25,544+17]..[25,544+24])
+                                Pexp_apply
+                                expression (testsuite/tests/lib-str/parallel.ml[25,544+19]..[25,544+22])
+                                  Pexp_ident "mod" (testsuite/tests/lib-str/parallel.ml[25,544+19]..[25,544+22])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-str/parallel.ml[25,544+17]..[25,544+18])
+                                      Pexp_ident "i" (testsuite/tests/lib-str/parallel.ml[25,544+17]..[25,544+18])
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-str/parallel.ml[25,544+23]..[25,544+24])
+                                      Pexp_constant PConst_int (2,None)
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-str/parallel.ml[25,544+28]..[25,544+29])
+                                Pexp_constant PConst_int (0,None)
+                          ]
+                        expression (testsuite/tests/lib-str/parallel.ml[25,544+35]..[25,544+47])
+                          Pexp_constant PConst_string("the lazy_t",(testsuite/tests/lib-str/parallel.ml[25,544+36]..[25,544+46]),None)
+                        Some
+                          expression (testsuite/tests/lib-str/parallel.ml[25,544+53]..[25,544+67])
+                            Pexp_constant PConst_string("the lazy dog",(testsuite/tests/lib-str/parallel.ml[25,544+54]..[25,544+66]),None)
+                ]
+          ]
+          expression (testsuite/tests/lib-str/parallel.ml[27,618+2]..[39,1003+22])
+            Pexp_sequence
+            expression (testsuite/tests/lib-str/parallel.ml[27,618+2]..[34,877+6])
+              Pexp_for Up
+              pattern (testsuite/tests/lib-str/parallel.ml[27,618+6]..[27,618+7])
+                Ppat_var "i" (testsuite/tests/lib-str/parallel.ml[27,618+6]..[27,618+7])
+              expression (testsuite/tests/lib-str/parallel.ml[27,618+10]..[27,618+11])
+                Pexp_constant PConst_int (0,None)
+              expression (testsuite/tests/lib-str/parallel.ml[27,618+15]..[27,618+16])
+                Pexp_constant PConst_int (3,None)
+              expression (testsuite/tests/lib-str/parallel.ml[28,638+4]..[33,843+33])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/lib-str/parallel.ml[28,638+8]..[28,638+15])
+                      Ppat_var "domains" (testsuite/tests/lib-str/parallel.ml[28,638+8]..[28,638+15])
+                    expression (testsuite/tests/lib-str/parallel.ml[29,656+6]..[29,656+68])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-str/parallel.ml[29,656+6]..[29,656+14])
+                        Pexp_ident "List.map" (testsuite/tests/lib-str/parallel.ml[29,656+6]..[29,656+14])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-str/parallel.ml[29,656+15]..[29,656+54])
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (testsuite/tests/lib-str/parallel.ml[29,656+20]..[29,656+25])
+                              Ppat_var "param" (testsuite/tests/lib-str/parallel.ml[29,656+20]..[29,656+25])
+                            expression (testsuite/tests/lib-str/parallel.ml[29,656+29]..[29,656+53])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-str/parallel.ml[29,656+29]..[29,656+41])
+                                Pexp_ident "Domain.spawn" (testsuite/tests/lib-str/parallel.ml[29,656+29]..[29,656+41])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-str/parallel.ml[29,656+42]..[29,656+53])
+                                    Pexp_apply
+                                    expression (testsuite/tests/lib-str/parallel.ml[29,656+43]..[29,656+46])
+                                      Pexp_ident "run" (testsuite/tests/lib-str/parallel.ml[29,656+43]..[29,656+46])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/lib-str/parallel.ml[29,656+47]..[29,656+52])
+                                          Pexp_ident "param" (testsuite/tests/lib-str/parallel.ml[29,656+47]..[29,656+52])
+                                    ]
+                              ]
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-str/parallel.ml[29,656+55]..[29,656+68])
+                            Pexp_ident "domain_params" (testsuite/tests/lib-str/parallel.ml[29,656+55]..[29,656+68])
+                      ]
+                ]
+                expression (testsuite/tests/lib-str/parallel.ml[32,816+4]..[33,843+33])
+                  Pexp_sequence
+                  expression (testsuite/tests/lib-str/parallel.ml[32,816+4]..[32,816+25])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-str/parallel.ml[32,816+4]..[32,816+7])
+                      Pexp_ident "run" (testsuite/tests/lib-str/parallel.ml[32,816+4]..[32,816+7])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[32,816+8]..[32,816+22])
+                          Pexp_constant PConst_string("the lazy dog",(testsuite/tests/lib-str/parallel.ml[32,816+9]..[32,816+21]),None)
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[32,816+23]..[32,816+25])
+                          Pexp_construct "()" (testsuite/tests/lib-str/parallel.ml[32,816+23]..[32,816+25])
+                          None
+                    ]
+                  expression (testsuite/tests/lib-str/parallel.ml[33,843+4]..[33,843+33])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-str/parallel.ml[33,843+4]..[33,843+13])
+                      Pexp_ident "List.iter" (testsuite/tests/lib-str/parallel.ml[33,843+4]..[33,843+13])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[33,843+14]..[33,843+25])
+                          Pexp_ident "Domain.join" (testsuite/tests/lib-str/parallel.ml[33,843+14]..[33,843+25])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[33,843+26]..[33,843+33])
+                          Pexp_ident "domains" (testsuite/tests/lib-str/parallel.ml[33,843+26]..[33,843+33])
+                    ]
+            expression (testsuite/tests/lib-str/parallel.ml[35,885+2]..[39,1003+22])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/lib-str/parallel.ml[35,885+6]..[35,885+12])
+                    Ppat_var "total'" (testsuite/tests/lib-str/parallel.ml[35,885+6]..[35,885+12])
+                  expression (testsuite/tests/lib-str/parallel.ml[35,885+15]..[35,885+31])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-str/parallel.ml[35,885+15]..[35,885+25])
+                      Pexp_ident "Atomic.get" (testsuite/tests/lib-str/parallel.ml[35,885+15]..[35,885+25])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[35,885+26]..[35,885+31])
+                          Pexp_ident "total" (testsuite/tests/lib-str/parallel.ml[35,885+26]..[35,885+31])
+                    ]
+              ]
+              expression (testsuite/tests/lib-str/parallel.ml[36,920+2]..[39,1003+22])
+                Pexp_ifthenelse
+                expression (testsuite/tests/lib-str/parallel.ml[36,920+5]..[36,920+16])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-str/parallel.ml[36,920+12]..[36,920+14])
+                    Pexp_ident "!=" (testsuite/tests/lib-str/parallel.ml[36,920+12]..[36,920+14])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-str/parallel.ml[36,920+5]..[36,920+11])
+                        Pexp_ident "total'" (testsuite/tests/lib-str/parallel.ml[36,920+5]..[36,920+11])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-str/parallel.ml[36,920+15]..[36,920+16])
+                        Pexp_constant PConst_int (0,None)
+                  ]
+                expression (testsuite/tests/lib-str/parallel.ml[37,942+4]..[37,942+53])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-str/parallel.ml[37,942+4]..[37,942+18])
+                    Pexp_ident "Printf.eprintf" (testsuite/tests/lib-str/parallel.ml[37,942+4]..[37,942+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-str/parallel.ml[37,942+19]..[37,942+46])
+                        Pexp_constant PConst_string("NOK: total is not 0: %d\n",(testsuite/tests/lib-str/parallel.ml[37,942+20]..[37,942+45]),None)
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-str/parallel.ml[37,942+47]..[37,942+53])
+                        Pexp_ident "total'" (testsuite/tests/lib-str/parallel.ml[37,942+47]..[37,942+53])
+                  ]
+                Some
+                  expression (testsuite/tests/lib-str/parallel.ml[39,1003+4]..[39,1003+22])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-str/parallel.ml[39,1003+4]..[39,1003+17])
+                      Pexp_ident "print_endline" (testsuite/tests/lib-str/parallel.ml[39,1003+4]..[39,1003+17])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-str/parallel.ml[39,1003+18]..[39,1003+22])
+                          Pexp_constant PConst_string("OK",(testsuite/tests/lib-str/parallel.ml[39,1003+19]..[39,1003+21]),None)
+                    ]
+    ]
+]
+

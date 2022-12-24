@@ -1,0 +1,2376 @@
+[
+  structure_item (testsuite/tests/tmc/ambiguities.ml[3,23+0]..[5,51+27])
+    Pstr_type Rec
+    [
+      type_declaration "tree" (testsuite/tests/tmc/ambiguities.ml[3,23+8]..[3,23+12]) (testsuite/tests/tmc/ambiguities.ml[3,23+0]..[5,51+27])
+        ptype_params =
+          [
+            core_type (testsuite/tests/tmc/ambiguities.ml[3,23+5]..[3,23+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (testsuite/tests/tmc/ambiguities.ml[4,38+0]..[4,38+12])
+                "Leaf" (testsuite/tests/tmc/ambiguities.ml[4,38+2]..[4,38+6])
+                [
+                  core_type (testsuite/tests/tmc/ambiguities.ml[4,38+10]..[4,38+12])
+                    Ptyp_var a
+                ]
+                None
+              (testsuite/tests/tmc/ambiguities.ml[5,51+0]..[5,51+27])
+                "Node" (testsuite/tests/tmc/ambiguities.ml[5,51+2]..[5,51+6])
+                [
+                  core_type (testsuite/tests/tmc/ambiguities.ml[5,51+10]..[5,51+17])
+                    Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[5,51+13]..[5,51+17])
+                    [
+                      core_type (testsuite/tests/tmc/ambiguities.ml[5,51+10]..[5,51+12])
+                        Ptyp_var a
+                    ]
+                  core_type (testsuite/tests/tmc/ambiguities.ml[5,51+20]..[5,51+27])
+                    Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[5,51+23]..[5,51+27])
+                    [
+                      core_type (testsuite/tests/tmc/ambiguities.ml[5,51+20]..[5,51+22])
+                        Ptyp_var a
+                    ]
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[6,79+0]..[8,145+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[6,79+9]..[8,145+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[6,79+9]..[8,145+2])
+          Pexp_constant PConst_string ("\ntype 'a tree = Leaf of 'a | Node of 'a tree * 'a tree\n",(testsuite/tests/tmc/ambiguities.ml[6,79+11]..[8,145+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[10,150+0]..[15,305+3])
+    Pstr_module
+    "Ambiguous" (testsuite/tests/tmc/ambiguities.ml[10,150+7]..[10,150+16])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[10,150+19]..[15,305+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[11,176+2]..[14,270+34])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[11,176+26]..[11,176+29])
+                  Ppat_var "map" (testsuite/tests/tmc/ambiguities.ml[11,176+26]..[11,176+29])
+                expression (testsuite/tests/tmc/ambiguities.ml[11,176+30]..[14,270+34]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[11,176+30]..[11,176+31])
+                    Ppat_var "f" (testsuite/tests/tmc/ambiguities.ml[11,176+30]..[11,176+31])
+                  expression (testsuite/tests/tmc/ambiguities.ml[11,176+34]..[14,270+34])
+                    Pexp_function
+                    [
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[12,219+4]..[12,219+10])
+                          Ppat_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[12,219+4]..[12,219+8])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[12,219+9]..[12,219+10])
+                              Ppat_var "v" (testsuite/tests/tmc/ambiguities.ml[12,219+9]..[12,219+10])
+                        expression (testsuite/tests/tmc/ambiguities.ml[12,219+14]..[12,219+24])
+                          Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[12,219+14]..[12,219+18])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[12,219+19]..[12,219+24])
+                              Pexp_apply
+                              expression (testsuite/tests/tmc/ambiguities.ml[12,219+20]..[12,219+21])
+                                Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[12,219+20]..[12,219+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/tmc/ambiguities.ml[12,219+22]..[12,219+23])
+                                    Pexp_ident "v" (testsuite/tests/tmc/ambiguities.ml[12,219+22]..[12,219+23])
+                              ]
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[13,244+4]..[13,244+22])
+                          Ppat_construct "Node" (testsuite/tests/tmc/ambiguities.ml[13,244+4]..[13,244+8])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[13,244+9]..[13,244+22])
+                              Ppat_tuple
+                              [
+                                pattern (testsuite/tests/tmc/ambiguities.ml[13,244+10]..[13,244+14])
+                                  Ppat_var "left" (testsuite/tests/tmc/ambiguities.ml[13,244+10]..[13,244+14])
+                                pattern (testsuite/tests/tmc/ambiguities.ml[13,244+16]..[13,244+21])
+                                  Ppat_var "right" (testsuite/tests/tmc/ambiguities.ml[13,244+16]..[13,244+21])
+                              ]
+                        expression (testsuite/tests/tmc/ambiguities.ml[14,270+4]..[14,270+34])
+                          Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[14,270+4]..[14,270+8])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[14,270+9]..[14,270+34])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/ambiguities.ml[14,270+10]..[14,270+20])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[14,270+10]..[14,270+13])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[14,270+10]..[14,270+13])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[14,270+14]..[14,270+15])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[14,270+14]..[14,270+15])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[14,270+16]..[14,270+20])
+                                        Pexp_ident "left" (testsuite/tests/tmc/ambiguities.ml[14,270+16]..[14,270+20])
+                                  ]
+                                expression (testsuite/tests/tmc/ambiguities.ml[14,270+22]..[14,270+33])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[14,270+22]..[14,270+25])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[14,270+22]..[14,270+25])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[14,270+26]..[14,270+27])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[14,270+26]..[14,270+27])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[14,270+28]..[14,270+33])
+                                        Pexp_ident "right" (testsuite/tests/tmc/ambiguities.ml[14,270+28]..[14,270+33])
+                                  ]
+                              ]
+                    ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[16,309+0]..[33,999+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[16,309+9]..[33,999+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[16,309+9]..[33,999+2])
+          Pexp_constant PConst_string ("\nLine 5, characters 4-34:\n5 |     Node (map f left, map f right)\n        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nError: [@tail_mod_cons]: this constructor application may be TMC-transformed\n       in several different ways. Please disambiguate by adding an explicit\n       [@tailcall] attribute to the call that should be made tail-recursive,\n       or a [@tailcall false] attribute on calls that should not be\n       transformed.\nLine 5, characters 10-20:\n5 |     Node (map f left, map f right)\n              ^^^^^^^^^^\n  This call could be annotated.\nLine 5, characters 22-33:\n5 |     Node (map f left, map f right)\n                          ^^^^^^^^^^^\n  This call could be annotated.\n",(testsuite/tests/tmc/ambiguities.ml[16,309+11]..[33,999+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[35,1004+0]..[40,1187+3])
+    Pstr_module
+    "Positive_disambiguation" (testsuite/tests/tmc/ambiguities.ml[35,1004+7]..[35,1004+30])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[35,1004+33]..[40,1187+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[36,1044+2]..[39,1138+48])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[36,1044+26]..[36,1044+29])
+                  Ppat_var "map" (testsuite/tests/tmc/ambiguities.ml[36,1044+26]..[36,1044+29])
+                expression (testsuite/tests/tmc/ambiguities.ml[36,1044+30]..[39,1138+48]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[36,1044+30]..[36,1044+31])
+                    Ppat_var "f" (testsuite/tests/tmc/ambiguities.ml[36,1044+30]..[36,1044+31])
+                  expression (testsuite/tests/tmc/ambiguities.ml[36,1044+34]..[39,1138+48])
+                    Pexp_function
+                    [
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[37,1087+4]..[37,1087+10])
+                          Ppat_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[37,1087+4]..[37,1087+8])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[37,1087+9]..[37,1087+10])
+                              Ppat_var "v" (testsuite/tests/tmc/ambiguities.ml[37,1087+9]..[37,1087+10])
+                        expression (testsuite/tests/tmc/ambiguities.ml[37,1087+14]..[37,1087+24])
+                          Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[37,1087+14]..[37,1087+18])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[37,1087+19]..[37,1087+24])
+                              Pexp_apply
+                              expression (testsuite/tests/tmc/ambiguities.ml[37,1087+20]..[37,1087+21])
+                                Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[37,1087+20]..[37,1087+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/tmc/ambiguities.ml[37,1087+22]..[37,1087+23])
+                                    Pexp_ident "v" (testsuite/tests/tmc/ambiguities.ml[37,1087+22]..[37,1087+23])
+                              ]
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[38,1112+4]..[38,1112+22])
+                          Ppat_construct "Node" (testsuite/tests/tmc/ambiguities.ml[38,1112+4]..[38,1112+8])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[38,1112+9]..[38,1112+22])
+                              Ppat_tuple
+                              [
+                                pattern (testsuite/tests/tmc/ambiguities.ml[38,1112+10]..[38,1112+14])
+                                  Ppat_var "left" (testsuite/tests/tmc/ambiguities.ml[38,1112+10]..[38,1112+14])
+                                pattern (testsuite/tests/tmc/ambiguities.ml[38,1112+16]..[38,1112+21])
+                                  Ppat_var "right" (testsuite/tests/tmc/ambiguities.ml[38,1112+16]..[38,1112+21])
+                              ]
+                        expression (testsuite/tests/tmc/ambiguities.ml[39,1138+4]..[39,1138+48])
+                          Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[39,1138+4]..[39,1138+8])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[39,1138+9]..[39,1138+48])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/ambiguities.ml[39,1138+10]..[39,1138+20])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[39,1138+10]..[39,1138+13])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[39,1138+10]..[39,1138+13])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[39,1138+14]..[39,1138+15])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[39,1138+14]..[39,1138+15])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[39,1138+16]..[39,1138+20])
+                                        Pexp_ident "left" (testsuite/tests/tmc/ambiguities.ml[39,1138+16]..[39,1138+20])
+                                  ]
+                                expression (testsuite/tests/tmc/ambiguities.ml[39,1138+22]..[39,1138+47])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[39,1138+22]..[39,1138+39])
+                                    attribute "tailcall"
+                                      []
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[39,1138+23]..[39,1138+26])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[39,1138+40]..[39,1138+41])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[39,1138+40]..[39,1138+41])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[39,1138+42]..[39,1138+47])
+                                        Pexp_ident "right" (testsuite/tests/tmc/ambiguities.ml[39,1138+42]..[39,1138+47])
+                                  ]
+                              ]
+                    ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[41,1191+0]..[44,1289+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[41,1191+9]..[44,1289+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[41,1191+9]..[44,1289+2])
+          Pexp_constant PConst_string ("\nmodule Positive_disambiguation :\n  sig val map : ('a -> 'b) -> 'a tree -> 'b tree end\n",(testsuite/tests/tmc/ambiguities.ml[41,1191+11]..[44,1289+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[46,1294+0]..[51,1483+3])
+    Pstr_module
+    "Negative_disambiguation" (testsuite/tests/tmc/ambiguities.ml[46,1294+7]..[46,1294+30])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[46,1294+33]..[51,1483+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[47,1334+2]..[50,1428+54])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[47,1334+26]..[47,1334+29])
+                  Ppat_var "map" (testsuite/tests/tmc/ambiguities.ml[47,1334+26]..[47,1334+29])
+                expression (testsuite/tests/tmc/ambiguities.ml[47,1334+30]..[50,1428+54]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[47,1334+30]..[47,1334+31])
+                    Ppat_var "f" (testsuite/tests/tmc/ambiguities.ml[47,1334+30]..[47,1334+31])
+                  expression (testsuite/tests/tmc/ambiguities.ml[47,1334+34]..[50,1428+54])
+                    Pexp_function
+                    [
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[48,1377+4]..[48,1377+10])
+                          Ppat_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[48,1377+4]..[48,1377+8])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[48,1377+9]..[48,1377+10])
+                              Ppat_var "v" (testsuite/tests/tmc/ambiguities.ml[48,1377+9]..[48,1377+10])
+                        expression (testsuite/tests/tmc/ambiguities.ml[48,1377+14]..[48,1377+24])
+                          Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[48,1377+14]..[48,1377+18])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[48,1377+19]..[48,1377+24])
+                              Pexp_apply
+                              expression (testsuite/tests/tmc/ambiguities.ml[48,1377+20]..[48,1377+21])
+                                Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[48,1377+20]..[48,1377+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/tmc/ambiguities.ml[48,1377+22]..[48,1377+23])
+                                    Pexp_ident "v" (testsuite/tests/tmc/ambiguities.ml[48,1377+22]..[48,1377+23])
+                              ]
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[49,1402+4]..[49,1402+22])
+                          Ppat_construct "Node" (testsuite/tests/tmc/ambiguities.ml[49,1402+4]..[49,1402+8])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[49,1402+9]..[49,1402+22])
+                              Ppat_tuple
+                              [
+                                pattern (testsuite/tests/tmc/ambiguities.ml[49,1402+10]..[49,1402+14])
+                                  Ppat_var "left" (testsuite/tests/tmc/ambiguities.ml[49,1402+10]..[49,1402+14])
+                                pattern (testsuite/tests/tmc/ambiguities.ml[49,1402+16]..[49,1402+21])
+                                  Ppat_var "right" (testsuite/tests/tmc/ambiguities.ml[49,1402+16]..[49,1402+21])
+                              ]
+                        expression (testsuite/tests/tmc/ambiguities.ml[50,1428+4]..[50,1428+54])
+                          Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[50,1428+4]..[50,1428+8])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[50,1428+9]..[50,1428+54])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/ambiguities.ml[50,1428+10]..[50,1428+40])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[50,1428+10]..[50,1428+33])
+                                    attribute "tailcall"
+                                      [
+                                        structure_item (testsuite/tests/tmc/ambiguities.ml[50,1428+26]..[50,1428+31])
+                                          Pstr_eval
+                                          expression (testsuite/tests/tmc/ambiguities.ml[50,1428+26]..[50,1428+31])
+                                            Pexp_construct "false" (testsuite/tests/tmc/ambiguities.ml[50,1428+26]..[50,1428+31])
+                                            None
+                                      ]
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[50,1428+11]..[50,1428+14])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[50,1428+34]..[50,1428+35])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[50,1428+34]..[50,1428+35])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[50,1428+36]..[50,1428+40])
+                                        Pexp_ident "left" (testsuite/tests/tmc/ambiguities.ml[50,1428+36]..[50,1428+40])
+                                  ]
+                                expression (testsuite/tests/tmc/ambiguities.ml[50,1428+42]..[50,1428+53])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[50,1428+42]..[50,1428+45])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[50,1428+42]..[50,1428+45])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[50,1428+46]..[50,1428+47])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[50,1428+46]..[50,1428+47])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[50,1428+48]..[50,1428+53])
+                                        Pexp_ident "right" (testsuite/tests/tmc/ambiguities.ml[50,1428+48]..[50,1428+53])
+                                  ]
+                              ]
+                    ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[52,1487+0]..[55,1585+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[52,1487+9]..[55,1585+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[52,1487+9]..[55,1585+2])
+          Pexp_constant PConst_string ("\nmodule Negative_disambiguation :\n  sig val map : ('a -> 'b) -> 'a tree -> 'b tree end\n",(testsuite/tests/tmc/ambiguities.ml[52,1487+11]..[55,1585+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[57,1590+0]..[74,2066+3])
+    Pstr_module
+    "Positive_and_negative_disambiguation" (testsuite/tests/tmc/ambiguities.ml[57,1590+7]..[57,1590+43])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[57,1590+46]..[74,2066+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[59,1676+2]..[61,1698+31])
+            Pstr_type Rec
+            [
+              type_declaration "t" (testsuite/tests/tmc/ambiguities.ml[59,1676+10]..[59,1676+11]) (testsuite/tests/tmc/ambiguities.ml[59,1676+2]..[61,1698+31])
+                ptype_params =
+                  [
+                    core_type (testsuite/tests/tmc/ambiguities.ml[59,1676+7]..[59,1676+9])
+                      Ptyp_var a
+                  ]
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_variant
+                    [
+                      (testsuite/tests/tmc/ambiguities.ml[60,1690+4]..[60,1690+7])
+                        "N" (testsuite/tests/tmc/ambiguities.ml[60,1690+6]..[60,1690+7])
+                        []
+                        None
+                      (testsuite/tests/tmc/ambiguities.ml[61,1698+4]..[61,1698+31])
+                        "C" (testsuite/tests/tmc/ambiguities.ml[61,1698+6]..[61,1698+7])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[61,1698+11]..[61,1698+15])
+                            Ptyp_constr "t" (testsuite/tests/tmc/ambiguities.ml[61,1698+14]..[61,1698+15])
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[61,1698+11]..[61,1698+13])
+                                Ptyp_var a
+                            ]
+                          core_type (testsuite/tests/tmc/ambiguities.ml[61,1698+19]..[61,1698+30])
+                            Ptyp_tuple
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[61,1698+19]..[61,1698+23])
+                                Ptyp_constr "t" (testsuite/tests/tmc/ambiguities.ml[61,1698+22]..[61,1698+23])
+                                [
+                                  core_type (testsuite/tests/tmc/ambiguities.ml[61,1698+19]..[61,1698+21])
+                                    Ptyp_var a
+                                ]
+                              core_type (testsuite/tests/tmc/ambiguities.ml[61,1698+26]..[61,1698+30])
+                                Ptyp_constr "t" (testsuite/tests/tmc/ambiguities.ml[61,1698+29]..[61,1698+30])
+                                [
+                                  core_type (testsuite/tests/tmc/ambiguities.ml[61,1698+26]..[61,1698+28])
+                                    Ptyp_var a
+                                ]
+                            ]
+                        ]
+                        None
+                    ]
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[63,1731+2]..[67,1821+76])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[63,1731+26]..[63,1731+30])
+                  Ppat_var "map1" (testsuite/tests/tmc/ambiguities.ml[63,1731+26]..[63,1731+30])
+                expression (testsuite/tests/tmc/ambiguities.ml[63,1731+31]..[67,1821+76]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[63,1731+31]..[63,1731+32])
+                    Ppat_var "f" (testsuite/tests/tmc/ambiguities.ml[63,1731+31]..[63,1731+32])
+                  expression (testsuite/tests/tmc/ambiguities.ml[63,1731+33]..[67,1821+76]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (testsuite/tests/tmc/ambiguities.ml[63,1731+33]..[63,1731+34])
+                      Ppat_var "l" (testsuite/tests/tmc/ambiguities.ml[63,1731+33]..[63,1731+34])
+                    expression (testsuite/tests/tmc/ambiguities.ml[64,1768+4]..[67,1821+76])
+                      Pexp_match
+                      expression (testsuite/tests/tmc/ambiguities.ml[64,1768+10]..[64,1768+11])
+                        Pexp_ident "l" (testsuite/tests/tmc/ambiguities.ml[64,1768+10]..[64,1768+11])
+                      [
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[65,1785+6]..[65,1785+7])
+                            Ppat_construct "N" (testsuite/tests/tmc/ambiguities.ml[65,1785+6]..[65,1785+7])
+                            None
+                          expression (testsuite/tests/tmc/ambiguities.ml[65,1785+11]..[65,1785+12])
+                            Pexp_construct "N" (testsuite/tests/tmc/ambiguities.ml[65,1785+11]..[65,1785+12])
+                            None
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[66,1798+6]..[66,1798+19])
+                            Ppat_construct "C" (testsuite/tests/tmc/ambiguities.ml[66,1798+6]..[66,1798+7])
+                            Some
+                              []
+                              pattern (testsuite/tests/tmc/ambiguities.ml[66,1798+8]..[66,1798+19])
+                                Ppat_tuple
+                                [
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[66,1798+9]..[66,1798+10])
+                                    Ppat_var "a" (testsuite/tests/tmc/ambiguities.ml[66,1798+9]..[66,1798+10])
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[66,1798+12]..[66,1798+18])
+                                    Ppat_tuple
+                                    [
+                                      pattern (testsuite/tests/tmc/ambiguities.ml[66,1798+13]..[66,1798+14])
+                                        Ppat_var "b" (testsuite/tests/tmc/ambiguities.ml[66,1798+13]..[66,1798+14])
+                                      pattern (testsuite/tests/tmc/ambiguities.ml[66,1798+16]..[66,1798+17])
+                                        Ppat_var "c" (testsuite/tests/tmc/ambiguities.ml[66,1798+16]..[66,1798+17])
+                                    ]
+                                ]
+                          expression (testsuite/tests/tmc/ambiguities.ml[67,1821+8]..[67,1821+76])
+                            Pexp_construct "C" (testsuite/tests/tmc/ambiguities.ml[67,1821+8]..[67,1821+9])
+                            Some
+                              expression (testsuite/tests/tmc/ambiguities.ml[67,1821+10]..[67,1821+76])
+                                Pexp_tuple
+                                [
+                                  expression (testsuite/tests/tmc/ambiguities.ml[67,1821+11]..[67,1821+33])
+                                    Pexp_apply
+                                    expression (testsuite/tests/tmc/ambiguities.ml[67,1821+11]..[67,1821+29])
+                                      attribute "tailcall"
+                                        []
+                                      Pexp_ident "map1" (testsuite/tests/tmc/ambiguities.ml[67,1821+12]..[67,1821+16])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/tmc/ambiguities.ml[67,1821+30]..[67,1821+31])
+                                          Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[67,1821+30]..[67,1821+31])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/tmc/ambiguities.ml[67,1821+32]..[67,1821+33])
+                                          Pexp_ident "a" (testsuite/tests/tmc/ambiguities.ml[67,1821+32]..[67,1821+33])
+                                    ]
+                                  expression (testsuite/tests/tmc/ambiguities.ml[67,1821+35]..[67,1821+75])
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/tmc/ambiguities.ml[67,1821+36]..[67,1821+64])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[67,1821+36]..[67,1821+60])
+                                          attribute "tailcall"
+                                            [
+                                              structure_item (testsuite/tests/tmc/ambiguities.ml[67,1821+53]..[67,1821+58])
+                                                Pstr_eval
+                                                expression (testsuite/tests/tmc/ambiguities.ml[67,1821+53]..[67,1821+58])
+                                                  Pexp_construct "false" (testsuite/tests/tmc/ambiguities.ml[67,1821+53]..[67,1821+58])
+                                                  None
+                                            ]
+                                          Pexp_ident "map1" (testsuite/tests/tmc/ambiguities.ml[67,1821+37]..[67,1821+41])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[67,1821+61]..[67,1821+62])
+                                              Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[67,1821+61]..[67,1821+62])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[67,1821+63]..[67,1821+64])
+                                              Pexp_ident "b" (testsuite/tests/tmc/ambiguities.ml[67,1821+63]..[67,1821+64])
+                                        ]
+                                      expression (testsuite/tests/tmc/ambiguities.ml[67,1821+66]..[67,1821+74])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[67,1821+66]..[67,1821+70])
+                                          Pexp_ident "map1" (testsuite/tests/tmc/ambiguities.ml[67,1821+66]..[67,1821+70])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[67,1821+71]..[67,1821+72])
+                                              Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[67,1821+71]..[67,1821+72])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[67,1821+73]..[67,1821+74])
+                                              Pexp_ident "c" (testsuite/tests/tmc/ambiguities.ml[67,1821+73]..[67,1821+74])
+                                        ]
+                                    ]
+                                ]
+                      ]
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[69,1899+2]..[73,1989+76])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[69,1899+26]..[69,1899+30])
+                  Ppat_var "map2" (testsuite/tests/tmc/ambiguities.ml[69,1899+26]..[69,1899+30])
+                expression (testsuite/tests/tmc/ambiguities.ml[69,1899+31]..[73,1989+76]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[69,1899+31]..[69,1899+32])
+                    Ppat_var "f" (testsuite/tests/tmc/ambiguities.ml[69,1899+31]..[69,1899+32])
+                  expression (testsuite/tests/tmc/ambiguities.ml[69,1899+33]..[73,1989+76]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (testsuite/tests/tmc/ambiguities.ml[69,1899+33]..[69,1899+34])
+                      Ppat_var "l" (testsuite/tests/tmc/ambiguities.ml[69,1899+33]..[69,1899+34])
+                    expression (testsuite/tests/tmc/ambiguities.ml[70,1936+4]..[73,1989+76])
+                      Pexp_match
+                      expression (testsuite/tests/tmc/ambiguities.ml[70,1936+10]..[70,1936+11])
+                        Pexp_ident "l" (testsuite/tests/tmc/ambiguities.ml[70,1936+10]..[70,1936+11])
+                      [
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[71,1953+6]..[71,1953+7])
+                            Ppat_construct "N" (testsuite/tests/tmc/ambiguities.ml[71,1953+6]..[71,1953+7])
+                            None
+                          expression (testsuite/tests/tmc/ambiguities.ml[71,1953+11]..[71,1953+12])
+                            Pexp_construct "N" (testsuite/tests/tmc/ambiguities.ml[71,1953+11]..[71,1953+12])
+                            None
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[72,1966+6]..[72,1966+19])
+                            Ppat_construct "C" (testsuite/tests/tmc/ambiguities.ml[72,1966+6]..[72,1966+7])
+                            Some
+                              []
+                              pattern (testsuite/tests/tmc/ambiguities.ml[72,1966+8]..[72,1966+19])
+                                Ppat_tuple
+                                [
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[72,1966+9]..[72,1966+10])
+                                    Ppat_var "a" (testsuite/tests/tmc/ambiguities.ml[72,1966+9]..[72,1966+10])
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[72,1966+12]..[72,1966+18])
+                                    Ppat_tuple
+                                    [
+                                      pattern (testsuite/tests/tmc/ambiguities.ml[72,1966+13]..[72,1966+14])
+                                        Ppat_var "b" (testsuite/tests/tmc/ambiguities.ml[72,1966+13]..[72,1966+14])
+                                      pattern (testsuite/tests/tmc/ambiguities.ml[72,1966+16]..[72,1966+17])
+                                        Ppat_var "c" (testsuite/tests/tmc/ambiguities.ml[72,1966+16]..[72,1966+17])
+                                    ]
+                                ]
+                          expression (testsuite/tests/tmc/ambiguities.ml[73,1989+8]..[73,1989+76])
+                            Pexp_construct "C" (testsuite/tests/tmc/ambiguities.ml[73,1989+8]..[73,1989+9])
+                            Some
+                              expression (testsuite/tests/tmc/ambiguities.ml[73,1989+10]..[73,1989+76])
+                                Pexp_tuple
+                                [
+                                  expression (testsuite/tests/tmc/ambiguities.ml[73,1989+11]..[73,1989+39])
+                                    Pexp_apply
+                                    expression (testsuite/tests/tmc/ambiguities.ml[73,1989+11]..[73,1989+35])
+                                      attribute "tailcall"
+                                        [
+                                          structure_item (testsuite/tests/tmc/ambiguities.ml[73,1989+28]..[73,1989+33])
+                                            Pstr_eval
+                                            expression (testsuite/tests/tmc/ambiguities.ml[73,1989+28]..[73,1989+33])
+                                              Pexp_construct "false" (testsuite/tests/tmc/ambiguities.ml[73,1989+28]..[73,1989+33])
+                                              None
+                                        ]
+                                      Pexp_ident "map2" (testsuite/tests/tmc/ambiguities.ml[73,1989+12]..[73,1989+16])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/tmc/ambiguities.ml[73,1989+36]..[73,1989+37])
+                                          Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[73,1989+36]..[73,1989+37])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/tmc/ambiguities.ml[73,1989+38]..[73,1989+39])
+                                          Pexp_ident "a" (testsuite/tests/tmc/ambiguities.ml[73,1989+38]..[73,1989+39])
+                                    ]
+                                  expression (testsuite/tests/tmc/ambiguities.ml[73,1989+41]..[73,1989+75])
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/tmc/ambiguities.ml[73,1989+42]..[73,1989+64])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[73,1989+42]..[73,1989+60])
+                                          attribute "tailcall"
+                                            []
+                                          Pexp_ident "map2" (testsuite/tests/tmc/ambiguities.ml[73,1989+43]..[73,1989+47])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[73,1989+61]..[73,1989+62])
+                                              Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[73,1989+61]..[73,1989+62])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[73,1989+63]..[73,1989+64])
+                                              Pexp_ident "b" (testsuite/tests/tmc/ambiguities.ml[73,1989+63]..[73,1989+64])
+                                        ]
+                                      expression (testsuite/tests/tmc/ambiguities.ml[73,1989+66]..[73,1989+74])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[73,1989+66]..[73,1989+70])
+                                          Pexp_ident "map2" (testsuite/tests/tmc/ambiguities.ml[73,1989+66]..[73,1989+70])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[73,1989+71]..[73,1989+72])
+                                              Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[73,1989+71]..[73,1989+72])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[73,1989+73]..[73,1989+74])
+                                              Pexp_ident "c" (testsuite/tests/tmc/ambiguities.ml[73,1989+73]..[73,1989+74])
+                                        ]
+                                    ]
+                                ]
+                      ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[75,2070+0]..[82,2255+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[75,2070+10]..[82,2255+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[75,2070+10]..[82,2255+2])
+          Pexp_constant PConst_string ("\nmodule Positive_and_negative_disambiguation :\n  sig\n    type 'a t = N | C of 'a t * ('a t * 'a t)\n    val map1 : 'a -> 'b t -> 'c t\n    val map2 : 'a -> 'b t -> 'c t\n  end\n",(testsuite/tests/tmc/ambiguities.ml[75,2070+12]..[82,2255+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[84,2260+0]..[96,2748+3])
+    Pstr_module
+    "Long_before_and_after" (testsuite/tests/tmc/ambiguities.ml[84,2260+7]..[84,2260+28])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[84,2260+31]..[96,2748+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[85,2298+2]..[85,2298+85])
+            Pstr_type Rec
+            [
+              type_declaration "tree" (testsuite/tests/tmc/ambiguities.ml[85,2298+10]..[85,2298+14]) (testsuite/tests/tmc/ambiguities.ml[85,2298+2]..[85,2298+85])
+                ptype_params =
+                  [
+                    core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+7]..[85,2298+9])
+                      Ptyp_var a
+                  ]
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_variant
+                    [
+                      (testsuite/tests/tmc/ambiguities.ml[85,2298+17]..[85,2298+27])
+                        "Leaf" (testsuite/tests/tmc/ambiguities.ml[85,2298+17]..[85,2298+21])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+25]..[85,2298+27])
+                            Ptyp_var a
+                        ]
+                        None
+                      (testsuite/tests/tmc/ambiguities.ml[85,2298+28]..[85,2298+85])
+                        "Node" (testsuite/tests/tmc/ambiguities.ml[85,2298+30]..[85,2298+34])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+38]..[85,2298+45])
+                            Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[85,2298+41]..[85,2298+45])
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+38]..[85,2298+40])
+                                Ptyp_var a
+                            ]
+                          core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+48]..[85,2298+55])
+                            Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[85,2298+51]..[85,2298+55])
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+48]..[85,2298+50])
+                                Ptyp_var a
+                            ]
+                          core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+58]..[85,2298+65])
+                            Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[85,2298+61]..[85,2298+65])
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+58]..[85,2298+60])
+                                Ptyp_var a
+                            ]
+                          core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+68]..[85,2298+75])
+                            Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[85,2298+71]..[85,2298+75])
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+68]..[85,2298+70])
+                                Ptyp_var a
+                            ]
+                          core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+78]..[85,2298+85])
+                            Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[85,2298+81]..[85,2298+85])
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[85,2298+78]..[85,2298+80])
+                                Ptyp_var a
+                            ]
+                        ]
+                        None
+                    ]
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[87,2385+2]..[91,2521+76])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[87,2385+26]..[87,2385+29])
+                  Ppat_var "map" (testsuite/tests/tmc/ambiguities.ml[87,2385+26]..[87,2385+29])
+                expression (testsuite/tests/tmc/ambiguities.ml[87,2385+30]..[91,2521+76]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[87,2385+30]..[87,2385+31])
+                    Ppat_var "f" (testsuite/tests/tmc/ambiguities.ml[87,2385+30]..[87,2385+31])
+                  expression (testsuite/tests/tmc/ambiguities.ml[87,2385+34]..[91,2521+76])
+                    Pexp_function
+                    [
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[88,2428+6]..[88,2428+12])
+                          Ppat_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[88,2428+6]..[88,2428+10])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[88,2428+11]..[88,2428+12])
+                              Ppat_var "v" (testsuite/tests/tmc/ambiguities.ml[88,2428+11]..[88,2428+12])
+                        expression (testsuite/tests/tmc/ambiguities.ml[88,2428+16]..[88,2428+26])
+                          Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[88,2428+16]..[88,2428+20])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[88,2428+21]..[88,2428+26])
+                              Pexp_apply
+                              expression (testsuite/tests/tmc/ambiguities.ml[88,2428+22]..[88,2428+23])
+                                Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[88,2428+22]..[88,2428+23])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/tmc/ambiguities.ml[88,2428+24]..[88,2428+25])
+                                    Pexp_ident "v" (testsuite/tests/tmc/ambiguities.ml[88,2428+24]..[88,2428+25])
+                              ]
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[89,2455+6]..[89,2455+31])
+                          Ppat_construct "Node" (testsuite/tests/tmc/ambiguities.ml[89,2455+6]..[89,2455+10])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[89,2455+11]..[89,2455+31])
+                              Ppat_tuple
+                              [
+                                pattern (testsuite/tests/tmc/ambiguities.ml[89,2455+12]..[89,2455+14])
+                                  Ppat_var "t1" (testsuite/tests/tmc/ambiguities.ml[89,2455+12]..[89,2455+14])
+                                pattern (testsuite/tests/tmc/ambiguities.ml[89,2455+16]..[89,2455+18])
+                                  Ppat_var "t2" (testsuite/tests/tmc/ambiguities.ml[89,2455+16]..[89,2455+18])
+                                pattern (testsuite/tests/tmc/ambiguities.ml[89,2455+20]..[89,2455+22])
+                                  Ppat_var "t3" (testsuite/tests/tmc/ambiguities.ml[89,2455+20]..[89,2455+22])
+                                pattern (testsuite/tests/tmc/ambiguities.ml[89,2455+24]..[89,2455+26])
+                                  Ppat_var "t4" (testsuite/tests/tmc/ambiguities.ml[89,2455+24]..[89,2455+26])
+                                pattern (testsuite/tests/tmc/ambiguities.ml[89,2455+28]..[89,2455+30])
+                                  Ppat_var "t5" (testsuite/tests/tmc/ambiguities.ml[89,2455+28]..[89,2455+30])
+                              ]
+                        expression (testsuite/tests/tmc/ambiguities.ml[91,2521+8]..[91,2521+76])
+                          Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[91,2521+8]..[91,2521+12])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[91,2521+13]..[91,2521+76])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/ambiguities.ml[91,2521+14]..[91,2521+22])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[91,2521+14]..[91,2521+17])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[91,2521+14]..[91,2521+17])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+18]..[91,2521+19])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[91,2521+18]..[91,2521+19])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+20]..[91,2521+22])
+                                        Pexp_ident "t1" (testsuite/tests/tmc/ambiguities.ml[91,2521+20]..[91,2521+22])
+                                  ]
+                                expression (testsuite/tests/tmc/ambiguities.ml[91,2521+24]..[91,2521+32])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[91,2521+24]..[91,2521+27])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[91,2521+24]..[91,2521+27])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+28]..[91,2521+29])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[91,2521+28]..[91,2521+29])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+30]..[91,2521+32])
+                                        Pexp_ident "t2" (testsuite/tests/tmc/ambiguities.ml[91,2521+30]..[91,2521+32])
+                                  ]
+                                expression (testsuite/tests/tmc/ambiguities.ml[91,2521+34]..[91,2521+55])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[91,2521+34]..[91,2521+50])
+                                    attribute "tailcall"
+                                      []
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[91,2521+35]..[91,2521+38])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+51]..[91,2521+52])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[91,2521+51]..[91,2521+52])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+53]..[91,2521+55])
+                                        Pexp_ident "t3" (testsuite/tests/tmc/ambiguities.ml[91,2521+53]..[91,2521+55])
+                                  ]
+                                expression (testsuite/tests/tmc/ambiguities.ml[91,2521+57]..[91,2521+65])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[91,2521+57]..[91,2521+60])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[91,2521+57]..[91,2521+60])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+61]..[91,2521+62])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[91,2521+61]..[91,2521+62])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+63]..[91,2521+65])
+                                        Pexp_ident "t4" (testsuite/tests/tmc/ambiguities.ml[91,2521+63]..[91,2521+65])
+                                  ]
+                                expression (testsuite/tests/tmc/ambiguities.ml[91,2521+67]..[91,2521+75])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[91,2521+67]..[91,2521+70])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[91,2521+67]..[91,2521+70])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+71]..[91,2521+72])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[91,2521+71]..[91,2521+72])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[91,2521+73]..[91,2521+75])
+                                        Pexp_ident "t5" (testsuite/tests/tmc/ambiguities.ml[91,2521+73]..[91,2521+75])
+                                  ]
+                              ]
+                    ]
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[93,2599+2]..[95,2679+68])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/tmc/ambiguities.ml[93,2599+6]..[93,2599+8])
+                  Ppat_construct "()" (testsuite/tests/tmc/ambiguities.ml[93,2599+6]..[93,2599+8])
+                  None
+                expression (testsuite/tests/tmc/ambiguities.ml[94,2610+4]..[95,2679+68])
+                  Pexp_assert
+                  expression (testsuite/tests/tmc/ambiguities.ml[94,2610+11]..[95,2679+68])
+                    Pexp_apply
+                    expression (testsuite/tests/tmc/ambiguities.ml[95,2679+20]..[95,2679+21])
+                      Pexp_ident "=" (testsuite/tests/tmc/ambiguities.ml[95,2679+20]..[95,2679+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/tmc/ambiguities.ml[94,2610+12]..[94,2610+68])
+                          Pexp_apply
+                          expression (testsuite/tests/tmc/ambiguities.ml[94,2610+12]..[94,2610+15])
+                            Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[94,2610+12]..[94,2610+15])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/tmc/ambiguities.ml[94,2610+16]..[94,2610+20])
+                                Pexp_ident "succ" (testsuite/tests/tmc/ambiguities.ml[94,2610+16]..[94,2610+20])
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/tmc/ambiguities.ml[94,2610+21]..[94,2610+68])
+                                Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[94,2610+22]..[94,2610+26])
+                                Some
+                                  expression (testsuite/tests/tmc/ambiguities.ml[94,2610+27]..[94,2610+67])
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/tmc/ambiguities.ml[94,2610+28]..[94,2610+34])
+                                        Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[94,2610+28]..[94,2610+32])
+                                        Some
+                                          expression (testsuite/tests/tmc/ambiguities.ml[94,2610+33]..[94,2610+34])
+                                            Pexp_constant PConst_int (0,None)
+                                      expression (testsuite/tests/tmc/ambiguities.ml[94,2610+36]..[94,2610+42])
+                                        Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[94,2610+36]..[94,2610+40])
+                                        Some
+                                          expression (testsuite/tests/tmc/ambiguities.ml[94,2610+41]..[94,2610+42])
+                                            Pexp_constant PConst_int (1,None)
+                                      expression (testsuite/tests/tmc/ambiguities.ml[94,2610+44]..[94,2610+50])
+                                        Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[94,2610+44]..[94,2610+48])
+                                        Some
+                                          expression (testsuite/tests/tmc/ambiguities.ml[94,2610+49]..[94,2610+50])
+                                            Pexp_constant PConst_int (2,None)
+                                      expression (testsuite/tests/tmc/ambiguities.ml[94,2610+52]..[94,2610+58])
+                                        Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[94,2610+52]..[94,2610+56])
+                                        Some
+                                          expression (testsuite/tests/tmc/ambiguities.ml[94,2610+57]..[94,2610+58])
+                                            Pexp_constant PConst_int (3,None)
+                                      expression (testsuite/tests/tmc/ambiguities.ml[94,2610+60]..[94,2610+66])
+                                        Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[94,2610+60]..[94,2610+64])
+                                        Some
+                                          expression (testsuite/tests/tmc/ambiguities.ml[94,2610+65]..[94,2610+66])
+                                            Pexp_constant PConst_int (4,None)
+                                    ]
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/tmc/ambiguities.ml[95,2679+22]..[95,2679+67])
+                          Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[95,2679+22]..[95,2679+26])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[95,2679+27]..[95,2679+67])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/ambiguities.ml[95,2679+28]..[95,2679+34])
+                                  Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[95,2679+28]..[95,2679+32])
+                                  Some
+                                    expression (testsuite/tests/tmc/ambiguities.ml[95,2679+33]..[95,2679+34])
+                                      Pexp_constant PConst_int (1,None)
+                                expression (testsuite/tests/tmc/ambiguities.ml[95,2679+36]..[95,2679+42])
+                                  Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[95,2679+36]..[95,2679+40])
+                                  Some
+                                    expression (testsuite/tests/tmc/ambiguities.ml[95,2679+41]..[95,2679+42])
+                                      Pexp_constant PConst_int (2,None)
+                                expression (testsuite/tests/tmc/ambiguities.ml[95,2679+44]..[95,2679+50])
+                                  Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[95,2679+44]..[95,2679+48])
+                                  Some
+                                    expression (testsuite/tests/tmc/ambiguities.ml[95,2679+49]..[95,2679+50])
+                                      Pexp_constant PConst_int (3,None)
+                                expression (testsuite/tests/tmc/ambiguities.ml[95,2679+52]..[95,2679+58])
+                                  Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[95,2679+52]..[95,2679+56])
+                                  Some
+                                    expression (testsuite/tests/tmc/ambiguities.ml[95,2679+57]..[95,2679+58])
+                                      Pexp_constant PConst_int (4,None)
+                                expression (testsuite/tests/tmc/ambiguities.ml[95,2679+60]..[95,2679+66])
+                                  Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[95,2679+60]..[95,2679+64])
+                                  Some
+                                    expression (testsuite/tests/tmc/ambiguities.ml[95,2679+65]..[95,2679+66])
+                                      Pexp_constant PConst_int (5,None)
+                              ]
+                    ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[97,2752+0]..[105,2957+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[97,2752+10]..[105,2957+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[97,2752+10]..[105,2957+2])
+          Pexp_constant PConst_string ("\nmodule Long_before_and_after :\n  sig\n    type 'a tree =\n        Leaf of 'a\n      | Node of 'a tree * 'a tree * 'a tree * 'a tree * 'a tree\n    val map : ('a -> 'b) -> 'a tree -> 'b tree\n  end\n",(testsuite/tests/tmc/ambiguities.ml[97,2752+12]..[105,2957+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[108,2963+0]..[119,3456+3])
+    Pstr_module
+    "Deep_nesting_nonambiguous" (testsuite/tests/tmc/ambiguities.ml[108,2963+7]..[108,2963+32])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[108,2963+35]..[119,3456+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[109,3005+2]..[109,3005+91])
+            Pstr_type Rec
+            [
+              type_declaration "tree" (testsuite/tests/tmc/ambiguities.ml[109,3005+10]..[109,3005+14]) (testsuite/tests/tmc/ambiguities.ml[109,3005+2]..[109,3005+91])
+                ptype_params =
+                  [
+                    core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+7]..[109,3005+9])
+                      Ptyp_var a
+                  ]
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_variant
+                    [
+                      (testsuite/tests/tmc/ambiguities.ml[109,3005+17]..[109,3005+27])
+                        "Leaf" (testsuite/tests/tmc/ambiguities.ml[109,3005+17]..[109,3005+21])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+25]..[109,3005+27])
+                            Ptyp_var a
+                        ]
+                        None
+                      (testsuite/tests/tmc/ambiguities.ml[109,3005+28]..[109,3005+91])
+                        "Node" (testsuite/tests/tmc/ambiguities.ml[109,3005+30]..[109,3005+34])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+38]..[109,3005+45])
+                            Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[109,3005+41]..[109,3005+45])
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+38]..[109,3005+40])
+                                Ptyp_var a
+                            ]
+                          core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+49]..[109,3005+90])
+                            Ptyp_tuple
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+49]..[109,3005+56])
+                                Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[109,3005+52]..[109,3005+56])
+                                [
+                                  core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+49]..[109,3005+51])
+                                    Ptyp_var a
+                                ]
+                              core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+60]..[109,3005+89])
+                                Ptyp_tuple
+                                [
+                                  core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+60]..[109,3005+67])
+                                    Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[109,3005+63]..[109,3005+67])
+                                    [
+                                      core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+60]..[109,3005+62])
+                                        Ptyp_var a
+                                    ]
+                                  core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+71]..[109,3005+88])
+                                    Ptyp_tuple
+                                    [
+                                      core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+71]..[109,3005+78])
+                                        Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[109,3005+74]..[109,3005+78])
+                                        [
+                                          core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+71]..[109,3005+73])
+                                            Ptyp_var a
+                                        ]
+                                      core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+81]..[109,3005+88])
+                                        Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[109,3005+84]..[109,3005+88])
+                                        [
+                                          core_type (testsuite/tests/tmc/ambiguities.ml[109,3005+81]..[109,3005+83])
+                                            Ptyp_var a
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        None
+                    ]
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[111,3098+2]..[114,3209+82])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[111,3098+26]..[111,3098+29])
+                  Ppat_var "map" (testsuite/tests/tmc/ambiguities.ml[111,3098+26]..[111,3098+29])
+                expression (testsuite/tests/tmc/ambiguities.ml[111,3098+30]..[114,3209+82]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[111,3098+30]..[111,3098+31])
+                    Ppat_var "f" (testsuite/tests/tmc/ambiguities.ml[111,3098+30]..[111,3098+31])
+                  expression (testsuite/tests/tmc/ambiguities.ml[111,3098+34]..[114,3209+82])
+                    Pexp_function
+                    [
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[112,3141+6]..[112,3141+12])
+                          Ppat_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[112,3141+6]..[112,3141+10])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[112,3141+11]..[112,3141+12])
+                              Ppat_var "v" (testsuite/tests/tmc/ambiguities.ml[112,3141+11]..[112,3141+12])
+                        expression (testsuite/tests/tmc/ambiguities.ml[112,3141+16]..[112,3141+26])
+                          Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[112,3141+16]..[112,3141+20])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[112,3141+21]..[112,3141+26])
+                              Pexp_apply
+                              expression (testsuite/tests/tmc/ambiguities.ml[112,3141+22]..[112,3141+23])
+                                Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[112,3141+22]..[112,3141+23])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/tmc/ambiguities.ml[112,3141+24]..[112,3141+25])
+                                    Pexp_ident "v" (testsuite/tests/tmc/ambiguities.ml[112,3141+24]..[112,3141+25])
+                              ]
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+6]..[113,3168+37])
+                          Ppat_construct "Node" (testsuite/tests/tmc/ambiguities.ml[113,3168+6]..[113,3168+10])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+11]..[113,3168+37])
+                              Ppat_tuple
+                              [
+                                pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+12]..[113,3168+14])
+                                  Ppat_var "t1" (testsuite/tests/tmc/ambiguities.ml[113,3168+12]..[113,3168+14])
+                                pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+16]..[113,3168+36])
+                                  Ppat_tuple
+                                  [
+                                    pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+17]..[113,3168+19])
+                                      Ppat_var "t2" (testsuite/tests/tmc/ambiguities.ml[113,3168+17]..[113,3168+19])
+                                    pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+21]..[113,3168+35])
+                                      Ppat_tuple
+                                      [
+                                        pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+22]..[113,3168+24])
+                                          Ppat_var "t3" (testsuite/tests/tmc/ambiguities.ml[113,3168+22]..[113,3168+24])
+                                        pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+26]..[113,3168+34])
+                                          Ppat_tuple
+                                          [
+                                            pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+27]..[113,3168+29])
+                                              Ppat_var "t4" (testsuite/tests/tmc/ambiguities.ml[113,3168+27]..[113,3168+29])
+                                            pattern (testsuite/tests/tmc/ambiguities.ml[113,3168+31]..[113,3168+33])
+                                              Ppat_var "t5" (testsuite/tests/tmc/ambiguities.ml[113,3168+31]..[113,3168+33])
+                                          ]
+                                      ]
+                                  ]
+                              ]
+                        expression (testsuite/tests/tmc/ambiguities.ml[114,3209+8]..[114,3209+82])
+                          Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[114,3209+8]..[114,3209+12])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[114,3209+13]..[114,3209+82])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/ambiguities.ml[114,3209+14]..[114,3209+22])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[114,3209+14]..[114,3209+17])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[114,3209+14]..[114,3209+17])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[114,3209+18]..[114,3209+19])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[114,3209+18]..[114,3209+19])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[114,3209+20]..[114,3209+22])
+                                        Pexp_ident "t1" (testsuite/tests/tmc/ambiguities.ml[114,3209+20]..[114,3209+22])
+                                  ]
+                                expression (testsuite/tests/tmc/ambiguities.ml[114,3209+24]..[114,3209+81])
+                                  Pexp_tuple
+                                  [
+                                    expression (testsuite/tests/tmc/ambiguities.ml[114,3209+25]..[114,3209+33])
+                                      Pexp_apply
+                                      expression (testsuite/tests/tmc/ambiguities.ml[114,3209+25]..[114,3209+28])
+                                        Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[114,3209+25]..[114,3209+28])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[114,3209+29]..[114,3209+30])
+                                            Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[114,3209+29]..[114,3209+30])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[114,3209+31]..[114,3209+33])
+                                            Pexp_ident "t2" (testsuite/tests/tmc/ambiguities.ml[114,3209+31]..[114,3209+33])
+                                      ]
+                                    expression (testsuite/tests/tmc/ambiguities.ml[114,3209+35]..[114,3209+80])
+                                      Pexp_tuple
+                                      [
+                                        expression (testsuite/tests/tmc/ambiguities.ml[114,3209+36]..[114,3209+57])
+                                          Pexp_apply
+                                          expression (testsuite/tests/tmc/ambiguities.ml[114,3209+36]..[114,3209+52])
+                                            attribute "tailcall"
+                                              []
+                                            Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[114,3209+37]..[114,3209+40])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/tmc/ambiguities.ml[114,3209+53]..[114,3209+54])
+                                                Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[114,3209+53]..[114,3209+54])
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/tmc/ambiguities.ml[114,3209+55]..[114,3209+57])
+                                                Pexp_ident "t3" (testsuite/tests/tmc/ambiguities.ml[114,3209+55]..[114,3209+57])
+                                          ]
+                                        expression (testsuite/tests/tmc/ambiguities.ml[114,3209+59]..[114,3209+79])
+                                          Pexp_tuple
+                                          [
+                                            expression (testsuite/tests/tmc/ambiguities.ml[114,3209+60]..[114,3209+68])
+                                              Pexp_apply
+                                              expression (testsuite/tests/tmc/ambiguities.ml[114,3209+60]..[114,3209+63])
+                                                Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[114,3209+60]..[114,3209+63])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[114,3209+64]..[114,3209+65])
+                                                    Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[114,3209+64]..[114,3209+65])
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[114,3209+66]..[114,3209+68])
+                                                    Pexp_ident "t4" (testsuite/tests/tmc/ambiguities.ml[114,3209+66]..[114,3209+68])
+                                              ]
+                                            expression (testsuite/tests/tmc/ambiguities.ml[114,3209+70]..[114,3209+78])
+                                              Pexp_apply
+                                              expression (testsuite/tests/tmc/ambiguities.ml[114,3209+70]..[114,3209+73])
+                                                Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[114,3209+70]..[114,3209+73])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[114,3209+74]..[114,3209+75])
+                                                    Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[114,3209+74]..[114,3209+75])
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[114,3209+76]..[114,3209+78])
+                                                    Pexp_ident "t5" (testsuite/tests/tmc/ambiguities.ml[114,3209+76]..[114,3209+78])
+                                              ]
+                                          ]
+                                      ]
+                                  ]
+                              ]
+                    ]
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[116,3293+2]..[118,3379+76])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/tmc/ambiguities.ml[116,3293+6]..[116,3293+8])
+                  Ppat_construct "()" (testsuite/tests/tmc/ambiguities.ml[116,3293+6]..[116,3293+8])
+                  None
+                expression (testsuite/tests/tmc/ambiguities.ml[117,3304+4]..[118,3379+76])
+                  Pexp_assert
+                  expression (testsuite/tests/tmc/ambiguities.ml[117,3304+11]..[118,3379+76])
+                    Pexp_apply
+                    expression (testsuite/tests/tmc/ambiguities.ml[118,3379+22]..[118,3379+23])
+                      Pexp_ident "=" (testsuite/tests/tmc/ambiguities.ml[118,3379+22]..[118,3379+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/tmc/ambiguities.ml[117,3304+12]..[117,3304+74])
+                          Pexp_apply
+                          expression (testsuite/tests/tmc/ambiguities.ml[117,3304+12]..[117,3304+15])
+                            Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[117,3304+12]..[117,3304+15])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/tmc/ambiguities.ml[117,3304+16]..[117,3304+20])
+                                Pexp_ident "succ" (testsuite/tests/tmc/ambiguities.ml[117,3304+16]..[117,3304+20])
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/tmc/ambiguities.ml[117,3304+21]..[117,3304+74])
+                                Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[117,3304+22]..[117,3304+26])
+                                Some
+                                  expression (testsuite/tests/tmc/ambiguities.ml[117,3304+27]..[117,3304+73])
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/tmc/ambiguities.ml[117,3304+28]..[117,3304+34])
+                                        Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[117,3304+28]..[117,3304+32])
+                                        Some
+                                          expression (testsuite/tests/tmc/ambiguities.ml[117,3304+33]..[117,3304+34])
+                                            Pexp_constant PConst_int (0,None)
+                                      expression (testsuite/tests/tmc/ambiguities.ml[117,3304+36]..[117,3304+72])
+                                        Pexp_tuple
+                                        [
+                                          expression (testsuite/tests/tmc/ambiguities.ml[117,3304+37]..[117,3304+43])
+                                            Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[117,3304+37]..[117,3304+41])
+                                            Some
+                                              expression (testsuite/tests/tmc/ambiguities.ml[117,3304+42]..[117,3304+43])
+                                                Pexp_constant PConst_int (1,None)
+                                          expression (testsuite/tests/tmc/ambiguities.ml[117,3304+45]..[117,3304+71])
+                                            Pexp_tuple
+                                            [
+                                              expression (testsuite/tests/tmc/ambiguities.ml[117,3304+46]..[117,3304+52])
+                                                Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[117,3304+46]..[117,3304+50])
+                                                Some
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[117,3304+51]..[117,3304+52])
+                                                    Pexp_constant PConst_int (2,None)
+                                              expression (testsuite/tests/tmc/ambiguities.ml[117,3304+54]..[117,3304+70])
+                                                Pexp_tuple
+                                                [
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[117,3304+55]..[117,3304+61])
+                                                    Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[117,3304+55]..[117,3304+59])
+                                                    Some
+                                                      expression (testsuite/tests/tmc/ambiguities.ml[117,3304+60]..[117,3304+61])
+                                                        Pexp_constant PConst_int (3,None)
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[117,3304+63]..[117,3304+69])
+                                                    Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[117,3304+63]..[117,3304+67])
+                                                    Some
+                                                      expression (testsuite/tests/tmc/ambiguities.ml[117,3304+68]..[117,3304+69])
+                                                        Pexp_constant PConst_int (4,None)
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/tmc/ambiguities.ml[118,3379+24]..[118,3379+75])
+                          Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[118,3379+24]..[118,3379+28])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[118,3379+29]..[118,3379+75])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/ambiguities.ml[118,3379+30]..[118,3379+36])
+                                  Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[118,3379+30]..[118,3379+34])
+                                  Some
+                                    expression (testsuite/tests/tmc/ambiguities.ml[118,3379+35]..[118,3379+36])
+                                      Pexp_constant PConst_int (1,None)
+                                expression (testsuite/tests/tmc/ambiguities.ml[118,3379+38]..[118,3379+74])
+                                  Pexp_tuple
+                                  [
+                                    expression (testsuite/tests/tmc/ambiguities.ml[118,3379+39]..[118,3379+45])
+                                      Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[118,3379+39]..[118,3379+43])
+                                      Some
+                                        expression (testsuite/tests/tmc/ambiguities.ml[118,3379+44]..[118,3379+45])
+                                          Pexp_constant PConst_int (2,None)
+                                    expression (testsuite/tests/tmc/ambiguities.ml[118,3379+47]..[118,3379+73])
+                                      Pexp_tuple
+                                      [
+                                        expression (testsuite/tests/tmc/ambiguities.ml[118,3379+48]..[118,3379+54])
+                                          Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[118,3379+48]..[118,3379+52])
+                                          Some
+                                            expression (testsuite/tests/tmc/ambiguities.ml[118,3379+53]..[118,3379+54])
+                                              Pexp_constant PConst_int (3,None)
+                                        expression (testsuite/tests/tmc/ambiguities.ml[118,3379+56]..[118,3379+72])
+                                          Pexp_tuple
+                                          [
+                                            expression (testsuite/tests/tmc/ambiguities.ml[118,3379+57]..[118,3379+63])
+                                              Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[118,3379+57]..[118,3379+61])
+                                              Some
+                                                expression (testsuite/tests/tmc/ambiguities.ml[118,3379+62]..[118,3379+63])
+                                                  Pexp_constant PConst_int (4,None)
+                                            expression (testsuite/tests/tmc/ambiguities.ml[118,3379+65]..[118,3379+71])
+                                              Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[118,3379+65]..[118,3379+69])
+                                              Some
+                                                expression (testsuite/tests/tmc/ambiguities.ml[118,3379+70]..[118,3379+71])
+                                                  Pexp_constant PConst_int (5,None)
+                                          ]
+                                      ]
+                                  ]
+                              ]
+                    ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[120,3460+0]..[128,3675+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[120,3460+10]..[128,3675+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[120,3460+10]..[128,3675+2])
+          Pexp_constant PConst_string ("\nmodule Deep_nesting_nonambiguous :\n  sig\n    type 'a tree =\n        Leaf of 'a\n      | Node of 'a tree * ('a tree * ('a tree * ('a tree * 'a tree)))\n    val map : ('a -> 'b) -> 'a tree -> 'b tree\n  end\n",(testsuite/tests/tmc/ambiguities.ml[120,3460+12]..[128,3675+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[130,3680+0]..[141,4169+3])
+    Pstr_module
+    "Deep_nesting_ambiguous" (testsuite/tests/tmc/ambiguities.ml[130,3680+7]..[130,3680+29])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[130,3680+32]..[141,4169+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[131,3719+2]..[131,3719+91])
+            Pstr_type Rec
+            [
+              type_declaration "tree" (testsuite/tests/tmc/ambiguities.ml[131,3719+10]..[131,3719+14]) (testsuite/tests/tmc/ambiguities.ml[131,3719+2]..[131,3719+91])
+                ptype_params =
+                  [
+                    core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+7]..[131,3719+9])
+                      Ptyp_var a
+                  ]
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_variant
+                    [
+                      (testsuite/tests/tmc/ambiguities.ml[131,3719+17]..[131,3719+27])
+                        "Leaf" (testsuite/tests/tmc/ambiguities.ml[131,3719+17]..[131,3719+21])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+25]..[131,3719+27])
+                            Ptyp_var a
+                        ]
+                        None
+                      (testsuite/tests/tmc/ambiguities.ml[131,3719+28]..[131,3719+91])
+                        "Node" (testsuite/tests/tmc/ambiguities.ml[131,3719+30]..[131,3719+34])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+38]..[131,3719+45])
+                            Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[131,3719+41]..[131,3719+45])
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+38]..[131,3719+40])
+                                Ptyp_var a
+                            ]
+                          core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+49]..[131,3719+90])
+                            Ptyp_tuple
+                            [
+                              core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+49]..[131,3719+56])
+                                Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[131,3719+52]..[131,3719+56])
+                                [
+                                  core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+49]..[131,3719+51])
+                                    Ptyp_var a
+                                ]
+                              core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+60]..[131,3719+89])
+                                Ptyp_tuple
+                                [
+                                  core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+60]..[131,3719+67])
+                                    Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[131,3719+63]..[131,3719+67])
+                                    [
+                                      core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+60]..[131,3719+62])
+                                        Ptyp_var a
+                                    ]
+                                  core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+71]..[131,3719+88])
+                                    Ptyp_tuple
+                                    [
+                                      core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+71]..[131,3719+78])
+                                        Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[131,3719+74]..[131,3719+78])
+                                        [
+                                          core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+71]..[131,3719+73])
+                                            Ptyp_var a
+                                        ]
+                                      core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+81]..[131,3719+88])
+                                        Ptyp_constr "tree" (testsuite/tests/tmc/ambiguities.ml[131,3719+84]..[131,3719+88])
+                                        [
+                                          core_type (testsuite/tests/tmc/ambiguities.ml[131,3719+81]..[131,3719+83])
+                                            Ptyp_var a
+                                        ]
+                                    ]
+                                ]
+                            ]
+                        ]
+                        None
+                    ]
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[133,3812+4]..[136,3929+71])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[133,3812+28]..[133,3812+31])
+                  Ppat_var "map" (testsuite/tests/tmc/ambiguities.ml[133,3812+28]..[133,3812+31])
+                expression (testsuite/tests/tmc/ambiguities.ml[133,3812+32]..[136,3929+71]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[133,3812+32]..[133,3812+33])
+                    Ppat_var "f" (testsuite/tests/tmc/ambiguities.ml[133,3812+32]..[133,3812+33])
+                  expression (testsuite/tests/tmc/ambiguities.ml[133,3812+36]..[136,3929+71])
+                    Pexp_function
+                    [
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[134,3857+8]..[134,3857+14])
+                          Ppat_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[134,3857+8]..[134,3857+12])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[134,3857+13]..[134,3857+14])
+                              Ppat_var "v" (testsuite/tests/tmc/ambiguities.ml[134,3857+13]..[134,3857+14])
+                        expression (testsuite/tests/tmc/ambiguities.ml[134,3857+18]..[134,3857+28])
+                          Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[134,3857+18]..[134,3857+22])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[134,3857+23]..[134,3857+28])
+                              Pexp_apply
+                              expression (testsuite/tests/tmc/ambiguities.ml[134,3857+24]..[134,3857+25])
+                                Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[134,3857+24]..[134,3857+25])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/tmc/ambiguities.ml[134,3857+26]..[134,3857+27])
+                                    Pexp_ident "v" (testsuite/tests/tmc/ambiguities.ml[134,3857+26]..[134,3857+27])
+                              ]
+                      <case>
+                        pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+8]..[135,3886+39])
+                          Ppat_construct "Node" (testsuite/tests/tmc/ambiguities.ml[135,3886+8]..[135,3886+12])
+                          Some
+                            []
+                            pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+13]..[135,3886+39])
+                              Ppat_tuple
+                              [
+                                pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+14]..[135,3886+16])
+                                  Ppat_var "t1" (testsuite/tests/tmc/ambiguities.ml[135,3886+14]..[135,3886+16])
+                                pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+18]..[135,3886+38])
+                                  Ppat_tuple
+                                  [
+                                    pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+19]..[135,3886+21])
+                                      Ppat_var "t2" (testsuite/tests/tmc/ambiguities.ml[135,3886+19]..[135,3886+21])
+                                    pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+23]..[135,3886+37])
+                                      Ppat_tuple
+                                      [
+                                        pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+24]..[135,3886+26])
+                                          Ppat_var "t3" (testsuite/tests/tmc/ambiguities.ml[135,3886+24]..[135,3886+26])
+                                        pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+28]..[135,3886+36])
+                                          Ppat_tuple
+                                          [
+                                            pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+29]..[135,3886+31])
+                                              Ppat_var "t4" (testsuite/tests/tmc/ambiguities.ml[135,3886+29]..[135,3886+31])
+                                            pattern (testsuite/tests/tmc/ambiguities.ml[135,3886+33]..[135,3886+35])
+                                              Ppat_var "t5" (testsuite/tests/tmc/ambiguities.ml[135,3886+33]..[135,3886+35])
+                                          ]
+                                      ]
+                                  ]
+                              ]
+                        expression (testsuite/tests/tmc/ambiguities.ml[136,3929+10]..[136,3929+71])
+                          Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[136,3929+10]..[136,3929+14])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[136,3929+15]..[136,3929+71])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/ambiguities.ml[136,3929+16]..[136,3929+24])
+                                  Pexp_apply
+                                  expression (testsuite/tests/tmc/ambiguities.ml[136,3929+16]..[136,3929+19])
+                                    Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[136,3929+16]..[136,3929+19])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[136,3929+20]..[136,3929+21])
+                                        Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[136,3929+20]..[136,3929+21])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/tmc/ambiguities.ml[136,3929+22]..[136,3929+24])
+                                        Pexp_ident "t1" (testsuite/tests/tmc/ambiguities.ml[136,3929+22]..[136,3929+24])
+                                  ]
+                                expression (testsuite/tests/tmc/ambiguities.ml[136,3929+26]..[136,3929+70])
+                                  Pexp_tuple
+                                  [
+                                    expression (testsuite/tests/tmc/ambiguities.ml[136,3929+27]..[136,3929+35])
+                                      Pexp_apply
+                                      expression (testsuite/tests/tmc/ambiguities.ml[136,3929+27]..[136,3929+30])
+                                        Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[136,3929+27]..[136,3929+30])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[136,3929+31]..[136,3929+32])
+                                            Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[136,3929+31]..[136,3929+32])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[136,3929+33]..[136,3929+35])
+                                            Pexp_ident "t2" (testsuite/tests/tmc/ambiguities.ml[136,3929+33]..[136,3929+35])
+                                      ]
+                                    expression (testsuite/tests/tmc/ambiguities.ml[136,3929+37]..[136,3929+69])
+                                      Pexp_tuple
+                                      [
+                                        expression (testsuite/tests/tmc/ambiguities.ml[136,3929+38]..[136,3929+46])
+                                          Pexp_apply
+                                          expression (testsuite/tests/tmc/ambiguities.ml[136,3929+38]..[136,3929+41])
+                                            Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[136,3929+38]..[136,3929+41])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/tmc/ambiguities.ml[136,3929+42]..[136,3929+43])
+                                                Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[136,3929+42]..[136,3929+43])
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/tmc/ambiguities.ml[136,3929+44]..[136,3929+46])
+                                                Pexp_ident "t3" (testsuite/tests/tmc/ambiguities.ml[136,3929+44]..[136,3929+46])
+                                          ]
+                                        expression (testsuite/tests/tmc/ambiguities.ml[136,3929+48]..[136,3929+68])
+                                          Pexp_tuple
+                                          [
+                                            expression (testsuite/tests/tmc/ambiguities.ml[136,3929+49]..[136,3929+57])
+                                              Pexp_apply
+                                              expression (testsuite/tests/tmc/ambiguities.ml[136,3929+49]..[136,3929+52])
+                                                Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[136,3929+49]..[136,3929+52])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[136,3929+53]..[136,3929+54])
+                                                    Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[136,3929+53]..[136,3929+54])
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[136,3929+55]..[136,3929+57])
+                                                    Pexp_ident "t4" (testsuite/tests/tmc/ambiguities.ml[136,3929+55]..[136,3929+57])
+                                              ]
+                                            expression (testsuite/tests/tmc/ambiguities.ml[136,3929+59]..[136,3929+67])
+                                              Pexp_apply
+                                              expression (testsuite/tests/tmc/ambiguities.ml[136,3929+59]..[136,3929+62])
+                                                Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[136,3929+59]..[136,3929+62])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[136,3929+63]..[136,3929+64])
+                                                    Pexp_ident "f" (testsuite/tests/tmc/ambiguities.ml[136,3929+63]..[136,3929+64])
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[136,3929+65]..[136,3929+67])
+                                                    Pexp_ident "t5" (testsuite/tests/tmc/ambiguities.ml[136,3929+65]..[136,3929+67])
+                                              ]
+                                          ]
+                                      ]
+                                  ]
+                              ]
+                    ]
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[138,4002+4]..[140,4092+76])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/tmc/ambiguities.ml[138,4002+8]..[138,4002+10])
+                  Ppat_construct "()" (testsuite/tests/tmc/ambiguities.ml[138,4002+8]..[138,4002+10])
+                  None
+                expression (testsuite/tests/tmc/ambiguities.ml[139,4015+6]..[140,4092+76])
+                  Pexp_assert
+                  expression (testsuite/tests/tmc/ambiguities.ml[139,4015+13]..[140,4092+76])
+                    Pexp_apply
+                    expression (testsuite/tests/tmc/ambiguities.ml[140,4092+22]..[140,4092+23])
+                      Pexp_ident "=" (testsuite/tests/tmc/ambiguities.ml[140,4092+22]..[140,4092+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/tmc/ambiguities.ml[139,4015+14]..[139,4015+76])
+                          Pexp_apply
+                          expression (testsuite/tests/tmc/ambiguities.ml[139,4015+14]..[139,4015+17])
+                            Pexp_ident "map" (testsuite/tests/tmc/ambiguities.ml[139,4015+14]..[139,4015+17])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/tmc/ambiguities.ml[139,4015+18]..[139,4015+22])
+                                Pexp_ident "succ" (testsuite/tests/tmc/ambiguities.ml[139,4015+18]..[139,4015+22])
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/tmc/ambiguities.ml[139,4015+23]..[139,4015+76])
+                                Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[139,4015+24]..[139,4015+28])
+                                Some
+                                  expression (testsuite/tests/tmc/ambiguities.ml[139,4015+29]..[139,4015+75])
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/tmc/ambiguities.ml[139,4015+30]..[139,4015+36])
+                                        Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[139,4015+30]..[139,4015+34])
+                                        Some
+                                          expression (testsuite/tests/tmc/ambiguities.ml[139,4015+35]..[139,4015+36])
+                                            Pexp_constant PConst_int (0,None)
+                                      expression (testsuite/tests/tmc/ambiguities.ml[139,4015+38]..[139,4015+74])
+                                        Pexp_tuple
+                                        [
+                                          expression (testsuite/tests/tmc/ambiguities.ml[139,4015+39]..[139,4015+45])
+                                            Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[139,4015+39]..[139,4015+43])
+                                            Some
+                                              expression (testsuite/tests/tmc/ambiguities.ml[139,4015+44]..[139,4015+45])
+                                                Pexp_constant PConst_int (1,None)
+                                          expression (testsuite/tests/tmc/ambiguities.ml[139,4015+47]..[139,4015+73])
+                                            Pexp_tuple
+                                            [
+                                              expression (testsuite/tests/tmc/ambiguities.ml[139,4015+48]..[139,4015+54])
+                                                Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[139,4015+48]..[139,4015+52])
+                                                Some
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[139,4015+53]..[139,4015+54])
+                                                    Pexp_constant PConst_int (2,None)
+                                              expression (testsuite/tests/tmc/ambiguities.ml[139,4015+56]..[139,4015+72])
+                                                Pexp_tuple
+                                                [
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[139,4015+57]..[139,4015+63])
+                                                    Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[139,4015+57]..[139,4015+61])
+                                                    Some
+                                                      expression (testsuite/tests/tmc/ambiguities.ml[139,4015+62]..[139,4015+63])
+                                                        Pexp_constant PConst_int (3,None)
+                                                  expression (testsuite/tests/tmc/ambiguities.ml[139,4015+65]..[139,4015+71])
+                                                    Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[139,4015+65]..[139,4015+69])
+                                                    Some
+                                                      expression (testsuite/tests/tmc/ambiguities.ml[139,4015+70]..[139,4015+71])
+                                                        Pexp_constant PConst_int (4,None)
+                                                ]
+                                            ]
+                                        ]
+                                    ]
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/tmc/ambiguities.ml[140,4092+24]..[140,4092+75])
+                          Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[140,4092+24]..[140,4092+28])
+                          Some
+                            expression (testsuite/tests/tmc/ambiguities.ml[140,4092+29]..[140,4092+75])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/tmc/ambiguities.ml[140,4092+30]..[140,4092+36])
+                                  Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[140,4092+30]..[140,4092+34])
+                                  Some
+                                    expression (testsuite/tests/tmc/ambiguities.ml[140,4092+35]..[140,4092+36])
+                                      Pexp_constant PConst_int (1,None)
+                                expression (testsuite/tests/tmc/ambiguities.ml[140,4092+38]..[140,4092+74])
+                                  Pexp_tuple
+                                  [
+                                    expression (testsuite/tests/tmc/ambiguities.ml[140,4092+39]..[140,4092+45])
+                                      Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[140,4092+39]..[140,4092+43])
+                                      Some
+                                        expression (testsuite/tests/tmc/ambiguities.ml[140,4092+44]..[140,4092+45])
+                                          Pexp_constant PConst_int (2,None)
+                                    expression (testsuite/tests/tmc/ambiguities.ml[140,4092+47]..[140,4092+73])
+                                      Pexp_tuple
+                                      [
+                                        expression (testsuite/tests/tmc/ambiguities.ml[140,4092+48]..[140,4092+54])
+                                          Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[140,4092+48]..[140,4092+52])
+                                          Some
+                                            expression (testsuite/tests/tmc/ambiguities.ml[140,4092+53]..[140,4092+54])
+                                              Pexp_constant PConst_int (3,None)
+                                        expression (testsuite/tests/tmc/ambiguities.ml[140,4092+56]..[140,4092+72])
+                                          Pexp_tuple
+                                          [
+                                            expression (testsuite/tests/tmc/ambiguities.ml[140,4092+57]..[140,4092+63])
+                                              Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[140,4092+57]..[140,4092+61])
+                                              Some
+                                                expression (testsuite/tests/tmc/ambiguities.ml[140,4092+62]..[140,4092+63])
+                                                  Pexp_constant PConst_int (4,None)
+                                            expression (testsuite/tests/tmc/ambiguities.ml[140,4092+65]..[140,4092+71])
+                                              Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[140,4092+65]..[140,4092+69])
+                                              Some
+                                                expression (testsuite/tests/tmc/ambiguities.ml[140,4092+70]..[140,4092+71])
+                                                  Pexp_constant PConst_int (5,None)
+                                          ]
+                                      ]
+                                  ]
+                              ]
+                    ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[142,4173+0]..[171,5606+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[142,4173+10]..[171,5606+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[142,4173+10]..[171,5606+2])
+          Pexp_constant PConst_string ("\nLine 7, characters 10-71:\n7 |           Node (map f t1, (map f t2, (map f t3, (map f t4, map f t5))))\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nError: [@tail_mod_cons]: this constructor application may be TMC-transformed\n       in several different ways. Please disambiguate by adding an explicit\n       [@tailcall] attribute to the call that should be made tail-recursive,\n       or a [@tailcall false] attribute on calls that should not be\n       transformed.\nLine 7, characters 16-24:\n7 |           Node (map f t1, (map f t2, (map f t3, (map f t4, map f t5))))\n                    ^^^^^^^^\n  This call could be annotated.\nLine 7, characters 27-35:\n7 |           Node (map f t1, (map f t2, (map f t3, (map f t4, map f t5))))\n                               ^^^^^^^^\n  This call could be annotated.\nLine 7, characters 38-46:\n7 |           Node (map f t1, (map f t2, (map f t3, (map f t4, map f t5))))\n                                          ^^^^^^^^\n  This call could be annotated.\nLine 7, characters 49-57:\n7 |           Node (map f t1, (map f t2, (map f t3, (map f t4, map f t5))))\n                                                     ^^^^^^^^\n  This call could be annotated.\nLine 7, characters 59-67:\n7 |           Node (map f t1, (map f t2, (map f t3, (map f t4, map f t5))))\n                                                               ^^^^^^^^\n  This call could be annotated.\n",(testsuite/tests/tmc/ambiguities.ml[142,4173+12]..[171,5606+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[174,5612+0]..[194,6424+3])
+    Pstr_module
+    "Disjunctions_ambiguous" (testsuite/tests/tmc/ambiguities.ml[174,5612+7]..[174,5612+29])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[174,5612+32]..[194,6424+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[175,5651+2]..[175,5651+38])
+            Pstr_type Rec
+            [
+              type_declaration "t" (testsuite/tests/tmc/ambiguities.ml[175,5651+7]..[175,5651+8]) (testsuite/tests/tmc/ambiguities.ml[175,5651+2]..[175,5651+38])
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_variant
+                    [
+                      (testsuite/tests/tmc/ambiguities.ml[175,5651+11]..[175,5651+22])
+                        "Leaf" (testsuite/tests/tmc/ambiguities.ml[175,5651+11]..[175,5651+15])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[175,5651+19]..[175,5651+22])
+                            Ptyp_constr "int" (testsuite/tests/tmc/ambiguities.ml[175,5651+19]..[175,5651+22])
+                            []
+                        ]
+                        None
+                      (testsuite/tests/tmc/ambiguities.ml[175,5651+23]..[175,5651+38])
+                        "Node" (testsuite/tests/tmc/ambiguities.ml[175,5651+25]..[175,5651+29])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[175,5651+33]..[175,5651+34])
+                            Ptyp_constr "t" (testsuite/tests/tmc/ambiguities.ml[175,5651+33]..[175,5651+34])
+                            []
+                          core_type (testsuite/tests/tmc/ambiguities.ml[175,5651+37]..[175,5651+38])
+                            Ptyp_constr "t" (testsuite/tests/tmc/ambiguities.ml[175,5651+37]..[175,5651+38])
+                            []
+                        ]
+                        None
+                    ]
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[180,5857+2]..[193,6414+9])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "ocaml.doc"
+                    [
+                      structure_item (testsuite/tests/tmc/ambiguities.ml[177,5691+2]..[179,5821+35])
+                        Pstr_eval
+                        expression (testsuite/tests/tmc/ambiguities.ml[177,5691+2]..[179,5821+35])
+                          Pexp_constant PConst_string(" [shift ~flip:false k t] shifts all the leaves of [t] by [k].\n     When [~flip:true], leaves of even level are shifted by k,\n     leaves of odd level by (-k) ",(testsuite/tests/tmc/ambiguities.ml[177,5691+2]..[179,5821+35]),None)
+                    ]
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[180,5857+26]..[180,5857+31])
+                  Ppat_var "shift" (testsuite/tests/tmc/ambiguities.ml[180,5857+26]..[180,5857+31])
+                expression (testsuite/tests/tmc/ambiguities.ml[180,5857+32]..[193,6414+9]) ghost
+                  Pexp_fun
+                  Labelled "flip"
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[180,5857+33]..[180,5857+37])
+                    Ppat_var "flip" (testsuite/tests/tmc/ambiguities.ml[180,5857+33]..[180,5857+37])
+                  expression (testsuite/tests/tmc/ambiguities.ml[180,5857+38]..[193,6414+9]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (testsuite/tests/tmc/ambiguities.ml[180,5857+38]..[180,5857+39])
+                      Ppat_var "k" (testsuite/tests/tmc/ambiguities.ml[180,5857+38]..[180,5857+39])
+                    expression (testsuite/tests/tmc/ambiguities.ml[180,5857+42]..[193,6414+9])
+                      Pexp_function
+                      [
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[181,5908+6]..[181,5908+12])
+                            Ppat_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[181,5908+6]..[181,5908+10])
+                            Some
+                              []
+                              pattern (testsuite/tests/tmc/ambiguities.ml[181,5908+11]..[181,5908+12])
+                                Ppat_var "n" (testsuite/tests/tmc/ambiguities.ml[181,5908+11]..[181,5908+12])
+                          expression (testsuite/tests/tmc/ambiguities.ml[181,5908+16]..[181,5908+28])
+                            Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[181,5908+16]..[181,5908+20])
+                            Some
+                              expression (testsuite/tests/tmc/ambiguities.ml[181,5908+21]..[181,5908+28])
+                                Pexp_apply
+                                expression (testsuite/tests/tmc/ambiguities.ml[181,5908+24]..[181,5908+25])
+                                  Pexp_ident "+" (testsuite/tests/tmc/ambiguities.ml[181,5908+24]..[181,5908+25])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/tmc/ambiguities.ml[181,5908+22]..[181,5908+23])
+                                      Pexp_ident "n" (testsuite/tests/tmc/ambiguities.ml[181,5908+22]..[181,5908+23])
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/tmc/ambiguities.ml[181,5908+26]..[181,5908+27])
+                                      Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[181,5908+26]..[181,5908+27])
+                                ]
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[182,5937+6]..[182,5937+24])
+                            Ppat_construct "Node" (testsuite/tests/tmc/ambiguities.ml[182,5937+6]..[182,5937+10])
+                            Some
+                              []
+                              pattern (testsuite/tests/tmc/ambiguities.ml[182,5937+11]..[182,5937+24])
+                                Ppat_tuple
+                                [
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[182,5937+12]..[182,5937+16])
+                                    Ppat_var "left" (testsuite/tests/tmc/ambiguities.ml[182,5937+12]..[182,5937+16])
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[182,5937+18]..[182,5937+23])
+                                    Ppat_var "right" (testsuite/tests/tmc/ambiguities.ml[182,5937+18]..[182,5937+23])
+                                ]
+                          expression (testsuite/tests/tmc/ambiguities.ml[186,6208+8]..[193,6414+9])
+                            Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[186,6208+8]..[186,6208+12])
+                            Some
+                              expression (testsuite/tests/tmc/ambiguities.ml[186,6208+13]..[193,6414+9])
+                                Pexp_tuple
+                                [
+                                  expression (testsuite/tests/tmc/ambiguities.ml[187,6223+10]..[189,6281+35])
+                                    Pexp_ifthenelse
+                                    expression (testsuite/tests/tmc/ambiguities.ml[187,6223+14]..[187,6223+18])
+                                      Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[187,6223+14]..[187,6223+18])
+                                    expression (testsuite/tests/tmc/ambiguities.ml[188,6242+16]..[188,6242+38])
+                                      Pexp_apply
+                                      expression (testsuite/tests/tmc/ambiguities.ml[188,6242+16]..[188,6242+21])
+                                        Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[188,6242+16]..[188,6242+21])
+                                      [
+                                        <arg>
+                                        Labelled "flip"
+                                          expression (testsuite/tests/tmc/ambiguities.ml[188,6242+23]..[188,6242+27])
+                                            Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[188,6242+23]..[188,6242+27])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[188,6242+28]..[188,6242+33])
+                                            Pexp_apply
+                                            expression (testsuite/tests/tmc/ambiguities.ml[188,6242+29]..[188,6242+30])
+                                              Pexp_ident "~-" (testsuite/tests/tmc/ambiguities.ml[188,6242+29]..[188,6242+30])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/tmc/ambiguities.ml[188,6242+31]..[188,6242+32])
+                                                  Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[188,6242+31]..[188,6242+32])
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[188,6242+34]..[188,6242+38])
+                                            Pexp_ident "left" (testsuite/tests/tmc/ambiguities.ml[188,6242+34]..[188,6242+38])
+                                      ]
+                                    Some
+                                      expression (testsuite/tests/tmc/ambiguities.ml[189,6281+16]..[189,6281+34])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[189,6281+16]..[189,6281+21])
+                                          Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[189,6281+16]..[189,6281+21])
+                                        [
+                                          <arg>
+                                          Labelled "flip"
+                                            expression (testsuite/tests/tmc/ambiguities.ml[189,6281+23]..[189,6281+27])
+                                              Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[189,6281+23]..[189,6281+27])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[189,6281+28]..[189,6281+29])
+                                              Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[189,6281+28]..[189,6281+29])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[189,6281+30]..[189,6281+34])
+                                              Pexp_ident "left" (testsuite/tests/tmc/ambiguities.ml[189,6281+30]..[189,6281+34])
+                                        ]
+                                  expression (testsuite/tests/tmc/ambiguities.ml[190,6318+10]..[192,6377+36])
+                                    Pexp_ifthenelse
+                                    expression (testsuite/tests/tmc/ambiguities.ml[190,6318+14]..[190,6318+18])
+                                      Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[190,6318+14]..[190,6318+18])
+                                    expression (testsuite/tests/tmc/ambiguities.ml[191,6337+16]..[191,6337+39])
+                                      Pexp_apply
+                                      expression (testsuite/tests/tmc/ambiguities.ml[191,6337+16]..[191,6337+21])
+                                        Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[191,6337+16]..[191,6337+21])
+                                      [
+                                        <arg>
+                                        Labelled "flip"
+                                          expression (testsuite/tests/tmc/ambiguities.ml[191,6337+23]..[191,6337+27])
+                                            Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[191,6337+23]..[191,6337+27])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[191,6337+28]..[191,6337+33])
+                                            Pexp_apply
+                                            expression (testsuite/tests/tmc/ambiguities.ml[191,6337+29]..[191,6337+30])
+                                              Pexp_ident "~-" (testsuite/tests/tmc/ambiguities.ml[191,6337+29]..[191,6337+30])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/tmc/ambiguities.ml[191,6337+31]..[191,6337+32])
+                                                  Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[191,6337+31]..[191,6337+32])
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[191,6337+34]..[191,6337+39])
+                                            Pexp_ident "right" (testsuite/tests/tmc/ambiguities.ml[191,6337+34]..[191,6337+39])
+                                      ]
+                                    Some
+                                      expression (testsuite/tests/tmc/ambiguities.ml[192,6377+16]..[192,6377+35])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[192,6377+16]..[192,6377+21])
+                                          Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[192,6377+16]..[192,6377+21])
+                                        [
+                                          <arg>
+                                          Labelled "flip"
+                                            expression (testsuite/tests/tmc/ambiguities.ml[192,6377+23]..[192,6377+27])
+                                              Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[192,6377+23]..[192,6377+27])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[192,6377+28]..[192,6377+29])
+                                              Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[192,6377+28]..[192,6377+29])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[192,6377+30]..[192,6377+35])
+                                              Pexp_ident "right" (testsuite/tests/tmc/ambiguities.ml[192,6377+30]..[192,6377+35])
+                                        ]
+                                ]
+                      ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[195,6428+0]..[226,7623+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[195,6428+10]..[226,7623+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[195,6428+10]..[226,7623+2])
+          Pexp_constant PConst_string ("\nLines 13-20, characters 8-9:\n13 | ........Node (\n14 |           (if flip\n15 |            then shift ~flip (- k) left\n16 |            else shift ~flip k left),\n17 |           (if flip\n18 |            then shift ~flip (- k) right\n19 |            else shift ~flip k right)\n20 |         )\nError: [@tail_mod_cons]: this constructor application may be TMC-transformed\n       in several different ways. Please disambiguate by adding an explicit\n       [@tailcall] attribute to the call that should be made tail-recursive,\n       or a [@tailcall false] attribute on calls that should not be\n       transformed.\nLine 15, characters 16-38:\n15 |            then shift ~flip (- k) left\n                     ^^^^^^^^^^^^^^^^^^^^^^\n  This call could be annotated.\nLine 16, characters 16-34:\n16 |            else shift ~flip k left),\n                     ^^^^^^^^^^^^^^^^^^\n  This call could be annotated.\nLine 18, characters 16-39:\n18 |            then shift ~flip (- k) right\n                     ^^^^^^^^^^^^^^^^^^^^^^^\n  This call could be annotated.\nLine 19, characters 16-35:\n19 |            else shift ~flip k right)\n                     ^^^^^^^^^^^^^^^^^^^\n  This call could be annotated.\n",(testsuite/tests/tmc/ambiguities.ml[195,6428+12]..[226,7623+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[228,7628+0]..[242,8048+3])
+    Pstr_module
+    "Disjunctions_disambiguated" (testsuite/tests/tmc/ambiguities.ml[228,7628+7]..[228,7628+33])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[228,7628+36]..[242,8048+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[229,7671+2]..[229,7671+38])
+            Pstr_type Rec
+            [
+              type_declaration "t" (testsuite/tests/tmc/ambiguities.ml[229,7671+7]..[229,7671+8]) (testsuite/tests/tmc/ambiguities.ml[229,7671+2]..[229,7671+38])
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_variant
+                    [
+                      (testsuite/tests/tmc/ambiguities.ml[229,7671+11]..[229,7671+22])
+                        "Leaf" (testsuite/tests/tmc/ambiguities.ml[229,7671+11]..[229,7671+15])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[229,7671+19]..[229,7671+22])
+                            Ptyp_constr "int" (testsuite/tests/tmc/ambiguities.ml[229,7671+19]..[229,7671+22])
+                            []
+                        ]
+                        None
+                      (testsuite/tests/tmc/ambiguities.ml[229,7671+23]..[229,7671+38])
+                        "Node" (testsuite/tests/tmc/ambiguities.ml[229,7671+25]..[229,7671+29])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[229,7671+33]..[229,7671+34])
+                            Ptyp_constr "t" (testsuite/tests/tmc/ambiguities.ml[229,7671+33]..[229,7671+34])
+                            []
+                          core_type (testsuite/tests/tmc/ambiguities.ml[229,7671+37]..[229,7671+38])
+                            Ptyp_constr "t" (testsuite/tests/tmc/ambiguities.ml[229,7671+37]..[229,7671+38])
+                            []
+                        ]
+                        None
+                    ]
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[231,7711+2]..[241,8038+9])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[231,7711+26]..[231,7711+31])
+                  Ppat_var "shift" (testsuite/tests/tmc/ambiguities.ml[231,7711+26]..[231,7711+31])
+                expression (testsuite/tests/tmc/ambiguities.ml[231,7711+32]..[241,8038+9]) ghost
+                  Pexp_fun
+                  Labelled "flip"
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[231,7711+33]..[231,7711+37])
+                    Ppat_var "flip" (testsuite/tests/tmc/ambiguities.ml[231,7711+33]..[231,7711+37])
+                  expression (testsuite/tests/tmc/ambiguities.ml[231,7711+38]..[241,8038+9]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (testsuite/tests/tmc/ambiguities.ml[231,7711+38]..[231,7711+39])
+                      Ppat_var "k" (testsuite/tests/tmc/ambiguities.ml[231,7711+38]..[231,7711+39])
+                    expression (testsuite/tests/tmc/ambiguities.ml[231,7711+42]..[241,8038+9])
+                      Pexp_function
+                      [
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[232,7762+6]..[232,7762+12])
+                            Ppat_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[232,7762+6]..[232,7762+10])
+                            Some
+                              []
+                              pattern (testsuite/tests/tmc/ambiguities.ml[232,7762+11]..[232,7762+12])
+                                Ppat_var "n" (testsuite/tests/tmc/ambiguities.ml[232,7762+11]..[232,7762+12])
+                          expression (testsuite/tests/tmc/ambiguities.ml[232,7762+16]..[232,7762+28])
+                            Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[232,7762+16]..[232,7762+20])
+                            Some
+                              expression (testsuite/tests/tmc/ambiguities.ml[232,7762+21]..[232,7762+28])
+                                Pexp_apply
+                                expression (testsuite/tests/tmc/ambiguities.ml[232,7762+24]..[232,7762+25])
+                                  Pexp_ident "+" (testsuite/tests/tmc/ambiguities.ml[232,7762+24]..[232,7762+25])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/tmc/ambiguities.ml[232,7762+22]..[232,7762+23])
+                                      Pexp_ident "n" (testsuite/tests/tmc/ambiguities.ml[232,7762+22]..[232,7762+23])
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/tmc/ambiguities.ml[232,7762+26]..[232,7762+27])
+                                      Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[232,7762+26]..[232,7762+27])
+                                ]
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[233,7791+6]..[233,7791+24])
+                            Ppat_construct "Node" (testsuite/tests/tmc/ambiguities.ml[233,7791+6]..[233,7791+10])
+                            Some
+                              []
+                              pattern (testsuite/tests/tmc/ambiguities.ml[233,7791+11]..[233,7791+24])
+                                Ppat_tuple
+                                [
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[233,7791+12]..[233,7791+16])
+                                    Ppat_var "left" (testsuite/tests/tmc/ambiguities.ml[233,7791+12]..[233,7791+16])
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[233,7791+18]..[233,7791+23])
+                                    Ppat_var "right" (testsuite/tests/tmc/ambiguities.ml[233,7791+18]..[233,7791+23])
+                                ]
+                          expression (testsuite/tests/tmc/ambiguities.ml[234,7819+8]..[241,8038+9])
+                            Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[234,7819+8]..[234,7819+12])
+                            Some
+                              expression (testsuite/tests/tmc/ambiguities.ml[234,7819+13]..[241,8038+9])
+                                Pexp_tuple
+                                [
+                                  expression (testsuite/tests/tmc/ambiguities.ml[235,7834+10]..[237,7892+35])
+                                    Pexp_ifthenelse
+                                    expression (testsuite/tests/tmc/ambiguities.ml[235,7834+14]..[235,7834+18])
+                                      Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[235,7834+14]..[235,7834+18])
+                                    expression (testsuite/tests/tmc/ambiguities.ml[236,7853+16]..[236,7853+38])
+                                      Pexp_apply
+                                      expression (testsuite/tests/tmc/ambiguities.ml[236,7853+16]..[236,7853+21])
+                                        Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[236,7853+16]..[236,7853+21])
+                                      [
+                                        <arg>
+                                        Labelled "flip"
+                                          expression (testsuite/tests/tmc/ambiguities.ml[236,7853+23]..[236,7853+27])
+                                            Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[236,7853+23]..[236,7853+27])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[236,7853+28]..[236,7853+33])
+                                            Pexp_apply
+                                            expression (testsuite/tests/tmc/ambiguities.ml[236,7853+29]..[236,7853+30])
+                                              Pexp_ident "~-" (testsuite/tests/tmc/ambiguities.ml[236,7853+29]..[236,7853+30])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/tmc/ambiguities.ml[236,7853+31]..[236,7853+32])
+                                                  Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[236,7853+31]..[236,7853+32])
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[236,7853+34]..[236,7853+38])
+                                            Pexp_ident "left" (testsuite/tests/tmc/ambiguities.ml[236,7853+34]..[236,7853+38])
+                                      ]
+                                    Some
+                                      expression (testsuite/tests/tmc/ambiguities.ml[237,7892+16]..[237,7892+34])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[237,7892+16]..[237,7892+21])
+                                          Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[237,7892+16]..[237,7892+21])
+                                        [
+                                          <arg>
+                                          Labelled "flip"
+                                            expression (testsuite/tests/tmc/ambiguities.ml[237,7892+23]..[237,7892+27])
+                                              Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[237,7892+23]..[237,7892+27])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[237,7892+28]..[237,7892+29])
+                                              Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[237,7892+28]..[237,7892+29])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[237,7892+30]..[237,7892+34])
+                                              Pexp_ident "left" (testsuite/tests/tmc/ambiguities.ml[237,7892+30]..[237,7892+34])
+                                        ]
+                                  expression (testsuite/tests/tmc/ambiguities.ml[238,7929+10]..[240,7988+49])
+                                    Pexp_ifthenelse
+                                    expression (testsuite/tests/tmc/ambiguities.ml[238,7929+14]..[238,7929+18])
+                                      Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[238,7929+14]..[238,7929+18])
+                                    expression (testsuite/tests/tmc/ambiguities.ml[239,7948+16]..[239,7948+39])
+                                      Pexp_apply
+                                      expression (testsuite/tests/tmc/ambiguities.ml[239,7948+16]..[239,7948+21])
+                                        Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[239,7948+16]..[239,7948+21])
+                                      [
+                                        <arg>
+                                        Labelled "flip"
+                                          expression (testsuite/tests/tmc/ambiguities.ml[239,7948+23]..[239,7948+27])
+                                            Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[239,7948+23]..[239,7948+27])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[239,7948+28]..[239,7948+33])
+                                            Pexp_apply
+                                            expression (testsuite/tests/tmc/ambiguities.ml[239,7948+29]..[239,7948+30])
+                                              Pexp_ident "~-" (testsuite/tests/tmc/ambiguities.ml[239,7948+29]..[239,7948+30])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/tmc/ambiguities.ml[239,7948+31]..[239,7948+32])
+                                                  Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[239,7948+31]..[239,7948+32])
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[239,7948+34]..[239,7948+39])
+                                            Pexp_ident "right" (testsuite/tests/tmc/ambiguities.ml[239,7948+34]..[239,7948+39])
+                                      ]
+                                    Some
+                                      expression (testsuite/tests/tmc/ambiguities.ml[240,7988+16]..[240,7988+48])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[240,7988+16]..[240,7988+34])
+                                          attribute "tailcall"
+                                            []
+                                          Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[240,7988+17]..[240,7988+22])
+                                        [
+                                          <arg>
+                                          Labelled "flip"
+                                            expression (testsuite/tests/tmc/ambiguities.ml[240,7988+36]..[240,7988+40])
+                                              Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[240,7988+36]..[240,7988+40])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[240,7988+41]..[240,7988+42])
+                                              Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[240,7988+41]..[240,7988+42])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[240,7988+43]..[240,7988+48])
+                                              Pexp_ident "right" (testsuite/tests/tmc/ambiguities.ml[240,7988+43]..[240,7988+48])
+                                        ]
+                                ]
+                      ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[243,8052+0]..[249,8197+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[243,8052+10]..[249,8197+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[243,8052+10]..[249,8197+2])
+          Pexp_constant PConst_string ("\nmodule Disjunctions_disambiguated :\n  sig\n    type t = Leaf of int | Node of t * t\n    val shift : flip:bool -> int -> t -> t\n  end\n",(testsuite/tests/tmc/ambiguities.ml[243,8052+12]..[249,8197+0]),Some "")
+    ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[251,8202+0]..[265,8637+3])
+    Pstr_module
+    "Disjunctions_ambiguous_again" (testsuite/tests/tmc/ambiguities.ml[251,8202+7]..[251,8202+35])
+      module_expr (testsuite/tests/tmc/ambiguities.ml[251,8202+38]..[265,8637+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/tmc/ambiguities.ml[252,8247+2]..[252,8247+38])
+            Pstr_type Rec
+            [
+              type_declaration "t" (testsuite/tests/tmc/ambiguities.ml[252,8247+7]..[252,8247+8]) (testsuite/tests/tmc/ambiguities.ml[252,8247+2]..[252,8247+38])
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_variant
+                    [
+                      (testsuite/tests/tmc/ambiguities.ml[252,8247+11]..[252,8247+22])
+                        "Leaf" (testsuite/tests/tmc/ambiguities.ml[252,8247+11]..[252,8247+15])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[252,8247+19]..[252,8247+22])
+                            Ptyp_constr "int" (testsuite/tests/tmc/ambiguities.ml[252,8247+19]..[252,8247+22])
+                            []
+                        ]
+                        None
+                      (testsuite/tests/tmc/ambiguities.ml[252,8247+23]..[252,8247+38])
+                        "Node" (testsuite/tests/tmc/ambiguities.ml[252,8247+25]..[252,8247+29])
+                        [
+                          core_type (testsuite/tests/tmc/ambiguities.ml[252,8247+33]..[252,8247+34])
+                            Ptyp_constr "t" (testsuite/tests/tmc/ambiguities.ml[252,8247+33]..[252,8247+34])
+                            []
+                          core_type (testsuite/tests/tmc/ambiguities.ml[252,8247+37]..[252,8247+38])
+                            Ptyp_constr "t" (testsuite/tests/tmc/ambiguities.ml[252,8247+37]..[252,8247+38])
+                            []
+                        ]
+                        None
+                    ]
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          structure_item (testsuite/tests/tmc/ambiguities.ml[254,8287+2]..[264,8627+9])
+            Pstr_value Rec
+            [
+              <def>
+                  attribute "tail_mod_cons"
+                    []
+                pattern (testsuite/tests/tmc/ambiguities.ml[254,8287+26]..[254,8287+31])
+                  Ppat_var "shift" (testsuite/tests/tmc/ambiguities.ml[254,8287+26]..[254,8287+31])
+                expression (testsuite/tests/tmc/ambiguities.ml[254,8287+32]..[264,8627+9]) ghost
+                  Pexp_fun
+                  Labelled "flip"
+                  None
+                  pattern (testsuite/tests/tmc/ambiguities.ml[254,8287+33]..[254,8287+37])
+                    Ppat_var "flip" (testsuite/tests/tmc/ambiguities.ml[254,8287+33]..[254,8287+37])
+                  expression (testsuite/tests/tmc/ambiguities.ml[254,8287+38]..[264,8627+9]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (testsuite/tests/tmc/ambiguities.ml[254,8287+38]..[254,8287+39])
+                      Ppat_var "k" (testsuite/tests/tmc/ambiguities.ml[254,8287+38]..[254,8287+39])
+                    expression (testsuite/tests/tmc/ambiguities.ml[254,8287+42]..[264,8627+9])
+                      Pexp_function
+                      [
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[255,8338+6]..[255,8338+12])
+                            Ppat_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[255,8338+6]..[255,8338+10])
+                            Some
+                              []
+                              pattern (testsuite/tests/tmc/ambiguities.ml[255,8338+11]..[255,8338+12])
+                                Ppat_var "n" (testsuite/tests/tmc/ambiguities.ml[255,8338+11]..[255,8338+12])
+                          expression (testsuite/tests/tmc/ambiguities.ml[255,8338+16]..[255,8338+28])
+                            Pexp_construct "Leaf" (testsuite/tests/tmc/ambiguities.ml[255,8338+16]..[255,8338+20])
+                            Some
+                              expression (testsuite/tests/tmc/ambiguities.ml[255,8338+21]..[255,8338+28])
+                                Pexp_apply
+                                expression (testsuite/tests/tmc/ambiguities.ml[255,8338+24]..[255,8338+25])
+                                  Pexp_ident "+" (testsuite/tests/tmc/ambiguities.ml[255,8338+24]..[255,8338+25])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/tmc/ambiguities.ml[255,8338+22]..[255,8338+23])
+                                      Pexp_ident "n" (testsuite/tests/tmc/ambiguities.ml[255,8338+22]..[255,8338+23])
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/tmc/ambiguities.ml[255,8338+26]..[255,8338+27])
+                                      Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[255,8338+26]..[255,8338+27])
+                                ]
+                        <case>
+                          pattern (testsuite/tests/tmc/ambiguities.ml[256,8367+6]..[256,8367+24])
+                            Ppat_construct "Node" (testsuite/tests/tmc/ambiguities.ml[256,8367+6]..[256,8367+10])
+                            Some
+                              []
+                              pattern (testsuite/tests/tmc/ambiguities.ml[256,8367+11]..[256,8367+24])
+                                Ppat_tuple
+                                [
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[256,8367+12]..[256,8367+16])
+                                    Ppat_var "left" (testsuite/tests/tmc/ambiguities.ml[256,8367+12]..[256,8367+16])
+                                  pattern (testsuite/tests/tmc/ambiguities.ml[256,8367+18]..[256,8367+23])
+                                    Ppat_var "right" (testsuite/tests/tmc/ambiguities.ml[256,8367+18]..[256,8367+23])
+                                ]
+                          expression (testsuite/tests/tmc/ambiguities.ml[257,8395+8]..[264,8627+9])
+                            Pexp_construct "Node" (testsuite/tests/tmc/ambiguities.ml[257,8395+8]..[257,8395+12])
+                            Some
+                              expression (testsuite/tests/tmc/ambiguities.ml[257,8395+13]..[264,8627+9])
+                                Pexp_tuple
+                                [
+                                  expression (testsuite/tests/tmc/ambiguities.ml[258,8410+10]..[260,8481+35])
+                                    Pexp_ifthenelse
+                                    expression (testsuite/tests/tmc/ambiguities.ml[258,8410+14]..[258,8410+18])
+                                      Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[258,8410+14]..[258,8410+18])
+                                    expression (testsuite/tests/tmc/ambiguities.ml[259,8429+16]..[259,8429+51])
+                                      Pexp_apply
+                                      expression (testsuite/tests/tmc/ambiguities.ml[259,8429+16]..[259,8429+34])
+                                        attribute "tailcall"
+                                          []
+                                        Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[259,8429+17]..[259,8429+22])
+                                      [
+                                        <arg>
+                                        Labelled "flip"
+                                          expression (testsuite/tests/tmc/ambiguities.ml[259,8429+36]..[259,8429+40])
+                                            Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[259,8429+36]..[259,8429+40])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[259,8429+41]..[259,8429+46])
+                                            Pexp_apply
+                                            expression (testsuite/tests/tmc/ambiguities.ml[259,8429+42]..[259,8429+43])
+                                              Pexp_ident "~-" (testsuite/tests/tmc/ambiguities.ml[259,8429+42]..[259,8429+43])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/tmc/ambiguities.ml[259,8429+44]..[259,8429+45])
+                                                  Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[259,8429+44]..[259,8429+45])
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[259,8429+47]..[259,8429+51])
+                                            Pexp_ident "left" (testsuite/tests/tmc/ambiguities.ml[259,8429+47]..[259,8429+51])
+                                      ]
+                                    Some
+                                      expression (testsuite/tests/tmc/ambiguities.ml[260,8481+16]..[260,8481+34])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[260,8481+16]..[260,8481+21])
+                                          Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[260,8481+16]..[260,8481+21])
+                                        [
+                                          <arg>
+                                          Labelled "flip"
+                                            expression (testsuite/tests/tmc/ambiguities.ml[260,8481+23]..[260,8481+27])
+                                              Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[260,8481+23]..[260,8481+27])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[260,8481+28]..[260,8481+29])
+                                              Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[260,8481+28]..[260,8481+29])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[260,8481+30]..[260,8481+34])
+                                              Pexp_ident "left" (testsuite/tests/tmc/ambiguities.ml[260,8481+30]..[260,8481+34])
+                                        ]
+                                  expression (testsuite/tests/tmc/ambiguities.ml[261,8518+10]..[263,8577+49])
+                                    Pexp_ifthenelse
+                                    expression (testsuite/tests/tmc/ambiguities.ml[261,8518+14]..[261,8518+18])
+                                      Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[261,8518+14]..[261,8518+18])
+                                    expression (testsuite/tests/tmc/ambiguities.ml[262,8537+16]..[262,8537+39])
+                                      Pexp_apply
+                                      expression (testsuite/tests/tmc/ambiguities.ml[262,8537+16]..[262,8537+21])
+                                        Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[262,8537+16]..[262,8537+21])
+                                      [
+                                        <arg>
+                                        Labelled "flip"
+                                          expression (testsuite/tests/tmc/ambiguities.ml[262,8537+23]..[262,8537+27])
+                                            Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[262,8537+23]..[262,8537+27])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[262,8537+28]..[262,8537+33])
+                                            Pexp_apply
+                                            expression (testsuite/tests/tmc/ambiguities.ml[262,8537+29]..[262,8537+30])
+                                              Pexp_ident "~-" (testsuite/tests/tmc/ambiguities.ml[262,8537+29]..[262,8537+30])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/tmc/ambiguities.ml[262,8537+31]..[262,8537+32])
+                                                  Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[262,8537+31]..[262,8537+32])
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/tmc/ambiguities.ml[262,8537+34]..[262,8537+39])
+                                            Pexp_ident "right" (testsuite/tests/tmc/ambiguities.ml[262,8537+34]..[262,8537+39])
+                                      ]
+                                    Some
+                                      expression (testsuite/tests/tmc/ambiguities.ml[263,8577+16]..[263,8577+48])
+                                        Pexp_apply
+                                        expression (testsuite/tests/tmc/ambiguities.ml[263,8577+16]..[263,8577+34])
+                                          attribute "tailcall"
+                                            []
+                                          Pexp_ident "shift" (testsuite/tests/tmc/ambiguities.ml[263,8577+17]..[263,8577+22])
+                                        [
+                                          <arg>
+                                          Labelled "flip"
+                                            expression (testsuite/tests/tmc/ambiguities.ml[263,8577+36]..[263,8577+40])
+                                              Pexp_ident "flip" (testsuite/tests/tmc/ambiguities.ml[263,8577+36]..[263,8577+40])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[263,8577+41]..[263,8577+42])
+                                              Pexp_ident "k" (testsuite/tests/tmc/ambiguities.ml[263,8577+41]..[263,8577+42])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/tmc/ambiguities.ml[263,8577+43]..[263,8577+48])
+                                              Pexp_ident "right" (testsuite/tests/tmc/ambiguities.ml[263,8577+43]..[263,8577+48])
+                                        ]
+                                ]
+                      ]
+            ]
+        ]
+  structure_item (testsuite/tests/tmc/ambiguities.ml[266,8641+0]..[289,9652+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/tmc/ambiguities.ml[266,8641+10]..[289,9652+2])
+        Pstr_eval
+        expression (testsuite/tests/tmc/ambiguities.ml[266,8641+10]..[289,9652+2])
+          Pexp_constant PConst_string ("\nLines 7-14, characters 8-9:\n 7 | ........Node (\n 8 |           (if flip\n 9 |            then (shift[@tailcall]) ~flip (- k) left\n10 |            else shift ~flip k left),\n11 |           (if flip\n12 |            then shift ~flip (- k) right\n13 |            else (shift[@tailcall]) ~flip k right)\n14 |         )\nError: [@tail_mod_cons]: this constructor application may be TMC-transformed\n       in several different ways. Only one of the arguments may become a TMC\n       call, but several arguments contain calls that are explicitly marked\n       as tail-recursive. Please fix the conflict by reviewing and fixing the\n       conflicting annotations.\nLine 9, characters 16-51:\n9 |            then (shift[@tailcall]) ~flip (- k) left\n                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  This call is explicitly annotated.\nLine 13, characters 16-48:\n13 |            else (shift[@tailcall]) ~flip k right)\n                     ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  This call is explicitly annotated.\n",(testsuite/tests/tmc/ambiguities.ml[266,8641+12]..[289,9652+0]),Some "")
+    ]
+]
+

@@ -1,0 +1,2014 @@
+[
+  signature_item (stdlib/stringLabels.mli[24,1294+0]..[71,3279+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[24,1294+0]..[71,3279+2])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[24,1294+0]..[71,3279+2])
+          Pexp_constant PConst_string(" Strings.\n\n    A string [s] of length [n] is an indexable and immutable sequence\n    of [n] bytes. For historical reasons these bytes are referred to\n    as characters.\n\n    The semantics of string functions is defined in terms of\n    indices and positions. These are depicted and described\n    as follows.\n\n{v\npositions  0   1   2   3   4    n-1    n\n           +---+---+---+---+     +-----+\n  indices  | 0 | 1 | 2 | 3 | ... | n-1 |\n           +---+---+---+---+     +-----+\nv}\n    {ul\n    {- An {e index} [i] of [s] is an integer in the range \\[[0];[n-1]\\].\n       It represents the [i]th byte (character) of [s] which can be\n       accessed using the constant time string indexing operator\n       [s.[i]].}\n    {- A {e position} [i] of [s] is an integer in the range\n       \\[[0];[n]\\]. It represents either the point at the beginning of\n       the string, or the point between two indices, or the point at\n       the end of the string. The [i]th byte index is between position\n       [i] and [i+1].}}\n\n    Two integers [start] and [len] are said to define a {e valid\n    substring} of [s] if [len >= 0] and [start], [start+len] are\n    positions of [s].\n\n    {b Unicode text.} Strings being arbitrary sequences of bytes, they\n    can hold any kind of textual encoding. However the recommended\n    encoding for storing Unicode text in OCaml strings is UTF-8. This\n    is the encoding used by Unicode escapes in string literals. For\n    example the string [\"\\u{1F42B}\"] is the UTF-8 encoding of the\n    Unicode character U+1F42B.\n\n    {b Past mutability.} Before OCaml 4.02, strings used to be modifiable in\n    place like {!Bytes.t} mutable sequences of bytes.\n    OCaml 4 had various compiler flags and configuration options to support the\n    transition period from mutable to immutable strings.\n    Those options are no longer available, and strings are now always\n    immutable.\n\n    The labeled version of this module can be used as described in the\n    {!StdLabels} module.\n",(stdlib/stringLabels.mli[24,1294+0]..[71,3279+2]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[73,3283+0]..[73,3283+26])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[73,3283+0]..[73,3283+26])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[73,3283+0]..[73,3283+26])
+          Pexp_constant PConst_string(" {1:strings Strings} ",(stdlib/stringLabels.mli[73,3283+0]..[73,3283+26]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[75,3311+0]..[75,3311+15])
+    Psig_type Rec
+    [
+      type_declaration "t" (stdlib/stringLabels.mli[75,3311+5]..[75,3311+6]) (stdlib/stringLabels.mli[75,3311+0]..[75,3311+15])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/stringLabels.mli[76,3327+0]..[76,3327+28])
+              Pstr_eval
+              expression (stdlib/stringLabels.mli[76,3327+0]..[76,3327+28])
+                Pexp_constant PConst_string(" The type for strings. ",(stdlib/stringLabels.mli[76,3327+0]..[76,3327+28]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (stdlib/stringLabels.mli[75,3311+9]..[75,3311+15])
+              Ptyp_constr "string" (stdlib/stringLabels.mli[75,3311+9]..[75,3311+15])
+              []
+    ]
+  signature_item (stdlib/stringLabels.mli[78,3357+0]..[78,3357+32])
+    Psig_value
+    value_description "make" (stdlib/stringLabels.mli[78,3357+4]..[78,3357+8]) (stdlib/stringLabels.mli[78,3357+0]..[78,3357+32])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[79,3390+0]..[82,3479+76])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[79,3390+0]..[82,3479+76])
+              Pexp_constant PConst_string(" [make n c] is a string of length [n] with each index holding the\n    character [c].\n\n    @raise Invalid_argument if [n < 0] or [n > ]{!Sys.max_string_length}. ",(stdlib/stringLabels.mli[79,3390+0]..[82,3479+76]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[78,3357+11]..[78,3357+32])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[78,3357+11]..[78,3357+14])
+          Ptyp_constr "int" (stdlib/stringLabels.mli[78,3357+11]..[78,3357+14])
+          []
+        core_type (stdlib/stringLabels.mli[78,3357+18]..[78,3357+32])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[78,3357+18]..[78,3357+22])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[78,3357+18]..[78,3357+22])
+            []
+          core_type (stdlib/stringLabels.mli[78,3357+26]..[78,3357+32])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[78,3357+26]..[78,3357+32])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[84,3557+0]..[84,3557+43])
+    Psig_value
+    value_description "init" (stdlib/stringLabels.mli[84,3557+4]..[84,3557+8]) (stdlib/stringLabels.mli[84,3557+0]..[84,3557+43])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[85,3601+0]..[89,3801+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[85,3601+0]..[89,3801+18])
+              Pexp_constant PConst_string(" [init n ~f] is a string of length [n] with index\n    [i] holding the character [f i] (called in increasing index order).\n\n    @raise Invalid_argument if [n < 0] or [n > ]{!Sys.max_string_length}.\n    @since 4.02 ",(stdlib/stringLabels.mli[85,3601+0]..[89,3801+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[84,3557+11]..[84,3557+43])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[84,3557+11]..[84,3557+14])
+          Ptyp_constr "int" (stdlib/stringLabels.mli[84,3557+11]..[84,3557+14])
+          []
+        core_type (stdlib/stringLabels.mli[84,3557+18]..[84,3557+43])
+          Ptyp_arrow
+          Labelled "f"
+          core_type (stdlib/stringLabels.mli[84,3557+21]..[84,3557+32])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[84,3557+21]..[84,3557+24])
+              Ptyp_constr "int" (stdlib/stringLabels.mli[84,3557+21]..[84,3557+24])
+              []
+            core_type (stdlib/stringLabels.mli[84,3557+28]..[84,3557+32])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[84,3557+28]..[84,3557+32])
+              []
+          core_type (stdlib/stringLabels.mli[84,3557+37]..[84,3557+43])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[84,3557+37]..[84,3557+43])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[91,3821+0]..[91,3821+18])
+    Psig_value
+    value_description "empty" (stdlib/stringLabels.mli[91,3821+4]..[91,3821+9]) (stdlib/stringLabels.mli[91,3821+0]..[91,3821+18])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[92,3840+0]..[95,3879+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[92,3840+0]..[95,3879+2])
+              Pexp_constant PConst_string(" The empty string.\n\n    @since 4.13\n",(stdlib/stringLabels.mli[92,3840+0]..[95,3879+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[91,3821+12]..[91,3821+18])
+        Ptyp_constr "string" (stdlib/stringLabels.mli[91,3821+12]..[91,3821+18])
+        []
+      []
+  signature_item (stdlib/stringLabels.mli[97,3883+0]..[97,3883+30])
+    Psig_value
+    value_description "of_bytes" (stdlib/stringLabels.mli[97,3883+4]..[97,3883+12]) (stdlib/stringLabels.mli[97,3883+0]..[97,3883+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[98,3914+0]..[102,4016+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[98,3914+0]..[102,4016+2])
+              Pexp_constant PConst_string(" Return a new string that contains the same bytes as the given byte\n    sequence.\n\n    @since 4.13\n",(stdlib/stringLabels.mli[98,3914+0]..[102,4016+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[97,3883+15]..[97,3883+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[97,3883+15]..[97,3883+20])
+          Ptyp_constr "bytes" (stdlib/stringLabels.mli[97,3883+15]..[97,3883+20])
+          []
+        core_type (stdlib/stringLabels.mli[97,3883+24]..[97,3883+30])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[97,3883+24]..[97,3883+30])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[104,4020+0]..[104,4020+30])
+    Psig_value
+    value_description "to_bytes" (stdlib/stringLabels.mli[104,4020+4]..[104,4020+12]) (stdlib/stringLabels.mli[104,4020+0]..[104,4020+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[105,4051+0]..[109,4153+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[105,4051+0]..[109,4153+2])
+              Pexp_constant PConst_string(" Return a new byte sequence that contains the same bytes as the given\n    string.\n\n    @since 4.13\n",(stdlib/stringLabels.mli[105,4051+0]..[109,4153+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[104,4020+15]..[104,4020+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[104,4020+15]..[104,4020+21])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[104,4020+15]..[104,4020+21])
+          []
+        core_type (stdlib/stringLabels.mli[104,4020+25]..[104,4020+30])
+          Ptyp_constr "bytes" (stdlib/stringLabels.mli[104,4020+25]..[104,4020+30])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[111,4157+0]..[111,4157+50])
+    Psig_value
+    value_description "length" (stdlib/stringLabels.mli[111,4157+9]..[111,4157+15]) (stdlib/stringLabels.mli[111,4157+0]..[111,4157+50])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[112,4208+0]..[112,4208+68])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[112,4208+0]..[112,4208+68])
+              Pexp_constant PConst_string(" [length s] is the length (number of bytes/characters) of [s]. ",(stdlib/stringLabels.mli[112,4208+0]..[112,4208+68]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[111,4157+18]..[111,4157+31])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[111,4157+18]..[111,4157+24])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[111,4157+18]..[111,4157+24])
+          []
+        core_type (stdlib/stringLabels.mli[111,4157+28]..[111,4157+31])
+          Ptyp_constr "int" (stdlib/stringLabels.mli[111,4157+28]..[111,4157+31])
+          []
+      [
+        "%string_length"
+      ]
+  signature_item (stdlib/stringLabels.mli[114,4278+0]..[114,4278+57])
+    Psig_value
+    value_description "get" (stdlib/stringLabels.mli[114,4278+9]..[114,4278+12]) (stdlib/stringLabels.mli[114,4278+0]..[114,4278+57])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[115,4336+0]..[118,4430+58])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[115,4336+0]..[118,4430+58])
+              Pexp_constant PConst_string(" [get s i] is the character at index [i] in [s]. This is the same\n    as writing [s.[i]].\n\n    @raise Invalid_argument if [i] not an index of [s]. ",(stdlib/stringLabels.mli[115,4336+0]..[118,4430+58]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[114,4278+15]..[114,4278+36])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[114,4278+15]..[114,4278+21])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[114,4278+15]..[114,4278+21])
+          []
+        core_type (stdlib/stringLabels.mli[114,4278+25]..[114,4278+36])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[114,4278+25]..[114,4278+28])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[114,4278+25]..[114,4278+28])
+            []
+          core_type (stdlib/stringLabels.mli[114,4278+32]..[114,4278+36])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[114,4278+32]..[114,4278+36])
+            []
+      [
+        "%string_safe_get"
+      ]
+  signature_item (stdlib/stringLabels.mli[120,4490+0]..[123,4587+15])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[120,4490+0]..[123,4587+15])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[120,4490+0]..[123,4587+15])
+          Pexp_constant PConst_string(" {1:concat Concatenating}\n\n    {b Note.} The {!Stdlib.( ^ )} binary operator concatenates two\n    strings. ",(stdlib/stringLabels.mli[120,4490+0]..[123,4587+15]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[125,4604+0]..[125,4604+48])
+    Psig_value
+    value_description "concat" (stdlib/stringLabels.mli[125,4604+4]..[125,4604+10]) (stdlib/stringLabels.mli[125,4604+0]..[125,4604+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[126,4653+0]..[130,4826+38])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[126,4653+0]..[130,4826+38])
+              Pexp_constant PConst_string(" [concat ~sep ss] concatenates the list of strings [ss], inserting\n    the separator string [sep] between each.\n\n    @raise Invalid_argument if the result is longer than\n    {!Sys.max_string_length} bytes. ",(stdlib/stringLabels.mli[126,4653+0]..[130,4826+38]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[125,4604+13]..[125,4604+48])
+        Ptyp_arrow
+        Labelled "sep"
+        core_type (stdlib/stringLabels.mli[125,4604+17]..[125,4604+23])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[125,4604+17]..[125,4604+23])
+          []
+        core_type (stdlib/stringLabels.mli[125,4604+27]..[125,4604+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[125,4604+27]..[125,4604+38])
+            Ptyp_constr "list" (stdlib/stringLabels.mli[125,4604+34]..[125,4604+38])
+            [
+              core_type (stdlib/stringLabels.mli[125,4604+27]..[125,4604+33])
+                Ptyp_constr "string" (stdlib/stringLabels.mli[125,4604+27]..[125,4604+33])
+                []
+            ]
+          core_type (stdlib/stringLabels.mli[125,4604+42]..[125,4604+48])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[125,4604+42]..[125,4604+48])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[132,4866+0]..[132,4866+36])
+    Psig_value
+    value_description "cat" (stdlib/stringLabels.mli[132,4866+4]..[132,4866+7]) (stdlib/stringLabels.mli[132,4866+0]..[132,4866+36])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[133,4903+0]..[139,5066+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[133,4903+0]..[139,5066+2])
+              Pexp_constant PConst_string(" [cat s1 s2] concatenates s1 and s2 ([s1 ^ s2]).\n\n    @raise Invalid_argument if the result is longer than\n    {!Sys.max_string_length} bytes.\n\n    @since 4.13\n",(stdlib/stringLabels.mli[133,4903+0]..[139,5066+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[132,4866+10]..[132,4866+36])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[132,4866+10]..[132,4866+16])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[132,4866+10]..[132,4866+16])
+          []
+        core_type (stdlib/stringLabels.mli[132,4866+20]..[132,4866+36])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[132,4866+20]..[132,4866+26])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[132,4866+20]..[132,4866+26])
+            []
+          core_type (stdlib/stringLabels.mli[132,4866+30]..[132,4866+36])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[132,4866+30]..[132,4866+36])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[141,5070+0]..[141,5070+48])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[141,5070+0]..[141,5070+48])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[141,5070+0]..[141,5070+48])
+          Pexp_constant PConst_string(" {1:predicates Predicates and comparisons} ",(stdlib/stringLabels.mli[141,5070+0]..[141,5070+48]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[143,5120+0]..[143,5120+26])
+    Psig_value
+    value_description "equal" (stdlib/stringLabels.mli[143,5120+4]..[143,5120+9]) (stdlib/stringLabels.mli[143,5120+0]..[143,5120+26])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[144,5147+0]..[146,5234+41])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[144,5147+0]..[146,5234+41])
+              Pexp_constant PConst_string(" [equal s0 s1] is [true] if and only if [s0] and [s1] are character-wise\n    equal.\n    @since 4.03 (4.05 in StringLabels) ",(stdlib/stringLabels.mli[144,5147+0]..[146,5234+41]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[143,5120+12]..[143,5120+26])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[143,5120+12]..[143,5120+13])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[143,5120+12]..[143,5120+13])
+          []
+        core_type (stdlib/stringLabels.mli[143,5120+17]..[143,5120+26])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[143,5120+17]..[143,5120+18])
+            Ptyp_constr "t" (stdlib/stringLabels.mli[143,5120+17]..[143,5120+18])
+            []
+          core_type (stdlib/stringLabels.mli[143,5120+22]..[143,5120+26])
+            Ptyp_constr "bool" (stdlib/stringLabels.mli[143,5120+22]..[143,5120+26])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[148,5277+0]..[148,5277+27])
+    Psig_value
+    value_description "compare" (stdlib/stringLabels.mli[148,5277+4]..[148,5277+11]) (stdlib/stringLabels.mli[148,5277+0]..[148,5277+27])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[149,5305+0]..[150,5381+75])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[149,5305+0]..[150,5381+75])
+              Pexp_constant PConst_string(" [compare s0 s1] sorts [s0] and [s1] in lexicographical order. [compare]\n    behaves like {!Stdlib.compare} on strings but may be more efficient. ",(stdlib/stringLabels.mli[149,5305+0]..[150,5381+75]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[148,5277+14]..[148,5277+27])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[148,5277+14]..[148,5277+15])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[148,5277+14]..[148,5277+15])
+          []
+        core_type (stdlib/stringLabels.mli[148,5277+19]..[148,5277+27])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[148,5277+19]..[148,5277+20])
+            Ptyp_constr "t" (stdlib/stringLabels.mli[148,5277+19]..[148,5277+20])
+            []
+          core_type (stdlib/stringLabels.mli[148,5277+24]..[148,5277+27])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[148,5277+24]..[148,5277+27])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[152,5458+0]..[153,5476+79])
+    Psig_value
+    value_description "starts_with" (stdlib/stringLabels.mli[152,5458+4]..[152,5458+15]) (stdlib/stringLabels.mli[152,5458+0]..[153,5476+79])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[154,5556+0]..[157,5642+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[154,5556+0]..[157,5642+18])
+              Pexp_constant PConst_string(" [starts_with ][~prefix s] is [true] if and only if [s] starts with\n    [prefix].\n\n    @since 4.13 ",(stdlib/stringLabels.mli[154,5556+0]..[157,5642+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[153,5476+2]..[153,5476+79])
+        Ptyp_arrow
+        Labelled "prefix"
+        core_type (stdlib/stringLabels.mli[153,5476+55]..[153,5476+61])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[153,5476+55]..[153,5476+61])
+          []
+        core_type (stdlib/stringLabels.mli[153,5476+65]..[153,5476+79])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[153,5476+65]..[153,5476+71])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[153,5476+65]..[153,5476+71])
+            []
+          core_type (stdlib/stringLabels.mli[153,5476+75]..[153,5476+79])
+            Ptyp_constr "bool" (stdlib/stringLabels.mli[153,5476+75]..[153,5476+79])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[159,5662+0]..[160,5678+79])
+    Psig_value
+    value_description "ends_with" (stdlib/stringLabels.mli[159,5662+4]..[159,5662+13]) (stdlib/stringLabels.mli[159,5662+0]..[160,5678+79])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[161,5758+0]..[163,5836+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[161,5758+0]..[163,5836+18])
+              Pexp_constant PConst_string(" [ends_with ][~suffix s] is [true] if and only if [s] ends with [suffix].\n\n    @since 4.13 ",(stdlib/stringLabels.mli[161,5758+0]..[163,5836+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[160,5678+2]..[160,5678+79])
+        Ptyp_arrow
+        Labelled "suffix"
+        core_type (stdlib/stringLabels.mli[160,5678+55]..[160,5678+61])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[160,5678+55]..[160,5678+61])
+          []
+        core_type (stdlib/stringLabels.mli[160,5678+65]..[160,5678+79])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[160,5678+65]..[160,5678+71])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[160,5678+65]..[160,5678+71])
+            []
+          core_type (stdlib/stringLabels.mli[160,5678+75]..[160,5678+79])
+            Ptyp_constr "bool" (stdlib/stringLabels.mli[160,5678+75]..[160,5678+79])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[165,5856+0]..[165,5856+49])
+    Psig_value
+    value_description "contains_from" (stdlib/stringLabels.mli[165,5856+4]..[165,5856+17]) (stdlib/stringLabels.mli[165,5856+0]..[165,5856+49])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[166,5906+0]..[169,6009+73])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[166,5906+0]..[169,6009+73])
+              Pexp_constant PConst_string(" [contains_from s start c] is [true] if and only if [c] appears in [s]\n    after position [start].\n\n    @raise Invalid_argument if [start] is not a valid position in [s]. ",(stdlib/stringLabels.mli[166,5906+0]..[169,6009+73]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[165,5856+20]..[165,5856+49])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[165,5856+20]..[165,5856+26])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[165,5856+20]..[165,5856+26])
+          []
+        core_type (stdlib/stringLabels.mli[165,5856+30]..[165,5856+49])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[165,5856+30]..[165,5856+33])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[165,5856+30]..[165,5856+33])
+            []
+          core_type (stdlib/stringLabels.mli[165,5856+37]..[165,5856+49])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[165,5856+37]..[165,5856+41])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[165,5856+37]..[165,5856+41])
+              []
+            core_type (stdlib/stringLabels.mli[165,5856+45]..[165,5856+49])
+              Ptyp_constr "bool" (stdlib/stringLabels.mli[165,5856+45]..[165,5856+49])
+              []
+      []
+  signature_item (stdlib/stringLabels.mli[171,6084+0]..[171,6084+50])
+    Psig_value
+    value_description "rcontains_from" (stdlib/stringLabels.mli[171,6084+4]..[171,6084+18]) (stdlib/stringLabels.mli[171,6084+0]..[171,6084+50])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[172,6135+0]..[176,6309+23])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[172,6135+0]..[176,6309+23])
+              Pexp_constant PConst_string(" [rcontains_from s stop c] is [true] if and only if [c] appears in [s]\n    before position [stop+1].\n\n    @raise Invalid_argument if [stop < 0] or [stop+1] is not a valid\n    position in [s]. ",(stdlib/stringLabels.mli[172,6135+0]..[176,6309+23]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[171,6084+21]..[171,6084+50])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[171,6084+21]..[171,6084+27])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[171,6084+21]..[171,6084+27])
+          []
+        core_type (stdlib/stringLabels.mli[171,6084+31]..[171,6084+50])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[171,6084+31]..[171,6084+34])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[171,6084+31]..[171,6084+34])
+            []
+          core_type (stdlib/stringLabels.mli[171,6084+38]..[171,6084+50])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[171,6084+38]..[171,6084+42])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[171,6084+38]..[171,6084+42])
+              []
+            core_type (stdlib/stringLabels.mli[171,6084+46]..[171,6084+50])
+              Ptyp_constr "bool" (stdlib/stringLabels.mli[171,6084+46]..[171,6084+50])
+              []
+      []
+  signature_item (stdlib/stringLabels.mli[178,6334+0]..[178,6334+37])
+    Psig_value
+    value_description "contains" (stdlib/stringLabels.mli[178,6334+4]..[178,6334+12]) (stdlib/stringLabels.mli[178,6334+0]..[178,6334+37])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[179,6372+0]..[179,6372+57])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[179,6372+0]..[179,6372+57])
+              Pexp_constant PConst_string(" [contains s c] is {!String.contains_from}[ s 0 c]. ",(stdlib/stringLabels.mli[179,6372+0]..[179,6372+57]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[178,6334+15]..[178,6334+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[178,6334+15]..[178,6334+21])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[178,6334+15]..[178,6334+21])
+          []
+        core_type (stdlib/stringLabels.mli[178,6334+25]..[178,6334+37])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[178,6334+25]..[178,6334+29])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[178,6334+25]..[178,6334+29])
+            []
+          core_type (stdlib/stringLabels.mli[178,6334+33]..[178,6334+37])
+            Ptyp_constr "bool" (stdlib/stringLabels.mli[178,6334+33]..[178,6334+37])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[181,6431+0]..[181,6431+40])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[181,6431+0]..[181,6431+40])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[181,6431+0]..[181,6431+40])
+          Pexp_constant PConst_string(" {1:extract Extracting substrings} ",(stdlib/stringLabels.mli[181,6431+0]..[181,6431+40]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[183,6473+0]..[183,6473+48])
+    Psig_value
+    value_description "sub" (stdlib/stringLabels.mli[183,6473+4]..[183,6473+7]) (stdlib/stringLabels.mli[183,6473+0]..[183,6473+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[184,6522+0]..[189,6738+24])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[184,6522+0]..[189,6738+24])
+              Pexp_constant PConst_string(" [sub s ~pos ~len] is a string of length [len], containing the\n    substring of [s] that starts at position [pos] and has length\n    [len].\n\n    @raise Invalid_argument if [pos] and [len] do not designate a valid\n    substring of [s]. ",(stdlib/stringLabels.mli[184,6522+0]..[189,6738+24]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[183,6473+10]..[183,6473+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[183,6473+10]..[183,6473+16])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[183,6473+10]..[183,6473+16])
+          []
+        core_type (stdlib/stringLabels.mli[183,6473+20]..[183,6473+48])
+          Ptyp_arrow
+          Labelled "pos"
+          core_type (stdlib/stringLabels.mli[183,6473+24]..[183,6473+27])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[183,6473+24]..[183,6473+27])
+            []
+          core_type (stdlib/stringLabels.mli[183,6473+31]..[183,6473+48])
+            Ptyp_arrow
+            Labelled "len"
+            core_type (stdlib/stringLabels.mli[183,6473+35]..[183,6473+38])
+              Ptyp_constr "int" (stdlib/stringLabels.mli[183,6473+35]..[183,6473+38])
+              []
+            core_type (stdlib/stringLabels.mli[183,6473+42]..[183,6473+48])
+              Ptyp_constr "string" (stdlib/stringLabels.mli[183,6473+42]..[183,6473+48])
+              []
+      []
+  signature_item (stdlib/stringLabels.mli[191,6764+0]..[191,6764+53])
+    Psig_value
+    value_description "split_on_char" (stdlib/stringLabels.mli[191,6764+4]..[191,6764+17]) (stdlib/stringLabels.mli[191,6764+0]..[191,6764+53])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[192,6818+0]..[203,7279+41])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[192,6818+0]..[203,7279+41])
+              Pexp_constant PConst_string(" [split_on_char ~sep s] is the list of all (possibly empty)\n    substrings of [s] that are delimited by the character [sep].\n\n    The function's result is specified by the following invariants:\n    {ul\n    {- The list is not empty.}\n    {- Concatenating its elements using [sep] as a separator returns a\n      string equal to the input ([concat (make 1 sep)\n      (split_on_char sep s) = s]).}\n    {- No string in the result contains the [sep] character.}}\n\n    @since 4.04 (4.05 in StringLabels) ",(stdlib/stringLabels.mli[192,6818+0]..[203,7279+41]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[191,6764+20]..[191,6764+53])
+        Ptyp_arrow
+        Labelled "sep"
+        core_type (stdlib/stringLabels.mli[191,6764+24]..[191,6764+28])
+          Ptyp_constr "char" (stdlib/stringLabels.mli[191,6764+24]..[191,6764+28])
+          []
+        core_type (stdlib/stringLabels.mli[191,6764+32]..[191,6764+53])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[191,6764+32]..[191,6764+38])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[191,6764+32]..[191,6764+38])
+            []
+          core_type (stdlib/stringLabels.mli[191,6764+42]..[191,6764+53])
+            Ptyp_constr "list" (stdlib/stringLabels.mli[191,6764+49]..[191,6764+53])
+            [
+              core_type (stdlib/stringLabels.mli[191,6764+42]..[191,6764+48])
+                Ptyp_constr "string" (stdlib/stringLabels.mli[191,6764+42]..[191,6764+48])
+                []
+            ]
+      []
+  signature_item (stdlib/stringLabels.mli[205,7322+0]..[205,7322+36])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[205,7322+0]..[205,7322+36])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[205,7322+0]..[205,7322+36])
+          Pexp_constant PConst_string(" {1:transforming Transforming} ",(stdlib/stringLabels.mli[205,7322+0]..[205,7322+36]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[207,7360+0]..[207,7360+46])
+    Psig_value
+    value_description "map" (stdlib/stringLabels.mli[207,7360+4]..[207,7360+7]) (stdlib/stringLabels.mli[207,7360+0]..[207,7360+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[208,7407+0]..[211,7518+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[208,7407+0]..[211,7518+18])
+              Pexp_constant PConst_string(" [map f s] is the string resulting from applying [f] to all the\n    characters of [s] in increasing order.\n\n    @since 4.00 ",(stdlib/stringLabels.mli[208,7407+0]..[211,7518+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[207,7360+10]..[207,7360+46])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/stringLabels.mli[207,7360+13]..[207,7360+25])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[207,7360+13]..[207,7360+17])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[207,7360+13]..[207,7360+17])
+            []
+          core_type (stdlib/stringLabels.mli[207,7360+21]..[207,7360+25])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[207,7360+21]..[207,7360+25])
+            []
+        core_type (stdlib/stringLabels.mli[207,7360+30]..[207,7360+46])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[207,7360+30]..[207,7360+36])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[207,7360+30]..[207,7360+36])
+            []
+          core_type (stdlib/stringLabels.mli[207,7360+40]..[207,7360+46])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[207,7360+40]..[207,7360+46])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[213,7538+0]..[213,7538+54])
+    Psig_value
+    value_description "mapi" (stdlib/stringLabels.mli[213,7538+4]..[213,7538+8]) (stdlib/stringLabels.mli[213,7538+0]..[213,7538+54])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[214,7593+0]..[217,7683+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[214,7593+0]..[217,7683+18])
+              Pexp_constant PConst_string(" [mapi ~f s] is like {!map} but the index of the character is also\n    passed to [f].\n\n    @since 4.02 ",(stdlib/stringLabels.mli[214,7593+0]..[217,7683+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[213,7538+11]..[213,7538+54])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/stringLabels.mli[213,7538+14]..[213,7538+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[213,7538+14]..[213,7538+17])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[213,7538+14]..[213,7538+17])
+            []
+          core_type (stdlib/stringLabels.mli[213,7538+21]..[213,7538+33])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[213,7538+21]..[213,7538+25])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[213,7538+21]..[213,7538+25])
+              []
+            core_type (stdlib/stringLabels.mli[213,7538+29]..[213,7538+33])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[213,7538+29]..[213,7538+33])
+              []
+        core_type (stdlib/stringLabels.mli[213,7538+38]..[213,7538+54])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[213,7538+38]..[213,7538+44])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[213,7538+38]..[213,7538+44])
+            []
+          core_type (stdlib/stringLabels.mli[213,7538+48]..[213,7538+54])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[213,7538+48]..[213,7538+54])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[219,7703+0]..[219,7703+63])
+    Psig_value
+    value_description "fold_left" (stdlib/stringLabels.mli[219,7703+4]..[219,7703+13]) (stdlib/stringLabels.mli[219,7703+0]..[219,7703+63])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[220,7767+0]..[222,7890+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[220,7767+0]..[222,7890+18])
+              Pexp_constant PConst_string(" [fold_left f x s] computes [f (... (f (f x s.[0]) s.[1]) ...) s.[n-1]],\n    where [n] is the length of the string [s].\n    @since 4.13 ",(stdlib/stringLabels.mli[220,7767+0]..[222,7890+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[219,7703+16]..[219,7703+63])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/stringLabels.mli[219,7703+19]..[219,7703+35])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[219,7703+19]..[219,7703+21])
+            Ptyp_var a
+          core_type (stdlib/stringLabels.mli[219,7703+25]..[219,7703+35])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[219,7703+25]..[219,7703+29])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[219,7703+25]..[219,7703+29])
+              []
+            core_type (stdlib/stringLabels.mli[219,7703+33]..[219,7703+35])
+              Ptyp_var a
+        core_type (stdlib/stringLabels.mli[219,7703+40]..[219,7703+63])
+          Ptyp_arrow
+          Labelled "init"
+          core_type (stdlib/stringLabels.mli[219,7703+45]..[219,7703+47])
+            Ptyp_var a
+          core_type (stdlib/stringLabels.mli[219,7703+51]..[219,7703+63])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[219,7703+51]..[219,7703+57])
+              Ptyp_constr "string" (stdlib/stringLabels.mli[219,7703+51]..[219,7703+57])
+              []
+            core_type (stdlib/stringLabels.mli[219,7703+61]..[219,7703+63])
+              Ptyp_var a
+      []
+  signature_item (stdlib/stringLabels.mli[224,7910+0]..[224,7910+64])
+    Psig_value
+    value_description "fold_right" (stdlib/stringLabels.mli[224,7910+4]..[224,7910+14]) (stdlib/stringLabels.mli[224,7910+0]..[224,7910+64])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[225,7975+0]..[227,8100+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[225,7975+0]..[227,8100+18])
+              Pexp_constant PConst_string(" [fold_right f s x] computes [f s.[0] (f s.[1] ( ... (f s.[n-1] x) ...))],\n    where [n] is the length of the string [s].\n    @since 4.13 ",(stdlib/stringLabels.mli[225,7975+0]..[227,8100+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[224,7910+17]..[224,7910+64])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/stringLabels.mli[224,7910+20]..[224,7910+36])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[224,7910+20]..[224,7910+24])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[224,7910+20]..[224,7910+24])
+            []
+          core_type (stdlib/stringLabels.mli[224,7910+28]..[224,7910+36])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[224,7910+28]..[224,7910+30])
+              Ptyp_var a
+            core_type (stdlib/stringLabels.mli[224,7910+34]..[224,7910+36])
+              Ptyp_var a
+        core_type (stdlib/stringLabels.mli[224,7910+41]..[224,7910+64])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[224,7910+41]..[224,7910+47])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[224,7910+41]..[224,7910+47])
+            []
+          core_type (stdlib/stringLabels.mli[224,7910+51]..[224,7910+64])
+            Ptyp_arrow
+            Labelled "init"
+            core_type (stdlib/stringLabels.mli[224,7910+56]..[224,7910+58])
+              Ptyp_var a
+            core_type (stdlib/stringLabels.mli[224,7910+62]..[224,7910+64])
+              Ptyp_var a
+      []
+  signature_item (stdlib/stringLabels.mli[229,8120+0]..[229,8120+48])
+    Psig_value
+    value_description "for_all" (stdlib/stringLabels.mli[229,8120+4]..[229,8120+11]) (stdlib/stringLabels.mli[229,8120+0]..[229,8120+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[230,8169+0]..[231,8246+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[230,8169+0]..[231,8246+18])
+              Pexp_constant PConst_string(" [for_all p s] checks if all characters in [s] satisfy the predicate [p].\n    @since 4.13 ",(stdlib/stringLabels.mli[230,8169+0]..[231,8246+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[229,8120+14]..[229,8120+48])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/stringLabels.mli[229,8120+17]..[229,8120+29])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[229,8120+17]..[229,8120+21])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[229,8120+17]..[229,8120+21])
+            []
+          core_type (stdlib/stringLabels.mli[229,8120+25]..[229,8120+29])
+            Ptyp_constr "bool" (stdlib/stringLabels.mli[229,8120+25]..[229,8120+29])
+            []
+        core_type (stdlib/stringLabels.mli[229,8120+34]..[229,8120+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[229,8120+34]..[229,8120+40])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[229,8120+34]..[229,8120+40])
+            []
+          core_type (stdlib/stringLabels.mli[229,8120+44]..[229,8120+48])
+            Ptyp_constr "bool" (stdlib/stringLabels.mli[229,8120+44]..[229,8120+48])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[233,8266+0]..[233,8266+47])
+    Psig_value
+    value_description "exists" (stdlib/stringLabels.mli[233,8266+4]..[233,8266+10]) (stdlib/stringLabels.mli[233,8266+0]..[233,8266+47])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[234,8314+0]..[236,8404+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[234,8314+0]..[236,8404+18])
+              Pexp_constant PConst_string(" [exists p s] checks if at least one character of [s] satisfies the predicate\n    [p].\n    @since 4.13 ",(stdlib/stringLabels.mli[234,8314+0]..[236,8404+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[233,8266+13]..[233,8266+47])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/stringLabels.mli[233,8266+16]..[233,8266+28])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[233,8266+16]..[233,8266+20])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[233,8266+16]..[233,8266+20])
+            []
+          core_type (stdlib/stringLabels.mli[233,8266+24]..[233,8266+28])
+            Ptyp_constr "bool" (stdlib/stringLabels.mli[233,8266+24]..[233,8266+28])
+            []
+        core_type (stdlib/stringLabels.mli[233,8266+33]..[233,8266+47])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[233,8266+33]..[233,8266+39])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[233,8266+33]..[233,8266+39])
+            []
+          core_type (stdlib/stringLabels.mli[233,8266+43]..[233,8266+47])
+            Ptyp_constr "bool" (stdlib/stringLabels.mli[233,8266+43]..[233,8266+47])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[238,8424+0]..[238,8424+27])
+    Psig_value
+    value_description "trim" (stdlib/stringLabels.mli[238,8424+4]..[238,8424+8]) (stdlib/stringLabels.mli[238,8424+0]..[238,8424+27])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[239,8452+0]..[242,8602+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[239,8452+0]..[242,8602+18])
+              Pexp_constant PConst_string(" [trim s] is [s] without leading and trailing whitespace. Whitespace\n    characters are: [' '], ['\\x0C'] (form feed), ['\\n'], ['\\r'], and ['\\t'].\n\n    @since 4.00 ",(stdlib/stringLabels.mli[239,8452+0]..[242,8602+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[238,8424+11]..[238,8424+27])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[238,8424+11]..[238,8424+17])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[238,8424+11]..[238,8424+17])
+          []
+        core_type (stdlib/stringLabels.mli[238,8424+21]..[238,8424+27])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[238,8424+21]..[238,8424+27])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[244,8622+0]..[244,8622+30])
+    Psig_value
+    value_description "escaped" (stdlib/stringLabels.mli[244,8622+4]..[244,8622+11]) (stdlib/stringLabels.mli[244,8622+0]..[244,8622+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[245,8653+0]..[256,9143+38])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[245,8653+0]..[256,9143+38])
+              Pexp_constant PConst_string(" [escaped s] is [s] with special characters represented by escape\n    sequences, following the lexical conventions of OCaml.\n\n    All characters outside the US-ASCII printable range \\[0x20;0x7E\\] are\n    escaped, as well as backslash (0x2F) and double-quote (0x22).\n\n    The function {!Scanf.unescaped} is a left inverse of [escaped],\n    i.e. [Scanf.unescaped (escaped s) = s] for any string [s] (unless\n    [escaped s] fails).\n\n    @raise Invalid_argument if the result is longer than\n    {!Sys.max_string_length} bytes. ",(stdlib/stringLabels.mli[245,8653+0]..[256,9143+38]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[244,8622+14]..[244,8622+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[244,8622+14]..[244,8622+20])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[244,8622+14]..[244,8622+20])
+          []
+        core_type (stdlib/stringLabels.mli[244,8622+24]..[244,8622+30])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[244,8622+24]..[244,8622+30])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[258,9183+0]..[258,9183+38])
+    Psig_value
+    value_description "uppercase_ascii" (stdlib/stringLabels.mli[258,9183+4]..[258,9183+19]) (stdlib/stringLabels.mli[258,9183+0]..[258,9183+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[259,9222+0]..[262,9344+41])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[259,9222+0]..[262,9344+41])
+              Pexp_constant PConst_string(" [uppercase_ascii s] is [s] with all lowercase letters\n    translated to uppercase, using the US-ASCII character set.\n\n    @since 4.03 (4.05 in StringLabels) ",(stdlib/stringLabels.mli[259,9222+0]..[262,9344+41]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[258,9183+22]..[258,9183+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[258,9183+22]..[258,9183+28])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[258,9183+22]..[258,9183+28])
+          []
+        core_type (stdlib/stringLabels.mli[258,9183+32]..[258,9183+38])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[258,9183+32]..[258,9183+38])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[264,9387+0]..[264,9387+38])
+    Psig_value
+    value_description "lowercase_ascii" (stdlib/stringLabels.mli[264,9387+4]..[264,9387+19]) (stdlib/stringLabels.mli[264,9387+0]..[264,9387+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[265,9426+0]..[268,9548+41])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[265,9426+0]..[268,9548+41])
+              Pexp_constant PConst_string(" [lowercase_ascii s] is [s] with all uppercase letters translated\n    to lowercase, using the US-ASCII character set.\n\n    @since 4.03 (4.05 in StringLabels) ",(stdlib/stringLabels.mli[265,9426+0]..[268,9548+41]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[264,9387+22]..[264,9387+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[264,9387+22]..[264,9387+28])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[264,9387+22]..[264,9387+28])
+          []
+        core_type (stdlib/stringLabels.mli[264,9387+32]..[264,9387+38])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[264,9387+32]..[264,9387+38])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[270,9591+0]..[270,9591+39])
+    Psig_value
+    value_description "capitalize_ascii" (stdlib/stringLabels.mli[270,9591+4]..[270,9591+20]) (stdlib/stringLabels.mli[270,9591+0]..[270,9591+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[271,9631+0]..[274,9745+41])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[271,9631+0]..[274,9745+41])
+              Pexp_constant PConst_string(" [capitalize_ascii s] is [s] with the first character set to\n    uppercase, using the US-ASCII character set.\n\n    @since 4.03 (4.05 in StringLabels) ",(stdlib/stringLabels.mli[271,9631+0]..[274,9745+41]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[270,9591+23]..[270,9591+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[270,9591+23]..[270,9591+29])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[270,9591+23]..[270,9591+29])
+          []
+        core_type (stdlib/stringLabels.mli[270,9591+33]..[270,9591+39])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[270,9591+33]..[270,9591+39])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[276,9788+0]..[276,9788+41])
+    Psig_value
+    value_description "uncapitalize_ascii" (stdlib/stringLabels.mli[276,9788+4]..[276,9788+22]) (stdlib/stringLabels.mli[276,9788+0]..[276,9788+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[277,9830+0]..[280,9946+41])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[277,9830+0]..[280,9946+41])
+              Pexp_constant PConst_string(" [uncapitalize_ascii s] is [s] with the first character set to lowercase,\n    using the US-ASCII character set.\n\n    @since 4.03 (4.05 in StringLabels) ",(stdlib/stringLabels.mli[277,9830+0]..[280,9946+41]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[276,9788+25]..[276,9788+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[276,9788+25]..[276,9788+31])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[276,9788+25]..[276,9788+31])
+          []
+        core_type (stdlib/stringLabels.mli[276,9788+35]..[276,9788+41])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[276,9788+35]..[276,9788+41])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[282,9989+0]..[282,9989+32])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[282,9989+0]..[282,9989+32])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[282,9989+0]..[282,9989+32])
+          Pexp_constant PConst_string(" {1:traversing Traversing} ",(stdlib/stringLabels.mli[282,9989+0]..[282,9989+32]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[284,10023+0]..[284,10023+45])
+    Psig_value
+    value_description "iter" (stdlib/stringLabels.mli[284,10023+4]..[284,10023+8]) (stdlib/stringLabels.mli[284,10023+0]..[284,10023+45])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[285,10069+0]..[286,10144+75])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[285,10069+0]..[286,10144+75])
+              Pexp_constant PConst_string(" [iter ~f s] applies function [f] in turn to all the characters of [s].\n    It is equivalent to [f s.[0]; f s.[1]; ...; f s.[length s - 1]; ()]. ",(stdlib/stringLabels.mli[285,10069+0]..[286,10144+75]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[284,10023+11]..[284,10023+45])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/stringLabels.mli[284,10023+14]..[284,10023+26])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[284,10023+14]..[284,10023+18])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[284,10023+14]..[284,10023+18])
+            []
+          core_type (stdlib/stringLabels.mli[284,10023+22]..[284,10023+26])
+            Ptyp_constr "unit" (stdlib/stringLabels.mli[284,10023+22]..[284,10023+26])
+            []
+        core_type (stdlib/stringLabels.mli[284,10023+31]..[284,10023+45])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[284,10023+31]..[284,10023+37])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[284,10023+31]..[284,10023+37])
+            []
+          core_type (stdlib/stringLabels.mli[284,10023+41]..[284,10023+45])
+            Ptyp_constr "unit" (stdlib/stringLabels.mli[284,10023+41]..[284,10023+45])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[288,10221+0]..[288,10221+53])
+    Psig_value
+    value_description "iteri" (stdlib/stringLabels.mli[288,10221+4]..[288,10221+9]) (stdlib/stringLabels.mli[288,10221+0]..[288,10221+53])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[289,10275+0]..[292,10375+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[289,10275+0]..[292,10375+18])
+              Pexp_constant PConst_string(" [iteri] is like {!iter}, but the function is also given the\n    corresponding character index.\n\n    @since 4.00 ",(stdlib/stringLabels.mli[289,10275+0]..[292,10375+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[288,10221+12]..[288,10221+53])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/stringLabels.mli[288,10221+15]..[288,10221+34])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[288,10221+15]..[288,10221+18])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[288,10221+15]..[288,10221+18])
+            []
+          core_type (stdlib/stringLabels.mli[288,10221+22]..[288,10221+34])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[288,10221+22]..[288,10221+26])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[288,10221+22]..[288,10221+26])
+              []
+            core_type (stdlib/stringLabels.mli[288,10221+30]..[288,10221+34])
+              Ptyp_constr "unit" (stdlib/stringLabels.mli[288,10221+30]..[288,10221+34])
+              []
+        core_type (stdlib/stringLabels.mli[288,10221+39]..[288,10221+53])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[288,10221+39]..[288,10221+45])
+            Ptyp_constr "string" (stdlib/stringLabels.mli[288,10221+39]..[288,10221+45])
+            []
+          core_type (stdlib/stringLabels.mli[288,10221+49]..[288,10221+53])
+            Ptyp_constr "unit" (stdlib/stringLabels.mli[288,10221+49]..[288,10221+53])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[294,10395+0]..[294,10395+30])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[294,10395+0]..[294,10395+30])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[294,10395+0]..[294,10395+30])
+          Pexp_constant PConst_string(" {1:searching Searching} ",(stdlib/stringLabels.mli[294,10395+0]..[294,10395+30]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[296,10427+0]..[296,10427+45])
+    Psig_value
+    value_description "index_from" (stdlib/stringLabels.mli[296,10427+4]..[296,10427+14]) (stdlib/stringLabels.mli[296,10427+0]..[296,10427+45])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[297,10473+0]..[301,10642+69])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[297,10473+0]..[301,10642+69])
+              Pexp_constant PConst_string(" [index_from s i c] is the index of the first occurrence of [c] in\n    [s] after position [i].\n\n    @raise Not_found if [c] does not occur in [s] after position [i].\n    @raise Invalid_argument if [i] is not a valid position in [s]. ",(stdlib/stringLabels.mli[297,10473+0]..[301,10642+69]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[296,10427+17]..[296,10427+45])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[296,10427+17]..[296,10427+23])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[296,10427+17]..[296,10427+23])
+          []
+        core_type (stdlib/stringLabels.mli[296,10427+27]..[296,10427+45])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[296,10427+27]..[296,10427+30])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[296,10427+27]..[296,10427+30])
+            []
+          core_type (stdlib/stringLabels.mli[296,10427+34]..[296,10427+45])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[296,10427+34]..[296,10427+38])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[296,10427+34]..[296,10427+38])
+              []
+            core_type (stdlib/stringLabels.mli[296,10427+42]..[296,10427+45])
+              Ptyp_constr "int" (stdlib/stringLabels.mli[296,10427+42]..[296,10427+45])
+              []
+      []
+  signature_item (stdlib/stringLabels.mli[304,10714+0]..[304,10714+56])
+    Psig_value
+    value_description "index_from_opt" (stdlib/stringLabels.mli[304,10714+4]..[304,10714+18]) (stdlib/stringLabels.mli[304,10714+0]..[304,10714+56])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[305,10771+0]..[309,10950+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[305,10771+0]..[309,10950+18])
+              Pexp_constant PConst_string(" [index_from_opt s i c] is the index of the first occurrence of [c]\n    in [s] after position [i] (if any).\n\n    @raise Invalid_argument if [i] is not a valid position in [s].\n    @since 4.05 ",(stdlib/stringLabels.mli[305,10771+0]..[309,10950+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[304,10714+21]..[304,10714+56])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[304,10714+21]..[304,10714+27])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[304,10714+21]..[304,10714+27])
+          []
+        core_type (stdlib/stringLabels.mli[304,10714+31]..[304,10714+56])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[304,10714+31]..[304,10714+34])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[304,10714+31]..[304,10714+34])
+            []
+          core_type (stdlib/stringLabels.mli[304,10714+38]..[304,10714+56])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[304,10714+38]..[304,10714+42])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[304,10714+38]..[304,10714+42])
+              []
+            core_type (stdlib/stringLabels.mli[304,10714+46]..[304,10714+56])
+              Ptyp_constr "option" (stdlib/stringLabels.mli[304,10714+50]..[304,10714+56])
+              [
+                core_type (stdlib/stringLabels.mli[304,10714+46]..[304,10714+49])
+                  Ptyp_constr "int" (stdlib/stringLabels.mli[304,10714+46]..[304,10714+49])
+                  []
+              ]
+      []
+  signature_item (stdlib/stringLabels.mli[311,10970+0]..[311,10970+46])
+    Psig_value
+    value_description "rindex_from" (stdlib/stringLabels.mli[311,10970+4]..[311,10970+15]) (stdlib/stringLabels.mli[311,10970+0]..[311,10970+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[312,11017+0]..[316,11192+71])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[312,11017+0]..[316,11192+71])
+              Pexp_constant PConst_string(" [rindex_from s i c] is the index of the last occurrence of [c] in\n    [s] before position [i+1].\n\n    @raise Not_found if [c] does not occur in [s] before position [i+1].\n    @raise Invalid_argument if [i+1] is not a valid position in [s]. ",(stdlib/stringLabels.mli[312,11017+0]..[316,11192+71]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[311,10970+18]..[311,10970+46])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[311,10970+18]..[311,10970+24])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[311,10970+18]..[311,10970+24])
+          []
+        core_type (stdlib/stringLabels.mli[311,10970+28]..[311,10970+46])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[311,10970+28]..[311,10970+31])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[311,10970+28]..[311,10970+31])
+            []
+          core_type (stdlib/stringLabels.mli[311,10970+35]..[311,10970+46])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[311,10970+35]..[311,10970+39])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[311,10970+35]..[311,10970+39])
+              []
+            core_type (stdlib/stringLabels.mli[311,10970+43]..[311,10970+46])
+              Ptyp_constr "int" (stdlib/stringLabels.mli[311,10970+43]..[311,10970+46])
+              []
+      []
+  signature_item (stdlib/stringLabels.mli[318,11265+0]..[318,11265+57])
+    Psig_value
+    value_description "rindex_from_opt" (stdlib/stringLabels.mli[318,11265+4]..[318,11265+19]) (stdlib/stringLabels.mli[318,11265+0]..[318,11265+57])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[319,11323+0]..[323,11507+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[319,11323+0]..[323,11507+18])
+              Pexp_constant PConst_string(" [rindex_from_opt s i c] is the index of the last occurrence of [c]\n    in [s] before position [i+1] (if any).\n\n    @raise Invalid_argument if [i+1] is not a valid position in [s].\n    @since 4.05 ",(stdlib/stringLabels.mli[319,11323+0]..[323,11507+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[318,11265+22]..[318,11265+57])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[318,11265+22]..[318,11265+28])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[318,11265+22]..[318,11265+28])
+          []
+        core_type (stdlib/stringLabels.mli[318,11265+32]..[318,11265+57])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[318,11265+32]..[318,11265+35])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[318,11265+32]..[318,11265+35])
+            []
+          core_type (stdlib/stringLabels.mli[318,11265+39]..[318,11265+57])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/stringLabels.mli[318,11265+39]..[318,11265+43])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[318,11265+39]..[318,11265+43])
+              []
+            core_type (stdlib/stringLabels.mli[318,11265+47]..[318,11265+57])
+              Ptyp_constr "option" (stdlib/stringLabels.mli[318,11265+51]..[318,11265+57])
+              [
+                core_type (stdlib/stringLabels.mli[318,11265+47]..[318,11265+50])
+                  Ptyp_constr "int" (stdlib/stringLabels.mli[318,11265+47]..[318,11265+50])
+                  []
+              ]
+      []
+  signature_item (stdlib/stringLabels.mli[325,11527+0]..[325,11527+33])
+    Psig_value
+    value_description "index" (stdlib/stringLabels.mli[325,11527+4]..[325,11527+9]) (stdlib/stringLabels.mli[325,11527+0]..[325,11527+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[326,11561+0]..[326,11561+51])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[326,11561+0]..[326,11561+51])
+              Pexp_constant PConst_string(" [index s c] is {!String.index_from}[ s 0 c]. ",(stdlib/stringLabels.mli[326,11561+0]..[326,11561+51]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[325,11527+12]..[325,11527+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[325,11527+12]..[325,11527+18])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[325,11527+12]..[325,11527+18])
+          []
+        core_type (stdlib/stringLabels.mli[325,11527+22]..[325,11527+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[325,11527+22]..[325,11527+26])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[325,11527+22]..[325,11527+26])
+            []
+          core_type (stdlib/stringLabels.mli[325,11527+30]..[325,11527+33])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[325,11527+30]..[325,11527+33])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[328,11614+0]..[328,11614+44])
+    Psig_value
+    value_description "index_opt" (stdlib/stringLabels.mli[328,11614+4]..[328,11614+13]) (stdlib/stringLabels.mli[328,11614+0]..[328,11614+44])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[329,11659+0]..[331,11717+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[329,11659+0]..[331,11717+18])
+              Pexp_constant PConst_string(" [index_opt s c] is {!String.index_from_opt}[ s 0 c].\n\n    @since 4.05 ",(stdlib/stringLabels.mli[329,11659+0]..[331,11717+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[328,11614+16]..[328,11614+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[328,11614+16]..[328,11614+22])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[328,11614+16]..[328,11614+22])
+          []
+        core_type (stdlib/stringLabels.mli[328,11614+26]..[328,11614+44])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[328,11614+26]..[328,11614+30])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[328,11614+26]..[328,11614+30])
+            []
+          core_type (stdlib/stringLabels.mli[328,11614+34]..[328,11614+44])
+            Ptyp_constr "option" (stdlib/stringLabels.mli[328,11614+38]..[328,11614+44])
+            [
+              core_type (stdlib/stringLabels.mli[328,11614+34]..[328,11614+37])
+                Ptyp_constr "int" (stdlib/stringLabels.mli[328,11614+34]..[328,11614+37])
+                []
+            ]
+      []
+  signature_item (stdlib/stringLabels.mli[333,11737+0]..[333,11737+34])
+    Psig_value
+    value_description "rindex" (stdlib/stringLabels.mli[333,11737+4]..[333,11737+10]) (stdlib/stringLabels.mli[333,11737+0]..[333,11737+34])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[334,11772+0]..[334,11772+66])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[334,11772+0]..[334,11772+66])
+              Pexp_constant PConst_string(" [rindex s c] is {!String.rindex_from}[ s (length s - 1) c]. ",(stdlib/stringLabels.mli[334,11772+0]..[334,11772+66]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[333,11737+13]..[333,11737+34])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[333,11737+13]..[333,11737+19])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[333,11737+13]..[333,11737+19])
+          []
+        core_type (stdlib/stringLabels.mli[333,11737+23]..[333,11737+34])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[333,11737+23]..[333,11737+27])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[333,11737+23]..[333,11737+27])
+            []
+          core_type (stdlib/stringLabels.mli[333,11737+31]..[333,11737+34])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[333,11737+31]..[333,11737+34])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[336,11840+0]..[336,11840+45])
+    Psig_value
+    value_description "rindex_opt" (stdlib/stringLabels.mli[336,11840+4]..[336,11840+14]) (stdlib/stringLabels.mli[336,11840+0]..[336,11840+45])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[337,11886+0]..[339,11959+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[337,11886+0]..[339,11959+18])
+              Pexp_constant PConst_string(" [rindex_opt s c] is {!String.rindex_from_opt}[ s (length s - 1) c].\n\n    @since 4.05 ",(stdlib/stringLabels.mli[337,11886+0]..[339,11959+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[336,11840+17]..[336,11840+45])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[336,11840+17]..[336,11840+23])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[336,11840+17]..[336,11840+23])
+          []
+        core_type (stdlib/stringLabels.mli[336,11840+27]..[336,11840+45])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[336,11840+27]..[336,11840+31])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[336,11840+27]..[336,11840+31])
+            []
+          core_type (stdlib/stringLabels.mli[336,11840+35]..[336,11840+45])
+            Ptyp_constr "option" (stdlib/stringLabels.mli[336,11840+39]..[336,11840+45])
+            [
+              core_type (stdlib/stringLabels.mli[336,11840+35]..[336,11840+38])
+                Ptyp_constr "int" (stdlib/stringLabels.mli[336,11840+35]..[336,11840+38])
+                []
+            ]
+      []
+  signature_item (stdlib/stringLabels.mli[341,11979+0]..[341,11979+32])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[341,11979+0]..[341,11979+32])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[341,11979+0]..[341,11979+32])
+          Pexp_constant PConst_string(" {1 Strings and Sequences} ",(stdlib/stringLabels.mli[341,11979+0]..[341,11979+32]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[343,12013+0]..[343,12013+28])
+    Psig_value
+    value_description "to_seq" (stdlib/stringLabels.mli[343,12013+4]..[343,12013+10]) (stdlib/stringLabels.mli[343,12013+0]..[343,12013+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[344,12042+0]..[348,12240+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[344,12042+0]..[348,12240+18])
+              Pexp_constant PConst_string(" [to_seq s] is a sequence made of the string's characters in\n    increasing order. In [\"unsafe-string\"] mode, modifications of the string\n    during iteration will be reflected in the sequence.\n\n    @since 4.07 ",(stdlib/stringLabels.mli[344,12042+0]..[348,12240+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[343,12013+13]..[343,12013+28])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[343,12013+13]..[343,12013+14])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[343,12013+13]..[343,12013+14])
+          []
+        core_type (stdlib/stringLabels.mli[343,12013+18]..[343,12013+28])
+          Ptyp_constr "Seq.t" (stdlib/stringLabels.mli[343,12013+23]..[343,12013+28])
+          [
+            core_type (stdlib/stringLabels.mli[343,12013+18]..[343,12013+22])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[343,12013+18]..[343,12013+22])
+              []
+          ]
+      []
+  signature_item (stdlib/stringLabels.mli[350,12260+0]..[350,12260+37])
+    Psig_value
+    value_description "to_seqi" (stdlib/stringLabels.mli[350,12260+4]..[350,12260+11]) (stdlib/stringLabels.mli[350,12260+0]..[350,12260+37])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[351,12298+0]..[353,12374+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[351,12298+0]..[353,12374+18])
+              Pexp_constant PConst_string(" [to_seqi s] is like {!to_seq} but also tuples the corresponding index.\n\n    @since 4.07 ",(stdlib/stringLabels.mli[351,12298+0]..[353,12374+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[350,12260+14]..[350,12260+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[350,12260+14]..[350,12260+15])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[350,12260+14]..[350,12260+15])
+          []
+        core_type (stdlib/stringLabels.mli[350,12260+19]..[350,12260+37])
+          Ptyp_constr "Seq.t" (stdlib/stringLabels.mli[350,12260+32]..[350,12260+37])
+          [
+            core_type (stdlib/stringLabels.mli[350,12260+20]..[350,12260+30])
+              Ptyp_tuple
+              [
+                core_type (stdlib/stringLabels.mli[350,12260+20]..[350,12260+23])
+                  Ptyp_constr "int" (stdlib/stringLabels.mli[350,12260+20]..[350,12260+23])
+                  []
+                core_type (stdlib/stringLabels.mli[350,12260+26]..[350,12260+30])
+                  Ptyp_constr "char" (stdlib/stringLabels.mli[350,12260+26]..[350,12260+30])
+                  []
+              ]
+          ]
+      []
+  signature_item (stdlib/stringLabels.mli[355,12394+0]..[355,12394+28])
+    Psig_value
+    value_description "of_seq" (stdlib/stringLabels.mli[355,12394+4]..[355,12394+10]) (stdlib/stringLabels.mli[355,12394+0]..[355,12394+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[356,12423+0]..[358,12486+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[356,12423+0]..[358,12486+18])
+              Pexp_constant PConst_string(" [of_seq s] is a string made of the sequence's characters.\n\n    @since 4.07 ",(stdlib/stringLabels.mli[356,12423+0]..[358,12486+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[355,12394+13]..[355,12394+28])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[355,12394+13]..[355,12394+23])
+          Ptyp_constr "Seq.t" (stdlib/stringLabels.mli[355,12394+18]..[355,12394+23])
+          [
+            core_type (stdlib/stringLabels.mli[355,12394+13]..[355,12394+17])
+              Ptyp_constr "char" (stdlib/stringLabels.mli[355,12394+13]..[355,12394+17])
+              []
+          ]
+        core_type (stdlib/stringLabels.mli[355,12394+27]..[355,12394+28])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[355,12394+27]..[355,12394+28])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[360,12506+0]..[362,12548+18])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[360,12506+0]..[362,12548+18])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[360,12506+0]..[362,12548+18])
+          Pexp_constant PConst_string(" {1:utf UTF decoding and validations}\n\n    @since 4.14 ",(stdlib/stringLabels.mli[360,12506+0]..[362,12548+18]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[364,12568+0]..[364,12568+22])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[364,12568+0]..[364,12568+22])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[364,12568+0]..[364,12568+22])
+          Pexp_constant PConst_string(" {2:utf_8 UTF-8} ",(stdlib/stringLabels.mli[364,12568+0]..[364,12568+22]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[366,12592+0]..[366,12592+50])
+    Psig_value
+    value_description "get_utf_8_uchar" (stdlib/stringLabels.mli[366,12592+4]..[366,12592+19]) (stdlib/stringLabels.mli[366,12592+0]..[366,12592+50])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[367,12643+0]..[368,12712+11])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[367,12643+0]..[368,12712+11])
+              Pexp_constant PConst_string(" [get_utf_8_uchar b i] decodes an UTF-8 character at index [i] in\n    [b]. ",(stdlib/stringLabels.mli[367,12643+0]..[368,12712+11]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[366,12592+22]..[366,12592+50])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[366,12592+22]..[366,12592+23])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[366,12592+22]..[366,12592+23])
+          []
+        core_type (stdlib/stringLabels.mli[366,12592+27]..[366,12592+50])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[366,12592+27]..[366,12592+30])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[366,12592+27]..[366,12592+30])
+            []
+          core_type (stdlib/stringLabels.mli[366,12592+34]..[366,12592+50])
+            Ptyp_constr "Uchar.utf_decode" (stdlib/stringLabels.mli[366,12592+34]..[366,12592+50])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[370,12725+0]..[370,12725+30])
+    Psig_value
+    value_description "is_valid_utf_8" (stdlib/stringLabels.mli[370,12725+4]..[370,12725+18]) (stdlib/stringLabels.mli[370,12725+0]..[370,12725+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[371,12756+0]..[372,12823+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[371,12756+0]..[372,12823+18])
+              Pexp_constant PConst_string(" [is_valid_utf_8 b] is [true] if and only if [b] contains valid\n    UTF-8 data. ",(stdlib/stringLabels.mli[371,12756+0]..[372,12823+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[370,12725+21]..[370,12725+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[370,12725+21]..[370,12725+22])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[370,12725+21]..[370,12725+22])
+          []
+        core_type (stdlib/stringLabels.mli[370,12725+26]..[370,12725+30])
+          Ptyp_constr "bool" (stdlib/stringLabels.mli[370,12725+26]..[370,12725+30])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[374,12843+0]..[374,12843+28])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[374,12843+0]..[374,12843+28])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[374,12843+0]..[374,12843+28])
+          Pexp_constant PConst_string(" {2:utf_16be UTF-16BE} ",(stdlib/stringLabels.mli[374,12843+0]..[374,12843+28]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[376,12873+0]..[376,12873+53])
+    Psig_value
+    value_description "get_utf_16be_uchar" (stdlib/stringLabels.mli[376,12873+4]..[376,12873+22]) (stdlib/stringLabels.mli[376,12873+0]..[376,12873+53])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[377,12927+0]..[378,12995+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[377,12927+0]..[378,12995+18])
+              Pexp_constant PConst_string(" [get_utf_16be_uchar b i] decodes an UTF-16BE character at index\n    [i] in [b]. ",(stdlib/stringLabels.mli[377,12927+0]..[378,12995+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[376,12873+25]..[376,12873+53])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[376,12873+25]..[376,12873+26])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[376,12873+25]..[376,12873+26])
+          []
+        core_type (stdlib/stringLabels.mli[376,12873+30]..[376,12873+53])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[376,12873+30]..[376,12873+33])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[376,12873+30]..[376,12873+33])
+            []
+          core_type (stdlib/stringLabels.mli[376,12873+37]..[376,12873+53])
+            Ptyp_constr "Uchar.utf_decode" (stdlib/stringLabels.mli[376,12873+37]..[376,12873+53])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[380,13015+0]..[380,13015+33])
+    Psig_value
+    value_description "is_valid_utf_16be" (stdlib/stringLabels.mli[380,13015+4]..[380,13015+21]) (stdlib/stringLabels.mli[380,13015+0]..[380,13015+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[381,13049+0]..[382,13119+21])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[381,13049+0]..[382,13119+21])
+              Pexp_constant PConst_string(" [is_valid_utf_16be b] is [true] if and only if [b] contains valid\n    UTF-16BE data. ",(stdlib/stringLabels.mli[381,13049+0]..[382,13119+21]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[380,13015+24]..[380,13015+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[380,13015+24]..[380,13015+25])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[380,13015+24]..[380,13015+25])
+          []
+        core_type (stdlib/stringLabels.mli[380,13015+29]..[380,13015+33])
+          Ptyp_constr "bool" (stdlib/stringLabels.mli[380,13015+29]..[380,13015+33])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[384,13142+0]..[384,13142+28])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[384,13142+0]..[384,13142+28])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[384,13142+0]..[384,13142+28])
+          Pexp_constant PConst_string(" {2:utf_16le UTF-16LE} ",(stdlib/stringLabels.mli[384,13142+0]..[384,13142+28]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[386,13172+0]..[386,13172+53])
+    Psig_value
+    value_description "get_utf_16le_uchar" (stdlib/stringLabels.mli[386,13172+4]..[386,13172+22]) (stdlib/stringLabels.mli[386,13172+0]..[386,13172+53])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[387,13226+0]..[388,13294+18])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[387,13226+0]..[388,13294+18])
+              Pexp_constant PConst_string(" [get_utf_16le_uchar b i] decodes an UTF-16LE character at index\n    [i] in [b]. ",(stdlib/stringLabels.mli[387,13226+0]..[388,13294+18]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[386,13172+25]..[386,13172+53])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[386,13172+25]..[386,13172+26])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[386,13172+25]..[386,13172+26])
+          []
+        core_type (stdlib/stringLabels.mli[386,13172+30]..[386,13172+53])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[386,13172+30]..[386,13172+33])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[386,13172+30]..[386,13172+33])
+            []
+          core_type (stdlib/stringLabels.mli[386,13172+37]..[386,13172+53])
+            Ptyp_constr "Uchar.utf_decode" (stdlib/stringLabels.mli[386,13172+37]..[386,13172+53])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[390,13314+0]..[390,13314+33])
+    Psig_value
+    value_description "is_valid_utf_16le" (stdlib/stringLabels.mli[390,13314+4]..[390,13314+21]) (stdlib/stringLabels.mli[390,13314+0]..[390,13314+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[391,13348+0]..[392,13418+21])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[391,13348+0]..[392,13418+21])
+              Pexp_constant PConst_string(" [is_valid_utf_16le b] is [true] if and only if [b] contains valid\n    UTF-16LE data. ",(stdlib/stringLabels.mli[391,13348+0]..[392,13418+21]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[390,13314+24]..[390,13314+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[390,13314+24]..[390,13314+25])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[390,13314+24]..[390,13314+25])
+          []
+        core_type (stdlib/stringLabels.mli[390,13314+29]..[390,13314+33])
+          Ptyp_constr "bool" (stdlib/stringLabels.mli[390,13314+29]..[390,13314+33])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[394,13441+0]..[395,13452+74])
+    Psig_value
+    value_description "blit" (stdlib/stringLabels.mli[394,13441+4]..[394,13441+8]) (stdlib/stringLabels.mli[394,13441+0]..[395,13452+74])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[396,13527+0]..[402,13837+47])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[396,13527+0]..[402,13837+47])
+              Pexp_constant PConst_string(" [blit ~src ~src_pos ~dst ~dst_pos ~len] copies [len] bytes\n    from the string [src], starting at index [src_pos],\n    to byte sequence [dst], starting at character number [dst_pos].\n\n    @raise Invalid_argument if [src_pos] and [len] do not\n    designate a valid range of [src], or if [dst_pos] and [len]\n    do not designate a valid range of [dst]. ",(stdlib/stringLabels.mli[396,13527+0]..[402,13837+47]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[395,13452+2]..[395,13452+74])
+        Ptyp_arrow
+        Labelled "src"
+        core_type (stdlib/stringLabels.mli[395,13452+6]..[395,13452+12])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[395,13452+6]..[395,13452+12])
+          []
+        core_type (stdlib/stringLabels.mli[395,13452+16]..[395,13452+74])
+          Ptyp_arrow
+          Labelled "src_pos"
+          core_type (stdlib/stringLabels.mli[395,13452+24]..[395,13452+27])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[395,13452+24]..[395,13452+27])
+            []
+          core_type (stdlib/stringLabels.mli[395,13452+31]..[395,13452+74])
+            Ptyp_arrow
+            Labelled "dst"
+            core_type (stdlib/stringLabels.mli[395,13452+35]..[395,13452+40])
+              Ptyp_constr "bytes" (stdlib/stringLabels.mli[395,13452+35]..[395,13452+40])
+              []
+            core_type (stdlib/stringLabels.mli[395,13452+44]..[395,13452+74])
+              Ptyp_arrow
+              Labelled "dst_pos"
+              core_type (stdlib/stringLabels.mli[395,13452+52]..[395,13452+55])
+                Ptyp_constr "int" (stdlib/stringLabels.mli[395,13452+52]..[395,13452+55])
+                []
+              core_type (stdlib/stringLabels.mli[395,13452+59]..[395,13452+74])
+                Ptyp_arrow
+                Labelled "len"
+                core_type (stdlib/stringLabels.mli[395,13452+63]..[395,13452+66])
+                  Ptyp_constr "int" (stdlib/stringLabels.mli[395,13452+63]..[395,13452+66])
+                  []
+                core_type (stdlib/stringLabels.mli[395,13452+70]..[395,13452+74])
+                  Ptyp_constr "unit" (stdlib/stringLabels.mli[395,13452+70]..[395,13452+74])
+                  []
+      []
+  signature_item (stdlib/stringLabels.mli[404,13886+0]..[404,13886+38])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[404,13886+0]..[404,13886+38])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[404,13886+0]..[404,13886+38])
+          Pexp_constant PConst_string(" {1 Binary decoding of integers} ",(stdlib/stringLabels.mli[404,13886+0]..[404,13886+38]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[406,13926+0]..[424,14826+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[406,13926+0]..[424,14826+2])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[406,13926+0]..[424,14826+2])
+          Pexp_constant PConst_string(" The functions in this section binary decode integers from strings.\n\n    All following functions raise [Invalid_argument] if the characters\n    needed at index [i] to decode the integer are not available.\n\n    Little-endian (resp. big-endian) encoding means that least\n    (resp. most) significant bytes are stored first.  Big-endian is\n    also known as network byte order.  Native-endian encoding is\n    either little-endian or big-endian depending on {!Sys.big_endian}.\n\n    32-bit and 64-bit integers are represented by the [int32] and\n    [int64] types, which can be interpreted either as signed or\n    unsigned numbers.\n\n    8-bit and 16-bit integers are represented by the [int] type,\n    which has more bits than the binary encoding.  These extra bits\n    are sign-extended (or zero-extended) for functions which decode 8-bit\n    or 16-bit integers and represented them with [int] values.\n",(stdlib/stringLabels.mli[406,13926+0]..[424,14826+2]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[426,14830+0]..[426,14830+36])
+    Psig_value
+    value_description "get_uint8" (stdlib/stringLabels.mli[426,14830+4]..[426,14830+13]) (stdlib/stringLabels.mli[426,14830+0]..[426,14830+36])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[427,14867+0]..[431,14973+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[427,14867+0]..[431,14973+2])
+              Pexp_constant PConst_string(" [get_uint8 b i] is [b]'s unsigned 8-bit integer starting at character\n    index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[427,14867+0]..[431,14973+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[426,14830+16]..[426,14830+36])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[426,14830+16]..[426,14830+22])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[426,14830+16]..[426,14830+22])
+          []
+        core_type (stdlib/stringLabels.mli[426,14830+26]..[426,14830+36])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[426,14830+26]..[426,14830+29])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[426,14830+26]..[426,14830+29])
+            []
+          core_type (stdlib/stringLabels.mli[426,14830+33]..[426,14830+36])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[426,14830+33]..[426,14830+36])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[433,14977+0]..[433,14977+35])
+    Psig_value
+    value_description "get_int8" (stdlib/stringLabels.mli[433,14977+4]..[433,14977+12]) (stdlib/stringLabels.mli[433,14977+0]..[433,14977+35])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[434,15013+0]..[438,15116+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[434,15013+0]..[438,15116+2])
+              Pexp_constant PConst_string(" [get_int8 b i] is [b]'s signed 8-bit integer starting at character\n    index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[434,15013+0]..[438,15116+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[433,14977+15]..[433,14977+35])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[433,14977+15]..[433,14977+21])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[433,14977+15]..[433,14977+21])
+          []
+        core_type (stdlib/stringLabels.mli[433,14977+25]..[433,14977+35])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[433,14977+25]..[433,14977+28])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[433,14977+25]..[433,14977+28])
+            []
+          core_type (stdlib/stringLabels.mli[433,14977+32]..[433,14977+35])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[433,14977+32]..[433,14977+35])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[440,15120+0]..[440,15120+40])
+    Psig_value
+    value_description "get_uint16_ne" (stdlib/stringLabels.mli[440,15120+4]..[440,15120+17]) (stdlib/stringLabels.mli[440,15120+0]..[440,15120+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[441,15161+0]..[445,15286+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[441,15161+0]..[445,15286+2])
+              Pexp_constant PConst_string(" [get_uint16_ne b i] is [b]'s native-endian unsigned 16-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[441,15161+0]..[445,15286+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[440,15120+20]..[440,15120+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[440,15120+20]..[440,15120+26])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[440,15120+20]..[440,15120+26])
+          []
+        core_type (stdlib/stringLabels.mli[440,15120+30]..[440,15120+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[440,15120+30]..[440,15120+33])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[440,15120+30]..[440,15120+33])
+            []
+          core_type (stdlib/stringLabels.mli[440,15120+37]..[440,15120+40])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[440,15120+37]..[440,15120+40])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[447,15290+0]..[447,15290+40])
+    Psig_value
+    value_description "get_uint16_be" (stdlib/stringLabels.mli[447,15290+4]..[447,15290+17]) (stdlib/stringLabels.mli[447,15290+0]..[447,15290+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[448,15331+0]..[452,15453+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[448,15331+0]..[452,15453+2])
+              Pexp_constant PConst_string(" [get_uint16_be b i] is [b]'s big-endian unsigned 16-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[448,15331+0]..[452,15453+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[447,15290+20]..[447,15290+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[447,15290+20]..[447,15290+26])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[447,15290+20]..[447,15290+26])
+          []
+        core_type (stdlib/stringLabels.mli[447,15290+30]..[447,15290+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[447,15290+30]..[447,15290+33])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[447,15290+30]..[447,15290+33])
+            []
+          core_type (stdlib/stringLabels.mli[447,15290+37]..[447,15290+40])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[447,15290+37]..[447,15290+40])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[454,15457+0]..[454,15457+40])
+    Psig_value
+    value_description "get_uint16_le" (stdlib/stringLabels.mli[454,15457+4]..[454,15457+17]) (stdlib/stringLabels.mli[454,15457+0]..[454,15457+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[455,15498+0]..[459,15623+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[455,15498+0]..[459,15623+2])
+              Pexp_constant PConst_string(" [get_uint16_le b i] is [b]'s little-endian unsigned 16-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[455,15498+0]..[459,15623+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[454,15457+20]..[454,15457+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[454,15457+20]..[454,15457+26])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[454,15457+20]..[454,15457+26])
+          []
+        core_type (stdlib/stringLabels.mli[454,15457+30]..[454,15457+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[454,15457+30]..[454,15457+33])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[454,15457+30]..[454,15457+33])
+            []
+          core_type (stdlib/stringLabels.mli[454,15457+37]..[454,15457+40])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[454,15457+37]..[454,15457+40])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[461,15627+0]..[461,15627+39])
+    Psig_value
+    value_description "get_int16_ne" (stdlib/stringLabels.mli[461,15627+4]..[461,15627+16]) (stdlib/stringLabels.mli[461,15627+0]..[461,15627+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[462,15667+0]..[466,15789+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[462,15667+0]..[466,15789+2])
+              Pexp_constant PConst_string(" [get_int16_ne b i] is [b]'s native-endian signed 16-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[462,15667+0]..[466,15789+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[461,15627+19]..[461,15627+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[461,15627+19]..[461,15627+25])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[461,15627+19]..[461,15627+25])
+          []
+        core_type (stdlib/stringLabels.mli[461,15627+29]..[461,15627+39])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[461,15627+29]..[461,15627+32])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[461,15627+29]..[461,15627+32])
+            []
+          core_type (stdlib/stringLabels.mli[461,15627+36]..[461,15627+39])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[461,15627+36]..[461,15627+39])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[468,15793+0]..[468,15793+39])
+    Psig_value
+    value_description "get_int16_be" (stdlib/stringLabels.mli[468,15793+4]..[468,15793+16]) (stdlib/stringLabels.mli[468,15793+0]..[468,15793+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[469,15833+0]..[473,15952+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[469,15833+0]..[473,15952+2])
+              Pexp_constant PConst_string(" [get_int16_be b i] is [b]'s big-endian signed 16-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[469,15833+0]..[473,15952+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[468,15793+19]..[468,15793+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[468,15793+19]..[468,15793+25])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[468,15793+19]..[468,15793+25])
+          []
+        core_type (stdlib/stringLabels.mli[468,15793+29]..[468,15793+39])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[468,15793+29]..[468,15793+32])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[468,15793+29]..[468,15793+32])
+            []
+          core_type (stdlib/stringLabels.mli[468,15793+36]..[468,15793+39])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[468,15793+36]..[468,15793+39])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[475,15956+0]..[475,15956+39])
+    Psig_value
+    value_description "get_int16_le" (stdlib/stringLabels.mli[475,15956+4]..[475,15956+16]) (stdlib/stringLabels.mli[475,15956+0]..[475,15956+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[476,15996+0]..[480,16118+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[476,15996+0]..[480,16118+2])
+              Pexp_constant PConst_string(" [get_int16_le b i] is [b]'s little-endian signed 16-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[476,15996+0]..[480,16118+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[475,15956+19]..[475,15956+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[475,15956+19]..[475,15956+25])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[475,15956+19]..[475,15956+25])
+          []
+        core_type (stdlib/stringLabels.mli[475,15956+29]..[475,15956+39])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[475,15956+29]..[475,15956+32])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[475,15956+29]..[475,15956+32])
+            []
+          core_type (stdlib/stringLabels.mli[475,15956+36]..[475,15956+39])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[475,15956+36]..[475,15956+39])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[482,16122+0]..[482,16122+41])
+    Psig_value
+    value_description "get_int32_ne" (stdlib/stringLabels.mli[482,16122+4]..[482,16122+16]) (stdlib/stringLabels.mli[482,16122+0]..[482,16122+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[483,16164+0]..[487,16279+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[483,16164+0]..[487,16279+2])
+              Pexp_constant PConst_string(" [get_int32_ne b i] is [b]'s native-endian 32-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[483,16164+0]..[487,16279+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[482,16122+19]..[482,16122+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[482,16122+19]..[482,16122+25])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[482,16122+19]..[482,16122+25])
+          []
+        core_type (stdlib/stringLabels.mli[482,16122+29]..[482,16122+41])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[482,16122+29]..[482,16122+32])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[482,16122+29]..[482,16122+32])
+            []
+          core_type (stdlib/stringLabels.mli[482,16122+36]..[482,16122+41])
+            Ptyp_constr "int32" (stdlib/stringLabels.mli[482,16122+36]..[482,16122+41])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[489,16283+0]..[489,16283+19])
+    Psig_value
+    value_description "hash" (stdlib/stringLabels.mli[489,16283+4]..[489,16283+8]) (stdlib/stringLabels.mli[489,16283+0]..[489,16283+19])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[490,16303+0]..[494,16492+17])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[490,16303+0]..[494,16492+17])
+              Pexp_constant PConst_string(" An unseeded hash function for strings, with the same output value as\n    {!Hashtbl.hash}. This function allows this module to be passed as argument\n    to the functor {!Hashtbl.Make}.\n\n    @since 5.0 ",(stdlib/stringLabels.mli[490,16303+0]..[494,16492+17]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[489,16283+11]..[489,16283+19])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[489,16283+11]..[489,16283+12])
+          Ptyp_constr "t" (stdlib/stringLabels.mli[489,16283+11]..[489,16283+12])
+          []
+        core_type (stdlib/stringLabels.mli[489,16283+16]..[489,16283+19])
+          Ptyp_constr "int" (stdlib/stringLabels.mli[489,16283+16]..[489,16283+19])
+          []
+      []
+  signature_item (stdlib/stringLabels.mli[496,16511+0]..[496,16511+33])
+    Psig_value
+    value_description "seeded_hash" (stdlib/stringLabels.mli[496,16511+4]..[496,16511+15]) (stdlib/stringLabels.mli[496,16511+0]..[496,16511+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[497,16545+0]..[501,16744+17])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[497,16545+0]..[501,16744+17])
+              Pexp_constant PConst_string(" A seeded hash function for strings, with the same output value as\n    {!Hashtbl.seeded_hash}. This function allows this module to be passed as\n    argument to the functor {!Hashtbl.MakeSeeded}.\n\n    @since 5.0 ",(stdlib/stringLabels.mli[497,16545+0]..[501,16744+17]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[496,16511+18]..[496,16511+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[496,16511+18]..[496,16511+21])
+          Ptyp_constr "int" (stdlib/stringLabels.mli[496,16511+18]..[496,16511+21])
+          []
+        core_type (stdlib/stringLabels.mli[496,16511+25]..[496,16511+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[496,16511+25]..[496,16511+26])
+            Ptyp_constr "t" (stdlib/stringLabels.mli[496,16511+25]..[496,16511+26])
+            []
+          core_type (stdlib/stringLabels.mli[496,16511+30]..[496,16511+33])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[496,16511+30]..[496,16511+33])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[503,16763+0]..[503,16763+41])
+    Psig_value
+    value_description "get_int32_be" (stdlib/stringLabels.mli[503,16763+4]..[503,16763+16]) (stdlib/stringLabels.mli[503,16763+0]..[503,16763+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[504,16805+0]..[508,16917+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[504,16805+0]..[508,16917+2])
+              Pexp_constant PConst_string(" [get_int32_be b i] is [b]'s big-endian 32-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[504,16805+0]..[508,16917+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[503,16763+19]..[503,16763+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[503,16763+19]..[503,16763+25])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[503,16763+19]..[503,16763+25])
+          []
+        core_type (stdlib/stringLabels.mli[503,16763+29]..[503,16763+41])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[503,16763+29]..[503,16763+32])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[503,16763+29]..[503,16763+32])
+            []
+          core_type (stdlib/stringLabels.mli[503,16763+36]..[503,16763+41])
+            Ptyp_constr "int32" (stdlib/stringLabels.mli[503,16763+36]..[503,16763+41])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[510,16921+0]..[510,16921+41])
+    Psig_value
+    value_description "get_int32_le" (stdlib/stringLabels.mli[510,16921+4]..[510,16921+16]) (stdlib/stringLabels.mli[510,16921+0]..[510,16921+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[511,16963+0]..[515,17078+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[511,16963+0]..[515,17078+2])
+              Pexp_constant PConst_string(" [get_int32_le b i] is [b]'s little-endian 32-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[511,16963+0]..[515,17078+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[510,16921+19]..[510,16921+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[510,16921+19]..[510,16921+25])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[510,16921+19]..[510,16921+25])
+          []
+        core_type (stdlib/stringLabels.mli[510,16921+29]..[510,16921+41])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[510,16921+29]..[510,16921+32])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[510,16921+29]..[510,16921+32])
+            []
+          core_type (stdlib/stringLabels.mli[510,16921+36]..[510,16921+41])
+            Ptyp_constr "int32" (stdlib/stringLabels.mli[510,16921+36]..[510,16921+41])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[517,17082+0]..[517,17082+41])
+    Psig_value
+    value_description "get_int64_ne" (stdlib/stringLabels.mli[517,17082+4]..[517,17082+16]) (stdlib/stringLabels.mli[517,17082+0]..[517,17082+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[518,17124+0]..[522,17239+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[518,17124+0]..[522,17239+2])
+              Pexp_constant PConst_string(" [get_int64_ne b i] is [b]'s native-endian 64-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[518,17124+0]..[522,17239+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[517,17082+19]..[517,17082+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[517,17082+19]..[517,17082+25])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[517,17082+19]..[517,17082+25])
+          []
+        core_type (stdlib/stringLabels.mli[517,17082+29]..[517,17082+41])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[517,17082+29]..[517,17082+32])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[517,17082+29]..[517,17082+32])
+            []
+          core_type (stdlib/stringLabels.mli[517,17082+36]..[517,17082+41])
+            Ptyp_constr "int64" (stdlib/stringLabels.mli[517,17082+36]..[517,17082+41])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[524,17243+0]..[524,17243+41])
+    Psig_value
+    value_description "get_int64_be" (stdlib/stringLabels.mli[524,17243+4]..[524,17243+16]) (stdlib/stringLabels.mli[524,17243+0]..[524,17243+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[525,17285+0]..[529,17397+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[525,17285+0]..[529,17397+2])
+              Pexp_constant PConst_string(" [get_int64_be b i] is [b]'s big-endian 64-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[525,17285+0]..[529,17397+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[524,17243+19]..[524,17243+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[524,17243+19]..[524,17243+25])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[524,17243+19]..[524,17243+25])
+          []
+        core_type (stdlib/stringLabels.mli[524,17243+29]..[524,17243+41])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[524,17243+29]..[524,17243+32])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[524,17243+29]..[524,17243+32])
+            []
+          core_type (stdlib/stringLabels.mli[524,17243+36]..[524,17243+41])
+            Ptyp_constr "int64" (stdlib/stringLabels.mli[524,17243+36]..[524,17243+41])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[531,17401+0]..[531,17401+41])
+    Psig_value
+    value_description "get_int64_le" (stdlib/stringLabels.mli[531,17401+4]..[531,17401+16]) (stdlib/stringLabels.mli[531,17401+0]..[531,17401+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/stringLabels.mli[532,17443+0]..[536,17558+2])
+            Pstr_eval
+            expression (stdlib/stringLabels.mli[532,17443+0]..[536,17558+2])
+              Pexp_constant PConst_string(" [get_int64_le b i] is [b]'s little-endian 64-bit integer\n    starting at character index [i].\n\n    @since 4.13\n",(stdlib/stringLabels.mli[532,17443+0]..[536,17558+2]),None)
+        ]
+      core_type (stdlib/stringLabels.mli[531,17401+19]..[531,17401+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[531,17401+19]..[531,17401+25])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[531,17401+19]..[531,17401+25])
+          []
+        core_type (stdlib/stringLabels.mli[531,17401+29]..[531,17401+41])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[531,17401+29]..[531,17401+32])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[531,17401+29]..[531,17401+32])
+            []
+          core_type (stdlib/stringLabels.mli[531,17401+36]..[531,17401+41])
+            Ptyp_constr "int64" (stdlib/stringLabels.mli[531,17401+36]..[531,17401+41])
+            []
+      []
+  signature_item (stdlib/stringLabels.mli[538,17562+0]..[538,17562+7])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/stringLabels.mli[538,17562+0]..[538,17562+7])
+        Pstr_eval
+        expression (stdlib/stringLabels.mli[538,17562+0]..[538,17562+7])
+          Pexp_constant PConst_string("/*",(stdlib/stringLabels.mli[538,17562+0]..[538,17562+7]),None)
+    ]
+  signature_item (stdlib/stringLabels.mli[542,17638+0]..[542,17638+66])
+    Psig_value
+    value_description "unsafe_get" (stdlib/stringLabels.mli[542,17638+9]..[542,17638+19]) (stdlib/stringLabels.mli[542,17638+0]..[542,17638+66])
+      core_type (stdlib/stringLabels.mli[542,17638+22]..[542,17638+43])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/stringLabels.mli[542,17638+22]..[542,17638+28])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[542,17638+22]..[542,17638+28])
+          []
+        core_type (stdlib/stringLabels.mli[542,17638+32]..[542,17638+43])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/stringLabels.mli[542,17638+32]..[542,17638+35])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[542,17638+32]..[542,17638+35])
+            []
+          core_type (stdlib/stringLabels.mli[542,17638+39]..[542,17638+43])
+            Ptyp_constr "char" (stdlib/stringLabels.mli[542,17638+39]..[542,17638+43])
+            []
+      [
+        "%string_unsafe_get"
+      ]
+  signature_item (stdlib/stringLabels.mli[543,17705+0]..[545,17798+41])
+    Psig_value
+    value_description "unsafe_blit" (stdlib/stringLabels.mli[543,17705+9]..[543,17705+20]) (stdlib/stringLabels.mli[543,17705+0]..[545,17798+41])
+      attribute "noalloc"
+        []
+      core_type (stdlib/stringLabels.mli[544,17728+2]..[545,17798+8])
+        Ptyp_arrow
+        Labelled "src"
+        core_type (stdlib/stringLabels.mli[544,17728+6]..[544,17728+12])
+          Ptyp_constr "string" (stdlib/stringLabels.mli[544,17728+6]..[544,17728+12])
+          []
+        core_type (stdlib/stringLabels.mli[544,17728+16]..[545,17798+8])
+          Ptyp_arrow
+          Labelled "src_pos"
+          core_type (stdlib/stringLabels.mli[544,17728+24]..[544,17728+27])
+            Ptyp_constr "int" (stdlib/stringLabels.mli[544,17728+24]..[544,17728+27])
+            []
+          core_type (stdlib/stringLabels.mli[544,17728+31]..[545,17798+8])
+            Ptyp_arrow
+            Labelled "dst"
+            core_type (stdlib/stringLabels.mli[544,17728+35]..[544,17728+40])
+              Ptyp_constr "bytes" (stdlib/stringLabels.mli[544,17728+35]..[544,17728+40])
+              []
+            core_type (stdlib/stringLabels.mli[544,17728+44]..[545,17798+8])
+              Ptyp_arrow
+              Labelled "dst_pos"
+              core_type (stdlib/stringLabels.mli[544,17728+52]..[544,17728+55])
+                Ptyp_constr "int" (stdlib/stringLabels.mli[544,17728+52]..[544,17728+55])
+                []
+              core_type (stdlib/stringLabels.mli[544,17728+59]..[545,17798+8])
+                Ptyp_arrow
+                Labelled "len"
+                core_type (stdlib/stringLabels.mli[544,17728+63]..[544,17728+66])
+                  Ptyp_constr "int" (stdlib/stringLabels.mli[544,17728+63]..[544,17728+66])
+                  []
+                core_type (stdlib/stringLabels.mli[545,17798+4]..[545,17798+8])
+                  Ptyp_constr "unit" (stdlib/stringLabels.mli[545,17798+4]..[545,17798+8])
+                  []
+      [
+        "caml_blit_string"
+      ]
+]
+

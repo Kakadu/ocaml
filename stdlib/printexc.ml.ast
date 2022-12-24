@@ -1,0 +1,3621 @@
+[
+  structure_item (stdlib/printexc.ml[16,1079+0]..[16,1079+11])
+    Pstr_open Fresh
+    module_expr (stdlib/printexc.ml[16,1079+5]..[16,1079+11])
+      Pmod_ident "Printf" (stdlib/printexc.ml[16,1079+5]..[16,1079+11])
+  structure_item (stdlib/printexc.ml[18,1092+0]..[18,1092+17])
+    Pstr_type Rec
+    [
+      type_declaration "t" (stdlib/printexc.ml[18,1092+5]..[18,1092+6]) (stdlib/printexc.ml[18,1092+0]..[18,1092+17])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_open
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (stdlib/printexc.ml[18,1092+9]..[18,1092+12])
+              Ptyp_constr "exn" (stdlib/printexc.ml[18,1092+9]..[18,1092+12])
+              []
+    ]
+  structure_item (stdlib/printexc.ml[20,1111+0]..[20,1111+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[20,1111+4]..[20,1111+12])
+          Ppat_var "printers" (stdlib/printexc.ml[20,1111+4]..[20,1111+12])
+        expression (stdlib/printexc.ml[20,1111+15]..[20,1111+29])
+          Pexp_apply
+          expression (stdlib/printexc.ml[20,1111+15]..[20,1111+26])
+            Pexp_ident "Atomic.make" (stdlib/printexc.ml[20,1111+15]..[20,1111+26])
+          [
+            <arg>
+            Nolabel
+              expression (stdlib/printexc.ml[20,1111+27]..[20,1111+29])
+                Pexp_construct "[]" (stdlib/printexc.ml[20,1111+27]..[20,1111+29])
+                None
+          ]
+    ]
+  structure_item (stdlib/printexc.ml[22,1142+0]..[22,1142+74])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[22,1142+4]..[22,1142+10])
+          Ppat_var "locfmt" (stdlib/printexc.ml[22,1142+4]..[22,1142+10])
+        expression (stdlib/printexc.ml[22,1142+13]..[22,1142+74])
+          Pexp_apply
+          expression (stdlib/printexc.ml[22,1142+13]..[22,1142+29])
+            Pexp_ident "format_of_string" (stdlib/printexc.ml[22,1142+13]..[22,1142+29])
+          [
+            <arg>
+            Nolabel
+              expression (stdlib/printexc.ml[22,1142+30]..[22,1142+74])
+                Pexp_constant PConst_string("File \"%s\", line %d, characters %d-%d: %s",(stdlib/printexc.ml[22,1142+31]..[22,1142+73]),None)
+          ]
+    ]
+  structure_item (stdlib/printexc.ml[24,1218+0]..[33,1537+7])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[24,1218+4]..[24,1218+9])
+          Ppat_var "field" (stdlib/printexc.ml[24,1218+4]..[24,1218+9])
+        expression (stdlib/printexc.ml[24,1218+10]..[33,1537+7]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[24,1218+10]..[24,1218+11])
+            Ppat_var "x" (stdlib/printexc.ml[24,1218+10]..[24,1218+11])
+          expression (stdlib/printexc.ml[24,1218+12]..[33,1537+7]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[24,1218+12]..[24,1218+13])
+              Ppat_var "i" (stdlib/printexc.ml[24,1218+12]..[24,1218+13])
+            expression (stdlib/printexc.ml[25,1234+2]..[33,1537+7])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (stdlib/printexc.ml[25,1234+6]..[25,1234+7])
+                    Ppat_var "f" (stdlib/printexc.ml[25,1234+6]..[25,1234+7])
+                  expression (stdlib/printexc.ml[25,1234+10]..[25,1234+23])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[25,1234+10]..[25,1234+19])
+                      Pexp_ident "Obj.field" (stdlib/printexc.ml[25,1234+10]..[25,1234+19])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[25,1234+20]..[25,1234+21])
+                          Pexp_ident "x" (stdlib/printexc.ml[25,1234+20]..[25,1234+21])
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[25,1234+22]..[25,1234+23])
+                          Pexp_ident "i" (stdlib/printexc.ml[25,1234+22]..[25,1234+23])
+                    ]
+              ]
+              expression (stdlib/printexc.ml[26,1261+2]..[33,1537+7])
+                Pexp_ifthenelse
+                expression (stdlib/printexc.ml[26,1261+5]..[26,1261+25])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[26,1261+5]..[26,1261+8])
+                    Pexp_ident "not" (stdlib/printexc.ml[26,1261+5]..[26,1261+8])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[26,1261+9]..[26,1261+25])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[26,1261+10]..[26,1261+22])
+                          Pexp_ident "Obj.is_block" (stdlib/printexc.ml[26,1261+10]..[26,1261+22])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[26,1261+23]..[26,1261+24])
+                              Pexp_ident "f" (stdlib/printexc.ml[26,1261+23]..[26,1261+24])
+                        ]
+                  ]
+                expression (stdlib/printexc.ml[27,1292+4]..[27,1292+36])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[27,1292+4]..[27,1292+11])
+                    Pexp_ident "sprintf" (stdlib/printexc.ml[27,1292+4]..[27,1292+11])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[27,1292+12]..[27,1292+16])
+                        Pexp_constant PConst_string("%d",(stdlib/printexc.ml[27,1292+13]..[27,1292+15]),None)
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[27,1292+17]..[27,1292+36])
+                        Pexp_constraint
+                        expression (stdlib/printexc.ml[27,1292+18]..[27,1292+29])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[27,1292+18]..[27,1292+27])
+                            Pexp_ident "Obj.magic" (stdlib/printexc.ml[27,1292+18]..[27,1292+27])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[27,1292+28]..[27,1292+29])
+                                Pexp_ident "f" (stdlib/printexc.ml[27,1292+28]..[27,1292+29])
+                          ]
+                        core_type (stdlib/printexc.ml[27,1292+32]..[27,1292+35])
+                          Ptyp_constr "int" (stdlib/printexc.ml[27,1292+32]..[27,1292+35])
+                          []
+                  ]
+                Some
+                  expression (stdlib/printexc.ml[28,1364+7]..[33,1537+7])
+                    Pexp_ifthenelse
+                    expression (stdlib/printexc.ml[28,1364+10]..[28,1364+36])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[28,1364+20]..[28,1364+21])
+                        Pexp_ident "=" (stdlib/printexc.ml[28,1364+20]..[28,1364+21])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[28,1364+10]..[28,1364+19])
+                            Pexp_apply
+                            expression (stdlib/printexc.ml[28,1364+10]..[28,1364+17])
+                              Pexp_ident "Obj.tag" (stdlib/printexc.ml[28,1364+10]..[28,1364+17])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/printexc.ml[28,1364+18]..[28,1364+19])
+                                  Pexp_ident "f" (stdlib/printexc.ml[28,1364+18]..[28,1364+19])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[28,1364+22]..[28,1364+36])
+                            Pexp_ident "Obj.string_tag" (stdlib/printexc.ml[28,1364+22]..[28,1364+36])
+                      ]
+                    expression (stdlib/printexc.ml[29,1406+4]..[29,1406+39])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[29,1406+4]..[29,1406+11])
+                        Pexp_ident "sprintf" (stdlib/printexc.ml[29,1406+4]..[29,1406+11])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[29,1406+12]..[29,1406+16])
+                            Pexp_constant PConst_string("%S",(stdlib/printexc.ml[29,1406+13]..[29,1406+15]),None)
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[29,1406+17]..[29,1406+39])
+                            Pexp_constraint
+                            expression (stdlib/printexc.ml[29,1406+18]..[29,1406+29])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[29,1406+18]..[29,1406+27])
+                                Pexp_ident "Obj.magic" (stdlib/printexc.ml[29,1406+18]..[29,1406+27])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[29,1406+28]..[29,1406+29])
+                                    Pexp_ident "f" (stdlib/printexc.ml[29,1406+28]..[29,1406+29])
+                              ]
+                            core_type (stdlib/printexc.ml[29,1406+32]..[29,1406+38])
+                              Ptyp_constr "string" (stdlib/printexc.ml[29,1406+32]..[29,1406+38])
+                              []
+                      ]
+                    Some
+                      expression (stdlib/printexc.ml[30,1446+7]..[33,1537+7])
+                        Pexp_ifthenelse
+                        expression (stdlib/printexc.ml[30,1446+10]..[30,1446+36])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[30,1446+20]..[30,1446+21])
+                            Pexp_ident "=" (stdlib/printexc.ml[30,1446+20]..[30,1446+21])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[30,1446+10]..[30,1446+19])
+                                Pexp_apply
+                                expression (stdlib/printexc.ml[30,1446+10]..[30,1446+17])
+                                  Pexp_ident "Obj.tag" (stdlib/printexc.ml[30,1446+10]..[30,1446+17])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/printexc.ml[30,1446+18]..[30,1446+19])
+                                      Pexp_ident "f" (stdlib/printexc.ml[30,1446+18]..[30,1446+19])
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[30,1446+22]..[30,1446+36])
+                                Pexp_ident "Obj.double_tag" (stdlib/printexc.ml[30,1446+22]..[30,1446+36])
+                          ]
+                        expression (stdlib/printexc.ml[31,1488+4]..[31,1488+41])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[31,1488+4]..[31,1488+19])
+                            Pexp_ident "string_of_float" (stdlib/printexc.ml[31,1488+4]..[31,1488+19])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[31,1488+20]..[31,1488+41])
+                                Pexp_constraint
+                                expression (stdlib/printexc.ml[31,1488+21]..[31,1488+32])
+                                  Pexp_apply
+                                  expression (stdlib/printexc.ml[31,1488+21]..[31,1488+30])
+                                    Pexp_ident "Obj.magic" (stdlib/printexc.ml[31,1488+21]..[31,1488+30])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/printexc.ml[31,1488+31]..[31,1488+32])
+                                        Pexp_ident "f" (stdlib/printexc.ml[31,1488+31]..[31,1488+32])
+                                  ]
+                                core_type (stdlib/printexc.ml[31,1488+35]..[31,1488+40])
+                                  Ptyp_constr "float" (stdlib/printexc.ml[31,1488+35]..[31,1488+40])
+                                  []
+                          ]
+                        Some
+                          expression (stdlib/printexc.ml[33,1537+4]..[33,1537+7])
+                            Pexp_constant PConst_string("_",(stdlib/printexc.ml[33,1537+5]..[33,1537+6]),None)
+    ]
+  structure_item (stdlib/printexc.ml[35,1546+0]..[37,1602+58])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[35,1546+8]..[35,1546+20])
+          Ppat_var "other_fields" (stdlib/printexc.ml[35,1546+8]..[35,1546+20])
+        expression (stdlib/printexc.ml[35,1546+21]..[37,1602+58]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[35,1546+21]..[35,1546+22])
+            Ppat_var "x" (stdlib/printexc.ml[35,1546+21]..[35,1546+22])
+          expression (stdlib/printexc.ml[35,1546+23]..[37,1602+58]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[35,1546+23]..[35,1546+24])
+              Ppat_var "i" (stdlib/printexc.ml[35,1546+23]..[35,1546+24])
+            expression (stdlib/printexc.ml[36,1573+2]..[37,1602+58])
+              Pexp_ifthenelse
+              expression (stdlib/printexc.ml[36,1573+5]..[36,1573+20])
+                Pexp_apply
+                expression (stdlib/printexc.ml[36,1573+7]..[36,1573+9])
+                  Pexp_ident ">=" (stdlib/printexc.ml[36,1573+7]..[36,1573+9])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[36,1573+5]..[36,1573+6])
+                      Pexp_ident "i" (stdlib/printexc.ml[36,1573+5]..[36,1573+6])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[36,1573+10]..[36,1573+20])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[36,1573+10]..[36,1573+18])
+                        Pexp_ident "Obj.size" (stdlib/printexc.ml[36,1573+10]..[36,1573+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[36,1573+19]..[36,1573+20])
+                            Pexp_ident "x" (stdlib/printexc.ml[36,1573+19]..[36,1573+20])
+                      ]
+                ]
+              expression (stdlib/printexc.ml[36,1573+26]..[36,1573+28])
+                Pexp_constant PConst_string("",(stdlib/printexc.ml[36,1573+27]..[36,1573+27]),None)
+              Some
+                expression (stdlib/printexc.ml[37,1602+7]..[37,1602+58])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[37,1602+7]..[37,1602+14])
+                    Pexp_ident "sprintf" (stdlib/printexc.ml[37,1602+7]..[37,1602+14])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[37,1602+15]..[37,1602+23])
+                        Pexp_constant PConst_string(", %s%s",(stdlib/printexc.ml[37,1602+16]..[37,1602+22]),None)
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[37,1602+24]..[37,1602+35])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[37,1602+25]..[37,1602+30])
+                          Pexp_ident "field" (stdlib/printexc.ml[37,1602+25]..[37,1602+30])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[37,1602+31]..[37,1602+32])
+                              Pexp_ident "x" (stdlib/printexc.ml[37,1602+31]..[37,1602+32])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[37,1602+33]..[37,1602+34])
+                              Pexp_ident "i" (stdlib/printexc.ml[37,1602+33]..[37,1602+34])
+                        ]
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[37,1602+36]..[37,1602+58])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[37,1602+37]..[37,1602+49])
+                          Pexp_ident "other_fields" (stdlib/printexc.ml[37,1602+37]..[37,1602+49])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[37,1602+50]..[37,1602+51])
+                              Pexp_ident "x" (stdlib/printexc.ml[37,1602+50]..[37,1602+51])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[37,1602+52]..[37,1602+57])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[37,1602+54]..[37,1602+55])
+                                Pexp_ident "+" (stdlib/printexc.ml[37,1602+54]..[37,1602+55])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[37,1602+53]..[37,1602+54])
+                                    Pexp_ident "i" (stdlib/printexc.ml[37,1602+53]..[37,1602+54])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[37,1602+55]..[37,1602+56])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                        ]
+                  ]
+    ]
+  structure_item (stdlib/printexc.ml[39,1662+0]..[44,1761+56])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[39,1662+4]..[39,1662+10])
+          Ppat_var "fields" (stdlib/printexc.ml[39,1662+4]..[39,1662+10])
+        expression (stdlib/printexc.ml[39,1662+11]..[44,1761+56]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[39,1662+11]..[39,1662+12])
+            Ppat_var "x" (stdlib/printexc.ml[39,1662+11]..[39,1662+12])
+          expression (stdlib/printexc.ml[40,1677+2]..[44,1761+56])
+            Pexp_match
+            expression (stdlib/printexc.ml[40,1677+8]..[40,1677+18])
+              Pexp_apply
+              expression (stdlib/printexc.ml[40,1677+8]..[40,1677+16])
+                Pexp_ident "Obj.size" (stdlib/printexc.ml[40,1677+8]..[40,1677+16])
+              [
+                <arg>
+                Nolabel
+                  expression (stdlib/printexc.ml[40,1677+17]..[40,1677+18])
+                    Pexp_ident "x" (stdlib/printexc.ml[40,1677+17]..[40,1677+18])
+              ]
+            [
+              <case>
+                pattern (stdlib/printexc.ml[41,1701+4]..[41,1701+5])
+                  Ppat_constant PConst_int (0,None)
+                expression (stdlib/printexc.ml[41,1701+9]..[41,1701+11])
+                  Pexp_constant PConst_string("",(stdlib/printexc.ml[41,1701+10]..[41,1701+10]),None)
+              <case>
+                pattern (stdlib/printexc.ml[42,1713+4]..[42,1713+5])
+                  Ppat_constant PConst_int (1,None)
+                expression (stdlib/printexc.ml[42,1713+9]..[42,1713+11])
+                  Pexp_constant PConst_string("",(stdlib/printexc.ml[42,1713+10]..[42,1713+10]),None)
+              <case>
+                pattern (stdlib/printexc.ml[43,1725+4]..[43,1725+5])
+                  Ppat_constant PConst_int (2,None)
+                expression (stdlib/printexc.ml[43,1725+9]..[43,1725+35])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[43,1725+9]..[43,1725+16])
+                    Pexp_ident "sprintf" (stdlib/printexc.ml[43,1725+9]..[43,1725+16])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[43,1725+17]..[43,1725+23])
+                        Pexp_constant PConst_string("(%s)",(stdlib/printexc.ml[43,1725+18]..[43,1725+22]),None)
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[43,1725+24]..[43,1725+35])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[43,1725+25]..[43,1725+30])
+                          Pexp_ident "field" (stdlib/printexc.ml[43,1725+25]..[43,1725+30])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[43,1725+31]..[43,1725+32])
+                              Pexp_ident "x" (stdlib/printexc.ml[43,1725+31]..[43,1725+32])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[43,1725+33]..[43,1725+34])
+                              Pexp_constant PConst_int (1,None)
+                        ]
+                  ]
+              <case>
+                pattern (stdlib/printexc.ml[44,1761+4]..[44,1761+5])
+                  Ppat_any
+                expression (stdlib/printexc.ml[44,1761+9]..[44,1761+56])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[44,1761+9]..[44,1761+16])
+                    Pexp_ident "sprintf" (stdlib/printexc.ml[44,1761+9]..[44,1761+16])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[44,1761+17]..[44,1761+25])
+                        Pexp_constant PConst_string("(%s%s)",(stdlib/printexc.ml[44,1761+18]..[44,1761+24]),None)
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[44,1761+26]..[44,1761+37])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[44,1761+27]..[44,1761+32])
+                          Pexp_ident "field" (stdlib/printexc.ml[44,1761+27]..[44,1761+32])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[44,1761+33]..[44,1761+34])
+                              Pexp_ident "x" (stdlib/printexc.ml[44,1761+33]..[44,1761+34])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[44,1761+35]..[44,1761+36])
+                              Pexp_constant PConst_int (1,None)
+                        ]
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[44,1761+38]..[44,1761+56])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[44,1761+39]..[44,1761+51])
+                          Pexp_ident "other_fields" (stdlib/printexc.ml[44,1761+39]..[44,1761+51])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[44,1761+52]..[44,1761+53])
+                              Pexp_ident "x" (stdlib/printexc.ml[44,1761+52]..[44,1761+53])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[44,1761+54]..[44,1761+55])
+                              Pexp_constant PConst_int (2,None)
+                        ]
+                  ]
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[46,1819+0]..[53,1999+28])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[46,1819+4]..[46,1819+16])
+          Ppat_var "use_printers" (stdlib/printexc.ml[46,1819+4]..[46,1819+16])
+        expression (stdlib/printexc.ml[46,1819+17]..[53,1999+28]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[46,1819+17]..[46,1819+18])
+            Ppat_var "x" (stdlib/printexc.ml[46,1819+17]..[46,1819+18])
+          expression (stdlib/printexc.ml[47,1840+2]..[53,1999+28])
+            Pexp_let Rec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[47,1840+10]..[47,1840+14])
+                  Ppat_var "conv" (stdlib/printexc.ml[47,1840+10]..[47,1840+14])
+                expression (stdlib/printexc.ml[47,1840+17]..[52,1979+16])
+                  Pexp_function
+                  [
+                    <case>
+                      pattern (stdlib/printexc.ml[48,1866+6]..[48,1866+14])
+                        Ppat_construct "::" (stdlib/printexc.ml[48,1866+9]..[48,1866+11])
+                        Some
+                          []
+                          pattern (stdlib/printexc.ml[48,1866+6]..[48,1866+14]) ghost
+                            Ppat_tuple
+                            [
+                              pattern (stdlib/printexc.ml[48,1866+6]..[48,1866+8])
+                                Ppat_var "hd" (stdlib/printexc.ml[48,1866+6]..[48,1866+8])
+                              pattern (stdlib/printexc.ml[48,1866+12]..[48,1866+14])
+                                Ppat_var "tl" (stdlib/printexc.ml[48,1866+12]..[48,1866+14])
+                            ]
+                      expression (stdlib/printexc.ml[49,1884+8]..[51,1950+28])
+                        Pexp_match
+                        expression (stdlib/printexc.ml[49,1884+15]..[49,1884+19])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[49,1884+15]..[49,1884+17])
+                            Pexp_ident "hd" (stdlib/printexc.ml[49,1884+15]..[49,1884+17])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[49,1884+18]..[49,1884+19])
+                                Pexp_ident "x" (stdlib/printexc.ml[49,1884+18]..[49,1884+19])
+                          ]
+                        [
+                          <case>
+                            pattern (stdlib/printexc.ml[50,1909+11]..[50,1909+29])
+                              Ppat_or
+                              pattern (stdlib/printexc.ml[50,1909+11]..[50,1909+15])
+                                Ppat_construct "None" (stdlib/printexc.ml[50,1909+11]..[50,1909+15])
+                                None
+                              pattern (stdlib/printexc.ml[50,1909+18]..[50,1909+29])
+                                Ppat_exception
+                                pattern (stdlib/printexc.ml[50,1909+28]..[50,1909+29])
+                                  Ppat_any
+                            expression (stdlib/printexc.ml[50,1909+33]..[50,1909+40])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[50,1909+33]..[50,1909+37])
+                                Pexp_ident "conv" (stdlib/printexc.ml[50,1909+33]..[50,1909+37])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[50,1909+38]..[50,1909+40])
+                                    Pexp_ident "tl" (stdlib/printexc.ml[50,1909+38]..[50,1909+40])
+                              ]
+                          <case>
+                            pattern (stdlib/printexc.ml[51,1950+11]..[51,1950+17])
+                              Ppat_construct "Some" (stdlib/printexc.ml[51,1950+11]..[51,1950+15])
+                              Some
+                                []
+                                pattern (stdlib/printexc.ml[51,1950+16]..[51,1950+17])
+                                  Ppat_var "s" (stdlib/printexc.ml[51,1950+16]..[51,1950+17])
+                            expression (stdlib/printexc.ml[51,1950+21]..[51,1950+27])
+                              Pexp_construct "Some" (stdlib/printexc.ml[51,1950+21]..[51,1950+25])
+                              Some
+                                expression (stdlib/printexc.ml[51,1950+26]..[51,1950+27])
+                                  Pexp_ident "s" (stdlib/printexc.ml[51,1950+26]..[51,1950+27])
+                        ]
+                    <case>
+                      pattern (stdlib/printexc.ml[52,1979+6]..[52,1979+8])
+                        Ppat_construct "[]" (stdlib/printexc.ml[52,1979+6]..[52,1979+8])
+                        None
+                      expression (stdlib/printexc.ml[52,1979+12]..[52,1979+16])
+                        Pexp_construct "None" (stdlib/printexc.ml[52,1979+12]..[52,1979+16])
+                        None
+                  ]
+            ]
+            expression (stdlib/printexc.ml[53,1999+2]..[53,1999+28])
+              Pexp_apply
+              expression (stdlib/printexc.ml[53,1999+2]..[53,1999+6])
+                Pexp_ident "conv" (stdlib/printexc.ml[53,1999+2]..[53,1999+6])
+              [
+                <arg>
+                Nolabel
+                  expression (stdlib/printexc.ml[53,1999+7]..[53,1999+28])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[53,1999+8]..[53,1999+18])
+                      Pexp_ident "Atomic.get" (stdlib/printexc.ml[53,1999+8]..[53,1999+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[53,1999+19]..[53,1999+27])
+                          Pexp_ident "printers" (stdlib/printexc.ml[53,1999+19]..[53,1999+27])
+                    ]
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[55,2029+0]..[61,2225+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[55,2029+4]..[55,2029+28])
+          Ppat_var "destruct_ext_constructor" (stdlib/printexc.ml[55,2029+4]..[55,2029+28])
+        expression (stdlib/printexc.ml[55,2029+29]..[61,2225+34]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[55,2029+29]..[55,2029+30])
+            Ppat_var "x" (stdlib/printexc.ml[55,2029+29]..[55,2029+30])
+          expression (stdlib/printexc.ml[56,2062+2]..[61,2225+34])
+            Pexp_ifthenelse
+            expression (stdlib/printexc.ml[56,2062+5]..[56,2062+19])
+              Pexp_apply
+              expression (stdlib/printexc.ml[56,2062+15]..[56,2062+17])
+                Pexp_ident "<>" (stdlib/printexc.ml[56,2062+15]..[56,2062+17])
+              [
+                <arg>
+                Nolabel
+                  expression (stdlib/printexc.ml[56,2062+5]..[56,2062+14])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[56,2062+5]..[56,2062+12])
+                      Pexp_ident "Obj.tag" (stdlib/printexc.ml[56,2062+5]..[56,2062+12])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[56,2062+13]..[56,2062+14])
+                          Pexp_ident "x" (stdlib/printexc.ml[56,2062+13]..[56,2062+14])
+                    ]
+                <arg>
+                Nolabel
+                  expression (stdlib/printexc.ml[56,2062+18]..[56,2062+19])
+                    Pexp_constant PConst_int (0,None)
+              ]
+            expression (stdlib/printexc.ml[57,2087+4]..[57,2087+48])
+              Pexp_tuple
+              [
+                expression (stdlib/printexc.ml[57,2087+5]..[57,2087+41])
+                  Pexp_constraint
+                  expression (stdlib/printexc.ml[57,2087+6]..[57,2087+31])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[57,2087+6]..[57,2087+15])
+                      Pexp_ident "Obj.magic" (stdlib/printexc.ml[57,2087+6]..[57,2087+15])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[57,2087+16]..[57,2087+31])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[57,2087+17]..[57,2087+26])
+                            Pexp_ident "Obj.field" (stdlib/printexc.ml[57,2087+17]..[57,2087+26])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[57,2087+27]..[57,2087+28])
+                                Pexp_ident "x" (stdlib/printexc.ml[57,2087+27]..[57,2087+28])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[57,2087+29]..[57,2087+30])
+                                Pexp_constant PConst_int (0,None)
+                          ]
+                    ]
+                  core_type (stdlib/printexc.ml[57,2087+34]..[57,2087+40])
+                    Ptyp_constr "string" (stdlib/printexc.ml[57,2087+34]..[57,2087+40])
+                    []
+                expression (stdlib/printexc.ml[57,2087+43]..[57,2087+47])
+                  Pexp_construct "None" (stdlib/printexc.ml[57,2087+43]..[57,2087+47])
+                  None
+              ]
+            Some
+              expression (stdlib/printexc.ml[59,2143+4]..[61,2225+34])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (stdlib/printexc.ml[59,2143+8]..[59,2143+19])
+                      Ppat_var "constructor" (stdlib/printexc.ml[59,2143+8]..[59,2143+19])
+                    expression (stdlib/printexc.ml[60,2165+6]..[60,2165+56])
+                      Pexp_constraint
+                      expression (stdlib/printexc.ml[60,2165+7]..[60,2165+46])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[60,2165+7]..[60,2165+16])
+                          Pexp_ident "Obj.magic" (stdlib/printexc.ml[60,2165+7]..[60,2165+16])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[60,2165+17]..[60,2165+46])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[60,2165+18]..[60,2165+27])
+                                Pexp_ident "Obj.field" (stdlib/printexc.ml[60,2165+18]..[60,2165+27])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[60,2165+28]..[60,2165+43])
+                                    Pexp_apply
+                                    expression (stdlib/printexc.ml[60,2165+29]..[60,2165+38])
+                                      Pexp_ident "Obj.field" (stdlib/printexc.ml[60,2165+29]..[60,2165+38])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/printexc.ml[60,2165+39]..[60,2165+40])
+                                          Pexp_ident "x" (stdlib/printexc.ml[60,2165+39]..[60,2165+40])
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/printexc.ml[60,2165+41]..[60,2165+42])
+                                          Pexp_constant PConst_int (0,None)
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[60,2165+44]..[60,2165+45])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                        ]
+                      core_type (stdlib/printexc.ml[60,2165+49]..[60,2165+55])
+                        Ptyp_constr "string" (stdlib/printexc.ml[60,2165+49]..[60,2165+55])
+                        []
+                ]
+                expression (stdlib/printexc.ml[61,2225+4]..[61,2225+34])
+                  Pexp_tuple
+                  [
+                    expression (stdlib/printexc.ml[61,2225+5]..[61,2225+16])
+                      Pexp_ident "constructor" (stdlib/printexc.ml[61,2225+5]..[61,2225+16])
+                    expression (stdlib/printexc.ml[61,2225+18]..[61,2225+33])
+                      Pexp_construct "Some" (stdlib/printexc.ml[61,2225+18]..[61,2225+22])
+                      Some
+                        expression (stdlib/printexc.ml[61,2225+23]..[61,2225+33])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[61,2225+24]..[61,2225+30])
+                            Pexp_ident "fields" (stdlib/printexc.ml[61,2225+24]..[61,2225+30])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[61,2225+31]..[61,2225+32])
+                                Pexp_ident "x" (stdlib/printexc.ml[61,2225+31]..[61,2225+32])
+                          ]
+                  ]
+    ]
+  structure_item (stdlib/printexc.ml[63,2261+0]..[67,2411+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[63,2261+4]..[63,2261+35])
+          Ppat_var "string_of_extension_constructor" (stdlib/printexc.ml[63,2261+4]..[63,2261+35])
+        expression (stdlib/printexc.ml[63,2261+36]..[67,2411+29]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[63,2261+36]..[63,2261+37])
+            Ppat_var "t" (stdlib/printexc.ml[63,2261+36]..[63,2261+37])
+          expression (stdlib/printexc.ml[64,2301+2]..[67,2411+29])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[64,2301+6]..[64,2301+29])
+                  Ppat_tuple
+                  [
+                    pattern (stdlib/printexc.ml[64,2301+6]..[64,2301+17])
+                      Ppat_var "constructor" (stdlib/printexc.ml[64,2301+6]..[64,2301+17])
+                    pattern (stdlib/printexc.ml[64,2301+19]..[64,2301+29])
+                      Ppat_var "fields_opt" (stdlib/printexc.ml[64,2301+19]..[64,2301+29])
+                  ]
+                expression (stdlib/printexc.ml[64,2301+32]..[64,2301+58])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[64,2301+32]..[64,2301+56])
+                    Pexp_ident "destruct_ext_constructor" (stdlib/printexc.ml[64,2301+32]..[64,2301+56])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[64,2301+57]..[64,2301+58])
+                        Pexp_ident "t" (stdlib/printexc.ml[64,2301+57]..[64,2301+58])
+                  ]
+            ]
+            expression (stdlib/printexc.ml[65,2363+2]..[67,2411+29])
+              Pexp_match
+              expression (stdlib/printexc.ml[65,2363+8]..[65,2363+18])
+                Pexp_ident "fields_opt" (stdlib/printexc.ml[65,2363+8]..[65,2363+18])
+              [
+                <case>
+                  pattern (stdlib/printexc.ml[66,2387+4]..[66,2387+8])
+                    Ppat_construct "None" (stdlib/printexc.ml[66,2387+4]..[66,2387+8])
+                    None
+                  expression (stdlib/printexc.ml[66,2387+12]..[66,2387+23])
+                    Pexp_ident "constructor" (stdlib/printexc.ml[66,2387+12]..[66,2387+23])
+                <case>
+                  pattern (stdlib/printexc.ml[67,2411+4]..[67,2411+10])
+                    Ppat_construct "Some" (stdlib/printexc.ml[67,2411+4]..[67,2411+8])
+                    Some
+                      []
+                      pattern (stdlib/printexc.ml[67,2411+9]..[67,2411+10])
+                        Ppat_var "f" (stdlib/printexc.ml[67,2411+9]..[67,2411+10])
+                  expression (stdlib/printexc.ml[67,2411+14]..[67,2411+29])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[67,2411+26]..[67,2411+27])
+                      Pexp_ident "^" (stdlib/printexc.ml[67,2411+26]..[67,2411+27])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[67,2411+14]..[67,2411+25])
+                          Pexp_ident "constructor" (stdlib/printexc.ml[67,2411+14]..[67,2411+25])
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[67,2411+28]..[67,2411+29])
+                          Pexp_ident "f" (stdlib/printexc.ml[67,2411+28]..[67,2411+29])
+                    ]
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[69,2442+0]..[79,2900+50])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[69,2442+4]..[69,2442+21])
+          Ppat_var "to_string_default" (stdlib/printexc.ml[69,2442+4]..[69,2442+21])
+        expression (stdlib/printexc.ml[69,2442+24]..[79,2900+50])
+          Pexp_function
+          [
+            <case>
+              pattern (stdlib/printexc.ml[70,2475+4]..[70,2475+17])
+                Ppat_construct "Out_of_memory" (stdlib/printexc.ml[70,2475+4]..[70,2475+17])
+                None
+              expression (stdlib/printexc.ml[70,2475+21]..[70,2475+36])
+                Pexp_constant PConst_string("Out of memory",(stdlib/printexc.ml[70,2475+22]..[70,2475+35]),None)
+            <case>
+              pattern (stdlib/printexc.ml[71,2512+4]..[71,2512+18])
+                Ppat_construct "Stack_overflow" (stdlib/printexc.ml[71,2512+4]..[71,2512+18])
+                None
+              expression (stdlib/printexc.ml[71,2512+22]..[71,2512+38])
+                Pexp_constant PConst_string("Stack overflow",(stdlib/printexc.ml[71,2512+23]..[71,2512+37]),None)
+            <case>
+              pattern (stdlib/printexc.ml[72,2551+4]..[72,2551+35])
+                Ppat_construct "Match_failure" (stdlib/printexc.ml[72,2551+4]..[72,2551+17])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[72,2551+17]..[72,2551+35])
+                    Ppat_tuple
+                    [
+                      pattern (stdlib/printexc.ml[72,2551+18]..[72,2551+22])
+                        Ppat_var "file" (stdlib/printexc.ml[72,2551+18]..[72,2551+22])
+                      pattern (stdlib/printexc.ml[72,2551+24]..[72,2551+28])
+                        Ppat_var "line" (stdlib/printexc.ml[72,2551+24]..[72,2551+28])
+                      pattern (stdlib/printexc.ml[72,2551+30]..[72,2551+34])
+                        Ppat_var "char" (stdlib/printexc.ml[72,2551+30]..[72,2551+34])
+                    ]
+              expression (stdlib/printexc.ml[73,2590+6]..[73,2590+70])
+                Pexp_apply
+                expression (stdlib/printexc.ml[73,2590+6]..[73,2590+13])
+                  Pexp_ident "sprintf" (stdlib/printexc.ml[73,2590+6]..[73,2590+13])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[73,2590+14]..[73,2590+20])
+                      Pexp_ident "locfmt" (stdlib/printexc.ml[73,2590+14]..[73,2590+20])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[73,2590+21]..[73,2590+25])
+                      Pexp_ident "file" (stdlib/printexc.ml[73,2590+21]..[73,2590+25])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[73,2590+26]..[73,2590+30])
+                      Pexp_ident "line" (stdlib/printexc.ml[73,2590+26]..[73,2590+30])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[73,2590+31]..[73,2590+35])
+                      Pexp_ident "char" (stdlib/printexc.ml[73,2590+31]..[73,2590+35])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[73,2590+36]..[73,2590+44])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[73,2590+41]..[73,2590+42])
+                        Pexp_ident "+" (stdlib/printexc.ml[73,2590+41]..[73,2590+42])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[73,2590+37]..[73,2590+41])
+                            Pexp_ident "char" (stdlib/printexc.ml[73,2590+37]..[73,2590+41])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[73,2590+42]..[73,2590+43])
+                            Pexp_constant PConst_int (5,None)
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[73,2590+45]..[73,2590+70])
+                      Pexp_constant PConst_string("Pattern matching failed",(stdlib/printexc.ml[73,2590+46]..[73,2590+69]),None)
+                ]
+            <case>
+              pattern (stdlib/printexc.ml[74,2661+4]..[74,2661+36])
+                Ppat_construct "Assert_failure" (stdlib/printexc.ml[74,2661+4]..[74,2661+18])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[74,2661+18]..[74,2661+36])
+                    Ppat_tuple
+                    [
+                      pattern (stdlib/printexc.ml[74,2661+19]..[74,2661+23])
+                        Ppat_var "file" (stdlib/printexc.ml[74,2661+19]..[74,2661+23])
+                      pattern (stdlib/printexc.ml[74,2661+25]..[74,2661+29])
+                        Ppat_var "line" (stdlib/printexc.ml[74,2661+25]..[74,2661+29])
+                      pattern (stdlib/printexc.ml[74,2661+31]..[74,2661+35])
+                        Ppat_var "char" (stdlib/printexc.ml[74,2661+31]..[74,2661+35])
+                    ]
+              expression (stdlib/printexc.ml[75,2701+6]..[75,2701+63])
+                Pexp_apply
+                expression (stdlib/printexc.ml[75,2701+6]..[75,2701+13])
+                  Pexp_ident "sprintf" (stdlib/printexc.ml[75,2701+6]..[75,2701+13])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[75,2701+14]..[75,2701+20])
+                      Pexp_ident "locfmt" (stdlib/printexc.ml[75,2701+14]..[75,2701+20])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[75,2701+21]..[75,2701+25])
+                      Pexp_ident "file" (stdlib/printexc.ml[75,2701+21]..[75,2701+25])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[75,2701+26]..[75,2701+30])
+                      Pexp_ident "line" (stdlib/printexc.ml[75,2701+26]..[75,2701+30])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[75,2701+31]..[75,2701+35])
+                      Pexp_ident "char" (stdlib/printexc.ml[75,2701+31]..[75,2701+35])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[75,2701+36]..[75,2701+44])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[75,2701+41]..[75,2701+42])
+                        Pexp_ident "+" (stdlib/printexc.ml[75,2701+41]..[75,2701+42])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[75,2701+37]..[75,2701+41])
+                            Pexp_ident "char" (stdlib/printexc.ml[75,2701+37]..[75,2701+41])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[75,2701+42]..[75,2701+43])
+                            Pexp_constant PConst_int (6,None)
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[75,2701+45]..[75,2701+63])
+                      Pexp_constant PConst_string("Assertion failed",(stdlib/printexc.ml[75,2701+46]..[75,2701+62]),None)
+                ]
+            <case>
+              pattern (stdlib/printexc.ml[76,2765+4]..[76,2765+48])
+                Ppat_construct "Undefined_recursive_module" (stdlib/printexc.ml[76,2765+4]..[76,2765+30])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[76,2765+30]..[76,2765+48])
+                    Ppat_tuple
+                    [
+                      pattern (stdlib/printexc.ml[76,2765+31]..[76,2765+35])
+                        Ppat_var "file" (stdlib/printexc.ml[76,2765+31]..[76,2765+35])
+                      pattern (stdlib/printexc.ml[76,2765+37]..[76,2765+41])
+                        Ppat_var "line" (stdlib/printexc.ml[76,2765+37]..[76,2765+41])
+                      pattern (stdlib/printexc.ml[76,2765+43]..[76,2765+47])
+                        Ppat_var "char" (stdlib/printexc.ml[76,2765+43]..[76,2765+47])
+                    ]
+              expression (stdlib/printexc.ml[77,2817+6]..[77,2817+73])
+                Pexp_apply
+                expression (stdlib/printexc.ml[77,2817+6]..[77,2817+13])
+                  Pexp_ident "sprintf" (stdlib/printexc.ml[77,2817+6]..[77,2817+13])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[77,2817+14]..[77,2817+20])
+                      Pexp_ident "locfmt" (stdlib/printexc.ml[77,2817+14]..[77,2817+20])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[77,2817+21]..[77,2817+25])
+                      Pexp_ident "file" (stdlib/printexc.ml[77,2817+21]..[77,2817+25])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[77,2817+26]..[77,2817+30])
+                      Pexp_ident "line" (stdlib/printexc.ml[77,2817+26]..[77,2817+30])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[77,2817+31]..[77,2817+35])
+                      Pexp_ident "char" (stdlib/printexc.ml[77,2817+31]..[77,2817+35])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[77,2817+36]..[77,2817+44])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[77,2817+41]..[77,2817+42])
+                        Pexp_ident "+" (stdlib/printexc.ml[77,2817+41]..[77,2817+42])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[77,2817+37]..[77,2817+41])
+                            Pexp_ident "char" (stdlib/printexc.ml[77,2817+37]..[77,2817+41])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[77,2817+42]..[77,2817+43])
+                            Pexp_constant PConst_int (6,None)
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[77,2817+45]..[77,2817+73])
+                      Pexp_constant PConst_string("Undefined recursive module",(stdlib/printexc.ml[77,2817+46]..[77,2817+72]),None)
+                ]
+            <case>
+              pattern (stdlib/printexc.ml[78,2891+4]..[78,2891+5])
+                Ppat_var "x" (stdlib/printexc.ml[78,2891+4]..[78,2891+5])
+              expression (stdlib/printexc.ml[79,2900+6]..[79,2900+50])
+                Pexp_apply
+                expression (stdlib/printexc.ml[79,2900+6]..[79,2900+37])
+                  Pexp_ident "string_of_extension_constructor" (stdlib/printexc.ml[79,2900+6]..[79,2900+37])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[79,2900+38]..[79,2900+50])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[79,2900+39]..[79,2900+47])
+                        Pexp_ident "Obj.repr" (stdlib/printexc.ml[79,2900+39]..[79,2900+47])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[79,2900+48]..[79,2900+49])
+                            Pexp_ident "x" (stdlib/printexc.ml[79,2900+48]..[79,2900+49])
+                      ]
+                ]
+          ]
+    ]
+  structure_item (stdlib/printexc.ml[81,2952+0]..[84,3014+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[81,2952+4]..[81,2952+13])
+          Ppat_var "to_string" (stdlib/printexc.ml[81,2952+4]..[81,2952+13])
+        expression (stdlib/printexc.ml[81,2952+14]..[84,3014+31]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[81,2952+14]..[81,2952+15])
+            Ppat_var "e" (stdlib/printexc.ml[81,2952+14]..[81,2952+15])
+          expression (stdlib/printexc.ml[82,2970+2]..[84,3014+31])
+            Pexp_match
+            expression (stdlib/printexc.ml[82,2970+8]..[82,2970+22])
+              Pexp_apply
+              expression (stdlib/printexc.ml[82,2970+8]..[82,2970+20])
+                Pexp_ident "use_printers" (stdlib/printexc.ml[82,2970+8]..[82,2970+20])
+              [
+                <arg>
+                Nolabel
+                  expression (stdlib/printexc.ml[82,2970+21]..[82,2970+22])
+                    Pexp_ident "e" (stdlib/printexc.ml[82,2970+21]..[82,2970+22])
+              ]
+            [
+              <case>
+                pattern (stdlib/printexc.ml[83,2998+4]..[83,2998+10])
+                  Ppat_construct "Some" (stdlib/printexc.ml[83,2998+4]..[83,2998+8])
+                  Some
+                    []
+                    pattern (stdlib/printexc.ml[83,2998+9]..[83,2998+10])
+                      Ppat_var "s" (stdlib/printexc.ml[83,2998+9]..[83,2998+10])
+                expression (stdlib/printexc.ml[83,2998+14]..[83,2998+15])
+                  Pexp_ident "s" (stdlib/printexc.ml[83,2998+14]..[83,2998+15])
+              <case>
+                pattern (stdlib/printexc.ml[84,3014+4]..[84,3014+8])
+                  Ppat_construct "None" (stdlib/printexc.ml[84,3014+4]..[84,3014+8])
+                  None
+                expression (stdlib/printexc.ml[84,3014+12]..[84,3014+31])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[84,3014+12]..[84,3014+29])
+                    Pexp_ident "to_string_default" (stdlib/printexc.ml[84,3014+12]..[84,3014+29])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[84,3014+30]..[84,3014+31])
+                        Pexp_ident "e" (stdlib/printexc.ml[84,3014+30]..[84,3014+31])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[86,3047+0]..[92,3169+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[86,3047+4]..[86,3047+9])
+          Ppat_var "print" (stdlib/printexc.ml[86,3047+4]..[86,3047+9])
+        expression (stdlib/printexc.ml[86,3047+10]..[92,3169+11]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[86,3047+10]..[86,3047+13])
+            Ppat_var "fct" (stdlib/printexc.ml[86,3047+10]..[86,3047+13])
+          expression (stdlib/printexc.ml[86,3047+14]..[92,3169+11]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[86,3047+14]..[86,3047+17])
+              Ppat_var "arg" (stdlib/printexc.ml[86,3047+14]..[86,3047+17])
+            expression (stdlib/printexc.ml[87,3067+2]..[92,3169+11])
+              Pexp_try
+              expression (stdlib/printexc.ml[88,3073+4]..[88,3073+11])
+                Pexp_apply
+                expression (stdlib/printexc.ml[88,3073+4]..[88,3073+7])
+                  Pexp_ident "fct" (stdlib/printexc.ml[88,3073+4]..[88,3073+7])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[88,3073+8]..[88,3073+11])
+                      Pexp_ident "arg" (stdlib/printexc.ml[88,3073+8]..[88,3073+11])
+                ]
+              [
+                <case>
+                  pattern (stdlib/printexc.ml[89,3085+7]..[89,3085+8])
+                    Ppat_var "x" (stdlib/printexc.ml[89,3085+7]..[89,3085+8])
+                  expression (stdlib/printexc.ml[90,3097+4]..[92,3169+11])
+                    Pexp_sequence
+                    expression (stdlib/printexc.ml[90,3097+4]..[90,3097+52])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[90,3097+4]..[90,3097+11])
+                        Pexp_ident "eprintf" (stdlib/printexc.ml[90,3097+4]..[90,3097+11])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[90,3097+12]..[90,3097+38])
+                            Pexp_constant PConst_string("Uncaught exception: %s\n",(stdlib/printexc.ml[90,3097+13]..[90,3097+37]),None)
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[90,3097+39]..[90,3097+52])
+                            Pexp_apply
+                            expression (stdlib/printexc.ml[90,3097+40]..[90,3097+49])
+                              Pexp_ident "to_string" (stdlib/printexc.ml[90,3097+40]..[90,3097+49])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/printexc.ml[90,3097+50]..[90,3097+51])
+                                  Pexp_ident "x" (stdlib/printexc.ml[90,3097+50]..[90,3097+51])
+                            ]
+                      ]
+                    expression (stdlib/printexc.ml[91,3151+4]..[92,3169+11])
+                      Pexp_sequence
+                      expression (stdlib/printexc.ml[91,3151+4]..[91,3151+16])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[91,3151+4]..[91,3151+9])
+                          Pexp_ident "flush" (stdlib/printexc.ml[91,3151+4]..[91,3151+9])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[91,3151+10]..[91,3151+16])
+                              Pexp_ident "stderr" (stdlib/printexc.ml[91,3151+10]..[91,3151+16])
+                        ]
+                      expression (stdlib/printexc.ml[92,3169+4]..[92,3169+11])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[92,3169+4]..[92,3169+9])
+                          Pexp_ident "raise" (stdlib/printexc.ml[92,3169+4]..[92,3169+9])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[92,3169+10]..[92,3169+11])
+                              Pexp_ident "x" (stdlib/printexc.ml[92,3169+10]..[92,3169+11])
+                        ]
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[94,3182+0]..[100,3304+10])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[94,3182+4]..[94,3182+9])
+          Ppat_var "catch" (stdlib/printexc.ml[94,3182+4]..[94,3182+9])
+        expression (stdlib/printexc.ml[94,3182+10]..[100,3304+10]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[94,3182+10]..[94,3182+13])
+            Ppat_var "fct" (stdlib/printexc.ml[94,3182+10]..[94,3182+13])
+          expression (stdlib/printexc.ml[94,3182+14]..[100,3304+10]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[94,3182+14]..[94,3182+17])
+              Ppat_var "arg" (stdlib/printexc.ml[94,3182+14]..[94,3182+17])
+            expression (stdlib/printexc.ml[95,3202+2]..[100,3304+10])
+              Pexp_try
+              expression (stdlib/printexc.ml[96,3208+4]..[96,3208+11])
+                Pexp_apply
+                expression (stdlib/printexc.ml[96,3208+4]..[96,3208+7])
+                  Pexp_ident "fct" (stdlib/printexc.ml[96,3208+4]..[96,3208+7])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[96,3208+8]..[96,3208+11])
+                      Pexp_ident "arg" (stdlib/printexc.ml[96,3208+8]..[96,3208+11])
+                ]
+              [
+                <case>
+                  pattern (stdlib/printexc.ml[97,3220+7]..[97,3220+8])
+                    Ppat_var "x" (stdlib/printexc.ml[97,3220+7]..[97,3220+8])
+                  expression (stdlib/printexc.ml[98,3232+4]..[100,3304+10])
+                    Pexp_sequence
+                    expression (stdlib/printexc.ml[98,3232+4]..[98,3232+16])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[98,3232+4]..[98,3232+9])
+                        Pexp_ident "flush" (stdlib/printexc.ml[98,3232+4]..[98,3232+9])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[98,3232+10]..[98,3232+16])
+                            Pexp_ident "stdout" (stdlib/printexc.ml[98,3232+10]..[98,3232+16])
+                      ]
+                    expression (stdlib/printexc.ml[99,3250+4]..[100,3304+10])
+                      Pexp_sequence
+                      expression (stdlib/printexc.ml[99,3250+4]..[99,3250+52])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[99,3250+4]..[99,3250+11])
+                          Pexp_ident "eprintf" (stdlib/printexc.ml[99,3250+4]..[99,3250+11])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[99,3250+12]..[99,3250+38])
+                              Pexp_constant PConst_string("Uncaught exception: %s\n",(stdlib/printexc.ml[99,3250+13]..[99,3250+37]),None)
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[99,3250+39]..[99,3250+52])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[99,3250+40]..[99,3250+49])
+                                Pexp_ident "to_string" (stdlib/printexc.ml[99,3250+40]..[99,3250+49])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[99,3250+50]..[99,3250+51])
+                                    Pexp_ident "x" (stdlib/printexc.ml[99,3250+50]..[99,3250+51])
+                              ]
+                        ]
+                      expression (stdlib/printexc.ml[100,3304+4]..[100,3304+10])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[100,3304+4]..[100,3304+8])
+                          Pexp_ident "exit" (stdlib/printexc.ml[100,3304+4]..[100,3304+8])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[100,3304+9]..[100,3304+10])
+                              Pexp_constant PConst_int (2,None)
+                        ]
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[102,3316+0]..[102,3316+23])
+    Pstr_type Rec
+    [
+      type_declaration "raw_backtrace_slot" (stdlib/printexc.ml[102,3316+5]..[102,3316+23]) (stdlib/printexc.ml[102,3316+0]..[102,3316+23])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (stdlib/printexc.ml[103,3340+0]..[103,3340+38])
+    Pstr_type Rec
+    [
+      type_declaration "raw_backtrace_entry" (stdlib/printexc.ml[103,3340+5]..[103,3340+24]) (stdlib/printexc.ml[103,3340+0]..[103,3340+38])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Private
+        ptype_manifest =
+          Some
+            core_type (stdlib/printexc.ml[103,3340+35]..[103,3340+38])
+              Ptyp_constr "int" (stdlib/printexc.ml[103,3340+35]..[103,3340+38])
+              []
+    ]
+  structure_item (stdlib/printexc.ml[104,3379+0]..[104,3379+46])
+    Pstr_type Rec
+    [
+      type_declaration "raw_backtrace" (stdlib/printexc.ml[104,3379+5]..[104,3379+18]) (stdlib/printexc.ml[104,3379+0]..[104,3379+46])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (stdlib/printexc.ml[104,3379+21]..[104,3379+46])
+              Ptyp_constr "array" (stdlib/printexc.ml[104,3379+41]..[104,3379+46])
+              [
+                core_type (stdlib/printexc.ml[104,3379+21]..[104,3379+40])
+                  Ptyp_constr "raw_backtrace_entry" (stdlib/printexc.ml[104,3379+21]..[104,3379+40])
+                  []
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[106,3427+0]..[106,3427+33])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[106,3427+4]..[106,3427+25])
+          Ppat_var "raw_backtrace_entries" (stdlib/printexc.ml[106,3427+4]..[106,3427+25])
+        expression (stdlib/printexc.ml[106,3427+26]..[106,3427+33]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[106,3427+26]..[106,3427+28])
+            Ppat_var "bt" (stdlib/printexc.ml[106,3427+26]..[106,3427+28])
+          expression (stdlib/printexc.ml[106,3427+31]..[106,3427+33])
+            Pexp_ident "bt" (stdlib/printexc.ml[106,3427+31]..[106,3427+33])
+    ]
+  structure_item (stdlib/printexc.ml[108,3462+0]..[109,3490+60])
+    Pstr_primitive
+    value_description "get_raw_backtrace" (stdlib/printexc.ml[108,3462+9]..[108,3462+26]) (stdlib/printexc.ml[108,3462+0]..[109,3490+60])
+      core_type (stdlib/printexc.ml[109,3490+2]..[109,3490+23])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[109,3490+2]..[109,3490+6])
+          Ptyp_constr "unit" (stdlib/printexc.ml[109,3490+2]..[109,3490+6])
+          []
+        core_type (stdlib/printexc.ml[109,3490+10]..[109,3490+23])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.ml[109,3490+10]..[109,3490+23])
+          []
+      [
+        "caml_get_exception_raw_backtrace"
+      ]
+  structure_item (stdlib/printexc.ml[111,3552+0]..[112,3610+27])
+    Pstr_primitive
+    value_description "raise_with_backtrace" (stdlib/printexc.ml[111,3552+9]..[111,3552+29]) (stdlib/printexc.ml[111,3552+0]..[112,3610+27])
+      core_type (stdlib/printexc.ml[111,3552+31]..[111,3552+57])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[111,3552+31]..[111,3552+34])
+          Ptyp_constr "exn" (stdlib/printexc.ml[111,3552+31]..[111,3552+34])
+          []
+        core_type (stdlib/printexc.ml[111,3552+38]..[111,3552+57])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.ml[111,3552+38]..[111,3552+51])
+            Ptyp_constr "raw_backtrace" (stdlib/printexc.ml[111,3552+38]..[111,3552+51])
+            []
+          core_type (stdlib/printexc.ml[111,3552+55]..[111,3552+57])
+            Ptyp_var a
+      [
+        "%raise_with_backtrace"
+      ]
+  structure_item (stdlib/printexc.ml[114,3639+0]..[126,3922+5])
+    Pstr_type Rec
+    [
+      type_declaration "backtrace_slot" (stdlib/printexc.ml[114,3639+5]..[114,3639+19]) (stdlib/printexc.ml[114,3639+0]..[126,3922+5])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (stdlib/printexc.ml[115,3661+2]..[123,3868+5])
+                "Known_location" (stdlib/printexc.ml[115,3661+4]..[115,3661+18])
+                [
+                  (stdlib/printexc.ml[116,3685+6]..[116,3685+25])
+                    Immutable
+                    "is_raise" (stdlib/printexc.ml[116,3685+6]..[116,3685+14])                    core_type (stdlib/printexc.ml[116,3685+20]..[116,3685+24])
+                      Ptyp_constr "bool" (stdlib/printexc.ml[116,3685+20]..[116,3685+24])
+                      []
+                  (stdlib/printexc.ml[117,3711+6]..[117,3711+27])
+                    Immutable
+                    "filename" (stdlib/printexc.ml[117,3711+6]..[117,3711+14])                    core_type (stdlib/printexc.ml[117,3711+20]..[117,3711+26])
+                      Ptyp_constr "string" (stdlib/printexc.ml[117,3711+20]..[117,3711+26])
+                      []
+                  (stdlib/printexc.ml[118,3739+6]..[118,3739+24])
+                    Immutable
+                    "line_number" (stdlib/printexc.ml[118,3739+6]..[118,3739+17])                    core_type (stdlib/printexc.ml[118,3739+20]..[118,3739+23])
+                      Ptyp_constr "int" (stdlib/printexc.ml[118,3739+20]..[118,3739+23])
+                      []
+                  (stdlib/printexc.ml[119,3764+6]..[119,3764+24])
+                    Immutable
+                    "start_char" (stdlib/printexc.ml[119,3764+6]..[119,3764+16])                    core_type (stdlib/printexc.ml[119,3764+20]..[119,3764+23])
+                      Ptyp_constr "int" (stdlib/printexc.ml[119,3764+20]..[119,3764+23])
+                      []
+                  (stdlib/printexc.ml[120,3789+6]..[120,3789+24])
+                    Immutable
+                    "end_char" (stdlib/printexc.ml[120,3789+6]..[120,3789+14])                    core_type (stdlib/printexc.ml[120,3789+20]..[120,3789+23])
+                      Ptyp_constr "int" (stdlib/printexc.ml[120,3789+20]..[120,3789+23])
+                      []
+                  (stdlib/printexc.ml[121,3814+6]..[121,3814+25])
+                    Immutable
+                    "is_inline" (stdlib/printexc.ml[121,3814+6]..[121,3814+15])                    core_type (stdlib/printexc.ml[121,3814+20]..[121,3814+24])
+                      Ptyp_constr "bool" (stdlib/printexc.ml[121,3814+20]..[121,3814+24])
+                      []
+                  (stdlib/printexc.ml[122,3840+6]..[122,3840+27])
+                    Immutable
+                    "defname" (stdlib/printexc.ml[122,3840+6]..[122,3840+13])                    core_type (stdlib/printexc.ml[122,3840+20]..[122,3840+26])
+                      Ptyp_constr "string" (stdlib/printexc.ml[122,3840+20]..[122,3840+26])
+                      []
+                ]
+                None
+              (stdlib/printexc.ml[124,3874+2]..[126,3922+5])
+                "Unknown_location" (stdlib/printexc.ml[124,3874+4]..[124,3874+20])
+                [
+                  (stdlib/printexc.ml[125,3900+6]..[125,3900+21])
+                    Immutable
+                    "is_raise" (stdlib/printexc.ml[125,3900+6]..[125,3900+14])                    core_type (stdlib/printexc.ml[125,3900+17]..[125,3900+21])
+                      Ptyp_constr "bool" (stdlib/printexc.ml[125,3900+17]..[125,3900+21])
+                      []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (stdlib/printexc.ml[129,3952+0]..[132,4145+47])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[129,3952+4]..[129,3952+5])
+          Ppat_any
+        expression (stdlib/printexc.ml[129,3952+8]..[132,4145+47])
+          Pexp_construct "::" (stdlib/printexc.ml[129,3952+9]..[132,4145+47]) ghost
+          Some
+            expression (stdlib/printexc.ml[129,3952+9]..[132,4145+47]) ghost
+              Pexp_tuple
+              [
+                expression (stdlib/printexc.ml[129,3952+9]..[131,4084+59])
+                  Pexp_construct "Known_location" (stdlib/printexc.ml[129,3952+9]..[129,3952+23])
+                  Some
+                    expression (stdlib/printexc.ml[129,3952+24]..[131,4084+59])
+                      Pexp_record
+                      [
+                        "is_raise" (stdlib/printexc.ml[129,3952+26]..[129,3952+34])
+                          expression (stdlib/printexc.ml[129,3952+37]..[129,3952+42])
+                            Pexp_construct "false" (stdlib/printexc.ml[129,3952+37]..[129,3952+42])
+                            None
+                        "filename" (stdlib/printexc.ml[129,3952+44]..[129,3952+52])
+                          expression (stdlib/printexc.ml[129,3952+55]..[129,3952+57])
+                            Pexp_constant PConst_string("",(stdlib/printexc.ml[129,3952+56]..[129,3952+56]),None)
+                        "line_number" (stdlib/printexc.ml[130,4011+26]..[130,4011+37])
+                          expression (stdlib/printexc.ml[130,4011+40]..[130,4011+41])
+                            Pexp_constant PConst_int (0,None)
+                        "start_char" (stdlib/printexc.ml[130,4011+43]..[130,4011+53])
+                          expression (stdlib/printexc.ml[130,4011+56]..[130,4011+57])
+                            Pexp_constant PConst_int (0,None)
+                        "end_char" (stdlib/printexc.ml[130,4011+59]..[130,4011+67])
+                          expression (stdlib/printexc.ml[130,4011+70]..[130,4011+71])
+                            Pexp_constant PConst_int (0,None)
+                        "is_inline" (stdlib/printexc.ml[131,4084+26]..[131,4084+35])
+                          expression (stdlib/printexc.ml[131,4084+38]..[131,4084+43])
+                            Pexp_construct "false" (stdlib/printexc.ml[131,4084+38]..[131,4084+43])
+                            None
+                        "defname" (stdlib/printexc.ml[131,4084+45]..[131,4084+52])
+                          expression (stdlib/printexc.ml[131,4084+55]..[131,4084+57])
+                            Pexp_constant PConst_string("",(stdlib/printexc.ml[131,4084+56]..[131,4084+56]),None)
+                      ]
+                      None
+                expression (stdlib/printexc.ml[132,4145+9]..[132,4145+47]) ghost
+                  Pexp_construct "::" (stdlib/printexc.ml[132,4145+9]..[132,4145+47]) ghost
+                  Some
+                    expression (stdlib/printexc.ml[132,4145+9]..[132,4145+47]) ghost
+                      Pexp_tuple
+                      [
+                        expression (stdlib/printexc.ml[132,4145+9]..[132,4145+46])
+                          Pexp_construct "Unknown_location" (stdlib/printexc.ml[132,4145+9]..[132,4145+25])
+                          Some
+                            expression (stdlib/printexc.ml[132,4145+26]..[132,4145+46])
+                              Pexp_record
+                              [
+                                "is_raise" (stdlib/printexc.ml[132,4145+28]..[132,4145+36])
+                                  expression (stdlib/printexc.ml[132,4145+39]..[132,4145+44])
+                                    Pexp_construct "false" (stdlib/printexc.ml[132,4145+39]..[132,4145+44])
+                                    None
+                              ]
+                              None
+                        expression (stdlib/printexc.ml[132,4145+46]..[132,4145+47]) ghost
+                          Pexp_construct "[]" (stdlib/printexc.ml[132,4145+46]..[132,4145+47]) ghost
+                          None
+                      ]
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[134,4194+0]..[135,4231+74])
+    Pstr_primitive
+    value_description "convert_raw_backtrace_slot" (stdlib/printexc.ml[134,4194+9]..[134,4194+35]) (stdlib/printexc.ml[134,4194+0]..[135,4231+74])
+      core_type (stdlib/printexc.ml[135,4231+2]..[135,4231+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[135,4231+2]..[135,4231+20])
+          Ptyp_constr "raw_backtrace_slot" (stdlib/printexc.ml[135,4231+2]..[135,4231+20])
+          []
+        core_type (stdlib/printexc.ml[135,4231+24]..[135,4231+38])
+          Ptyp_constr "backtrace_slot" (stdlib/printexc.ml[135,4231+24]..[135,4231+38])
+          []
+      [
+        "caml_convert_raw_backtrace_slot"
+      ]
+  structure_item (stdlib/printexc.ml[137,4307+0]..[138,4339+70])
+    Pstr_primitive
+    value_description "convert_raw_backtrace" (stdlib/printexc.ml[137,4307+9]..[137,4307+30]) (stdlib/printexc.ml[137,4307+0]..[138,4339+70])
+      core_type (stdlib/printexc.ml[138,4339+2]..[138,4339+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[138,4339+2]..[138,4339+15])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.ml[138,4339+2]..[138,4339+15])
+          []
+        core_type (stdlib/printexc.ml[138,4339+19]..[138,4339+39])
+          Ptyp_constr "array" (stdlib/printexc.ml[138,4339+34]..[138,4339+39])
+          [
+            core_type (stdlib/printexc.ml[138,4339+19]..[138,4339+33])
+              Ptyp_constr "backtrace_slot" (stdlib/printexc.ml[138,4339+19]..[138,4339+33])
+              []
+          ]
+      [
+        "caml_convert_raw_backtrace"
+      ]
+  structure_item (stdlib/printexc.ml[140,4411+0]..[142,4480+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[140,4411+4]..[140,4411+25])
+          Ppat_var "convert_raw_backtrace" (stdlib/printexc.ml[140,4411+4]..[140,4411+25])
+        expression (stdlib/printexc.ml[140,4411+26]..[142,4480+24]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[140,4411+26]..[140,4411+28])
+            Ppat_var "bt" (stdlib/printexc.ml[140,4411+26]..[140,4411+28])
+          expression (stdlib/printexc.ml[141,4442+2]..[142,4480+24])
+            Pexp_try
+            expression (stdlib/printexc.ml[141,4442+6]..[141,4442+37])
+              Pexp_construct "Some" (stdlib/printexc.ml[141,4442+6]..[141,4442+10])
+              Some
+                expression (stdlib/printexc.ml[141,4442+11]..[141,4442+37])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[141,4442+12]..[141,4442+33])
+                    Pexp_ident "convert_raw_backtrace" (stdlib/printexc.ml[141,4442+12]..[141,4442+33])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[141,4442+34]..[141,4442+36])
+                        Pexp_ident "bt" (stdlib/printexc.ml[141,4442+34]..[141,4442+36])
+                  ]
+            [
+              <case>
+                pattern (stdlib/printexc.ml[142,4480+7]..[142,4480+16])
+                  Ppat_construct "Failure" (stdlib/printexc.ml[142,4480+7]..[142,4480+14])
+                  Some
+                    []
+                    pattern (stdlib/printexc.ml[142,4480+15]..[142,4480+16])
+                      Ppat_any
+                expression (stdlib/printexc.ml[142,4480+20]..[142,4480+24])
+                  Pexp_construct "None" (stdlib/printexc.ml[142,4480+20]..[142,4480+24])
+                  None
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[144,4506+0]..[161,5129+52])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[144,4506+4]..[144,4506+25])
+          Ppat_var "format_backtrace_slot" (stdlib/printexc.ml[144,4506+4]..[144,4506+25])
+        expression (stdlib/printexc.ml[144,4506+26]..[161,5129+52]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[144,4506+26]..[144,4506+29])
+            Ppat_var "pos" (stdlib/printexc.ml[144,4506+26]..[144,4506+29])
+          expression (stdlib/printexc.ml[144,4506+30]..[161,5129+52]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[144,4506+30]..[144,4506+34])
+              Ppat_var "slot" (stdlib/printexc.ml[144,4506+30]..[144,4506+34])
+            expression (stdlib/printexc.ml[145,4543+2]..[161,5129+52])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (stdlib/printexc.ml[145,4543+6]..[145,4543+10])
+                    Ppat_var "info" (stdlib/printexc.ml[145,4543+6]..[145,4543+10])
+                  expression (stdlib/printexc.ml[145,4543+11]..[149,4649+75]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (stdlib/printexc.ml[145,4543+11]..[145,4543+19])
+                      Ppat_var "is_raise" (stdlib/printexc.ml[145,4543+11]..[145,4543+19])
+                    expression (stdlib/printexc.ml[146,4565+4]..[149,4649+75])
+                      Pexp_ifthenelse
+                      expression (stdlib/printexc.ml[146,4565+7]..[146,4565+15])
+                        Pexp_ident "is_raise" (stdlib/printexc.ml[146,4565+7]..[146,4565+15])
+                      expression (stdlib/printexc.ml[147,4586+6]..[147,4586+53])
+                        Pexp_ifthenelse
+                        expression (stdlib/printexc.ml[147,4586+9]..[147,4586+16])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[147,4586+13]..[147,4586+14])
+                            Pexp_ident "=" (stdlib/printexc.ml[147,4586+13]..[147,4586+14])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[147,4586+9]..[147,4586+12])
+                                Pexp_ident "pos" (stdlib/printexc.ml[147,4586+9]..[147,4586+12])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[147,4586+15]..[147,4586+16])
+                                Pexp_constant PConst_int (0,None)
+                          ]
+                        expression (stdlib/printexc.ml[147,4586+22]..[147,4586+33])
+                          Pexp_constant PConst_string("Raised at",(stdlib/printexc.ml[147,4586+23]..[147,4586+32]),None)
+                        Some
+                          expression (stdlib/printexc.ml[147,4586+39]..[147,4586+53])
+                            Pexp_constant PConst_string("Re-raised at",(stdlib/printexc.ml[147,4586+40]..[147,4586+52]),None)
+                      Some
+                        expression (stdlib/printexc.ml[149,4649+6]..[149,4649+75])
+                          Pexp_ifthenelse
+                          expression (stdlib/printexc.ml[149,4649+9]..[149,4649+16])
+                            Pexp_apply
+                            expression (stdlib/printexc.ml[149,4649+13]..[149,4649+14])
+                              Pexp_ident "=" (stdlib/printexc.ml[149,4649+13]..[149,4649+14])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/printexc.ml[149,4649+9]..[149,4649+12])
+                                  Pexp_ident "pos" (stdlib/printexc.ml[149,4649+9]..[149,4649+12])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/printexc.ml[149,4649+15]..[149,4649+16])
+                                  Pexp_constant PConst_int (0,None)
+                            ]
+                          expression (stdlib/printexc.ml[149,4649+22]..[149,4649+56])
+                            Pexp_constant PConst_string("Raised by primitive operation at",(stdlib/printexc.ml[149,4649+23]..[149,4649+55]),None)
+                          Some
+                            expression (stdlib/printexc.ml[149,4649+62]..[149,4649+75])
+                              Pexp_constant PConst_string("Called from",(stdlib/printexc.ml[149,4649+63]..[149,4649+74]),None)
+              ]
+              expression (stdlib/printexc.ml[151,4730+2]..[161,5129+52])
+                Pexp_match
+                expression (stdlib/printexc.ml[151,4730+8]..[151,4730+12])
+                  Pexp_ident "slot" (stdlib/printexc.ml[151,4730+8]..[151,4730+12])
+                [
+                  <case>
+                    pattern (stdlib/printexc.ml[152,4748+4]..[152,4748+22])
+                      Ppat_construct "Unknown_location" (stdlib/printexc.ml[152,4748+4]..[152,4748+20])
+                      Some
+                        []
+                        pattern (stdlib/printexc.ml[152,4748+21]..[152,4748+22])
+                          Ppat_var "l" (stdlib/printexc.ml[152,4748+21]..[152,4748+22])
+                    expression (stdlib/printexc.ml[153,4774+6]..[156,4865+57])
+                      Pexp_ifthenelse
+                      expression (stdlib/printexc.ml[153,4774+9]..[153,4774+19])
+                        Pexp_field
+                        expression (stdlib/printexc.ml[153,4774+9]..[153,4774+10])
+                          Pexp_ident "l" (stdlib/printexc.ml[153,4774+9]..[153,4774+10])
+                        "is_raise" (stdlib/printexc.ml[153,4774+11]..[153,4774+19])
+                      expression (stdlib/printexc.ml[154,4799+50]..[154,4799+54])
+                        Pexp_construct "None" (stdlib/printexc.ml[154,4799+50]..[154,4799+54])
+                        None
+                      Some
+                        expression (stdlib/printexc.ml[156,4865+8]..[156,4865+57])
+                          Pexp_construct "Some" (stdlib/printexc.ml[156,4865+8]..[156,4865+12])
+                          Some
+                            expression (stdlib/printexc.ml[156,4865+13]..[156,4865+57])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[156,4865+14]..[156,4865+21])
+                                Pexp_ident "sprintf" (stdlib/printexc.ml[156,4865+14]..[156,4865+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[156,4865+22]..[156,4865+43])
+                                    Pexp_constant PConst_string("%s unknown location",(stdlib/printexc.ml[156,4865+23]..[156,4865+42]),None)
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[156,4865+44]..[156,4865+56])
+                                    Pexp_apply
+                                    expression (stdlib/printexc.ml[156,4865+45]..[156,4865+49])
+                                      Pexp_ident "info" (stdlib/printexc.ml[156,4865+45]..[156,4865+49])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/printexc.ml[156,4865+50]..[156,4865+55])
+                                          Pexp_construct "false" (stdlib/printexc.ml[156,4865+50]..[156,4865+55])
+                                          None
+                                    ]
+                              ]
+                  <case>
+                    pattern (stdlib/printexc.ml[157,4923+4]..[157,4923+20])
+                      Ppat_construct "Known_location" (stdlib/printexc.ml[157,4923+4]..[157,4923+18])
+                      Some
+                        []
+                        pattern (stdlib/printexc.ml[157,4923+19]..[157,4923+20])
+                          Ppat_var "l" (stdlib/printexc.ml[157,4923+19]..[157,4923+20])
+                    expression (stdlib/printexc.ml[158,4947+6]..[161,5129+52])
+                      Pexp_construct "Some" (stdlib/printexc.ml[158,4947+6]..[158,4947+10])
+                      Some
+                        expression (stdlib/printexc.ml[158,4947+11]..[161,5129+52])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[158,4947+12]..[158,4947+19])
+                            Pexp_ident "sprintf" (stdlib/printexc.ml[158,4947+12]..[158,4947+19])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[158,4947+20]..[158,4947+71])
+                                Pexp_constant PConst_string("%s %s in file \"%s\"%s, line %d, characters %d-%d",(stdlib/printexc.ml[158,4947+21]..[158,4947+70]),None)
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[159,5019+14]..[159,5019+31])
+                                Pexp_apply
+                                expression (stdlib/printexc.ml[159,5019+15]..[159,5019+19])
+                                  Pexp_ident "info" (stdlib/printexc.ml[159,5019+15]..[159,5019+19])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/printexc.ml[159,5019+20]..[159,5019+30])
+                                      Pexp_field
+                                      expression (stdlib/printexc.ml[159,5019+20]..[159,5019+21])
+                                        Pexp_ident "l" (stdlib/printexc.ml[159,5019+20]..[159,5019+21])
+                                      "is_raise" (stdlib/printexc.ml[159,5019+22]..[159,5019+30])
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[159,5019+32]..[159,5019+41])
+                                Pexp_field
+                                expression (stdlib/printexc.ml[159,5019+32]..[159,5019+33])
+                                  Pexp_ident "l" (stdlib/printexc.ml[159,5019+32]..[159,5019+33])
+                                "defname" (stdlib/printexc.ml[159,5019+34]..[159,5019+41])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[159,5019+42]..[159,5019+52])
+                                Pexp_field
+                                expression (stdlib/printexc.ml[159,5019+42]..[159,5019+43])
+                                  Pexp_ident "l" (stdlib/printexc.ml[159,5019+42]..[159,5019+43])
+                                "filename" (stdlib/printexc.ml[159,5019+44]..[159,5019+52])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[160,5072+14]..[160,5072+56])
+                                Pexp_ifthenelse
+                                expression (stdlib/printexc.ml[160,5072+18]..[160,5072+29])
+                                  Pexp_field
+                                  expression (stdlib/printexc.ml[160,5072+18]..[160,5072+19])
+                                    Pexp_ident "l" (stdlib/printexc.ml[160,5072+18]..[160,5072+19])
+                                  "is_inline" (stdlib/printexc.ml[160,5072+20]..[160,5072+29])
+                                expression (stdlib/printexc.ml[160,5072+35]..[160,5072+47])
+                                  Pexp_constant PConst_string(" (inlined)",(stdlib/printexc.ml[160,5072+36]..[160,5072+46]),None)
+                                Some
+                                  expression (stdlib/printexc.ml[160,5072+53]..[160,5072+55])
+                                    Pexp_constant PConst_string("",(stdlib/printexc.ml[160,5072+54]..[160,5072+54]),None)
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[161,5129+14]..[161,5129+27])
+                                Pexp_field
+                                expression (stdlib/printexc.ml[161,5129+14]..[161,5129+15])
+                                  Pexp_ident "l" (stdlib/printexc.ml[161,5129+14]..[161,5129+15])
+                                "line_number" (stdlib/printexc.ml[161,5129+16]..[161,5129+27])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[161,5129+28]..[161,5129+40])
+                                Pexp_field
+                                expression (stdlib/printexc.ml[161,5129+28]..[161,5129+29])
+                                  Pexp_ident "l" (stdlib/printexc.ml[161,5129+28]..[161,5129+29])
+                                "start_char" (stdlib/printexc.ml[161,5129+30]..[161,5129+40])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[161,5129+41]..[161,5129+51])
+                                Pexp_field
+                                expression (stdlib/printexc.ml[161,5129+41]..[161,5129+42])
+                                  Pexp_ident "l" (stdlib/printexc.ml[161,5129+41]..[161,5129+42])
+                                "end_char" (stdlib/printexc.ml[161,5129+43]..[161,5129+51])
+                          ]
+                ]
+    ]
+  structure_item (stdlib/printexc.ml[163,5183+0]..[173,5539+10])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[163,5183+4]..[163,5183+29])
+          Ppat_var "print_exception_backtrace" (stdlib/printexc.ml[163,5183+4]..[163,5183+29])
+        expression (stdlib/printexc.ml[163,5183+30]..[173,5539+10]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[163,5183+30]..[163,5183+37])
+            Ppat_var "outchan" (stdlib/printexc.ml[163,5183+30]..[163,5183+37])
+          expression (stdlib/printexc.ml[163,5183+38]..[173,5539+10]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[163,5183+38]..[163,5183+47])
+              Ppat_var "backtrace" (stdlib/printexc.ml[163,5183+38]..[163,5183+47])
+            expression (stdlib/printexc.ml[164,5233+2]..[173,5539+10])
+              Pexp_match
+              expression (stdlib/printexc.ml[164,5233+8]..[164,5233+17])
+                Pexp_ident "backtrace" (stdlib/printexc.ml[164,5233+8]..[164,5233+17])
+              [
+                <case>
+                  pattern (stdlib/printexc.ml[165,5256+4]..[165,5256+8])
+                    Ppat_construct "None" (stdlib/printexc.ml[165,5256+4]..[165,5256+8])
+                    None
+                  expression (stdlib/printexc.ml[166,5268+6]..[167,5290+70])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[166,5268+6]..[166,5268+13])
+                      Pexp_ident "fprintf" (stdlib/printexc.ml[166,5268+6]..[166,5268+13])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[166,5268+14]..[166,5268+21])
+                          Pexp_ident "outchan" (stdlib/printexc.ml[166,5268+14]..[166,5268+21])
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[167,5290+8]..[167,5290+70])
+                          Pexp_constant PConst_string("(Program not linked with -g, cannot print stack backtrace)\n",(stdlib/printexc.ml[167,5290+9]..[167,5290+69]),None)
+                    ]
+                <case>
+                  pattern (stdlib/printexc.ml[168,5361+4]..[168,5361+10])
+                    Ppat_construct "Some" (stdlib/printexc.ml[168,5361+4]..[168,5361+8])
+                    Some
+                      []
+                      pattern (stdlib/printexc.ml[168,5361+9]..[168,5361+10])
+                        Ppat_var "a" (stdlib/printexc.ml[168,5361+9]..[168,5361+10])
+                  expression (stdlib/printexc.ml[169,5375+6]..[173,5539+10])
+                    Pexp_for Up
+                    pattern (stdlib/printexc.ml[169,5375+10]..[169,5375+11])
+                      Ppat_var "i" (stdlib/printexc.ml[169,5375+10]..[169,5375+11])
+                    expression (stdlib/printexc.ml[169,5375+14]..[169,5375+15])
+                      Pexp_constant PConst_int (0,None)
+                    expression (stdlib/printexc.ml[169,5375+19]..[169,5375+37])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[169,5375+34]..[169,5375+35])
+                        Pexp_ident "-" (stdlib/printexc.ml[169,5375+34]..[169,5375+35])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[169,5375+19]..[169,5375+33])
+                            Pexp_apply
+                            expression (stdlib/printexc.ml[169,5375+19]..[169,5375+31])
+                              Pexp_ident "Array.length" (stdlib/printexc.ml[169,5375+19]..[169,5375+31])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/printexc.ml[169,5375+32]..[169,5375+33])
+                                  Pexp_ident "a" (stdlib/printexc.ml[169,5375+32]..[169,5375+33])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[169,5375+36]..[169,5375+37])
+                            Pexp_constant PConst_int (1,None)
+                      ]
+                    expression (stdlib/printexc.ml[170,5416+8]..[172,5488+50])
+                      Pexp_match
+                      expression (stdlib/printexc.ml[170,5416+14]..[170,5416+43])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[170,5416+14]..[170,5416+35])
+                          Pexp_ident "format_backtrace_slot" (stdlib/printexc.ml[170,5416+14]..[170,5416+35])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[170,5416+36]..[170,5416+37])
+                              Pexp_ident "i" (stdlib/printexc.ml[170,5416+36]..[170,5416+37])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[170,5416+38]..[170,5416+43])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[170,5416+38]..[170,5416+43]) ghost
+                                Pexp_ident "Array.get" (stdlib/printexc.ml[170,5416+38]..[170,5416+43]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[170,5416+38]..[170,5416+39])
+                                    Pexp_ident "a" (stdlib/printexc.ml[170,5416+38]..[170,5416+39])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[170,5416+41]..[170,5416+42])
+                                    Pexp_ident "i" (stdlib/printexc.ml[170,5416+41]..[170,5416+42])
+                              ]
+                        ]
+                      [
+                        <case>
+                          pattern (stdlib/printexc.ml[171,5465+12]..[171,5465+16])
+                            Ppat_construct "None" (stdlib/printexc.ml[171,5465+12]..[171,5465+16])
+                            None
+                          expression (stdlib/printexc.ml[171,5465+20]..[171,5465+22])
+                            Pexp_construct "()" (stdlib/printexc.ml[171,5465+20]..[171,5465+22])
+                            None
+                        <case>
+                          pattern (stdlib/printexc.ml[172,5488+12]..[172,5488+20])
+                            Ppat_construct "Some" (stdlib/printexc.ml[172,5488+12]..[172,5488+16])
+                            Some
+                              []
+                              pattern (stdlib/printexc.ml[172,5488+17]..[172,5488+20])
+                                Ppat_var "str" (stdlib/printexc.ml[172,5488+17]..[172,5488+20])
+                          expression (stdlib/printexc.ml[172,5488+24]..[172,5488+50])
+                            Pexp_apply
+                            expression (stdlib/printexc.ml[172,5488+24]..[172,5488+31])
+                              Pexp_ident "fprintf" (stdlib/printexc.ml[172,5488+24]..[172,5488+31])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (stdlib/printexc.ml[172,5488+32]..[172,5488+39])
+                                  Pexp_ident "outchan" (stdlib/printexc.ml[172,5488+32]..[172,5488+39])
+                              <arg>
+                              Nolabel
+                                expression (stdlib/printexc.ml[172,5488+40]..[172,5488+46])
+                                  Pexp_constant PConst_string("%s\n",(stdlib/printexc.ml[172,5488+41]..[172,5488+45]),None)
+                              <arg>
+                              Nolabel
+                                expression (stdlib/printexc.ml[172,5488+47]..[172,5488+50])
+                                  Pexp_ident "str" (stdlib/printexc.ml[172,5488+47]..[172,5488+50])
+                            ]
+                      ]
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[175,5551+0]..[176,5599+73])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[175,5551+4]..[175,5551+23])
+          Ppat_var "print_raw_backtrace" (stdlib/printexc.ml[175,5551+4]..[175,5551+23])
+        expression (stdlib/printexc.ml[175,5551+24]..[176,5599+73]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[175,5551+24]..[175,5551+31])
+            Ppat_var "outchan" (stdlib/printexc.ml[175,5551+24]..[175,5551+31])
+          expression (stdlib/printexc.ml[175,5551+32]..[176,5599+73]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[175,5551+32]..[175,5551+45])
+              Ppat_var "raw_backtrace" (stdlib/printexc.ml[175,5551+32]..[175,5551+45])
+            expression (stdlib/printexc.ml[176,5599+2]..[176,5599+73])
+              Pexp_apply
+              expression (stdlib/printexc.ml[176,5599+2]..[176,5599+27])
+                Pexp_ident "print_exception_backtrace" (stdlib/printexc.ml[176,5599+2]..[176,5599+27])
+              [
+                <arg>
+                Nolabel
+                  expression (stdlib/printexc.ml[176,5599+28]..[176,5599+35])
+                    Pexp_ident "outchan" (stdlib/printexc.ml[176,5599+28]..[176,5599+35])
+                <arg>
+                Nolabel
+                  expression (stdlib/printexc.ml[176,5599+36]..[176,5599+73])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[176,5599+37]..[176,5599+58])
+                      Pexp_ident "convert_raw_backtrace" (stdlib/printexc.ml[176,5599+37]..[176,5599+58])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[176,5599+59]..[176,5599+72])
+                          Pexp_ident "raw_backtrace" (stdlib/printexc.ml[176,5599+59]..[176,5599+72])
+                    ]
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[179,5735+0]..[180,5765+52])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[179,5735+4]..[179,5735+19])
+          Ppat_var "print_backtrace" (stdlib/printexc.ml[179,5735+4]..[179,5735+19])
+        expression (stdlib/printexc.ml[179,5735+20]..[180,5765+52]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[179,5735+20]..[179,5735+27])
+            Ppat_var "outchan" (stdlib/printexc.ml[179,5735+20]..[179,5735+27])
+          expression (stdlib/printexc.ml[180,5765+2]..[180,5765+52])
+            Pexp_apply
+            expression (stdlib/printexc.ml[180,5765+2]..[180,5765+21])
+              Pexp_ident "print_raw_backtrace" (stdlib/printexc.ml[180,5765+2]..[180,5765+21])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/printexc.ml[180,5765+22]..[180,5765+29])
+                  Pexp_ident "outchan" (stdlib/printexc.ml[180,5765+22]..[180,5765+29])
+              <arg>
+              Nolabel
+                expression (stdlib/printexc.ml[180,5765+30]..[180,5765+52])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[180,5765+31]..[180,5765+48])
+                    Pexp_ident "get_raw_backtrace" (stdlib/printexc.ml[180,5765+31]..[180,5765+48])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[180,5765+49]..[180,5765+51])
+                        Pexp_construct "()" (stdlib/printexc.ml[180,5765+49]..[180,5765+51])
+                        None
+                  ]
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[182,5819+0]..[193,6178+23])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[182,5819+4]..[182,5819+23])
+          Ppat_var "backtrace_to_string" (stdlib/printexc.ml[182,5819+4]..[182,5819+23])
+        expression (stdlib/printexc.ml[182,5819+24]..[193,6178+23]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[182,5819+24]..[182,5819+33])
+            Ppat_var "backtrace" (stdlib/printexc.ml[182,5819+24]..[182,5819+33])
+          expression (stdlib/printexc.ml[183,5855+2]..[193,6178+23])
+            Pexp_match
+            expression (stdlib/printexc.ml[183,5855+8]..[183,5855+17])
+              Pexp_ident "backtrace" (stdlib/printexc.ml[183,5855+8]..[183,5855+17])
+            [
+              <case>
+                pattern (stdlib/printexc.ml[184,5878+4]..[184,5878+8])
+                  Ppat_construct "None" (stdlib/printexc.ml[184,5878+4]..[184,5878+8])
+                  None
+                expression (stdlib/printexc.ml[185,5890+5]..[185,5890+67])
+                  Pexp_constant PConst_string("(Program not linked with -g, cannot print stack backtrace)\n",(stdlib/printexc.ml[185,5890+6]..[185,5890+66]),None)
+              <case>
+                pattern (stdlib/printexc.ml[186,5958+4]..[186,5958+10])
+                  Ppat_construct "Some" (stdlib/printexc.ml[186,5958+4]..[186,5958+8])
+                  Some
+                    []
+                    pattern (stdlib/printexc.ml[186,5958+9]..[186,5958+10])
+                      Ppat_var "a" (stdlib/printexc.ml[186,5958+9]..[186,5958+10])
+                expression (stdlib/printexc.ml[187,5972+6]..[193,6178+23])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (stdlib/printexc.ml[187,5972+10]..[187,5972+11])
+                        Ppat_var "b" (stdlib/printexc.ml[187,5972+10]..[187,5972+11])
+                      expression (stdlib/printexc.ml[187,5972+14]..[187,5972+32])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[187,5972+14]..[187,5972+27])
+                          Pexp_ident "Buffer.create" (stdlib/printexc.ml[187,5972+14]..[187,5972+27])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[187,5972+28]..[187,5972+32])
+                              Pexp_constant PConst_int (1024,None)
+                        ]
+                  ]
+                  expression (stdlib/printexc.ml[188,6008+6]..[193,6178+23])
+                    Pexp_sequence
+                    expression (stdlib/printexc.ml[188,6008+6]..[192,6166+10])
+                      Pexp_for Up
+                      pattern (stdlib/printexc.ml[188,6008+10]..[188,6008+11])
+                        Ppat_var "i" (stdlib/printexc.ml[188,6008+10]..[188,6008+11])
+                      expression (stdlib/printexc.ml[188,6008+14]..[188,6008+15])
+                        Pexp_constant PConst_int (0,None)
+                      expression (stdlib/printexc.ml[188,6008+19]..[188,6008+37])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[188,6008+34]..[188,6008+35])
+                          Pexp_ident "-" (stdlib/printexc.ml[188,6008+34]..[188,6008+35])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[188,6008+19]..[188,6008+33])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[188,6008+19]..[188,6008+31])
+                                Pexp_ident "Array.length" (stdlib/printexc.ml[188,6008+19]..[188,6008+31])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[188,6008+32]..[188,6008+33])
+                                    Pexp_ident "a" (stdlib/printexc.ml[188,6008+32]..[188,6008+33])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[188,6008+36]..[188,6008+37])
+                              Pexp_constant PConst_int (1,None)
+                        ]
+                      expression (stdlib/printexc.ml[189,6049+8]..[191,6121+44])
+                        Pexp_match
+                        expression (stdlib/printexc.ml[189,6049+14]..[189,6049+43])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[189,6049+14]..[189,6049+35])
+                            Pexp_ident "format_backtrace_slot" (stdlib/printexc.ml[189,6049+14]..[189,6049+35])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[189,6049+36]..[189,6049+37])
+                                Pexp_ident "i" (stdlib/printexc.ml[189,6049+36]..[189,6049+37])
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[189,6049+38]..[189,6049+43])
+                                Pexp_apply
+                                expression (stdlib/printexc.ml[189,6049+38]..[189,6049+43]) ghost
+                                  Pexp_ident "Array.get" (stdlib/printexc.ml[189,6049+38]..[189,6049+43]) ghost
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/printexc.ml[189,6049+38]..[189,6049+39])
+                                      Pexp_ident "a" (stdlib/printexc.ml[189,6049+38]..[189,6049+39])
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/printexc.ml[189,6049+41]..[189,6049+42])
+                                      Pexp_ident "i" (stdlib/printexc.ml[189,6049+41]..[189,6049+42])
+                                ]
+                          ]
+                        [
+                          <case>
+                            pattern (stdlib/printexc.ml[190,6098+12]..[190,6098+16])
+                              Ppat_construct "None" (stdlib/printexc.ml[190,6098+12]..[190,6098+16])
+                              None
+                            expression (stdlib/printexc.ml[190,6098+20]..[190,6098+22])
+                              Pexp_construct "()" (stdlib/printexc.ml[190,6098+20]..[190,6098+22])
+                              None
+                          <case>
+                            pattern (stdlib/printexc.ml[191,6121+12]..[191,6121+20])
+                              Ppat_construct "Some" (stdlib/printexc.ml[191,6121+12]..[191,6121+16])
+                              Some
+                                []
+                                pattern (stdlib/printexc.ml[191,6121+17]..[191,6121+20])
+                                  Ppat_var "str" (stdlib/printexc.ml[191,6121+17]..[191,6121+20])
+                            expression (stdlib/printexc.ml[191,6121+24]..[191,6121+44])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[191,6121+24]..[191,6121+31])
+                                Pexp_ident "bprintf" (stdlib/printexc.ml[191,6121+24]..[191,6121+31])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[191,6121+32]..[191,6121+33])
+                                    Pexp_ident "b" (stdlib/printexc.ml[191,6121+32]..[191,6121+33])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[191,6121+34]..[191,6121+40])
+                                    Pexp_constant PConst_string("%s\n",(stdlib/printexc.ml[191,6121+35]..[191,6121+39]),None)
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[191,6121+41]..[191,6121+44])
+                                    Pexp_ident "str" (stdlib/printexc.ml[191,6121+41]..[191,6121+44])
+                              ]
+                        ]
+                    expression (stdlib/printexc.ml[193,6178+6]..[193,6178+23])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[193,6178+6]..[193,6178+21])
+                        Pexp_ident "Buffer.contents" (stdlib/printexc.ml[193,6178+6]..[193,6178+21])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[193,6178+22]..[193,6178+23])
+                            Pexp_ident "b" (stdlib/printexc.ml[193,6178+22]..[193,6178+23])
+                      ]
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[195,6203+0]..[196,6247+59])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[195,6203+4]..[195,6203+27])
+          Ppat_var "raw_backtrace_to_string" (stdlib/printexc.ml[195,6203+4]..[195,6203+27])
+        expression (stdlib/printexc.ml[195,6203+28]..[196,6247+59]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[195,6203+28]..[195,6203+41])
+            Ppat_var "raw_backtrace" (stdlib/printexc.ml[195,6203+28]..[195,6203+41])
+          expression (stdlib/printexc.ml[196,6247+2]..[196,6247+59])
+            Pexp_apply
+            expression (stdlib/printexc.ml[196,6247+2]..[196,6247+21])
+              Pexp_ident "backtrace_to_string" (stdlib/printexc.ml[196,6247+2]..[196,6247+21])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/printexc.ml[196,6247+22]..[196,6247+59])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[196,6247+23]..[196,6247+44])
+                    Pexp_ident "convert_raw_backtrace" (stdlib/printexc.ml[196,6247+23]..[196,6247+44])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[196,6247+45]..[196,6247+58])
+                        Pexp_ident "raw_backtrace" (stdlib/printexc.ml[196,6247+45]..[196,6247+58])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[198,6308+0]..[200,6382+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[198,6308+4]..[198,6308+27])
+          Ppat_var "backtrace_slot_is_raise" (stdlib/printexc.ml[198,6308+4]..[198,6308+27])
+        expression (stdlib/printexc.ml[198,6308+30]..[200,6382+36])
+          Pexp_function
+          [
+            <case>
+              pattern (stdlib/printexc.ml[199,6347+4]..[199,6347+20])
+                Ppat_construct "Known_location" (stdlib/printexc.ml[199,6347+4]..[199,6347+18])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[199,6347+19]..[199,6347+20])
+                    Ppat_var "l" (stdlib/printexc.ml[199,6347+19]..[199,6347+20])
+              expression (stdlib/printexc.ml[199,6347+24]..[199,6347+34])
+                Pexp_field
+                expression (stdlib/printexc.ml[199,6347+24]..[199,6347+25])
+                  Pexp_ident "l" (stdlib/printexc.ml[199,6347+24]..[199,6347+25])
+                "is_raise" (stdlib/printexc.ml[199,6347+26]..[199,6347+34])
+            <case>
+              pattern (stdlib/printexc.ml[200,6382+4]..[200,6382+22])
+                Ppat_construct "Unknown_location" (stdlib/printexc.ml[200,6382+4]..[200,6382+20])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[200,6382+21]..[200,6382+22])
+                    Ppat_var "l" (stdlib/printexc.ml[200,6382+21]..[200,6382+22])
+              expression (stdlib/printexc.ml[200,6382+26]..[200,6382+36])
+                Pexp_field
+                expression (stdlib/printexc.ml[200,6382+26]..[200,6382+27])
+                  Pexp_ident "l" (stdlib/printexc.ml[200,6382+26]..[200,6382+27])
+                "is_raise" (stdlib/printexc.ml[200,6382+28]..[200,6382+36])
+          ]
+    ]
+  structure_item (stdlib/printexc.ml[202,6420+0]..[204,6496+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[202,6420+4]..[202,6420+28])
+          Ppat_var "backtrace_slot_is_inline" (stdlib/printexc.ml[202,6420+4]..[202,6420+28])
+        expression (stdlib/printexc.ml[202,6420+31]..[204,6496+31])
+          Pexp_function
+          [
+            <case>
+              pattern (stdlib/printexc.ml[203,6460+4]..[203,6460+20])
+                Ppat_construct "Known_location" (stdlib/printexc.ml[203,6460+4]..[203,6460+18])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[203,6460+19]..[203,6460+20])
+                    Ppat_var "l" (stdlib/printexc.ml[203,6460+19]..[203,6460+20])
+              expression (stdlib/printexc.ml[203,6460+24]..[203,6460+35])
+                Pexp_field
+                expression (stdlib/printexc.ml[203,6460+24]..[203,6460+25])
+                  Pexp_ident "l" (stdlib/printexc.ml[203,6460+24]..[203,6460+25])
+                "is_inline" (stdlib/printexc.ml[203,6460+26]..[203,6460+35])
+            <case>
+              pattern (stdlib/printexc.ml[204,6496+4]..[204,6496+22])
+                Ppat_construct "Unknown_location" (stdlib/printexc.ml[204,6496+4]..[204,6496+20])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[204,6496+21]..[204,6496+22])
+                    Ppat_any
+              expression (stdlib/printexc.ml[204,6496+26]..[204,6496+31])
+                Pexp_construct "false" (stdlib/printexc.ml[204,6496+26]..[204,6496+31])
+                None
+          ]
+    ]
+  structure_item (stdlib/printexc.ml[206,6529+0]..[211,6627+1])
+    Pstr_type Rec
+    [
+      type_declaration "location" (stdlib/printexc.ml[206,6529+5]..[206,6529+13]) (stdlib/printexc.ml[206,6529+0]..[211,6627+1])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_record
+            [
+              (stdlib/printexc.ml[207,6547+2]..[207,6547+20])
+                Immutable
+                "filename" (stdlib/printexc.ml[207,6547+2]..[207,6547+10])                core_type (stdlib/printexc.ml[207,6547+13]..[207,6547+19])
+                  Ptyp_constr "string" (stdlib/printexc.ml[207,6547+13]..[207,6547+19])
+                  []
+              (stdlib/printexc.ml[208,6568+2]..[208,6568+20])
+                Immutable
+                "line_number" (stdlib/printexc.ml[208,6568+2]..[208,6568+13])                core_type (stdlib/printexc.ml[208,6568+16]..[208,6568+19])
+                  Ptyp_constr "int" (stdlib/printexc.ml[208,6568+16]..[208,6568+19])
+                  []
+              (stdlib/printexc.ml[209,6589+2]..[209,6589+19])
+                Immutable
+                "start_char" (stdlib/printexc.ml[209,6589+2]..[209,6589+12])                core_type (stdlib/printexc.ml[209,6589+15]..[209,6589+18])
+                  Ptyp_constr "int" (stdlib/printexc.ml[209,6589+15]..[209,6589+18])
+                  []
+              (stdlib/printexc.ml[210,6609+2]..[210,6609+17])
+                Immutable
+                "end_char" (stdlib/printexc.ml[210,6609+2]..[210,6609+10])                core_type (stdlib/printexc.ml[210,6609+13]..[210,6609+16])
+                  Ptyp_constr "int" (stdlib/printexc.ml[210,6609+13]..[210,6609+16])
+                  []
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (stdlib/printexc.ml[213,6630+0]..[221,6868+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[213,6630+4]..[213,6630+27])
+          Ppat_var "backtrace_slot_location" (stdlib/printexc.ml[213,6630+4]..[213,6630+27])
+        expression (stdlib/printexc.ml[213,6630+30]..[221,6868+5])
+          Pexp_function
+          [
+            <case>
+              pattern (stdlib/printexc.ml[214,6669+4]..[214,6669+22])
+                Ppat_construct "Unknown_location" (stdlib/printexc.ml[214,6669+4]..[214,6669+20])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[214,6669+21]..[214,6669+22])
+                    Ppat_any
+              expression (stdlib/printexc.ml[214,6669+26]..[214,6669+30])
+                Pexp_construct "None" (stdlib/printexc.ml[214,6669+26]..[214,6669+30])
+                None
+            <case>
+              pattern (stdlib/printexc.ml[215,6700+4]..[215,6700+20])
+                Ppat_construct "Known_location" (stdlib/printexc.ml[215,6700+4]..[215,6700+18])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[215,6700+19]..[215,6700+20])
+                    Ppat_var "l" (stdlib/printexc.ml[215,6700+19]..[215,6700+20])
+              expression (stdlib/printexc.ml[216,6724+4]..[221,6868+5])
+                Pexp_construct "Some" (stdlib/printexc.ml[216,6724+4]..[216,6724+8])
+                Some
+                  expression (stdlib/printexc.ml[216,6724+9]..[221,6868+5])
+                    Pexp_record
+                    [
+                      "filename" (stdlib/printexc.ml[217,6735+6]..[217,6735+14])
+                        expression (stdlib/printexc.ml[217,6735+20]..[217,6735+30])
+                          Pexp_field
+                          expression (stdlib/printexc.ml[217,6735+20]..[217,6735+21])
+                            Pexp_ident "l" (stdlib/printexc.ml[217,6735+20]..[217,6735+21])
+                          "filename" (stdlib/printexc.ml[217,6735+22]..[217,6735+30])
+                      "line_number" (stdlib/printexc.ml[218,6767+6]..[218,6767+17])
+                        expression (stdlib/printexc.ml[218,6767+20]..[218,6767+33])
+                          Pexp_field
+                          expression (stdlib/printexc.ml[218,6767+20]..[218,6767+21])
+                            Pexp_ident "l" (stdlib/printexc.ml[218,6767+20]..[218,6767+21])
+                          "line_number" (stdlib/printexc.ml[218,6767+22]..[218,6767+33])
+                      "start_char" (stdlib/printexc.ml[219,6802+6]..[219,6802+16])
+                        expression (stdlib/printexc.ml[219,6802+20]..[219,6802+32])
+                          Pexp_field
+                          expression (stdlib/printexc.ml[219,6802+20]..[219,6802+21])
+                            Pexp_ident "l" (stdlib/printexc.ml[219,6802+20]..[219,6802+21])
+                          "start_char" (stdlib/printexc.ml[219,6802+22]..[219,6802+32])
+                      "end_char" (stdlib/printexc.ml[220,6836+6]..[220,6836+14])
+                        expression (stdlib/printexc.ml[220,6836+20]..[220,6836+30])
+                          Pexp_field
+                          expression (stdlib/printexc.ml[220,6836+20]..[220,6836+21])
+                            Pexp_ident "l" (stdlib/printexc.ml[220,6836+20]..[220,6836+21])
+                          "end_char" (stdlib/printexc.ml[220,6836+22]..[220,6836+30])
+                    ]
+                    None
+          ]
+    ]
+  structure_item (stdlib/printexc.ml[223,6875+0]..[226,6980+38])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[223,6875+4]..[223,6875+26])
+          Ppat_var "backtrace_slot_defname" (stdlib/printexc.ml[223,6875+4]..[223,6875+26])
+        expression (stdlib/printexc.ml[223,6875+29]..[226,6980+38])
+          Pexp_function
+          [
+            <case>
+              pattern (stdlib/printexc.ml[224,6913+4]..[225,6936+35])
+                Ppat_or
+                pattern (stdlib/printexc.ml[224,6913+4]..[224,6913+22])
+                  Ppat_construct "Unknown_location" (stdlib/printexc.ml[224,6913+4]..[224,6913+20])
+                  Some
+                    []
+                    pattern (stdlib/printexc.ml[224,6913+21]..[224,6913+22])
+                      Ppat_any
+                pattern (stdlib/printexc.ml[225,6936+4]..[225,6936+35])
+                  Ppat_construct "Known_location" (stdlib/printexc.ml[225,6936+4]..[225,6936+18])
+                  Some
+                    []
+                    pattern (stdlib/printexc.ml[225,6936+19]..[225,6936+35])
+                      Ppat_record Closed
+                      [
+                        "defname" (stdlib/printexc.ml[225,6936+21]..[225,6936+28])
+                          pattern (stdlib/printexc.ml[225,6936+31]..[225,6936+33])
+                            Ppat_constant PConst_string("",(stdlib/printexc.ml[225,6936+32]..[225,6936+32]),None)
+                      ]
+              expression (stdlib/printexc.ml[225,6936+39]..[225,6936+43])
+                Pexp_construct "None" (stdlib/printexc.ml[225,6936+39]..[225,6936+43])
+                None
+            <case>
+              pattern (stdlib/printexc.ml[226,6980+4]..[226,6980+20])
+                Ppat_construct "Known_location" (stdlib/printexc.ml[226,6980+4]..[226,6980+18])
+                Some
+                  []
+                  pattern (stdlib/printexc.ml[226,6980+19]..[226,6980+20])
+                    Ppat_var "l" (stdlib/printexc.ml[226,6980+19]..[226,6980+20])
+              expression (stdlib/printexc.ml[226,6980+24]..[226,6980+38])
+                Pexp_construct "Some" (stdlib/printexc.ml[226,6980+24]..[226,6980+28])
+                Some
+                  expression (stdlib/printexc.ml[226,6980+29]..[226,6980+38])
+                    Pexp_field
+                    expression (stdlib/printexc.ml[226,6980+29]..[226,6980+30])
+                      Pexp_ident "l" (stdlib/printexc.ml[226,6980+29]..[226,6980+30])
+                    "defname" (stdlib/printexc.ml[226,6980+31]..[226,6980+38])
+          ]
+    ]
+  structure_item (stdlib/printexc.ml[228,7020+0]..[246,7818+15])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[228,7020+4]..[228,7020+19])
+          Ppat_var "backtrace_slots" (stdlib/printexc.ml[228,7020+4]..[228,7020+19])
+        expression (stdlib/printexc.ml[228,7020+20]..[246,7818+15]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[228,7020+20]..[228,7020+33])
+            Ppat_var "raw_backtrace" (stdlib/printexc.ml[228,7020+20]..[228,7020+33])
+          expression (stdlib/printexc.ml[235,7407+2]..[246,7818+15])
+            Pexp_match
+            expression (stdlib/printexc.ml[235,7407+8]..[235,7407+43])
+              Pexp_apply
+              expression (stdlib/printexc.ml[235,7407+8]..[235,7407+29])
+                Pexp_ident "convert_raw_backtrace" (stdlib/printexc.ml[235,7407+8]..[235,7407+29])
+              [
+                <arg>
+                Nolabel
+                  expression (stdlib/printexc.ml[235,7407+30]..[235,7407+43])
+                    Pexp_ident "raw_backtrace" (stdlib/printexc.ml[235,7407+30]..[235,7407+43])
+              ]
+            [
+              <case>
+                pattern (stdlib/printexc.ml[236,7456+6]..[236,7456+10])
+                  Ppat_construct "None" (stdlib/printexc.ml[236,7456+6]..[236,7456+10])
+                  None
+                expression (stdlib/printexc.ml[236,7456+14]..[236,7456+18])
+                  Pexp_construct "None" (stdlib/printexc.ml[236,7456+14]..[236,7456+18])
+                  None
+              <case>
+                pattern (stdlib/printexc.ml[237,7475+6]..[237,7475+20])
+                  Ppat_construct "Some" (stdlib/printexc.ml[237,7475+6]..[237,7475+10])
+                  Some
+                    []
+                    pattern (stdlib/printexc.ml[237,7475+11]..[237,7475+20])
+                      Ppat_var "backtrace" (stdlib/printexc.ml[237,7475+11]..[237,7475+20])
+                expression (stdlib/printexc.ml[238,7499+6]..[246,7818+15])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (stdlib/printexc.ml[238,7499+10]..[238,7499+21])
+                        Ppat_var "usable_slot" (stdlib/printexc.ml[238,7499+10]..[238,7499+21])
+                      expression (stdlib/printexc.ml[238,7499+24]..[240,7570+34])
+                        Pexp_function
+                        [
+                          <case>
+                            pattern (stdlib/printexc.ml[239,7532+10]..[239,7532+28])
+                              Ppat_construct "Unknown_location" (stdlib/printexc.ml[239,7532+10]..[239,7532+26])
+                              Some
+                                []
+                                pattern (stdlib/printexc.ml[239,7532+27]..[239,7532+28])
+                                  Ppat_any
+                            expression (stdlib/printexc.ml[239,7532+32]..[239,7532+37])
+                              Pexp_construct "false" (stdlib/printexc.ml[239,7532+32]..[239,7532+37])
+                              None
+                          <case>
+                            pattern (stdlib/printexc.ml[240,7570+10]..[240,7570+26])
+                              Ppat_construct "Known_location" (stdlib/printexc.ml[240,7570+10]..[240,7570+24])
+                              Some
+                                []
+                                pattern (stdlib/printexc.ml[240,7570+25]..[240,7570+26])
+                                  Ppat_any
+                            expression (stdlib/printexc.ml[240,7570+30]..[240,7570+34])
+                              Pexp_construct "true" (stdlib/printexc.ml[240,7570+30]..[240,7570+34])
+                              None
+                        ]
+                  ]
+                  expression (stdlib/printexc.ml[241,7608+6]..[246,7818+15])
+                    Pexp_let Rec
+                    [
+                      <def>
+                        pattern (stdlib/printexc.ml[241,7608+14]..[241,7608+27])
+                          Ppat_var "exists_usable" (stdlib/printexc.ml[241,7608+14]..[241,7608+27])
+                        expression (stdlib/printexc.ml[241,7608+30]..[243,7671+65])
+                          Pexp_function
+                          [
+                            <case>
+                              pattern (stdlib/printexc.ml[242,7647+10]..[242,7647+14])
+                                Ppat_constant PConst_int (-1,None)
+                              expression (stdlib/printexc.ml[242,7647+18]..[242,7647+23])
+                                Pexp_construct "false" (stdlib/printexc.ml[242,7647+18]..[242,7647+23])
+                                None
+                            <case>
+                              pattern (stdlib/printexc.ml[243,7671+10]..[243,7671+11])
+                                Ppat_var "i" (stdlib/printexc.ml[243,7671+10]..[243,7671+11])
+                              expression (stdlib/printexc.ml[243,7671+15]..[243,7671+65])
+                                Pexp_apply
+                                expression (stdlib/printexc.ml[243,7671+41]..[243,7671+43])
+                                  Pexp_ident "||" (stdlib/printexc.ml[243,7671+41]..[243,7671+43])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/printexc.ml[243,7671+15]..[243,7671+40])
+                                      Pexp_apply
+                                      expression (stdlib/printexc.ml[243,7671+15]..[243,7671+26])
+                                        Pexp_ident "usable_slot" (stdlib/printexc.ml[243,7671+15]..[243,7671+26])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (stdlib/printexc.ml[243,7671+27]..[243,7671+40])
+                                            Pexp_apply
+                                            expression (stdlib/printexc.ml[243,7671+27]..[243,7671+40]) ghost
+                                              Pexp_ident "Array.get" (stdlib/printexc.ml[243,7671+27]..[243,7671+40]) ghost
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (stdlib/printexc.ml[243,7671+27]..[243,7671+36])
+                                                  Pexp_ident "backtrace" (stdlib/printexc.ml[243,7671+27]..[243,7671+36])
+                                              <arg>
+                                              Nolabel
+                                                expression (stdlib/printexc.ml[243,7671+38]..[243,7671+39])
+                                                  Pexp_ident "i" (stdlib/printexc.ml[243,7671+38]..[243,7671+39])
+                                            ]
+                                      ]
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/printexc.ml[243,7671+44]..[243,7671+65])
+                                      Pexp_apply
+                                      expression (stdlib/printexc.ml[243,7671+44]..[243,7671+57])
+                                        Pexp_ident "exists_usable" (stdlib/printexc.ml[243,7671+44]..[243,7671+57])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (stdlib/printexc.ml[243,7671+58]..[243,7671+65])
+                                            Pexp_apply
+                                            expression (stdlib/printexc.ml[243,7671+61]..[243,7671+62])
+                                              Pexp_ident "-" (stdlib/printexc.ml[243,7671+61]..[243,7671+62])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (stdlib/printexc.ml[243,7671+59]..[243,7671+60])
+                                                  Pexp_ident "i" (stdlib/printexc.ml[243,7671+59]..[243,7671+60])
+                                              <arg>
+                                              Nolabel
+                                                expression (stdlib/printexc.ml[243,7671+63]..[243,7671+64])
+                                                  Pexp_constant PConst_int (1,None)
+                                            ]
+                                      ]
+                                ]
+                          ]
+                    ]
+                    expression (stdlib/printexc.ml[244,7740+6]..[246,7818+15])
+                      Pexp_ifthenelse
+                      expression (stdlib/printexc.ml[244,7740+9]..[244,7740+51])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[244,7740+9]..[244,7740+22])
+                          Pexp_ident "exists_usable" (stdlib/printexc.ml[244,7740+9]..[244,7740+22])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[244,7740+23]..[244,7740+51])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[244,7740+47]..[244,7740+48])
+                                Pexp_ident "-" (stdlib/printexc.ml[244,7740+47]..[244,7740+48])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[244,7740+24]..[244,7740+46])
+                                    Pexp_apply
+                                    expression (stdlib/printexc.ml[244,7740+24]..[244,7740+36])
+                                      Pexp_ident "Array.length" (stdlib/printexc.ml[244,7740+24]..[244,7740+36])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/printexc.ml[244,7740+37]..[244,7740+46])
+                                          Pexp_ident "backtrace" (stdlib/printexc.ml[244,7740+37]..[244,7740+46])
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[244,7740+49]..[244,7740+50])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                        ]
+                      expression (stdlib/printexc.ml[245,7792+11]..[245,7792+25])
+                        Pexp_construct "Some" (stdlib/printexc.ml[245,7792+11]..[245,7792+15])
+                        Some
+                          expression (stdlib/printexc.ml[245,7792+16]..[245,7792+25])
+                            Pexp_ident "backtrace" (stdlib/printexc.ml[245,7792+16]..[245,7792+25])
+                      Some
+                        expression (stdlib/printexc.ml[246,7818+11]..[246,7818+15])
+                          Pexp_construct "None" (stdlib/printexc.ml[246,7818+11]..[246,7818+15])
+                          None
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[248,7835+0]..[249,7876+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[248,7835+4]..[248,7835+32])
+          Ppat_var "backtrace_slots_of_raw_entry" (stdlib/printexc.ml[248,7835+4]..[248,7835+32])
+        expression (stdlib/printexc.ml[248,7835+33]..[249,7876+29]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[248,7835+33]..[248,7835+38])
+            Ppat_var "entry" (stdlib/printexc.ml[248,7835+33]..[248,7835+38])
+          expression (stdlib/printexc.ml[249,7876+2]..[249,7876+29])
+            Pexp_apply
+            expression (stdlib/printexc.ml[249,7876+2]..[249,7876+17])
+              Pexp_ident "backtrace_slots" (stdlib/printexc.ml[249,7876+2]..[249,7876+17])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/printexc.ml[249,7876+18]..[249,7876+29])
+                  Pexp_array
+                  [
+                    expression (stdlib/printexc.ml[249,7876+21]..[249,7876+26])
+                      Pexp_ident "entry" (stdlib/printexc.ml[249,7876+21]..[249,7876+26])
+                  ]
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[251,7907+0]..[258,8152+3])
+    Pstr_module
+    "Slot" (stdlib/printexc.ml[251,7907+7]..[251,7907+11])
+      module_expr (stdlib/printexc.ml[251,7907+14]..[258,8152+3])
+        Pmod_structure
+        [
+          structure_item (stdlib/printexc.ml[252,7928+2]..[252,7928+25])
+            Pstr_type Rec
+            [
+              type_declaration "t" (stdlib/printexc.ml[252,7928+7]..[252,7928+8]) (stdlib/printexc.ml[252,7928+2]..[252,7928+25])
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  Some
+                    core_type (stdlib/printexc.ml[252,7928+11]..[252,7928+25])
+                      Ptyp_constr "backtrace_slot" (stdlib/printexc.ml[252,7928+11]..[252,7928+25])
+                      []
+            ]
+          structure_item (stdlib/printexc.ml[253,7954+2]..[253,7954+36])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[253,7954+6]..[253,7954+12])
+                  Ppat_var "format" (stdlib/printexc.ml[253,7954+6]..[253,7954+12])
+                expression (stdlib/printexc.ml[253,7954+15]..[253,7954+36])
+                  Pexp_ident "format_backtrace_slot" (stdlib/printexc.ml[253,7954+15]..[253,7954+36])
+            ]
+          structure_item (stdlib/printexc.ml[254,7991+2]..[254,7991+40])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[254,7991+6]..[254,7991+14])
+                  Ppat_var "is_raise" (stdlib/printexc.ml[254,7991+6]..[254,7991+14])
+                expression (stdlib/printexc.ml[254,7991+17]..[254,7991+40])
+                  Pexp_ident "backtrace_slot_is_raise" (stdlib/printexc.ml[254,7991+17]..[254,7991+40])
+            ]
+          structure_item (stdlib/printexc.ml[255,8032+2]..[255,8032+42])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[255,8032+6]..[255,8032+15])
+                  Ppat_var "is_inline" (stdlib/printexc.ml[255,8032+6]..[255,8032+15])
+                expression (stdlib/printexc.ml[255,8032+18]..[255,8032+42])
+                  Pexp_ident "backtrace_slot_is_inline" (stdlib/printexc.ml[255,8032+18]..[255,8032+42])
+            ]
+          structure_item (stdlib/printexc.ml[256,8075+2]..[256,8075+40])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[256,8075+6]..[256,8075+14])
+                  Ppat_var "location" (stdlib/printexc.ml[256,8075+6]..[256,8075+14])
+                expression (stdlib/printexc.ml[256,8075+17]..[256,8075+40])
+                  Pexp_ident "backtrace_slot_location" (stdlib/printexc.ml[256,8075+17]..[256,8075+40])
+            ]
+          structure_item (stdlib/printexc.ml[257,8116+2]..[257,8116+35])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[257,8116+6]..[257,8116+10])
+                  Ppat_var "name" (stdlib/printexc.ml[257,8116+6]..[257,8116+10])
+                expression (stdlib/printexc.ml[257,8116+13]..[257,8116+35])
+                  Pexp_ident "backtrace_slot_defname" (stdlib/printexc.ml[257,8116+13]..[257,8116+35])
+            ]
+        ]
+  structure_item (stdlib/printexc.ml[260,8157+0]..[260,8157+45])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[260,8157+4]..[260,8157+24])
+          Ppat_var "raw_backtrace_length" (stdlib/printexc.ml[260,8157+4]..[260,8157+24])
+        expression (stdlib/printexc.ml[260,8157+25]..[260,8157+45]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[260,8157+25]..[260,8157+27])
+            Ppat_var "bt" (stdlib/printexc.ml[260,8157+25]..[260,8157+27])
+          expression (stdlib/printexc.ml[260,8157+30]..[260,8157+45])
+            Pexp_apply
+            expression (stdlib/printexc.ml[260,8157+30]..[260,8157+42])
+              Pexp_ident "Array.length" (stdlib/printexc.ml[260,8157+30]..[260,8157+42])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/printexc.ml[260,8157+43]..[260,8157+45])
+                  Pexp_ident "bt" (stdlib/printexc.ml[260,8157+43]..[260,8157+45])
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[262,8204+0]..[263,8238+72])
+    Pstr_primitive
+    value_description "get_raw_backtrace_slot" (stdlib/printexc.ml[262,8204+9]..[262,8204+31]) (stdlib/printexc.ml[262,8204+0]..[263,8238+72])
+      core_type (stdlib/printexc.ml[263,8238+2]..[263,8238+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[263,8238+2]..[263,8238+15])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.ml[263,8238+2]..[263,8238+15])
+          []
+        core_type (stdlib/printexc.ml[263,8238+19]..[263,8238+44])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.ml[263,8238+19]..[263,8238+22])
+            Ptyp_constr "int" (stdlib/printexc.ml[263,8238+19]..[263,8238+22])
+            []
+          core_type (stdlib/printexc.ml[263,8238+26]..[263,8238+44])
+            Ptyp_constr "raw_backtrace_slot" (stdlib/printexc.ml[263,8238+26]..[263,8238+44])
+            []
+      [
+        "caml_raw_backtrace_slot"
+      ]
+  structure_item (stdlib/printexc.ml[265,8312+0]..[267,8401+34])
+    Pstr_primitive
+    value_description "get_raw_backtrace_next_slot" (stdlib/printexc.ml[265,8312+9]..[265,8312+36]) (stdlib/printexc.ml[265,8312+0]..[267,8401+34])
+      core_type (stdlib/printexc.ml[266,8351+2]..[266,8351+49])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[266,8351+2]..[266,8351+20])
+          Ptyp_constr "raw_backtrace_slot" (stdlib/printexc.ml[266,8351+2]..[266,8351+20])
+          []
+        core_type (stdlib/printexc.ml[266,8351+24]..[266,8351+49])
+          Ptyp_constr "option" (stdlib/printexc.ml[266,8351+43]..[266,8351+49])
+          [
+            core_type (stdlib/printexc.ml[266,8351+24]..[266,8351+42])
+              Ptyp_constr "raw_backtrace_slot" (stdlib/printexc.ml[266,8351+24]..[266,8351+42])
+              []
+          ]
+      [
+        "caml_raw_backtrace_next_slot"
+      ]
+  structure_item (stdlib/printexc.ml[271,8532+0]..[271,8532+69])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[271,8532+4]..[271,8532+17])
+          Ppat_var "get_backtrace" (stdlib/printexc.ml[271,8532+4]..[271,8532+17])
+        expression (stdlib/printexc.ml[271,8532+18]..[271,8532+69]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[271,8532+18]..[271,8532+20])
+            Ppat_construct "()" (stdlib/printexc.ml[271,8532+18]..[271,8532+20])
+            None
+          expression (stdlib/printexc.ml[271,8532+23]..[271,8532+69])
+            Pexp_apply
+            expression (stdlib/printexc.ml[271,8532+23]..[271,8532+46])
+              Pexp_ident "raw_backtrace_to_string" (stdlib/printexc.ml[271,8532+23]..[271,8532+46])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/printexc.ml[271,8532+47]..[271,8532+69])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[271,8532+48]..[271,8532+65])
+                    Pexp_ident "get_raw_backtrace" (stdlib/printexc.ml[271,8532+48]..[271,8532+65])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[271,8532+66]..[271,8532+68])
+                        Pexp_construct "()" (stdlib/printexc.ml[271,8532+66]..[271,8532+68])
+                        None
+                  ]
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[273,8603+0]..[273,8603+65])
+    Pstr_primitive
+    value_description "record_backtrace" (stdlib/printexc.ml[273,8603+9]..[273,8603+25]) (stdlib/printexc.ml[273,8603+0]..[273,8603+65])
+      core_type (stdlib/printexc.ml[273,8603+27]..[273,8603+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[273,8603+27]..[273,8603+31])
+          Ptyp_constr "bool" (stdlib/printexc.ml[273,8603+27]..[273,8603+31])
+          []
+        core_type (stdlib/printexc.ml[273,8603+35]..[273,8603+39])
+          Ptyp_constr "unit" (stdlib/printexc.ml[273,8603+35]..[273,8603+39])
+          []
+      [
+        "caml_record_backtrace"
+      ]
+  structure_item (stdlib/printexc.ml[274,8669+0]..[274,8669+65])
+    Pstr_primitive
+    value_description "backtrace_status" (stdlib/printexc.ml[274,8669+9]..[274,8669+25]) (stdlib/printexc.ml[274,8669+0]..[274,8669+65])
+      core_type (stdlib/printexc.ml[274,8669+27]..[274,8669+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[274,8669+27]..[274,8669+31])
+          Ptyp_constr "unit" (stdlib/printexc.ml[274,8669+27]..[274,8669+31])
+          []
+        core_type (stdlib/printexc.ml[274,8669+35]..[274,8669+39])
+          Ptyp_constr "bool" (stdlib/printexc.ml[274,8669+35]..[274,8669+39])
+          []
+      [
+        "caml_backtrace_status"
+      ]
+  structure_item (stdlib/printexc.ml[276,8736+0]..[280,8930+41])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[276,8736+8]..[276,8736+24])
+          Ppat_var "register_printer" (stdlib/printexc.ml[276,8736+8]..[276,8736+24])
+        expression (stdlib/printexc.ml[276,8736+25]..[280,8930+41]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[276,8736+25]..[276,8736+27])
+            Ppat_var "fn" (stdlib/printexc.ml[276,8736+25]..[276,8736+27])
+          expression (stdlib/printexc.ml[277,8766+2]..[280,8930+41])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[277,8766+6]..[277,8766+18])
+                  Ppat_var "old_printers" (stdlib/printexc.ml[277,8766+6]..[277,8766+18])
+                expression (stdlib/printexc.ml[277,8766+21]..[277,8766+40])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[277,8766+21]..[277,8766+31])
+                    Pexp_ident "Atomic.get" (stdlib/printexc.ml[277,8766+21]..[277,8766+31])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[277,8766+32]..[277,8766+40])
+                        Pexp_ident "printers" (stdlib/printexc.ml[277,8766+32]..[277,8766+40])
+                  ]
+            ]
+            expression (stdlib/printexc.ml[278,8810+2]..[280,8930+41])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (stdlib/printexc.ml[278,8810+6]..[278,8810+18])
+                    Ppat_var "new_printers" (stdlib/printexc.ml[278,8810+6]..[278,8810+18])
+                  expression (stdlib/printexc.ml[278,8810+21]..[278,8810+39])
+                    Pexp_construct "::" (stdlib/printexc.ml[278,8810+24]..[278,8810+26])
+                    Some
+                      expression (stdlib/printexc.ml[278,8810+21]..[278,8810+39]) ghost
+                        Pexp_tuple
+                        [
+                          expression (stdlib/printexc.ml[278,8810+21]..[278,8810+23])
+                            Pexp_ident "fn" (stdlib/printexc.ml[278,8810+21]..[278,8810+23])
+                          expression (stdlib/printexc.ml[278,8810+27]..[278,8810+39])
+                            Pexp_ident "old_printers" (stdlib/printexc.ml[278,8810+27]..[278,8810+39])
+                        ]
+              ]
+              expression (stdlib/printexc.ml[279,8853+2]..[280,8930+41])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (stdlib/printexc.ml[279,8853+6]..[279,8853+13])
+                      Ppat_var "success" (stdlib/printexc.ml[279,8853+6]..[279,8853+13])
+                    expression (stdlib/printexc.ml[279,8853+16]..[279,8853+73])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[279,8853+16]..[279,8853+38])
+                        Pexp_ident "Atomic.compare_and_set" (stdlib/printexc.ml[279,8853+16]..[279,8853+38])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[279,8853+39]..[279,8853+47])
+                            Pexp_ident "printers" (stdlib/printexc.ml[279,8853+39]..[279,8853+47])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[279,8853+48]..[279,8853+60])
+                            Pexp_ident "old_printers" (stdlib/printexc.ml[279,8853+48]..[279,8853+60])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[279,8853+61]..[279,8853+73])
+                            Pexp_ident "new_printers" (stdlib/printexc.ml[279,8853+61]..[279,8853+73])
+                      ]
+                ]
+                expression (stdlib/printexc.ml[280,8930+2]..[280,8930+41])
+                  Pexp_ifthenelse
+                  expression (stdlib/printexc.ml[280,8930+5]..[280,8930+16])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[280,8930+5]..[280,8930+8])
+                      Pexp_ident "not" (stdlib/printexc.ml[280,8930+5]..[280,8930+8])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[280,8930+9]..[280,8930+16])
+                          Pexp_ident "success" (stdlib/printexc.ml[280,8930+9]..[280,8930+16])
+                    ]
+                  expression (stdlib/printexc.ml[280,8930+22]..[280,8930+41])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[280,8930+22]..[280,8930+38])
+                      Pexp_ident "register_printer" (stdlib/printexc.ml[280,8930+22]..[280,8930+38])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[280,8930+39]..[280,8930+41])
+                          Pexp_ident "fn" (stdlib/printexc.ml[280,8930+39]..[280,8930+41])
+                    ]
+                  None
+    ]
+  structure_item (stdlib/printexc.ml[282,8973+0]..[282,8973+75])
+    Pstr_primitive
+    value_description "get_callstack" (stdlib/printexc.ml[282,8973+9]..[282,8973+22]) (stdlib/printexc.ml[282,8973+0]..[282,8973+75])
+      core_type (stdlib/printexc.ml[282,8973+24]..[282,8973+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[282,8973+24]..[282,8973+27])
+          Ptyp_constr "int" (stdlib/printexc.ml[282,8973+24]..[282,8973+27])
+          []
+        core_type (stdlib/printexc.ml[282,8973+31]..[282,8973+44])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.ml[282,8973+31]..[282,8973+44])
+          []
+      [
+        "caml_get_current_callstack"
+      ]
+  structure_item (stdlib/printexc.ml[284,9050+0]..[286,9091+44])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[284,9050+4]..[284,9050+12])
+          Ppat_var "exn_slot" (stdlib/printexc.ml[284,9050+4]..[284,9050+12])
+        expression (stdlib/printexc.ml[284,9050+13]..[286,9091+44]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[284,9050+13]..[284,9050+14])
+            Ppat_var "x" (stdlib/printexc.ml[284,9050+13]..[284,9050+14])
+          expression (stdlib/printexc.ml[285,9067+2]..[286,9091+44])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[285,9067+6]..[285,9067+7])
+                  Ppat_var "x" (stdlib/printexc.ml[285,9067+6]..[285,9067+7])
+                expression (stdlib/printexc.ml[285,9067+10]..[285,9067+20])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[285,9067+10]..[285,9067+18])
+                    Pexp_ident "Obj.repr" (stdlib/printexc.ml[285,9067+10]..[285,9067+18])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[285,9067+19]..[285,9067+20])
+                        Pexp_ident "x" (stdlib/printexc.ml[285,9067+19]..[285,9067+20])
+                  ]
+            ]
+            expression (stdlib/printexc.ml[286,9091+2]..[286,9091+44])
+              Pexp_ifthenelse
+              expression (stdlib/printexc.ml[286,9091+5]..[286,9091+18])
+                Pexp_apply
+                expression (stdlib/printexc.ml[286,9091+15]..[286,9091+16])
+                  Pexp_ident "=" (stdlib/printexc.ml[286,9091+15]..[286,9091+16])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[286,9091+5]..[286,9091+14])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[286,9091+5]..[286,9091+12])
+                        Pexp_ident "Obj.tag" (stdlib/printexc.ml[286,9091+5]..[286,9091+12])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[286,9091+13]..[286,9091+14])
+                            Pexp_ident "x" (stdlib/printexc.ml[286,9091+13]..[286,9091+14])
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[286,9091+17]..[286,9091+18])
+                      Pexp_constant PConst_int (0,None)
+                ]
+              expression (stdlib/printexc.ml[286,9091+24]..[286,9091+37])
+                Pexp_apply
+                expression (stdlib/printexc.ml[286,9091+24]..[286,9091+33])
+                  Pexp_ident "Obj.field" (stdlib/printexc.ml[286,9091+24]..[286,9091+33])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[286,9091+34]..[286,9091+35])
+                      Pexp_ident "x" (stdlib/printexc.ml[286,9091+34]..[286,9091+35])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[286,9091+36]..[286,9091+37])
+                      Pexp_constant PConst_int (0,None)
+                ]
+              Some
+                expression (stdlib/printexc.ml[286,9091+43]..[286,9091+44])
+                  Pexp_ident "x" (stdlib/printexc.ml[286,9091+43]..[286,9091+44])
+    ]
+  structure_item (stdlib/printexc.ml[288,9137+0]..[290,9184+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[288,9137+4]..[288,9137+15])
+          Ppat_var "exn_slot_id" (stdlib/printexc.ml[288,9137+4]..[288,9137+15])
+        expression (stdlib/printexc.ml[288,9137+16]..[290,9184+36]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[288,9137+16]..[288,9137+17])
+            Ppat_var "x" (stdlib/printexc.ml[288,9137+16]..[288,9137+17])
+          expression (stdlib/printexc.ml[289,9157+2]..[290,9184+36])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[289,9157+6]..[289,9157+10])
+                  Ppat_var "slot" (stdlib/printexc.ml[289,9157+6]..[289,9157+10])
+                expression (stdlib/printexc.ml[289,9157+13]..[289,9157+23])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[289,9157+13]..[289,9157+21])
+                    Pexp_ident "exn_slot" (stdlib/printexc.ml[289,9157+13]..[289,9157+21])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[289,9157+22]..[289,9157+23])
+                        Pexp_ident "x" (stdlib/printexc.ml[289,9157+22]..[289,9157+23])
+                  ]
+            ]
+            expression (stdlib/printexc.ml[290,9184+2]..[290,9184+36])
+              Pexp_constraint
+              expression (stdlib/printexc.ml[290,9184+3]..[290,9184+29])
+                Pexp_apply
+                expression (stdlib/printexc.ml[290,9184+3]..[290,9184+10])
+                  Pexp_ident "Obj.obj" (stdlib/printexc.ml[290,9184+3]..[290,9184+10])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[290,9184+11]..[290,9184+29])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[290,9184+12]..[290,9184+21])
+                        Pexp_ident "Obj.field" (stdlib/printexc.ml[290,9184+12]..[290,9184+21])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[290,9184+22]..[290,9184+26])
+                            Pexp_ident "slot" (stdlib/printexc.ml[290,9184+22]..[290,9184+26])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[290,9184+27]..[290,9184+28])
+                            Pexp_constant PConst_int (1,None)
+                      ]
+                ]
+              core_type (stdlib/printexc.ml[290,9184+32]..[290,9184+35])
+                Ptyp_constr "int" (stdlib/printexc.ml[290,9184+32]..[290,9184+35])
+                []
+    ]
+  structure_item (stdlib/printexc.ml[292,9222+0]..[294,9271+39])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[292,9222+4]..[292,9222+17])
+          Ppat_var "exn_slot_name" (stdlib/printexc.ml[292,9222+4]..[292,9222+17])
+        expression (stdlib/printexc.ml[292,9222+18]..[294,9271+39]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[292,9222+18]..[292,9222+19])
+            Ppat_var "x" (stdlib/printexc.ml[292,9222+18]..[292,9222+19])
+          expression (stdlib/printexc.ml[293,9244+2]..[294,9271+39])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (stdlib/printexc.ml[293,9244+6]..[293,9244+10])
+                  Ppat_var "slot" (stdlib/printexc.ml[293,9244+6]..[293,9244+10])
+                expression (stdlib/printexc.ml[293,9244+13]..[293,9244+23])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[293,9244+13]..[293,9244+21])
+                    Pexp_ident "exn_slot" (stdlib/printexc.ml[293,9244+13]..[293,9244+21])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[293,9244+22]..[293,9244+23])
+                        Pexp_ident "x" (stdlib/printexc.ml[293,9244+22]..[293,9244+23])
+                  ]
+            ]
+            expression (stdlib/printexc.ml[294,9271+2]..[294,9271+39])
+              Pexp_constraint
+              expression (stdlib/printexc.ml[294,9271+3]..[294,9271+29])
+                Pexp_apply
+                expression (stdlib/printexc.ml[294,9271+3]..[294,9271+10])
+                  Pexp_ident "Obj.obj" (stdlib/printexc.ml[294,9271+3]..[294,9271+10])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[294,9271+11]..[294,9271+29])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[294,9271+12]..[294,9271+21])
+                        Pexp_ident "Obj.field" (stdlib/printexc.ml[294,9271+12]..[294,9271+21])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[294,9271+22]..[294,9271+26])
+                            Pexp_ident "slot" (stdlib/printexc.ml[294,9271+22]..[294,9271+26])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[294,9271+27]..[294,9271+28])
+                            Pexp_constant PConst_int (0,None)
+                      ]
+                ]
+              core_type (stdlib/printexc.ml[294,9271+32]..[294,9271+38])
+                Ptyp_constr "string" (stdlib/printexc.ml[294,9271+32]..[294,9271+38])
+                []
+    ]
+  structure_item (stdlib/printexc.ml[296,9312+0]..[296,9312+74])
+    Pstr_primitive
+    value_description "get_debug_info_status" (stdlib/printexc.ml[296,9312+9]..[296,9312+30]) (stdlib/printexc.ml[296,9312+0]..[296,9312+74])
+      core_type (stdlib/printexc.ml[296,9312+33]..[296,9312+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[296,9312+33]..[296,9312+37])
+          Ptyp_constr "unit" (stdlib/printexc.ml[296,9312+33]..[296,9312+37])
+          []
+        core_type (stdlib/printexc.ml[296,9312+41]..[296,9312+44])
+          Ptyp_constr "int" (stdlib/printexc.ml[296,9312+41]..[296,9312+44])
+          []
+      [
+        "caml_ml_debug_info_status"
+      ]
+  structure_item (stdlib/printexc.ml[299,9453+0]..[313,9989+2])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[299,9453+4]..[299,9453+10])
+          Ppat_var "errors" (stdlib/printexc.ml[299,9453+4]..[299,9453+10])
+        expression (stdlib/printexc.ml[299,9453+13]..[313,9989+2])
+          Pexp_array
+          [
+            expression (stdlib/printexc.ml[299,9453+16]..[299,9453+18])
+              Pexp_constant PConst_string("",(stdlib/printexc.ml[299,9453+17]..[299,9453+17]),None)
+            expression (stdlib/printexc.ml[301,9496+2]..[302,9528+50])
+              Pexp_constant PConst_string("(Cannot print locations:\n bytecode executable program file not found)",(stdlib/printexc.ml[301,9496+3]..[302,9528+49]),None)
+            expression (stdlib/printexc.ml[304,9601+2]..[305,9633+62])
+              Pexp_constant PConst_string("(Cannot print locations:\n bytecode executable program file appears to be corrupt)",(stdlib/printexc.ml[304,9601+3]..[305,9633+61]),None)
+            expression (stdlib/printexc.ml[307,9717+2]..[308,9749+63])
+              Pexp_constant PConst_string("(Cannot print locations:\n bytecode executable program file has wrong magic number)",(stdlib/printexc.ml[307,9717+3]..[308,9749+62]),None)
+            expression (stdlib/printexc.ml[310,9829+2]..[312,9922+66])
+              Pexp_constant PConst_string("(Cannot print locations:\n bytecode executable program file cannot be opened;\n -- too many open files. Try running with OCAMLRUNPARAM=b=2)",(stdlib/printexc.ml[310,9829+3]..[312,9922+65]),None)
+          ]
+    ]
+  structure_item (stdlib/printexc.ml[315,9993+0]..[321,10256+14])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[315,9993+4]..[315,9993+38])
+          Ppat_var "default_uncaught_exception_handler" (stdlib/printexc.ml[315,9993+4]..[315,9993+38])
+        expression (stdlib/printexc.ml[315,9993+39]..[321,10256+14]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[315,9993+39]..[315,9993+42])
+            Ppat_var "exn" (stdlib/printexc.ml[315,9993+39]..[315,9993+42])
+          expression (stdlib/printexc.ml[315,9993+43]..[321,10256+14]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[315,9993+43]..[315,9993+56])
+              Ppat_var "raw_backtrace" (stdlib/printexc.ml[315,9993+43]..[315,9993+56])
+            expression (stdlib/printexc.ml[316,10052+2]..[321,10256+14])
+              Pexp_sequence
+              expression (stdlib/printexc.ml[316,10052+2]..[316,10052+55])
+                Pexp_apply
+                expression (stdlib/printexc.ml[316,10052+2]..[316,10052+9])
+                  Pexp_ident "eprintf" (stdlib/printexc.ml[316,10052+2]..[316,10052+9])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[316,10052+10]..[316,10052+39])
+                      Pexp_constant PConst_string("Fatal error: exception %s\n",(stdlib/printexc.ml[316,10052+11]..[316,10052+38]),None)
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[316,10052+40]..[316,10052+55])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[316,10052+41]..[316,10052+50])
+                        Pexp_ident "to_string" (stdlib/printexc.ml[316,10052+41]..[316,10052+50])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[316,10052+51]..[316,10052+54])
+                            Pexp_ident "exn" (stdlib/printexc.ml[316,10052+51]..[316,10052+54])
+                      ]
+                ]
+              expression (stdlib/printexc.ml[317,10109+2]..[321,10256+14])
+                Pexp_sequence
+                expression (stdlib/printexc.ml[317,10109+2]..[317,10109+42])
+                  Pexp_apply
+                  expression (stdlib/printexc.ml[317,10109+2]..[317,10109+21])
+                    Pexp_ident "print_raw_backtrace" (stdlib/printexc.ml[317,10109+2]..[317,10109+21])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[317,10109+22]..[317,10109+28])
+                        Pexp_ident "stderr" (stdlib/printexc.ml[317,10109+22]..[317,10109+28])
+                    <arg>
+                    Nolabel
+                      expression (stdlib/printexc.ml[317,10109+29]..[317,10109+42])
+                        Pexp_ident "raw_backtrace" (stdlib/printexc.ml[317,10109+29]..[317,10109+42])
+                  ]
+                expression (stdlib/printexc.ml[318,10153+2]..[321,10256+14])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (stdlib/printexc.ml[318,10153+6]..[318,10153+12])
+                        Ppat_var "status" (stdlib/printexc.ml[318,10153+6]..[318,10153+12])
+                      expression (stdlib/printexc.ml[318,10153+15]..[318,10153+39])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[318,10153+15]..[318,10153+36])
+                          Pexp_ident "get_debug_info_status" (stdlib/printexc.ml[318,10153+15]..[318,10153+36])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[318,10153+37]..[318,10153+39])
+                              Pexp_construct "()" (stdlib/printexc.ml[318,10153+37]..[318,10153+39])
+                              None
+                        ]
+                  ]
+                  expression (stdlib/printexc.ml[319,10196+2]..[321,10256+14])
+                    Pexp_sequence
+                    expression (stdlib/printexc.ml[319,10196+2]..[320,10217+37])
+                      Pexp_ifthenelse
+                      expression (stdlib/printexc.ml[319,10196+5]..[319,10196+15])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[319,10196+12]..[319,10196+13])
+                          Pexp_ident "<" (stdlib/printexc.ml[319,10196+12]..[319,10196+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[319,10196+5]..[319,10196+11])
+                              Pexp_ident "status" (stdlib/printexc.ml[319,10196+5]..[319,10196+11])
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[319,10196+14]..[319,10196+15])
+                              Pexp_constant PConst_int (0,None)
+                        ]
+                      expression (stdlib/printexc.ml[320,10217+4]..[320,10217+37])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[320,10217+4]..[320,10217+17])
+                          Pexp_ident "prerr_endline" (stdlib/printexc.ml[320,10217+4]..[320,10217+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[320,10217+18]..[320,10217+37])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[320,10217+18]..[320,10217+37]) ghost
+                                Pexp_ident "Array.get" (stdlib/printexc.ml[320,10217+18]..[320,10217+37]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[320,10217+18]..[320,10217+24])
+                                    Pexp_ident "errors" (stdlib/printexc.ml[320,10217+18]..[320,10217+24])
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[320,10217+26]..[320,10217+36])
+                                    Pexp_apply
+                                    expression (stdlib/printexc.ml[320,10217+26]..[320,10217+29])
+                                      Pexp_ident "abs" (stdlib/printexc.ml[320,10217+26]..[320,10217+29])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/printexc.ml[320,10217+30]..[320,10217+36])
+                                          Pexp_ident "status" (stdlib/printexc.ml[320,10217+30]..[320,10217+36])
+                                    ]
+                              ]
+                        ]
+                      None
+                    expression (stdlib/printexc.ml[321,10256+2]..[321,10256+14])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[321,10256+2]..[321,10256+7])
+                        Pexp_ident "flush" (stdlib/printexc.ml[321,10256+2]..[321,10256+7])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[321,10256+8]..[321,10256+14])
+                            Pexp_ident "stderr" (stdlib/printexc.ml[321,10256+8]..[321,10256+14])
+                      ]
+    ]
+  structure_item (stdlib/printexc.ml[323,10272+0]..[323,10272+71])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[323,10272+4]..[323,10272+30])
+          Ppat_var "uncaught_exception_handler" (stdlib/printexc.ml[323,10272+4]..[323,10272+30])
+        expression (stdlib/printexc.ml[323,10272+33]..[323,10272+71])
+          Pexp_apply
+          expression (stdlib/printexc.ml[323,10272+33]..[323,10272+36])
+            Pexp_ident "ref" (stdlib/printexc.ml[323,10272+33]..[323,10272+36])
+          [
+            <arg>
+            Nolabel
+              expression (stdlib/printexc.ml[323,10272+37]..[323,10272+71])
+                Pexp_ident "default_uncaught_exception_handler" (stdlib/printexc.ml[323,10272+37]..[323,10272+71])
+          ]
+    ]
+  structure_item (stdlib/printexc.ml[325,10345+0]..[325,10345+72])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[325,10345+4]..[325,10345+34])
+          Ppat_var "set_uncaught_exception_handler" (stdlib/printexc.ml[325,10345+4]..[325,10345+34])
+        expression (stdlib/printexc.ml[325,10345+35]..[325,10345+72]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[325,10345+35]..[325,10345+37])
+            Ppat_var "fn" (stdlib/printexc.ml[325,10345+35]..[325,10345+37])
+          expression (stdlib/printexc.ml[325,10345+40]..[325,10345+72])
+            Pexp_apply
+            expression (stdlib/printexc.ml[325,10345+67]..[325,10345+69])
+              Pexp_ident ":=" (stdlib/printexc.ml[325,10345+67]..[325,10345+69])
+            [
+              <arg>
+              Nolabel
+                expression (stdlib/printexc.ml[325,10345+40]..[325,10345+66])
+                  Pexp_ident "uncaught_exception_handler" (stdlib/printexc.ml[325,10345+40]..[325,10345+66])
+              <arg>
+              Nolabel
+                expression (stdlib/printexc.ml[325,10345+70]..[325,10345+72])
+                  Pexp_ident "fn" (stdlib/printexc.ml[325,10345+70]..[325,10345+72])
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[327,10419+0]..[327,10419+43])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[327,10419+4]..[327,10419+35]) ghost
+          Ppat_constraint
+          pattern (stdlib/printexc.ml[327,10419+4]..[327,10419+19])
+            Ppat_var "empty_backtrace" (stdlib/printexc.ml[327,10419+4]..[327,10419+19])
+          core_type (stdlib/printexc.ml[327,10419+22]..[327,10419+35]) ghost
+            Ptyp_poly
+            core_type (stdlib/printexc.ml[327,10419+22]..[327,10419+35])
+              Ptyp_constr "raw_backtrace" (stdlib/printexc.ml[327,10419+22]..[327,10419+35])
+              []
+        expression (stdlib/printexc.ml[327,10419+4]..[327,10419+43])
+          Pexp_constraint
+          expression (stdlib/printexc.ml[327,10419+38]..[327,10419+43])
+            Pexp_array
+            []
+          core_type (stdlib/printexc.ml[327,10419+22]..[327,10419+35])
+            Ptyp_constr "raw_backtrace" (stdlib/printexc.ml[327,10419+22]..[327,10419+35])
+            []
+    ]
+  structure_item (stdlib/printexc.ml[329,10464+0]..[333,10559+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[329,10464+4]..[329,10464+25])
+          Ppat_var "try_get_raw_backtrace" (stdlib/printexc.ml[329,10464+4]..[329,10464+25])
+        expression (stdlib/printexc.ml[329,10464+26]..[333,10559+19]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[329,10464+26]..[329,10464+28])
+            Ppat_construct "()" (stdlib/printexc.ml[329,10464+26]..[329,10464+28])
+            None
+          expression (stdlib/printexc.ml[330,10495+2]..[333,10559+19])
+            Pexp_try
+            expression (stdlib/printexc.ml[331,10501+4]..[331,10501+24])
+              Pexp_apply
+              expression (stdlib/printexc.ml[331,10501+4]..[331,10501+21])
+                Pexp_ident "get_raw_backtrace" (stdlib/printexc.ml[331,10501+4]..[331,10501+21])
+              [
+                <arg>
+                Nolabel
+                  expression (stdlib/printexc.ml[331,10501+22]..[331,10501+24])
+                    Pexp_construct "()" (stdlib/printexc.ml[331,10501+22]..[331,10501+24])
+                    None
+              ]
+            [
+              <case>
+                pattern (stdlib/printexc.ml[332,10526+7]..[332,10526+8])
+                  Ppat_any
+                expression (stdlib/printexc.ml[333,10559+4]..[333,10559+19])
+                  Pexp_ident "empty_backtrace" (stdlib/printexc.ml[333,10559+4]..[333,10559+19])
+            ]
+    ]
+  structure_item (stdlib/printexc.ml[335,10580+0]..[359,11408+68])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[335,10580+4]..[335,10580+30])
+          Ppat_var "handle_uncaught_exception'" (stdlib/printexc.ml[335,10580+4]..[335,10580+30])
+        expression (stdlib/printexc.ml[335,10580+31]..[359,11408+68]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[335,10580+31]..[335,10580+34])
+            Ppat_var "exn" (stdlib/printexc.ml[335,10580+31]..[335,10580+34])
+          expression (stdlib/printexc.ml[335,10580+35]..[359,11408+68]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[335,10580+35]..[335,10580+50])
+              Ppat_var "debugger_in_use" (stdlib/printexc.ml[335,10580+35]..[335,10580+50])
+            expression (stdlib/printexc.ml[336,10633+2]..[359,11408+68])
+              Pexp_try
+              expression (stdlib/printexc.ml[339,10730+4]..[355,11337+18])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (stdlib/printexc.ml[339,10730+8]..[339,10730+21])
+                      Ppat_var "raw_backtrace" (stdlib/printexc.ml[339,10730+8]..[339,10730+21])
+                    expression (stdlib/printexc.ml[340,10754+6]..[343,10862+32])
+                      Pexp_ifthenelse
+                      expression (stdlib/printexc.ml[340,10754+9]..[340,10754+24])
+                        Pexp_ident "debugger_in_use" (stdlib/printexc.ml[340,10754+9]..[340,10754+24])
+                      expression (stdlib/printexc.ml[341,10827+8]..[341,10827+23])
+                        Pexp_ident "empty_backtrace" (stdlib/printexc.ml[341,10827+8]..[341,10827+23])
+                      Some
+                        expression (stdlib/printexc.ml[343,10862+8]..[343,10862+32])
+                          Pexp_apply
+                          expression (stdlib/printexc.ml[343,10862+8]..[343,10862+29])
+                            Pexp_ident "try_get_raw_backtrace" (stdlib/printexc.ml[343,10862+8]..[343,10862+29])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (stdlib/printexc.ml[343,10862+30]..[343,10862+32])
+                                Pexp_construct "()" (stdlib/printexc.ml[343,10862+30]..[343,10862+32])
+                                None
+                          ]
+                ]
+                expression (stdlib/printexc.ml[345,10902+4]..[355,11337+18])
+                  Pexp_sequence
+                  expression (stdlib/printexc.ml[345,10902+4]..[345,10902+43])
+                    Pexp_try
+                    expression (stdlib/printexc.ml[345,10902+9]..[345,10902+29])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[345,10902+9]..[345,10902+26])
+                        Pexp_ident "Stdlib.do_at_exit" (stdlib/printexc.ml[345,10902+9]..[345,10902+26])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[345,10902+27]..[345,10902+29])
+                            Pexp_construct "()" (stdlib/printexc.ml[345,10902+27]..[345,10902+29])
+                            None
+                      ]
+                    [
+                      <case>
+                        pattern (stdlib/printexc.ml[345,10902+35]..[345,10902+36])
+                          Ppat_any
+                        expression (stdlib/printexc.ml[345,10902+40]..[345,10902+42])
+                          Pexp_construct "()" (stdlib/printexc.ml[345,10902+40]..[345,10902+42])
+                          None
+                    ]
+                  expression (stdlib/printexc.ml[346,10947+4]..[355,11337+18])
+                    Pexp_try
+                    expression (stdlib/printexc.ml[347,10955+6]..[347,10955+51])
+                      Pexp_apply
+                      expression (stdlib/printexc.ml[347,10955+6]..[347,10955+33])
+                        Pexp_apply
+                        expression (stdlib/printexc.ml[347,10955+6]..[347,10955+7])
+                          Pexp_ident "!" (stdlib/printexc.ml[347,10955+6]..[347,10955+7])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (stdlib/printexc.ml[347,10955+7]..[347,10955+33])
+                              Pexp_ident "uncaught_exception_handler" (stdlib/printexc.ml[347,10955+7]..[347,10955+33])
+                        ]
+                      [
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[347,10955+34]..[347,10955+37])
+                            Pexp_ident "exn" (stdlib/printexc.ml[347,10955+34]..[347,10955+37])
+                        <arg>
+                        Nolabel
+                          expression (stdlib/printexc.ml[347,10955+38]..[347,10955+51])
+                            Pexp_ident "raw_backtrace" (stdlib/printexc.ml[347,10955+38]..[347,10955+51])
+                      ]
+                    [
+                      <case>
+                        pattern (stdlib/printexc.ml[348,11007+9]..[348,11007+13])
+                          Ppat_var "exn'" (stdlib/printexc.ml[348,11007+9]..[348,11007+13])
+                        expression (stdlib/printexc.ml[349,11024+6]..[355,11337+18])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (stdlib/printexc.ml[349,11024+10]..[349,11024+24])
+                                Ppat_var "raw_backtrace'" (stdlib/printexc.ml[349,11024+10]..[349,11024+24])
+                              expression (stdlib/printexc.ml[349,11024+27]..[349,11024+51])
+                                Pexp_apply
+                                expression (stdlib/printexc.ml[349,11024+27]..[349,11024+48])
+                                  Pexp_ident "try_get_raw_backtrace" (stdlib/printexc.ml[349,11024+27]..[349,11024+48])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/printexc.ml[349,11024+49]..[349,11024+51])
+                                      Pexp_construct "()" (stdlib/printexc.ml[349,11024+49]..[349,11024+51])
+                                      None
+                                ]
+                          ]
+                          expression (stdlib/printexc.ml[350,11079+6]..[355,11337+18])
+                            Pexp_sequence
+                            expression (stdlib/printexc.ml[350,11079+6]..[350,11079+59])
+                              Pexp_apply
+                              expression (stdlib/printexc.ml[350,11079+6]..[350,11079+13])
+                                Pexp_ident "eprintf" (stdlib/printexc.ml[350,11079+6]..[350,11079+13])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[350,11079+14]..[350,11079+43])
+                                    Pexp_constant PConst_string("Fatal error: exception %s\n",(stdlib/printexc.ml[350,11079+15]..[350,11079+42]),None)
+                                <arg>
+                                Nolabel
+                                  expression (stdlib/printexc.ml[350,11079+44]..[350,11079+59])
+                                    Pexp_apply
+                                    expression (stdlib/printexc.ml[350,11079+45]..[350,11079+54])
+                                      Pexp_ident "to_string" (stdlib/printexc.ml[350,11079+45]..[350,11079+54])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/printexc.ml[350,11079+55]..[350,11079+58])
+                                          Pexp_ident "exn" (stdlib/printexc.ml[350,11079+55]..[350,11079+58])
+                                    ]
+                              ]
+                            expression (stdlib/printexc.ml[351,11140+6]..[355,11337+18])
+                              Pexp_sequence
+                              expression (stdlib/printexc.ml[351,11140+6]..[351,11140+46])
+                                Pexp_apply
+                                expression (stdlib/printexc.ml[351,11140+6]..[351,11140+25])
+                                  Pexp_ident "print_raw_backtrace" (stdlib/printexc.ml[351,11140+6]..[351,11140+25])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/printexc.ml[351,11140+26]..[351,11140+32])
+                                      Pexp_ident "stderr" (stdlib/printexc.ml[351,11140+26]..[351,11140+32])
+                                  <arg>
+                                  Nolabel
+                                    expression (stdlib/printexc.ml[351,11140+33]..[351,11140+46])
+                                      Pexp_ident "raw_backtrace" (stdlib/printexc.ml[351,11140+33]..[351,11140+46])
+                                ]
+                              expression (stdlib/printexc.ml[352,11188+6]..[355,11337+18])
+                                Pexp_sequence
+                                expression (stdlib/printexc.ml[352,11188+6]..[353,11262+24])
+                                  Pexp_apply
+                                  expression (stdlib/printexc.ml[352,11188+6]..[352,11188+13])
+                                    Pexp_ident "eprintf" (stdlib/printexc.ml[352,11188+6]..[352,11188+13])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/printexc.ml[352,11188+14]..[352,11188+73])
+                                        Pexp_constant PConst_string("Fatal error in uncaught exception handler: exception %s\n",(stdlib/printexc.ml[352,11188+15]..[352,11188+72]),None)
+                                    <arg>
+                                    Nolabel
+                                      expression (stdlib/printexc.ml[353,11262+8]..[353,11262+24])
+                                        Pexp_apply
+                                        expression (stdlib/printexc.ml[353,11262+9]..[353,11262+18])
+                                          Pexp_ident "to_string" (stdlib/printexc.ml[353,11262+9]..[353,11262+18])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (stdlib/printexc.ml[353,11262+19]..[353,11262+23])
+                                              Pexp_ident "exn'" (stdlib/printexc.ml[353,11262+19]..[353,11262+23])
+                                        ]
+                                  ]
+                                expression (stdlib/printexc.ml[354,11288+6]..[355,11337+18])
+                                  Pexp_sequence
+                                  expression (stdlib/printexc.ml[354,11288+6]..[354,11288+47])
+                                    Pexp_apply
+                                    expression (stdlib/printexc.ml[354,11288+6]..[354,11288+25])
+                                      Pexp_ident "print_raw_backtrace" (stdlib/printexc.ml[354,11288+6]..[354,11288+25])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/printexc.ml[354,11288+26]..[354,11288+32])
+                                          Pexp_ident "stderr" (stdlib/printexc.ml[354,11288+26]..[354,11288+32])
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/printexc.ml[354,11288+33]..[354,11288+47])
+                                          Pexp_ident "raw_backtrace'" (stdlib/printexc.ml[354,11288+33]..[354,11288+47])
+                                    ]
+                                  expression (stdlib/printexc.ml[355,11337+6]..[355,11337+18])
+                                    Pexp_apply
+                                    expression (stdlib/printexc.ml[355,11337+6]..[355,11337+11])
+                                      Pexp_ident "flush" (stdlib/printexc.ml[355,11337+6]..[355,11337+11])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (stdlib/printexc.ml[355,11337+12]..[355,11337+18])
+                                          Pexp_ident "stderr" (stdlib/printexc.ml[355,11337+12]..[355,11337+18])
+                                    ]
+                    ]
+              [
+                <case>
+                  pattern (stdlib/printexc.ml[357,11363+6]..[357,11363+19])
+                    Ppat_construct "Out_of_memory" (stdlib/printexc.ml[357,11363+6]..[357,11363+19])
+                    None
+                  expression (stdlib/printexc.ml[358,11386+8]..[359,11408+68])
+                    Pexp_apply
+                    expression (stdlib/printexc.ml[358,11386+8]..[358,11386+21])
+                      Pexp_ident "prerr_endline" (stdlib/printexc.ml[358,11386+8]..[358,11386+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (stdlib/printexc.ml[359,11408+10]..[359,11408+68])
+                          Pexp_constant PConst_string("Fatal error: out of memory in uncaught exception handler",(stdlib/printexc.ml[359,11408+11]..[359,11408+67]),None)
+                    ]
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[363,11608+0]..[368,11781+6])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[363,11608+4]..[363,11608+29])
+          Ppat_var "handle_uncaught_exception" (stdlib/printexc.ml[363,11608+4]..[363,11608+29])
+        expression (stdlib/printexc.ml[363,11608+30]..[368,11781+6]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (stdlib/printexc.ml[363,11608+30]..[363,11608+33])
+            Ppat_var "exn" (stdlib/printexc.ml[363,11608+30]..[363,11608+33])
+          expression (stdlib/printexc.ml[363,11608+34]..[368,11781+6]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (stdlib/printexc.ml[363,11608+34]..[363,11608+49])
+              Ppat_var "debugger_in_use" (stdlib/printexc.ml[363,11608+34]..[363,11608+49])
+            expression (stdlib/printexc.ml[364,11660+2]..[368,11781+6])
+              Pexp_try
+              expression (stdlib/printexc.ml[365,11666+4]..[365,11666+50])
+                Pexp_apply
+                expression (stdlib/printexc.ml[365,11666+4]..[365,11666+30])
+                  Pexp_ident "handle_uncaught_exception'" (stdlib/printexc.ml[365,11666+4]..[365,11666+30])
+                [
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[365,11666+31]..[365,11666+34])
+                      Pexp_ident "exn" (stdlib/printexc.ml[365,11666+31]..[365,11666+34])
+                  <arg>
+                  Nolabel
+                    expression (stdlib/printexc.ml[365,11666+35]..[365,11666+50])
+                      Pexp_ident "debugger_in_use" (stdlib/printexc.ml[365,11666+35]..[365,11666+50])
+                ]
+              [
+                <case>
+                  pattern (stdlib/printexc.ml[366,11717+7]..[366,11717+8])
+                    Ppat_any
+                  expression (stdlib/printexc.ml[368,11781+4]..[368,11781+6])
+                    Pexp_construct "()" (stdlib/printexc.ml[368,11781+4]..[368,11781+6])
+                    None
+              ]
+    ]
+  structure_item (stdlib/printexc.ml[370,11789+0]..[371,11842+31])
+    Pstr_primitive
+    value_description "register_named_value" (stdlib/printexc.ml[370,11789+9]..[370,11789+29]) (stdlib/printexc.ml[370,11789+0]..[371,11842+31])
+      core_type (stdlib/printexc.ml[370,11789+32]..[370,11789+52])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.ml[370,11789+32]..[370,11789+38])
+          Ptyp_constr "string" (stdlib/printexc.ml[370,11789+32]..[370,11789+38])
+          []
+        core_type (stdlib/printexc.ml[370,11789+42]..[370,11789+52])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.ml[370,11789+42]..[370,11789+44])
+            Ptyp_var a
+          core_type (stdlib/printexc.ml[370,11789+48]..[370,11789+52])
+            Ptyp_constr "unit" (stdlib/printexc.ml[370,11789+48]..[370,11789+52])
+            []
+      [
+        "caml_register_named_value"
+      ]
+  structure_item (stdlib/printexc.ml[373,11875+0]..[375,11944+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (stdlib/printexc.ml[373,11875+4]..[373,11875+6])
+          Ppat_construct "()" (stdlib/printexc.ml[373,11875+4]..[373,11875+6])
+          None
+        expression (stdlib/printexc.ml[374,11884+2]..[375,11944+29])
+          Pexp_apply
+          expression (stdlib/printexc.ml[374,11884+2]..[374,11884+22])
+            Pexp_ident "register_named_value" (stdlib/printexc.ml[374,11884+2]..[374,11884+22])
+          [
+            <arg>
+            Nolabel
+              expression (stdlib/printexc.ml[374,11884+23]..[374,11884+59])
+                Pexp_constant PConst_string("Printexc.handle_uncaught_exception",(stdlib/printexc.ml[374,11884+24]..[374,11884+58]),None)
+            <arg>
+            Nolabel
+              expression (stdlib/printexc.ml[375,11944+4]..[375,11944+29])
+                Pexp_ident "handle_uncaught_exception" (stdlib/printexc.ml[375,11944+4]..[375,11944+29])
+          ]
+    ]
+]
+

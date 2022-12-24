@@ -1,0 +1,1010 @@
+[
+  signature_item (stdlib/printexc.mli[16,1079+0]..[16,1079+76])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/printexc.mli[16,1079+0]..[16,1079+76])
+        Pstr_eval
+        expression (stdlib/printexc.mli[16,1079+0]..[16,1079+76])
+          Pexp_constant PConst_string(" Facilities for printing exceptions and inspecting current call stack. ",(stdlib/printexc.mli[16,1079+0]..[16,1079+76]),None)
+    ]
+  signature_item (stdlib/printexc.mli[18,1157+0]..[18,1157+17])
+    Psig_type Rec
+    [
+      type_declaration "t" (stdlib/printexc.mli[18,1157+5]..[18,1157+6]) (stdlib/printexc.mli[18,1157+0]..[18,1157+17])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/printexc.mli[19,1175+0]..[19,1175+36])
+              Pstr_eval
+              expression (stdlib/printexc.mli[19,1175+0]..[19,1175+36])
+                Pexp_constant PConst_string(" The type of exception values. ",(stdlib/printexc.mli[19,1175+0]..[19,1175+36]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_open
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (stdlib/printexc.mli[18,1157+9]..[18,1157+12])
+              Ptyp_constr "exn" (stdlib/printexc.mli[18,1157+9]..[18,1157+12])
+              []
+    ]
+  signature_item (stdlib/printexc.mli[21,1213+0]..[21,1213+28])
+    Psig_value
+    value_description "to_string" (stdlib/printexc.mli[21,1213+4]..[21,1213+13]) (stdlib/printexc.mli[21,1213+0]..[21,1213+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[22,1242+0]..[23,1304+24])
+            Pstr_eval
+            expression (stdlib/printexc.mli[22,1242+0]..[23,1304+24])
+              Pexp_constant PConst_string(" [Printexc.to_string e] returns a string representation of\n   the exception [e]. ",(stdlib/printexc.mli[22,1242+0]..[23,1304+24]),None)
+        ]
+      core_type (stdlib/printexc.mli[21,1213+15]..[21,1213+28])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[21,1213+15]..[21,1213+18])
+          Ptyp_constr "exn" (stdlib/printexc.mli[21,1213+15]..[21,1213+18])
+          []
+        core_type (stdlib/printexc.mli[21,1213+22]..[21,1213+28])
+          Ptyp_constr "string" (stdlib/printexc.mli[21,1213+22]..[21,1213+28])
+          []
+      []
+  signature_item (stdlib/printexc.mli[25,1330+0]..[25,1330+36])
+    Psig_value
+    value_description "to_string_default" (stdlib/printexc.mli[25,1330+4]..[25,1330+21]) (stdlib/printexc.mli[25,1330+0]..[25,1330+36])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[26,1367+0]..[29,1520+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[26,1367+0]..[29,1520+2])
+              Pexp_constant PConst_string(" [Printexc.to_string_default e] returns a string representation of the\n    exception [e], ignoring all registered exception printers.\n    @since 4.09\n",(stdlib/printexc.mli[26,1367+0]..[29,1520+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[25,1330+23]..[25,1330+36])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[25,1330+23]..[25,1330+26])
+          Ptyp_constr "exn" (stdlib/printexc.mli[25,1330+23]..[25,1330+26])
+          []
+        core_type (stdlib/printexc.mli[25,1330+30]..[25,1330+36])
+          Ptyp_constr "string" (stdlib/printexc.mli[25,1330+30]..[25,1330+36])
+          []
+      []
+  signature_item (stdlib/printexc.mli[31,1524+0]..[31,1524+33])
+    Psig_value
+    value_description "print" (stdlib/printexc.mli[31,1524+4]..[31,1524+9]) (stdlib/printexc.mli[31,1524+0]..[31,1524+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[32,1558+0]..[37,1843+36])
+            Pstr_eval
+            expression (stdlib/printexc.mli[32,1558+0]..[37,1843+36])
+              Pexp_constant PConst_string(" [Printexc.print fn x] applies [fn] to [x] and returns the result.\n   If the evaluation of [fn x] raises any exception, the\n   name of the exception is printed on standard error output,\n   and the exception is raised again.\n   The typical use is to catch and report exceptions that\n   escape a function application. ",(stdlib/printexc.mli[32,1558+0]..[37,1843+36]),None)
+        ]
+      core_type (stdlib/printexc.mli[31,1524+11]..[31,1524+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[31,1524+12]..[31,1524+20])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[31,1524+12]..[31,1524+14])
+            Ptyp_var a
+          core_type (stdlib/printexc.mli[31,1524+18]..[31,1524+20])
+            Ptyp_var b
+        core_type (stdlib/printexc.mli[31,1524+25]..[31,1524+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[31,1524+25]..[31,1524+27])
+            Ptyp_var a
+          core_type (stdlib/printexc.mli[31,1524+31]..[31,1524+33])
+            Ptyp_var b
+      []
+  signature_item (stdlib/printexc.mli[39,1881+0]..[40,1915+57])
+    Psig_value
+    value_description "catch" (stdlib/printexc.mli[39,1881+4]..[39,1881+9]) (stdlib/printexc.mli[39,1881+0]..[40,1915+57])
+      attribute "ocaml.deprecated"
+        [
+          structure_item (stdlib/printexc.mli[40,1915+20]..[40,1915+56])
+            Pstr_eval
+            expression (stdlib/printexc.mli[40,1915+20]..[40,1915+56])
+              Pexp_constant PConst_string("This function is no longer needed.",(stdlib/printexc.mli[40,1915+21]..[40,1915+55]),None)
+        ]
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[41,1973+0]..[48,2401+51])
+            Pstr_eval
+            expression (stdlib/printexc.mli[41,1973+0]..[48,2401+51])
+              Pexp_constant PConst_string(" [Printexc.catch fn x] is similar to {!Printexc.print}, but\n   aborts the program with exit code 2 after printing the\n   uncaught exception.  This function is deprecated: the runtime\n   system is now able to print uncaught exceptions as precisely\n   as [Printexc.catch] does.  Moreover, calling [Printexc.catch]\n   makes it harder to track the location of the exception\n   using the debugger or the stack backtrace facility.\n   So, do not use [Printexc.catch] in new code.  ",(stdlib/printexc.mli[41,1973+0]..[48,2401+51]),None)
+        ]
+      core_type (stdlib/printexc.mli[39,1881+11]..[39,1881+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[39,1881+12]..[39,1881+20])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[39,1881+12]..[39,1881+14])
+            Ptyp_var a
+          core_type (stdlib/printexc.mli[39,1881+18]..[39,1881+20])
+            Ptyp_var b
+        core_type (stdlib/printexc.mli[39,1881+25]..[39,1881+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[39,1881+25]..[39,1881+27])
+            Ptyp_var a
+          core_type (stdlib/printexc.mli[39,1881+31]..[39,1881+33])
+            Ptyp_var b
+      []
+  signature_item (stdlib/printexc.mli[50,2454+0]..[50,2454+40])
+    Psig_value
+    value_description "print_backtrace" (stdlib/printexc.mli[50,2454+4]..[50,2454+19]) (stdlib/printexc.mli[50,2454+0]..[50,2454+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[51,2495+0]..[63,3083+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[51,2495+0]..[63,3083+2])
+              Pexp_constant PConst_string(" [Printexc.print_backtrace oc] prints an exception backtrace\n    on the output channel [oc].  The backtrace lists the program\n    locations where the most-recently raised exception was raised\n    and where it was propagated through function calls.\n\n    If the call is not inside an exception handler, the returned\n    backtrace is unspecified. If the call is after some\n    exception-catching code (before in the handler, or in a when-guard\n    during the matching of the exception handler), the backtrace may\n    correspond to a later exception than the handled one.\n\n    @since 3.11\n",(stdlib/printexc.mli[51,2495+0]..[63,3083+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[50,2454+21]..[50,2454+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[50,2454+21]..[50,2454+32])
+          Ptyp_constr "out_channel" (stdlib/printexc.mli[50,2454+21]..[50,2454+32])
+          []
+        core_type (stdlib/printexc.mli[50,2454+36]..[50,2454+40])
+          Ptyp_constr "unit" (stdlib/printexc.mli[50,2454+36]..[50,2454+40])
+          []
+      []
+  signature_item (stdlib/printexc.mli[65,3087+0]..[65,3087+33])
+    Psig_value
+    value_description "get_backtrace" (stdlib/printexc.mli[65,3087+4]..[65,3087+17]) (stdlib/printexc.mli[65,3087+0]..[65,3087+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[66,3121+0]..[70,3327+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[66,3121+0]..[70,3327+2])
+              Pexp_constant PConst_string(" [Printexc.get_backtrace ()] returns a string containing the\n    same exception backtrace that [Printexc.print_backtrace] would\n    print. Same restriction usage than {!print_backtrace}.\n    @since 3.11\n",(stdlib/printexc.mli[66,3121+0]..[70,3327+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[65,3087+19]..[65,3087+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[65,3087+19]..[65,3087+23])
+          Ptyp_constr "unit" (stdlib/printexc.mli[65,3087+19]..[65,3087+23])
+          []
+        core_type (stdlib/printexc.mli[65,3087+27]..[65,3087+33])
+          Ptyp_constr "string" (stdlib/printexc.mli[65,3087+27]..[65,3087+33])
+          []
+      []
+  signature_item (stdlib/printexc.mli[72,3331+0]..[72,3331+34])
+    Psig_value
+    value_description "record_backtrace" (stdlib/printexc.mli[72,3331+4]..[72,3331+20]) (stdlib/printexc.mli[72,3331+0]..[72,3331+34])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[73,3366+0]..[78,3635+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[73,3366+0]..[78,3635+2])
+              Pexp_constant PConst_string(" [Printexc.record_backtrace b] turns recording of exception backtraces\n    on (if [b = true]) or off (if [b = false]).  Initially, backtraces\n    are not recorded, unless the [b] flag is given to the program\n    through the [OCAMLRUNPARAM] variable.\n    @since 3.11\n",(stdlib/printexc.mli[73,3366+0]..[78,3635+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[72,3331+22]..[72,3331+34])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[72,3331+22]..[72,3331+26])
+          Ptyp_constr "bool" (stdlib/printexc.mli[72,3331+22]..[72,3331+26])
+          []
+        core_type (stdlib/printexc.mli[72,3331+30]..[72,3331+34])
+          Ptyp_constr "unit" (stdlib/printexc.mli[72,3331+30]..[72,3331+34])
+          []
+      []
+  signature_item (stdlib/printexc.mli[80,3639+0]..[80,3639+34])
+    Psig_value
+    value_description "backtrace_status" (stdlib/printexc.mli[80,3639+4]..[80,3639+20]) (stdlib/printexc.mli[80,3639+0]..[80,3639+34])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[81,3674+0]..[84,3807+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[81,3674+0]..[84,3807+2])
+              Pexp_constant PConst_string(" [Printexc.backtrace_status()] returns [true] if exception\n    backtraces are currently recorded, [false] if not.\n    @since 3.11\n",(stdlib/printexc.mli[81,3674+0]..[84,3807+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[80,3639+22]..[80,3639+34])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[80,3639+22]..[80,3639+26])
+          Ptyp_constr "unit" (stdlib/printexc.mli[80,3639+22]..[80,3639+26])
+          []
+        core_type (stdlib/printexc.mli[80,3639+30]..[80,3639+34])
+          Ptyp_constr "bool" (stdlib/printexc.mli[80,3639+30]..[80,3639+34])
+          []
+      []
+  signature_item (stdlib/printexc.mli[86,3811+0]..[86,3811+52])
+    Psig_value
+    value_description "register_printer" (stdlib/printexc.mli[86,3811+4]..[86,3811+20]) (stdlib/printexc.mli[86,3811+0]..[86,3811+52])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[87,3864+0]..[103,4761+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[87,3864+0]..[103,4761+2])
+              Pexp_constant PConst_string(" [Printexc.register_printer fn] registers [fn] as an exception\n    printer.  The printer should return [None] or raise an exception\n    if it does not know how to convert the passed exception, and [Some\n    s] with [s] the resulting string if it can convert the passed\n    exception. Exceptions raised by the printer are ignored.\n\n    When converting an exception into a string, the printers will be invoked\n    in the reverse order of their registrations, until a printer returns\n    a [Some s] value (if no such printer exists, the runtime will use a\n    generic printer).\n\n    When using this mechanism, one should be aware that an exception backtrace\n    is attached to the thread that saw it raised, rather than to the exception\n    itself. Practically, it means that the code related to [fn] should not use\n    the backtrace if it has itself raised an exception before.\n    @since 3.11.2\n",(stdlib/printexc.mli[87,3864+0]..[103,4761+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[86,3811+22]..[86,3811+52])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[86,3811+23]..[86,3811+43])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[86,3811+23]..[86,3811+26])
+            Ptyp_constr "exn" (stdlib/printexc.mli[86,3811+23]..[86,3811+26])
+            []
+          core_type (stdlib/printexc.mli[86,3811+30]..[86,3811+43])
+            Ptyp_constr "option" (stdlib/printexc.mli[86,3811+37]..[86,3811+43])
+            [
+              core_type (stdlib/printexc.mli[86,3811+30]..[86,3811+36])
+                Ptyp_constr "string" (stdlib/printexc.mli[86,3811+30]..[86,3811+36])
+                []
+            ]
+        core_type (stdlib/printexc.mli[86,3811+48]..[86,3811+52])
+          Ptyp_constr "unit" (stdlib/printexc.mli[86,3811+48]..[86,3811+52])
+          []
+      []
+  signature_item (stdlib/printexc.mli[105,4765+0]..[105,4765+38])
+    Psig_value
+    value_description "use_printers" (stdlib/printexc.mli[105,4765+4]..[105,4765+16]) (stdlib/printexc.mli[105,4765+0]..[105,4765+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[106,4804+0]..[109,4963+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[106,4804+0]..[109,4963+2])
+              Pexp_constant PConst_string(" [Printexc.use_printers e] returns [None] if there are no registered\n    printers and [Some s] with else as the resulting string otherwise.\n    @since 4.09\n",(stdlib/printexc.mli[106,4804+0]..[109,4963+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[105,4765+18]..[105,4765+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[105,4765+18]..[105,4765+21])
+          Ptyp_constr "exn" (stdlib/printexc.mli[105,4765+18]..[105,4765+21])
+          []
+        core_type (stdlib/printexc.mli[105,4765+25]..[105,4765+38])
+          Ptyp_constr "option" (stdlib/printexc.mli[105,4765+32]..[105,4765+38])
+          [
+            core_type (stdlib/printexc.mli[105,4765+25]..[105,4765+31])
+              Ptyp_constr "string" (stdlib/printexc.mli[105,4765+25]..[105,4765+31])
+              []
+          ]
+      []
+  signature_item (stdlib/printexc.mli[111,4967+0]..[111,4967+25])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/printexc.mli[111,4967+0]..[111,4967+25])
+        Pstr_eval
+        expression (stdlib/printexc.mli[111,4967+0]..[111,4967+25])
+          Pexp_constant PConst_string(" {1 Raw backtraces} ",(stdlib/printexc.mli[111,4967+0]..[111,4967+25]),None)
+    ]
+  signature_item (stdlib/printexc.mli[113,4994+0]..[113,4994+18])
+    Psig_type Rec
+    [
+      type_declaration "raw_backtrace" (stdlib/printexc.mli[113,4994+5]..[113,4994+18]) (stdlib/printexc.mli[113,4994+0]..[113,4994+18])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/printexc.mli[114,5013+0]..[127,5595+2])
+              Pstr_eval
+              expression (stdlib/printexc.mli[114,5013+0]..[127,5595+2])
+                Pexp_constant PConst_string(" The type [raw_backtrace] stores a backtrace in a low-level format,\n    which can be converted to usable form using [raw_backtrace_entries]\n    and [backtrace_slots_of_raw_entry] below.\n\n    Converting backtraces to [backtrace_slot]s is slower than capturing the\n    backtraces. If an application processes many backtraces, it can be useful\n    to use [raw_backtrace] to avoid or delay conversion.\n\n    Raw backtraces cannot be marshalled. If you need marshalling, you\n    should use the array returned by the [backtrace_slots] function of\n    the next section.\n\n    @since 4.01\n",(stdlib/printexc.mli[114,5013+0]..[127,5595+2]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (stdlib/printexc.mli[129,5599+0]..[129,5599+38])
+    Psig_type Rec
+    [
+      type_declaration "raw_backtrace_entry" (stdlib/printexc.mli[129,5599+5]..[129,5599+24]) (stdlib/printexc.mli[129,5599+0]..[129,5599+38])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/printexc.mli[130,5638+0]..[148,6527+18])
+              Pstr_eval
+              expression (stdlib/printexc.mli[130,5638+0]..[148,6527+18])
+                Pexp_constant PConst_string(" A [raw_backtrace_entry] is an element of a [raw_backtrace].\n\n    Each [raw_backtrace_entry] is an opaque integer, whose value is not stable\n    between different programs, or even between different runs of the same\n    binary.\n\n    A [raw_backtrace_entry] can be converted to a usable form using\n    [backtrace_slots_of_raw_entry] below. Note that, due to inlining, a\n    single [raw_backtrace_entry] may convert to several [backtrace_slot]s.\n    Since the values of a [raw_backtrace_entry] are not stable, they cannot\n    be marshalled. If they are to be converted, the conversion must be done\n    by the process that generated them.\n\n    Again due to inlining, there may be multiple distinct raw_backtrace_entry\n    values that convert to equal [backtrace_slot]s. However, if two\n    [raw_backtrace_entry]s are equal as integers, then they represent the same\n    [backtrace_slot]s.\n\n    @since 4.12 ",(stdlib/printexc.mli[130,5638+0]..[148,6527+18]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Private
+        ptype_manifest =
+          Some
+            core_type (stdlib/printexc.mli[129,5599+35]..[129,5599+38])
+              Ptyp_constr "int" (stdlib/printexc.mli[129,5599+35]..[129,5599+38])
+              []
+    ]
+  signature_item (stdlib/printexc.mli[150,6547+0]..[150,6547+70])
+    Psig_value
+    value_description "raw_backtrace_entries" (stdlib/printexc.mli[150,6547+4]..[150,6547+25]) (stdlib/printexc.mli[150,6547+0]..[150,6547+70])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[151,6618+0]..[151,6618+18])
+            Pstr_eval
+            expression (stdlib/printexc.mli[151,6618+0]..[151,6618+18])
+              Pexp_constant PConst_string(" @since 4.12 ",(stdlib/printexc.mli[151,6618+0]..[151,6618+18]),None)
+        ]
+      core_type (stdlib/printexc.mli[150,6547+28]..[150,6547+70])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[150,6547+28]..[150,6547+41])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[150,6547+28]..[150,6547+41])
+          []
+        core_type (stdlib/printexc.mli[150,6547+45]..[150,6547+70])
+          Ptyp_constr "array" (stdlib/printexc.mli[150,6547+65]..[150,6547+70])
+          [
+            core_type (stdlib/printexc.mli[150,6547+45]..[150,6547+64])
+              Ptyp_constr "raw_backtrace_entry" (stdlib/printexc.mli[150,6547+45]..[150,6547+64])
+              []
+          ]
+      []
+  signature_item (stdlib/printexc.mli[153,6638+0]..[153,6638+44])
+    Psig_value
+    value_description "get_raw_backtrace" (stdlib/printexc.mli[153,6638+4]..[153,6638+21]) (stdlib/printexc.mli[153,6638+0]..[153,6638+44])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[154,6683+0]..[159,6895+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[154,6683+0]..[159,6895+2])
+              Pexp_constant PConst_string(" [Printexc.get_raw_backtrace ()] returns the same exception\n    backtrace that [Printexc.print_backtrace] would print, but in\n    a raw format. Same restriction usage than {!print_backtrace}.\n\n    @since 4.01\n",(stdlib/printexc.mli[154,6683+0]..[159,6895+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[153,6638+23]..[153,6638+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[153,6638+23]..[153,6638+27])
+          Ptyp_constr "unit" (stdlib/printexc.mli[153,6638+23]..[153,6638+27])
+          []
+        core_type (stdlib/printexc.mli[153,6638+31]..[153,6638+44])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[153,6638+31]..[153,6638+44])
+          []
+      []
+  signature_item (stdlib/printexc.mli[161,6899+0]..[161,6899+61])
+    Psig_value
+    value_description "print_raw_backtrace" (stdlib/printexc.mli[161,6899+4]..[161,6899+23]) (stdlib/printexc.mli[161,6899+0]..[161,6899+61])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[162,6961+0]..[166,7060+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[162,6961+0]..[166,7060+2])
+              Pexp_constant PConst_string(" Print a raw backtrace in the same format\n    [Printexc.print_backtrace] uses.\n\n    @since 4.01\n",(stdlib/printexc.mli[162,6961+0]..[166,7060+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[161,6899+25]..[161,6899+61])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[161,6899+25]..[161,6899+36])
+          Ptyp_constr "out_channel" (stdlib/printexc.mli[161,6899+25]..[161,6899+36])
+          []
+        core_type (stdlib/printexc.mli[161,6899+40]..[161,6899+61])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[161,6899+40]..[161,6899+53])
+            Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[161,6899+40]..[161,6899+53])
+            []
+          core_type (stdlib/printexc.mli[161,6899+57]..[161,6899+61])
+            Ptyp_constr "unit" (stdlib/printexc.mli[161,6899+57]..[161,6899+61])
+            []
+      []
+  signature_item (stdlib/printexc.mli[168,7064+0]..[168,7064+52])
+    Psig_value
+    value_description "raw_backtrace_to_string" (stdlib/printexc.mli[168,7064+4]..[168,7064+27]) (stdlib/printexc.mli[168,7064+0]..[168,7064+52])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[169,7117+0]..[173,7230+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[169,7117+0]..[173,7230+2])
+              Pexp_constant PConst_string(" Return a string from a raw backtrace, in the same format\n    [Printexc.get_backtrace] uses.\n\n    @since 4.01\n",(stdlib/printexc.mli[169,7117+0]..[173,7230+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[168,7064+29]..[168,7064+52])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[168,7064+29]..[168,7064+42])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[168,7064+29]..[168,7064+42])
+          []
+        core_type (stdlib/printexc.mli[168,7064+46]..[168,7064+52])
+          Ptyp_constr "string" (stdlib/printexc.mli[168,7064+46]..[168,7064+52])
+          []
+      []
+  signature_item (stdlib/printexc.mli[175,7234+0]..[176,7292+27])
+    Psig_value
+    value_description "raise_with_backtrace" (stdlib/printexc.mli[175,7234+9]..[175,7234+29]) (stdlib/printexc.mli[175,7234+0]..[176,7292+27])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[177,7320+0]..[181,7429+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[177,7320+0]..[181,7429+2])
+              Pexp_constant PConst_string(" Reraise the exception using the given raw_backtrace for the\n    origin of the exception\n\n    @since 4.05\n",(stdlib/printexc.mli[177,7320+0]..[181,7429+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[175,7234+31]..[175,7234+57])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[175,7234+31]..[175,7234+34])
+          Ptyp_constr "exn" (stdlib/printexc.mli[175,7234+31]..[175,7234+34])
+          []
+        core_type (stdlib/printexc.mli[175,7234+38]..[175,7234+57])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[175,7234+38]..[175,7234+51])
+            Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[175,7234+38]..[175,7234+51])
+            []
+          core_type (stdlib/printexc.mli[175,7234+55]..[175,7234+57])
+            Ptyp_var a
+      [
+        "%raise_with_backtrace"
+      ]
+  signature_item (stdlib/printexc.mli[183,7433+0]..[183,7433+29])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/printexc.mli[183,7433+0]..[183,7433+29])
+        Pstr_eval
+        expression (stdlib/printexc.mli[183,7433+0]..[183,7433+29])
+          Pexp_constant PConst_string(" {1 Current call stack} ",(stdlib/printexc.mli[183,7433+0]..[183,7433+29]),None)
+    ]
+  signature_item (stdlib/printexc.mli[185,7464+0]..[185,7464+75])
+    Psig_value
+    value_description "get_callstack" (stdlib/printexc.mli[185,7464+9]..[185,7464+22]) (stdlib/printexc.mli[185,7464+0]..[185,7464+75])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[186,7540+0]..[192,7837+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[186,7540+0]..[192,7837+2])
+              Pexp_constant PConst_string(" [Printexc.get_callstack n] returns a description of the top of the\n    call stack on the current program point (for the current thread),\n    with at most [n] entries.  (Note: this function is not related to\n    exceptions at all, despite being part of the [Printexc] module.)\n\n    @since 4.01\n",(stdlib/printexc.mli[186,7540+0]..[192,7837+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[185,7464+24]..[185,7464+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[185,7464+24]..[185,7464+27])
+          Ptyp_constr "int" (stdlib/printexc.mli[185,7464+24]..[185,7464+27])
+          []
+        core_type (stdlib/printexc.mli[185,7464+31]..[185,7464+44])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[185,7464+31]..[185,7464+44])
+          []
+      [
+        "caml_get_current_callstack"
+      ]
+  signature_item (stdlib/printexc.mli[194,7841+0]..[194,7841+30])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/printexc.mli[194,7841+0]..[194,7841+30])
+        Pstr_eval
+        expression (stdlib/printexc.mli[194,7841+0]..[194,7841+30])
+          Pexp_constant PConst_string(" {1 Uncaught exceptions} ",(stdlib/printexc.mli[194,7841+0]..[194,7841+30]),None)
+    ]
+  signature_item (stdlib/printexc.mli[196,7873+0]..[196,7873+68])
+    Psig_value
+    value_description "default_uncaught_exception_handler" (stdlib/printexc.mli[196,7873+4]..[196,7873+38]) (stdlib/printexc.mli[196,7873+0]..[196,7873+68])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[197,7942+0]..[201,8074+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[197,7942+0]..[201,8074+2])
+              Pexp_constant PConst_string(" [Printexc.default_uncaught_exception_handler] prints the exception and\n    backtrace on standard error output.\n\n    @since 4.11\n",(stdlib/printexc.mli[197,7942+0]..[201,8074+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[196,7873+40]..[196,7873+68])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[196,7873+40]..[196,7873+43])
+          Ptyp_constr "exn" (stdlib/printexc.mli[196,7873+40]..[196,7873+43])
+          []
+        core_type (stdlib/printexc.mli[196,7873+47]..[196,7873+68])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[196,7873+47]..[196,7873+60])
+            Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[196,7873+47]..[196,7873+60])
+            []
+          core_type (stdlib/printexc.mli[196,7873+64]..[196,7873+68])
+            Ptyp_constr "unit" (stdlib/printexc.mli[196,7873+64]..[196,7873+68])
+            []
+      []
+  signature_item (stdlib/printexc.mli[203,8078+0]..[203,8078+74])
+    Psig_value
+    value_description "set_uncaught_exception_handler" (stdlib/printexc.mli[203,8078+4]..[203,8078+34]) (stdlib/printexc.mli[203,8078+0]..[203,8078+74])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[204,8153+0]..[219,8854+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[204,8153+0]..[219,8854+2])
+              Pexp_constant PConst_string(" [Printexc.set_uncaught_exception_handler fn] registers [fn] as the handler\n    for uncaught exceptions. The default handler is\n    {!Printexc.default_uncaught_exception_handler}.\n\n    Note that when [fn] is called all the functions registered with\n    {!Stdlib.at_exit} have already been called. Because of this you must\n    make sure any output channel [fn] writes on is flushed.\n\n    Also note that exceptions raised by user code in the interactive toplevel\n    are not passed to this function as they are caught by the toplevel itself.\n\n    If [fn] raises an exception, both the exceptions passed to [fn] and raised\n    by [fn] will be printed with their respective backtrace.\n\n    @since 4.02\n",(stdlib/printexc.mli[204,8153+0]..[219,8854+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[203,8078+36]..[203,8078+74])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[203,8078+37]..[203,8078+65])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[203,8078+37]..[203,8078+40])
+            Ptyp_constr "exn" (stdlib/printexc.mli[203,8078+37]..[203,8078+40])
+            []
+          core_type (stdlib/printexc.mli[203,8078+44]..[203,8078+65])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/printexc.mli[203,8078+44]..[203,8078+57])
+              Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[203,8078+44]..[203,8078+57])
+              []
+            core_type (stdlib/printexc.mli[203,8078+61]..[203,8078+65])
+              Ptyp_constr "unit" (stdlib/printexc.mli[203,8078+61]..[203,8078+65])
+              []
+        core_type (stdlib/printexc.mli[203,8078+70]..[203,8078+74])
+          Ptyp_constr "unit" (stdlib/printexc.mli[203,8078+70]..[203,8078+74])
+          []
+      []
+  signature_item (stdlib/printexc.mli[222,8859+0]..[226,9047+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/printexc.mli[222,8859+0]..[226,9047+2])
+        Pstr_eval
+        expression (stdlib/printexc.mli[222,8859+0]..[226,9047+2])
+          Pexp_constant PConst_string(" {1 Manipulation of backtrace information}\n\n    These functions are used to traverse the slots of a raw backtrace\n    and extract information from them in a programmer-friendly format.\n",(stdlib/printexc.mli[222,8859+0]..[226,9047+2]),None)
+    ]
+  signature_item (stdlib/printexc.mli[228,9051+0]..[228,9051+19])
+    Psig_type Rec
+    [
+      type_declaration "backtrace_slot" (stdlib/printexc.mli[228,9051+5]..[228,9051+19]) (stdlib/printexc.mli[228,9051+0]..[228,9051+19])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/printexc.mli[229,9071+0]..[233,9172+2])
+              Pstr_eval
+              expression (stdlib/printexc.mli[229,9071+0]..[233,9172+2])
+                Pexp_constant PConst_string(" The abstract type [backtrace_slot] represents a single slot of\n    a backtrace.\n\n    @since 4.02\n",(stdlib/printexc.mli[229,9071+0]..[233,9172+2]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (stdlib/printexc.mli[235,9176+0]..[235,9176+66])
+    Psig_value
+    value_description "backtrace_slots" (stdlib/printexc.mli[235,9176+4]..[235,9176+19]) (stdlib/printexc.mli[235,9176+0]..[235,9176+66])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[236,9243+0]..[250,9792+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[236,9243+0]..[250,9792+2])
+              Pexp_constant PConst_string(" Returns the slots of a raw backtrace, or [None] if none of them\n    contain useful information.\n\n    In the return array, the slot at index [0] corresponds to the most\n    recent function call, raise, or primitive [get_backtrace] call in\n    the trace.\n\n    Some possible reasons for returning [None] are as follow:\n    - none of the slots in the trace come from modules compiled with\n    debug information ([-g])\n    - the program is a bytecode program that has not been linked with\n    debug information enabled ([ocamlc -g])\n\n    @since 4.02\n",(stdlib/printexc.mli[236,9243+0]..[250,9792+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[235,9176+22]..[235,9176+66])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[235,9176+22]..[235,9176+35])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[235,9176+22]..[235,9176+35])
+          []
+        core_type (stdlib/printexc.mli[235,9176+39]..[235,9176+66])
+          Ptyp_constr "option" (stdlib/printexc.mli[235,9176+60]..[235,9176+66])
+          [
+            core_type (stdlib/printexc.mli[235,9176+39]..[235,9176+59])
+              Ptyp_constr "array" (stdlib/printexc.mli[235,9176+54]..[235,9176+59])
+              [
+                core_type (stdlib/printexc.mli[235,9176+39]..[235,9176+53])
+                  Ptyp_constr "backtrace_slot" (stdlib/printexc.mli[235,9176+39]..[235,9176+53])
+                  []
+              ]
+          ]
+      []
+  signature_item (stdlib/printexc.mli[252,9796+0]..[253,9831+52])
+    Psig_value
+    value_description "backtrace_slots_of_raw_entry" (stdlib/printexc.mli[252,9796+4]..[252,9796+32]) (stdlib/printexc.mli[252,9796+0]..[253,9831+52])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[254,9884+0]..[262,10189+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[254,9884+0]..[262,10189+2])
+              Pexp_constant PConst_string(" Returns the slots of a single raw backtrace entry, or [None] if this\n    entry lacks debug information.\n\n    Slots are returned in the same order as [backtrace_slots]: the slot\n    at index [0] is the most recent call, raise, or primitive, and\n    subsequent slots represent callers.\n\n    @since 4.12\n",(stdlib/printexc.mli[254,9884+0]..[262,10189+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[253,9831+2]..[253,9831+52])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[253,9831+2]..[253,9831+21])
+          Ptyp_constr "raw_backtrace_entry" (stdlib/printexc.mli[253,9831+2]..[253,9831+21])
+          []
+        core_type (stdlib/printexc.mli[253,9831+25]..[253,9831+52])
+          Ptyp_constr "option" (stdlib/printexc.mli[253,9831+46]..[253,9831+52])
+          [
+            core_type (stdlib/printexc.mli[253,9831+25]..[253,9831+45])
+              Ptyp_constr "array" (stdlib/printexc.mli[253,9831+40]..[253,9831+45])
+              [
+                core_type (stdlib/printexc.mli[253,9831+25]..[253,9831+39])
+                  Ptyp_constr "backtrace_slot" (stdlib/printexc.mli[253,9831+25]..[253,9831+39])
+                  []
+              ]
+          ]
+      []
+  signature_item (stdlib/printexc.mli[265,10194+0]..[270,10292+1])
+    Psig_type Rec
+    [
+      type_declaration "location" (stdlib/printexc.mli[265,10194+5]..[265,10194+13]) (stdlib/printexc.mli[265,10194+0]..[270,10292+1])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/printexc.mli[271,10294+0]..[276,10458+2])
+              Pstr_eval
+              expression (stdlib/printexc.mli[271,10294+0]..[276,10458+2])
+                Pexp_constant PConst_string(" The type of location information found in backtraces. [start_char]\n    and [end_char] are positions relative to the beginning of the\n    line.\n\n    @since 4.02\n",(stdlib/printexc.mli[271,10294+0]..[276,10458+2]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_record
+            [
+              (stdlib/printexc.mli[266,10212+2]..[266,10212+20])
+                Immutable
+                "filename" (stdlib/printexc.mli[266,10212+2]..[266,10212+10])                core_type (stdlib/printexc.mli[266,10212+13]..[266,10212+19])
+                  Ptyp_constr "string" (stdlib/printexc.mli[266,10212+13]..[266,10212+19])
+                  []
+              (stdlib/printexc.mli[267,10233+2]..[267,10233+20])
+                Immutable
+                "line_number" (stdlib/printexc.mli[267,10233+2]..[267,10233+13])                core_type (stdlib/printexc.mli[267,10233+16]..[267,10233+19])
+                  Ptyp_constr "int" (stdlib/printexc.mli[267,10233+16]..[267,10233+19])
+                  []
+              (stdlib/printexc.mli[268,10254+2]..[268,10254+19])
+                Immutable
+                "start_char" (stdlib/printexc.mli[268,10254+2]..[268,10254+12])                core_type (stdlib/printexc.mli[268,10254+15]..[268,10254+18])
+                  Ptyp_constr "int" (stdlib/printexc.mli[268,10254+15]..[268,10254+18])
+                  []
+              (stdlib/printexc.mli[269,10274+2]..[269,10274+17])
+                Immutable
+                "end_char" (stdlib/printexc.mli[269,10274+2]..[269,10274+10])                core_type (stdlib/printexc.mli[269,10274+13]..[269,10274+16])
+                  Ptyp_constr "int" (stdlib/printexc.mli[269,10274+13]..[269,10274+16])
+                  []
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (stdlib/printexc.mli[279,10481+0]..[331,12123+3])
+    Psig_module "Slot" (stdlib/printexc.mli[279,10481+7]..[279,10481+11])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[278,10462+0]..[278,10462+18])
+            Pstr_eval
+            expression (stdlib/printexc.mli[278,10462+0]..[278,10462+18])
+              Pexp_constant PConst_string(" @since 4.02 ",(stdlib/printexc.mli[278,10462+0]..[278,10462+18]),None)
+        ]
+    module_type (stdlib/printexc.mli[279,10481+14]..[331,12123+3])
+      Pmty_signature
+      [
+        signature_item (stdlib/printexc.mli[280,10499+2]..[280,10499+25])
+          Psig_type Rec
+          [
+            type_declaration "t" (stdlib/printexc.mli[280,10499+7]..[280,10499+8]) (stdlib/printexc.mli[280,10499+2]..[280,10499+25])
+              ptype_params =
+                []
+              ptype_cstrs =
+                []
+              ptype_kind =
+                Ptype_abstract
+              ptype_private = Public
+              ptype_manifest =
+                Some
+                  core_type (stdlib/printexc.mli[280,10499+11]..[280,10499+25])
+                    Ptyp_constr "backtrace_slot" (stdlib/printexc.mli[280,10499+11]..[280,10499+25])
+                    []
+          ]
+        signature_item (stdlib/printexc.mli[282,10526+2]..[282,10526+26])
+          Psig_value
+          value_description "is_raise" (stdlib/printexc.mli[282,10526+6]..[282,10526+14]) (stdlib/printexc.mli[282,10526+2]..[282,10526+26])
+            attribute "ocaml.doc"
+              [
+                structure_item (stdlib/printexc.mli[283,10553+2]..[288,10722+4])
+                  Pstr_eval
+                  expression (stdlib/printexc.mli[283,10553+2]..[288,10722+4])
+                    Pexp_constant PConst_string(" [is_raise slot] is [true] when [slot] refers to a raising\n      point in the code, and [false] when it comes from a simple\n      function call.\n\n      @since 4.02\n  ",(stdlib/printexc.mli[283,10553+2]..[288,10722+4]),None)
+              ]
+            core_type (stdlib/printexc.mli[282,10526+17]..[282,10526+26])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/printexc.mli[282,10526+17]..[282,10526+18])
+                Ptyp_constr "t" (stdlib/printexc.mli[282,10526+17]..[282,10526+18])
+                []
+              core_type (stdlib/printexc.mli[282,10526+22]..[282,10526+26])
+                Ptyp_constr "bool" (stdlib/printexc.mli[282,10526+22]..[282,10526+26])
+                []
+            []
+        signature_item (stdlib/printexc.mli[290,10728+2]..[290,10728+27])
+          Psig_value
+          value_description "is_inline" (stdlib/printexc.mli[290,10728+6]..[290,10728+15]) (stdlib/printexc.mli[290,10728+2]..[290,10728+27])
+            attribute "ocaml.doc"
+              [
+                structure_item (stdlib/printexc.mli[291,10756+2]..[296,10933+4])
+                  Pstr_eval
+                  expression (stdlib/printexc.mli[291,10756+2]..[296,10933+4])
+                    Pexp_constant PConst_string(" [is_inline slot] is [true] when [slot] refers to a call\n      that got inlined by the compiler, and [false] when it comes from\n      any other context.\n\n      @since 4.04\n  ",(stdlib/printexc.mli[291,10756+2]..[296,10933+4]),None)
+              ]
+            core_type (stdlib/printexc.mli[290,10728+18]..[290,10728+27])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/printexc.mli[290,10728+18]..[290,10728+19])
+                Ptyp_constr "t" (stdlib/printexc.mli[290,10728+18]..[290,10728+19])
+                []
+              core_type (stdlib/printexc.mli[290,10728+23]..[290,10728+27])
+                Ptyp_constr "bool" (stdlib/printexc.mli[290,10728+23]..[290,10728+27])
+                []
+            []
+        signature_item (stdlib/printexc.mli[298,10939+2]..[298,10939+37])
+          Psig_value
+          value_description "location" (stdlib/printexc.mli[298,10939+6]..[298,10939+14]) (stdlib/printexc.mli[298,10939+2]..[298,10939+37])
+            attribute "ocaml.doc"
+              [
+                structure_item (stdlib/printexc.mli[299,10977+2]..[308,11358+4])
+                  Pstr_eval
+                  expression (stdlib/printexc.mli[299,10977+2]..[308,11358+4])
+                    Pexp_constant PConst_string(" [location slot] returns the location information of the slot,\n      if available, and [None] otherwise.\n\n      Some possible reasons for failing to return a location are as follow:\n      - the slot corresponds to a compiler-inserted raise\n      - the slot corresponds to a part of the program that has not been\n      compiled with debug information ([-g])\n\n      @since 4.02\n  ",(stdlib/printexc.mli[299,10977+2]..[308,11358+4]),None)
+              ]
+            core_type (stdlib/printexc.mli[298,10939+17]..[298,10939+37])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/printexc.mli[298,10939+17]..[298,10939+18])
+                Ptyp_constr "t" (stdlib/printexc.mli[298,10939+17]..[298,10939+18])
+                []
+              core_type (stdlib/printexc.mli[298,10939+22]..[298,10939+37])
+                Ptyp_constr "option" (stdlib/printexc.mli[298,10939+31]..[298,10939+37])
+                [
+                  core_type (stdlib/printexc.mli[298,10939+22]..[298,10939+30])
+                    Ptyp_constr "location" (stdlib/printexc.mli[298,10939+22]..[298,10939+30])
+                    []
+                ]
+            []
+        signature_item (stdlib/printexc.mli[310,11364+2]..[310,11364+31])
+          Psig_value
+          value_description "name" (stdlib/printexc.mli[310,11364+6]..[310,11364+10]) (stdlib/printexc.mli[310,11364+2]..[310,11364+31])
+            attribute "ocaml.doc"
+              [
+                structure_item (stdlib/printexc.mli[311,11396+2]..[318,11668+4])
+                  Pstr_eval
+                  expression (stdlib/printexc.mli[311,11396+2]..[318,11668+4])
+                    Pexp_constant PConst_string(" [name slot] returns the name of the function or definition\n      enclosing the location referred to by the slot.\n\n      [name slot] returns None if the name is unavailable, which\n      may happen for the same reasons as [location] returning None.\n\n      @since 4.11\n  ",(stdlib/printexc.mli[311,11396+2]..[318,11668+4]),None)
+              ]
+            core_type (stdlib/printexc.mli[310,11364+13]..[310,11364+31])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/printexc.mli[310,11364+13]..[310,11364+14])
+                Ptyp_constr "t" (stdlib/printexc.mli[310,11364+13]..[310,11364+14])
+                []
+              core_type (stdlib/printexc.mli[310,11364+18]..[310,11364+31])
+                Ptyp_constr "option" (stdlib/printexc.mli[310,11364+25]..[310,11364+31])
+                [
+                  core_type (stdlib/printexc.mli[310,11364+18]..[310,11364+24])
+                    Ptyp_constr "string" (stdlib/printexc.mli[310,11364+18]..[310,11364+24])
+                    []
+                ]
+            []
+        signature_item (stdlib/printexc.mli[320,11674+2]..[320,11674+40])
+          Psig_value
+          value_description "format" (stdlib/printexc.mli[320,11674+6]..[320,11674+12]) (stdlib/printexc.mli[320,11674+2]..[320,11674+40])
+            attribute "ocaml.doc"
+              [
+                structure_item (stdlib/printexc.mli[321,11715+2]..[330,12118+4])
+                  Pstr_eval
+                  expression (stdlib/printexc.mli[321,11715+2]..[330,12118+4])
+                    Pexp_constant PConst_string(" [format pos slot] returns the string representation of [slot] as\n      [raw_backtrace_to_string] would format it, assuming it is the\n      [pos]-th element of the backtrace: the [0]-th element is\n      pretty-printed differently than the others.\n\n      Whole-backtrace printing functions also skip some uninformative\n      slots; in that case, [format pos slot] returns [None].\n\n      @since 4.02\n  ",(stdlib/printexc.mli[321,11715+2]..[330,12118+4]),None)
+              ]
+            core_type (stdlib/printexc.mli[320,11674+15]..[320,11674+40])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/printexc.mli[320,11674+15]..[320,11674+18])
+                Ptyp_constr "int" (stdlib/printexc.mli[320,11674+15]..[320,11674+18])
+                []
+              core_type (stdlib/printexc.mli[320,11674+22]..[320,11674+40])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/printexc.mli[320,11674+22]..[320,11674+23])
+                  Ptyp_constr "t" (stdlib/printexc.mli[320,11674+22]..[320,11674+23])
+                  []
+                core_type (stdlib/printexc.mli[320,11674+27]..[320,11674+40])
+                  Ptyp_constr "option" (stdlib/printexc.mli[320,11674+34]..[320,11674+40])
+                  [
+                    core_type (stdlib/printexc.mli[320,11674+27]..[320,11674+33])
+                      Ptyp_constr "string" (stdlib/printexc.mli[320,11674+27]..[320,11674+33])
+                      []
+                  ]
+            []
+      ]
+  signature_item (stdlib/printexc.mli[334,12129+0]..[334,12129+30])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/printexc.mli[334,12129+0]..[334,12129+30])
+        Pstr_eval
+        expression (stdlib/printexc.mli[334,12129+0]..[334,12129+30])
+          Pexp_constant PConst_string(" {1 Raw backtrace slots} ",(stdlib/printexc.mli[334,12129+0]..[334,12129+30]),None)
+    ]
+  signature_item (stdlib/printexc.mli[336,12161+0]..[336,12161+23])
+    Psig_type Rec
+    [
+      type_declaration "raw_backtrace_slot" (stdlib/printexc.mli[336,12161+5]..[336,12161+23]) (stdlib/printexc.mli[336,12161+0]..[336,12161+23])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/printexc.mli[337,12185+0]..[350,12835+2])
+              Pstr_eval
+              expression (stdlib/printexc.mli[337,12185+0]..[350,12835+2])
+                Pexp_constant PConst_string(" This type is used to iterate over the slots of a [raw_backtrace].\n    For most purposes, [backtrace_slots_of_raw_entry] is easier to use.\n\n    Like [raw_backtrace_entry], values of this type are process-specific and\n    must absolutely not be marshalled, and are unsafe to use for this reason\n    (marshalling them may not fail, but un-marshalling and using the result\n    will result in undefined behavior).\n\n    Elements of this type can still be compared and hashed: when two elements\n    are equal, then they represent the same source location (the converse is not\n    necessarily true in presence of inlining, for example).\n\n    @since 4.02\n",(stdlib/printexc.mli[337,12185+0]..[350,12835+2]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (stdlib/printexc.mli[352,12839+0]..[352,12839+47])
+    Psig_value
+    value_description "raw_backtrace_length" (stdlib/printexc.mli[352,12839+4]..[352,12839+24]) (stdlib/printexc.mli[352,12839+0]..[352,12839+47])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[353,12887+0]..[357,12993+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[353,12887+0]..[357,12993+2])
+              Pexp_constant PConst_string(" [raw_backtrace_length bckt] returns the number of slots in the\n    backtrace [bckt].\n\n    @since 4.02\n",(stdlib/printexc.mli[353,12887+0]..[357,12993+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[352,12839+27]..[352,12839+47])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[352,12839+27]..[352,12839+40])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[352,12839+27]..[352,12839+40])
+          []
+        core_type (stdlib/printexc.mli[352,12839+44]..[352,12839+47])
+          Ptyp_constr "int" (stdlib/printexc.mli[352,12839+44]..[352,12839+47])
+          []
+      []
+  signature_item (stdlib/printexc.mli[359,12997+0]..[359,12997+71])
+    Psig_value
+    value_description "get_raw_backtrace_slot" (stdlib/printexc.mli[359,12997+4]..[359,12997+26]) (stdlib/printexc.mli[359,12997+0]..[359,12997+71])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[360,13069+0]..[364,13188+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[360,13069+0]..[364,13188+2])
+              Pexp_constant PConst_string(" [get_raw_backtrace_slot bckt pos] returns the slot in position [pos] in the\n    backtrace [bckt].\n\n    @since 4.02\n",(stdlib/printexc.mli[360,13069+0]..[364,13188+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[359,12997+29]..[359,12997+71])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[359,12997+29]..[359,12997+42])
+          Ptyp_constr "raw_backtrace" (stdlib/printexc.mli[359,12997+29]..[359,12997+42])
+          []
+        core_type (stdlib/printexc.mli[359,12997+46]..[359,12997+71])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/printexc.mli[359,12997+46]..[359,12997+49])
+            Ptyp_constr "int" (stdlib/printexc.mli[359,12997+46]..[359,12997+49])
+            []
+          core_type (stdlib/printexc.mli[359,12997+53]..[359,12997+71])
+            Ptyp_constr "raw_backtrace_slot" (stdlib/printexc.mli[359,12997+53]..[359,12997+71])
+            []
+      []
+  signature_item (stdlib/printexc.mli[366,13192+0]..[366,13192+69])
+    Psig_value
+    value_description "convert_raw_backtrace_slot" (stdlib/printexc.mli[366,13192+4]..[366,13192+30]) (stdlib/printexc.mli[366,13192+0]..[366,13192+69])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[367,13262+0]..[371,13370+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[367,13262+0]..[371,13370+2])
+              Pexp_constant PConst_string(" Extracts the user-friendly [backtrace_slot] from a low-level\n    [raw_backtrace_slot].\n\n    @since 4.02\n",(stdlib/printexc.mli[367,13262+0]..[371,13370+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[366,13192+33]..[366,13192+69])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[366,13192+33]..[366,13192+51])
+          Ptyp_constr "raw_backtrace_slot" (stdlib/printexc.mli[366,13192+33]..[366,13192+51])
+          []
+        core_type (stdlib/printexc.mli[366,13192+55]..[366,13192+69])
+          Ptyp_constr "backtrace_slot" (stdlib/printexc.mli[366,13192+55]..[366,13192+69])
+          []
+      []
+  signature_item (stdlib/printexc.mli[374,13375+0]..[375,13409+51])
+    Psig_value
+    value_description "get_raw_backtrace_next_slot" (stdlib/printexc.mli[374,13375+4]..[374,13375+31]) (stdlib/printexc.mli[374,13375+0]..[375,13409+51])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[376,13461+0]..[395,14079+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[376,13461+0]..[395,14079+2])
+              Pexp_constant PConst_string(" [get_raw_backtrace_next_slot slot] returns the next slot inlined, if any.\n\n    Sample code to iterate over all frames (inlined and non-inlined):\n    {[\n      (* Iterate over inlined frames *)\n      let rec iter_raw_backtrace_slot f slot =\n        f slot;\n        match get_raw_backtrace_next_slot slot with\n        | None -> ()\n        | Some slot' -> iter_raw_backtrace_slot f slot'\n\n      (* Iterate over stack frames *)\n      let iter_raw_backtrace f bt =\n        for i = 0 to raw_backtrace_length bt - 1 do\n          iter_raw_backtrace_slot f (get_raw_backtrace_slot bt i)\n        done\n    ]}\n\n    @since 4.04\n",(stdlib/printexc.mli[376,13461+0]..[395,14079+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[375,13409+4]..[375,13409+51])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[375,13409+4]..[375,13409+22])
+          Ptyp_constr "raw_backtrace_slot" (stdlib/printexc.mli[375,13409+4]..[375,13409+22])
+          []
+        core_type (stdlib/printexc.mli[375,13409+26]..[375,13409+51])
+          Ptyp_constr "option" (stdlib/printexc.mli[375,13409+45]..[375,13409+51])
+          [
+            core_type (stdlib/printexc.mli[375,13409+26]..[375,13409+44])
+              Ptyp_constr "raw_backtrace_slot" (stdlib/printexc.mli[375,13409+26]..[375,13409+44])
+              []
+          ]
+      []
+  signature_item (stdlib/printexc.mli[397,14083+0]..[397,14083+26])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/printexc.mli[397,14083+0]..[397,14083+26])
+        Pstr_eval
+        expression (stdlib/printexc.mli[397,14083+0]..[397,14083+26])
+          Pexp_constant PConst_string(" {1 Exception slots} ",(stdlib/printexc.mli[397,14083+0]..[397,14083+26]),None)
+    ]
+  signature_item (stdlib/printexc.mli[399,14111+0]..[399,14111+27])
+    Psig_value
+    value_description "exn_slot_id" (stdlib/printexc.mli[399,14111+4]..[399,14111+15]) (stdlib/printexc.mli[399,14111+0]..[399,14111+27])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[400,14139+0]..[405,14319+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[400,14139+0]..[405,14319+2])
+              Pexp_constant PConst_string(" [Printexc.exn_slot_id] returns an integer which uniquely identifies\n    the constructor used to create the exception value [exn]\n    (in the current runtime).\n\n    @since 4.02\n",(stdlib/printexc.mli[400,14139+0]..[405,14319+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[399,14111+17]..[399,14111+27])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[399,14111+17]..[399,14111+20])
+          Ptyp_constr "exn" (stdlib/printexc.mli[399,14111+17]..[399,14111+20])
+          []
+        core_type (stdlib/printexc.mli[399,14111+24]..[399,14111+27])
+          Ptyp_constr "int" (stdlib/printexc.mli[399,14111+24]..[399,14111+27])
+          []
+      []
+  signature_item (stdlib/printexc.mli[407,14323+0]..[407,14323+32])
+    Psig_value
+    value_description "exn_slot_name" (stdlib/printexc.mli[407,14323+4]..[407,14323+17]) (stdlib/printexc.mli[407,14323+0]..[407,14323+32])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/printexc.mli[408,14356+0]..[412,14497+2])
+            Pstr_eval
+            expression (stdlib/printexc.mli[408,14356+0]..[412,14497+2])
+              Pexp_constant PConst_string(" [Printexc.exn_slot_name exn] returns the internal name of the constructor\n    used to create the exception value [exn].\n\n    @since 4.02\n",(stdlib/printexc.mli[408,14356+0]..[412,14497+2]),None)
+        ]
+      core_type (stdlib/printexc.mli[407,14323+19]..[407,14323+32])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[407,14323+19]..[407,14323+22])
+          Ptyp_constr "exn" (stdlib/printexc.mli[407,14323+19]..[407,14323+22])
+          []
+        core_type (stdlib/printexc.mli[407,14323+26]..[407,14323+32])
+          Ptyp_constr "string" (stdlib/printexc.mli[407,14323+26]..[407,14323+32])
+          []
+      []
+  signature_item (stdlib/printexc.mli[414,14501+0]..[414,14501+7])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/printexc.mli[414,14501+0]..[414,14501+7])
+        Pstr_eval
+        expression (stdlib/printexc.mli[414,14501+0]..[414,14501+7])
+          Pexp_constant PConst_string("/*",(stdlib/printexc.mli[414,14501+0]..[414,14501+7]),None)
+    ]
+  signature_item (stdlib/printexc.mli[416,14510+0]..[419,14620+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/printexc.mli[416,14510+0]..[419,14620+2])
+        Pstr_eval
+        expression (stdlib/printexc.mli[416,14510+0]..[419,14620+2])
+          Pexp_constant PConst_string("  {1 Obj printer}\n  Unsafe printer used in this module and exposed to the other standard library\n   module\n",(stdlib/printexc.mli[416,14510+0]..[419,14620+2]),None)
+    ]
+  signature_item (stdlib/printexc.mli[421,14624+0]..[421,14624+52])
+    Psig_value
+    value_description "string_of_extension_constructor" (stdlib/printexc.mli[421,14624+4]..[421,14624+35]) (stdlib/printexc.mli[421,14624+0]..[421,14624+52])
+      core_type (stdlib/printexc.mli[421,14624+37]..[421,14624+52])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/printexc.mli[421,14624+37]..[421,14624+42])
+          Ptyp_constr "Obj.t" (stdlib/printexc.mli[421,14624+37]..[421,14624+42])
+          []
+        core_type (stdlib/printexc.mli[421,14624+46]..[421,14624+52])
+          Ptyp_constr "string" (stdlib/printexc.mli[421,14624+46]..[421,14624+52])
+          []
+      []
+]
+

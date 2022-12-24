@@ -1,0 +1,403 @@
+[
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[6,42+0]..[6,42+47])
+    Pstr_type Rec
+    [
+      type_declaration "t" (testsuite/tests/typing-gadts/pr10907.ml[6,42+8]..[6,42+9]) (testsuite/tests/typing-gadts/pr10907.ml[6,42+0]..[6,42+47])
+        ptype_params =
+          [
+            core_type (testsuite/tests/typing-gadts/pr10907.ml[6,42+5]..[6,42+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (testsuite/tests/typing-gadts/pr10907.ml[6,42+12]..[6,42+47])
+                "T" (testsuite/tests/typing-gadts/pr10907.ml[6,42+12]..[6,42+13])
+                [
+                  core_type (testsuite/tests/typing-gadts/pr10907.ml[6,42+17]..[6,42+25])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (testsuite/tests/typing-gadts/pr10907.ml[6,42+17]..[6,42+19])
+                      Ptyp_var a
+                    core_type (testsuite/tests/typing-gadts/pr10907.ml[6,42+23]..[6,42+25])
+                      Ptyp_var b
+                  core_type (testsuite/tests/typing-gadts/pr10907.ml[6,42+30]..[6,42+38])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (testsuite/tests/typing-gadts/pr10907.ml[6,42+30]..[6,42+32])
+                      Ptyp_var b
+                    core_type (testsuite/tests/typing-gadts/pr10907.ml[6,42+36]..[6,42+38])
+                      Ptyp_var a
+                ]
+                Some
+                  core_type (testsuite/tests/typing-gadts/pr10907.ml[6,42+43]..[6,42+47])
+                    Ptyp_constr "t" (testsuite/tests/typing-gadts/pr10907.ml[6,42+46]..[6,42+47])
+                    [
+                      core_type (testsuite/tests/typing-gadts/pr10907.ml[6,42+43]..[6,42+45])
+                        Ptyp_var a
+                    ]
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[7,92+0]..[9,152+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-gadts/pr10907.ml[7,92+9]..[9,152+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-gadts/pr10907.ml[7,92+9]..[9,152+2])
+          Pexp_constant PConst_string ("\ntype 'a t = T : ('a -> 'b) * ('b -> 'a) -> 'a t\n",(testsuite/tests/typing-gadts/pr10907.ml[7,92+11]..[9,152+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[11,157+0]..[11,157+38])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-gadts/pr10907.ml[11,157+4]..[11,157+5])
+          Ppat_var "t" (testsuite/tests/typing-gadts/pr10907.ml[11,157+4]..[11,157+5])
+        expression (testsuite/tests/typing-gadts/pr10907.ml[11,157+8]..[11,157+38])
+          Pexp_construct "T" (testsuite/tests/typing-gadts/pr10907.ml[11,157+8]..[11,157+9])
+          Some
+            expression (testsuite/tests/typing-gadts/pr10907.ml[11,157+10]..[11,157+38])
+              Pexp_tuple
+              [
+                expression (testsuite/tests/typing-gadts/pr10907.ml[11,157+11]..[11,157+23])
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/typing-gadts/pr10907.ml[11,157+16]..[11,157+17])
+                    Ppat_var "x" (testsuite/tests/typing-gadts/pr10907.ml[11,157+16]..[11,157+17])
+                  expression (testsuite/tests/typing-gadts/pr10907.ml[11,157+21]..[11,157+22])
+                    Pexp_ident "x" (testsuite/tests/typing-gadts/pr10907.ml[11,157+21]..[11,157+22])
+                expression (testsuite/tests/typing-gadts/pr10907.ml[11,157+25]..[11,157+37])
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/typing-gadts/pr10907.ml[11,157+30]..[11,157+31])
+                    Ppat_var "x" (testsuite/tests/typing-gadts/pr10907.ml[11,157+30]..[11,157+31])
+                  expression (testsuite/tests/typing-gadts/pr10907.ml[11,157+35]..[11,157+36])
+                    Pexp_ident "x" (testsuite/tests/typing-gadts/pr10907.ml[11,157+35]..[11,157+36])
+              ]
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[12,198+0]..[14,242+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-gadts/pr10907.ml[12,198+9]..[14,242+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-gadts/pr10907.ml[12,198+9]..[14,242+2])
+          Pexp_constant PConst_string ("\nval t : 'a t = T (<fun>, <fun>)\n",(testsuite/tests/typing-gadts/pr10907.ml[12,198+11]..[14,242+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[16,247+0]..[16,247+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-gadts/pr10907.ml[16,247+4]..[16,247+6])
+          Ppat_var "t1" (testsuite/tests/typing-gadts/pr10907.ml[16,247+4]..[16,247+6])
+        expression (testsuite/tests/typing-gadts/pr10907.ml[16,247+9]..[16,247+36])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/typing-gadts/pr10907.ml[16,247+13]..[16,247+21])
+                Ppat_construct "T" (testsuite/tests/typing-gadts/pr10907.ml[16,247+13]..[16,247+14])
+                Some
+                  []
+                  pattern (testsuite/tests/typing-gadts/pr10907.ml[16,247+15]..[16,247+21])
+                    Ppat_tuple
+                    [
+                      pattern (testsuite/tests/typing-gadts/pr10907.ml[16,247+16]..[16,247+17])
+                        Ppat_var "g" (testsuite/tests/typing-gadts/pr10907.ml[16,247+16]..[16,247+17])
+                      pattern (testsuite/tests/typing-gadts/pr10907.ml[16,247+19]..[16,247+20])
+                        Ppat_var "h" (testsuite/tests/typing-gadts/pr10907.ml[16,247+19]..[16,247+20])
+                    ]
+              expression (testsuite/tests/typing-gadts/pr10907.ml[16,247+24]..[16,247+25])
+                Pexp_ident "t" (testsuite/tests/typing-gadts/pr10907.ml[16,247+24]..[16,247+25])
+          ]
+          expression (testsuite/tests/typing-gadts/pr10907.ml[16,247+29]..[16,247+36])
+            Pexp_apply
+            expression (testsuite/tests/typing-gadts/pr10907.ml[16,247+29]..[16,247+30])
+              Pexp_ident "h" (testsuite/tests/typing-gadts/pr10907.ml[16,247+29]..[16,247+30])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/typing-gadts/pr10907.ml[16,247+31]..[16,247+36])
+                  Pexp_apply
+                  expression (testsuite/tests/typing-gadts/pr10907.ml[16,247+32]..[16,247+33])
+                    Pexp_ident "g" (testsuite/tests/typing-gadts/pr10907.ml[16,247+32]..[16,247+33])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/typing-gadts/pr10907.ml[16,247+34]..[16,247+35])
+                        Pexp_constant PConst_int (1,None)
+                  ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[17,286+0]..[19,315+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-gadts/pr10907.ml[17,286+9]..[19,315+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-gadts/pr10907.ml[17,286+9]..[19,315+2])
+          Pexp_constant PConst_string ("\nval t1 : int = 1\n",(testsuite/tests/typing-gadts/pr10907.ml[17,286+11]..[19,315+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[21,320+0]..[21,320+37])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-gadts/pr10907.ml[21,320+4]..[21,320+5])
+          Ppat_var "f" (testsuite/tests/typing-gadts/pr10907.ml[21,320+4]..[21,320+5])
+        expression (testsuite/tests/typing-gadts/pr10907.ml[21,320+6]..[21,320+37]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-gadts/pr10907.ml[21,320+6]..[21,320+7])
+            Ppat_var "x" (testsuite/tests/typing-gadts/pr10907.ml[21,320+6]..[21,320+7])
+          expression (testsuite/tests/typing-gadts/pr10907.ml[21,320+10]..[21,320+37])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/typing-gadts/pr10907.ml[21,320+14]..[21,320+22])
+                  Ppat_construct "T" (testsuite/tests/typing-gadts/pr10907.ml[21,320+14]..[21,320+15])
+                  Some
+                    []
+                    pattern (testsuite/tests/typing-gadts/pr10907.ml[21,320+16]..[21,320+22])
+                      Ppat_tuple
+                      [
+                        pattern (testsuite/tests/typing-gadts/pr10907.ml[21,320+17]..[21,320+18])
+                          Ppat_var "g" (testsuite/tests/typing-gadts/pr10907.ml[21,320+17]..[21,320+18])
+                        pattern (testsuite/tests/typing-gadts/pr10907.ml[21,320+20]..[21,320+21])
+                          Ppat_var "h" (testsuite/tests/typing-gadts/pr10907.ml[21,320+20]..[21,320+21])
+                      ]
+                expression (testsuite/tests/typing-gadts/pr10907.ml[21,320+25]..[21,320+26])
+                  Pexp_ident "t" (testsuite/tests/typing-gadts/pr10907.ml[21,320+25]..[21,320+26])
+            ]
+            expression (testsuite/tests/typing-gadts/pr10907.ml[21,320+30]..[21,320+37])
+              Pexp_apply
+              expression (testsuite/tests/typing-gadts/pr10907.ml[21,320+30]..[21,320+31])
+                Pexp_ident "h" (testsuite/tests/typing-gadts/pr10907.ml[21,320+30]..[21,320+31])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/typing-gadts/pr10907.ml[21,320+32]..[21,320+37])
+                    Pexp_apply
+                    expression (testsuite/tests/typing-gadts/pr10907.ml[21,320+33]..[21,320+34])
+                      Pexp_ident "g" (testsuite/tests/typing-gadts/pr10907.ml[21,320+33]..[21,320+34])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/typing-gadts/pr10907.ml[21,320+35]..[21,320+36])
+                          Pexp_ident "x" (testsuite/tests/typing-gadts/pr10907.ml[21,320+35]..[21,320+36])
+                    ]
+              ]
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[22,360+0]..[24,397+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-gadts/pr10907.ml[22,360+9]..[24,397+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-gadts/pr10907.ml[22,360+9]..[24,397+2])
+          Pexp_constant PConst_string ("\nval f : 'a -> 'a = <fun>\n",(testsuite/tests/typing-gadts/pr10907.ml[22,360+11]..[24,397+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[29,473+0]..[29,473+43])
+    Pstr_type Rec
+    [
+      type_declaration "iso" (testsuite/tests/typing-gadts/pr10907.ml[29,473+14]..[29,473+17]) (testsuite/tests/typing-gadts/pr10907.ml[29,473+0]..[29,473+43])
+        ptype_params =
+          [
+            core_type (testsuite/tests/typing-gadts/pr10907.ml[29,473+6]..[29,473+8])
+              Ptyp_var a
+            core_type (testsuite/tests/typing-gadts/pr10907.ml[29,473+10]..[29,473+12])
+              Ptyp_var b
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (testsuite/tests/typing-gadts/pr10907.ml[29,473+20]..[29,473+43])
+              Ptyp_tuple
+              [
+                core_type (testsuite/tests/typing-gadts/pr10907.ml[29,473+21]..[29,473+29])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (testsuite/tests/typing-gadts/pr10907.ml[29,473+21]..[29,473+23])
+                    Ptyp_var a
+                  core_type (testsuite/tests/typing-gadts/pr10907.ml[29,473+27]..[29,473+29])
+                    Ptyp_var b
+                core_type (testsuite/tests/typing-gadts/pr10907.ml[29,473+34]..[29,473+42])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (testsuite/tests/typing-gadts/pr10907.ml[29,473+34]..[29,473+36])
+                    Ptyp_var b
+                  core_type (testsuite/tests/typing-gadts/pr10907.ml[29,473+40]..[29,473+42])
+                    Ptyp_var a
+              ]
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[32,548+0]..[32,548+52])
+    Pstr_type Rec
+    [
+      type_declaration "some_iso" (testsuite/tests/typing-gadts/pr10907.ml[32,548+8]..[32,548+16]) (testsuite/tests/typing-gadts/pr10907.ml[32,548+0]..[32,548+52])
+        ptype_params =
+          [
+            core_type (testsuite/tests/typing-gadts/pr10907.ml[32,548+5]..[32,548+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (testsuite/tests/typing-gadts/pr10907.ml[32,548+19]..[32,548+52])
+                "Iso" (testsuite/tests/typing-gadts/pr10907.ml[32,548+19]..[32,548+22])
+                [
+                  core_type (testsuite/tests/typing-gadts/pr10907.ml[32,548+25]..[32,548+37])
+                    Ptyp_constr "iso" (testsuite/tests/typing-gadts/pr10907.ml[32,548+34]..[32,548+37])
+                    [
+                      core_type (testsuite/tests/typing-gadts/pr10907.ml[32,548+26]..[32,548+28])
+                        Ptyp_var a
+                      core_type (testsuite/tests/typing-gadts/pr10907.ml[32,548+30]..[32,548+32])
+                        Ptyp_var b
+                    ]
+                ]
+                Some
+                  core_type (testsuite/tests/typing-gadts/pr10907.ml[32,548+41]..[32,548+52])
+                    Ptyp_constr "some_iso" (testsuite/tests/typing-gadts/pr10907.ml[32,548+44]..[32,548+52])
+                    [
+                      core_type (testsuite/tests/typing-gadts/pr10907.ml[32,548+41]..[32,548+43])
+                        Ptyp_var a
+                    ]
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[33,601+0]..[36,710+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-gadts/pr10907.ml[33,601+9]..[36,710+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-gadts/pr10907.ml[33,601+9]..[36,710+2])
+          Pexp_constant PConst_string ("\ntype ('a, 'b) iso = ('a -> 'b) * ('b -> 'a)\ntype 'a some_iso = Iso : ('a, 'b) iso -> 'a some_iso\n",(testsuite/tests/typing-gadts/pr10907.ml[33,601+11]..[36,710+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[39,756+0]..[40,783+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-gadts/pr10907.ml[39,756+4]..[39,756+24]) ghost
+          Ppat_constraint
+          pattern (testsuite/tests/typing-gadts/pr10907.ml[39,756+4]..[39,756+5])
+            Ppat_var "t" (testsuite/tests/typing-gadts/pr10907.ml[39,756+4]..[39,756+5])
+          core_type (testsuite/tests/typing-gadts/pr10907.ml[39,756+8]..[39,756+24]) ghost
+            Ptyp_poly 'a
+            core_type (testsuite/tests/typing-gadts/pr10907.ml[39,756+13]..[39,756+24])
+              Ptyp_constr "some_iso" (testsuite/tests/typing-gadts/pr10907.ml[39,756+16]..[39,756+24])
+              [
+                core_type (testsuite/tests/typing-gadts/pr10907.ml[39,756+13]..[39,756+15])
+                  Ptyp_var a
+              ]
+        expression (testsuite/tests/typing-gadts/pr10907.ml[40,783+2]..[40,783+34])
+          Pexp_construct "Iso" (testsuite/tests/typing-gadts/pr10907.ml[40,783+2]..[40,783+5])
+          Some
+            expression (testsuite/tests/typing-gadts/pr10907.ml[40,783+6]..[40,783+34])
+              Pexp_tuple
+              [
+                expression (testsuite/tests/typing-gadts/pr10907.ml[40,783+7]..[40,783+19])
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/typing-gadts/pr10907.ml[40,783+12]..[40,783+13])
+                    Ppat_var "x" (testsuite/tests/typing-gadts/pr10907.ml[40,783+12]..[40,783+13])
+                  expression (testsuite/tests/typing-gadts/pr10907.ml[40,783+17]..[40,783+18])
+                    Pexp_ident "x" (testsuite/tests/typing-gadts/pr10907.ml[40,783+17]..[40,783+18])
+                expression (testsuite/tests/typing-gadts/pr10907.ml[40,783+21]..[40,783+33])
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/typing-gadts/pr10907.ml[40,783+26]..[40,783+27])
+                    Ppat_var "x" (testsuite/tests/typing-gadts/pr10907.ml[40,783+26]..[40,783+27])
+                  expression (testsuite/tests/typing-gadts/pr10907.ml[40,783+31]..[40,783+32])
+                    Pexp_ident "x" (testsuite/tests/typing-gadts/pr10907.ml[40,783+31]..[40,783+32])
+              ]
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[41,818+0]..[43,871+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-gadts/pr10907.ml[41,818+9]..[43,871+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-gadts/pr10907.ml[41,818+9]..[43,871+2])
+          Pexp_constant PConst_string ("\nval t : 'a some_iso = Iso (<fun>, <fun>)\n",(testsuite/tests/typing-gadts/pr10907.ml[41,818+11]..[43,871+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[45,876+0]..[46,922+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-gadts/pr10907.ml[45,876+4]..[45,876+34]) ghost
+          Ppat_constraint
+          pattern (testsuite/tests/typing-gadts/pr10907.ml[45,876+4]..[45,876+16])
+            Ppat_var "unsound_cast" (testsuite/tests/typing-gadts/pr10907.ml[45,876+4]..[45,876+16])
+          core_type (testsuite/tests/typing-gadts/pr10907.ml[45,876+19]..[45,876+34]) ghost
+            Ptyp_poly 'a 'b
+            core_type (testsuite/tests/typing-gadts/pr10907.ml[45,876+26]..[45,876+34])
+              Ptyp_arrow
+              Nolabel
+              core_type (testsuite/tests/typing-gadts/pr10907.ml[45,876+26]..[45,876+28])
+                Ptyp_var a
+              core_type (testsuite/tests/typing-gadts/pr10907.ml[45,876+32]..[45,876+34])
+                Ptyp_var b
+        expression (testsuite/tests/typing-gadts/pr10907.ml[45,876+37]..[46,922+36])
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-gadts/pr10907.ml[45,876+41]..[45,876+42])
+            Ppat_var "x" (testsuite/tests/typing-gadts/pr10907.ml[45,876+41]..[45,876+42])
+          expression (testsuite/tests/typing-gadts/pr10907.ml[46,922+2]..[46,922+36])
+            Pexp_match
+            expression (testsuite/tests/typing-gadts/pr10907.ml[46,922+8]..[46,922+9])
+              Pexp_ident "t" (testsuite/tests/typing-gadts/pr10907.ml[46,922+8]..[46,922+9])
+            [
+              <case>
+                pattern (testsuite/tests/typing-gadts/pr10907.ml[46,922+15]..[46,922+25])
+                  Ppat_construct "Iso" (testsuite/tests/typing-gadts/pr10907.ml[46,922+15]..[46,922+18])
+                  Some
+                    []
+                    pattern (testsuite/tests/typing-gadts/pr10907.ml[46,922+19]..[46,922+25])
+                      Ppat_tuple
+                      [
+                        pattern (testsuite/tests/typing-gadts/pr10907.ml[46,922+20]..[46,922+21])
+                          Ppat_var "g" (testsuite/tests/typing-gadts/pr10907.ml[46,922+20]..[46,922+21])
+                        pattern (testsuite/tests/typing-gadts/pr10907.ml[46,922+23]..[46,922+24])
+                          Ppat_var "h" (testsuite/tests/typing-gadts/pr10907.ml[46,922+23]..[46,922+24])
+                      ]
+                expression (testsuite/tests/typing-gadts/pr10907.ml[46,922+29]..[46,922+36])
+                  Pexp_apply
+                  expression (testsuite/tests/typing-gadts/pr10907.ml[46,922+29]..[46,922+30])
+                    Pexp_ident "h" (testsuite/tests/typing-gadts/pr10907.ml[46,922+29]..[46,922+30])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/typing-gadts/pr10907.ml[46,922+31]..[46,922+36])
+                        Pexp_apply
+                        expression (testsuite/tests/typing-gadts/pr10907.ml[46,922+32]..[46,922+33])
+                          Pexp_ident "g" (testsuite/tests/typing-gadts/pr10907.ml[46,922+32]..[46,922+33])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/typing-gadts/pr10907.ml[46,922+34]..[46,922+35])
+                              Pexp_ident "x" (testsuite/tests/typing-gadts/pr10907.ml[46,922+34]..[46,922+35])
+                        ]
+                  ]
+            ]
+    ]
+  structure_item (testsuite/tests/typing-gadts/pr10907.ml[47,959+0]..[53,1188+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-gadts/pr10907.ml[47,959+9]..[53,1188+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-gadts/pr10907.ml[47,959+9]..[53,1188+2])
+          Pexp_constant PConst_string ("\nLines 1-2, characters 37-36:\n1 | .....................................fun x ->\n2 |   match t with Iso (g, h) -> h (g x)\nError: This definition has type 'c. 'c -> 'c which is less general than\n         'a 'b. 'a -> 'b\n",(testsuite/tests/typing-gadts/pr10907.ml[47,959+11]..[53,1188+0]),Some "")
+    ]
+]
+

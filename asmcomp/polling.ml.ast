@@ -1,0 +1,3041 @@
+[
+  structure_item (asmcomp/polling.ml[20,1387+0]..[20,1387+9])
+    Pstr_open Fresh
+    module_expr (asmcomp/polling.ml[20,1387+5]..[20,1387+9])
+      Pmod_ident "Mach" (asmcomp/polling.ml[20,1387+5]..[20,1387+9])
+  structure_item (asmcomp/polling.ml[21,1397+0]..[21,1397+11])
+    Pstr_open Fresh
+    module_expr (asmcomp/polling.ml[21,1397+5]..[21,1397+11])
+      Pmod_ident "Format" (asmcomp/polling.ml[21,1397+5]..[21,1397+11])
+  structure_item (asmcomp/polling.ml[23,1410+0]..[23,1410+24])
+    Pstr_module
+    "Int" (asmcomp/polling.ml[23,1410+7]..[23,1410+10])
+      module_expr (asmcomp/polling.ml[23,1410+13]..[23,1410+24])
+        Pmod_ident "Numbers.Int" (asmcomp/polling.ml[23,1410+13]..[23,1410+24])
+  structure_item (asmcomp/polling.ml[24,1435+0]..[24,1435+34])
+    Pstr_module
+    "String" (asmcomp/polling.ml[24,1435+7]..[24,1435+13])
+      module_expr (asmcomp/polling.ml[24,1435+16]..[24,1435+34])
+        Pmod_ident "Misc.Stdlib.String" (asmcomp/polling.ml[24,1435+16]..[24,1435+34])
+  structure_item (asmcomp/polling.ml[26,1471+0]..[28,1563+48])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[26,1471+4]..[26,1471+37])
+          Ppat_var "function_is_assumed_to_never_poll" (asmcomp/polling.ml[26,1471+4]..[26,1471+37])
+        expression (asmcomp/polling.ml[26,1471+38]..[28,1563+48]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/polling.ml[26,1471+38]..[26,1471+42])
+            Ppat_var "func" (asmcomp/polling.ml[26,1471+38]..[26,1471+42])
+          expression (asmcomp/polling.ml[27,1516+2]..[28,1563+48])
+            Pexp_apply
+            expression (asmcomp/polling.ml[28,1563+2]..[28,1563+4])
+              Pexp_ident "||" (asmcomp/polling.ml[28,1563+2]..[28,1563+4])
+            [
+              <arg>
+              Nolabel
+                expression (asmcomp/polling.ml[27,1516+2]..[27,1516+46])
+                  Pexp_apply
+                  expression (asmcomp/polling.ml[27,1516+2]..[27,1516+20])
+                    Pexp_ident "String.starts_with" (asmcomp/polling.ml[27,1516+2]..[27,1516+20])
+                  [
+                    <arg>
+                    Labelled "prefix"
+                      expression (asmcomp/polling.ml[27,1516+29]..[27,1516+41])
+                        Pexp_constant PConst_string("caml_apply",(asmcomp/polling.ml[27,1516+30]..[27,1516+40]),None)
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/polling.ml[27,1516+42]..[27,1516+46])
+                        Pexp_ident "func" (asmcomp/polling.ml[27,1516+42]..[27,1516+46])
+                  ]
+              <arg>
+              Nolabel
+                expression (asmcomp/polling.ml[28,1563+5]..[28,1563+48])
+                  Pexp_apply
+                  expression (asmcomp/polling.ml[28,1563+5]..[28,1563+23])
+                    Pexp_ident "String.starts_with" (asmcomp/polling.ml[28,1563+5]..[28,1563+23])
+                  [
+                    <arg>
+                    Labelled "prefix"
+                      expression (asmcomp/polling.ml[28,1563+32]..[28,1563+43])
+                        Pexp_constant PConst_string("caml_send",(asmcomp/polling.ml[28,1563+33]..[28,1563+42]),None)
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/polling.ml[28,1563+44]..[28,1563+48])
+                        Pexp_ident "func" (asmcomp/polling.ml[28,1563+44]..[28,1563+48])
+                  ]
+            ]
+    ]
+  structure_item (asmcomp/polling.ml[31,1672+0]..[31,1672+65])
+    Pstr_type Rec
+    [
+      type_declaration "polling_point" (asmcomp/polling.ml[31,1672+5]..[31,1672+18]) (asmcomp/polling.ml[31,1672+0]..[31,1672+65])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/polling.ml[31,1672+21]..[31,1672+26])
+                "Alloc" (asmcomp/polling.ml[31,1672+21]..[31,1672+26])
+                []
+                None
+              (asmcomp/polling.ml[31,1672+27]..[31,1672+33])
+                "Poll" (asmcomp/polling.ml[31,1672+29]..[31,1672+33])
+                []
+                None
+              (asmcomp/polling.ml[31,1672+34]..[31,1672+49])
+                "Function_call" (asmcomp/polling.ml[31,1672+36]..[31,1672+49])
+                []
+                None
+              (asmcomp/polling.ml[31,1672+50]..[31,1672+65])
+                "External_call" (asmcomp/polling.ml[31,1672+52]..[31,1672+65])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/polling.ml[32,1738+0]..[32,1738+61])
+    Pstr_type Rec
+    [
+      type_declaration "error" (asmcomp/polling.ml[32,1738+5]..[32,1738+10]) (asmcomp/polling.ml[32,1738+0]..[32,1738+61])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/polling.ml[32,1738+13]..[32,1738+61])
+                "Poll_error" (asmcomp/polling.ml[32,1738+13]..[32,1738+23])
+                [
+                  core_type (asmcomp/polling.ml[32,1738+27]..[32,1738+61])
+                    Ptyp_constr "list" (asmcomp/polling.ml[32,1738+57]..[32,1738+61])
+                    [
+                      core_type (asmcomp/polling.ml[32,1738+28]..[32,1738+55])
+                        Ptyp_tuple
+                        [
+                          core_type (asmcomp/polling.ml[32,1738+28]..[32,1738+41])
+                            Ptyp_constr "polling_point" (asmcomp/polling.ml[32,1738+28]..[32,1738+41])
+                            []
+                          core_type (asmcomp/polling.ml[32,1738+44]..[32,1738+55])
+                            Ptyp_constr "Debuginfo.t" (asmcomp/polling.ml[32,1738+44]..[32,1738+55])
+                            []
+                        ]
+                    ]
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/polling.ml[34,1801+0]..[34,1801+24])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (asmcomp/polling.ml[34,1801+0]..[34,1801+24])
+          pext_name = "Error"
+          pext_kind =
+            Pext_decl
+              [
+                core_type (asmcomp/polling.ml[34,1801+19]..[34,1801+24])
+                  Ptyp_constr "error" (asmcomp/polling.ml[34,1801+19]..[34,1801+24])
+                  []
+              ]
+              None
+  structure_item (asmcomp/polling.ml[49,2312+0]..[49,2312+35])
+    Pstr_type Rec
+    [
+      type_declaration "unsafe_or_safe" (asmcomp/polling.ml[49,2312+5]..[49,2312+19]) (asmcomp/polling.ml[49,2312+0]..[49,2312+35])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/polling.ml[49,2312+22]..[49,2312+28])
+                "Unsafe" (asmcomp/polling.ml[49,2312+22]..[49,2312+28])
+                []
+                None
+              (asmcomp/polling.ml[49,2312+29]..[49,2312+35])
+                "Safe" (asmcomp/polling.ml[49,2312+31]..[49,2312+35])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/polling.ml[51,2349+0]..[69,2702+3])
+    Pstr_module
+    "Unsafe_or_safe" (asmcomp/polling.ml[51,2349+7]..[51,2349+21])
+      module_expr (asmcomp/polling.ml[51,2349+24]..[69,2702+3])
+        Pmod_structure
+        [
+          structure_item (asmcomp/polling.ml[52,2380+2]..[52,2380+25])
+            Pstr_type Rec
+            [
+              type_declaration "t" (asmcomp/polling.ml[52,2380+7]..[52,2380+8]) (asmcomp/polling.ml[52,2380+2]..[52,2380+25])
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  Some
+                    core_type (asmcomp/polling.ml[52,2380+11]..[52,2380+25])
+                      Ptyp_constr "unsafe_or_safe" (asmcomp/polling.ml[52,2380+11]..[52,2380+25])
+                      []
+            ]
+          structure_item (asmcomp/polling.ml[54,2407+2]..[54,2407+18])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (asmcomp/polling.ml[54,2407+6]..[54,2407+9])
+                  Ppat_var "bot" (asmcomp/polling.ml[54,2407+6]..[54,2407+9])
+                expression (asmcomp/polling.ml[54,2407+12]..[54,2407+18])
+                  Pexp_construct "Unsafe" (asmcomp/polling.ml[54,2407+12]..[54,2407+18])
+                  None
+            ]
+          structure_item (asmcomp/polling.ml[56,2427+2]..[61,2537+24])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (asmcomp/polling.ml[56,2427+6]..[56,2427+10])
+                  Ppat_var "join" (asmcomp/polling.ml[56,2427+6]..[56,2427+10])
+                expression (asmcomp/polling.ml[56,2427+11]..[61,2537+24]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (asmcomp/polling.ml[56,2427+11]..[56,2427+13])
+                    Ppat_var "t1" (asmcomp/polling.ml[56,2427+11]..[56,2427+13])
+                  expression (asmcomp/polling.ml[56,2427+14]..[61,2537+24]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (asmcomp/polling.ml[56,2427+14]..[56,2427+16])
+                      Ppat_var "t2" (asmcomp/polling.ml[56,2427+14]..[56,2427+16])
+                    expression (asmcomp/polling.ml[57,2446+4]..[61,2537+24])
+                      Pexp_match
+                      expression (asmcomp/polling.ml[57,2446+10]..[57,2446+16])
+                        Pexp_tuple
+                        [
+                          expression (asmcomp/polling.ml[57,2446+10]..[57,2446+12])
+                            Pexp_ident "t1" (asmcomp/polling.ml[57,2446+10]..[57,2446+12])
+                          expression (asmcomp/polling.ml[57,2446+14]..[57,2446+16])
+                            Pexp_ident "t2" (asmcomp/polling.ml[57,2446+14]..[57,2446+16])
+                        ]
+                      [
+                        <case>
+                          pattern (asmcomp/polling.ml[58,2468+6]..[60,2508+18])
+                            Ppat_or
+                            pattern (asmcomp/polling.ml[58,2468+6]..[59,2489+18])
+                              Ppat_or
+                              pattern (asmcomp/polling.ml[58,2468+6]..[58,2468+20])
+                                Ppat_tuple
+                                [
+                                  pattern (asmcomp/polling.ml[58,2468+6]..[58,2468+12])
+                                    Ppat_construct "Unsafe" (asmcomp/polling.ml[58,2468+6]..[58,2468+12])
+                                    None
+                                  pattern (asmcomp/polling.ml[58,2468+14]..[58,2468+20])
+                                    Ppat_construct "Unsafe" (asmcomp/polling.ml[58,2468+14]..[58,2468+20])
+                                    None
+                                ]
+                              pattern (asmcomp/polling.ml[59,2489+6]..[59,2489+18])
+                                Ppat_tuple
+                                [
+                                  pattern (asmcomp/polling.ml[59,2489+6]..[59,2489+12])
+                                    Ppat_construct "Unsafe" (asmcomp/polling.ml[59,2489+6]..[59,2489+12])
+                                    None
+                                  pattern (asmcomp/polling.ml[59,2489+14]..[59,2489+18])
+                                    Ppat_construct "Safe" (asmcomp/polling.ml[59,2489+14]..[59,2489+18])
+                                    None
+                                ]
+                            pattern (asmcomp/polling.ml[60,2508+6]..[60,2508+18])
+                              Ppat_tuple
+                              [
+                                pattern (asmcomp/polling.ml[60,2508+6]..[60,2508+10])
+                                  Ppat_construct "Safe" (asmcomp/polling.ml[60,2508+6]..[60,2508+10])
+                                  None
+                                pattern (asmcomp/polling.ml[60,2508+12]..[60,2508+18])
+                                  Ppat_construct "Unsafe" (asmcomp/polling.ml[60,2508+12]..[60,2508+18])
+                                  None
+                              ]
+                          expression (asmcomp/polling.ml[60,2508+22]..[60,2508+28])
+                            Pexp_construct "Unsafe" (asmcomp/polling.ml[60,2508+22]..[60,2508+28])
+                            None
+                        <case>
+                          pattern (asmcomp/polling.ml[61,2537+6]..[61,2537+16])
+                            Ppat_tuple
+                            [
+                              pattern (asmcomp/polling.ml[61,2537+6]..[61,2537+10])
+                                Ppat_construct "Safe" (asmcomp/polling.ml[61,2537+6]..[61,2537+10])
+                                None
+                              pattern (asmcomp/polling.ml[61,2537+12]..[61,2537+16])
+                                Ppat_construct "Safe" (asmcomp/polling.ml[61,2537+12]..[61,2537+16])
+                                None
+                            ]
+                          expression (asmcomp/polling.ml[61,2537+20]..[61,2537+24])
+                            Pexp_construct "Safe" (asmcomp/polling.ml[61,2537+20]..[61,2537+24])
+                            None
+                      ]
+            ]
+          structure_item (asmcomp/polling.ml[63,2563+2]..[68,2674+27])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (asmcomp/polling.ml[63,2563+6]..[63,2563+15])
+                  Ppat_var "lessequal" (asmcomp/polling.ml[63,2563+6]..[63,2563+15])
+                expression (asmcomp/polling.ml[63,2563+16]..[68,2674+27]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (asmcomp/polling.ml[63,2563+16]..[63,2563+18])
+                    Ppat_var "t1" (asmcomp/polling.ml[63,2563+16]..[63,2563+18])
+                  expression (asmcomp/polling.ml[63,2563+19]..[68,2674+27]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (asmcomp/polling.ml[63,2563+19]..[63,2563+21])
+                      Ppat_var "t2" (asmcomp/polling.ml[63,2563+19]..[63,2563+21])
+                    expression (asmcomp/polling.ml[64,2587+4]..[68,2674+27])
+                      Pexp_match
+                      expression (asmcomp/polling.ml[64,2587+10]..[64,2587+16])
+                        Pexp_tuple
+                        [
+                          expression (asmcomp/polling.ml[64,2587+10]..[64,2587+12])
+                            Pexp_ident "t1" (asmcomp/polling.ml[64,2587+10]..[64,2587+12])
+                          expression (asmcomp/polling.ml[64,2587+14]..[64,2587+16])
+                            Pexp_ident "t2" (asmcomp/polling.ml[64,2587+14]..[64,2587+16])
+                        ]
+                      [
+                        <case>
+                          pattern (asmcomp/polling.ml[65,2609+6]..[67,2649+16])
+                            Ppat_or
+                            pattern (asmcomp/polling.ml[65,2609+6]..[66,2630+18])
+                              Ppat_or
+                              pattern (asmcomp/polling.ml[65,2609+6]..[65,2609+20])
+                                Ppat_tuple
+                                [
+                                  pattern (asmcomp/polling.ml[65,2609+6]..[65,2609+12])
+                                    Ppat_construct "Unsafe" (asmcomp/polling.ml[65,2609+6]..[65,2609+12])
+                                    None
+                                  pattern (asmcomp/polling.ml[65,2609+14]..[65,2609+20])
+                                    Ppat_construct "Unsafe" (asmcomp/polling.ml[65,2609+14]..[65,2609+20])
+                                    None
+                                ]
+                              pattern (asmcomp/polling.ml[66,2630+6]..[66,2630+18])
+                                Ppat_tuple
+                                [
+                                  pattern (asmcomp/polling.ml[66,2630+6]..[66,2630+12])
+                                    Ppat_construct "Unsafe" (asmcomp/polling.ml[66,2630+6]..[66,2630+12])
+                                    None
+                                  pattern (asmcomp/polling.ml[66,2630+14]..[66,2630+18])
+                                    Ppat_construct "Safe" (asmcomp/polling.ml[66,2630+14]..[66,2630+18])
+                                    None
+                                ]
+                            pattern (asmcomp/polling.ml[67,2649+6]..[67,2649+16])
+                              Ppat_tuple
+                              [
+                                pattern (asmcomp/polling.ml[67,2649+6]..[67,2649+10])
+                                  Ppat_construct "Safe" (asmcomp/polling.ml[67,2649+6]..[67,2649+10])
+                                  None
+                                pattern (asmcomp/polling.ml[67,2649+12]..[67,2649+16])
+                                  Ppat_construct "Safe" (asmcomp/polling.ml[67,2649+12]..[67,2649+16])
+                                  None
+                              ]
+                          expression (asmcomp/polling.ml[67,2649+20]..[67,2649+24])
+                            Pexp_construct "true" (asmcomp/polling.ml[67,2649+20]..[67,2649+24])
+                            None
+                        <case>
+                          pattern (asmcomp/polling.ml[68,2674+6]..[68,2674+18])
+                            Ppat_tuple
+                            [
+                              pattern (asmcomp/polling.ml[68,2674+6]..[68,2674+10])
+                                Ppat_construct "Safe" (asmcomp/polling.ml[68,2674+6]..[68,2674+10])
+                                None
+                              pattern (asmcomp/polling.ml[68,2674+12]..[68,2674+18])
+                                Ppat_construct "Unsafe" (asmcomp/polling.ml[68,2674+12]..[68,2674+18])
+                                None
+                            ]
+                          expression (asmcomp/polling.ml[68,2674+22]..[68,2674+27])
+                            Pexp_construct "false" (asmcomp/polling.ml[68,2674+22]..[68,2674+27])
+                            None
+                      ]
+            ]
+        ]
+  structure_item (asmcomp/polling.ml[71,2707+0]..[71,2707+62])
+    Pstr_module
+    "PolledLoopsAnalysis" (asmcomp/polling.ml[71,2707+7]..[71,2707+26])
+      module_expr (asmcomp/polling.ml[71,2707+29]..[71,2707+62])
+        Pmod_apply
+        module_expr (asmcomp/polling.ml[71,2707+29]..[71,2707+46])
+          Pmod_ident "Dataflow.Backward" (asmcomp/polling.ml[71,2707+29]..[71,2707+46])
+        module_expr (asmcomp/polling.ml[71,2707+47]..[71,2707+61])
+          Pmod_ident "Unsafe_or_safe" (asmcomp/polling.ml[71,2707+47]..[71,2707+61])
+  structure_item (asmcomp/polling.ml[73,2771+0]..[89,3318+69])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[73,2771+4]..[73,2771+25])
+          Ppat_var "polled_loops_analysis" (asmcomp/polling.ml[73,2771+4]..[73,2771+25])
+        expression (asmcomp/polling.ml[73,2771+26]..[89,3318+69]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/polling.ml[73,2771+26]..[73,2771+33])
+            Ppat_var "funbody" (asmcomp/polling.ml[73,2771+26]..[73,2771+33])
+          expression (asmcomp/polling.ml[74,2807+2]..[89,3318+69])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (asmcomp/polling.ml[74,2807+6]..[74,2807+14])
+                  Ppat_var "transfer" (asmcomp/polling.ml[74,2807+6]..[74,2807+14])
+                expression (asmcomp/polling.ml[74,2807+15]..[85,3161+21]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (asmcomp/polling.ml[74,2807+15]..[74,2807+16])
+                    Ppat_var "i" (asmcomp/polling.ml[74,2807+15]..[74,2807+16])
+                  expression (asmcomp/polling.ml[74,2807+17]..[85,3161+21]) ghost
+                    Pexp_fun
+                    Labelled "next"
+                    None
+                    pattern (asmcomp/polling.ml[74,2807+18]..[74,2807+22])
+                      Ppat_var "next" (asmcomp/polling.ml[74,2807+18]..[74,2807+22])
+                    expression (asmcomp/polling.ml[74,2807+23]..[85,3161+21]) ghost
+                      Pexp_fun
+                      Labelled "exn"
+                      None
+                      pattern (asmcomp/polling.ml[74,2807+24]..[74,2807+27])
+                        Ppat_var "exn" (asmcomp/polling.ml[74,2807+24]..[74,2807+27])
+                      expression (asmcomp/polling.ml[75,2837+4]..[85,3161+21])
+                        Pexp_match
+                        expression (asmcomp/polling.ml[75,2837+10]..[75,2837+16])
+                          Pexp_field
+                          expression (asmcomp/polling.ml[75,2837+10]..[75,2837+11])
+                            Pexp_ident "i" (asmcomp/polling.ml[75,2837+10]..[75,2837+11])
+                          "desc" (asmcomp/polling.ml[75,2837+12]..[75,2837+16])
+                        [
+                          <case>
+                            pattern (asmcomp/polling.ml[76,2859+6]..[76,2859+10])
+                              Ppat_construct "Iend" (asmcomp/polling.ml[76,2859+6]..[76,2859+10])
+                              None
+                            expression (asmcomp/polling.ml[76,2859+14]..[76,2859+18])
+                              Pexp_ident "next" (asmcomp/polling.ml[76,2859+14]..[76,2859+18])
+                          <case>
+                            pattern (asmcomp/polling.ml[77,2878+6]..[78,2909+43])
+                              Ppat_or
+                              pattern (asmcomp/polling.ml[77,2878+6]..[77,2878+30])
+                                Ppat_construct "Iop" (asmcomp/polling.ml[77,2878+6]..[77,2878+9])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[77,2878+10]..[77,2878+30])
+                                    Ppat_or
+                                    pattern (asmcomp/polling.ml[77,2878+11]..[77,2878+19])
+                                      Ppat_construct "Ialloc" (asmcomp/polling.ml[77,2878+11]..[77,2878+17])
+                                      Some
+                                        []
+                                        pattern (asmcomp/polling.ml[77,2878+18]..[77,2878+19])
+                                          Ppat_any
+                                    pattern (asmcomp/polling.ml[77,2878+22]..[77,2878+29])
+                                      Ppat_construct "Ipoll" (asmcomp/polling.ml[77,2878+22]..[77,2878+27])
+                                      Some
+                                        []
+                                        pattern (asmcomp/polling.ml[77,2878+28]..[77,2878+29])
+                                          Ppat_any
+                              pattern (asmcomp/polling.ml[78,2909+6]..[78,2909+43])
+                                Ppat_construct "Iop" (asmcomp/polling.ml[78,2909+6]..[78,2909+9])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[78,2909+10]..[78,2909+43])
+                                    Ppat_or
+                                    pattern (asmcomp/polling.ml[78,2909+11]..[78,2909+24])
+                                      Ppat_construct "Itailcall_ind" (asmcomp/polling.ml[78,2909+11]..[78,2909+24])
+                                      None
+                                    pattern (asmcomp/polling.ml[78,2909+27]..[78,2909+42])
+                                      Ppat_construct "Itailcall_imm" (asmcomp/polling.ml[78,2909+27]..[78,2909+40])
+                                      Some
+                                        []
+                                        pattern (asmcomp/polling.ml[78,2909+41]..[78,2909+42])
+                                          Ppat_any
+                            expression (asmcomp/polling.ml[78,2909+47]..[78,2909+51])
+                              Pexp_construct "Safe" (asmcomp/polling.ml[78,2909+47]..[78,2909+51])
+                              None
+                          <case>
+                            pattern (asmcomp/polling.ml[79,2961+6]..[79,2961+12])
+                              Ppat_construct "Iop" (asmcomp/polling.ml[79,2961+6]..[79,2961+9])
+                              Some
+                                []
+                                pattern (asmcomp/polling.ml[79,2961+10]..[79,2961+12])
+                                  Ppat_var "op" (asmcomp/polling.ml[79,2961+10]..[79,2961+12])
+                            expression (asmcomp/polling.ml[80,2977+6]..[82,3049+15])
+                              Pexp_ifthenelse
+                              expression (asmcomp/polling.ml[80,2977+9]..[80,2977+31])
+                                Pexp_apply
+                                expression (asmcomp/polling.ml[80,2977+9]..[80,2977+28])
+                                  Pexp_ident "operation_can_raise" (asmcomp/polling.ml[80,2977+9]..[80,2977+28])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[80,2977+29]..[80,2977+31])
+                                      Pexp_ident "op" (asmcomp/polling.ml[80,2977+29]..[80,2977+31])
+                                ]
+                              expression (asmcomp/polling.ml[81,3009+11]..[81,3009+39])
+                                Pexp_apply
+                                expression (asmcomp/polling.ml[81,3009+11]..[81,3009+30])
+                                  Pexp_ident "Unsafe_or_safe.join" (asmcomp/polling.ml[81,3009+11]..[81,3009+30])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[81,3009+31]..[81,3009+35])
+                                      Pexp_ident "next" (asmcomp/polling.ml[81,3009+31]..[81,3009+35])
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[81,3009+36]..[81,3009+39])
+                                      Pexp_ident "exn" (asmcomp/polling.ml[81,3009+36]..[81,3009+39])
+                                ]
+                              Some
+                                expression (asmcomp/polling.ml[82,3049+11]..[82,3049+15])
+                                  Pexp_ident "next" (asmcomp/polling.ml[82,3049+11]..[82,3049+15])
+                          <case>
+                            pattern (asmcomp/polling.ml[83,3065+6]..[83,3065+13])
+                              Ppat_construct "Ireturn" (asmcomp/polling.ml[83,3065+6]..[83,3065+13])
+                              None
+                            expression (asmcomp/polling.ml[83,3065+17]..[83,3065+21])
+                              Pexp_construct "Safe" (asmcomp/polling.ml[83,3065+17]..[83,3065+21])
+                              None
+                          <case>
+                            pattern (asmcomp/polling.ml[84,3087+6]..[84,3087+65])
+                              Ppat_or
+                              pattern (asmcomp/polling.ml[84,3087+6]..[84,3087+52])
+                                Ppat_or
+                                pattern (asmcomp/polling.ml[84,3087+6]..[84,3087+42])
+                                  Ppat_or
+                                  pattern (asmcomp/polling.ml[84,3087+6]..[84,3087+31])
+                                    Ppat_or
+                                    pattern (asmcomp/polling.ml[84,3087+6]..[84,3087+19])
+                                      Ppat_construct "Iifthenelse" (asmcomp/polling.ml[84,3087+6]..[84,3087+17])
+                                      Some
+                                        []
+                                        pattern (asmcomp/polling.ml[84,3087+18]..[84,3087+19])
+                                          Ppat_any
+                                    pattern (asmcomp/polling.ml[84,3087+22]..[84,3087+31])
+                                      Ppat_construct "Iswitch" (asmcomp/polling.ml[84,3087+22]..[84,3087+29])
+                                      Some
+                                        []
+                                        pattern (asmcomp/polling.ml[84,3087+30]..[84,3087+31])
+                                          Ppat_any
+                                  pattern (asmcomp/polling.ml[84,3087+34]..[84,3087+42])
+                                    Ppat_construct "Icatch" (asmcomp/polling.ml[84,3087+34]..[84,3087+40])
+                                    Some
+                                      []
+                                      pattern (asmcomp/polling.ml[84,3087+41]..[84,3087+42])
+                                        Ppat_any
+                                pattern (asmcomp/polling.ml[84,3087+45]..[84,3087+52])
+                                  Ppat_construct "Iexit" (asmcomp/polling.ml[84,3087+45]..[84,3087+50])
+                                  Some
+                                    []
+                                    pattern (asmcomp/polling.ml[84,3087+51]..[84,3087+52])
+                                      Ppat_any
+                              pattern (asmcomp/polling.ml[84,3087+55]..[84,3087+65])
+                                Ppat_construct "Itrywith" (asmcomp/polling.ml[84,3087+55]..[84,3087+63])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[84,3087+64]..[84,3087+65])
+                                    Ppat_any
+                            expression (asmcomp/polling.ml[84,3087+69]..[84,3087+73])
+                              Pexp_ident "next" (asmcomp/polling.ml[84,3087+69]..[84,3087+73])
+                          <case>
+                            pattern (asmcomp/polling.ml[85,3161+6]..[85,3161+14])
+                              Ppat_construct "Iraise" (asmcomp/polling.ml[85,3161+6]..[85,3161+12])
+                              Some
+                                []
+                                pattern (asmcomp/polling.ml[85,3161+13]..[85,3161+14])
+                                  Ppat_any
+                            expression (asmcomp/polling.ml[85,3161+18]..[85,3161+21])
+                              Pexp_ident "exn" (asmcomp/polling.ml[85,3161+18]..[85,3161+21])
+                        ]
+            ]
+            expression (asmcomp/polling.ml[89,3318+2]..[89,3318+69])
+              Pexp_apply
+              expression (asmcomp/polling.ml[89,3318+2]..[89,3318+5])
+                Pexp_ident "snd" (asmcomp/polling.ml[89,3318+2]..[89,3318+5])
+              [
+                <arg>
+                Nolabel
+                  expression (asmcomp/polling.ml[89,3318+6]..[89,3318+69])
+                    Pexp_apply
+                    expression (asmcomp/polling.ml[89,3318+7]..[89,3318+34])
+                      Pexp_ident "PolledLoopsAnalysis.analyze" (asmcomp/polling.ml[89,3318+7]..[89,3318+34])
+                    [
+                      <arg>
+                      Labelled "exnescape"
+                        expression (asmcomp/polling.ml[89,3318+46]..[89,3318+50])
+                          Pexp_construct "Safe" (asmcomp/polling.ml[89,3318+46]..[89,3318+50])
+                          None
+                      <arg>
+                      Labelled "transfer"
+                        expression (asmcomp/polling.ml[89,3318+52]..[89,3318+60])
+                          Pexp_ident "transfer" (asmcomp/polling.ml[89,3318+52]..[89,3318+60])
+                      <arg>
+                      Nolabel
+                        expression (asmcomp/polling.ml[89,3318+61]..[89,3318+68])
+                          Pexp_ident "funbody" (asmcomp/polling.ml[89,3318+61]..[89,3318+68])
+                    ]
+              ]
+    ]
+  structure_item (asmcomp/polling.ml[136,5363+0]..[136,5363+54])
+    Pstr_type Rec
+    [
+      type_declaration "polls_before_prtc" (asmcomp/polling.ml[136,5363+5]..[136,5363+22]) (asmcomp/polling.ml[136,5363+0]..[136,5363+54])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/polling.ml[136,5363+25]..[136,5363+39])
+                "Might_not_poll" (asmcomp/polling.ml[136,5363+25]..[136,5363+39])
+                []
+                None
+              (asmcomp/polling.ml[136,5363+40]..[136,5363+54])
+                "Always_polls" (asmcomp/polling.ml[136,5363+42]..[136,5363+54])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/polling.ml[138,5419+0]..[156,5928+3])
+    Pstr_module
+    "Polls_before_prtc" (asmcomp/polling.ml[138,5419+7]..[138,5419+24])
+      module_expr (asmcomp/polling.ml[138,5419+27]..[156,5928+3])
+        Pmod_structure
+        [
+          structure_item (asmcomp/polling.ml[139,5453+2]..[139,5453+28])
+            Pstr_type Rec
+            [
+              type_declaration "t" (asmcomp/polling.ml[139,5453+7]..[139,5453+8]) (asmcomp/polling.ml[139,5453+2]..[139,5453+28])
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  Some
+                    core_type (asmcomp/polling.ml[139,5453+11]..[139,5453+28])
+                      Ptyp_constr "polls_before_prtc" (asmcomp/polling.ml[139,5453+11]..[139,5453+28])
+                      []
+            ]
+          structure_item (asmcomp/polling.ml[141,5483+2]..[141,5483+24])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (asmcomp/polling.ml[141,5483+6]..[141,5483+9])
+                  Ppat_var "bot" (asmcomp/polling.ml[141,5483+6]..[141,5483+9])
+                expression (asmcomp/polling.ml[141,5483+12]..[141,5483+24])
+                  Pexp_construct "Always_polls" (asmcomp/polling.ml[141,5483+12]..[141,5483+24])
+                  None
+            ]
+          structure_item (asmcomp/polling.ml[143,5509+2]..[148,5675+48])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (asmcomp/polling.ml[143,5509+6]..[143,5509+10])
+                  Ppat_var "join" (asmcomp/polling.ml[143,5509+6]..[143,5509+10])
+                expression (asmcomp/polling.ml[143,5509+11]..[148,5675+48]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (asmcomp/polling.ml[143,5509+11]..[143,5509+13])
+                    Ppat_var "t1" (asmcomp/polling.ml[143,5509+11]..[143,5509+13])
+                  expression (asmcomp/polling.ml[143,5509+14]..[148,5675+48]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (asmcomp/polling.ml[143,5509+14]..[143,5509+16])
+                      Ppat_var "t2" (asmcomp/polling.ml[143,5509+14]..[143,5509+16])
+                    expression (asmcomp/polling.ml[144,5528+4]..[148,5675+48])
+                      Pexp_match
+                      expression (asmcomp/polling.ml[144,5528+10]..[144,5528+16])
+                        Pexp_tuple
+                        [
+                          expression (asmcomp/polling.ml[144,5528+10]..[144,5528+12])
+                            Pexp_ident "t1" (asmcomp/polling.ml[144,5528+10]..[144,5528+12])
+                          expression (asmcomp/polling.ml[144,5528+14]..[144,5528+16])
+                            Pexp_ident "t2" (asmcomp/polling.ml[144,5528+14]..[144,5528+16])
+                        ]
+                      [
+                        <case>
+                          pattern (asmcomp/polling.ml[145,5550+6]..[147,5622+34])
+                            Ppat_or
+                            pattern (asmcomp/polling.ml[145,5550+6]..[146,5587+34])
+                              Ppat_or
+                              pattern (asmcomp/polling.ml[145,5550+6]..[145,5550+36])
+                                Ppat_tuple
+                                [
+                                  pattern (asmcomp/polling.ml[145,5550+6]..[145,5550+20])
+                                    Ppat_construct "Might_not_poll" (asmcomp/polling.ml[145,5550+6]..[145,5550+20])
+                                    None
+                                  pattern (asmcomp/polling.ml[145,5550+22]..[145,5550+36])
+                                    Ppat_construct "Might_not_poll" (asmcomp/polling.ml[145,5550+22]..[145,5550+36])
+                                    None
+                                ]
+                              pattern (asmcomp/polling.ml[146,5587+6]..[146,5587+34])
+                                Ppat_tuple
+                                [
+                                  pattern (asmcomp/polling.ml[146,5587+6]..[146,5587+20])
+                                    Ppat_construct "Might_not_poll" (asmcomp/polling.ml[146,5587+6]..[146,5587+20])
+                                    None
+                                  pattern (asmcomp/polling.ml[146,5587+22]..[146,5587+34])
+                                    Ppat_construct "Always_polls" (asmcomp/polling.ml[146,5587+22]..[146,5587+34])
+                                    None
+                                ]
+                            pattern (asmcomp/polling.ml[147,5622+6]..[147,5622+34])
+                              Ppat_tuple
+                              [
+                                pattern (asmcomp/polling.ml[147,5622+6]..[147,5622+18])
+                                  Ppat_construct "Always_polls" (asmcomp/polling.ml[147,5622+6]..[147,5622+18])
+                                  None
+                                pattern (asmcomp/polling.ml[147,5622+20]..[147,5622+34])
+                                  Ppat_construct "Might_not_poll" (asmcomp/polling.ml[147,5622+20]..[147,5622+34])
+                                  None
+                              ]
+                          expression (asmcomp/polling.ml[147,5622+38]..[147,5622+52])
+                            Pexp_construct "Might_not_poll" (asmcomp/polling.ml[147,5622+38]..[147,5622+52])
+                            None
+                        <case>
+                          pattern (asmcomp/polling.ml[148,5675+6]..[148,5675+32])
+                            Ppat_tuple
+                            [
+                              pattern (asmcomp/polling.ml[148,5675+6]..[148,5675+18])
+                                Ppat_construct "Always_polls" (asmcomp/polling.ml[148,5675+6]..[148,5675+18])
+                                None
+                              pattern (asmcomp/polling.ml[148,5675+20]..[148,5675+32])
+                                Ppat_construct "Always_polls" (asmcomp/polling.ml[148,5675+20]..[148,5675+32])
+                                None
+                            ]
+                          expression (asmcomp/polling.ml[148,5675+36]..[148,5675+48])
+                            Pexp_construct "Always_polls" (asmcomp/polling.ml[148,5675+36]..[148,5675+48])
+                            None
+                      ]
+            ]
+          structure_item (asmcomp/polling.ml[150,5725+2]..[155,5884+43])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (asmcomp/polling.ml[150,5725+6]..[150,5725+15])
+                  Ppat_var "lessequal" (asmcomp/polling.ml[150,5725+6]..[150,5725+15])
+                expression (asmcomp/polling.ml[150,5725+16]..[155,5884+43]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (asmcomp/polling.ml[150,5725+16]..[150,5725+18])
+                    Ppat_var "t1" (asmcomp/polling.ml[150,5725+16]..[150,5725+18])
+                  expression (asmcomp/polling.ml[150,5725+19]..[155,5884+43]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (asmcomp/polling.ml[150,5725+19]..[150,5725+21])
+                      Ppat_var "t2" (asmcomp/polling.ml[150,5725+19]..[150,5725+21])
+                    expression (asmcomp/polling.ml[151,5749+4]..[155,5884+43])
+                      Pexp_match
+                      expression (asmcomp/polling.ml[151,5749+10]..[151,5749+16])
+                        Pexp_tuple
+                        [
+                          expression (asmcomp/polling.ml[151,5749+10]..[151,5749+12])
+                            Pexp_ident "t1" (asmcomp/polling.ml[151,5749+10]..[151,5749+12])
+                          expression (asmcomp/polling.ml[151,5749+14]..[151,5749+16])
+                            Pexp_ident "t2" (asmcomp/polling.ml[151,5749+14]..[151,5749+16])
+                        ]
+                      [
+                        <case>
+                          pattern (asmcomp/polling.ml[152,5771+6]..[154,5839+36])
+                            Ppat_or
+                            pattern (asmcomp/polling.ml[152,5771+6]..[153,5804+34])
+                              Ppat_or
+                              pattern (asmcomp/polling.ml[152,5771+6]..[152,5771+32])
+                                Ppat_tuple
+                                [
+                                  pattern (asmcomp/polling.ml[152,5771+6]..[152,5771+18])
+                                    Ppat_construct "Always_polls" (asmcomp/polling.ml[152,5771+6]..[152,5771+18])
+                                    None
+                                  pattern (asmcomp/polling.ml[152,5771+20]..[152,5771+32])
+                                    Ppat_construct "Always_polls" (asmcomp/polling.ml[152,5771+20]..[152,5771+32])
+                                    None
+                                ]
+                              pattern (asmcomp/polling.ml[153,5804+6]..[153,5804+34])
+                                Ppat_tuple
+                                [
+                                  pattern (asmcomp/polling.ml[153,5804+6]..[153,5804+18])
+                                    Ppat_construct "Always_polls" (asmcomp/polling.ml[153,5804+6]..[153,5804+18])
+                                    None
+                                  pattern (asmcomp/polling.ml[153,5804+20]..[153,5804+34])
+                                    Ppat_construct "Might_not_poll" (asmcomp/polling.ml[153,5804+20]..[153,5804+34])
+                                    None
+                                ]
+                            pattern (asmcomp/polling.ml[154,5839+6]..[154,5839+36])
+                              Ppat_tuple
+                              [
+                                pattern (asmcomp/polling.ml[154,5839+6]..[154,5839+20])
+                                  Ppat_construct "Might_not_poll" (asmcomp/polling.ml[154,5839+6]..[154,5839+20])
+                                  None
+                                pattern (asmcomp/polling.ml[154,5839+22]..[154,5839+36])
+                                  Ppat_construct "Might_not_poll" (asmcomp/polling.ml[154,5839+22]..[154,5839+36])
+                                  None
+                              ]
+                          expression (asmcomp/polling.ml[154,5839+40]..[154,5839+44])
+                            Pexp_construct "true" (asmcomp/polling.ml[154,5839+40]..[154,5839+44])
+                            None
+                        <case>
+                          pattern (asmcomp/polling.ml[155,5884+6]..[155,5884+34])
+                            Ppat_tuple
+                            [
+                              pattern (asmcomp/polling.ml[155,5884+6]..[155,5884+20])
+                                Ppat_construct "Might_not_poll" (asmcomp/polling.ml[155,5884+6]..[155,5884+20])
+                                None
+                              pattern (asmcomp/polling.ml[155,5884+22]..[155,5884+34])
+                                Ppat_construct "Always_polls" (asmcomp/polling.ml[155,5884+22]..[155,5884+34])
+                                None
+                            ]
+                          expression (asmcomp/polling.ml[155,5884+38]..[155,5884+43])
+                            Pexp_construct "false" (asmcomp/polling.ml[155,5884+38]..[155,5884+43])
+                            None
+                      ]
+            ]
+        ]
+  structure_item (asmcomp/polling.ml[158,5933+0]..[158,5933+58])
+    Pstr_module
+    "PTRCAnalysis" (asmcomp/polling.ml[158,5933+7]..[158,5933+19])
+      module_expr (asmcomp/polling.ml[158,5933+22]..[158,5933+58])
+        Pmod_apply
+        module_expr (asmcomp/polling.ml[158,5933+22]..[158,5933+39])
+          Pmod_ident "Dataflow.Backward" (asmcomp/polling.ml[158,5933+22]..[158,5933+39])
+        module_expr (asmcomp/polling.ml[158,5933+40]..[158,5933+57])
+          Pmod_ident "Polls_before_prtc" (asmcomp/polling.ml[158,5933+40]..[158,5933+57])
+  structure_item (asmcomp/polling.ml[160,5993+0]..[179,6713+46])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[160,5993+4]..[160,5993+34])
+          Ppat_var "potentially_recursive_tailcall" (asmcomp/polling.ml[160,5993+4]..[160,5993+34])
+        expression (asmcomp/polling.ml[160,5993+35]..[179,6713+46]) ghost
+          Pexp_fun
+          Labelled "future_funcnames"
+          None
+          pattern (asmcomp/polling.ml[160,5993+36]..[160,5993+52])
+            Ppat_var "future_funcnames" (asmcomp/polling.ml[160,5993+36]..[160,5993+52])
+          expression (asmcomp/polling.ml[160,5993+53]..[179,6713+46]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/polling.ml[160,5993+53]..[160,5993+60])
+              Ppat_var "funbody" (asmcomp/polling.ml[160,5993+53]..[160,5993+60])
+            expression (asmcomp/polling.ml[161,6056+2]..[179,6713+46])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (asmcomp/polling.ml[161,6056+6]..[161,6056+14])
+                    Ppat_var "transfer" (asmcomp/polling.ml[161,6056+6]..[161,6056+14])
+                  expression (asmcomp/polling.ml[161,6056+15]..[177,6686+21]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (asmcomp/polling.ml[161,6056+15]..[161,6056+16])
+                      Ppat_var "i" (asmcomp/polling.ml[161,6056+15]..[161,6056+16])
+                    expression (asmcomp/polling.ml[161,6056+17]..[177,6686+21]) ghost
+                      Pexp_fun
+                      Labelled "next"
+                      None
+                      pattern (asmcomp/polling.ml[161,6056+18]..[161,6056+22])
+                        Ppat_var "next" (asmcomp/polling.ml[161,6056+18]..[161,6056+22])
+                      expression (asmcomp/polling.ml[161,6056+23]..[177,6686+21]) ghost
+                        Pexp_fun
+                        Labelled "exn"
+                        None
+                        pattern (asmcomp/polling.ml[161,6056+24]..[161,6056+27])
+                          Ppat_var "exn" (asmcomp/polling.ml[161,6056+24]..[161,6056+27])
+                        expression (asmcomp/polling.ml[162,6086+4]..[177,6686+21])
+                          Pexp_match
+                          expression (asmcomp/polling.ml[162,6086+10]..[162,6086+16])
+                            Pexp_field
+                            expression (asmcomp/polling.ml[162,6086+10]..[162,6086+11])
+                              Pexp_ident "i" (asmcomp/polling.ml[162,6086+10]..[162,6086+11])
+                            "desc" (asmcomp/polling.ml[162,6086+12]..[162,6086+16])
+                          [
+                            <case>
+                              pattern (asmcomp/polling.ml[163,6108+6]..[163,6108+10])
+                                Ppat_construct "Iend" (asmcomp/polling.ml[163,6108+6]..[163,6108+10])
+                                None
+                              expression (asmcomp/polling.ml[163,6108+14]..[163,6108+18])
+                                Pexp_ident "next" (asmcomp/polling.ml[163,6108+14]..[163,6108+18])
+                            <case>
+                              pattern (asmcomp/polling.ml[164,6127+6]..[164,6127+30])
+                                Ppat_construct "Iop" (asmcomp/polling.ml[164,6127+6]..[164,6127+9])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[164,6127+10]..[164,6127+30])
+                                    Ppat_or
+                                    pattern (asmcomp/polling.ml[164,6127+11]..[164,6127+19])
+                                      Ppat_construct "Ialloc" (asmcomp/polling.ml[164,6127+11]..[164,6127+17])
+                                      Some
+                                        []
+                                        pattern (asmcomp/polling.ml[164,6127+18]..[164,6127+19])
+                                          Ppat_any
+                                    pattern (asmcomp/polling.ml[164,6127+22]..[164,6127+29])
+                                      Ppat_construct "Ipoll" (asmcomp/polling.ml[164,6127+22]..[164,6127+27])
+                                      Some
+                                        []
+                                        pattern (asmcomp/polling.ml[164,6127+28]..[164,6127+29])
+                                          Ppat_any
+                              expression (asmcomp/polling.ml[164,6127+34]..[164,6127+46])
+                                Pexp_construct "Always_polls" (asmcomp/polling.ml[164,6127+34]..[164,6127+46])
+                                None
+                            <case>
+                              pattern (asmcomp/polling.ml[165,6174+6]..[165,6174+25])
+                                Ppat_construct "Iop" (asmcomp/polling.ml[165,6174+6]..[165,6174+9])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[165,6174+10]..[165,6174+25])
+                                    Ppat_construct "Itailcall_ind" (asmcomp/polling.ml[165,6174+11]..[165,6174+24])
+                                    None
+                              expression (asmcomp/polling.ml[165,6174+29]..[165,6174+43])
+                                Pexp_construct "Might_not_poll" (asmcomp/polling.ml[165,6174+29]..[165,6174+43])
+                                None
+                            <case>
+                              pattern (asmcomp/polling.ml[166,6240+6]..[166,6240+34])
+                                Ppat_construct "Iop" (asmcomp/polling.ml[166,6240+6]..[166,6240+9])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[166,6240+10]..[166,6240+34])
+                                    Ppat_construct "Itailcall_imm" (asmcomp/polling.ml[166,6240+11]..[166,6240+24])
+                                    Some
+                                      []
+                                      pattern (asmcomp/polling.ml[166,6240+25]..[166,6240+33])
+                                        Ppat_record Closed
+                                        [
+                                          "func" (asmcomp/polling.ml[166,6240+27]..[166,6240+31]) ghost
+                                            pattern (asmcomp/polling.ml[166,6240+27]..[166,6240+31])
+                                              Ppat_var "func" (asmcomp/polling.ml[166,6240+27]..[166,6240+31])
+                                        ]
+                              expression (asmcomp/polling.ml[167,6278+6]..[170,6423+23])
+                                Pexp_ifthenelse
+                                expression (asmcomp/polling.ml[167,6278+9]..[168,6324+50])
+                                  Pexp_apply
+                                  expression (asmcomp/polling.ml[168,6324+9]..[168,6324+11])
+                                    Pexp_ident "||" (asmcomp/polling.ml[168,6324+9]..[168,6324+11])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[167,6278+9]..[167,6278+45])
+                                        Pexp_apply
+                                        expression (asmcomp/polling.ml[167,6278+9]..[167,6278+23])
+                                          Pexp_ident "String.Set.mem" (asmcomp/polling.ml[167,6278+9]..[167,6278+23])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/polling.ml[167,6278+24]..[167,6278+28])
+                                              Pexp_ident "func" (asmcomp/polling.ml[167,6278+24]..[167,6278+28])
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/polling.ml[167,6278+29]..[167,6278+45])
+                                              Pexp_ident "future_funcnames" (asmcomp/polling.ml[167,6278+29]..[167,6278+45])
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[168,6324+12]..[168,6324+50])
+                                        Pexp_apply
+                                        expression (asmcomp/polling.ml[168,6324+12]..[168,6324+45])
+                                          Pexp_ident "function_is_assumed_to_never_poll" (asmcomp/polling.ml[168,6324+12]..[168,6324+45])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/polling.ml[168,6324+46]..[168,6324+50])
+                                              Pexp_ident "func" (asmcomp/polling.ml[168,6324+46]..[168,6324+50])
+                                        ]
+                                  ]
+                                expression (asmcomp/polling.ml[169,6375+11]..[169,6375+25])
+                                  Pexp_construct "Might_not_poll" (asmcomp/polling.ml[169,6375+11]..[169,6375+25])
+                                  None
+                                Some
+                                  expression (asmcomp/polling.ml[170,6423+11]..[170,6423+23])
+                                    Pexp_construct "Always_polls" (asmcomp/polling.ml[170,6423+11]..[170,6423+23])
+                                    None
+                            <case>
+                              pattern (asmcomp/polling.ml[171,6475+6]..[171,6475+12])
+                                Ppat_construct "Iop" (asmcomp/polling.ml[171,6475+6]..[171,6475+9])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[171,6475+10]..[171,6475+12])
+                                    Ppat_var "op" (asmcomp/polling.ml[171,6475+10]..[171,6475+12])
+                              expression (asmcomp/polling.ml[172,6491+6]..[174,6566+15])
+                                Pexp_ifthenelse
+                                expression (asmcomp/polling.ml[172,6491+9]..[172,6491+31])
+                                  Pexp_apply
+                                  expression (asmcomp/polling.ml[172,6491+9]..[172,6491+28])
+                                    Pexp_ident "operation_can_raise" (asmcomp/polling.ml[172,6491+9]..[172,6491+28])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[172,6491+29]..[172,6491+31])
+                                        Pexp_ident "op" (asmcomp/polling.ml[172,6491+29]..[172,6491+31])
+                                  ]
+                                expression (asmcomp/polling.ml[173,6523+11]..[173,6523+42])
+                                  Pexp_apply
+                                  expression (asmcomp/polling.ml[173,6523+11]..[173,6523+33])
+                                    Pexp_ident "Polls_before_prtc.join" (asmcomp/polling.ml[173,6523+11]..[173,6523+33])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[173,6523+34]..[173,6523+38])
+                                        Pexp_ident "next" (asmcomp/polling.ml[173,6523+34]..[173,6523+38])
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[173,6523+39]..[173,6523+42])
+                                        Pexp_ident "exn" (asmcomp/polling.ml[173,6523+39]..[173,6523+42])
+                                  ]
+                                Some
+                                  expression (asmcomp/polling.ml[174,6566+11]..[174,6566+15])
+                                    Pexp_ident "next" (asmcomp/polling.ml[174,6566+11]..[174,6566+15])
+                            <case>
+                              pattern (asmcomp/polling.ml[175,6582+6]..[175,6582+13])
+                                Ppat_construct "Ireturn" (asmcomp/polling.ml[175,6582+6]..[175,6582+13])
+                                None
+                              expression (asmcomp/polling.ml[175,6582+17]..[175,6582+29])
+                                Pexp_construct "Always_polls" (asmcomp/polling.ml[175,6582+17]..[175,6582+29])
+                                None
+                            <case>
+                              pattern (asmcomp/polling.ml[176,6612+6]..[176,6612+65])
+                                Ppat_or
+                                pattern (asmcomp/polling.ml[176,6612+6]..[176,6612+52])
+                                  Ppat_or
+                                  pattern (asmcomp/polling.ml[176,6612+6]..[176,6612+42])
+                                    Ppat_or
+                                    pattern (asmcomp/polling.ml[176,6612+6]..[176,6612+31])
+                                      Ppat_or
+                                      pattern (asmcomp/polling.ml[176,6612+6]..[176,6612+19])
+                                        Ppat_construct "Iifthenelse" (asmcomp/polling.ml[176,6612+6]..[176,6612+17])
+                                        Some
+                                          []
+                                          pattern (asmcomp/polling.ml[176,6612+18]..[176,6612+19])
+                                            Ppat_any
+                                      pattern (asmcomp/polling.ml[176,6612+22]..[176,6612+31])
+                                        Ppat_construct "Iswitch" (asmcomp/polling.ml[176,6612+22]..[176,6612+29])
+                                        Some
+                                          []
+                                          pattern (asmcomp/polling.ml[176,6612+30]..[176,6612+31])
+                                            Ppat_any
+                                    pattern (asmcomp/polling.ml[176,6612+34]..[176,6612+42])
+                                      Ppat_construct "Icatch" (asmcomp/polling.ml[176,6612+34]..[176,6612+40])
+                                      Some
+                                        []
+                                        pattern (asmcomp/polling.ml[176,6612+41]..[176,6612+42])
+                                          Ppat_any
+                                  pattern (asmcomp/polling.ml[176,6612+45]..[176,6612+52])
+                                    Ppat_construct "Iexit" (asmcomp/polling.ml[176,6612+45]..[176,6612+50])
+                                    Some
+                                      []
+                                      pattern (asmcomp/polling.ml[176,6612+51]..[176,6612+52])
+                                        Ppat_any
+                                pattern (asmcomp/polling.ml[176,6612+55]..[176,6612+65])
+                                  Ppat_construct "Itrywith" (asmcomp/polling.ml[176,6612+55]..[176,6612+63])
+                                  Some
+                                    []
+                                    pattern (asmcomp/polling.ml[176,6612+64]..[176,6612+65])
+                                      Ppat_any
+                              expression (asmcomp/polling.ml[176,6612+69]..[176,6612+73])
+                                Pexp_ident "next" (asmcomp/polling.ml[176,6612+69]..[176,6612+73])
+                            <case>
+                              pattern (asmcomp/polling.ml[177,6686+6]..[177,6686+14])
+                                Ppat_construct "Iraise" (asmcomp/polling.ml[177,6686+6]..[177,6686+12])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[177,6686+13]..[177,6686+14])
+                                    Ppat_any
+                              expression (asmcomp/polling.ml[177,6686+18]..[177,6686+21])
+                                Pexp_ident "exn" (asmcomp/polling.ml[177,6686+18]..[177,6686+21])
+                          ]
+              ]
+              expression (asmcomp/polling.ml[179,6713+2]..[179,6713+46])
+                Pexp_apply
+                expression (asmcomp/polling.ml[179,6713+2]..[179,6713+5])
+                  Pexp_ident "fst" (asmcomp/polling.ml[179,6713+2]..[179,6713+5])
+                [
+                  <arg>
+                  Nolabel
+                    expression (asmcomp/polling.ml[179,6713+6]..[179,6713+46])
+                      Pexp_apply
+                      expression (asmcomp/polling.ml[179,6713+7]..[179,6713+27])
+                        Pexp_ident "PTRCAnalysis.analyze" (asmcomp/polling.ml[179,6713+7]..[179,6713+27])
+                      [
+                        <arg>
+                        Labelled "transfer"
+                          expression (asmcomp/polling.ml[179,6713+29]..[179,6713+37])
+                            Pexp_ident "transfer" (asmcomp/polling.ml[179,6713+29]..[179,6713+37])
+                        <arg>
+                        Nolabel
+                          expression (asmcomp/polling.ml[179,6713+38]..[179,6713+45])
+                            Pexp_ident "funbody" (asmcomp/polling.ml[179,6713+38]..[179,6713+45])
+                      ]
+                ]
+    ]
+  structure_item (asmcomp/polling.ml[190,7166+0]..[190,7166+30])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[190,7166+4]..[190,7166+18])
+          Ppat_var "contains_polls" (asmcomp/polling.ml[190,7166+4]..[190,7166+18])
+        expression (asmcomp/polling.ml[190,7166+21]..[190,7166+30])
+          Pexp_apply
+          expression (asmcomp/polling.ml[190,7166+21]..[190,7166+24])
+            Pexp_ident "ref" (asmcomp/polling.ml[190,7166+21]..[190,7166+24])
+          [
+            <arg>
+            Nolabel
+              expression (asmcomp/polling.ml[190,7166+25]..[190,7166+30])
+                Pexp_construct "false" (asmcomp/polling.ml[190,7166+25]..[190,7166+30])
+                None
+          ]
+    ]
+  structure_item (asmcomp/polling.ml[192,7198+0]..[194,7241+79])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[192,7198+4]..[192,7198+12])
+          Ppat_var "add_poll" (asmcomp/polling.ml[192,7198+4]..[192,7198+12])
+        expression (asmcomp/polling.ml[192,7198+13]..[194,7241+79]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/polling.ml[192,7198+13]..[192,7198+14])
+            Ppat_var "i" (asmcomp/polling.ml[192,7198+13]..[192,7198+14])
+          expression (asmcomp/polling.ml[193,7215+2]..[194,7241+79])
+            Pexp_sequence
+            expression (asmcomp/polling.ml[193,7215+2]..[193,7215+24])
+              Pexp_apply
+              expression (asmcomp/polling.ml[193,7215+17]..[193,7215+19])
+                Pexp_ident ":=" (asmcomp/polling.ml[193,7215+17]..[193,7215+19])
+              [
+                <arg>
+                Nolabel
+                  expression (asmcomp/polling.ml[193,7215+2]..[193,7215+16])
+                    Pexp_ident "contains_polls" (asmcomp/polling.ml[193,7215+2]..[193,7215+16])
+                <arg>
+                Nolabel
+                  expression (asmcomp/polling.ml[193,7215+20]..[193,7215+24])
+                    Pexp_construct "true" (asmcomp/polling.ml[193,7215+20]..[193,7215+24])
+                    None
+              ]
+            expression (asmcomp/polling.ml[194,7241+2]..[194,7241+79])
+              Pexp_apply
+              expression (asmcomp/polling.ml[194,7241+2]..[194,7241+23])
+                Pexp_ident "Mach.instr_cons_debug" (asmcomp/polling.ml[194,7241+2]..[194,7241+23])
+              [
+                <arg>
+                Nolabel
+                  expression (asmcomp/polling.ml[194,7241+24]..[194,7241+61])
+                    Pexp_construct "Iop" (asmcomp/polling.ml[194,7241+25]..[194,7241+28])
+                    Some
+                      expression (asmcomp/polling.ml[194,7241+29]..[194,7241+60])
+                        Pexp_construct "Ipoll" (asmcomp/polling.ml[194,7241+30]..[194,7241+35])
+                        Some
+                          expression (asmcomp/polling.ml[194,7241+36]..[194,7241+59])
+                            Pexp_record
+                            [
+                              "return_label" (asmcomp/polling.ml[194,7241+38]..[194,7241+50])
+                                expression (asmcomp/polling.ml[194,7241+53]..[194,7241+57])
+                                  Pexp_construct "None" (asmcomp/polling.ml[194,7241+53]..[194,7241+57])
+                                  None
+                            ]
+                            None
+                <arg>
+                Nolabel
+                  expression (asmcomp/polling.ml[194,7241+62]..[194,7241+66])
+                    Pexp_array
+                    []
+                <arg>
+                Nolabel
+                  expression (asmcomp/polling.ml[194,7241+67]..[194,7241+71])
+                    Pexp_array
+                    []
+                <arg>
+                Nolabel
+                  expression (asmcomp/polling.ml[194,7241+72]..[194,7241+77])
+                    Pexp_field
+                    expression (asmcomp/polling.ml[194,7241+72]..[194,7241+73])
+                      Pexp_ident "i" (asmcomp/polling.ml[194,7241+72]..[194,7241+73])
+                    "dbg" (asmcomp/polling.ml[194,7241+74]..[194,7241+77])
+                <arg>
+                Nolabel
+                  expression (asmcomp/polling.ml[194,7241+78]..[194,7241+79])
+                    Pexp_ident "i" (asmcomp/polling.ml[194,7241+78]..[194,7241+79])
+              ]
+    ]
+  structure_item (asmcomp/polling.ml[196,7322+0]..[248,8855+23])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[196,7322+4]..[196,7322+14])
+          Ppat_var "instr_body" (asmcomp/polling.ml[196,7322+4]..[196,7322+14])
+        expression (asmcomp/polling.ml[196,7322+15]..[248,8855+23]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/polling.ml[196,7322+15]..[196,7322+27])
+            Ppat_var "handler_safe" (asmcomp/polling.ml[196,7322+15]..[196,7322+27])
+          expression (asmcomp/polling.ml[196,7322+28]..[248,8855+23]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/polling.ml[196,7322+28]..[196,7322+29])
+              Ppat_var "i" (asmcomp/polling.ml[196,7322+28]..[196,7322+29])
+            expression (asmcomp/polling.ml[197,7354+2]..[248,8855+23])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (asmcomp/polling.ml[197,7354+6]..[197,7354+24])
+                    Ppat_var "add_unsafe_handler" (asmcomp/polling.ml[197,7354+6]..[197,7354+24])
+                  expression (asmcomp/polling.ml[197,7354+25]..[200,7440+33]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (asmcomp/polling.ml[197,7354+25]..[197,7354+28])
+                      Ppat_var "ube" (asmcomp/polling.ml[197,7354+25]..[197,7354+28])
+                    expression (asmcomp/polling.ml[197,7354+29]..[200,7440+33]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (asmcomp/polling.ml[197,7354+29]..[197,7354+35])
+                        Ppat_tuple
+                        [
+                          pattern (asmcomp/polling.ml[197,7354+30]..[197,7354+31])
+                            Ppat_var "k" (asmcomp/polling.ml[197,7354+30]..[197,7354+31])
+                          pattern (asmcomp/polling.ml[197,7354+33]..[197,7354+34])
+                            Ppat_any
+                        ]
+                      expression (asmcomp/polling.ml[198,7392+4]..[200,7440+33])
+                        Pexp_match
+                        expression (asmcomp/polling.ml[198,7392+10]..[198,7392+24])
+                          Pexp_apply
+                          expression (asmcomp/polling.ml[198,7392+10]..[198,7392+22])
+                            Pexp_ident "handler_safe" (asmcomp/polling.ml[198,7392+10]..[198,7392+22])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/polling.ml[198,7392+23]..[198,7392+24])
+                                Pexp_ident "k" (asmcomp/polling.ml[198,7392+23]..[198,7392+24])
+                          ]
+                        [
+                          <case>
+                            pattern (asmcomp/polling.ml[199,7422+6]..[199,7422+10])
+                              Ppat_construct "Safe" (asmcomp/polling.ml[199,7422+6]..[199,7422+10])
+                              None
+                            expression (asmcomp/polling.ml[199,7422+14]..[199,7422+17])
+                              Pexp_ident "ube" (asmcomp/polling.ml[199,7422+14]..[199,7422+17])
+                          <case>
+                            pattern (asmcomp/polling.ml[200,7440+6]..[200,7440+12])
+                              Ppat_construct "Unsafe" (asmcomp/polling.ml[200,7440+6]..[200,7440+12])
+                              None
+                            expression (asmcomp/polling.ml[200,7440+16]..[200,7440+33])
+                              Pexp_apply
+                              expression (asmcomp/polling.ml[200,7440+16]..[200,7440+27])
+                                Pexp_ident "Int.Set.add" (asmcomp/polling.ml[200,7440+16]..[200,7440+27])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/polling.ml[200,7440+28]..[200,7440+29])
+                                    Pexp_ident "k" (asmcomp/polling.ml[200,7440+28]..[200,7440+29])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/polling.ml[200,7440+30]..[200,7440+33])
+                                    Pexp_ident "ube" (asmcomp/polling.ml[200,7440+30]..[200,7440+33])
+                              ]
+                        ]
+              ]
+              expression (asmcomp/polling.ml[202,7479+2]..[248,8855+23])
+                Pexp_let Rec
+                [
+                  <def>
+                    pattern (asmcomp/polling.ml[202,7479+10]..[202,7479+15])
+                      Ppat_var "instr" (asmcomp/polling.ml[202,7479+10]..[202,7479+15])
+                    expression (asmcomp/polling.ml[202,7479+16]..[246,8809+40]) ghost
+                      Pexp_fun
+                      Nolabel
+                      None
+                      pattern (asmcomp/polling.ml[202,7479+16]..[202,7479+19])
+                        Ppat_var "ube" (asmcomp/polling.ml[202,7479+16]..[202,7479+19])
+                      expression (asmcomp/polling.ml[202,7479+20]..[246,8809+40]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/polling.ml[202,7479+20]..[202,7479+21])
+                          Ppat_var "i" (asmcomp/polling.ml[202,7479+20]..[202,7479+21])
+                        expression (asmcomp/polling.ml[203,7503+4]..[246,8809+40])
+                          Pexp_match
+                          expression (asmcomp/polling.ml[203,7503+10]..[203,7503+16])
+                            Pexp_field
+                            expression (asmcomp/polling.ml[203,7503+10]..[203,7503+11])
+                              Pexp_ident "i" (asmcomp/polling.ml[203,7503+10]..[203,7503+11])
+                            "desc" (asmcomp/polling.ml[203,7503+12]..[203,7503+16])
+                          [
+                            <case>
+                              pattern (asmcomp/polling.ml[204,7525+6]..[204,7525+32])
+                                Ppat_construct "Iifthenelse" (asmcomp/polling.ml[204,7525+6]..[204,7525+17])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[204,7525+18]..[204,7525+32])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/polling.ml[204,7525+19]..[204,7525+23])
+                                        Ppat_var "test" (asmcomp/polling.ml[204,7525+19]..[204,7525+23])
+                                      pattern (asmcomp/polling.ml[204,7525+25]..[204,7525+27])
+                                        Ppat_var "i0" (asmcomp/polling.ml[204,7525+25]..[204,7525+27])
+                                      pattern (asmcomp/polling.ml[204,7525+29]..[204,7525+31])
+                                        Ppat_var "i1" (asmcomp/polling.ml[204,7525+29]..[204,7525+31])
+                                    ]
+                              expression (asmcomp/polling.ml[205,7561+6]..[208,7672+7])
+                                Pexp_record
+                                [
+                                  "desc" (asmcomp/polling.ml[206,7576+8]..[206,7576+12])
+                                    expression (asmcomp/polling.ml[206,7576+15]..[206,7576+61])
+                                      Pexp_construct "Iifthenelse" (asmcomp/polling.ml[206,7576+15]..[206,7576+26])
+                                      Some
+                                        expression (asmcomp/polling.ml[206,7576+27]..[206,7576+61])
+                                          Pexp_tuple
+                                          [
+                                            expression (asmcomp/polling.ml[206,7576+28]..[206,7576+32])
+                                              Pexp_ident "test" (asmcomp/polling.ml[206,7576+28]..[206,7576+32])
+                                            expression (asmcomp/polling.ml[206,7576+34]..[206,7576+46])
+                                              Pexp_apply
+                                              expression (asmcomp/polling.ml[206,7576+34]..[206,7576+39])
+                                                Pexp_ident "instr" (asmcomp/polling.ml[206,7576+34]..[206,7576+39])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[206,7576+40]..[206,7576+43])
+                                                    Pexp_ident "ube" (asmcomp/polling.ml[206,7576+40]..[206,7576+43])
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[206,7576+44]..[206,7576+46])
+                                                    Pexp_ident "i0" (asmcomp/polling.ml[206,7576+44]..[206,7576+46])
+                                              ]
+                                            expression (asmcomp/polling.ml[206,7576+48]..[206,7576+60])
+                                              Pexp_apply
+                                              expression (asmcomp/polling.ml[206,7576+48]..[206,7576+53])
+                                                Pexp_ident "instr" (asmcomp/polling.ml[206,7576+48]..[206,7576+53])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[206,7576+54]..[206,7576+57])
+                                                    Pexp_ident "ube" (asmcomp/polling.ml[206,7576+54]..[206,7576+57])
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[206,7576+58]..[206,7576+60])
+                                                    Pexp_ident "i1" (asmcomp/polling.ml[206,7576+58]..[206,7576+60])
+                                              ]
+                                          ]
+                                  "next" (asmcomp/polling.ml[207,7639+8]..[207,7639+12])
+                                    expression (asmcomp/polling.ml[207,7639+15]..[207,7639+31])
+                                      Pexp_apply
+                                      expression (asmcomp/polling.ml[207,7639+15]..[207,7639+20])
+                                        Pexp_ident "instr" (asmcomp/polling.ml[207,7639+15]..[207,7639+20])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/polling.ml[207,7639+21]..[207,7639+24])
+                                            Pexp_ident "ube" (asmcomp/polling.ml[207,7639+21]..[207,7639+24])
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/polling.ml[207,7639+25]..[207,7639+31])
+                                            Pexp_field
+                                            expression (asmcomp/polling.ml[207,7639+25]..[207,7639+26])
+                                              Pexp_ident "i" (asmcomp/polling.ml[207,7639+25]..[207,7639+26])
+                                            "next" (asmcomp/polling.ml[207,7639+27]..[207,7639+31])
+                                      ]
+                                ]
+                                Some
+                                  expression (asmcomp/polling.ml[205,7561+8]..[205,7561+9])
+                                    Pexp_ident "i" (asmcomp/polling.ml[205,7561+8]..[205,7561+9])
+                            <case>
+                              pattern (asmcomp/polling.ml[209,7680+6]..[209,7680+28])
+                                Ppat_construct "Iswitch" (asmcomp/polling.ml[209,7680+6]..[209,7680+13])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[209,7680+14]..[209,7680+28])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/polling.ml[209,7680+15]..[209,7680+20])
+                                        Ppat_var "index" (asmcomp/polling.ml[209,7680+15]..[209,7680+20])
+                                      pattern (asmcomp/polling.ml[209,7680+22]..[209,7680+27])
+                                        Ppat_var "cases" (asmcomp/polling.ml[209,7680+22]..[209,7680+27])
+                                    ]
+                              expression (asmcomp/polling.ml[210,7712+6]..[213,7821+7])
+                                Pexp_record
+                                [
+                                  "desc" (asmcomp/polling.ml[211,7727+8]..[211,7727+12])
+                                    expression (asmcomp/polling.ml[211,7727+15]..[211,7727+59])
+                                      Pexp_construct "Iswitch" (asmcomp/polling.ml[211,7727+15]..[211,7727+22])
+                                      Some
+                                        expression (asmcomp/polling.ml[211,7727+23]..[211,7727+59])
+                                          Pexp_tuple
+                                          [
+                                            expression (asmcomp/polling.ml[211,7727+24]..[211,7727+29])
+                                              Pexp_ident "index" (asmcomp/polling.ml[211,7727+24]..[211,7727+29])
+                                            expression (asmcomp/polling.ml[211,7727+31]..[211,7727+58])
+                                              Pexp_apply
+                                              expression (asmcomp/polling.ml[211,7727+31]..[211,7727+40])
+                                                Pexp_ident "Array.map" (asmcomp/polling.ml[211,7727+31]..[211,7727+40])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[211,7727+41]..[211,7727+52])
+                                                    Pexp_apply
+                                                    expression (asmcomp/polling.ml[211,7727+42]..[211,7727+47])
+                                                      Pexp_ident "instr" (asmcomp/polling.ml[211,7727+42]..[211,7727+47])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (asmcomp/polling.ml[211,7727+48]..[211,7727+51])
+                                                          Pexp_ident "ube" (asmcomp/polling.ml[211,7727+48]..[211,7727+51])
+                                                    ]
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[211,7727+53]..[211,7727+58])
+                                                    Pexp_ident "cases" (asmcomp/polling.ml[211,7727+53]..[211,7727+58])
+                                              ]
+                                          ]
+                                  "next" (asmcomp/polling.ml[212,7788+8]..[212,7788+12])
+                                    expression (asmcomp/polling.ml[212,7788+15]..[212,7788+31])
+                                      Pexp_apply
+                                      expression (asmcomp/polling.ml[212,7788+15]..[212,7788+20])
+                                        Pexp_ident "instr" (asmcomp/polling.ml[212,7788+15]..[212,7788+20])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/polling.ml[212,7788+21]..[212,7788+24])
+                                            Pexp_ident "ube" (asmcomp/polling.ml[212,7788+21]..[212,7788+24])
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/polling.ml[212,7788+25]..[212,7788+31])
+                                            Pexp_field
+                                            expression (asmcomp/polling.ml[212,7788+25]..[212,7788+26])
+                                              Pexp_ident "i" (asmcomp/polling.ml[212,7788+25]..[212,7788+26])
+                                            "next" (asmcomp/polling.ml[212,7788+27]..[212,7788+31])
+                                      ]
+                                ]
+                                Some
+                                  expression (asmcomp/polling.ml[210,7712+8]..[210,7712+9])
+                                    Pexp_ident "i" (asmcomp/polling.ml[210,7712+8]..[210,7712+9])
+                            <case>
+                              pattern (asmcomp/polling.ml[214,7829+6]..[214,7829+28])
+                                Ppat_construct "Icatch" (asmcomp/polling.ml[214,7829+6]..[214,7829+12])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[214,7829+13]..[214,7829+28])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/polling.ml[214,7829+14]..[214,7829+16])
+                                        Ppat_var "rc" (asmcomp/polling.ml[214,7829+14]..[214,7829+16])
+                                      pattern (asmcomp/polling.ml[214,7829+18]..[214,7829+21])
+                                        Ppat_var "hdl" (asmcomp/polling.ml[214,7829+18]..[214,7829+21])
+                                      pattern (asmcomp/polling.ml[214,7829+23]..[214,7829+27])
+                                        Ppat_var "body" (asmcomp/polling.ml[214,7829+23]..[214,7829+27])
+                                    ]
+                              expression (asmcomp/polling.ml[215,7861+6]..[230,8431+7])
+                                Pexp_let Nonrec
+                                [
+                                  <def>
+                                    pattern (asmcomp/polling.ml[215,7861+10]..[215,7861+14])
+                                      Ppat_var "ube'" (asmcomp/polling.ml[215,7861+10]..[215,7861+14])
+                                    expression (asmcomp/polling.ml[216,7878+8]..[218,7969+33])
+                                      Pexp_match
+                                      expression (asmcomp/polling.ml[216,7878+14]..[216,7878+16])
+                                        Pexp_ident "rc" (asmcomp/polling.ml[216,7878+14]..[216,7878+16])
+                                      [
+                                        <case>
+                                          pattern (asmcomp/polling.ml[217,7900+10]..[217,7900+23])
+                                            Ppat_construct "Cmm.Recursive" (asmcomp/polling.ml[217,7900+10]..[217,7900+23])
+                                            None
+                                          expression (asmcomp/polling.ml[217,7900+27]..[217,7900+68])
+                                            Pexp_apply
+                                            expression (asmcomp/polling.ml[217,7900+27]..[217,7900+41])
+                                              Pexp_ident "List.fold_left" (asmcomp/polling.ml[217,7900+27]..[217,7900+41])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (asmcomp/polling.ml[217,7900+42]..[217,7900+60])
+                                                  Pexp_ident "add_unsafe_handler" (asmcomp/polling.ml[217,7900+42]..[217,7900+60])
+                                              <arg>
+                                              Nolabel
+                                                expression (asmcomp/polling.ml[217,7900+61]..[217,7900+64])
+                                                  Pexp_ident "ube" (asmcomp/polling.ml[217,7900+61]..[217,7900+64])
+                                              <arg>
+                                              Nolabel
+                                                expression (asmcomp/polling.ml[217,7900+65]..[217,7900+68])
+                                                  Pexp_ident "hdl" (asmcomp/polling.ml[217,7900+65]..[217,7900+68])
+                                            ]
+                                        <case>
+                                          pattern (asmcomp/polling.ml[218,7969+10]..[218,7969+26])
+                                            Ppat_construct "Cmm.Nonrecursive" (asmcomp/polling.ml[218,7969+10]..[218,7969+26])
+                                            None
+                                          expression (asmcomp/polling.ml[218,7969+30]..[218,7969+33])
+                                            Pexp_ident "ube" (asmcomp/polling.ml[218,7969+30]..[218,7969+33])
+                                      ]
+                                ]
+                                expression (asmcomp/polling.ml[219,8006+6]..[230,8431+7])
+                                  Pexp_let Nonrec
+                                  [
+                                    <def>
+                                      pattern (asmcomp/polling.ml[219,8006+10]..[219,8006+23])
+                                        Ppat_var "instr_handler" (asmcomp/polling.ml[219,8006+10]..[219,8006+23])
+                                      expression (asmcomp/polling.ml[219,8006+24]..[221,8074+15]) ghost
+                                        Pexp_fun
+                                        Nolabel
+                                        None
+                                        pattern (asmcomp/polling.ml[219,8006+24]..[219,8006+31])
+                                          Ppat_tuple
+                                          [
+                                            pattern (asmcomp/polling.ml[219,8006+25]..[219,8006+26])
+                                              Ppat_var "k" (asmcomp/polling.ml[219,8006+25]..[219,8006+26])
+                                            pattern (asmcomp/polling.ml[219,8006+28]..[219,8006+30])
+                                              Ppat_var "i0" (asmcomp/polling.ml[219,8006+28]..[219,8006+30])
+                                          ]
+                                        expression (asmcomp/polling.ml[220,8040+8]..[221,8074+15])
+                                          Pexp_let Nonrec
+                                          [
+                                            <def>
+                                              pattern (asmcomp/polling.ml[220,8040+12]..[220,8040+14])
+                                                Ppat_var "i1" (asmcomp/polling.ml[220,8040+12]..[220,8040+14])
+                                              expression (asmcomp/polling.ml[220,8040+17]..[220,8040+30])
+                                                Pexp_apply
+                                                expression (asmcomp/polling.ml[220,8040+17]..[220,8040+22])
+                                                  Pexp_ident "instr" (asmcomp/polling.ml[220,8040+17]..[220,8040+22])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (asmcomp/polling.ml[220,8040+23]..[220,8040+27])
+                                                      Pexp_ident "ube'" (asmcomp/polling.ml[220,8040+23]..[220,8040+27])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (asmcomp/polling.ml[220,8040+28]..[220,8040+30])
+                                                      Pexp_ident "i0" (asmcomp/polling.ml[220,8040+28]..[220,8040+30])
+                                                ]
+                                          ]
+                                          expression (asmcomp/polling.ml[221,8074+8]..[221,8074+15])
+                                            Pexp_tuple
+                                            [
+                                              expression (asmcomp/polling.ml[221,8074+9]..[221,8074+10])
+                                                Pexp_ident "k" (asmcomp/polling.ml[221,8074+9]..[221,8074+10])
+                                              expression (asmcomp/polling.ml[221,8074+12]..[221,8074+14])
+                                                Pexp_ident "i1" (asmcomp/polling.ml[221,8074+12]..[221,8074+14])
+                                            ]
+                                  ]
+                                  expression (asmcomp/polling.ml[224,8240+6]..[230,8431+7])
+                                    Pexp_let Nonrec
+                                    [
+                                      <def>
+                                        pattern (asmcomp/polling.ml[224,8240+10]..[224,8240+14])
+                                          Ppat_var "body" (asmcomp/polling.ml[224,8240+10]..[224,8240+14])
+                                        expression (asmcomp/polling.ml[224,8240+17]..[224,8240+31])
+                                          Pexp_apply
+                                          expression (asmcomp/polling.ml[224,8240+17]..[224,8240+22])
+                                            Pexp_ident "instr" (asmcomp/polling.ml[224,8240+17]..[224,8240+22])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/polling.ml[224,8240+23]..[224,8240+26])
+                                                Pexp_ident "ube" (asmcomp/polling.ml[224,8240+23]..[224,8240+26])
+                                            <arg>
+                                            Nolabel
+                                              expression (asmcomp/polling.ml[224,8240+27]..[224,8240+31])
+                                                Pexp_ident "body" (asmcomp/polling.ml[224,8240+27]..[224,8240+31])
+                                          ]
+                                    ]
+                                    expression (asmcomp/polling.ml[225,8275+6]..[230,8431+7])
+                                      Pexp_record
+                                      [
+                                        "desc" (asmcomp/polling.ml[226,8290+8]..[226,8290+12])
+                                          expression (asmcomp/polling.ml[226,8290+15]..[228,8368+28])
+                                            Pexp_construct "Icatch" (asmcomp/polling.ml[226,8290+15]..[226,8290+21])
+                                            Some
+                                              expression (asmcomp/polling.ml[226,8290+22]..[228,8368+28])
+                                                Pexp_tuple
+                                                [
+                                                  expression (asmcomp/polling.ml[226,8290+23]..[226,8290+25])
+                                                    Pexp_ident "rc" (asmcomp/polling.ml[226,8290+23]..[226,8290+25])
+                                                  expression (asmcomp/polling.ml[227,8317+23]..[227,8317+49])
+                                                    Pexp_apply
+                                                    expression (asmcomp/polling.ml[227,8317+23]..[227,8317+31])
+                                                      Pexp_ident "List.map" (asmcomp/polling.ml[227,8317+23]..[227,8317+31])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (asmcomp/polling.ml[227,8317+32]..[227,8317+45])
+                                                          Pexp_ident "instr_handler" (asmcomp/polling.ml[227,8317+32]..[227,8317+45])
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (asmcomp/polling.ml[227,8317+46]..[227,8317+49])
+                                                          Pexp_ident "hdl" (asmcomp/polling.ml[227,8317+46]..[227,8317+49])
+                                                    ]
+                                                  expression (asmcomp/polling.ml[228,8368+23]..[228,8368+27])
+                                                    Pexp_ident "body" (asmcomp/polling.ml[228,8368+23]..[228,8368+27])
+                                                ]
+                                        "next" (asmcomp/polling.ml[229,8398+8]..[229,8398+12])
+                                          expression (asmcomp/polling.ml[229,8398+15]..[229,8398+31])
+                                            Pexp_apply
+                                            expression (asmcomp/polling.ml[229,8398+15]..[229,8398+20])
+                                              Pexp_ident "instr" (asmcomp/polling.ml[229,8398+15]..[229,8398+20])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (asmcomp/polling.ml[229,8398+21]..[229,8398+24])
+                                                  Pexp_ident "ube" (asmcomp/polling.ml[229,8398+21]..[229,8398+24])
+                                              <arg>
+                                              Nolabel
+                                                expression (asmcomp/polling.ml[229,8398+25]..[229,8398+31])
+                                                  Pexp_field
+                                                  expression (asmcomp/polling.ml[229,8398+25]..[229,8398+26])
+                                                    Pexp_ident "i" (asmcomp/polling.ml[229,8398+25]..[229,8398+26])
+                                                  "next" (asmcomp/polling.ml[229,8398+27]..[229,8398+31])
+                                            ]
+                                      ]
+                                      Some
+                                        expression (asmcomp/polling.ml[225,8275+8]..[225,8275+9])
+                                          Pexp_ident "i" (asmcomp/polling.ml[225,8275+8]..[225,8275+9])
+                            <case>
+                              pattern (asmcomp/polling.ml[231,8439+6]..[231,8439+13])
+                                Ppat_construct "Iexit" (asmcomp/polling.ml[231,8439+6]..[231,8439+11])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[231,8439+12]..[231,8439+13])
+                                    Ppat_var "k" (asmcomp/polling.ml[231,8439+12]..[231,8439+13])
+                              expression (asmcomp/polling.ml[232,8456+6]..[234,8505+12])
+                                Pexp_ifthenelse
+                                expression (asmcomp/polling.ml[232,8456+9]..[232,8456+26])
+                                  Pexp_apply
+                                  expression (asmcomp/polling.ml[232,8456+9]..[232,8456+20])
+                                    Pexp_ident "Int.Set.mem" (asmcomp/polling.ml[232,8456+9]..[232,8456+20])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[232,8456+21]..[232,8456+22])
+                                        Pexp_ident "k" (asmcomp/polling.ml[232,8456+21]..[232,8456+22])
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[232,8456+23]..[232,8456+26])
+                                        Pexp_ident "ube" (asmcomp/polling.ml[232,8456+23]..[232,8456+26])
+                                  ]
+                                expression (asmcomp/polling.ml[233,8483+11]..[233,8483+21])
+                                  Pexp_apply
+                                  expression (asmcomp/polling.ml[233,8483+11]..[233,8483+19])
+                                    Pexp_ident "add_poll" (asmcomp/polling.ml[233,8483+11]..[233,8483+19])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[233,8483+20]..[233,8483+21])
+                                        Pexp_ident "i" (asmcomp/polling.ml[233,8483+20]..[233,8483+21])
+                                  ]
+                                Some
+                                  expression (asmcomp/polling.ml[234,8505+11]..[234,8505+12])
+                                    Pexp_ident "i" (asmcomp/polling.ml[234,8505+11]..[234,8505+12])
+                            <case>
+                              pattern (asmcomp/polling.ml[235,8518+6]..[235,8518+26])
+                                Ppat_construct "Itrywith" (asmcomp/polling.ml[235,8518+6]..[235,8518+14])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[235,8518+15]..[235,8518+26])
+                                    Ppat_tuple
+                                    [
+                                      pattern (asmcomp/polling.ml[235,8518+16]..[235,8518+20])
+                                        Ppat_var "body" (asmcomp/polling.ml[235,8518+16]..[235,8518+20])
+                                      pattern (asmcomp/polling.ml[235,8518+22]..[235,8518+25])
+                                        Ppat_var "hdl" (asmcomp/polling.ml[235,8518+22]..[235,8518+25])
+                                    ]
+                              expression (asmcomp/polling.ml[236,8548+6]..[239,8653+7])
+                                Pexp_record
+                                [
+                                  "desc" (asmcomp/polling.ml[237,8563+8]..[237,8563+12])
+                                    expression (asmcomp/polling.ml[237,8563+15]..[237,8563+55])
+                                      Pexp_construct "Itrywith" (asmcomp/polling.ml[237,8563+15]..[237,8563+23])
+                                      Some
+                                        expression (asmcomp/polling.ml[237,8563+24]..[237,8563+55])
+                                          Pexp_tuple
+                                          [
+                                            expression (asmcomp/polling.ml[237,8563+25]..[237,8563+39])
+                                              Pexp_apply
+                                              expression (asmcomp/polling.ml[237,8563+25]..[237,8563+30])
+                                                Pexp_ident "instr" (asmcomp/polling.ml[237,8563+25]..[237,8563+30])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[237,8563+31]..[237,8563+34])
+                                                    Pexp_ident "ube" (asmcomp/polling.ml[237,8563+31]..[237,8563+34])
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[237,8563+35]..[237,8563+39])
+                                                    Pexp_ident "body" (asmcomp/polling.ml[237,8563+35]..[237,8563+39])
+                                              ]
+                                            expression (asmcomp/polling.ml[237,8563+41]..[237,8563+54])
+                                              Pexp_apply
+                                              expression (asmcomp/polling.ml[237,8563+41]..[237,8563+46])
+                                                Pexp_ident "instr" (asmcomp/polling.ml[237,8563+41]..[237,8563+46])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[237,8563+47]..[237,8563+50])
+                                                    Pexp_ident "ube" (asmcomp/polling.ml[237,8563+47]..[237,8563+50])
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[237,8563+51]..[237,8563+54])
+                                                    Pexp_ident "hdl" (asmcomp/polling.ml[237,8563+51]..[237,8563+54])
+                                              ]
+                                          ]
+                                  "next" (asmcomp/polling.ml[238,8620+8]..[238,8620+12])
+                                    expression (asmcomp/polling.ml[238,8620+15]..[238,8620+31])
+                                      Pexp_apply
+                                      expression (asmcomp/polling.ml[238,8620+15]..[238,8620+20])
+                                        Pexp_ident "instr" (asmcomp/polling.ml[238,8620+15]..[238,8620+20])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/polling.ml[238,8620+21]..[238,8620+24])
+                                            Pexp_ident "ube" (asmcomp/polling.ml[238,8620+21]..[238,8620+24])
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/polling.ml[238,8620+25]..[238,8620+31])
+                                            Pexp_field
+                                            expression (asmcomp/polling.ml[238,8620+25]..[238,8620+26])
+                                              Pexp_ident "i" (asmcomp/polling.ml[238,8620+25]..[238,8620+26])
+                                            "next" (asmcomp/polling.ml[238,8620+27]..[238,8620+31])
+                                      ]
+                                ]
+                                Some
+                                  expression (asmcomp/polling.ml[236,8548+8]..[236,8548+9])
+                                    Pexp_ident "i" (asmcomp/polling.ml[236,8548+8]..[236,8548+9])
+                            <case>
+                              pattern (asmcomp/polling.ml[240,8661+6]..[240,8661+31])
+                                Ppat_or
+                                pattern (asmcomp/polling.ml[240,8661+6]..[240,8661+20])
+                                  Ppat_or
+                                  pattern (asmcomp/polling.ml[240,8661+6]..[240,8661+10])
+                                    Ppat_construct "Iend" (asmcomp/polling.ml[240,8661+6]..[240,8661+10])
+                                    None
+                                  pattern (asmcomp/polling.ml[240,8661+13]..[240,8661+20])
+                                    Ppat_construct "Ireturn" (asmcomp/polling.ml[240,8661+13]..[240,8661+20])
+                                    None
+                                pattern (asmcomp/polling.ml[240,8661+23]..[240,8661+31])
+                                  Ppat_construct "Iraise" (asmcomp/polling.ml[240,8661+23]..[240,8661+29])
+                                  Some
+                                    []
+                                    pattern (asmcomp/polling.ml[240,8661+30]..[240,8661+31])
+                                      Ppat_any
+                              expression (asmcomp/polling.ml[240,8661+35]..[240,8661+36])
+                                Pexp_ident "i" (asmcomp/polling.ml[240,8661+35]..[240,8661+36])
+                            <case>
+                              pattern (asmcomp/polling.ml[241,8698+6]..[241,8698+12])
+                                Ppat_construct "Iop" (asmcomp/polling.ml[241,8698+6]..[241,8698+9])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[241,8698+10]..[241,8698+12])
+                                    Ppat_var "op" (asmcomp/polling.ml[241,8698+10]..[241,8698+12])
+                              expression (asmcomp/polling.ml[242,8714+6]..[246,8809+40])
+                                Pexp_sequence
+                                expression (asmcomp/polling.ml[242,8714+6]..[245,8798+9])
+                                  Pexp_match
+                                  expression (asmcomp/polling.ml[242,8714+18]..[242,8714+20])
+                                    Pexp_ident "op" (asmcomp/polling.ml[242,8714+18]..[242,8714+20])
+                                  [
+                                    <case>
+                                      pattern (asmcomp/polling.ml[243,8740+8]..[243,8740+15])
+                                        Ppat_construct "Ipoll" (asmcomp/polling.ml[243,8740+8]..[243,8740+13])
+                                        Some
+                                          []
+                                          pattern (asmcomp/polling.ml[243,8740+14]..[243,8740+15])
+                                            Ppat_any
+                                      expression (asmcomp/polling.ml[243,8740+19]..[243,8740+41])
+                                        Pexp_apply
+                                        expression (asmcomp/polling.ml[243,8740+34]..[243,8740+36])
+                                          Pexp_ident ":=" (asmcomp/polling.ml[243,8740+34]..[243,8740+36])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/polling.ml[243,8740+19]..[243,8740+33])
+                                              Pexp_ident "contains_polls" (asmcomp/polling.ml[243,8740+19]..[243,8740+33])
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/polling.ml[243,8740+37]..[243,8740+41])
+                                              Pexp_construct "true" (asmcomp/polling.ml[243,8740+37]..[243,8740+41])
+                                              None
+                                        ]
+                                    <case>
+                                      pattern (asmcomp/polling.ml[244,8782+8]..[244,8782+9])
+                                        Ppat_any
+                                      expression (asmcomp/polling.ml[244,8782+13]..[244,8782+15])
+                                        Pexp_construct "()" (asmcomp/polling.ml[244,8782+13]..[244,8782+15])
+                                        None
+                                  ]
+                                expression (asmcomp/polling.ml[246,8809+6]..[246,8809+40])
+                                  Pexp_record
+                                  [
+                                    "next" (asmcomp/polling.ml[246,8809+15]..[246,8809+19])
+                                      expression (asmcomp/polling.ml[246,8809+22]..[246,8809+38])
+                                        Pexp_apply
+                                        expression (asmcomp/polling.ml[246,8809+22]..[246,8809+27])
+                                          Pexp_ident "instr" (asmcomp/polling.ml[246,8809+22]..[246,8809+27])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/polling.ml[246,8809+28]..[246,8809+31])
+                                              Pexp_ident "ube" (asmcomp/polling.ml[246,8809+28]..[246,8809+31])
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/polling.ml[246,8809+32]..[246,8809+38])
+                                              Pexp_field
+                                              expression (asmcomp/polling.ml[246,8809+32]..[246,8809+33])
+                                                Pexp_ident "i" (asmcomp/polling.ml[246,8809+32]..[246,8809+33])
+                                              "next" (asmcomp/polling.ml[246,8809+34]..[246,8809+38])
+                                        ]
+                                  ]
+                                  Some
+                                    expression (asmcomp/polling.ml[246,8809+8]..[246,8809+9])
+                                      Pexp_ident "i" (asmcomp/polling.ml[246,8809+8]..[246,8809+9])
+                          ]
+                ]
+                expression (asmcomp/polling.ml[248,8855+2]..[248,8855+23])
+                  Pexp_apply
+                  expression (asmcomp/polling.ml[248,8855+2]..[248,8855+7])
+                    Pexp_ident "instr" (asmcomp/polling.ml[248,8855+2]..[248,8855+7])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/polling.ml[248,8855+8]..[248,8855+21])
+                        Pexp_ident "Int.Set.empty" (asmcomp/polling.ml[248,8855+8]..[248,8855+21])
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/polling.ml[248,8855+22]..[248,8855+23])
+                        Pexp_ident "i" (asmcomp/polling.ml[248,8855+22]..[248,8855+23])
+                  ]
+    ]
+  structure_item (asmcomp/polling.ml[250,8880+0]..[273,9871+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[250,8880+4]..[250,8880+28])
+          Ppat_var "find_poll_alloc_or_calls" (asmcomp/polling.ml[250,8880+4]..[250,8880+28])
+        expression (asmcomp/polling.ml[250,8880+29]..[273,9871+19]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/polling.ml[250,8880+29]..[250,8880+34])
+            Ppat_var "instr" (asmcomp/polling.ml[250,8880+29]..[250,8880+34])
+          expression (asmcomp/polling.ml[251,8917+2]..[273,9871+19])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (asmcomp/polling.ml[251,8917+6]..[251,8917+13])
+                  Ppat_var "f_match" (asmcomp/polling.ml[251,8917+6]..[251,8917+13])
+                expression (asmcomp/polling.ml[251,8917+14]..[264,9654+37]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (asmcomp/polling.ml[251,8917+14]..[251,8917+15])
+                    Ppat_var "i" (asmcomp/polling.ml[251,8917+14]..[251,8917+15])
+                  expression (asmcomp/polling.ml[252,8935+6]..[264,9654+37])
+                    Pexp_match
+                    expression (asmcomp/polling.ml[252,8935+12]..[252,8935+18])
+                      Pexp_field
+                      expression (asmcomp/polling.ml[252,8935+12]..[252,8935+13])
+                        Pexp_ident "i" (asmcomp/polling.ml[252,8935+12]..[252,8935+13])
+                      "desc" (asmcomp/polling.ml[252,8935+14]..[252,8935+18])
+                    [
+                      <case>
+                        pattern (asmcomp/polling.ml[253,8959+8]..[253,8959+20])
+                          Ppat_construct "Iop" (asmcomp/polling.ml[253,8959+8]..[253,8959+11])
+                          Some
+                            []
+                            pattern (asmcomp/polling.ml[253,8959+11]..[253,8959+20])
+                              Ppat_construct "Ipoll" (asmcomp/polling.ml[253,8959+12]..[253,8959+17])
+                              Some
+                                []
+                                pattern (asmcomp/polling.ml[253,8959+18]..[253,8959+19])
+                                  Ppat_any
+                        expression (asmcomp/polling.ml[253,8959+24]..[253,8959+42])
+                          Pexp_construct "Some" (asmcomp/polling.ml[253,8959+24]..[253,8959+28])
+                          Some
+                            expression (asmcomp/polling.ml[253,8959+29]..[253,8959+42])
+                              Pexp_tuple
+                              [
+                                expression (asmcomp/polling.ml[253,8959+30]..[253,8959+34])
+                                  Pexp_construct "Poll" (asmcomp/polling.ml[253,8959+30]..[253,8959+34])
+                                  None
+                                expression (asmcomp/polling.ml[253,8959+36]..[253,8959+41])
+                                  Pexp_field
+                                  expression (asmcomp/polling.ml[253,8959+36]..[253,8959+37])
+                                    Pexp_ident "i" (asmcomp/polling.ml[253,8959+36]..[253,8959+37])
+                                  "dbg" (asmcomp/polling.ml[253,8959+38]..[253,8959+41])
+                              ]
+                      <case>
+                        pattern (asmcomp/polling.ml[254,9002+8]..[254,9002+21])
+                          Ppat_construct "Iop" (asmcomp/polling.ml[254,9002+8]..[254,9002+11])
+                          Some
+                            []
+                            pattern (asmcomp/polling.ml[254,9002+11]..[254,9002+21])
+                              Ppat_construct "Ialloc" (asmcomp/polling.ml[254,9002+12]..[254,9002+18])
+                              Some
+                                []
+                                pattern (asmcomp/polling.ml[254,9002+19]..[254,9002+20])
+                                  Ppat_any
+                        expression (asmcomp/polling.ml[254,9002+25]..[254,9002+44])
+                          Pexp_construct "Some" (asmcomp/polling.ml[254,9002+25]..[254,9002+29])
+                          Some
+                            expression (asmcomp/polling.ml[254,9002+30]..[254,9002+44])
+                              Pexp_tuple
+                              [
+                                expression (asmcomp/polling.ml[254,9002+31]..[254,9002+36])
+                                  Pexp_construct "Alloc" (asmcomp/polling.ml[254,9002+31]..[254,9002+36])
+                                  None
+                                expression (asmcomp/polling.ml[254,9002+38]..[254,9002+43])
+                                  Pexp_field
+                                  expression (asmcomp/polling.ml[254,9002+38]..[254,9002+39])
+                                    Pexp_ident "i" (asmcomp/polling.ml[254,9002+38]..[254,9002+39])
+                                  "dbg" (asmcomp/polling.ml[254,9002+40]..[254,9002+43])
+                              ]
+                      <case>
+                        pattern (asmcomp/polling.ml[255,9047+8]..[256,9085+45])
+                          Ppat_construct "Iop" (asmcomp/polling.ml[255,9047+8]..[255,9047+11])
+                          Some
+                            []
+                            pattern (asmcomp/polling.ml[255,9047+11]..[256,9085+45])
+                              Ppat_or
+                              pattern (asmcomp/polling.ml[255,9047+12]..[256,9085+25])
+                                Ppat_or
+                                pattern (asmcomp/polling.ml[255,9047+12]..[255,9047+35])
+                                  Ppat_or
+                                  pattern (asmcomp/polling.ml[255,9047+12]..[255,9047+21])
+                                    Ppat_construct "Icall_ind" (asmcomp/polling.ml[255,9047+12]..[255,9047+21])
+                                    None
+                                  pattern (asmcomp/polling.ml[255,9047+24]..[255,9047+35])
+                                    Ppat_construct "Icall_imm" (asmcomp/polling.ml[255,9047+24]..[255,9047+33])
+                                    Some
+                                      []
+                                      pattern (asmcomp/polling.ml[255,9047+34]..[255,9047+35])
+                                        Ppat_any
+                                pattern (asmcomp/polling.ml[256,9085+12]..[256,9085+25])
+                                  Ppat_construct "Itailcall_ind" (asmcomp/polling.ml[256,9085+12]..[256,9085+25])
+                                  None
+                              pattern (asmcomp/polling.ml[256,9085+28]..[256,9085+43])
+                                Ppat_construct "Itailcall_imm" (asmcomp/polling.ml[256,9085+28]..[256,9085+41])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[256,9085+42]..[256,9085+43])
+                                    Ppat_any
+                        expression (asmcomp/polling.ml[256,9085+49]..[256,9085+76])
+                          Pexp_construct "Some" (asmcomp/polling.ml[256,9085+49]..[256,9085+53])
+                          Some
+                            expression (asmcomp/polling.ml[256,9085+54]..[256,9085+76])
+                              Pexp_tuple
+                              [
+                                expression (asmcomp/polling.ml[256,9085+55]..[256,9085+68])
+                                  Pexp_construct "Function_call" (asmcomp/polling.ml[256,9085+55]..[256,9085+68])
+                                  None
+                                expression (asmcomp/polling.ml[256,9085+70]..[256,9085+75])
+                                  Pexp_field
+                                  expression (asmcomp/polling.ml[256,9085+70]..[256,9085+71])
+                                    Pexp_ident "i" (asmcomp/polling.ml[256,9085+70]..[256,9085+71])
+                                  "dbg" (asmcomp/polling.ml[256,9085+72]..[256,9085+75])
+                              ]
+                      <case>
+                        pattern (asmcomp/polling.ml[257,9162+8]..[257,9162+38])
+                          Ppat_construct "Iop" (asmcomp/polling.ml[257,9162+8]..[257,9162+11])
+                          Some
+                            []
+                            pattern (asmcomp/polling.ml[257,9162+11]..[257,9162+38])
+                              Ppat_construct "Iextcall" (asmcomp/polling.ml[257,9162+12]..[257,9162+20])
+                              Some
+                                []
+                                pattern (asmcomp/polling.ml[257,9162+21]..[257,9162+37])
+                                  Ppat_record Closed
+                                  [
+                                    "alloc" (asmcomp/polling.ml[257,9162+23]..[257,9162+28])
+                                      pattern (asmcomp/polling.ml[257,9162+31]..[257,9162+35])
+                                        Ppat_construct "true" (asmcomp/polling.ml[257,9162+31]..[257,9162+35])
+                                        None
+                                  ]
+                        expression (asmcomp/polling.ml[257,9162+42]..[257,9162+69])
+                          Pexp_construct "Some" (asmcomp/polling.ml[257,9162+42]..[257,9162+46])
+                          Some
+                            expression (asmcomp/polling.ml[257,9162+47]..[257,9162+69])
+                              Pexp_tuple
+                              [
+                                expression (asmcomp/polling.ml[257,9162+48]..[257,9162+61])
+                                  Pexp_construct "External_call" (asmcomp/polling.ml[257,9162+48]..[257,9162+61])
+                                  None
+                                expression (asmcomp/polling.ml[257,9162+63]..[257,9162+68])
+                                  Pexp_field
+                                  expression (asmcomp/polling.ml[257,9162+63]..[257,9162+64])
+                                    Pexp_ident "i" (asmcomp/polling.ml[257,9162+63]..[257,9162+64])
+                                  "dbg" (asmcomp/polling.ml[257,9162+65]..[257,9162+68])
+                              ]
+                      <case>
+                        pattern (asmcomp/polling.ml[258,9232+8]..[262,9526+45])
+                          Ppat_construct "Iop" (asmcomp/polling.ml[258,9232+8]..[258,9232+11])
+                          Some
+                            []
+                            pattern (asmcomp/polling.ml[258,9232+11]..[262,9526+45])
+                              Ppat_or
+                              pattern (asmcomp/polling.ml[258,9232+12]..[262,9526+33])
+                                Ppat_or
+                                pattern (asmcomp/polling.ml[258,9232+12]..[262,9526+19])
+                                  Ppat_or
+                                  pattern (asmcomp/polling.ml[258,9232+12]..[261,9452+71])
+                                    Ppat_or
+                                    pattern (asmcomp/polling.ml[258,9232+12]..[261,9452+63])
+                                      Ppat_or
+                                      pattern (asmcomp/polling.ml[258,9232+12]..[261,9452+55])
+                                        Ppat_or
+                                        pattern (asmcomp/polling.ml[258,9232+12]..[261,9452+47])
+                                          Ppat_or
+                                          pattern (asmcomp/polling.ml[258,9232+12]..[261,9452+39])
+                                            Ppat_or
+                                            pattern (asmcomp/polling.ml[258,9232+12]..[261,9452+31])
+                                              Ppat_or
+                                              pattern (asmcomp/polling.ml[258,9232+12]..[261,9452+23])
+                                                Ppat_or
+                                                pattern (asmcomp/polling.ml[258,9232+12]..[260,9379+70])
+                                                  Ppat_or
+                                                  pattern (asmcomp/polling.ml[258,9232+12]..[260,9379+56])
+                                                    Ppat_or
+                                                    pattern (asmcomp/polling.ml[258,9232+12]..[260,9379+41])
+                                                      Ppat_or
+                                                      pattern (asmcomp/polling.ml[258,9232+12]..[260,9379+30])
+                                                        Ppat_or
+                                                        pattern (asmcomp/polling.ml[258,9232+12]..[260,9379+19])
+                                                          Ppat_or
+                                                          pattern (asmcomp/polling.ml[258,9232+12]..[259,9303+73])
+                                                            Ppat_or
+                                                            pattern (asmcomp/polling.ml[258,9232+12]..[259,9303+56])
+                                                              Ppat_or
+                                                              pattern (asmcomp/polling.ml[258,9232+12]..[259,9303+27])
+                                                                Ppat_or
+                                                                pattern (asmcomp/polling.ml[258,9232+12]..[258,9232+68])
+                                                                  Ppat_or
+                                                                  pattern (asmcomp/polling.ml[258,9232+12]..[258,9232+51])
+                                                                    Ppat_or
+                                                                    pattern (asmcomp/polling.ml[258,9232+12]..[258,9232+36])
+                                                                      Ppat_or
+                                                                      pattern (asmcomp/polling.ml[258,9232+12]..[258,9232+26])
+Ppat_or
+pattern (asmcomp/polling.ml[258,9232+12]..[258,9232+17])
+  Ppat_construct "Imove" (asmcomp/polling.ml[258,9232+12]..[258,9232+17])
+  None
+pattern (asmcomp/polling.ml[258,9232+20]..[258,9232+26])
+  Ppat_construct "Ispill" (asmcomp/polling.ml[258,9232+20]..[258,9232+26])
+  None
+                                                                      pattern (asmcomp/polling.ml[258,9232+29]..[258,9232+36])
+Ppat_construct "Ireload" (asmcomp/polling.ml[258,9232+29]..[258,9232+36])
+None
+                                                                    pattern (asmcomp/polling.ml[258,9232+39]..[258,9232+51])
+                                                                      Ppat_construct "Iconst_int" (asmcomp/polling.ml[258,9232+39]..[258,9232+49])
+                                                                      Some
+[]
+pattern (asmcomp/polling.ml[258,9232+50]..[258,9232+51])
+  Ppat_any
+                                                                  pattern (asmcomp/polling.ml[258,9232+54]..[258,9232+68])
+                                                                    Ppat_construct "Iconst_float" (asmcomp/polling.ml[258,9232+54]..[258,9232+66])
+                                                                    Some
+                                                                      []
+                                                                      pattern (asmcomp/polling.ml[258,9232+67]..[258,9232+68])
+Ppat_any
+                                                                pattern (asmcomp/polling.ml[259,9303+12]..[259,9303+27])
+                                                                  Ppat_construct "Iconst_symbol" (asmcomp/polling.ml[259,9303+12]..[259,9303+25])
+                                                                  Some
+                                                                    []
+                                                                    pattern (asmcomp/polling.ml[259,9303+26]..[259,9303+27])
+                                                                      Ppat_any
+                                                              pattern (asmcomp/polling.ml[259,9303+30]..[259,9303+56])
+                                                                Ppat_construct "Iextcall" (asmcomp/polling.ml[259,9303+30]..[259,9303+38])
+                                                                Some
+                                                                  []
+                                                                  pattern (asmcomp/polling.ml[259,9303+39]..[259,9303+56])
+                                                                    Ppat_record Closed
+                                                                    [
+                                                                      "alloc" (asmcomp/polling.ml[259,9303+41]..[259,9303+46])
+pattern (asmcomp/polling.ml[259,9303+49]..[259,9303+54])
+  Ppat_construct "false" (asmcomp/polling.ml[259,9303+49]..[259,9303+54])
+  None
+                                                                    ]
+                                                            pattern (asmcomp/polling.ml[259,9303+59]..[259,9303+73])
+                                                              Ppat_construct "Istackoffset" (asmcomp/polling.ml[259,9303+59]..[259,9303+71])
+                                                              Some
+                                                                []
+                                                                pattern (asmcomp/polling.ml[259,9303+72]..[259,9303+73])
+                                                                  Ppat_any
+                                                          pattern (asmcomp/polling.ml[260,9379+12]..[260,9379+19])
+                                                            Ppat_construct "Iload" (asmcomp/polling.ml[260,9379+12]..[260,9379+17])
+                                                            Some
+                                                              []
+                                                              pattern (asmcomp/polling.ml[260,9379+18]..[260,9379+19])
+                                                                Ppat_any
+                                                        pattern (asmcomp/polling.ml[260,9379+22]..[260,9379+30])
+                                                          Ppat_construct "Istore" (asmcomp/polling.ml[260,9379+22]..[260,9379+28])
+                                                          Some
+                                                            []
+                                                            pattern (asmcomp/polling.ml[260,9379+29]..[260,9379+30])
+                                                              Ppat_any
+                                                      pattern (asmcomp/polling.ml[260,9379+33]..[260,9379+41])
+                                                        Ppat_construct "Iintop" (asmcomp/polling.ml[260,9379+33]..[260,9379+39])
+                                                        Some
+                                                          []
+                                                          pattern (asmcomp/polling.ml[260,9379+40]..[260,9379+41])
+                                                            Ppat_any
+                                                    pattern (asmcomp/polling.ml[260,9379+44]..[260,9379+56])
+                                                      Ppat_construct "Iintop_imm" (asmcomp/polling.ml[260,9379+44]..[260,9379+54])
+                                                      Some
+                                                        []
+                                                        pattern (asmcomp/polling.ml[260,9379+55]..[260,9379+56])
+                                                          Ppat_any
+                                                  pattern (asmcomp/polling.ml[260,9379+59]..[260,9379+70])
+                                                    Ppat_construct "Ifloatofint" (asmcomp/polling.ml[260,9379+59]..[260,9379+70])
+                                                    None
+                                                pattern (asmcomp/polling.ml[261,9452+12]..[261,9452+23])
+                                                  Ppat_construct "Iintoffloat" (asmcomp/polling.ml[261,9452+12]..[261,9452+23])
+                                                  None
+                                              pattern (asmcomp/polling.ml[261,9452+26]..[261,9452+31])
+                                                Ppat_construct "Inegf" (asmcomp/polling.ml[261,9452+26]..[261,9452+31])
+                                                None
+                                            pattern (asmcomp/polling.ml[261,9452+34]..[261,9452+39])
+                                              Ppat_construct "Iabsf" (asmcomp/polling.ml[261,9452+34]..[261,9452+39])
+                                              None
+                                          pattern (asmcomp/polling.ml[261,9452+42]..[261,9452+47])
+                                            Ppat_construct "Iaddf" (asmcomp/polling.ml[261,9452+42]..[261,9452+47])
+                                            None
+                                        pattern (asmcomp/polling.ml[261,9452+50]..[261,9452+55])
+                                          Ppat_construct "Isubf" (asmcomp/polling.ml[261,9452+50]..[261,9452+55])
+                                          None
+                                      pattern (asmcomp/polling.ml[261,9452+58]..[261,9452+63])
+                                        Ppat_construct "Imulf" (asmcomp/polling.ml[261,9452+58]..[261,9452+63])
+                                        None
+                                    pattern (asmcomp/polling.ml[261,9452+66]..[261,9452+71])
+                                      Ppat_construct "Idivf" (asmcomp/polling.ml[261,9452+66]..[261,9452+71])
+                                      None
+                                  pattern (asmcomp/polling.ml[262,9526+12]..[262,9526+19])
+                                    Ppat_construct "Iopaque" (asmcomp/polling.ml[262,9526+12]..[262,9526+19])
+                                    None
+                                pattern (asmcomp/polling.ml[262,9526+22]..[262,9526+33])
+                                  Ppat_construct "Ispecific" (asmcomp/polling.ml[262,9526+22]..[262,9526+31])
+                                  Some
+                                    []
+                                    pattern (asmcomp/polling.ml[262,9526+32]..[262,9526+33])
+                                      Ppat_any
+                              pattern (asmcomp/polling.ml[262,9526+36]..[262,9526+44])
+                                Ppat_construct "Idls_get" (asmcomp/polling.ml[262,9526+36]..[262,9526+44])
+                                None
+                        expression (asmcomp/polling.ml[262,9526+49]..[262,9526+53])
+                          Pexp_construct "None" (asmcomp/polling.ml[262,9526+49]..[262,9526+53])
+                          None
+                      <case>
+                        pattern (asmcomp/polling.ml[263,9580+8]..[264,9654+29])
+                          Ppat_or
+                          pattern (asmcomp/polling.ml[263,9580+8]..[264,9654+18])
+                            Ppat_or
+                            pattern (asmcomp/polling.ml[263,9580+8]..[263,9580+71])
+                              Ppat_or
+                              pattern (asmcomp/polling.ml[263,9580+8]..[263,9580+61])
+                                Ppat_or
+                                pattern (asmcomp/polling.ml[263,9580+8]..[263,9580+50])
+                                  Ppat_or
+                                  pattern (asmcomp/polling.ml[263,9580+8]..[263,9580+38])
+                                    Ppat_or
+                                    pattern (asmcomp/polling.ml[263,9580+8]..[263,9580+22])
+                                      Ppat_or
+                                      pattern (asmcomp/polling.ml[263,9580+8]..[263,9580+12])
+                                        Ppat_construct "Iend" (asmcomp/polling.ml[263,9580+8]..[263,9580+12])
+                                        None
+                                      pattern (asmcomp/polling.ml[263,9580+15]..[263,9580+22])
+                                        Ppat_construct "Ireturn" (asmcomp/polling.ml[263,9580+15]..[263,9580+22])
+                                        None
+                                    pattern (asmcomp/polling.ml[263,9580+25]..[263,9580+38])
+                                      Ppat_construct "Iifthenelse" (asmcomp/polling.ml[263,9580+25]..[263,9580+36])
+                                      Some
+                                        []
+                                        pattern (asmcomp/polling.ml[263,9580+37]..[263,9580+38])
+                                          Ppat_any
+                                  pattern (asmcomp/polling.ml[263,9580+41]..[263,9580+50])
+                                    Ppat_construct "Iswitch" (asmcomp/polling.ml[263,9580+41]..[263,9580+48])
+                                    Some
+                                      []
+                                      pattern (asmcomp/polling.ml[263,9580+49]..[263,9580+50])
+                                        Ppat_any
+                                pattern (asmcomp/polling.ml[263,9580+53]..[263,9580+61])
+                                  Ppat_construct "Icatch" (asmcomp/polling.ml[263,9580+53]..[263,9580+59])
+                                  Some
+                                    []
+                                    pattern (asmcomp/polling.ml[263,9580+60]..[263,9580+61])
+                                      Ppat_any
+                              pattern (asmcomp/polling.ml[263,9580+64]..[263,9580+71])
+                                Ppat_construct "Iexit" (asmcomp/polling.ml[263,9580+64]..[263,9580+69])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[263,9580+70]..[263,9580+71])
+                                    Ppat_any
+                            pattern (asmcomp/polling.ml[264,9654+8]..[264,9654+18])
+                              Ppat_construct "Itrywith" (asmcomp/polling.ml[264,9654+8]..[264,9654+16])
+                              Some
+                                []
+                                pattern (asmcomp/polling.ml[264,9654+17]..[264,9654+18])
+                                  Ppat_any
+                          pattern (asmcomp/polling.ml[264,9654+21]..[264,9654+29])
+                            Ppat_construct "Iraise" (asmcomp/polling.ml[264,9654+21]..[264,9654+27])
+                            Some
+                              []
+                              pattern (asmcomp/polling.ml[264,9654+28]..[264,9654+29])
+                                Ppat_any
+                        expression (asmcomp/polling.ml[264,9654+33]..[264,9654+37])
+                          Pexp_construct "None" (asmcomp/polling.ml[264,9654+33]..[264,9654+37])
+                          None
+                    ]
+            ]
+            expression (asmcomp/polling.ml[266,9699+2]..[273,9871+19])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (asmcomp/polling.ml[266,9699+6]..[266,9699+13])
+                    Ppat_var "matches" (asmcomp/polling.ml[266,9699+6]..[266,9699+13])
+                  expression (asmcomp/polling.ml[266,9699+16]..[266,9699+22])
+                    Pexp_apply
+                    expression (asmcomp/polling.ml[266,9699+16]..[266,9699+19])
+                      Pexp_ident "ref" (asmcomp/polling.ml[266,9699+16]..[266,9699+19])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (asmcomp/polling.ml[266,9699+20]..[266,9699+22])
+                          Pexp_construct "[]" (asmcomp/polling.ml[266,9699+20]..[266,9699+22])
+                          None
+                    ]
+              ]
+              expression (asmcomp/polling.ml[267,9725+4]..[273,9871+19])
+                Pexp_sequence
+                expression (asmcomp/polling.ml[267,9725+4]..[272,9858+11])
+                  Pexp_apply
+                  expression (asmcomp/polling.ml[267,9725+4]..[267,9725+19])
+                    Pexp_ident "Mach.instr_iter" (asmcomp/polling.ml[267,9725+4]..[267,9725+19])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/polling.ml[268,9745+6]..[271,9836+21])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/polling.ml[268,9745+11]..[268,9745+12])
+                          Ppat_var "i" (asmcomp/polling.ml[268,9745+11]..[268,9745+12])
+                        expression (asmcomp/polling.ml[269,9761+8]..[271,9836+20])
+                          Pexp_match
+                          expression (asmcomp/polling.ml[269,9761+14]..[269,9761+23])
+                            Pexp_apply
+                            expression (asmcomp/polling.ml[269,9761+14]..[269,9761+21])
+                              Pexp_ident "f_match" (asmcomp/polling.ml[269,9761+14]..[269,9761+21])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/polling.ml[269,9761+22]..[269,9761+23])
+                                  Pexp_ident "i" (asmcomp/polling.ml[269,9761+22]..[269,9761+23])
+                            ]
+                          [
+                            <case>
+                              pattern (asmcomp/polling.ml[270,9790+10]..[270,9790+17])
+                                Ppat_construct "Some" (asmcomp/polling.ml[270,9790+10]..[270,9790+14])
+                                Some
+                                  []
+                                  pattern (asmcomp/polling.ml[270,9790+14]..[270,9790+17])
+                                    Ppat_var "x" (asmcomp/polling.ml[270,9790+15]..[270,9790+16])
+                              expression (asmcomp/polling.ml[270,9790+21]..[270,9790+45])
+                                Pexp_apply
+                                expression (asmcomp/polling.ml[270,9790+29]..[270,9790+31])
+                                  Pexp_ident ":=" (asmcomp/polling.ml[270,9790+29]..[270,9790+31])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[270,9790+21]..[270,9790+28])
+                                      Pexp_ident "matches" (asmcomp/polling.ml[270,9790+21]..[270,9790+28])
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[270,9790+32]..[270,9790+45])
+                                      Pexp_construct "::" (asmcomp/polling.ml[270,9790+34]..[270,9790+36])
+                                      Some
+                                        expression (asmcomp/polling.ml[270,9790+32]..[270,9790+45]) ghost
+                                          Pexp_tuple
+                                          [
+                                            expression (asmcomp/polling.ml[270,9790+32]..[270,9790+33])
+                                              Pexp_ident "x" (asmcomp/polling.ml[270,9790+32]..[270,9790+33])
+                                            expression (asmcomp/polling.ml[270,9790+37]..[270,9790+45])
+                                              Pexp_apply
+                                              expression (asmcomp/polling.ml[270,9790+37]..[270,9790+38])
+                                                Pexp_ident "!" (asmcomp/polling.ml[270,9790+37]..[270,9790+38])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[270,9790+38]..[270,9790+45])
+                                                    Pexp_ident "matches" (asmcomp/polling.ml[270,9790+38]..[270,9790+45])
+                                              ]
+                                          ]
+                                ]
+                            <case>
+                              pattern (asmcomp/polling.ml[271,9836+10]..[271,9836+14])
+                                Ppat_construct "None" (asmcomp/polling.ml[271,9836+10]..[271,9836+14])
+                                None
+                              expression (asmcomp/polling.ml[271,9836+18]..[271,9836+20])
+                                Pexp_construct "()" (asmcomp/polling.ml[271,9836+18]..[271,9836+20])
+                                None
+                          ]
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/polling.ml[272,9858+6]..[272,9858+11])
+                        Pexp_ident "instr" (asmcomp/polling.ml[272,9858+6]..[272,9858+11])
+                  ]
+                expression (asmcomp/polling.ml[273,9871+2]..[273,9871+19])
+                  Pexp_apply
+                  expression (asmcomp/polling.ml[273,9871+2]..[273,9871+10])
+                    Pexp_ident "List.rev" (asmcomp/polling.ml[273,9871+2]..[273,9871+10])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/polling.ml[273,9871+11]..[273,9871+19])
+                        Pexp_apply
+                        expression (asmcomp/polling.ml[273,9871+11]..[273,9871+12])
+                          Pexp_ident "!" (asmcomp/polling.ml[273,9871+11]..[273,9871+12])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[273,9871+12]..[273,9871+19])
+                              Pexp_ident "matches" (asmcomp/polling.ml[273,9871+12]..[273,9871+19])
+                        ]
+                  ]
+    ]
+  structure_item (asmcomp/polling.ml[275,9892+0]..[290,10591+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[275,9892+4]..[275,9892+22])
+          Ppat_var "instrument_fundecl" (asmcomp/polling.ml[275,9892+4]..[275,9892+22])
+        expression (asmcomp/polling.ml[275,9892+23]..[290,10591+5]) ghost
+          Pexp_fun
+          Labelled "future_funcnames"
+          None
+          pattern (asmcomp/polling.ml[275,9892+41]..[275,9892+42])
+            Ppat_any
+          expression (asmcomp/polling.ml[275,9892+43]..[290,10591+5]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/polling.ml[275,9892+43]..[275,9892+61])
+              Ppat_constraint
+              pattern (asmcomp/polling.ml[275,9892+44]..[275,9892+45])
+                Ppat_var "f" (asmcomp/polling.ml[275,9892+44]..[275,9892+45])
+              core_type (asmcomp/polling.ml[275,9892+48]..[275,9892+60])
+                Ptyp_constr "Mach.fundecl" (asmcomp/polling.ml[275,9892+48]..[275,9892+60])
+                []
+            expression (asmcomp/polling.ml[275,9892+62]..[290,10591+5])
+              Pexp_constraint
+              expression (asmcomp/polling.ml[276,9971+2]..[290,10591+5])
+                Pexp_ifthenelse
+                expression (asmcomp/polling.ml[276,9971+5]..[276,9971+49])
+                  Pexp_apply
+                  expression (asmcomp/polling.ml[276,9971+5]..[276,9971+38])
+                    Pexp_ident "function_is_assumed_to_never_poll" (asmcomp/polling.ml[276,9971+5]..[276,9971+38])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/polling.ml[276,9971+39]..[276,9971+49])
+                        Pexp_field
+                        expression (asmcomp/polling.ml[276,9971+39]..[276,9971+40])
+                          Pexp_ident "f" (asmcomp/polling.ml[276,9971+39]..[276,9971+40])
+                        "fun_name" (asmcomp/polling.ml[276,9971+41]..[276,9971+49])
+                  ]
+                expression (asmcomp/polling.ml[276,9971+55]..[276,9971+56])
+                  Pexp_ident "f" (asmcomp/polling.ml[276,9971+55]..[276,9971+56])
+                Some
+                  expression (asmcomp/polling.ml[277,10028+7]..[290,10591+5])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (asmcomp/polling.ml[278,10041+8]..[278,10041+26])
+                          Ppat_var "handler_needs_poll" (asmcomp/polling.ml[278,10041+8]..[278,10041+26])
+                        expression (asmcomp/polling.ml[278,10041+29]..[278,10041+61])
+                          Pexp_apply
+                          expression (asmcomp/polling.ml[278,10041+29]..[278,10041+50])
+                            Pexp_ident "polled_loops_analysis" (asmcomp/polling.ml[278,10041+29]..[278,10041+50])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/polling.ml[278,10041+51]..[278,10041+61])
+                                Pexp_field
+                                expression (asmcomp/polling.ml[278,10041+51]..[278,10041+52])
+                                  Pexp_ident "f" (asmcomp/polling.ml[278,10041+51]..[278,10041+52])
+                                "fun_body" (asmcomp/polling.ml[278,10041+53]..[278,10041+61])
+                          ]
+                    ]
+                    expression (asmcomp/polling.ml[279,10106+4]..[289,10515+75])
+                      Pexp_sequence
+                      expression (asmcomp/polling.ml[279,10106+4]..[279,10106+27])
+                        Pexp_apply
+                        expression (asmcomp/polling.ml[279,10106+19]..[279,10106+21])
+                          Pexp_ident ":=" (asmcomp/polling.ml[279,10106+19]..[279,10106+21])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[279,10106+4]..[279,10106+18])
+                              Pexp_ident "contains_polls" (asmcomp/polling.ml[279,10106+4]..[279,10106+18])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[279,10106+22]..[279,10106+27])
+                              Pexp_construct "false" (asmcomp/polling.ml[279,10106+22]..[279,10106+27])
+                              None
+                        ]
+                      expression (asmcomp/polling.ml[280,10135+4]..[289,10515+75])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (asmcomp/polling.ml[280,10135+8]..[280,10135+16])
+                              Ppat_var "new_body" (asmcomp/polling.ml[280,10135+8]..[280,10135+16])
+                            expression (asmcomp/polling.ml[280,10135+19]..[280,10135+59])
+                              Pexp_apply
+                              expression (asmcomp/polling.ml[280,10135+19]..[280,10135+29])
+                                Pexp_ident "instr_body" (asmcomp/polling.ml[280,10135+19]..[280,10135+29])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/polling.ml[280,10135+30]..[280,10135+48])
+                                    Pexp_ident "handler_needs_poll" (asmcomp/polling.ml[280,10135+30]..[280,10135+48])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/polling.ml[280,10135+49]..[280,10135+59])
+                                    Pexp_field
+                                    expression (asmcomp/polling.ml[280,10135+49]..[280,10135+50])
+                                      Pexp_ident "f" (asmcomp/polling.ml[280,10135+49]..[280,10135+50])
+                                    "fun_body" (asmcomp/polling.ml[280,10135+51]..[280,10135+59])
+                              ]
+                        ]
+                        expression (asmcomp/polling.ml[281,10198+4]..[289,10515+75])
+                          Pexp_sequence
+                          expression (asmcomp/polling.ml[281,10198+4]..[287,10413+28])
+                            Pexp_match
+                            expression (asmcomp/polling.ml[281,10198+16]..[281,10198+26])
+                              Pexp_field
+                              expression (asmcomp/polling.ml[281,10198+16]..[281,10198+17])
+                                Pexp_ident "f" (asmcomp/polling.ml[281,10198+16]..[281,10198+17])
+                              "fun_poll" (asmcomp/polling.ml[281,10198+18]..[281,10198+26])
+                            [
+                              <case>
+                                pattern (asmcomp/polling.ml[282,10230+6]..[282,10230+16])
+                                  Ppat_construct "Error_poll" (asmcomp/polling.ml[282,10230+6]..[282,10230+16])
+                                  None
+                                expression (asmcomp/polling.ml[282,10230+20]..[286,10403+9])
+                                  Pexp_match
+                                  expression (asmcomp/polling.ml[283,10256+14]..[283,10256+47])
+                                    Pexp_apply
+                                    expression (asmcomp/polling.ml[283,10256+14]..[283,10256+38])
+                                      Pexp_ident "find_poll_alloc_or_calls" (asmcomp/polling.ml[283,10256+14]..[283,10256+38])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (asmcomp/polling.ml[283,10256+39]..[283,10256+47])
+                                          Pexp_ident "new_body" (asmcomp/polling.ml[283,10256+39]..[283,10256+47])
+                                    ]
+                                  [
+                                    <case>
+                                      pattern (asmcomp/polling.ml[284,10309+10]..[284,10309+12])
+                                        Ppat_construct "[]" (asmcomp/polling.ml[284,10309+10]..[284,10309+12])
+                                        None
+                                      expression (asmcomp/polling.ml[284,10309+16]..[284,10309+18])
+                                        Pexp_construct "()" (asmcomp/polling.ml[284,10309+16]..[284,10309+18])
+                                        None
+                                    <case>
+                                      pattern (asmcomp/polling.ml[285,10328+10]..[285,10328+27])
+                                        Ppat_var "poll_error_instrs" (asmcomp/polling.ml[285,10328+10]..[285,10328+27])
+                                      expression (asmcomp/polling.ml[285,10328+31]..[285,10328+74])
+                                        Pexp_apply
+                                        expression (asmcomp/polling.ml[285,10328+31]..[285,10328+36])
+                                          Pexp_ident "raise" (asmcomp/polling.ml[285,10328+31]..[285,10328+36])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/polling.ml[285,10328+37]..[285,10328+74])
+                                              Pexp_construct "Error" (asmcomp/polling.ml[285,10328+38]..[285,10328+43])
+                                              Some
+                                                expression (asmcomp/polling.ml[285,10328+43]..[285,10328+73])
+                                                  Pexp_construct "Poll_error" (asmcomp/polling.ml[285,10328+44]..[285,10328+54])
+                                                  Some
+                                                    expression (asmcomp/polling.ml[285,10328+55]..[285,10328+72])
+                                                      Pexp_ident "poll_error_instrs" (asmcomp/polling.ml[285,10328+55]..[285,10328+72])
+                                        ]
+                                  ]
+                              <case>
+                                pattern (asmcomp/polling.ml[287,10413+6]..[287,10413+18])
+                                  Ppat_construct "Default_poll" (asmcomp/polling.ml[287,10413+6]..[287,10413+18])
+                                  None
+                                expression (asmcomp/polling.ml[287,10413+22]..[287,10413+24])
+                                  Pexp_construct "()" (asmcomp/polling.ml[287,10413+22]..[287,10413+24])
+                                  None
+                            ]
+                          expression (asmcomp/polling.ml[288,10443+4]..[289,10515+75])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (asmcomp/polling.ml[288,10443+8]..[288,10443+26])
+                                  Ppat_var "new_contains_calls" (asmcomp/polling.ml[288,10443+8]..[288,10443+26])
+                                expression (asmcomp/polling.ml[288,10443+29]..[288,10443+68])
+                                  Pexp_apply
+                                  expression (asmcomp/polling.ml[288,10443+50]..[288,10443+52])
+                                    Pexp_ident "||" (asmcomp/polling.ml[288,10443+50]..[288,10443+52])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[288,10443+29]..[288,10443+49])
+                                        Pexp_field
+                                        expression (asmcomp/polling.ml[288,10443+29]..[288,10443+30])
+                                          Pexp_ident "f" (asmcomp/polling.ml[288,10443+29]..[288,10443+30])
+                                        "fun_contains_calls" (asmcomp/polling.ml[288,10443+31]..[288,10443+49])
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[288,10443+53]..[288,10443+68])
+                                        Pexp_apply
+                                        expression (asmcomp/polling.ml[288,10443+53]..[288,10443+54])
+                                          Pexp_ident "!" (asmcomp/polling.ml[288,10443+53]..[288,10443+54])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (asmcomp/polling.ml[288,10443+54]..[288,10443+68])
+                                              Pexp_ident "contains_polls" (asmcomp/polling.ml[288,10443+54]..[288,10443+68])
+                                        ]
+                                  ]
+                            ]
+                            expression (asmcomp/polling.ml[289,10515+4]..[289,10515+75])
+                              Pexp_record
+                              [
+                                "fun_body" (asmcomp/polling.ml[289,10515+13]..[289,10515+21])
+                                  expression (asmcomp/polling.ml[289,10515+24]..[289,10515+32])
+                                    Pexp_ident "new_body" (asmcomp/polling.ml[289,10515+24]..[289,10515+32])
+                                "fun_contains_calls" (asmcomp/polling.ml[289,10515+34]..[289,10515+52])
+                                  expression (asmcomp/polling.ml[289,10515+55]..[289,10515+73])
+                                    Pexp_ident "new_contains_calls" (asmcomp/polling.ml[289,10515+55]..[289,10515+73])
+                              ]
+                              Some
+                                expression (asmcomp/polling.ml[289,10515+6]..[289,10515+7])
+                                  Pexp_ident "f" (asmcomp/polling.ml[289,10515+6]..[289,10515+7])
+              core_type (asmcomp/polling.ml[275,9892+64]..[275,9892+76])
+                Ptyp_constr "Mach.fundecl" (asmcomp/polling.ml[275,9892+64]..[275,9892+76])
+                []
+    ]
+  structure_item (asmcomp/polling.ml[292,10598+0]..[297,10818+27])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[292,10598+4]..[292,10598+26])
+          Ppat_var "requires_prologue_poll" (asmcomp/polling.ml[292,10598+4]..[292,10598+26])
+        expression (asmcomp/polling.ml[292,10598+27]..[297,10818+27]) ghost
+          Pexp_fun
+          Labelled "future_funcnames"
+          None
+          pattern (asmcomp/polling.ml[292,10598+28]..[292,10598+44])
+            Ppat_var "future_funcnames" (asmcomp/polling.ml[292,10598+28]..[292,10598+44])
+          expression (asmcomp/polling.ml[292,10598+45]..[297,10818+27]) ghost
+            Pexp_fun
+            Labelled "fun_name"
+            None
+            pattern (asmcomp/polling.ml[292,10598+46]..[292,10598+54])
+              Ppat_var "fun_name" (asmcomp/polling.ml[292,10598+46]..[292,10598+54])
+            expression (asmcomp/polling.ml[292,10598+55]..[297,10818+27]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (asmcomp/polling.ml[292,10598+55]..[292,10598+56])
+                Ppat_var "i" (asmcomp/polling.ml[292,10598+55]..[292,10598+56])
+              expression (asmcomp/polling.ml[293,10657+2]..[297,10818+27])
+                Pexp_ifthenelse
+                expression (asmcomp/polling.ml[293,10657+5]..[293,10657+47])
+                  Pexp_apply
+                  expression (asmcomp/polling.ml[293,10657+5]..[293,10657+38])
+                    Pexp_ident "function_is_assumed_to_never_poll" (asmcomp/polling.ml[293,10657+5]..[293,10657+38])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/polling.ml[293,10657+39]..[293,10657+47])
+                        Pexp_ident "fun_name" (asmcomp/polling.ml[293,10657+39]..[293,10657+47])
+                  ]
+                expression (asmcomp/polling.ml[293,10657+53]..[293,10657+58])
+                  Pexp_construct "false" (asmcomp/polling.ml[293,10657+53]..[293,10657+58])
+                  None
+                Some
+                  expression (asmcomp/polling.ml[295,10723+4]..[297,10818+27])
+                    Pexp_match
+                    expression (asmcomp/polling.ml[295,10723+10]..[295,10723+60])
+                      Pexp_apply
+                      expression (asmcomp/polling.ml[295,10723+10]..[295,10723+40])
+                        Pexp_ident "potentially_recursive_tailcall" (asmcomp/polling.ml[295,10723+10]..[295,10723+40])
+                      [
+                        <arg>
+                        Labelled "future_funcnames"
+                          expression (asmcomp/polling.ml[295,10723+42]..[295,10723+58])
+                            Pexp_ident "future_funcnames" (asmcomp/polling.ml[295,10723+42]..[295,10723+58])
+                        <arg>
+                        Nolabel
+                          expression (asmcomp/polling.ml[295,10723+59]..[295,10723+60])
+                            Pexp_ident "i" (asmcomp/polling.ml[295,10723+59]..[295,10723+60])
+                      ]
+                    [
+                      <case>
+                        pattern (asmcomp/polling.ml[296,10789+6]..[296,10789+20])
+                          Ppat_construct "Might_not_poll" (asmcomp/polling.ml[296,10789+6]..[296,10789+20])
+                          None
+                        expression (asmcomp/polling.ml[296,10789+24]..[296,10789+28])
+                          Pexp_construct "true" (asmcomp/polling.ml[296,10789+24]..[296,10789+28])
+                          None
+                      <case>
+                        pattern (asmcomp/polling.ml[297,10818+6]..[297,10818+18])
+                          Ppat_construct "Always_polls" (asmcomp/polling.ml[297,10818+6]..[297,10818+18])
+                          None
+                        expression (asmcomp/polling.ml[297,10818+22]..[297,10818+27])
+                          Pexp_construct "false" (asmcomp/polling.ml[297,10818+22]..[297,10818+27])
+                          None
+                    ]
+    ]
+  structure_item (asmcomp/polling.ml[301,10867+0]..[306,10992+51])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[301,10867+4]..[301,10867+14])
+          Ppat_var "instr_type" (asmcomp/polling.ml[301,10867+4]..[301,10867+14])
+        expression (asmcomp/polling.ml[301,10867+15]..[306,10992+51]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/polling.ml[301,10867+15]..[301,10867+16])
+            Ppat_var "p" (asmcomp/polling.ml[301,10867+15]..[301,10867+16])
+          expression (asmcomp/polling.ml[302,10886+2]..[306,10992+51])
+            Pexp_match
+            expression (asmcomp/polling.ml[302,10886+8]..[302,10886+9])
+              Pexp_ident "p" (asmcomp/polling.ml[302,10886+8]..[302,10886+9])
+            [
+              <case>
+                pattern (asmcomp/polling.ml[303,10901+4]..[303,10901+8])
+                  Ppat_construct "Poll" (asmcomp/polling.ml[303,10901+4]..[303,10901+8])
+                  None
+                expression (asmcomp/polling.ml[303,10901+12]..[303,10901+27])
+                  Pexp_constant PConst_string("inserted poll",(asmcomp/polling.ml[303,10901+13]..[303,10901+26]),None)
+              <case>
+                pattern (asmcomp/polling.ml[304,10929+4]..[304,10929+9])
+                  Ppat_construct "Alloc" (asmcomp/polling.ml[304,10929+4]..[304,10929+9])
+                  None
+                expression (asmcomp/polling.ml[304,10929+13]..[304,10929+25])
+                  Pexp_constant PConst_string("allocation",(asmcomp/polling.ml[304,10929+14]..[304,10929+24]),None)
+              <case>
+                pattern (asmcomp/polling.ml[305,10955+4]..[305,10955+17])
+                  Ppat_construct "Function_call" (asmcomp/polling.ml[305,10955+4]..[305,10955+17])
+                  None
+                expression (asmcomp/polling.ml[305,10955+21]..[305,10955+36])
+                  Pexp_constant PConst_string("function call",(asmcomp/polling.ml[305,10955+22]..[305,10955+35]),None)
+              <case>
+                pattern (asmcomp/polling.ml[306,10992+4]..[306,10992+17])
+                  Ppat_construct "External_call" (asmcomp/polling.ml[306,10992+4]..[306,10992+17])
+                  None
+                expression (asmcomp/polling.ml[306,10992+21]..[306,10992+51])
+                  Pexp_constant PConst_string("external call that allocates",(asmcomp/polling.ml[306,10992+22]..[306,10992+50]),None)
+            ]
+    ]
+  structure_item (asmcomp/polling.ml[308,11045+0]..[336,12110+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[308,11045+4]..[308,11045+16])
+          Ppat_var "report_error" (asmcomp/polling.ml[308,11045+4]..[308,11045+16])
+        expression (asmcomp/polling.ml[308,11045+17]..[336,12110+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/polling.ml[308,11045+17]..[308,11045+20])
+            Ppat_var "ppf" (asmcomp/polling.ml[308,11045+17]..[308,11045+20])
+          expression (asmcomp/polling.ml[308,11045+23]..[336,12110+5])
+            Pexp_function
+            [
+              <case>
+                pattern (asmcomp/polling.ml[309,11077+2]..[309,11077+19])
+                  Ppat_construct "Poll_error" (asmcomp/polling.ml[309,11077+2]..[309,11077+12])
+                  Some
+                    []
+                    pattern (asmcomp/polling.ml[309,11077+13]..[309,11077+19])
+                      Ppat_var "instrs" (asmcomp/polling.ml[309,11077+13]..[309,11077+19])
+                expression (asmcomp/polling.ml[310,11100+2]..[336,12110+5])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (asmcomp/polling.ml[311,11108+8]..[311,11108+26])
+                        Ppat_var "num_inserted_polls" (asmcomp/polling.ml[311,11108+8]..[311,11108+26])
+                      expression (asmcomp/polling.ml[312,11137+6]..[315,11274+16])
+                        Pexp_apply
+                        expression (asmcomp/polling.ml[312,11137+6]..[312,11137+20])
+                          Pexp_ident "List.fold_left" (asmcomp/polling.ml[312,11137+6]..[312,11137+20])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[313,11158+6]..[315,11274+7])
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (asmcomp/polling.ml[313,11158+11]..[313,11158+12])
+                                Ppat_var "s" (asmcomp/polling.ml[313,11158+11]..[313,11158+12])
+                              expression (asmcomp/polling.ml[313,11158+13]..[314,11207+66]) ghost
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (asmcomp/polling.ml[313,11158+13]..[313,11158+18])
+                                  Ppat_tuple
+                                  [
+                                    pattern (asmcomp/polling.ml[313,11158+14]..[313,11158+15])
+                                      Ppat_var "p" (asmcomp/polling.ml[313,11158+14]..[313,11158+15])
+                                    pattern (asmcomp/polling.ml[313,11158+16]..[313,11158+17])
+                                      Ppat_any
+                                  ]
+                                expression (asmcomp/polling.ml[313,11158+22]..[314,11207+66])
+                                  Pexp_apply
+                                  expression (asmcomp/polling.ml[313,11158+24]..[313,11158+25])
+                                    Pexp_ident "+" (asmcomp/polling.ml[313,11158+24]..[313,11158+25])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[313,11158+22]..[313,11158+23])
+                                        Pexp_ident "s" (asmcomp/polling.ml[313,11158+22]..[313,11158+23])
+                                    <arg>
+                                    Nolabel
+                                      expression (asmcomp/polling.ml[313,11158+26]..[314,11207+66])
+                                        Pexp_match
+                                        expression (asmcomp/polling.ml[313,11158+32]..[313,11158+33])
+                                          Pexp_ident "p" (asmcomp/polling.ml[313,11158+32]..[313,11158+33])
+                                        [
+                                          <case>
+                                            pattern (asmcomp/polling.ml[313,11158+39]..[313,11158+43])
+                                              Ppat_construct "Poll" (asmcomp/polling.ml[313,11158+39]..[313,11158+43])
+                                              None
+                                            expression (asmcomp/polling.ml[313,11158+47]..[313,11158+48])
+                                              Pexp_constant PConst_int (1,None)
+                                          <case>
+                                            pattern (asmcomp/polling.ml[314,11207+24]..[314,11207+61])
+                                              Ppat_or
+                                              pattern (asmcomp/polling.ml[314,11207+24]..[314,11207+45])
+                                                Ppat_or
+                                                pattern (asmcomp/polling.ml[314,11207+24]..[314,11207+29])
+                                                  Ppat_construct "Alloc" (asmcomp/polling.ml[314,11207+24]..[314,11207+29])
+                                                  None
+                                                pattern (asmcomp/polling.ml[314,11207+32]..[314,11207+45])
+                                                  Ppat_construct "Function_call" (asmcomp/polling.ml[314,11207+32]..[314,11207+45])
+                                                  None
+                                              pattern (asmcomp/polling.ml[314,11207+48]..[314,11207+61])
+                                                Ppat_construct "External_call" (asmcomp/polling.ml[314,11207+48]..[314,11207+61])
+                                                None
+                                            expression (asmcomp/polling.ml[314,11207+65]..[314,11207+66])
+                                              Pexp_constant PConst_int (0,None)
+                                        ]
+                                  ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[315,11274+8]..[315,11274+9])
+                              Pexp_constant PConst_int (0,None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[315,11274+10]..[315,11274+16])
+                              Pexp_ident "instrs" (asmcomp/polling.ml[315,11274+10]..[315,11274+16])
+                        ]
+                  ]
+                  expression (asmcomp/polling.ml[316,11294+6]..[335,12100+9])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (asmcomp/polling.ml[316,11294+10]..[316,11294+24])
+                          Ppat_var "num_user_polls" (asmcomp/polling.ml[316,11294+10]..[316,11294+24])
+                        expression (asmcomp/polling.ml[316,11294+27]..[316,11294+68])
+                          Pexp_apply
+                          expression (asmcomp/polling.ml[316,11294+48]..[316,11294+49])
+                            Pexp_ident "-" (asmcomp/polling.ml[316,11294+48]..[316,11294+49])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/polling.ml[316,11294+27]..[316,11294+47])
+                                Pexp_apply
+                                expression (asmcomp/polling.ml[316,11294+28]..[316,11294+39])
+                                  Pexp_ident "List.length" (asmcomp/polling.ml[316,11294+28]..[316,11294+39])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[316,11294+40]..[316,11294+46])
+                                      Pexp_ident "instrs" (asmcomp/polling.ml[316,11294+40]..[316,11294+46])
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/polling.ml[316,11294+50]..[316,11294+68])
+                                Pexp_ident "num_inserted_polls" (asmcomp/polling.ml[316,11294+50]..[316,11294+68])
+                          ]
+                    ]
+                    expression (asmcomp/polling.ml[317,11366+6]..[335,12100+9])
+                      Pexp_ifthenelse
+                      expression (asmcomp/polling.ml[317,11366+9]..[317,11366+27])
+                        Pexp_apply
+                        expression (asmcomp/polling.ml[317,11366+24]..[317,11366+25])
+                          Pexp_ident "=" (asmcomp/polling.ml[317,11366+24]..[317,11366+25])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[317,11366+9]..[317,11366+23])
+                              Pexp_ident "num_user_polls" (asmcomp/polling.ml[317,11366+9]..[317,11366+23])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[317,11366+26]..[317,11366+27])
+                              Pexp_constant PConst_int (0,None)
+                        ]
+                      expression (asmcomp/polling.ml[318,11399+8]..[319,11474+44])
+                        Pexp_apply
+                        expression (asmcomp/polling.ml[318,11399+8]..[318,11399+15])
+                          Pexp_ident "fprintf" (asmcomp/polling.ml[318,11399+8]..[318,11399+15])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[318,11399+16]..[318,11399+19])
+                              Pexp_ident "ppf" (asmcomp/polling.ml[318,11399+16]..[318,11399+19])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/polling.ml[318,11399+20]..[319,11474+44])
+                              Pexp_constant PConst_string("Function with poll-error attribute contains polling points (inserted by the compiler)\n",(asmcomp/polling.ml[318,11399+21]..[319,11474+43]),None)
+                        ]
+                      Some
+                        expression (asmcomp/polling.ml[320,11519+11]..[335,12100+9])
+                          Pexp_sequence
+                          expression (asmcomp/polling.ml[321,11536+8]..[322,11556+71])
+                            Pexp_apply
+                            expression (asmcomp/polling.ml[321,11536+8]..[321,11536+15])
+                              Pexp_ident "fprintf" (asmcomp/polling.ml[321,11536+8]..[321,11536+15])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/polling.ml[321,11536+16]..[321,11536+19])
+                                  Pexp_ident "ppf" (asmcomp/polling.ml[321,11536+16]..[321,11536+19])
+                              <arg>
+                              Nolabel
+                                expression (asmcomp/polling.ml[322,11556+8]..[322,11556+71])
+                                  Pexp_constant PConst_string("Function with poll-error attribute contains polling points:\n",(asmcomp/polling.ml[322,11556+9]..[322,11556+70]),None)
+                            ]
+                          expression (asmcomp/polling.ml[323,11629+8]..[334,12063+36])
+                            Pexp_sequence
+                            expression (asmcomp/polling.ml[323,11629+8]..[331,11926+16])
+                              Pexp_apply
+                              expression (asmcomp/polling.ml[323,11629+8]..[323,11629+17])
+                                Pexp_ident "List.iter" (asmcomp/polling.ml[323,11629+8]..[323,11629+17])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/polling.ml[323,11629+18]..[331,11926+9])
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (asmcomp/polling.ml[323,11629+23]..[323,11629+30])
+                                      Ppat_tuple
+                                      [
+                                        pattern (asmcomp/polling.ml[323,11629+24]..[323,11629+25])
+                                          Ppat_var "p" (asmcomp/polling.ml[323,11629+24]..[323,11629+25])
+                                        pattern (asmcomp/polling.ml[323,11629+26]..[323,11629+29])
+                                          Ppat_var "dbg" (asmcomp/polling.ml[323,11629+26]..[323,11629+29])
+                                      ]
+                                    expression (asmcomp/polling.ml[324,11663+10]..[330,11912+13])
+                                      Pexp_match
+                                      expression (asmcomp/polling.ml[324,11663+22]..[324,11663+23])
+                                        Pexp_ident "p" (asmcomp/polling.ml[324,11663+22]..[324,11663+23])
+                                      [
+                                        <case>
+                                          pattern (asmcomp/polling.ml[325,11692+12]..[325,11692+16])
+                                            Ppat_construct "Poll" (asmcomp/polling.ml[325,11692+12]..[325,11692+16])
+                                            None
+                                          expression (asmcomp/polling.ml[325,11692+20]..[325,11692+22])
+                                            Pexp_construct "()" (asmcomp/polling.ml[325,11692+20]..[325,11692+22])
+                                            None
+                                        <case>
+                                          pattern (asmcomp/polling.ml[326,11715+12]..[326,11715+49])
+                                            Ppat_or
+                                            pattern (asmcomp/polling.ml[326,11715+12]..[326,11715+33])
+                                              Ppat_or
+                                              pattern (asmcomp/polling.ml[326,11715+12]..[326,11715+17])
+                                                Ppat_construct "Alloc" (asmcomp/polling.ml[326,11715+12]..[326,11715+17])
+                                                None
+                                              pattern (asmcomp/polling.ml[326,11715+20]..[326,11715+33])
+                                                Ppat_construct "Function_call" (asmcomp/polling.ml[326,11715+20]..[326,11715+33])
+                                                None
+                                            pattern (asmcomp/polling.ml[326,11715+36]..[326,11715+49])
+                                              Ppat_construct "External_call" (asmcomp/polling.ml[326,11715+36]..[326,11715+49])
+                                              None
+                                          expression (asmcomp/polling.ml[327,11768+12]..[329,11883+28])
+                                            Pexp_sequence
+                                            expression (asmcomp/polling.ml[327,11768+12]..[327,11768+49])
+                                              Pexp_apply
+                                              expression (asmcomp/polling.ml[327,11768+12]..[327,11768+19])
+                                                Pexp_ident "fprintf" (asmcomp/polling.ml[327,11768+12]..[327,11768+19])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[327,11768+20]..[327,11768+23])
+                                                    Pexp_ident "ppf" (asmcomp/polling.ml[327,11768+20]..[327,11768+23])
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[327,11768+24]..[327,11768+34])
+                                                    Pexp_constant PConst_string("\t%s at ",(asmcomp/polling.ml[327,11768+25]..[327,11768+33]),None)
+                                                <arg>
+                                                Nolabel
+                                                  expression (asmcomp/polling.ml[327,11768+35]..[327,11768+49])
+                                                    Pexp_apply
+                                                    expression (asmcomp/polling.ml[327,11768+36]..[327,11768+46])
+                                                      Pexp_ident "instr_type" (asmcomp/polling.ml[327,11768+36]..[327,11768+46])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (asmcomp/polling.ml[327,11768+47]..[327,11768+48])
+                                                          Pexp_ident "p" (asmcomp/polling.ml[327,11768+47]..[327,11768+48])
+                                                    ]
+                                              ]
+                                            expression (asmcomp/polling.ml[328,11819+12]..[329,11883+28])
+                                              Pexp_sequence
+                                              expression (asmcomp/polling.ml[328,11819+12]..[328,11819+62])
+                                                Pexp_apply
+                                                expression (asmcomp/polling.ml[328,11819+12]..[328,11819+30])
+                                                  Pexp_ident "Location.print_loc" (asmcomp/polling.ml[328,11819+12]..[328,11819+30])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (asmcomp/polling.ml[328,11819+31]..[328,11819+34])
+                                                      Pexp_ident "ppf" (asmcomp/polling.ml[328,11819+31]..[328,11819+34])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (asmcomp/polling.ml[328,11819+35]..[328,11819+62])
+                                                      Pexp_apply
+                                                      expression (asmcomp/polling.ml[328,11819+36]..[328,11819+57])
+                                                        Pexp_ident "Debuginfo.to_location" (asmcomp/polling.ml[328,11819+36]..[328,11819+57])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (asmcomp/polling.ml[328,11819+58]..[328,11819+61])
+                                                            Pexp_ident "dbg" (asmcomp/polling.ml[328,11819+58]..[328,11819+61])
+                                                      ]
+                                                ]
+                                              expression (asmcomp/polling.ml[329,11883+12]..[329,11883+28])
+                                                Pexp_apply
+                                                expression (asmcomp/polling.ml[329,11883+12]..[329,11883+19])
+                                                  Pexp_ident "fprintf" (asmcomp/polling.ml[329,11883+12]..[329,11883+19])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (asmcomp/polling.ml[329,11883+20]..[329,11883+23])
+                                                      Pexp_ident "ppf" (asmcomp/polling.ml[329,11883+20]..[329,11883+23])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (asmcomp/polling.ml[329,11883+24]..[329,11883+28])
+                                                      Pexp_constant PConst_string("\n",(asmcomp/polling.ml[329,11883+25]..[329,11883+27]),None)
+                                                ]
+                                      ]
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/polling.ml[331,11926+10]..[331,11926+16])
+                                    Pexp_ident "instrs" (asmcomp/polling.ml[331,11926+10]..[331,11926+16])
+                              ]
+                            expression (asmcomp/polling.ml[332,11944+8]..[334,12063+36])
+                              Pexp_ifthenelse
+                              expression (asmcomp/polling.ml[332,11944+11]..[332,11944+33])
+                                Pexp_apply
+                                expression (asmcomp/polling.ml[332,11944+30]..[332,11944+31])
+                                  Pexp_ident ">" (asmcomp/polling.ml[332,11944+30]..[332,11944+31])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[332,11944+11]..[332,11944+29])
+                                      Pexp_ident "num_inserted_polls" (asmcomp/polling.ml[332,11944+11]..[332,11944+29])
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[332,11944+32]..[332,11944+33])
+                                      Pexp_constant PConst_int (0,None)
+                                ]
+                              expression (asmcomp/polling.ml[333,11983+10]..[334,12063+36])
+                                Pexp_apply
+                                expression (asmcomp/polling.ml[333,11983+10]..[333,11983+17])
+                                  Pexp_ident "fprintf" (asmcomp/polling.ml[333,11983+10]..[333,11983+17])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[333,11983+18]..[333,11983+21])
+                                      Pexp_ident "ppf" (asmcomp/polling.ml[333,11983+18]..[333,11983+21])
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/polling.ml[333,11983+22]..[334,12063+36])
+                                      Pexp_constant PConst_string("\t(plus compiler-inserted polling point(s) in prologue and/or loop back edges)\n",(asmcomp/polling.ml[333,11983+23]..[334,12063+35]),None)
+                                ]
+                              None
+            ]
+    ]
+  structure_item (asmcomp/polling.ml[338,12117+0]..[343,12267+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/polling.ml[338,12117+4]..[338,12117+6])
+          Ppat_construct "()" (asmcomp/polling.ml[338,12117+4]..[338,12117+6])
+          None
+        expression (asmcomp/polling.ml[339,12126+2]..[343,12267+5])
+          Pexp_apply
+          expression (asmcomp/polling.ml[339,12126+2]..[339,12126+32])
+            Pexp_ident "Location.register_error_of_exn" (asmcomp/polling.ml[339,12126+2]..[339,12126+32])
+          [
+            <arg>
+            Nolabel
+              expression (asmcomp/polling.ml[340,12159+4]..[343,12267+5])
+                Pexp_function
+                [
+                  <case>
+                    pattern (asmcomp/polling.ml[341,12173+8]..[341,12173+17])
+                      Ppat_construct "Error" (asmcomp/polling.ml[341,12173+8]..[341,12173+13])
+                      Some
+                        []
+                        pattern (asmcomp/polling.ml[341,12173+14]..[341,12173+17])
+                          Ppat_var "err" (asmcomp/polling.ml[341,12173+14]..[341,12173+17])
+                    expression (asmcomp/polling.ml[341,12173+21]..[341,12173+75])
+                      Pexp_construct "Some" (asmcomp/polling.ml[341,12173+21]..[341,12173+25])
+                      Some
+                        expression (asmcomp/polling.ml[341,12173+26]..[341,12173+75])
+                          Pexp_apply
+                          expression (asmcomp/polling.ml[341,12173+27]..[341,12173+57])
+                            Pexp_ident "Location.error_of_printer_file" (asmcomp/polling.ml[341,12173+27]..[341,12173+57])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/polling.ml[341,12173+58]..[341,12173+70])
+                                Pexp_ident "report_error" (asmcomp/polling.ml[341,12173+58]..[341,12173+70])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/polling.ml[341,12173+71]..[341,12173+74])
+                                Pexp_ident "err" (asmcomp/polling.ml[341,12173+71]..[341,12173+74])
+                          ]
+                  <case>
+                    pattern (asmcomp/polling.ml[342,12249+8]..[342,12249+9])
+                      Ppat_any
+                    expression (asmcomp/polling.ml[342,12249+13]..[342,12249+17])
+                      Pexp_construct "None" (asmcomp/polling.ml[342,12249+13]..[342,12249+17])
+                      None
+                ]
+          ]
+    ]
+]
+

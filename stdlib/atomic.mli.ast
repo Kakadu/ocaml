@@ -1,0 +1,253 @@
+[
+  signature_item (stdlib/atomic.mli[18,1233+0]..[24,1373+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/atomic.mli[18,1233+0]..[24,1373+2])
+        Pstr_eval
+        expression (stdlib/atomic.mli[18,1233+0]..[24,1373+2])
+          Pexp_constant PConst_string(" Atomic references.\n\n  See {{!examples} the examples} below.\n  See 'Memory model: The hard bits' chapter in the manual.\n\n    @since 4.12\n",(stdlib/atomic.mli[18,1233+0]..[24,1373+2]),None)
+    ]
+  signature_item (stdlib/atomic.mli[27,1439+0]..[27,1439+10])
+    Psig_type Rec
+    [
+      type_declaration "t" (stdlib/atomic.mli[27,1439+9]..[27,1439+10]) (stdlib/atomic.mli[27,1439+0]..[27,1439+10])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/atomic.mli[26,1377+0]..[26,1377+61])
+              Pstr_eval
+              expression (stdlib/atomic.mli[26,1377+0]..[26,1377+61])
+                Pexp_constant PConst_string(" An atomic (mutable) reference to a value of type ['a]. ",(stdlib/atomic.mli[26,1377+0]..[26,1377+61]),None)
+          ]
+        ptype_params =
+          [
+            core_type (stdlib/atomic.mli[27,1439+6]..[27,1439+8])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (stdlib/atomic.mli[30,1486+0]..[30,1486+21])
+    Psig_value
+    value_description "make" (stdlib/atomic.mli[30,1486+4]..[30,1486+8]) (stdlib/atomic.mli[30,1486+0]..[30,1486+21])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/atomic.mli[29,1451+0]..[29,1451+34])
+            Pstr_eval
+            expression (stdlib/atomic.mli[29,1451+0]..[29,1451+34])
+              Pexp_constant PConst_string(" Create an atomic reference. ",(stdlib/atomic.mli[29,1451+0]..[29,1451+34]),None)
+        ]
+      core_type (stdlib/atomic.mli[30,1486+11]..[30,1486+21])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/atomic.mli[30,1486+11]..[30,1486+13])
+          Ptyp_var a
+        core_type (stdlib/atomic.mli[30,1486+17]..[30,1486+21])
+          Ptyp_constr "t" (stdlib/atomic.mli[30,1486+20]..[30,1486+21])
+          [
+            core_type (stdlib/atomic.mli[30,1486+17]..[30,1486+19])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/atomic.mli[33,1563+0]..[33,1563+20])
+    Psig_value
+    value_description "get" (stdlib/atomic.mli[33,1563+4]..[33,1563+7]) (stdlib/atomic.mli[33,1563+0]..[33,1563+20])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/atomic.mli[32,1509+0]..[32,1509+53])
+            Pstr_eval
+            expression (stdlib/atomic.mli[32,1509+0]..[32,1509+53])
+              Pexp_constant PConst_string(" Get the current value of the atomic reference. ",(stdlib/atomic.mli[32,1509+0]..[32,1509+53]),None)
+        ]
+      core_type (stdlib/atomic.mli[33,1563+10]..[33,1563+20])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/atomic.mli[33,1563+10]..[33,1563+14])
+          Ptyp_constr "t" (stdlib/atomic.mli[33,1563+13]..[33,1563+14])
+          [
+            core_type (stdlib/atomic.mli[33,1563+10]..[33,1563+12])
+              Ptyp_var a
+          ]
+        core_type (stdlib/atomic.mli[33,1563+18]..[33,1563+20])
+          Ptyp_var a
+      []
+  signature_item (stdlib/atomic.mli[36,1634+0]..[36,1634+28])
+    Psig_value
+    value_description "set" (stdlib/atomic.mli[36,1634+4]..[36,1634+7]) (stdlib/atomic.mli[36,1634+0]..[36,1634+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/atomic.mli[35,1585+0]..[35,1585+48])
+            Pstr_eval
+            expression (stdlib/atomic.mli[35,1585+0]..[35,1585+48])
+              Pexp_constant PConst_string(" Set a new value for the atomic reference. ",(stdlib/atomic.mli[35,1585+0]..[35,1585+48]),None)
+        ]
+      core_type (stdlib/atomic.mli[36,1634+10]..[36,1634+28])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/atomic.mli[36,1634+10]..[36,1634+14])
+          Ptyp_constr "t" (stdlib/atomic.mli[36,1634+13]..[36,1634+14])
+          [
+            core_type (stdlib/atomic.mli[36,1634+10]..[36,1634+12])
+              Ptyp_var a
+          ]
+        core_type (stdlib/atomic.mli[36,1634+18]..[36,1634+28])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/atomic.mli[36,1634+18]..[36,1634+20])
+            Ptyp_var a
+          core_type (stdlib/atomic.mli[36,1634+24]..[36,1634+28])
+            Ptyp_constr "unit" (stdlib/atomic.mli[36,1634+24]..[36,1634+28])
+            []
+      []
+  signature_item (stdlib/atomic.mli[39,1743+0]..[39,1743+31])
+    Psig_value
+    value_description "exchange" (stdlib/atomic.mli[39,1743+4]..[39,1743+12]) (stdlib/atomic.mli[39,1743+0]..[39,1743+31])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/atomic.mli[38,1664+0]..[38,1664+78])
+            Pstr_eval
+            expression (stdlib/atomic.mli[38,1664+0]..[38,1664+78])
+              Pexp_constant PConst_string(" Set a new value for the atomic reference, and return the current value. ",(stdlib/atomic.mli[38,1664+0]..[38,1664+78]),None)
+        ]
+      core_type (stdlib/atomic.mli[39,1743+15]..[39,1743+31])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/atomic.mli[39,1743+15]..[39,1743+19])
+          Ptyp_constr "t" (stdlib/atomic.mli[39,1743+18]..[39,1743+19])
+          [
+            core_type (stdlib/atomic.mli[39,1743+15]..[39,1743+17])
+              Ptyp_var a
+          ]
+        core_type (stdlib/atomic.mli[39,1743+23]..[39,1743+31])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/atomic.mli[39,1743+23]..[39,1743+25])
+            Ptyp_var a
+          core_type (stdlib/atomic.mli[39,1743+29]..[39,1743+31])
+            Ptyp_var a
+      []
+  signature_item (stdlib/atomic.mli[46,2051+0]..[46,2051+46])
+    Psig_value
+    value_description "compare_and_set" (stdlib/atomic.mli[46,2051+4]..[46,2051+19]) (stdlib/atomic.mli[46,2051+0]..[46,2051+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/atomic.mli[41,1776+0]..[45,2033+17])
+            Pstr_eval
+            expression (stdlib/atomic.mli[41,1776+0]..[45,2033+17])
+              Pexp_constant PConst_string(" [compare_and_set r seen v] sets the new value of [r] to [v] only\n    if its current value is physically equal to [seen] -- the\n    comparison and the set occur atomically. Returns [true] if the\n    comparison succeeded (so the set happened) and [false]\n    otherwise. ",(stdlib/atomic.mli[41,1776+0]..[45,2033+17]),None)
+        ]
+      core_type (stdlib/atomic.mli[46,2051+22]..[46,2051+46])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/atomic.mli[46,2051+22]..[46,2051+26])
+          Ptyp_constr "t" (stdlib/atomic.mli[46,2051+25]..[46,2051+26])
+          [
+            core_type (stdlib/atomic.mli[46,2051+22]..[46,2051+24])
+              Ptyp_var a
+          ]
+        core_type (stdlib/atomic.mli[46,2051+30]..[46,2051+46])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/atomic.mli[46,2051+30]..[46,2051+32])
+            Ptyp_var a
+          core_type (stdlib/atomic.mli[46,2051+36]..[46,2051+46])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/atomic.mli[46,2051+36]..[46,2051+38])
+              Ptyp_var a
+            core_type (stdlib/atomic.mli[46,2051+42]..[46,2051+46])
+              Ptyp_constr "bool" (stdlib/atomic.mli[46,2051+42]..[46,2051+46])
+              []
+      []
+  signature_item (stdlib/atomic.mli[50,2231+0]..[50,2231+39])
+    Psig_value
+    value_description "fetch_and_add" (stdlib/atomic.mli[50,2231+4]..[50,2231+17]) (stdlib/atomic.mli[50,2231+0]..[50,2231+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/atomic.mli[48,2099+0]..[49,2170+60])
+            Pstr_eval
+            expression (stdlib/atomic.mli[48,2099+0]..[49,2170+60])
+              Pexp_constant PConst_string(" [fetch_and_add r n] atomically increments the value of [r] by [n],\n    and returns the current value (before the increment). ",(stdlib/atomic.mli[48,2099+0]..[49,2170+60]),None)
+        ]
+      core_type (stdlib/atomic.mli[50,2231+20]..[50,2231+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/atomic.mli[50,2231+20]..[50,2231+25])
+          Ptyp_constr "t" (stdlib/atomic.mli[50,2231+24]..[50,2231+25])
+          [
+            core_type (stdlib/atomic.mli[50,2231+20]..[50,2231+23])
+              Ptyp_constr "int" (stdlib/atomic.mli[50,2231+20]..[50,2231+23])
+              []
+          ]
+        core_type (stdlib/atomic.mli[50,2231+29]..[50,2231+39])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/atomic.mli[50,2231+29]..[50,2231+32])
+            Ptyp_constr "int" (stdlib/atomic.mli[50,2231+29]..[50,2231+32])
+            []
+          core_type (stdlib/atomic.mli[50,2231+36]..[50,2231+39])
+            Ptyp_constr "int" (stdlib/atomic.mli[50,2231+36]..[50,2231+39])
+            []
+      []
+  signature_item (stdlib/atomic.mli[53,2335+0]..[53,2335+24])
+    Psig_value
+    value_description "incr" (stdlib/atomic.mli[53,2335+4]..[53,2335+8]) (stdlib/atomic.mli[53,2335+0]..[53,2335+24])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/atomic.mli[52,2272+0]..[52,2272+62])
+            Pstr_eval
+            expression (stdlib/atomic.mli[52,2272+0]..[52,2272+62])
+              Pexp_constant PConst_string(" [incr r] atomically increments the value of [r] by [1]. ",(stdlib/atomic.mli[52,2272+0]..[52,2272+62]),None)
+        ]
+      core_type (stdlib/atomic.mli[53,2335+11]..[53,2335+24])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/atomic.mli[53,2335+11]..[53,2335+16])
+          Ptyp_constr "t" (stdlib/atomic.mli[53,2335+15]..[53,2335+16])
+          [
+            core_type (stdlib/atomic.mli[53,2335+11]..[53,2335+14])
+              Ptyp_constr "int" (stdlib/atomic.mli[53,2335+11]..[53,2335+14])
+              []
+          ]
+        core_type (stdlib/atomic.mli[53,2335+20]..[53,2335+24])
+          Ptyp_constr "unit" (stdlib/atomic.mli[53,2335+20]..[53,2335+24])
+          []
+      []
+  signature_item (stdlib/atomic.mli[56,2424+0]..[56,2424+24])
+    Psig_value
+    value_description "decr" (stdlib/atomic.mli[56,2424+4]..[56,2424+8]) (stdlib/atomic.mli[56,2424+0]..[56,2424+24])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/atomic.mli[55,2361+0]..[55,2361+62])
+            Pstr_eval
+            expression (stdlib/atomic.mli[55,2361+0]..[55,2361+62])
+              Pexp_constant PConst_string(" [decr r] atomically decrements the value of [r] by [1]. ",(stdlib/atomic.mli[55,2361+0]..[55,2361+62]),None)
+        ]
+      core_type (stdlib/atomic.mli[56,2424+11]..[56,2424+24])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/atomic.mli[56,2424+11]..[56,2424+16])
+          Ptyp_constr "t" (stdlib/atomic.mli[56,2424+15]..[56,2424+16])
+          [
+            core_type (stdlib/atomic.mli[56,2424+11]..[56,2424+14])
+              Ptyp_constr "int" (stdlib/atomic.mli[56,2424+11]..[56,2424+14])
+              []
+          ]
+        core_type (stdlib/atomic.mli[56,2424+20]..[56,2424+24])
+          Ptyp_constr "unit" (stdlib/atomic.mli[56,2424+20]..[56,2424+24])
+          []
+      []
+  signature_item (stdlib/atomic.mli[58,2450+0]..[159,5801+4])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/atomic.mli[58,2450+0]..[159,5801+4])
+        Pstr_eval
+        expression (stdlib/atomic.mli[58,2450+0]..[159,5801+4])
+          Pexp_constant PConst_string(" {1:examples Examples}\n\n    {2 Basic Thread Coordination}\n\n    A basic use case is to have global counters that are updated in a\n    thread-safe way, for example to keep some sorts of metrics\n    over IOs performed by the program. Another basic use case is to coordinate\n    the termination of threads in a given program, for example when one thread\n    finds an answer, or when the program is shut down by the user.\n\n    Here, for example, we're going to try to find a number whose hash\n    satisfies a basic property. To do that, we'll run multiple threads which\n    will try random numbers until they find one that works.\n\n    Of course the output below is a sample run and will change every time\n    the program is run.\n\n    {[\n    (* use for termination *)\n    let stop_all_threads = Atomic.make false\n\n    (* total number of individual attempts to find a number *)\n    let num_attempts = Atomic.make 0\n\n    (* find a number that satisfies [p], by... trying random numbers\n       until one fits. *)\n    let find_number_where (p:int -> bool) =\n      let rand = Random.State.make_self_init() in\n      while not (Atomic.get stop_all_threads) do\n\n        let n = Random.State.full_int rand max_int in\n        ignore (Atomic.fetch_and_add num_attempts 1 : int);\n\n        if p (Hashtbl.hash n) then (\n          Printf.printf \"found %d (hash=%d)\\n%!\" n (Hashtbl.hash n);\n          Atomic.set stop_all_threads true; (* signal all threads to stop *)\n        )\n      done;;\n\n\n    (* run multiple domains to search for a [n] where [hash n <= 100] *)\n    let () =\n      let criterion n = n <= 100 in\n      let threads =\n        Array.init 8\n          (fun _ -> Domain.spawn (fun () -> find_number_where criterion))\n      in\n      Array.iter Domain.join threads;\n      Printf.printf \"total number of attempts: %d\\n%!\"\n        (Atomic.get num_attempts) ;;\n\n    - : unit = ()\n    found 1651745641680046833 (hash=33)\n    total number of attempts: 30230350\n    ]}\n\n    {2 Treiber Stack}\n\n    Another example is a basic\n    {{: https://en.wikipedia.org/wiki/Treiber_stack} Treiber stack}\n    (a thread-safe stack) that can be safely shared between threads.\n\n    Note how both [push] and [pop] are recursive, because they attempt to\n    swap the new stack (with one more, or one fewer, element) with the old\n    stack.\n    This is optimistic concurrency: each iteration of, say, [push stack x]\n    gets the old stack [l], and hopes that by the time it tries to replace\n    [l] with [x::l], nobody else has had time to modify the list. If the\n    [compare_and_set] fails it means we were too optimistic, and must try\n    again.\n\n    {[\n    type 'a stack = 'a list Atomic.t\n\n    let rec push (stack: _ stack) elt : unit =\n      let cur = Atomic.get stack in\n      let success = Atomic.compare_and_set stack cur (elt :: cur) in\n      if not success then\n        push stack elt\n\n    let rec pop (stack: _ stack) : _ option =\n      let cur = Atomic.get stack in\n      match cur with\n      | [] -> None\n      | x :: tail ->\n        let success = Atomic.compare_and_set stack cur tail in\n        if success then Some x\n        else pop stack\n\n    # let st = Atomic.make []\n    # push st 1\n    - : unit = ()\n    # push st 2\n    - : unit = ()\n    # pop st\n    - : int option = Some 2\n    # pop st\n    - : int option = Some 1\n    # pop st\n    - : int option = None\n    ]}\n  ",(stdlib/atomic.mli[58,2450+0]..[159,5801+4]),None)
+    ]
+]
+

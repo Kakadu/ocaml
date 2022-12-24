@@ -1,0 +1,192 @@
+[
+  structure_item (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[8,69+0]..[19,308+60])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[8,69+4]..[8,69+5])
+          Ppat_any
+        expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+2]..[19,308+60])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+6]..[9,77+7])
+                Ppat_var "t" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+6]..[9,77+7])
+              expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+10]..[9,77+30])
+                Pexp_apply
+                expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+10]..[9,77+13])
+                  Pexp_ident "ref" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+10]..[9,77+13])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+14]..[9,77+30])
+                      Pexp_apply
+                      expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+15]..[9,77+26])
+                        Pexp_ident "Thread.self" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+15]..[9,77+26])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+27]..[9,77+29])
+                            Pexp_construct "()" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[9,77+27]..[9,77+29])
+                            None
+                      ]
+                ]
+          ]
+          expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[10,111+2]..[19,308+60])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[10,111+6]..[10,111+7])
+                  Ppat_var "d" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[10,111+6]..[10,111+7])
+                expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[10,111+10]..[15,259+6])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[10,111+10]..[10,111+22])
+                    Pexp_ident "Domain.spawn" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[10,111+10]..[10,111+22])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[10,111+23]..[15,259+6])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[10,111+33]..[10,111+35])
+                          Ppat_construct "()" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[10,111+33]..[10,111+35])
+                          None
+                        expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+5]..[14,252+6])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+9]..[11,150+20])
+                                Ppat_var "thread_func" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+9]..[11,150+20])
+                              expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+21]..[11,150+38]) ghost
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+21]..[11,150+23])
+                                  Ppat_construct "()" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+21]..[11,150+23])
+                                  None
+                                expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+26]..[11,150+38])
+                                  Pexp_apply
+                                  expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+26]..[11,150+36])
+                                    Pexp_ident "Unix.sleep" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+26]..[11,150+36])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[11,150+37]..[11,150+38])
+                                        Pexp_constant PConst_int (5,None)
+                                  ]
+                          ]
+                          expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+5]..[14,252+6])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+9]..[12,192+11])
+                                  Ppat_var "tt" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+9]..[12,192+11])
+                                expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+14]..[12,192+42])
+                                  Pexp_apply
+                                  expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+14]..[12,192+27])
+                                    Pexp_ident "Thread.create" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+14]..[12,192+27])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+28]..[12,192+39])
+                                        Pexp_ident "thread_func" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+28]..[12,192+39])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+40]..[12,192+42])
+                                        Pexp_construct "()" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[12,192+40]..[12,192+42])
+                                        None
+                                  ]
+                            ]
+                            expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[13,238+5]..[14,252+6])
+                              Pexp_sequence
+                              expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[13,238+5]..[13,238+12])
+                                Pexp_apply
+                                expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[13,238+7]..[13,238+9])
+                                  Pexp_ident ":=" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[13,238+7]..[13,238+9])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[13,238+5]..[13,238+6])
+                                      Pexp_ident "t" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[13,238+5]..[13,238+6])
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[13,238+10]..[13,238+12])
+                                      Pexp_ident "tt" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[13,238+10]..[13,238+12])
+                                ]
+                              expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[14,252+4]..[14,252+6])
+                                Pexp_construct "()" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[14,252+4]..[14,252+6])
+                                None
+                  ]
+            ]
+            expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[17,271+2]..[19,308+60])
+              Pexp_sequence
+              expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[17,271+2]..[17,271+15])
+                Pexp_apply
+                expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[17,271+2]..[17,271+13])
+                  Pexp_ident "Domain.join" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[17,271+2]..[17,271+13])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[17,271+14]..[17,271+15])
+                      Pexp_ident "d" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[17,271+14]..[17,271+15])
+                ]
+              expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[18,288+2]..[19,308+60])
+                Pexp_sequence
+                expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[18,288+2]..[18,288+18])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[18,288+2]..[18,288+13])
+                    Pexp_ident "Thread.join" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[18,288+2]..[18,288+13])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[18,288+14]..[18,288+18])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[18,288+15]..[18,288+16])
+                          Pexp_ident "!" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[18,288+15]..[18,288+16])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[18,288+16]..[18,288+17])
+                              Pexp_ident "t" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[18,288+16]..[18,288+17])
+                        ]
+                  ]
+                expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+2]..[19,308+60])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+14]..[19,308+16])
+                    Pexp_ident "@@" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+14]..[19,308+16])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+2]..[19,308+13])
+                        Pexp_ident "Domain.join" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+2]..[19,308+13])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+17]..[19,308+60])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+17]..[19,308+29])
+                          Pexp_ident "Domain.spawn" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+17]..[19,308+29])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+30]..[19,308+60])
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+35]..[19,308+37])
+                                Ppat_construct "()" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+35]..[19,308+37])
+                                None
+                              expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+41]..[19,308+59])
+                                Pexp_apply
+                                expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+41]..[19,308+54])
+                                  Pexp_ident "print_endline" (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+41]..[19,308+54])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+55]..[19,308+59])
+                                      Pexp_constant PConst_string("ok",(testsuite/tests/lib-systhreads/multicore_lifecycle.ml[19,308+56]..[19,308+58]),None)
+                                ]
+                        ]
+                  ]
+    ]
+]
+

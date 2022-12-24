@@ -1,0 +1,393 @@
+[
+  structure_item (testsuite/tests/callback/test_finaliser_gc.ml[4,12+0]..[4,12+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/callback/test_finaliser_gc.ml[4,12+4]..[4,12+5])
+          Ppat_var "z" (testsuite/tests/callback/test_finaliser_gc.ml[4,12+4]..[4,12+5])
+        expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+8]..[4,12+36])
+          Pexp_apply
+          expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+8]..[4,12+11])
+            Pexp_ident "ref" (testsuite/tests/callback/test_finaliser_gc.ml[4,12+8]..[4,12+11])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+12]..[4,12+36])
+                Pexp_tuple
+                [
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+13]..[4,12+14])
+                    Pexp_constant PConst_int (0,None)
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+16]..[4,12+17])
+                    Pexp_constant PConst_int (1,None)
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+19]..[4,12+20])
+                    Pexp_constant PConst_int (2,None)
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+22]..[4,12+23])
+                    Pexp_constant PConst_int (3,None)
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+25]..[4,12+26])
+                    Pexp_constant PConst_int (4,None)
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+28]..[4,12+29])
+                    Pexp_constant PConst_int (5,None)
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+31]..[4,12+32])
+                    Pexp_constant PConst_int (6,None)
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[4,12+34]..[4,12+35])
+                    Pexp_constant PConst_int (7,None)
+                ]
+          ]
+    ]
+  structure_item (testsuite/tests/callback/test_finaliser_gc.ml[5,49+0]..[5,49+32])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/callback/test_finaliser_gc.ml[5,49+4]..[5,49+21])
+          Ppat_var "finaliser_pending" (testsuite/tests/callback/test_finaliser_gc.ml[5,49+4]..[5,49+21])
+        expression (testsuite/tests/callback/test_finaliser_gc.ml[5,49+24]..[5,49+32])
+          Pexp_apply
+          expression (testsuite/tests/callback/test_finaliser_gc.ml[5,49+24]..[5,49+27])
+            Pexp_ident "ref" (testsuite/tests/callback/test_finaliser_gc.ml[5,49+24]..[5,49+27])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/callback/test_finaliser_gc.ml[5,49+28]..[5,49+32])
+                Pexp_construct "true" (testsuite/tests/callback/test_finaliser_gc.ml[5,49+28]..[5,49+32])
+                None
+          ]
+    ]
+  structure_item (testsuite/tests/callback/test_finaliser_gc.ml[7,83+0]..[10,187+18])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/callback/test_finaliser_gc.ml[7,83+4]..[7,83+15])
+          Ppat_var "force_gc_fn" (testsuite/tests/callback/test_finaliser_gc.ml[7,83+4]..[7,83+15])
+        expression (testsuite/tests/callback/test_finaliser_gc.ml[7,83+16]..[10,187+18]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/callback/test_finaliser_gc.ml[7,83+16]..[7,83+17])
+            Ppat_any
+          expression (testsuite/tests/callback/test_finaliser_gc.ml[8,103+2]..[10,187+18])
+            Pexp_sequence
+            expression (testsuite/tests/callback/test_finaliser_gc.ml[8,103+2]..[8,103+35])
+              Pexp_apply
+              expression (testsuite/tests/callback/test_finaliser_gc.ml[8,103+2]..[8,103+14])
+                Pexp_ident "print_string" (testsuite/tests/callback/test_finaliser_gc.ml[8,103+2]..[8,103+14])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[8,103+15]..[8,103+35])
+                    Pexp_constant PConst_string("Finaliser has run!",(testsuite/tests/callback/test_finaliser_gc.ml[8,103+16]..[8,103+34]),None)
+              ]
+            expression (testsuite/tests/callback/test_finaliser_gc.ml[8,103+37]..[10,187+18])
+              Pexp_sequence
+              expression (testsuite/tests/callback/test_finaliser_gc.ml[8,103+37]..[8,103+52])
+                Pexp_apply
+                expression (testsuite/tests/callback/test_finaliser_gc.ml[8,103+37]..[8,103+50])
+                  Pexp_ident "print_newline" (testsuite/tests/callback/test_finaliser_gc.ml[8,103+37]..[8,103+50])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/callback/test_finaliser_gc.ml[8,103+50]..[8,103+52])
+                      Pexp_construct "()" (testsuite/tests/callback/test_finaliser_gc.ml[8,103+50]..[8,103+52])
+                      None
+                ]
+              expression (testsuite/tests/callback/test_finaliser_gc.ml[9,157+2]..[10,187+18])
+                Pexp_sequence
+                expression (testsuite/tests/callback/test_finaliser_gc.ml[9,157+2]..[9,157+28])
+                  Pexp_apply
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[9,157+20]..[9,157+22])
+                    Pexp_ident ":=" (testsuite/tests/callback/test_finaliser_gc.ml[9,157+20]..[9,157+22])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/callback/test_finaliser_gc.ml[9,157+2]..[9,157+19])
+                        Pexp_ident "finaliser_pending" (testsuite/tests/callback/test_finaliser_gc.ml[9,157+2]..[9,157+19])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/callback/test_finaliser_gc.ml[9,157+23]..[9,157+28])
+                        Pexp_construct "false" (testsuite/tests/callback/test_finaliser_gc.ml[9,157+23]..[9,157+28])
+                        None
+                  ]
+                expression (testsuite/tests/callback/test_finaliser_gc.ml[10,187+2]..[10,187+18])
+                  Pexp_apply
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[10,187+2]..[10,187+15])
+                    Pexp_ident "Gc.full_major" (testsuite/tests/callback/test_finaliser_gc.ml[10,187+2]..[10,187+15])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/callback/test_finaliser_gc.ml[10,187+16]..[10,187+18])
+                        Pexp_construct "()" (testsuite/tests/callback/test_finaliser_gc.ml[10,187+16]..[10,187+18])
+                        None
+                  ]
+    ]
+  structure_item (testsuite/tests/callback/test_finaliser_gc.ml[12,207+0]..[28,772+3])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/callback/test_finaliser_gc.ml[12,207+4]..[12,207+21])
+          Ppat_var "trigger_finaliser" (testsuite/tests/callback/test_finaliser_gc.ml[12,207+4]..[12,207+21])
+        expression (testsuite/tests/callback/test_finaliser_gc.ml[12,207+22]..[28,772+3]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/callback/test_finaliser_gc.ml[12,207+22]..[12,207+24])
+            Ppat_construct "()" (testsuite/tests/callback/test_finaliser_gc.ml[12,207+22]..[12,207+24])
+            None
+          expression (testsuite/tests/callback/test_finaliser_gc.ml[15,307+2]..[28,772+3])
+            Pexp_sequence
+            expression (testsuite/tests/callback/test_finaliser_gc.ml[15,307+2]..[15,307+33])
+              Pexp_apply
+              expression (testsuite/tests/callback/test_finaliser_gc.ml[15,307+2]..[15,307+13])
+                Pexp_ident "Gc.finalise" (testsuite/tests/callback/test_finaliser_gc.ml[15,307+2]..[15,307+13])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[15,307+14]..[15,307+25])
+                    Pexp_ident "force_gc_fn" (testsuite/tests/callback/test_finaliser_gc.ml[15,307+14]..[15,307+25])
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[15,307+26]..[15,307+33])
+                    Pexp_apply
+                    expression (testsuite/tests/callback/test_finaliser_gc.ml[15,307+27]..[15,307+30])
+                      Pexp_ident "ref" (testsuite/tests/callback/test_finaliser_gc.ml[15,307+27]..[15,307+30])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/callback/test_finaliser_gc.ml[15,307+31]..[15,307+32])
+                          Pexp_constant PConst_int (0,None)
+                    ]
+              ]
+            expression (testsuite/tests/callback/test_finaliser_gc.ml[17,385+2]..[28,772+3])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/callback/test_finaliser_gc.ml[17,385+6]..[17,385+7])
+                    Ppat_var "s" (testsuite/tests/callback/test_finaliser_gc.ml[17,385+6]..[17,385+7])
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[17,385+10]..[17,385+27])
+                    Pexp_apply
+                    expression (testsuite/tests/callback/test_finaliser_gc.ml[17,385+10]..[17,385+21])
+                      Pexp_ident "String.make" (testsuite/tests/callback/test_finaliser_gc.ml[17,385+10]..[17,385+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/callback/test_finaliser_gc.ml[17,385+22]..[17,385+23])
+                          Pexp_constant PConst_int (5,None)
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/callback/test_finaliser_gc.ml[17,385+24]..[17,385+27])
+                          Pexp_constant PConst_char 62
+                    ]
+              ]
+              expression (testsuite/tests/callback/test_finaliser_gc.ml[23,636+2]..[28,772+3])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/callback/test_finaliser_gc.ml[23,636+6]..[23,636+7])
+                      Ppat_var "x" (testsuite/tests/callback/test_finaliser_gc.ml[23,636+6]..[23,636+7])
+                    expression (testsuite/tests/callback/test_finaliser_gc.ml[23,636+10]..[23,636+15])
+                      Pexp_apply
+                      expression (testsuite/tests/callback/test_finaliser_gc.ml[23,636+10]..[23,636+13])
+                        Pexp_ident "ref" (testsuite/tests/callback/test_finaliser_gc.ml[23,636+10]..[23,636+13])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/callback/test_finaliser_gc.ml[23,636+14]..[23,636+15])
+                            Pexp_constant PConst_int (0,None)
+                      ]
+                ]
+                expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+2]..[28,772+3])
+                  Pexp_sequence
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+2]..[27,764+6])
+                    Pexp_while
+                    expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+8]..[24,655+50])
+                      Pexp_apply
+                      expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+29]..[24,655+31])
+                        Pexp_ident "&&" (testsuite/tests/callback/test_finaliser_gc.ml[24,655+29]..[24,655+31])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+8]..[24,655+28])
+                            Pexp_apply
+                            expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+12]..[24,655+13])
+                              Pexp_ident "<" (testsuite/tests/callback/test_finaliser_gc.ml[24,655+12]..[24,655+13])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+9]..[24,655+11])
+                                  Pexp_apply
+                                  expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+9]..[24,655+10])
+                                    Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[24,655+9]..[24,655+10])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+10]..[24,655+11])
+                                        Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[24,655+10]..[24,655+11])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+14]..[24,655+27])
+                                  Pexp_constant PConst_int (1_000_000_000,None)
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+32]..[24,655+50])
+                            Pexp_apply
+                            expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+32]..[24,655+33])
+                              Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[24,655+32]..[24,655+33])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[24,655+33]..[24,655+50])
+                                  Pexp_ident "finaliser_pending" (testsuite/tests/callback/test_finaliser_gc.ml[24,655+33]..[24,655+50])
+                            ]
+                      ]
+                    expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+4]..[26,752+11])
+                      Pexp_sequence
+                      expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+4]..[25,709+41])
+                        Pexp_apply
+                        expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+6]..[25,709+8])
+                          Pexp_ident ":=" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+6]..[25,709+8])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+4]..[25,709+5])
+                              Pexp_ident "z" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+4]..[25,709+5])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+9]..[25,709+41])
+                              Pexp_tuple
+                              [
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+10]..[25,709+12])
+                                  Pexp_apply
+                                  expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+10]..[25,709+11])
+                                    Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+10]..[25,709+11])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+11]..[25,709+12])
+                                        Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+11]..[25,709+12])
+                                  ]
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+14]..[25,709+16])
+                                  Pexp_apply
+                                  expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+14]..[25,709+15])
+                                    Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+14]..[25,709+15])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+15]..[25,709+16])
+                                        Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+15]..[25,709+16])
+                                  ]
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+18]..[25,709+20])
+                                  Pexp_apply
+                                  expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+18]..[25,709+19])
+                                    Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+18]..[25,709+19])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+19]..[25,709+20])
+                                        Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+19]..[25,709+20])
+                                  ]
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+22]..[25,709+24])
+                                  Pexp_apply
+                                  expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+22]..[25,709+23])
+                                    Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+22]..[25,709+23])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+23]..[25,709+24])
+                                        Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+23]..[25,709+24])
+                                  ]
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+26]..[25,709+28])
+                                  Pexp_apply
+                                  expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+26]..[25,709+27])
+                                    Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+26]..[25,709+27])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+27]..[25,709+28])
+                                        Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+27]..[25,709+28])
+                                  ]
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+30]..[25,709+32])
+                                  Pexp_apply
+                                  expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+30]..[25,709+31])
+                                    Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+30]..[25,709+31])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+31]..[25,709+32])
+                                        Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+31]..[25,709+32])
+                                  ]
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+34]..[25,709+36])
+                                  Pexp_apply
+                                  expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+34]..[25,709+35])
+                                    Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+34]..[25,709+35])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+35]..[25,709+36])
+                                        Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+35]..[25,709+36])
+                                  ]
+                                expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+38]..[25,709+40])
+                                  Pexp_apply
+                                  expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+38]..[25,709+39])
+                                    Pexp_ident "!" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+38]..[25,709+39])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/callback/test_finaliser_gc.ml[25,709+39]..[25,709+40])
+                                        Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[25,709+39]..[25,709+40])
+                                  ]
+                              ]
+                        ]
+                      expression (testsuite/tests/callback/test_finaliser_gc.ml[26,752+4]..[26,752+10])
+                        Pexp_apply
+                        expression (testsuite/tests/callback/test_finaliser_gc.ml[26,752+4]..[26,752+8])
+                          Pexp_ident "incr" (testsuite/tests/callback/test_finaliser_gc.ml[26,752+4]..[26,752+8])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/callback/test_finaliser_gc.ml[26,752+9]..[26,752+10])
+                              Pexp_ident "x" (testsuite/tests/callback/test_finaliser_gc.ml[26,752+9]..[26,752+10])
+                        ]
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[28,772+2]..[28,772+3])
+                    Pexp_ident "s" (testsuite/tests/callback/test_finaliser_gc.ml[28,772+2]..[28,772+3])
+    ]
+  structure_item (testsuite/tests/callback/test_finaliser_gc.ml[30,777+0]..[31,785+55])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/callback/test_finaliser_gc.ml[30,777+4]..[30,777+5])
+          Ppat_any
+        expression (testsuite/tests/callback/test_finaliser_gc.ml[31,785+2]..[31,785+55])
+          Pexp_sequence
+          expression (testsuite/tests/callback/test_finaliser_gc.ml[31,785+2]..[31,785+37])
+            Pexp_apply
+            expression (testsuite/tests/callback/test_finaliser_gc.ml[31,785+2]..[31,785+14])
+              Pexp_ident "print_string" (testsuite/tests/callback/test_finaliser_gc.ml[31,785+2]..[31,785+14])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/callback/test_finaliser_gc.ml[31,785+15]..[31,785+37])
+                  Pexp_apply
+                  expression (testsuite/tests/callback/test_finaliser_gc.ml[31,785+16]..[31,785+33])
+                    Pexp_ident "trigger_finaliser" (testsuite/tests/callback/test_finaliser_gc.ml[31,785+16]..[31,785+33])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/callback/test_finaliser_gc.ml[31,785+34]..[31,785+36])
+                        Pexp_construct "()" (testsuite/tests/callback/test_finaliser_gc.ml[31,785+34]..[31,785+36])
+                        None
+                  ]
+            ]
+          expression (testsuite/tests/callback/test_finaliser_gc.ml[31,785+39]..[31,785+54])
+            Pexp_apply
+            expression (testsuite/tests/callback/test_finaliser_gc.ml[31,785+39]..[31,785+52])
+              Pexp_ident "print_newline" (testsuite/tests/callback/test_finaliser_gc.ml[31,785+39]..[31,785+52])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/callback/test_finaliser_gc.ml[31,785+52]..[31,785+54])
+                  Pexp_construct "()" (testsuite/tests/callback/test_finaliser_gc.ml[31,785+52]..[31,785+54])
+                  None
+            ]
+    ]
+]
+

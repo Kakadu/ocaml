@@ -1,0 +1,124 @@
+[
+  structure_item (testsuite/tests/backtrace/backtrace_c_exn.ml[8,157+0]..[8,157+56])
+    Pstr_primitive
+    value_description "stubbed_raise" (testsuite/tests/backtrace/backtrace_c_exn.ml[8,157+9]..[8,157+22]) (testsuite/tests/backtrace/backtrace_c_exn.ml[8,157+0]..[8,157+56])
+      core_type (testsuite/tests/backtrace/backtrace_c_exn.ml[8,157+25]..[8,157+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (testsuite/tests/backtrace/backtrace_c_exn.ml[8,157+25]..[8,157+29])
+          Ptyp_constr "unit" (testsuite/tests/backtrace/backtrace_c_exn.ml[8,157+25]..[8,157+29])
+          []
+        core_type (testsuite/tests/backtrace/backtrace_c_exn.ml[8,157+33]..[8,157+37])
+          Ptyp_constr "unit" (testsuite/tests/backtrace/backtrace_c_exn.ml[8,157+33]..[8,157+37])
+          []
+      [
+        "caml_498_raise"
+      ]
+  structure_item (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+0]..[10,215+33])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+4]..[10,215+13])
+          Ppat_var "raise_exn" (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+4]..[10,215+13])
+        expression (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+14]..[10,215+33]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+14]..[10,215+16])
+            Ppat_construct "()" (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+14]..[10,215+16])
+            None
+          expression (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+19]..[10,215+33])
+            Pexp_apply
+            expression (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+19]..[10,215+27])
+              Pexp_ident "failwith" (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+19]..[10,215+27])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+28]..[10,215+33])
+                  Pexp_constant PConst_string("exn",(testsuite/tests/backtrace/backtrace_c_exn.ml[10,215+29]..[10,215+32]),None)
+            ]
+    ]
+  structure_item (testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+0]..[12,250+53])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+4]..[12,250+6])
+          Ppat_construct "()" (testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+4]..[12,250+6])
+          None
+        expression (testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+9]..[12,250+53])
+          Pexp_apply
+          expression (testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+9]..[12,250+26])
+            Pexp_ident "Callback.register" (testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+9]..[12,250+26])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+27]..[12,250+43])
+                Pexp_constant PConst_string("test_raise_exn",(testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+28]..[12,250+42]),None)
+            <arg>
+            Nolabel
+              expression (testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+44]..[12,250+53])
+                Pexp_ident "raise_exn" (testsuite/tests/backtrace/backtrace_c_exn.ml[12,250+44]..[12,250+53])
+          ]
+    ]
+  structure_item (testsuite/tests/backtrace/backtrace_c_exn.ml[14,305+0]..[20,404+35])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/backtrace/backtrace_c_exn.ml[14,305+4]..[14,305+6])
+          Ppat_construct "()" (testsuite/tests/backtrace/backtrace_c_exn.ml[14,305+4]..[14,305+6])
+          None
+        expression (testsuite/tests/backtrace/backtrace_c_exn.ml[15,314+2]..[20,404+35])
+          Pexp_try
+          expression (testsuite/tests/backtrace/backtrace_c_exn.ml[16,320+4]..[16,320+20])
+            Pexp_apply
+            expression (testsuite/tests/backtrace/backtrace_c_exn.ml[16,320+4]..[16,320+17])
+              Pexp_ident "stubbed_raise" (testsuite/tests/backtrace/backtrace_c_exn.ml[16,320+4]..[16,320+17])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/backtrace/backtrace_c_exn.ml[16,320+18]..[16,320+20])
+                  Pexp_construct "()" (testsuite/tests/backtrace/backtrace_c_exn.ml[16,320+18]..[16,320+20])
+                  None
+            ]
+          [
+            <case>
+              pattern (testsuite/tests/backtrace/backtrace_c_exn.ml[18,348+4]..[18,348+7])
+                Ppat_var "exn" (testsuite/tests/backtrace/backtrace_c_exn.ml[18,348+4]..[18,348+7])
+              expression (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+4]..[20,404+35])
+                Pexp_sequence
+                expression (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+4]..[19,359+43])
+                  Pexp_apply
+                  expression (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+27]..[19,359+29])
+                    Pexp_ident "|>" (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+27]..[19,359+29])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+4]..[19,359+26])
+                        Pexp_apply
+                        expression (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+4]..[19,359+22])
+                          Pexp_ident "Printexc.to_string" (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+4]..[19,359+22])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+23]..[19,359+26])
+                              Pexp_ident "exn" (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+23]..[19,359+26])
+                        ]
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+30]..[19,359+43])
+                        Pexp_ident "print_endline" (testsuite/tests/backtrace/backtrace_c_exn.ml[19,359+30]..[19,359+43])
+                  ]
+                expression (testsuite/tests/backtrace/backtrace_c_exn.ml[20,404+4]..[20,404+35])
+                  Pexp_apply
+                  expression (testsuite/tests/backtrace/backtrace_c_exn.ml[20,404+4]..[20,404+28])
+                    Pexp_ident "Printexc.print_backtrace" (testsuite/tests/backtrace/backtrace_c_exn.ml[20,404+4]..[20,404+28])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/backtrace/backtrace_c_exn.ml[20,404+29]..[20,404+35])
+                        Pexp_ident "stdout" (testsuite/tests/backtrace/backtrace_c_exn.ml[20,404+29]..[20,404+35])
+                  ]
+          ]
+    ]
+]
+

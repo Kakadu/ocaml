@@ -1,0 +1,2393 @@
+[
+  structure_item (lambda/translobj.ml[16,1079+0]..[16,1079+13])
+    Pstr_open Fresh
+    module_expr (lambda/translobj.ml[16,1079+5]..[16,1079+13])
+      Pmod_ident "Asttypes" (lambda/translobj.ml[16,1079+5]..[16,1079+13])
+  structure_item (lambda/translobj.ml[17,1093+0]..[17,1093+11])
+    Pstr_open Fresh
+    module_expr (lambda/translobj.ml[17,1093+5]..[17,1093+11])
+      Pmod_ident "Lambda" (lambda/translobj.ml[17,1093+5]..[17,1093+11])
+  structure_item (lambda/translobj.ml[21,1143+0]..[21,1143+49])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[21,1143+4]..[21,1143+11])
+          Ppat_var "oo_prim" (lambda/translobj.ml[21,1143+4]..[21,1143+11])
+        expression (lambda/translobj.ml[21,1143+14]..[21,1143+49])
+          Pexp_apply
+          expression (lambda/translobj.ml[21,1143+14]..[21,1143+32])
+            Pexp_ident "Lambda.transl_prim" (lambda/translobj.ml[21,1143+14]..[21,1143+32])
+          [
+            <arg>
+            Nolabel
+              expression (lambda/translobj.ml[21,1143+33]..[21,1143+49])
+                Pexp_constant PConst_string("CamlinternalOO",(lambda/translobj.ml[21,1143+34]..[21,1143+48]),None)
+          ]
+    ]
+  structure_item (lambda/translobj.ml[25,1214+0]..[25,1214+73])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[25,1214+4]..[25,1214+53]) ghost
+          Ppat_constraint
+          pattern (lambda/translobj.ml[25,1214+4]..[25,1214+10])
+            Ppat_var "consts" (lambda/translobj.ml[25,1214+4]..[25,1214+10])
+          core_type (lambda/translobj.ml[25,1214+13]..[25,1214+53]) ghost
+            Ptyp_poly
+            core_type (lambda/translobj.ml[25,1214+13]..[25,1214+53])
+              Ptyp_constr "Hashtbl.t" (lambda/translobj.ml[25,1214+44]..[25,1214+53])
+              [
+                core_type (lambda/translobj.ml[25,1214+14]..[25,1214+33])
+                  Ptyp_constr "structured_constant" (lambda/translobj.ml[25,1214+14]..[25,1214+33])
+                  []
+                core_type (lambda/translobj.ml[25,1214+35]..[25,1214+42])
+                  Ptyp_constr "Ident.t" (lambda/translobj.ml[25,1214+35]..[25,1214+42])
+                  []
+              ]
+        expression (lambda/translobj.ml[25,1214+4]..[25,1214+73])
+          Pexp_constraint
+          expression (lambda/translobj.ml[25,1214+56]..[25,1214+73])
+            Pexp_apply
+            expression (lambda/translobj.ml[25,1214+56]..[25,1214+70])
+              Pexp_ident "Hashtbl.create" (lambda/translobj.ml[25,1214+56]..[25,1214+70])
+            [
+              <arg>
+              Nolabel
+                expression (lambda/translobj.ml[25,1214+71]..[25,1214+73])
+                  Pexp_constant PConst_int (17,None)
+            ]
+          core_type (lambda/translobj.ml[25,1214+13]..[25,1214+53])
+            Ptyp_constr "Hashtbl.t" (lambda/translobj.ml[25,1214+44]..[25,1214+53])
+            [
+              core_type (lambda/translobj.ml[25,1214+14]..[25,1214+33])
+                Ptyp_constr "structured_constant" (lambda/translobj.ml[25,1214+14]..[25,1214+33])
+                []
+              core_type (lambda/translobj.ml[25,1214+35]..[25,1214+42])
+                Ptyp_constr "Ident.t" (lambda/translobj.ml[25,1214+35]..[25,1214+42])
+                []
+            ]
+    ]
+  structure_item (lambda/translobj.ml[27,1289+0]..[37,1542+17])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[27,1289+4]..[27,1289+9])
+          Ppat_var "share" (lambda/translobj.ml[27,1289+4]..[27,1289+9])
+        expression (lambda/translobj.ml[27,1289+10]..[37,1542+17]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[27,1289+10]..[27,1289+11])
+            Ppat_var "c" (lambda/translobj.ml[27,1289+10]..[27,1289+11])
+          expression (lambda/translobj.ml[28,1303+2]..[37,1542+17])
+            Pexp_match
+            expression (lambda/translobj.ml[28,1303+8]..[28,1303+9])
+              Pexp_ident "c" (lambda/translobj.ml[28,1303+8]..[28,1303+9])
+            [
+              <case>
+                pattern (lambda/translobj.ml[29,1318+4]..[29,1318+23])
+                  Ppat_construct "Const_block" (lambda/translobj.ml[29,1318+4]..[29,1318+15])
+                  Some
+                    []
+                    pattern (lambda/translobj.ml[29,1318+16]..[29,1318+23])
+                      Ppat_tuple
+                      [
+                        pattern (lambda/translobj.ml[29,1318+17]..[29,1318+19])
+                          Ppat_var "_n" (lambda/translobj.ml[29,1318+17]..[29,1318+19])
+                        pattern (lambda/translobj.ml[29,1318+21]..[29,1318+22])
+                          Ppat_var "l" (lambda/translobj.ml[29,1318+21]..[29,1318+22])
+                      ]
+                <when>
+                  expression (lambda/translobj.ml[29,1318+29]..[29,1318+36])
+                    Pexp_apply
+                    expression (lambda/translobj.ml[29,1318+31]..[29,1318+33])
+                      Pexp_ident "<>" (lambda/translobj.ml[29,1318+31]..[29,1318+33])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[29,1318+29]..[29,1318+30])
+                          Pexp_ident "l" (lambda/translobj.ml[29,1318+29]..[29,1318+30])
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[29,1318+34]..[29,1318+36])
+                          Pexp_construct "[]" (lambda/translobj.ml[29,1318+34]..[29,1318+36])
+                          None
+                    ]
+                expression (lambda/translobj.ml[30,1358+6]..[36,1532+9])
+                  Pexp_try
+                  expression (lambda/translobj.ml[31,1374+8]..[31,1374+36])
+                    Pexp_construct "Lvar" (lambda/translobj.ml[31,1374+8]..[31,1374+12])
+                    Some
+                      expression (lambda/translobj.ml[31,1374+13]..[31,1374+36])
+                        Pexp_apply
+                        expression (lambda/translobj.ml[31,1374+14]..[31,1374+26])
+                          Pexp_ident "Hashtbl.find" (lambda/translobj.ml[31,1374+14]..[31,1374+26])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[31,1374+27]..[31,1374+33])
+                              Pexp_ident "consts" (lambda/translobj.ml[31,1374+27]..[31,1374+33])
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[31,1374+34]..[31,1374+35])
+                              Pexp_ident "c" (lambda/translobj.ml[31,1374+34]..[31,1374+35])
+                        ]
+                  [
+                    <case>
+                      pattern (lambda/translobj.ml[32,1411+11]..[32,1411+20])
+                        Ppat_construct "Not_found" (lambda/translobj.ml[32,1411+11]..[32,1411+20])
+                        None
+                      expression (lambda/translobj.ml[33,1435+8]..[35,1516+15])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (lambda/translobj.ml[33,1435+12]..[33,1435+14])
+                              Ppat_var "id" (lambda/translobj.ml[33,1435+12]..[33,1435+14])
+                            expression (lambda/translobj.ml[33,1435+17]..[33,1435+44])
+                              Pexp_apply
+                              expression (lambda/translobj.ml[33,1435+17]..[33,1435+35])
+                                Pexp_ident "Ident.create_local" (lambda/translobj.ml[33,1435+17]..[33,1435+35])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (lambda/translobj.ml[33,1435+36]..[33,1435+44])
+                                    Pexp_constant PConst_string("shared",(lambda/translobj.ml[33,1435+37]..[33,1435+43]),None)
+                              ]
+                        ]
+                        expression (lambda/translobj.ml[34,1483+8]..[35,1516+15])
+                          Pexp_sequence
+                          expression (lambda/translobj.ml[34,1483+8]..[34,1483+31])
+                            Pexp_apply
+                            expression (lambda/translobj.ml[34,1483+8]..[34,1483+19])
+                              Pexp_ident "Hashtbl.add" (lambda/translobj.ml[34,1483+8]..[34,1483+19])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[34,1483+20]..[34,1483+26])
+                                  Pexp_ident "consts" (lambda/translobj.ml[34,1483+20]..[34,1483+26])
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[34,1483+27]..[34,1483+28])
+                                  Pexp_ident "c" (lambda/translobj.ml[34,1483+27]..[34,1483+28])
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[34,1483+29]..[34,1483+31])
+                                  Pexp_ident "id" (lambda/translobj.ml[34,1483+29]..[34,1483+31])
+                            ]
+                          expression (lambda/translobj.ml[35,1516+8]..[35,1516+15])
+                            Pexp_construct "Lvar" (lambda/translobj.ml[35,1516+8]..[35,1516+12])
+                            Some
+                              expression (lambda/translobj.ml[35,1516+13]..[35,1516+15])
+                                Pexp_ident "id" (lambda/translobj.ml[35,1516+13]..[35,1516+15])
+                  ]
+              <case>
+                pattern (lambda/translobj.ml[37,1542+4]..[37,1542+5])
+                  Ppat_any
+                expression (lambda/translobj.ml[37,1542+9]..[37,1542+17])
+                  Pexp_construct "Lconst" (lambda/translobj.ml[37,1542+9]..[37,1542+15])
+                  Some
+                    expression (lambda/translobj.ml[37,1542+16]..[37,1542+17])
+                      Pexp_ident "c" (lambda/translobj.ml[37,1542+16]..[37,1542+17])
+            ]
+    ]
+  structure_item (lambda/translobj.ml[41,1583+0]..[41,1583+30])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[41,1583+4]..[41,1583+18])
+          Ppat_var "cache_required" (lambda/translobj.ml[41,1583+4]..[41,1583+18])
+        expression (lambda/translobj.ml[41,1583+21]..[41,1583+30])
+          Pexp_apply
+          expression (lambda/translobj.ml[41,1583+21]..[41,1583+24])
+            Pexp_ident "ref" (lambda/translobj.ml[41,1583+21]..[41,1583+24])
+          [
+            <arg>
+            Nolabel
+              expression (lambda/translobj.ml[41,1583+25]..[41,1583+30])
+                Pexp_construct "false" (lambda/translobj.ml[41,1583+25]..[41,1583+30])
+                None
+          ]
+    ]
+  structure_item (lambda/translobj.ml[42,1614+0]..[42,1614+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[42,1614+4]..[42,1614+16])
+          Ppat_var "method_cache" (lambda/translobj.ml[42,1614+4]..[42,1614+16])
+        expression (lambda/translobj.ml[42,1614+19]..[42,1614+34])
+          Pexp_apply
+          expression (lambda/translobj.ml[42,1614+19]..[42,1614+22])
+            Pexp_ident "ref" (lambda/translobj.ml[42,1614+19]..[42,1614+22])
+          [
+            <arg>
+            Nolabel
+              expression (lambda/translobj.ml[42,1614+23]..[42,1614+34])
+                Pexp_ident "lambda_unit" (lambda/translobj.ml[42,1614+23]..[42,1614+34])
+          ]
+    ]
+  structure_item (lambda/translobj.ml[43,1649+0]..[43,1649+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[43,1649+4]..[43,1649+16])
+          Ppat_var "method_count" (lambda/translobj.ml[43,1649+4]..[43,1649+16])
+        expression (lambda/translobj.ml[43,1649+19]..[43,1649+24])
+          Pexp_apply
+          expression (lambda/translobj.ml[43,1649+19]..[43,1649+22])
+            Pexp_ident "ref" (lambda/translobj.ml[43,1649+19]..[43,1649+22])
+          [
+            <arg>
+            Nolabel
+              expression (lambda/translobj.ml[43,1649+23]..[43,1649+24])
+                Pexp_constant PConst_int (0,None)
+          ]
+    ]
+  structure_item (lambda/translobj.ml[44,1674+0]..[44,1674+25])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[44,1674+4]..[44,1674+16])
+          Ppat_var "method_table" (lambda/translobj.ml[44,1674+4]..[44,1674+16])
+        expression (lambda/translobj.ml[44,1674+19]..[44,1674+25])
+          Pexp_apply
+          expression (lambda/translobj.ml[44,1674+19]..[44,1674+22])
+            Pexp_ident "ref" (lambda/translobj.ml[44,1674+19]..[44,1674+22])
+          [
+            <arg>
+            Nolabel
+              expression (lambda/translobj.ml[44,1674+23]..[44,1674+25])
+                Pexp_construct "[]" (lambda/translobj.ml[44,1674+23]..[44,1674+25])
+                None
+          ]
+    ]
+  structure_item (lambda/translobj.ml[46,1701+0]..[46,1701+68])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[46,1701+4]..[46,1701+12])
+          Ppat_var "meth_tag" (lambda/translobj.ml[46,1701+4]..[46,1701+12])
+        expression (lambda/translobj.ml[46,1701+13]..[46,1701+68]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[46,1701+13]..[46,1701+14])
+            Ppat_var "s" (lambda/translobj.ml[46,1701+13]..[46,1701+14])
+          expression (lambda/translobj.ml[46,1701+17]..[46,1701+68])
+            Pexp_construct "Lconst" (lambda/translobj.ml[46,1701+17]..[46,1701+23])
+            Some
+              expression (lambda/translobj.ml[46,1701+23]..[46,1701+68])
+                Pexp_construct "Const_base" (lambda/translobj.ml[46,1701+24]..[46,1701+34])
+                Some
+                  expression (lambda/translobj.ml[46,1701+34]..[46,1701+67])
+                    Pexp_construct "Const_int" (lambda/translobj.ml[46,1701+35]..[46,1701+44])
+                    Some
+                      expression (lambda/translobj.ml[46,1701+44]..[46,1701+66])
+                        Pexp_apply
+                        expression (lambda/translobj.ml[46,1701+45]..[46,1701+63])
+                          Pexp_ident "Btype.hash_variant" (lambda/translobj.ml[46,1701+45]..[46,1701+63])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[46,1701+64]..[46,1701+65])
+                              Pexp_ident "s" (lambda/translobj.ml[46,1701+64]..[46,1701+65])
+                        ]
+    ]
+  structure_item (lambda/translobj.ml[48,1771+0]..[51,1840+57])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[48,1771+4]..[48,1771+14])
+          Ppat_var "next_cache" (lambda/translobj.ml[48,1771+4]..[48,1771+14])
+        expression (lambda/translobj.ml[48,1771+15]..[51,1840+57]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[48,1771+15]..[48,1771+18])
+            Ppat_var "tag" (lambda/translobj.ml[48,1771+15]..[48,1771+18])
+          expression (lambda/translobj.ml[49,1792+2]..[51,1840+57])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (lambda/translobj.ml[49,1792+6]..[49,1792+7])
+                  Ppat_var "n" (lambda/translobj.ml[49,1792+6]..[49,1792+7])
+                expression (lambda/translobj.ml[49,1792+10]..[49,1792+23])
+                  Pexp_apply
+                  expression (lambda/translobj.ml[49,1792+10]..[49,1792+11])
+                    Pexp_ident "!" (lambda/translobj.ml[49,1792+10]..[49,1792+11])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[49,1792+11]..[49,1792+23])
+                        Pexp_ident "method_count" (lambda/translobj.ml[49,1792+11]..[49,1792+23])
+                  ]
+            ]
+            expression (lambda/translobj.ml[50,1819+2]..[51,1840+57])
+              Pexp_sequence
+              expression (lambda/translobj.ml[50,1819+2]..[50,1819+19])
+                Pexp_apply
+                expression (lambda/translobj.ml[50,1819+2]..[50,1819+6])
+                  Pexp_ident "incr" (lambda/translobj.ml[50,1819+2]..[50,1819+6])
+                [
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[50,1819+7]..[50,1819+19])
+                      Pexp_ident "method_count" (lambda/translobj.ml[50,1819+7]..[50,1819+19])
+                ]
+              expression (lambda/translobj.ml[51,1840+2]..[51,1840+57])
+                Pexp_tuple
+                [
+                  expression (lambda/translobj.ml[51,1840+3]..[51,1840+6])
+                    Pexp_ident "tag" (lambda/translobj.ml[51,1840+3]..[51,1840+6])
+                  expression (lambda/translobj.ml[51,1840+8]..[51,1840+56])
+                    Pexp_construct "::" (lambda/translobj.ml[51,1840+9]..[51,1840+56]) ghost
+                    Some
+                      expression (lambda/translobj.ml[51,1840+9]..[51,1840+56]) ghost
+                        Pexp_tuple
+                        [
+                          expression (lambda/translobj.ml[51,1840+9]..[51,1840+22])
+                            Pexp_apply
+                            expression (lambda/translobj.ml[51,1840+9]..[51,1840+10])
+                              Pexp_ident "!" (lambda/translobj.ml[51,1840+9]..[51,1840+10])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[51,1840+10]..[51,1840+22])
+                                  Pexp_ident "method_cache" (lambda/translobj.ml[51,1840+10]..[51,1840+22])
+                            ]
+                          expression (lambda/translobj.ml[51,1840+24]..[51,1840+56]) ghost
+                            Pexp_construct "::" (lambda/translobj.ml[51,1840+24]..[51,1840+56]) ghost
+                            Some
+                              expression (lambda/translobj.ml[51,1840+24]..[51,1840+56]) ghost
+                                Pexp_tuple
+                                [
+                                  expression (lambda/translobj.ml[51,1840+24]..[51,1840+55])
+                                    Pexp_construct "Lconst" (lambda/translobj.ml[51,1840+24]..[51,1840+30])
+                                    Some
+                                      expression (lambda/translobj.ml[51,1840+30]..[51,1840+55])
+                                        Pexp_construct "Const_base" (lambda/translobj.ml[51,1840+31]..[51,1840+41])
+                                        Some
+                                          expression (lambda/translobj.ml[51,1840+41]..[51,1840+54])
+                                            Pexp_construct "Const_int" (lambda/translobj.ml[51,1840+42]..[51,1840+51])
+                                            Some
+                                              expression (lambda/translobj.ml[51,1840+52]..[51,1840+53])
+                                                Pexp_ident "n" (lambda/translobj.ml[51,1840+52]..[51,1840+53])
+                                  expression (lambda/translobj.ml[51,1840+55]..[51,1840+56]) ghost
+                                    Pexp_construct "[]" (lambda/translobj.ml[51,1840+55]..[51,1840+56]) ghost
+                                    None
+                                ]
+                        ]
+                ]
+    ]
+  structure_item (lambda/translobj.ml[53,1899+0]..[58,2129+14])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (lambda/translobj.ml[53,1899+8]..[53,1899+15])
+          Ppat_var "is_path" (lambda/translobj.ml[53,1899+8]..[53,1899+15])
+        expression (lambda/translobj.ml[53,1899+18]..[58,2129+14])
+          Pexp_function
+          [
+            <case>
+              pattern (lambda/translobj.ml[54,1926+4]..[54,1926+51])
+                Ppat_or
+                pattern (lambda/translobj.ml[54,1926+4]..[54,1926+40])
+                  Ppat_or
+                  pattern (lambda/translobj.ml[54,1926+4]..[54,1926+10])
+                    Ppat_construct "Lvar" (lambda/translobj.ml[54,1926+4]..[54,1926+8])
+                    Some
+                      []
+                      pattern (lambda/translobj.ml[54,1926+9]..[54,1926+10])
+                        Ppat_any
+                  pattern (lambda/translobj.ml[54,1926+13]..[54,1926+40])
+                    Ppat_construct "Lprim" (lambda/translobj.ml[54,1926+13]..[54,1926+18])
+                    Some
+                      []
+                      pattern (lambda/translobj.ml[54,1926+19]..[54,1926+40])
+                        Ppat_tuple
+                        [
+                          pattern (lambda/translobj.ml[54,1926+20]..[54,1926+32])
+                            Ppat_construct "Pgetglobal" (lambda/translobj.ml[54,1926+20]..[54,1926+30])
+                            Some
+                              []
+                              pattern (lambda/translobj.ml[54,1926+31]..[54,1926+32])
+                                Ppat_any
+                          pattern (lambda/translobj.ml[54,1926+34]..[54,1926+36])
+                            Ppat_construct "[]" (lambda/translobj.ml[54,1926+34]..[54,1926+36])
+                            None
+                          pattern (lambda/translobj.ml[54,1926+38]..[54,1926+39])
+                            Ppat_any
+                        ]
+                pattern (lambda/translobj.ml[54,1926+43]..[54,1926+51])
+                  Ppat_construct "Lconst" (lambda/translobj.ml[54,1926+43]..[54,1926+49])
+                  Some
+                    []
+                    pattern (lambda/translobj.ml[54,1926+50]..[54,1926+51])
+                      Ppat_any
+              expression (lambda/translobj.ml[54,1926+55]..[54,1926+59])
+                Pexp_construct "true" (lambda/translobj.ml[54,1926+55]..[54,1926+59])
+                None
+            <case>
+              pattern (lambda/translobj.ml[55,1986+4]..[55,1986+30])
+                Ppat_construct "Lprim" (lambda/translobj.ml[55,1986+4]..[55,1986+9])
+                Some
+                  []
+                  pattern (lambda/translobj.ml[55,1986+10]..[55,1986+30])
+                    Ppat_tuple
+                    [
+                      pattern (lambda/translobj.ml[55,1986+11]..[55,1986+19])
+                        Ppat_construct "Pfield" (lambda/translobj.ml[55,1986+11]..[55,1986+17])
+                        Some
+                          []
+                          pattern (lambda/translobj.ml[55,1986+18]..[55,1986+19])
+                            Ppat_any
+                      pattern (lambda/translobj.ml[55,1986+21]..[55,1986+26])
+                        Ppat_construct "::" (lambda/translobj.ml[55,1986+22]..[55,1986+26]) ghost
+                        Some
+                          []
+                          pattern (lambda/translobj.ml[55,1986+22]..[55,1986+26]) ghost
+                            Ppat_tuple
+                            [
+                              pattern (lambda/translobj.ml[55,1986+22]..[55,1986+25])
+                                Ppat_var "lam" (lambda/translobj.ml[55,1986+22]..[55,1986+25])
+                              pattern (lambda/translobj.ml[55,1986+25]..[55,1986+26]) ghost
+                                Ppat_construct "[]" (lambda/translobj.ml[55,1986+25]..[55,1986+26]) ghost
+                                None
+                            ]
+                      pattern (lambda/translobj.ml[55,1986+28]..[55,1986+29])
+                        Ppat_any
+                    ]
+              expression (lambda/translobj.ml[55,1986+34]..[55,1986+45])
+                Pexp_apply
+                expression (lambda/translobj.ml[55,1986+34]..[55,1986+41])
+                  Pexp_ident "is_path" (lambda/translobj.ml[55,1986+34]..[55,1986+41])
+                [
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[55,1986+42]..[55,1986+45])
+                      Pexp_ident "lam" (lambda/translobj.ml[55,1986+42]..[55,1986+45])
+                ]
+            <case>
+              pattern (lambda/translobj.ml[56,2032+4]..[56,2032+58])
+                Ppat_construct "Lprim" (lambda/translobj.ml[56,2032+4]..[56,2032+9])
+                Some
+                  []
+                  pattern (lambda/translobj.ml[56,2032+10]..[56,2032+58])
+                    Ppat_tuple
+                    [
+                      pattern (lambda/translobj.ml[56,2032+11]..[56,2032+40])
+                        Ppat_or
+                        pattern (lambda/translobj.ml[56,2032+12]..[56,2032+24])
+                          Ppat_construct "Parrayrefu" (lambda/translobj.ml[56,2032+12]..[56,2032+22])
+                          Some
+                            []
+                            pattern (lambda/translobj.ml[56,2032+23]..[56,2032+24])
+                              Ppat_any
+                        pattern (lambda/translobj.ml[56,2032+27]..[56,2032+39])
+                          Ppat_construct "Parrayrefs" (lambda/translobj.ml[56,2032+27]..[56,2032+37])
+                          Some
+                            []
+                            pattern (lambda/translobj.ml[56,2032+38]..[56,2032+39])
+                              Ppat_any
+                      pattern (lambda/translobj.ml[56,2032+42]..[56,2032+54])
+                        Ppat_construct "::" (lambda/translobj.ml[56,2032+43]..[56,2032+54]) ghost
+                        Some
+                          []
+                          pattern (lambda/translobj.ml[56,2032+43]..[56,2032+54]) ghost
+                            Ppat_tuple
+                            [
+                              pattern (lambda/translobj.ml[56,2032+43]..[56,2032+47])
+                                Ppat_var "lam1" (lambda/translobj.ml[56,2032+43]..[56,2032+47])
+                              pattern (lambda/translobj.ml[56,2032+49]..[56,2032+54]) ghost
+                                Ppat_construct "::" (lambda/translobj.ml[56,2032+49]..[56,2032+54]) ghost
+                                Some
+                                  []
+                                  pattern (lambda/translobj.ml[56,2032+49]..[56,2032+54]) ghost
+                                    Ppat_tuple
+                                    [
+                                      pattern (lambda/translobj.ml[56,2032+49]..[56,2032+53])
+                                        Ppat_var "lam2" (lambda/translobj.ml[56,2032+49]..[56,2032+53])
+                                      pattern (lambda/translobj.ml[56,2032+53]..[56,2032+54]) ghost
+                                        Ppat_construct "[]" (lambda/translobj.ml[56,2032+53]..[56,2032+54]) ghost
+                                        None
+                                    ]
+                            ]
+                      pattern (lambda/translobj.ml[56,2032+56]..[56,2032+57])
+                        Ppat_any
+                    ]
+              expression (lambda/translobj.ml[57,2094+6]..[57,2094+34])
+                Pexp_apply
+                expression (lambda/translobj.ml[57,2094+19]..[57,2094+21])
+                  Pexp_ident "&&" (lambda/translobj.ml[57,2094+19]..[57,2094+21])
+                [
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[57,2094+6]..[57,2094+18])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[57,2094+6]..[57,2094+13])
+                        Pexp_ident "is_path" (lambda/translobj.ml[57,2094+6]..[57,2094+13])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[57,2094+14]..[57,2094+18])
+                            Pexp_ident "lam1" (lambda/translobj.ml[57,2094+14]..[57,2094+18])
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[57,2094+22]..[57,2094+34])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[57,2094+22]..[57,2094+29])
+                        Pexp_ident "is_path" (lambda/translobj.ml[57,2094+22]..[57,2094+29])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[57,2094+30]..[57,2094+34])
+                            Pexp_ident "lam2" (lambda/translobj.ml[57,2094+30]..[57,2094+34])
+                      ]
+                ]
+            <case>
+              pattern (lambda/translobj.ml[58,2129+4]..[58,2129+5])
+                Ppat_any
+              expression (lambda/translobj.ml[58,2129+9]..[58,2129+14])
+                Pexp_construct "false" (lambda/translobj.ml[58,2129+9]..[58,2129+14])
+                None
+          ]
+    ]
+  structure_item (lambda/translobj.ml[60,2145+0]..[75,2585+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[60,2145+4]..[60,2145+8])
+          Ppat_var "meth" (lambda/translobj.ml[60,2145+4]..[60,2145+8])
+        expression (lambda/translobj.ml[60,2145+9]..[75,2585+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[60,2145+9]..[60,2145+12])
+            Ppat_var "obj" (lambda/translobj.ml[60,2145+9]..[60,2145+12])
+          expression (lambda/translobj.ml[60,2145+13]..[75,2585+5]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (lambda/translobj.ml[60,2145+13]..[60,2145+16])
+              Ppat_var "lab" (lambda/translobj.ml[60,2145+13]..[60,2145+16])
+            expression (lambda/translobj.ml[61,2164+2]..[75,2585+5])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (lambda/translobj.ml[61,2164+6]..[61,2164+9])
+                    Ppat_var "tag" (lambda/translobj.ml[61,2164+6]..[61,2164+9])
+                  expression (lambda/translobj.ml[61,2164+12]..[61,2164+24])
+                    Pexp_apply
+                    expression (lambda/translobj.ml[61,2164+12]..[61,2164+20])
+                      Pexp_ident "meth_tag" (lambda/translobj.ml[61,2164+12]..[61,2164+20])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[61,2164+21]..[61,2164+24])
+                          Pexp_ident "lab" (lambda/translobj.ml[61,2164+21]..[61,2164+24])
+                    ]
+              ]
+              expression (lambda/translobj.ml[62,2192+2]..[75,2585+5])
+                Pexp_ifthenelse
+                expression (lambda/translobj.ml[62,2192+5]..[62,2192+50])
+                  Pexp_apply
+                  expression (lambda/translobj.ml[62,2192+5]..[62,2192+8])
+                    Pexp_ident "not" (lambda/translobj.ml[62,2192+5]..[62,2192+8])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[62,2192+9]..[62,2192+50])
+                        Pexp_apply
+                        expression (lambda/translobj.ml[62,2192+26]..[62,2192+28])
+                          Pexp_ident "&&" (lambda/translobj.ml[62,2192+26]..[62,2192+28])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[62,2192+10]..[62,2192+25])
+                              Pexp_apply
+                              expression (lambda/translobj.ml[62,2192+10]..[62,2192+11])
+                                Pexp_ident "!" (lambda/translobj.ml[62,2192+10]..[62,2192+11])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (lambda/translobj.ml[62,2192+11]..[62,2192+25])
+                                    Pexp_ident "cache_required" (lambda/translobj.ml[62,2192+11]..[62,2192+25])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[62,2192+29]..[62,2192+49])
+                              Pexp_apply
+                              expression (lambda/translobj.ml[62,2192+29]..[62,2192+30])
+                                Pexp_ident "!" (lambda/translobj.ml[62,2192+29]..[62,2192+30])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (lambda/translobj.ml[62,2192+30]..[62,2192+49])
+                                    Pexp_ident "Clflags.native_code" (lambda/translobj.ml[62,2192+30]..[62,2192+49])
+                              ]
+                        ]
+                  ]
+                expression (lambda/translobj.ml[62,2192+56]..[62,2192+65])
+                  Pexp_tuple
+                  [
+                    expression (lambda/translobj.ml[62,2192+57]..[62,2192+60])
+                      Pexp_ident "tag" (lambda/translobj.ml[62,2192+57]..[62,2192+60])
+                    expression (lambda/translobj.ml[62,2192+62]..[62,2192+64])
+                      Pexp_construct "[]" (lambda/translobj.ml[62,2192+62]..[62,2192+64])
+                      None
+                  ]
+                Some
+                  expression (lambda/translobj.ml[63,2263+2]..[75,2585+5])
+                    Pexp_ifthenelse
+                    expression (lambda/translobj.ml[63,2263+5]..[63,2263+22])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[63,2263+5]..[63,2263+8])
+                        Pexp_ident "not" (lambda/translobj.ml[63,2263+5]..[63,2263+8])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[63,2263+9]..[63,2263+22])
+                            Pexp_apply
+                            expression (lambda/translobj.ml[63,2263+10]..[63,2263+17])
+                              Pexp_ident "is_path" (lambda/translobj.ml[63,2263+10]..[63,2263+17])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[63,2263+18]..[63,2263+21])
+                                  Pexp_ident "obj" (lambda/translobj.ml[63,2263+18]..[63,2263+21])
+                            ]
+                      ]
+                    expression (lambda/translobj.ml[63,2263+28]..[63,2263+42])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[63,2263+28]..[63,2263+38])
+                        Pexp_ident "next_cache" (lambda/translobj.ml[63,2263+28]..[63,2263+38])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[63,2263+39]..[63,2263+42])
+                            Pexp_ident "tag" (lambda/translobj.ml[63,2263+39]..[63,2263+42])
+                      ]
+                    Some
+                      expression (lambda/translobj.ml[64,2311+2]..[75,2585+5])
+                        Pexp_try
+                        expression (lambda/translobj.ml[65,2317+4]..[71,2474+7])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (lambda/translobj.ml[65,2317+8]..[65,2317+9])
+                                Ppat_var "r" (lambda/translobj.ml[65,2317+8]..[65,2317+9])
+                              expression (lambda/translobj.ml[65,2317+12]..[65,2317+40])
+                                Pexp_apply
+                                expression (lambda/translobj.ml[65,2317+12]..[65,2317+22])
+                                  Pexp_ident "List.assoc" (lambda/translobj.ml[65,2317+12]..[65,2317+22])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (lambda/translobj.ml[65,2317+23]..[65,2317+26])
+                                      Pexp_ident "obj" (lambda/translobj.ml[65,2317+23]..[65,2317+26])
+                                  <arg>
+                                  Nolabel
+                                    expression (lambda/translobj.ml[65,2317+27]..[65,2317+40])
+                                      Pexp_apply
+                                      expression (lambda/translobj.ml[65,2317+27]..[65,2317+28])
+                                        Pexp_ident "!" (lambda/translobj.ml[65,2317+27]..[65,2317+28])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (lambda/translobj.ml[65,2317+28]..[65,2317+40])
+                                            Pexp_ident "method_table" (lambda/translobj.ml[65,2317+28]..[65,2317+40])
+                                      ]
+                                ]
+                          ]
+                          expression (lambda/translobj.ml[66,2361+4]..[71,2474+7])
+                            Pexp_try
+                            expression (lambda/translobj.ml[67,2369+6]..[67,2369+30])
+                              Pexp_tuple
+                              [
+                                expression (lambda/translobj.ml[67,2369+7]..[67,2369+10])
+                                  Pexp_ident "tag" (lambda/translobj.ml[67,2369+7]..[67,2369+10])
+                                expression (lambda/translobj.ml[67,2369+12]..[67,2369+29])
+                                  Pexp_apply
+                                  expression (lambda/translobj.ml[67,2369+12]..[67,2369+22])
+                                    Pexp_ident "List.assoc" (lambda/translobj.ml[67,2369+12]..[67,2369+22])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[67,2369+23]..[67,2369+26])
+                                        Pexp_ident "tag" (lambda/translobj.ml[67,2369+23]..[67,2369+26])
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[67,2369+27]..[67,2369+29])
+                                        Pexp_apply
+                                        expression (lambda/translobj.ml[67,2369+27]..[67,2369+28])
+                                          Pexp_ident "!" (lambda/translobj.ml[67,2369+27]..[67,2369+28])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (lambda/translobj.ml[67,2369+28]..[67,2369+29])
+                                              Pexp_ident "r" (lambda/translobj.ml[67,2369+28]..[67,2369+29])
+                                        ]
+                                  ]
+                              ]
+                            [
+                              <case>
+                                pattern (lambda/translobj.ml[68,2400+9]..[68,2400+18])
+                                  Ppat_construct "Not_found" (lambda/translobj.ml[68,2400+9]..[68,2400+18])
+                                  None
+                                expression (lambda/translobj.ml[69,2422+6]..[71,2474+7])
+                                  Pexp_let Nonrec
+                                  [
+                                    <def>
+                                      pattern (lambda/translobj.ml[69,2422+10]..[69,2422+11])
+                                        Ppat_var "p" (lambda/translobj.ml[69,2422+10]..[69,2422+11])
+                                      expression (lambda/translobj.ml[69,2422+14]..[69,2422+28])
+                                        Pexp_apply
+                                        expression (lambda/translobj.ml[69,2422+14]..[69,2422+24])
+                                          Pexp_ident "next_cache" (lambda/translobj.ml[69,2422+14]..[69,2422+24])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (lambda/translobj.ml[69,2422+25]..[69,2422+28])
+                                              Pexp_ident "tag" (lambda/translobj.ml[69,2422+25]..[69,2422+28])
+                                        ]
+                                  ]
+                                  expression (lambda/translobj.ml[70,2454+6]..[71,2474+7])
+                                    Pexp_sequence
+                                    expression (lambda/translobj.ml[70,2454+6]..[70,2454+18])
+                                      Pexp_apply
+                                      expression (lambda/translobj.ml[70,2454+8]..[70,2454+10])
+                                        Pexp_ident ":=" (lambda/translobj.ml[70,2454+8]..[70,2454+10])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (lambda/translobj.ml[70,2454+6]..[70,2454+7])
+                                            Pexp_ident "r" (lambda/translobj.ml[70,2454+6]..[70,2454+7])
+                                        <arg>
+                                        Nolabel
+                                          expression (lambda/translobj.ml[70,2454+11]..[70,2454+18])
+                                            Pexp_construct "::" (lambda/translobj.ml[70,2454+13]..[70,2454+15])
+                                            Some
+                                              expression (lambda/translobj.ml[70,2454+11]..[70,2454+18]) ghost
+                                                Pexp_tuple
+                                                [
+                                                  expression (lambda/translobj.ml[70,2454+11]..[70,2454+12])
+                                                    Pexp_ident "p" (lambda/translobj.ml[70,2454+11]..[70,2454+12])
+                                                  expression (lambda/translobj.ml[70,2454+16]..[70,2454+18])
+                                                    Pexp_apply
+                                                    expression (lambda/translobj.ml[70,2454+16]..[70,2454+17])
+                                                      Pexp_ident "!" (lambda/translobj.ml[70,2454+16]..[70,2454+17])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (lambda/translobj.ml[70,2454+17]..[70,2454+18])
+                                                          Pexp_ident "r" (lambda/translobj.ml[70,2454+17]..[70,2454+18])
+                                                    ]
+                                                ]
+                                      ]
+                                    expression (lambda/translobj.ml[71,2474+6]..[71,2474+7])
+                                      Pexp_ident "p" (lambda/translobj.ml[71,2474+6]..[71,2474+7])
+                            ]
+                        [
+                          <case>
+                            pattern (lambda/translobj.ml[72,2482+7]..[72,2482+16])
+                              Ppat_construct "Not_found" (lambda/translobj.ml[72,2482+7]..[72,2482+16])
+                              None
+                            expression (lambda/translobj.ml[73,2502+4]..[75,2585+5])
+                              Pexp_let Nonrec
+                              [
+                                <def>
+                                  pattern (lambda/translobj.ml[73,2502+8]..[73,2502+9])
+                                    Ppat_var "p" (lambda/translobj.ml[73,2502+8]..[73,2502+9])
+                                  expression (lambda/translobj.ml[73,2502+12]..[73,2502+26])
+                                    Pexp_apply
+                                    expression (lambda/translobj.ml[73,2502+12]..[73,2502+22])
+                                      Pexp_ident "next_cache" (lambda/translobj.ml[73,2502+12]..[73,2502+22])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (lambda/translobj.ml[73,2502+23]..[73,2502+26])
+                                          Pexp_ident "tag" (lambda/translobj.ml[73,2502+23]..[73,2502+26])
+                                    ]
+                              ]
+                              expression (lambda/translobj.ml[74,2532+4]..[75,2585+5])
+                                Pexp_sequence
+                                expression (lambda/translobj.ml[74,2532+4]..[74,2532+51])
+                                  Pexp_apply
+                                  expression (lambda/translobj.ml[74,2532+17]..[74,2532+19])
+                                    Pexp_ident ":=" (lambda/translobj.ml[74,2532+17]..[74,2532+19])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[74,2532+4]..[74,2532+16])
+                                        Pexp_ident "method_table" (lambda/translobj.ml[74,2532+4]..[74,2532+16])
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[74,2532+20]..[74,2532+51])
+                                        Pexp_construct "::" (lambda/translobj.ml[74,2532+35]..[74,2532+37])
+                                        Some
+                                          expression (lambda/translobj.ml[74,2532+20]..[74,2532+51]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (lambda/translobj.ml[74,2532+20]..[74,2532+34])
+                                                Pexp_tuple
+                                                [
+                                                  expression (lambda/translobj.ml[74,2532+21]..[74,2532+24])
+                                                    Pexp_ident "obj" (lambda/translobj.ml[74,2532+21]..[74,2532+24])
+                                                  expression (lambda/translobj.ml[74,2532+26]..[74,2532+33])
+                                                    Pexp_apply
+                                                    expression (lambda/translobj.ml[74,2532+26]..[74,2532+29])
+                                                      Pexp_ident "ref" (lambda/translobj.ml[74,2532+26]..[74,2532+29])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (lambda/translobj.ml[74,2532+30]..[74,2532+33])
+                                                          Pexp_construct "::" (lambda/translobj.ml[74,2532+31]..[74,2532+33]) ghost
+                                                          Some
+                                                            expression (lambda/translobj.ml[74,2532+31]..[74,2532+33]) ghost
+                                                              Pexp_tuple
+                                                              [
+                                                                expression (lambda/translobj.ml[74,2532+31]..[74,2532+32])
+                                                                  Pexp_ident "p" (lambda/translobj.ml[74,2532+31]..[74,2532+32])
+                                                                expression (lambda/translobj.ml[74,2532+32]..[74,2532+33]) ghost
+                                                                  Pexp_construct "[]" (lambda/translobj.ml[74,2532+32]..[74,2532+33]) ghost
+                                                                  None
+                                                              ]
+                                                    ]
+                                                ]
+                                              expression (lambda/translobj.ml[74,2532+38]..[74,2532+51])
+                                                Pexp_apply
+                                                expression (lambda/translobj.ml[74,2532+38]..[74,2532+39])
+                                                  Pexp_ident "!" (lambda/translobj.ml[74,2532+38]..[74,2532+39])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (lambda/translobj.ml[74,2532+39]..[74,2532+51])
+                                                      Pexp_ident "method_table" (lambda/translobj.ml[74,2532+39]..[74,2532+51])
+                                                ]
+                                            ]
+                                  ]
+                                expression (lambda/translobj.ml[75,2585+4]..[75,2585+5])
+                                  Pexp_ident "p" (lambda/translobj.ml[75,2585+4]..[75,2585+5])
+                        ]
+    ]
+  structure_item (lambda/translobj.ml[77,2592+0]..[80,2659+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[77,2592+4]..[77,2592+16])
+          Ppat_var "reset_labels" (lambda/translobj.ml[77,2592+4]..[77,2592+16])
+        expression (lambda/translobj.ml[77,2592+17]..[80,2659+20]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[77,2592+17]..[77,2592+19])
+            Ppat_construct "()" (lambda/translobj.ml[77,2592+17]..[77,2592+19])
+            None
+          expression (lambda/translobj.ml[78,2614+2]..[80,2659+20])
+            Pexp_sequence
+            expression (lambda/translobj.ml[78,2614+2]..[78,2614+22])
+              Pexp_apply
+              expression (lambda/translobj.ml[78,2614+2]..[78,2614+15])
+                Pexp_ident "Hashtbl.clear" (lambda/translobj.ml[78,2614+2]..[78,2614+15])
+              [
+                <arg>
+                Nolabel
+                  expression (lambda/translobj.ml[78,2614+16]..[78,2614+22])
+                    Pexp_ident "consts" (lambda/translobj.ml[78,2614+16]..[78,2614+22])
+              ]
+            expression (lambda/translobj.ml[79,2638+2]..[80,2659+20])
+              Pexp_sequence
+              expression (lambda/translobj.ml[79,2638+2]..[79,2638+19])
+                Pexp_apply
+                expression (lambda/translobj.ml[79,2638+15]..[79,2638+17])
+                  Pexp_ident ":=" (lambda/translobj.ml[79,2638+15]..[79,2638+17])
+                [
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[79,2638+2]..[79,2638+14])
+                      Pexp_ident "method_count" (lambda/translobj.ml[79,2638+2]..[79,2638+14])
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[79,2638+18]..[79,2638+19])
+                      Pexp_constant PConst_int (0,None)
+                ]
+              expression (lambda/translobj.ml[80,2659+2]..[80,2659+20])
+                Pexp_apply
+                expression (lambda/translobj.ml[80,2659+15]..[80,2659+17])
+                  Pexp_ident ":=" (lambda/translobj.ml[80,2659+15]..[80,2659+17])
+                [
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[80,2659+2]..[80,2659+14])
+                      Pexp_ident "method_table" (lambda/translobj.ml[80,2659+2]..[80,2659+14])
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[80,2659+18]..[80,2659+20])
+                      Pexp_construct "[]" (lambda/translobj.ml[80,2659+18]..[80,2659+20])
+                      None
+                ]
+    ]
+  structure_item (lambda/translobj.ml[84,2702+0]..[84,2702+45])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[84,2702+4]..[84,2702+7])
+          Ppat_var "int" (lambda/translobj.ml[84,2702+4]..[84,2702+7])
+        expression (lambda/translobj.ml[84,2702+8]..[84,2702+45]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[84,2702+8]..[84,2702+9])
+            Ppat_var "n" (lambda/translobj.ml[84,2702+8]..[84,2702+9])
+          expression (lambda/translobj.ml[84,2702+12]..[84,2702+45])
+            Pexp_construct "Lconst" (lambda/translobj.ml[84,2702+12]..[84,2702+18])
+            Some
+              expression (lambda/translobj.ml[84,2702+19]..[84,2702+45])
+                Pexp_construct "Const_base" (lambda/translobj.ml[84,2702+20]..[84,2702+30])
+                Some
+                  expression (lambda/translobj.ml[84,2702+31]..[84,2702+44])
+                    Pexp_construct "Const_int" (lambda/translobj.ml[84,2702+32]..[84,2702+41])
+                    Some
+                      expression (lambda/translobj.ml[84,2702+42]..[84,2702+43])
+                        Pexp_ident "n" (lambda/translobj.ml[84,2702+42]..[84,2702+43])
+    ]
+  structure_item (lambda/translobj.ml[86,2749+0]..[87,2770+62])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[86,2749+4]..[86,2749+18])
+          Ppat_var "prim_makearray" (lambda/translobj.ml[86,2749+4]..[86,2749+18])
+        expression (lambda/translobj.ml[87,2770+2]..[87,2770+62])
+          Pexp_apply
+          expression (lambda/translobj.ml[87,2770+2]..[87,2770+18])
+            Pexp_ident "Primitive.simple" (lambda/translobj.ml[87,2770+2]..[87,2770+18])
+          [
+            <arg>
+            Labelled "name"
+              expression (lambda/translobj.ml[87,2770+25]..[87,2770+41])
+                Pexp_constant PConst_string("caml_make_vect",(lambda/translobj.ml[87,2770+26]..[87,2770+40]),None)
+            <arg>
+            Labelled "arity"
+              expression (lambda/translobj.ml[87,2770+49]..[87,2770+50])
+                Pexp_constant PConst_int (2,None)
+            <arg>
+            Labelled "alloc"
+              expression (lambda/translobj.ml[87,2770+58]..[87,2770+62])
+                Pexp_construct "true" (lambda/translobj.ml[87,2770+58]..[87,2770+62])
+                None
+          ]
+    ]
+  structure_item (lambda/translobj.ml[90,2873+0]..[104,3268+12])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[90,2873+4]..[90,2873+29])
+          Ppat_var "transl_label_init_general" (lambda/translobj.ml[90,2873+4]..[90,2873+29])
+        expression (lambda/translobj.ml[90,2873+30]..[104,3268+12]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[90,2873+30]..[90,2873+31])
+            Ppat_var "f" (lambda/translobj.ml[90,2873+30]..[90,2873+31])
+          expression (lambda/translobj.ml[91,2907+2]..[104,3268+12])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (lambda/translobj.ml[91,2907+6]..[91,2907+16])
+                  Ppat_tuple
+                  [
+                    pattern (lambda/translobj.ml[91,2907+6]..[91,2907+10])
+                      Ppat_var "expr" (lambda/translobj.ml[91,2907+6]..[91,2907+10])
+                    pattern (lambda/translobj.ml[91,2907+12]..[91,2907+16])
+                      Ppat_var "size" (lambda/translobj.ml[91,2907+12]..[91,2907+16])
+                  ]
+                expression (lambda/translobj.ml[91,2907+19]..[91,2907+23])
+                  Pexp_apply
+                  expression (lambda/translobj.ml[91,2907+19]..[91,2907+20])
+                    Pexp_ident "f" (lambda/translobj.ml[91,2907+19]..[91,2907+20])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[91,2907+21]..[91,2907+23])
+                        Pexp_construct "()" (lambda/translobj.ml[91,2907+21]..[91,2907+23])
+                        None
+                  ]
+            ]
+            expression (lambda/translobj.ml[92,2934+2]..[104,3268+12])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (lambda/translobj.ml[92,2934+6]..[92,2934+10])
+                    Ppat_var "expr" (lambda/translobj.ml[92,2934+6]..[92,2934+10])
+                  expression (lambda/translobj.ml[93,2947+4]..[95,3030+17])
+                    Pexp_apply
+                    expression (lambda/translobj.ml[93,2947+4]..[93,2947+16])
+                      Pexp_ident "Hashtbl.fold" (lambda/translobj.ml[93,2947+4]..[93,2947+16])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[94,2964+6]..[94,2964+65])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (lambda/translobj.ml[94,2964+11]..[94,2964+12])
+                            Ppat_var "c" (lambda/translobj.ml[94,2964+11]..[94,2964+12])
+                          expression (lambda/translobj.ml[94,2964+13]..[94,2964+64]) ghost
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (lambda/translobj.ml[94,2964+13]..[94,2964+15])
+                              Ppat_var "id" (lambda/translobj.ml[94,2964+13]..[94,2964+15])
+                            expression (lambda/translobj.ml[94,2964+16]..[94,2964+64]) ghost
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (lambda/translobj.ml[94,2964+16]..[94,2964+20])
+                                Ppat_var "expr" (lambda/translobj.ml[94,2964+16]..[94,2964+20])
+                              expression (lambda/translobj.ml[94,2964+24]..[94,2964+64])
+                                Pexp_construct "Llet" (lambda/translobj.ml[94,2964+24]..[94,2964+28])
+                                Some
+                                  expression (lambda/translobj.ml[94,2964+28]..[94,2964+64])
+                                    Pexp_tuple
+                                    [
+                                      expression (lambda/translobj.ml[94,2964+29]..[94,2964+34])
+                                        Pexp_construct "Alias" (lambda/translobj.ml[94,2964+29]..[94,2964+34])
+                                        None
+                                      expression (lambda/translobj.ml[94,2964+36]..[94,2964+43])
+                                        Pexp_construct "Pgenval" (lambda/translobj.ml[94,2964+36]..[94,2964+43])
+                                        None
+                                      expression (lambda/translobj.ml[94,2964+45]..[94,2964+47])
+                                        Pexp_ident "id" (lambda/translobj.ml[94,2964+45]..[94,2964+47])
+                                      expression (lambda/translobj.ml[94,2964+49]..[94,2964+57])
+                                        Pexp_construct "Lconst" (lambda/translobj.ml[94,2964+49]..[94,2964+55])
+                                        Some
+                                          expression (lambda/translobj.ml[94,2964+56]..[94,2964+57])
+                                            Pexp_ident "c" (lambda/translobj.ml[94,2964+56]..[94,2964+57])
+                                      expression (lambda/translobj.ml[94,2964+59]..[94,2964+63])
+                                        Pexp_ident "expr" (lambda/translobj.ml[94,2964+59]..[94,2964+63])
+                                    ]
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[95,3030+6]..[95,3030+12])
+                          Pexp_ident "consts" (lambda/translobj.ml[95,3030+6]..[95,3030+12])
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[95,3030+13]..[95,3030+17])
+                          Pexp_ident "expr" (lambda/translobj.ml[95,3030+13]..[95,3030+17])
+                    ]
+              ]
+              expression (lambda/translobj.ml[103,3249+2]..[104,3268+12])
+                Pexp_sequence
+                expression (lambda/translobj.ml[103,3249+2]..[103,3249+17])
+                  Pexp_apply
+                  expression (lambda/translobj.ml[103,3249+2]..[103,3249+14])
+                    Pexp_ident "reset_labels" (lambda/translobj.ml[103,3249+2]..[103,3249+14])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[103,3249+15]..[103,3249+17])
+                        Pexp_construct "()" (lambda/translobj.ml[103,3249+15]..[103,3249+17])
+                        None
+                  ]
+                expression (lambda/translobj.ml[104,3268+2]..[104,3268+12])
+                  Pexp_tuple
+                  [
+                    expression (lambda/translobj.ml[104,3268+2]..[104,3268+6])
+                      Pexp_ident "expr" (lambda/translobj.ml[104,3268+2]..[104,3268+6])
+                    expression (lambda/translobj.ml[104,3268+8]..[104,3268+12])
+                      Pexp_ident "size" (lambda/translobj.ml[104,3268+8]..[104,3268+12])
+                  ]
+    ]
+  structure_item (lambda/translobj.ml[106,3282+0]..[123,3857+50])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[106,3282+4]..[106,3282+29])
+          Ppat_var "transl_label_init_flambda" (lambda/translobj.ml[106,3282+4]..[106,3282+29])
+        expression (lambda/translobj.ml[106,3282+30]..[123,3857+50]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[106,3282+30]..[106,3282+31])
+            Ppat_var "f" (lambda/translobj.ml[106,3282+30]..[106,3282+31])
+          expression (lambda/translobj.ml[107,3316+2]..[123,3857+50])
+            Pexp_sequence
+            expression (lambda/translobj.ml[107,3316+2]..[107,3316+24])
+              Pexp_assert
+              expression (lambda/translobj.ml[107,3316+8]..[107,3316+24])
+                Pexp_ident "Config.flambda" (lambda/translobj.ml[107,3316+9]..[107,3316+23])
+            expression (lambda/translobj.ml[108,3342+2]..[123,3857+50])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (lambda/translobj.ml[108,3342+6]..[108,3342+21])
+                    Ppat_var "method_cache_id" (lambda/translobj.ml[108,3342+6]..[108,3342+21])
+                  expression (lambda/translobj.ml[108,3342+24]..[108,3342+57])
+                    Pexp_apply
+                    expression (lambda/translobj.ml[108,3342+24]..[108,3342+42])
+                      Pexp_ident "Ident.create_local" (lambda/translobj.ml[108,3342+24]..[108,3342+42])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[108,3342+43]..[108,3342+57])
+                          Pexp_constant PConst_string("method_cache",(lambda/translobj.ml[108,3342+44]..[108,3342+56]),None)
+                    ]
+              ]
+              expression (lambda/translobj.ml[109,3403+2]..[123,3857+50])
+                Pexp_sequence
+                expression (lambda/translobj.ml[109,3403+2]..[109,3403+38])
+                  Pexp_apply
+                  expression (lambda/translobj.ml[109,3403+15]..[109,3403+17])
+                    Pexp_ident ":=" (lambda/translobj.ml[109,3403+15]..[109,3403+17])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[109,3403+2]..[109,3403+14])
+                        Pexp_ident "method_cache" (lambda/translobj.ml[109,3403+2]..[109,3403+14])
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[109,3403+18]..[109,3403+38])
+                        Pexp_construct "Lvar" (lambda/translobj.ml[109,3403+18]..[109,3403+22])
+                        Some
+                          expression (lambda/translobj.ml[109,3403+23]..[109,3403+38])
+                            Pexp_ident "method_cache_id" (lambda/translobj.ml[109,3403+23]..[109,3403+38])
+                  ]
+                expression (lambda/translobj.ml[113,3598+2]..[123,3857+50])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (lambda/translobj.ml[113,3598+6]..[113,3598+16])
+                        Ppat_tuple
+                        [
+                          pattern (lambda/translobj.ml[113,3598+6]..[113,3598+10])
+                            Ppat_var "expr" (lambda/translobj.ml[113,3598+6]..[113,3598+10])
+                          pattern (lambda/translobj.ml[113,3598+12]..[113,3598+16])
+                            Ppat_var "size" (lambda/translobj.ml[113,3598+12]..[113,3598+16])
+                        ]
+                      expression (lambda/translobj.ml[113,3598+19]..[113,3598+23])
+                        Pexp_apply
+                        expression (lambda/translobj.ml[113,3598+19]..[113,3598+20])
+                          Pexp_ident "f" (lambda/translobj.ml[113,3598+19]..[113,3598+20])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[113,3598+21]..[113,3598+23])
+                              Pexp_construct "()" (lambda/translobj.ml[113,3598+21]..[113,3598+23])
+                              None
+                        ]
+                  ]
+                  expression (lambda/translobj.ml[114,3625+2]..[123,3857+50])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (lambda/translobj.ml[114,3625+6]..[114,3625+10])
+                          Ppat_var "expr" (lambda/translobj.ml[114,3625+6]..[114,3625+10])
+                        expression (lambda/translobj.ml[115,3638+4]..[121,3838+13])
+                          Pexp_ifthenelse
+                          expression (lambda/translobj.ml[115,3638+7]..[115,3638+24])
+                            Pexp_apply
+                            expression (lambda/translobj.ml[115,3638+21]..[115,3638+22])
+                              Pexp_ident "=" (lambda/translobj.ml[115,3638+21]..[115,3638+22])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[115,3638+7]..[115,3638+20])
+                                  Pexp_apply
+                                  expression (lambda/translobj.ml[115,3638+7]..[115,3638+8])
+                                    Pexp_ident "!" (lambda/translobj.ml[115,3638+7]..[115,3638+8])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[115,3638+8]..[115,3638+20])
+                                        Pexp_ident "method_count" (lambda/translobj.ml[115,3638+8]..[115,3638+20])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[115,3638+23]..[115,3638+24])
+                                  Pexp_constant PConst_int (0,None)
+                            ]
+                          expression (lambda/translobj.ml[115,3638+30]..[115,3638+34])
+                            Pexp_ident "expr" (lambda/translobj.ml[115,3638+30]..[115,3638+34])
+                          Some
+                            expression (lambda/translobj.ml[117,3682+6]..[121,3838+13])
+                              Pexp_construct "Llet" (lambda/translobj.ml[117,3682+6]..[117,3682+10])
+                              Some
+                                expression (lambda/translobj.ml[117,3682+11]..[121,3838+13])
+                                  Pexp_tuple
+                                  [
+                                    expression (lambda/translobj.ml[117,3682+12]..[117,3682+18])
+                                      Pexp_construct "Strict" (lambda/translobj.ml[117,3682+12]..[117,3682+18])
+                                      None
+                                    expression (lambda/translobj.ml[117,3682+20]..[117,3682+27])
+                                      Pexp_construct "Pgenval" (lambda/translobj.ml[117,3682+20]..[117,3682+27])
+                                      None
+                                    expression (lambda/translobj.ml[117,3682+29]..[117,3682+44])
+                                      Pexp_ident "method_cache_id" (lambda/translobj.ml[117,3682+29]..[117,3682+44])
+                                    expression (lambda/translobj.ml[118,3728+8]..[120,3809+27])
+                                      Pexp_construct "Lprim" (lambda/translobj.ml[118,3728+8]..[118,3728+13])
+                                      Some
+                                        expression (lambda/translobj.ml[118,3728+14]..[120,3809+27])
+                                          Pexp_tuple
+                                          [
+                                            expression (lambda/translobj.ml[118,3728+15]..[118,3728+36])
+                                              Pexp_construct "Pccall" (lambda/translobj.ml[118,3728+15]..[118,3728+21])
+                                              Some
+                                                expression (lambda/translobj.ml[118,3728+22]..[118,3728+36])
+                                                  Pexp_ident "prim_makearray" (lambda/translobj.ml[118,3728+22]..[118,3728+36])
+                                            expression (lambda/translobj.ml[119,3766+15]..[119,3766+41])
+                                              Pexp_construct "::" (lambda/translobj.ml[119,3766+16]..[119,3766+41]) ghost
+                                              Some
+                                                expression (lambda/translobj.ml[119,3766+16]..[119,3766+41]) ghost
+                                                  Pexp_tuple
+                                                  [
+                                                    expression (lambda/translobj.ml[119,3766+16]..[119,3766+33])
+                                                      Pexp_apply
+                                                      expression (lambda/translobj.ml[119,3766+16]..[119,3766+19])
+                                                        Pexp_ident "int" (lambda/translobj.ml[119,3766+16]..[119,3766+19])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (lambda/translobj.ml[119,3766+20]..[119,3766+33])
+                                                            Pexp_apply
+                                                            expression (lambda/translobj.ml[119,3766+20]..[119,3766+21])
+                                                              Pexp_ident "!" (lambda/translobj.ml[119,3766+20]..[119,3766+21])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (lambda/translobj.ml[119,3766+21]..[119,3766+33])
+                                                                  Pexp_ident "method_count" (lambda/translobj.ml[119,3766+21]..[119,3766+33])
+                                                            ]
+                                                      ]
+                                                    expression (lambda/translobj.ml[119,3766+35]..[119,3766+41]) ghost
+                                                      Pexp_construct "::" (lambda/translobj.ml[119,3766+35]..[119,3766+41]) ghost
+                                                      Some
+                                                        expression (lambda/translobj.ml[119,3766+35]..[119,3766+41]) ghost
+                                                          Pexp_tuple
+                                                          [
+                                                            expression (lambda/translobj.ml[119,3766+35]..[119,3766+40])
+                                                              Pexp_apply
+                                                              expression (lambda/translobj.ml[119,3766+35]..[119,3766+38])
+                                                                Pexp_ident "int" (lambda/translobj.ml[119,3766+35]..[119,3766+38])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (lambda/translobj.ml[119,3766+39]..[119,3766+40])
+                                                                    Pexp_constant PConst_int (0,None)
+                                                              ]
+                                                            expression (lambda/translobj.ml[119,3766+40]..[119,3766+41]) ghost
+                                                              Pexp_construct "[]" (lambda/translobj.ml[119,3766+40]..[119,3766+41]) ghost
+                                                              None
+                                                          ]
+                                                  ]
+                                            expression (lambda/translobj.ml[120,3809+15]..[120,3809+26])
+                                              Pexp_construct "Loc_unknown" (lambda/translobj.ml[120,3809+15]..[120,3809+26])
+                                              None
+                                          ]
+                                    expression (lambda/translobj.ml[121,3838+8]..[121,3838+12])
+                                      Pexp_ident "expr" (lambda/translobj.ml[121,3838+8]..[121,3838+12])
+                                  ]
+                    ]
+                    expression (lambda/translobj.ml[123,3857+2]..[123,3857+50])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[123,3857+2]..[123,3857+27])
+                        Pexp_ident "transl_label_init_general" (lambda/translobj.ml[123,3857+2]..[123,3857+27])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[123,3857+28]..[123,3857+50])
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (lambda/translobj.ml[123,3857+33]..[123,3857+35])
+                              Ppat_construct "()" (lambda/translobj.ml[123,3857+33]..[123,3857+35])
+                              None
+                            expression (lambda/translobj.ml[123,3857+39]..[123,3857+49])
+                              Pexp_tuple
+                              [
+                                expression (lambda/translobj.ml[123,3857+39]..[123,3857+43])
+                                  Pexp_ident "expr" (lambda/translobj.ml[123,3857+39]..[123,3857+43])
+                                expression (lambda/translobj.ml[123,3857+45]..[123,3857+49])
+                                  Pexp_ident "size" (lambda/translobj.ml[123,3857+45]..[123,3857+49])
+                              ]
+                      ]
+    ]
+  structure_item (lambda/translobj.ml[125,3909+0]..[146,4698+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[125,3909+4]..[125,3909+27])
+          Ppat_var "transl_store_label_init" (lambda/translobj.ml[125,3909+4]..[125,3909+27])
+        expression (lambda/translobj.ml[125,3909+28]..[146,4698+11]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[125,3909+28]..[125,3909+32])
+            Ppat_var "glob" (lambda/translobj.ml[125,3909+28]..[125,3909+32])
+          expression (lambda/translobj.ml[125,3909+33]..[146,4698+11]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (lambda/translobj.ml[125,3909+33]..[125,3909+37])
+              Ppat_var "size" (lambda/translobj.ml[125,3909+33]..[125,3909+37])
+            expression (lambda/translobj.ml[125,3909+38]..[146,4698+11]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (lambda/translobj.ml[125,3909+38]..[125,3909+39])
+                Ppat_var "f" (lambda/translobj.ml[125,3909+38]..[125,3909+39])
+              expression (lambda/translobj.ml[125,3909+40]..[146,4698+11]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (lambda/translobj.ml[125,3909+40]..[125,3909+43])
+                  Ppat_var "arg" (lambda/translobj.ml[125,3909+40]..[125,3909+43])
+                expression (lambda/translobj.ml[126,3955+2]..[146,4698+11])
+                  Pexp_sequence
+                  expression (lambda/translobj.ml[126,3955+2]..[126,3955+28])
+                    Pexp_assert
+                    expression (lambda/translobj.ml[126,3955+8]..[126,3955+28])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[126,3955+9]..[126,3955+12])
+                        Pexp_ident "not" (lambda/translobj.ml[126,3955+9]..[126,3955+12])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[126,3955+13]..[126,3955+27])
+                            Pexp_ident "Config.flambda" (lambda/translobj.ml[126,3955+13]..[126,3955+27])
+                      ]
+                  expression (lambda/translobj.ml[127,3985+2]..[146,4698+11])
+                    Pexp_sequence
+                    expression (lambda/translobj.ml[127,3985+2]..[127,3985+30])
+                      Pexp_assert
+                      expression (lambda/translobj.ml[127,3985+8]..[127,3985+30])
+                        Pexp_apply
+                        expression (lambda/translobj.ml[127,3985+9]..[127,3985+10])
+                          Pexp_ident "!" (lambda/translobj.ml[127,3985+9]..[127,3985+10])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[127,3985+10]..[127,3985+29])
+                              Pexp_ident "Clflags.native_code" (lambda/translobj.ml[127,3985+10]..[127,3985+29])
+                        ]
+                    expression (lambda/translobj.ml[128,4017+2]..[146,4698+11])
+                      Pexp_sequence
+                      expression (lambda/translobj.ml[128,4017+2]..[131,4192+36])
+                        Pexp_apply
+                        expression (lambda/translobj.ml[128,4017+15]..[128,4017+17])
+                          Pexp_ident ":=" (lambda/translobj.ml[128,4017+15]..[128,4017+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[128,4017+2]..[128,4017+14])
+                              Pexp_ident "method_cache" (lambda/translobj.ml[128,4017+2]..[128,4017+14])
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[128,4017+18]..[131,4192+36])
+                              Pexp_construct "Lprim" (lambda/translobj.ml[128,4017+18]..[128,4017+23])
+                              Some
+                                expression (lambda/translobj.ml[128,4017+23]..[131,4192+36])
+                                  Pexp_tuple
+                                  [
+                                    expression (lambda/translobj.ml[128,4017+24]..[128,4017+55])
+                                      Pexp_construct "Pfield" (lambda/translobj.ml[128,4017+24]..[128,4017+30])
+                                      Some
+                                        expression (lambda/translobj.ml[128,4017+31]..[128,4017+55])
+                                          Pexp_tuple
+                                          [
+                                            expression (lambda/translobj.ml[128,4017+32]..[128,4017+36])
+                                              Pexp_ident "size" (lambda/translobj.ml[128,4017+32]..[128,4017+36])
+                                            expression (lambda/translobj.ml[128,4017+38]..[128,4017+45])
+                                              Pexp_construct "Pointer" (lambda/translobj.ml[128,4017+38]..[128,4017+45])
+                                              None
+                                            expression (lambda/translobj.ml[128,4017+47]..[128,4017+54])
+                                              Pexp_construct "Mutable" (lambda/translobj.ml[128,4017+47]..[128,4017+54])
+                                              None
+                                          ]
+                                    expression (lambda/translobj.ml[130,4125+24]..[130,4125+65])
+                                      Pexp_construct "::" (lambda/translobj.ml[130,4125+25]..[130,4125+65]) ghost
+                                      Some
+                                        expression (lambda/translobj.ml[130,4125+25]..[130,4125+65]) ghost
+                                          Pexp_tuple
+                                          [
+                                            expression (lambda/translobj.ml[130,4125+25]..[130,4125+64])
+                                              Pexp_construct "Lprim" (lambda/translobj.ml[130,4125+25]..[130,4125+30])
+                                              Some
+                                                expression (lambda/translobj.ml[130,4125+30]..[130,4125+64])
+                                                  Pexp_tuple
+                                                  [
+                                                    expression (lambda/translobj.ml[130,4125+31]..[130,4125+46])
+                                                      Pexp_construct "Pgetglobal" (lambda/translobj.ml[130,4125+31]..[130,4125+41])
+                                                      Some
+                                                        expression (lambda/translobj.ml[130,4125+42]..[130,4125+46])
+                                                          Pexp_ident "glob" (lambda/translobj.ml[130,4125+42]..[130,4125+46])
+                                                    expression (lambda/translobj.ml[130,4125+48]..[130,4125+50])
+                                                      Pexp_construct "[]" (lambda/translobj.ml[130,4125+48]..[130,4125+50])
+                                                      None
+                                                    expression (lambda/translobj.ml[130,4125+52]..[130,4125+63])
+                                                      Pexp_construct "Loc_unknown" (lambda/translobj.ml[130,4125+52]..[130,4125+63])
+                                                      None
+                                                  ]
+                                            expression (lambda/translobj.ml[130,4125+64]..[130,4125+65]) ghost
+                                              Pexp_construct "[]" (lambda/translobj.ml[130,4125+64]..[130,4125+65]) ghost
+                                              None
+                                          ]
+                                    expression (lambda/translobj.ml[131,4192+24]..[131,4192+35])
+                                      Pexp_construct "Loc_unknown" (lambda/translobj.ml[131,4192+24]..[131,4192+35])
+                                      None
+                                  ]
+                        ]
+                      expression (lambda/translobj.ml[132,4230+2]..[146,4698+11])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (lambda/translobj.ml[132,4230+6]..[132,4230+10])
+                              Ppat_var "expr" (lambda/translobj.ml[132,4230+6]..[132,4230+10])
+                            expression (lambda/translobj.ml[132,4230+13]..[132,4230+18])
+                              Pexp_apply
+                              expression (lambda/translobj.ml[132,4230+13]..[132,4230+14])
+                                Pexp_ident "f" (lambda/translobj.ml[132,4230+13]..[132,4230+14])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (lambda/translobj.ml[132,4230+15]..[132,4230+18])
+                                    Pexp_ident "arg" (lambda/translobj.ml[132,4230+15]..[132,4230+18])
+                              ]
+                        ]
+                        expression (lambda/translobj.ml[133,4252+2]..[146,4698+11])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (lambda/translobj.ml[133,4252+6]..[133,4252+18])
+                                Ppat_tuple
+                                [
+                                  pattern (lambda/translobj.ml[133,4252+7]..[133,4252+11])
+                                    Ppat_var "size" (lambda/translobj.ml[133,4252+7]..[133,4252+11])
+                                  pattern (lambda/translobj.ml[133,4252+13]..[133,4252+17])
+                                    Ppat_var "expr" (lambda/translobj.ml[133,4252+13]..[133,4252+17])
+                                ]
+                              expression (lambda/translobj.ml[134,4273+4]..[143,4609+11])
+                                Pexp_ifthenelse
+                                expression (lambda/translobj.ml[134,4273+7]..[134,4273+24])
+                                  Pexp_apply
+                                  expression (lambda/translobj.ml[134,4273+21]..[134,4273+22])
+                                    Pexp_ident "=" (lambda/translobj.ml[134,4273+21]..[134,4273+22])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[134,4273+7]..[134,4273+20])
+                                        Pexp_apply
+                                        expression (lambda/translobj.ml[134,4273+7]..[134,4273+8])
+                                          Pexp_ident "!" (lambda/translobj.ml[134,4273+7]..[134,4273+8])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (lambda/translobj.ml[134,4273+8]..[134,4273+20])
+                                              Pexp_ident "method_count" (lambda/translobj.ml[134,4273+8]..[134,4273+20])
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[134,4273+23]..[134,4273+24])
+                                        Pexp_constant PConst_int (0,None)
+                                  ]
+                                expression (lambda/translobj.ml[134,4273+30]..[134,4273+42])
+                                  Pexp_tuple
+                                  [
+                                    expression (lambda/translobj.ml[134,4273+31]..[134,4273+35])
+                                      Pexp_ident "size" (lambda/translobj.ml[134,4273+31]..[134,4273+35])
+                                    expression (lambda/translobj.ml[134,4273+37]..[134,4273+41])
+                                      Pexp_ident "expr" (lambda/translobj.ml[134,4273+37]..[134,4273+41])
+                                  ]
+                                Some
+                                  expression (lambda/translobj.ml[135,4321+4]..[143,4609+11])
+                                    Pexp_tuple
+                                    [
+                                      expression (lambda/translobj.ml[135,4321+5]..[135,4321+11])
+                                        Pexp_apply
+                                        expression (lambda/translobj.ml[135,4321+9]..[135,4321+10])
+                                          Pexp_ident "+" (lambda/translobj.ml[135,4321+9]..[135,4321+10])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (lambda/translobj.ml[135,4321+5]..[135,4321+9])
+                                              Pexp_ident "size" (lambda/translobj.ml[135,4321+5]..[135,4321+9])
+                                          <arg>
+                                          Nolabel
+                                            expression (lambda/translobj.ml[135,4321+10]..[135,4321+11])
+                                              Pexp_constant PConst_int (1,None)
+                                        ]
+                                      expression (lambda/translobj.ml[136,4334+5]..[143,4609+10])
+                                        Pexp_construct "Lsequence" (lambda/translobj.ml[136,4334+5]..[136,4334+14])
+                                        Some
+                                          expression (lambda/translobj.ml[136,4334+14]..[143,4609+10])
+                                            Pexp_tuple
+                                            [
+                                              expression (lambda/translobj.ml[137,4350+5]..[142,4584+23])
+                                                Pexp_construct "Lprim" (lambda/translobj.ml[137,4350+5]..[137,4350+10])
+                                                Some
+                                                  expression (lambda/translobj.ml[137,4350+10]..[142,4584+23])
+                                                    Pexp_tuple
+                                                    [
+                                                      expression (lambda/translobj.ml[137,4350+11]..[137,4350+56])
+                                                        Pexp_construct "Psetfield" (lambda/translobj.ml[137,4350+11]..[137,4350+20])
+                                                        Some
+                                                          expression (lambda/translobj.ml[137,4350+20]..[137,4350+56])
+                                                            Pexp_tuple
+                                                            [
+                                                              expression (lambda/translobj.ml[137,4350+21]..[137,4350+25])
+                                                                Pexp_ident "size" (lambda/translobj.ml[137,4350+21]..[137,4350+25])
+                                                              expression (lambda/translobj.ml[137,4350+27]..[137,4350+34])
+                                                                Pexp_construct "Pointer" (lambda/translobj.ml[137,4350+27]..[137,4350+34])
+                                                                None
+                                                              expression (lambda/translobj.ml[137,4350+36]..[137,4350+55])
+                                                                Pexp_construct "Root_initialization" (lambda/translobj.ml[137,4350+36]..[137,4350+55])
+                                                                None
+                                                            ]
+                                                      expression (lambda/translobj.ml[138,4408+11]..[141,4550+32])
+                                                        Pexp_construct "::" (lambda/translobj.ml[138,4408+12]..[141,4550+32]) ghost
+                                                        Some
+                                                          expression (lambda/translobj.ml[138,4408+12]..[141,4550+32]) ghost
+                                                            Pexp_tuple
+                                                            [
+                                                              expression (lambda/translobj.ml[138,4408+12]..[138,4408+51])
+                                                                Pexp_construct "Lprim" (lambda/translobj.ml[138,4408+12]..[138,4408+17])
+                                                                Some
+                                                                  expression (lambda/translobj.ml[138,4408+17]..[138,4408+51])
+                                                                    Pexp_tuple
+                                                                    [
+                                                                      expression (lambda/translobj.ml[138,4408+18]..[138,4408+33])
+Pexp_construct "Pgetglobal" (lambda/translobj.ml[138,4408+18]..[138,4408+28])
+Some
+  expression (lambda/translobj.ml[138,4408+29]..[138,4408+33])
+    Pexp_ident "glob" (lambda/translobj.ml[138,4408+29]..[138,4408+33])
+                                                                      expression (lambda/translobj.ml[138,4408+35]..[138,4408+37])
+Pexp_construct "[]" (lambda/translobj.ml[138,4408+35]..[138,4408+37])
+None
+                                                                      expression (lambda/translobj.ml[138,4408+39]..[138,4408+50])
+Pexp_construct "Loc_unknown" (lambda/translobj.ml[138,4408+39]..[138,4408+50])
+None
+                                                                    ]
+                                                              expression (lambda/translobj.ml[139,4461+12]..[141,4550+32]) ghost
+                                                                Pexp_construct "::" (lambda/translobj.ml[139,4461+12]..[141,4550+32]) ghost
+                                                                Some
+                                                                  expression (lambda/translobj.ml[139,4461+12]..[141,4550+32]) ghost
+                                                                    Pexp_tuple
+                                                                    [
+                                                                      expression (lambda/translobj.ml[139,4461+12]..[141,4550+31])
+Pexp_construct "Lprim" (lambda/translobj.ml[139,4461+12]..[139,4461+17])
+Some
+  expression (lambda/translobj.ml[139,4461+18]..[141,4550+31])
+    Pexp_tuple
+    [
+      expression (lambda/translobj.ml[139,4461+19]..[139,4461+40])
+        Pexp_construct "Pccall" (lambda/translobj.ml[139,4461+19]..[139,4461+25])
+        Some
+          expression (lambda/translobj.ml[139,4461+26]..[139,4461+40])
+            Pexp_ident "prim_makearray" (lambda/translobj.ml[139,4461+26]..[139,4461+40])
+      expression (lambda/translobj.ml[140,4503+19]..[140,4503+45])
+        Pexp_construct "::" (lambda/translobj.ml[140,4503+20]..[140,4503+45]) ghost
+        Some
+          expression (lambda/translobj.ml[140,4503+20]..[140,4503+45]) ghost
+            Pexp_tuple
+            [
+              expression (lambda/translobj.ml[140,4503+20]..[140,4503+37])
+                Pexp_apply
+                expression (lambda/translobj.ml[140,4503+20]..[140,4503+23])
+                  Pexp_ident "int" (lambda/translobj.ml[140,4503+20]..[140,4503+23])
+                [
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[140,4503+24]..[140,4503+37])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[140,4503+24]..[140,4503+25])
+                        Pexp_ident "!" (lambda/translobj.ml[140,4503+24]..[140,4503+25])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[140,4503+25]..[140,4503+37])
+                            Pexp_ident "method_count" (lambda/translobj.ml[140,4503+25]..[140,4503+37])
+                      ]
+                ]
+              expression (lambda/translobj.ml[140,4503+39]..[140,4503+45]) ghost
+                Pexp_construct "::" (lambda/translobj.ml[140,4503+39]..[140,4503+45]) ghost
+                Some
+                  expression (lambda/translobj.ml[140,4503+39]..[140,4503+45]) ghost
+                    Pexp_tuple
+                    [
+                      expression (lambda/translobj.ml[140,4503+39]..[140,4503+44])
+                        Pexp_apply
+                        expression (lambda/translobj.ml[140,4503+39]..[140,4503+42])
+                          Pexp_ident "int" (lambda/translobj.ml[140,4503+39]..[140,4503+42])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[140,4503+43]..[140,4503+44])
+                              Pexp_constant PConst_int (0,None)
+                        ]
+                      expression (lambda/translobj.ml[140,4503+44]..[140,4503+45]) ghost
+                        Pexp_construct "[]" (lambda/translobj.ml[140,4503+44]..[140,4503+45]) ghost
+                        None
+                    ]
+            ]
+      expression (lambda/translobj.ml[141,4550+19]..[141,4550+30])
+        Pexp_construct "Loc_unknown" (lambda/translobj.ml[141,4550+19]..[141,4550+30])
+        None
+    ]
+                                                                      expression (lambda/translobj.ml[141,4550+31]..[141,4550+32]) ghost
+Pexp_construct "[]" (lambda/translobj.ml[141,4550+31]..[141,4550+32]) ghost
+None
+                                                                    ]
+                                                            ]
+                                                      expression (lambda/translobj.ml[142,4584+11]..[142,4584+22])
+                                                        Pexp_construct "Loc_unknown" (lambda/translobj.ml[142,4584+11]..[142,4584+22])
+                                                        None
+                                                    ]
+                                              expression (lambda/translobj.ml[143,4609+5]..[143,4609+9])
+                                                Pexp_ident "expr" (lambda/translobj.ml[143,4609+5]..[143,4609+9])
+                                            ]
+                                    ]
+                          ]
+                          expression (lambda/translobj.ml[145,4626+2]..[146,4698+11])
+                            Pexp_let Nonrec
+                            [
+                              <def>
+                                pattern (lambda/translobj.ml[145,4626+6]..[145,4626+15])
+                                  Ppat_tuple
+                                  [
+                                    pattern (lambda/translobj.ml[145,4626+6]..[145,4626+9])
+                                      Ppat_var "lam" (lambda/translobj.ml[145,4626+6]..[145,4626+9])
+                                    pattern (lambda/translobj.ml[145,4626+11]..[145,4626+15])
+                                      Ppat_var "size" (lambda/translobj.ml[145,4626+11]..[145,4626+15])
+                                  ]
+                                expression (lambda/translobj.ml[145,4626+18]..[145,4626+68])
+                                  Pexp_apply
+                                  expression (lambda/translobj.ml[145,4626+18]..[145,4626+43])
+                                    Pexp_ident "transl_label_init_general" (lambda/translobj.ml[145,4626+18]..[145,4626+43])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[145,4626+44]..[145,4626+68])
+                                        Pexp_fun
+                                        Nolabel
+                                        None
+                                        pattern (lambda/translobj.ml[145,4626+49]..[145,4626+51])
+                                          Ppat_construct "()" (lambda/translobj.ml[145,4626+49]..[145,4626+51])
+                                          None
+                                        expression (lambda/translobj.ml[145,4626+55]..[145,4626+67])
+                                          Pexp_tuple
+                                          [
+                                            expression (lambda/translobj.ml[145,4626+56]..[145,4626+60])
+                                              Pexp_ident "expr" (lambda/translobj.ml[145,4626+56]..[145,4626+60])
+                                            expression (lambda/translobj.ml[145,4626+62]..[145,4626+66])
+                                              Pexp_ident "size" (lambda/translobj.ml[145,4626+62]..[145,4626+66])
+                                          ]
+                                  ]
+                            ]
+                            expression (lambda/translobj.ml[146,4698+2]..[146,4698+11])
+                              Pexp_tuple
+                              [
+                                expression (lambda/translobj.ml[146,4698+2]..[146,4698+6])
+                                  Pexp_ident "size" (lambda/translobj.ml[146,4698+2]..[146,4698+6])
+                                expression (lambda/translobj.ml[146,4698+8]..[146,4698+11])
+                                  Pexp_ident "lam" (lambda/translobj.ml[146,4698+8]..[146,4698+11])
+                              ]
+    ]
+  structure_item (lambda/translobj.ml[148,4711+0]..[152,4807+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[148,4711+4]..[148,4711+21])
+          Ppat_var "transl_label_init" (lambda/translobj.ml[148,4711+4]..[148,4711+21])
+        expression (lambda/translobj.ml[148,4711+22]..[152,4807+31]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[148,4711+22]..[148,4711+23])
+            Ppat_var "f" (lambda/translobj.ml[148,4711+22]..[148,4711+23])
+          expression (lambda/translobj.ml[149,4737+2]..[152,4807+31])
+            Pexp_ifthenelse
+            expression (lambda/translobj.ml[149,4737+5]..[149,4737+25])
+              Pexp_apply
+              expression (lambda/translobj.ml[149,4737+5]..[149,4737+6])
+                Pexp_ident "!" (lambda/translobj.ml[149,4737+5]..[149,4737+6])
+              [
+                <arg>
+                Nolabel
+                  expression (lambda/translobj.ml[149,4737+6]..[149,4737+25])
+                    Pexp_ident "Clflags.native_code" (lambda/translobj.ml[149,4737+6]..[149,4737+25])
+              ]
+            expression (lambda/translobj.ml[150,4768+4]..[150,4768+31])
+              Pexp_apply
+              expression (lambda/translobj.ml[150,4768+4]..[150,4768+29])
+                Pexp_ident "transl_label_init_flambda" (lambda/translobj.ml[150,4768+4]..[150,4768+29])
+              [
+                <arg>
+                Nolabel
+                  expression (lambda/translobj.ml[150,4768+30]..[150,4768+31])
+                    Pexp_ident "f" (lambda/translobj.ml[150,4768+30]..[150,4768+31])
+              ]
+            Some
+              expression (lambda/translobj.ml[152,4807+4]..[152,4807+31])
+                Pexp_apply
+                expression (lambda/translobj.ml[152,4807+4]..[152,4807+29])
+                  Pexp_ident "transl_label_init_general" (lambda/translobj.ml[152,4807+4]..[152,4807+29])
+                [
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[152,4807+30]..[152,4807+31])
+                      Pexp_ident "f" (lambda/translobj.ml[152,4807+30]..[152,4807+31])
+                ]
+    ]
+  structure_item (lambda/translobj.ml[156,4861+0]..[156,4861+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[156,4861+4]..[156,4861+12])
+          Ppat_var "wrapping" (lambda/translobj.ml[156,4861+4]..[156,4861+12])
+        expression (lambda/translobj.ml[156,4861+15]..[156,4861+24])
+          Pexp_apply
+          expression (lambda/translobj.ml[156,4861+15]..[156,4861+18])
+            Pexp_ident "ref" (lambda/translobj.ml[156,4861+15]..[156,4861+18])
+          [
+            <arg>
+            Nolabel
+              expression (lambda/translobj.ml[156,4861+19]..[156,4861+24])
+                Pexp_construct "false" (lambda/translobj.ml[156,4861+19]..[156,4861+24])
+                None
+          ]
+    ]
+  structure_item (lambda/translobj.ml[157,4886+0]..[157,4886+27])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[157,4886+4]..[157,4886+11])
+          Ppat_var "top_env" (lambda/translobj.ml[157,4886+4]..[157,4886+11])
+        expression (lambda/translobj.ml[157,4886+14]..[157,4886+27])
+          Pexp_apply
+          expression (lambda/translobj.ml[157,4886+14]..[157,4886+17])
+            Pexp_ident "ref" (lambda/translobj.ml[157,4886+14]..[157,4886+17])
+          [
+            <arg>
+            Nolabel
+              expression (lambda/translobj.ml[157,4886+18]..[157,4886+27])
+                Pexp_ident "Env.empty" (lambda/translobj.ml[157,4886+18]..[157,4886+27])
+          ]
+    ]
+  structure_item (lambda/translobj.ml[158,4914+0]..[158,4914+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[158,4914+4]..[158,4914+11])
+          Ppat_var "classes" (lambda/translobj.ml[158,4914+4]..[158,4914+11])
+        expression (lambda/translobj.ml[158,4914+14]..[158,4914+20])
+          Pexp_apply
+          expression (lambda/translobj.ml[158,4914+14]..[158,4914+17])
+            Pexp_ident "ref" (lambda/translobj.ml[158,4914+14]..[158,4914+17])
+          [
+            <arg>
+            Nolabel
+              expression (lambda/translobj.ml[158,4914+18]..[158,4914+20])
+                Pexp_construct "[]" (lambda/translobj.ml[158,4914+18]..[158,4914+20])
+                None
+          ]
+    ]
+  structure_item (lambda/translobj.ml[159,4935+0]..[159,4935+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[159,4935+4]..[159,4935+14])
+          Ppat_var "method_ids" (lambda/translobj.ml[159,4935+4]..[159,4935+14])
+        expression (lambda/translobj.ml[159,4935+17]..[159,4935+36])
+          Pexp_apply
+          expression (lambda/translobj.ml[159,4935+17]..[159,4935+20])
+            Pexp_ident "ref" (lambda/translobj.ml[159,4935+17]..[159,4935+20])
+          [
+            <arg>
+            Nolabel
+              expression (lambda/translobj.ml[159,4935+21]..[159,4935+36])
+                Pexp_ident "Ident.Set.empty" (lambda/translobj.ml[159,4935+21]..[159,4935+36])
+          ]
+    ]
+  structure_item (lambda/translobj.ml[161,4973+0]..[163,5024+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[161,4973+4]..[161,4973+16])
+          Ppat_var "oo_add_class" (lambda/translobj.ml[161,4973+4]..[161,4973+16])
+        expression (lambda/translobj.ml[161,4973+17]..[163,5024+29]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[161,4973+17]..[161,4973+19])
+            Ppat_var "id" (lambda/translobj.ml[161,4973+17]..[161,4973+19])
+          expression (lambda/translobj.ml[162,4995+2]..[163,5024+29])
+            Pexp_sequence
+            expression (lambda/translobj.ml[162,4995+2]..[162,4995+27])
+              Pexp_apply
+              expression (lambda/translobj.ml[162,4995+10]..[162,4995+12])
+                Pexp_ident ":=" (lambda/translobj.ml[162,4995+10]..[162,4995+12])
+              [
+                <arg>
+                Nolabel
+                  expression (lambda/translobj.ml[162,4995+2]..[162,4995+9])
+                    Pexp_ident "classes" (lambda/translobj.ml[162,4995+2]..[162,4995+9])
+                <arg>
+                Nolabel
+                  expression (lambda/translobj.ml[162,4995+13]..[162,4995+27])
+                    Pexp_construct "::" (lambda/translobj.ml[162,4995+16]..[162,4995+18])
+                    Some
+                      expression (lambda/translobj.ml[162,4995+13]..[162,4995+27]) ghost
+                        Pexp_tuple
+                        [
+                          expression (lambda/translobj.ml[162,4995+13]..[162,4995+15])
+                            Pexp_ident "id" (lambda/translobj.ml[162,4995+13]..[162,4995+15])
+                          expression (lambda/translobj.ml[162,4995+19]..[162,4995+27])
+                            Pexp_apply
+                            expression (lambda/translobj.ml[162,4995+19]..[162,4995+20])
+                              Pexp_ident "!" (lambda/translobj.ml[162,4995+19]..[162,4995+20])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[162,4995+20]..[162,4995+27])
+                                  Pexp_ident "classes" (lambda/translobj.ml[162,4995+20]..[162,4995+27])
+                            ]
+                        ]
+              ]
+            expression (lambda/translobj.ml[163,5024+2]..[163,5024+29])
+              Pexp_tuple
+              [
+                expression (lambda/translobj.ml[163,5024+3]..[163,5024+11])
+                  Pexp_apply
+                  expression (lambda/translobj.ml[163,5024+3]..[163,5024+4])
+                    Pexp_ident "!" (lambda/translobj.ml[163,5024+3]..[163,5024+4])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[163,5024+4]..[163,5024+11])
+                        Pexp_ident "top_env" (lambda/translobj.ml[163,5024+4]..[163,5024+11])
+                  ]
+                expression (lambda/translobj.ml[163,5024+13]..[163,5024+28])
+                  Pexp_apply
+                  expression (lambda/translobj.ml[163,5024+13]..[163,5024+14])
+                    Pexp_ident "!" (lambda/translobj.ml[163,5024+13]..[163,5024+14])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[163,5024+14]..[163,5024+28])
+                        Pexp_ident "cache_required" (lambda/translobj.ml[163,5024+14]..[163,5024+28])
+                  ]
+              ]
+    ]
+  structure_item (lambda/translobj.ml[165,5055+0]..[189,5826+7])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[165,5055+4]..[165,5055+11])
+          Ppat_var "oo_wrap" (lambda/translobj.ml[165,5055+4]..[165,5055+11])
+        expression (lambda/translobj.ml[165,5055+12]..[189,5826+7]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[165,5055+12]..[165,5055+15])
+            Ppat_var "env" (lambda/translobj.ml[165,5055+12]..[165,5055+15])
+          expression (lambda/translobj.ml[165,5055+16]..[189,5826+7]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (lambda/translobj.ml[165,5055+16]..[165,5055+19])
+              Ppat_var "req" (lambda/translobj.ml[165,5055+16]..[165,5055+19])
+            expression (lambda/translobj.ml[165,5055+20]..[189,5826+7]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (lambda/translobj.ml[165,5055+20]..[165,5055+21])
+                Ppat_var "f" (lambda/translobj.ml[165,5055+20]..[165,5055+21])
+              expression (lambda/translobj.ml[165,5055+22]..[189,5826+7]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (lambda/translobj.ml[165,5055+22]..[165,5055+23])
+                  Ppat_var "x" (lambda/translobj.ml[165,5055+22]..[165,5055+23])
+                expression (lambda/translobj.ml[166,5081+2]..[189,5826+7])
+                  Pexp_ifthenelse
+                  expression (lambda/translobj.ml[166,5081+5]..[166,5081+14])
+                    Pexp_apply
+                    expression (lambda/translobj.ml[166,5081+5]..[166,5081+6])
+                      Pexp_ident "!" (lambda/translobj.ml[166,5081+5]..[166,5081+6])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[166,5081+6]..[166,5081+14])
+                          Pexp_ident "wrapping" (lambda/translobj.ml[166,5081+6]..[166,5081+14])
+                    ]
+                  expression (lambda/translobj.ml[167,5101+4]..[170,5219+9])
+                    Pexp_ifthenelse
+                    expression (lambda/translobj.ml[167,5101+7]..[167,5101+22])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[167,5101+7]..[167,5101+8])
+                        Pexp_ident "!" (lambda/translobj.ml[167,5101+7]..[167,5101+8])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[167,5101+8]..[167,5101+22])
+                            Pexp_ident "cache_required" (lambda/translobj.ml[167,5101+8]..[167,5101+22])
+                      ]
+                    expression (lambda/translobj.ml[167,5101+28]..[167,5101+31])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[167,5101+28]..[167,5101+29])
+                        Pexp_ident "f" (lambda/translobj.ml[167,5101+28]..[167,5101+29])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[167,5101+30]..[167,5101+31])
+                            Pexp_ident "x" (lambda/translobj.ml[167,5101+30]..[167,5101+31])
+                      ]
+                    Some
+                      expression (lambda/translobj.ml[168,5138+6]..[170,5219+9])
+                        Pexp_apply
+                        expression (lambda/translobj.ml[168,5138+6]..[168,5138+23])
+                          Pexp_ident "Misc.protect_refs" (lambda/translobj.ml[168,5138+6]..[168,5138+23])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[168,5138+24]..[168,5138+55])
+                              Pexp_construct "::" (lambda/translobj.ml[168,5138+25]..[168,5138+55]) ghost
+                              Some
+                                expression (lambda/translobj.ml[168,5138+25]..[168,5138+55]) ghost
+                                  Pexp_tuple
+                                  [
+                                    expression (lambda/translobj.ml[168,5138+25]..[168,5138+54])
+                                      Pexp_construct "Misc.R" (lambda/translobj.ml[168,5138+25]..[168,5138+31])
+                                      Some
+                                        expression (lambda/translobj.ml[168,5138+32]..[168,5138+54])
+                                          Pexp_tuple
+                                          [
+                                            expression (lambda/translobj.ml[168,5138+33]..[168,5138+47])
+                                              Pexp_ident "cache_required" (lambda/translobj.ml[168,5138+33]..[168,5138+47])
+                                            expression (lambda/translobj.ml[168,5138+49]..[168,5138+53])
+                                              Pexp_construct "true" (lambda/translobj.ml[168,5138+49]..[168,5138+53])
+                                              None
+                                          ]
+                                    expression (lambda/translobj.ml[168,5138+54]..[168,5138+55]) ghost
+                                      Pexp_construct "[]" (lambda/translobj.ml[168,5138+54]..[168,5138+55]) ghost
+                                      None
+                                  ]
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[168,5138+56]..[170,5219+9])
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (lambda/translobj.ml[168,5138+61]..[168,5138+63])
+                                Ppat_construct "()" (lambda/translobj.ml[168,5138+61]..[168,5138+63])
+                                None
+                              expression (lambda/translobj.ml[169,5205+10]..[169,5205+13])
+                                Pexp_apply
+                                expression (lambda/translobj.ml[169,5205+10]..[169,5205+11])
+                                  Pexp_ident "f" (lambda/translobj.ml[169,5205+10]..[169,5205+11])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (lambda/translobj.ml[169,5205+12]..[169,5205+13])
+                                      Pexp_ident "x" (lambda/translobj.ml[169,5205+12]..[169,5205+13])
+                                ]
+                        ]
+                  Some
+                    expression (lambda/translobj.ml[172,5236+4]..[189,5826+7])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[172,5236+4]..[172,5236+21])
+                        Pexp_ident "Misc.protect_refs" (lambda/translobj.ml[172,5236+4]..[172,5236+21])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[172,5236+22]..[172,5236+70])
+                            Pexp_construct "::" (lambda/translobj.ml[172,5236+23]..[172,5236+70]) ghost
+                            Some
+                              expression (lambda/translobj.ml[172,5236+23]..[172,5236+70]) ghost
+                                Pexp_tuple
+                                [
+                                  expression (lambda/translobj.ml[172,5236+23]..[172,5236+46])
+                                    Pexp_construct "Misc.R" (lambda/translobj.ml[172,5236+23]..[172,5236+29])
+                                    Some
+                                      expression (lambda/translobj.ml[172,5236+30]..[172,5236+46])
+                                        Pexp_tuple
+                                        [
+                                          expression (lambda/translobj.ml[172,5236+31]..[172,5236+39])
+                                            Pexp_ident "wrapping" (lambda/translobj.ml[172,5236+31]..[172,5236+39])
+                                          expression (lambda/translobj.ml[172,5236+41]..[172,5236+45])
+                                            Pexp_construct "true" (lambda/translobj.ml[172,5236+41]..[172,5236+45])
+                                            None
+                                        ]
+                                  expression (lambda/translobj.ml[172,5236+48]..[172,5236+70]) ghost
+                                    Pexp_construct "::" (lambda/translobj.ml[172,5236+48]..[172,5236+70]) ghost
+                                    Some
+                                      expression (lambda/translobj.ml[172,5236+48]..[172,5236+70]) ghost
+                                        Pexp_tuple
+                                        [
+                                          expression (lambda/translobj.ml[172,5236+48]..[172,5236+69])
+                                            Pexp_construct "Misc.R" (lambda/translobj.ml[172,5236+48]..[172,5236+54])
+                                            Some
+                                              expression (lambda/translobj.ml[172,5236+55]..[172,5236+69])
+                                                Pexp_tuple
+                                                [
+                                                  expression (lambda/translobj.ml[172,5236+56]..[172,5236+63])
+                                                    Pexp_ident "top_env" (lambda/translobj.ml[172,5236+56]..[172,5236+63])
+                                                  expression (lambda/translobj.ml[172,5236+65]..[172,5236+68])
+                                                    Pexp_ident "env" (lambda/translobj.ml[172,5236+65]..[172,5236+68])
+                                                ]
+                                          expression (lambda/translobj.ml[172,5236+69]..[172,5236+70]) ghost
+                                            Pexp_construct "[]" (lambda/translobj.ml[172,5236+69]..[172,5236+70]) ghost
+                                            None
+                                        ]
+                                ]
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[173,5307+6]..[189,5826+7])
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (lambda/translobj.ml[173,5307+11]..[173,5307+13])
+                              Ppat_construct "()" (lambda/translobj.ml[173,5307+11]..[173,5307+13])
+                              None
+                            expression (lambda/translobj.ml[174,5324+9]..[188,5810+15])
+                              Pexp_sequence
+                              expression (lambda/translobj.ml[174,5324+9]..[174,5324+30])
+                                Pexp_apply
+                                expression (lambda/translobj.ml[174,5324+24]..[174,5324+26])
+                                  Pexp_ident ":=" (lambda/translobj.ml[174,5324+24]..[174,5324+26])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (lambda/translobj.ml[174,5324+9]..[174,5324+23])
+                                      Pexp_ident "cache_required" (lambda/translobj.ml[174,5324+9]..[174,5324+23])
+                                  <arg>
+                                  Nolabel
+                                    expression (lambda/translobj.ml[174,5324+27]..[174,5324+30])
+                                      Pexp_ident "req" (lambda/translobj.ml[174,5324+27]..[174,5324+30])
+                                ]
+                              expression (lambda/translobj.ml[175,5356+9]..[188,5810+15])
+                                Pexp_sequence
+                                expression (lambda/translobj.ml[175,5356+9]..[175,5356+22])
+                                  Pexp_apply
+                                  expression (lambda/translobj.ml[175,5356+17]..[175,5356+19])
+                                    Pexp_ident ":=" (lambda/translobj.ml[175,5356+17]..[175,5356+19])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[175,5356+9]..[175,5356+16])
+                                        Pexp_ident "classes" (lambda/translobj.ml[175,5356+9]..[175,5356+16])
+                                    <arg>
+                                    Nolabel
+                                      expression (lambda/translobj.ml[175,5356+20]..[175,5356+22])
+                                        Pexp_construct "[]" (lambda/translobj.ml[175,5356+20]..[175,5356+22])
+                                        None
+                                  ]
+                                expression (lambda/translobj.ml[176,5380+9]..[188,5810+15])
+                                  Pexp_sequence
+                                  expression (lambda/translobj.ml[176,5380+9]..[176,5380+38])
+                                    Pexp_apply
+                                    expression (lambda/translobj.ml[176,5380+20]..[176,5380+22])
+                                      Pexp_ident ":=" (lambda/translobj.ml[176,5380+20]..[176,5380+22])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (lambda/translobj.ml[176,5380+9]..[176,5380+19])
+                                          Pexp_ident "method_ids" (lambda/translobj.ml[176,5380+9]..[176,5380+19])
+                                      <arg>
+                                      Nolabel
+                                        expression (lambda/translobj.ml[176,5380+23]..[176,5380+38])
+                                          Pexp_ident "Ident.Set.empty" (lambda/translobj.ml[176,5380+23]..[176,5380+38])
+                                    ]
+                                  expression (lambda/translobj.ml[177,5420+9]..[188,5810+15])
+                                    Pexp_let Nonrec
+                                    [
+                                      <def>
+                                        pattern (lambda/translobj.ml[177,5420+13]..[177,5420+19])
+                                          Ppat_var "lambda" (lambda/translobj.ml[177,5420+13]..[177,5420+19])
+                                        expression (lambda/translobj.ml[177,5420+22]..[177,5420+25])
+                                          Pexp_apply
+                                          expression (lambda/translobj.ml[177,5420+22]..[177,5420+23])
+                                            Pexp_ident "f" (lambda/translobj.ml[177,5420+22]..[177,5420+23])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (lambda/translobj.ml[177,5420+24]..[177,5420+25])
+                                                Pexp_ident "x" (lambda/translobj.ml[177,5420+24]..[177,5420+25])
+                                          ]
+                                    ]
+                                    expression (lambda/translobj.ml[178,5449+9]..[188,5810+15])
+                                      Pexp_let Nonrec
+                                      [
+                                        <def>
+                                          pattern (lambda/translobj.ml[178,5449+13]..[178,5449+19])
+                                            Ppat_var "lambda" (lambda/translobj.ml[178,5449+13]..[178,5449+19])
+                                          expression (lambda/translobj.ml[179,5471+11]..[186,5769+28])
+                                            Pexp_apply
+                                            expression (lambda/translobj.ml[179,5471+11]..[179,5471+25])
+                                              Pexp_ident "List.fold_left" (lambda/translobj.ml[179,5471+11]..[179,5471+25])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (lambda/translobj.ml[180,5497+13]..[185,5739+29])
+                                                  Pexp_fun
+                                                  Nolabel
+                                                  None
+                                                  pattern (lambda/translobj.ml[180,5497+18]..[180,5497+24])
+                                                    Ppat_var "lambda" (lambda/translobj.ml[180,5497+18]..[180,5497+24])
+                                                  expression (lambda/translobj.ml[180,5497+25]..[185,5739+28]) ghost
+                                                    Pexp_fun
+                                                    Nolabel
+                                                    None
+                                                    pattern (lambda/translobj.ml[180,5497+25]..[180,5497+27])
+                                                      Ppat_var "id" (lambda/translobj.ml[180,5497+25]..[180,5497+27])
+                                                    expression (lambda/translobj.ml[181,5528+16]..[185,5739+28])
+                                                      Pexp_construct "Llet" (lambda/translobj.ml[181,5528+16]..[181,5528+20])
+                                                      Some
+                                                        expression (lambda/translobj.ml[181,5528+20]..[185,5739+28])
+                                                          Pexp_tuple
+                                                          [
+                                                            expression (lambda/translobj.ml[181,5528+21]..[181,5528+30])
+                                                              Pexp_construct "StrictOpt" (lambda/translobj.ml[181,5528+21]..[181,5528+30])
+                                                              None
+                                                            expression (lambda/translobj.ml[181,5528+32]..[181,5528+39])
+                                                              Pexp_construct "Pgenval" (lambda/translobj.ml[181,5528+32]..[181,5528+39])
+                                                              None
+                                                            expression (lambda/translobj.ml[181,5528+41]..[181,5528+43])
+                                                              Pexp_ident "id" (lambda/translobj.ml[181,5528+41]..[181,5528+43])
+                                                            expression (lambda/translobj.ml[182,5573+21]..[184,5698+39])
+                                                              Pexp_construct "Lprim" (lambda/translobj.ml[182,5573+21]..[182,5573+26])
+                                                              Some
+                                                                expression (lambda/translobj.ml[182,5573+26]..[184,5698+39])
+                                                                  Pexp_tuple
+                                                                  [
+                                                                    expression (lambda/translobj.ml[182,5573+27]..[182,5573+55])
+                                                                      Pexp_construct "Pmakeblock" (lambda/translobj.ml[182,5573+27]..[182,5573+37])
+                                                                      Some
+expression (lambda/translobj.ml[182,5573+37]..[182,5573+55])
+  Pexp_tuple
+  [
+    expression (lambda/translobj.ml[182,5573+38]..[182,5573+39])
+      Pexp_constant PConst_int (0,None)
+    expression (lambda/translobj.ml[182,5573+41]..[182,5573+48])
+      Pexp_construct "Mutable" (lambda/translobj.ml[182,5573+41]..[182,5573+48])
+      None
+    expression (lambda/translobj.ml[182,5573+50]..[182,5573+54])
+      Pexp_construct "None" (lambda/translobj.ml[182,5573+50]..[182,5573+54])
+      None
+  ]
+                                                                    expression (lambda/translobj.ml[183,5630+27]..[183,5630+66])
+                                                                      Pexp_construct "::" (lambda/translobj.ml[183,5630+28]..[183,5630+66]) ghost
+                                                                      Some
+expression (lambda/translobj.ml[183,5630+28]..[183,5630+66]) ghost
+  Pexp_tuple
+  [
+    expression (lambda/translobj.ml[183,5630+28]..[183,5630+39])
+      Pexp_ident "lambda_unit" (lambda/translobj.ml[183,5630+28]..[183,5630+39])
+    expression (lambda/translobj.ml[183,5630+41]..[183,5630+66]) ghost
+      Pexp_construct "::" (lambda/translobj.ml[183,5630+41]..[183,5630+66]) ghost
+      Some
+        expression (lambda/translobj.ml[183,5630+41]..[183,5630+66]) ghost
+          Pexp_tuple
+          [
+            expression (lambda/translobj.ml[183,5630+41]..[183,5630+52])
+              Pexp_ident "lambda_unit" (lambda/translobj.ml[183,5630+41]..[183,5630+52])
+            expression (lambda/translobj.ml[183,5630+54]..[183,5630+66]) ghost
+              Pexp_construct "::" (lambda/translobj.ml[183,5630+54]..[183,5630+66]) ghost
+              Some
+                expression (lambda/translobj.ml[183,5630+54]..[183,5630+66]) ghost
+                  Pexp_tuple
+                  [
+                    expression (lambda/translobj.ml[183,5630+54]..[183,5630+65])
+                      Pexp_ident "lambda_unit" (lambda/translobj.ml[183,5630+54]..[183,5630+65])
+                    expression (lambda/translobj.ml[183,5630+65]..[183,5630+66]) ghost
+                      Pexp_construct "[]" (lambda/translobj.ml[183,5630+65]..[183,5630+66]) ghost
+                      None
+                  ]
+          ]
+  ]
+                                                                    expression (lambda/translobj.ml[184,5698+27]..[184,5698+38])
+                                                                      Pexp_construct "Loc_unknown" (lambda/translobj.ml[184,5698+27]..[184,5698+38])
+                                                                      None
+                                                                  ]
+                                                            expression (lambda/translobj.ml[185,5739+21]..[185,5739+27])
+                                                              Pexp_ident "lambda" (lambda/translobj.ml[185,5739+21]..[185,5739+27])
+                                                          ]
+                                              <arg>
+                                              Nolabel
+                                                expression (lambda/translobj.ml[186,5769+13]..[186,5769+19])
+                                                  Pexp_ident "lambda" (lambda/translobj.ml[186,5769+13]..[186,5769+19])
+                                              <arg>
+                                              Nolabel
+                                                expression (lambda/translobj.ml[186,5769+20]..[186,5769+28])
+                                                  Pexp_apply
+                                                  expression (lambda/translobj.ml[186,5769+20]..[186,5769+21])
+                                                    Pexp_ident "!" (lambda/translobj.ml[186,5769+20]..[186,5769+21])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (lambda/translobj.ml[186,5769+21]..[186,5769+28])
+                                                        Pexp_ident "classes" (lambda/translobj.ml[186,5769+21]..[186,5769+28])
+                                                  ]
+                                            ]
+                                      ]
+                                      expression (lambda/translobj.ml[188,5810+9]..[188,5810+15])
+                                        Pexp_ident "lambda" (lambda/translobj.ml[188,5810+9]..[188,5810+15])
+                      ]
+    ]
+  structure_item (lambda/translobj.ml[191,5835+0]..[200,6037+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (lambda/translobj.ml[191,5835+4]..[191,5835+9])
+          Ppat_var "reset" (lambda/translobj.ml[191,5835+4]..[191,5835+9])
+        expression (lambda/translobj.ml[191,5835+10]..[200,6037+31]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (lambda/translobj.ml[191,5835+10]..[191,5835+12])
+            Ppat_construct "()" (lambda/translobj.ml[191,5835+10]..[191,5835+12])
+            None
+          expression (lambda/translobj.ml[192,5850+2]..[200,6037+31])
+            Pexp_sequence
+            expression (lambda/translobj.ml[192,5850+2]..[192,5850+22])
+              Pexp_apply
+              expression (lambda/translobj.ml[192,5850+2]..[192,5850+15])
+                Pexp_ident "Hashtbl.clear" (lambda/translobj.ml[192,5850+2]..[192,5850+15])
+              [
+                <arg>
+                Nolabel
+                  expression (lambda/translobj.ml[192,5850+16]..[192,5850+22])
+                    Pexp_ident "consts" (lambda/translobj.ml[192,5850+16]..[192,5850+22])
+              ]
+            expression (lambda/translobj.ml[193,5874+2]..[200,6037+31])
+              Pexp_sequence
+              expression (lambda/translobj.ml[193,5874+2]..[193,5874+25])
+                Pexp_apply
+                expression (lambda/translobj.ml[193,5874+17]..[193,5874+19])
+                  Pexp_ident ":=" (lambda/translobj.ml[193,5874+17]..[193,5874+19])
+                [
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[193,5874+2]..[193,5874+16])
+                      Pexp_ident "cache_required" (lambda/translobj.ml[193,5874+2]..[193,5874+16])
+                  <arg>
+                  Nolabel
+                    expression (lambda/translobj.ml[193,5874+20]..[193,5874+25])
+                      Pexp_construct "false" (lambda/translobj.ml[193,5874+20]..[193,5874+25])
+                      None
+                ]
+              expression (lambda/translobj.ml[194,5901+2]..[200,6037+31])
+                Pexp_sequence
+                expression (lambda/translobj.ml[194,5901+2]..[194,5901+29])
+                  Pexp_apply
+                  expression (lambda/translobj.ml[194,5901+15]..[194,5901+17])
+                    Pexp_ident ":=" (lambda/translobj.ml[194,5901+15]..[194,5901+17])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[194,5901+2]..[194,5901+14])
+                        Pexp_ident "method_cache" (lambda/translobj.ml[194,5901+2]..[194,5901+14])
+                    <arg>
+                    Nolabel
+                      expression (lambda/translobj.ml[194,5901+18]..[194,5901+29])
+                        Pexp_ident "lambda_unit" (lambda/translobj.ml[194,5901+18]..[194,5901+29])
+                  ]
+                expression (lambda/translobj.ml[195,5932+2]..[200,6037+31])
+                  Pexp_sequence
+                  expression (lambda/translobj.ml[195,5932+2]..[195,5932+19])
+                    Pexp_apply
+                    expression (lambda/translobj.ml[195,5932+15]..[195,5932+17])
+                      Pexp_ident ":=" (lambda/translobj.ml[195,5932+15]..[195,5932+17])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[195,5932+2]..[195,5932+14])
+                          Pexp_ident "method_count" (lambda/translobj.ml[195,5932+2]..[195,5932+14])
+                      <arg>
+                      Nolabel
+                        expression (lambda/translobj.ml[195,5932+18]..[195,5932+19])
+                          Pexp_constant PConst_int (0,None)
+                    ]
+                  expression (lambda/translobj.ml[196,5953+2]..[200,6037+31])
+                    Pexp_sequence
+                    expression (lambda/translobj.ml[196,5953+2]..[196,5953+20])
+                      Pexp_apply
+                      expression (lambda/translobj.ml[196,5953+15]..[196,5953+17])
+                        Pexp_ident ":=" (lambda/translobj.ml[196,5953+15]..[196,5953+17])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[196,5953+2]..[196,5953+14])
+                            Pexp_ident "method_table" (lambda/translobj.ml[196,5953+2]..[196,5953+14])
+                        <arg>
+                        Nolabel
+                          expression (lambda/translobj.ml[196,5953+18]..[196,5953+20])
+                            Pexp_construct "[]" (lambda/translobj.ml[196,5953+18]..[196,5953+20])
+                            None
+                      ]
+                    expression (lambda/translobj.ml[197,5975+2]..[200,6037+31])
+                      Pexp_sequence
+                      expression (lambda/translobj.ml[197,5975+2]..[197,5975+19])
+                        Pexp_apply
+                        expression (lambda/translobj.ml[197,5975+11]..[197,5975+13])
+                          Pexp_ident ":=" (lambda/translobj.ml[197,5975+11]..[197,5975+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[197,5975+2]..[197,5975+10])
+                              Pexp_ident "wrapping" (lambda/translobj.ml[197,5975+2]..[197,5975+10])
+                          <arg>
+                          Nolabel
+                            expression (lambda/translobj.ml[197,5975+14]..[197,5975+19])
+                              Pexp_construct "false" (lambda/translobj.ml[197,5975+14]..[197,5975+19])
+                              None
+                        ]
+                      expression (lambda/translobj.ml[198,5996+2]..[200,6037+31])
+                        Pexp_sequence
+                        expression (lambda/translobj.ml[198,5996+2]..[198,5996+22])
+                          Pexp_apply
+                          expression (lambda/translobj.ml[198,5996+10]..[198,5996+12])
+                            Pexp_ident ":=" (lambda/translobj.ml[198,5996+10]..[198,5996+12])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (lambda/translobj.ml[198,5996+2]..[198,5996+9])
+                                Pexp_ident "top_env" (lambda/translobj.ml[198,5996+2]..[198,5996+9])
+                            <arg>
+                            Nolabel
+                              expression (lambda/translobj.ml[198,5996+13]..[198,5996+22])
+                                Pexp_ident "Env.empty" (lambda/translobj.ml[198,5996+13]..[198,5996+22])
+                          ]
+                        expression (lambda/translobj.ml[199,6020+2]..[200,6037+31])
+                          Pexp_sequence
+                          expression (lambda/translobj.ml[199,6020+2]..[199,6020+15])
+                            Pexp_apply
+                            expression (lambda/translobj.ml[199,6020+10]..[199,6020+12])
+                              Pexp_ident ":=" (lambda/translobj.ml[199,6020+10]..[199,6020+12])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[199,6020+2]..[199,6020+9])
+                                  Pexp_ident "classes" (lambda/translobj.ml[199,6020+2]..[199,6020+9])
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[199,6020+13]..[199,6020+15])
+                                  Pexp_construct "[]" (lambda/translobj.ml[199,6020+13]..[199,6020+15])
+                                  None
+                            ]
+                          expression (lambda/translobj.ml[200,6037+2]..[200,6037+31])
+                            Pexp_apply
+                            expression (lambda/translobj.ml[200,6037+13]..[200,6037+15])
+                              Pexp_ident ":=" (lambda/translobj.ml[200,6037+13]..[200,6037+15])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[200,6037+2]..[200,6037+12])
+                                  Pexp_ident "method_ids" (lambda/translobj.ml[200,6037+2]..[200,6037+12])
+                              <arg>
+                              Nolabel
+                                expression (lambda/translobj.ml[200,6037+16]..[200,6037+31])
+                                  Pexp_ident "Ident.Set.empty" (lambda/translobj.ml[200,6037+16]..[200,6037+31])
+                            ]
+    ]
+]
+

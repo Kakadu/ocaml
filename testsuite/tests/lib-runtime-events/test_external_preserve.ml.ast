@@ -1,0 +1,189 @@
+[
+  structure_item (testsuite/tests/lib-runtime-events/test_external_preserve.ml[11,203+2]..[29,916+7])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-runtime-events/test_external_preserve.ml[11,203+6]..[11,203+8])
+          Ppat_construct "()" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[11,203+6]..[11,203+8])
+          None
+        expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[13,265+4]..[29,916+7])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/lib-runtime-events/test_external_preserve.ml[13,265+8]..[13,265+18])
+                Ppat_var "parent_cwd" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[13,265+8]..[13,265+18])
+              expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[13,265+21]..[13,265+34])
+                Pexp_apply
+                expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[13,265+21]..[13,265+31])
+                  Pexp_ident "Sys.getcwd" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[13,265+21]..[13,265+31])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[13,265+32]..[13,265+34])
+                      Pexp_construct "()" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[13,265+32]..[13,265+34])
+                      None
+                ]
+          ]
+          expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[14,303+4]..[29,916+7])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/lib-runtime-events/test_external_preserve.ml[14,303+8]..[14,303+17])
+                  Ppat_var "child_pid" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[14,303+8]..[14,303+17])
+                expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[14,303+20]..[14,303+32])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[14,303+20]..[14,303+29])
+                    Pexp_ident "Unix.fork" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[14,303+20]..[14,303+29])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[14,303+30]..[14,303+32])
+                        Pexp_construct "()" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[14,303+30]..[14,303+32])
+                        None
+                  ]
+            ]
+            expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[15,339+4]..[29,916+7])
+              Pexp_ifthenelse
+              expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[15,339+7]..[15,339+21])
+                Pexp_apply
+                expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[15,339+17]..[15,339+19])
+                  Pexp_ident "==" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[15,339+17]..[15,339+19])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[15,339+7]..[15,339+16])
+                      Pexp_ident "child_pid" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[15,339+7]..[15,339+16])
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[15,339+20]..[15,339+21])
+                      Pexp_constant PConst_int (0,None)
+                ]
+              expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[15,339+27]..[19,510+7])
+                Pexp_apply
+                expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[17,429+6]..[17,429+26])
+                  Pexp_ident "Runtime_events.start" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[17,429+6]..[17,429+26])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[17,429+27]..[17,429+29])
+                      Pexp_construct "()" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[17,429+27]..[17,429+29])
+                      None
+                ]
+              Some
+                expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[19,510+13]..[29,916+7])
+                  Pexp_sequence
+                  expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+6]..[21,574+28])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+19]..[21,574+21])
+                      Pexp_ident "|>" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+19]..[21,574+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+6]..[21,574+18])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+6]..[21,574+15])
+                            Pexp_ident "Unix.wait" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+6]..[21,574+15])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+16]..[21,574+18])
+                                Pexp_construct "()" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+16]..[21,574+18])
+                                None
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+22]..[21,574+28])
+                          Pexp_ident "ignore" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[21,574+22]..[21,574+28])
+                    ]
+                  expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[23,655+6]..[28,888+27])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (testsuite/tests/lib-runtime-events/test_external_preserve.ml[23,655+10]..[23,655+16])
+                          Ppat_var "cursor" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[23,655+10]..[23,655+16])
+                        expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+10]..[24,674+69])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+10]..[24,674+38])
+                            Pexp_ident "Runtime_events.create_cursor" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+10]..[24,674+38])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+39]..[24,674+69])
+                                Pexp_construct "Some" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+40]..[24,674+44])
+                                Some
+                                  expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+45]..[24,674+68])
+                                    Pexp_tuple
+                                    [
+                                      expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+46]..[24,674+56])
+                                        Pexp_ident "parent_cwd" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+46]..[24,674+56])
+                                      expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+58]..[24,674+67])
+                                        Pexp_ident "child_pid" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[24,674+58]..[24,674+67])
+                                    ]
+                          ]
+                    ]
+                    expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[25,747+6]..[28,888+27])
+                      Pexp_sequence
+                      expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[25,747+6]..[25,747+39])
+                        Pexp_apply
+                        expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[25,747+6]..[25,747+32])
+                          Pexp_ident "Runtime_events.free_cursor" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[25,747+6]..[25,747+32])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[25,747+33]..[25,747+39])
+                              Pexp_ident "cursor" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[25,747+33]..[25,747+39])
+                        ]
+                      expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[26,788+6]..[28,888+27])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (testsuite/tests/lib-runtime-events/test_external_preserve.ml[26,788+10]..[26,788+19])
+                              Ppat_var "ring_file" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[26,788+10]..[26,788+19])
+                            expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+10]..[27,810+74])
+                              Pexp_apply
+                              expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+10]..[27,810+25])
+                                Pexp_ident "Filename.concat" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+10]..[27,810+25])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+26]..[27,810+36])
+                                    Pexp_ident "parent_cwd" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+26]..[27,810+36])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+37]..[27,810+74])
+                                    Pexp_apply
+                                    expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+62]..[27,810+63])
+                                      Pexp_ident "^" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+62]..[27,810+63])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+38]..[27,810+61])
+                                          Pexp_apply
+                                          expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+38]..[27,810+51])
+                                            Pexp_ident "string_of_int" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+38]..[27,810+51])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+52]..[27,810+61])
+                                                Pexp_ident "child_pid" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+52]..[27,810+61])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+64]..[27,810+73])
+                                          Pexp_constant PConst_string(".events",(testsuite/tests/lib-runtime-events/test_external_preserve.ml[27,810+65]..[27,810+72]),None)
+                                    ]
+                              ]
+                        ]
+                        expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[28,888+6]..[28,888+27])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[28,888+6]..[28,888+17])
+                            Pexp_ident "Unix.unlink" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[28,888+6]..[28,888+17])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-runtime-events/test_external_preserve.ml[28,888+18]..[28,888+27])
+                                Pexp_ident "ring_file" (testsuite/tests/lib-runtime-events/test_external_preserve.ml[28,888+18]..[28,888+27])
+                          ]
+    ]
+]
+

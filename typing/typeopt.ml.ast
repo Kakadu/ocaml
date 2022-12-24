@@ -1,0 +1,2590 @@
+[
+  structure_item (typing/typeopt.ml[18,1145+0]..[18,1145+9])
+    Pstr_open Fresh
+    module_expr (typing/typeopt.ml[18,1145+5]..[18,1145+9])
+      Pmod_ident "Path" (typing/typeopt.ml[18,1145+5]..[18,1145+9])
+  structure_item (typing/typeopt.ml[19,1155+0]..[19,1155+10])
+    Pstr_open Fresh
+    module_expr (typing/typeopt.ml[19,1155+5]..[19,1155+10])
+      Pmod_ident "Types" (typing/typeopt.ml[19,1155+5]..[19,1155+10])
+  structure_item (typing/typeopt.ml[20,1166+0]..[20,1166+13])
+    Pstr_open Fresh
+    module_expr (typing/typeopt.ml[20,1166+5]..[20,1166+13])
+      Pmod_ident "Asttypes" (typing/typeopt.ml[20,1166+5]..[20,1166+13])
+  structure_item (typing/typeopt.ml[21,1180+0]..[21,1180+14])
+    Pstr_open Fresh
+    module_expr (typing/typeopt.ml[21,1180+5]..[21,1180+14])
+      Pmod_ident "Typedtree" (typing/typeopt.ml[21,1180+5]..[21,1180+14])
+  structure_item (typing/typeopt.ml[22,1195+0]..[22,1195+11])
+    Pstr_open Fresh
+    module_expr (typing/typeopt.ml[22,1195+5]..[22,1195+11])
+      Pmod_ident "Lambda" (typing/typeopt.ml[22,1195+5]..[22,1195+11])
+  structure_item (typing/typeopt.ml[24,1208+0]..[43,1838+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[24,1208+4]..[24,1208+13])
+          Ppat_var "scrape_ty" (typing/typeopt.ml[24,1208+4]..[24,1208+13])
+        expression (typing/typeopt.ml[24,1208+14]..[43,1838+11]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[24,1208+14]..[24,1208+17])
+            Ppat_var "env" (typing/typeopt.ml[24,1208+14]..[24,1208+17])
+          expression (typing/typeopt.ml[24,1208+18]..[43,1838+11]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[24,1208+18]..[24,1208+20])
+              Ppat_var "ty" (typing/typeopt.ml[24,1208+18]..[24,1208+20])
+            expression (typing/typeopt.ml[25,1231+2]..[43,1838+11])
+              Pexp_match
+              expression (typing/typeopt.ml[25,1231+8]..[25,1231+19])
+                Pexp_apply
+                expression (typing/typeopt.ml[25,1231+8]..[25,1231+16])
+                  Pexp_ident "get_desc" (typing/typeopt.ml[25,1231+8]..[25,1231+16])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[25,1231+17]..[25,1231+19])
+                      Pexp_ident "ty" (typing/typeopt.ml[25,1231+17]..[25,1231+19])
+                ]
+              [
+                <case>
+                  pattern (typing/typeopt.ml[26,1256+4]..[26,1256+13])
+                    Ppat_construct "Tconstr" (typing/typeopt.ml[26,1256+4]..[26,1256+11])
+                    Some
+                      []
+                      pattern (typing/typeopt.ml[26,1256+12]..[26,1256+13])
+                        Ppat_any
+                  expression (typing/typeopt.ml[27,1273+6]..[42,1828+9])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (typing/typeopt.ml[27,1273+10]..[27,1273+12])
+                          Ppat_var "ty" (typing/typeopt.ml[27,1273+10]..[27,1273+12])
+                        expression (typing/typeopt.ml[27,1273+15]..[27,1273+66])
+                          Pexp_apply
+                          expression (typing/typeopt.ml[27,1273+15]..[27,1273+36])
+                            Pexp_ident "Ctype.expand_head_opt" (typing/typeopt.ml[27,1273+15]..[27,1273+36])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/typeopt.ml[27,1273+37]..[27,1273+40])
+                                Pexp_ident "env" (typing/typeopt.ml[27,1273+37]..[27,1273+40])
+                            <arg>
+                            Nolabel
+                              expression (typing/typeopt.ml[27,1273+41]..[27,1273+66])
+                                Pexp_apply
+                                expression (typing/typeopt.ml[27,1273+42]..[27,1273+62])
+                                  Pexp_ident "Ctype.correct_levels" (typing/typeopt.ml[27,1273+42]..[27,1273+62])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/typeopt.ml[27,1273+63]..[27,1273+65])
+                                      Pexp_ident "ty" (typing/typeopt.ml[27,1273+63]..[27,1273+65])
+                                ]
+                          ]
+                    ]
+                    expression (typing/typeopt.ml[28,1343+6]..[42,1828+9])
+                      Pexp_match
+                      expression (typing/typeopt.ml[28,1343+18]..[28,1343+29])
+                        Pexp_apply
+                        expression (typing/typeopt.ml[28,1343+18]..[28,1343+26])
+                          Pexp_ident "get_desc" (typing/typeopt.ml[28,1343+18]..[28,1343+26])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[28,1343+27]..[28,1343+29])
+                              Pexp_ident "ty" (typing/typeopt.ml[28,1343+27]..[28,1343+29])
+                        ]
+                      [
+                        <case>
+                          pattern (typing/typeopt.ml[29,1378+8]..[29,1378+25])
+                            Ppat_construct "Tconstr" (typing/typeopt.ml[29,1378+8]..[29,1378+15])
+                            Some
+                              []
+                              pattern (typing/typeopt.ml[29,1378+16]..[29,1378+25])
+                                Ppat_tuple
+                                [
+                                  pattern (typing/typeopt.ml[29,1378+17]..[29,1378+18])
+                                    Ppat_var "p" (typing/typeopt.ml[29,1378+17]..[29,1378+18])
+                                  pattern (typing/typeopt.ml[29,1378+20]..[29,1378+21])
+                                    Ppat_any
+                                  pattern (typing/typeopt.ml[29,1378+23]..[29,1378+24])
+                                    Ppat_any
+                                ]
+                          expression (typing/typeopt.ml[30,1407+10]..[39,1788+13])
+                            Pexp_match
+                            expression (typing/typeopt.ml[30,1407+22]..[30,1407+41])
+                              Pexp_apply
+                              expression (typing/typeopt.ml[30,1407+22]..[30,1407+35])
+                                Pexp_ident "Env.find_type" (typing/typeopt.ml[30,1407+22]..[30,1407+35])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (typing/typeopt.ml[30,1407+36]..[30,1407+37])
+                                    Pexp_ident "p" (typing/typeopt.ml[30,1407+36]..[30,1407+37])
+                                <arg>
+                                Nolabel
+                                  expression (typing/typeopt.ml[30,1407+38]..[30,1407+41])
+                                    Pexp_ident "env" (typing/typeopt.ml[30,1407+38]..[30,1407+41])
+                              ]
+                            [
+                              <case>
+                                pattern (typing/typeopt.ml[31,1454+12]..[32,1515+51])
+                                  Ppat_record Open
+                                  [
+                                    "type_kind" (typing/typeopt.ml[31,1454+13]..[31,1454+22])
+                                      pattern (typing/typeopt.ml[31,1454+25]..[32,1515+47])
+                                        Ppat_or
+                                        pattern (typing/typeopt.ml[31,1454+27]..[31,1454+60])
+                                          Ppat_construct "Type_variant" (typing/typeopt.ml[31,1454+27]..[31,1454+39])
+                                          Some
+                                            []
+                                            pattern (typing/typeopt.ml[31,1454+40]..[31,1454+60])
+                                              Ppat_tuple
+                                              [
+                                                pattern (typing/typeopt.ml[31,1454+41]..[31,1454+42])
+                                                  Ppat_any
+                                                pattern (typing/typeopt.ml[31,1454+44]..[31,1454+59])
+                                                  Ppat_construct "Variant_unboxed" (typing/typeopt.ml[31,1454+44]..[31,1454+59])
+                                                  None
+                                              ]
+                                        pattern (typing/typeopt.ml[32,1515+12]..[32,1515+45])
+                                          Ppat_construct "Type_record" (typing/typeopt.ml[32,1515+12]..[32,1515+23])
+                                          Some
+                                            []
+                                            pattern (typing/typeopt.ml[32,1515+24]..[32,1515+45])
+                                              Ppat_tuple
+                                              [
+                                                pattern (typing/typeopt.ml[32,1515+25]..[32,1515+26])
+                                                  Ppat_any
+                                                pattern (typing/typeopt.ml[32,1515+28]..[32,1515+44])
+                                                  Ppat_construct "Record_unboxed" (typing/typeopt.ml[32,1515+28]..[32,1515+42])
+                                                  Some
+                                                    []
+                                                    pattern (typing/typeopt.ml[32,1515+43]..[32,1515+44])
+                                                      Ppat_any
+                                              ]
+                                  ]
+                                expression (typing/typeopt.ml[32,1515+55]..[36,1716+13])
+                                  Pexp_match
+                                  expression (typing/typeopt.ml[33,1576+20]..[33,1576+75])
+                                    Pexp_apply
+                                    expression (typing/typeopt.ml[33,1576+20]..[33,1576+68])
+                                      Pexp_ident "Typedecl_unboxed.get_unboxed_type_representation" (typing/typeopt.ml[33,1576+20]..[33,1576+68])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/typeopt.ml[33,1576+69]..[33,1576+72])
+                                          Pexp_ident "env" (typing/typeopt.ml[33,1576+69]..[33,1576+72])
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/typeopt.ml[33,1576+73]..[33,1576+75])
+                                          Pexp_ident "ty" (typing/typeopt.ml[33,1576+73]..[33,1576+75])
+                                    ]
+                                  [
+                                    <case>
+                                      pattern (typing/typeopt.ml[34,1657+16]..[34,1657+20])
+                                        Ppat_construct "None" (typing/typeopt.ml[34,1657+16]..[34,1657+20])
+                                        None
+                                      expression (typing/typeopt.ml[34,1657+24]..[34,1657+26])
+                                        Pexp_ident "ty" (typing/typeopt.ml[34,1657+24]..[34,1657+26])
+                                    <case>
+                                      pattern (typing/typeopt.ml[35,1684+16]..[35,1684+24])
+                                        Ppat_construct "Some" (typing/typeopt.ml[35,1684+16]..[35,1684+20])
+                                        Some
+                                          []
+                                          pattern (typing/typeopt.ml[35,1684+21]..[35,1684+24])
+                                            Ppat_var "ty2" (typing/typeopt.ml[35,1684+21]..[35,1684+24])
+                                      expression (typing/typeopt.ml[35,1684+28]..[35,1684+31])
+                                        Pexp_ident "ty2" (typing/typeopt.ml[35,1684+28]..[35,1684+31])
+                                  ]
+                              <case>
+                                pattern (typing/typeopt.ml[37,1730+12]..[37,1730+13])
+                                  Ppat_any
+                                expression (typing/typeopt.ml[37,1730+17]..[37,1730+19])
+                                  Pexp_ident "ty" (typing/typeopt.ml[37,1730+17]..[37,1730+19])
+                              <case>
+                                pattern (typing/typeopt.ml[38,1750+12]..[38,1750+31])
+                                  Ppat_exception
+                                  pattern (typing/typeopt.ml[38,1750+22]..[38,1750+31])
+                                    Ppat_construct "Not_found" (typing/typeopt.ml[38,1750+22]..[38,1750+31])
+                                    None
+                                expression (typing/typeopt.ml[38,1750+35]..[38,1750+37])
+                                  Pexp_ident "ty" (typing/typeopt.ml[38,1750+35]..[38,1750+37])
+                            ]
+                        <case>
+                          pattern (typing/typeopt.ml[40,1802+8]..[40,1802+9])
+                            Ppat_any
+                          expression (typing/typeopt.ml[41,1815+10]..[41,1815+12])
+                            Pexp_ident "ty" (typing/typeopt.ml[41,1815+10]..[41,1815+12])
+                      ]
+                <case>
+                  pattern (typing/typeopt.ml[43,1838+4]..[43,1838+5])
+                    Ppat_any
+                  expression (typing/typeopt.ml[43,1838+9]..[43,1838+11])
+                    Pexp_ident "ty" (typing/typeopt.ml[43,1838+9]..[43,1838+11])
+              ]
+    ]
+  structure_item (typing/typeopt.ml[45,1851+0]..[46,1871+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[45,1851+4]..[45,1851+10])
+          Ppat_var "scrape" (typing/typeopt.ml[45,1851+4]..[45,1851+10])
+        expression (typing/typeopt.ml[45,1851+11]..[46,1871+29]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[45,1851+11]..[45,1851+14])
+            Ppat_var "env" (typing/typeopt.ml[45,1851+11]..[45,1851+14])
+          expression (typing/typeopt.ml[45,1851+15]..[46,1871+29]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[45,1851+15]..[45,1851+17])
+              Ppat_var "ty" (typing/typeopt.ml[45,1851+15]..[45,1851+17])
+            expression (typing/typeopt.ml[46,1871+2]..[46,1871+29])
+              Pexp_apply
+              expression (typing/typeopt.ml[46,1871+2]..[46,1871+10])
+                Pexp_ident "get_desc" (typing/typeopt.ml[46,1871+2]..[46,1871+10])
+              [
+                <arg>
+                Nolabel
+                  expression (typing/typeopt.ml[46,1871+11]..[46,1871+29])
+                    Pexp_apply
+                    expression (typing/typeopt.ml[46,1871+12]..[46,1871+21])
+                      Pexp_ident "scrape_ty" (typing/typeopt.ml[46,1871+12]..[46,1871+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[46,1871+22]..[46,1871+25])
+                          Pexp_ident "env" (typing/typeopt.ml[46,1871+22]..[46,1871+25])
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[46,1871+26]..[46,1871+28])
+                          Pexp_ident "ty" (typing/typeopt.ml[46,1871+26]..[46,1871+28])
+                    ]
+              ]
+    ]
+  structure_item (typing/typeopt.ml[48,1902+0]..[52,2016+10])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[48,1902+4]..[48,1902+15])
+          Ppat_var "scrape_poly" (typing/typeopt.ml[48,1902+4]..[48,1902+15])
+        expression (typing/typeopt.ml[48,1902+16]..[52,2016+10]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[48,1902+16]..[48,1902+19])
+            Ppat_var "env" (typing/typeopt.ml[48,1902+16]..[48,1902+19])
+          expression (typing/typeopt.ml[48,1902+20]..[52,2016+10]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[48,1902+20]..[48,1902+22])
+              Ppat_var "ty" (typing/typeopt.ml[48,1902+20]..[48,1902+22])
+            expression (typing/typeopt.ml[49,1927+2]..[52,2016+10])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (typing/typeopt.ml[49,1927+6]..[49,1927+8])
+                    Ppat_var "ty" (typing/typeopt.ml[49,1927+6]..[49,1927+8])
+                  expression (typing/typeopt.ml[49,1927+11]..[49,1927+27])
+                    Pexp_apply
+                    expression (typing/typeopt.ml[49,1927+11]..[49,1927+20])
+                      Pexp_ident "scrape_ty" (typing/typeopt.ml[49,1927+11]..[49,1927+20])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[49,1927+21]..[49,1927+24])
+                          Pexp_ident "env" (typing/typeopt.ml[49,1927+21]..[49,1927+24])
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[49,1927+25]..[49,1927+27])
+                          Pexp_ident "ty" (typing/typeopt.ml[49,1927+25]..[49,1927+27])
+                    ]
+              ]
+              expression (typing/typeopt.ml[50,1958+2]..[52,2016+10])
+                Pexp_match
+                expression (typing/typeopt.ml[50,1958+8]..[50,1958+19])
+                  Pexp_apply
+                  expression (typing/typeopt.ml[50,1958+8]..[50,1958+16])
+                    Pexp_ident "get_desc" (typing/typeopt.ml[50,1958+8]..[50,1958+16])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (typing/typeopt.ml[50,1958+17]..[50,1958+19])
+                        Pexp_ident "ty" (typing/typeopt.ml[50,1958+17]..[50,1958+19])
+                  ]
+                [
+                  <case>
+                    pattern (typing/typeopt.ml[51,1983+4]..[51,1983+17])
+                      Ppat_construct "Tpoly" (typing/typeopt.ml[51,1983+4]..[51,1983+9])
+                      Some
+                        []
+                        pattern (typing/typeopt.ml[51,1983+10]..[51,1983+17])
+                          Ppat_tuple
+                          [
+                            pattern (typing/typeopt.ml[51,1983+11]..[51,1983+13])
+                              Ppat_var "ty" (typing/typeopt.ml[51,1983+11]..[51,1983+13])
+                            pattern (typing/typeopt.ml[51,1983+15]..[51,1983+16])
+                              Ppat_any
+                          ]
+                    expression (typing/typeopt.ml[51,1983+21]..[51,1983+32])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[51,1983+21]..[51,1983+29])
+                        Pexp_ident "get_desc" (typing/typeopt.ml[51,1983+21]..[51,1983+29])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[51,1983+30]..[51,1983+32])
+                            Pexp_ident "ty" (typing/typeopt.ml[51,1983+30]..[51,1983+32])
+                      ]
+                  <case>
+                    pattern (typing/typeopt.ml[52,2016+4]..[52,2016+5])
+                      Ppat_var "d" (typing/typeopt.ml[52,2016+4]..[52,2016+5])
+                    expression (typing/typeopt.ml[52,2016+9]..[52,2016+10])
+                      Pexp_ident "d" (typing/typeopt.ml[52,2016+9]..[52,2016+10])
+                ]
+    ]
+  structure_item (typing/typeopt.ml[54,2028+0]..[57,2132+13])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[54,2028+4]..[54,2028+20])
+          Ppat_var "is_function_type" (typing/typeopt.ml[54,2028+4]..[54,2028+20])
+        expression (typing/typeopt.ml[54,2028+21]..[57,2132+13]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[54,2028+21]..[54,2028+24])
+            Ppat_var "env" (typing/typeopt.ml[54,2028+21]..[54,2028+24])
+          expression (typing/typeopt.ml[54,2028+25]..[57,2132+13]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[54,2028+25]..[54,2028+27])
+              Ppat_var "ty" (typing/typeopt.ml[54,2028+25]..[54,2028+27])
+            expression (typing/typeopt.ml[55,2058+2]..[57,2132+13])
+              Pexp_match
+              expression (typing/typeopt.ml[55,2058+8]..[55,2058+21])
+                Pexp_apply
+                expression (typing/typeopt.ml[55,2058+8]..[55,2058+14])
+                  Pexp_ident "scrape" (typing/typeopt.ml[55,2058+8]..[55,2058+14])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[55,2058+15]..[55,2058+18])
+                      Pexp_ident "env" (typing/typeopt.ml[55,2058+15]..[55,2058+18])
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[55,2058+19]..[55,2058+21])
+                      Pexp_ident "ty" (typing/typeopt.ml[55,2058+19]..[55,2058+21])
+                ]
+              [
+                <case>
+                  pattern (typing/typeopt.ml[56,2085+4]..[56,2085+27])
+                    Ppat_construct "Tarrow" (typing/typeopt.ml[56,2085+4]..[56,2085+10])
+                    Some
+                      []
+                      pattern (typing/typeopt.ml[56,2085+11]..[56,2085+27])
+                        Ppat_tuple
+                        [
+                          pattern (typing/typeopt.ml[56,2085+12]..[56,2085+13])
+                            Ppat_any
+                          pattern (typing/typeopt.ml[56,2085+15]..[56,2085+18])
+                            Ppat_var "lhs" (typing/typeopt.ml[56,2085+15]..[56,2085+18])
+                          pattern (typing/typeopt.ml[56,2085+20]..[56,2085+23])
+                            Ppat_var "rhs" (typing/typeopt.ml[56,2085+20]..[56,2085+23])
+                          pattern (typing/typeopt.ml[56,2085+25]..[56,2085+26])
+                            Ppat_any
+                        ]
+                  expression (typing/typeopt.ml[56,2085+31]..[56,2085+46])
+                    Pexp_construct "Some" (typing/typeopt.ml[56,2085+31]..[56,2085+35])
+                    Some
+                      expression (typing/typeopt.ml[56,2085+36]..[56,2085+46])
+                        Pexp_tuple
+                        [
+                          expression (typing/typeopt.ml[56,2085+37]..[56,2085+40])
+                            Pexp_ident "lhs" (typing/typeopt.ml[56,2085+37]..[56,2085+40])
+                          expression (typing/typeopt.ml[56,2085+42]..[56,2085+45])
+                            Pexp_ident "rhs" (typing/typeopt.ml[56,2085+42]..[56,2085+45])
+                        ]
+                <case>
+                  pattern (typing/typeopt.ml[57,2132+4]..[57,2132+5])
+                    Ppat_any
+                  expression (typing/typeopt.ml[57,2132+9]..[57,2132+13])
+                    Pexp_construct "None" (typing/typeopt.ml[57,2132+9]..[57,2132+13])
+                    None
+              ]
+    ]
+  structure_item (typing/typeopt.ml[59,2147+0]..[62,2262+14])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[59,2147+4]..[59,2147+16])
+          Ppat_var "is_base_type" (typing/typeopt.ml[59,2147+4]..[59,2147+16])
+        expression (typing/typeopt.ml[59,2147+17]..[62,2262+14]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[59,2147+17]..[59,2147+20])
+            Ppat_var "env" (typing/typeopt.ml[59,2147+17]..[59,2147+20])
+          expression (typing/typeopt.ml[59,2147+21]..[62,2262+14]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[59,2147+21]..[59,2147+23])
+              Ppat_var "ty" (typing/typeopt.ml[59,2147+21]..[59,2147+23])
+            expression (typing/typeopt.ml[59,2147+24]..[62,2262+14]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (typing/typeopt.ml[59,2147+24]..[59,2147+36])
+                Ppat_var "base_ty_path" (typing/typeopt.ml[59,2147+24]..[59,2147+36])
+              expression (typing/typeopt.ml[60,2186+2]..[62,2262+14])
+                Pexp_match
+                expression (typing/typeopt.ml[60,2186+8]..[60,2186+21])
+                  Pexp_apply
+                  expression (typing/typeopt.ml[60,2186+8]..[60,2186+14])
+                    Pexp_ident "scrape" (typing/typeopt.ml[60,2186+8]..[60,2186+14])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (typing/typeopt.ml[60,2186+15]..[60,2186+18])
+                        Pexp_ident "env" (typing/typeopt.ml[60,2186+15]..[60,2186+18])
+                    <arg>
+                    Nolabel
+                      expression (typing/typeopt.ml[60,2186+19]..[60,2186+21])
+                        Pexp_ident "ty" (typing/typeopt.ml[60,2186+19]..[60,2186+21])
+                  ]
+                [
+                  <case>
+                    pattern (typing/typeopt.ml[61,2213+4]..[61,2213+20])
+                      Ppat_construct "Tconstr" (typing/typeopt.ml[61,2213+4]..[61,2213+11])
+                      Some
+                        []
+                        pattern (typing/typeopt.ml[61,2213+11]..[61,2213+20])
+                          Ppat_tuple
+                          [
+                            pattern (typing/typeopt.ml[61,2213+12]..[61,2213+13])
+                              Ppat_var "p" (typing/typeopt.ml[61,2213+12]..[61,2213+13])
+                            pattern (typing/typeopt.ml[61,2213+15]..[61,2213+16])
+                              Ppat_any
+                            pattern (typing/typeopt.ml[61,2213+18]..[61,2213+19])
+                              Ppat_any
+                          ]
+                    expression (typing/typeopt.ml[61,2213+24]..[61,2213+48])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[61,2213+24]..[61,2213+33])
+                        Pexp_ident "Path.same" (typing/typeopt.ml[61,2213+24]..[61,2213+33])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[61,2213+34]..[61,2213+35])
+                            Pexp_ident "p" (typing/typeopt.ml[61,2213+34]..[61,2213+35])
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[61,2213+36]..[61,2213+48])
+                            Pexp_ident "base_ty_path" (typing/typeopt.ml[61,2213+36]..[61,2213+48])
+                      ]
+                  <case>
+                    pattern (typing/typeopt.ml[62,2262+4]..[62,2262+5])
+                      Ppat_any
+                    expression (typing/typeopt.ml[62,2262+9]..[62,2262+14])
+                      Pexp_construct "false" (typing/typeopt.ml[62,2262+9]..[62,2262+14])
+                      None
+                ]
+    ]
+  structure_item (typing/typeopt.ml[64,2278+0]..[70,2519+48])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[64,2278+4]..[64,2278+16])
+          Ppat_var "is_immediate" (typing/typeopt.ml[64,2278+4]..[64,2278+16])
+        expression (typing/typeopt.ml[64,2278+19]..[70,2519+48])
+          Pexp_function
+          [
+            <case>
+              pattern (typing/typeopt.ml[65,2306+4]..[65,2306+26])
+                Ppat_construct "Type_immediacy.Unknown" (typing/typeopt.ml[65,2306+4]..[65,2306+26])
+                None
+              expression (typing/typeopt.ml[65,2306+30]..[65,2306+35])
+                Pexp_construct "false" (typing/typeopt.ml[65,2306+30]..[65,2306+35])
+                None
+            <case>
+              pattern (typing/typeopt.ml[66,2342+4]..[66,2342+25])
+                Ppat_construct "Type_immediacy.Always" (typing/typeopt.ml[66,2342+4]..[66,2342+25])
+                None
+              expression (typing/typeopt.ml[66,2342+29]..[66,2342+33])
+                Pexp_construct "true" (typing/typeopt.ml[66,2342+29]..[66,2342+33])
+                None
+            <case>
+              pattern (typing/typeopt.ml[67,2376+4]..[67,2376+35])
+                Ppat_construct "Type_immediacy.Always_on_64bits" (typing/typeopt.ml[67,2376+4]..[67,2376+35])
+                None
+              expression (typing/typeopt.ml[70,2519+6]..[70,2519+48])
+                Pexp_apply
+                expression (typing/typeopt.ml[70,2519+27]..[70,2519+29])
+                  Pexp_ident "&&" (typing/typeopt.ml[70,2519+27]..[70,2519+29])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[70,2519+6]..[70,2519+26])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[70,2519+6]..[70,2519+7])
+                        Pexp_ident "!" (typing/typeopt.ml[70,2519+6]..[70,2519+7])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[70,2519+7]..[70,2519+26])
+                            Pexp_ident "Clflags.native_code" (typing/typeopt.ml[70,2519+7]..[70,2519+26])
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[70,2519+30]..[70,2519+48])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[70,2519+44]..[70,2519+45])
+                        Pexp_ident "=" (typing/typeopt.ml[70,2519+44]..[70,2519+45])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[70,2519+30]..[70,2519+43])
+                            Pexp_ident "Sys.word_size" (typing/typeopt.ml[70,2519+30]..[70,2519+43])
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[70,2519+46]..[70,2519+48])
+                            Pexp_constant PConst_int (64,None)
+                      ]
+                ]
+          ]
+    ]
+  structure_item (typing/typeopt.ml[72,2569+0]..[75,2690+14])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[72,2569+4]..[72,2569+22])
+          Ppat_var "maybe_pointer_type" (typing/typeopt.ml[72,2569+4]..[72,2569+22])
+        expression (typing/typeopt.ml[72,2569+23]..[75,2690+14]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[72,2569+23]..[72,2569+26])
+            Ppat_var "env" (typing/typeopt.ml[72,2569+23]..[72,2569+26])
+          expression (typing/typeopt.ml[72,2569+27]..[75,2690+14]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[72,2569+27]..[72,2569+29])
+              Ppat_var "ty" (typing/typeopt.ml[72,2569+27]..[72,2569+29])
+            expression (typing/typeopt.ml[73,2601+2]..[75,2690+14])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (typing/typeopt.ml[73,2601+6]..[73,2601+8])
+                    Ppat_var "ty" (typing/typeopt.ml[73,2601+6]..[73,2601+8])
+                  expression (typing/typeopt.ml[73,2601+11]..[73,2601+27])
+                    Pexp_apply
+                    expression (typing/typeopt.ml[73,2601+11]..[73,2601+20])
+                      Pexp_ident "scrape_ty" (typing/typeopt.ml[73,2601+11]..[73,2601+20])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[73,2601+21]..[73,2601+24])
+                          Pexp_ident "env" (typing/typeopt.ml[73,2601+21]..[73,2601+24])
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[73,2601+25]..[73,2601+27])
+                          Pexp_ident "ty" (typing/typeopt.ml[73,2601+25]..[73,2601+27])
+                    ]
+              ]
+              expression (typing/typeopt.ml[74,2632+2]..[75,2690+14])
+                Pexp_ifthenelse
+                expression (typing/typeopt.ml[74,2632+5]..[74,2632+42])
+                  Pexp_apply
+                  expression (typing/typeopt.ml[74,2632+5]..[74,2632+17])
+                    Pexp_ident "is_immediate" (typing/typeopt.ml[74,2632+5]..[74,2632+17])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (typing/typeopt.ml[74,2632+18]..[74,2632+42])
+                        Pexp_apply
+                        expression (typing/typeopt.ml[74,2632+19]..[74,2632+34])
+                          Pexp_ident "Ctype.immediacy" (typing/typeopt.ml[74,2632+19]..[74,2632+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[74,2632+35]..[74,2632+38])
+                              Pexp_ident "env" (typing/typeopt.ml[74,2632+35]..[74,2632+38])
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[74,2632+39]..[74,2632+41])
+                              Pexp_ident "ty" (typing/typeopt.ml[74,2632+39]..[74,2632+41])
+                        ]
+                  ]
+                expression (typing/typeopt.ml[74,2632+48]..[74,2632+57])
+                  Pexp_construct "Immediate" (typing/typeopt.ml[74,2632+48]..[74,2632+57])
+                  None
+                Some
+                  expression (typing/typeopt.ml[75,2690+7]..[75,2690+14])
+                    Pexp_construct "Pointer" (typing/typeopt.ml[75,2690+7]..[75,2690+14])
+                    None
+    ]
+  structure_item (typing/typeopt.ml[77,2706+0]..[77,2706+67])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[77,2706+4]..[77,2706+17])
+          Ppat_var "maybe_pointer" (typing/typeopt.ml[77,2706+4]..[77,2706+17])
+        expression (typing/typeopt.ml[77,2706+18]..[77,2706+67]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[77,2706+18]..[77,2706+21])
+            Ppat_var "exp" (typing/typeopt.ml[77,2706+18]..[77,2706+21])
+          expression (typing/typeopt.ml[77,2706+24]..[77,2706+67])
+            Pexp_apply
+            expression (typing/typeopt.ml[77,2706+24]..[77,2706+42])
+              Pexp_ident "maybe_pointer_type" (typing/typeopt.ml[77,2706+24]..[77,2706+42])
+            [
+              <arg>
+              Nolabel
+                expression (typing/typeopt.ml[77,2706+43]..[77,2706+54])
+                  Pexp_field
+                  expression (typing/typeopt.ml[77,2706+43]..[77,2706+46])
+                    Pexp_ident "exp" (typing/typeopt.ml[77,2706+43]..[77,2706+46])
+                  "exp_env" (typing/typeopt.ml[77,2706+47]..[77,2706+54])
+              <arg>
+              Nolabel
+                expression (typing/typeopt.ml[77,2706+55]..[77,2706+67])
+                  Pexp_field
+                  expression (typing/typeopt.ml[77,2706+55]..[77,2706+58])
+                    Pexp_ident "exp" (typing/typeopt.ml[77,2706+55]..[77,2706+58])
+                  "exp_type" (typing/typeopt.ml[77,2706+59]..[77,2706+67])
+            ]
+    ]
+  structure_item (typing/typeopt.ml[79,2775+0]..[84,2874+7])
+    Pstr_type Rec
+    [
+      type_declaration "classification" (typing/typeopt.ml[79,2775+5]..[79,2775+19]) (typing/typeopt.ml[79,2775+0]..[84,2874+7])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (typing/typeopt.ml[80,2797+2]..[80,2797+7])
+                "Int" (typing/typeopt.ml[80,2797+4]..[80,2797+7])
+                []
+                None
+              (typing/typeopt.ml[81,2805+2]..[81,2805+9])
+                "Float" (typing/typeopt.ml[81,2805+4]..[81,2805+9])
+                []
+                None
+              (typing/typeopt.ml[82,2815+2]..[82,2815+8])
+                "Lazy" (typing/typeopt.ml[82,2815+4]..[82,2815+8])
+                []
+                None
+              (typing/typeopt.ml[83,2824+2]..[83,2824+8])
+                "Addr" (typing/typeopt.ml[83,2824+4]..[83,2824+8])
+                []
+                None
+              (typing/typeopt.ml[84,2874+2]..[84,2874+7])
+                "Any" (typing/typeopt.ml[84,2874+4]..[84,2874+7])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (typing/typeopt.ml[86,2883+0]..[117,4024+18])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[86,2883+4]..[86,2883+12])
+          Ppat_var "classify" (typing/typeopt.ml[86,2883+4]..[86,2883+12])
+        expression (typing/typeopt.ml[86,2883+13]..[117,4024+18]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[86,2883+13]..[86,2883+16])
+            Ppat_var "env" (typing/typeopt.ml[86,2883+13]..[86,2883+16])
+          expression (typing/typeopt.ml[86,2883+17]..[117,4024+18]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[86,2883+17]..[86,2883+19])
+              Ppat_var "ty" (typing/typeopt.ml[86,2883+17]..[86,2883+19])
+            expression (typing/typeopt.ml[87,2905+2]..[117,4024+18])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (typing/typeopt.ml[87,2905+6]..[87,2905+8])
+                    Ppat_var "ty" (typing/typeopt.ml[87,2905+6]..[87,2905+8])
+                  expression (typing/typeopt.ml[87,2905+11]..[87,2905+27])
+                    Pexp_apply
+                    expression (typing/typeopt.ml[87,2905+11]..[87,2905+20])
+                      Pexp_ident "scrape_ty" (typing/typeopt.ml[87,2905+11]..[87,2905+20])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[87,2905+21]..[87,2905+24])
+                          Pexp_ident "env" (typing/typeopt.ml[87,2905+21]..[87,2905+24])
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[87,2905+25]..[87,2905+27])
+                          Pexp_ident "ty" (typing/typeopt.ml[87,2905+25]..[87,2905+27])
+                    ]
+              ]
+              expression (typing/typeopt.ml[88,2936+2]..[117,4024+18])
+                Pexp_ifthenelse
+                expression (typing/typeopt.ml[88,2936+5]..[88,2936+42])
+                  Pexp_apply
+                  expression (typing/typeopt.ml[88,2936+31]..[88,2936+32])
+                    Pexp_ident "=" (typing/typeopt.ml[88,2936+31]..[88,2936+32])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (typing/typeopt.ml[88,2936+5]..[88,2936+30])
+                        Pexp_apply
+                        expression (typing/typeopt.ml[88,2936+5]..[88,2936+23])
+                          Pexp_ident "maybe_pointer_type" (typing/typeopt.ml[88,2936+5]..[88,2936+23])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[88,2936+24]..[88,2936+27])
+                              Pexp_ident "env" (typing/typeopt.ml[88,2936+24]..[88,2936+27])
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[88,2936+28]..[88,2936+30])
+                              Pexp_ident "ty" (typing/typeopt.ml[88,2936+28]..[88,2936+30])
+                        ]
+                    <arg>
+                    Nolabel
+                      expression (typing/typeopt.ml[88,2936+33]..[88,2936+42])
+                        Pexp_construct "Immediate" (typing/typeopt.ml[88,2936+33]..[88,2936+42])
+                        None
+                  ]
+                expression (typing/typeopt.ml[88,2936+48]..[88,2936+51])
+                  Pexp_construct "Int" (typing/typeopt.ml[88,2936+48]..[88,2936+51])
+                  None
+                Some
+                  expression (typing/typeopt.ml[89,2988+7]..[117,4024+18])
+                    Pexp_match
+                    expression (typing/typeopt.ml[89,2988+13]..[89,2988+24])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[89,2988+13]..[89,2988+21])
+                        Pexp_ident "get_desc" (typing/typeopt.ml[89,2988+13]..[89,2988+21])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[89,2988+22]..[89,2988+24])
+                            Pexp_ident "ty" (typing/typeopt.ml[89,2988+22]..[89,2988+24])
+                      ]
+                    [
+                      <case>
+                        pattern (typing/typeopt.ml[90,3018+4]..[90,3018+22])
+                          Ppat_or
+                          pattern (typing/typeopt.ml[90,3018+4]..[90,3018+10])
+                            Ppat_construct "Tvar" (typing/typeopt.ml[90,3018+4]..[90,3018+8])
+                            Some
+                              []
+                              pattern (typing/typeopt.ml[90,3018+9]..[90,3018+10])
+                                Ppat_any
+                          pattern (typing/typeopt.ml[90,3018+13]..[90,3018+22])
+                            Ppat_construct "Tunivar" (typing/typeopt.ml[90,3018+13]..[90,3018+20])
+                            Some
+                              []
+                              pattern (typing/typeopt.ml[90,3018+21]..[90,3018+22])
+                                Ppat_any
+                        expression (typing/typeopt.ml[91,3044+6]..[91,3044+9])
+                          Pexp_construct "Any" (typing/typeopt.ml[91,3044+6]..[91,3044+9])
+                          None
+                      <case>
+                        pattern (typing/typeopt.ml[92,3054+4]..[92,3054+31])
+                          Ppat_construct "Tconstr" (typing/typeopt.ml[92,3054+4]..[92,3054+11])
+                          Some
+                            []
+                            pattern (typing/typeopt.ml[92,3054+12]..[92,3054+31])
+                              Ppat_tuple
+                              [
+                                pattern (typing/typeopt.ml[92,3054+13]..[92,3054+14])
+                                  Ppat_var "p" (typing/typeopt.ml[92,3054+13]..[92,3054+14])
+                                pattern (typing/typeopt.ml[92,3054+16]..[92,3054+21])
+                                  Ppat_var "_args" (typing/typeopt.ml[92,3054+16]..[92,3054+21])
+                                pattern (typing/typeopt.ml[92,3054+23]..[92,3054+30])
+                                  Ppat_var "_abbrev" (typing/typeopt.ml[92,3054+23]..[92,3054+30])
+                              ]
+                        expression (typing/typeopt.ml[93,3089+6]..[113,3884+9])
+                          Pexp_ifthenelse
+                          expression (typing/typeopt.ml[93,3089+9]..[93,3089+38])
+                            Pexp_apply
+                            expression (typing/typeopt.ml[93,3089+9]..[93,3089+18])
+                              Pexp_ident "Path.same" (typing/typeopt.ml[93,3089+9]..[93,3089+18])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[93,3089+19]..[93,3089+20])
+                                  Pexp_ident "p" (typing/typeopt.ml[93,3089+19]..[93,3089+20])
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[93,3089+21]..[93,3089+38])
+                                  Pexp_ident "Predef.path_float" (typing/typeopt.ml[93,3089+21]..[93,3089+38])
+                            ]
+                          expression (typing/typeopt.ml[93,3089+44]..[93,3089+49])
+                            Pexp_construct "Float" (typing/typeopt.ml[93,3089+44]..[93,3089+49])
+                            None
+                          Some
+                            expression (typing/typeopt.ml[94,3139+11]..[113,3884+9])
+                              Pexp_ifthenelse
+                              expression (typing/typeopt.ml[94,3139+14]..[94,3139+44])
+                                Pexp_apply
+                                expression (typing/typeopt.ml[94,3139+14]..[94,3139+23])
+                                  Pexp_ident "Path.same" (typing/typeopt.ml[94,3139+14]..[94,3139+23])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/typeopt.ml[94,3139+24]..[94,3139+25])
+                                      Pexp_ident "p" (typing/typeopt.ml[94,3139+24]..[94,3139+25])
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/typeopt.ml[94,3139+26]..[94,3139+44])
+                                      Pexp_ident "Predef.path_lazy_t" (typing/typeopt.ml[94,3139+26]..[94,3139+44])
+                                ]
+                              expression (typing/typeopt.ml[94,3139+50]..[94,3139+54])
+                                Pexp_construct "Lazy" (typing/typeopt.ml[94,3139+50]..[94,3139+54])
+                                None
+                              Some
+                                expression (typing/typeopt.ml[95,3194+11]..[113,3884+9])
+                                  Pexp_ifthenelse
+                                  expression (typing/typeopt.ml[95,3194+14]..[100,3419+43])
+                                    Pexp_apply
+                                    expression (typing/typeopt.ml[96,3239+11]..[96,3239+13])
+                                      Pexp_ident "||" (typing/typeopt.ml[96,3239+11]..[96,3239+13])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/typeopt.ml[95,3194+14]..[95,3194+44])
+                                          Pexp_apply
+                                          expression (typing/typeopt.ml[95,3194+14]..[95,3194+23])
+                                            Pexp_ident "Path.same" (typing/typeopt.ml[95,3194+14]..[95,3194+23])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/typeopt.ml[95,3194+24]..[95,3194+25])
+                                                Pexp_ident "p" (typing/typeopt.ml[95,3194+24]..[95,3194+25])
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/typeopt.ml[95,3194+26]..[95,3194+44])
+                                                Pexp_ident "Predef.path_string" (typing/typeopt.ml[95,3194+26]..[95,3194+44])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (typing/typeopt.ml[96,3239+14]..[100,3419+43])
+                                          Pexp_apply
+                                          expression (typing/typeopt.ml[97,3283+11]..[97,3283+13])
+                                            Pexp_ident "||" (typing/typeopt.ml[97,3283+11]..[97,3283+13])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/typeopt.ml[96,3239+14]..[96,3239+43])
+                                                Pexp_apply
+                                                expression (typing/typeopt.ml[96,3239+14]..[96,3239+23])
+                                                  Pexp_ident "Path.same" (typing/typeopt.ml[96,3239+14]..[96,3239+23])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/typeopt.ml[96,3239+24]..[96,3239+25])
+                                                      Pexp_ident "p" (typing/typeopt.ml[96,3239+24]..[96,3239+25])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/typeopt.ml[96,3239+26]..[96,3239+43])
+                                                      Pexp_ident "Predef.path_bytes" (typing/typeopt.ml[96,3239+26]..[96,3239+43])
+                                                ]
+                                            <arg>
+                                            Nolabel
+                                              expression (typing/typeopt.ml[97,3283+14]..[100,3419+43])
+                                                Pexp_apply
+                                                expression (typing/typeopt.ml[98,3327+11]..[98,3327+13])
+                                                  Pexp_ident "||" (typing/typeopt.ml[98,3327+11]..[98,3327+13])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/typeopt.ml[97,3283+14]..[97,3283+43])
+                                                      Pexp_apply
+                                                      expression (typing/typeopt.ml[97,3283+14]..[97,3283+23])
+                                                        Pexp_ident "Path.same" (typing/typeopt.ml[97,3283+14]..[97,3283+23])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (typing/typeopt.ml[97,3283+24]..[97,3283+25])
+                                                            Pexp_ident "p" (typing/typeopt.ml[97,3283+24]..[97,3283+25])
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (typing/typeopt.ml[97,3283+26]..[97,3283+43])
+                                                            Pexp_ident "Predef.path_array" (typing/typeopt.ml[97,3283+26]..[97,3283+43])
+                                                      ]
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (typing/typeopt.ml[98,3327+14]..[100,3419+43])
+                                                      Pexp_apply
+                                                      expression (typing/typeopt.ml[99,3375+11]..[99,3375+13])
+                                                        Pexp_ident "||" (typing/typeopt.ml[99,3375+11]..[99,3375+13])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (typing/typeopt.ml[98,3327+14]..[98,3327+47])
+                                                            Pexp_apply
+                                                            expression (typing/typeopt.ml[98,3327+14]..[98,3327+23])
+                                                              Pexp_ident "Path.same" (typing/typeopt.ml[98,3327+14]..[98,3327+23])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/typeopt.ml[98,3327+24]..[98,3327+25])
+                                                                  Pexp_ident "p" (typing/typeopt.ml[98,3327+24]..[98,3327+25])
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/typeopt.ml[98,3327+26]..[98,3327+47])
+                                                                  Pexp_ident "Predef.path_nativeint" (typing/typeopt.ml[98,3327+26]..[98,3327+47])
+                                                            ]
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (typing/typeopt.ml[99,3375+14]..[100,3419+43])
+                                                            Pexp_apply
+                                                            expression (typing/typeopt.ml[100,3419+11]..[100,3419+13])
+                                                              Pexp_ident "||" (typing/typeopt.ml[100,3419+11]..[100,3419+13])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/typeopt.ml[99,3375+14]..[99,3375+43])
+                                                                  Pexp_apply
+                                                                  expression (typing/typeopt.ml[99,3375+14]..[99,3375+23])
+                                                                    Pexp_ident "Path.same" (typing/typeopt.ml[99,3375+14]..[99,3375+23])
+                                                                  [
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (typing/typeopt.ml[99,3375+24]..[99,3375+25])
+Pexp_ident "p" (typing/typeopt.ml[99,3375+24]..[99,3375+25])
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (typing/typeopt.ml[99,3375+26]..[99,3375+43])
+Pexp_ident "Predef.path_int32" (typing/typeopt.ml[99,3375+26]..[99,3375+43])
+                                                                  ]
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (typing/typeopt.ml[100,3419+14]..[100,3419+43])
+                                                                  Pexp_apply
+                                                                  expression (typing/typeopt.ml[100,3419+14]..[100,3419+23])
+                                                                    Pexp_ident "Path.same" (typing/typeopt.ml[100,3419+14]..[100,3419+23])
+                                                                  [
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (typing/typeopt.ml[100,3419+24]..[100,3419+25])
+Pexp_ident "p" (typing/typeopt.ml[100,3419+24]..[100,3419+25])
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (typing/typeopt.ml[100,3419+26]..[100,3419+43])
+Pexp_ident "Predef.path_int64" (typing/typeopt.ml[100,3419+26]..[100,3419+43])
+                                                                  ]
+                                                            ]
+                                                      ]
+                                                ]
+                                          ]
+                                    ]
+                                  expression (typing/typeopt.ml[100,3419+49]..[100,3419+53])
+                                    Pexp_construct "Addr" (typing/typeopt.ml[100,3419+49]..[100,3419+53])
+                                    None
+                                  Some
+                                    expression (typing/typeopt.ml[101,3473+11]..[113,3884+9])
+                                      Pexp_try
+                                      expression (typing/typeopt.ml[103,3502+10]..[107,3660+18])
+                                        Pexp_match
+                                        expression (typing/typeopt.ml[103,3502+16]..[103,3502+47])
+                                          Pexp_field
+                                          expression (typing/typeopt.ml[103,3502+16]..[103,3502+37])
+                                            Pexp_apply
+                                            expression (typing/typeopt.ml[103,3502+17]..[103,3502+30])
+                                              Pexp_ident "Env.find_type" (typing/typeopt.ml[103,3502+17]..[103,3502+30])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (typing/typeopt.ml[103,3502+31]..[103,3502+32])
+                                                  Pexp_ident "p" (typing/typeopt.ml[103,3502+31]..[103,3502+32])
+                                              <arg>
+                                              Nolabel
+                                                expression (typing/typeopt.ml[103,3502+33]..[103,3502+36])
+                                                  Pexp_ident "env" (typing/typeopt.ml[103,3502+33]..[103,3502+36])
+                                            ]
+                                          "type_kind" (typing/typeopt.ml[103,3502+38]..[103,3502+47])
+                                        [
+                                          <case>
+                                            pattern (typing/typeopt.ml[104,3555+12]..[104,3555+25])
+                                              Ppat_construct "Type_abstract" (typing/typeopt.ml[104,3555+12]..[104,3555+25])
+                                              None
+                                            expression (typing/typeopt.ml[105,3584+14]..[105,3584+17])
+                                              Pexp_construct "Any" (typing/typeopt.ml[105,3584+14]..[105,3584+17])
+                                              None
+                                          <case>
+                                            pattern (typing/typeopt.ml[106,3602+12]..[106,3602+54])
+                                              Ppat_or
+                                              pattern (typing/typeopt.ml[106,3602+12]..[106,3602+42])
+                                                Ppat_or
+                                                pattern (typing/typeopt.ml[106,3602+12]..[106,3602+25])
+                                                  Ppat_construct "Type_record" (typing/typeopt.ml[106,3602+12]..[106,3602+23])
+                                                  Some
+                                                    []
+                                                    pattern (typing/typeopt.ml[106,3602+24]..[106,3602+25])
+                                                      Ppat_any
+                                                pattern (typing/typeopt.ml[106,3602+28]..[106,3602+42])
+                                                  Ppat_construct "Type_variant" (typing/typeopt.ml[106,3602+28]..[106,3602+40])
+                                                  Some
+                                                    []
+                                                    pattern (typing/typeopt.ml[106,3602+41]..[106,3602+42])
+                                                      Ppat_any
+                                              pattern (typing/typeopt.ml[106,3602+45]..[106,3602+54])
+                                                Ppat_construct "Type_open" (typing/typeopt.ml[106,3602+45]..[106,3602+54])
+                                                None
+                                            expression (typing/typeopt.ml[107,3660+14]..[107,3660+18])
+                                              Pexp_construct "Addr" (typing/typeopt.ml[107,3660+14]..[107,3660+18])
+                                              None
+                                        ]
+                                      [
+                                        <case>
+                                          pattern (typing/typeopt.ml[108,3679+13]..[108,3679+22])
+                                            Ppat_construct "Not_found" (typing/typeopt.ml[108,3679+13]..[108,3679+22])
+                                            None
+                                          expression (typing/typeopt.ml[112,3870+10]..[112,3870+13])
+                                            Pexp_construct "Any" (typing/typeopt.ml[112,3870+10]..[112,3870+13])
+                                            None
+                                      ]
+                      <case>
+                        pattern (typing/typeopt.ml[114,3894+4]..[114,3894+68])
+                          Ppat_or
+                          pattern (typing/typeopt.ml[114,3894+4]..[114,3894+55])
+                            Ppat_or
+                            pattern (typing/typeopt.ml[114,3894+4]..[114,3894+48])
+                              Ppat_or
+                              pattern (typing/typeopt.ml[114,3894+4]..[114,3894+36])
+                                Ppat_or
+                                pattern (typing/typeopt.ml[114,3894+4]..[114,3894+23])
+                                  Ppat_or
+                                  pattern (typing/typeopt.ml[114,3894+4]..[114,3894+12])
+                                    Ppat_construct "Tarrow" (typing/typeopt.ml[114,3894+4]..[114,3894+10])
+                                    Some
+                                      []
+                                      pattern (typing/typeopt.ml[114,3894+11]..[114,3894+12])
+                                        Ppat_any
+                                  pattern (typing/typeopt.ml[114,3894+15]..[114,3894+23])
+                                    Ppat_construct "Ttuple" (typing/typeopt.ml[114,3894+15]..[114,3894+21])
+                                    Some
+                                      []
+                                      pattern (typing/typeopt.ml[114,3894+22]..[114,3894+23])
+                                        Ppat_any
+                                pattern (typing/typeopt.ml[114,3894+26]..[114,3894+36])
+                                  Ppat_construct "Tpackage" (typing/typeopt.ml[114,3894+26]..[114,3894+34])
+                                  Some
+                                    []
+                                    pattern (typing/typeopt.ml[114,3894+35]..[114,3894+36])
+                                      Ppat_any
+                              pattern (typing/typeopt.ml[114,3894+39]..[114,3894+48])
+                                Ppat_construct "Tobject" (typing/typeopt.ml[114,3894+39]..[114,3894+46])
+                                Some
+                                  []
+                                  pattern (typing/typeopt.ml[114,3894+47]..[114,3894+48])
+                                    Ppat_any
+                            pattern (typing/typeopt.ml[114,3894+51]..[114,3894+55])
+                              Ppat_construct "Tnil" (typing/typeopt.ml[114,3894+51]..[114,3894+55])
+                              None
+                          pattern (typing/typeopt.ml[114,3894+58]..[114,3894+68])
+                            Ppat_construct "Tvariant" (typing/typeopt.ml[114,3894+58]..[114,3894+66])
+                            Some
+                              []
+                              pattern (typing/typeopt.ml[114,3894+67]..[114,3894+68])
+                                Ppat_any
+                        expression (typing/typeopt.ml[115,3966+6]..[115,3966+10])
+                          Pexp_construct "Addr" (typing/typeopt.ml[115,3966+6]..[115,3966+10])
+                          None
+                      <case>
+                        pattern (typing/typeopt.ml[116,3977+4]..[116,3977+43])
+                          Ppat_or
+                          pattern (typing/typeopt.ml[116,3977+4]..[116,3977+32])
+                            Ppat_or
+                            pattern (typing/typeopt.ml[116,3977+4]..[116,3977+22])
+                              Ppat_or
+                              pattern (typing/typeopt.ml[116,3977+4]..[116,3977+11])
+                                Ppat_construct "Tlink" (typing/typeopt.ml[116,3977+4]..[116,3977+9])
+                                Some
+                                  []
+                                  pattern (typing/typeopt.ml[116,3977+10]..[116,3977+11])
+                                    Ppat_any
+                              pattern (typing/typeopt.ml[116,3977+14]..[116,3977+22])
+                                Ppat_construct "Tsubst" (typing/typeopt.ml[116,3977+14]..[116,3977+20])
+                                Some
+                                  []
+                                  pattern (typing/typeopt.ml[116,3977+21]..[116,3977+22])
+                                    Ppat_any
+                            pattern (typing/typeopt.ml[116,3977+25]..[116,3977+32])
+                              Ppat_construct "Tpoly" (typing/typeopt.ml[116,3977+25]..[116,3977+30])
+                              Some
+                                []
+                                pattern (typing/typeopt.ml[116,3977+31]..[116,3977+32])
+                                  Ppat_any
+                          pattern (typing/typeopt.ml[116,3977+35]..[116,3977+43])
+                            Ppat_construct "Tfield" (typing/typeopt.ml[116,3977+35]..[116,3977+41])
+                            Some
+                              []
+                              pattern (typing/typeopt.ml[116,3977+42]..[116,3977+43])
+                                Ppat_any
+                        expression (typing/typeopt.ml[117,4024+6]..[117,4024+18])
+                          Pexp_assert
+                          expression (typing/typeopt.ml[117,4024+13]..[117,4024+18])
+                            Pexp_construct "false" (typing/typeopt.ml[117,4024+13]..[117,4024+18])
+                            None
+                    ]
+    ]
+  structure_item (typing/typeopt.ml[119,4044+0]..[132,4573+15])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[119,4044+4]..[119,4044+19])
+          Ppat_var "array_type_kind" (typing/typeopt.ml[119,4044+4]..[119,4044+19])
+        expression (typing/typeopt.ml[119,4044+20]..[132,4573+15]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[119,4044+20]..[119,4044+23])
+            Ppat_var "env" (typing/typeopt.ml[119,4044+20]..[119,4044+23])
+          expression (typing/typeopt.ml[119,4044+24]..[132,4573+15]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[119,4044+24]..[119,4044+26])
+              Ppat_var "ty" (typing/typeopt.ml[119,4044+24]..[119,4044+26])
+            expression (typing/typeopt.ml[120,4073+2]..[132,4573+15])
+              Pexp_match
+              expression (typing/typeopt.ml[120,4073+8]..[120,4073+26])
+                Pexp_apply
+                expression (typing/typeopt.ml[120,4073+8]..[120,4073+19])
+                  Pexp_ident "scrape_poly" (typing/typeopt.ml[120,4073+8]..[120,4073+19])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[120,4073+20]..[120,4073+23])
+                      Pexp_ident "env" (typing/typeopt.ml[120,4073+20]..[120,4073+23])
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[120,4073+24]..[120,4073+26])
+                      Pexp_ident "ty" (typing/typeopt.ml[120,4073+24]..[120,4073+26])
+                ]
+              [
+                <case>
+                  pattern (typing/typeopt.ml[121,4105+4]..[121,4105+27])
+                    Ppat_construct "Tconstr" (typing/typeopt.ml[121,4105+4]..[121,4105+11])
+                    Some
+                      []
+                      pattern (typing/typeopt.ml[121,4105+11]..[121,4105+27])
+                        Ppat_tuple
+                        [
+                          pattern (typing/typeopt.ml[121,4105+12]..[121,4105+13])
+                            Ppat_var "p" (typing/typeopt.ml[121,4105+12]..[121,4105+13])
+                          pattern (typing/typeopt.ml[121,4105+15]..[121,4105+23])
+                            Ppat_construct "::" (typing/typeopt.ml[121,4105+16]..[121,4105+23]) ghost
+                            Some
+                              []
+                              pattern (typing/typeopt.ml[121,4105+16]..[121,4105+23]) ghost
+                                Ppat_tuple
+                                [
+                                  pattern (typing/typeopt.ml[121,4105+16]..[121,4105+22])
+                                    Ppat_var "elt_ty" (typing/typeopt.ml[121,4105+16]..[121,4105+22])
+                                  pattern (typing/typeopt.ml[121,4105+22]..[121,4105+23]) ghost
+                                    Ppat_construct "[]" (typing/typeopt.ml[121,4105+22]..[121,4105+23]) ghost
+                                    None
+                                ]
+                          pattern (typing/typeopt.ml[121,4105+25]..[121,4105+26])
+                            Ppat_any
+                        ]
+                  <when>
+                    expression (typing/typeopt.ml[121,4105+33]..[121,4105+62])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[121,4105+33]..[121,4105+42])
+                        Pexp_ident "Path.same" (typing/typeopt.ml[121,4105+33]..[121,4105+42])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[121,4105+43]..[121,4105+44])
+                            Pexp_ident "p" (typing/typeopt.ml[121,4105+43]..[121,4105+44])
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[121,4105+45]..[121,4105+62])
+                            Pexp_ident "Predef.path_array" (typing/typeopt.ml[121,4105+45]..[121,4105+62])
+                      ]
+                  expression (typing/typeopt.ml[122,4171+6]..[127,4423+9])
+                    Pexp_match
+                    expression (typing/typeopt.ml[122,4171+18]..[122,4171+37])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[122,4171+18]..[122,4171+26])
+                        Pexp_ident "classify" (typing/typeopt.ml[122,4171+18]..[122,4171+26])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[122,4171+27]..[122,4171+30])
+                            Pexp_ident "env" (typing/typeopt.ml[122,4171+27]..[122,4171+30])
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[122,4171+31]..[122,4171+37])
+                            Pexp_ident "elt_ty" (typing/typeopt.ml[122,4171+31]..[122,4171+37])
+                      ]
+                    [
+                      <case>
+                        pattern (typing/typeopt.ml[123,4214+8]..[123,4214+11])
+                          Ppat_construct "Any" (typing/typeopt.ml[123,4214+8]..[123,4214+11])
+                          None
+                        expression (typing/typeopt.ml[123,4214+15]..[123,4214+72])
+                          Pexp_ifthenelse
+                          expression (typing/typeopt.ml[123,4214+18]..[123,4214+41])
+                            Pexp_ident "Config.flat_float_array" (typing/typeopt.ml[123,4214+18]..[123,4214+41])
+                          expression (typing/typeopt.ml[123,4214+47]..[123,4214+56])
+                            Pexp_construct "Pgenarray" (typing/typeopt.ml[123,4214+47]..[123,4214+56])
+                            None
+                          Some
+                            expression (typing/typeopt.ml[123,4214+62]..[123,4214+72])
+                              Pexp_construct "Paddrarray" (typing/typeopt.ml[123,4214+62]..[123,4214+72])
+                              None
+                      <case>
+                        pattern (typing/typeopt.ml[124,4287+8]..[124,4287+13])
+                          Ppat_construct "Float" (typing/typeopt.ml[124,4287+8]..[124,4287+13])
+                          None
+                        expression (typing/typeopt.ml[124,4287+17]..[124,4287+76])
+                          Pexp_ifthenelse
+                          expression (typing/typeopt.ml[124,4287+20]..[124,4287+43])
+                            Pexp_ident "Config.flat_float_array" (typing/typeopt.ml[124,4287+20]..[124,4287+43])
+                          expression (typing/typeopt.ml[124,4287+49]..[124,4287+60])
+                            Pexp_construct "Pfloatarray" (typing/typeopt.ml[124,4287+49]..[124,4287+60])
+                            None
+                          Some
+                            expression (typing/typeopt.ml[124,4287+66]..[124,4287+76])
+                              Pexp_construct "Paddrarray" (typing/typeopt.ml[124,4287+66]..[124,4287+76])
+                              None
+                      <case>
+                        pattern (typing/typeopt.ml[125,4364+8]..[125,4364+19])
+                          Ppat_or
+                          pattern (typing/typeopt.ml[125,4364+8]..[125,4364+12])
+                            Ppat_construct "Addr" (typing/typeopt.ml[125,4364+8]..[125,4364+12])
+                            None
+                          pattern (typing/typeopt.ml[125,4364+15]..[125,4364+19])
+                            Ppat_construct "Lazy" (typing/typeopt.ml[125,4364+15]..[125,4364+19])
+                            None
+                        expression (typing/typeopt.ml[125,4364+23]..[125,4364+33])
+                          Pexp_construct "Paddrarray" (typing/typeopt.ml[125,4364+23]..[125,4364+33])
+                          None
+                      <case>
+                        pattern (typing/typeopt.ml[126,4398+8]..[126,4398+11])
+                          Ppat_construct "Int" (typing/typeopt.ml[126,4398+8]..[126,4398+11])
+                          None
+                        expression (typing/typeopt.ml[126,4398+15]..[126,4398+24])
+                          Pexp_construct "Pintarray" (typing/typeopt.ml[126,4398+15]..[126,4398+24])
+                          None
+                    ]
+                <case>
+                  pattern (typing/typeopt.ml[128,4433+4]..[128,4433+21])
+                    Ppat_construct "Tconstr" (typing/typeopt.ml[128,4433+4]..[128,4433+11])
+                    Some
+                      []
+                      pattern (typing/typeopt.ml[128,4433+11]..[128,4433+21])
+                        Ppat_tuple
+                        [
+                          pattern (typing/typeopt.ml[128,4433+12]..[128,4433+13])
+                            Ppat_var "p" (typing/typeopt.ml[128,4433+12]..[128,4433+13])
+                          pattern (typing/typeopt.ml[128,4433+15]..[128,4433+17])
+                            Ppat_construct "[]" (typing/typeopt.ml[128,4433+15]..[128,4433+17])
+                            None
+                          pattern (typing/typeopt.ml[128,4433+19]..[128,4433+20])
+                            Ppat_any
+                        ]
+                  <when>
+                    expression (typing/typeopt.ml[128,4433+27]..[128,4433+61])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[128,4433+27]..[128,4433+36])
+                        Pexp_ident "Path.same" (typing/typeopt.ml[128,4433+27]..[128,4433+36])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[128,4433+37]..[128,4433+38])
+                            Pexp_ident "p" (typing/typeopt.ml[128,4433+37]..[128,4433+38])
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[128,4433+39]..[128,4433+61])
+                            Pexp_ident "Predef.path_floatarray" (typing/typeopt.ml[128,4433+39]..[128,4433+61])
+                      ]
+                  expression (typing/typeopt.ml[129,4498+6]..[129,4498+17])
+                    Pexp_construct "Pfloatarray" (typing/typeopt.ml[129,4498+6]..[129,4498+17])
+                    None
+                <case>
+                  pattern (typing/typeopt.ml[130,4516+4]..[130,4516+5])
+                    Ppat_any
+                  expression (typing/typeopt.ml[132,4573+6]..[132,4573+15])
+                    Pexp_construct "Pgenarray" (typing/typeopt.ml[132,4573+6]..[132,4573+15])
+                    None
+              ]
+    ]
+  structure_item (typing/typeopt.ml[134,4590+0]..[134,4590+61])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[134,4590+4]..[134,4590+14])
+          Ppat_var "array_kind" (typing/typeopt.ml[134,4590+4]..[134,4590+14])
+        expression (typing/typeopt.ml[134,4590+15]..[134,4590+61]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[134,4590+15]..[134,4590+18])
+            Ppat_var "exp" (typing/typeopt.ml[134,4590+15]..[134,4590+18])
+          expression (typing/typeopt.ml[134,4590+21]..[134,4590+61])
+            Pexp_apply
+            expression (typing/typeopt.ml[134,4590+21]..[134,4590+36])
+              Pexp_ident "array_type_kind" (typing/typeopt.ml[134,4590+21]..[134,4590+36])
+            [
+              <arg>
+              Nolabel
+                expression (typing/typeopt.ml[134,4590+37]..[134,4590+48])
+                  Pexp_field
+                  expression (typing/typeopt.ml[134,4590+37]..[134,4590+40])
+                    Pexp_ident "exp" (typing/typeopt.ml[134,4590+37]..[134,4590+40])
+                  "exp_env" (typing/typeopt.ml[134,4590+41]..[134,4590+48])
+              <arg>
+              Nolabel
+                expression (typing/typeopt.ml[134,4590+49]..[134,4590+61])
+                  Pexp_field
+                  expression (typing/typeopt.ml[134,4590+49]..[134,4590+52])
+                    Pexp_ident "exp" (typing/typeopt.ml[134,4590+49]..[134,4590+52])
+                  "exp_type" (typing/typeopt.ml[134,4590+53]..[134,4590+61])
+            ]
+    ]
+  structure_item (typing/typeopt.ml[136,4653+0]..[136,4653+69])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[136,4653+4]..[136,4653+22])
+          Ppat_var "array_pattern_kind" (typing/typeopt.ml[136,4653+4]..[136,4653+22])
+        expression (typing/typeopt.ml[136,4653+23]..[136,4653+69]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[136,4653+23]..[136,4653+26])
+            Ppat_var "pat" (typing/typeopt.ml[136,4653+23]..[136,4653+26])
+          expression (typing/typeopt.ml[136,4653+29]..[136,4653+69])
+            Pexp_apply
+            expression (typing/typeopt.ml[136,4653+29]..[136,4653+44])
+              Pexp_ident "array_type_kind" (typing/typeopt.ml[136,4653+29]..[136,4653+44])
+            [
+              <arg>
+              Nolabel
+                expression (typing/typeopt.ml[136,4653+45]..[136,4653+56])
+                  Pexp_field
+                  expression (typing/typeopt.ml[136,4653+45]..[136,4653+48])
+                    Pexp_ident "pat" (typing/typeopt.ml[136,4653+45]..[136,4653+48])
+                  "pat_env" (typing/typeopt.ml[136,4653+49]..[136,4653+56])
+              <arg>
+              Nolabel
+                expression (typing/typeopt.ml[136,4653+57]..[136,4653+69])
+                  Pexp_field
+                  expression (typing/typeopt.ml[136,4653+57]..[136,4653+60])
+                    Pexp_ident "pat" (typing/typeopt.ml[136,4653+57]..[136,4653+60])
+                  "pat_type" (typing/typeopt.ml[136,4653+61]..[136,4653+69])
+            ]
+    ]
+  structure_item (typing/typeopt.ml[138,4724+0]..[144,4971+9])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[138,4724+4]..[138,4724+24])
+          Ppat_var "bigarray_decode_type" (typing/typeopt.ml[138,4724+4]..[138,4724+24])
+        expression (typing/typeopt.ml[138,4724+25]..[144,4971+9]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[138,4724+25]..[138,4724+28])
+            Ppat_var "env" (typing/typeopt.ml[138,4724+25]..[138,4724+28])
+          expression (typing/typeopt.ml[138,4724+29]..[144,4971+9]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[138,4724+29]..[138,4724+31])
+              Ppat_var "ty" (typing/typeopt.ml[138,4724+29]..[138,4724+31])
+            expression (typing/typeopt.ml[138,4724+32]..[144,4971+9]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (typing/typeopt.ml[138,4724+32]..[138,4724+35])
+                Ppat_var "tbl" (typing/typeopt.ml[138,4724+32]..[138,4724+35])
+              expression (typing/typeopt.ml[138,4724+36]..[144,4971+9]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (typing/typeopt.ml[138,4724+36]..[138,4724+39])
+                  Ppat_var "dfl" (typing/typeopt.ml[138,4724+36]..[138,4724+39])
+                expression (typing/typeopt.ml[139,4766+2]..[144,4971+9])
+                  Pexp_match
+                  expression (typing/typeopt.ml[139,4766+8]..[139,4766+21])
+                    Pexp_apply
+                    expression (typing/typeopt.ml[139,4766+8]..[139,4766+14])
+                      Pexp_ident "scrape" (typing/typeopt.ml[139,4766+8]..[139,4766+14])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[139,4766+15]..[139,4766+18])
+                          Pexp_ident "env" (typing/typeopt.ml[139,4766+15]..[139,4766+18])
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[139,4766+19]..[139,4766+21])
+                          Pexp_ident "ty" (typing/typeopt.ml[139,4766+19]..[139,4766+21])
+                    ]
+                  [
+                    <case>
+                      pattern (typing/typeopt.ml[140,4793+4]..[140,4793+50])
+                        Ppat_construct "Tconstr" (typing/typeopt.ml[140,4793+4]..[140,4793+11])
+                        Some
+                          []
+                          pattern (typing/typeopt.ml[140,4793+11]..[140,4793+50])
+                            Ppat_tuple
+                            [
+                              pattern (typing/typeopt.ml[140,4793+12]..[140,4793+42])
+                                Ppat_construct "Pdot" (typing/typeopt.ml[140,4793+12]..[140,4793+16])
+                                Some
+                                  []
+                                  pattern (typing/typeopt.ml[140,4793+16]..[140,4793+42])
+                                    Ppat_tuple
+                                    [
+                                      pattern (typing/typeopt.ml[140,4793+17]..[140,4793+30])
+                                        Ppat_construct "Pident" (typing/typeopt.ml[140,4793+17]..[140,4793+23])
+                                        Some
+                                          []
+                                          pattern (typing/typeopt.ml[140,4793+24]..[140,4793+30])
+                                            Ppat_var "mod_id" (typing/typeopt.ml[140,4793+24]..[140,4793+30])
+                                      pattern (typing/typeopt.ml[140,4793+32]..[140,4793+41])
+                                        Ppat_var "type_name" (typing/typeopt.ml[140,4793+32]..[140,4793+41])
+                                    ]
+                              pattern (typing/typeopt.ml[140,4793+44]..[140,4793+46])
+                                Ppat_construct "[]" (typing/typeopt.ml[140,4793+44]..[140,4793+46])
+                                None
+                              pattern (typing/typeopt.ml[140,4793+48]..[140,4793+49])
+                                Ppat_any
+                            ]
+                      <when>
+                        expression (typing/typeopt.ml[141,4844+9]..[141,4844+47])
+                          Pexp_apply
+                          expression (typing/typeopt.ml[141,4844+27]..[141,4844+28])
+                            Pexp_ident "=" (typing/typeopt.ml[141,4844+27]..[141,4844+28])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/typeopt.ml[141,4844+9]..[141,4844+26])
+                                Pexp_apply
+                                expression (typing/typeopt.ml[141,4844+9]..[141,4844+19])
+                                  Pexp_ident "Ident.name" (typing/typeopt.ml[141,4844+9]..[141,4844+19])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (typing/typeopt.ml[141,4844+20]..[141,4844+26])
+                                      Pexp_ident "mod_id" (typing/typeopt.ml[141,4844+20]..[141,4844+26])
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (typing/typeopt.ml[141,4844+29]..[141,4844+47])
+                                Pexp_constant PConst_string("Stdlib__Bigarray",(typing/typeopt.ml[141,4844+30]..[141,4844+46]),None)
+                          ]
+                      expression (typing/typeopt.ml[142,4895+6]..[142,4895+66])
+                        Pexp_try
+                        expression (typing/typeopt.ml[142,4895+16]..[142,4895+40])
+                          Pexp_apply
+                          expression (typing/typeopt.ml[142,4895+16]..[142,4895+26])
+                            Pexp_ident "List.assoc" (typing/typeopt.ml[142,4895+16]..[142,4895+26])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (typing/typeopt.ml[142,4895+27]..[142,4895+36])
+                                Pexp_ident "type_name" (typing/typeopt.ml[142,4895+27]..[142,4895+36])
+                            <arg>
+                            Nolabel
+                              expression (typing/typeopt.ml[142,4895+37]..[142,4895+40])
+                                Pexp_ident "tbl" (typing/typeopt.ml[142,4895+37]..[142,4895+40])
+                          ]
+                        [
+                          <case>
+                            pattern (typing/typeopt.ml[142,4895+46]..[142,4895+55])
+                              Ppat_construct "Not_found" (typing/typeopt.ml[142,4895+46]..[142,4895+55])
+                              None
+                            expression (typing/typeopt.ml[142,4895+59]..[142,4895+62])
+                              Pexp_ident "dfl" (typing/typeopt.ml[142,4895+59]..[142,4895+62])
+                        ]
+                    <case>
+                      pattern (typing/typeopt.ml[143,4962+4]..[143,4962+5])
+                        Ppat_any
+                      expression (typing/typeopt.ml[144,4971+6]..[144,4971+9])
+                        Pexp_ident "dfl" (typing/typeopt.ml[144,4971+6]..[144,4971+9])
+                  ]
+    ]
+  structure_item (typing/typeopt.ml[146,4982+0]..[158,5420+40])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[146,4982+4]..[146,4982+14])
+          Ppat_var "kind_table" (typing/typeopt.ml[146,4982+4]..[146,4982+14])
+        expression (typing/typeopt.ml[147,4999+2]..[158,5420+40])
+          Pexp_construct "::" (typing/typeopt.ml[147,4999+3]..[158,5420+40]) ghost
+          Some
+            expression (typing/typeopt.ml[147,4999+3]..[158,5420+40]) ghost
+              Pexp_tuple
+              [
+                expression (typing/typeopt.ml[147,4999+3]..[147,4999+35])
+                  Pexp_tuple
+                  [
+                    expression (typing/typeopt.ml[147,4999+3]..[147,4999+16])
+                      Pexp_constant PConst_string("float32_elt",(typing/typeopt.ml[147,4999+4]..[147,4999+15]),None)
+                    expression (typing/typeopt.ml[147,4999+18]..[147,4999+35])
+                      Pexp_construct "Pbigarray_float32" (typing/typeopt.ml[147,4999+18]..[147,4999+35])
+                      None
+                  ]
+                expression (typing/typeopt.ml[148,5036+3]..[158,5420+40]) ghost
+                  Pexp_construct "::" (typing/typeopt.ml[148,5036+3]..[158,5420+40]) ghost
+                  Some
+                    expression (typing/typeopt.ml[148,5036+3]..[158,5420+40]) ghost
+                      Pexp_tuple
+                      [
+                        expression (typing/typeopt.ml[148,5036+3]..[148,5036+35])
+                          Pexp_tuple
+                          [
+                            expression (typing/typeopt.ml[148,5036+3]..[148,5036+16])
+                              Pexp_constant PConst_string("float64_elt",(typing/typeopt.ml[148,5036+4]..[148,5036+15]),None)
+                            expression (typing/typeopt.ml[148,5036+18]..[148,5036+35])
+                              Pexp_construct "Pbigarray_float64" (typing/typeopt.ml[148,5036+18]..[148,5036+35])
+                              None
+                          ]
+                        expression (typing/typeopt.ml[149,5073+3]..[158,5420+40]) ghost
+                          Pexp_construct "::" (typing/typeopt.ml[149,5073+3]..[158,5420+40]) ghost
+                          Some
+                            expression (typing/typeopt.ml[149,5073+3]..[158,5420+40]) ghost
+                              Pexp_tuple
+                              [
+                                expression (typing/typeopt.ml[149,5073+3]..[149,5073+37])
+                                  Pexp_tuple
+                                  [
+                                    expression (typing/typeopt.ml[149,5073+3]..[149,5073+20])
+                                      Pexp_constant PConst_string("int8_signed_elt",(typing/typeopt.ml[149,5073+4]..[149,5073+19]),None)
+                                    expression (typing/typeopt.ml[149,5073+22]..[149,5073+37])
+                                      Pexp_construct "Pbigarray_sint8" (typing/typeopt.ml[149,5073+22]..[149,5073+37])
+                                      None
+                                  ]
+                                expression (typing/typeopt.ml[150,5112+3]..[158,5420+40]) ghost
+                                  Pexp_construct "::" (typing/typeopt.ml[150,5112+3]..[158,5420+40]) ghost
+                                  Some
+                                    expression (typing/typeopt.ml[150,5112+3]..[158,5420+40]) ghost
+                                      Pexp_tuple
+                                      [
+                                        expression (typing/typeopt.ml[150,5112+3]..[150,5112+39])
+                                          Pexp_tuple
+                                          [
+                                            expression (typing/typeopt.ml[150,5112+3]..[150,5112+22])
+                                              Pexp_constant PConst_string("int8_unsigned_elt",(typing/typeopt.ml[150,5112+4]..[150,5112+21]),None)
+                                            expression (typing/typeopt.ml[150,5112+24]..[150,5112+39])
+                                              Pexp_construct "Pbigarray_uint8" (typing/typeopt.ml[150,5112+24]..[150,5112+39])
+                                              None
+                                          ]
+                                        expression (typing/typeopt.ml[151,5153+3]..[158,5420+40]) ghost
+                                          Pexp_construct "::" (typing/typeopt.ml[151,5153+3]..[158,5420+40]) ghost
+                                          Some
+                                            expression (typing/typeopt.ml[151,5153+3]..[158,5420+40]) ghost
+                                              Pexp_tuple
+                                              [
+                                                expression (typing/typeopt.ml[151,5153+3]..[151,5153+39])
+                                                  Pexp_tuple
+                                                  [
+                                                    expression (typing/typeopt.ml[151,5153+3]..[151,5153+21])
+                                                      Pexp_constant PConst_string("int16_signed_elt",(typing/typeopt.ml[151,5153+4]..[151,5153+20]),None)
+                                                    expression (typing/typeopt.ml[151,5153+23]..[151,5153+39])
+                                                      Pexp_construct "Pbigarray_sint16" (typing/typeopt.ml[151,5153+23]..[151,5153+39])
+                                                      None
+                                                  ]
+                                                expression (typing/typeopt.ml[152,5194+3]..[158,5420+40]) ghost
+                                                  Pexp_construct "::" (typing/typeopt.ml[152,5194+3]..[158,5420+40]) ghost
+                                                  Some
+                                                    expression (typing/typeopt.ml[152,5194+3]..[158,5420+40]) ghost
+                                                      Pexp_tuple
+                                                      [
+                                                        expression (typing/typeopt.ml[152,5194+3]..[152,5194+41])
+                                                          Pexp_tuple
+                                                          [
+                                                            expression (typing/typeopt.ml[152,5194+3]..[152,5194+23])
+                                                              Pexp_constant PConst_string("int16_unsigned_elt",(typing/typeopt.ml[152,5194+4]..[152,5194+22]),None)
+                                                            expression (typing/typeopt.ml[152,5194+25]..[152,5194+41])
+                                                              Pexp_construct "Pbigarray_uint16" (typing/typeopt.ml[152,5194+25]..[152,5194+41])
+                                                              None
+                                                          ]
+                                                        expression (typing/typeopt.ml[153,5237+3]..[158,5420+40]) ghost
+                                                          Pexp_construct "::" (typing/typeopt.ml[153,5237+3]..[158,5420+40]) ghost
+                                                          Some
+                                                            expression (typing/typeopt.ml[153,5237+3]..[158,5420+40]) ghost
+                                                              Pexp_tuple
+                                                              [
+                                                                expression (typing/typeopt.ml[153,5237+3]..[153,5237+31])
+                                                                  Pexp_tuple
+                                                                  [
+                                                                    expression (typing/typeopt.ml[153,5237+3]..[153,5237+14])
+                                                                      Pexp_constant PConst_string("int32_elt",(typing/typeopt.ml[153,5237+4]..[153,5237+13]),None)
+                                                                    expression (typing/typeopt.ml[153,5237+16]..[153,5237+31])
+                                                                      Pexp_construct "Pbigarray_int32" (typing/typeopt.ml[153,5237+16]..[153,5237+31])
+                                                                      None
+                                                                  ]
+                                                                expression (typing/typeopt.ml[154,5270+3]..[158,5420+40]) ghost
+                                                                  Pexp_construct "::" (typing/typeopt.ml[154,5270+3]..[158,5420+40]) ghost
+                                                                  Some
+                                                                    expression (typing/typeopt.ml[154,5270+3]..[158,5420+40]) ghost
+                                                                      Pexp_tuple
+                                                                      [
+expression (typing/typeopt.ml[154,5270+3]..[154,5270+31])
+  Pexp_tuple
+  [
+    expression (typing/typeopt.ml[154,5270+3]..[154,5270+14])
+      Pexp_constant PConst_string("int64_elt",(typing/typeopt.ml[154,5270+4]..[154,5270+13]),None)
+    expression (typing/typeopt.ml[154,5270+16]..[154,5270+31])
+      Pexp_construct "Pbigarray_int64" (typing/typeopt.ml[154,5270+16]..[154,5270+31])
+      None
+  ]
+expression (typing/typeopt.ml[155,5303+3]..[158,5420+40]) ghost
+  Pexp_construct "::" (typing/typeopt.ml[155,5303+3]..[158,5420+40]) ghost
+  Some
+    expression (typing/typeopt.ml[155,5303+3]..[158,5420+40]) ghost
+      Pexp_tuple
+      [
+        expression (typing/typeopt.ml[155,5303+3]..[155,5303+32])
+          Pexp_tuple
+          [
+            expression (typing/typeopt.ml[155,5303+3]..[155,5303+12])
+              Pexp_constant PConst_string("int_elt",(typing/typeopt.ml[155,5303+4]..[155,5303+11]),None)
+            expression (typing/typeopt.ml[155,5303+14]..[155,5303+32])
+              Pexp_construct "Pbigarray_caml_int" (typing/typeopt.ml[155,5303+14]..[155,5303+32])
+              None
+          ]
+        expression (typing/typeopt.ml[156,5337+3]..[158,5420+40]) ghost
+          Pexp_construct "::" (typing/typeopt.ml[156,5337+3]..[158,5420+40]) ghost
+          Some
+            expression (typing/typeopt.ml[156,5337+3]..[158,5420+40]) ghost
+              Pexp_tuple
+              [
+                expression (typing/typeopt.ml[156,5337+3]..[156,5337+40])
+                  Pexp_tuple
+                  [
+                    expression (typing/typeopt.ml[156,5337+3]..[156,5337+18])
+                      Pexp_constant PConst_string("nativeint_elt",(typing/typeopt.ml[156,5337+4]..[156,5337+17]),None)
+                    expression (typing/typeopt.ml[156,5337+20]..[156,5337+40])
+                      Pexp_construct "Pbigarray_native_int" (typing/typeopt.ml[156,5337+20]..[156,5337+40])
+                      None
+                  ]
+                expression (typing/typeopt.ml[157,5379+3]..[158,5420+40]) ghost
+                  Pexp_construct "::" (typing/typeopt.ml[157,5379+3]..[158,5420+40]) ghost
+                  Some
+                    expression (typing/typeopt.ml[157,5379+3]..[158,5420+40]) ghost
+                      Pexp_tuple
+                      [
+                        expression (typing/typeopt.ml[157,5379+3]..[157,5379+39])
+                          Pexp_tuple
+                          [
+                            expression (typing/typeopt.ml[157,5379+3]..[157,5379+18])
+                              Pexp_constant PConst_string("complex32_elt",(typing/typeopt.ml[157,5379+4]..[157,5379+17]),None)
+                            expression (typing/typeopt.ml[157,5379+20]..[157,5379+39])
+                              Pexp_construct "Pbigarray_complex32" (typing/typeopt.ml[157,5379+20]..[157,5379+39])
+                              None
+                          ]
+                        expression (typing/typeopt.ml[158,5420+3]..[158,5420+40]) ghost
+                          Pexp_construct "::" (typing/typeopt.ml[158,5420+3]..[158,5420+40]) ghost
+                          Some
+                            expression (typing/typeopt.ml[158,5420+3]..[158,5420+40]) ghost
+                              Pexp_tuple
+                              [
+                                expression (typing/typeopt.ml[158,5420+3]..[158,5420+39])
+                                  Pexp_tuple
+                                  [
+                                    expression (typing/typeopt.ml[158,5420+3]..[158,5420+18])
+                                      Pexp_constant PConst_string("complex64_elt",(typing/typeopt.ml[158,5420+4]..[158,5420+17]),None)
+                                    expression (typing/typeopt.ml[158,5420+20]..[158,5420+39])
+                                      Pexp_construct "Pbigarray_complex64" (typing/typeopt.ml[158,5420+20]..[158,5420+39])
+                                      None
+                                  ]
+                                expression (typing/typeopt.ml[158,5420+39]..[158,5420+40]) ghost
+                                  Pexp_construct "[]" (typing/typeopt.ml[158,5420+39]..[158,5420+40]) ghost
+                                  None
+                              ]
+                      ]
+              ]
+      ]
+                                                                      ]
+                                                              ]
+                                                      ]
+                                              ]
+                                      ]
+                              ]
+                      ]
+              ]
+    ]
+  structure_item (typing/typeopt.ml[160,5462+0]..[162,5516+46])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[160,5462+4]..[160,5462+16])
+          Ppat_var "layout_table" (typing/typeopt.ml[160,5462+4]..[160,5462+16])
+        expression (typing/typeopt.ml[161,5481+2]..[162,5516+46])
+          Pexp_construct "::" (typing/typeopt.ml[161,5481+3]..[162,5516+46]) ghost
+          Some
+            expression (typing/typeopt.ml[161,5481+3]..[162,5516+46]) ghost
+              Pexp_tuple
+              [
+                expression (typing/typeopt.ml[161,5481+3]..[161,5481+33])
+                  Pexp_tuple
+                  [
+                    expression (typing/typeopt.ml[161,5481+3]..[161,5481+13])
+                      Pexp_constant PConst_string("c_layout",(typing/typeopt.ml[161,5481+4]..[161,5481+12]),None)
+                    expression (typing/typeopt.ml[161,5481+15]..[161,5481+33])
+                      Pexp_construct "Pbigarray_c_layout" (typing/typeopt.ml[161,5481+15]..[161,5481+33])
+                      None
+                  ]
+                expression (typing/typeopt.ml[162,5516+3]..[162,5516+46]) ghost
+                  Pexp_construct "::" (typing/typeopt.ml[162,5516+3]..[162,5516+46]) ghost
+                  Some
+                    expression (typing/typeopt.ml[162,5516+3]..[162,5516+46]) ghost
+                      Pexp_tuple
+                      [
+                        expression (typing/typeopt.ml[162,5516+3]..[162,5516+45])
+                          Pexp_tuple
+                          [
+                            expression (typing/typeopt.ml[162,5516+3]..[162,5516+19])
+                              Pexp_constant PConst_string("fortran_layout",(typing/typeopt.ml[162,5516+4]..[162,5516+18]),None)
+                            expression (typing/typeopt.ml[162,5516+21]..[162,5516+45])
+                              Pexp_construct "Pbigarray_fortran_layout" (typing/typeopt.ml[162,5516+21]..[162,5516+45])
+                              None
+                          ]
+                        expression (typing/typeopt.ml[162,5516+45]..[162,5516+46]) ghost
+                          Pexp_construct "[]" (typing/typeopt.ml[162,5516+45]..[162,5516+46]) ghost
+                          None
+                      ]
+              ]
+    ]
+  structure_item (typing/typeopt.ml[164,5564+0]..[171,5892+51])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[164,5564+4]..[164,5564+33])
+          Ppat_var "bigarray_type_kind_and_layout" (typing/typeopt.ml[164,5564+4]..[164,5564+33])
+        expression (typing/typeopt.ml[164,5564+34]..[171,5892+51]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[164,5564+34]..[164,5564+37])
+            Ppat_var "env" (typing/typeopt.ml[164,5564+34]..[164,5564+37])
+          expression (typing/typeopt.ml[164,5564+38]..[171,5892+51]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[164,5564+38]..[164,5564+41])
+              Ppat_var "typ" (typing/typeopt.ml[164,5564+38]..[164,5564+41])
+            expression (typing/typeopt.ml[165,5608+2]..[171,5892+51])
+              Pexp_match
+              expression (typing/typeopt.ml[165,5608+8]..[165,5608+22])
+                Pexp_apply
+                expression (typing/typeopt.ml[165,5608+8]..[165,5608+14])
+                  Pexp_ident "scrape" (typing/typeopt.ml[165,5608+8]..[165,5608+14])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[165,5608+15]..[165,5608+18])
+                      Pexp_ident "env" (typing/typeopt.ml[165,5608+15]..[165,5608+18])
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[165,5608+19]..[165,5608+22])
+                      Pexp_ident "typ" (typing/typeopt.ml[165,5608+19]..[165,5608+22])
+                ]
+              [
+                <case>
+                  pattern (typing/typeopt.ml[166,5636+4]..[166,5636+61])
+                    Ppat_construct "Tconstr" (typing/typeopt.ml[166,5636+4]..[166,5636+11])
+                    Some
+                      []
+                      pattern (typing/typeopt.ml[166,5636+11]..[166,5636+61])
+                        Ppat_tuple
+                        [
+                          pattern (typing/typeopt.ml[166,5636+12]..[166,5636+14])
+                            Ppat_var "_p" (typing/typeopt.ml[166,5636+12]..[166,5636+14])
+                          pattern (typing/typeopt.ml[166,5636+16]..[166,5636+51])
+                            Ppat_construct "::" (typing/typeopt.ml[166,5636+17]..[166,5636+51]) ghost
+                            Some
+                              []
+                              pattern (typing/typeopt.ml[166,5636+17]..[166,5636+51]) ghost
+                                Ppat_tuple
+                                [
+                                  pattern (typing/typeopt.ml[166,5636+17]..[166,5636+27])
+                                    Ppat_var "_caml_type" (typing/typeopt.ml[166,5636+17]..[166,5636+27])
+                                  pattern (typing/typeopt.ml[166,5636+29]..[166,5636+51]) ghost
+                                    Ppat_construct "::" (typing/typeopt.ml[166,5636+29]..[166,5636+51]) ghost
+                                    Some
+                                      []
+                                      pattern (typing/typeopt.ml[166,5636+29]..[166,5636+51]) ghost
+                                        Ppat_tuple
+                                        [
+                                          pattern (typing/typeopt.ml[166,5636+29]..[166,5636+37])
+                                            Ppat_var "elt_type" (typing/typeopt.ml[166,5636+29]..[166,5636+37])
+                                          pattern (typing/typeopt.ml[166,5636+39]..[166,5636+51]) ghost
+                                            Ppat_construct "::" (typing/typeopt.ml[166,5636+39]..[166,5636+51]) ghost
+                                            Some
+                                              []
+                                              pattern (typing/typeopt.ml[166,5636+39]..[166,5636+51]) ghost
+                                                Ppat_tuple
+                                                [
+                                                  pattern (typing/typeopt.ml[166,5636+39]..[166,5636+50])
+                                                    Ppat_var "layout_type" (typing/typeopt.ml[166,5636+39]..[166,5636+50])
+                                                  pattern (typing/typeopt.ml[166,5636+50]..[166,5636+51]) ghost
+                                                    Ppat_construct "[]" (typing/typeopt.ml[166,5636+50]..[166,5636+51]) ghost
+                                                    None
+                                                ]
+                                        ]
+                                ]
+                          pattern (typing/typeopt.ml[166,5636+53]..[166,5636+60])
+                            Ppat_var "_abbrev" (typing/typeopt.ml[166,5636+53]..[166,5636+60])
+                        ]
+                  expression (typing/typeopt.ml[167,5701+6]..[169,5829+53])
+                    Pexp_tuple
+                    [
+                      expression (typing/typeopt.ml[167,5701+7]..[167,5701+69])
+                        Pexp_apply
+                        expression (typing/typeopt.ml[167,5701+7]..[167,5701+27])
+                          Pexp_ident "bigarray_decode_type" (typing/typeopt.ml[167,5701+7]..[167,5701+27])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[167,5701+28]..[167,5701+31])
+                              Pexp_ident "env" (typing/typeopt.ml[167,5701+28]..[167,5701+31])
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[167,5701+32]..[167,5701+40])
+                              Pexp_ident "elt_type" (typing/typeopt.ml[167,5701+32]..[167,5701+40])
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[167,5701+41]..[167,5701+51])
+                              Pexp_ident "kind_table" (typing/typeopt.ml[167,5701+41]..[167,5701+51])
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[167,5701+52]..[167,5701+69])
+                              Pexp_construct "Pbigarray_unknown" (typing/typeopt.ml[167,5701+52]..[167,5701+69])
+                              None
+                        ]
+                      expression (typing/typeopt.ml[168,5772+7]..[169,5829+52])
+                        Pexp_apply
+                        expression (typing/typeopt.ml[168,5772+7]..[168,5772+27])
+                          Pexp_ident "bigarray_decode_type" (typing/typeopt.ml[168,5772+7]..[168,5772+27])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[168,5772+28]..[168,5772+31])
+                              Pexp_ident "env" (typing/typeopt.ml[168,5772+28]..[168,5772+31])
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[168,5772+32]..[168,5772+43])
+                              Pexp_ident "layout_type" (typing/typeopt.ml[168,5772+32]..[168,5772+43])
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[168,5772+44]..[168,5772+56])
+                              Pexp_ident "layout_table" (typing/typeopt.ml[168,5772+44]..[168,5772+56])
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[169,5829+28]..[169,5829+52])
+                              Pexp_construct "Pbigarray_unknown_layout" (typing/typeopt.ml[169,5829+28]..[169,5829+52])
+                              None
+                        ]
+                    ]
+                <case>
+                  pattern (typing/typeopt.ml[170,5883+4]..[170,5883+5])
+                    Ppat_any
+                  expression (typing/typeopt.ml[171,5892+6]..[171,5892+51])
+                    Pexp_tuple
+                    [
+                      expression (typing/typeopt.ml[171,5892+7]..[171,5892+24])
+                        Pexp_construct "Pbigarray_unknown" (typing/typeopt.ml[171,5892+7]..[171,5892+24])
+                        None
+                      expression (typing/typeopt.ml[171,5892+26]..[171,5892+50])
+                        Pexp_construct "Pbigarray_unknown_layout" (typing/typeopt.ml[171,5892+26]..[171,5892+50])
+                        None
+                    ]
+              ]
+    ]
+  structure_item (typing/typeopt.ml[173,5945+0]..[188,6477+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[173,5945+4]..[173,5945+14])
+          Ppat_var "value_kind" (typing/typeopt.ml[173,5945+4]..[173,5945+14])
+        expression (typing/typeopt.ml[173,5945+15]..[188,6477+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[173,5945+15]..[173,5945+18])
+            Ppat_var "env" (typing/typeopt.ml[173,5945+15]..[173,5945+18])
+          expression (typing/typeopt.ml[173,5945+19]..[188,6477+5]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[173,5945+19]..[173,5945+21])
+              Ppat_var "ty" (typing/typeopt.ml[173,5945+19]..[173,5945+21])
+            expression (typing/typeopt.ml[174,5969+2]..[188,6477+5])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (typing/typeopt.ml[174,5969+6]..[174,5969+8])
+                    Ppat_var "ty" (typing/typeopt.ml[174,5969+6]..[174,5969+8])
+                  expression (typing/typeopt.ml[174,5969+11]..[174,5969+27])
+                    Pexp_apply
+                    expression (typing/typeopt.ml[174,5969+11]..[174,5969+20])
+                      Pexp_ident "scrape_ty" (typing/typeopt.ml[174,5969+11]..[174,5969+20])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[174,5969+21]..[174,5969+24])
+                          Pexp_ident "env" (typing/typeopt.ml[174,5969+21]..[174,5969+24])
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[174,5969+25]..[174,5969+27])
+                          Pexp_ident "ty" (typing/typeopt.ml[174,5969+25]..[174,5969+27])
+                    ]
+              ]
+              expression (typing/typeopt.ml[175,6000+2]..[188,6477+5])
+                Pexp_ifthenelse
+                expression (typing/typeopt.ml[175,6000+5]..[175,6000+42])
+                  Pexp_apply
+                  expression (typing/typeopt.ml[175,6000+5]..[175,6000+17])
+                    Pexp_ident "is_immediate" (typing/typeopt.ml[175,6000+5]..[175,6000+17])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (typing/typeopt.ml[175,6000+18]..[175,6000+42])
+                        Pexp_apply
+                        expression (typing/typeopt.ml[175,6000+19]..[175,6000+34])
+                          Pexp_ident "Ctype.immediacy" (typing/typeopt.ml[175,6000+19]..[175,6000+34])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[175,6000+35]..[175,6000+38])
+                              Pexp_ident "env" (typing/typeopt.ml[175,6000+35]..[175,6000+38])
+                          <arg>
+                          Nolabel
+                            expression (typing/typeopt.ml[175,6000+39]..[175,6000+41])
+                              Pexp_ident "ty" (typing/typeopt.ml[175,6000+39]..[175,6000+41])
+                        ]
+                  ]
+                expression (typing/typeopt.ml[175,6000+48]..[175,6000+55])
+                  Pexp_construct "Pintval" (typing/typeopt.ml[175,6000+48]..[175,6000+55])
+                  None
+                Some
+                  expression (typing/typeopt.ml[176,6056+7]..[188,6477+5])
+                    Pexp_match
+                    expression (typing/typeopt.ml[177,6069+10]..[177,6069+21])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[177,6069+10]..[177,6069+18])
+                        Pexp_ident "get_desc" (typing/typeopt.ml[177,6069+10]..[177,6069+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[177,6069+19]..[177,6069+21])
+                            Pexp_ident "ty" (typing/typeopt.ml[177,6069+19]..[177,6069+21])
+                      ]
+                    [
+                      <case>
+                        pattern (typing/typeopt.ml[178,6096+6]..[178,6096+22])
+                          Ppat_construct "Tconstr" (typing/typeopt.ml[178,6096+6]..[178,6096+13])
+                          Some
+                            []
+                            pattern (typing/typeopt.ml[178,6096+13]..[178,6096+22])
+                              Ppat_tuple
+                              [
+                                pattern (typing/typeopt.ml[178,6096+14]..[178,6096+15])
+                                  Ppat_var "p" (typing/typeopt.ml[178,6096+14]..[178,6096+15])
+                                pattern (typing/typeopt.ml[178,6096+17]..[178,6096+18])
+                                  Ppat_any
+                                pattern (typing/typeopt.ml[178,6096+20]..[178,6096+21])
+                                  Ppat_any
+                              ]
+                        <when>
+                          expression (typing/typeopt.ml[178,6096+28]..[178,6096+57])
+                            Pexp_apply
+                            expression (typing/typeopt.ml[178,6096+28]..[178,6096+37])
+                              Pexp_ident "Path.same" (typing/typeopt.ml[178,6096+28]..[178,6096+37])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[178,6096+38]..[178,6096+39])
+                                  Pexp_ident "p" (typing/typeopt.ml[178,6096+38]..[178,6096+39])
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[178,6096+40]..[178,6096+57])
+                                  Pexp_ident "Predef.path_float" (typing/typeopt.ml[178,6096+40]..[178,6096+57])
+                            ]
+                        expression (typing/typeopt.ml[179,6157+8]..[179,6157+17])
+                          Pexp_construct "Pfloatval" (typing/typeopt.ml[179,6157+8]..[179,6157+17])
+                          None
+                      <case>
+                        pattern (typing/typeopt.ml[180,6175+6]..[180,6175+22])
+                          Ppat_construct "Tconstr" (typing/typeopt.ml[180,6175+6]..[180,6175+13])
+                          Some
+                            []
+                            pattern (typing/typeopt.ml[180,6175+13]..[180,6175+22])
+                              Ppat_tuple
+                              [
+                                pattern (typing/typeopt.ml[180,6175+14]..[180,6175+15])
+                                  Ppat_var "p" (typing/typeopt.ml[180,6175+14]..[180,6175+15])
+                                pattern (typing/typeopt.ml[180,6175+17]..[180,6175+18])
+                                  Ppat_any
+                                pattern (typing/typeopt.ml[180,6175+20]..[180,6175+21])
+                                  Ppat_any
+                              ]
+                        <when>
+                          expression (typing/typeopt.ml[180,6175+28]..[180,6175+57])
+                            Pexp_apply
+                            expression (typing/typeopt.ml[180,6175+28]..[180,6175+37])
+                              Pexp_ident "Path.same" (typing/typeopt.ml[180,6175+28]..[180,6175+37])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[180,6175+38]..[180,6175+39])
+                                  Pexp_ident "p" (typing/typeopt.ml[180,6175+38]..[180,6175+39])
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[180,6175+40]..[180,6175+57])
+                                  Pexp_ident "Predef.path_int32" (typing/typeopt.ml[180,6175+40]..[180,6175+57])
+                            ]
+                        expression (typing/typeopt.ml[181,6236+8]..[181,6236+27])
+                          Pexp_construct "Pboxedintval" (typing/typeopt.ml[181,6236+8]..[181,6236+20])
+                          Some
+                            expression (typing/typeopt.ml[181,6236+21]..[181,6236+27])
+                              Pexp_construct "Pint32" (typing/typeopt.ml[181,6236+21]..[181,6236+27])
+                              None
+                      <case>
+                        pattern (typing/typeopt.ml[182,6264+6]..[182,6264+22])
+                          Ppat_construct "Tconstr" (typing/typeopt.ml[182,6264+6]..[182,6264+13])
+                          Some
+                            []
+                            pattern (typing/typeopt.ml[182,6264+13]..[182,6264+22])
+                              Ppat_tuple
+                              [
+                                pattern (typing/typeopt.ml[182,6264+14]..[182,6264+15])
+                                  Ppat_var "p" (typing/typeopt.ml[182,6264+14]..[182,6264+15])
+                                pattern (typing/typeopt.ml[182,6264+17]..[182,6264+18])
+                                  Ppat_any
+                                pattern (typing/typeopt.ml[182,6264+20]..[182,6264+21])
+                                  Ppat_any
+                              ]
+                        <when>
+                          expression (typing/typeopt.ml[182,6264+28]..[182,6264+57])
+                            Pexp_apply
+                            expression (typing/typeopt.ml[182,6264+28]..[182,6264+37])
+                              Pexp_ident "Path.same" (typing/typeopt.ml[182,6264+28]..[182,6264+37])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[182,6264+38]..[182,6264+39])
+                                  Pexp_ident "p" (typing/typeopt.ml[182,6264+38]..[182,6264+39])
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[182,6264+40]..[182,6264+57])
+                                  Pexp_ident "Predef.path_int64" (typing/typeopt.ml[182,6264+40]..[182,6264+57])
+                            ]
+                        expression (typing/typeopt.ml[183,6325+8]..[183,6325+27])
+                          Pexp_construct "Pboxedintval" (typing/typeopt.ml[183,6325+8]..[183,6325+20])
+                          Some
+                            expression (typing/typeopt.ml[183,6325+21]..[183,6325+27])
+                              Pexp_construct "Pint64" (typing/typeopt.ml[183,6325+21]..[183,6325+27])
+                              None
+                      <case>
+                        pattern (typing/typeopt.ml[184,6353+6]..[184,6353+22])
+                          Ppat_construct "Tconstr" (typing/typeopt.ml[184,6353+6]..[184,6353+13])
+                          Some
+                            []
+                            pattern (typing/typeopt.ml[184,6353+13]..[184,6353+22])
+                              Ppat_tuple
+                              [
+                                pattern (typing/typeopt.ml[184,6353+14]..[184,6353+15])
+                                  Ppat_var "p" (typing/typeopt.ml[184,6353+14]..[184,6353+15])
+                                pattern (typing/typeopt.ml[184,6353+17]..[184,6353+18])
+                                  Ppat_any
+                                pattern (typing/typeopt.ml[184,6353+20]..[184,6353+21])
+                                  Ppat_any
+                              ]
+                        <when>
+                          expression (typing/typeopt.ml[184,6353+28]..[184,6353+61])
+                            Pexp_apply
+                            expression (typing/typeopt.ml[184,6353+28]..[184,6353+37])
+                              Pexp_ident "Path.same" (typing/typeopt.ml[184,6353+28]..[184,6353+37])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[184,6353+38]..[184,6353+39])
+                                  Pexp_ident "p" (typing/typeopt.ml[184,6353+38]..[184,6353+39])
+                              <arg>
+                              Nolabel
+                                expression (typing/typeopt.ml[184,6353+40]..[184,6353+61])
+                                  Pexp_ident "Predef.path_nativeint" (typing/typeopt.ml[184,6353+40]..[184,6353+61])
+                            ]
+                        expression (typing/typeopt.ml[185,6418+8]..[185,6418+31])
+                          Pexp_construct "Pboxedintval" (typing/typeopt.ml[185,6418+8]..[185,6418+20])
+                          Some
+                            expression (typing/typeopt.ml[185,6418+21]..[185,6418+31])
+                              Pexp_construct "Pnativeint" (typing/typeopt.ml[185,6418+21]..[185,6418+31])
+                              None
+                      <case>
+                        pattern (typing/typeopt.ml[186,6450+6]..[186,6450+7])
+                          Ppat_any
+                        expression (typing/typeopt.ml[187,6461+8]..[187,6461+15])
+                          Pexp_construct "Pgenval" (typing/typeopt.ml[187,6461+8]..[187,6461+15])
+                          None
+                    ]
+    ]
+  structure_item (typing/typeopt.ml[190,6484+0]..[193,6604+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[190,6484+4]..[190,6484+30])
+          Ppat_var "function_return_value_kind" (typing/typeopt.ml[190,6484+4]..[190,6484+30])
+        expression (typing/typeopt.ml[190,6484+31]..[193,6604+19]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[190,6484+31]..[190,6484+34])
+            Ppat_var "env" (typing/typeopt.ml[190,6484+31]..[190,6484+34])
+          expression (typing/typeopt.ml[190,6484+35]..[193,6604+19]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[190,6484+35]..[190,6484+37])
+              Ppat_var "ty" (typing/typeopt.ml[190,6484+35]..[190,6484+37])
+            expression (typing/typeopt.ml[191,6524+2]..[193,6604+19])
+              Pexp_match
+              expression (typing/typeopt.ml[191,6524+8]..[191,6524+31])
+                Pexp_apply
+                expression (typing/typeopt.ml[191,6524+8]..[191,6524+24])
+                  Pexp_ident "is_function_type" (typing/typeopt.ml[191,6524+8]..[191,6524+24])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[191,6524+25]..[191,6524+28])
+                      Pexp_ident "env" (typing/typeopt.ml[191,6524+25]..[191,6524+28])
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[191,6524+29]..[191,6524+31])
+                      Pexp_ident "ty" (typing/typeopt.ml[191,6524+29]..[191,6524+31])
+                ]
+              [
+                <case>
+                  pattern (typing/typeopt.ml[192,6561+4]..[192,6561+20])
+                    Ppat_construct "Some" (typing/typeopt.ml[192,6561+4]..[192,6561+8])
+                    Some
+                      []
+                      pattern (typing/typeopt.ml[192,6561+9]..[192,6561+20])
+                        Ppat_tuple
+                        [
+                          pattern (typing/typeopt.ml[192,6561+10]..[192,6561+14])
+                            Ppat_var "_lhs" (typing/typeopt.ml[192,6561+10]..[192,6561+14])
+                          pattern (typing/typeopt.ml[192,6561+16]..[192,6561+19])
+                            Ppat_var "rhs" (typing/typeopt.ml[192,6561+16]..[192,6561+19])
+                        ]
+                  expression (typing/typeopt.ml[192,6561+24]..[192,6561+42])
+                    Pexp_apply
+                    expression (typing/typeopt.ml[192,6561+24]..[192,6561+34])
+                      Pexp_ident "value_kind" (typing/typeopt.ml[192,6561+24]..[192,6561+34])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[192,6561+35]..[192,6561+38])
+                          Pexp_ident "env" (typing/typeopt.ml[192,6561+35]..[192,6561+38])
+                      <arg>
+                      Nolabel
+                        expression (typing/typeopt.ml[192,6561+39]..[192,6561+42])
+                          Pexp_ident "rhs" (typing/typeopt.ml[192,6561+39]..[192,6561+42])
+                    ]
+                <case>
+                  pattern (typing/typeopt.ml[193,6604+4]..[193,6604+8])
+                    Ppat_construct "None" (typing/typeopt.ml[193,6604+4]..[193,6604+8])
+                    None
+                  expression (typing/typeopt.ml[193,6604+12]..[193,6604+19])
+                    Pexp_construct "Pgenval" (typing/typeopt.ml[193,6604+12]..[193,6604+19])
+                    None
+              ]
+    ]
+  structure_item (typing/typeopt.ml[197,6760+0]..[201,6888+23])
+    Pstr_value Nonrec
+    [
+      <def>
+          attribute "ocaml.doc"
+            [
+              structure_item (typing/typeopt.ml[195,6625+0]..[196,6697+62])
+                Pstr_eval
+                expression (typing/typeopt.ml[195,6625+0]..[196,6697+62])
+                  Pexp_constant PConst_string(" Whether a forward block is needed for a lazy thunk on a value, i.e.\n    if the value can be represented as a float/forward/lazy ",(typing/typeopt.ml[195,6625+0]..[196,6697+62]),None)
+            ]
+        pattern (typing/typeopt.ml[197,6760+4]..[197,6760+29])
+          Ppat_var "lazy_val_requires_forward" (typing/typeopt.ml[197,6760+4]..[197,6760+29])
+        expression (typing/typeopt.ml[197,6760+30]..[201,6888+23]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[197,6760+30]..[197,6760+33])
+            Ppat_var "env" (typing/typeopt.ml[197,6760+30]..[197,6760+33])
+          expression (typing/typeopt.ml[197,6760+34]..[201,6888+23]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[197,6760+34]..[197,6760+36])
+              Ppat_var "ty" (typing/typeopt.ml[197,6760+34]..[197,6760+36])
+            expression (typing/typeopt.ml[198,6799+2]..[201,6888+23])
+              Pexp_match
+              expression (typing/typeopt.ml[198,6799+8]..[198,6799+23])
+                Pexp_apply
+                expression (typing/typeopt.ml[198,6799+8]..[198,6799+16])
+                  Pexp_ident "classify" (typing/typeopt.ml[198,6799+8]..[198,6799+16])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[198,6799+17]..[198,6799+20])
+                      Pexp_ident "env" (typing/typeopt.ml[198,6799+17]..[198,6799+20])
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[198,6799+21]..[198,6799+23])
+                      Pexp_ident "ty" (typing/typeopt.ml[198,6799+21]..[198,6799+23])
+                ]
+              [
+                <case>
+                  pattern (typing/typeopt.ml[199,6828+4]..[199,6828+14])
+                    Ppat_or
+                    pattern (typing/typeopt.ml[199,6828+4]..[199,6828+7])
+                      Ppat_construct "Any" (typing/typeopt.ml[199,6828+4]..[199,6828+7])
+                      None
+                    pattern (typing/typeopt.ml[199,6828+10]..[199,6828+14])
+                      Ppat_construct "Lazy" (typing/typeopt.ml[199,6828+10]..[199,6828+14])
+                      None
+                  expression (typing/typeopt.ml[199,6828+18]..[199,6828+22])
+                    Pexp_construct "true" (typing/typeopt.ml[199,6828+18]..[199,6828+22])
+                    None
+                <case>
+                  pattern (typing/typeopt.ml[200,6851+4]..[200,6851+9])
+                    Ppat_construct "Float" (typing/typeopt.ml[200,6851+4]..[200,6851+9])
+                    None
+                  expression (typing/typeopt.ml[200,6851+13]..[200,6851+36])
+                    Pexp_ident "Config.flat_float_array" (typing/typeopt.ml[200,6851+13]..[200,6851+36])
+                <case>
+                  pattern (typing/typeopt.ml[201,6888+4]..[201,6888+14])
+                    Ppat_or
+                    pattern (typing/typeopt.ml[201,6888+4]..[201,6888+8])
+                      Ppat_construct "Addr" (typing/typeopt.ml[201,6888+4]..[201,6888+8])
+                      None
+                    pattern (typing/typeopt.ml[201,6888+11]..[201,6888+14])
+                      Ppat_construct "Int" (typing/typeopt.ml[201,6888+11]..[201,6888+14])
+                      None
+                  expression (typing/typeopt.ml[201,6888+18]..[201,6888+23])
+                    Pexp_construct "false" (typing/typeopt.ml[201,6888+18]..[201,6888+23])
+                    None
+              ]
+    ]
+  structure_item (typing/typeopt.ml[206,7145+0]..[227,8005+13])
+    Pstr_value Nonrec
+    [
+      <def>
+          attribute "ocaml.doc"
+            [
+              structure_item (typing/typeopt.ml[203,6913+0]..[205,7065+79])
+                Pstr_eval
+                expression (typing/typeopt.ml[203,6913+0]..[205,7065+79])
+                  Pexp_constant PConst_string(" The compilation of the expression [lazy e] depends on the form of e:\n    constants, floats and identifiers are optimized.  The optimization must be\n    taken into account when determining whether a recursive binding is safe. ",(typing/typeopt.ml[203,6913+0]..[205,7065+79]),None)
+            ]
+        pattern (typing/typeopt.ml[206,7145+4]..[210,7380+37]) ghost
+          Ppat_constraint
+          pattern (typing/typeopt.ml[206,7145+4]..[206,7145+26])
+            Ppat_var "classify_lazy_argument" (typing/typeopt.ml[206,7145+4]..[206,7145+26])
+          core_type (typing/typeopt.ml[206,7145+29]..[210,7380+37]) ghost
+            Ptyp_poly
+            core_type (typing/typeopt.ml[206,7145+29]..[210,7380+37])
+              Ptyp_arrow
+              Nolabel
+              core_type (typing/typeopt.ml[206,7145+29]..[206,7145+49])
+                Ptyp_constr "Typedtree.expression" (typing/typeopt.ml[206,7145+29]..[206,7145+49])
+                []
+              core_type (typing/typeopt.ml[207,7198+29]..[210,7380+37])
+                Ptyp_variant closed=Closed
+                [
+                  Rtag "Constant_or_function" true
+                    []
+                  Rtag "Float_that_cannot_be_shortcut" true
+                    []
+                  Rtag "Identifier" false
+                    [
+                      core_type (typing/typeopt.ml[209,7311+45]..[209,7311+68])
+                        Ptyp_variant closed=Closed
+                        [
+                          Rtag "Forward_value" true
+                            []
+                          Rtag "Other" true
+                            []
+                        ]
+                        None
+                    ]
+                  Rtag "Other" true
+                    []
+                ]
+                None
+        expression (typing/typeopt.ml[206,7145+4]..[227,8005+13])
+          Pexp_constraint
+          expression (typing/typeopt.ml[211,7420+2]..[227,8005+13])
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[211,7420+6]..[211,7420+7])
+              Ppat_var "e" (typing/typeopt.ml[211,7420+6]..[211,7420+7])
+            expression (typing/typeopt.ml[211,7420+11]..[227,8005+13])
+              Pexp_match
+              expression (typing/typeopt.ml[211,7420+17]..[211,7420+27])
+                Pexp_field
+                expression (typing/typeopt.ml[211,7420+17]..[211,7420+18])
+                  Pexp_ident "e" (typing/typeopt.ml[211,7420+17]..[211,7420+18])
+                "exp_desc" (typing/typeopt.ml[211,7420+19]..[211,7420+27])
+              [
+                <case>
+                  pattern (typing/typeopt.ml[212,7453+6]..[216,7611+45])
+                    Ppat_or
+                    pattern (typing/typeopt.ml[212,7453+6]..[215,7589+21])
+                      Ppat_or
+                      pattern (typing/typeopt.ml[212,7453+6]..[214,7527+61])
+                        Ppat_construct "Texp_constant" (typing/typeopt.ml[212,7453+6]..[212,7453+19])
+                        Some
+                          []
+                          pattern (typing/typeopt.ml[213,7473+8]..[214,7527+61])
+                            Ppat_or
+                            pattern (typing/typeopt.ml[213,7473+10]..[214,7527+39])
+                              Ppat_or
+                              pattern (typing/typeopt.ml[213,7473+10]..[214,7527+23])
+                                Ppat_or
+                                pattern (typing/typeopt.ml[213,7473+10]..[213,7473+53])
+                                  Ppat_or
+                                  pattern (typing/typeopt.ml[213,7473+10]..[213,7473+36])
+                                    Ppat_or
+                                    pattern (typing/typeopt.ml[213,7473+10]..[213,7473+21])
+                                      Ppat_construct "Const_int" (typing/typeopt.ml[213,7473+10]..[213,7473+19])
+                                      Some
+                                        []
+                                        pattern (typing/typeopt.ml[213,7473+20]..[213,7473+21])
+                                          Ppat_any
+                                    pattern (typing/typeopt.ml[213,7473+24]..[213,7473+36])
+                                      Ppat_construct "Const_char" (typing/typeopt.ml[213,7473+24]..[213,7473+34])
+                                      Some
+                                        []
+                                        pattern (typing/typeopt.ml[213,7473+35]..[213,7473+36])
+                                          Ppat_any
+                                  pattern (typing/typeopt.ml[213,7473+39]..[213,7473+53])
+                                    Ppat_construct "Const_string" (typing/typeopt.ml[213,7473+39]..[213,7473+51])
+                                    Some
+                                      []
+                                      pattern (typing/typeopt.ml[213,7473+52]..[213,7473+53])
+                                        Ppat_any
+                                pattern (typing/typeopt.ml[214,7527+10]..[214,7527+23])
+                                  Ppat_construct "Const_int32" (typing/typeopt.ml[214,7527+10]..[214,7527+21])
+                                  Some
+                                    []
+                                    pattern (typing/typeopt.ml[214,7527+22]..[214,7527+23])
+                                      Ppat_any
+                              pattern (typing/typeopt.ml[214,7527+26]..[214,7527+39])
+                                Ppat_construct "Const_int64" (typing/typeopt.ml[214,7527+26]..[214,7527+37])
+                                Some
+                                  []
+                                  pattern (typing/typeopt.ml[214,7527+38]..[214,7527+39])
+                                    Ppat_any
+                            pattern (typing/typeopt.ml[214,7527+42]..[214,7527+59])
+                              Ppat_construct "Const_nativeint" (typing/typeopt.ml[214,7527+42]..[214,7527+57])
+                              Some
+                                []
+                                pattern (typing/typeopt.ml[214,7527+58]..[214,7527+59])
+                                  Ppat_any
+                      pattern (typing/typeopt.ml[215,7589+6]..[215,7589+21])
+                        Ppat_construct "Texp_function" (typing/typeopt.ml[215,7589+6]..[215,7589+19])
+                        Some
+                          []
+                          pattern (typing/typeopt.ml[215,7589+20]..[215,7589+21])
+                            Ppat_any
+                    pattern (typing/typeopt.ml[216,7611+6]..[216,7611+45])
+                      Ppat_construct "Texp_construct" (typing/typeopt.ml[216,7611+6]..[216,7611+20])
+                      Some
+                        []
+                        pattern (typing/typeopt.ml[216,7611+21]..[216,7611+45])
+                          Ppat_tuple
+                          [
+                            pattern (typing/typeopt.ml[216,7611+22]..[216,7611+23])
+                              Ppat_any
+                            pattern (typing/typeopt.ml[216,7611+25]..[216,7611+41])
+                              Ppat_record Closed
+                              [
+                                "cstr_arity" (typing/typeopt.ml[216,7611+26]..[216,7611+36])
+                                  pattern (typing/typeopt.ml[216,7611+39]..[216,7611+40])
+                                    Ppat_constant PConst_int (0,None)
+                              ]
+                            pattern (typing/typeopt.ml[216,7611+43]..[216,7611+44])
+                              Ppat_any
+                          ]
+                  expression (typing/typeopt.ml[217,7660+7]..[217,7660+28])
+                    Pexp_variant "Constant_or_function"
+                    None
+                <case>
+                  pattern (typing/typeopt.ml[218,7689+6]..[218,7689+34])
+                    Ppat_construct "Texp_constant" (typing/typeopt.ml[218,7689+6]..[218,7689+19])
+                    Some
+                      []
+                      pattern (typing/typeopt.ml[218,7689+19]..[218,7689+34])
+                        Ppat_construct "Const_float" (typing/typeopt.ml[218,7689+20]..[218,7689+31])
+                        Some
+                          []
+                          pattern (typing/typeopt.ml[218,7689+32]..[218,7689+33])
+                            Ppat_any
+                  expression (typing/typeopt.ml[219,7727+7]..[221,7804+33])
+                    Pexp_ifthenelse
+                    expression (typing/typeopt.ml[219,7727+10]..[219,7727+33])
+                      Pexp_ident "Config.flat_float_array" (typing/typeopt.ml[219,7727+10]..[219,7727+33])
+                    expression (typing/typeopt.ml[220,7761+12]..[220,7761+42])
+                      Pexp_variant "Float_that_cannot_be_shortcut"
+                      None
+                    Some
+                      expression (typing/typeopt.ml[221,7804+12]..[221,7804+33])
+                        Pexp_variant "Constant_or_function"
+                        None
+                <case>
+                  pattern (typing/typeopt.ml[222,7838+6]..[222,7838+18])
+                    Ppat_construct "Texp_ident" (typing/typeopt.ml[222,7838+6]..[222,7838+16])
+                    Some
+                      []
+                      pattern (typing/typeopt.ml[222,7838+17]..[222,7838+18])
+                        Ppat_any
+                  <when>
+                    expression (typing/typeopt.ml[222,7838+24]..[222,7838+70])
+                      Pexp_apply
+                      expression (typing/typeopt.ml[222,7838+24]..[222,7838+49])
+                        Pexp_ident "lazy_val_requires_forward" (typing/typeopt.ml[222,7838+24]..[222,7838+49])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[222,7838+50]..[222,7838+59])
+                            Pexp_field
+                            expression (typing/typeopt.ml[222,7838+50]..[222,7838+51])
+                              Pexp_ident "e" (typing/typeopt.ml[222,7838+50]..[222,7838+51])
+                            "exp_env" (typing/typeopt.ml[222,7838+52]..[222,7838+59])
+                        <arg>
+                        Nolabel
+                          expression (typing/typeopt.ml[222,7838+60]..[222,7838+70])
+                            Pexp_field
+                            expression (typing/typeopt.ml[222,7838+60]..[222,7838+61])
+                              Pexp_ident "e" (typing/typeopt.ml[222,7838+60]..[222,7838+61])
+                            "exp_type" (typing/typeopt.ml[222,7838+62]..[222,7838+70])
+                      ]
+                  expression (typing/typeopt.ml[223,7912+7]..[223,7912+33])
+                    Pexp_variant "Identifier"
+                    Some
+                      expression (typing/typeopt.ml[223,7912+19]..[223,7912+33])
+                        Pexp_variant "Forward_value"
+                        None
+                <case>
+                  pattern (typing/typeopt.ml[224,7946+6]..[224,7946+18])
+                    Ppat_construct "Texp_ident" (typing/typeopt.ml[224,7946+6]..[224,7946+16])
+                    Some
+                      []
+                      pattern (typing/typeopt.ml[224,7946+17]..[224,7946+18])
+                        Ppat_any
+                  expression (typing/typeopt.ml[225,7968+7]..[225,7968+25])
+                    Pexp_variant "Identifier"
+                    Some
+                      expression (typing/typeopt.ml[225,7968+19]..[225,7968+25])
+                        Pexp_variant "Other"
+                        None
+                <case>
+                  pattern (typing/typeopt.ml[226,7994+6]..[226,7994+7])
+                    Ppat_any
+                  expression (typing/typeopt.ml[227,8005+7]..[227,8005+13])
+                    Pexp_variant "Other"
+                    None
+              ]
+          core_type (typing/typeopt.ml[206,7145+29]..[210,7380+37])
+            Ptyp_arrow
+            Nolabel
+            core_type (typing/typeopt.ml[206,7145+29]..[206,7145+49])
+              Ptyp_constr "Typedtree.expression" (typing/typeopt.ml[206,7145+29]..[206,7145+49])
+              []
+            core_type (typing/typeopt.ml[207,7198+29]..[210,7380+37])
+              Ptyp_variant closed=Closed
+              [
+                Rtag "Constant_or_function" true
+                  []
+                Rtag "Float_that_cannot_be_shortcut" true
+                  []
+                Rtag "Identifier" false
+                  [
+                    core_type (typing/typeopt.ml[209,7311+45]..[209,7311+68])
+                      Ptyp_variant closed=Closed
+                      [
+                        Rtag "Forward_value" true
+                          []
+                        Rtag "Other" true
+                          []
+                      ]
+                      None
+                  ]
+                Rtag "Other" true
+                  []
+              ]
+              None
+    ]
+  structure_item (typing/typeopt.ml[229,8020+0]..[231,8070+14])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (typing/typeopt.ml[229,8020+4]..[229,8020+20])
+          Ppat_var "value_kind_union" (typing/typeopt.ml[229,8020+4]..[229,8020+20])
+        expression (typing/typeopt.ml[229,8020+21]..[231,8070+14]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (typing/typeopt.ml[229,8020+21]..[229,8020+23])
+            Ppat_var "k1" (typing/typeopt.ml[229,8020+21]..[229,8020+23])
+          expression (typing/typeopt.ml[229,8020+24]..[231,8070+14]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (typing/typeopt.ml[229,8020+24]..[229,8020+26])
+              Ppat_var "k2" (typing/typeopt.ml[229,8020+24]..[229,8020+26])
+            expression (typing/typeopt.ml[230,8049+2]..[231,8070+14])
+              Pexp_ifthenelse
+              expression (typing/typeopt.ml[230,8049+5]..[230,8049+12])
+                Pexp_apply
+                expression (typing/typeopt.ml[230,8049+8]..[230,8049+9])
+                  Pexp_ident "=" (typing/typeopt.ml[230,8049+8]..[230,8049+9])
+                [
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[230,8049+5]..[230,8049+7])
+                      Pexp_ident "k1" (typing/typeopt.ml[230,8049+5]..[230,8049+7])
+                  <arg>
+                  Nolabel
+                    expression (typing/typeopt.ml[230,8049+10]..[230,8049+12])
+                      Pexp_ident "k2" (typing/typeopt.ml[230,8049+10]..[230,8049+12])
+                ]
+              expression (typing/typeopt.ml[230,8049+18]..[230,8049+20])
+                Pexp_ident "k1" (typing/typeopt.ml[230,8049+18]..[230,8049+20])
+              Some
+                expression (typing/typeopt.ml[231,8070+7]..[231,8070+14])
+                  Pexp_construct "Pgenval" (typing/typeopt.ml[231,8070+7]..[231,8070+14])
+                  None
+    ]
+]
+

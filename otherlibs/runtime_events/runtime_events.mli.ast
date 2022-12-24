@@ -1,0 +1,789 @@
+[
+  signature_item (otherlibs/runtime_events/runtime_events.mli[15,1002+0]..[47,2606+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (otherlibs/runtime_events/runtime_events.mli[15,1002+0]..[47,2606+2])
+        Pstr_eval
+        expression (otherlibs/runtime_events/runtime_events.mli[15,1002+0]..[47,2606+2])
+          Pexp_constant PConst_string(" Runtime events - ring buffer-based runtime tracing\n\n    This module enables users to enable and subscribe to tracing events\n    from the Garbage Collector and other parts of the OCaml runtime. This can\n    be useful for diagnostic or performance monitoring purposes. This module\n    can be used to subscribe to events for the current process or external\n    processes asynchronously.\n\n    When enabled (either via setting the OCAML_RUNTIME_EVENTS_START environment\n    variable or calling Runtime_events.start) a file with the pid of the process\n    and extension .events will be created. By default this is in the\n    current directory but can be over-ridden by the OCAML_RUNTIME_EVENTS_DIR\n    environment variable. Each domain maintains its own ring buffer in a section\n    of the larger file into which it emits events.\n\n    There is additionally a set of C APIs in runtime_events.h that can enable\n    zero-impact monitoring of the current process or bindings for other\n    languages.\n\n    The runtime events system's behaviour can be controlled by the following\n    environment variables:\n\n    - OCAML_RUNTIME_EVENTS_START if set will cause the runtime events system\n    to be started as part of the OCaml runtime initialization.\n\n    - OCAML_RUNTIME_EVENTS_DIR sets the directory where the runtime events\n    ring buffers will be located. If not present the program's working directory\n    will be used.\n\n  - OCAML_RUNTIME_EVENTS_PRESERVE if set will prevent the OCaml runtime from\n    removing its ring buffers when it terminates. This can help if monitoring\n    very short running programs.\n",(otherlibs/runtime_events/runtime_events.mli[15,1002+0]..[47,2606+2]),None)
+    ]
+  signature_item (otherlibs/runtime_events/runtime_events.mli[50,2668+0]..[61,3013+41])
+    Psig_type Rec
+    [
+      type_declaration "runtime_counter" (otherlibs/runtime_events/runtime_events.mli[50,2668+5]..[50,2668+20]) (otherlibs/runtime_events/runtime_events.mli[50,2668+0]..[61,3013+41])
+        attribute "ocaml.doc"
+          [
+            structure_item (otherlibs/runtime_events/runtime_events.mli[49,2610+0]..[49,2610+57])
+              Pstr_eval
+              expression (otherlibs/runtime_events/runtime_events.mli[49,2610+0]..[49,2610+57])
+                Pexp_constant PConst_string(" The type for counter events emitted by the runtime ",(otherlibs/runtime_events/runtime_events.mli[49,2610+0]..[49,2610+57]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (otherlibs/runtime_events/runtime_events.mli[51,2691+0]..[51,2691+30])
+                "EV_C_FORCE_MINOR_ALLOC_SMALL" (otherlibs/runtime_events/runtime_events.mli[51,2691+2]..[51,2691+30])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[52,2722+0]..[52,2722+28])
+                "EV_C_FORCE_MINOR_MAKE_VECT" (otherlibs/runtime_events/runtime_events.mli[52,2722+2]..[52,2722+28])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[53,2751+0]..[53,2751+38])
+                "EV_C_FORCE_MINOR_SET_MINOR_HEAP_SIZE" (otherlibs/runtime_events/runtime_events.mli[53,2751+2]..[53,2751+38])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[54,2790+0]..[54,2790+26])
+                "EV_C_FORCE_MINOR_MEMPROF" (otherlibs/runtime_events/runtime_events.mli[54,2790+2]..[54,2790+26])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[55,2817+0]..[55,2817+21])
+                "EV_C_MINOR_PROMOTED" (otherlibs/runtime_events/runtime_events.mli[55,2817+2]..[55,2817+21])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[56,2839+0]..[56,2839+22])
+                "EV_C_MINOR_ALLOCATED" (otherlibs/runtime_events/runtime_events.mli[56,2839+2]..[56,2839+22])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[57,2862+0]..[57,2862+30])
+                "EV_C_REQUEST_MAJOR_ALLOC_SHR" (otherlibs/runtime_events/runtime_events.mli[57,2862+2]..[57,2862+30])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[58,2893+0]..[58,2893+36])
+                "EV_C_REQUEST_MAJOR_ADJUST_GC_SPEED" (otherlibs/runtime_events/runtime_events.mli[58,2893+2]..[58,2893+36])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[59,2930+0]..[59,2930+38])
+                "EV_C_REQUEST_MINOR_REALLOC_REF_TABLE" (otherlibs/runtime_events/runtime_events.mli[59,2930+2]..[59,2930+38])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[60,2969+0]..[60,2969+43])
+                "EV_C_REQUEST_MINOR_REALLOC_EPHE_REF_TABLE" (otherlibs/runtime_events/runtime_events.mli[60,2969+2]..[60,2969+43])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[61,3013+0]..[61,3013+41])
+                "EV_C_REQUEST_MINOR_REALLOC_CUSTOM_TABLE" (otherlibs/runtime_events/runtime_events.mli[61,3013+2]..[61,3013+41])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (otherlibs/runtime_events/runtime_events.mli[64,3111+0]..[104,4034+35])
+    Psig_type Rec
+    [
+      type_declaration "runtime_phase" (otherlibs/runtime_events/runtime_events.mli[64,3111+5]..[64,3111+18]) (otherlibs/runtime_events/runtime_events.mli[64,3111+0]..[104,4034+35])
+        attribute "ocaml.doc"
+          [
+            structure_item (otherlibs/runtime_events/runtime_events.mli[63,3056+0]..[63,3056+54])
+              Pstr_eval
+              expression (otherlibs/runtime_events/runtime_events.mli[63,3056+0]..[63,3056+54])
+                Pexp_constant PConst_string(" The type for span events emitted by the runtime ",(otherlibs/runtime_events/runtime_events.mli[63,3056+0]..[63,3056+54]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (otherlibs/runtime_events/runtime_events.mli[65,3132+0]..[65,3132+20])
+                "EV_EXPLICIT_GC_SET" (otherlibs/runtime_events/runtime_events.mli[65,3132+2]..[65,3132+20])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[66,3153+0]..[66,3153+21])
+                "EV_EXPLICIT_GC_STAT" (otherlibs/runtime_events/runtime_events.mli[66,3153+2]..[66,3153+21])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[67,3175+0]..[67,3175+22])
+                "EV_EXPLICIT_GC_MINOR" (otherlibs/runtime_events/runtime_events.mli[67,3175+2]..[67,3175+22])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[68,3198+0]..[68,3198+22])
+                "EV_EXPLICIT_GC_MAJOR" (otherlibs/runtime_events/runtime_events.mli[68,3198+2]..[68,3198+22])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[69,3221+0]..[69,3221+27])
+                "EV_EXPLICIT_GC_FULL_MAJOR" (otherlibs/runtime_events/runtime_events.mli[69,3221+2]..[69,3221+27])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[70,3249+0]..[70,3249+24])
+                "EV_EXPLICIT_GC_COMPACT" (otherlibs/runtime_events/runtime_events.mli[70,3249+2]..[70,3249+24])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[71,3274+0]..[71,3274+10])
+                "EV_MAJOR" (otherlibs/runtime_events/runtime_events.mli[71,3274+2]..[71,3274+10])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[72,3285+0]..[72,3285+16])
+                "EV_MAJOR_SWEEP" (otherlibs/runtime_events/runtime_events.mli[72,3285+2]..[72,3285+16])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[73,3302+0]..[73,3302+21])
+                "EV_MAJOR_MARK_ROOTS" (otherlibs/runtime_events/runtime_events.mli[73,3302+2]..[73,3302+21])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[74,3324+0]..[74,3324+15])
+                "EV_MAJOR_MARK" (otherlibs/runtime_events/runtime_events.mli[74,3324+2]..[74,3324+15])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[75,3340+0]..[75,3340+10])
+                "EV_MINOR" (otherlibs/runtime_events/runtime_events.mli[75,3340+2]..[75,3340+10])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[76,3351+0]..[76,3351+22])
+                "EV_MINOR_LOCAL_ROOTS" (otherlibs/runtime_events/runtime_events.mli[76,3351+2]..[76,3351+22])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[77,3374+0]..[77,3374+20])
+                "EV_MINOR_FINALIZED" (otherlibs/runtime_events/runtime_events.mli[77,3374+2]..[77,3374+20])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[78,3395+0]..[78,3395+28])
+                "EV_EXPLICIT_GC_MAJOR_SLICE" (otherlibs/runtime_events/runtime_events.mli[78,3395+2]..[78,3395+28])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[79,3424+0]..[79,3424+26])
+                "EV_FINALISE_UPDATE_FIRST" (otherlibs/runtime_events/runtime_events.mli[79,3424+2]..[79,3424+26])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[80,3451+0]..[80,3451+25])
+                "EV_FINALISE_UPDATE_LAST" (otherlibs/runtime_events/runtime_events.mli[80,3451+2]..[80,3451+25])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[81,3477+0]..[81,3477+21])
+                "EV_INTERRUPT_REMOTE" (otherlibs/runtime_events/runtime_events.mli[81,3477+2]..[81,3477+21])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[82,3499+0]..[82,3499+20])
+                "EV_MAJOR_EPHE_MARK" (otherlibs/runtime_events/runtime_events.mli[82,3499+2]..[82,3499+20])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[83,3520+0]..[83,3520+21])
+                "EV_MAJOR_EPHE_SWEEP" (otherlibs/runtime_events/runtime_events.mli[83,3520+2]..[83,3520+21])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[84,3542+0]..[84,3542+25])
+                "EV_MAJOR_FINISH_MARKING" (otherlibs/runtime_events/runtime_events.mli[84,3542+2]..[84,3542+25])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[85,3568+0]..[85,3568+27])
+                "EV_MAJOR_GC_CYCLE_DOMAINS" (otherlibs/runtime_events/runtime_events.mli[85,3568+2]..[85,3568+27])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[86,3596+0]..[86,3596+26])
+                "EV_MAJOR_GC_PHASE_CHANGE" (otherlibs/runtime_events/runtime_events.mli[86,3596+2]..[86,3596+26])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[87,3623+0]..[87,3623+17])
+                "EV_MAJOR_GC_STW" (otherlibs/runtime_events/runtime_events.mli[87,3623+2]..[87,3623+17])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[88,3641+0]..[88,3641+29])
+                "EV_MAJOR_MARK_OPPORTUNISTIC" (otherlibs/runtime_events/runtime_events.mli[88,3641+2]..[88,3641+29])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[89,3671+0]..[89,3671+16])
+                "EV_MAJOR_SLICE" (otherlibs/runtime_events/runtime_events.mli[89,3671+2]..[89,3671+16])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[90,3688+0]..[90,3688+23])
+                "EV_MAJOR_FINISH_CYCLE" (otherlibs/runtime_events/runtime_events.mli[90,3688+2]..[90,3688+23])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[91,3712+0]..[91,3712+16])
+                "EV_MINOR_CLEAR" (otherlibs/runtime_events/runtime_events.mli[91,3712+2]..[91,3712+16])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[92,3729+0]..[92,3729+28])
+                "EV_MINOR_FINALIZERS_OLDIFY" (otherlibs/runtime_events/runtime_events.mli[92,3729+2]..[92,3729+28])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[93,3758+0]..[93,3758+23])
+                "EV_MINOR_GLOBAL_ROOTS" (otherlibs/runtime_events/runtime_events.mli[93,3758+2]..[93,3758+23])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[94,3782+0]..[94,3782+24])
+                "EV_MINOR_LEAVE_BARRIER" (otherlibs/runtime_events/runtime_events.mli[94,3782+2]..[94,3782+24])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[95,3807+0]..[95,3807+20])
+                "EV_STW_API_BARRIER" (otherlibs/runtime_events/runtime_events.mli[95,3807+2]..[95,3807+20])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[96,3828+0]..[96,3828+16])
+                "EV_STW_HANDLER" (otherlibs/runtime_events/runtime_events.mli[96,3828+2]..[96,3828+16])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[97,3845+0]..[97,3845+15])
+                "EV_STW_LEADER" (otherlibs/runtime_events/runtime_events.mli[97,3845+2]..[97,3845+15])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[98,3861+0]..[98,3861+26])
+                "EV_MAJOR_FINISH_SWEEPING" (otherlibs/runtime_events/runtime_events.mli[98,3861+2]..[98,3861+26])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[99,3888+0]..[99,3888+27])
+                "EV_MINOR_FINALIZERS_ADMIN" (otherlibs/runtime_events/runtime_events.mli[99,3888+2]..[99,3888+27])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[100,3916+0]..[100,3916+25])
+                "EV_MINOR_REMEMBERED_SET" (otherlibs/runtime_events/runtime_events.mli[100,3916+2]..[100,3916+25])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[101,3942+0]..[101,3942+33])
+                "EV_MINOR_REMEMBERED_SET_PROMOTE" (otherlibs/runtime_events/runtime_events.mli[101,3942+2]..[101,3942+33])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[102,3976+0]..[102,3976+30])
+                "EV_MINOR_LOCAL_ROOTS_PROMOTE" (otherlibs/runtime_events/runtime_events.mli[102,3976+2]..[102,3976+30])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[103,4007+0]..[103,4007+26])
+                "EV_DOMAIN_CONDITION_WAIT" (otherlibs/runtime_events/runtime_events.mli[103,4007+2]..[103,4007+26])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[104,4034+0]..[104,4034+35])
+                "EV_DOMAIN_RESIZE_HEAP_RESERVATION" (otherlibs/runtime_events/runtime_events.mli[104,4034+2]..[104,4034+35])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (otherlibs/runtime_events/runtime_events.mli[107,4115+0]..[115,4247+21])
+    Psig_type Rec
+    [
+      type_declaration "lifecycle" (otherlibs/runtime_events/runtime_events.mli[107,4115+5]..[107,4115+14]) (otherlibs/runtime_events/runtime_events.mli[107,4115+0]..[115,4247+21])
+        attribute "ocaml.doc"
+          [
+            structure_item (otherlibs/runtime_events/runtime_events.mli[106,4071+0]..[106,4071+43])
+              Pstr_eval
+              expression (otherlibs/runtime_events/runtime_events.mli[106,4071+0]..[106,4071+43])
+                Pexp_constant PConst_string(" Lifecycle events for the ring itself ",(otherlibs/runtime_events/runtime_events.mli[106,4071+0]..[106,4071+43]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (otherlibs/runtime_events/runtime_events.mli[108,4132+2]..[108,4132+15])
+                "EV_RING_START" (otherlibs/runtime_events/runtime_events.mli[108,4132+2]..[108,4132+15])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[109,4148+0]..[109,4148+14])
+                "EV_RING_STOP" (otherlibs/runtime_events/runtime_events.mli[109,4148+2]..[109,4148+14])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[110,4163+0]..[110,4163+15])
+                "EV_RING_PAUSE" (otherlibs/runtime_events/runtime_events.mli[110,4163+2]..[110,4163+15])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[111,4179+0]..[111,4179+16])
+                "EV_RING_RESUME" (otherlibs/runtime_events/runtime_events.mli[111,4179+2]..[111,4179+16])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[112,4196+0]..[112,4196+16])
+                "EV_FORK_PARENT" (otherlibs/runtime_events/runtime_events.mli[112,4196+2]..[112,4196+16])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[113,4213+0]..[113,4213+15])
+                "EV_FORK_CHILD" (otherlibs/runtime_events/runtime_events.mli[113,4213+2]..[113,4213+15])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[114,4229+0]..[114,4229+17])
+                "EV_DOMAIN_SPAWN" (otherlibs/runtime_events/runtime_events.mli[114,4229+2]..[114,4229+17])
+                []
+                None
+              (otherlibs/runtime_events/runtime_events.mli[115,4247+0]..[115,4247+21])
+                "EV_DOMAIN_TERMINATE" (otherlibs/runtime_events/runtime_events.mli[115,4247+2]..[115,4247+21])
+                []
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (otherlibs/runtime_events/runtime_events.mli[117,4270+0]..[117,4270+40])
+    Psig_value
+    value_description "lifecycle_name" (otherlibs/runtime_events/runtime_events.mli[117,4270+4]..[117,4270+18]) (otherlibs/runtime_events/runtime_events.mli[117,4270+0]..[117,4270+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (otherlibs/runtime_events/runtime_events.mli[118,4311+0]..[118,4311+69])
+            Pstr_eval
+            expression (otherlibs/runtime_events/runtime_events.mli[118,4311+0]..[118,4311+69])
+              Pexp_constant PConst_string(" Return a string representation of a given lifecycle event type ",(otherlibs/runtime_events/runtime_events.mli[118,4311+0]..[118,4311+69]),None)
+        ]
+      core_type (otherlibs/runtime_events/runtime_events.mli[117,4270+21]..[117,4270+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (otherlibs/runtime_events/runtime_events.mli[117,4270+21]..[117,4270+30])
+          Ptyp_constr "lifecycle" (otherlibs/runtime_events/runtime_events.mli[117,4270+21]..[117,4270+30])
+          []
+        core_type (otherlibs/runtime_events/runtime_events.mli[117,4270+34]..[117,4270+40])
+          Ptyp_constr "string" (otherlibs/runtime_events/runtime_events.mli[117,4270+34]..[117,4270+40])
+          []
+      []
+  signature_item (otherlibs/runtime_events/runtime_events.mli[120,4382+0]..[120,4382+48])
+    Psig_value
+    value_description "runtime_phase_name" (otherlibs/runtime_events/runtime_events.mli[120,4382+4]..[120,4382+22]) (otherlibs/runtime_events/runtime_events.mli[120,4382+0]..[120,4382+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (otherlibs/runtime_events/runtime_events.mli[121,4431+0]..[121,4431+73])
+            Pstr_eval
+            expression (otherlibs/runtime_events/runtime_events.mli[121,4431+0]..[121,4431+73])
+              Pexp_constant PConst_string(" Return a string representation of a given runtime phase event type ",(otherlibs/runtime_events/runtime_events.mli[121,4431+0]..[121,4431+73]),None)
+        ]
+      core_type (otherlibs/runtime_events/runtime_events.mli[120,4382+25]..[120,4382+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (otherlibs/runtime_events/runtime_events.mli[120,4382+25]..[120,4382+38])
+          Ptyp_constr "runtime_phase" (otherlibs/runtime_events/runtime_events.mli[120,4382+25]..[120,4382+38])
+          []
+        core_type (otherlibs/runtime_events/runtime_events.mli[120,4382+42]..[120,4382+48])
+          Ptyp_constr "string" (otherlibs/runtime_events/runtime_events.mli[120,4382+42]..[120,4382+48])
+          []
+      []
+  signature_item (otherlibs/runtime_events/runtime_events.mli[123,4506+0]..[123,4506+52])
+    Psig_value
+    value_description "runtime_counter_name" (otherlibs/runtime_events/runtime_events.mli[123,4506+4]..[123,4506+24]) (otherlibs/runtime_events/runtime_events.mli[123,4506+0]..[123,4506+52])
+      attribute "ocaml.doc"
+        [
+          structure_item (otherlibs/runtime_events/runtime_events.mli[124,4559+0]..[124,4559+69])
+            Pstr_eval
+            expression (otherlibs/runtime_events/runtime_events.mli[124,4559+0]..[124,4559+69])
+              Pexp_constant PConst_string(" Return a string representation of a given runtime counter type ",(otherlibs/runtime_events/runtime_events.mli[124,4559+0]..[124,4559+69]),None)
+        ]
+      core_type (otherlibs/runtime_events/runtime_events.mli[123,4506+27]..[123,4506+52])
+        Ptyp_arrow
+        Nolabel
+        core_type (otherlibs/runtime_events/runtime_events.mli[123,4506+27]..[123,4506+42])
+          Ptyp_constr "runtime_counter" (otherlibs/runtime_events/runtime_events.mli[123,4506+27]..[123,4506+42])
+          []
+        core_type (otherlibs/runtime_events/runtime_events.mli[123,4506+46]..[123,4506+52])
+          Ptyp_constr "string" (otherlibs/runtime_events/runtime_events.mli[123,4506+46]..[123,4506+52])
+          []
+      []
+  signature_item (otherlibs/runtime_events/runtime_events.mli[126,4630+0]..[126,4630+11])
+    Psig_type Rec
+    [
+      type_declaration "cursor" (otherlibs/runtime_events/runtime_events.mli[126,4630+5]..[126,4630+11]) (otherlibs/runtime_events/runtime_events.mli[126,4630+0]..[126,4630+11])
+        attribute "ocaml.doc"
+          [
+            structure_item (otherlibs/runtime_events/runtime_events.mli[127,4642+0]..[127,4642+45])
+              Pstr_eval
+              expression (otherlibs/runtime_events/runtime_events.mli[127,4642+0]..[127,4642+45])
+                Pexp_constant PConst_string(" Type of the cursor used when consuming ",(otherlibs/runtime_events/runtime_events.mli[127,4642+0]..[127,4642+45]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (otherlibs/runtime_events/runtime_events.mli[129,4689+0]..[134,4822+3])
+    Psig_module "Timestamp" (otherlibs/runtime_events/runtime_events.mli[129,4689+7]..[129,4689+16])
+    module_type (otherlibs/runtime_events/runtime_events.mli[129,4689+19]..[134,4822+3])
+      Pmty_signature
+      [
+        signature_item (otherlibs/runtime_events/runtime_events.mli[130,4712+4]..[130,4712+10])
+          Psig_type Rec
+          [
+            type_declaration "t" (otherlibs/runtime_events/runtime_events.mli[130,4712+9]..[130,4712+10]) (otherlibs/runtime_events/runtime_events.mli[130,4712+4]..[130,4712+10])
+              attribute "ocaml.doc"
+                [
+                  structure_item (otherlibs/runtime_events/runtime_events.mli[131,4723+4]..[131,4723+67])
+                    Pstr_eval
+                    expression (otherlibs/runtime_events/runtime_events.mli[131,4723+4]..[131,4723+67])
+                      Pexp_constant PConst_string(" Type for the int64 timestamp to allow for future changes ",(otherlibs/runtime_events/runtime_events.mli[131,4723+4]..[131,4723+67]),None)
+                ]
+              ptype_params =
+                []
+              ptype_cstrs =
+                []
+              ptype_kind =
+                Ptype_abstract
+              ptype_private = Public
+              ptype_manifest =
+                None
+          ]
+        signature_item (otherlibs/runtime_events/runtime_events.mli[133,4792+4]..[133,4792+29])
+          Psig_value
+          value_description "to_int64" (otherlibs/runtime_events/runtime_events.mli[133,4792+8]..[133,4792+16]) (otherlibs/runtime_events/runtime_events.mli[133,4792+4]..[133,4792+29])
+            core_type (otherlibs/runtime_events/runtime_events.mli[133,4792+19]..[133,4792+29])
+              Ptyp_arrow
+              Nolabel
+              core_type (otherlibs/runtime_events/runtime_events.mli[133,4792+19]..[133,4792+20])
+                Ptyp_constr "t" (otherlibs/runtime_events/runtime_events.mli[133,4792+19]..[133,4792+20])
+                []
+              core_type (otherlibs/runtime_events/runtime_events.mli[133,4792+24]..[133,4792+29])
+                Ptyp_constr "int64" (otherlibs/runtime_events/runtime_events.mli[133,4792+24]..[133,4792+29])
+                []
+            []
+      ]
+  signature_item (otherlibs/runtime_events/runtime_events.mli[136,4827+0]..[164,6463+3])
+    Psig_module "Callbacks" (otherlibs/runtime_events/runtime_events.mli[136,4827+7]..[136,4827+16])
+    module_type (otherlibs/runtime_events/runtime_events.mli[136,4827+19]..[164,6463+3])
+      Pmty_signature
+      [
+        signature_item (otherlibs/runtime_events/runtime_events.mli[137,4850+2]..[137,4850+8])
+          Psig_type Rec
+          [
+            type_declaration "t" (otherlibs/runtime_events/runtime_events.mli[137,4850+7]..[137,4850+8]) (otherlibs/runtime_events/runtime_events.mli[137,4850+2]..[137,4850+8])
+              attribute "ocaml.doc"
+                [
+                  structure_item (otherlibs/runtime_events/runtime_events.mli[138,4859+2]..[138,4859+26])
+                    Pstr_eval
+                    expression (otherlibs/runtime_events/runtime_events.mli[138,4859+2]..[138,4859+26])
+                      Pexp_constant PConst_string(" Type of callbacks ",(otherlibs/runtime_events/runtime_events.mli[138,4859+2]..[138,4859+26]),None)
+                ]
+              ptype_params =
+                []
+              ptype_cstrs =
+                []
+              ptype_kind =
+                Ptype_abstract
+              ptype_private = Public
+              ptype_manifest =
+                None
+          ]
+        signature_item (otherlibs/runtime_events/runtime_events.mli[140,4887+2]..[149,5401+59])
+          Psig_value
+          value_description "create" (otherlibs/runtime_events/runtime_events.mli[140,4887+6]..[140,4887+12]) (otherlibs/runtime_events/runtime_events.mli[140,4887+2]..[149,5401+59])
+            attribute "ocaml.doc"
+              [
+                structure_item (otherlibs/runtime_events/runtime_events.mli[150,5461+2]..[163,6454+8])
+                  Pstr_eval
+                  expression (otherlibs/runtime_events/runtime_events.mli[150,5461+2]..[163,6454+8])
+                    Pexp_constant PConst_string(" Create a [Callback] that optionally subscribes to one or more runtime\n      events. The first int supplied to callbacks is the ring buffer index.\n      Each domain owns a single ring buffer for the duration of the domain's\n      existence. After a domain terminates, a newly spawned domain may take\n      ownership of the ring buffer. A [runtime_begin] callback is called when\n      the runtime enters a new phase (e.g a runtime_begin with EV_MINOR is\n      called at the start of a minor GC). A [runtime_end] callback is called\n      when the runtime leaves a certain phase. The [runtime_counter] callback\n      is called when a counter is emitted by the runtime. [lifecycle] callbacks\n      are called when the ring undergoes a change in lifecycle and a consumer\n      may need to respond. [alloc] callbacks are currently only called on the\n      instrumented runtime. [lost_events] callbacks are called if the consumer\n      code detects some unconsumed events have been overwritten.\n      ",(otherlibs/runtime_events/runtime_events.mli[150,5461+2]..[163,6454+8]),None)
+              ]
+            core_type (otherlibs/runtime_events/runtime_events.mli[140,4887+15]..[149,5401+59])
+              Ptyp_arrow
+              Optional "runtime_begin"
+              core_type (otherlibs/runtime_events/runtime_events.mli[140,4887+31]..[141,4954+39])
+                Ptyp_arrow
+                Nolabel
+                core_type (otherlibs/runtime_events/runtime_events.mli[140,4887+31]..[140,4887+34])
+                  Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[140,4887+31]..[140,4887+34])
+                  []
+                core_type (otherlibs/runtime_events/runtime_events.mli[140,4887+38]..[141,4954+39])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (otherlibs/runtime_events/runtime_events.mli[140,4887+38]..[140,4887+49])
+                    Ptyp_constr "Timestamp.t" (otherlibs/runtime_events/runtime_events.mli[140,4887+38]..[140,4887+49])
+                    []
+                  core_type (otherlibs/runtime_events/runtime_events.mli[140,4887+53]..[141,4954+39])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (otherlibs/runtime_events/runtime_events.mli[140,4887+53]..[140,4887+66])
+                      Ptyp_constr "runtime_phase" (otherlibs/runtime_events/runtime_events.mli[140,4887+53]..[140,4887+66])
+                      []
+                    core_type (otherlibs/runtime_events/runtime_events.mli[141,4954+35]..[141,4954+39])
+                      Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[141,4954+35]..[141,4954+39])
+                      []
+              core_type (otherlibs/runtime_events/runtime_events.mli[142,4998+13]..[149,5401+59])
+                Ptyp_arrow
+                Optional "runtime_end"
+                core_type (otherlibs/runtime_events/runtime_events.mli[142,4998+27]..[143,5061+39])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (otherlibs/runtime_events/runtime_events.mli[142,4998+27]..[142,4998+30])
+                    Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[142,4998+27]..[142,4998+30])
+                    []
+                  core_type (otherlibs/runtime_events/runtime_events.mli[142,4998+34]..[143,5061+39])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (otherlibs/runtime_events/runtime_events.mli[142,4998+34]..[142,4998+45])
+                      Ptyp_constr "Timestamp.t" (otherlibs/runtime_events/runtime_events.mli[142,4998+34]..[142,4998+45])
+                      []
+                    core_type (otherlibs/runtime_events/runtime_events.mli[142,4998+49]..[143,5061+39])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (otherlibs/runtime_events/runtime_events.mli[142,4998+49]..[142,4998+62])
+                        Ptyp_constr "runtime_phase" (otherlibs/runtime_events/runtime_events.mli[142,4998+49]..[142,4998+62])
+                        []
+                      core_type (otherlibs/runtime_events/runtime_events.mli[143,5061+35]..[143,5061+39])
+                        Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[143,5061+35]..[143,5061+39])
+                        []
+                core_type (otherlibs/runtime_events/runtime_events.mli[144,5105+13]..[149,5401+59])
+                  Ptyp_arrow
+                  Optional "runtime_counter"
+                  core_type (otherlibs/runtime_events/runtime_events.mli[144,5105+31]..[145,5174+46])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (otherlibs/runtime_events/runtime_events.mli[144,5105+31]..[144,5105+34])
+                      Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[144,5105+31]..[144,5105+34])
+                      []
+                    core_type (otherlibs/runtime_events/runtime_events.mli[144,5105+38]..[145,5174+46])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (otherlibs/runtime_events/runtime_events.mli[144,5105+38]..[144,5105+49])
+                        Ptyp_constr "Timestamp.t" (otherlibs/runtime_events/runtime_events.mli[144,5105+38]..[144,5105+49])
+                        []
+                      core_type (otherlibs/runtime_events/runtime_events.mli[144,5105+53]..[145,5174+46])
+                        Ptyp_arrow
+                        Nolabel
+                        core_type (otherlibs/runtime_events/runtime_events.mli[144,5105+53]..[144,5105+68])
+                          Ptyp_constr "runtime_counter" (otherlibs/runtime_events/runtime_events.mli[144,5105+53]..[144,5105+68])
+                          []
+                        core_type (otherlibs/runtime_events/runtime_events.mli[145,5174+35]..[145,5174+46])
+                          Ptyp_arrow
+                          Nolabel
+                          core_type (otherlibs/runtime_events/runtime_events.mli[145,5174+35]..[145,5174+38])
+                            Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[145,5174+35]..[145,5174+38])
+                            []
+                          core_type (otherlibs/runtime_events/runtime_events.mli[145,5174+42]..[145,5174+46])
+                            Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[145,5174+42]..[145,5174+46])
+                            []
+                  core_type (otherlibs/runtime_events/runtime_events.mli[146,5225+13]..[149,5401+59])
+                    Ptyp_arrow
+                    Optional "alloc"
+                    core_type (otherlibs/runtime_events/runtime_events.mli[146,5225+21]..[146,5225+60])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (otherlibs/runtime_events/runtime_events.mli[146,5225+21]..[146,5225+24])
+                        Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[146,5225+21]..[146,5225+24])
+                        []
+                      core_type (otherlibs/runtime_events/runtime_events.mli[146,5225+28]..[146,5225+60])
+                        Ptyp_arrow
+                        Nolabel
+                        core_type (otherlibs/runtime_events/runtime_events.mli[146,5225+28]..[146,5225+39])
+                          Ptyp_constr "Timestamp.t" (otherlibs/runtime_events/runtime_events.mli[146,5225+28]..[146,5225+39])
+                          []
+                        core_type (otherlibs/runtime_events/runtime_events.mli[146,5225+43]..[146,5225+60])
+                          Ptyp_arrow
+                          Nolabel
+                          core_type (otherlibs/runtime_events/runtime_events.mli[146,5225+43]..[146,5225+52])
+                            Ptyp_constr "array" (otherlibs/runtime_events/runtime_events.mli[146,5225+47]..[146,5225+52])
+                            [
+                              core_type (otherlibs/runtime_events/runtime_events.mli[146,5225+43]..[146,5225+46])
+                                Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[146,5225+43]..[146,5225+46])
+                                []
+                            ]
+                          core_type (otherlibs/runtime_events/runtime_events.mli[146,5225+56]..[146,5225+60])
+                            Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[146,5225+56]..[146,5225+60])
+                            []
+                    core_type (otherlibs/runtime_events/runtime_events.mli[147,5290+13]..[149,5401+59])
+                      Ptyp_arrow
+                      Optional "lifecycle"
+                      core_type (otherlibs/runtime_events/runtime_events.mli[147,5290+25]..[148,5347+49])
+                        Ptyp_arrow
+                        Nolabel
+                        core_type (otherlibs/runtime_events/runtime_events.mli[147,5290+25]..[147,5290+28])
+                          Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[147,5290+25]..[147,5290+28])
+                          []
+                        core_type (otherlibs/runtime_events/runtime_events.mli[147,5290+32]..[148,5347+49])
+                          Ptyp_arrow
+                          Nolabel
+                          core_type (otherlibs/runtime_events/runtime_events.mli[147,5290+32]..[147,5290+43])
+                            Ptyp_constr "Timestamp.t" (otherlibs/runtime_events/runtime_events.mli[147,5290+32]..[147,5290+43])
+                            []
+                          core_type (otherlibs/runtime_events/runtime_events.mli[147,5290+47]..[148,5347+49])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (otherlibs/runtime_events/runtime_events.mli[147,5290+47]..[147,5290+56])
+                              Ptyp_constr "lifecycle" (otherlibs/runtime_events/runtime_events.mli[147,5290+47]..[147,5290+56])
+                              []
+                            core_type (otherlibs/runtime_events/runtime_events.mli[148,5347+31]..[148,5347+49])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (otherlibs/runtime_events/runtime_events.mli[148,5347+31]..[148,5347+41])
+                                Ptyp_constr "option" (otherlibs/runtime_events/runtime_events.mli[148,5347+35]..[148,5347+41])
+                                [
+                                  core_type (otherlibs/runtime_events/runtime_events.mli[148,5347+31]..[148,5347+34])
+                                    Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[148,5347+31]..[148,5347+34])
+                                    []
+                                ]
+                              core_type (otherlibs/runtime_events/runtime_events.mli[148,5347+45]..[148,5347+49])
+                                Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[148,5347+45]..[148,5347+49])
+                                []
+                      core_type (otherlibs/runtime_events/runtime_events.mli[149,5401+13]..[149,5401+59])
+                        Ptyp_arrow
+                        Optional "lost_events"
+                        core_type (otherlibs/runtime_events/runtime_events.mli[149,5401+27]..[149,5401+45])
+                          Ptyp_arrow
+                          Nolabel
+                          core_type (otherlibs/runtime_events/runtime_events.mli[149,5401+27]..[149,5401+30])
+                            Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[149,5401+27]..[149,5401+30])
+                            []
+                          core_type (otherlibs/runtime_events/runtime_events.mli[149,5401+34]..[149,5401+45])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (otherlibs/runtime_events/runtime_events.mli[149,5401+34]..[149,5401+37])
+                              Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[149,5401+34]..[149,5401+37])
+                              []
+                            core_type (otherlibs/runtime_events/runtime_events.mli[149,5401+41]..[149,5401+45])
+                              Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[149,5401+41]..[149,5401+45])
+                              []
+                        core_type (otherlibs/runtime_events/runtime_events.mli[149,5401+50]..[149,5401+59])
+                          Ptyp_arrow
+                          Nolabel
+                          core_type (otherlibs/runtime_events/runtime_events.mli[149,5401+50]..[149,5401+54])
+                            Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[149,5401+50]..[149,5401+54])
+                            []
+                          core_type (otherlibs/runtime_events/runtime_events.mli[149,5401+58]..[149,5401+59])
+                            Ptyp_constr "t" (otherlibs/runtime_events/runtime_events.mli[149,5401+58]..[149,5401+59])
+                            []
+            []
+      ]
+  signature_item (otherlibs/runtime_events/runtime_events.mli[166,6468+0]..[166,6468+24])
+    Psig_value
+    value_description "start" (otherlibs/runtime_events/runtime_events.mli[166,6468+4]..[166,6468+9]) (otherlibs/runtime_events/runtime_events.mli[166,6468+0]..[166,6468+24])
+      attribute "ocaml.doc"
+        [
+          structure_item (otherlibs/runtime_events/runtime_events.mli[167,6493+0]..[172,6725+2])
+            Pstr_eval
+            expression (otherlibs/runtime_events/runtime_events.mli[167,6493+0]..[172,6725+2])
+              Pexp_constant PConst_string(" [start ()] will start the collection of events in the runtime if not already\n  started.\n\n  Events can be consumed by creating a cursor with [create_cursor] and providing\n  a set of callbacks to be called for each type of event.\n",(otherlibs/runtime_events/runtime_events.mli[167,6493+0]..[172,6725+2]),None)
+        ]
+      core_type (otherlibs/runtime_events/runtime_events.mli[166,6468+12]..[166,6468+24])
+        Ptyp_arrow
+        Nolabel
+        core_type (otherlibs/runtime_events/runtime_events.mli[166,6468+12]..[166,6468+16])
+          Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[166,6468+12]..[166,6468+16])
+          []
+        core_type (otherlibs/runtime_events/runtime_events.mli[166,6468+20]..[166,6468+24])
+          Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[166,6468+20]..[166,6468+24])
+          []
+      []
+  signature_item (otherlibs/runtime_events/runtime_events.mli[174,6729+0]..[174,6729+24])
+    Psig_value
+    value_description "pause" (otherlibs/runtime_events/runtime_events.mli[174,6729+4]..[174,6729+9]) (otherlibs/runtime_events/runtime_events.mli[174,6729+0]..[174,6729+24])
+      attribute "ocaml.doc"
+        [
+          structure_item (otherlibs/runtime_events/runtime_events.mli[175,6754+0]..[178,6969+2])
+            Pstr_eval
+            expression (otherlibs/runtime_events/runtime_events.mli[175,6754+0]..[178,6969+2])
+              Pexp_constant PConst_string(" [pause ()] will pause the collection of events in the runtime.\n   Traces are collected if the program has called [Runtime_events.start ()] or\n   the OCAML_RUNTIME_EVENTS_START environment variable has been set.\n",(otherlibs/runtime_events/runtime_events.mli[175,6754+0]..[178,6969+2]),None)
+        ]
+      core_type (otherlibs/runtime_events/runtime_events.mli[174,6729+12]..[174,6729+24])
+        Ptyp_arrow
+        Nolabel
+        core_type (otherlibs/runtime_events/runtime_events.mli[174,6729+12]..[174,6729+16])
+          Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[174,6729+12]..[174,6729+16])
+          []
+        core_type (otherlibs/runtime_events/runtime_events.mli[174,6729+20]..[174,6729+24])
+          Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[174,6729+20]..[174,6729+24])
+          []
+      []
+  signature_item (otherlibs/runtime_events/runtime_events.mli[180,6973+0]..[180,6973+25])
+    Psig_value
+    value_description "resume" (otherlibs/runtime_events/runtime_events.mli[180,6973+4]..[180,6973+10]) (otherlibs/runtime_events/runtime_events.mli[180,6973+0]..[180,6973+25])
+      attribute "ocaml.doc"
+        [
+          structure_item (otherlibs/runtime_events/runtime_events.mli[181,6999+0]..[184,7216+2])
+            Pstr_eval
+            expression (otherlibs/runtime_events/runtime_events.mli[181,6999+0]..[184,7216+2])
+              Pexp_constant PConst_string(" [resume ()] will resume the collection of events in the runtime.\n   Traces are collected if the program has called [Runtime_events.start ()] or\n   the OCAML_RUNTIME_EVENTS_START environment variable has been set.\n",(otherlibs/runtime_events/runtime_events.mli[181,6999+0]..[184,7216+2]),None)
+        ]
+      core_type (otherlibs/runtime_events/runtime_events.mli[180,6973+13]..[180,6973+25])
+        Ptyp_arrow
+        Nolabel
+        core_type (otherlibs/runtime_events/runtime_events.mli[180,6973+13]..[180,6973+17])
+          Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[180,6973+13]..[180,6973+17])
+          []
+        core_type (otherlibs/runtime_events/runtime_events.mli[180,6973+21]..[180,6973+25])
+          Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[180,6973+21]..[180,6973+25])
+          []
+      []
+  signature_item (otherlibs/runtime_events/runtime_events.mli[186,7220+0]..[186,7220+51])
+    Psig_value
+    value_description "create_cursor" (otherlibs/runtime_events/runtime_events.mli[186,7220+4]..[186,7220+17]) (otherlibs/runtime_events/runtime_events.mli[186,7220+0]..[186,7220+51])
+      attribute "ocaml.doc"
+        [
+          structure_item (otherlibs/runtime_events/runtime_events.mli[187,7272+0]..[195,7864+34])
+            Pstr_eval
+            expression (otherlibs/runtime_events/runtime_events.mli[187,7272+0]..[195,7864+34])
+              Pexp_constant PConst_string(" [create_cursor path_pid] creates a cursor to read from an runtime_events.\n   Cursors can be created for runtime_events in and out of process. A\n   runtime_events ring-buffer may have multiple cursors reading from it at any\n   point in time and a program may have multiple cursors open concurrently\n  (for example if multiple consumers want different sets of events). If\n   [path_pid] is None then a cursor is created for the current process.\n   Otherwise the pair contains a string [path] to the directory that contains\n   the [pid].events file and int [pid] for the runtime_events of an\n   external process to monitor. ",(otherlibs/runtime_events/runtime_events.mli[187,7272+0]..[195,7864+34]),None)
+        ]
+      core_type (otherlibs/runtime_events/runtime_events.mli[186,7220+20]..[186,7220+51])
+        Ptyp_arrow
+        Nolabel
+        core_type (otherlibs/runtime_events/runtime_events.mli[186,7220+20]..[186,7220+41])
+          Ptyp_constr "option" (otherlibs/runtime_events/runtime_events.mli[186,7220+35]..[186,7220+41])
+          [
+            core_type (otherlibs/runtime_events/runtime_events.mli[186,7220+21]..[186,7220+33])
+              Ptyp_tuple
+              [
+                core_type (otherlibs/runtime_events/runtime_events.mli[186,7220+21]..[186,7220+27])
+                  Ptyp_constr "string" (otherlibs/runtime_events/runtime_events.mli[186,7220+21]..[186,7220+27])
+                  []
+                core_type (otherlibs/runtime_events/runtime_events.mli[186,7220+30]..[186,7220+33])
+                  Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[186,7220+30]..[186,7220+33])
+                  []
+              ]
+          ]
+        core_type (otherlibs/runtime_events/runtime_events.mli[186,7220+45]..[186,7220+51])
+          Ptyp_constr "cursor" (otherlibs/runtime_events/runtime_events.mli[186,7220+45]..[186,7220+51])
+          []
+      []
+  signature_item (otherlibs/runtime_events/runtime_events.mli[197,7900+0]..[197,7900+32])
+    Psig_value
+    value_description "free_cursor" (otherlibs/runtime_events/runtime_events.mli[197,7900+4]..[197,7900+15]) (otherlibs/runtime_events/runtime_events.mli[197,7900+0]..[197,7900+32])
+      attribute "ocaml.doc"
+        [
+          structure_item (otherlibs/runtime_events/runtime_events.mli[198,7933+0]..[198,7933+54])
+            Pstr_eval
+            expression (otherlibs/runtime_events/runtime_events.mli[198,7933+0]..[198,7933+54])
+              Pexp_constant PConst_string(" Free a previously created runtime_events cursor ",(otherlibs/runtime_events/runtime_events.mli[198,7933+0]..[198,7933+54]),None)
+        ]
+      core_type (otherlibs/runtime_events/runtime_events.mli[197,7900+18]..[197,7900+32])
+        Ptyp_arrow
+        Nolabel
+        core_type (otherlibs/runtime_events/runtime_events.mli[197,7900+18]..[197,7900+24])
+          Ptyp_constr "cursor" (otherlibs/runtime_events/runtime_events.mli[197,7900+18]..[197,7900+24])
+          []
+        core_type (otherlibs/runtime_events/runtime_events.mli[197,7900+28]..[197,7900+32])
+          Ptyp_constr "unit" (otherlibs/runtime_events/runtime_events.mli[197,7900+28]..[197,7900+32])
+          []
+      []
+  signature_item (otherlibs/runtime_events/runtime_events.mli[200,7989+0]..[200,7989+58])
+    Psig_value
+    value_description "read_poll" (otherlibs/runtime_events/runtime_events.mli[200,7989+4]..[200,7989+13]) (otherlibs/runtime_events/runtime_events.mli[200,7989+0]..[200,7989+58])
+      attribute "ocaml.doc"
+        [
+          structure_item (otherlibs/runtime_events/runtime_events.mli[201,8048+0]..[203,8195+60])
+            Pstr_eval
+            expression (otherlibs/runtime_events/runtime_events.mli[201,8048+0]..[203,8195+60])
+              Pexp_constant PConst_string(" [read_poll cursor callbacks max_option] calls the corresponding functions\n    on [callbacks] for up to [max_option] events read off [cursor]'s\n    runtime_events and returns the number of events read. ",(otherlibs/runtime_events/runtime_events.mli[201,8048+0]..[203,8195+60]),None)
+        ]
+      core_type (otherlibs/runtime_events/runtime_events.mli[200,7989+16]..[200,7989+58])
+        Ptyp_arrow
+        Nolabel
+        core_type (otherlibs/runtime_events/runtime_events.mli[200,7989+16]..[200,7989+22])
+          Ptyp_constr "cursor" (otherlibs/runtime_events/runtime_events.mli[200,7989+16]..[200,7989+22])
+          []
+        core_type (otherlibs/runtime_events/runtime_events.mli[200,7989+26]..[200,7989+58])
+          Ptyp_arrow
+          Nolabel
+          core_type (otherlibs/runtime_events/runtime_events.mli[200,7989+26]..[200,7989+37])
+            Ptyp_constr "Callbacks.t" (otherlibs/runtime_events/runtime_events.mli[200,7989+26]..[200,7989+37])
+            []
+          core_type (otherlibs/runtime_events/runtime_events.mli[200,7989+41]..[200,7989+58])
+            Ptyp_arrow
+            Nolabel
+            core_type (otherlibs/runtime_events/runtime_events.mli[200,7989+41]..[200,7989+51])
+              Ptyp_constr "option" (otherlibs/runtime_events/runtime_events.mli[200,7989+45]..[200,7989+51])
+              [
+                core_type (otherlibs/runtime_events/runtime_events.mli[200,7989+41]..[200,7989+44])
+                  Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[200,7989+41]..[200,7989+44])
+                  []
+              ]
+            core_type (otherlibs/runtime_events/runtime_events.mli[200,7989+55]..[200,7989+58])
+              Ptyp_constr "int" (otherlibs/runtime_events/runtime_events.mli[200,7989+55]..[200,7989+58])
+              []
+      []
+]
+

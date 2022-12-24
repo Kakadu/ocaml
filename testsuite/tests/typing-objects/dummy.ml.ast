@@ -1,0 +1,1398 @@
+[
+  structure_item (testsuite/tests/typing-objects/dummy.ml[5,24+0]..[14,245+5])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[5,24+0]..[8,98+5])
+        pci_virt = Virtual
+        pci_params =
+          []
+        pci_name = "child1" (testsuite/tests/typing-objects/dummy.ml[5,24+14]..[5,24+20])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[5,24+21]..[8,98+5])
+            Pcl_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/typing-objects/dummy.ml[5,24+21]..[5,24+27])
+              Ppat_var "parent" (testsuite/tests/typing-objects/dummy.ml[5,24+21]..[5,24+27])
+            class_expr (testsuite/tests/typing-objects/dummy.ml[6,54+2]..[8,98+5])
+              Pcl_structure
+              class_structure
+                pattern (testsuite/tests/typing-objects/dummy.ml[6,54+8]..[6,54+8]) ghost
+                  Ppat_any
+                [
+                  class_field (testsuite/tests/typing-objects/dummy.ml[7,63+4]..[7,63+34])
+                    Pcf_method Private
+                      "parent" (testsuite/tests/typing-objects/dummy.ml[7,63+19]..[7,63+25])
+                      Concrete Fresh
+                      expression (testsuite/tests/typing-objects/dummy.ml[7,63+28]..[7,63+34]) ghost
+                        Pexp_poly
+                        expression (testsuite/tests/typing-objects/dummy.ml[7,63+28]..[7,63+34])
+                          Pexp_ident "parent" (testsuite/tests/typing-objects/dummy.ml[7,63+28]..[7,63+34])
+                        None
+                ]
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[10,105+0]..[14,245+5])
+        pci_virt = Virtual
+        pci_params =
+          []
+        pci_name = "child2" (testsuite/tests/typing-objects/dummy.ml[10,105+12]..[10,105+18])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[11,126+2]..[14,245+5])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[11,126+8]..[11,126+19])
+                Ppat_constraint
+                pattern (testsuite/tests/typing-objects/dummy.ml[11,126+9]..[11,126+10])
+                  Ppat_any
+                core_type (testsuite/tests/typing-objects/dummy.ml[11,126+13]..[11,126+18])
+                  Ptyp_var self
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[12,146+4]..[12,146+55])
+                  Pcf_constraint
+                    core_type (testsuite/tests/typing-objects/dummy.ml[12,146+15]..[12,146+22])
+                      Ptyp_var parent
+                    core_type (testsuite/tests/typing-objects/dummy.ml[12,146+25]..[12,146+55])
+                      Ptyp_object Open
+                        method previous
+                          core_type (testsuite/tests/typing-objects/dummy.ml[12,146+37]..[12,146+49])
+                            Ptyp_constr "option" (testsuite/tests/typing-objects/dummy.ml[12,146+43]..[12,146+49])
+                            [
+                              core_type (testsuite/tests/typing-objects/dummy.ml[12,146+37]..[12,146+42])
+                                Ptyp_var self
+                            ]
+                class_field (testsuite/tests/typing-objects/dummy.ml[13,202+4]..[13,202+42])
+                  Pcf_method Private
+                    "parent" (testsuite/tests/typing-objects/dummy.ml[13,202+27]..[13,202+33])
+                    Virtual
+                    core_type (testsuite/tests/typing-objects/dummy.ml[13,202+35]..[13,202+42])
+                      Ptyp_var parent
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[16,252+0]..[22,437+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[16,252+9]..[22,437+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[16,252+9]..[22,437+2])
+          Pexp_constant PConst_string ("\nclass virtual child1 : 'a -> object method private parent : 'a end\nand virtual child2 :\n  object ('a)\n    method private virtual parent : < previous : 'a option; .. >\n  end\n",(testsuite/tests/typing-objects/dummy.ml[16,252+11]..[22,437+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[24,442+0]..[42,805+3])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[24,442+0]..[27,517+5])
+        pci_virt = Virtual
+        pci_params =
+          []
+        pci_name = "child1'" (testsuite/tests/typing-objects/dummy.ml[24,442+14]..[24,442+21])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[24,442+22]..[27,517+5])
+            Pcl_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/typing-objects/dummy.ml[24,442+22]..[24,442+28])
+              Ppat_var "parent" (testsuite/tests/typing-objects/dummy.ml[24,442+22]..[24,442+28])
+            class_expr (testsuite/tests/typing-objects/dummy.ml[25,473+2]..[27,517+5])
+              Pcl_structure
+              class_structure
+                pattern (testsuite/tests/typing-objects/dummy.ml[25,473+8]..[25,473+8]) ghost
+                  Ppat_any
+                [
+                  class_field (testsuite/tests/typing-objects/dummy.ml[26,482+4]..[26,482+34])
+                    Pcf_method Private
+                      "parent" (testsuite/tests/typing-objects/dummy.ml[26,482+19]..[26,482+25])
+                      Concrete Fresh
+                      expression (testsuite/tests/typing-objects/dummy.ml[26,482+28]..[26,482+34]) ghost
+                        Pexp_poly
+                        expression (testsuite/tests/typing-objects/dummy.ml[26,482+28]..[26,482+34])
+                          Pexp_ident "parent" (testsuite/tests/typing-objects/dummy.ml[26,482+28]..[26,482+34])
+                        None
+                ]
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[29,524+0]..[33,665+5])
+        pci_virt = Virtual
+        pci_params =
+          []
+        pci_name = "child2'" (testsuite/tests/typing-objects/dummy.ml[29,524+12]..[29,524+19])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[30,546+2]..[33,665+5])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[30,546+8]..[30,546+19])
+                Ppat_constraint
+                pattern (testsuite/tests/typing-objects/dummy.ml[30,546+9]..[30,546+10])
+                  Ppat_any
+                core_type (testsuite/tests/typing-objects/dummy.ml[30,546+13]..[30,546+18])
+                  Ptyp_var self
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[31,566+4]..[31,566+55])
+                  Pcf_constraint
+                    core_type (testsuite/tests/typing-objects/dummy.ml[31,566+15]..[31,566+22])
+                      Ptyp_var parent
+                    core_type (testsuite/tests/typing-objects/dummy.ml[31,566+25]..[31,566+55])
+                      Ptyp_object Open
+                        method previous
+                          core_type (testsuite/tests/typing-objects/dummy.ml[31,566+37]..[31,566+49])
+                            Ptyp_constr "option" (testsuite/tests/typing-objects/dummy.ml[31,566+43]..[31,566+49])
+                            [
+                              core_type (testsuite/tests/typing-objects/dummy.ml[31,566+37]..[31,566+42])
+                                Ptyp_var self
+                            ]
+                class_field (testsuite/tests/typing-objects/dummy.ml[32,622+4]..[32,622+42])
+                  Pcf_method Private
+                    "parent" (testsuite/tests/typing-objects/dummy.ml[32,622+27]..[32,622+33])
+                    Virtual
+                    core_type (testsuite/tests/typing-objects/dummy.ml[32,622+35]..[32,622+42])
+                      Ptyp_var parent
+              ]
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[35,672+0]..[42,805+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "foo" (testsuite/tests/typing-objects/dummy.ml[35,672+4]..[35,672+7])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[35,672+10]..[42,805+3])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[35,672+16]..[35,672+22])
+                Ppat_var "self" (testsuite/tests/typing-objects/dummy.ml[35,672+17]..[35,672+21])
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[36,695+2]..[36,695+24])
+                  Pcf_method Public
+                    "previous" (testsuite/tests/typing-objects/dummy.ml[36,695+9]..[36,695+17])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[36,695+20]..[36,695+24]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[36,695+20]..[36,695+24])
+                        Pexp_construct "None" (testsuite/tests/typing-objects/dummy.ml[36,695+20]..[36,695+24])
+                        None
+                      None
+                class_field (testsuite/tests/typing-objects/dummy.ml[37,720+2]..[41,797+7])
+                  Pcf_method Public
+                    "child" (testsuite/tests/typing-objects/dummy.ml[37,720+9]..[37,720+14])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[38,737+4]..[41,797+7]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[38,737+4]..[41,797+7])
+                        Pexp_object
+                        class_structure
+                          pattern (testsuite/tests/typing-objects/dummy.ml[38,737+10]..[38,737+10]) ghost
+                            Ppat_any
+                          [
+                            class_field (testsuite/tests/typing-objects/dummy.ml[39,748+6]..[39,748+26])
+                              Pcf_inherit Fresh
+                                class_expr (testsuite/tests/typing-objects/dummy.ml[39,748+14]..[39,748+26])
+                                  Pcl_apply
+                                  class_expr (testsuite/tests/typing-objects/dummy.ml[39,748+14]..[39,748+21])
+                                    Pcl_constr "child1'" (testsuite/tests/typing-objects/dummy.ml[39,748+14]..[39,748+21])
+                                    []
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/typing-objects/dummy.ml[39,748+22]..[39,748+26])
+                                        Pexp_ident "self" (testsuite/tests/typing-objects/dummy.ml[39,748+22]..[39,748+26])
+                                  ]
+                                None
+                            class_field (testsuite/tests/typing-objects/dummy.ml[40,775+6]..[40,775+21])
+                              Pcf_inherit Fresh
+                                class_expr (testsuite/tests/typing-objects/dummy.ml[40,775+14]..[40,775+21])
+                                  Pcl_constr "child2'" (testsuite/tests/typing-objects/dummy.ml[40,775+14]..[40,775+21])
+                                  []
+                                None
+                          ]
+                      None
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[44,812+0]..[51,1078+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[44,812+9]..[51,1078+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[44,812+9]..[51,1078+2])
+          Pexp_constant PConst_string ("\nLine 16, characters 22-26:\n16 |       inherit child1' self\n                           ^^^^\nError: This expression has type < child : 'a; previous : 'b option; .. >\n       but an expression was expected of type 'c\n       Self type cannot escape its class\n",(testsuite/tests/typing-objects/dummy.ml[44,812+11]..[51,1078+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[54,1156+0]..[61,1290+3])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[54,1156+0]..[61,1290+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "foo1" (testsuite/tests/typing-objects/dummy.ml[54,1156+6]..[54,1156+10])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[54,1156+13]..[61,1290+3])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[54,1156+19]..[54,1156+25])
+                Ppat_var "self" (testsuite/tests/typing-objects/dummy.ml[54,1156+20]..[54,1156+24])
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[55,1182+2]..[55,1182+24])
+                  Pcf_method Public
+                    "previous" (testsuite/tests/typing-objects/dummy.ml[55,1182+9]..[55,1182+17])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[55,1182+20]..[55,1182+24]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[55,1182+20]..[55,1182+24])
+                        Pexp_construct "None" (testsuite/tests/typing-objects/dummy.ml[55,1182+20]..[55,1182+24])
+                        None
+                      None
+                class_field (testsuite/tests/typing-objects/dummy.ml[56,1207+2]..[60,1282+7])
+                  Pcf_method Public
+                    "child" (testsuite/tests/typing-objects/dummy.ml[56,1207+9]..[56,1207+14])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[57,1224+4]..[60,1282+7]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[57,1224+4]..[60,1282+7])
+                        Pexp_object
+                        class_structure
+                          pattern (testsuite/tests/typing-objects/dummy.ml[57,1224+10]..[57,1224+10]) ghost
+                            Ppat_any
+                          [
+                            class_field (testsuite/tests/typing-objects/dummy.ml[58,1235+6]..[58,1235+25])
+                              Pcf_inherit Fresh
+                                class_expr (testsuite/tests/typing-objects/dummy.ml[58,1235+14]..[58,1235+25])
+                                  Pcl_apply
+                                  class_expr (testsuite/tests/typing-objects/dummy.ml[58,1235+14]..[58,1235+20])
+                                    Pcl_constr "child1" (testsuite/tests/typing-objects/dummy.ml[58,1235+14]..[58,1235+20])
+                                    []
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/typing-objects/dummy.ml[58,1235+21]..[58,1235+25])
+                                        Pexp_ident "self" (testsuite/tests/typing-objects/dummy.ml[58,1235+21]..[58,1235+25])
+                                  ]
+                                None
+                            class_field (testsuite/tests/typing-objects/dummy.ml[59,1261+6]..[59,1261+20])
+                              Pcf_inherit Fresh
+                                class_expr (testsuite/tests/typing-objects/dummy.ml[59,1261+14]..[59,1261+20])
+                                  Pcl_constr "child2" (testsuite/tests/typing-objects/dummy.ml[59,1261+14]..[59,1261+20])
+                                  []
+                                None
+                          ]
+                      None
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[62,1296+0]..[64,1386+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[62,1296+9]..[64,1386+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[62,1296+9]..[64,1386+2])
+          Pexp_constant PConst_string ("\nclass foo1 : object method child : child1 method previous : child1 option end\n",(testsuite/tests/typing-objects/dummy.ml[62,1296+11]..[64,1386+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[66,1391+0]..[75,1570+3])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[66,1391+0]..[75,1570+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "nested" (testsuite/tests/typing-objects/dummy.ml[66,1391+6]..[66,1391+12])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[66,1391+15]..[75,1570+3])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[66,1391+21]..[66,1391+21]) ghost
+                Ppat_any
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[67,1413+2]..[74,1564+5])
+                  Pcf_method Public
+                    "obj" (testsuite/tests/typing-objects/dummy.ml[67,1413+9]..[67,1413+12])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[67,1413+15]..[74,1564+5]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[67,1413+15]..[74,1564+5])
+                        Pexp_object
+                        class_structure
+                          pattern (testsuite/tests/typing-objects/dummy.ml[67,1413+21]..[67,1413+27])
+                            Ppat_var "self" (testsuite/tests/typing-objects/dummy.ml[67,1413+22]..[67,1413+26])
+                          [
+                            class_field (testsuite/tests/typing-objects/dummy.ml[68,1441+4]..[68,1441+26])
+                              Pcf_method Public
+                                "previous" (testsuite/tests/typing-objects/dummy.ml[68,1441+11]..[68,1441+19])
+                                Concrete Fresh
+                                expression (testsuite/tests/typing-objects/dummy.ml[68,1441+22]..[68,1441+26]) ghost
+                                  Pexp_poly
+                                  expression (testsuite/tests/typing-objects/dummy.ml[68,1441+22]..[68,1441+26])
+                                    Pexp_construct "None" (testsuite/tests/typing-objects/dummy.ml[68,1441+22]..[68,1441+26])
+                                    None
+                                  None
+                            class_field (testsuite/tests/typing-objects/dummy.ml[69,1468+4]..[73,1554+9])
+                              Pcf_method Public
+                                "child" (testsuite/tests/typing-objects/dummy.ml[69,1468+11]..[69,1468+16])
+                                Concrete Fresh
+                                expression (testsuite/tests/typing-objects/dummy.ml[69,1468+17]..[73,1554+9]) ghost
+                                  Pexp_poly
+                                  expression (testsuite/tests/typing-objects/dummy.ml[69,1468+17]..[73,1554+9]) ghost
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (testsuite/tests/typing-objects/dummy.ml[69,1468+17]..[69,1468+19])
+                                      Ppat_construct "()" (testsuite/tests/typing-objects/dummy.ml[69,1468+17]..[69,1468+19])
+                                      None
+                                    expression (testsuite/tests/typing-objects/dummy.ml[70,1490+6]..[73,1554+9])
+                                      Pexp_object
+                                      class_structure
+                                        pattern (testsuite/tests/typing-objects/dummy.ml[70,1490+12]..[70,1490+12]) ghost
+                                          Ppat_any
+                                        [
+                                          class_field (testsuite/tests/typing-objects/dummy.ml[71,1503+8]..[71,1503+27])
+                                            Pcf_inherit Fresh
+                                              class_expr (testsuite/tests/typing-objects/dummy.ml[71,1503+16]..[71,1503+27])
+                                                Pcl_apply
+                                                class_expr (testsuite/tests/typing-objects/dummy.ml[71,1503+16]..[71,1503+22])
+                                                  Pcl_constr "child1" (testsuite/tests/typing-objects/dummy.ml[71,1503+16]..[71,1503+22])
+                                                  []
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/typing-objects/dummy.ml[71,1503+23]..[71,1503+27])
+                                                      Pexp_ident "self" (testsuite/tests/typing-objects/dummy.ml[71,1503+23]..[71,1503+27])
+                                                ]
+                                              None
+                                          class_field (testsuite/tests/typing-objects/dummy.ml[72,1531+8]..[72,1531+22])
+                                            Pcf_inherit Fresh
+                                              class_expr (testsuite/tests/typing-objects/dummy.ml[72,1531+16]..[72,1531+22])
+                                                Pcl_constr "child2" (testsuite/tests/typing-objects/dummy.ml[72,1531+16]..[72,1531+22])
+                                                []
+                                              None
+                                        ]
+                                  None
+                          ]
+                      None
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[76,1576+0]..[81,1688+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[76,1576+9]..[81,1688+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[76,1576+9]..[81,1688+2])
+          Pexp_constant PConst_string ("\nclass nested :\n  object\n    method obj : < child : unit -> child1; previous : child1 option >\n  end\n",(testsuite/tests/typing-objects/dummy.ml[76,1576+11]..[81,1688+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[83,1693+0]..[93,1867+3])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[83,1693+0]..[93,1867+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "just_to_see" (testsuite/tests/typing-objects/dummy.ml[83,1693+6]..[83,1693+17])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[83,1693+20]..[93,1867+3])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[83,1693+26]..[83,1693+32])
+                Ppat_var "self" (testsuite/tests/typing-objects/dummy.ml[83,1693+27]..[83,1693+31])
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[84,1726+2]..[84,1726+24])
+                  Pcf_method Public
+                    "previous" (testsuite/tests/typing-objects/dummy.ml[84,1726+9]..[84,1726+17])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[84,1726+20]..[84,1726+24]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[84,1726+20]..[84,1726+24])
+                        Pexp_construct "None" (testsuite/tests/typing-objects/dummy.ml[84,1726+20]..[84,1726+24])
+                        None
+                      None
+                class_field (testsuite/tests/typing-objects/dummy.ml[85,1751+2]..[92,1861+5])
+                  Pcf_method Public
+                    "child" (testsuite/tests/typing-objects/dummy.ml[85,1751+9]..[85,1751+14])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[86,1768+4]..[92,1861+5]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[86,1768+4]..[92,1861+5])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (testsuite/tests/typing-objects/dummy.ml[86,1768+8]..[86,1768+9])
+                              Ppat_var "o" (testsuite/tests/typing-objects/dummy.ml[86,1768+8]..[86,1768+9])
+                            expression (testsuite/tests/typing-objects/dummy.ml[87,1780+6]..[90,1844+9])
+                              Pexp_object
+                              class_structure
+                                pattern (testsuite/tests/typing-objects/dummy.ml[87,1780+12]..[87,1780+12]) ghost
+                                  Ppat_any
+                                [
+                                  class_field (testsuite/tests/typing-objects/dummy.ml[88,1793+8]..[88,1793+27])
+                                    Pcf_inherit Fresh
+                                      class_expr (testsuite/tests/typing-objects/dummy.ml[88,1793+16]..[88,1793+27])
+                                        Pcl_apply
+                                        class_expr (testsuite/tests/typing-objects/dummy.ml[88,1793+16]..[88,1793+22])
+                                          Pcl_constr "child1" (testsuite/tests/typing-objects/dummy.ml[88,1793+16]..[88,1793+22])
+                                          []
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/typing-objects/dummy.ml[88,1793+23]..[88,1793+27])
+                                              Pexp_ident "self" (testsuite/tests/typing-objects/dummy.ml[88,1793+23]..[88,1793+27])
+                                        ]
+                                      None
+                                  class_field (testsuite/tests/typing-objects/dummy.ml[89,1821+8]..[89,1821+22])
+                                    Pcf_inherit Fresh
+                                      class_expr (testsuite/tests/typing-objects/dummy.ml[89,1821+16]..[89,1821+22])
+                                        Pcl_constr "child2" (testsuite/tests/typing-objects/dummy.ml[89,1821+16]..[89,1821+22])
+                                        []
+                                      None
+                                ]
+                        ]
+                        expression (testsuite/tests/typing-objects/dummy.ml[92,1861+4]..[92,1861+5])
+                          Pexp_ident "o" (testsuite/tests/typing-objects/dummy.ml[92,1861+4]..[92,1861+5])
+                      None
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[94,1873+0]..[97,1972+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[94,1873+9]..[97,1972+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[94,1873+9]..[97,1972+2])
+          Pexp_constant PConst_string ("\nclass just_to_see :\n  object method child : child1 method previous : child1 option end\n",(testsuite/tests/typing-objects/dummy.ml[94,1873+11]..[97,1972+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[99,1977+0]..[111,2198+3])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[99,1977+0]..[111,2198+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "just_to_see2" (testsuite/tests/typing-objects/dummy.ml[99,1977+6]..[99,1977+18])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[99,1977+21]..[111,2198+3])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[99,1977+27]..[99,1977+27]) ghost
+                Ppat_any
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[100,2005+2]..[110,2192+5])
+                  Pcf_method Public
+                    "obj" (testsuite/tests/typing-objects/dummy.ml[100,2005+9]..[100,2005+12])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[100,2005+15]..[110,2192+5]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[100,2005+15]..[110,2192+5])
+                        Pexp_object
+                        class_structure
+                          pattern (testsuite/tests/typing-objects/dummy.ml[100,2005+21]..[100,2005+27])
+                            Ppat_var "self" (testsuite/tests/typing-objects/dummy.ml[100,2005+22]..[100,2005+26])
+                          [
+                            class_field (testsuite/tests/typing-objects/dummy.ml[101,2033+4]..[101,2033+26])
+                              Pcf_method Public
+                                "previous" (testsuite/tests/typing-objects/dummy.ml[101,2033+11]..[101,2033+19])
+                                Concrete Fresh
+                                expression (testsuite/tests/typing-objects/dummy.ml[101,2033+22]..[101,2033+26]) ghost
+                                  Pexp_poly
+                                  expression (testsuite/tests/typing-objects/dummy.ml[101,2033+22]..[101,2033+26])
+                                    Pexp_construct "None" (testsuite/tests/typing-objects/dummy.ml[101,2033+22]..[101,2033+26])
+                                    None
+                                  None
+                            class_field (testsuite/tests/typing-objects/dummy.ml[102,2060+4]..[109,2184+7])
+                              Pcf_method Public
+                                "child" (testsuite/tests/typing-objects/dummy.ml[102,2060+11]..[102,2060+16])
+                                Concrete Fresh
+                                expression (testsuite/tests/typing-objects/dummy.ml[103,2079+6]..[109,2184+7]) ghost
+                                  Pexp_poly
+                                  expression (testsuite/tests/typing-objects/dummy.ml[103,2079+6]..[109,2184+7])
+                                    Pexp_let Nonrec
+                                    [
+                                      <def>
+                                        pattern (testsuite/tests/typing-objects/dummy.ml[103,2079+10]..[103,2079+11])
+                                          Ppat_var "o" (testsuite/tests/typing-objects/dummy.ml[103,2079+10]..[103,2079+11])
+                                        expression (testsuite/tests/typing-objects/dummy.ml[104,2093+8]..[107,2163+11])
+                                          Pexp_object
+                                          class_structure
+                                            pattern (testsuite/tests/typing-objects/dummy.ml[104,2093+14]..[104,2093+14]) ghost
+                                              Ppat_any
+                                            [
+                                              class_field (testsuite/tests/typing-objects/dummy.ml[105,2108+10]..[105,2108+29])
+                                                Pcf_inherit Fresh
+                                                  class_expr (testsuite/tests/typing-objects/dummy.ml[105,2108+18]..[105,2108+29])
+                                                    Pcl_apply
+                                                    class_expr (testsuite/tests/typing-objects/dummy.ml[105,2108+18]..[105,2108+24])
+                                                      Pcl_constr "child1" (testsuite/tests/typing-objects/dummy.ml[105,2108+18]..[105,2108+24])
+                                                      []
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (testsuite/tests/typing-objects/dummy.ml[105,2108+25]..[105,2108+29])
+                                                          Pexp_ident "self" (testsuite/tests/typing-objects/dummy.ml[105,2108+25]..[105,2108+29])
+                                                    ]
+                                                  None
+                                              class_field (testsuite/tests/typing-objects/dummy.ml[106,2138+10]..[106,2138+24])
+                                                Pcf_inherit Fresh
+                                                  class_expr (testsuite/tests/typing-objects/dummy.ml[106,2138+18]..[106,2138+24])
+                                                    Pcl_constr "child2" (testsuite/tests/typing-objects/dummy.ml[106,2138+18]..[106,2138+24])
+                                                    []
+                                                  None
+                                            ]
+                                    ]
+                                    expression (testsuite/tests/typing-objects/dummy.ml[109,2184+6]..[109,2184+7])
+                                      Pexp_ident "o" (testsuite/tests/typing-objects/dummy.ml[109,2184+6]..[109,2184+7])
+                                  None
+                          ]
+                      None
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[112,2204+0]..[115,2308+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[112,2204+9]..[115,2308+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[112,2204+9]..[115,2308+2])
+          Pexp_constant PConst_string ("\nclass just_to_see2 :\n  object method obj : < child : child1; previous : child1 option > end\n",(testsuite/tests/typing-objects/dummy.ml[112,2204+11]..[115,2308+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[117,2313+0]..[117,2313+36])
+    Pstr_type Rec
+    [
+      type_declaration "gadt" (testsuite/tests/typing-objects/dummy.ml[117,2313+5]..[117,2313+9]) (testsuite/tests/typing-objects/dummy.ml[117,2313+0]..[117,2313+36])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (testsuite/tests/typing-objects/dummy.ml[117,2313+12]..[117,2313+36])
+                "Not_really_though" (testsuite/tests/typing-objects/dummy.ml[117,2313+12]..[117,2313+29])
+                []
+                Some
+                  core_type (testsuite/tests/typing-objects/dummy.ml[117,2313+32]..[117,2313+36])
+                    Ptyp_constr "gadt" (testsuite/tests/typing-objects/dummy.ml[117,2313+32]..[117,2313+36])
+                    []
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[119,2351+0]..[126,2511+3])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[119,2351+0]..[126,2511+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "just_to_see3" (testsuite/tests/typing-objects/dummy.ml[119,2351+6]..[119,2351+18])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[119,2351+21]..[126,2511+3])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[119,2351+27]..[119,2351+33])
+                Ppat_var "self" (testsuite/tests/typing-objects/dummy.ml[119,2351+28]..[119,2351+32])
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[120,2385+2]..[120,2385+24])
+                  Pcf_method Public
+                    "previous" (testsuite/tests/typing-objects/dummy.ml[120,2385+9]..[120,2385+17])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[120,2385+20]..[120,2385+24]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[120,2385+20]..[120,2385+24])
+                        Pexp_construct "None" (testsuite/tests/typing-objects/dummy.ml[120,2385+20]..[120,2385+24])
+                        None
+                      None
+                class_field (testsuite/tests/typing-objects/dummy.ml[121,2410+2]..[125,2503+7])
+                  Pcf_method Public
+                    "child" (testsuite/tests/typing-objects/dummy.ml[121,2410+9]..[121,2410+14])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[121,2410+15]..[125,2503+7]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[121,2410+15]..[125,2503+7]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/typing-objects/dummy.ml[121,2410+15]..[121,2410+32])
+                          Ppat_construct "Not_really_though" (testsuite/tests/typing-objects/dummy.ml[121,2410+15]..[121,2410+32])
+                          None
+                        expression (testsuite/tests/typing-objects/dummy.ml[122,2445+4]..[125,2503+7])
+                          Pexp_object
+                          class_structure
+                            pattern (testsuite/tests/typing-objects/dummy.ml[122,2445+10]..[122,2445+10]) ghost
+                              Ppat_any
+                            [
+                              class_field (testsuite/tests/typing-objects/dummy.ml[123,2456+6]..[123,2456+25])
+                                Pcf_inherit Fresh
+                                  class_expr (testsuite/tests/typing-objects/dummy.ml[123,2456+14]..[123,2456+25])
+                                    Pcl_apply
+                                    class_expr (testsuite/tests/typing-objects/dummy.ml[123,2456+14]..[123,2456+20])
+                                      Pcl_constr "child1" (testsuite/tests/typing-objects/dummy.ml[123,2456+14]..[123,2456+20])
+                                      []
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/typing-objects/dummy.ml[123,2456+21]..[123,2456+25])
+                                          Pexp_ident "self" (testsuite/tests/typing-objects/dummy.ml[123,2456+21]..[123,2456+25])
+                                    ]
+                                  None
+                              class_field (testsuite/tests/typing-objects/dummy.ml[124,2482+6]..[124,2482+20])
+                                Pcf_inherit Fresh
+                                  class_expr (testsuite/tests/typing-objects/dummy.ml[124,2482+14]..[124,2482+20])
+                                    Pcl_constr "child2" (testsuite/tests/typing-objects/dummy.ml[124,2482+14]..[124,2482+20])
+                                    []
+                                  None
+                            ]
+                      None
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[127,2517+0]..[131,2662+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[127,2517+9]..[131,2662+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[127,2517+9]..[131,2662+2])
+          Pexp_constant PConst_string ("\ntype gadt = Not_really_though : gadt\nclass just_to_see3 :\n  object method child : gadt -> child1 method previous : child1 option end\n",(testsuite/tests/typing-objects/dummy.ml[127,2517+11]..[131,2662+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[133,2667+0]..[140,2827+3])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[133,2667+0]..[140,2827+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "leading_up_to" (testsuite/tests/typing-objects/dummy.ml[133,2667+6]..[133,2667+19])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[133,2667+22]..[140,2827+3])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[133,2667+28]..[133,2667+39])
+                Ppat_constraint
+                pattern (testsuite/tests/typing-objects/dummy.ml[133,2667+29]..[133,2667+33])
+                  Ppat_var "self" (testsuite/tests/typing-objects/dummy.ml[133,2667+29]..[133,2667+33])
+                core_type (testsuite/tests/typing-objects/dummy.ml[133,2667+36]..[133,2667+38])
+                  Ptyp_var a
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[134,2707+2]..[134,2707+36])
+                  Pcf_method Public
+                    "previous" (testsuite/tests/typing-objects/dummy.ml[134,2707+9]..[134,2707+17])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[134,2707+20]..[134,2707+36]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[134,2707+32]..[134,2707+36])
+                        Pexp_construct "None" (testsuite/tests/typing-objects/dummy.ml[134,2707+32]..[134,2707+36])
+                        None
+                      Some
+                        core_type (testsuite/tests/typing-objects/dummy.ml[134,2707+20]..[134,2707+29])
+                          Ptyp_constr "option" (testsuite/tests/typing-objects/dummy.ml[134,2707+23]..[134,2707+29])
+                          [
+                            core_type (testsuite/tests/typing-objects/dummy.ml[134,2707+20]..[134,2707+22])
+                              Ptyp_var a
+                          ]
+                class_field (testsuite/tests/typing-objects/dummy.ml[135,2744+2]..[139,2819+7])
+                  Pcf_method Public
+                    "child" (testsuite/tests/typing-objects/dummy.ml[135,2744+9]..[135,2744+14])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[136,2761+4]..[139,2819+7]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[136,2761+4]..[139,2819+7])
+                        Pexp_object
+                        class_structure
+                          pattern (testsuite/tests/typing-objects/dummy.ml[136,2761+10]..[136,2761+10]) ghost
+                            Ppat_any
+                          [
+                            class_field (testsuite/tests/typing-objects/dummy.ml[137,2772+6]..[137,2772+25])
+                              Pcf_inherit Fresh
+                                class_expr (testsuite/tests/typing-objects/dummy.ml[137,2772+14]..[137,2772+25])
+                                  Pcl_apply
+                                  class_expr (testsuite/tests/typing-objects/dummy.ml[137,2772+14]..[137,2772+20])
+                                    Pcl_constr "child1" (testsuite/tests/typing-objects/dummy.ml[137,2772+14]..[137,2772+20])
+                                    []
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/typing-objects/dummy.ml[137,2772+21]..[137,2772+25])
+                                        Pexp_ident "self" (testsuite/tests/typing-objects/dummy.ml[137,2772+21]..[137,2772+25])
+                                  ]
+                                None
+                            class_field (testsuite/tests/typing-objects/dummy.ml[138,2798+6]..[138,2798+20])
+                              Pcf_inherit Fresh
+                                class_expr (testsuite/tests/typing-objects/dummy.ml[138,2798+14]..[138,2798+20])
+                                  Pcl_constr "child2" (testsuite/tests/typing-objects/dummy.ml[138,2798+14]..[138,2798+20])
+                                  []
+                                None
+                          ]
+                      None
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[141,2833+0]..[149,3069+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[141,2833+9]..[149,3069+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[141,2833+9]..[149,3069+2])
+          Pexp_constant PConst_string ("\nLines 4-7, characters 4-7:\n4 | ....object\n5 |       inherit child1 self\n6 |       inherit child2\n7 |     end\nError: This object has undeclared virtual methods.\n       The following methods were not declared : previous child\n",(testsuite/tests/typing-objects/dummy.ml[141,2833+11]..[149,3069+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[151,3074+0]..[161,3302+3])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[151,3074+0]..[161,3302+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "assertion_failure" (testsuite/tests/typing-objects/dummy.ml[151,3074+6]..[151,3074+23])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[151,3074+26]..[161,3302+3])
+            Pcl_structure
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[151,3074+32]..[151,3074+43])
+                Ppat_constraint
+                pattern (testsuite/tests/typing-objects/dummy.ml[151,3074+33]..[151,3074+37])
+                  Ppat_var "self" (testsuite/tests/typing-objects/dummy.ml[151,3074+33]..[151,3074+37])
+                core_type (testsuite/tests/typing-objects/dummy.ml[151,3074+40]..[151,3074+42])
+                  Ptyp_var a
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[152,3118+2]..[152,3118+36])
+                  Pcf_method Public
+                    "previous" (testsuite/tests/typing-objects/dummy.ml[152,3118+9]..[152,3118+17])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[152,3118+20]..[152,3118+36]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[152,3118+32]..[152,3118+36])
+                        Pexp_construct "None" (testsuite/tests/typing-objects/dummy.ml[152,3118+32]..[152,3118+36])
+                        None
+                      Some
+                        core_type (testsuite/tests/typing-objects/dummy.ml[152,3118+20]..[152,3118+29])
+                          Ptyp_constr "option" (testsuite/tests/typing-objects/dummy.ml[152,3118+23]..[152,3118+29])
+                          [
+                            core_type (testsuite/tests/typing-objects/dummy.ml[152,3118+20]..[152,3118+22])
+                              Ptyp_var a
+                          ]
+                class_field (testsuite/tests/typing-objects/dummy.ml[153,3155+2]..[160,3294+7])
+                  Pcf_method Public
+                    "child" (testsuite/tests/typing-objects/dummy.ml[153,3155+9]..[153,3155+14])
+                    Concrete Fresh
+                    expression (testsuite/tests/typing-objects/dummy.ml[154,3172+4]..[160,3294+7]) ghost
+                      Pexp_poly
+                      expression (testsuite/tests/typing-objects/dummy.ml[154,3172+4]..[160,3294+7])
+                        Pexp_object
+                        class_structure
+                          pattern (testsuite/tests/typing-objects/dummy.ml[154,3172+10]..[154,3172+10]) ghost
+                            Ppat_any
+                          [
+                            class_field (testsuite/tests/typing-objects/dummy.ml[155,3183+6]..[155,3183+25])
+                              Pcf_inherit Fresh
+                                class_expr (testsuite/tests/typing-objects/dummy.ml[155,3183+14]..[155,3183+25])
+                                  Pcl_apply
+                                  class_expr (testsuite/tests/typing-objects/dummy.ml[155,3183+14]..[155,3183+20])
+                                    Pcl_constr "child1" (testsuite/tests/typing-objects/dummy.ml[155,3183+14]..[155,3183+20])
+                                    []
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/typing-objects/dummy.ml[155,3183+21]..[155,3183+25])
+                                        Pexp_ident "self" (testsuite/tests/typing-objects/dummy.ml[155,3183+21]..[155,3183+25])
+                                  ]
+                                None
+                            class_field (testsuite/tests/typing-objects/dummy.ml[156,3209+6]..[156,3209+20])
+                              Pcf_inherit Fresh
+                                class_expr (testsuite/tests/typing-objects/dummy.ml[156,3209+14]..[156,3209+20])
+                                  Pcl_constr "child2" (testsuite/tests/typing-objects/dummy.ml[156,3209+14]..[156,3209+20])
+                                  []
+                                None
+                            class_field (testsuite/tests/typing-objects/dummy.ml[158,3231+6]..[158,3231+28])
+                              Pcf_method Public
+                                "previous" (testsuite/tests/typing-objects/dummy.ml[158,3231+13]..[158,3231+21])
+                                Concrete Fresh
+                                expression (testsuite/tests/typing-objects/dummy.ml[158,3231+24]..[158,3231+28]) ghost
+                                  Pexp_poly
+                                  expression (testsuite/tests/typing-objects/dummy.ml[158,3231+24]..[158,3231+28])
+                                    Pexp_construct "None" (testsuite/tests/typing-objects/dummy.ml[158,3231+24]..[158,3231+28])
+                                    None
+                                  None
+                            class_field (testsuite/tests/typing-objects/dummy.ml[159,3260+6]..[159,3260+33])
+                              Pcf_method Public
+                                "child" (testsuite/tests/typing-objects/dummy.ml[159,3260+13]..[159,3260+18])
+                                Concrete Fresh
+                                expression (testsuite/tests/typing-objects/dummy.ml[159,3260+21]..[159,3260+33]) ghost
+                                  Pexp_poly
+                                  expression (testsuite/tests/typing-objects/dummy.ml[159,3260+21]..[159,3260+33])
+                                    Pexp_assert
+                                    expression (testsuite/tests/typing-objects/dummy.ml[159,3260+28]..[159,3260+33])
+                                      Pexp_construct "false" (testsuite/tests/typing-objects/dummy.ml[159,3260+28]..[159,3260+33])
+                                      None
+                                  None
+                          ]
+                      None
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[162,3308+0]..[175,3716+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[162,3308+9]..[175,3716+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[162,3308+9]..[175,3716+2])
+          Pexp_constant PConst_string ("\nLines 4-10, characters 4-7:\n 4 | ....object\n 5 |       inherit child1 self\n 6 |       inherit child2\n 7 |\n 8 |       method previous = None\n 9 |       method child = assert false\n10 |     end\nError: Cannot close type of object literal:\n       < child : '_weak1; previous : 'a option; _.. > as 'a\n       it has been unified with the self type of a class that is not yet\n       completely defined.\n",(testsuite/tests/typing-objects/dummy.ml[162,3308+11]..[175,3716+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[178,3751+0]..[181,3855+3])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[178,3751+0]..[181,3855+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[178,3751+6]..[178,3751+29])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[178,3751+30]..[181,3855+3])
+            Pcl_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/typing-objects/dummy.ml[178,3751+30]..[178,3751+33])
+              Ppat_var "app" (testsuite/tests/typing-objects/dummy.ml[178,3751+30]..[178,3751+33])
+            class_expr (testsuite/tests/typing-objects/dummy.ml[178,3751+36]..[181,3855+3])
+              Pcl_structure
+              class_structure
+                pattern (testsuite/tests/typing-objects/dummy.ml[178,3751+42]..[178,3751+48])
+                  Ppat_var "self" (testsuite/tests/typing-objects/dummy.ml[178,3751+43]..[178,3751+47])
+                [
+                  class_field (testsuite/tests/typing-objects/dummy.ml[179,3800+2]..[180,3829+25])
+                    Pcf_method Public
+                      "invalidate" (testsuite/tests/typing-objects/dummy.ml[179,3800+9]..[179,3800+19])
+                      Concrete Fresh
+                      expression (testsuite/tests/typing-objects/dummy.ml[179,3800+22]..[180,3829+25]) ghost
+                        Pexp_poly
+                        expression (testsuite/tests/typing-objects/dummy.ml[180,3829+4]..[180,3829+25])
+                          Pexp_apply
+                          expression (testsuite/tests/typing-objects/dummy.ml[180,3829+4]..[180,3829+20])
+                            Pexp_send "redrawWidget"
+                            expression (testsuite/tests/typing-objects/dummy.ml[180,3829+4]..[180,3829+7])
+                              Pexp_ident "app" (testsuite/tests/typing-objects/dummy.ml[180,3829+4]..[180,3829+7])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/typing-objects/dummy.ml[180,3829+21]..[180,3829+25])
+                                Pexp_ident "self" (testsuite/tests/typing-objects/dummy.ml[180,3829+21]..[180,3829+25])
+                          ]
+                        Some
+                          core_type (testsuite/tests/typing-objects/dummy.ml[179,3800+22]..[179,3800+26])
+                            Ptyp_constr "unit" (testsuite/tests/typing-objects/dummy.ml[179,3800+22]..[179,3800+26])
+                            []
+                ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[182,3861+0]..[186,3987+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[182,3861+9]..[186,3987+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[182,3861+9]..[186,3987+2])
+          Pexp_constant PConst_string ("\nclass parameter_contains_self :\n  < redrawWidget : 'a -> unit; .. > ->\n  object ('a) method invalidate : unit end\n",(testsuite/tests/typing-objects/dummy.ml[182,3861+11]..[186,3987+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[188,3992+0]..[191,4125+5])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[188,3992+0]..[191,4125+5])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "closes_via_inheritance" (testsuite/tests/typing-objects/dummy.ml[188,3992+6]..[188,3992+28])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[188,3992+29]..[191,4125+5])
+            Pcl_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/typing-objects/dummy.ml[188,3992+29]..[188,3992+34])
+              Ppat_var "param" (testsuite/tests/typing-objects/dummy.ml[188,3992+29]..[188,3992+34])
+            class_expr (testsuite/tests/typing-objects/dummy.ml[189,4029+2]..[191,4125+5])
+              Pcl_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/typing-objects/dummy.ml[189,4029+6]..[189,4029+7])
+                    Ppat_any
+                  expression (testsuite/tests/typing-objects/dummy.ml[189,4029+10]..[189,4029+43])
+                    Pexp_apply
+                    expression (testsuite/tests/typing-objects/dummy.ml[189,4029+10]..[189,4029+37])
+                      Pexp_new "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[189,4029+14]..[189,4029+37])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/typing-objects/dummy.ml[189,4029+38]..[189,4029+43])
+                          Pexp_ident "param" (testsuite/tests/typing-objects/dummy.ml[189,4029+38]..[189,4029+43])
+                    ]
+              ]
+              class_expr (testsuite/tests/typing-objects/dummy.ml[189,4029+47]..[191,4125+5])
+                Pcl_structure
+                class_structure
+                  pattern (testsuite/tests/typing-objects/dummy.ml[189,4029+53]..[189,4029+53]) ghost
+                    Ppat_any
+                  [
+                    class_field (testsuite/tests/typing-objects/dummy.ml[190,4083+4]..[190,4083+41])
+                      Pcf_inherit Fresh
+                        class_expr (testsuite/tests/typing-objects/dummy.ml[190,4083+12]..[190,4083+41])
+                          Pcl_apply
+                          class_expr (testsuite/tests/typing-objects/dummy.ml[190,4083+12]..[190,4083+35])
+                            Pcl_constr "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[190,4083+12]..[190,4083+35])
+                            []
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/typing-objects/dummy.ml[190,4083+36]..[190,4083+41])
+                                Pexp_ident "param" (testsuite/tests/typing-objects/dummy.ml[190,4083+36]..[190,4083+41])
+                          ]
+                        None
+                  ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[192,4133+0]..[203,4653+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[192,4133+9]..[203,4653+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[192,4133+9]..[203,4653+2])
+          Pexp_constant PConst_string ("\nLine 3, characters 36-41:\n3 |     inherit parameter_contains_self param\n                                        ^^^^^\nError: This expression has type\n         < redrawWidget : parameter_contains_self -> unit; .. >\n       but an expression was expected of type\n         < redrawWidget : < invalidate : unit; .. > -> unit; .. >\n       Type parameter_contains_self = < invalidate : unit >\n       is not compatible with type < invalidate : unit; .. >\n       Self type cannot be unified with a closed object type\n",(testsuite/tests/typing-objects/dummy.ml[192,4133+11]..[203,4653+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[205,4658+0]..[207,4742+31])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[205,4658+0]..[207,4742+31])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "closes_via_application" (testsuite/tests/typing-objects/dummy.ml[205,4658+6]..[205,4658+28])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[205,4658+29]..[207,4742+31])
+            Pcl_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/typing-objects/dummy.ml[205,4658+29]..[205,4658+34])
+              Ppat_var "param" (testsuite/tests/typing-objects/dummy.ml[205,4658+29]..[205,4658+34])
+            class_expr (testsuite/tests/typing-objects/dummy.ml[206,4695+2]..[207,4742+31])
+              Pcl_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/typing-objects/dummy.ml[206,4695+6]..[206,4695+7])
+                    Ppat_any
+                  expression (testsuite/tests/typing-objects/dummy.ml[206,4695+10]..[206,4695+43])
+                    Pexp_apply
+                    expression (testsuite/tests/typing-objects/dummy.ml[206,4695+10]..[206,4695+37])
+                      Pexp_new "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[206,4695+14]..[206,4695+37])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/typing-objects/dummy.ml[206,4695+38]..[206,4695+43])
+                          Pexp_ident "param" (testsuite/tests/typing-objects/dummy.ml[206,4695+38]..[206,4695+43])
+                    ]
+              ]
+              class_expr (testsuite/tests/typing-objects/dummy.ml[207,4742+2]..[207,4742+31])
+                Pcl_apply
+                class_expr (testsuite/tests/typing-objects/dummy.ml[207,4742+2]..[207,4742+25])
+                  Pcl_constr "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[207,4742+2]..[207,4742+25])
+                  []
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/typing-objects/dummy.ml[207,4742+26]..[207,4742+31])
+                      Pexp_ident "param" (testsuite/tests/typing-objects/dummy.ml[207,4742+26]..[207,4742+31])
+                ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[208,4776+0]..[219,5278+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[208,4776+9]..[219,5278+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[208,4776+9]..[219,5278+2])
+          Pexp_constant PConst_string ("\nLine 3, characters 26-31:\n3 |   parameter_contains_self param;;\n                              ^^^^^\nError: This expression has type\n         < redrawWidget : parameter_contains_self -> unit; .. >\n       but an expression was expected of type\n         < redrawWidget : < invalidate : unit; .. > -> unit; .. >\n       Type parameter_contains_self = < invalidate : unit >\n       is not compatible with type < invalidate : unit; .. >\n       Self type cannot be unified with a closed object type\n",(testsuite/tests/typing-objects/dummy.ml[208,4776+11]..[219,5278+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[221,5283+0]..[227,5429+4])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-objects/dummy.ml[221,5283+4]..[221,5283+27])
+          Ppat_var "escapes_via_inheritance" (testsuite/tests/typing-objects/dummy.ml[221,5283+4]..[221,5283+27])
+        expression (testsuite/tests/typing-objects/dummy.ml[221,5283+28]..[227,5429+4]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-objects/dummy.ml[221,5283+28]..[221,5283+33])
+            Ppat_var "param" (testsuite/tests/typing-objects/dummy.ml[221,5283+28]..[221,5283+33])
+          expression (testsuite/tests/typing-objects/dummy.ml[222,5319+2]..[227,5429+4])
+            Pexp_letmodule "Local" (testsuite/tests/typing-objects/dummy.ml[222,5319+13]..[222,5319+18])
+            module_expr (testsuite/tests/typing-objects/dummy.ml[222,5319+21]..[226,5420+5])
+              Pmod_structure
+              [
+                structure_item (testsuite/tests/typing-objects/dummy.ml[223,5347+4]..[225,5412+7])
+                  Pstr_class
+                  [
+                    class_declaration (testsuite/tests/typing-objects/dummy.ml[223,5347+4]..[225,5412+7])
+                      pci_virt = Concrete
+                      pci_params =
+                        []
+                      pci_name = "c" (testsuite/tests/typing-objects/dummy.ml[223,5347+10]..[223,5347+11])
+                      pci_expr =
+                        class_expr (testsuite/tests/typing-objects/dummy.ml[223,5347+14]..[225,5412+7])
+                          Pcl_structure
+                          class_structure
+                            pattern (testsuite/tests/typing-objects/dummy.ml[223,5347+20]..[223,5347+20]) ghost
+                              Ppat_any
+                            [
+                              class_field (testsuite/tests/typing-objects/dummy.ml[224,5368+6]..[224,5368+43])
+                                Pcf_inherit Fresh
+                                  class_expr (testsuite/tests/typing-objects/dummy.ml[224,5368+14]..[224,5368+43])
+                                    Pcl_apply
+                                    class_expr (testsuite/tests/typing-objects/dummy.ml[224,5368+14]..[224,5368+37])
+                                      Pcl_constr "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[224,5368+14]..[224,5368+37])
+                                      []
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/typing-objects/dummy.ml[224,5368+38]..[224,5368+43])
+                                          Pexp_ident "param" (testsuite/tests/typing-objects/dummy.ml[224,5368+38]..[224,5368+43])
+                                    ]
+                                  None
+                            ]
+                  ]
+              ]
+            expression (testsuite/tests/typing-objects/dummy.ml[227,5429+2]..[227,5429+4])
+              Pexp_construct "()" (testsuite/tests/typing-objects/dummy.ml[227,5429+2]..[227,5429+4])
+              None
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[228,5436+0]..[235,5751+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[228,5436+9]..[235,5751+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[228,5436+9]..[235,5751+2])
+          Pexp_constant PConst_string ("\nLine 4, characters 38-43:\n4 |       inherit parameter_contains_self param\n                                          ^^^^^\nError: This expression has type 'a but an expression was expected of type\n         < redrawWidget : < invalidate : unit; .. > -> unit; .. >\n       Self type cannot escape its class\n",(testsuite/tests/typing-objects/dummy.ml[228,5436+11]..[235,5751+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[237,5756+0]..[241,5873+4])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-objects/dummy.ml[237,5756+4]..[237,5756+27])
+          Ppat_var "escapes_via_application" (testsuite/tests/typing-objects/dummy.ml[237,5756+4]..[237,5756+27])
+        expression (testsuite/tests/typing-objects/dummy.ml[237,5756+28]..[241,5873+4]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-objects/dummy.ml[237,5756+28]..[237,5756+33])
+            Ppat_var "param" (testsuite/tests/typing-objects/dummy.ml[237,5756+28]..[237,5756+33])
+          expression (testsuite/tests/typing-objects/dummy.ml[238,5792+2]..[241,5873+4])
+            Pexp_letmodule "Local" (testsuite/tests/typing-objects/dummy.ml[238,5792+13]..[238,5792+18])
+            module_expr (testsuite/tests/typing-objects/dummy.ml[238,5792+21]..[240,5864+5])
+              Pmod_structure
+              [
+                structure_item (testsuite/tests/typing-objects/dummy.ml[239,5820+4]..[239,5820+43])
+                  Pstr_class
+                  [
+                    class_declaration (testsuite/tests/typing-objects/dummy.ml[239,5820+4]..[239,5820+43])
+                      pci_virt = Concrete
+                      pci_params =
+                        []
+                      pci_name = "c" (testsuite/tests/typing-objects/dummy.ml[239,5820+10]..[239,5820+11])
+                      pci_expr =
+                        class_expr (testsuite/tests/typing-objects/dummy.ml[239,5820+14]..[239,5820+43])
+                          Pcl_apply
+                          class_expr (testsuite/tests/typing-objects/dummy.ml[239,5820+14]..[239,5820+37])
+                            Pcl_constr "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[239,5820+14]..[239,5820+37])
+                            []
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/typing-objects/dummy.ml[239,5820+38]..[239,5820+43])
+                                Pexp_ident "param" (testsuite/tests/typing-objects/dummy.ml[239,5820+38]..[239,5820+43])
+                          ]
+                  ]
+              ]
+            expression (testsuite/tests/typing-objects/dummy.ml[241,5873+2]..[241,5873+4])
+              Pexp_construct "()" (testsuite/tests/typing-objects/dummy.ml[241,5873+2]..[241,5873+4])
+              None
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[242,5880+0]..[249,6195+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[242,5880+9]..[249,6195+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[242,5880+9]..[249,6195+2])
+          Pexp_constant PConst_string ("\nLine 3, characters 38-43:\n3 |     class c = parameter_contains_self param\n                                          ^^^^^\nError: This expression has type 'a but an expression was expected of type\n         < redrawWidget : < invalidate : unit; .. > -> unit; .. >\n       Self type cannot escape its class\n",(testsuite/tests/typing-objects/dummy.ml[242,5880+11]..[249,6195+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[251,6200+0]..[254,6343+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-objects/dummy.ml[251,6200+4]..[251,6200+36])
+          Ppat_var "can_close_object_via_inheritance" (testsuite/tests/typing-objects/dummy.ml[251,6200+4]..[251,6200+36])
+        expression (testsuite/tests/typing-objects/dummy.ml[251,6200+37]..[254,6343+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-objects/dummy.ml[251,6200+37]..[251,6200+42])
+            Ppat_var "param" (testsuite/tests/typing-objects/dummy.ml[251,6200+37]..[251,6200+42])
+          expression (testsuite/tests/typing-objects/dummy.ml[252,6245+4]..[254,6343+5])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/typing-objects/dummy.ml[252,6245+8]..[252,6245+9])
+                  Ppat_any
+                expression (testsuite/tests/typing-objects/dummy.ml[252,6245+12]..[252,6245+45])
+                  Pexp_apply
+                  expression (testsuite/tests/typing-objects/dummy.ml[252,6245+12]..[252,6245+39])
+                    Pexp_new "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[252,6245+16]..[252,6245+39])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/typing-objects/dummy.ml[252,6245+40]..[252,6245+45])
+                        Pexp_ident "param" (testsuite/tests/typing-objects/dummy.ml[252,6245+40]..[252,6245+45])
+                  ]
+            ]
+            expression (testsuite/tests/typing-objects/dummy.ml[252,6245+49]..[254,6343+5])
+              Pexp_object
+              class_structure
+                pattern (testsuite/tests/typing-objects/dummy.ml[252,6245+55]..[252,6245+55]) ghost
+                  Ppat_any
+                [
+                  class_field (testsuite/tests/typing-objects/dummy.ml[253,6301+4]..[253,6301+41])
+                    Pcf_inherit Fresh
+                      class_expr (testsuite/tests/typing-objects/dummy.ml[253,6301+12]..[253,6301+41])
+                        Pcl_apply
+                        class_expr (testsuite/tests/typing-objects/dummy.ml[253,6301+12]..[253,6301+35])
+                          Pcl_constr "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[253,6301+12]..[253,6301+35])
+                          []
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/typing-objects/dummy.ml[253,6301+36]..[253,6301+41])
+                              Pexp_ident "param" (testsuite/tests/typing-objects/dummy.ml[253,6301+36]..[253,6301+41])
+                        ]
+                      None
+                ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[255,6351+0]..[266,6871+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[255,6351+9]..[266,6871+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[255,6351+9]..[266,6871+2])
+          Pexp_constant PConst_string ("\nLine 3, characters 36-41:\n3 |     inherit parameter_contains_self param\n                                        ^^^^^\nError: This expression has type\n         < redrawWidget : parameter_contains_self -> unit; .. >\n       but an expression was expected of type\n         < redrawWidget : < invalidate : unit; .. > -> unit; .. >\n       Type parameter_contains_self = < invalidate : unit >\n       is not compatible with type < invalidate : unit; .. >\n       Self type cannot be unified with a closed object type\n",(testsuite/tests/typing-objects/dummy.ml[255,6351+11]..[266,6871+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[268,6876+0]..[270,6971+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-objects/dummy.ml[268,6876+4]..[268,6876+37])
+          Ppat_var "can_escape_object_via_inheritance" (testsuite/tests/typing-objects/dummy.ml[268,6876+4]..[268,6876+37])
+        expression (testsuite/tests/typing-objects/dummy.ml[268,6876+38]..[270,6971+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/typing-objects/dummy.ml[268,6876+38]..[268,6876+43])
+            Ppat_var "param" (testsuite/tests/typing-objects/dummy.ml[268,6876+38]..[268,6876+43])
+          expression (testsuite/tests/typing-objects/dummy.ml[268,6876+46]..[270,6971+5])
+            Pexp_object
+            class_structure
+              pattern (testsuite/tests/typing-objects/dummy.ml[268,6876+52]..[268,6876+52]) ghost
+                Ppat_any
+              [
+                class_field (testsuite/tests/typing-objects/dummy.ml[269,6929+4]..[269,6929+41])
+                  Pcf_inherit Fresh
+                    class_expr (testsuite/tests/typing-objects/dummy.ml[269,6929+12]..[269,6929+41])
+                      Pcl_apply
+                      class_expr (testsuite/tests/typing-objects/dummy.ml[269,6929+12]..[269,6929+35])
+                        Pcl_constr "parameter_contains_self" (testsuite/tests/typing-objects/dummy.ml[269,6929+12]..[269,6929+35])
+                        []
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/typing-objects/dummy.ml[269,6929+36]..[269,6929+41])
+                            Pexp_ident "param" (testsuite/tests/typing-objects/dummy.ml[269,6929+36]..[269,6929+41])
+                      ]
+                    None
+              ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[271,6979+0]..[275,7125+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[271,6979+9]..[275,7125+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[271,6979+9]..[275,7125+2])
+          Pexp_constant PConst_string ("\nval can_escape_object_via_inheritance :\n  < redrawWidget : parameter_contains_self -> unit; .. > ->\n  parameter_contains_self = <fun>\n",(testsuite/tests/typing-objects/dummy.ml[271,6979+11]..[275,7125+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[277,7130+0]..[279,7204+3])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-objects/dummy.ml[277,7130+4]..[277,7130+31])
+          Ppat_var "can_close_object_explicitly" (testsuite/tests/typing-objects/dummy.ml[277,7130+4]..[277,7130+31])
+        expression (testsuite/tests/typing-objects/dummy.ml[277,7130+34]..[279,7204+3])
+          Pexp_object
+          class_structure
+            pattern (testsuite/tests/typing-objects/dummy.ml[277,7130+41]..[277,7130+58])
+              Ppat_constraint
+              pattern (testsuite/tests/typing-objects/dummy.ml[277,7130+42]..[277,7130+43])
+                Ppat_any
+              core_type (testsuite/tests/typing-objects/dummy.ml[277,7130+46]..[277,7130+57])
+                Ptyp_object Closed
+                  method i
+                    core_type (testsuite/tests/typing-objects/dummy.ml[277,7130+52]..[277,7130+55])
+                      Ptyp_constr "int" (testsuite/tests/typing-objects/dummy.ml[277,7130+52]..[277,7130+55])
+                      []
+            [
+              class_field (testsuite/tests/typing-objects/dummy.ml[278,7189+2]..[278,7189+14])
+                Pcf_method Public
+                  "i" (testsuite/tests/typing-objects/dummy.ml[278,7189+9]..[278,7189+10])
+                  Concrete Fresh
+                  expression (testsuite/tests/typing-objects/dummy.ml[278,7189+13]..[278,7189+14]) ghost
+                    Pexp_poly
+                    expression (testsuite/tests/typing-objects/dummy.ml[278,7189+13]..[278,7189+14])
+                      Pexp_constant PConst_int (5,None)
+                    None
+            ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[280,7210+0]..[282,7276+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[280,7210+9]..[282,7276+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[280,7210+9]..[282,7276+2])
+          Pexp_constant PConst_string ("\nval can_close_object_explicitly : < i : int > = <obj>\n",(testsuite/tests/typing-objects/dummy.ml[280,7210+11]..[282,7276+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[284,7281+0]..[288,7400+3])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/typing-objects/dummy.ml[284,7281+4]..[284,7281+51])
+          Ppat_var "cannot_close_object_explicitly_with_inheritance" (testsuite/tests/typing-objects/dummy.ml[284,7281+4]..[284,7281+51])
+        expression (testsuite/tests/typing-objects/dummy.ml[284,7281+54]..[288,7400+3])
+          Pexp_object
+          class_structure
+            pattern (testsuite/tests/typing-objects/dummy.ml[284,7281+60]..[284,7281+60]) ghost
+              Ppat_any
+            [
+              class_field (testsuite/tests/typing-objects/dummy.ml[285,7342+2]..[287,7394+5])
+                Pcf_inherit Fresh
+                  class_expr (testsuite/tests/typing-objects/dummy.ml[285,7342+10]..[287,7394+5])
+                    Pcl_structure
+                    class_structure
+                      pattern (testsuite/tests/typing-objects/dummy.ml[285,7342+17]..[285,7342+34])
+                        Ppat_constraint
+                        pattern (testsuite/tests/typing-objects/dummy.ml[285,7342+18]..[285,7342+19])
+                          Ppat_any
+                        core_type (testsuite/tests/typing-objects/dummy.ml[285,7342+22]..[285,7342+33])
+                          Ptyp_object Closed
+                            method i
+                              core_type (testsuite/tests/typing-objects/dummy.ml[285,7342+28]..[285,7342+31])
+                                Ptyp_constr "int" (testsuite/tests/typing-objects/dummy.ml[285,7342+28]..[285,7342+31])
+                                []
+                      [
+                        class_field (testsuite/tests/typing-objects/dummy.ml[286,7377+4]..[286,7377+16])
+                          Pcf_method Public
+                            "i" (testsuite/tests/typing-objects/dummy.ml[286,7377+11]..[286,7377+12])
+                            Concrete Fresh
+                            expression (testsuite/tests/typing-objects/dummy.ml[286,7377+15]..[286,7377+16]) ghost
+                              Pexp_poly
+                              expression (testsuite/tests/typing-objects/dummy.ml[286,7377+15]..[286,7377+16])
+                                Pexp_constant PConst_int (5,None)
+                              None
+                      ]
+                  None
+            ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[289,7406+0]..[295,7611+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[289,7406+9]..[295,7611+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[289,7406+9]..[295,7611+2])
+          Pexp_constant PConst_string ("\nLine 2, characters 17-34:\n2 |   inherit object (_ : < i : int >)\n                     ^^^^^^^^^^^^^^^^^\nError: This pattern cannot match self: it only matches values of type\n       < i : int >\n",(testsuite/tests/typing-objects/dummy.ml[289,7406+11]..[295,7611+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[297,7616+0]..[298,7648+75])
+    Pstr_class
+    [
+      class_declaration (testsuite/tests/typing-objects/dummy.ml[297,7616+0]..[298,7648+75])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "closes_after_constraint" (testsuite/tests/typing-objects/dummy.ml[297,7616+6]..[297,7616+29])
+        pci_expr =
+          class_expr (testsuite/tests/typing-objects/dummy.ml[298,7648+2]..[298,7648+75])
+            Pcl_apply
+            class_expr (testsuite/tests/typing-objects/dummy.ml[298,7648+2]..[298,7648+62])
+              Pcl_constraint
+              class_expr (testsuite/tests/typing-objects/dummy.ml[298,7648+8]..[298,7648+37])
+                Pcl_fun
+                Nolabel
+                None
+                pattern (testsuite/tests/typing-objects/dummy.ml[298,7648+8]..[298,7648+16])
+                  Ppat_constraint
+                  pattern (testsuite/tests/typing-objects/dummy.ml[298,7648+9]..[298,7648+10])
+                    Ppat_var "x" (testsuite/tests/typing-objects/dummy.ml[298,7648+9]..[298,7648+10])
+                  core_type (testsuite/tests/typing-objects/dummy.ml[298,7648+13]..[298,7648+15])
+                    Ptyp_var a
+                class_expr (testsuite/tests/typing-objects/dummy.ml[298,7648+20]..[298,7648+37])
+                  Pcl_structure
+                  class_structure
+                    pattern (testsuite/tests/typing-objects/dummy.ml[298,7648+27]..[298,7648+33])
+                      Ppat_constraint
+                      pattern (testsuite/tests/typing-objects/dummy.ml[298,7648+28]..[298,7648+29])
+                        Ppat_any
+                      core_type (testsuite/tests/typing-objects/dummy.ml[298,7648+30]..[298,7648+32])
+                        Ptyp_var a
+                    []
+              class_type (testsuite/tests/typing-objects/dummy.ml[298,7648+41]..[298,7648+61])
+                Pcty_arrow
+                Nolabel
+                core_type (testsuite/tests/typing-objects/dummy.ml[298,7648+41]..[298,7648+43])
+                  Ptyp_var a
+                class_type (testsuite/tests/typing-objects/dummy.ml[298,7648+47]..[298,7648+61])
+                  Pcty_signature
+                  class_signature
+                    core_type (testsuite/tests/typing-objects/dummy.ml[298,7648+54]..[298,7648+56])
+                      Ptyp_var a
+                    []
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/typing-objects/dummy.ml[298,7648+63]..[298,7648+75])
+                  Pexp_object
+                  class_structure
+                    pattern (testsuite/tests/typing-objects/dummy.ml[298,7648+70]..[298,7648+70]) ghost
+                      Ppat_any
+                    []
+            ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[299,7726+0]..[306,8079+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[299,7726+9]..[306,8079+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[299,7726+9]..[306,8079+2])
+          Pexp_constant PConst_string ("\nLine 2, characters 63-75:\n2 |   ((fun (x : 'a) -> object (_:'a) end) : 'a -> object('a) end) (object end);;\n                                                                   ^^^^^^^^^^^^\nError: This expression has type <  > but an expression was expected of type\n         < .. >\n       Self type cannot be unified with a closed object type\n",(testsuite/tests/typing-objects/dummy.ml[299,7726+11]..[306,8079+0]),Some "")
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[308,8086+0]..[308,8086+36])
+    Pstr_class_type
+    [
+      class_type_declaration (testsuite/tests/typing-objects/dummy.ml[308,8086+0]..[308,8086+36])
+        pci_virt = Concrete
+        pci_params =
+          [
+            core_type (testsuite/tests/typing-objects/dummy.ml[308,8086+12]..[308,8086+14])
+              Ptyp_var a
+          ]
+        pci_name = "ct" (testsuite/tests/typing-objects/dummy.ml[308,8086+16]..[308,8086+18])
+        pci_expr =
+          class_type (testsuite/tests/typing-objects/dummy.ml[308,8086+21]..[308,8086+36])
+            Pcty_signature
+            class_signature
+              core_type (testsuite/tests/typing-objects/dummy.ml[308,8086+29]..[308,8086+31])
+                Ptyp_var a
+              []
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[309,8123+0]..[309,8123+52])
+    Pstr_class_type
+    [
+      class_type_declaration (testsuite/tests/typing-objects/dummy.ml[309,8123+0]..[309,8123+52])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "closes_via_application" (testsuite/tests/typing-objects/dummy.ml[309,8123+11]..[309,8123+33])
+        pci_expr =
+          class_type (testsuite/tests/typing-objects/dummy.ml[309,8123+36]..[309,8123+52])
+            Pcty_constr "ct" (testsuite/tests/typing-objects/dummy.ml[309,8123+50]..[309,8123+52])
+            [
+              core_type (testsuite/tests/typing-objects/dummy.ml[309,8123+38]..[309,8123+47])
+                Ptyp_object Closed
+                  method m
+                    core_type (testsuite/tests/typing-objects/dummy.ml[309,8123+43]..[309,8123+46])
+                      Ptyp_constr "int" (testsuite/tests/typing-objects/dummy.ml[309,8123+43]..[309,8123+46])
+                      []
+            ]
+    ]
+  structure_item (testsuite/tests/typing-objects/dummy.ml[310,8178+0]..[318,8543+3])
+    Pstr_extension "expect"
+    [
+      structure_item (testsuite/tests/typing-objects/dummy.ml[310,8178+9]..[318,8543+2])
+        Pstr_eval
+        expression (testsuite/tests/typing-objects/dummy.ml[310,8178+9]..[318,8543+2])
+          Pexp_constant PConst_string ("\nclass type ['a] ct = object ('a) constraint 'a = < .. > end\nLine 2, characters 38-47:\n2 | class type closes_via_application = [ <m : int> ] ct;;\n                                          ^^^^^^^^^\nError: The type parameter < m : int >\n       does not meet its constraint: it should be < .. >\n       Self type cannot be unified with a closed object type\n",(testsuite/tests/typing-objects/dummy.ml[310,8178+11]..[318,8543+0]),Some "")
+    ]
+]
+

@@ -1,0 +1,411 @@
+[
+  structure_item (testsuite/tests/backtrace/backtrace_effects.ml[7,76+0]..[7,76+11])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/backtrace/backtrace_effects.ml[7,76+5]..[7,76+11])
+      Pmod_ident "Effect" (testsuite/tests/backtrace/backtrace_effects.ml[7,76+5]..[7,76+11])
+  structure_item (testsuite/tests/backtrace/backtrace_effects.ml[8,88+0]..[8,88+16])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/backtrace/backtrace_effects.ml[8,88+5]..[8,88+16])
+      Pmod_ident "Effect.Deep" (testsuite/tests/backtrace/backtrace_effects.ml[8,88+5]..[8,88+16])
+  structure_item (testsuite/tests/backtrace/backtrace_effects.ml[10,106+0]..[10,106+22])
+    Pstr_typext
+    type_extension
+      ptyext_path = "t" (testsuite/tests/backtrace/backtrace_effects.ml[10,106+7]..[10,106+8])
+      ptyext_params =
+        [
+          core_type (testsuite/tests/backtrace/backtrace_effects.ml[10,106+5]..[10,106+6])
+            Ptyp_any
+        ]
+      ptyext_constructors =
+        [
+          extension_constructor (testsuite/tests/backtrace/backtrace_effects.ml[10,106+12]..[10,106+22])
+            pext_name = "E"
+            pext_kind =
+              Pext_decl
+                []
+                Some
+                  core_type (testsuite/tests/backtrace/backtrace_effects.ml[10,106+16]..[10,106+22])
+                    Ptyp_constr "t" (testsuite/tests/backtrace/backtrace_effects.ml[10,106+21]..[10,106+22])
+                    [
+                      core_type (testsuite/tests/backtrace/backtrace_effects.ml[10,106+16]..[10,106+20])
+                        Ptyp_constr "unit" (testsuite/tests/backtrace/backtrace_effects.ml[10,106+16]..[10,106+20])
+                        []
+                    ]
+        ]
+      ptyext_private = Public
+  structure_item (testsuite/tests/backtrace/backtrace_effects.ml[12,130+0]..[22,396+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/backtrace/backtrace_effects.ml[12,130+4]..[12,130+7])
+          Ppat_var "bar" (testsuite/tests/backtrace/backtrace_effects.ml[12,130+4]..[12,130+7])
+        expression (testsuite/tests/backtrace/backtrace_effects.ml[12,130+8]..[22,396+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/backtrace/backtrace_effects.ml[12,130+8]..[12,130+9])
+            Ppat_var "i" (testsuite/tests/backtrace/backtrace_effects.ml[12,130+8]..[12,130+9])
+          expression (testsuite/tests/backtrace/backtrace_effects.ml[13,142+2]..[22,396+5])
+            Pexp_ifthenelse
+            expression (testsuite/tests/backtrace/backtrace_effects.ml[13,142+5]..[13,142+10])
+              Pexp_apply
+              expression (testsuite/tests/backtrace/backtrace_effects.ml[13,142+7]..[13,142+8])
+                Pexp_ident "<" (testsuite/tests/backtrace/backtrace_effects.ml[13,142+7]..[13,142+8])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/backtrace/backtrace_effects.ml[13,142+5]..[13,142+6])
+                    Pexp_ident "i" (testsuite/tests/backtrace/backtrace_effects.ml[13,142+5]..[13,142+6])
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/backtrace/backtrace_effects.ml[13,142+9]..[13,142+10])
+                    Pexp_constant PConst_int (0,None)
+              ]
+            expression (testsuite/tests/backtrace/backtrace_effects.ml[13,142+16]..[16,214+5])
+              Pexp_sequence
+              expression (testsuite/tests/backtrace/backtrace_effects.ml[14,164+4]..[14,164+33])
+                Pexp_apply
+                expression (testsuite/tests/backtrace/backtrace_effects.ml[14,164+4]..[14,164+17])
+                  Pexp_ident "print_endline" (testsuite/tests/backtrace/backtrace_effects.ml[14,164+4]..[14,164+17])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/backtrace/backtrace_effects.ml[14,164+18]..[14,164+33])
+                      Pexp_constant PConst_string("(** raise **)",(testsuite/tests/backtrace/backtrace_effects.ml[14,164+19]..[14,164+32]),None)
+                ]
+              expression (testsuite/tests/backtrace/backtrace_effects.ml[15,199+4]..[15,199+14])
+                Pexp_apply
+                expression (testsuite/tests/backtrace/backtrace_effects.ml[15,199+4]..[15,199+9])
+                  Pexp_ident "raise" (testsuite/tests/backtrace/backtrace_effects.ml[15,199+4]..[15,199+9])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/backtrace/backtrace_effects.ml[15,199+10]..[15,199+14])
+                      Pexp_construct "Exit" (testsuite/tests/backtrace/backtrace_effects.ml[15,199+10]..[15,199+14])
+                      None
+                ]
+            Some
+              expression (testsuite/tests/backtrace/backtrace_effects.ml[16,214+11]..[22,396+5])
+                Pexp_sequence
+                expression (testsuite/tests/backtrace/backtrace_effects.ml[17,231+4]..[17,231+41])
+                  Pexp_apply
+                  expression (testsuite/tests/backtrace/backtrace_effects.ml[17,231+4]..[17,231+17])
+                    Pexp_ident "print_endline" (testsuite/tests/backtrace/backtrace_effects.ml[17,231+4]..[17,231+17])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/backtrace/backtrace_effects.ml[17,231+18]..[17,231+41])
+                        Pexp_constant PConst_string("(** get_callstack **)",(testsuite/tests/backtrace/backtrace_effects.ml[17,231+19]..[17,231+40]),None)
+                  ]
+                expression (testsuite/tests/backtrace/backtrace_effects.ml[18,274+4]..[21,389+6])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (testsuite/tests/backtrace/backtrace_effects.ml[18,274+8]..[18,274+10])
+                        Ppat_var "bt" (testsuite/tests/backtrace/backtrace_effects.ml[18,274+8]..[18,274+10])
+                      expression (testsuite/tests/backtrace/backtrace_effects.ml[18,274+13]..[18,274+39])
+                        Pexp_apply
+                        expression (testsuite/tests/backtrace/backtrace_effects.ml[18,274+13]..[18,274+35])
+                          Pexp_ident "Printexc.get_callstack" (testsuite/tests/backtrace/backtrace_effects.ml[18,274+13]..[18,274+35])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/backtrace/backtrace_effects.ml[18,274+36]..[18,274+39])
+                              Pexp_constant PConst_int (100,None)
+                        ]
+                  ]
+                  expression (testsuite/tests/backtrace/backtrace_effects.ml[19,317+4]..[21,389+6])
+                    Pexp_sequence
+                    expression (testsuite/tests/backtrace/backtrace_effects.ml[19,317+4]..[19,317+55])
+                      Pexp_apply
+                      expression (testsuite/tests/backtrace/backtrace_effects.ml[19,317+17]..[19,317+19])
+                        Pexp_ident "@@" (testsuite/tests/backtrace/backtrace_effects.ml[19,317+17]..[19,317+19])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/backtrace/backtrace_effects.ml[19,317+4]..[19,317+16])
+                            Pexp_ident "print_string" (testsuite/tests/backtrace/backtrace_effects.ml[19,317+4]..[19,317+16])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/backtrace/backtrace_effects.ml[19,317+20]..[19,317+55])
+                            Pexp_apply
+                            expression (testsuite/tests/backtrace/backtrace_effects.ml[19,317+20]..[19,317+52])
+                              Pexp_ident "Printexc.raw_backtrace_to_string" (testsuite/tests/backtrace/backtrace_effects.ml[19,317+20]..[19,317+52])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/backtrace/backtrace_effects.ml[19,317+53]..[19,317+55])
+                                  Pexp_ident "bt" (testsuite/tests/backtrace/backtrace_effects.ml[19,317+53]..[19,317+55])
+                            ]
+                      ]
+                    expression (testsuite/tests/backtrace/backtrace_effects.ml[20,374+4]..[21,389+6])
+                      Pexp_sequence
+                      expression (testsuite/tests/backtrace/backtrace_effects.ml[20,374+4]..[20,374+13])
+                        Pexp_apply
+                        expression (testsuite/tests/backtrace/backtrace_effects.ml[20,374+4]..[20,374+11])
+                          Pexp_ident "perform" (testsuite/tests/backtrace/backtrace_effects.ml[20,374+4]..[20,374+11])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/backtrace/backtrace_effects.ml[20,374+12]..[20,374+13])
+                              Pexp_construct "E" (testsuite/tests/backtrace/backtrace_effects.ml[20,374+12]..[20,374+13])
+                              None
+                        ]
+                      expression (testsuite/tests/backtrace/backtrace_effects.ml[21,389+4]..[21,389+6])
+                        Pexp_constant PConst_int (20,None)
+    ]
+  structure_item (testsuite/tests/backtrace/backtrace_effects.ml[24,403+0]..[26,434+10])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/backtrace/backtrace_effects.ml[24,403+4]..[24,403+7])
+          Ppat_var "foo" (testsuite/tests/backtrace/backtrace_effects.ml[24,403+4]..[24,403+7])
+        expression (testsuite/tests/backtrace/backtrace_effects.ml[24,403+8]..[26,434+10]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/backtrace/backtrace_effects.ml[24,403+8]..[24,403+9])
+            Ppat_var "i" (testsuite/tests/backtrace/backtrace_effects.ml[24,403+8]..[24,403+9])
+          expression (testsuite/tests/backtrace/backtrace_effects.ml[25,415+2]..[26,434+10])
+            Pexp_sequence
+            expression (testsuite/tests/backtrace/backtrace_effects.ml[25,415+2]..[25,415+17])
+              Pexp_apply
+              expression (testsuite/tests/backtrace/backtrace_effects.ml[25,415+9]..[25,415+11])
+                Pexp_ident "@@" (testsuite/tests/backtrace/backtrace_effects.ml[25,415+9]..[25,415+11])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/backtrace/backtrace_effects.ml[25,415+2]..[25,415+8])
+                    Pexp_ident "ignore" (testsuite/tests/backtrace/backtrace_effects.ml[25,415+2]..[25,415+8])
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/backtrace/backtrace_effects.ml[25,415+12]..[25,415+17])
+                    Pexp_apply
+                    expression (testsuite/tests/backtrace/backtrace_effects.ml[25,415+12]..[25,415+15])
+                      Pexp_ident "bar" (testsuite/tests/backtrace/backtrace_effects.ml[25,415+12]..[25,415+15])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/backtrace/backtrace_effects.ml[25,415+16]..[25,415+17])
+                          Pexp_ident "i" (testsuite/tests/backtrace/backtrace_effects.ml[25,415+16]..[25,415+17])
+                    ]
+              ]
+            expression (testsuite/tests/backtrace/backtrace_effects.ml[26,434+2]..[26,434+10])
+              Pexp_apply
+              expression (testsuite/tests/backtrace/backtrace_effects.ml[26,434+2]..[26,434+5])
+                Pexp_ident "bar" (testsuite/tests/backtrace/backtrace_effects.ml[26,434+2]..[26,434+5])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/backtrace/backtrace_effects.ml[26,434+6]..[26,434+10])
+                    Pexp_constant PConst_int (-1,None)
+              ]
+    ]
+  structure_item (testsuite/tests/backtrace/backtrace_effects.ml[28,446+0]..[39,841+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/backtrace/backtrace_effects.ml[28,446+4]..[28,446+7])
+          Ppat_var "baz" (testsuite/tests/backtrace/backtrace_effects.ml[28,446+4]..[28,446+7])
+        expression (testsuite/tests/backtrace/backtrace_effects.ml[28,446+8]..[39,841+19]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/backtrace/backtrace_effects.ml[28,446+8]..[28,446+10])
+            Ppat_construct "()" (testsuite/tests/backtrace/backtrace_effects.ml[28,446+8]..[28,446+10])
+            None
+          expression (testsuite/tests/backtrace/backtrace_effects.ml[29,459+2]..[39,841+19])
+            Pexp_apply
+            expression (testsuite/tests/backtrace/backtrace_effects.ml[29,459+2]..[29,459+12])
+              Pexp_ident "match_with" (testsuite/tests/backtrace/backtrace_effects.ml[29,459+2]..[29,459+12])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/backtrace/backtrace_effects.ml[29,459+13]..[29,459+16])
+                  Pexp_ident "foo" (testsuite/tests/backtrace/backtrace_effects.ml[29,459+13]..[29,459+16])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/backtrace/backtrace_effects.ml[29,459+17]..[29,459+19])
+                  Pexp_constant PConst_int (10,None)
+              <arg>
+              Nolabel
+                expression (testsuite/tests/backtrace/backtrace_effects.ml[30,479+2]..[39,841+19])
+                  Pexp_record
+                  [
+                    "retc" (testsuite/tests/backtrace/backtrace_effects.ml[30,479+4]..[30,479+8])
+                      expression (testsuite/tests/backtrace/backtrace_effects.ml[30,479+11]..[30,479+24])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/backtrace/backtrace_effects.ml[30,479+16]..[30,479+17])
+                          Ppat_var "x" (testsuite/tests/backtrace/backtrace_effects.ml[30,479+16]..[30,479+17])
+                        expression (testsuite/tests/backtrace/backtrace_effects.ml[30,479+21]..[30,479+23])
+                          Pexp_construct "()" (testsuite/tests/backtrace/backtrace_effects.ml[30,479+21]..[30,479+23])
+                          None
+                    "exnc" (testsuite/tests/backtrace/backtrace_effects.ml[31,505+4]..[31,505+8])
+                      expression (testsuite/tests/backtrace/backtrace_effects.ml[31,505+11]..[31,505+29])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/backtrace/backtrace_effects.ml[31,505+16]..[31,505+17])
+                          Ppat_var "e" (testsuite/tests/backtrace/backtrace_effects.ml[31,505+16]..[31,505+17])
+                        expression (testsuite/tests/backtrace/backtrace_effects.ml[31,505+21]..[31,505+28])
+                          Pexp_apply
+                          expression (testsuite/tests/backtrace/backtrace_effects.ml[31,505+21]..[31,505+26])
+                            Pexp_ident "raise" (testsuite/tests/backtrace/backtrace_effects.ml[31,505+21]..[31,505+26])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/backtrace/backtrace_effects.ml[31,505+27]..[31,505+28])
+                                Pexp_ident "e" (testsuite/tests/backtrace/backtrace_effects.ml[31,505+27]..[31,505+28])
+                          ]
+                    "effc" (testsuite/tests/backtrace/backtrace_effects.ml[32,536+4]..[32,536+8])
+                      expression (testsuite/tests/backtrace/backtrace_effects.ml[32,536+11]..[39,841+17])
+                        Pexp_newtype "a"
+                        expression (testsuite/tests/backtrace/backtrace_effects.ml[32,536+24]..[39,841+17]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/backtrace/backtrace_effects.ml[32,536+24]..[32,536+33])
+                            Ppat_constraint
+                            pattern (testsuite/tests/backtrace/backtrace_effects.ml[32,536+25]..[32,536+26])
+                              Ppat_var "e" (testsuite/tests/backtrace/backtrace_effects.ml[32,536+25]..[32,536+26])
+                            core_type (testsuite/tests/backtrace/backtrace_effects.ml[32,536+29]..[32,536+32])
+                              Ptyp_constr "t" (testsuite/tests/backtrace/backtrace_effects.ml[32,536+31]..[32,536+32])
+                              [
+                                core_type (testsuite/tests/backtrace/backtrace_effects.ml[32,536+29]..[32,536+30])
+                                  Ptyp_constr "a" (testsuite/tests/backtrace/backtrace_effects.ml[32,536+29]..[32,536+30])
+                                  []
+                              ]
+                          expression (testsuite/tests/backtrace/backtrace_effects.ml[33,573+6]..[39,841+17])
+                            Pexp_match
+                            expression (testsuite/tests/backtrace/backtrace_effects.ml[33,573+12]..[33,573+13])
+                              Pexp_ident "e" (testsuite/tests/backtrace/backtrace_effects.ml[33,573+12]..[33,573+13])
+                            [
+                              <case>
+                                pattern (testsuite/tests/backtrace/backtrace_effects.ml[34,592+8]..[34,592+9])
+                                  Ppat_construct "E" (testsuite/tests/backtrace/backtrace_effects.ml[34,592+8]..[34,592+9])
+                                  None
+                                expression (testsuite/tests/backtrace/backtrace_effects.ml[34,592+13]..[38,816+24])
+                                  Pexp_construct "Some" (testsuite/tests/backtrace/backtrace_effects.ml[34,592+13]..[34,592+17])
+                                  Some
+                                    expression (testsuite/tests/backtrace/backtrace_effects.ml[34,592+18]..[38,816+24])
+                                      Pexp_fun
+                                      Nolabel
+                                      None
+                                      pattern (testsuite/tests/backtrace/backtrace_effects.ml[34,592+23]..[34,592+48])
+                                        Ppat_constraint
+                                        pattern (testsuite/tests/backtrace/backtrace_effects.ml[34,592+24]..[34,592+25])
+                                          Ppat_var "k" (testsuite/tests/backtrace/backtrace_effects.ml[34,592+24]..[34,592+25])
+                                        core_type (testsuite/tests/backtrace/backtrace_effects.ml[34,592+28]..[34,592+47])
+                                          Ptyp_constr "continuation" (testsuite/tests/backtrace/backtrace_effects.ml[34,592+35]..[34,592+47])
+                                          [
+                                            core_type (testsuite/tests/backtrace/backtrace_effects.ml[34,592+29]..[34,592+30])
+                                              Ptyp_constr "a" (testsuite/tests/backtrace/backtrace_effects.ml[34,592+29]..[34,592+30])
+                                              []
+                                            core_type (testsuite/tests/backtrace/backtrace_effects.ml[34,592+32]..[34,592+33])
+                                              Ptyp_any
+                                          ]
+                                      expression (testsuite/tests/backtrace/backtrace_effects.ml[35,644+10]..[38,816+23])
+                                        Pexp_sequence
+                                        expression (testsuite/tests/backtrace/backtrace_effects.ml[35,644+10]..[35,644+60])
+                                          Pexp_apply
+                                          expression (testsuite/tests/backtrace/backtrace_effects.ml[35,644+10]..[35,644+23])
+                                            Pexp_ident "print_endline" (testsuite/tests/backtrace/backtrace_effects.ml[35,644+10]..[35,644+23])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/backtrace/backtrace_effects.ml[35,644+24]..[35,644+60])
+                                                Pexp_constant PConst_string("(** get_continuation_callstack **)",(testsuite/tests/backtrace/backtrace_effects.ml[35,644+25]..[35,644+59]),None)
+                                          ]
+                                        expression (testsuite/tests/backtrace/backtrace_effects.ml[36,706+10]..[38,816+23])
+                                          Pexp_let Nonrec
+                                          [
+                                            <def>
+                                              pattern (testsuite/tests/backtrace/backtrace_effects.ml[36,706+14]..[36,706+16])
+                                                Ppat_var "bt" (testsuite/tests/backtrace/backtrace_effects.ml[36,706+14]..[36,706+16])
+                                              expression (testsuite/tests/backtrace/backtrace_effects.ml[36,706+19]..[36,706+43])
+                                                Pexp_apply
+                                                expression (testsuite/tests/backtrace/backtrace_effects.ml[36,706+19]..[36,706+37])
+                                                  Pexp_ident "Deep.get_callstack" (testsuite/tests/backtrace/backtrace_effects.ml[36,706+19]..[36,706+37])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/backtrace/backtrace_effects.ml[36,706+38]..[36,706+39])
+                                                      Pexp_ident "k" (testsuite/tests/backtrace/backtrace_effects.ml[36,706+38]..[36,706+39])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/backtrace/backtrace_effects.ml[36,706+40]..[36,706+43])
+                                                      Pexp_constant PConst_int (100,None)
+                                                ]
+                                          ]
+                                          expression (testsuite/tests/backtrace/backtrace_effects.ml[37,753+10]..[38,816+23])
+                                            Pexp_sequence
+                                            expression (testsuite/tests/backtrace/backtrace_effects.ml[37,753+10]..[37,753+61])
+                                              Pexp_apply
+                                              expression (testsuite/tests/backtrace/backtrace_effects.ml[37,753+23]..[37,753+25])
+                                                Pexp_ident "@@" (testsuite/tests/backtrace/backtrace_effects.ml[37,753+23]..[37,753+25])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/backtrace/backtrace_effects.ml[37,753+10]..[37,753+22])
+                                                    Pexp_ident "print_string" (testsuite/tests/backtrace/backtrace_effects.ml[37,753+10]..[37,753+22])
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/backtrace/backtrace_effects.ml[37,753+26]..[37,753+61])
+                                                    Pexp_apply
+                                                    expression (testsuite/tests/backtrace/backtrace_effects.ml[37,753+26]..[37,753+58])
+                                                      Pexp_ident "Printexc.raw_backtrace_to_string" (testsuite/tests/backtrace/backtrace_effects.ml[37,753+26]..[37,753+58])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (testsuite/tests/backtrace/backtrace_effects.ml[37,753+59]..[37,753+61])
+                                                          Pexp_ident "bt" (testsuite/tests/backtrace/backtrace_effects.ml[37,753+59]..[37,753+61])
+                                                    ]
+                                              ]
+                                            expression (testsuite/tests/backtrace/backtrace_effects.ml[38,816+10]..[38,816+23])
+                                              Pexp_apply
+                                              expression (testsuite/tests/backtrace/backtrace_effects.ml[38,816+10]..[38,816+18])
+                                                Pexp_ident "continue" (testsuite/tests/backtrace/backtrace_effects.ml[38,816+10]..[38,816+18])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/backtrace/backtrace_effects.ml[38,816+19]..[38,816+20])
+                                                    Pexp_ident "k" (testsuite/tests/backtrace/backtrace_effects.ml[38,816+19]..[38,816+20])
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/backtrace/backtrace_effects.ml[38,816+21]..[38,816+23])
+                                                    Pexp_construct "()" (testsuite/tests/backtrace/backtrace_effects.ml[38,816+21]..[38,816+23])
+                                                    None
+                                              ]
+                              <case>
+                                pattern (testsuite/tests/backtrace/backtrace_effects.ml[39,841+8]..[39,841+9])
+                                  Ppat_any
+                                expression (testsuite/tests/backtrace/backtrace_effects.ml[39,841+13]..[39,841+17])
+                                  Pexp_construct "None" (testsuite/tests/backtrace/backtrace_effects.ml[39,841+13]..[39,841+17])
+                                  None
+                            ]
+                  ]
+                  None
+            ]
+    ]
+  structure_item (testsuite/tests/backtrace/backtrace_effects.ml[41,862+0]..[41,862+14])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/backtrace/backtrace_effects.ml[41,862+4]..[41,862+5])
+          Ppat_any
+        expression (testsuite/tests/backtrace/backtrace_effects.ml[41,862+8]..[41,862+14])
+          Pexp_apply
+          expression (testsuite/tests/backtrace/backtrace_effects.ml[41,862+8]..[41,862+11])
+            Pexp_ident "baz" (testsuite/tests/backtrace/backtrace_effects.ml[41,862+8]..[41,862+11])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/backtrace/backtrace_effects.ml[41,862+12]..[41,862+14])
+                Pexp_construct "()" (testsuite/tests/backtrace/backtrace_effects.ml[41,862+12]..[41,862+14])
+                None
+          ]
+    ]
+]
+

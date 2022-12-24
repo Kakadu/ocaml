@@ -1,0 +1,1647 @@
+[
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[4,12+0]..[5,82+59])
+    Pstr_attribute "ocaml.text"
+    [
+      structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[4,12+0]..[5,82+59])
+        Pstr_eval
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[4,12+0]..[5,82+59])
+          Pexp_constant PConst_string(" This test weak table by application to the memoization of collatz\n    (also known as syracuse) algorithm suite computation ",(testsuite/tests/weak-ephe-final/ephetest3.ml[4,12+0]..[5,82+59]),None)
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[7,143+0]..[7,143+42])
+    Pstr_attribute "ocaml.text"
+    [
+      structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[7,143+0]..[7,143+42])
+        Pstr_eval
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[7,143+0]..[7,143+42])
+          Pexp_constant PConst_string(" We use Int64 because they are boxed ",(testsuite/tests/weak-ephe-final/ephetest3.ml[7,143+0]..[7,143+42]),None)
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[10,256+0]..[10,256+12])
+    Pstr_value Nonrec
+    [
+      <def>
+          attribute "ocaml.doc"
+            [
+              structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[9,187+0]..[9,187+68])
+                Pstr_eval
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[9,187+0]..[9,187+68])
+                  Pexp_constant PConst_string(" number of element of the suite to compute (more are computed) ",(testsuite/tests/weak-ephe-final/ephetest3.ml[9,187+0]..[9,187+68]),None)
+            ]
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[10,256+4]..[10,256+5])
+          Ppat_var "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[10,256+4]..[10,256+5])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[10,256+8]..[10,256+12])
+          Pexp_constant PConst_int (1000,None)
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[12,270+0]..[12,270+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[12,270+4]..[12,270+7])
+          Ppat_var "two" (testsuite/tests/weak-ephe-final/ephetest3.ml[12,270+4]..[12,270+7])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[12,270+10]..[12,270+24])
+          Pexp_apply
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[12,270+10]..[12,270+22])
+            Pexp_ident "Int64.of_int" (testsuite/tests/weak-ephe-final/ephetest3.ml[12,270+10]..[12,270+22])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[12,270+23]..[12,270+24])
+                Pexp_constant PConst_int (2,None)
+          ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[13,295+0]..[13,295+26])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[13,295+4]..[13,295+9])
+          Ppat_var "three" (testsuite/tests/weak-ephe-final/ephetest3.ml[13,295+4]..[13,295+9])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[13,295+12]..[13,295+26])
+          Pexp_apply
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[13,295+12]..[13,295+24])
+            Pexp_ident "Int64.of_int" (testsuite/tests/weak-ephe-final/ephetest3.ml[13,295+12]..[13,295+24])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[13,295+25]..[13,295+26])
+                Pexp_constant PConst_int (3,None)
+          ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[15,323+0]..[18,408+37])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[15,323+4]..[15,323+11])
+          Ppat_var "collatz" (testsuite/tests/weak-ephe-final/ephetest3.ml[15,323+4]..[15,323+11])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[15,323+12]..[18,408+37]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[15,323+12]..[15,323+13])
+            Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[15,323+12]..[15,323+13])
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+2]..[18,408+37])
+            Pexp_ifthenelse
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+5]..[16,339+45])
+              Pexp_apply
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+5]..[16,339+16])
+                Pexp_ident "Int64.equal" (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+5]..[16,339+16])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+17]..[16,339+34])
+                    Pexp_apply
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+18]..[16,339+27])
+                      Pexp_ident "Int64.rem" (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+18]..[16,339+27])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+28]..[16,339+29])
+                          Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+28]..[16,339+29])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+30]..[16,339+33])
+                          Pexp_ident "two" (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+30]..[16,339+33])
+                    ]
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+35]..[16,339+45])
+                    Pexp_ident "Int64.zero" (testsuite/tests/weak-ephe-final/ephetest3.ml[16,339+35]..[16,339+45])
+              ]
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[17,385+7]..[17,385+22])
+              Pexp_apply
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[17,385+7]..[17,385+16])
+                Pexp_ident "Int64.div" (testsuite/tests/weak-ephe-final/ephetest3.ml[17,385+7]..[17,385+16])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[17,385+17]..[17,385+18])
+                    Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[17,385+17]..[17,385+18])
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[17,385+19]..[17,385+22])
+                    Pexp_ident "two" (testsuite/tests/weak-ephe-final/ephetest3.ml[17,385+19]..[17,385+22])
+              ]
+            Some
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+7]..[18,408+37])
+                Pexp_apply
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+7]..[18,408+17])
+                  Pexp_ident "Int64.succ" (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+7]..[18,408+17])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+18]..[18,408+37])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+19]..[18,408+28])
+                        Pexp_ident "Int64.mul" (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+19]..[18,408+28])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+29]..[18,408+30])
+                            Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+29]..[18,408+30])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+31]..[18,408+36])
+                            Pexp_ident "three" (testsuite/tests/weak-ephe-final/ephetest3.ml[18,408+31]..[18,408+36])
+                      ]
+                ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[20,447+0]..[23,515+3])
+    Pstr_module
+    "S" (testsuite/tests/weak-ephe-final/ephetest3.ml[20,447+7]..[20,447+8])
+      module_expr (testsuite/tests/weak-ephe-final/ephetest3.ml[20,447+11]..[23,515+3])
+        Pmod_structure
+        [
+          structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[21,465+2]..[21,465+15])
+            Pstr_include            module_expr (testsuite/tests/weak-ephe-final/ephetest3.ml[21,465+10]..[21,465+15])
+              Pmod_ident "Int64" (testsuite/tests/weak-ephe-final/ephetest3.ml[21,465+10]..[21,465+15])
+          structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+2]..[22,481+33])
+            Pstr_value Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+6]..[22,481+10])
+                  Ppat_var "hash" (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+6]..[22,481+10])
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+11]..[22,481+33]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+11]..[22,481+16])
+                    Ppat_constraint
+                    pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+12]..[22,481+13])
+                      Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+12]..[22,481+13])
+                    core_type (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+14]..[22,481+15])
+                      Ptyp_constr "t" (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+14]..[22,481+15])
+                      []
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+19]..[22,481+33])
+                    Pexp_apply
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+19]..[22,481+31])
+                      Pexp_ident "Hashtbl.hash" (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+19]..[22,481+31])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+32]..[22,481+33])
+                          Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[22,481+32]..[22,481+33])
+                    ]
+            ]
+        ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[25,520+0]..[25,520+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[25,520+4]..[25,520+6])
+          Ppat_var "pp" (testsuite/tests/weak-ephe-final/ephetest3.ml[25,520+4]..[25,520+6])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[25,520+9]..[25,520+24])
+          Pexp_ident "Int64.to_string" (testsuite/tests/weak-ephe-final/ephetest3.ml[25,520+9]..[25,520+24])
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[27,546+0]..[27,546+32])
+    Pstr_module
+    "HW" (testsuite/tests/weak-ephe-final/ephetest3.ml[27,546+7]..[27,546+9])
+      module_expr (testsuite/tests/weak-ephe-final/ephetest3.ml[27,546+12]..[27,546+32])
+        Pmod_apply
+        module_expr (testsuite/tests/weak-ephe-final/ephetest3.ml[27,546+12]..[27,546+29])
+          Pmod_ident "Ephemeron.K1.Make" (testsuite/tests/weak-ephe-final/ephetest3.ml[27,546+12]..[27,546+29])
+        module_expr (testsuite/tests/weak-ephe-final/ephetest3.ml[27,546+30]..[27,546+31])
+          Pmod_ident "S" (testsuite/tests/weak-ephe-final/ephetest3.ml[27,546+30]..[27,546+31])
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[28,579+0]..[28,579+24])
+    Pstr_module
+    "SW" (testsuite/tests/weak-ephe-final/ephetest3.ml[28,579+7]..[28,579+9])
+      module_expr (testsuite/tests/weak-ephe-final/ephetest3.ml[28,579+12]..[28,579+24])
+        Pmod_apply
+        module_expr (testsuite/tests/weak-ephe-final/ephetest3.ml[28,579+12]..[28,579+21])
+          Pmod_ident "Weak.Make" (testsuite/tests/weak-ephe-final/ephetest3.ml[28,579+12]..[28,579+21])
+        module_expr (testsuite/tests/weak-ephe-final/ephetest3.ml[28,579+22]..[28,579+23])
+          Pmod_ident "S" (testsuite/tests/weak-ephe-final/ephetest3.ml[28,579+22]..[28,579+23])
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[30,605+0]..[30,605+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[30,605+4]..[30,605+6])
+          Ppat_var "sw" (testsuite/tests/weak-ephe-final/ephetest3.ml[30,605+4]..[30,605+6])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[30,605+9]..[30,605+20])
+          Pexp_apply
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[30,605+9]..[30,605+18])
+            Pexp_ident "SW.create" (testsuite/tests/weak-ephe-final/ephetest3.ml[30,605+9]..[30,605+18])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[30,605+19]..[30,605+20])
+                Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[30,605+19]..[30,605+20])
+          ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+0]..[31,626+30])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+4]..[31,626+12])
+          Ppat_var "hashcons" (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+4]..[31,626+12])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+13]..[31,626+30]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+13]..[31,626+14])
+            Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+13]..[31,626+14])
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+17]..[31,626+30])
+            Pexp_apply
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+17]..[31,626+25])
+              Pexp_ident "SW.merge" (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+17]..[31,626+25])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+26]..[31,626+28])
+                  Pexp_ident "sw" (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+26]..[31,626+28])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+29]..[31,626+30])
+                  Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[31,626+29]..[31,626+30])
+            ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[33,658+0]..[33,658+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[33,658+4]..[33,658+6])
+          Ppat_var "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[33,658+4]..[33,658+6])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[33,658+9]..[33,658+20])
+          Pexp_apply
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[33,658+9]..[33,658+18])
+            Pexp_ident "HW.create" (testsuite/tests/weak-ephe-final/ephetest3.ml[33,658+9]..[33,658+18])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[33,658+19]..[33,658+20])
+                Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[33,658+19]..[33,658+20])
+          ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[35,680+0]..[40,803+5])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[35,680+8]..[35,680+15])
+          Ppat_var "fill_hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[35,680+8]..[35,680+15])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[35,680+16]..[40,803+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[35,680+16]..[35,680+17])
+            Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[35,680+16]..[35,680+17])
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+2]..[40,803+5])
+            Pexp_ifthenelse
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+5]..[36,700+22])
+              Pexp_apply
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+5]..[36,700+8])
+                Pexp_ident "not" (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+5]..[36,700+8])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+9]..[36,700+22])
+                    Pexp_apply
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+10]..[36,700+16])
+                      Pexp_ident "HW.mem" (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+10]..[36,700+16])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+17]..[36,700+19])
+                          Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+17]..[36,700+19])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+20]..[36,700+21])
+                          Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+20]..[36,700+21])
+                    ]
+              ]
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[36,700+28]..[40,803+5])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+8]..[37,734+9])
+                    Ppat_var "y" (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+8]..[37,734+9])
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+12]..[37,734+32])
+                    Pexp_apply
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+12]..[37,734+20])
+                      Pexp_ident "hashcons" (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+12]..[37,734+20])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+21]..[37,734+32])
+                          Pexp_apply
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+22]..[37,734+29])
+                            Pexp_ident "collatz" (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+22]..[37,734+29])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+30]..[37,734+31])
+                                Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[37,734+30]..[37,734+31])
+                          ]
+                    ]
+              ]
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+4]..[39,789+13])
+                Pexp_sequence
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+4]..[38,770+17])
+                  Pexp_apply
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+4]..[38,770+10])
+                    Pexp_ident "HW.add" (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+4]..[38,770+10])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+11]..[38,770+13])
+                        Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+11]..[38,770+13])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+14]..[38,770+15])
+                        Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+14]..[38,770+15])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+16]..[38,770+17])
+                        Pexp_ident "y" (testsuite/tests/weak-ephe-final/ephetest3.ml[38,770+16]..[38,770+17])
+                  ]
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[39,789+4]..[39,789+13])
+                  Pexp_apply
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[39,789+4]..[39,789+11])
+                    Pexp_ident "fill_hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[39,789+4]..[39,789+11])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[39,789+12]..[39,789+13])
+                        Pexp_ident "y" (testsuite/tests/weak-ephe-final/ephetest3.ml[39,789+12]..[39,789+13])
+                  ]
+            None
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[42,810+0]..[42,810+35])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (testsuite/tests/weak-ephe-final/ephetest3.ml[42,810+0]..[42,810+35])
+          pext_name = "InvariantBroken"
+          pext_kind =
+            Pext_decl
+              [
+                core_type (testsuite/tests/weak-ephe-final/ephetest3.ml[42,810+29]..[42,810+35])
+                  Ptyp_constr "string" (testsuite/tests/weak-ephe-final/ephetest3.ml[42,810+29]..[42,810+35])
+                  []
+              ]
+              None
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+0]..[43,846+79])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+4]..[43,846+8])
+          Ppat_var "test" (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+4]..[43,846+8])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+9]..[43,846+79]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+9]..[43,846+10])
+            Ppat_var "b" (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+9]..[43,846+10])
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+13]..[43,846+79])
+            Pexp_apply
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+13]..[43,846+28])
+              Pexp_ident "Printf.ksprintf" (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+13]..[43,846+28])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+29]..[43,846+79])
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+34]..[43,846+35])
+                    Ppat_var "s" (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+34]..[43,846+35])
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+39]..[43,846+78])
+                    Pexp_ifthenelse
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+42]..[43,846+47])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+42]..[43,846+45])
+                        Pexp_ident "not" (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+42]..[43,846+45])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+46]..[43,846+47])
+                            Pexp_ident "b" (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+46]..[43,846+47])
+                      ]
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+53]..[43,846+78])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+53]..[43,846+58])
+                        Pexp_ident "raise" (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+53]..[43,846+58])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+59]..[43,846+78])
+                            Pexp_construct "InvariantBroken" (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+60]..[43,846+75])
+                            Some
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+76]..[43,846+77])
+                                Pexp_ident "s" (testsuite/tests/weak-ephe-final/ephetest3.ml[43,846+76]..[43,846+77])
+                      ]
+                    None
+            ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[45,927+0]..[64,1634+5])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[45,927+8]..[45,927+20])
+          Ppat_var "check_hw_aux" (testsuite/tests/weak-ephe-final/ephetest3.ml[45,927+8]..[45,927+20])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[45,927+21]..[64,1634+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[45,927+21]..[45,927+26])
+            Ppat_var "cache" (testsuite/tests/weak-ephe-final/ephetest3.ml[45,927+21]..[45,927+26])
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[45,927+27]..[64,1634+5]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[45,927+27]..[45,927+28])
+              Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[45,927+27]..[45,927+28])
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+2]..[64,1634+5])
+              Pexp_ifthenelse
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+5]..[47,1017+45])
+                Pexp_apply
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+5]..[47,1017+8])
+                  Pexp_ident "not" (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+5]..[47,1017+8])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+9]..[47,1017+45])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+10]..[47,1017+21])
+                        Pexp_ident "Hashtbl.mem" (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+10]..[47,1017+21])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+22]..[47,1017+27])
+                            Pexp_ident "cache" (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+22]..[47,1017+27])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+28]..[47,1017+44])
+                            Pexp_apply
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+29]..[47,1017+41])
+                              Pexp_ident "Int64.to_int" (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+29]..[47,1017+41])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+42]..[47,1017+43])
+                                  Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+42]..[47,1017+43])
+                            ]
+                      ]
+                ]
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[47,1017+51]..[64,1634+5])
+                Pexp_sequence
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+4]..[48,1074+44])
+                  Pexp_apply
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+4]..[48,1074+8])
+                    Pexp_ident "test" (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+4]..[48,1074+8])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+9]..[48,1074+22])
+                        Pexp_apply
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+10]..[48,1074+16])
+                          Pexp_ident "HW.mem" (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+10]..[48,1074+16])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+17]..[48,1074+19])
+                              Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+17]..[48,1074+19])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+20]..[48,1074+21])
+                              Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+20]..[48,1074+21])
+                        ]
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+23]..[48,1074+37])
+                        Pexp_constant PConst_string("missing %s%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+24]..[48,1074+36]),None)
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+38]..[48,1074+44])
+                        Pexp_apply
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+39]..[48,1074+41])
+                          Pexp_ident "pp" (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+39]..[48,1074+41])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+42]..[48,1074+43])
+                              Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[48,1074+42]..[48,1074+43])
+                        ]
+                  ]
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[49,1120+4]..[63,1609+24])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[49,1120+8]..[49,1120+9])
+                        Ppat_var "y" (testsuite/tests/weak-ephe-final/ephetest3.ml[49,1120+8]..[49,1120+9])
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[50,1132+6]..[55,1314+20])
+                        Pexp_try
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[50,1132+10]..[50,1132+22])
+                          Pexp_apply
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[50,1132+10]..[50,1132+17])
+                            Pexp_ident "HW.find" (testsuite/tests/weak-ephe-final/ephetest3.ml[50,1132+10]..[50,1132+17])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[50,1132+18]..[50,1132+20])
+                                Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[50,1132+18]..[50,1132+20])
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[50,1132+21]..[50,1132+22])
+                                Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[50,1132+21]..[50,1132+22])
+                          ]
+                        [
+                          <case>
+                            pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[51,1155+11]..[51,1155+20])
+                              Ppat_construct "Not_found" (testsuite/tests/weak-ephe-final/ephetest3.ml[51,1155+11]..[51,1155+20])
+                              None
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+8]..[55,1314+20])
+                              Pexp_sequence
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+8]..[53,1254+16])
+                                Pexp_apply
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+8]..[52,1179+12])
+                                  Pexp_ident "test" (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+8]..[52,1179+12])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+13]..[52,1179+32])
+                                      Pexp_apply
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+14]..[52,1179+17])
+                                        Pexp_ident "not" (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+14]..[52,1179+17])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+18]..[52,1179+31])
+                                            Pexp_apply
+                                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+19]..[52,1179+25])
+                                              Pexp_ident "HW.mem" (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+19]..[52,1179+25])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+26]..[52,1179+28])
+                                                  Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+26]..[52,1179+28])
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+29]..[52,1179+30])
+                                                  Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+29]..[52,1179+30])
+                                            ]
+                                      ]
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+33]..[52,1179+74])
+                                      Pexp_constant PConst_string("key in the table but data missing %s!%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[52,1179+34]..[52,1179+73]),None)
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[53,1254+10]..[53,1254+16])
+                                      Pexp_apply
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[53,1254+11]..[53,1254+13])
+                                        Pexp_ident "pp" (testsuite/tests/weak-ephe-final/ephetest3.ml[53,1254+11]..[53,1254+13])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[53,1254+14]..[53,1254+15])
+                                            Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[53,1254+14]..[53,1254+15])
+                                      ]
+                                ]
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+8]..[55,1314+20])
+                                Pexp_sequence
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+8]..[54,1272+40])
+                                  Pexp_apply
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+8]..[54,1272+12])
+                                    Pexp_ident "test" (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+8]..[54,1272+12])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+13]..[54,1272+18])
+                                        Pexp_construct "false" (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+13]..[54,1272+18])
+                                        None
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+19]..[54,1272+33])
+                                        Pexp_constant PConst_string("missing %s%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+20]..[54,1272+32]),None)
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+34]..[54,1272+40])
+                                        Pexp_apply
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+35]..[54,1272+37])
+                                          Pexp_ident "pp" (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+35]..[54,1272+37])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+38]..[54,1272+39])
+                                              Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[54,1272+38]..[54,1272+39])
+                                        ]
+                                  ]
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[55,1314+8]..[55,1314+20])
+                                  Pexp_assert
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[55,1314+15]..[55,1314+20])
+                                    Pexp_construct "false" (testsuite/tests/weak-ephe-final/ephetest3.ml[55,1314+15]..[55,1314+20])
+                                    None
+                        ]
+                  ]
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[57,1342+4]..[63,1609+24])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[57,1342+8]..[57,1342+10])
+                          Ppat_var "y'" (testsuite/tests/weak-ephe-final/ephetest3.ml[57,1342+8]..[57,1342+10])
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[57,1342+13]..[57,1342+22])
+                          Pexp_apply
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[57,1342+13]..[57,1342+20])
+                            Pexp_ident "collatz" (testsuite/tests/weak-ephe-final/ephetest3.ml[57,1342+13]..[57,1342+20])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[57,1342+21]..[57,1342+22])
+                                Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[57,1342+21]..[57,1342+22])
+                          ]
+                    ]
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+4]..[63,1609+24])
+                      Pexp_sequence
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+4]..[59,1436+27])
+                        Pexp_apply
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+4]..[58,1368+8])
+                          Pexp_ident "test" (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+4]..[58,1368+8])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+9]..[58,1368+27])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+10]..[58,1368+21])
+                                Pexp_ident "Int64.equal" (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+10]..[58,1368+21])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+22]..[58,1368+23])
+                                    Pexp_ident "y" (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+22]..[58,1368+23])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+24]..[58,1368+26])
+                                    Pexp_ident "y'" (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+24]..[58,1368+26])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+28]..[58,1368+67])
+                              Pexp_constant PConst_string("bad result for %s: %s instead of %s%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[58,1368+29]..[58,1368+66]),None)
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+6]..[59,1436+12])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+7]..[59,1436+9])
+                                Pexp_ident "pp" (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+7]..[59,1436+9])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+10]..[59,1436+11])
+                                    Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+10]..[59,1436+11])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+13]..[59,1436+19])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+14]..[59,1436+16])
+                                Pexp_ident "pp" (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+14]..[59,1436+16])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+17]..[59,1436+18])
+                                    Pexp_ident "y" (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+17]..[59,1436+18])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+20]..[59,1436+27])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+21]..[59,1436+23])
+                                Pexp_ident "pp" (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+21]..[59,1436+23])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+24]..[59,1436+26])
+                                    Pexp_ident "y'" (testsuite/tests/weak-ephe-final/ephetest3.ml[59,1436+24]..[59,1436+26])
+                              ]
+                        ]
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[60,1465+4]..[63,1609+24])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[60,1465+8]..[60,1465+11])
+                              Ppat_var "y''" (testsuite/tests/weak-ephe-final/ephetest3.ml[60,1465+8]..[60,1465+11])
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[60,1465+14]..[60,1465+25])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[60,1465+14]..[60,1465+22])
+                                Pexp_ident "hashcons" (testsuite/tests/weak-ephe-final/ephetest3.ml[60,1465+14]..[60,1465+22])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[60,1465+23]..[60,1465+25])
+                                    Pexp_ident "y'" (testsuite/tests/weak-ephe-final/ephetest3.ml[60,1465+23]..[60,1465+25])
+                              ]
+                        ]
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+4]..[63,1609+24])
+                          Pexp_sequence
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+4]..[61,1494+70])
+                            Pexp_apply
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+4]..[61,1494+8])
+                              Pexp_ident "test" (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+4]..[61,1494+8])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+9]..[61,1494+19])
+                                  Pexp_apply
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+12]..[61,1494+14])
+                                    Pexp_ident "==" (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+12]..[61,1494+14])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+10]..[61,1494+11])
+                                        Pexp_ident "y" (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+10]..[61,1494+11])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+15]..[61,1494+18])
+                                        Pexp_ident "y''" (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+15]..[61,1494+18])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+20]..[61,1494+63])
+                                  Pexp_constant PConst_string("bad result for %s: not physically equal%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+21]..[61,1494+62]),None)
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+64]..[61,1494+70])
+                                  Pexp_apply
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+65]..[61,1494+67])
+                                    Pexp_ident "pp" (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+65]..[61,1494+67])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+68]..[61,1494+69])
+                                        Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[61,1494+68]..[61,1494+69])
+                                  ]
+                            ]
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+4]..[63,1609+24])
+                            Pexp_sequence
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+4]..[62,1566+41])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+4]..[62,1566+15])
+                                Pexp_ident "Hashtbl.add" (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+4]..[62,1566+15])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+16]..[62,1566+21])
+                                    Pexp_ident "cache" (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+16]..[62,1566+21])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+22]..[62,1566+38])
+                                    Pexp_apply
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+23]..[62,1566+35])
+                                      Pexp_ident "Int64.to_int" (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+23]..[62,1566+35])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+36]..[62,1566+37])
+                                          Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+36]..[62,1566+37])
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+39]..[62,1566+41])
+                                    Pexp_construct "()" (testsuite/tests/weak-ephe-final/ephetest3.ml[62,1566+39]..[62,1566+41])
+                                    None
+                              ]
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[63,1609+4]..[63,1609+24])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[63,1609+4]..[63,1609+16])
+                                Pexp_ident "check_hw_aux" (testsuite/tests/weak-ephe-final/ephetest3.ml[63,1609+4]..[63,1609+16])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[63,1609+17]..[63,1609+22])
+                                    Pexp_ident "cache" (testsuite/tests/weak-ephe-final/ephetest3.ml[63,1609+17]..[63,1609+22])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[63,1609+23]..[63,1609+24])
+                                    Pexp_ident "y" (testsuite/tests/weak-ephe-final/ephetest3.ml[63,1609+23]..[63,1609+24])
+                              ]
+              None
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[66,1641+0]..[68,1695+38])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[66,1641+4]..[66,1641+12])
+          Ppat_var "check_hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[66,1641+4]..[66,1641+12])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[66,1641+13]..[68,1695+38]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[66,1641+13]..[66,1641+17])
+            Ppat_var "iter" (testsuite/tests/weak-ephe-final/ephetest3.ml[66,1641+13]..[66,1641+17])
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[67,1661+2]..[68,1695+38])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[67,1661+6]..[67,1661+11])
+                  Ppat_var "cache" (testsuite/tests/weak-ephe-final/ephetest3.ml[67,1661+6]..[67,1661+11])
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[67,1661+14]..[67,1661+30])
+                  Pexp_apply
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[67,1661+14]..[67,1661+28])
+                    Pexp_ident "Hashtbl.create" (testsuite/tests/weak-ephe-final/ephetest3.ml[67,1661+14]..[67,1661+28])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[67,1661+29]..[67,1661+30])
+                        Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[67,1661+29]..[67,1661+30])
+                  ]
+            ]
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+2]..[68,1695+38])
+              Pexp_apply
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+2]..[68,1695+6])
+                Pexp_ident "iter" (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+2]..[68,1695+6])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+7]..[68,1695+38])
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+12]..[68,1695+13])
+                      Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+12]..[68,1695+13])
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+17]..[68,1695+37])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+17]..[68,1695+29])
+                        Pexp_ident "check_hw_aux" (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+17]..[68,1695+29])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+30]..[68,1695+35])
+                            Pexp_ident "cache" (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+30]..[68,1695+35])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+36]..[68,1695+37])
+                            Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[68,1695+36]..[68,1695+37])
+                      ]
+              ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[70,1735+0]..[70,1735+12])
+    Pstr_attribute "ocaml.text"
+    [
+      structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[70,1735+0]..[70,1735+12])
+        Pstr_eval
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[70,1735+0]..[70,1735+12])
+          Pexp_constant PConst_string(" tests ",(testsuite/tests/weak-ephe-final/ephetest3.ml[70,1735+0]..[70,1735+12]),None)
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[72,1749+0]..[83,1941+47])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[72,1749+4]..[72,1749+7])
+          Ppat_var "run" (testsuite/tests/weak-ephe-final/ephetest3.ml[72,1749+4]..[72,1749+7])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[72,1749+8]..[83,1941+47]) ghost
+          Pexp_fun
+          Labelled "next"
+          None
+          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[72,1749+9]..[72,1749+13])
+            Ppat_var "next" (testsuite/tests/weak-ephe-final/ephetest3.ml[72,1749+9]..[72,1749+13])
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[72,1749+14]..[83,1941+47]) ghost
+            Pexp_fun
+            Labelled "check"
+            None
+            pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[72,1749+15]..[72,1749+20])
+              Ppat_var "check" (testsuite/tests/weak-ephe-final/ephetest3.ml[72,1749+15]..[72,1749+20])
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[73,1772+2]..[83,1941+47])
+              Pexp_sequence
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[73,1772+2]..[73,1772+13])
+                Pexp_apply
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[73,1772+2]..[73,1772+10])
+                  Pexp_ident "HW.reset" (testsuite/tests/weak-ephe-final/ephetest3.ml[73,1772+2]..[73,1772+10])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[73,1772+11]..[73,1772+13])
+                      Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[73,1772+11]..[73,1772+13])
+                ]
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[74,1787+2]..[83,1941+47])
+                Pexp_sequence
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[74,1787+2]..[74,1787+13])
+                  Pexp_apply
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[74,1787+2]..[74,1787+10])
+                    Pexp_ident "SW.clear" (testsuite/tests/weak-ephe-final/ephetest3.ml[74,1787+2]..[74,1787+10])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[74,1787+11]..[74,1787+13])
+                        Pexp_ident "sw" (testsuite/tests/weak-ephe-final/ephetest3.ml[74,1787+11]..[74,1787+13])
+                  ]
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[76,1828+2]..[83,1941+47])
+                  Pexp_sequence
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[76,1828+2]..[80,1898+6])
+                    Pexp_for Up
+                    pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[76,1828+6]..[76,1828+7])
+                      Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[76,1828+6]..[76,1828+7])
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[76,1828+8]..[76,1828+9])
+                      Pexp_constant PConst_int (0,None)
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[76,1828+13]..[76,1828+14])
+                      Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[76,1828+13]..[76,1828+14])
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[77,1846+4]..[79,1885+12])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[77,1846+8]..[77,1846+10])
+                            Ppat_var "x'" (testsuite/tests/weak-ephe-final/ephetest3.ml[77,1846+8]..[77,1846+10])
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[77,1846+13]..[77,1846+19])
+                            Pexp_apply
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[77,1846+13]..[77,1846+17])
+                              Pexp_ident "next" (testsuite/tests/weak-ephe-final/ephetest3.ml[77,1846+13]..[77,1846+17])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[77,1846+18]..[77,1846+19])
+                                  Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[77,1846+18]..[77,1846+19])
+                            ]
+                      ]
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[78,1869+4]..[79,1885+12])
+                        Pexp_sequence
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[78,1869+4]..[78,1869+14])
+                          Pexp_apply
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[78,1869+4]..[78,1869+11])
+                            Pexp_ident "fill_hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[78,1869+4]..[78,1869+11])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[78,1869+12]..[78,1869+14])
+                                Pexp_ident "x'" (testsuite/tests/weak-ephe-final/ephetest3.ml[78,1869+12]..[78,1869+14])
+                          ]
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[79,1885+4]..[79,1885+11])
+                          Pexp_apply
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[79,1885+4]..[79,1885+9])
+                            Pexp_ident "check" (testsuite/tests/weak-ephe-final/ephetest3.ml[79,1885+4]..[79,1885+9])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[79,1885+10]..[79,1885+11])
+                                Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[79,1885+10]..[79,1885+11])
+                          ]
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[81,1906+2]..[83,1941+47])
+                    Pexp_sequence
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[81,1906+2]..[81,1906+18])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[81,1906+2]..[81,1906+15])
+                        Pexp_ident "Gc.full_major" (testsuite/tests/weak-ephe-final/ephetest3.ml[81,1906+2]..[81,1906+15])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[81,1906+16]..[81,1906+18])
+                            Pexp_construct "()" (testsuite/tests/weak-ephe-final/ephetest3.ml[81,1906+16]..[81,1906+18])
+                            None
+                      ]
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[82,1926+2]..[83,1941+47])
+                      Pexp_sequence
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[82,1926+2]..[82,1926+13])
+                        Pexp_apply
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[82,1926+2]..[82,1926+10])
+                          Pexp_ident "HW.clean" (testsuite/tests/weak-ephe-final/ephetest3.ml[82,1926+2]..[82,1926+10])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[82,1926+11]..[82,1926+13])
+                              Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[82,1926+11]..[82,1926+13])
+                        ]
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+2]..[83,1941+47])
+                        Pexp_apply
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+2]..[83,1941+15])
+                          Pexp_ident "Printf.printf" (testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+2]..[83,1941+15])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+16]..[83,1941+32])
+                              Pexp_constant PConst_string("length: %i\n%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+17]..[83,1941+31]),None)
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+33]..[83,1941+47])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+34]..[83,1941+43])
+                                Pexp_ident "HW.length" (testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+34]..[83,1941+43])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+44]..[83,1941+46])
+                                    Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[83,1941+44]..[83,1941+46])
+                              ]
+                        ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[85,1990+0]..[97,2372+49])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[85,1990+4]..[85,1990+15])
+          Ppat_var "print_stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[85,1990+4]..[85,1990+15])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[85,1990+16]..[97,2372+49]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[85,1990+16]..[85,1990+18])
+            Ppat_construct "()" (testsuite/tests/weak-ephe-final/ephetest3.ml[85,1990+16]..[85,1990+18])
+            None
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[86,2011+2]..[97,2372+49])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[86,2011+6]..[86,2011+17])
+                  Ppat_var "print_stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[86,2011+6]..[86,2011+17])
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[86,2011+18]..[94,2296+25]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[86,2011+18]..[86,2011+22])
+                    Ppat_var "name" (testsuite/tests/weak-ephe-final/ephetest3.ml[86,2011+18]..[86,2011+22])
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[86,2011+23]..[94,2296+25]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[86,2011+23]..[86,2011+28])
+                      Ppat_var "stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[86,2011+23]..[86,2011+28])
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[87,2042+4]..[94,2296+25])
+                      Pexp_sequence
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[87,2042+4]..[91,2159+37])
+                        Pexp_apply
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[87,2042+4]..[87,2042+17])
+                          Pexp_ident "Printf.printf" (testsuite/tests/weak-ephe-final/ephetest3.ml[87,2042+4]..[87,2042+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[87,2042+18]..[87,2042+40])
+                              Pexp_constant PConst_string("%s (%3i,%3i,%3i): %!",(testsuite/tests/weak-ephe-final/ephetest3.ml[87,2042+19]..[87,2042+39]),None)
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[88,2083+6]..[88,2083+10])
+                              Pexp_ident "name" (testsuite/tests/weak-ephe-final/ephetest3.ml[88,2083+6]..[88,2083+10])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[89,2094+6]..[89,2094+32])
+                              Pexp_field
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[89,2094+6]..[89,2094+11])
+                                Pexp_ident "stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[89,2094+6]..[89,2094+11])
+                              "Hashtbl.num_bindings" (testsuite/tests/weak-ephe-final/ephetest3.ml[89,2094+12]..[89,2094+32])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[90,2127+6]..[90,2127+31])
+                              Pexp_field
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[90,2127+6]..[90,2127+11])
+                                Pexp_ident "stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[90,2127+6]..[90,2127+11])
+                              "Hashtbl.num_buckets" (testsuite/tests/weak-ephe-final/ephetest3.ml[90,2127+12]..[90,2127+31])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[91,2159+6]..[91,2159+37])
+                              Pexp_field
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[91,2159+6]..[91,2159+11])
+                                Pexp_ident "stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[91,2159+6]..[91,2159+11])
+                              "Hashtbl.max_bucket_length" (testsuite/tests/weak-ephe-final/ephetest3.ml[91,2159+12]..[91,2159+37])
+                        ]
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+4]..[94,2296+25])
+                        Pexp_sequence
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+4]..[93,2258+36])
+                          Pexp_apply
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+4]..[92,2198+15])
+                            Pexp_ident "Array.iteri" (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+4]..[92,2198+15])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+16]..[92,2198+59])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+21]..[92,2198+22])
+                                  Ppat_var "i" (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+21]..[92,2198+22])
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+23]..[92,2198+58]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+23]..[92,2198+24])
+                                    Ppat_var "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+23]..[92,2198+24])
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+28]..[92,2198+58])
+                                    Pexp_apply
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+28]..[92,2198+41])
+                                      Pexp_ident "Printf.printf" (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+28]..[92,2198+41])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+42]..[92,2198+54])
+                                          Pexp_constant PConst_string("%i: %i, %!",(testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+43]..[92,2198+53]),None)
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+55]..[92,2198+56])
+                                          Pexp_ident "i" (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+55]..[92,2198+56])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+57]..[92,2198+58])
+                                          Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[92,2198+57]..[92,2198+58])
+                                    ]
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[93,2258+6]..[93,2258+36])
+                                Pexp_field
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[93,2258+6]..[93,2258+11])
+                                  Pexp_ident "stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[93,2258+6]..[93,2258+11])
+                                "Hashtbl.bucket_histogram" (testsuite/tests/weak-ephe-final/ephetest3.ml[93,2258+12]..[93,2258+36])
+                          ]
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[94,2296+4]..[94,2296+24])
+                          Pexp_apply
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[94,2296+4]..[94,2296+17])
+                            Pexp_ident "Printf.printf" (testsuite/tests/weak-ephe-final/ephetest3.ml[94,2296+4]..[94,2296+17])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[94,2296+18]..[94,2296+24])
+                                Pexp_constant PConst_string("\n%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[94,2296+19]..[94,2296+23]),None)
+                          ]
+            ]
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+2]..[97,2372+49])
+              Pexp_sequence
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+2]..[96,2327+43])
+                Pexp_apply
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+2]..[96,2327+13])
+                  Pexp_ident "print_stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+2]..[96,2327+13])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+14]..[96,2327+29])
+                      Pexp_constant PConst_string("stats      : ",(testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+15]..[96,2327+28]),None)
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+30]..[96,2327+43])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+31]..[96,2327+39])
+                        Pexp_ident "HW.stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+31]..[96,2327+39])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+40]..[96,2327+42])
+                            Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[96,2327+40]..[96,2327+42])
+                      ]
+                ]
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+2]..[97,2372+49])
+                Pexp_apply
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+2]..[97,2372+13])
+                  Pexp_ident "print_stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+2]..[97,2372+13])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+14]..[97,2372+29])
+                      Pexp_constant PConst_string("stats_alive: ",(testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+15]..[97,2372+28]),None)
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+30]..[97,2372+49])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+31]..[97,2372+45])
+                        Pexp_ident "HW.stats_alive" (testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+31]..[97,2372+45])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+46]..[97,2372+48])
+                            Pexp_ident "hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[97,2372+46]..[97,2372+48])
+                      ]
+                ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[99,2423+0]..[118,3029+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[99,2423+4]..[99,2423+18])
+          Ppat_var "test_keep_last" (testsuite/tests/weak-ephe-final/ephetest3.ml[99,2423+4]..[99,2423+18])
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[99,2423+19]..[118,3029+22]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[99,2423+19]..[99,2423+20])
+            Ppat_var "d" (testsuite/tests/weak-ephe-final/ephetest3.ml[99,2423+19]..[99,2423+20])
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[99,2423+21]..[118,3029+22]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[99,2423+21]..[99,2423+23])
+              Ppat_var "d'" (testsuite/tests/weak-ephe-final/ephetest3.ml[99,2423+21]..[99,2423+23])
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+2]..[118,3029+22])
+              Pexp_sequence
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+2]..[100,2449+74])
+                Pexp_apply
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+2]..[100,2449+15])
+                  Pexp_ident "Printf.printf" (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+2]..[100,2449+15])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+16]..[100,2449+61])
+                      Pexp_constant PConst_string("## Keep last %i alive, check each %i ##\n%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+17]..[100,2449+60]),None)
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+62]..[100,2449+67])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+64]..[100,2449+65])
+                        Pexp_ident "/" (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+64]..[100,2449+65])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+63]..[100,2449+64])
+                            Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+63]..[100,2449+64])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+65]..[100,2449+66])
+                            Pexp_ident "d" (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+65]..[100,2449+66])
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+68]..[100,2449+74])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+70]..[100,2449+71])
+                        Pexp_ident "/" (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+70]..[100,2449+71])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+69]..[100,2449+70])
+                            Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+69]..[100,2449+70])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+71]..[100,2449+73])
+                            Pexp_ident "d'" (testsuite/tests/weak-ephe-final/ephetest3.ml[100,2449+71]..[100,2449+73])
+                      ]
+                ]
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+2]..[118,3029+22])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+6]..[101,2525+16])
+                      Ppat_var "keep_alive" (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+6]..[101,2525+16])
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+19]..[101,2525+46])
+                      Pexp_apply
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+19]..[101,2525+29])
+                        Pexp_ident "Array.make" (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+19]..[101,2525+29])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+30]..[101,2525+35])
+                            Pexp_apply
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+32]..[101,2525+33])
+                              Pexp_ident "/" (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+32]..[101,2525+33])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+31]..[101,2525+32])
+                                  Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+31]..[101,2525+32])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+33]..[101,2525+34])
+                                  Pexp_ident "d" (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+33]..[101,2525+34])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+36]..[101,2525+46])
+                            Pexp_ident "Int64.zero" (testsuite/tests/weak-ephe-final/ephetest3.ml[101,2525+36]..[101,2525+46])
+                      ]
+                ]
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[102,2575+2]..[118,3029+22])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[102,2575+6]..[102,2575+10])
+                        Ppat_var "next" (testsuite/tests/weak-ephe-final/ephetest3.ml[102,2575+6]..[102,2575+10])
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[102,2575+11]..[105,2675+6]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[102,2575+11]..[102,2575+12])
+                          Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[102,2575+11]..[102,2575+12])
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+4]..[105,2675+6])
+                          Pexp_let Nonrec
+                          [
+                            <def>
+                              pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+8]..[103,2590+10])
+                                Ppat_var "x'" (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+8]..[103,2590+10])
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+13]..[103,2590+38])
+                                Pexp_apply
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+13]..[103,2590+21])
+                                  Pexp_ident "hashcons" (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+13]..[103,2590+21])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+22]..[103,2590+38])
+                                      Pexp_apply
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+23]..[103,2590+35])
+                                        Pexp_ident "Int64.of_int" (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+23]..[103,2590+35])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+36]..[103,2590+37])
+                                            Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[103,2590+36]..[103,2590+37])
+                                      ]
+                                ]
+                          ]
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+4]..[105,2675+6])
+                            Pexp_sequence
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+4]..[104,2632+41])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+4]..[104,2632+13])
+                                Pexp_ident "Array.set" (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+4]..[104,2632+13])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+14]..[104,2632+24])
+                                    Pexp_ident "keep_alive" (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+14]..[104,2632+24])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+25]..[104,2632+38])
+                                    Pexp_apply
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+28]..[104,2632+31])
+                                      Pexp_ident "mod" (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+28]..[104,2632+31])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+26]..[104,2632+27])
+                                          Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+26]..[104,2632+27])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+32]..[104,2632+37])
+                                          Pexp_apply
+                                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+34]..[104,2632+35])
+                                            Pexp_ident "/" (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+34]..[104,2632+35])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+33]..[104,2632+34])
+                                                Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+33]..[104,2632+34])
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+35]..[104,2632+36])
+                                                Pexp_ident "d" (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+35]..[104,2632+36])
+                                          ]
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+39]..[104,2632+41])
+                                    Pexp_ident "x'" (testsuite/tests/weak-ephe-final/ephetest3.ml[104,2632+39]..[104,2632+41])
+                              ]
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[105,2675+4]..[105,2675+6])
+                              Pexp_ident "x'" (testsuite/tests/weak-ephe-final/ephetest3.ml[105,2675+4]..[105,2675+6])
+                  ]
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[107,2687+2]..[118,3029+22])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[107,2687+6]..[107,2687+11])
+                          Ppat_var "check" (testsuite/tests/weak-ephe-final/ephetest3.ml[107,2687+6]..[107,2687+11])
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[107,2687+12]..[110,2797+7]) ghost
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[107,2687+12]..[107,2687+13])
+                            Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[107,2687+12]..[107,2687+13])
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+4]..[110,2797+7])
+                            Pexp_ifthenelse
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+7]..[108,2703+32])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+24]..[108,2703+26])
+                                Pexp_ident "||" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+24]..[108,2703+26])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+7]..[108,2703+23])
+                                    Pexp_apply
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+20]..[108,2703+21])
+                                      Pexp_ident "=" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+20]..[108,2703+21])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+7]..[108,2703+19])
+                                          Pexp_apply
+                                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+9]..[108,2703+12])
+                                            Pexp_ident "mod" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+9]..[108,2703+12])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+7]..[108,2703+8])
+                                                Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+7]..[108,2703+8])
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+13]..[108,2703+19])
+                                                Pexp_apply
+                                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+15]..[108,2703+16])
+                                                  Pexp_ident "/" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+15]..[108,2703+16])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+14]..[108,2703+15])
+                                                      Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+14]..[108,2703+15])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+16]..[108,2703+18])
+                                                      Pexp_ident "d'" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+16]..[108,2703+18])
+                                                ]
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+22]..[108,2703+23])
+                                          Pexp_constant PConst_int (0,None)
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+27]..[108,2703+32])
+                                    Pexp_apply
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+29]..[108,2703+30])
+                                      Pexp_ident "=" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+29]..[108,2703+30])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+27]..[108,2703+28])
+                                          Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+27]..[108,2703+28])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+31]..[108,2703+32])
+                                          Pexp_ident "n" (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+31]..[108,2703+32])
+                                    ]
+                              ]
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[108,2703+38]..[110,2797+7])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+6]..[109,2747+14])
+                                Pexp_ident "check_hw" (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+6]..[109,2747+14])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+15]..[109,2747+49])
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+20]..[109,2747+21])
+                                      Ppat_var "f" (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+20]..[109,2747+21])
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+25]..[109,2747+48])
+                                      Pexp_apply
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+25]..[109,2747+35])
+                                        Pexp_ident "Array.iter" (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+25]..[109,2747+35])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+36]..[109,2747+37])
+                                            Pexp_ident "f" (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+36]..[109,2747+37])
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+38]..[109,2747+48])
+                                            Pexp_ident "keep_alive" (testsuite/tests/weak-ephe-final/ephetest3.ml[109,2747+38]..[109,2747+48])
+                                      ]
+                              ]
+                            None
+                    ]
+                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[112,2810+2]..[118,3029+22])
+                      Pexp_sequence
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[112,2810+2]..[112,2810+18])
+                        Pexp_apply
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[112,2810+2]..[112,2810+5])
+                          Pexp_ident "run" (testsuite/tests/weak-ephe-final/ephetest3.ml[112,2810+2]..[112,2810+5])
+                        [
+                          <arg>
+                          Labelled "next"
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[112,2810+7]..[112,2810+11])
+                              Pexp_ident "next" (testsuite/tests/weak-ephe-final/ephetest3.ml[112,2810+7]..[112,2810+11])
+                          <arg>
+                          Labelled "check"
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[112,2810+13]..[112,2810+18])
+                              Pexp_ident "check" (testsuite/tests/weak-ephe-final/ephetest3.ml[112,2810+13]..[112,2810+18])
+                        ]
+                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[114,2874+2]..[118,3029+22])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[114,2874+6]..[114,2874+7])
+                              Ppat_var "s" (testsuite/tests/weak-ephe-final/ephetest3.ml[114,2874+6]..[114,2874+7])
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+4]..[115,2884+72])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+4]..[115,2884+19])
+                                Pexp_ident "Array.fold_left" (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+4]..[115,2884+19])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+20]..[115,2884+50])
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+25]..[115,2884+28])
+                                      Ppat_var "acc" (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+25]..[115,2884+28])
+                                    expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+29]..[115,2884+49]) ghost
+                                      Pexp_fun
+                                      Nolabel
+                                      None
+                                      pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+29]..[115,2884+30])
+                                        Ppat_var "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+29]..[115,2884+30])
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+34]..[115,2884+49])
+                                        Pexp_apply
+                                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+34]..[115,2884+43])
+                                          Pexp_ident "Int64.add" (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+34]..[115,2884+43])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+44]..[115,2884+45])
+                                              Pexp_ident "x" (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+44]..[115,2884+45])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+46]..[115,2884+49])
+                                              Pexp_ident "acc" (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+46]..[115,2884+49])
+                                        ]
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+51]..[115,2884+61])
+                                    Pexp_ident "Int64.zero" (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+51]..[115,2884+61])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+62]..[115,2884+72])
+                                    Pexp_ident "keep_alive" (testsuite/tests/weak-ephe-final/ephetest3.ml[115,2884+62]..[115,2884+72])
+                              ]
+                        ]
+                        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+2]..[118,3029+22])
+                          Pexp_sequence
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+2]..[116,2960+49])
+                            Pexp_apply
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+2]..[116,2960+15])
+                              Pexp_ident "Printf.printf" (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+2]..[116,2960+15])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+16]..[116,2960+42])
+                                  Pexp_constant PConst_string("sum of kept alive %s\n%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+17]..[116,2960+41]),None)
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+43]..[116,2960+49])
+                                  Pexp_apply
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+44]..[116,2960+46])
+                                    Pexp_ident "pp" (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+44]..[116,2960+46])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+47]..[116,2960+48])
+                                        Pexp_ident "s" (testsuite/tests/weak-ephe-final/ephetest3.ml[116,2960+47]..[116,2960+48])
+                                  ]
+                            ]
+                          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[117,3011+2]..[118,3029+22])
+                            Pexp_sequence
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[117,3011+2]..[117,3011+16])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[117,3011+2]..[117,3011+13])
+                                Pexp_ident "print_stats" (testsuite/tests/weak-ephe-final/ephetest3.ml[117,3011+2]..[117,3011+13])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[117,3011+14]..[117,3011+16])
+                                    Pexp_construct "()" (testsuite/tests/weak-ephe-final/ephetest3.ml[117,3011+14]..[117,3011+16])
+                                    None
+                              ]
+                            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[118,3029+2]..[118,3029+22])
+                              Pexp_apply
+                              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[118,3029+2]..[118,3029+15])
+                                Pexp_ident "Printf.printf" (testsuite/tests/weak-ephe-final/ephetest3.ml[118,3029+2]..[118,3029+15])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[118,3029+16]..[118,3029+22])
+                                    Pexp_constant PConst_string("\n%!",(testsuite/tests/weak-ephe-final/ephetest3.ml[118,3029+17]..[118,3029+21]),None)
+                              ]
+    ]
+  structure_item (testsuite/tests/weak-ephe-final/ephetest3.ml[120,3053+0]..[123,3109+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/weak-ephe-final/ephetest3.ml[120,3053+4]..[120,3053+6])
+          Ppat_construct "()" (testsuite/tests/weak-ephe-final/ephetest3.ml[120,3053+4]..[120,3053+6])
+          None
+        expression (testsuite/tests/weak-ephe-final/ephetest3.ml[121,3062+2]..[123,3109+22])
+          Pexp_sequence
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[121,3062+2]..[121,3062+21])
+            Pexp_apply
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[121,3062+2]..[121,3062+16])
+              Pexp_ident "test_keep_last" (testsuite/tests/weak-ephe-final/ephetest3.ml[121,3062+2]..[121,3062+16])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[121,3062+17]..[121,3062+18])
+                  Pexp_constant PConst_int (1,None)
+              <arg>
+              Nolabel
+                expression (testsuite/tests/weak-ephe-final/ephetest3.ml[121,3062+19]..[121,3062+21])
+                  Pexp_constant PConst_int (10,None)
+            ]
+          expression (testsuite/tests/weak-ephe-final/ephetest3.ml[122,3085+2]..[123,3109+22])
+            Pexp_sequence
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[122,3085+2]..[122,3085+22])
+              Pexp_apply
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[122,3085+2]..[122,3085+16])
+                Pexp_ident "test_keep_last" (testsuite/tests/weak-ephe-final/ephetest3.ml[122,3085+2]..[122,3085+16])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[122,3085+17]..[122,3085+19])
+                    Pexp_constant PConst_int (50,None)
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[122,3085+20]..[122,3085+22])
+                    Pexp_constant PConst_int (10,None)
+              ]
+            expression (testsuite/tests/weak-ephe-final/ephetest3.ml[123,3109+2]..[123,3109+22])
+              Pexp_apply
+              expression (testsuite/tests/weak-ephe-final/ephetest3.ml[123,3109+2]..[123,3109+16])
+                Pexp_ident "test_keep_last" (testsuite/tests/weak-ephe-final/ephetest3.ml[123,3109+2]..[123,3109+16])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[123,3109+17]..[123,3109+20])
+                    Pexp_constant PConst_int (100,None)
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/weak-ephe-final/ephetest3.ml[123,3109+21]..[123,3109+22])
+                    Pexp_constant PConst_int (2,None)
+              ]
+    ]
+]
+

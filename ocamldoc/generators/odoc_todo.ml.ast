@@ -1,0 +1,1936 @@
+[
+  structure_item (ocamldoc/generators/odoc_todo.ml[16,1079+0]..[17,1148+48])
+    Pstr_attribute "ocaml.text"
+    [
+      structure_item (ocamldoc/generators/odoc_todo.ml[16,1079+0]..[17,1148+48])
+        Pstr_eval
+        expression (ocamldoc/generators/odoc_todo.ml[16,1079+0]..[17,1148+48])
+          Pexp_constant PConst_string(" An OCamldoc generator to retrieve information in \"todo\" tags and\n   generate an html page with all todo items. ",(ocamldoc/generators/odoc_todo.ml[16,1079+0]..[17,1148+48]),None)
+    ]
+  structure_item (ocamldoc/generators/odoc_todo.ml[19,1198+0]..[19,1198+14])
+    Pstr_open Fresh
+    module_expr (ocamldoc/generators/odoc_todo.ml[19,1198+5]..[19,1198+14])
+      Pmod_ident "Odoc_info" (ocamldoc/generators/odoc_todo.ml[19,1198+5]..[19,1198+14])
+  structure_item (ocamldoc/generators/odoc_todo.ml[20,1213+0]..[20,1213+32])
+    Pstr_module
+    "Naming" (ocamldoc/generators/odoc_todo.ml[20,1213+7]..[20,1213+13])
+      module_expr (ocamldoc/generators/odoc_todo.ml[20,1213+16]..[20,1213+32])
+        Pmod_ident "Odoc_html.Naming" (ocamldoc/generators/odoc_todo.ml[20,1213+16]..[20,1213+32])
+  structure_item (ocamldoc/generators/odoc_todo.ml[21,1246+0]..[21,1246+20])
+    Pstr_open Fresh
+    module_expr (ocamldoc/generators/odoc_todo.ml[21,1246+5]..[21,1246+20])
+      Pmod_ident "Odoc_info.Value" (ocamldoc/generators/odoc_todo.ml[21,1246+5]..[21,1246+20])
+  structure_item (ocamldoc/generators/odoc_todo.ml[22,1267+0]..[22,1267+21])
+    Pstr_open Fresh
+    module_expr (ocamldoc/generators/odoc_todo.ml[22,1267+5]..[22,1267+21])
+      Pmod_ident "Odoc_info.Module" (ocamldoc/generators/odoc_todo.ml[22,1267+5]..[22,1267+21])
+  structure_item (ocamldoc/generators/odoc_todo.ml[23,1289+0]..[23,1289+19])
+    Pstr_open Fresh
+    module_expr (ocamldoc/generators/odoc_todo.ml[23,1289+5]..[23,1289+19])
+      Pmod_ident "Odoc_info.Type" (ocamldoc/generators/odoc_todo.ml[23,1289+5]..[23,1289+19])
+  structure_item (ocamldoc/generators/odoc_todo.ml[24,1309+0]..[24,1309+24])
+    Pstr_open Fresh
+    module_expr (ocamldoc/generators/odoc_todo.ml[24,1309+5]..[24,1309+24])
+      Pmod_ident "Odoc_info.Extension" (ocamldoc/generators/odoc_todo.ml[24,1309+5]..[24,1309+24])
+  structure_item (ocamldoc/generators/odoc_todo.ml[25,1334+0]..[25,1334+24])
+    Pstr_open Fresh
+    module_expr (ocamldoc/generators/odoc_todo.ml[25,1334+5]..[25,1334+24])
+      Pmod_ident "Odoc_info.Exception" (ocamldoc/generators/odoc_todo.ml[25,1334+5]..[25,1334+24])
+  structure_item (ocamldoc/generators/odoc_todo.ml[26,1359+0]..[26,1359+20])
+    Pstr_open Fresh
+    module_expr (ocamldoc/generators/odoc_todo.ml[26,1359+5]..[26,1359+20])
+      Pmod_ident "Odoc_info.Class" (ocamldoc/generators/odoc_todo.ml[26,1359+5]..[26,1359+20])
+  structure_item (ocamldoc/generators/odoc_todo.ml[28,1381+0]..[28,1381+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (ocamldoc/generators/odoc_todo.ml[28,1381+4]..[28,1381+5])
+          Ppat_var "p" (ocamldoc/generators/odoc_todo.ml[28,1381+4]..[28,1381+5])
+        expression (ocamldoc/generators/odoc_todo.ml[28,1381+8]..[28,1381+22])
+          Pexp_ident "Printf.bprintf" (ocamldoc/generators/odoc_todo.ml[28,1381+8]..[28,1381+22])
+    ]
+  structure_item (ocamldoc/generators/odoc_todo.ml[30,1405+0]..[39,1694+31])
+    Pstr_module
+    "Html" (ocamldoc/generators/odoc_todo.ml[30,1405+7]..[30,1405+11])
+      module_expr (ocamldoc/generators/odoc_todo.ml[31,1419+2]..[39,1694+31])
+        Pmod_unpack
+        expression (ocamldoc/generators/odoc_todo.ml[32,1426+3]..[39,1694+30]) ghost
+          Pexp_constraint
+          expression (ocamldoc/generators/odoc_todo.ml[32,1426+3]..[39,1694+3])
+            Pexp_match
+            expression (ocamldoc/generators/odoc_todo.ml[33,1431+9]..[33,1431+37])
+              Pexp_apply
+              expression (ocamldoc/generators/odoc_todo.ml[33,1431+9]..[33,1431+10])
+                Pexp_ident "!" (ocamldoc/generators/odoc_todo.ml[33,1431+9]..[33,1431+10])
+              [
+                <arg>
+                Nolabel
+                  expression (ocamldoc/generators/odoc_todo.ml[33,1431+10]..[33,1431+37])
+                    Pexp_ident "Odoc_args.current_generator" (ocamldoc/generators/odoc_todo.ml[33,1431+10]..[33,1431+37])
+              ]
+            [
+              <case>
+                pattern (ocamldoc/generators/odoc_todo.ml[34,1474+5]..[34,1474+9])
+                  Ppat_construct "None" (ocamldoc/generators/odoc_todo.ml[34,1474+5]..[34,1474+9])
+                  None
+                expression (ocamldoc/generators/odoc_todo.ml[34,1474+13]..[34,1474+68])
+                  Pexp_constraint
+                  expression (ocamldoc/generators/odoc_todo.ml[34,1474+13]..[34,1474+68]) ghost
+                    Pexp_pack
+                    module_expr (ocamldoc/generators/odoc_todo.ml[34,1474+21]..[34,1474+40])
+                      Pmod_ident "Odoc_html.Generator" (ocamldoc/generators/odoc_todo.ml[34,1474+21]..[34,1474+40])
+                  core_type (ocamldoc/generators/odoc_todo.ml[34,1474+43]..[34,1474+67])
+                    Ptyp_package "Odoc_html.Html_generator" (ocamldoc/generators/odoc_todo.ml[34,1474+43]..[34,1474+67])
+                    []
+              <case>
+                pattern (ocamldoc/generators/odoc_todo.ml[35,1543+5]..[35,1543+27])
+                  Ppat_construct "Some" (ocamldoc/generators/odoc_todo.ml[35,1543+5]..[35,1543+9])
+                  Some
+                    []
+                    pattern (ocamldoc/generators/odoc_todo.ml[35,1543+10]..[35,1543+27])
+                      Ppat_construct "Odoc_gen.Html" (ocamldoc/generators/odoc_todo.ml[35,1543+11]..[35,1543+24])
+                      Some
+                        []
+                        pattern (ocamldoc/generators/odoc_todo.ml[35,1543+25]..[35,1543+26])
+                          Ppat_var "m" (ocamldoc/generators/odoc_todo.ml[35,1543+25]..[35,1543+26])
+                expression (ocamldoc/generators/odoc_todo.ml[35,1543+31]..[35,1543+32])
+                  Pexp_ident "m" (ocamldoc/generators/odoc_todo.ml[35,1543+31]..[35,1543+32])
+              <case>
+                pattern (ocamldoc/generators/odoc_todo.ml[36,1576+5]..[36,1576+6])
+                  Ppat_any
+                expression (ocamldoc/generators/odoc_todo.ml[37,1586+7]..[38,1602+91])
+                  Pexp_apply
+                  expression (ocamldoc/generators/odoc_todo.ml[37,1586+7]..[37,1586+15])
+                    Pexp_ident "failwith" (ocamldoc/generators/odoc_todo.ml[37,1586+7]..[37,1586+15])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (ocamldoc/generators/odoc_todo.ml[38,1602+9]..[38,1602+91])
+                        Pexp_constant PConst_string("A non-html generator is already set. Cannot install the Todo-list html generator",(ocamldoc/generators/odoc_todo.ml[38,1602+10]..[38,1602+90]),None)
+                  ]
+            ]
+          core_type (ocamldoc/generators/odoc_todo.ml[39,1694+6]..[39,1694+30])
+            Ptyp_package "Odoc_html.Html_generator" (ocamldoc/generators/odoc_todo.ml[39,1694+6]..[39,1694+30])
+            []
+  structure_item (ocamldoc/generators/odoc_todo.ml[41,1727+0]..[230,7602+3])
+    Pstr_module
+    "Generator" (ocamldoc/generators/odoc_todo.ml[41,1727+7]..[41,1727+16])
+      module_expr (ocamldoc/generators/odoc_todo.ml[42,1746+0]..[230,7602+3])
+        Pmod_structure
+        [
+          structure_item (ocamldoc/generators/odoc_todo.ml[43,1753+2]..[192,6394+5])
+            Pstr_class
+            [
+              class_declaration (ocamldoc/generators/odoc_todo.ml[43,1753+2]..[192,6394+5])
+                pci_virt = Concrete
+                pci_params =
+                  []
+                pci_name = "scanner" (ocamldoc/generators/odoc_todo.ml[43,1753+8]..[43,1753+15])
+                pci_expr =
+                  class_expr (ocamldoc/generators/odoc_todo.ml[43,1753+16]..[192,6394+5])
+                    Pcl_fun
+                    Nolabel
+                    None
+                    pattern (ocamldoc/generators/odoc_todo.ml[43,1753+16]..[43,1753+20])
+                      Ppat_var "html" (ocamldoc/generators/odoc_todo.ml[43,1753+16]..[43,1753+20])
+                    class_expr (ocamldoc/generators/odoc_todo.ml[44,1776+4]..[192,6394+5])
+                      Pcl_structure
+                      class_structure
+                        pattern (ocamldoc/generators/odoc_todo.ml[44,1776+11]..[44,1776+17])
+                          Ppat_var "self" (ocamldoc/generators/odoc_todo.ml[44,1776+12]..[44,1776+16])
+                        [
+                          class_field (ocamldoc/generators/odoc_todo.ml[45,1794+6]..[45,1794+36])
+                            Pcf_inherit Fresh
+                              class_expr (ocamldoc/generators/odoc_todo.ml[45,1794+14]..[45,1794+36])
+                                Pcl_constr "Odoc_info.Scan.scanner" (ocamldoc/generators/odoc_todo.ml[45,1794+14]..[45,1794+36])
+                                []
+                              None
+                          class_field (ocamldoc/generators/odoc_todo.ml[47,1832+4]..[47,1832+29])
+                            Pcf_val Immutable
+                              "b" (ocamldoc/generators/odoc_todo.ml[47,1832+8]..[47,1832+9])
+                              Concrete Fresh
+                              expression (ocamldoc/generators/odoc_todo.ml[47,1832+12]..[47,1832+29])
+                                Pexp_apply
+                                expression (ocamldoc/generators/odoc_todo.ml[47,1832+12]..[47,1832+25])
+                                  Pexp_ident "Buffer.create" (ocamldoc/generators/odoc_todo.ml[47,1832+12]..[47,1832+25])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (ocamldoc/generators/odoc_todo.ml[47,1832+26]..[47,1832+29])
+                                      Pexp_constant PConst_int (256,None)
+                                ]
+                          class_field (ocamldoc/generators/odoc_todo.ml[48,1862+4]..[48,1862+21])
+                            Pcf_method Public
+                              "buffer" (ocamldoc/generators/odoc_todo.ml[48,1862+11]..[48,1862+17])
+                              Concrete Fresh
+                              expression (ocamldoc/generators/odoc_todo.ml[48,1862+20]..[48,1862+21]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[48,1862+20]..[48,1862+21])
+                                  Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[48,1862+20]..[48,1862+21])
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[50,1885+4]..[107,3831+26])
+                            Pcf_method Private
+                              "gen_if_tag" (ocamldoc/generators/odoc_todo.ml[50,1885+19]..[50,1885+29])
+                              Concrete Fresh
+                              expression (ocamldoc/generators/odoc_todo.ml[50,1885+30]..[107,3831+26]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[50,1885+30]..[107,3831+26]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[50,1885+30]..[50,1885+34])
+                                    Ppat_var "name" (ocamldoc/generators/odoc_todo.ml[50,1885+30]..[50,1885+34])
+                                  expression (ocamldoc/generators/odoc_todo.ml[50,1885+35]..[107,3831+26]) ghost
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (ocamldoc/generators/odoc_todo.ml[50,1885+35]..[50,1885+41])
+                                      Ppat_var "target" (ocamldoc/generators/odoc_todo.ml[50,1885+35]..[50,1885+41])
+                                    expression (ocamldoc/generators/odoc_todo.ml[50,1885+42]..[107,3831+26]) ghost
+                                      Pexp_fun
+                                      Nolabel
+                                      None
+                                      pattern (ocamldoc/generators/odoc_todo.ml[50,1885+42]..[50,1885+50])
+                                        Ppat_var "info_opt" (ocamldoc/generators/odoc_todo.ml[50,1885+42]..[50,1885+50])
+                                      expression (ocamldoc/generators/odoc_todo.ml[51,1938+6]..[107,3831+26])
+                                        Pexp_match
+                                        expression (ocamldoc/generators/odoc_todo.ml[51,1938+12]..[51,1938+20])
+                                          Pexp_ident "info_opt" (ocamldoc/generators/odoc_todo.ml[51,1938+12]..[51,1938+20])
+                                        [
+                                          <case>
+                                            pattern (ocamldoc/generators/odoc_todo.ml[52,1964+8]..[52,1964+12])
+                                              Ppat_construct "None" (ocamldoc/generators/odoc_todo.ml[52,1964+8]..[52,1964+12])
+                                              None
+                                            expression (ocamldoc/generators/odoc_todo.ml[52,1964+16]..[52,1964+18])
+                                              Pexp_construct "()" (ocamldoc/generators/odoc_todo.ml[52,1964+16]..[52,1964+18])
+                                              None
+                                          <case>
+                                            pattern (ocamldoc/generators/odoc_todo.ml[53,1983+8]..[53,1983+14])
+                                              Ppat_construct "Some" (ocamldoc/generators/odoc_todo.ml[53,1983+8]..[53,1983+12])
+                                              Some
+                                                []
+                                                pattern (ocamldoc/generators/odoc_todo.ml[53,1983+13]..[53,1983+14])
+                                                  Ppat_var "i" (ocamldoc/generators/odoc_todo.ml[53,1983+13]..[53,1983+14])
+                                            expression (ocamldoc/generators/odoc_todo.ml[54,2001+10]..[107,3831+26])
+                                              Pexp_let Nonrec
+                                              [
+                                                <def>
+                                                  pattern (ocamldoc/generators/odoc_todo.ml[54,2001+14]..[54,2001+15])
+                                                    Ppat_var "l" (ocamldoc/generators/odoc_todo.ml[54,2001+14]..[54,2001+15])
+                                                  expression (ocamldoc/generators/odoc_todo.ml[55,2019+12]..[77,2804+24])
+                                                    Pexp_apply
+                                                    expression (ocamldoc/generators/odoc_todo.ml[55,2019+12]..[55,2019+26])
+                                                      Pexp_ident "List.fold_left" (ocamldoc/generators/odoc_todo.ml[55,2019+12]..[55,2019+26])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (ocamldoc/generators/odoc_todo.ml[56,2046+14]..[75,2771+15])
+                                                          Pexp_fun
+                                                          Nolabel
+                                                          None
+                                                          pattern (ocamldoc/generators/odoc_todo.ml[56,2046+19]..[56,2046+22])
+                                                            Ppat_var "acc" (ocamldoc/generators/odoc_todo.ml[56,2046+19]..[56,2046+22])
+                                                          expression (ocamldoc/generators/odoc_todo.ml[56,2046+23]..[74,2743+27]) ghost
+                                                            Pexp_fun
+                                                            Nolabel
+                                                            None
+                                                            pattern (ocamldoc/generators/odoc_todo.ml[56,2046+23]..[56,2046+32])
+                                                              Ppat_tuple
+                                                              [
+                                                                pattern (ocamldoc/generators/odoc_todo.ml[56,2046+24]..[56,2046+25])
+                                                                  Ppat_var "t" (ocamldoc/generators/odoc_todo.ml[56,2046+24]..[56,2046+25])
+                                                                pattern (ocamldoc/generators/odoc_todo.ml[56,2046+27]..[56,2046+31])
+                                                                  Ppat_var "text" (ocamldoc/generators/odoc_todo.ml[56,2046+27]..[56,2046+31])
+                                                              ]
+                                                            expression (ocamldoc/generators/odoc_todo.ml[57,2082+17]..[74,2743+27])
+                                                              Pexp_match
+                                                              expression (ocamldoc/generators/odoc_todo.ml[57,2082+23]..[57,2082+24])
+                                                                Pexp_ident "t" (ocamldoc/generators/odoc_todo.ml[57,2082+23]..[57,2082+24])
+                                                              [
+                                                                <case>
+                                                                  pattern (ocamldoc/generators/odoc_todo.ml[58,2112+19]..[58,2112+25])
+                                                                    Ppat_constant PConst_string("todo",(ocamldoc/generators/odoc_todo.ml[58,2112+20]..[58,2112+24]),None)
+                                                                  expression (ocamldoc/generators/odoc_todo.ml[59,2141+21]..[73,2718+24])
+                                                                    Pexp_match
+                                                                    expression (ocamldoc/generators/odoc_todo.ml[60,2168+29]..[60,2168+33])
+                                                                      Pexp_ident "text" (ocamldoc/generators/odoc_todo.ml[60,2168+29]..[60,2168+33])
+                                                                    [
+                                                                      <case>
+pattern (ocamldoc/generators/odoc_todo.ml[61,2207+25]..[61,2207+48])
+  Ppat_construct "::" (ocamldoc/generators/odoc_todo.ml[61,2207+44]..[61,2207+46])
+  Some
+    []
+    pattern (ocamldoc/generators/odoc_todo.ml[61,2207+25]..[61,2207+48]) ghost
+      Ppat_tuple
+      [
+        pattern (ocamldoc/generators/odoc_todo.ml[61,2207+25]..[61,2207+43])
+          Ppat_construct "Odoc_info.Code" (ocamldoc/generators/odoc_todo.ml[61,2207+26]..[61,2207+40])
+          Some
+            []
+            pattern (ocamldoc/generators/odoc_todo.ml[61,2207+41]..[61,2207+42])
+              Ppat_var "s" (ocamldoc/generators/odoc_todo.ml[61,2207+41]..[61,2207+42])
+        pattern (ocamldoc/generators/odoc_todo.ml[61,2207+47]..[61,2207+48])
+          Ppat_var "q" (ocamldoc/generators/odoc_todo.ml[61,2207+47]..[61,2207+48])
+      ]
+expression (ocamldoc/generators/odoc_todo.ml[62,2259+27]..[70,2638+28])
+  Pexp_try
+  expression (ocamldoc/generators/odoc_todo.ml[64,2320+30]..[68,2525+54])
+    Pexp_let Nonrec
+    [
+      <def>
+        pattern (ocamldoc/generators/odoc_todo.ml[64,2320+34]..[64,2320+35])
+          Ppat_var "n" (ocamldoc/generators/odoc_todo.ml[64,2320+34]..[64,2320+35])
+        expression (ocamldoc/generators/odoc_todo.ml[64,2320+38]..[64,2320+53])
+          Pexp_apply
+          expression (ocamldoc/generators/odoc_todo.ml[64,2320+38]..[64,2320+51])
+            Pexp_ident "int_of_string" (ocamldoc/generators/odoc_todo.ml[64,2320+38]..[64,2320+51])
+          [
+            <arg>
+            Nolabel
+              expression (ocamldoc/generators/odoc_todo.ml[64,2320+52]..[64,2320+53])
+                Pexp_ident "s" (ocamldoc/generators/odoc_todo.ml[64,2320+52]..[64,2320+53])
+          ]
+    ]
+    expression (ocamldoc/generators/odoc_todo.ml[65,2377+30]..[68,2525+54])
+      Pexp_let Nonrec
+      [
+        <def>
+          pattern (ocamldoc/generators/odoc_todo.ml[65,2377+34]..[65,2377+38])
+            Ppat_var "head" (ocamldoc/generators/odoc_todo.ml[65,2377+34]..[65,2377+38])
+          expression (ocamldoc/generators/odoc_todo.ml[66,2418+32]..[66,2418+73])
+            Pexp_construct "Odoc_info.Code" (ocamldoc/generators/odoc_todo.ml[66,2418+32]..[66,2418+46])
+            Some
+              expression (ocamldoc/generators/odoc_todo.ml[66,2418+47]..[66,2418+73])
+                Pexp_apply
+                expression (ocamldoc/generators/odoc_todo.ml[66,2418+48]..[66,2418+62])
+                  Pexp_ident "Printf.sprintf" (ocamldoc/generators/odoc_todo.ml[66,2418+48]..[66,2418+62])
+                [
+                  <arg>
+                  Nolabel
+                    expression (ocamldoc/generators/odoc_todo.ml[66,2418+63]..[66,2418+70])
+                      Pexp_constant PConst_string("[%d] ",(ocamldoc/generators/odoc_todo.ml[66,2418+64]..[66,2418+69]),None)
+                  <arg>
+                  Nolabel
+                    expression (ocamldoc/generators/odoc_todo.ml[66,2418+71]..[66,2418+72])
+                      Pexp_ident "n" (ocamldoc/generators/odoc_todo.ml[66,2418+71]..[66,2418+72])
+                ]
+      ]
+      expression (ocamldoc/generators/odoc_todo.ml[68,2525+30]..[68,2525+54])
+        Pexp_construct "::" (ocamldoc/generators/odoc_todo.ml[68,2525+48]..[68,2525+50])
+        Some
+          expression (ocamldoc/generators/odoc_todo.ml[68,2525+30]..[68,2525+54]) ghost
+            Pexp_tuple
+            [
+              expression (ocamldoc/generators/odoc_todo.ml[68,2525+30]..[68,2525+47])
+                Pexp_tuple
+                [
+                  expression (ocamldoc/generators/odoc_todo.ml[68,2525+31]..[68,2525+37])
+                    Pexp_construct "Some" (ocamldoc/generators/odoc_todo.ml[68,2525+31]..[68,2525+35])
+                    Some
+                      expression (ocamldoc/generators/odoc_todo.ml[68,2525+36]..[68,2525+37])
+                        Pexp_ident "n" (ocamldoc/generators/odoc_todo.ml[68,2525+36]..[68,2525+37])
+                  expression (ocamldoc/generators/odoc_todo.ml[68,2525+39]..[68,2525+46])
+                    Pexp_construct "::" (ocamldoc/generators/odoc_todo.ml[68,2525+43]..[68,2525+45])
+                    Some
+                      expression (ocamldoc/generators/odoc_todo.ml[68,2525+39]..[68,2525+46]) ghost
+                        Pexp_tuple
+                        [
+                          expression (ocamldoc/generators/odoc_todo.ml[68,2525+39]..[68,2525+43])
+                            Pexp_ident "head" (ocamldoc/generators/odoc_todo.ml[68,2525+39]..[68,2525+43])
+                          expression (ocamldoc/generators/odoc_todo.ml[68,2525+45]..[68,2525+46])
+                            Pexp_ident "q" (ocamldoc/generators/odoc_todo.ml[68,2525+45]..[68,2525+46])
+                        ]
+                ]
+              expression (ocamldoc/generators/odoc_todo.ml[68,2525+51]..[68,2525+54])
+                Pexp_ident "acc" (ocamldoc/generators/odoc_todo.ml[68,2525+51]..[68,2525+54])
+            ]
+  [
+    <case>
+      pattern (ocamldoc/generators/odoc_todo.ml[69,2580+33]..[69,2580+34])
+        Ppat_any
+      expression (ocamldoc/generators/odoc_todo.ml[69,2580+38]..[69,2580+57])
+        Pexp_construct "::" (ocamldoc/generators/odoc_todo.ml[69,2580+51]..[69,2580+53])
+        Some
+          expression (ocamldoc/generators/odoc_todo.ml[69,2580+38]..[69,2580+57]) ghost
+            Pexp_tuple
+            [
+              expression (ocamldoc/generators/odoc_todo.ml[69,2580+38]..[69,2580+50])
+                Pexp_tuple
+                [
+                  expression (ocamldoc/generators/odoc_todo.ml[69,2580+39]..[69,2580+43])
+                    Pexp_construct "None" (ocamldoc/generators/odoc_todo.ml[69,2580+39]..[69,2580+43])
+                    None
+                  expression (ocamldoc/generators/odoc_todo.ml[69,2580+45]..[69,2580+49])
+                    Pexp_ident "text" (ocamldoc/generators/odoc_todo.ml[69,2580+45]..[69,2580+49])
+                ]
+              expression (ocamldoc/generators/odoc_todo.ml[69,2580+54]..[69,2580+57])
+                Pexp_ident "acc" (ocamldoc/generators/odoc_todo.ml[69,2580+54]..[69,2580+57])
+            ]
+  ]
+                                                                      <case>
+pattern (ocamldoc/generators/odoc_todo.ml[71,2667+25]..[71,2667+26])
+  Ppat_any
+expression (ocamldoc/generators/odoc_todo.ml[71,2667+30]..[71,2667+49])
+  Pexp_construct "::" (ocamldoc/generators/odoc_todo.ml[71,2667+43]..[71,2667+45])
+  Some
+    expression (ocamldoc/generators/odoc_todo.ml[71,2667+30]..[71,2667+49]) ghost
+      Pexp_tuple
+      [
+        expression (ocamldoc/generators/odoc_todo.ml[71,2667+30]..[71,2667+42])
+          Pexp_tuple
+          [
+            expression (ocamldoc/generators/odoc_todo.ml[71,2667+31]..[71,2667+35])
+              Pexp_construct "None" (ocamldoc/generators/odoc_todo.ml[71,2667+31]..[71,2667+35])
+              None
+            expression (ocamldoc/generators/odoc_todo.ml[71,2667+37]..[71,2667+41])
+              Pexp_ident "text" (ocamldoc/generators/odoc_todo.ml[71,2667+37]..[71,2667+41])
+          ]
+        expression (ocamldoc/generators/odoc_todo.ml[71,2667+46]..[71,2667+49])
+          Pexp_ident "acc" (ocamldoc/generators/odoc_todo.ml[71,2667+46]..[71,2667+49])
+      ]
+                                                                    ]
+                                                                <case>
+                                                                  pattern (ocamldoc/generators/odoc_todo.ml[74,2743+19]..[74,2743+20])
+                                                                    Ppat_any
+                                                                  expression (ocamldoc/generators/odoc_todo.ml[74,2743+24]..[74,2743+27])
+                                                                    Pexp_ident "acc" (ocamldoc/generators/odoc_todo.ml[74,2743+24]..[74,2743+27])
+                                                              ]
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (ocamldoc/generators/odoc_todo.ml[76,2787+14]..[76,2787+16])
+                                                          Pexp_construct "[]" (ocamldoc/generators/odoc_todo.ml[76,2787+14]..[76,2787+16])
+                                                          None
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (ocamldoc/generators/odoc_todo.ml[77,2804+14]..[77,2804+24])
+                                                          Pexp_field
+                                                          expression (ocamldoc/generators/odoc_todo.ml[77,2804+14]..[77,2804+15])
+                                                            Pexp_ident "i" (ocamldoc/generators/odoc_todo.ml[77,2804+14]..[77,2804+15])
+                                                          "i_custom" (ocamldoc/generators/odoc_todo.ml[77,2804+16]..[77,2804+24])
+                                                    ]
+                                              ]
+                                              expression (ocamldoc/generators/odoc_todo.ml[79,2842+10]..[107,3831+26])
+                                                Pexp_match
+                                                expression (ocamldoc/generators/odoc_todo.ml[79,2842+16]..[79,2842+17])
+                                                  Pexp_ident "l" (ocamldoc/generators/odoc_todo.ml[79,2842+16]..[79,2842+17])
+                                                [
+                                                  <case>
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[80,2865+12]..[80,2865+14])
+                                                      Ppat_construct "[]" (ocamldoc/generators/odoc_todo.ml[80,2865+12]..[80,2865+14])
+                                                      None
+                                                    expression (ocamldoc/generators/odoc_todo.ml[80,2865+18]..[80,2865+20])
+                                                      Pexp_construct "()" (ocamldoc/generators/odoc_todo.ml[80,2865+18]..[80,2865+20])
+                                                      None
+                                                  <case>
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[81,2886+12]..[81,2886+13])
+                                                      Ppat_any
+                                                    expression (ocamldoc/generators/odoc_todo.ml[82,2903+14]..[107,3831+26])
+                                                      Pexp_let Nonrec
+                                                      [
+                                                        <def>
+                                                          pattern (ocamldoc/generators/odoc_todo.ml[82,2903+18]..[82,2903+19])
+                                                            Ppat_var "l" (ocamldoc/generators/odoc_todo.ml[82,2903+18]..[82,2903+19])
+                                                          expression (ocamldoc/generators/odoc_todo.ml[82,2903+22]..[89,3160+17])
+                                                            Pexp_apply
+                                                            expression (ocamldoc/generators/odoc_todo.ml[82,2903+22]..[82,2903+31])
+                                                              Pexp_ident "List.sort" (ocamldoc/generators/odoc_todo.ml[82,2903+22]..[82,2903+31])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (ocamldoc/generators/odoc_todo.ml[83,2935+16]..[88,3142+17])
+                                                                  Pexp_fun
+                                                                  Nolabel
+                                                                  None
+                                                                  pattern (ocamldoc/generators/odoc_todo.ml[83,2935+21]..[83,2935+22])
+                                                                    Ppat_var "a" (ocamldoc/generators/odoc_todo.ml[83,2935+21]..[83,2935+22])
+                                                                  expression (ocamldoc/generators/odoc_todo.ml[83,2935+23]..[87,3077+64]) ghost
+                                                                    Pexp_fun
+                                                                    Nolabel
+                                                                    None
+                                                                    pattern (ocamldoc/generators/odoc_todo.ml[83,2935+23]..[83,2935+24])
+                                                                      Ppat_var "b" (ocamldoc/generators/odoc_todo.ml[83,2935+23]..[83,2935+24])
+                                                                    expression (ocamldoc/generators/odoc_todo.ml[84,2963+19]..[87,3077+64])
+                                                                      Pexp_match
+                                                                      expression (ocamldoc/generators/odoc_todo.ml[84,2963+25]..[84,2963+29])
+Pexp_tuple
+[
+  expression (ocamldoc/generators/odoc_todo.ml[84,2963+25]..[84,2963+26])
+    Pexp_ident "a" (ocamldoc/generators/odoc_todo.ml[84,2963+25]..[84,2963+26])
+  expression (ocamldoc/generators/odoc_todo.ml[84,2963+28]..[84,2963+29])
+    Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[84,2963+28]..[84,2963+29])
+]
+                                                                      [
+<case>
+  pattern (ocamldoc/generators/odoc_todo.ml[85,2998+21]..[85,2998+33])
+    Ppat_tuple
+    [
+      pattern (ocamldoc/generators/odoc_todo.ml[85,2998+21]..[85,2998+30])
+        Ppat_tuple
+        [
+          pattern (ocamldoc/generators/odoc_todo.ml[85,2998+22]..[85,2998+26])
+            Ppat_construct "None" (ocamldoc/generators/odoc_todo.ml[85,2998+22]..[85,2998+26])
+            None
+          pattern (ocamldoc/generators/odoc_todo.ml[85,2998+28]..[85,2998+29])
+            Ppat_any
+        ]
+      pattern (ocamldoc/generators/odoc_todo.ml[85,2998+32]..[85,2998+33])
+        Ppat_any
+    ]
+  expression (ocamldoc/generators/odoc_todo.ml[85,2998+37]..[85,2998+39])
+    Pexp_constant PConst_int (-1,None)
+<case>
+  pattern (ocamldoc/generators/odoc_todo.ml[86,3038+21]..[86,3038+33])
+    Ppat_tuple
+    [
+      pattern (ocamldoc/generators/odoc_todo.ml[86,3038+21]..[86,3038+22])
+        Ppat_any
+      pattern (ocamldoc/generators/odoc_todo.ml[86,3038+24]..[86,3038+33])
+        Ppat_tuple
+        [
+          pattern (ocamldoc/generators/odoc_todo.ml[86,3038+25]..[86,3038+29])
+            Ppat_construct "None" (ocamldoc/generators/odoc_todo.ml[86,3038+25]..[86,3038+29])
+            None
+          pattern (ocamldoc/generators/odoc_todo.ml[86,3038+31]..[86,3038+32])
+            Ppat_any
+        ]
+    ]
+  expression (ocamldoc/generators/odoc_todo.ml[86,3038+37]..[86,3038+38])
+    Pexp_constant PConst_int (1,None)
+<case>
+  pattern (ocamldoc/generators/odoc_todo.ml[87,3077+21]..[87,3077+47])
+    Ppat_tuple
+    [
+      pattern (ocamldoc/generators/odoc_todo.ml[87,3077+21]..[87,3077+33])
+        Ppat_tuple
+        [
+          pattern (ocamldoc/generators/odoc_todo.ml[87,3077+22]..[87,3077+29])
+            Ppat_construct "Some" (ocamldoc/generators/odoc_todo.ml[87,3077+22]..[87,3077+26])
+            Some
+              []
+              pattern (ocamldoc/generators/odoc_todo.ml[87,3077+27]..[87,3077+29])
+                Ppat_var "n1" (ocamldoc/generators/odoc_todo.ml[87,3077+27]..[87,3077+29])
+          pattern (ocamldoc/generators/odoc_todo.ml[87,3077+31]..[87,3077+32])
+            Ppat_any
+        ]
+      pattern (ocamldoc/generators/odoc_todo.ml[87,3077+35]..[87,3077+47])
+        Ppat_tuple
+        [
+          pattern (ocamldoc/generators/odoc_todo.ml[87,3077+36]..[87,3077+43])
+            Ppat_construct "Some" (ocamldoc/generators/odoc_todo.ml[87,3077+36]..[87,3077+40])
+            Some
+              []
+              pattern (ocamldoc/generators/odoc_todo.ml[87,3077+41]..[87,3077+43])
+                Ppat_var "n2" (ocamldoc/generators/odoc_todo.ml[87,3077+41]..[87,3077+43])
+          pattern (ocamldoc/generators/odoc_todo.ml[87,3077+45]..[87,3077+46])
+            Ppat_any
+        ]
+    ]
+  expression (ocamldoc/generators/odoc_todo.ml[87,3077+51]..[87,3077+64])
+    Pexp_apply
+    expression (ocamldoc/generators/odoc_todo.ml[87,3077+51]..[87,3077+58])
+      Pexp_ident "compare" (ocamldoc/generators/odoc_todo.ml[87,3077+51]..[87,3077+58])
+    [
+      <arg>
+      Nolabel
+        expression (ocamldoc/generators/odoc_todo.ml[87,3077+59]..[87,3077+61])
+          Pexp_ident "n1" (ocamldoc/generators/odoc_todo.ml[87,3077+59]..[87,3077+61])
+      <arg>
+      Nolabel
+        expression (ocamldoc/generators/odoc_todo.ml[87,3077+62]..[87,3077+64])
+          Pexp_ident "n2" (ocamldoc/generators/odoc_todo.ml[87,3077+62]..[87,3077+64])
+    ]
+                                                                      ]
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (ocamldoc/generators/odoc_todo.ml[89,3160+16]..[89,3160+17])
+                                                                  Pexp_ident "l" (ocamldoc/generators/odoc_todo.ml[89,3160+16]..[89,3160+17])
+                                                            ]
+                                                      ]
+                                                      expression (ocamldoc/generators/odoc_todo.ml[91,3195+14]..[107,3831+26])
+                                                        Pexp_sequence
+                                                        expression (ocamldoc/generators/odoc_todo.ml[91,3195+14]..[92,3268+27])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/generators/odoc_todo.ml[91,3195+14]..[91,3195+15])
+                                                            Pexp_ident "p" (ocamldoc/generators/odoc_todo.ml[91,3195+14]..[91,3195+15])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/generators/odoc_todo.ml[91,3195+16]..[91,3195+17])
+                                                                Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[91,3195+16]..[91,3195+17])
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/generators/odoc_todo.ml[91,3195+18]..[91,3195+72])
+                                                                Pexp_constant PConst_string("<pre><a href=\"%s\">%s</a></pre><div class=\"info\">",(ocamldoc/generators/odoc_todo.ml[91,3195+19]..[91,3195+71]),None)
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/generators/odoc_todo.ml[92,3268+16]..[92,3268+22])
+                                                                Pexp_ident "target" (ocamldoc/generators/odoc_todo.ml[92,3268+16]..[92,3268+22])
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/generators/odoc_todo.ml[92,3268+23]..[92,3268+27])
+                                                                Pexp_ident "name" (ocamldoc/generators/odoc_todo.ml[92,3268+23]..[92,3268+27])
+                                                          ]
+                                                        expression (ocamldoc/generators/odoc_todo.ml[93,3297+14]..[107,3831+26])
+                                                          Pexp_let Nonrec
+                                                          [
+                                                            <def>
+                                                              pattern (ocamldoc/generators/odoc_todo.ml[93,3297+18]..[93,3297+21])
+                                                                Ppat_var "col" (ocamldoc/generators/odoc_todo.ml[93,3297+18]..[93,3297+21])
+                                                              expression (ocamldoc/generators/odoc_todo.ml[93,3297+24]..[98,3472+71])
+                                                                Pexp_function
+                                                                [
+                                                                  <case>
+                                                                    pattern (ocamldoc/generators/odoc_todo.ml[94,3330+16]..[94,3330+20])
+                                                                      Ppat_construct "None" (ocamldoc/generators/odoc_todo.ml[94,3330+16]..[94,3330+20])
+                                                                      None
+                                                                    expression (ocamldoc/generators/odoc_todo.ml[94,3330+24]..[94,3330+33])
+                                                                      Pexp_constant PConst_string("#000000",(ocamldoc/generators/odoc_todo.ml[94,3330+25]..[94,3330+32]),None)
+                                                                  <case>
+                                                                    pattern (ocamldoc/generators/odoc_todo.ml[95,3364+16]..[95,3364+22])
+                                                                      Ppat_construct "Some" (ocamldoc/generators/odoc_todo.ml[95,3364+16]..[95,3364+20])
+                                                                      Some
+[]
+pattern (ocamldoc/generators/odoc_todo.ml[95,3364+21]..[95,3364+22])
+  Ppat_constant PConst_int (1,None)
+                                                                    expression (ocamldoc/generators/odoc_todo.ml[95,3364+26]..[95,3364+35])
+                                                                      Pexp_constant PConst_string("#FF0000",(ocamldoc/generators/odoc_todo.ml[95,3364+27]..[95,3364+34]),None)
+                                                                  <case>
+                                                                    pattern (ocamldoc/generators/odoc_todo.ml[96,3400+16]..[96,3400+22])
+                                                                      Ppat_construct "Some" (ocamldoc/generators/odoc_todo.ml[96,3400+16]..[96,3400+20])
+                                                                      Some
+[]
+pattern (ocamldoc/generators/odoc_todo.ml[96,3400+21]..[96,3400+22])
+  Ppat_constant PConst_int (2,None)
+                                                                    expression (ocamldoc/generators/odoc_todo.ml[96,3400+26]..[96,3400+35])
+                                                                      Pexp_constant PConst_string("#AA5555",(ocamldoc/generators/odoc_todo.ml[96,3400+27]..[96,3400+34]),None)
+                                                                  <case>
+                                                                    pattern (ocamldoc/generators/odoc_todo.ml[97,3436+16]..[97,3436+22])
+                                                                      Ppat_construct "Some" (ocamldoc/generators/odoc_todo.ml[97,3436+16]..[97,3436+20])
+                                                                      Some
+[]
+pattern (ocamldoc/generators/odoc_todo.ml[97,3436+21]..[97,3436+22])
+  Ppat_constant PConst_int (3,None)
+                                                                    expression (ocamldoc/generators/odoc_todo.ml[97,3436+26]..[97,3436+35])
+                                                                      Pexp_constant PConst_string("#44BB00",(ocamldoc/generators/odoc_todo.ml[97,3436+27]..[97,3436+34]),None)
+                                                                  <case>
+                                                                    pattern (ocamldoc/generators/odoc_todo.ml[98,3472+16]..[98,3472+22])
+                                                                      Ppat_construct "Some" (ocamldoc/generators/odoc_todo.ml[98,3472+16]..[98,3472+20])
+                                                                      Some
+[]
+pattern (ocamldoc/generators/odoc_todo.ml[98,3472+21]..[98,3472+22])
+  Ppat_var "n" (ocamldoc/generators/odoc_todo.ml[98,3472+21]..[98,3472+22])
+                                                                    expression (ocamldoc/generators/odoc_todo.ml[98,3472+26]..[98,3472+71])
+                                                                      Pexp_apply
+                                                                      expression (ocamldoc/generators/odoc_todo.ml[98,3472+26]..[98,3472+40])
+Pexp_ident "Printf.sprintf" (ocamldoc/generators/odoc_todo.ml[98,3472+26]..[98,3472+40])
+                                                                      [
+<arg>
+Nolabel
+  expression (ocamldoc/generators/odoc_todo.ml[98,3472+41]..[98,3472+51])
+    Pexp_constant PConst_string("#%2x0000",(ocamldoc/generators/odoc_todo.ml[98,3472+42]..[98,3472+50]),None)
+<arg>
+Nolabel
+  expression (ocamldoc/generators/odoc_todo.ml[98,3472+52]..[98,3472+71])
+    Pexp_apply
+    expression (ocamldoc/generators/odoc_todo.ml[98,3472+58]..[98,3472+59])
+      Pexp_ident "-" (ocamldoc/generators/odoc_todo.ml[98,3472+58]..[98,3472+59])
+    [
+      <arg>
+      Nolabel
+        expression (ocamldoc/generators/odoc_todo.ml[98,3472+53]..[98,3472+57])
+          Pexp_constant PConst_int (0xAA,None)
+      <arg>
+      Nolabel
+        expression (ocamldoc/generators/odoc_todo.ml[98,3472+60]..[98,3472+70])
+          Pexp_apply
+          expression (ocamldoc/generators/odoc_todo.ml[98,3472+63]..[98,3472+64])
+            Pexp_ident "*" (ocamldoc/generators/odoc_todo.ml[98,3472+63]..[98,3472+64])
+          [
+            <arg>
+            Nolabel
+              expression (ocamldoc/generators/odoc_todo.ml[98,3472+61]..[98,3472+62])
+                Pexp_ident "n" (ocamldoc/generators/odoc_todo.ml[98,3472+61]..[98,3472+62])
+            <arg>
+            Nolabel
+              expression (ocamldoc/generators/odoc_todo.ml[98,3472+65]..[98,3472+69])
+                Pexp_constant PConst_int (0x10,None)
+          ]
+    ]
+                                                                      ]
+                                                                ]
+                                                          ]
+                                                          expression (ocamldoc/generators/odoc_todo.ml[100,3561+14]..[107,3831+26])
+                                                            Pexp_sequence
+                                                            expression (ocamldoc/generators/odoc_todo.ml[100,3561+14]..[106,3812+17])
+                                                              Pexp_apply
+                                                              expression (ocamldoc/generators/odoc_todo.ml[100,3561+14]..[100,3561+23])
+                                                                Pexp_ident "List.iter" (ocamldoc/generators/odoc_todo.ml[100,3561+14]..[100,3561+23])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (ocamldoc/generators/odoc_todo.ml[101,3585+16]..[105,3794+17])
+                                                                    Pexp_fun
+                                                                    Nolabel
+                                                                    None
+                                                                    pattern (ocamldoc/generators/odoc_todo.ml[101,3585+21]..[101,3585+27])
+                                                                      Ppat_tuple
+                                                                      [
+pattern (ocamldoc/generators/odoc_todo.ml[101,3585+22]..[101,3585+23])
+  Ppat_var "n" (ocamldoc/generators/odoc_todo.ml[101,3585+22]..[101,3585+23])
+pattern (ocamldoc/generators/odoc_todo.ml[101,3585+25]..[101,3585+26])
+  Ppat_var "e" (ocamldoc/generators/odoc_todo.ml[101,3585+25]..[101,3585+26])
+                                                                      ]
+                                                                    expression (ocamldoc/generators/odoc_todo.ml[102,3616+19]..[104,3753+40])
+                                                                      Pexp_sequence
+                                                                      expression (ocamldoc/generators/odoc_todo.ml[102,3616+19]..[102,3616+72])
+Pexp_apply
+expression (ocamldoc/generators/odoc_todo.ml[102,3616+19]..[102,3616+33])
+  Pexp_ident "Printf.bprintf" (ocamldoc/generators/odoc_todo.ml[102,3616+19]..[102,3616+33])
+[
+  <arg>
+  Nolabel
+    expression (ocamldoc/generators/odoc_todo.ml[102,3616+34]..[102,3616+35])
+      Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[102,3616+34]..[102,3616+35])
+  <arg>
+  Nolabel
+    expression (ocamldoc/generators/odoc_todo.ml[102,3616+36]..[102,3616+64])
+      Pexp_constant PConst_string("<span style=\"color: %s\">",(ocamldoc/generators/odoc_todo.ml[102,3616+37]..[102,3616+63]),None)
+  <arg>
+  Nolabel
+    expression (ocamldoc/generators/odoc_todo.ml[102,3616+65]..[102,3616+72])
+      Pexp_apply
+      expression (ocamldoc/generators/odoc_todo.ml[102,3616+66]..[102,3616+69])
+        Pexp_ident "col" (ocamldoc/generators/odoc_todo.ml[102,3616+66]..[102,3616+69])
+      [
+        <arg>
+        Nolabel
+          expression (ocamldoc/generators/odoc_todo.ml[102,3616+70]..[102,3616+71])
+            Pexp_ident "n" (ocamldoc/generators/odoc_todo.ml[102,3616+70]..[102,3616+71])
+      ]
+]
+                                                                      expression (ocamldoc/generators/odoc_todo.ml[103,3690+19]..[104,3753+40])
+Pexp_sequence
+expression (ocamldoc/generators/odoc_todo.ml[103,3690+19]..[103,3690+61])
+  Pexp_apply
+  expression (ocamldoc/generators/odoc_todo.ml[103,3690+19]..[103,3690+36])
+    Pexp_send "html_of_text"
+    expression (ocamldoc/generators/odoc_todo.ml[103,3690+19]..[103,3690+23])
+      Pexp_ident "html" (ocamldoc/generators/odoc_todo.ml[103,3690+19]..[103,3690+23])
+  [
+    <arg>
+    Optional "with_p"
+      expression (ocamldoc/generators/odoc_todo.ml[103,3690+45]..[103,3690+57])
+        Pexp_construct "Some" (ocamldoc/generators/odoc_todo.ml[103,3690+46]..[103,3690+50])
+        Some
+          expression (ocamldoc/generators/odoc_todo.ml[103,3690+51]..[103,3690+56])
+            Pexp_construct "false" (ocamldoc/generators/odoc_todo.ml[103,3690+51]..[103,3690+56])
+            None
+    <arg>
+    Nolabel
+      expression (ocamldoc/generators/odoc_todo.ml[103,3690+58]..[103,3690+59])
+        Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[103,3690+58]..[103,3690+59])
+    <arg>
+    Nolabel
+      expression (ocamldoc/generators/odoc_todo.ml[103,3690+60]..[103,3690+61])
+        Pexp_ident "e" (ocamldoc/generators/odoc_todo.ml[103,3690+60]..[103,3690+61])
+  ]
+expression (ocamldoc/generators/odoc_todo.ml[104,3753+19]..[104,3753+39])
+  Pexp_apply
+  expression (ocamldoc/generators/odoc_todo.ml[104,3753+19]..[104,3753+20])
+    Pexp_ident "p" (ocamldoc/generators/odoc_todo.ml[104,3753+19]..[104,3753+20])
+  [
+    <arg>
+    Nolabel
+      expression (ocamldoc/generators/odoc_todo.ml[104,3753+21]..[104,3753+22])
+        Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[104,3753+21]..[104,3753+22])
+    <arg>
+    Nolabel
+      expression (ocamldoc/generators/odoc_todo.ml[104,3753+23]..[104,3753+39])
+        Pexp_constant PConst_string("</span><br/>\n",(ocamldoc/generators/odoc_todo.ml[104,3753+24]..[104,3753+38]),None)
+  ]
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (ocamldoc/generators/odoc_todo.ml[106,3812+16]..[106,3812+17])
+                                                                    Pexp_ident "l" (ocamldoc/generators/odoc_todo.ml[106,3812+16]..[106,3812+17])
+                                                              ]
+                                                            expression (ocamldoc/generators/odoc_todo.ml[107,3831+14]..[107,3831+26])
+                                                              Pexp_apply
+                                                              expression (ocamldoc/generators/odoc_todo.ml[107,3831+14]..[107,3831+15])
+                                                                Pexp_ident "p" (ocamldoc/generators/odoc_todo.ml[107,3831+14]..[107,3831+15])
+                                                              [
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (ocamldoc/generators/odoc_todo.ml[107,3831+16]..[107,3831+17])
+                                                                    Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[107,3831+16]..[107,3831+17])
+                                                                <arg>
+                                                                Nolabel
+                                                                  expression (ocamldoc/generators/odoc_todo.ml[107,3831+18]..[107,3831+26])
+                                                                    Pexp_constant PConst_string("</div>",(ocamldoc/generators/odoc_todo.ml[107,3831+19]..[107,3831+25]),None)
+                                                              ]
+                                                ]
+                                        ]
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[109,3859+4]..[113,3978+18])
+                            Pcf_method Public
+                              "scan_value" (ocamldoc/generators/odoc_todo.ml[109,3859+12]..[109,3859+22])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[109,3859+23]..[113,3978+18]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[109,3859+23]..[113,3978+18]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[109,3859+23]..[109,3859+24])
+                                    Ppat_var "v" (ocamldoc/generators/odoc_todo.ml[109,3859+23]..[109,3859+24])
+                                  expression (ocamldoc/generators/odoc_todo.ml[110,3886+6]..[113,3978+18])
+                                    Pexp_apply
+                                    expression (ocamldoc/generators/odoc_todo.ml[110,3886+6]..[110,3886+21])
+                                      Pexp_send "gen_if_tag"
+                                      expression (ocamldoc/generators/odoc_todo.ml[110,3886+6]..[110,3886+10])
+                                        Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[110,3886+6]..[110,3886+10])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[111,3908+8]..[111,3908+18])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[111,3908+8]..[111,3908+9])
+                                            Pexp_ident "v" (ocamldoc/generators/odoc_todo.ml[111,3908+8]..[111,3908+9])
+                                          "val_name" (ocamldoc/generators/odoc_todo.ml[111,3908+10]..[111,3908+18])
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[112,3927+8]..[112,3927+50])
+                                          Pexp_apply
+                                          expression (ocamldoc/generators/odoc_todo.ml[112,3927+9]..[112,3927+47])
+                                            Pexp_ident "Odoc_html.Naming.complete_value_target" (ocamldoc/generators/odoc_todo.ml[112,3927+9]..[112,3927+47])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/generators/odoc_todo.ml[112,3927+48]..[112,3927+49])
+                                                Pexp_ident "v" (ocamldoc/generators/odoc_todo.ml[112,3927+48]..[112,3927+49])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[113,3978+8]..[113,3978+18])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[113,3978+8]..[113,3978+9])
+                                            Pexp_ident "v" (ocamldoc/generators/odoc_todo.ml[113,3978+8]..[113,3978+9])
+                                          "val_info" (ocamldoc/generators/odoc_todo.ml[113,3978+10]..[113,3978+18])
+                                    ]
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[115,3998+4]..[119,4114+17])
+                            Pcf_method Public
+                              "scan_type" (ocamldoc/generators/odoc_todo.ml[115,3998+12]..[115,3998+21])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[115,3998+22]..[119,4114+17]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[115,3998+22]..[119,4114+17]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[115,3998+22]..[115,3998+23])
+                                    Ppat_var "t" (ocamldoc/generators/odoc_todo.ml[115,3998+22]..[115,3998+23])
+                                  expression (ocamldoc/generators/odoc_todo.ml[116,4024+6]..[119,4114+17])
+                                    Pexp_apply
+                                    expression (ocamldoc/generators/odoc_todo.ml[116,4024+6]..[116,4024+21])
+                                      Pexp_send "gen_if_tag"
+                                      expression (ocamldoc/generators/odoc_todo.ml[116,4024+6]..[116,4024+10])
+                                        Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[116,4024+6]..[116,4024+10])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[117,4046+8]..[117,4046+17])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[117,4046+8]..[117,4046+9])
+                                            Pexp_ident "t" (ocamldoc/generators/odoc_todo.ml[117,4046+8]..[117,4046+9])
+                                          "ty_name" (ocamldoc/generators/odoc_todo.ml[117,4046+10]..[117,4046+17])
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[118,4064+8]..[118,4064+49])
+                                          Pexp_apply
+                                          expression (ocamldoc/generators/odoc_todo.ml[118,4064+9]..[118,4064+46])
+                                            Pexp_ident "Odoc_html.Naming.complete_type_target" (ocamldoc/generators/odoc_todo.ml[118,4064+9]..[118,4064+46])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/generators/odoc_todo.ml[118,4064+47]..[118,4064+48])
+                                                Pexp_ident "t" (ocamldoc/generators/odoc_todo.ml[118,4064+47]..[118,4064+48])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[119,4114+8]..[119,4114+17])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[119,4114+8]..[119,4114+9])
+                                            Pexp_ident "t" (ocamldoc/generators/odoc_todo.ml[119,4114+8]..[119,4114+9])
+                                          "ty_info" (ocamldoc/generators/odoc_todo.ml[119,4114+10]..[119,4114+17])
+                                    ]
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[121,4133+4]..[125,4271+35])
+                            Pcf_method Public
+                              "scan_extension_constructor" (ocamldoc/generators/odoc_todo.ml[121,4133+12]..[121,4133+38])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[121,4133+39]..[125,4271+35]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[121,4133+39]..[125,4271+35]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[121,4133+39]..[121,4133+40])
+                                    Ppat_var "x" (ocamldoc/generators/odoc_todo.ml[121,4133+39]..[121,4133+40])
+                                  expression (ocamldoc/generators/odoc_todo.ml[122,4176+6]..[125,4271+35])
+                                    Pexp_apply
+                                    expression (ocamldoc/generators/odoc_todo.ml[122,4176+6]..[122,4176+21])
+                                      Pexp_send "gen_if_tag"
+                                      expression (ocamldoc/generators/odoc_todo.ml[122,4176+6]..[122,4176+10])
+                                        Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[122,4176+6]..[122,4176+10])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[123,4198+8]..[123,4198+17])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[123,4198+8]..[123,4198+9])
+                                            Pexp_ident "x" (ocamldoc/generators/odoc_todo.ml[123,4198+8]..[123,4198+9])
+                                          "xt_name" (ocamldoc/generators/odoc_todo.ml[123,4198+10]..[123,4198+17])
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[124,4216+8]..[124,4216+54])
+                                          Pexp_apply
+                                          expression (ocamldoc/generators/odoc_todo.ml[124,4216+9]..[124,4216+51])
+                                            Pexp_ident "Odoc_html.Naming.complete_extension_target" (ocamldoc/generators/odoc_todo.ml[124,4216+9]..[124,4216+51])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/generators/odoc_todo.ml[124,4216+52]..[124,4216+53])
+                                                Pexp_ident "x" (ocamldoc/generators/odoc_todo.ml[124,4216+52]..[124,4216+53])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[125,4271+8]..[125,4271+35])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[125,4271+8]..[125,4271+27])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[125,4271+8]..[125,4271+9])
+                                              Pexp_ident "x" (ocamldoc/generators/odoc_todo.ml[125,4271+8]..[125,4271+9])
+                                            "xt_type_extension" (ocamldoc/generators/odoc_todo.ml[125,4271+10]..[125,4271+27])
+                                          "te_info" (ocamldoc/generators/odoc_todo.ml[125,4271+28]..[125,4271+35])
+                                    ]
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[127,4308+4]..[131,4434+17])
+                            Pcf_method Public
+                              "scan_exception" (ocamldoc/generators/odoc_todo.ml[127,4308+12]..[127,4308+26])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[127,4308+27]..[131,4434+17]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[127,4308+27]..[131,4434+17]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[127,4308+27]..[127,4308+28])
+                                    Ppat_var "e" (ocamldoc/generators/odoc_todo.ml[127,4308+27]..[127,4308+28])
+                                  expression (ocamldoc/generators/odoc_todo.ml[128,4339+6]..[131,4434+17])
+                                    Pexp_apply
+                                    expression (ocamldoc/generators/odoc_todo.ml[128,4339+6]..[128,4339+21])
+                                      Pexp_send "gen_if_tag"
+                                      expression (ocamldoc/generators/odoc_todo.ml[128,4339+6]..[128,4339+10])
+                                        Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[128,4339+6]..[128,4339+10])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[129,4361+8]..[129,4361+17])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[129,4361+8]..[129,4361+9])
+                                            Pexp_ident "e" (ocamldoc/generators/odoc_todo.ml[129,4361+8]..[129,4361+9])
+                                          "ex_name" (ocamldoc/generators/odoc_todo.ml[129,4361+10]..[129,4361+17])
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[130,4379+8]..[130,4379+54])
+                                          Pexp_apply
+                                          expression (ocamldoc/generators/odoc_todo.ml[130,4379+9]..[130,4379+51])
+                                            Pexp_ident "Odoc_html.Naming.complete_exception_target" (ocamldoc/generators/odoc_todo.ml[130,4379+9]..[130,4379+51])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/generators/odoc_todo.ml[130,4379+52]..[130,4379+53])
+                                                Pexp_ident "e" (ocamldoc/generators/odoc_todo.ml[130,4379+52]..[130,4379+53])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[131,4434+8]..[131,4434+17])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[131,4434+8]..[131,4434+9])
+                                            Pexp_ident "e" (ocamldoc/generators/odoc_todo.ml[131,4434+8]..[131,4434+9])
+                                          "ex_info" (ocamldoc/generators/odoc_todo.ml[131,4434+10]..[131,4434+17])
+                                    ]
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[133,4453+4]..[137,4590+28])
+                            Pcf_method Public
+                              "scan_attribute" (ocamldoc/generators/odoc_todo.ml[133,4453+12]..[133,4453+26])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[133,4453+27]..[137,4590+28]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[133,4453+27]..[137,4590+28]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[133,4453+27]..[133,4453+28])
+                                    Ppat_var "a" (ocamldoc/generators/odoc_todo.ml[133,4453+27]..[133,4453+28])
+                                  expression (ocamldoc/generators/odoc_todo.ml[134,4484+6]..[137,4590+28])
+                                    Pexp_apply
+                                    expression (ocamldoc/generators/odoc_todo.ml[134,4484+6]..[134,4484+21])
+                                      Pexp_send "gen_if_tag"
+                                      expression (ocamldoc/generators/odoc_todo.ml[134,4484+6]..[134,4484+10])
+                                        Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[134,4484+6]..[134,4484+10])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[135,4506+8]..[135,4506+28])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[135,4506+8]..[135,4506+19])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[135,4506+8]..[135,4506+9])
+                                              Pexp_ident "a" (ocamldoc/generators/odoc_todo.ml[135,4506+8]..[135,4506+9])
+                                            "att_value" (ocamldoc/generators/odoc_todo.ml[135,4506+10]..[135,4506+19])
+                                          "val_name" (ocamldoc/generators/odoc_todo.ml[135,4506+20]..[135,4506+28])
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[136,4535+8]..[136,4535+54])
+                                          Pexp_apply
+                                          expression (ocamldoc/generators/odoc_todo.ml[136,4535+9]..[136,4535+51])
+                                            Pexp_ident "Odoc_html.Naming.complete_attribute_target" (ocamldoc/generators/odoc_todo.ml[136,4535+9]..[136,4535+51])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/generators/odoc_todo.ml[136,4535+52]..[136,4535+53])
+                                                Pexp_ident "a" (ocamldoc/generators/odoc_todo.ml[136,4535+52]..[136,4535+53])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[137,4590+8]..[137,4590+28])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[137,4590+8]..[137,4590+19])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[137,4590+8]..[137,4590+9])
+                                              Pexp_ident "a" (ocamldoc/generators/odoc_todo.ml[137,4590+8]..[137,4590+9])
+                                            "att_value" (ocamldoc/generators/odoc_todo.ml[137,4590+10]..[137,4590+19])
+                                          "val_info" (ocamldoc/generators/odoc_todo.ml[137,4590+20]..[137,4590+28])
+                                    ]
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[139,4620+4]..[143,4751+28])
+                            Pcf_method Public
+                              "scan_method" (ocamldoc/generators/odoc_todo.ml[139,4620+12]..[139,4620+23])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[139,4620+24]..[143,4751+28]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[139,4620+24]..[143,4751+28]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[139,4620+24]..[139,4620+25])
+                                    Ppat_var "m" (ocamldoc/generators/odoc_todo.ml[139,4620+24]..[139,4620+25])
+                                  expression (ocamldoc/generators/odoc_todo.ml[140,4648+6]..[143,4751+28])
+                                    Pexp_apply
+                                    expression (ocamldoc/generators/odoc_todo.ml[140,4648+6]..[140,4648+21])
+                                      Pexp_send "gen_if_tag"
+                                      expression (ocamldoc/generators/odoc_todo.ml[140,4648+6]..[140,4648+10])
+                                        Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[140,4648+6]..[140,4648+10])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[141,4670+8]..[141,4670+28])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[141,4670+8]..[141,4670+19])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[141,4670+8]..[141,4670+9])
+                                              Pexp_ident "m" (ocamldoc/generators/odoc_todo.ml[141,4670+8]..[141,4670+9])
+                                            "met_value" (ocamldoc/generators/odoc_todo.ml[141,4670+10]..[141,4670+19])
+                                          "val_name" (ocamldoc/generators/odoc_todo.ml[141,4670+20]..[141,4670+28])
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[142,4699+8]..[142,4699+51])
+                                          Pexp_apply
+                                          expression (ocamldoc/generators/odoc_todo.ml[142,4699+9]..[142,4699+48])
+                                            Pexp_ident "Odoc_html.Naming.complete_method_target" (ocamldoc/generators/odoc_todo.ml[142,4699+9]..[142,4699+48])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/generators/odoc_todo.ml[142,4699+49]..[142,4699+50])
+                                                Pexp_ident "m" (ocamldoc/generators/odoc_todo.ml[142,4699+49]..[142,4699+50])
+                                          ]
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[143,4751+8]..[143,4751+28])
+                                          Pexp_field
+                                          expression (ocamldoc/generators/odoc_todo.ml[143,4751+8]..[143,4751+19])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[143,4751+8]..[143,4751+9])
+                                              Pexp_ident "m" (ocamldoc/generators/odoc_todo.ml[143,4751+8]..[143,4751+9])
+                                            "met_value" (ocamldoc/generators/odoc_todo.ml[143,4751+10]..[143,4751+19])
+                                          "val_info" (ocamldoc/generators/odoc_todo.ml[143,4751+20]..[143,4751+28])
+                                    ]
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[146,4843+4]..[161,5655+53])
+                              attribute "ocaml.doc"
+                                [
+                                  structure_item (ocamldoc/generators/odoc_todo.ml[145,4781+3]..[145,4781+61])
+                                    Pstr_eval
+                                    expression (ocamldoc/generators/odoc_todo.ml[145,4781+3]..[145,4781+61])
+                                      Pexp_constant PConst_string(" This method scans the elements of the given module. ",(ocamldoc/generators/odoc_todo.ml[145,4781+3]..[145,4781+61]),None)
+                                ]
+                            Pcf_method Public
+                              "scan_module_elements" (ocamldoc/generators/odoc_todo.ml[146,4843+12]..[146,4843+32])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[146,4843+33]..[161,5655+53]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[146,4843+33]..[161,5655+53]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[146,4843+33]..[146,4843+34])
+                                    Ppat_var "m" (ocamldoc/generators/odoc_todo.ml[146,4843+33]..[146,4843+34])
+                                  expression (ocamldoc/generators/odoc_todo.ml[147,4880+6]..[161,5655+53])
+                                    Pexp_apply
+                                    expression (ocamldoc/generators/odoc_todo.ml[147,4880+6]..[147,4880+15])
+                                      Pexp_ident "List.iter" (ocamldoc/generators/odoc_todo.ml[147,4880+6]..[147,4880+15])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[148,4896+8]..[160,5645+9])
+                                          Pexp_fun
+                                          Nolabel
+                                          None
+                                          pattern (ocamldoc/generators/odoc_todo.ml[148,4896+13]..[148,4896+16])
+                                            Ppat_var "ele" (ocamldoc/generators/odoc_todo.ml[148,4896+13]..[148,4896+16])
+                                          expression (ocamldoc/generators/odoc_todo.ml[149,4916+10]..[159,5566+78])
+                                            Pexp_match
+                                            expression (ocamldoc/generators/odoc_todo.ml[149,4916+16]..[149,4916+19])
+                                              Pexp_ident "ele" (ocamldoc/generators/odoc_todo.ml[149,4916+16]..[149,4916+19])
+                                            [
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[150,4941+12]..[150,4941+40])
+                                                  Ppat_construct "Odoc_module.Element_module" (ocamldoc/generators/odoc_todo.ml[150,4941+12]..[150,4941+38])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[150,4941+39]..[150,4941+40])
+                                                      Ppat_var "m" (ocamldoc/generators/odoc_todo.ml[150,4941+39]..[150,4941+40])
+                                                expression (ocamldoc/generators/odoc_todo.ml[150,4941+44]..[150,4941+62])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[150,4941+44]..[150,4941+60])
+                                                    Pexp_send "scan_module"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[150,4941+44]..[150,4941+48])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[150,4941+44]..[150,4941+48])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[150,4941+61]..[150,4941+62])
+                                                        Pexp_ident "m" (ocamldoc/generators/odoc_todo.ml[150,4941+61]..[150,4941+62])
+                                                  ]
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[151,5004+12]..[151,5004+46])
+                                                  Ppat_construct "Odoc_module.Element_module_type" (ocamldoc/generators/odoc_todo.ml[151,5004+12]..[151,5004+43])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[151,5004+44]..[151,5004+46])
+                                                      Ppat_var "mt" (ocamldoc/generators/odoc_todo.ml[151,5004+44]..[151,5004+46])
+                                                expression (ocamldoc/generators/odoc_todo.ml[151,5004+50]..[151,5004+74])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[151,5004+50]..[151,5004+71])
+                                                    Pexp_send "scan_module_type"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[151,5004+50]..[151,5004+54])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[151,5004+50]..[151,5004+54])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[151,5004+72]..[151,5004+74])
+                                                        Pexp_ident "mt" (ocamldoc/generators/odoc_todo.ml[151,5004+72]..[151,5004+74])
+                                                  ]
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[152,5079+12]..[152,5079+50])
+                                                  Ppat_construct "Odoc_module.Element_included_module" (ocamldoc/generators/odoc_todo.ml[152,5079+12]..[152,5079+47])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[152,5079+48]..[152,5079+50])
+                                                      Ppat_var "im" (ocamldoc/generators/odoc_todo.ml[152,5079+48]..[152,5079+50])
+                                                expression (ocamldoc/generators/odoc_todo.ml[152,5079+54]..[152,5079+82])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[152,5079+54]..[152,5079+79])
+                                                    Pexp_send "scan_included_module"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[152,5079+54]..[152,5079+58])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[152,5079+54]..[152,5079+58])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[152,5079+80]..[152,5079+82])
+                                                        Pexp_ident "im" (ocamldoc/generators/odoc_todo.ml[152,5079+80]..[152,5079+82])
+                                                  ]
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[153,5162+12]..[153,5162+39])
+                                                  Ppat_construct "Odoc_module.Element_class" (ocamldoc/generators/odoc_todo.ml[153,5162+12]..[153,5162+37])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[153,5162+38]..[153,5162+39])
+                                                      Ppat_var "c" (ocamldoc/generators/odoc_todo.ml[153,5162+38]..[153,5162+39])
+                                                expression (ocamldoc/generators/odoc_todo.ml[153,5162+43]..[153,5162+60])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[153,5162+43]..[153,5162+58])
+                                                    Pexp_send "scan_class"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[153,5162+43]..[153,5162+47])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[153,5162+43]..[153,5162+47])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[153,5162+59]..[153,5162+60])
+                                                        Pexp_ident "c" (ocamldoc/generators/odoc_todo.ml[153,5162+59]..[153,5162+60])
+                                                  ]
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[154,5223+12]..[154,5223+45])
+                                                  Ppat_construct "Odoc_module.Element_class_type" (ocamldoc/generators/odoc_todo.ml[154,5223+12]..[154,5223+42])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[154,5223+43]..[154,5223+45])
+                                                      Ppat_var "ct" (ocamldoc/generators/odoc_todo.ml[154,5223+43]..[154,5223+45])
+                                                expression (ocamldoc/generators/odoc_todo.ml[154,5223+49]..[154,5223+72])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[154,5223+49]..[154,5223+69])
+                                                    Pexp_send "scan_class_type"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[154,5223+49]..[154,5223+53])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[154,5223+49]..[154,5223+53])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[154,5223+70]..[154,5223+72])
+                                                        Pexp_ident "ct" (ocamldoc/generators/odoc_todo.ml[154,5223+70]..[154,5223+72])
+                                                  ]
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[155,5296+12]..[155,5296+39])
+                                                  Ppat_construct "Odoc_module.Element_value" (ocamldoc/generators/odoc_todo.ml[155,5296+12]..[155,5296+37])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[155,5296+38]..[155,5296+39])
+                                                      Ppat_var "v" (ocamldoc/generators/odoc_todo.ml[155,5296+38]..[155,5296+39])
+                                                expression (ocamldoc/generators/odoc_todo.ml[155,5296+43]..[155,5296+60])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[155,5296+43]..[155,5296+58])
+                                                    Pexp_send "scan_value"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[155,5296+43]..[155,5296+47])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[155,5296+43]..[155,5296+47])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[155,5296+59]..[155,5296+60])
+                                                        Pexp_ident "v" (ocamldoc/generators/odoc_todo.ml[155,5296+59]..[155,5296+60])
+                                                  ]
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[156,5357+12]..[156,5357+49])
+                                                  Ppat_construct "Odoc_module.Element_type_extension" (ocamldoc/generators/odoc_todo.ml[156,5357+12]..[156,5357+46])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[156,5357+47]..[156,5357+49])
+                                                      Ppat_var "te" (ocamldoc/generators/odoc_todo.ml[156,5357+47]..[156,5357+49])
+                                                expression (ocamldoc/generators/odoc_todo.ml[156,5357+53]..[156,5357+80])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[156,5357+53]..[156,5357+77])
+                                                    Pexp_send "scan_type_extension"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[156,5357+53]..[156,5357+57])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[156,5357+53]..[156,5357+57])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[156,5357+78]..[156,5357+80])
+                                                        Pexp_ident "te" (ocamldoc/generators/odoc_todo.ml[156,5357+78]..[156,5357+80])
+                                                  ]
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[157,5438+12]..[157,5438+43])
+                                                  Ppat_construct "Odoc_module.Element_exception" (ocamldoc/generators/odoc_todo.ml[157,5438+12]..[157,5438+41])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[157,5438+42]..[157,5438+43])
+                                                      Ppat_var "e" (ocamldoc/generators/odoc_todo.ml[157,5438+42]..[157,5438+43])
+                                                expression (ocamldoc/generators/odoc_todo.ml[157,5438+47]..[157,5438+68])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[157,5438+47]..[157,5438+66])
+                                                    Pexp_send "scan_exception"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[157,5438+47]..[157,5438+51])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[157,5438+47]..[157,5438+51])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[157,5438+67]..[157,5438+68])
+                                                        Pexp_ident "e" (ocamldoc/generators/odoc_todo.ml[157,5438+67]..[157,5438+68])
+                                                  ]
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[158,5507+12]..[158,5507+38])
+                                                  Ppat_construct "Odoc_module.Element_type" (ocamldoc/generators/odoc_todo.ml[158,5507+12]..[158,5507+36])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[158,5507+37]..[158,5507+38])
+                                                      Ppat_var "t" (ocamldoc/generators/odoc_todo.ml[158,5507+37]..[158,5507+38])
+                                                expression (ocamldoc/generators/odoc_todo.ml[158,5507+42]..[158,5507+58])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[158,5507+42]..[158,5507+56])
+                                                    Pexp_send "scan_type"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[158,5507+42]..[158,5507+46])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[158,5507+42]..[158,5507+46])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[158,5507+57]..[158,5507+58])
+                                                        Pexp_ident "t" (ocamldoc/generators/odoc_todo.ml[158,5507+57]..[158,5507+58])
+                                                  ]
+                                              <case>
+                                                pattern (ocamldoc/generators/odoc_todo.ml[159,5566+12]..[159,5566+48])
+                                                  Ppat_construct "Odoc_module.Element_module_comment" (ocamldoc/generators/odoc_todo.ml[159,5566+12]..[159,5566+46])
+                                                  Some
+                                                    []
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[159,5566+47]..[159,5566+48])
+                                                      Ppat_var "t" (ocamldoc/generators/odoc_todo.ml[159,5566+47]..[159,5566+48])
+                                                expression (ocamldoc/generators/odoc_todo.ml[159,5566+52]..[159,5566+78])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[159,5566+52]..[159,5566+76])
+                                                    Pexp_send "scan_module_comment"
+                                                    expression (ocamldoc/generators/odoc_todo.ml[159,5566+52]..[159,5566+56])
+                                                      Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[159,5566+52]..[159,5566+56])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[159,5566+77]..[159,5566+78])
+                                                        Pexp_ident "t" (ocamldoc/generators/odoc_todo.ml[159,5566+77]..[159,5566+78])
+                                                  ]
+                                            ]
+                                      <arg>
+                                      Nolabel
+                                        expression (ocamldoc/generators/odoc_todo.ml[161,5655+8]..[161,5655+53])
+                                          Pexp_apply
+                                          expression (ocamldoc/generators/odoc_todo.ml[161,5655+9]..[161,5655+36])
+                                            Pexp_ident "Odoc_module.module_elements" (ocamldoc/generators/odoc_todo.ml[161,5655+9]..[161,5655+36])
+                                          [
+                                            <arg>
+                                            Labelled "trans"
+                                              expression (ocamldoc/generators/odoc_todo.ml[161,5655+45]..[161,5655+50])
+                                                Pexp_construct "false" (ocamldoc/generators/odoc_todo.ml[161,5655+45]..[161,5655+50])
+                                                None
+                                            <arg>
+                                            Nolabel
+                                              expression (ocamldoc/generators/odoc_todo.ml[161,5655+51]..[161,5655+52])
+                                                Pexp_ident "m" (ocamldoc/generators/odoc_todo.ml[161,5655+51]..[161,5655+52])
+                                          ]
+                                    ]
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[163,5710+4]..[163,5710+39])
+                            Pcf_method Public
+                              "scan_included_module" (ocamldoc/generators/odoc_todo.ml[163,5710+12]..[163,5710+32])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[163,5710+33]..[163,5710+39]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[163,5710+33]..[163,5710+39]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[163,5710+33]..[163,5710+34])
+                                    Ppat_any
+                                  expression (ocamldoc/generators/odoc_todo.ml[163,5710+37]..[163,5710+39])
+                                    Pexp_construct "()" (ocamldoc/generators/odoc_todo.ml[163,5710+37]..[163,5710+39])
+                                    None
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[165,5751+4]..[170,5895+10])
+                            Pcf_method Public
+                              "scan_class_pre" (ocamldoc/generators/odoc_todo.ml[165,5751+12]..[165,5751+26])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[165,5751+27]..[170,5895+10]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[165,5751+27]..[170,5895+10]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[165,5751+27]..[165,5751+28])
+                                    Ppat_var "c" (ocamldoc/generators/odoc_todo.ml[165,5751+27]..[165,5751+28])
+                                  expression (ocamldoc/generators/odoc_todo.ml[166,5782+6]..[170,5895+10])
+                                    Pexp_sequence
+                                    expression (ocamldoc/generators/odoc_todo.ml[166,5782+6]..[169,5876+17])
+                                      Pexp_apply
+                                      expression (ocamldoc/generators/odoc_todo.ml[166,5782+6]..[166,5782+21])
+                                        Pexp_send "gen_if_tag"
+                                        expression (ocamldoc/generators/odoc_todo.ml[166,5782+6]..[166,5782+10])
+                                          Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[166,5782+6]..[166,5782+10])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[167,5804+8]..[167,5804+17])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[167,5804+8]..[167,5804+9])
+                                              Pexp_ident "c" (ocamldoc/generators/odoc_todo.ml[167,5804+8]..[167,5804+9])
+                                            "cl_name" (ocamldoc/generators/odoc_todo.ml[167,5804+10]..[167,5804+17])
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[168,5822+8]..[168,5822+53])
+                                            Pexp_apply
+                                            expression (ocamldoc/generators/odoc_todo.ml[168,5822+9]..[168,5822+12])
+                                              Pexp_ident "fst" (ocamldoc/generators/odoc_todo.ml[168,5822+9]..[168,5822+12])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/generators/odoc_todo.ml[168,5822+13]..[168,5822+52])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[168,5822+14]..[168,5822+41])
+                                                    Pexp_ident "Odoc_html.Naming.html_files" (ocamldoc/generators/odoc_todo.ml[168,5822+14]..[168,5822+41])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[168,5822+42]..[168,5822+51])
+                                                        Pexp_field
+                                                        expression (ocamldoc/generators/odoc_todo.ml[168,5822+42]..[168,5822+43])
+                                                          Pexp_ident "c" (ocamldoc/generators/odoc_todo.ml[168,5822+42]..[168,5822+43])
+                                                        "cl_name" (ocamldoc/generators/odoc_todo.ml[168,5822+44]..[168,5822+51])
+                                                  ]
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[169,5876+8]..[169,5876+17])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[169,5876+8]..[169,5876+9])
+                                              Pexp_ident "c" (ocamldoc/generators/odoc_todo.ml[169,5876+8]..[169,5876+9])
+                                            "cl_info" (ocamldoc/generators/odoc_todo.ml[169,5876+10]..[169,5876+17])
+                                      ]
+                                    expression (ocamldoc/generators/odoc_todo.ml[170,5895+6]..[170,5895+10])
+                                      Pexp_construct "true" (ocamldoc/generators/odoc_todo.ml[170,5895+6]..[170,5895+10])
+                                      None
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[172,5907+4]..[177,6063+10])
+                            Pcf_method Public
+                              "scan_class_type_pre" (ocamldoc/generators/odoc_todo.ml[172,5907+12]..[172,5907+31])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[172,5907+32]..[177,6063+10]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[172,5907+32]..[177,6063+10]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[172,5907+32]..[172,5907+34])
+                                    Ppat_var "ct" (ocamldoc/generators/odoc_todo.ml[172,5907+32]..[172,5907+34])
+                                  expression (ocamldoc/generators/odoc_todo.ml[173,5944+6]..[177,6063+10])
+                                    Pexp_sequence
+                                    expression (ocamldoc/generators/odoc_todo.ml[173,5944+6]..[176,6042+19])
+                                      Pexp_apply
+                                      expression (ocamldoc/generators/odoc_todo.ml[173,5944+6]..[173,5944+21])
+                                        Pexp_send "gen_if_tag"
+                                        expression (ocamldoc/generators/odoc_todo.ml[173,5944+6]..[173,5944+10])
+                                          Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[173,5944+6]..[173,5944+10])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[174,5966+8]..[174,5966+19])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[174,5966+8]..[174,5966+10])
+                                              Pexp_ident "ct" (ocamldoc/generators/odoc_todo.ml[174,5966+8]..[174,5966+10])
+                                            "clt_name" (ocamldoc/generators/odoc_todo.ml[174,5966+11]..[174,5966+19])
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[175,5986+8]..[175,5986+55])
+                                            Pexp_apply
+                                            expression (ocamldoc/generators/odoc_todo.ml[175,5986+9]..[175,5986+12])
+                                              Pexp_ident "fst" (ocamldoc/generators/odoc_todo.ml[175,5986+9]..[175,5986+12])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/generators/odoc_todo.ml[175,5986+13]..[175,5986+54])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[175,5986+14]..[175,5986+41])
+                                                    Pexp_ident "Odoc_html.Naming.html_files" (ocamldoc/generators/odoc_todo.ml[175,5986+14]..[175,5986+41])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[175,5986+42]..[175,5986+53])
+                                                        Pexp_field
+                                                        expression (ocamldoc/generators/odoc_todo.ml[175,5986+42]..[175,5986+44])
+                                                          Pexp_ident "ct" (ocamldoc/generators/odoc_todo.ml[175,5986+42]..[175,5986+44])
+                                                        "clt_name" (ocamldoc/generators/odoc_todo.ml[175,5986+45]..[175,5986+53])
+                                                  ]
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[176,6042+8]..[176,6042+19])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[176,6042+8]..[176,6042+10])
+                                              Pexp_ident "ct" (ocamldoc/generators/odoc_todo.ml[176,6042+8]..[176,6042+10])
+                                            "clt_info" (ocamldoc/generators/odoc_todo.ml[176,6042+11]..[176,6042+19])
+                                      ]
+                                    expression (ocamldoc/generators/odoc_todo.ml[177,6063+6]..[177,6063+10])
+                                      Pexp_construct "true" (ocamldoc/generators/odoc_todo.ml[177,6063+6]..[177,6063+10])
+                                      None
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[179,6075+4]..[184,6217+10])
+                            Pcf_method Public
+                              "scan_module_pre" (ocamldoc/generators/odoc_todo.ml[179,6075+12]..[179,6075+27])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[179,6075+28]..[184,6217+10]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[179,6075+28]..[184,6217+10]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[179,6075+28]..[179,6075+29])
+                                    Ppat_var "m" (ocamldoc/generators/odoc_todo.ml[179,6075+28]..[179,6075+29])
+                                  expression (ocamldoc/generators/odoc_todo.ml[180,6107+6]..[184,6217+10])
+                                    Pexp_sequence
+                                    expression (ocamldoc/generators/odoc_todo.ml[180,6107+6]..[183,6199+16])
+                                      Pexp_apply
+                                      expression (ocamldoc/generators/odoc_todo.ml[180,6107+6]..[180,6107+21])
+                                        Pexp_send "gen_if_tag"
+                                        expression (ocamldoc/generators/odoc_todo.ml[180,6107+6]..[180,6107+10])
+                                          Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[180,6107+6]..[180,6107+10])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[181,6129+8]..[181,6129+16])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[181,6129+8]..[181,6129+9])
+                                              Pexp_ident "m" (ocamldoc/generators/odoc_todo.ml[181,6129+8]..[181,6129+9])
+                                            "m_name" (ocamldoc/generators/odoc_todo.ml[181,6129+10]..[181,6129+16])
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[182,6146+8]..[182,6146+52])
+                                            Pexp_apply
+                                            expression (ocamldoc/generators/odoc_todo.ml[182,6146+9]..[182,6146+12])
+                                              Pexp_ident "fst" (ocamldoc/generators/odoc_todo.ml[182,6146+9]..[182,6146+12])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/generators/odoc_todo.ml[182,6146+13]..[182,6146+51])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[182,6146+14]..[182,6146+41])
+                                                    Pexp_ident "Odoc_html.Naming.html_files" (ocamldoc/generators/odoc_todo.ml[182,6146+14]..[182,6146+41])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[182,6146+42]..[182,6146+50])
+                                                        Pexp_field
+                                                        expression (ocamldoc/generators/odoc_todo.ml[182,6146+42]..[182,6146+43])
+                                                          Pexp_ident "m" (ocamldoc/generators/odoc_todo.ml[182,6146+42]..[182,6146+43])
+                                                        "m_name" (ocamldoc/generators/odoc_todo.ml[182,6146+44]..[182,6146+50])
+                                                  ]
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[183,6199+8]..[183,6199+16])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[183,6199+8]..[183,6199+9])
+                                              Pexp_ident "m" (ocamldoc/generators/odoc_todo.ml[183,6199+8]..[183,6199+9])
+                                            "m_info" (ocamldoc/generators/odoc_todo.ml[183,6199+10]..[183,6199+16])
+                                      ]
+                                    expression (ocamldoc/generators/odoc_todo.ml[184,6217+6]..[184,6217+10])
+                                      Pexp_construct "true" (ocamldoc/generators/odoc_todo.ml[184,6217+6]..[184,6217+10])
+                                      None
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[186,6229+4]..[191,6383+10])
+                            Pcf_method Public
+                              "scan_module_type_pre" (ocamldoc/generators/odoc_todo.ml[186,6229+12]..[186,6229+32])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[186,6229+33]..[191,6383+10]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[186,6229+33]..[191,6383+10]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[186,6229+33]..[186,6229+35])
+                                    Ppat_var "mt" (ocamldoc/generators/odoc_todo.ml[186,6229+33]..[186,6229+35])
+                                  expression (ocamldoc/generators/odoc_todo.ml[187,6267+6]..[191,6383+10])
+                                    Pexp_sequence
+                                    expression (ocamldoc/generators/odoc_todo.ml[187,6267+6]..[190,6363+18])
+                                      Pexp_apply
+                                      expression (ocamldoc/generators/odoc_todo.ml[187,6267+6]..[187,6267+21])
+                                        Pexp_send "gen_if_tag"
+                                        expression (ocamldoc/generators/odoc_todo.ml[187,6267+6]..[187,6267+10])
+                                          Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[187,6267+6]..[187,6267+10])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[188,6289+8]..[188,6289+18])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[188,6289+8]..[188,6289+10])
+                                              Pexp_ident "mt" (ocamldoc/generators/odoc_todo.ml[188,6289+8]..[188,6289+10])
+                                            "mt_name" (ocamldoc/generators/odoc_todo.ml[188,6289+11]..[188,6289+18])
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[189,6308+8]..[189,6308+54])
+                                            Pexp_apply
+                                            expression (ocamldoc/generators/odoc_todo.ml[189,6308+9]..[189,6308+12])
+                                              Pexp_ident "fst" (ocamldoc/generators/odoc_todo.ml[189,6308+9]..[189,6308+12])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (ocamldoc/generators/odoc_todo.ml[189,6308+13]..[189,6308+53])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[189,6308+14]..[189,6308+41])
+                                                    Pexp_ident "Odoc_html.Naming.html_files" (ocamldoc/generators/odoc_todo.ml[189,6308+14]..[189,6308+41])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[189,6308+42]..[189,6308+52])
+                                                        Pexp_field
+                                                        expression (ocamldoc/generators/odoc_todo.ml[189,6308+42]..[189,6308+44])
+                                                          Pexp_ident "mt" (ocamldoc/generators/odoc_todo.ml[189,6308+42]..[189,6308+44])
+                                                        "mt_name" (ocamldoc/generators/odoc_todo.ml[189,6308+45]..[189,6308+52])
+                                                  ]
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (ocamldoc/generators/odoc_todo.ml[190,6363+8]..[190,6363+18])
+                                            Pexp_field
+                                            expression (ocamldoc/generators/odoc_todo.ml[190,6363+8]..[190,6363+10])
+                                              Pexp_ident "mt" (ocamldoc/generators/odoc_todo.ml[190,6363+8]..[190,6363+10])
+                                            "mt_info" (ocamldoc/generators/odoc_todo.ml[190,6363+11]..[190,6363+18])
+                                      ]
+                                    expression (ocamldoc/generators/odoc_todo.ml[191,6383+6]..[191,6383+10])
+                                      Pexp_construct "true" (ocamldoc/generators/odoc_todo.ml[191,6383+6]..[191,6383+10])
+                                      None
+                                None
+                        ]
+            ]
+          structure_item (ocamldoc/generators/odoc_todo.ml[194,6401+2]..[229,7596+5])
+            Pstr_class
+            [
+              class_declaration (ocamldoc/generators/odoc_todo.ml[194,6401+2]..[229,7596+5])
+                pci_virt = Concrete
+                pci_params =
+                  []
+                pci_name = "html" (ocamldoc/generators/odoc_todo.ml[194,6401+8]..[194,6401+12])
+                pci_expr =
+                  class_expr (ocamldoc/generators/odoc_todo.ml[194,6401+13]..[229,7596+5])
+                    Pcl_constraint
+                    class_expr (ocamldoc/generators/odoc_todo.ml[195,6428+4]..[229,7596+5])
+                      Pcl_structure
+                      class_structure
+                        pattern (ocamldoc/generators/odoc_todo.ml[195,6428+11]..[195,6428+17])
+                          Ppat_var "self" (ocamldoc/generators/odoc_todo.ml[195,6428+12]..[195,6428+16])
+                        [
+                          class_field (ocamldoc/generators/odoc_todo.ml[196,6446+6]..[196,6446+31])
+                            Pcf_inherit Fresh
+                              class_expr (ocamldoc/generators/odoc_todo.ml[196,6446+14]..[196,6446+23])
+                                Pcl_constr "Html.html" (ocamldoc/generators/odoc_todo.ml[196,6446+14]..[196,6446+23])
+                                []
+                              Some
+                                "html" (ocamldoc/generators/odoc_todo.ml[196,6446+27]..[196,6446+31])
+                          class_field (ocamldoc/generators/odoc_todo.ml[202,6710+6]..[202,6710+56])
+                              attribute "ocaml.doc"
+                                [
+                                  structure_item (ocamldoc/generators/odoc_todo.ml[198,6479+6]..[201,6673+36])
+                                    Pstr_eval
+                                    expression (ocamldoc/generators/odoc_todo.ml[198,6479+6]..[201,6673+36])
+                                      Pexp_constant PConst_string(" we have to hack a little because we cannot inherit from\n             scanner, since public method cannot be hidden and\n             our html class must respect the type of the default\n             html generator class ",(ocamldoc/generators/odoc_todo.ml[198,6479+6]..[201,6673+36]),None)
+                                ]
+                            Pcf_val Mutable
+                              "scanner" (ocamldoc/generators/odoc_todo.ml[202,6710+18]..[202,6710+25])
+                              Concrete Fresh
+                              expression (ocamldoc/generators/odoc_todo.ml[202,6710+28]..[202,6710+56])
+                                Pexp_apply
+                                expression (ocamldoc/generators/odoc_todo.ml[202,6710+28]..[202,6710+39])
+                                  Pexp_new "scanner" (ocamldoc/generators/odoc_todo.ml[202,6710+32]..[202,6710+39])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (ocamldoc/generators/odoc_todo.ml[202,6710+40]..[202,6710+56])
+                                      Pexp_new "Html.html" (ocamldoc/generators/odoc_todo.ml[202,6710+45]..[202,6710+54])
+                                ]
+                          class_field (ocamldoc/generators/odoc_todo.ml[204,6768+6]..[225,7524+18])
+                            Pcf_method Public
+                              "generate" (ocamldoc/generators/odoc_todo.ml[204,6768+14]..[204,6768+22])
+                              Concrete Override
+                              expression (ocamldoc/generators/odoc_todo.ml[204,6768+23]..[225,7524+18]) ghost
+                                Pexp_poly
+                                expression (ocamldoc/generators/odoc_todo.ml[204,6768+23]..[225,7524+18]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (ocamldoc/generators/odoc_todo.ml[204,6768+23]..[204,6768+30])
+                                    Ppat_var "modules" (ocamldoc/generators/odoc_todo.ml[204,6768+23]..[204,6768+30])
+                                  expression (ocamldoc/generators/odoc_todo.ml[206,6867+6]..[225,7524+18])
+                                    Pexp_sequence
+                                    expression (ocamldoc/generators/odoc_todo.ml[206,6867+6]..[206,6867+64])
+                                      Pexp_setinstvar "tag_functions" (ocamldoc/generators/odoc_todo.ml[206,6867+6]..[206,6867+19])
+                                      expression (ocamldoc/generators/odoc_todo.ml[206,6867+24]..[206,6867+64])
+                                        Pexp_construct "::" (ocamldoc/generators/odoc_todo.ml[206,6867+48]..[206,6867+50])
+                                        Some
+                                          expression (ocamldoc/generators/odoc_todo.ml[206,6867+24]..[206,6867+64]) ghost
+                                            Pexp_tuple
+                                            [
+                                              expression (ocamldoc/generators/odoc_todo.ml[206,6867+24]..[206,6867+47])
+                                                Pexp_tuple
+                                                [
+                                                  expression (ocamldoc/generators/odoc_todo.ml[206,6867+25]..[206,6867+31])
+                                                    Pexp_constant PConst_string("todo",(ocamldoc/generators/odoc_todo.ml[206,6867+26]..[206,6867+30]),None)
+                                                  expression (ocamldoc/generators/odoc_todo.ml[206,6867+33]..[206,6867+46])
+                                                    Pexp_fun
+                                                    Nolabel
+                                                    None
+                                                    pattern (ocamldoc/generators/odoc_todo.ml[206,6867+38]..[206,6867+39])
+                                                      Ppat_any
+                                                    expression (ocamldoc/generators/odoc_todo.ml[206,6867+43]..[206,6867+45])
+                                                      Pexp_constant PConst_string("",(ocamldoc/generators/odoc_todo.ml[206,6867+44]..[206,6867+44]),None)
+                                                ]
+                                              expression (ocamldoc/generators/odoc_todo.ml[206,6867+51]..[206,6867+64])
+                                                Pexp_ident "tag_functions" (ocamldoc/generators/odoc_todo.ml[206,6867+51]..[206,6867+64])
+                                            ]
+                                    expression (ocamldoc/generators/odoc_todo.ml[208,6967+6]..[225,7524+18])
+                                      Pexp_sequence
+                                      expression (ocamldoc/generators/odoc_todo.ml[208,6967+6]..[208,6967+27])
+                                        Pexp_apply
+                                        expression (ocamldoc/generators/odoc_todo.ml[208,6967+6]..[208,6967+19])
+                                          Pexp_send "generate"
+                                          expression (ocamldoc/generators/odoc_todo.ml[208,6967+6]..[208,6967+10])
+                                            Pexp_ident "html" (ocamldoc/generators/odoc_todo.ml[208,6967+6]..[208,6967+10])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (ocamldoc/generators/odoc_todo.ml[208,6967+20]..[208,6967+27])
+                                              Pexp_ident "modules" (ocamldoc/generators/odoc_todo.ml[208,6967+20]..[208,6967+27])
+                                        ]
+                                      expression (ocamldoc/generators/odoc_todo.ml[210,7068+6]..[225,7524+18])
+                                        Pexp_let Nonrec
+                                        [
+                                          <def>
+                                            pattern (ocamldoc/generators/odoc_todo.ml[210,7068+10]..[210,7068+15])
+                                              Ppat_var "title" (ocamldoc/generators/odoc_todo.ml[210,7068+10]..[210,7068+15])
+                                            expression (ocamldoc/generators/odoc_todo.ml[211,7086+8]..[213,7150+21])
+                                              Pexp_match
+                                              expression (ocamldoc/generators/odoc_todo.ml[211,7086+14]..[211,7086+37])
+                                                Pexp_apply
+                                                expression (ocamldoc/generators/odoc_todo.ml[211,7086+14]..[211,7086+15])
+                                                  Pexp_ident "!" (ocamldoc/generators/odoc_todo.ml[211,7086+14]..[211,7086+15])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/generators/odoc_todo.ml[211,7086+15]..[211,7086+37])
+                                                      Pexp_ident "Odoc_info.Global.title" (ocamldoc/generators/odoc_todo.ml[211,7086+15]..[211,7086+37])
+                                                ]
+                                              [
+                                                <case>
+                                                  pattern (ocamldoc/generators/odoc_todo.ml[212,7129+10]..[212,7129+14])
+                                                    Ppat_construct "None" (ocamldoc/generators/odoc_todo.ml[212,7129+10]..[212,7129+14])
+                                                    None
+                                                  expression (ocamldoc/generators/odoc_todo.ml[212,7129+18]..[212,7129+20])
+                                                    Pexp_constant PConst_string("",(ocamldoc/generators/odoc_todo.ml[212,7129+19]..[212,7129+19]),None)
+                                                <case>
+                                                  pattern (ocamldoc/generators/odoc_todo.ml[213,7150+10]..[213,7150+16])
+                                                    Ppat_construct "Some" (ocamldoc/generators/odoc_todo.ml[213,7150+10]..[213,7150+14])
+                                                    Some
+                                                      []
+                                                      pattern (ocamldoc/generators/odoc_todo.ml[213,7150+15]..[213,7150+16])
+                                                        Ppat_var "s" (ocamldoc/generators/odoc_todo.ml[213,7150+15]..[213,7150+16])
+                                                  expression (ocamldoc/generators/odoc_todo.ml[213,7150+20]..[213,7150+21])
+                                                    Pexp_ident "s" (ocamldoc/generators/odoc_todo.ml[213,7150+20]..[213,7150+21])
+                                              ]
+                                        ]
+                                        expression (ocamldoc/generators/odoc_todo.ml[215,7181+6]..[225,7524+18])
+                                          Pexp_let Nonrec
+                                          [
+                                            <def>
+                                              pattern (ocamldoc/generators/odoc_todo.ml[215,7181+10]..[215,7181+11])
+                                                Ppat_var "b" (ocamldoc/generators/odoc_todo.ml[215,7181+10]..[215,7181+11])
+                                              expression (ocamldoc/generators/odoc_todo.ml[215,7181+14]..[215,7181+31])
+                                                Pexp_apply
+                                                expression (ocamldoc/generators/odoc_todo.ml[215,7181+14]..[215,7181+27])
+                                                  Pexp_ident "Buffer.create" (ocamldoc/generators/odoc_todo.ml[215,7181+14]..[215,7181+27])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/generators/odoc_todo.ml[215,7181+28]..[215,7181+31])
+                                                      Pexp_constant PConst_int (512,None)
+                                                ]
+                                          ]
+                                          expression (ocamldoc/generators/odoc_todo.ml[216,7216+6]..[225,7524+18])
+                                            Pexp_sequence
+                                            expression (ocamldoc/generators/odoc_todo.ml[216,7216+6]..[216,7216+18])
+                                              Pexp_apply
+                                              expression (ocamldoc/generators/odoc_todo.ml[216,7216+6]..[216,7216+7])
+                                                Pexp_ident "p" (ocamldoc/generators/odoc_todo.ml[216,7216+6]..[216,7216+7])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (ocamldoc/generators/odoc_todo.ml[216,7216+8]..[216,7216+9])
+                                                    Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[216,7216+8]..[216,7216+9])
+                                                <arg>
+                                                Nolabel
+                                                  expression (ocamldoc/generators/odoc_todo.ml[216,7216+10]..[216,7216+18])
+                                                    Pexp_constant PConst_string("<html>",(ocamldoc/generators/odoc_todo.ml[216,7216+11]..[216,7216+17]),None)
+                                              ]
+                                            expression (ocamldoc/generators/odoc_todo.ml[217,7236+6]..[225,7524+18])
+                                              Pexp_sequence
+                                              expression (ocamldoc/generators/odoc_todo.ml[217,7236+6]..[217,7236+31])
+                                                Pexp_apply
+                                                expression (ocamldoc/generators/odoc_todo.ml[217,7236+6]..[217,7236+23])
+                                                  Pexp_send "print_header"
+                                                  expression (ocamldoc/generators/odoc_todo.ml[217,7236+6]..[217,7236+10])
+                                                    Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[217,7236+6]..[217,7236+10])
+                                                [
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/generators/odoc_todo.ml[217,7236+24]..[217,7236+25])
+                                                      Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[217,7236+24]..[217,7236+25])
+                                                  <arg>
+                                                  Nolabel
+                                                    expression (ocamldoc/generators/odoc_todo.ml[217,7236+26]..[217,7236+31])
+                                                      Pexp_ident "title" (ocamldoc/generators/odoc_todo.ml[217,7236+26]..[217,7236+31])
+                                                ]
+                                              expression (ocamldoc/generators/odoc_todo.ml[218,7270+6]..[225,7524+18])
+                                                Pexp_sequence
+                                                expression (ocamldoc/generators/odoc_todo.ml[218,7270+6]..[218,7270+35])
+                                                  Pexp_apply
+                                                  expression (ocamldoc/generators/odoc_todo.ml[218,7270+6]..[218,7270+7])
+                                                    Pexp_ident "p" (ocamldoc/generators/odoc_todo.ml[218,7270+6]..[218,7270+7])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[218,7270+8]..[218,7270+9])
+                                                        Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[218,7270+8]..[218,7270+9])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[218,7270+10]..[218,7270+29])
+                                                        Pexp_constant PConst_string("<body><h1>%s</h1>",(ocamldoc/generators/odoc_todo.ml[218,7270+11]..[218,7270+28]),None)
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (ocamldoc/generators/odoc_todo.ml[218,7270+30]..[218,7270+35])
+                                                        Pexp_ident "title" (ocamldoc/generators/odoc_todo.ml[218,7270+30]..[218,7270+35])
+                                                  ]
+                                                expression (ocamldoc/generators/odoc_todo.ml[219,7307+6]..[225,7524+18])
+                                                  Pexp_sequence
+                                                  expression (ocamldoc/generators/odoc_todo.ml[219,7307+6]..[219,7307+38])
+                                                    Pexp_apply
+                                                    expression (ocamldoc/generators/odoc_todo.ml[219,7307+6]..[219,7307+30])
+                                                      Pexp_send "scan_module_list"
+                                                      expression (ocamldoc/generators/odoc_todo.ml[219,7307+6]..[219,7307+13])
+                                                        Pexp_ident "scanner" (ocamldoc/generators/odoc_todo.ml[219,7307+6]..[219,7307+13])
+                                                    [
+                                                      <arg>
+                                                      Nolabel
+                                                        expression (ocamldoc/generators/odoc_todo.ml[219,7307+31]..[219,7307+38])
+                                                          Pexp_ident "modules" (ocamldoc/generators/odoc_todo.ml[219,7307+31]..[219,7307+38])
+                                                    ]
+                                                  expression (ocamldoc/generators/odoc_todo.ml[220,7347+6]..[225,7524+18])
+                                                    Pexp_sequence
+                                                    expression (ocamldoc/generators/odoc_todo.ml[220,7347+6]..[220,7347+40])
+                                                      Pexp_apply
+                                                      expression (ocamldoc/generators/odoc_todo.ml[220,7347+6]..[220,7347+23])
+                                                        Pexp_ident "Buffer.add_buffer" (ocamldoc/generators/odoc_todo.ml[220,7347+6]..[220,7347+23])
+                                                      [
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/generators/odoc_todo.ml[220,7347+24]..[220,7347+25])
+                                                            Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[220,7347+24]..[220,7347+25])
+                                                        <arg>
+                                                        Nolabel
+                                                          expression (ocamldoc/generators/odoc_todo.ml[220,7347+26]..[220,7347+40])
+                                                            Pexp_send "buffer"
+                                                            expression (ocamldoc/generators/odoc_todo.ml[220,7347+26]..[220,7347+33])
+                                                              Pexp_ident "scanner" (ocamldoc/generators/odoc_todo.ml[220,7347+26]..[220,7347+33])
+                                                      ]
+                                                    expression (ocamldoc/generators/odoc_todo.ml[221,7389+6]..[225,7524+18])
+                                                      Pexp_let Nonrec
+                                                      [
+                                                        <def>
+                                                          pattern (ocamldoc/generators/odoc_todo.ml[221,7389+10]..[221,7389+12])
+                                                            Ppat_var "oc" (ocamldoc/generators/odoc_todo.ml[221,7389+10]..[221,7389+12])
+                                                          expression (ocamldoc/generators/odoc_todo.ml[221,7389+15]..[222,7413+68])
+                                                            Pexp_apply
+                                                            expression (ocamldoc/generators/odoc_todo.ml[221,7389+15]..[221,7389+23])
+                                                              Pexp_ident "open_out" (ocamldoc/generators/odoc_todo.ml[221,7389+15]..[221,7389+23])
+                                                            [
+                                                              <arg>
+                                                              Nolabel
+                                                                expression (ocamldoc/generators/odoc_todo.ml[222,7413+10]..[222,7413+68])
+                                                                  Pexp_apply
+                                                                  expression (ocamldoc/generators/odoc_todo.ml[222,7413+11]..[222,7413+26])
+                                                                    Pexp_ident "Filename.concat" (ocamldoc/generators/odoc_todo.ml[222,7413+11]..[222,7413+26])
+                                                                  [
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (ocamldoc/generators/odoc_todo.ml[222,7413+27]..[222,7413+55])
+Pexp_apply
+expression (ocamldoc/generators/odoc_todo.ml[222,7413+27]..[222,7413+28])
+  Pexp_ident "!" (ocamldoc/generators/odoc_todo.ml[222,7413+27]..[222,7413+28])
+[
+  <arg>
+  Nolabel
+    expression (ocamldoc/generators/odoc_todo.ml[222,7413+28]..[222,7413+55])
+      Pexp_ident "Odoc_info.Global.target_dir" (ocamldoc/generators/odoc_todo.ml[222,7413+28]..[222,7413+55])
+]
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (ocamldoc/generators/odoc_todo.ml[222,7413+56]..[222,7413+67])
+Pexp_constant PConst_string("todo.html",(ocamldoc/generators/odoc_todo.ml[222,7413+57]..[222,7413+66]),None)
+                                                                  ]
+                                                            ]
+                                                      ]
+                                                      expression (ocamldoc/generators/odoc_todo.ml[224,7491+6]..[225,7524+18])
+                                                        Pexp_sequence
+                                                        expression (ocamldoc/generators/odoc_todo.ml[224,7491+6]..[224,7491+31])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/generators/odoc_todo.ml[224,7491+6]..[224,7491+26])
+                                                            Pexp_ident "Buffer.output_buffer" (ocamldoc/generators/odoc_todo.ml[224,7491+6]..[224,7491+26])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/generators/odoc_todo.ml[224,7491+27]..[224,7491+29])
+                                                                Pexp_ident "oc" (ocamldoc/generators/odoc_todo.ml[224,7491+27]..[224,7491+29])
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/generators/odoc_todo.ml[224,7491+30]..[224,7491+31])
+                                                                Pexp_ident "b" (ocamldoc/generators/odoc_todo.ml[224,7491+30]..[224,7491+31])
+                                                          ]
+                                                        expression (ocamldoc/generators/odoc_todo.ml[225,7524+6]..[225,7524+18])
+                                                          Pexp_apply
+                                                          expression (ocamldoc/generators/odoc_todo.ml[225,7524+6]..[225,7524+15])
+                                                            Pexp_ident "close_out" (ocamldoc/generators/odoc_todo.ml[225,7524+6]..[225,7524+15])
+                                                          [
+                                                            <arg>
+                                                            Nolabel
+                                                              expression (ocamldoc/generators/odoc_todo.ml[225,7524+16]..[225,7524+18])
+                                                                Pexp_ident "oc" (ocamldoc/generators/odoc_todo.ml[225,7524+16]..[225,7524+18])
+                                                          ]
+                                None
+                          class_field (ocamldoc/generators/odoc_todo.ml[227,7544+5]..[228,7561+34])
+                            Pcf_initializer
+                              expression (ocamldoc/generators/odoc_todo.ml[228,7561+7]..[228,7561+34])
+                                Pexp_setinstvar "scanner" (ocamldoc/generators/odoc_todo.ml[228,7561+7]..[228,7561+14])
+                                expression (ocamldoc/generators/odoc_todo.ml[228,7561+18]..[228,7561+34])
+                                  Pexp_apply
+                                  expression (ocamldoc/generators/odoc_todo.ml[228,7561+18]..[228,7561+29])
+                                    Pexp_new "scanner" (ocamldoc/generators/odoc_todo.ml[228,7561+22]..[228,7561+29])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (ocamldoc/generators/odoc_todo.ml[228,7561+30]..[228,7561+34])
+                                        Pexp_ident "self" (ocamldoc/generators/odoc_todo.ml[228,7561+30]..[228,7561+34])
+                                  ]
+                        ]
+                    class_type (ocamldoc/generators/odoc_todo.ml[194,6401+15]..[194,6401+24])
+                      Pcty_constr "Html.html" (ocamldoc/generators/odoc_todo.ml[194,6401+15]..[194,6401+24])
+                      []
+            ]
+        ]
+  structure_item (ocamldoc/generators/odoc_todo.ml[232,7607+0]..[233,7639+62])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (ocamldoc/generators/odoc_todo.ml[232,7607+4]..[232,7607+5])
+          Ppat_any
+        expression (ocamldoc/generators/odoc_todo.ml[232,7607+8]..[233,7639+62])
+          Pexp_apply
+          expression (ocamldoc/generators/odoc_todo.ml[232,7607+8]..[232,7607+31])
+            Pexp_ident "Odoc_args.set_generator" (ocamldoc/generators/odoc_todo.ml[232,7607+8]..[232,7607+31])
+          [
+            <arg>
+            Nolabel
+              expression (ocamldoc/generators/odoc_todo.ml[233,7639+1]..[233,7639+62])
+                Pexp_construct "Odoc_gen.Html" (ocamldoc/generators/odoc_todo.ml[233,7639+2]..[233,7639+15])
+                Some
+                  expression (ocamldoc/generators/odoc_todo.ml[233,7639+16]..[233,7639+61])
+                    Pexp_constraint
+                    expression (ocamldoc/generators/odoc_todo.ml[233,7639+16]..[233,7639+61]) ghost
+                      Pexp_pack
+                      module_expr (ocamldoc/generators/odoc_todo.ml[233,7639+24]..[233,7639+33])
+                        Pmod_ident "Generator" (ocamldoc/generators/odoc_todo.ml[233,7639+24]..[233,7639+33])
+                    core_type (ocamldoc/generators/odoc_todo.ml[233,7639+36]..[233,7639+60])
+                      Ptyp_package "Odoc_html.Html_generator" (ocamldoc/generators/odoc_todo.ml[233,7639+36]..[233,7639+60])
+                      []
+          ]
+    ]
+]
+

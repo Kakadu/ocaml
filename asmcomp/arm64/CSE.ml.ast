@@ -1,0 +1,192 @@
+[
+  structure_item (asmcomp/arm64/CSE.ml[19,1127+0]..[19,1127+9])
+    Pstr_open Fresh
+    module_expr (asmcomp/arm64/CSE.ml[19,1127+5]..[19,1127+9])
+      Pmod_ident "Arch" (asmcomp/arm64/CSE.ml[19,1127+5]..[19,1127+9])
+  structure_item (asmcomp/arm64/CSE.ml[20,1137+0]..[20,1137+9])
+    Pstr_open Fresh
+    module_expr (asmcomp/arm64/CSE.ml[20,1137+5]..[20,1137+9])
+      Pmod_ident "Mach" (asmcomp/arm64/CSE.ml[20,1137+5]..[20,1137+9])
+  structure_item (asmcomp/arm64/CSE.ml[21,1147+0]..[21,1147+11])
+    Pstr_open Fresh
+    module_expr (asmcomp/arm64/CSE.ml[21,1147+5]..[21,1147+11])
+      Pmod_ident "CSEgen" (asmcomp/arm64/CSE.ml[21,1147+5]..[21,1147+11])
+  structure_item (asmcomp/arm64/CSE.ml[23,1160+0]..[38,1498+3])
+    Pstr_class
+    [
+      class_declaration (asmcomp/arm64/CSE.ml[23,1160+0]..[38,1498+3])
+        pci_virt = Concrete
+        pci_params =
+          []
+        pci_name = "cse" (asmcomp/arm64/CSE.ml[23,1160+6]..[23,1160+9])
+        pci_expr =
+          class_expr (asmcomp/arm64/CSE.ml[23,1160+12]..[38,1498+3])
+            Pcl_structure
+            class_structure
+              pattern (asmcomp/arm64/CSE.ml[23,1160+18]..[23,1160+18]) ghost
+                Ppat_any
+              [
+                class_field (asmcomp/arm64/CSE.ml[25,1180+0]..[25,1180+28])
+                  Pcf_inherit Fresh
+                    class_expr (asmcomp/arm64/CSE.ml[25,1180+8]..[25,1180+19])
+                      Pcl_constr "cse_generic" (asmcomp/arm64/CSE.ml[25,1180+8]..[25,1180+19])
+                      []
+                    Some
+                      "super" (asmcomp/arm64/CSE.ml[25,1180+23]..[25,1180+28])
+                class_field (asmcomp/arm64/CSE.ml[27,1210+0]..[31,1336+36])
+                  Pcf_method Public
+                    "class_of_operation" (asmcomp/arm64/CSE.ml[27,1210+8]..[27,1210+26])
+                    Concrete Override
+                    expression (asmcomp/arm64/CSE.ml[27,1210+27]..[31,1336+36]) ghost
+                      Pexp_poly
+                      expression (asmcomp/arm64/CSE.ml[27,1210+27]..[31,1336+36]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/arm64/CSE.ml[27,1210+27]..[27,1210+29])
+                          Ppat_var "op" (asmcomp/arm64/CSE.ml[27,1210+27]..[27,1210+29])
+                        expression (asmcomp/arm64/CSE.ml[28,1242+2]..[31,1336+36])
+                          Pexp_match
+                          expression (asmcomp/arm64/CSE.ml[28,1242+8]..[28,1242+10])
+                            Pexp_ident "op" (asmcomp/arm64/CSE.ml[28,1242+8]..[28,1242+10])
+                          [
+                            <case>
+                              pattern (asmcomp/arm64/CSE.ml[29,1258+4]..[29,1258+33])
+                                Ppat_construct "Ispecific" (asmcomp/arm64/CSE.ml[29,1258+4]..[29,1258+13])
+                                Some
+                                  []
+                                  pattern (asmcomp/arm64/CSE.ml[29,1258+13]..[29,1258+33])
+                                    Ppat_construct "Ishiftcheckbound" (asmcomp/arm64/CSE.ml[29,1258+14]..[29,1258+30])
+                                    Some
+                                      []
+                                      pattern (asmcomp/arm64/CSE.ml[29,1258+31]..[29,1258+32])
+                                        Ppat_any
+                              expression (asmcomp/arm64/CSE.ml[29,1258+37]..[29,1258+50])
+                                Pexp_construct "Op_checkbound" (asmcomp/arm64/CSE.ml[29,1258+37]..[29,1258+50])
+                                None
+                            <case>
+                              pattern (asmcomp/arm64/CSE.ml[30,1309+4]..[30,1309+15])
+                                Ppat_construct "Ispecific" (asmcomp/arm64/CSE.ml[30,1309+4]..[30,1309+13])
+                                Some
+                                  []
+                                  pattern (asmcomp/arm64/CSE.ml[30,1309+14]..[30,1309+15])
+                                    Ppat_any
+                              expression (asmcomp/arm64/CSE.ml[30,1309+19]..[30,1309+26])
+                                Pexp_construct "Op_pure" (asmcomp/arm64/CSE.ml[30,1309+19]..[30,1309+26])
+                                None
+                            <case>
+                              pattern (asmcomp/arm64/CSE.ml[31,1336+4]..[31,1336+5])
+                                Ppat_any
+                              expression (asmcomp/arm64/CSE.ml[31,1336+9]..[31,1336+36])
+                                Pexp_apply
+                                expression (asmcomp/arm64/CSE.ml[31,1336+9]..[31,1336+33])
+                                  Pexp_send "class_of_operation"
+                                  expression (asmcomp/arm64/CSE.ml[31,1336+9]..[31,1336+14])
+                                    Pexp_ident "super" (asmcomp/arm64/CSE.ml[31,1336+9]..[31,1336+14])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm64/CSE.ml[31,1336+34]..[31,1336+36])
+                                      Pexp_ident "op" (asmcomp/arm64/CSE.ml[31,1336+34]..[31,1336+36])
+                                ]
+                          ]
+                      None
+                class_field (asmcomp/arm64/CSE.ml[33,1374+0]..[36,1482+14])
+                  Pcf_method Public
+                    "is_cheap_operation" (asmcomp/arm64/CSE.ml[33,1374+8]..[33,1374+26])
+                    Concrete Override
+                    expression (asmcomp/arm64/CSE.ml[33,1374+27]..[36,1482+14]) ghost
+                      Pexp_poly
+                      expression (asmcomp/arm64/CSE.ml[33,1374+27]..[36,1482+14]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (asmcomp/arm64/CSE.ml[33,1374+27]..[33,1374+29])
+                          Ppat_var "op" (asmcomp/arm64/CSE.ml[33,1374+27]..[33,1374+29])
+                        expression (asmcomp/arm64/CSE.ml[34,1406+2]..[36,1482+14])
+                          Pexp_match
+                          expression (asmcomp/arm64/CSE.ml[34,1406+8]..[34,1406+10])
+                            Pexp_ident "op" (asmcomp/arm64/CSE.ml[34,1406+8]..[34,1406+10])
+                          [
+                            <case>
+                              pattern (asmcomp/arm64/CSE.ml[35,1422+4]..[35,1422+16])
+                                Ppat_construct "Iconst_int" (asmcomp/arm64/CSE.ml[35,1422+4]..[35,1422+14])
+                                Some
+                                  []
+                                  pattern (asmcomp/arm64/CSE.ml[35,1422+15]..[35,1422+16])
+                                    Ppat_var "n" (asmcomp/arm64/CSE.ml[35,1422+15]..[35,1422+16])
+                              expression (asmcomp/arm64/CSE.ml[35,1422+20]..[35,1422+59])
+                                Pexp_apply
+                                expression (asmcomp/arm64/CSE.ml[35,1422+38]..[35,1422+40])
+                                  Pexp_ident "&&" (asmcomp/arm64/CSE.ml[35,1422+38]..[35,1422+40])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm64/CSE.ml[35,1422+20]..[35,1422+37])
+                                      Pexp_apply
+                                      expression (asmcomp/arm64/CSE.ml[35,1422+22]..[35,1422+24])
+                                        Pexp_ident "<=" (asmcomp/arm64/CSE.ml[35,1422+22]..[35,1422+24])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/arm64/CSE.ml[35,1422+20]..[35,1422+21])
+                                            Pexp_ident "n" (asmcomp/arm64/CSE.ml[35,1422+20]..[35,1422+21])
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/arm64/CSE.ml[35,1422+25]..[35,1422+37])
+                                            Pexp_constant PConst_int (0x7FFF_FFFF,Some n)
+                                      ]
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/arm64/CSE.ml[35,1422+41]..[35,1422+59])
+                                      Pexp_apply
+                                      expression (asmcomp/arm64/CSE.ml[35,1422+43]..[35,1422+45])
+                                        Pexp_ident ">=" (asmcomp/arm64/CSE.ml[35,1422+43]..[35,1422+45])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/arm64/CSE.ml[35,1422+41]..[35,1422+42])
+                                            Pexp_ident "n" (asmcomp/arm64/CSE.ml[35,1422+41]..[35,1422+42])
+                                        <arg>
+                                        Nolabel
+                                          expression (asmcomp/arm64/CSE.ml[35,1422+46]..[35,1422+59])
+                                            Pexp_constant PConst_int (-0x8000_0000,Some n)
+                                      ]
+                                ]
+                            <case>
+                              pattern (asmcomp/arm64/CSE.ml[36,1482+4]..[36,1482+5])
+                                Ppat_any
+                              expression (asmcomp/arm64/CSE.ml[36,1482+9]..[36,1482+14])
+                                Pexp_construct "false" (asmcomp/arm64/CSE.ml[36,1482+9]..[36,1482+14])
+                                None
+                          ]
+                      None
+              ]
+    ]
+  structure_item (asmcomp/arm64/CSE.ml[40,1503+0]..[41,1519+21])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/arm64/CSE.ml[40,1503+4]..[40,1503+11])
+          Ppat_var "fundecl" (asmcomp/arm64/CSE.ml[40,1503+4]..[40,1503+11])
+        expression (asmcomp/arm64/CSE.ml[40,1503+12]..[41,1519+21]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/arm64/CSE.ml[40,1503+12]..[40,1503+13])
+            Ppat_var "f" (asmcomp/arm64/CSE.ml[40,1503+12]..[40,1503+13])
+          expression (asmcomp/arm64/CSE.ml[41,1519+2]..[41,1519+21])
+            Pexp_apply
+            expression (asmcomp/arm64/CSE.ml[41,1519+2]..[41,1519+19])
+              Pexp_send "fundecl"
+              expression (asmcomp/arm64/CSE.ml[41,1519+2]..[41,1519+11])
+                Pexp_new "cse" (asmcomp/arm64/CSE.ml[41,1519+7]..[41,1519+10])
+            [
+              <arg>
+              Nolabel
+                expression (asmcomp/arm64/CSE.ml[41,1519+20]..[41,1519+21])
+                  Pexp_ident "f" (asmcomp/arm64/CSE.ml[41,1519+20]..[41,1519+21])
+            ]
+    ]
+]
+

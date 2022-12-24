@@ -1,0 +1,257 @@
+[
+  structure_item (testsuite/tests/parallel/poll.ml[8,57+0]..[8,57+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/poll.ml[8,57+4]..[8,57+12])
+          Ppat_var "continue" (testsuite/tests/parallel/poll.ml[8,57+4]..[8,57+12])
+        expression (testsuite/tests/parallel/poll.ml[8,57+15]..[8,57+31])
+          Pexp_apply
+          expression (testsuite/tests/parallel/poll.ml[8,57+15]..[8,57+26])
+            Pexp_ident "Atomic.make" (testsuite/tests/parallel/poll.ml[8,57+15]..[8,57+26])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/parallel/poll.ml[8,57+27]..[8,57+31])
+                Pexp_construct "true" (testsuite/tests/parallel/poll.ml[8,57+27]..[8,57+31])
+                None
+          ]
+    ]
+  structure_item (testsuite/tests/parallel/poll.ml[10,90+0]..[11,108+37])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/poll.ml[10,90+8]..[10,90+12])
+          Ppat_var "loop" (testsuite/tests/parallel/poll.ml[10,90+8]..[10,90+12])
+        expression (testsuite/tests/parallel/poll.ml[10,90+13]..[11,108+37]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/poll.ml[10,90+13]..[10,90+15])
+            Ppat_construct "()" (testsuite/tests/parallel/poll.ml[10,90+13]..[10,90+15])
+            None
+          expression (testsuite/tests/parallel/poll.ml[11,108+2]..[11,108+37])
+            Pexp_ifthenelse
+            expression (testsuite/tests/parallel/poll.ml[11,108+5]..[11,108+24])
+              Pexp_apply
+              expression (testsuite/tests/parallel/poll.ml[11,108+5]..[11,108+15])
+                Pexp_ident "Atomic.get" (testsuite/tests/parallel/poll.ml[11,108+5]..[11,108+15])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/poll.ml[11,108+16]..[11,108+24])
+                    Pexp_ident "continue" (testsuite/tests/parallel/poll.ml[11,108+16]..[11,108+24])
+              ]
+            expression (testsuite/tests/parallel/poll.ml[11,108+30]..[11,108+37])
+              Pexp_apply
+              expression (testsuite/tests/parallel/poll.ml[11,108+30]..[11,108+34])
+                Pexp_ident "loop" (testsuite/tests/parallel/poll.ml[11,108+30]..[11,108+34])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/poll.ml[11,108+35]..[11,108+37])
+                    Pexp_construct "()" (testsuite/tests/parallel/poll.ml[11,108+35]..[11,108+37])
+                    None
+              ]
+            None
+    ]
+  structure_item (testsuite/tests/parallel/poll.ml[13,147+0]..[15,187+31])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/poll.ml[13,147+8]..[13,147+14])
+          Ppat_var "repeat" (testsuite/tests/parallel/poll.ml[13,147+8]..[13,147+14])
+        expression (testsuite/tests/parallel/poll.ml[13,147+15]..[15,187+31]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/poll.ml[13,147+15]..[13,147+16])
+            Ppat_var "f" (testsuite/tests/parallel/poll.ml[13,147+15]..[13,147+16])
+          expression (testsuite/tests/parallel/poll.ml[13,147+19]..[15,187+31])
+            Pexp_function
+            [
+              <case>
+                pattern (testsuite/tests/parallel/poll.ml[14,175+4]..[14,175+5])
+                  Ppat_constant PConst_int (0,None)
+                expression (testsuite/tests/parallel/poll.ml[14,175+9]..[14,175+11])
+                  Pexp_construct "()" (testsuite/tests/parallel/poll.ml[14,175+9]..[14,175+11])
+                  None
+              <case>
+                pattern (testsuite/tests/parallel/poll.ml[15,187+4]..[15,187+5])
+                  Ppat_var "n" (testsuite/tests/parallel/poll.ml[15,187+4]..[15,187+5])
+                expression (testsuite/tests/parallel/poll.ml[15,187+9]..[15,187+31])
+                  Pexp_sequence
+                  expression (testsuite/tests/parallel/poll.ml[15,187+9]..[15,187+13])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/poll.ml[15,187+9]..[15,187+10])
+                      Pexp_ident "f" (testsuite/tests/parallel/poll.ml[15,187+9]..[15,187+10])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/poll.ml[15,187+11]..[15,187+13])
+                          Pexp_construct "()" (testsuite/tests/parallel/poll.ml[15,187+11]..[15,187+13])
+                          None
+                    ]
+                  expression (testsuite/tests/parallel/poll.ml[15,187+15]..[15,187+31])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/poll.ml[15,187+15]..[15,187+21])
+                      Pexp_ident "repeat" (testsuite/tests/parallel/poll.ml[15,187+15]..[15,187+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/poll.ml[15,187+22]..[15,187+23])
+                          Pexp_ident "f" (testsuite/tests/parallel/poll.ml[15,187+22]..[15,187+23])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/poll.ml[15,187+24]..[15,187+31])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/poll.ml[15,187+27]..[15,187+28])
+                            Pexp_ident "-" (testsuite/tests/parallel/poll.ml[15,187+27]..[15,187+28])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/poll.ml[15,187+25]..[15,187+26])
+                                Pexp_ident "n" (testsuite/tests/parallel/poll.ml[15,187+25]..[15,187+26])
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/poll.ml[15,187+29]..[15,187+30])
+                                Pexp_constant PConst_int (1,None)
+                          ]
+                    ]
+            ]
+    ]
+  structure_item (testsuite/tests/parallel/poll.ml[17,220+0]..[23,358+15])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/poll.ml[17,220+4]..[17,220+5])
+          Ppat_var "f" (testsuite/tests/parallel/poll.ml[17,220+4]..[17,220+5])
+        expression (testsuite/tests/parallel/poll.ml[17,220+6]..[23,358+15]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/poll.ml[17,220+6]..[17,220+8])
+            Ppat_construct "()" (testsuite/tests/parallel/poll.ml[17,220+6]..[17,220+8])
+            None
+          expression (testsuite/tests/parallel/poll.ml[18,231+2]..[23,358+15])
+            Pexp_sequence
+            expression (testsuite/tests/parallel/poll.ml[18,231+2]..[18,231+26])
+              Pexp_apply
+              expression (testsuite/tests/parallel/poll.ml[18,231+2]..[18,231+12])
+                Pexp_ident "Atomic.set" (testsuite/tests/parallel/poll.ml[18,231+2]..[18,231+12])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/poll.ml[18,231+13]..[18,231+21])
+                    Pexp_ident "continue" (testsuite/tests/parallel/poll.ml[18,231+13]..[18,231+21])
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/poll.ml[18,231+22]..[18,231+26])
+                    Pexp_construct "true" (testsuite/tests/parallel/poll.ml[18,231+22]..[18,231+26])
+                    None
+              ]
+            expression (testsuite/tests/parallel/poll.ml[19,259+2]..[23,358+15])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/parallel/poll.ml[19,259+6]..[19,259+7])
+                    Ppat_var "d" (testsuite/tests/parallel/poll.ml[19,259+6]..[19,259+7])
+                  expression (testsuite/tests/parallel/poll.ml[19,259+10]..[19,259+27])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/poll.ml[19,259+10]..[19,259+22])
+                      Pexp_ident "Domain.spawn" (testsuite/tests/parallel/poll.ml[19,259+10]..[19,259+22])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/poll.ml[19,259+23]..[19,259+27])
+                          Pexp_ident "loop" (testsuite/tests/parallel/poll.ml[19,259+23]..[19,259+27])
+                    ]
+              ]
+              expression (testsuite/tests/parallel/poll.ml[20,290+2]..[23,358+15])
+                Pexp_sequence
+                expression (testsuite/tests/parallel/poll.ml[20,290+2]..[20,290+18])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/poll.ml[20,290+2]..[20,290+13])
+                    Pexp_ident "Unix.sleepf" (testsuite/tests/parallel/poll.ml[20,290+2]..[20,290+13])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/poll.ml[20,290+14]..[20,290+18])
+                        Pexp_constant PConst_float (5E-2,None)
+                  ]
+                expression (testsuite/tests/parallel/poll.ml[21,310+2]..[23,358+15])
+                  Pexp_sequence
+                  expression (testsuite/tests/parallel/poll.ml[21,310+2]..[21,310+17])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/poll.ml[21,310+2]..[21,310+15])
+                      Pexp_ident "Gc.full_major" (testsuite/tests/parallel/poll.ml[21,310+2]..[21,310+15])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/poll.ml[21,310+15]..[21,310+17])
+                          Pexp_construct "()" (testsuite/tests/parallel/poll.ml[21,310+15]..[21,310+17])
+                          None
+                    ]
+                  expression (testsuite/tests/parallel/poll.ml[22,329+2]..[23,358+15])
+                    Pexp_sequence
+                    expression (testsuite/tests/parallel/poll.ml[22,329+2]..[22,329+27])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/poll.ml[22,329+2]..[22,329+12])
+                        Pexp_ident "Atomic.set" (testsuite/tests/parallel/poll.ml[22,329+2]..[22,329+12])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/poll.ml[22,329+13]..[22,329+21])
+                            Pexp_ident "continue" (testsuite/tests/parallel/poll.ml[22,329+13]..[22,329+21])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/poll.ml[22,329+22]..[22,329+27])
+                            Pexp_construct "false" (testsuite/tests/parallel/poll.ml[22,329+22]..[22,329+27])
+                            None
+                      ]
+                    expression (testsuite/tests/parallel/poll.ml[23,358+2]..[23,358+15])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/poll.ml[23,358+2]..[23,358+13])
+                        Pexp_ident "Domain.join" (testsuite/tests/parallel/poll.ml[23,358+2]..[23,358+13])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/poll.ml[23,358+14]..[23,358+15])
+                            Pexp_ident "d" (testsuite/tests/parallel/poll.ml[23,358+14]..[23,358+15])
+                      ]
+    ]
+  structure_item (testsuite/tests/parallel/poll.ml[25,375+0]..[27,399+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/poll.ml[25,375+4]..[25,375+5])
+          Ppat_any
+        expression (testsuite/tests/parallel/poll.ml[26,383+2]..[27,399+20])
+          Pexp_sequence
+          expression (testsuite/tests/parallel/poll.ml[26,383+2]..[26,383+13])
+            Pexp_apply
+            expression (testsuite/tests/parallel/poll.ml[26,383+2]..[26,383+8])
+              Pexp_ident "repeat" (testsuite/tests/parallel/poll.ml[26,383+2]..[26,383+8])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/poll.ml[26,383+9]..[26,383+10])
+                  Pexp_ident "f" (testsuite/tests/parallel/poll.ml[26,383+9]..[26,383+10])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/poll.ml[26,383+11]..[26,383+13])
+                  Pexp_constant PConst_int (10,None)
+            ]
+          expression (testsuite/tests/parallel/poll.ml[27,399+2]..[27,399+20])
+            Pexp_apply
+            expression (testsuite/tests/parallel/poll.ml[27,399+2]..[27,399+15])
+              Pexp_ident "print_endline" (testsuite/tests/parallel/poll.ml[27,399+2]..[27,399+15])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/poll.ml[27,399+16]..[27,399+20])
+                  Pexp_constant PConst_string("OK",(testsuite/tests/parallel/poll.ml[27,399+17]..[27,399+19]),None)
+            ]
+    ]
+]
+

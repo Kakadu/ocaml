@@ -1,0 +1,1223 @@
+[
+  structure_item (parsing/parse.ml[20,1157+0]..[20,1157+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[20,1157+4]..[20,1157+14])
+          Ppat_var "last_token" (parsing/parse.ml[20,1157+4]..[20,1157+14])
+        expression (parsing/parse.ml[20,1157+17]..[20,1157+31])
+          Pexp_apply
+          expression (parsing/parse.ml[20,1157+17]..[20,1157+20])
+            Pexp_ident "ref" (parsing/parse.ml[20,1157+17]..[20,1157+20])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[20,1157+21]..[20,1157+31])
+                Pexp_construct "Parser.EOF" (parsing/parse.ml[20,1157+21]..[20,1157+31])
+                None
+          ]
+    ]
+  structure_item (parsing/parse.ml[22,1190+0]..[25,1268+7])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[22,1190+4]..[22,1190+9])
+          Ppat_var "token" (parsing/parse.ml[22,1190+4]..[22,1190+9])
+        expression (parsing/parse.ml[22,1190+10]..[25,1268+7]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (parsing/parse.ml[22,1190+10]..[22,1190+16])
+            Ppat_var "lexbuf" (parsing/parse.ml[22,1190+10]..[22,1190+16])
+          expression (parsing/parse.ml[23,1209+2]..[25,1268+7])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (parsing/parse.ml[23,1209+6]..[23,1209+11])
+                  Ppat_var "token" (parsing/parse.ml[23,1209+6]..[23,1209+11])
+                expression (parsing/parse.ml[23,1209+14]..[23,1209+32])
+                  Pexp_apply
+                  expression (parsing/parse.ml[23,1209+14]..[23,1209+25])
+                    Pexp_ident "Lexer.token" (parsing/parse.ml[23,1209+14]..[23,1209+25])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (parsing/parse.ml[23,1209+26]..[23,1209+32])
+                        Pexp_ident "lexbuf" (parsing/parse.ml[23,1209+26]..[23,1209+32])
+                  ]
+            ]
+            expression (parsing/parse.ml[24,1245+2]..[25,1268+7])
+              Pexp_sequence
+              expression (parsing/parse.ml[24,1245+2]..[24,1245+21])
+                Pexp_apply
+                expression (parsing/parse.ml[24,1245+13]..[24,1245+15])
+                  Pexp_ident ":=" (parsing/parse.ml[24,1245+13]..[24,1245+15])
+                [
+                  <arg>
+                  Nolabel
+                    expression (parsing/parse.ml[24,1245+2]..[24,1245+12])
+                      Pexp_ident "last_token" (parsing/parse.ml[24,1245+2]..[24,1245+12])
+                  <arg>
+                  Nolabel
+                    expression (parsing/parse.ml[24,1245+16]..[24,1245+21])
+                      Pexp_ident "token" (parsing/parse.ml[24,1245+16]..[24,1245+21])
+                ]
+              expression (parsing/parse.ml[25,1268+2]..[25,1268+7])
+                Pexp_ident "token" (parsing/parse.ml[25,1268+2]..[25,1268+7])
+    ]
+  structure_item (parsing/parse.ml[27,1277+0]..[36,1713+24])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (parsing/parse.ml[27,1277+8]..[27,1277+19])
+          Ppat_var "skip_phrase" (parsing/parse.ml[27,1277+8]..[27,1277+19])
+        expression (parsing/parse.ml[27,1277+20]..[36,1713+24]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (parsing/parse.ml[27,1277+20]..[27,1277+26])
+            Ppat_var "lexbuf" (parsing/parse.ml[27,1277+20]..[27,1277+26])
+          expression (parsing/parse.ml[28,1306+2]..[36,1713+24])
+            Pexp_match
+            expression (parsing/parse.ml[28,1306+8]..[28,1306+20])
+              Pexp_apply
+              expression (parsing/parse.ml[28,1306+8]..[28,1306+13])
+                Pexp_ident "token" (parsing/parse.ml[28,1306+8]..[28,1306+13])
+              [
+                <arg>
+                Nolabel
+                  expression (parsing/parse.ml[28,1306+14]..[28,1306+20])
+                    Pexp_ident "lexbuf" (parsing/parse.ml[28,1306+14]..[28,1306+20])
+              ]
+            [
+              <case>
+                pattern (parsing/parse.ml[29,1332+4]..[29,1332+32])
+                  Ppat_or
+                  pattern (parsing/parse.ml[29,1332+4]..[29,1332+19])
+                    Ppat_construct "Parser.SEMISEMI" (parsing/parse.ml[29,1332+4]..[29,1332+19])
+                    None
+                  pattern (parsing/parse.ml[29,1332+22]..[29,1332+32])
+                    Ppat_construct "Parser.EOF" (parsing/parse.ml[29,1332+22]..[29,1332+32])
+                    None
+                expression (parsing/parse.ml[29,1332+36]..[29,1332+38])
+                  Pexp_construct "()" (parsing/parse.ml[29,1332+36]..[29,1332+38])
+                  None
+              <case>
+                pattern (parsing/parse.ml[30,1371+4]..[30,1371+5])
+                  Ppat_any
+                expression (parsing/parse.ml[30,1371+9]..[30,1371+27])
+                  Pexp_apply
+                  expression (parsing/parse.ml[30,1371+9]..[30,1371+20])
+                    Pexp_ident "skip_phrase" (parsing/parse.ml[30,1371+9]..[30,1371+20])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (parsing/parse.ml[30,1371+21]..[30,1371+27])
+                        Pexp_ident "lexbuf" (parsing/parse.ml[30,1371+21]..[30,1371+27])
+                  ]
+              <case>
+                pattern (parsing/parse.ml[31,1399+4]..[35,1650+59])
+                  Ppat_exception
+                  pattern (parsing/parse.ml[31,1399+14]..[35,1650+59])
+                    Ppat_or
+                    pattern (parsing/parse.ml[31,1399+15]..[34,1578+71])
+                      Ppat_or
+                      pattern (parsing/parse.ml[31,1399+15]..[33,1519+58])
+                        Ppat_or
+                        pattern (parsing/parse.ml[31,1399+15]..[32,1460+58])
+                          Ppat_or
+                          pattern (parsing/parse.ml[31,1399+15]..[31,1399+60])
+                            Ppat_construct "Lexer.Error" (parsing/parse.ml[31,1399+15]..[31,1399+26])
+                            Some
+                              []
+                              pattern (parsing/parse.ml[31,1399+27]..[31,1399+60])
+                                Ppat_tuple
+                                [
+                                  pattern (parsing/parse.ml[31,1399+28]..[31,1399+56])
+                                    Ppat_construct "Lexer.Unterminated_comment" (parsing/parse.ml[31,1399+28]..[31,1399+54])
+                                    Some
+                                      []
+                                      pattern (parsing/parse.ml[31,1399+55]..[31,1399+56])
+                                        Ppat_any
+                                  pattern (parsing/parse.ml[31,1399+58]..[31,1399+59])
+                                    Ppat_any
+                                ]
+                          pattern (parsing/parse.ml[32,1460+16]..[32,1460+58])
+                            Ppat_construct "Lexer.Error" (parsing/parse.ml[32,1460+16]..[32,1460+27])
+                            Some
+                              []
+                              pattern (parsing/parse.ml[32,1460+28]..[32,1460+58])
+                                Ppat_tuple
+                                [
+                                  pattern (parsing/parse.ml[32,1460+29]..[32,1460+54])
+                                    Ppat_construct "Lexer.Unterminated_string" (parsing/parse.ml[32,1460+29]..[32,1460+54])
+                                    None
+                                  pattern (parsing/parse.ml[32,1460+56]..[32,1460+57])
+                                    Ppat_any
+                                ]
+                        pattern (parsing/parse.ml[33,1519+16]..[33,1519+58])
+                          Ppat_construct "Lexer.Error" (parsing/parse.ml[33,1519+16]..[33,1519+27])
+                          Some
+                            []
+                            pattern (parsing/parse.ml[33,1519+28]..[33,1519+58])
+                              Ppat_tuple
+                              [
+                                pattern (parsing/parse.ml[33,1519+29]..[33,1519+54])
+                                  Ppat_construct "Lexer.Reserved_sequence" (parsing/parse.ml[33,1519+29]..[33,1519+52])
+                                  Some
+                                    []
+                                    pattern (parsing/parse.ml[33,1519+53]..[33,1519+54])
+                                      Ppat_any
+                                pattern (parsing/parse.ml[33,1519+56]..[33,1519+57])
+                                  Ppat_any
+                              ]
+                      pattern (parsing/parse.ml[34,1578+16]..[34,1578+71])
+                        Ppat_construct "Lexer.Error" (parsing/parse.ml[34,1578+16]..[34,1578+27])
+                        Some
+                          []
+                          pattern (parsing/parse.ml[34,1578+28]..[34,1578+71])
+                            Ppat_tuple
+                            [
+                              pattern (parsing/parse.ml[34,1578+29]..[34,1578+67])
+                                Ppat_construct "Lexer.Unterminated_string_in_comment" (parsing/parse.ml[34,1578+29]..[34,1578+65])
+                                Some
+                                  []
+                                  pattern (parsing/parse.ml[34,1578+66]..[34,1578+67])
+                                    Ppat_any
+                              pattern (parsing/parse.ml[34,1578+69]..[34,1578+70])
+                                Ppat_any
+                            ]
+                    pattern (parsing/parse.ml[35,1650+16]..[35,1650+58])
+                      Ppat_construct "Lexer.Error" (parsing/parse.ml[35,1650+16]..[35,1650+27])
+                      Some
+                        []
+                        pattern (parsing/parse.ml[35,1650+28]..[35,1650+58])
+                          Ppat_tuple
+                          [
+                            pattern (parsing/parse.ml[35,1650+29]..[35,1650+54])
+                              Ppat_construct "Lexer.Illegal_character" (parsing/parse.ml[35,1650+29]..[35,1650+52])
+                              Some
+                                []
+                                pattern (parsing/parse.ml[35,1650+53]..[35,1650+54])
+                                  Ppat_any
+                            pattern (parsing/parse.ml[35,1650+56]..[35,1650+57])
+                              Ppat_any
+                          ]
+                expression (parsing/parse.ml[36,1713+6]..[36,1713+24])
+                  Pexp_apply
+                  expression (parsing/parse.ml[36,1713+6]..[36,1713+17])
+                    Pexp_ident "skip_phrase" (parsing/parse.ml[36,1713+6]..[36,1713+17])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (parsing/parse.ml[36,1713+18]..[36,1713+24])
+                        Pexp_ident "lexbuf" (parsing/parse.ml[36,1713+18]..[36,1713+24])
+                  ]
+            ]
+    ]
+  structure_item (parsing/parse.ml[38,1739+0]..[41,1834+27])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[38,1739+4]..[38,1739+21])
+          Ppat_var "maybe_skip_phrase" (parsing/parse.ml[38,1739+4]..[38,1739+21])
+        expression (parsing/parse.ml[38,1739+22]..[41,1834+27]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (parsing/parse.ml[38,1739+22]..[38,1739+28])
+            Ppat_var "lexbuf" (parsing/parse.ml[38,1739+22]..[38,1739+28])
+          expression (parsing/parse.ml[39,1770+2]..[41,1834+27])
+            Pexp_match
+            expression (parsing/parse.ml[39,1770+8]..[39,1770+19])
+              Pexp_apply
+              expression (parsing/parse.ml[39,1770+8]..[39,1770+9])
+                Pexp_ident "!" (parsing/parse.ml[39,1770+8]..[39,1770+9])
+              [
+                <arg>
+                Nolabel
+                  expression (parsing/parse.ml[39,1770+9]..[39,1770+19])
+                    Pexp_ident "last_token" (parsing/parse.ml[39,1770+9]..[39,1770+19])
+              ]
+            [
+              <case>
+                pattern (parsing/parse.ml[40,1795+4]..[40,1795+32])
+                  Ppat_or
+                  pattern (parsing/parse.ml[40,1795+4]..[40,1795+19])
+                    Ppat_construct "Parser.SEMISEMI" (parsing/parse.ml[40,1795+4]..[40,1795+19])
+                    None
+                  pattern (parsing/parse.ml[40,1795+22]..[40,1795+32])
+                    Ppat_construct "Parser.EOF" (parsing/parse.ml[40,1795+22]..[40,1795+32])
+                    None
+                expression (parsing/parse.ml[40,1795+36]..[40,1795+38])
+                  Pexp_construct "()" (parsing/parse.ml[40,1795+36]..[40,1795+38])
+                  None
+              <case>
+                pattern (parsing/parse.ml[41,1834+4]..[41,1834+5])
+                  Ppat_any
+                expression (parsing/parse.ml[41,1834+9]..[41,1834+27])
+                  Pexp_apply
+                  expression (parsing/parse.ml[41,1834+9]..[41,1834+20])
+                    Pexp_ident "skip_phrase" (parsing/parse.ml[41,1834+9]..[41,1834+20])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (parsing/parse.ml[41,1834+21]..[41,1834+27])
+                        Pexp_ident "lexbuf" (parsing/parse.ml[41,1834+21]..[41,1834+27])
+                  ]
+            ]
+    ]
+  structure_item (parsing/parse.ml[43,1863+0]..[44,1880+56])
+    Pstr_type Rec
+    [
+      type_declaration "parser" (parsing/parse.ml[43,1863+8]..[43,1863+14]) (parsing/parse.ml[43,1863+0]..[44,1880+56])
+        ptype_params =
+          [
+            core_type (parsing/parse.ml[43,1863+5]..[43,1863+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (parsing/parse.ml[44,1880+2]..[44,1880+56])
+              Ptyp_arrow
+              Nolabel
+              core_type (parsing/parse.ml[44,1880+3]..[44,1880+32])
+                Ptyp_arrow
+                Nolabel
+                core_type (parsing/parse.ml[44,1880+3]..[44,1880+16])
+                  Ptyp_constr "Lexing.lexbuf" (parsing/parse.ml[44,1880+3]..[44,1880+16])
+                  []
+                core_type (parsing/parse.ml[44,1880+20]..[44,1880+32])
+                  Ptyp_constr "Parser.token" (parsing/parse.ml[44,1880+20]..[44,1880+32])
+                  []
+              core_type (parsing/parse.ml[44,1880+37]..[44,1880+56])
+                Ptyp_arrow
+                Nolabel
+                core_type (parsing/parse.ml[44,1880+37]..[44,1880+50])
+                  Ptyp_constr "Lexing.lexbuf" (parsing/parse.ml[44,1880+37]..[44,1880+50])
+                  []
+                core_type (parsing/parse.ml[44,1880+54]..[44,1880+56])
+                  Ptyp_var a
+    ]
+  structure_item (parsing/parse.ml[46,1938+0]..[68,2627+49])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[46,1938+4]..[46,1938+8])
+          Ppat_var "wrap" (parsing/parse.ml[46,1938+4]..[46,1938+8])
+        expression (parsing/parse.ml[46,1938+9]..[68,2627+49]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (parsing/parse.ml[46,1938+9]..[46,1938+29])
+            Ppat_constraint
+            pattern (parsing/parse.ml[46,1938+10]..[46,1938+16])
+              Ppat_var "parser" (parsing/parse.ml[46,1938+10]..[46,1938+16])
+            core_type (parsing/parse.ml[46,1938+19]..[46,1938+28])
+              Ptyp_constr "parser" (parsing/parse.ml[46,1938+22]..[46,1938+28])
+              [
+                core_type (parsing/parse.ml[46,1938+19]..[46,1938+21])
+                  Ptyp_var a
+              ]
+          expression (parsing/parse.ml[46,1938+30]..[68,2627+49]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (parsing/parse.ml[46,1938+30]..[46,1938+36])
+              Ppat_var "lexbuf" (parsing/parse.ml[46,1938+30]..[46,1938+36])
+            expression (parsing/parse.ml[46,1938+37]..[68,2627+49])
+              Pexp_constraint
+              expression (parsing/parse.ml[47,1982+2]..[68,2627+49])
+                Pexp_try
+                expression (parsing/parse.ml[48,1988+4]..[54,2165+7])
+                  Pexp_sequence
+                  expression (parsing/parse.ml[48,1988+4]..[48,1988+22])
+                    Pexp_apply
+                    expression (parsing/parse.ml[48,1988+4]..[48,1988+19])
+                      Pexp_ident "Docstrings.init" (parsing/parse.ml[48,1988+4]..[48,1988+19])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[48,1988+20]..[48,1988+22])
+                          Pexp_construct "()" (parsing/parse.ml[48,1988+20]..[48,1988+22])
+                          None
+                    ]
+                  expression (parsing/parse.ml[49,2012+4]..[54,2165+7])
+                    Pexp_sequence
+                    expression (parsing/parse.ml[49,2012+4]..[49,2012+17])
+                      Pexp_apply
+                      expression (parsing/parse.ml[49,2012+4]..[49,2012+14])
+                        Pexp_ident "Lexer.init" (parsing/parse.ml[49,2012+4]..[49,2012+14])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (parsing/parse.ml[49,2012+15]..[49,2012+17])
+                            Pexp_construct "()" (parsing/parse.ml[49,2012+15]..[49,2012+17])
+                            None
+                      ]
+                    expression (parsing/parse.ml[50,2031+4]..[54,2165+7])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (parsing/parse.ml[50,2031+8]..[50,2031+11])
+                            Ppat_var "ast" (parsing/parse.ml[50,2031+8]..[50,2031+11])
+                          expression (parsing/parse.ml[50,2031+14]..[50,2031+33])
+                            Pexp_apply
+                            expression (parsing/parse.ml[50,2031+14]..[50,2031+20])
+                              Pexp_ident "parser" (parsing/parse.ml[50,2031+14]..[50,2031+20])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (parsing/parse.ml[50,2031+21]..[50,2031+26])
+                                  Pexp_ident "token" (parsing/parse.ml[50,2031+21]..[50,2031+26])
+                              <arg>
+                              Nolabel
+                                expression (parsing/parse.ml[50,2031+27]..[50,2031+33])
+                                  Pexp_ident "lexbuf" (parsing/parse.ml[50,2031+27]..[50,2031+33])
+                            ]
+                      ]
+                      expression (parsing/parse.ml[51,2068+4]..[54,2165+7])
+                        Pexp_sequence
+                        expression (parsing/parse.ml[51,2068+4]..[51,2068+26])
+                          Pexp_apply
+                          expression (parsing/parse.ml[51,2068+4]..[51,2068+24])
+                            Pexp_ident "Parsing.clear_parser" (parsing/parse.ml[51,2068+4]..[51,2068+24])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (parsing/parse.ml[51,2068+24]..[51,2068+26])
+                                Pexp_construct "()" (parsing/parse.ml[51,2068+24]..[51,2068+26])
+                                None
+                          ]
+                        expression (parsing/parse.ml[52,2096+4]..[54,2165+7])
+                          Pexp_sequence
+                          expression (parsing/parse.ml[52,2096+4]..[52,2096+37])
+                            Pexp_apply
+                            expression (parsing/parse.ml[52,2096+4]..[52,2096+34])
+                              Pexp_ident "Docstrings.warn_bad_docstrings" (parsing/parse.ml[52,2096+4]..[52,2096+34])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (parsing/parse.ml[52,2096+35]..[52,2096+37])
+                                  Pexp_construct "()" (parsing/parse.ml[52,2096+35]..[52,2096+37])
+                                  None
+                            ]
+                          expression (parsing/parse.ml[53,2135+4]..[54,2165+7])
+                            Pexp_sequence
+                            expression (parsing/parse.ml[53,2135+4]..[53,2135+28])
+                              Pexp_apply
+                              expression (parsing/parse.ml[53,2135+15]..[53,2135+17])
+                                Pexp_ident ":=" (parsing/parse.ml[53,2135+15]..[53,2135+17])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (parsing/parse.ml[53,2135+4]..[53,2135+14])
+                                    Pexp_ident "last_token" (parsing/parse.ml[53,2135+4]..[53,2135+14])
+                                <arg>
+                                Nolabel
+                                  expression (parsing/parse.ml[53,2135+18]..[53,2135+28])
+                                    Pexp_construct "Parser.EOF" (parsing/parse.ml[53,2135+18]..[53,2135+28])
+                                    None
+                              ]
+                            expression (parsing/parse.ml[54,2165+4]..[54,2165+7])
+                              Pexp_ident "ast" (parsing/parse.ml[54,2165+4]..[54,2165+7])
+                [
+                  <case>
+                    pattern (parsing/parse.ml[56,2180+4]..[56,2180+52])
+                      Ppat_alias "err" (parsing/parse.ml[56,2180+49]..[56,2180+52])
+                      pattern (parsing/parse.ml[56,2180+4]..[56,2180+45])
+                        Ppat_construct "Lexer.Error" (parsing/parse.ml[56,2180+4]..[56,2180+15])
+                        Some
+                          []
+                          pattern (parsing/parse.ml[56,2180+15]..[56,2180+45])
+                            Ppat_tuple
+                            [
+                              pattern (parsing/parse.ml[56,2180+16]..[56,2180+41])
+                                Ppat_construct "Lexer.Illegal_character" (parsing/parse.ml[56,2180+16]..[56,2180+39])
+                                Some
+                                  []
+                                  pattern (parsing/parse.ml[56,2180+40]..[56,2180+41])
+                                    Ppat_any
+                              pattern (parsing/parse.ml[56,2180+43]..[56,2180+44])
+                                Ppat_any
+                            ]
+                    <when>
+                      expression (parsing/parse.ml[57,2233+9]..[57,2233+46])
+                        Pexp_apply
+                        expression (parsing/parse.ml[57,2233+30]..[57,2233+31])
+                          Pexp_ident "=" (parsing/parse.ml[57,2233+30]..[57,2233+31])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (parsing/parse.ml[57,2233+9]..[57,2233+29])
+                              Pexp_apply
+                              expression (parsing/parse.ml[57,2233+9]..[57,2233+10])
+                                Pexp_ident "!" (parsing/parse.ml[57,2233+9]..[57,2233+10])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (parsing/parse.ml[57,2233+10]..[57,2233+29])
+                                    Pexp_ident "Location.input_name" (parsing/parse.ml[57,2233+10]..[57,2233+29])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (parsing/parse.ml[57,2233+32]..[57,2233+46])
+                              Pexp_constant PConst_string("//toplevel//",(parsing/parse.ml[57,2233+33]..[57,2233+45]),None)
+                        ]
+                    expression (parsing/parse.ml[58,2282+6]..[59,2308+15])
+                      Pexp_sequence
+                      expression (parsing/parse.ml[58,2282+6]..[58,2282+24])
+                        Pexp_apply
+                        expression (parsing/parse.ml[58,2282+6]..[58,2282+17])
+                          Pexp_ident "skip_phrase" (parsing/parse.ml[58,2282+6]..[58,2282+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (parsing/parse.ml[58,2282+18]..[58,2282+24])
+                              Pexp_ident "lexbuf" (parsing/parse.ml[58,2282+18]..[58,2282+24])
+                        ]
+                      expression (parsing/parse.ml[59,2308+6]..[59,2308+15])
+                        Pexp_apply
+                        expression (parsing/parse.ml[59,2308+6]..[59,2308+11])
+                          Pexp_ident "raise" (parsing/parse.ml[59,2308+6]..[59,2308+11])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (parsing/parse.ml[59,2308+12]..[59,2308+15])
+                              Pexp_ident "err" (parsing/parse.ml[59,2308+12]..[59,2308+15])
+                        ]
+                  <case>
+                    pattern (parsing/parse.ml[60,2324+4]..[60,2324+28])
+                      Ppat_alias "err" (parsing/parse.ml[60,2324+25]..[60,2324+28])
+                      pattern (parsing/parse.ml[60,2324+4]..[60,2324+21])
+                        Ppat_construct "Syntaxerr.Error" (parsing/parse.ml[60,2324+4]..[60,2324+19])
+                        Some
+                          []
+                          pattern (parsing/parse.ml[60,2324+20]..[60,2324+21])
+                            Ppat_any
+                    <when>
+                      expression (parsing/parse.ml[61,2353+9]..[61,2353+46])
+                        Pexp_apply
+                        expression (parsing/parse.ml[61,2353+30]..[61,2353+31])
+                          Pexp_ident "=" (parsing/parse.ml[61,2353+30]..[61,2353+31])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (parsing/parse.ml[61,2353+9]..[61,2353+29])
+                              Pexp_apply
+                              expression (parsing/parse.ml[61,2353+9]..[61,2353+10])
+                                Pexp_ident "!" (parsing/parse.ml[61,2353+9]..[61,2353+10])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (parsing/parse.ml[61,2353+10]..[61,2353+29])
+                                    Pexp_ident "Location.input_name" (parsing/parse.ml[61,2353+10]..[61,2353+29])
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (parsing/parse.ml[61,2353+32]..[61,2353+46])
+                              Pexp_constant PConst_string("//toplevel//",(parsing/parse.ml[61,2353+33]..[61,2353+45]),None)
+                        ]
+                    expression (parsing/parse.ml[62,2403+6]..[63,2435+15])
+                      Pexp_sequence
+                      expression (parsing/parse.ml[62,2403+6]..[62,2403+30])
+                        Pexp_apply
+                        expression (parsing/parse.ml[62,2403+6]..[62,2403+23])
+                          Pexp_ident "maybe_skip_phrase" (parsing/parse.ml[62,2403+6]..[62,2403+23])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (parsing/parse.ml[62,2403+24]..[62,2403+30])
+                              Pexp_ident "lexbuf" (parsing/parse.ml[62,2403+24]..[62,2403+30])
+                        ]
+                      expression (parsing/parse.ml[63,2435+6]..[63,2435+15])
+                        Pexp_apply
+                        expression (parsing/parse.ml[63,2435+6]..[63,2435+11])
+                          Pexp_ident "raise" (parsing/parse.ml[63,2435+6]..[63,2435+11])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (parsing/parse.ml[63,2435+12]..[63,2435+15])
+                              Pexp_ident "err" (parsing/parse.ml[63,2435+12]..[63,2435+15])
+                        ]
+                  <case>
+                    pattern (parsing/parse.ml[64,2451+4]..[64,2451+48])
+                      Ppat_or
+                      pattern (parsing/parse.ml[64,2451+4]..[64,2451+23])
+                        Ppat_construct "Parsing.Parse_error" (parsing/parse.ml[64,2451+4]..[64,2451+23])
+                        None
+                      pattern (parsing/parse.ml[64,2451+26]..[64,2451+48])
+                        Ppat_construct "Syntaxerr.Escape_error" (parsing/parse.ml[64,2451+26]..[64,2451+48])
+                        None
+                    expression (parsing/parse.ml[65,2503+6]..[68,2627+49])
+                      Pexp_let Nonrec
+                      [
+                        <def>
+                          pattern (parsing/parse.ml[65,2503+10]..[65,2503+13])
+                            Ppat_var "loc" (parsing/parse.ml[65,2503+10]..[65,2503+13])
+                          expression (parsing/parse.ml[65,2503+16]..[65,2503+36])
+                            Pexp_apply
+                            expression (parsing/parse.ml[65,2503+16]..[65,2503+29])
+                              Pexp_ident "Location.curr" (parsing/parse.ml[65,2503+16]..[65,2503+29])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (parsing/parse.ml[65,2503+30]..[65,2503+36])
+                                  Pexp_ident "lexbuf" (parsing/parse.ml[65,2503+30]..[65,2503+36])
+                            ]
+                      ]
+                      expression (parsing/parse.ml[66,2543+6]..[68,2627+49])
+                        Pexp_sequence
+                        expression (parsing/parse.ml[66,2543+6]..[67,2590+35])
+                          Pexp_ifthenelse
+                          expression (parsing/parse.ml[66,2543+9]..[66,2543+46])
+                            Pexp_apply
+                            expression (parsing/parse.ml[66,2543+30]..[66,2543+31])
+                              Pexp_ident "=" (parsing/parse.ml[66,2543+30]..[66,2543+31])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (parsing/parse.ml[66,2543+9]..[66,2543+29])
+                                  Pexp_apply
+                                  expression (parsing/parse.ml[66,2543+9]..[66,2543+10])
+                                    Pexp_ident "!" (parsing/parse.ml[66,2543+9]..[66,2543+10])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (parsing/parse.ml[66,2543+10]..[66,2543+29])
+                                        Pexp_ident "Location.input_name" (parsing/parse.ml[66,2543+10]..[66,2543+29])
+                                  ]
+                              <arg>
+                              Nolabel
+                                expression (parsing/parse.ml[66,2543+32]..[66,2543+46])
+                                  Pexp_constant PConst_string("//toplevel//",(parsing/parse.ml[66,2543+33]..[66,2543+45]),None)
+                            ]
+                          expression (parsing/parse.ml[67,2590+11]..[67,2590+35])
+                            Pexp_apply
+                            expression (parsing/parse.ml[67,2590+11]..[67,2590+28])
+                              Pexp_ident "maybe_skip_phrase" (parsing/parse.ml[67,2590+11]..[67,2590+28])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (parsing/parse.ml[67,2590+29]..[67,2590+35])
+                                  Pexp_ident "lexbuf" (parsing/parse.ml[67,2590+29]..[67,2590+35])
+                            ]
+                          None
+                        expression (parsing/parse.ml[68,2627+6]..[68,2627+49])
+                          Pexp_apply
+                          expression (parsing/parse.ml[68,2627+6]..[68,2627+11])
+                            Pexp_ident "raise" (parsing/parse.ml[68,2627+6]..[68,2627+11])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (parsing/parse.ml[68,2627+11]..[68,2627+49])
+                                Pexp_construct "Syntaxerr.Error" (parsing/parse.ml[68,2627+12]..[68,2627+27])
+                                Some
+                                  expression (parsing/parse.ml[68,2627+27]..[68,2627+48])
+                                    Pexp_construct "Syntaxerr.Other" (parsing/parse.ml[68,2627+28]..[68,2627+43])
+                                    Some
+                                      expression (parsing/parse.ml[68,2627+44]..[68,2627+47])
+                                        Pexp_ident "loc" (parsing/parse.ml[68,2627+44]..[68,2627+47])
+                          ]
+                ]
+              core_type (parsing/parse.ml[46,1938+39]..[46,1938+41])
+                Ptyp_var a
+    ]
+  structure_item (parsing/parse.ml[91,3658+0]..[97,3920+39])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[91,3658+4]..[91,3658+18])
+          Ppat_var "implementation" (parsing/parse.ml[91,3658+4]..[91,3658+18])
+        expression (parsing/parse.ml[91,3658+21]..[91,3658+47])
+          Pexp_apply
+          expression (parsing/parse.ml[91,3658+21]..[91,3658+25])
+            Pexp_ident "wrap" (parsing/parse.ml[91,3658+21]..[91,3658+25])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[91,3658+26]..[91,3658+47])
+                Pexp_ident "Parser.implementation" (parsing/parse.ml[91,3658+26]..[91,3658+47])
+          ]
+      <def>
+        pattern (parsing/parse.ml[92,3706+4]..[92,3706+13])
+          Ppat_var "interface" (parsing/parse.ml[92,3706+4]..[92,3706+13])
+        expression (parsing/parse.ml[92,3706+16]..[92,3706+37])
+          Pexp_apply
+          expression (parsing/parse.ml[92,3706+16]..[92,3706+20])
+            Pexp_ident "wrap" (parsing/parse.ml[92,3706+16]..[92,3706+20])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[92,3706+21]..[92,3706+37])
+                Pexp_ident "Parser.interface" (parsing/parse.ml[92,3706+21]..[92,3706+37])
+          ]
+      <def>
+        pattern (parsing/parse.ml[93,3744+4]..[93,3744+19])
+          Ppat_var "toplevel_phrase" (parsing/parse.ml[93,3744+4]..[93,3744+19])
+        expression (parsing/parse.ml[93,3744+22]..[93,3744+49])
+          Pexp_apply
+          expression (parsing/parse.ml[93,3744+22]..[93,3744+26])
+            Pexp_ident "wrap" (parsing/parse.ml[93,3744+22]..[93,3744+26])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[93,3744+27]..[93,3744+49])
+                Pexp_ident "Parser.toplevel_phrase" (parsing/parse.ml[93,3744+27]..[93,3744+49])
+          ]
+      <def>
+        pattern (parsing/parse.ml[94,3794+4]..[94,3794+12])
+          Ppat_var "use_file" (parsing/parse.ml[94,3794+4]..[94,3794+12])
+        expression (parsing/parse.ml[94,3794+15]..[94,3794+35])
+          Pexp_apply
+          expression (parsing/parse.ml[94,3794+15]..[94,3794+19])
+            Pexp_ident "wrap" (parsing/parse.ml[94,3794+15]..[94,3794+19])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[94,3794+20]..[94,3794+35])
+                Pexp_ident "Parser.use_file" (parsing/parse.ml[94,3794+20]..[94,3794+35])
+          ]
+      <def>
+        pattern (parsing/parse.ml[95,3830+4]..[95,3830+13])
+          Ppat_var "core_type" (parsing/parse.ml[95,3830+4]..[95,3830+13])
+        expression (parsing/parse.ml[95,3830+16]..[95,3830+43])
+          Pexp_apply
+          expression (parsing/parse.ml[95,3830+16]..[95,3830+20])
+            Pexp_ident "wrap" (parsing/parse.ml[95,3830+16]..[95,3830+20])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[95,3830+21]..[95,3830+43])
+                Pexp_ident "Parser.parse_core_type" (parsing/parse.ml[95,3830+21]..[95,3830+43])
+          ]
+      <def>
+        pattern (parsing/parse.ml[96,3874+4]..[96,3874+14])
+          Ppat_var "expression" (parsing/parse.ml[96,3874+4]..[96,3874+14])
+        expression (parsing/parse.ml[96,3874+17]..[96,3874+45])
+          Pexp_apply
+          expression (parsing/parse.ml[96,3874+17]..[96,3874+21])
+            Pexp_ident "wrap" (parsing/parse.ml[96,3874+17]..[96,3874+21])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[96,3874+22]..[96,3874+45])
+                Pexp_ident "Parser.parse_expression" (parsing/parse.ml[96,3874+22]..[96,3874+45])
+          ]
+      <def>
+        pattern (parsing/parse.ml[97,3920+4]..[97,3920+11])
+          Ppat_var "pattern" (parsing/parse.ml[97,3920+4]..[97,3920+11])
+        expression (parsing/parse.ml[97,3920+14]..[97,3920+39])
+          Pexp_apply
+          expression (parsing/parse.ml[97,3920+14]..[97,3920+18])
+            Pexp_ident "wrap" (parsing/parse.ml[97,3920+14]..[97,3920+18])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[97,3920+19]..[97,3920+39])
+                Pexp_ident "Parser.parse_pattern" (parsing/parse.ml[97,3920+19]..[97,3920+39])
+          ]
+    ]
+  structure_item (parsing/parse.ml[98,3960+0]..[98,3960+47])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[98,3960+4]..[98,3960+15])
+          Ppat_var "module_type" (parsing/parse.ml[98,3960+4]..[98,3960+15])
+        expression (parsing/parse.ml[98,3960+18]..[98,3960+47])
+          Pexp_apply
+          expression (parsing/parse.ml[98,3960+18]..[98,3960+22])
+            Pexp_ident "wrap" (parsing/parse.ml[98,3960+18]..[98,3960+22])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[98,3960+23]..[98,3960+47])
+                Pexp_ident "Parser.parse_module_type" (parsing/parse.ml[98,3960+23]..[98,3960+47])
+          ]
+    ]
+  structure_item (parsing/parse.ml[99,4008+0]..[99,4008+47])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[99,4008+4]..[99,4008+15])
+          Ppat_var "module_expr" (parsing/parse.ml[99,4008+4]..[99,4008+15])
+        expression (parsing/parse.ml[99,4008+18]..[99,4008+47])
+          Pexp_apply
+          expression (parsing/parse.ml[99,4008+18]..[99,4008+22])
+            Pexp_ident "wrap" (parsing/parse.ml[99,4008+18]..[99,4008+22])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[99,4008+23]..[99,4008+47])
+                Pexp_ident "Parser.parse_module_expr" (parsing/parse.ml[99,4008+23]..[99,4008+47])
+          ]
+    ]
+  structure_item (parsing/parse.ml[101,4057+0]..[101,4057+47])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[101,4057+4]..[101,4057+13])
+          Ppat_var "longident" (parsing/parse.ml[101,4057+4]..[101,4057+13])
+        expression (parsing/parse.ml[101,4057+16]..[101,4057+47])
+          Pexp_apply
+          expression (parsing/parse.ml[101,4057+16]..[101,4057+20])
+            Pexp_ident "wrap" (parsing/parse.ml[101,4057+16]..[101,4057+20])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[101,4057+21]..[101,4057+47])
+                Pexp_ident "Parser.parse_any_longident" (parsing/parse.ml[101,4057+21]..[101,4057+47])
+          ]
+    ]
+  structure_item (parsing/parse.ml[102,4105+0]..[102,4105+47])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[102,4105+4]..[102,4105+13])
+          Ppat_var "val_ident" (parsing/parse.ml[102,4105+4]..[102,4105+13])
+        expression (parsing/parse.ml[102,4105+16]..[102,4105+47])
+          Pexp_apply
+          expression (parsing/parse.ml[102,4105+16]..[102,4105+20])
+            Pexp_ident "wrap" (parsing/parse.ml[102,4105+16]..[102,4105+20])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[102,4105+21]..[102,4105+47])
+                Pexp_ident "Parser.parse_val_longident" (parsing/parse.ml[102,4105+21]..[102,4105+47])
+          ]
+    ]
+  structure_item (parsing/parse.ml[103,4153+0]..[103,4153+52])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[103,4153+4]..[103,4153+16])
+          Ppat_var "constr_ident" (parsing/parse.ml[103,4153+4]..[103,4153+16])
+        expression (parsing/parse.ml[103,4153+18]..[103,4153+52])
+          Pexp_apply
+          expression (parsing/parse.ml[103,4153+18]..[103,4153+22])
+            Pexp_ident "wrap" (parsing/parse.ml[103,4153+18]..[103,4153+22])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[103,4153+23]..[103,4153+52])
+                Pexp_ident "Parser.parse_constr_longident" (parsing/parse.ml[103,4153+23]..[103,4153+52])
+          ]
+    ]
+  structure_item (parsing/parse.ml[104,4206+0]..[104,4206+62])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[104,4206+4]..[104,4206+24])
+          Ppat_var "extended_module_path" (parsing/parse.ml[104,4206+4]..[104,4206+24])
+        expression (parsing/parse.ml[104,4206+27]..[104,4206+62])
+          Pexp_apply
+          expression (parsing/parse.ml[104,4206+27]..[104,4206+31])
+            Pexp_ident "wrap" (parsing/parse.ml[104,4206+27]..[104,4206+31])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[104,4206+32]..[104,4206+62])
+                Pexp_ident "Parser.parse_mod_ext_longident" (parsing/parse.ml[104,4206+32]..[104,4206+62])
+          ]
+    ]
+  structure_item (parsing/parse.ml[105,4269+0]..[105,4269+56])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[105,4269+4]..[105,4269+22])
+          Ppat_var "simple_module_path" (parsing/parse.ml[105,4269+4]..[105,4269+22])
+        expression (parsing/parse.ml[105,4269+25]..[105,4269+56])
+          Pexp_apply
+          expression (parsing/parse.ml[105,4269+25]..[105,4269+29])
+            Pexp_ident "wrap" (parsing/parse.ml[105,4269+25]..[105,4269+29])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[105,4269+30]..[105,4269+56])
+                Pexp_ident "Parser.parse_mod_longident" (parsing/parse.ml[105,4269+30]..[105,4269+56])
+          ]
+    ]
+  structure_item (parsing/parse.ml[106,4326+0]..[106,4326+48])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[106,4326+4]..[106,4326+14])
+          Ppat_var "type_ident" (parsing/parse.ml[106,4326+4]..[106,4326+14])
+        expression (parsing/parse.ml[106,4326+17]..[106,4326+48])
+          Pexp_apply
+          expression (parsing/parse.ml[106,4326+17]..[106,4326+21])
+            Pexp_ident "wrap" (parsing/parse.ml[106,4326+17]..[106,4326+21])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[106,4326+22]..[106,4326+48])
+                Pexp_ident "Parser.parse_mty_longident" (parsing/parse.ml[106,4326+22]..[106,4326+48])
+          ]
+    ]
+  structure_item (parsing/parse.ml[111,4486+0]..[149,5901+58])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[111,4486+4]..[111,4486+17])
+          Ppat_var "prepare_error" (parsing/parse.ml[111,4486+4]..[111,4486+17])
+        expression (parsing/parse.ml[111,4486+18]..[149,5901+58]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (parsing/parse.ml[111,4486+18]..[111,4486+21])
+            Ppat_var "err" (parsing/parse.ml[111,4486+18]..[111,4486+21])
+          expression (parsing/parse.ml[112,4510+2]..[149,5901+58])
+            Pexp_open Fresh
+            module_expr (parsing/parse.ml[112,4510+11]..[112,4510+20])
+              Pmod_ident "Syntaxerr" (parsing/parse.ml[112,4510+11]..[112,4510+20])
+            expression (parsing/parse.ml[113,4534+2]..[149,5901+58])
+              Pexp_match
+              expression (parsing/parse.ml[113,4534+8]..[113,4534+11])
+                Pexp_ident "err" (parsing/parse.ml[113,4534+8]..[113,4534+11])
+              [
+                <case>
+                  pattern (parsing/parse.ml[114,4551+4]..[114,4551+56])
+                    Ppat_construct "Unclosed" (parsing/parse.ml[114,4551+4]..[114,4551+12])
+                    Some
+                      []
+                      pattern (parsing/parse.ml[114,4551+12]..[114,4551+56])
+                        Ppat_tuple
+                        [
+                          pattern (parsing/parse.ml[114,4551+13]..[114,4551+24])
+                            Ppat_var "opening_loc" (parsing/parse.ml[114,4551+13]..[114,4551+24])
+                          pattern (parsing/parse.ml[114,4551+26]..[114,4551+33])
+                            Ppat_var "opening" (parsing/parse.ml[114,4551+26]..[114,4551+33])
+                          pattern (parsing/parse.ml[114,4551+35]..[114,4551+46])
+                            Ppat_var "closing_loc" (parsing/parse.ml[114,4551+35]..[114,4551+46])
+                          pattern (parsing/parse.ml[114,4551+48]..[114,4551+55])
+                            Ppat_var "closing" (parsing/parse.ml[114,4551+48]..[114,4551+55])
+                        ]
+                  expression (parsing/parse.ml[115,4611+6]..[121,4774+45])
+                    Pexp_apply
+                    expression (parsing/parse.ml[115,4611+6]..[115,4611+21])
+                      Pexp_ident "Location.errorf" (parsing/parse.ml[115,4611+6]..[115,4611+21])
+                    [
+                      <arg>
+                      Labelled "loc"
+                        expression (parsing/parse.ml[116,4633+13]..[116,4633+24])
+                          Pexp_ident "closing_loc" (parsing/parse.ml[116,4633+13]..[116,4633+24])
+                      <arg>
+                      Labelled "sub"
+                        expression (parsing/parse.ml[117,4658+13]..[120,4764+9])
+                          Pexp_construct "::" (parsing/parse.ml[118,4673+10]..[120,4764+9]) ghost
+                          Some
+                            expression (parsing/parse.ml[118,4673+10]..[120,4764+9]) ghost
+                              Pexp_tuple
+                              [
+                                expression (parsing/parse.ml[118,4673+10]..[119,4713+50])
+                                  Pexp_apply
+                                  expression (parsing/parse.ml[118,4673+10]..[118,4673+22])
+                                    Pexp_ident "Location.msg" (parsing/parse.ml[118,4673+10]..[118,4673+22])
+                                  [
+                                    <arg>
+                                    Labelled "loc"
+                                      expression (parsing/parse.ml[118,4673+28]..[118,4673+39])
+                                        Pexp_ident "opening_loc" (parsing/parse.ml[118,4673+28]..[118,4673+39])
+                                    <arg>
+                                    Nolabel
+                                      expression (parsing/parse.ml[119,4713+12]..[119,4713+42])
+                                        Pexp_constant PConst_string("This '%s' might be unmatched",(parsing/parse.ml[119,4713+13]..[119,4713+41]),None)
+                                    <arg>
+                                    Nolabel
+                                      expression (parsing/parse.ml[119,4713+43]..[119,4713+50])
+                                        Pexp_ident "opening" (parsing/parse.ml[119,4713+43]..[119,4713+50])
+                                  ]
+                                expression (parsing/parse.ml[120,4764+8]..[120,4764+9]) ghost
+                                  Pexp_construct "[]" (parsing/parse.ml[120,4764+8]..[120,4764+9]) ghost
+                                  None
+                              ]
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[121,4774+8]..[121,4774+37])
+                          Pexp_constant PConst_string("Syntax error: '%s' expected",(parsing/parse.ml[121,4774+9]..[121,4774+36]),None)
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[121,4774+38]..[121,4774+45])
+                          Pexp_ident "closing" (parsing/parse.ml[121,4774+38]..[121,4774+45])
+                    ]
+                <case>
+                  pattern (parsing/parse.ml[123,4821+4]..[123,4821+28])
+                    Ppat_construct "Expecting" (parsing/parse.ml[123,4821+4]..[123,4821+13])
+                    Some
+                      []
+                      pattern (parsing/parse.ml[123,4821+14]..[123,4821+28])
+                        Ppat_tuple
+                        [
+                          pattern (parsing/parse.ml[123,4821+15]..[123,4821+18])
+                            Ppat_var "loc" (parsing/parse.ml[123,4821+15]..[123,4821+18])
+                          pattern (parsing/parse.ml[123,4821+20]..[123,4821+27])
+                            Ppat_var "nonterm" (parsing/parse.ml[123,4821+20]..[123,4821+27])
+                        ]
+                  expression (parsing/parse.ml[124,4853+6]..[124,4853+63])
+                    Pexp_apply
+                    expression (parsing/parse.ml[124,4853+6]..[124,4853+21])
+                      Pexp_ident "Location.errorf" (parsing/parse.ml[124,4853+6]..[124,4853+21])
+                    [
+                      <arg>
+                      Labelled "loc"
+                        expression (parsing/parse.ml[124,4853+23]..[124,4853+26])
+                          Pexp_ident "loc" (parsing/parse.ml[124,4853+23]..[124,4853+26])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[124,4853+27]..[124,4853+55])
+                          Pexp_constant PConst_string("Syntax error: %s expected.",(parsing/parse.ml[124,4853+28]..[124,4853+54]),None)
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[124,4853+56]..[124,4853+63])
+                          Pexp_ident "nonterm" (parsing/parse.ml[124,4853+56]..[124,4853+63])
+                    ]
+                <case>
+                  pattern (parsing/parse.ml[125,4917+4]..[125,4917+32])
+                    Ppat_construct "Not_expecting" (parsing/parse.ml[125,4917+4]..[125,4917+17])
+                    Some
+                      []
+                      pattern (parsing/parse.ml[125,4917+18]..[125,4917+32])
+                        Ppat_tuple
+                        [
+                          pattern (parsing/parse.ml[125,4917+19]..[125,4917+22])
+                            Ppat_var "loc" (parsing/parse.ml[125,4917+19]..[125,4917+22])
+                          pattern (parsing/parse.ml[125,4917+24]..[125,4917+31])
+                            Ppat_var "nonterm" (parsing/parse.ml[125,4917+24]..[125,4917+31])
+                        ]
+                  expression (parsing/parse.ml[126,4953+6]..[126,4953+67])
+                    Pexp_apply
+                    expression (parsing/parse.ml[126,4953+6]..[126,4953+21])
+                      Pexp_ident "Location.errorf" (parsing/parse.ml[126,4953+6]..[126,4953+21])
+                    [
+                      <arg>
+                      Labelled "loc"
+                        expression (parsing/parse.ml[126,4953+23]..[126,4953+26])
+                          Pexp_ident "loc" (parsing/parse.ml[126,4953+23]..[126,4953+26])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[126,4953+27]..[126,4953+59])
+                          Pexp_constant PConst_string("Syntax error: %s not expected.",(parsing/parse.ml[126,4953+28]..[126,4953+58]),None)
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[126,4953+60]..[126,4953+67])
+                          Pexp_ident "nonterm" (parsing/parse.ml[126,4953+60]..[126,4953+67])
+                    ]
+                <case>
+                  pattern (parsing/parse.ml[127,5021+4]..[127,5021+24])
+                    Ppat_construct "Applicative_path" (parsing/parse.ml[127,5021+4]..[127,5021+20])
+                    Some
+                      []
+                      pattern (parsing/parse.ml[127,5021+21]..[127,5021+24])
+                        Ppat_var "loc" (parsing/parse.ml[127,5021+21]..[127,5021+24])
+                  expression (parsing/parse.ml[128,5049+6]..[130,5138+64])
+                    Pexp_apply
+                    expression (parsing/parse.ml[128,5049+6]..[128,5049+21])
+                      Pexp_ident "Location.errorf" (parsing/parse.ml[128,5049+6]..[128,5049+21])
+                    [
+                      <arg>
+                      Labelled "loc"
+                        expression (parsing/parse.ml[128,5049+23]..[128,5049+26])
+                          Pexp_ident "loc" (parsing/parse.ml[128,5049+23]..[128,5049+26])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[129,5076+8]..[130,5138+64])
+                          Pexp_constant PConst_string("Syntax error: applicative paths of the form F(X).t are not supported when the option -no-app-func is set.",(parsing/parse.ml[129,5076+9]..[130,5138+63]),None)
+                    ]
+                <case>
+                  pattern (parsing/parse.ml[131,5203+4]..[131,5203+32])
+                    Ppat_construct "Variable_in_scope" (parsing/parse.ml[131,5203+4]..[131,5203+21])
+                    Some
+                      []
+                      pattern (parsing/parse.ml[131,5203+22]..[131,5203+32])
+                        Ppat_tuple
+                        [
+                          pattern (parsing/parse.ml[131,5203+23]..[131,5203+26])
+                            Ppat_var "loc" (parsing/parse.ml[131,5203+23]..[131,5203+26])
+                          pattern (parsing/parse.ml[131,5203+28]..[131,5203+31])
+                            Ppat_var "var" (parsing/parse.ml[131,5203+28]..[131,5203+31])
+                        ]
+                  expression (parsing/parse.ml[132,5239+6]..[135,5355+31])
+                    Pexp_apply
+                    expression (parsing/parse.ml[132,5239+6]..[132,5239+21])
+                      Pexp_ident "Location.errorf" (parsing/parse.ml[132,5239+6]..[132,5239+21])
+                    [
+                      <arg>
+                      Labelled "loc"
+                        expression (parsing/parse.ml[132,5239+23]..[132,5239+26])
+                          Pexp_ident "loc" (parsing/parse.ml[132,5239+23]..[132,5239+26])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[133,5266+8]..[134,5310+44])
+                          Pexp_constant PConst_string("In this scoped type, variable %a is reserved for the local type %s.",(parsing/parse.ml[133,5266+9]..[134,5310+43]),None)
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[135,5355+8]..[135,5355+23])
+                          Pexp_ident "Pprintast.tyvar" (parsing/parse.ml[135,5355+8]..[135,5355+23])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[135,5355+24]..[135,5355+27])
+                          Pexp_ident "var" (parsing/parse.ml[135,5355+24]..[135,5355+27])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[135,5355+28]..[135,5355+31])
+                          Pexp_ident "var" (parsing/parse.ml[135,5355+28]..[135,5355+31])
+                    ]
+                <case>
+                  pattern (parsing/parse.ml[136,5387+4]..[136,5387+13])
+                    Ppat_construct "Other" (parsing/parse.ml[136,5387+4]..[136,5387+9])
+                    Some
+                      []
+                      pattern (parsing/parse.ml[136,5387+10]..[136,5387+13])
+                        Ppat_var "loc" (parsing/parse.ml[136,5387+10]..[136,5387+13])
+                  expression (parsing/parse.ml[137,5404+6]..[137,5404+41])
+                    Pexp_apply
+                    expression (parsing/parse.ml[137,5404+6]..[137,5404+21])
+                      Pexp_ident "Location.errorf" (parsing/parse.ml[137,5404+6]..[137,5404+21])
+                    [
+                      <arg>
+                      Labelled "loc"
+                        expression (parsing/parse.ml[137,5404+23]..[137,5404+26])
+                          Pexp_ident "loc" (parsing/parse.ml[137,5404+23]..[137,5404+26])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[137,5404+27]..[137,5404+41])
+                          Pexp_constant PConst_string("Syntax error",(parsing/parse.ml[137,5404+28]..[137,5404+40]),None)
+                    ]
+                <case>
+                  pattern (parsing/parse.ml[138,5446+4]..[138,5446+27])
+                    Ppat_construct "Ill_formed_ast" (parsing/parse.ml[138,5446+4]..[138,5446+18])
+                    Some
+                      []
+                      pattern (parsing/parse.ml[138,5446+19]..[138,5446+27])
+                        Ppat_tuple
+                        [
+                          pattern (parsing/parse.ml[138,5446+20]..[138,5446+23])
+                            Ppat_var "loc" (parsing/parse.ml[138,5446+20]..[138,5446+23])
+                          pattern (parsing/parse.ml[138,5446+25]..[138,5446+26])
+                            Ppat_var "s" (parsing/parse.ml[138,5446+25]..[138,5446+26])
+                        ]
+                  expression (parsing/parse.ml[139,5477+6]..[140,5504+45])
+                    Pexp_apply
+                    expression (parsing/parse.ml[139,5477+6]..[139,5477+21])
+                      Pexp_ident "Location.errorf" (parsing/parse.ml[139,5477+6]..[139,5477+21])
+                    [
+                      <arg>
+                      Labelled "loc"
+                        expression (parsing/parse.ml[139,5477+23]..[139,5477+26])
+                          Pexp_ident "loc" (parsing/parse.ml[139,5477+23]..[139,5477+26])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[140,5504+8]..[140,5504+43])
+                          Pexp_constant PConst_string("broken invariant in parsetree: %s",(parsing/parse.ml[140,5504+9]..[140,5504+42]),None)
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[140,5504+44]..[140,5504+45])
+                          Pexp_ident "s" (parsing/parse.ml[140,5504+44]..[140,5504+45])
+                    ]
+                <case>
+                  pattern (parsing/parse.ml[141,5550+4]..[141,5550+33])
+                    Ppat_construct "Invalid_package_type" (parsing/parse.ml[141,5550+4]..[141,5550+24])
+                    Some
+                      []
+                      pattern (parsing/parse.ml[141,5550+25]..[141,5550+33])
+                        Ppat_tuple
+                        [
+                          pattern (parsing/parse.ml[141,5550+26]..[141,5550+29])
+                            Ppat_var "loc" (parsing/parse.ml[141,5550+26]..[141,5550+29])
+                          pattern (parsing/parse.ml[141,5550+31]..[141,5550+32])
+                            Ppat_var "s" (parsing/parse.ml[141,5550+31]..[141,5550+32])
+                        ]
+                  expression (parsing/parse.ml[142,5587+6]..[142,5587+55])
+                    Pexp_apply
+                    expression (parsing/parse.ml[142,5587+6]..[142,5587+21])
+                      Pexp_ident "Location.errorf" (parsing/parse.ml[142,5587+6]..[142,5587+21])
+                    [
+                      <arg>
+                      Labelled "loc"
+                        expression (parsing/parse.ml[142,5587+23]..[142,5587+26])
+                          Pexp_ident "loc" (parsing/parse.ml[142,5587+23]..[142,5587+26])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[142,5587+27]..[142,5587+53])
+                          Pexp_constant PConst_string("invalid package type: %s",(parsing/parse.ml[142,5587+28]..[142,5587+52]),None)
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[142,5587+54]..[142,5587+55])
+                          Pexp_ident "s" (parsing/parse.ml[142,5587+54]..[142,5587+55])
+                    ]
+                <case>
+                  pattern (parsing/parse.ml[143,5643+4]..[143,5643+26])
+                    Ppat_construct "Removed_string_set" (parsing/parse.ml[143,5643+4]..[143,5643+22])
+                    Some
+                      []
+                      pattern (parsing/parse.ml[143,5643+23]..[143,5643+26])
+                        Ppat_var "loc" (parsing/parse.ml[143,5643+23]..[143,5643+26])
+                  expression (parsing/parse.ml[144,5673+6]..[149,5901+58])
+                    Pexp_apply
+                    expression (parsing/parse.ml[144,5673+6]..[144,5673+21])
+                      Pexp_ident "Location.errorf" (parsing/parse.ml[144,5673+6]..[144,5673+21])
+                    [
+                      <arg>
+                      Labelled "loc"
+                        expression (parsing/parse.ml[144,5673+23]..[144,5673+26])
+                          Pexp_ident "loc" (parsing/parse.ml[144,5673+23]..[144,5673+26])
+                      <arg>
+                      Nolabel
+                        expression (parsing/parse.ml[145,5700+8]..[149,5901+58])
+                          Pexp_constant PConst_string("Syntax error: strings are immutable, there is no assignment syntax for them.\n@{<hint>Hint@}: Mutable sequences of bytes are available in the Bytes module.\n@{<hint>Hint@}: Did you mean to use 'Bytes.set'?",(parsing/parse.ml[145,5700+9]..[149,5901+57]),None)
+                    ]
+              ]
+    ]
+  structure_item (parsing/parse.ml[150,5960+0]..[155,6090+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (parsing/parse.ml[150,5960+4]..[150,5960+6])
+          Ppat_construct "()" (parsing/parse.ml[150,5960+4]..[150,5960+6])
+          None
+        expression (parsing/parse.ml[151,5969+2]..[155,6090+5])
+          Pexp_apply
+          expression (parsing/parse.ml[151,5969+2]..[151,5969+32])
+            Pexp_ident "Location.register_error_of_exn" (parsing/parse.ml[151,5969+2]..[151,5969+32])
+          [
+            <arg>
+            Nolabel
+              expression (parsing/parse.ml[152,6002+4]..[155,6090+5])
+                Pexp_function
+                [
+                  <case>
+                    pattern (parsing/parse.ml[153,6016+8]..[153,6016+27])
+                      Ppat_construct "Syntaxerr.Error" (parsing/parse.ml[153,6016+8]..[153,6016+23])
+                      Some
+                        []
+                        pattern (parsing/parse.ml[153,6016+24]..[153,6016+27])
+                          Ppat_var "err" (parsing/parse.ml[153,6016+24]..[153,6016+27])
+                    expression (parsing/parse.ml[153,6016+31]..[153,6016+55])
+                      Pexp_construct "Some" (parsing/parse.ml[153,6016+31]..[153,6016+35])
+                      Some
+                        expression (parsing/parse.ml[153,6016+36]..[153,6016+55])
+                          Pexp_apply
+                          expression (parsing/parse.ml[153,6016+37]..[153,6016+50])
+                            Pexp_ident "prepare_error" (parsing/parse.ml[153,6016+37]..[153,6016+50])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (parsing/parse.ml[153,6016+51]..[153,6016+54])
+                                Pexp_ident "err" (parsing/parse.ml[153,6016+51]..[153,6016+54])
+                          ]
+                  <case>
+                    pattern (parsing/parse.ml[154,6072+8]..[154,6072+9])
+                      Ppat_any
+                    expression (parsing/parse.ml[154,6072+13]..[154,6072+17])
+                      Pexp_construct "None" (parsing/parse.ml[154,6072+13]..[154,6072+17])
+                      None
+                ]
+          ]
+    ]
+]
+

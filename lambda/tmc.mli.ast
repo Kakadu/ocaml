@@ -1,0 +1,34 @@
+[
+  signature_item (lambda/tmc.mli[18,1236+0]..[22,1358+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (lambda/tmc.mli[18,1236+0]..[22,1358+2])
+        Pstr_eval
+        expression (lambda/tmc.mli[18,1236+0]..[22,1358+2])
+          Pexp_constant PConst_string(" Tail-modulo-cons optimization.\n\n  {b Warning:} this module is unstable and part of\n  {{!Compiler_libs}compiler-libs}.\n",(lambda/tmc.mli[18,1236+0]..[22,1358+2]),None)
+    ]
+  signature_item (lambda/tmc.mli[24,1362+0]..[77,3402+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (lambda/tmc.mli[24,1362+0]..[77,3402+2])
+        Pstr_eval
+        expression (lambda/tmc.mli[24,1362+0]..[77,3402+2])
+          Pexp_constant PConst_string(" TMC (Tail Modulo Cons) is a code transformation that\n    rewrites transformed functions in destination-passing-style, in\n    such a way that certain calls that were not in tail position in the\n    original program become tail-calls in the transformed program.\n\n    As a classic example, the following program\n    {|\n     let[@tail_mod_cons] rec map f = function\n     | [] -> []\n     | x :: xs ->\n       let y = f x in\n       y :: map f xs\n    |}\n    becomes (expressed in almost-source-form; the translation is in\n    fact at the Lambda-level)\n    {|\n     let rec map f = function\n     | [] -> []\n     | x :: xs ->\n       let y = f x in\n       let dst = y :: Placeholder in\n       map_dps dst 1 f xs; dst\n     and map_dps dst offset f = function\n     | [] ->\n       dst.offset <- []\n     | x :: xs ->\n       let y = f x in\n       let dst' = y :: Placeholder in\n       dst.offset <- dst';\n       map_dps dst 1 f fx\n    |}\n\n    In this example, the expression (y :: map f xs) had a call in\n    non-tail-position, and it gets rewritten into tail-calls. TMC\n    handles all such cases where the continuation of the call\n    (what needs to be done after the return) is a \"construction\", the\n    creation of a (possibly nested) data block.\n\n    The code transformation generates two versions of the\n    input function, the \"direct\" version with the same type and\n    behavior as the original one (here just [map]), and\n    the \"destination-passing-style\" version (here [map_dps]).\n\n    Any call to the original function from outside the let..rec\n    declaration gets transformed into a call into the direct version,\n    which will itself call the destination-passing-style versions on\n    recursive calls that may benefit from it (they are in tail-position\n    modulo constructors).\n\n    Because of this inherent code duplication, the transformation may\n    not always improve performance. In this implementation, TMC is\n    opt-in, we only transform functions that the user has annotated\n    with an attribute to request the transformation.\n",(lambda/tmc.mli[24,1362+0]..[77,3402+2]),None)
+    ]
+  signature_item (lambda/tmc.mli[79,3406+0]..[79,3406+11])
+    Psig_open Fresh "Lambda" (lambda/tmc.mli[79,3406+5]..[79,3406+11])
+  signature_item (lambda/tmc.mli[81,3419+0]..[81,3419+30])
+    Psig_value
+    value_description "rewrite" (lambda/tmc.mli[81,3419+4]..[81,3419+11]) (lambda/tmc.mli[81,3419+0]..[81,3419+30])
+      core_type (lambda/tmc.mli[81,3419+14]..[81,3419+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (lambda/tmc.mli[81,3419+14]..[81,3419+20])
+          Ptyp_constr "lambda" (lambda/tmc.mli[81,3419+14]..[81,3419+20])
+          []
+        core_type (lambda/tmc.mli[81,3419+24]..[81,3419+30])
+          Ptyp_constr "lambda" (lambda/tmc.mli[81,3419+24]..[81,3419+30])
+          []
+      []
+]
+

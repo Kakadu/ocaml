@@ -1,0 +1,614 @@
+[
+  structure_item (tools/profiling.ml[19,1202+0]..[19,1202+62])
+    Pstr_type Rec
+    [
+      type_declaration "profiling_counters" (tools/profiling.ml[19,1202+5]..[19,1202+23]) (tools/profiling.ml[19,1202+0]..[19,1202+62])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (tools/profiling.ml[19,1202+26]..[19,1202+62])
+              Ptyp_constr "list" (tools/profiling.ml[19,1202+58]..[19,1202+62])
+              [
+                core_type (tools/profiling.ml[19,1202+27]..[19,1202+56])
+                  Ptyp_tuple
+                  [
+                    core_type (tools/profiling.ml[19,1202+27]..[19,1202+33])
+                      Ptyp_constr "string" (tools/profiling.ml[19,1202+27]..[19,1202+33])
+                      []
+                    core_type (tools/profiling.ml[19,1202+37]..[19,1202+55])
+                      Ptyp_tuple
+                      [
+                        core_type (tools/profiling.ml[19,1202+37]..[19,1202+43])
+                          Ptyp_constr "string" (tools/profiling.ml[19,1202+37]..[19,1202+43])
+                          []
+                        core_type (tools/profiling.ml[19,1202+46]..[19,1202+55])
+                          Ptyp_constr "array" (tools/profiling.ml[19,1202+50]..[19,1202+55])
+                          [
+                            core_type (tools/profiling.ml[19,1202+46]..[19,1202+49])
+                              Ptyp_constr "int" (tools/profiling.ml[19,1202+46]..[19,1202+49])
+                              []
+                          ]
+                      ]
+                  ]
+              ]
+    ]
+  structure_item (tools/profiling.ml[21,1266+0]..[21,1266+44])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (tools/profiling.ml[21,1266+4]..[21,1266+12])
+          Ppat_var "counters" (tools/profiling.ml[21,1266+4]..[21,1266+12])
+        expression (tools/profiling.ml[21,1266+15]..[21,1266+44])
+          Pexp_apply
+          expression (tools/profiling.ml[21,1266+15]..[21,1266+18])
+            Pexp_ident "ref" (tools/profiling.ml[21,1266+15]..[21,1266+18])
+          [
+            <arg>
+            Nolabel
+              expression (tools/profiling.ml[21,1266+19]..[21,1266+44])
+                Pexp_constraint
+                expression (tools/profiling.ml[21,1266+20]..[21,1266+22])
+                  Pexp_construct "[]" (tools/profiling.ml[21,1266+20]..[21,1266+22])
+                  None
+                core_type (tools/profiling.ml[21,1266+25]..[21,1266+43])
+                  Ptyp_constr "profiling_counters" (tools/profiling.ml[21,1266+25]..[21,1266+43])
+                  []
+          ]
+    ]
+  structure_item (tools/profiling.ml[22,1311+0]..[22,1311+33])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (tools/profiling.ml[22,1311+4]..[22,1311+8])
+          Ppat_var "incr" (tools/profiling.ml[22,1311+4]..[22,1311+8])
+        expression (tools/profiling.ml[22,1311+9]..[22,1311+33]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (tools/profiling.ml[22,1311+9]..[22,1311+10])
+            Ppat_var "a" (tools/profiling.ml[22,1311+9]..[22,1311+10])
+          expression (tools/profiling.ml[22,1311+11]..[22,1311+33]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (tools/profiling.ml[22,1311+11]..[22,1311+12])
+              Ppat_var "i" (tools/profiling.ml[22,1311+11]..[22,1311+12])
+            expression (tools/profiling.ml[22,1311+15]..[22,1311+33])
+              Pexp_apply
+              expression (tools/profiling.ml[22,1311+15]..[22,1311+33]) ghost
+                Pexp_ident "Array.set" (tools/profiling.ml[22,1311+15]..[22,1311+33]) ghost
+              [
+                <arg>
+                Nolabel
+                  expression (tools/profiling.ml[22,1311+15]..[22,1311+16])
+                    Pexp_ident "a" (tools/profiling.ml[22,1311+15]..[22,1311+16])
+                <arg>
+                Nolabel
+                  expression (tools/profiling.ml[22,1311+18]..[22,1311+19])
+                    Pexp_ident "i" (tools/profiling.ml[22,1311+18]..[22,1311+19])
+                <arg>
+                Nolabel
+                  expression (tools/profiling.ml[22,1311+24]..[22,1311+33])
+                    Pexp_apply
+                    expression (tools/profiling.ml[22,1311+30]..[22,1311+31])
+                      Pexp_ident "+" (tools/profiling.ml[22,1311+30]..[22,1311+31])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (tools/profiling.ml[22,1311+24]..[22,1311+29])
+                          Pexp_apply
+                          expression (tools/profiling.ml[22,1311+24]..[22,1311+29]) ghost
+                            Pexp_ident "Array.get" (tools/profiling.ml[22,1311+24]..[22,1311+29]) ghost
+                          [
+                            <arg>
+                            Nolabel
+                              expression (tools/profiling.ml[22,1311+24]..[22,1311+25])
+                                Pexp_ident "a" (tools/profiling.ml[22,1311+24]..[22,1311+25])
+                            <arg>
+                            Nolabel
+                              expression (tools/profiling.ml[22,1311+27]..[22,1311+28])
+                                Pexp_ident "i" (tools/profiling.ml[22,1311+27]..[22,1311+28])
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (tools/profiling.ml[22,1311+32]..[22,1311+33])
+                          Pexp_constant PConst_int (1,None)
+                    ]
+              ]
+    ]
+  structure_item (tools/profiling.ml[24,1346+0]..[24,1346+21])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (tools/profiling.ml[24,1346+0]..[24,1346+21])
+          pext_name = "Bad_profile"
+          pext_kind =
+            Pext_decl
+              []
+              None
+  structure_item (tools/profiling.ml[26,1369+0]..[54,2237+5])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (tools/profiling.ml[26,1369+4]..[26,1369+17])
+          Ppat_var "dump_counters" (tools/profiling.ml[26,1369+4]..[26,1369+17])
+        expression (tools/profiling.ml[26,1369+18]..[54,2237+5]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (tools/profiling.ml[26,1369+18]..[26,1369+20])
+            Ppat_construct "()" (tools/profiling.ml[26,1369+18]..[26,1369+20])
+            None
+          expression (tools/profiling.ml[27,1392+2]..[54,2237+5])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (tools/profiling.ml[27,1392+6]..[27,1392+14])
+                  Ppat_var "dumpfile" (tools/profiling.ml[27,1392+6]..[27,1392+14])
+                expression (tools/profiling.ml[28,1409+4]..[28,1409+70])
+                  Pexp_try
+                  expression (tools/profiling.ml[28,1409+8]..[28,1409+35])
+                    Pexp_apply
+                    expression (tools/profiling.ml[28,1409+8]..[28,1409+18])
+                      Pexp_ident "Sys.getenv" (tools/profiling.ml[28,1409+8]..[28,1409+18])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (tools/profiling.ml[28,1409+19]..[28,1409+35])
+                          Pexp_constant PConst_string("OCAMLPROF_DUMP",(tools/profiling.ml[28,1409+20]..[28,1409+34]),None)
+                    ]
+                  [
+                    <case>
+                      pattern (tools/profiling.ml[28,1409+41]..[28,1409+50])
+                        Ppat_construct "Not_found" (tools/profiling.ml[28,1409+41]..[28,1409+50])
+                        None
+                      expression (tools/profiling.ml[28,1409+54]..[28,1409+70])
+                        Pexp_constant PConst_string("ocamlprof.dump",(tools/profiling.ml[28,1409+55]..[28,1409+69]),None)
+                  ]
+            ]
+            expression (tools/profiling.ml[30,1485+2]..[54,2237+5])
+              Pexp_sequence
+              expression (tools/profiling.ml[30,1485+2]..[48,2117+5])
+                Pexp_try
+                expression (tools/profiling.ml[31,1497+4]..[46,2080+21])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (tools/profiling.ml[31,1497+8]..[31,1497+10])
+                        Ppat_var "ic" (tools/profiling.ml[31,1497+8]..[31,1497+10])
+                      expression (tools/profiling.ml[31,1497+13]..[31,1497+33])
+                        Pexp_apply
+                        expression (tools/profiling.ml[31,1497+13]..[31,1497+24])
+                          Pexp_ident "open_in_bin" (tools/profiling.ml[31,1497+13]..[31,1497+24])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (tools/profiling.ml[31,1497+25]..[31,1497+33])
+                              Pexp_ident "dumpfile" (tools/profiling.ml[31,1497+25]..[31,1497+33])
+                        ]
+                  ]
+                  expression (tools/profiling.ml[32,1534+4]..[46,2080+21])
+                    Pexp_let Nonrec
+                    [
+                      <def>
+                        pattern (tools/profiling.ml[32,1534+8]..[32,1534+13])
+                          Ppat_var "prevl" (tools/profiling.ml[32,1534+8]..[32,1534+13])
+                        expression (tools/profiling.ml[32,1534+16]..[32,1534+53])
+                          Pexp_constraint
+                          expression (tools/profiling.ml[32,1534+17]..[32,1534+31])
+                            Pexp_apply
+                            expression (tools/profiling.ml[32,1534+17]..[32,1534+28])
+                              Pexp_ident "input_value" (tools/profiling.ml[32,1534+17]..[32,1534+28])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (tools/profiling.ml[32,1534+29]..[32,1534+31])
+                                  Pexp_ident "ic" (tools/profiling.ml[32,1534+29]..[32,1534+31])
+                            ]
+                          core_type (tools/profiling.ml[32,1534+34]..[32,1534+52])
+                            Ptyp_constr "profiling_counters" (tools/profiling.ml[32,1534+34]..[32,1534+52])
+                            []
+                    ]
+                    expression (tools/profiling.ml[33,1591+4]..[46,2080+21])
+                      Pexp_sequence
+                      expression (tools/profiling.ml[33,1591+4]..[33,1591+15])
+                        Pexp_apply
+                        expression (tools/profiling.ml[33,1591+4]..[33,1591+12])
+                          Pexp_ident "close_in" (tools/profiling.ml[33,1591+4]..[33,1591+12])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (tools/profiling.ml[33,1591+13]..[33,1591+15])
+                              Pexp_ident "ic" (tools/profiling.ml[33,1591+13]..[33,1591+15])
+                        ]
+                      expression (tools/profiling.ml[34,1608+4]..[46,2080+21])
+                        Pexp_sequence
+                        expression (tools/profiling.ml[34,1608+4]..[40,1857+21])
+                          Pexp_apply
+                          expression (tools/profiling.ml[34,1608+4]..[34,1608+14])
+                            Pexp_ident "List.iter2" (tools/profiling.ml[34,1608+4]..[34,1608+14])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (tools/profiling.ml[35,1623+6]..[39,1825+31])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (tools/profiling.ml[35,1623+11]..[35,1623+41])
+                                  Ppat_tuple
+                                  [
+                                    pattern (tools/profiling.ml[35,1623+12]..[35,1623+19])
+                                      Ppat_var "curname" (tools/profiling.ml[35,1623+12]..[35,1623+19])
+                                    pattern (tools/profiling.ml[35,1623+21]..[35,1623+40])
+                                      Ppat_tuple
+                                      [
+                                        pattern (tools/profiling.ml[35,1623+22]..[35,1623+30])
+                                          Ppat_var "curmodes" (tools/profiling.ml[35,1623+22]..[35,1623+30])
+                                        pattern (tools/profiling.ml[35,1623+31]..[35,1623+39])
+                                          Ppat_var "curcount" (tools/profiling.ml[35,1623+31]..[35,1623+39])
+                                      ]
+                                  ]
+                                expression (tools/profiling.ml[35,1623+42]..[39,1825+30]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (tools/profiling.ml[35,1623+42]..[35,1623+75])
+                                    Ppat_tuple
+                                    [
+                                      pattern (tools/profiling.ml[35,1623+43]..[35,1623+51])
+                                        Ppat_var "prevname" (tools/profiling.ml[35,1623+43]..[35,1623+51])
+                                      pattern (tools/profiling.ml[35,1623+53]..[35,1623+74])
+                                        Ppat_tuple
+                                        [
+                                          pattern (tools/profiling.ml[35,1623+54]..[35,1623+63])
+                                            Ppat_var "prevmodes" (tools/profiling.ml[35,1623+54]..[35,1623+63])
+                                          pattern (tools/profiling.ml[35,1623+64]..[35,1623+73])
+                                            Ppat_var "prevcount" (tools/profiling.ml[35,1623+64]..[35,1623+73])
+                                        ]
+                                    ]
+                                  expression (tools/profiling.ml[36,1702+8]..[39,1825+30])
+                                    Pexp_ifthenelse
+                                    expression (tools/profiling.ml[36,1702+11]..[38,1766+58])
+                                      Pexp_apply
+                                      expression (tools/profiling.ml[37,1733+8]..[37,1733+10])
+                                        Pexp_ident "||" (tools/profiling.ml[37,1733+8]..[37,1733+10])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (tools/profiling.ml[36,1702+11]..[36,1702+30])
+                                            Pexp_apply
+                                            expression (tools/profiling.ml[36,1702+19]..[36,1702+21])
+                                              Pexp_ident "<>" (tools/profiling.ml[36,1702+19]..[36,1702+21])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (tools/profiling.ml[36,1702+11]..[36,1702+18])
+                                                  Pexp_ident "curname" (tools/profiling.ml[36,1702+11]..[36,1702+18])
+                                              <arg>
+                                              Nolabel
+                                                expression (tools/profiling.ml[36,1702+22]..[36,1702+30])
+                                                  Pexp_ident "prevname" (tools/profiling.ml[36,1702+22]..[36,1702+30])
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (tools/profiling.ml[37,1733+11]..[38,1766+58])
+                                            Pexp_apply
+                                            expression (tools/profiling.ml[38,1766+8]..[38,1766+10])
+                                              Pexp_ident "||" (tools/profiling.ml[38,1766+8]..[38,1766+10])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (tools/profiling.ml[37,1733+11]..[37,1733+32])
+                                                  Pexp_apply
+                                                  expression (tools/profiling.ml[37,1733+20]..[37,1733+22])
+                                                    Pexp_ident "<>" (tools/profiling.ml[37,1733+20]..[37,1733+22])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (tools/profiling.ml[37,1733+11]..[37,1733+19])
+                                                        Pexp_ident "curmodes" (tools/profiling.ml[37,1733+11]..[37,1733+19])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (tools/profiling.ml[37,1733+23]..[37,1733+32])
+                                                        Pexp_ident "prevmodes" (tools/profiling.ml[37,1733+23]..[37,1733+32])
+                                                  ]
+                                              <arg>
+                                              Nolabel
+                                                expression (tools/profiling.ml[38,1766+11]..[38,1766+58])
+                                                  Pexp_apply
+                                                  expression (tools/profiling.ml[38,1766+33]..[38,1766+35])
+                                                    Pexp_ident "<>" (tools/profiling.ml[38,1766+33]..[38,1766+35])
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (tools/profiling.ml[38,1766+11]..[38,1766+32])
+                                                        Pexp_apply
+                                                        expression (tools/profiling.ml[38,1766+11]..[38,1766+23])
+                                                          Pexp_ident "Array.length" (tools/profiling.ml[38,1766+11]..[38,1766+23])
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (tools/profiling.ml[38,1766+24]..[38,1766+32])
+                                                              Pexp_ident "curcount" (tools/profiling.ml[38,1766+24]..[38,1766+32])
+                                                        ]
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (tools/profiling.ml[38,1766+36]..[38,1766+58])
+                                                        Pexp_apply
+                                                        expression (tools/profiling.ml[38,1766+36]..[38,1766+48])
+                                                          Pexp_ident "Array.length" (tools/profiling.ml[38,1766+36]..[38,1766+48])
+                                                        [
+                                                          <arg>
+                                                          Nolabel
+                                                            expression (tools/profiling.ml[38,1766+49]..[38,1766+58])
+                                                              Pexp_ident "prevcount" (tools/profiling.ml[38,1766+49]..[38,1766+58])
+                                                        ]
+                                                  ]
+                                            ]
+                                      ]
+                                    expression (tools/profiling.ml[39,1825+13]..[39,1825+30])
+                                      Pexp_apply
+                                      expression (tools/profiling.ml[39,1825+13]..[39,1825+18])
+                                        Pexp_ident "raise" (tools/profiling.ml[39,1825+13]..[39,1825+18])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (tools/profiling.ml[39,1825+19]..[39,1825+30])
+                                            Pexp_construct "Bad_profile" (tools/profiling.ml[39,1825+19]..[39,1825+30])
+                                            None
+                                      ]
+                                    None
+                            <arg>
+                            Nolabel
+                              expression (tools/profiling.ml[40,1857+6]..[40,1857+15])
+                                Pexp_apply
+                                expression (tools/profiling.ml[40,1857+6]..[40,1857+7])
+                                  Pexp_ident "!" (tools/profiling.ml[40,1857+6]..[40,1857+7])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (tools/profiling.ml[40,1857+7]..[40,1857+15])
+                                      Pexp_ident "counters" (tools/profiling.ml[40,1857+7]..[40,1857+15])
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (tools/profiling.ml[40,1857+16]..[40,1857+21])
+                                Pexp_ident "prevl" (tools/profiling.ml[40,1857+16]..[40,1857+21])
+                          ]
+                        expression (tools/profiling.ml[41,1880+4]..[46,2080+21])
+                          Pexp_apply
+                          expression (tools/profiling.ml[41,1880+4]..[41,1880+14])
+                            Pexp_ident "List.iter2" (tools/profiling.ml[41,1880+4]..[41,1880+14])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (tools/profiling.ml[42,1895+6]..[45,2066+13])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (tools/profiling.ml[42,1895+11]..[42,1895+35])
+                                  Ppat_tuple
+                                  [
+                                    pattern (tools/profiling.ml[42,1895+12]..[42,1895+20])
+                                      Ppat_var "_curname" (tools/profiling.ml[42,1895+12]..[42,1895+20])
+                                    pattern (tools/profiling.ml[42,1895+22]..[42,1895+34])
+                                      Ppat_tuple
+                                      [
+                                        pattern (tools/profiling.ml[42,1895+23]..[42,1895+24])
+                                          Ppat_any
+                                        pattern (tools/profiling.ml[42,1895+25]..[42,1895+33])
+                                          Ppat_var "curcount" (tools/profiling.ml[42,1895+25]..[42,1895+33])
+                                      ]
+                                  ]
+                                expression (tools/profiling.ml[42,1895+36]..[45,2066+12]) ghost
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (tools/profiling.ml[42,1895+36]..[42,1895+62])
+                                    Ppat_tuple
+                                    [
+                                      pattern (tools/profiling.ml[42,1895+37]..[42,1895+46])
+                                        Ppat_var "_prevname" (tools/profiling.ml[42,1895+37]..[42,1895+46])
+                                      pattern (tools/profiling.ml[42,1895+48]..[42,1895+61])
+                                        Ppat_tuple
+                                        [
+                                          pattern (tools/profiling.ml[42,1895+49]..[42,1895+50])
+                                            Ppat_any
+                                          pattern (tools/profiling.ml[42,1895+51]..[42,1895+60])
+                                            Ppat_var "prevcount" (tools/profiling.ml[42,1895+51]..[42,1895+60])
+                                        ]
+                                    ]
+                                  expression (tools/profiling.ml[43,1961+8]..[45,2066+12])
+                                    Pexp_for Up
+                                    pattern (tools/profiling.ml[43,1961+12]..[43,1961+13])
+                                      Ppat_var "i" (tools/profiling.ml[43,1961+12]..[43,1961+13])
+                                    expression (tools/profiling.ml[43,1961+16]..[43,1961+17])
+                                      Pexp_constant PConst_int (0,None)
+                                    expression (tools/profiling.ml[43,1961+21]..[43,1961+46])
+                                      Pexp_apply
+                                      expression (tools/profiling.ml[43,1961+43]..[43,1961+44])
+                                        Pexp_ident "-" (tools/profiling.ml[43,1961+43]..[43,1961+44])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (tools/profiling.ml[43,1961+21]..[43,1961+42])
+                                            Pexp_apply
+                                            expression (tools/profiling.ml[43,1961+21]..[43,1961+33])
+                                              Pexp_ident "Array.length" (tools/profiling.ml[43,1961+21]..[43,1961+33])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (tools/profiling.ml[43,1961+34]..[43,1961+42])
+                                                  Pexp_ident "curcount" (tools/profiling.ml[43,1961+34]..[43,1961+42])
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (tools/profiling.ml[43,1961+45]..[43,1961+46])
+                                            Pexp_constant PConst_int (1,None)
+                                      ]
+                                    expression (tools/profiling.ml[44,2011+10]..[44,2011+54])
+                                      Pexp_apply
+                                      expression (tools/profiling.ml[44,2011+10]..[44,2011+54]) ghost
+                                        Pexp_ident "Array.set" (tools/profiling.ml[44,2011+10]..[44,2011+54]) ghost
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (tools/profiling.ml[44,2011+10]..[44,2011+18])
+                                            Pexp_ident "curcount" (tools/profiling.ml[44,2011+10]..[44,2011+18])
+                                        <arg>
+                                        Nolabel
+                                          expression (tools/profiling.ml[44,2011+20]..[44,2011+21])
+                                            Pexp_ident "i" (tools/profiling.ml[44,2011+20]..[44,2011+21])
+                                        <arg>
+                                        Nolabel
+                                          expression (tools/profiling.ml[44,2011+26]..[44,2011+54])
+                                            Pexp_apply
+                                            expression (tools/profiling.ml[44,2011+39]..[44,2011+40])
+                                              Pexp_ident "+" (tools/profiling.ml[44,2011+39]..[44,2011+40])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (tools/profiling.ml[44,2011+26]..[44,2011+38])
+                                                  Pexp_apply
+                                                  expression (tools/profiling.ml[44,2011+26]..[44,2011+38]) ghost
+                                                    Pexp_ident "Array.get" (tools/profiling.ml[44,2011+26]..[44,2011+38]) ghost
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (tools/profiling.ml[44,2011+26]..[44,2011+34])
+                                                        Pexp_ident "curcount" (tools/profiling.ml[44,2011+26]..[44,2011+34])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (tools/profiling.ml[44,2011+36]..[44,2011+37])
+                                                        Pexp_ident "i" (tools/profiling.ml[44,2011+36]..[44,2011+37])
+                                                  ]
+                                              <arg>
+                                              Nolabel
+                                                expression (tools/profiling.ml[44,2011+41]..[44,2011+54])
+                                                  Pexp_apply
+                                                  expression (tools/profiling.ml[44,2011+41]..[44,2011+54]) ghost
+                                                    Pexp_ident "Array.get" (tools/profiling.ml[44,2011+41]..[44,2011+54]) ghost
+                                                  [
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (tools/profiling.ml[44,2011+41]..[44,2011+50])
+                                                        Pexp_ident "prevcount" (tools/profiling.ml[44,2011+41]..[44,2011+50])
+                                                    <arg>
+                                                    Nolabel
+                                                      expression (tools/profiling.ml[44,2011+52]..[44,2011+53])
+                                                        Pexp_ident "i" (tools/profiling.ml[44,2011+52]..[44,2011+53])
+                                                  ]
+                                            ]
+                                      ]
+                            <arg>
+                            Nolabel
+                              expression (tools/profiling.ml[46,2080+6]..[46,2080+15])
+                                Pexp_apply
+                                expression (tools/profiling.ml[46,2080+6]..[46,2080+7])
+                                  Pexp_ident "!" (tools/profiling.ml[46,2080+6]..[46,2080+7])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (tools/profiling.ml[46,2080+7]..[46,2080+15])
+                                      Pexp_ident "counters" (tools/profiling.ml[46,2080+7]..[46,2080+15])
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (tools/profiling.ml[46,2080+16]..[46,2080+21])
+                                Pexp_ident "prevl" (tools/profiling.ml[46,2080+16]..[46,2080+21])
+                          ]
+                [
+                  <case>
+                    pattern (tools/profiling.ml[47,2102+7]..[47,2102+8])
+                      Ppat_any
+                    expression (tools/profiling.ml[47,2102+12]..[47,2102+14])
+                      Pexp_construct "()" (tools/profiling.ml[47,2102+12]..[47,2102+14])
+                      None
+                ]
+              expression (tools/profiling.ml[49,2124+2]..[54,2237+5])
+                Pexp_try
+                expression (tools/profiling.ml[50,2136+4]..[52,2205+16])
+                  Pexp_let Nonrec
+                  [
+                    <def>
+                      pattern (tools/profiling.ml[50,2136+8]..[50,2136+10])
+                        Ppat_var "oc" (tools/profiling.ml[50,2136+8]..[50,2136+10])
+                      expression (tools/profiling.ml[50,2136+13]..[50,2136+34])
+                        Pexp_apply
+                        expression (tools/profiling.ml[50,2136+13]..[50,2136+25])
+                          Pexp_ident "open_out_bin" (tools/profiling.ml[50,2136+13]..[50,2136+25])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (tools/profiling.ml[50,2136+26]..[50,2136+34])
+                              Pexp_ident "dumpfile" (tools/profiling.ml[50,2136+26]..[50,2136+34])
+                        ]
+                  ]
+                  expression (tools/profiling.ml[51,2174+4]..[52,2205+16])
+                    Pexp_sequence
+                    expression (tools/profiling.ml[51,2174+4]..[51,2174+29])
+                      Pexp_apply
+                      expression (tools/profiling.ml[51,2174+4]..[51,2174+16])
+                        Pexp_ident "output_value" (tools/profiling.ml[51,2174+4]..[51,2174+16])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (tools/profiling.ml[51,2174+17]..[51,2174+19])
+                            Pexp_ident "oc" (tools/profiling.ml[51,2174+17]..[51,2174+19])
+                        <arg>
+                        Nolabel
+                          expression (tools/profiling.ml[51,2174+20]..[51,2174+29])
+                            Pexp_apply
+                            expression (tools/profiling.ml[51,2174+20]..[51,2174+21])
+                              Pexp_ident "!" (tools/profiling.ml[51,2174+20]..[51,2174+21])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (tools/profiling.ml[51,2174+21]..[51,2174+29])
+                                  Pexp_ident "counters" (tools/profiling.ml[51,2174+21]..[51,2174+29])
+                            ]
+                      ]
+                    expression (tools/profiling.ml[52,2205+4]..[52,2205+16])
+                      Pexp_apply
+                      expression (tools/profiling.ml[52,2205+4]..[52,2205+13])
+                        Pexp_ident "close_out" (tools/profiling.ml[52,2205+4]..[52,2205+13])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (tools/profiling.ml[52,2205+14]..[52,2205+16])
+                            Pexp_ident "oc" (tools/profiling.ml[52,2205+14]..[52,2205+16])
+                      ]
+                [
+                  <case>
+                    pattern (tools/profiling.ml[53,2222+7]..[53,2222+8])
+                      Ppat_any
+                    expression (tools/profiling.ml[53,2222+12]..[53,2222+14])
+                      Pexp_construct "()" (tools/profiling.ml[53,2222+12]..[53,2222+14])
+                      None
+                ]
+    ]
+  structure_item (tools/profiling.ml[56,2244+0]..[56,2244+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (tools/profiling.ml[56,2244+4]..[56,2244+5])
+          Ppat_any
+        expression (tools/profiling.ml[56,2244+8]..[56,2244+29])
+          Pexp_apply
+          expression (tools/profiling.ml[56,2244+8]..[56,2244+15])
+            Pexp_ident "at_exit" (tools/profiling.ml[56,2244+8]..[56,2244+15])
+          [
+            <arg>
+            Nolabel
+              expression (tools/profiling.ml[56,2244+16]..[56,2244+29])
+                Pexp_ident "dump_counters" (tools/profiling.ml[56,2244+16]..[56,2244+29])
+          ]
+    ]
+]
+

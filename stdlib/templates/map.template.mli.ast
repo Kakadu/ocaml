@@ -1,0 +1,1859 @@
+[
+  signature_item (stdlib/templates/map.template.mli[19,1217+0]..[47,2185+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/map.template.mli[19,1217+0]..[47,2185+2])
+        Pstr_eval
+        expression (stdlib/templates/map.template.mli[19,1217+0]..[47,2185+2])
+          Pexp_constant PConst_string(" Association tables over ordered types.\n\n   This module implements applicative association tables, also known as\n   finite maps or dictionaries, given a total ordering function\n   over the keys.\n   All operations over maps are purely applicative (no side-effects).\n   The implementation uses balanced binary trees, and therefore searching\n   and insertion take time logarithmic in the size of the map.\n\n   For instance:\n   {[\n     module IntPairs =\n       struct\n         type t = int * int\n         let compare (x0,y0) (x1,y1) =\n           match Stdlib.compare x0 x1 with\n               0 -> Stdlib.compare y0 y1\n             | c -> c\n       end\n\n     module PairsMap = Map.Make(IntPairs)\n\n     let m = PairsMap.(empty |> add (0,1) \"hello\" |> add (1,0) \"world\")\n   ]}\n\n   This creates a new module [PairsMap], with a new type ['a PairsMap.t]\n   of maps from [int * int] to ['a]. In this example, [m] contains [string]\n   values so its type is [string PairsMap.t].\n",(stdlib/templates/map.template.mli[19,1217+0]..[47,2185+2]),None)
+    ]
+  signature_item (stdlib/templates/map.template.mli[49,2189+0]..[62,2748+5])
+    Psig_modtype "OrderedType" (stdlib/templates/map.template.mli[49,2189+12]..[49,2189+23])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/map.template.mli[63,2754+0]..[63,2754+46])
+            Pstr_eval
+            expression (stdlib/templates/map.template.mli[63,2754+0]..[63,2754+46])
+              Pexp_constant PConst_string(" Input signature of the functor {!Make}. ",(stdlib/templates/map.template.mli[63,2754+0]..[63,2754+46]),None)
+        ]
+      module_type (stdlib/templates/map.template.mli[50,2215+2]..[62,2748+5])
+        Pmty_signature
+        [
+          signature_item (stdlib/templates/map.template.mli[51,2221+4]..[51,2221+10])
+            Psig_type Rec
+            [
+              type_declaration "t" (stdlib/templates/map.template.mli[51,2221+9]..[51,2221+10]) (stdlib/templates/map.template.mli[51,2221+4]..[51,2221+10])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (stdlib/templates/map.template.mli[52,2232+6]..[52,2232+38])
+                      Pstr_eval
+                      expression (stdlib/templates/map.template.mli[52,2232+6]..[52,2232+38])
+                        Pexp_constant PConst_string(" The type of the map keys. ",(stdlib/templates/map.template.mli[52,2232+6]..[52,2232+38]),None)
+                  ]
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          signature_item (stdlib/templates/map.template.mli[54,2272+4]..[54,2272+31])
+            Psig_value
+            value_description "compare" (stdlib/templates/map.template.mli[54,2272+8]..[54,2272+15]) (stdlib/templates/map.template.mli[54,2272+4]..[54,2272+31])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[55,2304+6]..[61,2696+51])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[55,2304+6]..[61,2696+51])
+                      Pexp_constant PConst_string(" A total ordering function over the keys.\n          This is a two-argument function [f] such that\n          [f e1 e2] is zero if the keys [e1] and [e2] are equal,\n          [f e1 e2] is strictly negative if [e1] is smaller than [e2],\n          and [f e1 e2] is strictly positive if [e1] is greater than [e2].\n          Example: a suitable ordering function is the generic structural\n          comparison function {!Stdlib.compare}. ",(stdlib/templates/map.template.mli[55,2304+6]..[61,2696+51]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[54,2272+18]..[54,2272+31])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[54,2272+18]..[54,2272+19])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[54,2272+18]..[54,2272+19])
+                  []
+                core_type (stdlib/templates/map.template.mli[54,2272+23]..[54,2272+31])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[54,2272+23]..[54,2272+24])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[54,2272+23]..[54,2272+24])
+                    []
+                  core_type (stdlib/templates/map.template.mli[54,2272+28]..[54,2272+31])
+                    Ptyp_constr "int" (stdlib/templates/map.template.mli[54,2272+28]..[54,2272+31])
+                    []
+              []
+        ]
+  signature_item (stdlib/templates/map.template.mli[65,2802+0]..[362,15068+5])
+    Psig_modtype "S" (stdlib/templates/map.template.mli[65,2802+12]..[65,2802+13])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/map.template.mli[363,15074+0]..[363,15074+47])
+            Pstr_eval
+            expression (stdlib/templates/map.template.mli[363,15074+0]..[363,15074+47])
+              Pexp_constant PConst_string(" Output signature of the functor {!Make}. ",(stdlib/templates/map.template.mli[363,15074+0]..[363,15074+47]),None)
+        ]
+      module_type (stdlib/templates/map.template.mli[66,2818+2]..[362,15068+5])
+        Pmty_signature
+        [
+          signature_item (stdlib/templates/map.template.mli[68,2825+4]..[68,2825+24])
+            Psig_attribute "ocaml.text"
+            [
+              structure_item (stdlib/templates/map.template.mli[68,2825+4]..[68,2825+24])
+                Pstr_eval
+                expression (stdlib/templates/map.template.mli[68,2825+4]..[68,2825+24])
+                  Pexp_constant PConst_string(" {1:maps Maps} ",(stdlib/templates/map.template.mli[68,2825+4]..[68,2825+24]),None)
+            ]
+          signature_item (stdlib/templates/map.template.mli[70,2851+4]..[70,2851+12])
+            Psig_type Rec
+            [
+              type_declaration "key" (stdlib/templates/map.template.mli[70,2851+9]..[70,2851+12]) (stdlib/templates/map.template.mli[70,2851+4]..[70,2851+12])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (stdlib/templates/map.template.mli[71,2864+4]..[71,2864+36])
+                      Pstr_eval
+                      expression (stdlib/templates/map.template.mli[71,2864+4]..[71,2864+36])
+                        Pexp_constant PConst_string(" The type of the map keys. ",(stdlib/templates/map.template.mli[71,2864+4]..[71,2864+36]),None)
+                  ]
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          signature_item (stdlib/templates/map.template.mli[73,2902+4]..[73,2902+15])
+            Psig_type Rec
+            [
+              type_declaration "t" (stdlib/templates/map.template.mli[73,2902+14]..[73,2902+15]) (stdlib/templates/map.template.mli[73,2902+4]..[73,2902+15])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (stdlib/templates/map.template.mli[74,2918+4]..[74,2918+57])
+                      Pstr_eval
+                      expression (stdlib/templates/map.template.mli[74,2918+4]..[74,2918+57])
+                        Pexp_constant PConst_string(" The type of maps from type [key] to type ['a]. ",(stdlib/templates/map.template.mli[74,2918+4]..[74,2918+57]),None)
+                  ]
+                ptype_params =
+                  [
+                    core_type (stdlib/templates/map.template.mli[73,2902+11]..[73,2902+13])
+                      Ptyp_var a
+                  ]
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          signature_item (stdlib/templates/map.template.mli[76,2977+4]..[76,2977+19])
+            Psig_value
+            value_description "empty" (stdlib/templates/map.template.mli[76,2977+8]..[76,2977+13]) (stdlib/templates/map.template.mli[76,2977+4]..[76,2977+19])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[77,2997+4]..[77,2997+25])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[77,2997+4]..[77,2997+25])
+                      Pexp_constant PConst_string(" The empty map. ",(stdlib/templates/map.template.mli[77,2997+4]..[77,2997+25]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[76,2977+15]..[76,2977+19])
+                Ptyp_constr "t" (stdlib/templates/map.template.mli[76,2977+18]..[76,2977+19])
+                [
+                  core_type (stdlib/templates/map.template.mli[76,2977+15]..[76,2977+17])
+                    Ptyp_var a
+                ]
+              []
+          signature_item (stdlib/templates/map.template.mli[79,3024+4]..[79,3024+47])
+            Psig_value
+            value_description "add" (stdlib/templates/map.template.mli[79,3024+8]..[79,3024+11]) (stdlib/templates/map.template.mli[79,3024+4]..[79,3024+47])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[80,3072+4]..[86,3454+58])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[80,3072+4]..[86,3454+58])
+                      Pexp_constant PConst_string(" [add ~key ~data m] returns a map containing the same bindings as\n        [m], plus a binding of [key] to [data]. If [key] was already bound\n        in [m] to a value that is physically equal to [data],\n        [m] is returned unchanged (the result of the function is\n        then physically equal to [m]). Otherwise, the previous binding\n        of [key] in [m] disappears.\n        @before 4.03 Physical equality was not ensured. ",(stdlib/templates/map.template.mli[80,3072+4]..[86,3454+58]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[79,3024+13]..[79,3024+47])
+                Ptyp_arrow
+                Labelled "key"
+                core_type (stdlib/templates/map.template.mli[79,3024+17]..[79,3024+20])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[79,3024+17]..[79,3024+20])
+                  []
+                core_type (stdlib/templates/map.template.mli[79,3024+24]..[79,3024+47])
+                  Ptyp_arrow
+                  Labelled "data"
+                  core_type (stdlib/templates/map.template.mli[79,3024+29]..[79,3024+31])
+                    Ptyp_var a
+                  core_type (stdlib/templates/map.template.mli[79,3024+35]..[79,3024+47])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[79,3024+35]..[79,3024+39])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[79,3024+38]..[79,3024+39])
+                      [
+                        core_type (stdlib/templates/map.template.mli[79,3024+35]..[79,3024+37])
+                          Ptyp_var a
+                      ]
+                    core_type (stdlib/templates/map.template.mli[79,3024+43]..[79,3024+47])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[79,3024+46]..[79,3024+47])
+                      [
+                        core_type (stdlib/templates/map.template.mli[79,3024+43]..[79,3024+45])
+                          Ptyp_var a
+                      ]
+              []
+          signature_item (stdlib/templates/map.template.mli[88,3514+4]..[88,3514+65])
+            Psig_value
+            value_description "add_to_list" (stdlib/templates/map.template.mli[88,3514+8]..[88,3514+19]) (stdlib/templates/map.template.mli[88,3514+4]..[88,3514+65])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[89,3580+4]..[92,3752+21])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[89,3580+4]..[92,3752+21])
+                      Pexp_constant PConst_string(" [add_to_list ~key ~data m] is [m] with [key] mapped to [l] such\n        that [l] is [data :: Map.find key m] if [key] was bound in\n        [m] and [[v]] otherwise.\n        @since 5.1 ",(stdlib/templates/map.template.mli[89,3580+4]..[92,3752+21]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[88,3514+21]..[88,3514+65])
+                Ptyp_arrow
+                Labelled "key"
+                core_type (stdlib/templates/map.template.mli[88,3514+25]..[88,3514+28])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[88,3514+25]..[88,3514+28])
+                  []
+                core_type (stdlib/templates/map.template.mli[88,3514+32]..[88,3514+65])
+                  Ptyp_arrow
+                  Labelled "data"
+                  core_type (stdlib/templates/map.template.mli[88,3514+37]..[88,3514+39])
+                    Ptyp_var a
+                  core_type (stdlib/templates/map.template.mli[88,3514+43]..[88,3514+65])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[88,3514+43]..[88,3514+52])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[88,3514+51]..[88,3514+52])
+                      [
+                        core_type (stdlib/templates/map.template.mli[88,3514+43]..[88,3514+50])
+                          Ptyp_constr "list" (stdlib/templates/map.template.mli[88,3514+46]..[88,3514+50])
+                          [
+                            core_type (stdlib/templates/map.template.mli[88,3514+43]..[88,3514+45])
+                              Ptyp_var a
+                          ]
+                      ]
+                    core_type (stdlib/templates/map.template.mli[88,3514+56]..[88,3514+65])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[88,3514+64]..[88,3514+65])
+                      [
+                        core_type (stdlib/templates/map.template.mli[88,3514+56]..[88,3514+63])
+                          Ptyp_constr "list" (stdlib/templates/map.template.mli[88,3514+59]..[88,3514+63])
+                          [
+                            core_type (stdlib/templates/map.template.mli[88,3514+56]..[88,3514+58])
+                              Ptyp_var a
+                          ]
+                      ]
+              []
+          signature_item (stdlib/templates/map.template.mli[94,3775+4]..[94,3775+69])
+            Psig_value
+            value_description "update" (stdlib/templates/map.template.mli[94,3775+8]..[94,3775+14]) (stdlib/templates/map.template.mli[94,3775+4]..[94,3775+69])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[95,3845+4]..[104,4442+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[95,3845+4]..[104,4442+22])
+                      Pexp_constant PConst_string(" [update ~key ~f m] returns a map containing the same bindings as\n        [m], except for the binding of [key]. Depending on the value of\n        [y] where [y] is [f (find_opt key m)], the binding of [key] is\n        added, removed or updated. If [y] is [None], the binding is\n        removed if it exists; otherwise, if [y] is [Some z] then [key]\n        is associated to [z] in the resulting map.  If [key] was already\n        bound in [m] to a value that is physically equal to [z], [m]\n        is returned unchanged (the result of the function is then\n        physically equal to [m]).\n        @since 4.06 ",(stdlib/templates/map.template.mli[95,3845+4]..[104,4442+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[94,3775+16]..[94,3775+69])
+                Ptyp_arrow
+                Labelled "key"
+                core_type (stdlib/templates/map.template.mli[94,3775+20]..[94,3775+23])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[94,3775+20]..[94,3775+23])
+                  []
+                core_type (stdlib/templates/map.template.mli[94,3775+27]..[94,3775+69])
+                  Ptyp_arrow
+                  Labelled "f"
+                  core_type (stdlib/templates/map.template.mli[94,3775+30]..[94,3775+52])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[94,3775+30]..[94,3775+39])
+                      Ptyp_constr "option" (stdlib/templates/map.template.mli[94,3775+33]..[94,3775+39])
+                      [
+                        core_type (stdlib/templates/map.template.mli[94,3775+30]..[94,3775+32])
+                          Ptyp_var a
+                      ]
+                    core_type (stdlib/templates/map.template.mli[94,3775+43]..[94,3775+52])
+                      Ptyp_constr "option" (stdlib/templates/map.template.mli[94,3775+46]..[94,3775+52])
+                      [
+                        core_type (stdlib/templates/map.template.mli[94,3775+43]..[94,3775+45])
+                          Ptyp_var a
+                      ]
+                  core_type (stdlib/templates/map.template.mli[94,3775+57]..[94,3775+69])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[94,3775+57]..[94,3775+61])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[94,3775+60]..[94,3775+61])
+                      [
+                        core_type (stdlib/templates/map.template.mli[94,3775+57]..[94,3775+59])
+                          Ptyp_var a
+                      ]
+                    core_type (stdlib/templates/map.template.mli[94,3775+65]..[94,3775+69])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[94,3775+68]..[94,3775+69])
+                      [
+                        core_type (stdlib/templates/map.template.mli[94,3775+65]..[94,3775+67])
+                          Ptyp_var a
+                      ]
+              []
+          signature_item (stdlib/templates/map.template.mli[106,4466+4]..[106,4466+36])
+            Psig_value
+            value_description "singleton" (stdlib/templates/map.template.mli[106,4466+8]..[106,4466+17]) (stdlib/templates/map.template.mli[106,4466+4]..[106,4466+36])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[107,4503+4]..[109,4600+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[107,4503+4]..[109,4600+22])
+                      Pexp_constant PConst_string(" [singleton x y] returns the one-element map that contains a binding\n        [y] for [x].\n        @since 3.12 ",(stdlib/templates/map.template.mli[107,4503+4]..[109,4600+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[106,4466+19]..[106,4466+36])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[106,4466+19]..[106,4466+22])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[106,4466+19]..[106,4466+22])
+                  []
+                core_type (stdlib/templates/map.template.mli[106,4466+26]..[106,4466+36])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[106,4466+26]..[106,4466+28])
+                    Ptyp_var a
+                  core_type (stdlib/templates/map.template.mli[106,4466+32]..[106,4466+36])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[106,4466+35]..[106,4466+36])
+                    [
+                      core_type (stdlib/templates/map.template.mli[106,4466+32]..[106,4466+34])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[111,4624+4]..[111,4624+35])
+            Psig_value
+            value_description "remove" (stdlib/templates/map.template.mli[111,4624+8]..[111,4624+14]) (stdlib/templates/map.template.mli[111,4624+4]..[111,4624+35])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[112,4660+4]..[116,4920+58])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[112,4660+4]..[116,4920+58])
+                      Pexp_constant PConst_string(" [remove x m] returns a map containing the same bindings as\n        [m], except for [x] which is unbound in the returned map.\n        If [x] was not in [m], [m] is returned unchanged\n        (the result of the function is then physically equal to [m]).\n        @before 4.03 Physical equality was not ensured. ",(stdlib/templates/map.template.mli[112,4660+4]..[116,4920+58]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[111,4624+16]..[111,4624+35])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[111,4624+16]..[111,4624+19])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[111,4624+16]..[111,4624+19])
+                  []
+                core_type (stdlib/templates/map.template.mli[111,4624+23]..[111,4624+35])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[111,4624+23]..[111,4624+27])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[111,4624+26]..[111,4624+27])
+                    [
+                      core_type (stdlib/templates/map.template.mli[111,4624+23]..[111,4624+25])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[111,4624+31]..[111,4624+35])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[111,4624+34]..[111,4624+35])
+                    [
+                      core_type (stdlib/templates/map.template.mli[111,4624+31]..[111,4624+33])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[118,4980+4]..[120,5051+26])
+            Psig_value
+            value_description "merge" (stdlib/templates/map.template.mli[118,4980+8]..[118,4980+13]) (stdlib/templates/map.template.mli[118,4980+4]..[120,5051+26])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[121,5078+4]..[127,5484+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[121,5078+4]..[127,5484+22])
+                      Pexp_constant PConst_string(" [merge ~f m1 m2] computes a map whose keys are a subset of the keys of\n        [m1] and of [m2]. The presence of each such binding, and the\n        corresponding value, is determined with the function [f].\n        In terms of the [find_opt] operation, we have\n        [find_opt x (merge f m1 m2) = f x (find_opt x m1) (find_opt x m2)]\n        for any key [x], provided that [f x None None = None].\n        @since 3.12 ",(stdlib/templates/map.template.mli[121,5078+4]..[127,5484+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[119,4995+6]..[120,5051+26])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[119,4995+9]..[119,4995+51])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[119,4995+9]..[119,4995+12])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[119,4995+9]..[119,4995+12])
+                    []
+                  core_type (stdlib/templates/map.template.mli[119,4995+16]..[119,4995+51])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[119,4995+16]..[119,4995+25])
+                      Ptyp_constr "option" (stdlib/templates/map.template.mli[119,4995+19]..[119,4995+25])
+                      [
+                        core_type (stdlib/templates/map.template.mli[119,4995+16]..[119,4995+18])
+                          Ptyp_var a
+                      ]
+                    core_type (stdlib/templates/map.template.mli[119,4995+29]..[119,4995+51])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (stdlib/templates/map.template.mli[119,4995+29]..[119,4995+38])
+                        Ptyp_constr "option" (stdlib/templates/map.template.mli[119,4995+32]..[119,4995+38])
+                        [
+                          core_type (stdlib/templates/map.template.mli[119,4995+29]..[119,4995+31])
+                            Ptyp_var b
+                        ]
+                      core_type (stdlib/templates/map.template.mli[119,4995+42]..[119,4995+51])
+                        Ptyp_constr "option" (stdlib/templates/map.template.mli[119,4995+45]..[119,4995+51])
+                        [
+                          core_type (stdlib/templates/map.template.mli[119,4995+42]..[119,4995+44])
+                            Ptyp_var c
+                        ]
+                core_type (stdlib/templates/map.template.mli[120,5051+6]..[120,5051+26])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[120,5051+6]..[120,5051+10])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[120,5051+9]..[120,5051+10])
+                    [
+                      core_type (stdlib/templates/map.template.mli[120,5051+6]..[120,5051+8])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[120,5051+14]..[120,5051+26])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[120,5051+14]..[120,5051+18])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[120,5051+17]..[120,5051+18])
+                      [
+                        core_type (stdlib/templates/map.template.mli[120,5051+14]..[120,5051+16])
+                          Ptyp_var b
+                      ]
+                    core_type (stdlib/templates/map.template.mli[120,5051+22]..[120,5051+26])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[120,5051+25]..[120,5051+26])
+                      [
+                        core_type (stdlib/templates/map.template.mli[120,5051+22]..[120,5051+24])
+                          Ptyp_var c
+                      ]
+              []
+          signature_item (stdlib/templates/map.template.mli[129,5508+4]..[129,5508+71])
+            Psig_value
+            value_description "union" (stdlib/templates/map.template.mli[129,5508+8]..[129,5508+13]) (stdlib/templates/map.template.mli[129,5508+4]..[129,5508+71])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[130,5580+4]..[140,6073+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[130,5580+4]..[140,6073+22])
+                      Pexp_constant PConst_string(" [union ~f m1 m2] computes a map whose keys are a subset of the keys\n        of [m1] and of [m2].  When the same binding is defined in both\n        arguments, the function [f] is used to combine them.\n        This is a special case of [merge]: [union f m1 m2] is equivalent\n        to [merge f' m1 m2], where\n        - [f' _key None None = None]\n        - [f' _key (Some v) None = Some v]\n        - [f' _key None (Some v) = Some v]\n        - [f' key (Some v1) (Some v2) = f key v1 v2]\n\n        @since 4.03 ",(stdlib/templates/map.template.mli[130,5580+4]..[140,6073+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[129,5508+15]..[129,5508+71])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[129,5508+18]..[129,5508+46])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[129,5508+18]..[129,5508+21])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[129,5508+18]..[129,5508+21])
+                    []
+                  core_type (stdlib/templates/map.template.mli[129,5508+25]..[129,5508+46])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[129,5508+25]..[129,5508+27])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[129,5508+31]..[129,5508+46])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (stdlib/templates/map.template.mli[129,5508+31]..[129,5508+33])
+                        Ptyp_var a
+                      core_type (stdlib/templates/map.template.mli[129,5508+37]..[129,5508+46])
+                        Ptyp_constr "option" (stdlib/templates/map.template.mli[129,5508+40]..[129,5508+46])
+                        [
+                          core_type (stdlib/templates/map.template.mli[129,5508+37]..[129,5508+39])
+                            Ptyp_var a
+                        ]
+                core_type (stdlib/templates/map.template.mli[129,5508+51]..[129,5508+71])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[129,5508+51]..[129,5508+55])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[129,5508+54]..[129,5508+55])
+                    [
+                      core_type (stdlib/templates/map.template.mli[129,5508+51]..[129,5508+53])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[129,5508+59]..[129,5508+71])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[129,5508+59]..[129,5508+63])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[129,5508+62]..[129,5508+63])
+                      [
+                        core_type (stdlib/templates/map.template.mli[129,5508+59]..[129,5508+61])
+                          Ptyp_var a
+                      ]
+                    core_type (stdlib/templates/map.template.mli[129,5508+67]..[129,5508+71])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[129,5508+70]..[129,5508+71])
+                      [
+                        core_type (stdlib/templates/map.template.mli[129,5508+67]..[129,5508+69])
+                          Ptyp_var a
+                      ]
+              []
+          signature_item (stdlib/templates/map.template.mli[142,6097+4]..[142,6097+29])
+            Psig_value
+            value_description "cardinal" (stdlib/templates/map.template.mli[142,6097+8]..[142,6097+16]) (stdlib/templates/map.template.mli[142,6097+4]..[142,6097+29])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[143,6127+4]..[144,6175+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[143,6127+4]..[144,6175+22])
+                      Pexp_constant PConst_string(" Return the number of bindings of a map.\n        @since 3.12 ",(stdlib/templates/map.template.mli[143,6127+4]..[144,6175+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[142,6097+18]..[142,6097+29])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[142,6097+18]..[142,6097+22])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[142,6097+21]..[142,6097+22])
+                  [
+                    core_type (stdlib/templates/map.template.mli[142,6097+18]..[142,6097+20])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[142,6097+26]..[142,6097+29])
+                  Ptyp_constr "int" (stdlib/templates/map.template.mli[142,6097+26]..[142,6097+29])
+                  []
+              []
+          signature_item (stdlib/templates/map.template.mli[146,6199+4]..[146,6199+32])
+            Psig_attribute "ocaml.text"
+            [
+              structure_item (stdlib/templates/map.template.mli[146,6199+4]..[146,6199+32])
+                Pstr_eval
+                expression (stdlib/templates/map.template.mli[146,6199+4]..[146,6199+32])
+                  Pexp_constant PConst_string(" {1:bindings Bindings} ",(stdlib/templates/map.template.mli[146,6199+4]..[146,6199+32]),None)
+            ]
+          signature_item (stdlib/templates/map.template.mli[148,6233+4]..[148,6233+41])
+            Psig_value
+            value_description "bindings" (stdlib/templates/map.template.mli[148,6233+8]..[148,6233+16]) (stdlib/templates/map.template.mli[148,6233+4]..[148,6233+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[149,6275+4]..[153,6507+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[149,6275+4]..[153,6507+22])
+                      Pexp_constant PConst_string(" Return the list of all bindings of the given map.\n        The returned list is sorted in increasing order of keys with respect\n        to the ordering [Ord.compare], where [Ord] is the argument\n        given to {!Map.Make}.\n        @since 3.12 ",(stdlib/templates/map.template.mli[149,6275+4]..[153,6507+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[148,6233+18]..[148,6233+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[148,6233+18]..[148,6233+22])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[148,6233+21]..[148,6233+22])
+                  [
+                    core_type (stdlib/templates/map.template.mli[148,6233+18]..[148,6233+20])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[148,6233+26]..[148,6233+41])
+                  Ptyp_constr "list" (stdlib/templates/map.template.mli[148,6233+37]..[148,6233+41])
+                  [
+                    core_type (stdlib/templates/map.template.mli[148,6233+27]..[148,6233+35])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[148,6233+27]..[148,6233+30])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[148,6233+27]..[148,6233+30])
+                          []
+                        core_type (stdlib/templates/map.template.mli[148,6233+33]..[148,6233+35])
+                          Ptyp_var a
+                      ]
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[155,6531+4]..[155,6531+39])
+            Psig_value
+            value_description "min_binding" (stdlib/templates/map.template.mli[155,6531+8]..[155,6531+19]) (stdlib/templates/map.template.mli[155,6531+4]..[155,6531+39])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[156,6571+4]..[159,6739+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[156,6571+4]..[159,6739+22])
+                      Pexp_constant PConst_string(" Return the binding with the smallest key in a given map\n        (with respect to the [Ord.compare] ordering), or raise\n        [Not_found] if the map is empty.\n        @since 3.12 ",(stdlib/templates/map.template.mli[156,6571+4]..[159,6739+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[155,6531+21]..[155,6531+39])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[155,6531+21]..[155,6531+25])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[155,6531+24]..[155,6531+25])
+                  [
+                    core_type (stdlib/templates/map.template.mli[155,6531+21]..[155,6531+23])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[155,6531+30]..[155,6531+38])
+                  Ptyp_tuple
+                  [
+                    core_type (stdlib/templates/map.template.mli[155,6531+30]..[155,6531+33])
+                      Ptyp_constr "key" (stdlib/templates/map.template.mli[155,6531+30]..[155,6531+33])
+                      []
+                    core_type (stdlib/templates/map.template.mli[155,6531+36]..[155,6531+38])
+                      Ptyp_var a
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[161,6763+4]..[161,6763+50])
+            Psig_value
+            value_description "min_binding_opt" (stdlib/templates/map.template.mli[161,6763+8]..[161,6763+23]) (stdlib/templates/map.template.mli[161,6763+4]..[161,6763+50])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[162,6814+4]..[165,6973+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[162,6814+4]..[165,6973+22])
+                      Pexp_constant PConst_string(" Return the binding with the smallest key in the given map\n        (with respect to the [Ord.compare] ordering), or [None]\n        if the map is empty.\n        @since 4.05 ",(stdlib/templates/map.template.mli[162,6814+4]..[165,6973+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[161,6763+25]..[161,6763+50])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[161,6763+25]..[161,6763+29])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[161,6763+28]..[161,6763+29])
+                  [
+                    core_type (stdlib/templates/map.template.mli[161,6763+25]..[161,6763+27])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[161,6763+33]..[161,6763+50])
+                  Ptyp_constr "option" (stdlib/templates/map.template.mli[161,6763+44]..[161,6763+50])
+                  [
+                    core_type (stdlib/templates/map.template.mli[161,6763+34]..[161,6763+42])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[161,6763+34]..[161,6763+37])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[161,6763+34]..[161,6763+37])
+                          []
+                        core_type (stdlib/templates/map.template.mli[161,6763+40]..[161,6763+42])
+                          Ptyp_var a
+                      ]
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[167,6997+4]..[167,6997+39])
+            Psig_value
+            value_description "max_binding" (stdlib/templates/map.template.mli[167,6997+8]..[167,6997+19]) (stdlib/templates/map.template.mli[167,6997+4]..[167,6997+39])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[168,7037+4]..[170,7140+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[168,7037+4]..[170,7140+22])
+                      Pexp_constant PConst_string(" Same as {!min_binding}, but returns the binding with\n        the largest key in the given map.\n        @since 3.12 ",(stdlib/templates/map.template.mli[168,7037+4]..[170,7140+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[167,6997+21]..[167,6997+39])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[167,6997+21]..[167,6997+25])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[167,6997+24]..[167,6997+25])
+                  [
+                    core_type (stdlib/templates/map.template.mli[167,6997+21]..[167,6997+23])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[167,6997+30]..[167,6997+38])
+                  Ptyp_tuple
+                  [
+                    core_type (stdlib/templates/map.template.mli[167,6997+30]..[167,6997+33])
+                      Ptyp_constr "key" (stdlib/templates/map.template.mli[167,6997+30]..[167,6997+33])
+                      []
+                    core_type (stdlib/templates/map.template.mli[167,6997+36]..[167,6997+38])
+                      Ptyp_var a
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[172,7164+4]..[172,7164+50])
+            Psig_value
+            value_description "max_binding_opt" (stdlib/templates/map.template.mli[172,7164+8]..[172,7164+23]) (stdlib/templates/map.template.mli[172,7164+4]..[172,7164+50])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[173,7215+4]..[175,7322+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[173,7215+4]..[175,7322+22])
+                      Pexp_constant PConst_string(" Same as {!min_binding_opt}, but returns the binding with\n        the largest key in the given map.\n        @since 4.05 ",(stdlib/templates/map.template.mli[173,7215+4]..[175,7322+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[172,7164+25]..[172,7164+50])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[172,7164+25]..[172,7164+29])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[172,7164+28]..[172,7164+29])
+                  [
+                    core_type (stdlib/templates/map.template.mli[172,7164+25]..[172,7164+27])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[172,7164+33]..[172,7164+50])
+                  Ptyp_constr "option" (stdlib/templates/map.template.mli[172,7164+44]..[172,7164+50])
+                  [
+                    core_type (stdlib/templates/map.template.mli[172,7164+34]..[172,7164+42])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[172,7164+34]..[172,7164+37])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[172,7164+34]..[172,7164+37])
+                          []
+                        core_type (stdlib/templates/map.template.mli[172,7164+40]..[172,7164+42])
+                          Ptyp_var a
+                      ]
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[177,7346+4]..[177,7346+34])
+            Psig_value
+            value_description "choose" (stdlib/templates/map.template.mli[177,7346+8]..[177,7346+14]) (stdlib/templates/map.template.mli[177,7346+4]..[177,7346+34])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[178,7381+4]..[181,7574+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[178,7381+4]..[181,7574+22])
+                      Pexp_constant PConst_string(" Return one binding of the given map, or raise [Not_found] if\n        the map is empty. Which binding is chosen is unspecified,\n        but equal bindings will be chosen for equal maps.\n        @since 3.12 ",(stdlib/templates/map.template.mli[178,7381+4]..[181,7574+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[177,7346+16]..[177,7346+34])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[177,7346+16]..[177,7346+20])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[177,7346+19]..[177,7346+20])
+                  [
+                    core_type (stdlib/templates/map.template.mli[177,7346+16]..[177,7346+18])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[177,7346+25]..[177,7346+33])
+                  Ptyp_tuple
+                  [
+                    core_type (stdlib/templates/map.template.mli[177,7346+25]..[177,7346+28])
+                      Ptyp_constr "key" (stdlib/templates/map.template.mli[177,7346+25]..[177,7346+28])
+                      []
+                    core_type (stdlib/templates/map.template.mli[177,7346+31]..[177,7346+33])
+                      Ptyp_var a
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[183,7598+4]..[183,7598+45])
+            Psig_value
+            value_description "choose_opt" (stdlib/templates/map.template.mli[183,7598+8]..[183,7598+18]) (stdlib/templates/map.template.mli[183,7598+4]..[183,7598+45])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[184,7644+4]..[187,7826+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[184,7644+4]..[187,7826+22])
+                      Pexp_constant PConst_string(" Return one binding of the given map, or [None] if\n        the map is empty. Which binding is chosen is unspecified,\n        but equal bindings will be chosen for equal maps.\n        @since 4.05 ",(stdlib/templates/map.template.mli[184,7644+4]..[187,7826+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[183,7598+20]..[183,7598+45])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[183,7598+20]..[183,7598+24])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[183,7598+23]..[183,7598+24])
+                  [
+                    core_type (stdlib/templates/map.template.mli[183,7598+20]..[183,7598+22])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[183,7598+28]..[183,7598+45])
+                  Ptyp_constr "option" (stdlib/templates/map.template.mli[183,7598+39]..[183,7598+45])
+                  [
+                    core_type (stdlib/templates/map.template.mli[183,7598+29]..[183,7598+37])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[183,7598+29]..[183,7598+32])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[183,7598+29]..[183,7598+32])
+                          []
+                        core_type (stdlib/templates/map.template.mli[183,7598+35]..[183,7598+37])
+                          Ptyp_var a
+                      ]
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[189,7850+4]..[189,7850+34])
+            Psig_attribute "ocaml.text"
+            [
+              structure_item (stdlib/templates/map.template.mli[189,7850+4]..[189,7850+34])
+                Pstr_eval
+                expression (stdlib/templates/map.template.mli[189,7850+4]..[189,7850+34])
+                  Pexp_constant PConst_string(" {1:searching Searching} ",(stdlib/templates/map.template.mli[189,7850+4]..[189,7850+34]),None)
+            ]
+          signature_item (stdlib/templates/map.template.mli[191,7886+4]..[191,7886+31])
+            Psig_value
+            value_description "find" (stdlib/templates/map.template.mli[191,7886+8]..[191,7886+12]) (stdlib/templates/map.template.mli[191,7886+4]..[191,7886+31])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[192,7918+4]..[193,7978+62])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[192,7918+4]..[193,7978+62])
+                      Pexp_constant PConst_string(" [find x m] returns the current value of [x] in [m],\n        or raises [Not_found] if no binding for [x] exists. ",(stdlib/templates/map.template.mli[192,7918+4]..[193,7978+62]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[191,7886+14]..[191,7886+31])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[191,7886+14]..[191,7886+17])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[191,7886+14]..[191,7886+17])
+                  []
+                core_type (stdlib/templates/map.template.mli[191,7886+21]..[191,7886+31])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[191,7886+21]..[191,7886+25])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[191,7886+24]..[191,7886+25])
+                    [
+                      core_type (stdlib/templates/map.template.mli[191,7886+21]..[191,7886+23])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[191,7886+29]..[191,7886+31])
+                    Ptyp_var a
+              []
+          signature_item (stdlib/templates/map.template.mli[195,8042+4]..[195,8042+42])
+            Psig_value
+            value_description "find_opt" (stdlib/templates/map.template.mli[195,8042+8]..[195,8042+16]) (stdlib/templates/map.template.mli[195,8042+4]..[195,8042+42])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[196,8085+4]..[198,8216+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[196,8085+4]..[198,8216+22])
+                      Pexp_constant PConst_string(" [find_opt x m] returns [Some v] if the current value of [x]\n        in [m] is [v], or [None] if no binding for [x] exists.\n        @since 4.05 ",(stdlib/templates/map.template.mli[196,8085+4]..[198,8216+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[195,8042+18]..[195,8042+42])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[195,8042+18]..[195,8042+21])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[195,8042+18]..[195,8042+21])
+                  []
+                core_type (stdlib/templates/map.template.mli[195,8042+25]..[195,8042+42])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[195,8042+25]..[195,8042+29])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[195,8042+28]..[195,8042+29])
+                    [
+                      core_type (stdlib/templates/map.template.mli[195,8042+25]..[195,8042+27])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[195,8042+33]..[195,8042+42])
+                    Ptyp_constr "option" (stdlib/templates/map.template.mli[195,8042+36]..[195,8042+42])
+                    [
+                      core_type (stdlib/templates/map.template.mli[195,8042+33]..[195,8042+35])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[200,8240+4]..[200,8240+55])
+            Psig_value
+            value_description "find_first" (stdlib/templates/map.template.mli[200,8240+8]..[200,8240+18]) (stdlib/templates/map.template.mli[200,8240+4]..[200,8240+55])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[201,8296+4]..[210,8758+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[201,8296+4]..[210,8758+22])
+                      Pexp_constant PConst_string(" [find_first ~f m], where [f] is a monotonically increasing function,\n        returns the binding of [m] with the lowest key [k] such that [f k],\n        or raises [Not_found] if no such key exists.\n\n        For example, [find_first (fun k -> Ord.compare k x >= 0) m] will\n        return the first binding [k, v] of [m] where [Ord.compare k x >= 0]\n        (intuitively: [k >= x]), or raise [Not_found] if [x] is greater than\n        any element of [m].\n\n        @since 4.05 ",(stdlib/templates/map.template.mli[201,8296+4]..[210,8758+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[200,8240+20]..[200,8240+55])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[200,8240+23]..[200,8240+34])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[200,8240+23]..[200,8240+26])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[200,8240+23]..[200,8240+26])
+                    []
+                  core_type (stdlib/templates/map.template.mli[200,8240+30]..[200,8240+34])
+                    Ptyp_constr "bool" (stdlib/templates/map.template.mli[200,8240+30]..[200,8240+34])
+                    []
+                core_type (stdlib/templates/map.template.mli[200,8240+39]..[200,8240+55])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[200,8240+39]..[200,8240+43])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[200,8240+42]..[200,8240+43])
+                    [
+                      core_type (stdlib/templates/map.template.mli[200,8240+39]..[200,8240+41])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[200,8240+47]..[200,8240+55])
+                    Ptyp_tuple
+                    [
+                      core_type (stdlib/templates/map.template.mli[200,8240+47]..[200,8240+50])
+                        Ptyp_constr "key" (stdlib/templates/map.template.mli[200,8240+47]..[200,8240+50])
+                        []
+                      core_type (stdlib/templates/map.template.mli[200,8240+53]..[200,8240+55])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[212,8782+4]..[212,8782+68])
+            Psig_value
+            value_description "find_first_opt" (stdlib/templates/map.template.mli[212,8782+8]..[212,8782+22]) (stdlib/templates/map.template.mli[212,8782+4]..[212,8782+68])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[213,8851+4]..[216,9070+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[213,8851+4]..[216,9070+22])
+                      Pexp_constant PConst_string(" [find_first_opt ~f m], where [f] is a monotonically increasing\n        function, returns an option containing the binding of [m] with the\n        lowest key [k] such that [f k], or [None] if no such key exists.\n        @since 4.05 ",(stdlib/templates/map.template.mli[213,8851+4]..[216,9070+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[212,8782+24]..[212,8782+68])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[212,8782+27]..[212,8782+38])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[212,8782+27]..[212,8782+30])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[212,8782+27]..[212,8782+30])
+                    []
+                  core_type (stdlib/templates/map.template.mli[212,8782+34]..[212,8782+38])
+                    Ptyp_constr "bool" (stdlib/templates/map.template.mli[212,8782+34]..[212,8782+38])
+                    []
+                core_type (stdlib/templates/map.template.mli[212,8782+43]..[212,8782+68])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[212,8782+43]..[212,8782+47])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[212,8782+46]..[212,8782+47])
+                    [
+                      core_type (stdlib/templates/map.template.mli[212,8782+43]..[212,8782+45])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[212,8782+51]..[212,8782+68])
+                    Ptyp_constr "option" (stdlib/templates/map.template.mli[212,8782+62]..[212,8782+68])
+                    [
+                      core_type (stdlib/templates/map.template.mli[212,8782+52]..[212,8782+60])
+                        Ptyp_tuple
+                        [
+                          core_type (stdlib/templates/map.template.mli[212,8782+52]..[212,8782+55])
+                            Ptyp_constr "key" (stdlib/templates/map.template.mli[212,8782+52]..[212,8782+55])
+                            []
+                          core_type (stdlib/templates/map.template.mli[212,8782+58]..[212,8782+60])
+                            Ptyp_var a
+                        ]
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[218,9094+4]..[218,9094+54])
+            Psig_value
+            value_description "find_last" (stdlib/templates/map.template.mli[218,9094+8]..[218,9094+17]) (stdlib/templates/map.template.mli[218,9094+4]..[218,9094+54])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[219,9149+4]..[222,9355+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[219,9149+4]..[222,9355+22])
+                      Pexp_constant PConst_string(" [find_last ~f m], where [f] is a monotonically decreasing function,\n        returns the binding of [m] with the highest key [k] such that [f k],\n        or raises [Not_found] if no such key exists.\n        @since 4.05 ",(stdlib/templates/map.template.mli[219,9149+4]..[222,9355+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[218,9094+19]..[218,9094+54])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[218,9094+22]..[218,9094+33])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[218,9094+22]..[218,9094+25])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[218,9094+22]..[218,9094+25])
+                    []
+                  core_type (stdlib/templates/map.template.mli[218,9094+29]..[218,9094+33])
+                    Ptyp_constr "bool" (stdlib/templates/map.template.mli[218,9094+29]..[218,9094+33])
+                    []
+                core_type (stdlib/templates/map.template.mli[218,9094+38]..[218,9094+54])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[218,9094+38]..[218,9094+42])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[218,9094+41]..[218,9094+42])
+                    [
+                      core_type (stdlib/templates/map.template.mli[218,9094+38]..[218,9094+40])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[218,9094+46]..[218,9094+54])
+                    Ptyp_tuple
+                    [
+                      core_type (stdlib/templates/map.template.mli[218,9094+46]..[218,9094+49])
+                        Ptyp_constr "key" (stdlib/templates/map.template.mli[218,9094+46]..[218,9094+49])
+                        []
+                      core_type (stdlib/templates/map.template.mli[218,9094+52]..[218,9094+54])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[224,9379+4]..[224,9379+67])
+            Psig_value
+            value_description "find_last_opt" (stdlib/templates/map.template.mli[224,9379+8]..[224,9379+21]) (stdlib/templates/map.template.mli[224,9379+4]..[224,9379+67])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[225,9447+4]..[229,9674+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[225,9447+4]..[229,9674+22])
+                      Pexp_constant PConst_string(" [find_last_opt ~f m], where [f] is a monotonically decreasing\n        function, returns an option containing the binding of [m] with\n        the highest key [k] such that [f k], or [None] if no such key\n        exists.\n        @since 4.05 ",(stdlib/templates/map.template.mli[225,9447+4]..[229,9674+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[224,9379+23]..[224,9379+67])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[224,9379+26]..[224,9379+37])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[224,9379+26]..[224,9379+29])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[224,9379+26]..[224,9379+29])
+                    []
+                  core_type (stdlib/templates/map.template.mli[224,9379+33]..[224,9379+37])
+                    Ptyp_constr "bool" (stdlib/templates/map.template.mli[224,9379+33]..[224,9379+37])
+                    []
+                core_type (stdlib/templates/map.template.mli[224,9379+42]..[224,9379+67])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[224,9379+42]..[224,9379+46])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[224,9379+45]..[224,9379+46])
+                    [
+                      core_type (stdlib/templates/map.template.mli[224,9379+42]..[224,9379+44])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[224,9379+50]..[224,9379+67])
+                    Ptyp_constr "option" (stdlib/templates/map.template.mli[224,9379+61]..[224,9379+67])
+                    [
+                      core_type (stdlib/templates/map.template.mli[224,9379+51]..[224,9379+59])
+                        Ptyp_tuple
+                        [
+                          core_type (stdlib/templates/map.template.mli[224,9379+51]..[224,9379+54])
+                            Ptyp_constr "key" (stdlib/templates/map.template.mli[224,9379+51]..[224,9379+54])
+                            []
+                          core_type (stdlib/templates/map.template.mli[224,9379+57]..[224,9379+59])
+                            Ptyp_var a
+                        ]
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[231,9698+4]..[231,9698+36])
+            Psig_attribute "ocaml.text"
+            [
+              structure_item (stdlib/templates/map.template.mli[231,9698+4]..[231,9698+36])
+                Pstr_eval
+                expression (stdlib/templates/map.template.mli[231,9698+4]..[231,9698+36])
+                  Pexp_constant PConst_string(" {1:traversing Traversing} ",(stdlib/templates/map.template.mli[231,9698+4]..[231,9698+36]),None)
+            ]
+          signature_item (stdlib/templates/map.template.mli[233,9736+4]..[233,9736+60])
+            Psig_value
+            value_description "iter" (stdlib/templates/map.template.mli[233,9736+8]..[233,9736+12]) (stdlib/templates/map.template.mli[233,9736+4]..[233,9736+60])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[234,9797+4]..[237,10004+72])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[234,9797+4]..[237,10004+72])
+                      Pexp_constant PConst_string(" [iter ~f m] applies [f] to all bindings in map [m].\n        [f] receives the key as first argument, and the associated value\n        as second argument.  The bindings are passed to [f] in increasing\n        order with respect to the ordering over the type of the keys. ",(stdlib/templates/map.template.mli[234,9797+4]..[237,10004+72]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[233,9736+14]..[233,9736+60])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[233,9736+17]..[233,9736+43])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/map.template.mli[233,9736+21]..[233,9736+24])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[233,9736+21]..[233,9736+24])
+                    []
+                  core_type (stdlib/templates/map.template.mli[233,9736+28]..[233,9736+43])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/map.template.mli[233,9736+33]..[233,9736+35])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[233,9736+39]..[233,9736+43])
+                      Ptyp_constr "unit" (stdlib/templates/map.template.mli[233,9736+39]..[233,9736+43])
+                      []
+                core_type (stdlib/templates/map.template.mli[233,9736+48]..[233,9736+60])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[233,9736+48]..[233,9736+52])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[233,9736+51]..[233,9736+52])
+                    [
+                      core_type (stdlib/templates/map.template.mli[233,9736+48]..[233,9736+50])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[233,9736+56]..[233,9736+60])
+                    Ptyp_constr "unit" (stdlib/templates/map.template.mli[233,9736+56]..[233,9736+60])
+                    []
+              []
+          signature_item (stdlib/templates/map.template.mli[239,10078+4]..[239,10078+73])
+            Psig_value
+            value_description "fold" (stdlib/templates/map.template.mli[239,10078+8]..[239,10078+12]) (stdlib/templates/map.template.mli[239,10078+4]..[239,10078+73])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[240,10152+4]..[242,10284+74])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[240,10152+4]..[242,10284+74])
+                      Pexp_constant PConst_string(" [fold ~f m ~init] computes [(f kN dN ... (f k1 d1 init)...)],\n        where [k1 ... kN] are the keys of all bindings in [m]\n        (in increasing order), and [d1 ... dN] are the associated data. ",(stdlib/templates/map.template.mli[240,10152+4]..[242,10284+74]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[239,10078+14]..[239,10078+73])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[239,10078+17]..[239,10078+47])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/map.template.mli[239,10078+21]..[239,10078+24])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[239,10078+21]..[239,10078+24])
+                    []
+                  core_type (stdlib/templates/map.template.mli[239,10078+28]..[239,10078+47])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/map.template.mli[239,10078+33]..[239,10078+35])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[239,10078+39]..[239,10078+47])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (stdlib/templates/map.template.mli[239,10078+39]..[239,10078+41])
+                        Ptyp_var b
+                      core_type (stdlib/templates/map.template.mli[239,10078+45]..[239,10078+47])
+                        Ptyp_var b
+                core_type (stdlib/templates/map.template.mli[239,10078+52]..[239,10078+73])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[239,10078+52]..[239,10078+56])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[239,10078+55]..[239,10078+56])
+                    [
+                      core_type (stdlib/templates/map.template.mli[239,10078+52]..[239,10078+54])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[239,10078+60]..[239,10078+73])
+                    Ptyp_arrow
+                    Labelled "init"
+                    core_type (stdlib/templates/map.template.mli[239,10078+65]..[239,10078+67])
+                      Ptyp_var b
+                    core_type (stdlib/templates/map.template.mli[239,10078+71]..[239,10078+73])
+                      Ptyp_var b
+              []
+          signature_item (stdlib/templates/map.template.mli[244,10360+4]..[244,10360+40])
+            Psig_attribute "ocaml.text"
+            [
+              structure_item (stdlib/templates/map.template.mli[244,10360+4]..[244,10360+40])
+                Pstr_eval
+                expression (stdlib/templates/map.template.mli[244,10360+4]..[244,10360+40])
+                  Pexp_constant PConst_string(" {1:transforming Transforming} ",(stdlib/templates/map.template.mli[244,10360+4]..[244,10360+40]),None)
+            ]
+          signature_item (stdlib/templates/map.template.mli[246,10402+4]..[246,10402+41])
+            Psig_value
+            value_description "map" (stdlib/templates/map.template.mli[246,10402+8]..[246,10402+11]) (stdlib/templates/map.template.mli[246,10402+4]..[246,10402+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[247,10444+4]..[251,10697+66])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[247,10444+4]..[251,10697+66])
+                      Pexp_constant PConst_string(" [map ~f m] returns a map with same domain as [m], where the\n        associated value [a] of all bindings of [m] has been\n        replaced by the result of the application of [f] to [a].\n        The bindings are passed to [f] in increasing order\n        with respect to the ordering over the type of the keys. ",(stdlib/templates/map.template.mli[247,10444+4]..[251,10697+66]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[246,10402+13]..[246,10402+41])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[246,10402+16]..[246,10402+24])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[246,10402+16]..[246,10402+18])
+                    Ptyp_var a
+                  core_type (stdlib/templates/map.template.mli[246,10402+22]..[246,10402+24])
+                    Ptyp_var b
+                core_type (stdlib/templates/map.template.mli[246,10402+29]..[246,10402+41])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[246,10402+29]..[246,10402+33])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[246,10402+32]..[246,10402+33])
+                    [
+                      core_type (stdlib/templates/map.template.mli[246,10402+29]..[246,10402+31])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[246,10402+37]..[246,10402+41])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[246,10402+40]..[246,10402+41])
+                    [
+                      core_type (stdlib/templates/map.template.mli[246,10402+37]..[246,10402+39])
+                        Ptyp_var b
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[253,10765+4]..[253,10765+49])
+            Psig_value
+            value_description "mapi" (stdlib/templates/map.template.mli[253,10765+8]..[253,10765+12]) (stdlib/templates/map.template.mli[253,10765+4]..[253,10765+49])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[254,10815+4]..[255,10887+68])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[254,10815+4]..[255,10887+68])
+                      Pexp_constant PConst_string(" Same as {!map}, but the function receives as arguments both the\n        key and the associated value for each binding of the map. ",(stdlib/templates/map.template.mli[254,10815+4]..[255,10887+68]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[253,10765+14]..[253,10765+49])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[253,10765+17]..[253,10765+32])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[253,10765+17]..[253,10765+20])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[253,10765+17]..[253,10765+20])
+                    []
+                  core_type (stdlib/templates/map.template.mli[253,10765+24]..[253,10765+32])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[253,10765+24]..[253,10765+26])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[253,10765+30]..[253,10765+32])
+                      Ptyp_var b
+                core_type (stdlib/templates/map.template.mli[253,10765+37]..[253,10765+49])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[253,10765+37]..[253,10765+41])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[253,10765+40]..[253,10765+41])
+                    [
+                      core_type (stdlib/templates/map.template.mli[253,10765+37]..[253,10765+39])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[253,10765+45]..[253,10765+49])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[253,10765+48]..[253,10765+49])
+                    [
+                      core_type (stdlib/templates/map.template.mli[253,10765+45]..[253,10765+47])
+                        Ptyp_var b
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[257,10957+4]..[257,10957+53])
+            Psig_value
+            value_description "filter" (stdlib/templates/map.template.mli[257,10957+8]..[257,10957+14]) (stdlib/templates/map.template.mli[257,10957+4]..[257,10957+53])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[258,11011+4]..[263,11276+58])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[258,11011+4]..[263,11276+58])
+                      Pexp_constant PConst_string(" [filter ~f m] returns the map with all the bindings in [m]\n        that satisfy predicate [p]. If every binding in [m] satisfies [f],\n        [m] is returned unchanged (the result of the function is then\n        physically equal to [m])\n        @since 3.12\n        @before 4.03 Physical equality was not ensured. ",(stdlib/templates/map.template.mli[258,11011+4]..[263,11276+58]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[257,10957+16]..[257,10957+53])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[257,10957+19]..[257,10957+36])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[257,10957+19]..[257,10957+22])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[257,10957+19]..[257,10957+22])
+                    []
+                  core_type (stdlib/templates/map.template.mli[257,10957+26]..[257,10957+36])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[257,10957+26]..[257,10957+28])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[257,10957+32]..[257,10957+36])
+                      Ptyp_constr "bool" (stdlib/templates/map.template.mli[257,10957+32]..[257,10957+36])
+                      []
+                core_type (stdlib/templates/map.template.mli[257,10957+41]..[257,10957+53])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[257,10957+41]..[257,10957+45])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[257,10957+44]..[257,10957+45])
+                    [
+                      core_type (stdlib/templates/map.template.mli[257,10957+41]..[257,10957+43])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[257,10957+49]..[257,10957+53])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[257,10957+52]..[257,10957+53])
+                    [
+                      core_type (stdlib/templates/map.template.mli[257,10957+49]..[257,10957+51])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[265,11336+4]..[265,11336+62])
+            Psig_value
+            value_description "filter_map" (stdlib/templates/map.template.mli[265,11336+8]..[265,11336+18]) (stdlib/templates/map.template.mli[265,11336+4]..[265,11336+62])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[266,11399+4]..[282,12056+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[266,11399+4]..[282,12056+22])
+                      Pexp_constant PConst_string(" [filter_map ~f m] applies the function [f] to every binding of\n        [m], and builds a map from the results. For each binding\n        [(k, v)] in the input map:\n        - if [f k v] is [None] then [k] is not in the result,\n        - if [f k v] is [Some v'] then the binding [(k, v')]\n          is in the output map.\n\n        For example, the following function on maps whose values are lists\n        {[\n        filter_map\n          (fun _k li -> match li with [] -> None | _::tl -> Some tl)\n          m\n        ]}\n        drops all bindings of [m] whose value is an empty list, and pops\n        the first element of each value that is non-empty.\n\n        @since 4.11 ",(stdlib/templates/map.template.mli[266,11399+4]..[282,12056+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[265,11336+20]..[265,11336+62])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[265,11336+23]..[265,11336+45])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[265,11336+23]..[265,11336+26])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[265,11336+23]..[265,11336+26])
+                    []
+                  core_type (stdlib/templates/map.template.mli[265,11336+30]..[265,11336+45])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[265,11336+30]..[265,11336+32])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[265,11336+36]..[265,11336+45])
+                      Ptyp_constr "option" (stdlib/templates/map.template.mli[265,11336+39]..[265,11336+45])
+                      [
+                        core_type (stdlib/templates/map.template.mli[265,11336+36]..[265,11336+38])
+                          Ptyp_var b
+                      ]
+                core_type (stdlib/templates/map.template.mli[265,11336+50]..[265,11336+62])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[265,11336+50]..[265,11336+54])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[265,11336+53]..[265,11336+54])
+                    [
+                      core_type (stdlib/templates/map.template.mli[265,11336+50]..[265,11336+52])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[265,11336+58]..[265,11336+62])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[265,11336+61]..[265,11336+62])
+                    [
+                      core_type (stdlib/templates/map.template.mli[265,11336+58]..[265,11336+60])
+                        Ptyp_var b
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[284,12080+4]..[284,12080+63])
+            Psig_value
+            value_description "partition" (stdlib/templates/map.template.mli[284,12080+8]..[284,12080+17]) (stdlib/templates/map.template.mli[284,12080+4]..[284,12080+63])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[285,12144+4]..[289,12378+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[285,12144+4]..[289,12378+22])
+                      Pexp_constant PConst_string(" [partition ~f m] returns a pair of maps [(m1, m2)], where\n        [m1] contains all the bindings of [m] that satisfy the\n        predicate [f], and [m2] is the map with all the bindings of\n        [m] that do not satisfy [f].\n        @since 3.12 ",(stdlib/templates/map.template.mli[285,12144+4]..[289,12378+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[284,12080+19]..[284,12080+63])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[284,12080+22]..[284,12080+39])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[284,12080+22]..[284,12080+25])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[284,12080+22]..[284,12080+25])
+                    []
+                  core_type (stdlib/templates/map.template.mli[284,12080+29]..[284,12080+39])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[284,12080+29]..[284,12080+31])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[284,12080+35]..[284,12080+39])
+                      Ptyp_constr "bool" (stdlib/templates/map.template.mli[284,12080+35]..[284,12080+39])
+                      []
+                core_type (stdlib/templates/map.template.mli[284,12080+44]..[284,12080+63])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[284,12080+44]..[284,12080+48])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[284,12080+47]..[284,12080+48])
+                    [
+                      core_type (stdlib/templates/map.template.mli[284,12080+44]..[284,12080+46])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[284,12080+52]..[284,12080+63])
+                    Ptyp_tuple
+                    [
+                      core_type (stdlib/templates/map.template.mli[284,12080+52]..[284,12080+56])
+                        Ptyp_constr "t" (stdlib/templates/map.template.mli[284,12080+55]..[284,12080+56])
+                        [
+                          core_type (stdlib/templates/map.template.mli[284,12080+52]..[284,12080+54])
+                            Ptyp_var a
+                        ]
+                      core_type (stdlib/templates/map.template.mli[284,12080+59]..[284,12080+63])
+                        Ptyp_constr "t" (stdlib/templates/map.template.mli[284,12080+62]..[284,12080+63])
+                        [
+                          core_type (stdlib/templates/map.template.mli[284,12080+59]..[284,12080+61])
+                            Ptyp_var a
+                        ]
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[291,12402+4]..[291,12402+53])
+            Psig_value
+            value_description "split" (stdlib/templates/map.template.mli[291,12402+8]..[291,12402+13]) (stdlib/templates/map.template.mli[291,12402+4]..[291,12402+53])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[292,12456+4]..[299,12826+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[292,12456+4]..[299,12826+22])
+                      Pexp_constant PConst_string(" [split x m] returns a triple [(l, data, r)], where\n          [l] is the map with all the bindings of [m] whose key\n        is strictly less than [x];\n          [r] is the map with all the bindings of [m] whose key\n        is strictly greater than [x];\n          [data] is [None] if [m] contains no binding for [x],\n          or [Some v] if [m] binds [v] to [x].\n        @since 3.12 ",(stdlib/templates/map.template.mli[292,12456+4]..[299,12826+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[291,12402+15]..[291,12402+53])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[291,12402+15]..[291,12402+18])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[291,12402+15]..[291,12402+18])
+                  []
+                core_type (stdlib/templates/map.template.mli[291,12402+22]..[291,12402+53])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[291,12402+22]..[291,12402+26])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[291,12402+25]..[291,12402+26])
+                    [
+                      core_type (stdlib/templates/map.template.mli[291,12402+22]..[291,12402+24])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[291,12402+30]..[291,12402+53])
+                    Ptyp_tuple
+                    [
+                      core_type (stdlib/templates/map.template.mli[291,12402+30]..[291,12402+34])
+                        Ptyp_constr "t" (stdlib/templates/map.template.mli[291,12402+33]..[291,12402+34])
+                        [
+                          core_type (stdlib/templates/map.template.mli[291,12402+30]..[291,12402+32])
+                            Ptyp_var a
+                        ]
+                      core_type (stdlib/templates/map.template.mli[291,12402+37]..[291,12402+46])
+                        Ptyp_constr "option" (stdlib/templates/map.template.mli[291,12402+40]..[291,12402+46])
+                        [
+                          core_type (stdlib/templates/map.template.mli[291,12402+37]..[291,12402+39])
+                            Ptyp_var a
+                        ]
+                      core_type (stdlib/templates/map.template.mli[291,12402+49]..[291,12402+53])
+                        Ptyp_constr "t" (stdlib/templates/map.template.mli[291,12402+52]..[291,12402+53])
+                        [
+                          core_type (stdlib/templates/map.template.mli[291,12402+49]..[291,12402+51])
+                            Ptyp_var a
+                        ]
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[301,12850+4]..[301,12850+52])
+            Psig_attribute "ocaml.text"
+            [
+              structure_item (stdlib/templates/map.template.mli[301,12850+4]..[301,12850+52])
+                Pstr_eval
+                expression (stdlib/templates/map.template.mli[301,12850+4]..[301,12850+52])
+                  Pexp_constant PConst_string(" {1:predicates Predicates and comparisons} ",(stdlib/templates/map.template.mli[301,12850+4]..[301,12850+52]),None)
+            ]
+          signature_item (stdlib/templates/map.template.mli[303,12904+4]..[303,12904+30])
+            Psig_value
+            value_description "is_empty" (stdlib/templates/map.template.mli[303,12904+8]..[303,12904+16]) (stdlib/templates/map.template.mli[303,12904+4]..[303,12904+30])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[304,12935+4]..[304,12935+46])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[304,12935+4]..[304,12935+46])
+                      Pexp_constant PConst_string(" Test whether a map is empty or not. ",(stdlib/templates/map.template.mli[304,12935+4]..[304,12935+46]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[303,12904+18]..[303,12904+30])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[303,12904+18]..[303,12904+22])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[303,12904+21]..[303,12904+22])
+                  [
+                    core_type (stdlib/templates/map.template.mli[303,12904+18]..[303,12904+20])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[303,12904+26]..[303,12904+30])
+                  Ptyp_constr "bool" (stdlib/templates/map.template.mli[303,12904+26]..[303,12904+30])
+                  []
+              []
+          signature_item (stdlib/templates/map.template.mli[306,12983+4]..[306,12983+32])
+            Psig_value
+            value_description "mem" (stdlib/templates/map.template.mli[306,12983+8]..[306,12983+11]) (stdlib/templates/map.template.mli[306,12983+4]..[306,12983+32])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[307,13016+4]..[308,13084+33])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[307,13016+4]..[308,13084+33])
+                      Pexp_constant PConst_string(" [mem x m] returns [true] if [m] contains a binding for [x],\n        and [false] otherwise. ",(stdlib/templates/map.template.mli[307,13016+4]..[308,13084+33]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[306,12983+13]..[306,12983+32])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[306,12983+13]..[306,12983+16])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[306,12983+13]..[306,12983+16])
+                  []
+                core_type (stdlib/templates/map.template.mli[306,12983+20]..[306,12983+32])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[306,12983+20]..[306,12983+24])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[306,12983+23]..[306,12983+24])
+                    [
+                      core_type (stdlib/templates/map.template.mli[306,12983+20]..[306,12983+22])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[306,12983+28]..[306,12983+32])
+                    Ptyp_constr "bool" (stdlib/templates/map.template.mli[306,12983+28]..[306,12983+32])
+                    []
+              []
+          signature_item (stdlib/templates/map.template.mli[310,13119+4]..[310,13119+61])
+            Psig_value
+            value_description "equal" (stdlib/templates/map.template.mli[310,13119+8]..[310,13119+13]) (stdlib/templates/map.template.mli[310,13119+4]..[310,13119+61])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[311,13181+4]..[314,13385+45])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[311,13181+4]..[314,13385+45])
+                      Pexp_constant PConst_string(" [equal ~cmp m1 m2] tests whether the maps [m1] and [m2] are\n        equal, that is, contain equal keys and associate them with\n        equal data.  [cmp] is the equality predicate used to compare\n        the data associated with the keys. ",(stdlib/templates/map.template.mli[311,13181+4]..[314,13385+45]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[310,13119+15]..[310,13119+61])
+                Ptyp_arrow
+                Labelled "cmp"
+                core_type (stdlib/templates/map.template.mli[310,13119+20]..[310,13119+36])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[310,13119+20]..[310,13119+22])
+                    Ptyp_var a
+                  core_type (stdlib/templates/map.template.mli[310,13119+26]..[310,13119+36])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[310,13119+26]..[310,13119+28])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[310,13119+32]..[310,13119+36])
+                      Ptyp_constr "bool" (stdlib/templates/map.template.mli[310,13119+32]..[310,13119+36])
+                      []
+                core_type (stdlib/templates/map.template.mli[310,13119+41]..[310,13119+61])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[310,13119+41]..[310,13119+45])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[310,13119+44]..[310,13119+45])
+                    [
+                      core_type (stdlib/templates/map.template.mli[310,13119+41]..[310,13119+43])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[310,13119+49]..[310,13119+61])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[310,13119+49]..[310,13119+53])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[310,13119+52]..[310,13119+53])
+                      [
+                        core_type (stdlib/templates/map.template.mli[310,13119+49]..[310,13119+51])
+                          Ptyp_var a
+                      ]
+                    core_type (stdlib/templates/map.template.mli[310,13119+57]..[310,13119+61])
+                      Ptyp_constr "bool" (stdlib/templates/map.template.mli[310,13119+57]..[310,13119+61])
+                      []
+              []
+          signature_item (stdlib/templates/map.template.mli[316,13432+4]..[316,13432+61])
+            Psig_value
+            value_description "compare" (stdlib/templates/map.template.mli[316,13432+8]..[316,13432+15]) (stdlib/templates/map.template.mli[316,13432+4]..[316,13432+61])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[317,13494+4]..[318,13571+75])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[317,13494+4]..[318,13571+75])
+                      Pexp_constant PConst_string(" Total ordering between maps.  The first argument is a total ordering\n        used to compare data associated with equal keys in the two maps. ",(stdlib/templates/map.template.mli[317,13494+4]..[318,13571+75]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[316,13432+17]..[316,13432+61])
+                Ptyp_arrow
+                Labelled "cmp"
+                core_type (stdlib/templates/map.template.mli[316,13432+22]..[316,13432+37])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[316,13432+22]..[316,13432+24])
+                    Ptyp_var a
+                  core_type (stdlib/templates/map.template.mli[316,13432+28]..[316,13432+37])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[316,13432+28]..[316,13432+30])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[316,13432+34]..[316,13432+37])
+                      Ptyp_constr "int" (stdlib/templates/map.template.mli[316,13432+34]..[316,13432+37])
+                      []
+                core_type (stdlib/templates/map.template.mli[316,13432+42]..[316,13432+61])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[316,13432+42]..[316,13432+46])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[316,13432+45]..[316,13432+46])
+                    [
+                      core_type (stdlib/templates/map.template.mli[316,13432+42]..[316,13432+44])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[316,13432+50]..[316,13432+61])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[316,13432+50]..[316,13432+54])
+                      Ptyp_constr "t" (stdlib/templates/map.template.mli[316,13432+53]..[316,13432+54])
+                      [
+                        core_type (stdlib/templates/map.template.mli[316,13432+50]..[316,13432+52])
+                          Ptyp_var a
+                      ]
+                    core_type (stdlib/templates/map.template.mli[316,13432+58]..[316,13432+61])
+                      Ptyp_constr "int" (stdlib/templates/map.template.mli[316,13432+58]..[316,13432+61])
+                      []
+              []
+          signature_item (stdlib/templates/map.template.mli[320,13648+4]..[320,13648+54])
+            Psig_value
+            value_description "for_all" (stdlib/templates/map.template.mli[320,13648+8]..[320,13648+15]) (stdlib/templates/map.template.mli[320,13648+4]..[320,13648+54])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[321,13703+4]..[323,13799+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[321,13703+4]..[323,13799+22])
+                      Pexp_constant PConst_string(" [for_all ~f m] checks if all the bindings of the map\n        satisfy the predicate [f].\n        @since 3.12 ",(stdlib/templates/map.template.mli[321,13703+4]..[323,13799+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[320,13648+17]..[320,13648+54])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[320,13648+20]..[320,13648+37])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[320,13648+20]..[320,13648+23])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[320,13648+20]..[320,13648+23])
+                    []
+                  core_type (stdlib/templates/map.template.mli[320,13648+27]..[320,13648+37])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[320,13648+27]..[320,13648+29])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[320,13648+33]..[320,13648+37])
+                      Ptyp_constr "bool" (stdlib/templates/map.template.mli[320,13648+33]..[320,13648+37])
+                      []
+                core_type (stdlib/templates/map.template.mli[320,13648+42]..[320,13648+54])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[320,13648+42]..[320,13648+46])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[320,13648+45]..[320,13648+46])
+                    [
+                      core_type (stdlib/templates/map.template.mli[320,13648+42]..[320,13648+44])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[320,13648+50]..[320,13648+54])
+                    Ptyp_constr "bool" (stdlib/templates/map.template.mli[320,13648+50]..[320,13648+54])
+                    []
+              []
+          signature_item (stdlib/templates/map.template.mli[325,13823+4]..[325,13823+53])
+            Psig_value
+            value_description "exists" (stdlib/templates/map.template.mli[325,13823+8]..[325,13823+14]) (stdlib/templates/map.template.mli[325,13823+4]..[325,13823+53])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[326,13877+4]..[328,13978+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[326,13877+4]..[328,13978+22])
+                      Pexp_constant PConst_string(" [exists ~f m] checks if at least one binding of the map\n        satisfies the predicate [f].\n        @since 3.12 ",(stdlib/templates/map.template.mli[326,13877+4]..[328,13978+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[325,13823+16]..[325,13823+53])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/map.template.mli[325,13823+19]..[325,13823+36])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[325,13823+19]..[325,13823+22])
+                    Ptyp_constr "key" (stdlib/templates/map.template.mli[325,13823+19]..[325,13823+22])
+                    []
+                  core_type (stdlib/templates/map.template.mli[325,13823+26]..[325,13823+36])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (stdlib/templates/map.template.mli[325,13823+26]..[325,13823+28])
+                      Ptyp_var a
+                    core_type (stdlib/templates/map.template.mli[325,13823+32]..[325,13823+36])
+                      Ptyp_constr "bool" (stdlib/templates/map.template.mli[325,13823+32]..[325,13823+36])
+                      []
+                core_type (stdlib/templates/map.template.mli[325,13823+41]..[325,13823+53])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[325,13823+41]..[325,13823+45])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[325,13823+44]..[325,13823+45])
+                    [
+                      core_type (stdlib/templates/map.template.mli[325,13823+41]..[325,13823+43])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[325,13823+49]..[325,13823+53])
+                    Ptyp_constr "bool" (stdlib/templates/map.template.mli[325,13823+49]..[325,13823+53])
+                    []
+              []
+          signature_item (stdlib/templates/map.template.mli[330,14002+4]..[330,14002+36])
+            Psig_attribute "ocaml.text"
+            [
+              structure_item (stdlib/templates/map.template.mli[330,14002+4]..[330,14002+36])
+                Pstr_eval
+                expression (stdlib/templates/map.template.mli[330,14002+4]..[330,14002+36])
+                  Pexp_constant PConst_string(" {1:converting Converting} ",(stdlib/templates/map.template.mli[330,14002+4]..[330,14002+36]),None)
+            ]
+          signature_item (stdlib/templates/map.template.mli[332,14040+4]..[332,14040+41])
+            Psig_value
+            value_description "to_list" (stdlib/templates/map.template.mli[332,14040+8]..[332,14040+15]) (stdlib/templates/map.template.mli[332,14040+4]..[332,14040+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[333,14082+4]..[334,14122+21])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[333,14082+4]..[334,14122+21])
+                      Pexp_constant PConst_string(" [to_list m] is {!bindings}[ m].\n        @since 5.1 ",(stdlib/templates/map.template.mli[333,14082+4]..[334,14122+21]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[332,14040+18]..[332,14040+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[332,14040+18]..[332,14040+22])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[332,14040+21]..[332,14040+22])
+                  [
+                    core_type (stdlib/templates/map.template.mli[332,14040+18]..[332,14040+20])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[332,14040+26]..[332,14040+41])
+                  Ptyp_constr "list" (stdlib/templates/map.template.mli[332,14040+37]..[332,14040+41])
+                  [
+                    core_type (stdlib/templates/map.template.mli[332,14040+27]..[332,14040+35])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[332,14040+27]..[332,14040+30])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[332,14040+27]..[332,14040+30])
+                          []
+                        core_type (stdlib/templates/map.template.mli[332,14040+33]..[332,14040+35])
+                          Ptyp_var a
+                      ]
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[336,14145+4]..[336,14145+41])
+            Psig_value
+            value_description "of_list" (stdlib/templates/map.template.mli[336,14145+8]..[336,14145+15]) (stdlib/templates/map.template.mli[336,14145+4]..[336,14145+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[337,14187+4]..[340,14341+21])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[337,14187+4]..[340,14341+21])
+                      Pexp_constant PConst_string(" [of_list bs] adds the bindings of [bs] to the empty map,\n        in list order (if a key is bound twice in [bs] the last one\n        takes over).\n        @since 5.1 ",(stdlib/templates/map.template.mli[337,14187+4]..[340,14341+21]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[336,14145+18]..[336,14145+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[336,14145+18]..[336,14145+33])
+                  Ptyp_constr "list" (stdlib/templates/map.template.mli[336,14145+29]..[336,14145+33])
+                  [
+                    core_type (stdlib/templates/map.template.mli[336,14145+19]..[336,14145+27])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[336,14145+19]..[336,14145+22])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[336,14145+19]..[336,14145+22])
+                          []
+                        core_type (stdlib/templates/map.template.mli[336,14145+25]..[336,14145+27])
+                          Ptyp_var a
+                      ]
+                  ]
+                core_type (stdlib/templates/map.template.mli[336,14145+37]..[336,14145+41])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[336,14145+40]..[336,14145+41])
+                  [
+                    core_type (stdlib/templates/map.template.mli[336,14145+37]..[336,14145+39])
+                      Ptyp_var a
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[342,14364+4]..[342,14364+41])
+            Psig_value
+            value_description "to_seq" (stdlib/templates/map.template.mli[342,14364+8]..[342,14364+14]) (stdlib/templates/map.template.mli[342,14364+4]..[342,14364+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[343,14406+4]..[344,14467+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[343,14406+4]..[344,14467+22])
+                      Pexp_constant PConst_string(" Iterate on the whole map, in ascending order of keys\n        @since 4.07 ",(stdlib/templates/map.template.mli[343,14406+4]..[344,14467+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[342,14364+17]..[342,14364+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[342,14364+17]..[342,14364+21])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[342,14364+20]..[342,14364+21])
+                  [
+                    core_type (stdlib/templates/map.template.mli[342,14364+17]..[342,14364+19])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[342,14364+25]..[342,14364+41])
+                  Ptyp_constr "Seq.t" (stdlib/templates/map.template.mli[342,14364+36]..[342,14364+41])
+                  [
+                    core_type (stdlib/templates/map.template.mli[342,14364+26]..[342,14364+34])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[342,14364+26]..[342,14364+29])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[342,14364+26]..[342,14364+29])
+                          []
+                        core_type (stdlib/templates/map.template.mli[342,14364+32]..[342,14364+34])
+                          Ptyp_var a
+                      ]
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[346,14491+4]..[346,14491+45])
+            Psig_value
+            value_description "to_rev_seq" (stdlib/templates/map.template.mli[346,14491+8]..[346,14491+18]) (stdlib/templates/map.template.mli[346,14491+4]..[346,14491+45])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[347,14537+4]..[348,14599+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[347,14537+4]..[348,14599+22])
+                      Pexp_constant PConst_string(" Iterate on the whole map, in descending order of keys\n        @since 4.12 ",(stdlib/templates/map.template.mli[347,14537+4]..[348,14599+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[346,14491+21]..[346,14491+45])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[346,14491+21]..[346,14491+25])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[346,14491+24]..[346,14491+25])
+                  [
+                    core_type (stdlib/templates/map.template.mli[346,14491+21]..[346,14491+23])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/map.template.mli[346,14491+29]..[346,14491+45])
+                  Ptyp_constr "Seq.t" (stdlib/templates/map.template.mli[346,14491+40]..[346,14491+45])
+                  [
+                    core_type (stdlib/templates/map.template.mli[346,14491+30]..[346,14491+38])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[346,14491+30]..[346,14491+33])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[346,14491+30]..[346,14491+33])
+                          []
+                        core_type (stdlib/templates/map.template.mli[346,14491+36]..[346,14491+38])
+                          Ptyp_var a
+                      ]
+                  ]
+              []
+          signature_item (stdlib/templates/map.template.mli[350,14623+4]..[350,14623+53])
+            Psig_value
+            value_description "to_seq_from" (stdlib/templates/map.template.mli[350,14623+8]..[350,14623+19]) (stdlib/templates/map.template.mli[350,14623+4]..[350,14623+53])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[351,14677+4]..[353,14807+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[351,14677+4]..[353,14807+22])
+                      Pexp_constant PConst_string(" [to_seq_from k m] iterates on a subset of the bindings of [m],\n        in ascending order of keys, from key [k] or above.\n        @since 4.07 ",(stdlib/templates/map.template.mli[351,14677+4]..[353,14807+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[350,14623+22]..[350,14623+53])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[350,14623+22]..[350,14623+25])
+                  Ptyp_constr "key" (stdlib/templates/map.template.mli[350,14623+22]..[350,14623+25])
+                  []
+                core_type (stdlib/templates/map.template.mli[350,14623+29]..[350,14623+53])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[350,14623+29]..[350,14623+33])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[350,14623+32]..[350,14623+33])
+                    [
+                      core_type (stdlib/templates/map.template.mli[350,14623+29]..[350,14623+31])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[350,14623+37]..[350,14623+53])
+                    Ptyp_constr "Seq.t" (stdlib/templates/map.template.mli[350,14623+48]..[350,14623+53])
+                    [
+                      core_type (stdlib/templates/map.template.mli[350,14623+38]..[350,14623+46])
+                        Ptyp_tuple
+                        [
+                          core_type (stdlib/templates/map.template.mli[350,14623+38]..[350,14623+41])
+                            Ptyp_constr "key" (stdlib/templates/map.template.mli[350,14623+38]..[350,14623+41])
+                            []
+                          core_type (stdlib/templates/map.template.mli[350,14623+44]..[350,14623+46])
+                            Ptyp_var a
+                        ]
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[355,14831+4]..[355,14831+50])
+            Psig_value
+            value_description "add_seq" (stdlib/templates/map.template.mli[355,14831+8]..[355,14831+15]) (stdlib/templates/map.template.mli[355,14831+4]..[355,14831+50])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[356,14882+4]..[357,14935+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[356,14882+4]..[357,14935+22])
+                      Pexp_constant PConst_string(" Add the given bindings to the map, in order.\n        @since 4.07 ",(stdlib/templates/map.template.mli[356,14882+4]..[357,14935+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[355,14831+18]..[355,14831+50])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[355,14831+18]..[355,14831+34])
+                  Ptyp_constr "Seq.t" (stdlib/templates/map.template.mli[355,14831+29]..[355,14831+34])
+                  [
+                    core_type (stdlib/templates/map.template.mli[355,14831+19]..[355,14831+27])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[355,14831+19]..[355,14831+22])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[355,14831+19]..[355,14831+22])
+                          []
+                        core_type (stdlib/templates/map.template.mli[355,14831+25]..[355,14831+27])
+                          Ptyp_var a
+                      ]
+                  ]
+                core_type (stdlib/templates/map.template.mli[355,14831+38]..[355,14831+50])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/map.template.mli[355,14831+38]..[355,14831+42])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[355,14831+41]..[355,14831+42])
+                    [
+                      core_type (stdlib/templates/map.template.mli[355,14831+38]..[355,14831+40])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/map.template.mli[355,14831+46]..[355,14831+50])
+                    Ptyp_constr "t" (stdlib/templates/map.template.mli[355,14831+49]..[355,14831+50])
+                    [
+                      core_type (stdlib/templates/map.template.mli[355,14831+46]..[355,14831+48])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/map.template.mli[359,14959+4]..[359,14959+41])
+            Psig_value
+            value_description "of_seq" (stdlib/templates/map.template.mli[359,14959+8]..[359,14959+14]) (stdlib/templates/map.template.mli[359,14959+4]..[359,14959+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/map.template.mli[360,15001+4]..[361,15045+22])
+                    Pstr_eval
+                    expression (stdlib/templates/map.template.mli[360,15001+4]..[361,15045+22])
+                      Pexp_constant PConst_string(" Build a map from the given bindings\n        @since 4.07 ",(stdlib/templates/map.template.mli[360,15001+4]..[361,15045+22]),None)
+                ]
+              core_type (stdlib/templates/map.template.mli[359,14959+17]..[359,14959+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/map.template.mli[359,14959+17]..[359,14959+33])
+                  Ptyp_constr "Seq.t" (stdlib/templates/map.template.mli[359,14959+28]..[359,14959+33])
+                  [
+                    core_type (stdlib/templates/map.template.mli[359,14959+18]..[359,14959+26])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/map.template.mli[359,14959+18]..[359,14959+21])
+                          Ptyp_constr "key" (stdlib/templates/map.template.mli[359,14959+18]..[359,14959+21])
+                          []
+                        core_type (stdlib/templates/map.template.mli[359,14959+24]..[359,14959+26])
+                          Ptyp_var a
+                      ]
+                  ]
+                core_type (stdlib/templates/map.template.mli[359,14959+37]..[359,14959+41])
+                  Ptyp_constr "t" (stdlib/templates/map.template.mli[359,14959+40]..[359,14959+41])
+                  [
+                    core_type (stdlib/templates/map.template.mli[359,14959+37]..[359,14959+39])
+                      Ptyp_var a
+                  ]
+              []
+        ]
+  signature_item (stdlib/templates/map.template.mli[365,15123+0]..[365,15123+57])
+    Psig_module "Make" (stdlib/templates/map.template.mli[365,15123+7]..[365,15123+11])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/map.template.mli[366,15181+0]..[367,15241+35])
+            Pstr_eval
+            expression (stdlib/templates/map.template.mli[366,15181+0]..[367,15241+35])
+              Pexp_constant PConst_string(" Functor building an implementation of the map structure\n   given a totally ordered type. ",(stdlib/templates/map.template.mli[366,15181+0]..[367,15241+35]),None)
+        ]
+    module_type (stdlib/templates/map.template.mli[365,15123+12]..[365,15123+57])
+      Pmty_functor "Ord" (stdlib/templates/map.template.mli[365,15123+13]..[365,15123+16])
+      module_type (stdlib/templates/map.template.mli[365,15123+19]..[365,15123+30])
+        Pmty_ident "OrderedType" (stdlib/templates/map.template.mli[365,15123+19]..[365,15123+30])
+      module_type (stdlib/templates/map.template.mli[365,15123+34]..[365,15123+57])
+        Pmty_with
+        module_type (stdlib/templates/map.template.mli[365,15123+34]..[365,15123+35])
+          Pmty_ident "S" (stdlib/templates/map.template.mli[365,15123+34]..[365,15123+35])
+        [
+          Pwith_type "key" (stdlib/templates/map.template.mli[365,15123+46]..[365,15123+49])
+            type_declaration "key" (stdlib/templates/map.template.mli[365,15123+46]..[365,15123+49]) (stdlib/templates/map.template.mli[365,15123+41]..[365,15123+57])
+              ptype_params =
+                []
+              ptype_cstrs =
+                []
+              ptype_kind =
+                Ptype_abstract
+              ptype_private = Public
+              ptype_manifest =
+                Some
+                  core_type (stdlib/templates/map.template.mli[365,15123+52]..[365,15123+57])
+                    Ptyp_constr "Ord.t" (stdlib/templates/map.template.mli[365,15123+52]..[365,15123+57])
+                    []
+        ]
+]
+

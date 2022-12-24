@@ -1,0 +1,2622 @@
+[
+  signature_item (stdlib/templates/hashtbl.template.mli[19,1225+0]..[42,2355+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[19,1225+0]..[42,2355+2])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[19,1225+0]..[42,2355+2])
+          Pexp_constant PConst_string(" Hash tables and hash functions.\n\n   Hash tables are hashed association tables, with in-place modification.\n   Because most operations on a hash table modify their input, they're\n   more commonly used in imperative code. The lookup of the value associated\n   with a key (see {!find}, {!find_opt}) is normally very fast, often faster\n   than the equivalent lookup in {!Map}.\n\n   The functors {!Make} and {!MakeSeeded} can be used when\n   performance or flexibility are key.\n   The user provides custom equality and hash functions for the key type,\n   and obtains a custom hash table type for this particular type of key.\n\n   {b Warning} a hash table is only as good as the hash function. A bad hash\n   function will turn the table into a degenerate association list,\n   with linear time lookup instead of constant time lookup.\n\n   The polymorphic {!t} hash table is useful in simpler cases or\n   in interactive environments. It uses the polymorphic {!hash} function\n   defined in the OCaml runtime (at the time of writing, it's SipHash),\n   as well as the polymorphic equality [(=)].\n\n   See {{!examples} the examples section}.\n",(stdlib/templates/hashtbl.template.mli[19,1225+0]..[42,2355+2]),None)
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[44,2359+0]..[44,2359+34])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[44,2359+0]..[44,2359+34])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[44,2359+0]..[44,2359+34])
+          Pexp_constant PConst_string(" {b Unsynchronized accesses} ",(stdlib/templates/hashtbl.template.mli[44,2359+0]..[44,2359+34]),None)
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[46,2395+0]..[48,2497+1])
+    Psig_attribute "alert"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[46,2395+10]..[47,2427+69])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[46,2395+10]..[47,2427+69])
+          Pexp_apply
+          expression (stdlib/templates/hashtbl.template.mli[46,2395+10]..[46,2395+31])
+            Pexp_ident "unsynchronized_access" (stdlib/templates/hashtbl.template.mli[46,2395+10]..[46,2395+31])
+          [
+            <arg>
+            Nolabel
+              expression (stdlib/templates/hashtbl.template.mli[47,2427+4]..[47,2427+69])
+                Pexp_constant PConst_string("Unsynchronized accesses to hash tables are a programming error.",(stdlib/templates/hashtbl.template.mli[47,2427+5]..[47,2427+68]),None)
+          ]
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[50,2500+1]..[54,2696+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[50,2500+1]..[54,2696+2])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[50,2500+1]..[54,2696+2])
+          Pexp_constant PConst_string("\n    Unsynchronized accesses to a hash table may lead to an invalid hash table\n    state. Thus, concurrent accesses to a hash tables must be synchronized\n    (for instance with a {!Mutex.t}).\n",(stdlib/templates/hashtbl.template.mli[50,2500+1]..[54,2696+2]),None)
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[57,2701+0]..[57,2701+28])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[57,2701+0]..[57,2701+28])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[57,2701+0]..[57,2701+28])
+          Pexp_constant PConst_string(" {1 Generic interface} ",(stdlib/templates/hashtbl.template.mli[57,2701+0]..[57,2701+28]),None)
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[60,2732+0]..[60,2732+17])
+    Psig_type Rec
+    [
+      type_declaration "t" (stdlib/templates/hashtbl.template.mli[60,2732+16]..[60,2732+17]) (stdlib/templates/hashtbl.template.mli[60,2732+0]..[60,2732+17])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/templates/hashtbl.template.mli[61,2750+0]..[61,2750+59])
+              Pstr_eval
+              expression (stdlib/templates/hashtbl.template.mli[61,2750+0]..[61,2750+59])
+                Pexp_constant PConst_string(" The type of hash tables from type ['a] to type ['b]. ",(stdlib/templates/hashtbl.template.mli[61,2750+0]..[61,2750+59]),None)
+          ]
+        ptype_params =
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[60,2732+7]..[60,2732+9])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[60,2732+12]..[60,2732+14])
+              Ptyp_var b
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[63,2811+0]..[64,2877+30])
+    Psig_value
+    value_description "create" (stdlib/templates/hashtbl.template.mli[63,2811+4]..[63,2811+10]) (stdlib/templates/hashtbl.template.mli[63,2811+0]..[64,2877+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[65,2908+0]..[100,4833+54])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[65,2908+0]..[100,4833+54])
+              Pexp_constant PConst_string(" [Hashtbl.create n] creates a new, empty hash table, with\n   initial size [n].  For best results, [n] should be on the\n   order of the expected number of elements that will be in\n   the table.  The table grows as needed, so [n] is just an\n   initial guess.\n\n   The optional [~random] parameter (a boolean) controls whether\n   the internal organization of the hash table is randomized at each\n   execution of [Hashtbl.create] or deterministic over all executions.\n\n   A hash table that is created with [~random] set to [false] uses a\n   fixed hash function ({!hash}) to distribute keys among\n   buckets.  As a consequence, collisions between keys happen\n   deterministically.  In Web-facing applications or other\n   security-sensitive applications, the deterministic collision\n   patterns can be exploited by a malicious user to create a\n   denial-of-service attack: the attacker sends input crafted to\n   create many collisions in the table, slowing the application down.\n\n   A hash table that is created with [~random] set to [true] uses the seeded\n   hash function {!seeded_hash} with a seed that is randomly chosen at hash\n   table creation time.  In effect, the hash function used is randomly\n   selected among [2^{30}] different hash functions.  All these hash\n   functions have different collision patterns, rendering ineffective the\n   denial-of-service attack described above.  However, because of\n   randomization, enumerating all elements of the hash table using {!fold}\n   or {!iter} is no longer deterministic: elements are enumerated in\n   different orders at different runs of the program.\n\n   If no [~random] parameter is given, hash tables are created\n   in non-random mode by default.  This default can be changed\n   either programmatically by calling {!randomize} or by\n   setting the [R] flag in the [OCAMLRUNPARAM] environment variable.\n\n   @before 4.00 the [~random] parameter was not present and all\n   hash tables were created in non-randomized mode. ",(stdlib/templates/hashtbl.template.mli[65,2908+0]..[100,4833+54]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[63,2811+13]..[64,2877+30])
+        Ptyp_arrow
+        Optional "random"
+        core_type (stdlib/templates/hashtbl.template.mli[63,2811+58]..[63,2811+62])
+          Ptyp_constr "bool" (stdlib/templates/hashtbl.template.mli[63,2811+58]..[63,2811+62])
+          []
+        core_type (stdlib/templates/hashtbl.template.mli[64,2877+13]..[64,2877+30])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[64,2877+13]..[64,2877+16])
+            Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[64,2877+13]..[64,2877+16])
+            []
+          core_type (stdlib/templates/hashtbl.template.mli[64,2877+20]..[64,2877+30])
+            Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[64,2877+29]..[64,2877+30])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[64,2877+21]..[64,2877+23])
+                Ptyp_var a
+              core_type (stdlib/templates/hashtbl.template.mli[64,2877+25]..[64,2877+27])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[102,4889+0]..[102,4889+30])
+    Psig_value
+    value_description "clear" (stdlib/templates/hashtbl.template.mli[102,4889+4]..[102,4889+9]) (stdlib/templates/hashtbl.template.mli[102,4889+0]..[102,4889+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[103,4920+0]..[104,4989+52])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[103,4920+0]..[104,4989+52])
+              Pexp_constant PConst_string(" Empty a hash table. Use [reset] instead of [clear] to shrink the\n    size of the bucket table to its initial size. ",(stdlib/templates/hashtbl.template.mli[103,4920+0]..[104,4989+52]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[102,4889+12]..[102,4889+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[102,4889+12]..[102,4889+22])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[102,4889+21]..[102,4889+22])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[102,4889+13]..[102,4889+15])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[102,4889+17]..[102,4889+19])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[102,4889+26]..[102,4889+30])
+          Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[102,4889+26]..[102,4889+30])
+          []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[106,5043+0]..[106,5043+30])
+    Psig_value
+    value_description "reset" (stdlib/templates/hashtbl.template.mli[106,5043+4]..[106,5043+9]) (stdlib/templates/hashtbl.template.mli[106,5043+0]..[106,5043+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[107,5074+0]..[109,5162+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[107,5074+0]..[109,5162+18])
+              Pexp_constant PConst_string(" Empty a hash table and shrink the size of the bucket table\n    to its initial size.\n    @since 4.00 ",(stdlib/templates/hashtbl.template.mli[107,5074+0]..[109,5162+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[106,5043+12]..[106,5043+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[106,5043+12]..[106,5043+22])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[106,5043+21]..[106,5043+22])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[106,5043+13]..[106,5043+15])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[106,5043+17]..[106,5043+19])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[106,5043+26]..[106,5043+30])
+          Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[106,5043+26]..[106,5043+30])
+          []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[111,5182+0]..[111,5182+35])
+    Psig_value
+    value_description "copy" (stdlib/templates/hashtbl.template.mli[111,5182+4]..[111,5182+8]) (stdlib/templates/hashtbl.template.mli[111,5182+0]..[111,5182+35])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[112,5218+0]..[112,5218+44])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[112,5218+0]..[112,5218+44])
+              Pexp_constant PConst_string(" Return a copy of the given hashtable. ",(stdlib/templates/hashtbl.template.mli[112,5218+0]..[112,5218+44]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[111,5182+11]..[111,5182+35])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[111,5182+11]..[111,5182+21])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[111,5182+20]..[111,5182+21])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[111,5182+12]..[111,5182+14])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[111,5182+16]..[111,5182+18])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[111,5182+25]..[111,5182+35])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[111,5182+34]..[111,5182+35])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[111,5182+26]..[111,5182+28])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[111,5182+30]..[111,5182+32])
+              Ptyp_var b
+          ]
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[114,5264+0]..[114,5264+49])
+    Psig_value
+    value_description "add" (stdlib/templates/hashtbl.template.mli[114,5264+4]..[114,5264+7]) (stdlib/templates/hashtbl.template.mli[114,5264+0]..[114,5264+49])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[115,5314+0]..[124,5695+21])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[115,5314+0]..[124,5695+21])
+              Pexp_constant PConst_string(" [Hashtbl.add tbl ~key ~data] adds a binding of [key] to [data]\n   in table [tbl].\n\n   {b Warning}: Previous bindings for [key] are not removed, but simply\n   hidden. That is, after performing {!remove}[ tbl key],\n   the previous binding for [key], if any, is restored.\n   (Same behavior as with association lists.)\n\n   If you desire the classic behavior of replacing elements,\n   see {!replace}. ",(stdlib/templates/hashtbl.template.mli[115,5314+0]..[124,5695+21]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[114,5264+10]..[114,5264+49])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[114,5264+10]..[114,5264+20])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[114,5264+19]..[114,5264+20])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[114,5264+11]..[114,5264+13])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[114,5264+15]..[114,5264+17])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[114,5264+24]..[114,5264+49])
+          Ptyp_arrow
+          Labelled "key"
+          core_type (stdlib/templates/hashtbl.template.mli[114,5264+28]..[114,5264+30])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[114,5264+34]..[114,5264+49])
+            Ptyp_arrow
+            Labelled "data"
+            core_type (stdlib/templates/hashtbl.template.mli[114,5264+39]..[114,5264+41])
+              Ptyp_var b
+            core_type (stdlib/templates/hashtbl.template.mli[114,5264+45]..[114,5264+49])
+              Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[114,5264+45]..[114,5264+49])
+              []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[126,5718+0]..[126,5718+33])
+    Psig_value
+    value_description "find" (stdlib/templates/hashtbl.template.mli[126,5718+4]..[126,5718+8]) (stdlib/templates/hashtbl.template.mli[126,5718+0]..[126,5718+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[127,5752+0]..[128,5822+54])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[127,5752+0]..[128,5822+54])
+              Pexp_constant PConst_string(" [Hashtbl.find tbl x] returns the current binding of [x] in [tbl],\n   or raises [Not_found] if no such binding exists. ",(stdlib/templates/hashtbl.template.mli[127,5752+0]..[128,5822+54]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[126,5718+11]..[126,5718+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[126,5718+11]..[126,5718+21])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[126,5718+20]..[126,5718+21])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[126,5718+12]..[126,5718+14])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[126,5718+16]..[126,5718+18])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[126,5718+25]..[126,5718+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[126,5718+25]..[126,5718+27])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[126,5718+31]..[126,5718+33])
+            Ptyp_var b
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[130,5878+0]..[130,5878+44])
+    Psig_value
+    value_description "find_opt" (stdlib/templates/hashtbl.template.mli[130,5878+4]..[130,5878+12]) (stdlib/templates/hashtbl.template.mli[130,5878+0]..[130,5878+44])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[131,5923+0]..[133,6038+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[131,5923+0]..[133,6038+18])
+              Pexp_constant PConst_string(" [Hashtbl.find_opt tbl x] returns the current binding of [x] in [tbl],\n    or [None] if no such binding exists.\n    @since 4.05 ",(stdlib/templates/hashtbl.template.mli[131,5923+0]..[133,6038+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[130,5878+15]..[130,5878+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[130,5878+15]..[130,5878+25])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[130,5878+24]..[130,5878+25])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[130,5878+16]..[130,5878+18])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[130,5878+20]..[130,5878+22])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[130,5878+29]..[130,5878+44])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[130,5878+29]..[130,5878+31])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[130,5878+35]..[130,5878+44])
+            Ptyp_constr "option" (stdlib/templates/hashtbl.template.mli[130,5878+38]..[130,5878+44])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[130,5878+35]..[130,5878+37])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[135,6058+0]..[135,6058+42])
+    Psig_value
+    value_description "find_all" (stdlib/templates/hashtbl.template.mli[135,6058+4]..[135,6058+12]) (stdlib/templates/hashtbl.template.mli[135,6058+0]..[135,6058+42])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[136,6101+0]..[139,6252+62])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[136,6101+0]..[139,6252+62])
+              Pexp_constant PConst_string(" [Hashtbl.find_all tbl x] returns the list of all data\n   associated with [x] in [tbl].\n   The current binding is returned first, then the previous\n   bindings, in reverse order of introduction in the table. ",(stdlib/templates/hashtbl.template.mli[136,6101+0]..[139,6252+62]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[135,6058+15]..[135,6058+42])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[135,6058+15]..[135,6058+25])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[135,6058+24]..[135,6058+25])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[135,6058+16]..[135,6058+18])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[135,6058+20]..[135,6058+22])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[135,6058+29]..[135,6058+42])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[135,6058+29]..[135,6058+31])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[135,6058+35]..[135,6058+42])
+            Ptyp_constr "list" (stdlib/templates/hashtbl.template.mli[135,6058+38]..[135,6058+42])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[135,6058+35]..[135,6058+37])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[141,6316+0]..[141,6316+34])
+    Psig_value
+    value_description "mem" (stdlib/templates/hashtbl.template.mli[141,6316+4]..[141,6316+7]) (stdlib/templates/hashtbl.template.mli[141,6316+0]..[141,6316+34])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[142,6351+0]..[142,6351+59])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[142,6351+0]..[142,6351+59])
+              Pexp_constant PConst_string(" [Hashtbl.mem tbl x] checks if [x] is bound in [tbl]. ",(stdlib/templates/hashtbl.template.mli[142,6351+0]..[142,6351+59]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[141,6316+10]..[141,6316+34])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[141,6316+10]..[141,6316+20])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[141,6316+19]..[141,6316+20])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[141,6316+11]..[141,6316+13])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[141,6316+15]..[141,6316+17])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[141,6316+24]..[141,6316+34])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[141,6316+24]..[141,6316+26])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[141,6316+30]..[141,6316+34])
+            Ptyp_constr "bool" (stdlib/templates/hashtbl.template.mli[141,6316+30]..[141,6316+34])
+            []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[144,6412+0]..[144,6412+37])
+    Psig_value
+    value_description "remove" (stdlib/templates/hashtbl.template.mli[144,6412+4]..[144,6412+10]) (stdlib/templates/hashtbl.template.mli[144,6412+0]..[144,6412+37])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[145,6450+0]..[147,6570+51])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[145,6450+0]..[147,6570+51])
+              Pexp_constant PConst_string(" [Hashtbl.remove tbl x] removes the current binding of [x] in [tbl],\n   restoring the previous binding if it exists.\n   It does nothing if [x] is not bound in [tbl]. ",(stdlib/templates/hashtbl.template.mli[145,6450+0]..[147,6570+51]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[144,6412+13]..[144,6412+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[144,6412+13]..[144,6412+23])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[144,6412+22]..[144,6412+23])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[144,6412+14]..[144,6412+16])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[144,6412+18]..[144,6412+20])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[144,6412+27]..[144,6412+37])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[144,6412+27]..[144,6412+29])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[144,6412+33]..[144,6412+37])
+            Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[144,6412+33]..[144,6412+37])
+            []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[149,6623+0]..[149,6623+53])
+    Psig_value
+    value_description "replace" (stdlib/templates/hashtbl.template.mli[149,6623+4]..[149,6623+11]) (stdlib/templates/hashtbl.template.mli[149,6623+0]..[149,6623+53])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[150,6677+0]..[154,6937+40])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[150,6677+0]..[154,6937+40])
+              Pexp_constant PConst_string(" [Hashtbl.replace tbl ~key ~data] replaces the current binding of [key]\n   in [tbl] by a binding of [key] to [data].  If [key] is unbound in [tbl],\n   a binding of [key] to [data] is added to [tbl].\n   This is functionally equivalent to {!remove}[ tbl key]\n   followed by {!add}[ tbl key data]. ",(stdlib/templates/hashtbl.template.mli[150,6677+0]..[154,6937+40]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[149,6623+14]..[149,6623+53])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[149,6623+14]..[149,6623+24])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[149,6623+23]..[149,6623+24])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[149,6623+15]..[149,6623+17])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[149,6623+19]..[149,6623+21])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[149,6623+28]..[149,6623+53])
+          Ptyp_arrow
+          Labelled "key"
+          core_type (stdlib/templates/hashtbl.template.mli[149,6623+32]..[149,6623+34])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[149,6623+38]..[149,6623+53])
+            Ptyp_arrow
+            Labelled "data"
+            core_type (stdlib/templates/hashtbl.template.mli[149,6623+43]..[149,6623+45])
+              Ptyp_var b
+            core_type (stdlib/templates/hashtbl.template.mli[149,6623+49]..[149,6623+53])
+              Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[149,6623+49]..[149,6623+53])
+              []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[156,6979+0]..[156,6979+62])
+    Psig_value
+    value_description "iter" (stdlib/templates/hashtbl.template.mli[156,6979+4]..[156,6979+8]) (stdlib/templates/hashtbl.template.mli[156,6979+0]..[156,6979+62])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[157,7042+0]..[174,7887+2])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[157,7042+0]..[174,7887+2])
+              Pexp_constant PConst_string(" [Hashtbl.iter ~f tbl] applies [f] to all bindings in table [tbl].\n   [f] receives the key as first argument, and the associated value\n   as second argument. Each binding is presented exactly once to [f].\n\n   The order in which the bindings are passed to [f] is unspecified.\n   However, if the table contains several bindings for the same key,\n   they are passed to [f] in reverse order of introduction, that is,\n   the most recent binding is passed first.\n\n   If the hash table was created in non-randomized mode, the order\n   in which the bindings are enumerated is reproducible between\n   successive runs of the program, and even between minor versions\n   of OCaml.  For randomized hash tables, the order of enumeration\n   is entirely random.\n\n   The behavior is not specified if the hash table is modified\n   by [f] during the iteration.\n",(stdlib/templates/hashtbl.template.mli[157,7042+0]..[174,7887+2]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[156,6979+11]..[156,6979+62])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/templates/hashtbl.template.mli[156,6979+14]..[156,6979+39])
+          Ptyp_arrow
+          Labelled "key"
+          core_type (stdlib/templates/hashtbl.template.mli[156,6979+18]..[156,6979+20])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[156,6979+24]..[156,6979+39])
+            Ptyp_arrow
+            Labelled "data"
+            core_type (stdlib/templates/hashtbl.template.mli[156,6979+29]..[156,6979+31])
+              Ptyp_var b
+            core_type (stdlib/templates/hashtbl.template.mli[156,6979+35]..[156,6979+39])
+              Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[156,6979+35]..[156,6979+39])
+              []
+        core_type (stdlib/templates/hashtbl.template.mli[156,6979+44]..[156,6979+62])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[156,6979+44]..[156,6979+54])
+            Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[156,6979+53]..[156,6979+54])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[156,6979+45]..[156,6979+47])
+                Ptyp_var a
+              core_type (stdlib/templates/hashtbl.template.mli[156,6979+49]..[156,6979+51])
+                Ptyp_var b
+            ]
+          core_type (stdlib/templates/hashtbl.template.mli[156,6979+58]..[156,6979+62])
+            Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[156,6979+58]..[156,6979+62])
+            []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[176,7891+0]..[177,7967+8])
+    Psig_value
+    value_description "filter_map_inplace" (stdlib/templates/hashtbl.template.mli[176,7891+4]..[176,7891+22]) (stdlib/templates/hashtbl.template.mli[176,7891+0]..[177,7967+8])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[178,7976+0]..[185,8316+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[178,7976+0]..[185,8316+18])
+              Pexp_constant PConst_string(" [Hashtbl.filter_map_inplace ~f tbl] applies [f] to all bindings in\n    table [tbl] and update each binding depending on the result of\n    [f].  If [f] returns [None], the binding is discarded.  If it\n    returns [Some new_val], the binding is update to associate the key\n    to [new_val].\n\n    Other comments for {!iter} apply as well.\n    @since 4.03 ",(stdlib/templates/hashtbl.template.mli[178,7976+0]..[185,8316+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[176,7891+24]..[177,7967+8])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/templates/hashtbl.template.mli[176,7891+27]..[176,7891+57])
+          Ptyp_arrow
+          Labelled "key"
+          core_type (stdlib/templates/hashtbl.template.mli[176,7891+31]..[176,7891+33])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[176,7891+37]..[176,7891+57])
+            Ptyp_arrow
+            Labelled "data"
+            core_type (stdlib/templates/hashtbl.template.mli[176,7891+42]..[176,7891+44])
+              Ptyp_var b
+            core_type (stdlib/templates/hashtbl.template.mli[176,7891+48]..[176,7891+57])
+              Ptyp_constr "option" (stdlib/templates/hashtbl.template.mli[176,7891+51]..[176,7891+57])
+              [
+                core_type (stdlib/templates/hashtbl.template.mli[176,7891+48]..[176,7891+50])
+                  Ptyp_var b
+              ]
+        core_type (stdlib/templates/hashtbl.template.mli[176,7891+62]..[177,7967+8])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[176,7891+62]..[176,7891+72])
+            Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[176,7891+71]..[176,7891+72])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[176,7891+63]..[176,7891+65])
+                Ptyp_var a
+              core_type (stdlib/templates/hashtbl.template.mli[176,7891+67]..[176,7891+69])
+                Ptyp_var b
+            ]
+          core_type (stdlib/templates/hashtbl.template.mli[177,7967+4]..[177,7967+8])
+            Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[177,7967+4]..[177,7967+8])
+            []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[187,8336+0]..[187,8336+75])
+    Psig_value
+    value_description "fold" (stdlib/templates/hashtbl.template.mli[187,8336+4]..[187,8336+8]) (stdlib/templates/hashtbl.template.mli[187,8336+0]..[187,8336+75])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[188,8412+0]..[207,9284+2])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[188,8412+0]..[207,9284+2])
+              Pexp_constant PConst_string(" [Hashtbl.fold ~f tbl ~init] computes\n   [(f kN dN ... (f k1 d1 init)...)],\n   where [k1 ... kN] are the keys of all bindings in [tbl],\n   and [d1 ... dN] are the associated values.\n   Each binding is presented exactly once to [f].\n\n   The order in which the bindings are passed to [f] is unspecified.\n   However, if the table contains several bindings for the same key,\n   they are passed to [f] in reverse order of introduction, that is,\n   the most recent binding is passed first.\n\n   If the hash table was created in non-randomized mode, the order\n   in which the bindings are enumerated is reproducible between\n   successive runs of the program, and even between minor versions\n   of OCaml.  For randomized hash tables, the order of enumeration\n   is entirely random.\n\n   The behavior is not specified if the hash table is modified\n   by [f] during the iteration.\n",(stdlib/templates/hashtbl.template.mli[188,8412+0]..[207,9284+2]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[187,8336+11]..[187,8336+75])
+        Ptyp_arrow
+        Labelled "f"
+        core_type (stdlib/templates/hashtbl.template.mli[187,8336+14]..[187,8336+43])
+          Ptyp_arrow
+          Labelled "key"
+          core_type (stdlib/templates/hashtbl.template.mli[187,8336+18]..[187,8336+20])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[187,8336+24]..[187,8336+43])
+            Ptyp_arrow
+            Labelled "data"
+            core_type (stdlib/templates/hashtbl.template.mli[187,8336+29]..[187,8336+31])
+              Ptyp_var b
+            core_type (stdlib/templates/hashtbl.template.mli[187,8336+35]..[187,8336+43])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/templates/hashtbl.template.mli[187,8336+35]..[187,8336+37])
+                Ptyp_var c
+              core_type (stdlib/templates/hashtbl.template.mli[187,8336+41]..[187,8336+43])
+                Ptyp_var c
+        core_type (stdlib/templates/hashtbl.template.mli[187,8336+48]..[187,8336+75])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[187,8336+48]..[187,8336+58])
+            Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[187,8336+57]..[187,8336+58])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[187,8336+49]..[187,8336+51])
+                Ptyp_var a
+              core_type (stdlib/templates/hashtbl.template.mli[187,8336+53]..[187,8336+55])
+                Ptyp_var b
+            ]
+          core_type (stdlib/templates/hashtbl.template.mli[187,8336+62]..[187,8336+75])
+            Ptyp_arrow
+            Labelled "init"
+            core_type (stdlib/templates/hashtbl.template.mli[187,8336+67]..[187,8336+69])
+              Ptyp_var c
+            core_type (stdlib/templates/hashtbl.template.mli[187,8336+73]..[187,8336+75])
+              Ptyp_var c
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[209,9288+0]..[209,9288+30])
+    Psig_value
+    value_description "length" (stdlib/templates/hashtbl.template.mli[209,9288+4]..[209,9288+10]) (stdlib/templates/hashtbl.template.mli[209,9288+0]..[209,9288+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[210,9319+0]..[213,9528+21])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[210,9319+0]..[213,9528+21])
+              Pexp_constant PConst_string(" [Hashtbl.length tbl] returns the number of bindings in [tbl].\n   It takes constant time.  Multiple bindings are counted once each, so\n   [Hashtbl.length] gives the number of times [Hashtbl.iter] calls its\n   first argument. ",(stdlib/templates/hashtbl.template.mli[210,9319+0]..[213,9528+21]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[209,9288+13]..[209,9288+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[209,9288+13]..[209,9288+23])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[209,9288+22]..[209,9288+23])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[209,9288+14]..[209,9288+16])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[209,9288+18]..[209,9288+20])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[209,9288+27]..[209,9288+30])
+          Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[209,9288+27]..[209,9288+30])
+          []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[215,9551+0]..[215,9551+28])
+    Psig_value
+    value_description "randomize" (stdlib/templates/hashtbl.template.mli[215,9551+4]..[215,9551+13]) (stdlib/templates/hashtbl.template.mli[215,9551+0]..[215,9551+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[216,9580+0]..[232,10397+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[216,9580+0]..[232,10397+18])
+              Pexp_constant PConst_string(" After a call to [Hashtbl.randomize()], hash tables are created in\n    randomized mode by default: {!create} returns randomized\n    hash tables, unless the [~random:false] optional parameter is given.\n    The same effect can be achieved by setting the [R] parameter in\n    the [OCAMLRUNPARAM] environment variable.\n\n    It is recommended that applications or Web frameworks that need to\n    protect themselves against the denial-of-service attack described\n    in {!create} call [Hashtbl.randomize()] at initialization\n    time before any domains are created.\n\n    Note that once [Hashtbl.randomize()] was called, there is no way\n    to revert to the non-randomized default behavior of {!create}.\n    This is intentional.  Non-randomized hash tables can still be\n    created using [Hashtbl.create ~random:false].\n\n    @since 4.00 ",(stdlib/templates/hashtbl.template.mli[216,9580+0]..[232,10397+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[215,9551+16]..[215,9551+28])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[215,9551+16]..[215,9551+20])
+          Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[215,9551+16]..[215,9551+20])
+          []
+        core_type (stdlib/templates/hashtbl.template.mli[215,9551+24]..[215,9551+28])
+          Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[215,9551+24]..[215,9551+28])
+          []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[234,10417+0]..[234,10417+32])
+    Psig_value
+    value_description "is_randomized" (stdlib/templates/hashtbl.template.mli[234,10417+4]..[234,10417+17]) (stdlib/templates/hashtbl.template.mli[234,10417+0]..[234,10417+32])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[235,10450+0]..[237,10558+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[235,10450+0]..[237,10558+18])
+              Pexp_constant PConst_string(" Return [true] if the tables are currently created in randomized mode\n    by default, [false] otherwise.\n    @since 4.03 ",(stdlib/templates/hashtbl.template.mli[235,10450+0]..[237,10558+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[234,10417+20]..[234,10417+32])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[234,10417+20]..[234,10417+24])
+          Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[234,10417+20]..[234,10417+24])
+          []
+        core_type (stdlib/templates/hashtbl.template.mli[234,10417+28]..[234,10417+32])
+          Ptyp_constr "bool" (stdlib/templates/hashtbl.template.mli[234,10417+28]..[234,10417+32])
+          []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[239,10578+0]..[240,10645+28])
+    Psig_value
+    value_description "rebuild" (stdlib/templates/hashtbl.template.mli[239,10578+4]..[239,10578+11]) (stdlib/templates/hashtbl.template.mli[239,10578+0]..[240,10645+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[241,10674+0]..[254,11306+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[241,10674+0]..[254,11306+18])
+              Pexp_constant PConst_string(" Return a copy of the given hashtable.  Unlike {!copy},\n    {!rebuild}[ h] re-hashes all the (key, value) entries of\n    the original table [h].  The returned hash table is randomized if\n    [h] was randomized, or the optional [random] parameter is true, or\n    if the default is to create randomized hash tables; see\n    {!create} for more information.\n\n    {!rebuild} can safely be used to import a hash table built\n    by an old version of the {!Hashtbl} module, then marshaled to\n    persistent storage.  After unmarshaling, apply {!rebuild}\n    to produce a hash table for the current version of the {!Hashtbl}\n    module.\n\n    @since 4.12 ",(stdlib/templates/hashtbl.template.mli[241,10674+0]..[254,11306+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[239,10578+14]..[240,10645+28])
+        Ptyp_arrow
+        Optional "random"
+        core_type (stdlib/templates/hashtbl.template.mli[239,10578+59]..[239,10578+63])
+          Ptyp_constr "bool" (stdlib/templates/hashtbl.template.mli[239,10578+59]..[239,10578+63])
+          []
+        core_type (stdlib/templates/hashtbl.template.mli[240,10645+4]..[240,10645+28])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[240,10645+4]..[240,10645+14])
+            Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[240,10645+13]..[240,10645+14])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[240,10645+5]..[240,10645+7])
+                Ptyp_var a
+              core_type (stdlib/templates/hashtbl.template.mli[240,10645+9]..[240,10645+11])
+                Ptyp_var b
+            ]
+          core_type (stdlib/templates/hashtbl.template.mli[240,10645+18]..[240,10645+28])
+            Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[240,10645+27]..[240,10645+28])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[240,10645+19]..[240,10645+21])
+                Ptyp_var a
+              core_type (stdlib/templates/hashtbl.template.mli[240,10645+23]..[240,10645+25])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[257,11345+0]..[269,11832+1])
+    Psig_type Rec
+    [
+      type_declaration "statistics" (stdlib/templates/hashtbl.template.mli[257,11345+5]..[257,11345+15]) (stdlib/templates/hashtbl.template.mli[257,11345+0]..[269,11832+1])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/templates/hashtbl.template.mli[256,11326+0]..[256,11326+18])
+              Pstr_eval
+              expression (stdlib/templates/hashtbl.template.mli[256,11326+0]..[256,11326+18])
+                Pexp_constant PConst_string(" @since 4.00 ",(stdlib/templates/hashtbl.template.mli[256,11326+0]..[256,11326+18]),None)
+          ]
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_record
+            [
+              (stdlib/templates/hashtbl.template.mli[258,11365+2]..[258,11365+20])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (stdlib/templates/hashtbl.template.mli[259,11386+4]..[260,11435+47])
+                      Pstr_eval
+                      expression (stdlib/templates/hashtbl.template.mli[259,11386+4]..[260,11435+47])
+                        Pexp_constant PConst_string(" Number of bindings present in the table.\n        Same value as returned by {!length}. ",(stdlib/templates/hashtbl.template.mli[259,11386+4]..[260,11435+47]),None)
+                  ]
+                Immutable
+                "num_bindings" (stdlib/templates/hashtbl.template.mli[258,11365+2]..[258,11365+14])                core_type (stdlib/templates/hashtbl.template.mli[258,11365+16]..[258,11365+19])
+                  Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[258,11365+16]..[258,11365+19])
+                  []
+              (stdlib/templates/hashtbl.template.mli[261,11483+2]..[261,11483+19])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (stdlib/templates/hashtbl.template.mli[262,11503+4]..[262,11503+42])
+                      Pstr_eval
+                      expression (stdlib/templates/hashtbl.template.mli[262,11503+4]..[262,11503+42])
+                        Pexp_constant PConst_string(" Number of buckets in the table. ",(stdlib/templates/hashtbl.template.mli[262,11503+4]..[262,11503+42]),None)
+                  ]
+                Immutable
+                "num_buckets" (stdlib/templates/hashtbl.template.mli[261,11483+2]..[261,11483+13])                core_type (stdlib/templates/hashtbl.template.mli[261,11483+15]..[261,11483+18])
+                  Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[261,11483+15]..[261,11483+18])
+                  []
+              (stdlib/templates/hashtbl.template.mli[263,11546+2]..[263,11546+25])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (stdlib/templates/hashtbl.template.mli[264,11572+4]..[264,11572+49])
+                      Pstr_eval
+                      expression (stdlib/templates/hashtbl.template.mli[264,11572+4]..[264,11572+49])
+                        Pexp_constant PConst_string(" Maximal number of bindings per bucket. ",(stdlib/templates/hashtbl.template.mli[264,11572+4]..[264,11572+49]),None)
+                  ]
+                Immutable
+                "max_bucket_length" (stdlib/templates/hashtbl.template.mli[263,11546+2]..[263,11546+19])                core_type (stdlib/templates/hashtbl.template.mli[263,11546+21]..[263,11546+24])
+                  Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[263,11546+21]..[263,11546+24])
+                  []
+              (stdlib/templates/hashtbl.template.mli[265,11622+2]..[265,11622+29])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (stdlib/templates/hashtbl.template.mli[266,11652+4]..[268,11765+66])
+                      Pstr_eval
+                      expression (stdlib/templates/hashtbl.template.mli[266,11652+4]..[268,11765+66])
+                        Pexp_constant PConst_string(" Histogram of bucket sizes.  This array [histo] has\n        length [max_bucket_length + 1].  The value of\n        [histo.(i)] is the number of buckets whose size is [i]. ",(stdlib/templates/hashtbl.template.mli[266,11652+4]..[268,11765+66]),None)
+                  ]
+                Immutable
+                "bucket_histogram" (stdlib/templates/hashtbl.template.mli[265,11622+2]..[265,11622+18])                core_type (stdlib/templates/hashtbl.template.mli[265,11622+20]..[265,11622+29])
+                  Ptyp_constr "array" (stdlib/templates/hashtbl.template.mli[265,11622+24]..[265,11622+29])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[265,11622+20]..[265,11622+23])
+                      Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[265,11622+20]..[265,11622+23])
+                      []
+                  ]
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[271,11835+0]..[271,11835+36])
+    Psig_value
+    value_description "stats" (stdlib/templates/hashtbl.template.mli[271,11835+4]..[271,11835+9]) (stdlib/templates/hashtbl.template.mli[271,11835+0]..[271,11835+36])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[272,11872+0]..[275,12024+17])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[272,11872+0]..[275,12024+17])
+              Pexp_constant PConst_string(" [Hashtbl.stats tbl] returns statistics about the table [tbl]:\n   number of buckets, size of the biggest bucket, distribution of\n   buckets by size.\n   @since 4.00 ",(stdlib/templates/hashtbl.template.mli[272,11872+0]..[275,12024+17]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[271,11835+12]..[271,11835+36])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[271,11835+12]..[271,11835+22])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[271,11835+21]..[271,11835+22])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[271,11835+13]..[271,11835+15])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[271,11835+17]..[271,11835+19])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[271,11835+26]..[271,11835+36])
+          Ptyp_constr "statistics" (stdlib/templates/hashtbl.template.mli[271,11835+26]..[271,11835+36])
+          []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[277,12043+0]..[277,12043+36])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[277,12043+0]..[277,12043+36])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[277,12043+0]..[277,12043+36])
+          Pexp_constant PConst_string(" {1 Hash tables and Sequences} ",(stdlib/templates/hashtbl.template.mli[277,12043+0]..[277,12043+36]),None)
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[279,12081+0]..[279,12081+41])
+    Psig_value
+    value_description "to_seq" (stdlib/templates/hashtbl.template.mli[279,12081+4]..[279,12081+10]) (stdlib/templates/hashtbl.template.mli[279,12081+0]..[279,12081+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[280,12123+0]..[288,12492+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[280,12123+0]..[288,12492+18])
+              Pexp_constant PConst_string(" Iterate on the whole table.  The order in which the bindings\n    appear in the sequence is unspecified. However, if the table contains\n    several bindings for the same key, they appear in reversed order of\n    introduction, that is, the most recent binding appears first.\n\n    The behavior is not specified if the hash table is modified\n    during the iteration.\n\n    @since 4.07 ",(stdlib/templates/hashtbl.template.mli[280,12123+0]..[288,12492+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[279,12081+13]..[279,12081+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[279,12081+13]..[279,12081+22])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[279,12081+21]..[279,12081+22])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[279,12081+14]..[279,12081+16])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[279,12081+17]..[279,12081+19])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[279,12081+26]..[279,12081+41])
+          Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[279,12081+36]..[279,12081+41])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[279,12081+27]..[279,12081+34])
+              Ptyp_tuple
+              [
+                core_type (stdlib/templates/hashtbl.template.mli[279,12081+27]..[279,12081+29])
+                  Ptyp_var a
+                core_type (stdlib/templates/hashtbl.template.mli[279,12081+32]..[279,12081+34])
+                  Ptyp_var b
+              ]
+          ]
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[290,12512+0]..[290,12512+38])
+    Psig_value
+    value_description "to_seq_keys" (stdlib/templates/hashtbl.template.mli[290,12512+4]..[290,12512+15]) (stdlib/templates/hashtbl.template.mli[290,12512+0]..[290,12512+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[291,12551+0]..[292,12588+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[291,12551+0]..[292,12588+18])
+              Pexp_constant PConst_string(" Same as [Seq.map fst (to_seq m)]\n    @since 4.07 ",(stdlib/templates/hashtbl.template.mli[291,12551+0]..[292,12588+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[290,12512+18]..[290,12512+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[290,12512+18]..[290,12512+26])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[290,12512+25]..[290,12512+26])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[290,12512+19]..[290,12512+21])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[290,12512+22]..[290,12512+23])
+              Ptyp_any
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[290,12512+30]..[290,12512+38])
+          Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[290,12512+33]..[290,12512+38])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[290,12512+30]..[290,12512+32])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[294,12608+0]..[294,12608+40])
+    Psig_value
+    value_description "to_seq_values" (stdlib/templates/hashtbl.template.mli[294,12608+4]..[294,12608+17]) (stdlib/templates/hashtbl.template.mli[294,12608+0]..[294,12608+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[295,12649+0]..[296,12686+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[295,12649+0]..[296,12686+18])
+              Pexp_constant PConst_string(" Same as [Seq.map snd (to_seq m)]\n    @since 4.07 ",(stdlib/templates/hashtbl.template.mli[295,12649+0]..[296,12686+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[294,12608+20]..[294,12608+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[294,12608+20]..[294,12608+28])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[294,12608+27]..[294,12608+28])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[294,12608+21]..[294,12608+22])
+              Ptyp_any
+            core_type (stdlib/templates/hashtbl.template.mli[294,12608+23]..[294,12608+25])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[294,12608+32]..[294,12608+40])
+          Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[294,12608+35]..[294,12608+40])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[294,12608+32]..[294,12608+34])
+              Ptyp_var b
+          ]
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[298,12706+0]..[298,12706+50])
+    Psig_value
+    value_description "add_seq" (stdlib/templates/hashtbl.template.mli[298,12706+4]..[298,12706+11]) (stdlib/templates/hashtbl.template.mli[298,12706+0]..[298,12706+50])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[299,12757+0]..[300,12811+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[299,12757+0]..[300,12811+18])
+              Pexp_constant PConst_string(" Add the given bindings to the table, using {!add}\n    @since 4.07 ",(stdlib/templates/hashtbl.template.mli[299,12757+0]..[300,12811+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[298,12706+14]..[298,12706+50])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[298,12706+14]..[298,12706+23])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[298,12706+22]..[298,12706+23])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[298,12706+15]..[298,12706+17])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[298,12706+18]..[298,12706+20])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[298,12706+27]..[298,12706+50])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[298,12706+27]..[298,12706+42])
+            Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[298,12706+37]..[298,12706+42])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[298,12706+28]..[298,12706+35])
+                Ptyp_tuple
+                [
+                  core_type (stdlib/templates/hashtbl.template.mli[298,12706+28]..[298,12706+30])
+                    Ptyp_var a
+                  core_type (stdlib/templates/hashtbl.template.mli[298,12706+33]..[298,12706+35])
+                    Ptyp_var b
+                ]
+            ]
+          core_type (stdlib/templates/hashtbl.template.mli[298,12706+46]..[298,12706+50])
+            Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[298,12706+46]..[298,12706+50])
+            []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[302,12831+0]..[302,12831+54])
+    Psig_value
+    value_description "replace_seq" (stdlib/templates/hashtbl.template.mli[302,12831+4]..[302,12831+15]) (stdlib/templates/hashtbl.template.mli[302,12831+0]..[302,12831+54])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[303,12886+0]..[304,12944+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[303,12886+0]..[304,12944+18])
+              Pexp_constant PConst_string(" Add the given bindings to the table, using {!replace}\n    @since 4.07 ",(stdlib/templates/hashtbl.template.mli[303,12886+0]..[304,12944+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[302,12831+18]..[302,12831+54])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[302,12831+18]..[302,12831+27])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[302,12831+26]..[302,12831+27])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[302,12831+19]..[302,12831+21])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[302,12831+22]..[302,12831+24])
+              Ptyp_var b
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[302,12831+31]..[302,12831+54])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[302,12831+31]..[302,12831+46])
+            Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[302,12831+41]..[302,12831+46])
+            [
+              core_type (stdlib/templates/hashtbl.template.mli[302,12831+32]..[302,12831+39])
+                Ptyp_tuple
+                [
+                  core_type (stdlib/templates/hashtbl.template.mli[302,12831+32]..[302,12831+34])
+                    Ptyp_var a
+                  core_type (stdlib/templates/hashtbl.template.mli[302,12831+37]..[302,12831+39])
+                    Ptyp_var b
+                ]
+            ]
+          core_type (stdlib/templates/hashtbl.template.mli[302,12831+50]..[302,12831+54])
+            Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[302,12831+50]..[302,12831+54])
+            []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[306,12964+0]..[306,12964+42])
+    Psig_value
+    value_description "of_seq" (stdlib/templates/hashtbl.template.mli[306,12964+4]..[306,12964+10]) (stdlib/templates/hashtbl.template.mli[306,12964+0]..[306,12964+42])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[307,13007+0]..[311,13249+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[307,13007+0]..[311,13249+18])
+              Pexp_constant PConst_string(" Build a table from the given bindings. The bindings are added\n    in the same order they appear in the sequence, using {!replace_seq},\n    which means that if two pairs have the same key, only the latest one\n    will appear in the table.\n    @since 4.07 ",(stdlib/templates/hashtbl.template.mli[307,13007+0]..[311,13249+18]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[306,12964+13]..[306,12964+42])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[306,12964+13]..[306,12964+28])
+          Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[306,12964+23]..[306,12964+28])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[306,12964+14]..[306,12964+21])
+              Ptyp_tuple
+              [
+                core_type (stdlib/templates/hashtbl.template.mli[306,12964+14]..[306,12964+16])
+                  Ptyp_var a
+                core_type (stdlib/templates/hashtbl.template.mli[306,12964+19]..[306,12964+21])
+                  Ptyp_var b
+              ]
+          ]
+        core_type (stdlib/templates/hashtbl.template.mli[306,12964+32]..[306,12964+42])
+          Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[306,12964+41]..[306,12964+42])
+          [
+            core_type (stdlib/templates/hashtbl.template.mli[306,12964+33]..[306,12964+35])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[306,12964+37]..[306,12964+39])
+              Ptyp_var b
+          ]
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[313,13269+0]..[313,13269+31])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[313,13269+0]..[313,13269+31])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[313,13269+0]..[313,13269+31])
+          Pexp_constant PConst_string(" {1 Functorial interface} ",(stdlib/templates/hashtbl.template.mli[313,13269+0]..[313,13269+31]),None)
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[315,13302+0]..[342,14290+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[315,13302+0]..[342,14290+2])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[315,13302+0]..[342,14290+2])
+          Pexp_constant PConst_string(" The functorial interface allows the use of specific comparison\n    and hash functions, either for performance/security concerns,\n    or because keys are not hashable/comparable with the polymorphic builtins.\n\n    For instance, one might want to specialize a table for integer keys:\n    {[\n      module IntHash =\n        struct\n          type t = int\n          let equal i j = i=j\n          let hash i = i land max_int\n        end\n\n      module IntHashtbl = Hashtbl.Make(IntHash)\n\n      let h = IntHashtbl.create 17 in\n      IntHashtbl.add h 12 \"hello\"\n    ]}\n\n    This creates a new module [IntHashtbl], with a new type ['a\n    IntHashtbl.t] of tables from [int] to ['a]. In this example, [h]\n    contains [string] values so its type is [string IntHashtbl.t].\n\n    Note that the new type ['a IntHashtbl.t] is not compatible with\n    the type [('a,'b) Hashtbl.t] of the generic interface. For\n    example, [Hashtbl.length h] would not type-check, you must use\n    [IntHashtbl.length].\n",(stdlib/templates/hashtbl.template.mli[315,13302+0]..[342,14290+2]),None)
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[344,14294+0]..[365,15165+6])
+    Psig_modtype "HashedType" (stdlib/templates/hashtbl.template.mli[344,14294+12]..[344,14294+22])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[366,15172+0]..[366,15172+50])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[366,15172+0]..[366,15172+50])
+              Pexp_constant PConst_string(" The input signature of the functor {!Make}. ",(stdlib/templates/hashtbl.template.mli[366,15172+0]..[366,15172+50]),None)
+        ]
+      module_type (stdlib/templates/hashtbl.template.mli[345,14319+2]..[365,15165+6])
+        Pmty_signature
+        [
+          signature_item (stdlib/templates/hashtbl.template.mli[346,14325+4]..[346,14325+10])
+            Psig_type Rec
+            [
+              type_declaration "t" (stdlib/templates/hashtbl.template.mli[346,14325+9]..[346,14325+10]) (stdlib/templates/hashtbl.template.mli[346,14325+4]..[346,14325+10])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (stdlib/templates/hashtbl.template.mli[347,14336+4]..[347,14336+42])
+                      Pstr_eval
+                      expression (stdlib/templates/hashtbl.template.mli[347,14336+4]..[347,14336+42])
+                        Pexp_constant PConst_string(" The type of the hashtable keys. ",(stdlib/templates/hashtbl.template.mli[347,14336+4]..[347,14336+42]),None)
+                  ]
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          signature_item (stdlib/templates/hashtbl.template.mli[349,14380+4]..[349,14380+30])
+            Psig_value
+            value_description "equal" (stdlib/templates/hashtbl.template.mli[349,14380+8]..[349,14380+13]) (stdlib/templates/hashtbl.template.mli[349,14380+4]..[349,14380+30])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[350,14411+4]..[350,14411+55])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[350,14411+4]..[350,14411+55])
+                      Pexp_constant PConst_string(" The equality predicate used to compare keys. ",(stdlib/templates/hashtbl.template.mli[350,14411+4]..[350,14411+55]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[349,14380+16]..[349,14380+30])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[349,14380+16]..[349,14380+17])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[349,14380+16]..[349,14380+17])
+                  []
+                core_type (stdlib/templates/hashtbl.template.mli[349,14380+21]..[349,14380+30])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[349,14380+21]..[349,14380+22])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[349,14380+21]..[349,14380+22])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[349,14380+26]..[349,14380+30])
+                    Ptyp_constr "bool" (stdlib/templates/hashtbl.template.mli[349,14380+26]..[349,14380+30])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[352,14468+4]..[352,14468+23])
+            Psig_value
+            value_description "hash" (stdlib/templates/hashtbl.template.mli[352,14468+8]..[352,14468+12]) (stdlib/templates/hashtbl.template.mli[352,14468+4]..[352,14468+23])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[353,14492+6]..[364,15101+63])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[353,14492+6]..[364,15101+63])
+                      Pexp_constant PConst_string(" A hashing function on keys. It must be such that if two keys are\n          equal according to [equal], then they have identical hash values\n          as computed by [hash].\n          Examples: suitable ([equal], [hash]) pairs for arbitrary key\n          types include\n-         ([(=)], {!hash}) for comparing objects by structure\n              (provided objects do not contain floats)\n-         ([(fun x y -> compare x y = 0)], {!hash})\n              for comparing objects by structure\n              and handling {!Stdlib.nan} correctly\n-         ([(==)], {!hash}) for comparing objects by physical\n              equality (e.g. for mutable or cyclic objects). ",(stdlib/templates/hashtbl.template.mli[353,14492+6]..[364,15101+63]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[352,14468+15]..[352,14468+23])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[352,14468+15]..[352,14468+16])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[352,14468+15]..[352,14468+16])
+                  []
+                core_type (stdlib/templates/hashtbl.template.mli[352,14468+20]..[352,14468+23])
+                  Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[352,14468+20]..[352,14468+23])
+                  []
+              []
+        ]
+  signature_item (stdlib/templates/hashtbl.template.mli[368,15224+0]..[412,16468+5])
+    Psig_modtype "S" (stdlib/templates/hashtbl.template.mli[368,15224+12]..[368,15224+13])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[413,16474+0]..[413,16474+51])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[413,16474+0]..[413,16474+51])
+              Pexp_constant PConst_string(" The output signature of the functor {!Make}. ",(stdlib/templates/hashtbl.template.mli[413,16474+0]..[413,16474+51]),None)
+        ]
+      module_type (stdlib/templates/hashtbl.template.mli[369,15240+2]..[412,16468+5])
+        Pmty_signature
+        [
+          signature_item (stdlib/templates/hashtbl.template.mli[370,15246+4]..[370,15246+12])
+            Psig_type Rec
+            [
+              type_declaration "key" (stdlib/templates/hashtbl.template.mli[370,15246+9]..[370,15246+12]) (stdlib/templates/hashtbl.template.mli[370,15246+4]..[370,15246+12])
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          signature_item (stdlib/templates/hashtbl.template.mli[371,15259+4]..[371,15259+14])
+            Psig_type Rec
+            [
+              type_declaration "t" (stdlib/templates/hashtbl.template.mli[371,15259+13]..[371,15259+14]) (stdlib/templates/hashtbl.template.mli[371,15259+4]..[371,15259+14])
+                ptype_params =
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[371,15259+10]..[371,15259+12])
+                      Ptyp_var a
+                  ]
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          signature_item (stdlib/templates/hashtbl.template.mli[372,15274+4]..[372,15274+28])
+            Psig_value
+            value_description "create" (stdlib/templates/hashtbl.template.mli[372,15274+8]..[372,15274+14]) (stdlib/templates/hashtbl.template.mli[372,15274+4]..[372,15274+28])
+              core_type (stdlib/templates/hashtbl.template.mli[372,15274+17]..[372,15274+28])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[372,15274+17]..[372,15274+20])
+                  Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[372,15274+17]..[372,15274+20])
+                  []
+                core_type (stdlib/templates/hashtbl.template.mli[372,15274+24]..[372,15274+28])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[372,15274+27]..[372,15274+28])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[372,15274+24]..[372,15274+26])
+                      Ptyp_var a
+                  ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[373,15303+4]..[373,15303+28])
+            Psig_value
+            value_description "clear" (stdlib/templates/hashtbl.template.mli[373,15303+8]..[373,15303+13]) (stdlib/templates/hashtbl.template.mli[373,15303+4]..[373,15303+28])
+              core_type (stdlib/templates/hashtbl.template.mli[373,15303+16]..[373,15303+28])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[373,15303+16]..[373,15303+20])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[373,15303+19]..[373,15303+20])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[373,15303+16]..[373,15303+18])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[373,15303+24]..[373,15303+28])
+                  Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[373,15303+24]..[373,15303+28])
+                  []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[374,15332+4]..[374,15332+28])
+            Psig_value
+            value_description "reset" (stdlib/templates/hashtbl.template.mli[374,15332+8]..[374,15332+13]) (stdlib/templates/hashtbl.template.mli[374,15332+4]..[374,15332+28])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[374,15332+29]..[374,15332+47])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[374,15332+29]..[374,15332+47])
+                      Pexp_constant PConst_string(" @since 4.00 ",(stdlib/templates/hashtbl.template.mli[374,15332+29]..[374,15332+47]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[374,15332+16]..[374,15332+28])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[374,15332+16]..[374,15332+20])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[374,15332+19]..[374,15332+20])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[374,15332+16]..[374,15332+18])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[374,15332+24]..[374,15332+28])
+                  Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[374,15332+24]..[374,15332+28])
+                  []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[376,15381+4]..[376,15381+27])
+            Psig_value
+            value_description "copy" (stdlib/templates/hashtbl.template.mli[376,15381+8]..[376,15381+12]) (stdlib/templates/hashtbl.template.mli[376,15381+4]..[376,15381+27])
+              core_type (stdlib/templates/hashtbl.template.mli[376,15381+15]..[376,15381+27])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[376,15381+15]..[376,15381+19])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[376,15381+18]..[376,15381+19])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[376,15381+15]..[376,15381+17])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[376,15381+23]..[376,15381+27])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[376,15381+26]..[376,15381+27])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[376,15381+23]..[376,15381+25])
+                      Ptyp_var a
+                  ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[377,15409+4]..[377,15409+48])
+            Psig_value
+            value_description "add" (stdlib/templates/hashtbl.template.mli[377,15409+8]..[377,15409+11]) (stdlib/templates/hashtbl.template.mli[377,15409+4]..[377,15409+48])
+              core_type (stdlib/templates/hashtbl.template.mli[377,15409+14]..[377,15409+48])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[377,15409+14]..[377,15409+18])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[377,15409+17]..[377,15409+18])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[377,15409+14]..[377,15409+16])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[377,15409+22]..[377,15409+48])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[377,15409+26]..[377,15409+29])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[377,15409+26]..[377,15409+29])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[377,15409+33]..[377,15409+48])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[377,15409+38]..[377,15409+40])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[377,15409+44]..[377,15409+48])
+                      Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[377,15409+44]..[377,15409+48])
+                      []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[378,15458+4]..[378,15458+36])
+            Psig_value
+            value_description "remove" (stdlib/templates/hashtbl.template.mli[378,15458+8]..[378,15458+14]) (stdlib/templates/hashtbl.template.mli[378,15458+4]..[378,15458+36])
+              core_type (stdlib/templates/hashtbl.template.mli[378,15458+17]..[378,15458+36])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[378,15458+17]..[378,15458+21])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[378,15458+20]..[378,15458+21])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[378,15458+17]..[378,15458+19])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[378,15458+25]..[378,15458+36])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[378,15458+25]..[378,15458+28])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[378,15458+25]..[378,15458+28])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[378,15458+32]..[378,15458+36])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[378,15458+32]..[378,15458+36])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[379,15495+4]..[379,15495+32])
+            Psig_value
+            value_description "find" (stdlib/templates/hashtbl.template.mli[379,15495+8]..[379,15495+12]) (stdlib/templates/hashtbl.template.mli[379,15495+4]..[379,15495+32])
+              core_type (stdlib/templates/hashtbl.template.mli[379,15495+15]..[379,15495+32])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[379,15495+15]..[379,15495+19])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[379,15495+18]..[379,15495+19])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[379,15495+15]..[379,15495+17])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[379,15495+23]..[379,15495+32])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[379,15495+23]..[379,15495+26])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[379,15495+23]..[379,15495+26])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[379,15495+30]..[379,15495+32])
+                    Ptyp_var a
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[380,15528+4]..[380,15528+43])
+            Psig_value
+            value_description "find_opt" (stdlib/templates/hashtbl.template.mli[380,15528+8]..[380,15528+16]) (stdlib/templates/hashtbl.template.mli[380,15528+4]..[380,15528+43])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[381,15572+4]..[381,15572+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[381,15572+4]..[381,15572+22])
+                      Pexp_constant PConst_string(" @since 4.05 ",(stdlib/templates/hashtbl.template.mli[381,15572+4]..[381,15572+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[380,15528+19]..[380,15528+43])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[380,15528+19]..[380,15528+23])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[380,15528+22]..[380,15528+23])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[380,15528+19]..[380,15528+21])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[380,15528+27]..[380,15528+43])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[380,15528+27]..[380,15528+30])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[380,15528+27]..[380,15528+30])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[380,15528+34]..[380,15528+43])
+                    Ptyp_constr "option" (stdlib/templates/hashtbl.template.mli[380,15528+37]..[380,15528+43])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[380,15528+34]..[380,15528+36])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[383,15596+4]..[383,15596+41])
+            Psig_value
+            value_description "find_all" (stdlib/templates/hashtbl.template.mli[383,15596+8]..[383,15596+16]) (stdlib/templates/hashtbl.template.mli[383,15596+4]..[383,15596+41])
+              core_type (stdlib/templates/hashtbl.template.mli[383,15596+19]..[383,15596+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[383,15596+19]..[383,15596+23])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[383,15596+22]..[383,15596+23])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[383,15596+19]..[383,15596+21])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[383,15596+27]..[383,15596+41])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[383,15596+27]..[383,15596+30])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[383,15596+27]..[383,15596+30])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[383,15596+34]..[383,15596+41])
+                    Ptyp_constr "list" (stdlib/templates/hashtbl.template.mli[383,15596+37]..[383,15596+41])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[383,15596+34]..[383,15596+36])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[384,15638+4]..[384,15638+52])
+            Psig_value
+            value_description "replace" (stdlib/templates/hashtbl.template.mli[384,15638+8]..[384,15638+15]) (stdlib/templates/hashtbl.template.mli[384,15638+4]..[384,15638+52])
+              core_type (stdlib/templates/hashtbl.template.mli[384,15638+18]..[384,15638+52])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[384,15638+18]..[384,15638+22])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[384,15638+21]..[384,15638+22])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[384,15638+18]..[384,15638+20])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[384,15638+26]..[384,15638+52])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[384,15638+30]..[384,15638+33])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[384,15638+30]..[384,15638+33])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[384,15638+37]..[384,15638+52])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[384,15638+42]..[384,15638+44])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[384,15638+48]..[384,15638+52])
+                      Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[384,15638+48]..[384,15638+52])
+                      []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[385,15691+4]..[385,15691+33])
+            Psig_value
+            value_description "mem" (stdlib/templates/hashtbl.template.mli[385,15691+8]..[385,15691+11]) (stdlib/templates/hashtbl.template.mli[385,15691+4]..[385,15691+33])
+              core_type (stdlib/templates/hashtbl.template.mli[385,15691+14]..[385,15691+33])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[385,15691+14]..[385,15691+18])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[385,15691+17]..[385,15691+18])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[385,15691+14]..[385,15691+16])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[385,15691+22]..[385,15691+33])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[385,15691+22]..[385,15691+25])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[385,15691+22]..[385,15691+25])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[385,15691+29]..[385,15691+33])
+                    Ptyp_constr "bool" (stdlib/templates/hashtbl.template.mli[385,15691+29]..[385,15691+33])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[386,15725+4]..[386,15725+61])
+            Psig_value
+            value_description "iter" (stdlib/templates/hashtbl.template.mli[386,15725+8]..[386,15725+12]) (stdlib/templates/hashtbl.template.mli[386,15725+4]..[386,15725+61])
+              core_type (stdlib/templates/hashtbl.template.mli[386,15725+15]..[386,15725+61])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/hashtbl.template.mli[386,15725+18]..[386,15725+44])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[386,15725+22]..[386,15725+25])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[386,15725+22]..[386,15725+25])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[386,15725+29]..[386,15725+44])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[386,15725+34]..[386,15725+36])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[386,15725+40]..[386,15725+44])
+                      Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[386,15725+40]..[386,15725+44])
+                      []
+                core_type (stdlib/templates/hashtbl.template.mli[386,15725+49]..[386,15725+61])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[386,15725+49]..[386,15725+53])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[386,15725+52]..[386,15725+53])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[386,15725+49]..[386,15725+51])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[386,15725+57]..[386,15725+61])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[386,15725+57]..[386,15725+61])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[387,15787+4]..[388,15862+10])
+            Psig_value
+            value_description "filter_map_inplace" (stdlib/templates/hashtbl.template.mli[387,15787+8]..[387,15787+26]) (stdlib/templates/hashtbl.template.mli[387,15787+4]..[388,15862+10])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[389,15873+4]..[389,15873+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[389,15873+4]..[389,15873+22])
+                      Pexp_constant PConst_string(" @since 4.03 ",(stdlib/templates/hashtbl.template.mli[389,15873+4]..[389,15873+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[387,15787+28]..[388,15862+10])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/hashtbl.template.mli[387,15787+31]..[387,15787+62])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[387,15787+35]..[387,15787+38])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[387,15787+35]..[387,15787+38])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[387,15787+42]..[387,15787+62])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[387,15787+47]..[387,15787+49])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[387,15787+53]..[387,15787+62])
+                      Ptyp_constr "option" (stdlib/templates/hashtbl.template.mli[387,15787+56]..[387,15787+62])
+                      [
+                        core_type (stdlib/templates/hashtbl.template.mli[387,15787+53]..[387,15787+55])
+                          Ptyp_var a
+                      ]
+                core_type (stdlib/templates/hashtbl.template.mli[387,15787+67]..[388,15862+10])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[387,15787+67]..[387,15787+71])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[387,15787+70]..[387,15787+71])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[387,15787+67]..[387,15787+69])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[388,15862+6]..[388,15862+10])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[388,15862+6]..[388,15862+10])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[391,15897+4]..[391,15897+74])
+            Psig_value
+            value_description "fold" (stdlib/templates/hashtbl.template.mli[391,15897+8]..[391,15897+12]) (stdlib/templates/hashtbl.template.mli[391,15897+4]..[391,15897+74])
+              core_type (stdlib/templates/hashtbl.template.mli[391,15897+15]..[391,15897+74])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/hashtbl.template.mli[391,15897+18]..[391,15897+48])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[391,15897+22]..[391,15897+25])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[391,15897+22]..[391,15897+25])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[391,15897+29]..[391,15897+48])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[391,15897+34]..[391,15897+36])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[391,15897+40]..[391,15897+48])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (stdlib/templates/hashtbl.template.mli[391,15897+40]..[391,15897+42])
+                        Ptyp_var b
+                      core_type (stdlib/templates/hashtbl.template.mli[391,15897+46]..[391,15897+48])
+                        Ptyp_var b
+                core_type (stdlib/templates/hashtbl.template.mli[391,15897+53]..[391,15897+74])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[391,15897+53]..[391,15897+57])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[391,15897+56]..[391,15897+57])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[391,15897+53]..[391,15897+55])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[391,15897+61]..[391,15897+74])
+                    Ptyp_arrow
+                    Labelled "init"
+                    core_type (stdlib/templates/hashtbl.template.mli[391,15897+66]..[391,15897+68])
+                      Ptyp_var b
+                    core_type (stdlib/templates/hashtbl.template.mli[391,15897+72]..[391,15897+74])
+                      Ptyp_var b
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[392,15972+4]..[392,15972+28])
+            Psig_value
+            value_description "length" (stdlib/templates/hashtbl.template.mli[392,15972+8]..[392,15972+14]) (stdlib/templates/hashtbl.template.mli[392,15972+4]..[392,15972+28])
+              core_type (stdlib/templates/hashtbl.template.mli[392,15972+17]..[392,15972+28])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[392,15972+17]..[392,15972+21])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[392,15972+20]..[392,15972+21])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[392,15972+17]..[392,15972+19])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[392,15972+25]..[392,15972+28])
+                  Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[392,15972+25]..[392,15972+28])
+                  []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[393,16001+4]..[393,16001+33])
+            Psig_value
+            value_description "stats" (stdlib/templates/hashtbl.template.mli[393,16001+8]..[393,16001+13]) (stdlib/templates/hashtbl.template.mli[393,16001+4]..[393,16001+33])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[393,16001+34]..[393,16001+52])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[393,16001+34]..[393,16001+52])
+                      Pexp_constant PConst_string(" @since 4.00 ",(stdlib/templates/hashtbl.template.mli[393,16001+34]..[393,16001+52]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[393,16001+15]..[393,16001+33])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[393,16001+15]..[393,16001+19])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[393,16001+18]..[393,16001+19])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[393,16001+15]..[393,16001+17])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[393,16001+23]..[393,16001+33])
+                  Ptyp_constr "statistics" (stdlib/templates/hashtbl.template.mli[393,16001+23]..[393,16001+33])
+                  []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[395,16055+4]..[395,16055+41])
+            Psig_value
+            value_description "to_seq" (stdlib/templates/hashtbl.template.mli[395,16055+8]..[395,16055+14]) (stdlib/templates/hashtbl.template.mli[395,16055+4]..[395,16055+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[396,16097+4]..[396,16097+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[396,16097+4]..[396,16097+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[396,16097+4]..[396,16097+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[395,16055+17]..[395,16055+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[395,16055+17]..[395,16055+21])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[395,16055+20]..[395,16055+21])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[395,16055+17]..[395,16055+19])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[395,16055+25]..[395,16055+41])
+                  Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[395,16055+36]..[395,16055+41])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[395,16055+26]..[395,16055+34])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/hashtbl.template.mli[395,16055+26]..[395,16055+29])
+                          Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[395,16055+26]..[395,16055+29])
+                          []
+                        core_type (stdlib/templates/hashtbl.template.mli[395,16055+32]..[395,16055+34])
+                          Ptyp_var a
+                      ]
+                  ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[398,16121+4]..[398,16121+38])
+            Psig_value
+            value_description "to_seq_keys" (stdlib/templates/hashtbl.template.mli[398,16121+8]..[398,16121+19]) (stdlib/templates/hashtbl.template.mli[398,16121+4]..[398,16121+38])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[399,16160+4]..[399,16160+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[399,16160+4]..[399,16160+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[399,16160+4]..[399,16160+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[398,16121+22]..[398,16121+38])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[398,16121+22]..[398,16121+25])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[398,16121+24]..[398,16121+25])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[398,16121+22]..[398,16121+23])
+                      Ptyp_any
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[398,16121+29]..[398,16121+38])
+                  Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[398,16121+33]..[398,16121+38])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[398,16121+29]..[398,16121+32])
+                      Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[398,16121+29]..[398,16121+32])
+                      []
+                  ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[401,16184+4]..[401,16184+40])
+            Psig_value
+            value_description "to_seq_values" (stdlib/templates/hashtbl.template.mli[401,16184+8]..[401,16184+21]) (stdlib/templates/hashtbl.template.mli[401,16184+4]..[401,16184+40])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[402,16225+4]..[402,16225+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[402,16225+4]..[402,16225+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[402,16225+4]..[402,16225+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[401,16184+24]..[401,16184+40])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[401,16184+24]..[401,16184+28])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[401,16184+27]..[401,16184+28])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[401,16184+24]..[401,16184+26])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[401,16184+32]..[401,16184+40])
+                  Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[401,16184+35]..[401,16184+40])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[401,16184+32]..[401,16184+34])
+                      Ptyp_var a
+                  ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[404,16249+4]..[404,16249+50])
+            Psig_value
+            value_description "add_seq" (stdlib/templates/hashtbl.template.mli[404,16249+8]..[404,16249+15]) (stdlib/templates/hashtbl.template.mli[404,16249+4]..[404,16249+50])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[405,16300+4]..[405,16300+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[405,16300+4]..[405,16300+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[405,16300+4]..[405,16300+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[404,16249+18]..[404,16249+50])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[404,16249+18]..[404,16249+22])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[404,16249+21]..[404,16249+22])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[404,16249+18]..[404,16249+20])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[404,16249+26]..[404,16249+50])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[404,16249+26]..[404,16249+42])
+                    Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[404,16249+37]..[404,16249+42])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[404,16249+27]..[404,16249+35])
+                        Ptyp_tuple
+                        [
+                          core_type (stdlib/templates/hashtbl.template.mli[404,16249+27]..[404,16249+30])
+                            Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[404,16249+27]..[404,16249+30])
+                            []
+                          core_type (stdlib/templates/hashtbl.template.mli[404,16249+33]..[404,16249+35])
+                            Ptyp_var a
+                        ]
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[404,16249+46]..[404,16249+50])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[404,16249+46]..[404,16249+50])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[407,16324+4]..[407,16324+54])
+            Psig_value
+            value_description "replace_seq" (stdlib/templates/hashtbl.template.mli[407,16324+8]..[407,16324+19]) (stdlib/templates/hashtbl.template.mli[407,16324+4]..[407,16324+54])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[408,16379+4]..[408,16379+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[408,16379+4]..[408,16379+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[408,16379+4]..[408,16379+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[407,16324+22]..[407,16324+54])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[407,16324+22]..[407,16324+26])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[407,16324+25]..[407,16324+26])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[407,16324+22]..[407,16324+24])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[407,16324+30]..[407,16324+54])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[407,16324+30]..[407,16324+46])
+                    Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[407,16324+41]..[407,16324+46])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[407,16324+31]..[407,16324+39])
+                        Ptyp_tuple
+                        [
+                          core_type (stdlib/templates/hashtbl.template.mli[407,16324+31]..[407,16324+34])
+                            Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[407,16324+31]..[407,16324+34])
+                            []
+                          core_type (stdlib/templates/hashtbl.template.mli[407,16324+37]..[407,16324+39])
+                            Ptyp_var a
+                        ]
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[407,16324+50]..[407,16324+54])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[407,16324+50]..[407,16324+54])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[410,16403+4]..[410,16403+41])
+            Psig_value
+            value_description "of_seq" (stdlib/templates/hashtbl.template.mli[410,16403+8]..[410,16403+14]) (stdlib/templates/hashtbl.template.mli[410,16403+4]..[410,16403+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[411,16445+4]..[411,16445+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[411,16445+4]..[411,16445+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[411,16445+4]..[411,16445+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[410,16403+17]..[410,16403+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[410,16403+17]..[410,16403+33])
+                  Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[410,16403+28]..[410,16403+33])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[410,16403+18]..[410,16403+26])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/hashtbl.template.mli[410,16403+18]..[410,16403+21])
+                          Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[410,16403+18]..[410,16403+21])
+                          []
+                        core_type (stdlib/templates/hashtbl.template.mli[410,16403+24]..[410,16403+26])
+                          Ptyp_var a
+                      ]
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[410,16403+37]..[410,16403+41])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[410,16403+40]..[410,16403+41])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[410,16403+37]..[410,16403+39])
+                      Ptyp_var a
+                  ]
+              []
+        ]
+  signature_item (stdlib/templates/hashtbl.template.mli[415,16527+0]..[415,16527+52])
+    Psig_module "Make" (stdlib/templates/hashtbl.template.mli[415,16527+7]..[415,16527+11])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[416,16580+0]..[425,17136+34])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[416,16580+0]..[425,17136+34])
+              Pexp_constant PConst_string(" Functor building an implementation of the hashtable structure.\n    The functor [Hashtbl.Make] returns a structure containing\n    a type [key] of keys and a type ['a t] of hash tables\n    associating data of type ['a] to keys of type [key].\n    The operations perform similarly to those of the generic\n    interface, but use the hashing and equality functions\n    specified in the functor argument [H] instead of generic\n    equality and hashing.  Since the hash function is not seeded,\n    the [create] operation of the result structure always returns\n    non-randomized hash tables. ",(stdlib/templates/hashtbl.template.mli[416,16580+0]..[425,17136+34]),None)
+        ]
+    module_type (stdlib/templates/hashtbl.template.mli[415,16527+12]..[415,16527+52])
+      Pmty_functor "H" (stdlib/templates/hashtbl.template.mli[415,16527+13]..[415,16527+14])
+      module_type (stdlib/templates/hashtbl.template.mli[415,16527+17]..[415,16527+27])
+        Pmty_ident "HashedType" (stdlib/templates/hashtbl.template.mli[415,16527+17]..[415,16527+27])
+      module_type (stdlib/templates/hashtbl.template.mli[415,16527+31]..[415,16527+52])
+        Pmty_with
+        module_type (stdlib/templates/hashtbl.template.mli[415,16527+31]..[415,16527+32])
+          Pmty_ident "S" (stdlib/templates/hashtbl.template.mli[415,16527+31]..[415,16527+32])
+        [
+          Pwith_type "key" (stdlib/templates/hashtbl.template.mli[415,16527+43]..[415,16527+46])
+            type_declaration "key" (stdlib/templates/hashtbl.template.mli[415,16527+43]..[415,16527+46]) (stdlib/templates/hashtbl.template.mli[415,16527+38]..[415,16527+52])
+              ptype_params =
+                []
+              ptype_cstrs =
+                []
+              ptype_kind =
+                Ptype_abstract
+              ptype_private = Public
+              ptype_manifest =
+                Some
+                  core_type (stdlib/templates/hashtbl.template.mli[415,16527+49]..[415,16527+52])
+                    Ptyp_constr "H.t" (stdlib/templates/hashtbl.template.mli[415,16527+49]..[415,16527+52])
+                    []
+        ]
+  signature_item (stdlib/templates/hashtbl.template.mli[427,17172+0]..[441,17714+5])
+    Psig_modtype "SeededHashedType" (stdlib/templates/hashtbl.template.mli[427,17172+12]..[427,17172+28])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[442,17720+0]..[443,17774+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[442,17720+0]..[443,17774+18])
+              Pexp_constant PConst_string(" The input signature of the functor {!MakeSeeded}.\n    @since 4.00 ",(stdlib/templates/hashtbl.template.mli[442,17720+0]..[443,17774+18]),None)
+        ]
+      module_type (stdlib/templates/hashtbl.template.mli[428,17203+2]..[441,17714+5])
+        Pmty_signature
+        [
+          signature_item (stdlib/templates/hashtbl.template.mli[429,17209+4]..[429,17209+10])
+            Psig_type Rec
+            [
+              type_declaration "t" (stdlib/templates/hashtbl.template.mli[429,17209+9]..[429,17209+10]) (stdlib/templates/hashtbl.template.mli[429,17209+4]..[429,17209+10])
+                attribute "ocaml.doc"
+                  [
+                    structure_item (stdlib/templates/hashtbl.template.mli[430,17220+4]..[430,17220+42])
+                      Pstr_eval
+                      expression (stdlib/templates/hashtbl.template.mli[430,17220+4]..[430,17220+42])
+                        Pexp_constant PConst_string(" The type of the hashtable keys. ",(stdlib/templates/hashtbl.template.mli[430,17220+4]..[430,17220+42]),None)
+                  ]
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          signature_item (stdlib/templates/hashtbl.template.mli[432,17264+4]..[432,17264+29])
+            Psig_value
+            value_description "equal" (stdlib/templates/hashtbl.template.mli[432,17264+8]..[432,17264+13]) (stdlib/templates/hashtbl.template.mli[432,17264+4]..[432,17264+29])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[433,17294+4]..[433,17294+55])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[433,17294+4]..[433,17294+55])
+                      Pexp_constant PConst_string(" The equality predicate used to compare keys. ",(stdlib/templates/hashtbl.template.mli[433,17294+4]..[433,17294+55]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[432,17264+15]..[432,17264+29])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[432,17264+15]..[432,17264+16])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[432,17264+15]..[432,17264+16])
+                  []
+                core_type (stdlib/templates/hashtbl.template.mli[432,17264+20]..[432,17264+29])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[432,17264+20]..[432,17264+21])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[432,17264+20]..[432,17264+21])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[432,17264+25]..[432,17264+29])
+                    Ptyp_constr "bool" (stdlib/templates/hashtbl.template.mli[432,17264+25]..[432,17264+29])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[435,17351+4]..[435,17351+36])
+            Psig_value
+            value_description "seeded_hash" (stdlib/templates/hashtbl.template.mli[435,17351+8]..[435,17351+19]) (stdlib/templates/hashtbl.template.mli[435,17351+4]..[435,17351+36])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[436,17388+6]..[440,17671+42])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[436,17388+6]..[440,17671+42])
+                      Pexp_constant PConst_string(" A seeded hashing function on keys.  The first argument is\n          the seed.  It must be the case that if [equal x y] is true,\n          then [seeded_hash seed x = seeded_hash seed y] for any value of\n          [seed].  A suitable choice for [seeded_hash] is the function\n          {!Hashtbl.seeded_hash} below. ",(stdlib/templates/hashtbl.template.mli[436,17388+6]..[440,17671+42]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[435,17351+21]..[435,17351+36])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[435,17351+21]..[435,17351+24])
+                  Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[435,17351+21]..[435,17351+24])
+                  []
+                core_type (stdlib/templates/hashtbl.template.mli[435,17351+28]..[435,17351+36])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[435,17351+28]..[435,17351+29])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[435,17351+28]..[435,17351+29])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[435,17351+33]..[435,17351+36])
+                    Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[435,17351+33]..[435,17351+36])
+                    []
+              []
+        ]
+  signature_item (stdlib/templates/hashtbl.template.mli[445,17794+0]..[488,19071+5])
+    Psig_modtype "SeededS" (stdlib/templates/hashtbl.template.mli[445,17794+12]..[445,17794+19])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[489,19077+0]..[490,19132+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[489,19077+0]..[490,19132+18])
+              Pexp_constant PConst_string(" The output signature of the functor {!MakeSeeded}.\n    @since 4.00 ",(stdlib/templates/hashtbl.template.mli[489,19077+0]..[490,19132+18]),None)
+        ]
+      module_type (stdlib/templates/hashtbl.template.mli[446,17816+2]..[488,19071+5])
+        Pmty_signature
+        [
+          signature_item (stdlib/templates/hashtbl.template.mli[447,17822+4]..[447,17822+12])
+            Psig_type Rec
+            [
+              type_declaration "key" (stdlib/templates/hashtbl.template.mli[447,17822+9]..[447,17822+12]) (stdlib/templates/hashtbl.template.mli[447,17822+4]..[447,17822+12])
+                ptype_params =
+                  []
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          signature_item (stdlib/templates/hashtbl.template.mli[448,17835+4]..[448,17835+14])
+            Psig_type Rec
+            [
+              type_declaration "t" (stdlib/templates/hashtbl.template.mli[448,17835+13]..[448,17835+14]) (stdlib/templates/hashtbl.template.mli[448,17835+4]..[448,17835+14])
+                ptype_params =
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[448,17835+10]..[448,17835+12])
+                      Ptyp_var a
+                  ]
+                ptype_cstrs =
+                  []
+                ptype_kind =
+                  Ptype_abstract
+                ptype_private = Public
+                ptype_manifest =
+                  None
+            ]
+          signature_item (stdlib/templates/hashtbl.template.mli[449,17850+4]..[450,17920+28])
+            Psig_value
+            value_description "create" (stdlib/templates/hashtbl.template.mli[449,17850+8]..[449,17850+14]) (stdlib/templates/hashtbl.template.mli[449,17850+4]..[450,17920+28])
+              core_type (stdlib/templates/hashtbl.template.mli[449,17850+17]..[450,17920+28])
+                Ptyp_arrow
+                Optional "random"
+                core_type (stdlib/templates/hashtbl.template.mli[449,17850+62]..[449,17850+66])
+                  Ptyp_constr "bool" (stdlib/templates/hashtbl.template.mli[449,17850+62]..[449,17850+66])
+                  []
+                core_type (stdlib/templates/hashtbl.template.mli[450,17920+17]..[450,17920+28])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[450,17920+17]..[450,17920+20])
+                    Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[450,17920+17]..[450,17920+20])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[450,17920+24]..[450,17920+28])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[450,17920+27]..[450,17920+28])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[450,17920+24]..[450,17920+26])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[451,17949+4]..[451,17949+28])
+            Psig_value
+            value_description "clear" (stdlib/templates/hashtbl.template.mli[451,17949+8]..[451,17949+13]) (stdlib/templates/hashtbl.template.mli[451,17949+4]..[451,17949+28])
+              core_type (stdlib/templates/hashtbl.template.mli[451,17949+16]..[451,17949+28])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[451,17949+16]..[451,17949+20])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[451,17949+19]..[451,17949+20])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[451,17949+16]..[451,17949+18])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[451,17949+24]..[451,17949+28])
+                  Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[451,17949+24]..[451,17949+28])
+                  []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[452,17978+4]..[452,17978+28])
+            Psig_value
+            value_description "reset" (stdlib/templates/hashtbl.template.mli[452,17978+8]..[452,17978+13]) (stdlib/templates/hashtbl.template.mli[452,17978+4]..[452,17978+28])
+              core_type (stdlib/templates/hashtbl.template.mli[452,17978+16]..[452,17978+28])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[452,17978+16]..[452,17978+20])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[452,17978+19]..[452,17978+20])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[452,17978+16]..[452,17978+18])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[452,17978+24]..[452,17978+28])
+                  Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[452,17978+24]..[452,17978+28])
+                  []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[453,18007+4]..[453,18007+27])
+            Psig_value
+            value_description "copy" (stdlib/templates/hashtbl.template.mli[453,18007+8]..[453,18007+12]) (stdlib/templates/hashtbl.template.mli[453,18007+4]..[453,18007+27])
+              core_type (stdlib/templates/hashtbl.template.mli[453,18007+15]..[453,18007+27])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[453,18007+15]..[453,18007+19])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[453,18007+18]..[453,18007+19])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[453,18007+15]..[453,18007+17])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[453,18007+23]..[453,18007+27])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[453,18007+26]..[453,18007+27])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[453,18007+23]..[453,18007+25])
+                      Ptyp_var a
+                  ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[454,18035+4]..[454,18035+48])
+            Psig_value
+            value_description "add" (stdlib/templates/hashtbl.template.mli[454,18035+8]..[454,18035+11]) (stdlib/templates/hashtbl.template.mli[454,18035+4]..[454,18035+48])
+              core_type (stdlib/templates/hashtbl.template.mli[454,18035+14]..[454,18035+48])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[454,18035+14]..[454,18035+18])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[454,18035+17]..[454,18035+18])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[454,18035+14]..[454,18035+16])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[454,18035+22]..[454,18035+48])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[454,18035+26]..[454,18035+29])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[454,18035+26]..[454,18035+29])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[454,18035+33]..[454,18035+48])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[454,18035+38]..[454,18035+40])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[454,18035+44]..[454,18035+48])
+                      Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[454,18035+44]..[454,18035+48])
+                      []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[455,18084+4]..[455,18084+36])
+            Psig_value
+            value_description "remove" (stdlib/templates/hashtbl.template.mli[455,18084+8]..[455,18084+14]) (stdlib/templates/hashtbl.template.mli[455,18084+4]..[455,18084+36])
+              core_type (stdlib/templates/hashtbl.template.mli[455,18084+17]..[455,18084+36])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[455,18084+17]..[455,18084+21])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[455,18084+20]..[455,18084+21])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[455,18084+17]..[455,18084+19])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[455,18084+25]..[455,18084+36])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[455,18084+25]..[455,18084+28])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[455,18084+25]..[455,18084+28])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[455,18084+32]..[455,18084+36])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[455,18084+32]..[455,18084+36])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[456,18121+4]..[456,18121+32])
+            Psig_value
+            value_description "find" (stdlib/templates/hashtbl.template.mli[456,18121+8]..[456,18121+12]) (stdlib/templates/hashtbl.template.mli[456,18121+4]..[456,18121+32])
+              core_type (stdlib/templates/hashtbl.template.mli[456,18121+15]..[456,18121+32])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[456,18121+15]..[456,18121+19])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[456,18121+18]..[456,18121+19])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[456,18121+15]..[456,18121+17])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[456,18121+23]..[456,18121+32])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[456,18121+23]..[456,18121+26])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[456,18121+23]..[456,18121+26])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[456,18121+30]..[456,18121+32])
+                    Ptyp_var a
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[457,18154+4]..[457,18154+43])
+            Psig_value
+            value_description "find_opt" (stdlib/templates/hashtbl.template.mli[457,18154+8]..[457,18154+16]) (stdlib/templates/hashtbl.template.mli[457,18154+4]..[457,18154+43])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[457,18154+44]..[457,18154+62])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[457,18154+44]..[457,18154+62])
+                      Pexp_constant PConst_string(" @since 4.05 ",(stdlib/templates/hashtbl.template.mli[457,18154+44]..[457,18154+62]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[457,18154+19]..[457,18154+43])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[457,18154+19]..[457,18154+23])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[457,18154+22]..[457,18154+23])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[457,18154+19]..[457,18154+21])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[457,18154+27]..[457,18154+43])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[457,18154+27]..[457,18154+30])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[457,18154+27]..[457,18154+30])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[457,18154+34]..[457,18154+43])
+                    Ptyp_constr "option" (stdlib/templates/hashtbl.template.mli[457,18154+37]..[457,18154+43])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[457,18154+34]..[457,18154+36])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[459,18218+4]..[459,18218+41])
+            Psig_value
+            value_description "find_all" (stdlib/templates/hashtbl.template.mli[459,18218+8]..[459,18218+16]) (stdlib/templates/hashtbl.template.mli[459,18218+4]..[459,18218+41])
+              core_type (stdlib/templates/hashtbl.template.mli[459,18218+19]..[459,18218+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[459,18218+19]..[459,18218+23])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[459,18218+22]..[459,18218+23])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[459,18218+19]..[459,18218+21])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[459,18218+27]..[459,18218+41])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[459,18218+27]..[459,18218+30])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[459,18218+27]..[459,18218+30])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[459,18218+34]..[459,18218+41])
+                    Ptyp_constr "list" (stdlib/templates/hashtbl.template.mli[459,18218+37]..[459,18218+41])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[459,18218+34]..[459,18218+36])
+                        Ptyp_var a
+                    ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[460,18260+4]..[460,18260+52])
+            Psig_value
+            value_description "replace" (stdlib/templates/hashtbl.template.mli[460,18260+8]..[460,18260+15]) (stdlib/templates/hashtbl.template.mli[460,18260+4]..[460,18260+52])
+              core_type (stdlib/templates/hashtbl.template.mli[460,18260+18]..[460,18260+52])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[460,18260+18]..[460,18260+22])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[460,18260+21]..[460,18260+22])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[460,18260+18]..[460,18260+20])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[460,18260+26]..[460,18260+52])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[460,18260+30]..[460,18260+33])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[460,18260+30]..[460,18260+33])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[460,18260+37]..[460,18260+52])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[460,18260+42]..[460,18260+44])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[460,18260+48]..[460,18260+52])
+                      Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[460,18260+48]..[460,18260+52])
+                      []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[461,18313+4]..[461,18313+33])
+            Psig_value
+            value_description "mem" (stdlib/templates/hashtbl.template.mli[461,18313+8]..[461,18313+11]) (stdlib/templates/hashtbl.template.mli[461,18313+4]..[461,18313+33])
+              core_type (stdlib/templates/hashtbl.template.mli[461,18313+14]..[461,18313+33])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[461,18313+14]..[461,18313+18])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[461,18313+17]..[461,18313+18])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[461,18313+14]..[461,18313+16])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[461,18313+22]..[461,18313+33])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[461,18313+22]..[461,18313+25])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[461,18313+22]..[461,18313+25])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[461,18313+29]..[461,18313+33])
+                    Ptyp_constr "bool" (stdlib/templates/hashtbl.template.mli[461,18313+29]..[461,18313+33])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[462,18347+4]..[462,18347+61])
+            Psig_value
+            value_description "iter" (stdlib/templates/hashtbl.template.mli[462,18347+8]..[462,18347+12]) (stdlib/templates/hashtbl.template.mli[462,18347+4]..[462,18347+61])
+              core_type (stdlib/templates/hashtbl.template.mli[462,18347+15]..[462,18347+61])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/hashtbl.template.mli[462,18347+18]..[462,18347+44])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[462,18347+22]..[462,18347+25])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[462,18347+22]..[462,18347+25])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[462,18347+29]..[462,18347+44])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[462,18347+34]..[462,18347+36])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[462,18347+40]..[462,18347+44])
+                      Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[462,18347+40]..[462,18347+44])
+                      []
+                core_type (stdlib/templates/hashtbl.template.mli[462,18347+49]..[462,18347+61])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[462,18347+49]..[462,18347+53])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[462,18347+52]..[462,18347+53])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[462,18347+49]..[462,18347+51])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[462,18347+57]..[462,18347+61])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[462,18347+57]..[462,18347+61])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[463,18409+4]..[464,18484+10])
+            Psig_value
+            value_description "filter_map_inplace" (stdlib/templates/hashtbl.template.mli[463,18409+8]..[463,18409+26]) (stdlib/templates/hashtbl.template.mli[463,18409+4]..[464,18484+10])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[465,18495+4]..[465,18495+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[465,18495+4]..[465,18495+22])
+                      Pexp_constant PConst_string(" @since 4.03 ",(stdlib/templates/hashtbl.template.mli[465,18495+4]..[465,18495+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[463,18409+28]..[464,18484+10])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/hashtbl.template.mli[463,18409+31]..[463,18409+62])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[463,18409+35]..[463,18409+38])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[463,18409+35]..[463,18409+38])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[463,18409+42]..[463,18409+62])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[463,18409+47]..[463,18409+49])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[463,18409+53]..[463,18409+62])
+                      Ptyp_constr "option" (stdlib/templates/hashtbl.template.mli[463,18409+56]..[463,18409+62])
+                      [
+                        core_type (stdlib/templates/hashtbl.template.mli[463,18409+53]..[463,18409+55])
+                          Ptyp_var a
+                      ]
+                core_type (stdlib/templates/hashtbl.template.mli[463,18409+67]..[464,18484+10])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[463,18409+67]..[463,18409+71])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[463,18409+70]..[463,18409+71])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[463,18409+67]..[463,18409+69])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[464,18484+6]..[464,18484+10])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[464,18484+6]..[464,18484+10])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[467,18519+4]..[467,18519+74])
+            Psig_value
+            value_description "fold" (stdlib/templates/hashtbl.template.mli[467,18519+8]..[467,18519+12]) (stdlib/templates/hashtbl.template.mli[467,18519+4]..[467,18519+74])
+              core_type (stdlib/templates/hashtbl.template.mli[467,18519+15]..[467,18519+74])
+                Ptyp_arrow
+                Labelled "f"
+                core_type (stdlib/templates/hashtbl.template.mli[467,18519+18]..[467,18519+48])
+                  Ptyp_arrow
+                  Labelled "key"
+                  core_type (stdlib/templates/hashtbl.template.mli[467,18519+22]..[467,18519+25])
+                    Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[467,18519+22]..[467,18519+25])
+                    []
+                  core_type (stdlib/templates/hashtbl.template.mli[467,18519+29]..[467,18519+48])
+                    Ptyp_arrow
+                    Labelled "data"
+                    core_type (stdlib/templates/hashtbl.template.mli[467,18519+34]..[467,18519+36])
+                      Ptyp_var a
+                    core_type (stdlib/templates/hashtbl.template.mli[467,18519+40]..[467,18519+48])
+                      Ptyp_arrow
+                      Nolabel
+                      core_type (stdlib/templates/hashtbl.template.mli[467,18519+40]..[467,18519+42])
+                        Ptyp_var b
+                      core_type (stdlib/templates/hashtbl.template.mli[467,18519+46]..[467,18519+48])
+                        Ptyp_var b
+                core_type (stdlib/templates/hashtbl.template.mli[467,18519+53]..[467,18519+74])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[467,18519+53]..[467,18519+57])
+                    Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[467,18519+56]..[467,18519+57])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[467,18519+53]..[467,18519+55])
+                        Ptyp_var a
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[467,18519+61]..[467,18519+74])
+                    Ptyp_arrow
+                    Labelled "init"
+                    core_type (stdlib/templates/hashtbl.template.mli[467,18519+66]..[467,18519+68])
+                      Ptyp_var b
+                    core_type (stdlib/templates/hashtbl.template.mli[467,18519+72]..[467,18519+74])
+                      Ptyp_var b
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[468,18594+4]..[468,18594+28])
+            Psig_value
+            value_description "length" (stdlib/templates/hashtbl.template.mli[468,18594+8]..[468,18594+14]) (stdlib/templates/hashtbl.template.mli[468,18594+4]..[468,18594+28])
+              core_type (stdlib/templates/hashtbl.template.mli[468,18594+17]..[468,18594+28])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[468,18594+17]..[468,18594+21])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[468,18594+20]..[468,18594+21])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[468,18594+17]..[468,18594+19])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[468,18594+25]..[468,18594+28])
+                  Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[468,18594+25]..[468,18594+28])
+                  []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[469,18623+4]..[469,18623+33])
+            Psig_value
+            value_description "stats" (stdlib/templates/hashtbl.template.mli[469,18623+8]..[469,18623+13]) (stdlib/templates/hashtbl.template.mli[469,18623+4]..[469,18623+33])
+              core_type (stdlib/templates/hashtbl.template.mli[469,18623+15]..[469,18623+33])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[469,18623+15]..[469,18623+19])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[469,18623+18]..[469,18623+19])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[469,18623+15]..[469,18623+17])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[469,18623+23]..[469,18623+33])
+                  Ptyp_constr "statistics" (stdlib/templates/hashtbl.template.mli[469,18623+23]..[469,18623+33])
+                  []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[471,18658+4]..[471,18658+41])
+            Psig_value
+            value_description "to_seq" (stdlib/templates/hashtbl.template.mli[471,18658+8]..[471,18658+14]) (stdlib/templates/hashtbl.template.mli[471,18658+4]..[471,18658+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[472,18700+4]..[472,18700+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[472,18700+4]..[472,18700+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[472,18700+4]..[472,18700+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[471,18658+17]..[471,18658+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[471,18658+17]..[471,18658+21])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[471,18658+20]..[471,18658+21])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[471,18658+17]..[471,18658+19])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[471,18658+25]..[471,18658+41])
+                  Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[471,18658+36]..[471,18658+41])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[471,18658+26]..[471,18658+34])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/hashtbl.template.mli[471,18658+26]..[471,18658+29])
+                          Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[471,18658+26]..[471,18658+29])
+                          []
+                        core_type (stdlib/templates/hashtbl.template.mli[471,18658+32]..[471,18658+34])
+                          Ptyp_var a
+                      ]
+                  ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[474,18724+4]..[474,18724+38])
+            Psig_value
+            value_description "to_seq_keys" (stdlib/templates/hashtbl.template.mli[474,18724+8]..[474,18724+19]) (stdlib/templates/hashtbl.template.mli[474,18724+4]..[474,18724+38])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[475,18763+4]..[475,18763+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[475,18763+4]..[475,18763+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[475,18763+4]..[475,18763+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[474,18724+22]..[474,18724+38])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[474,18724+22]..[474,18724+25])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[474,18724+24]..[474,18724+25])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[474,18724+22]..[474,18724+23])
+                      Ptyp_any
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[474,18724+29]..[474,18724+38])
+                  Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[474,18724+33]..[474,18724+38])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[474,18724+29]..[474,18724+32])
+                      Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[474,18724+29]..[474,18724+32])
+                      []
+                  ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[477,18787+4]..[477,18787+40])
+            Psig_value
+            value_description "to_seq_values" (stdlib/templates/hashtbl.template.mli[477,18787+8]..[477,18787+21]) (stdlib/templates/hashtbl.template.mli[477,18787+4]..[477,18787+40])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[478,18828+4]..[478,18828+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[478,18828+4]..[478,18828+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[478,18828+4]..[478,18828+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[477,18787+24]..[477,18787+40])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[477,18787+24]..[477,18787+28])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[477,18787+27]..[477,18787+28])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[477,18787+24]..[477,18787+26])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[477,18787+32]..[477,18787+40])
+                  Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[477,18787+35]..[477,18787+40])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[477,18787+32]..[477,18787+34])
+                      Ptyp_var a
+                  ]
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[480,18852+4]..[480,18852+50])
+            Psig_value
+            value_description "add_seq" (stdlib/templates/hashtbl.template.mli[480,18852+8]..[480,18852+15]) (stdlib/templates/hashtbl.template.mli[480,18852+4]..[480,18852+50])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[481,18903+4]..[481,18903+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[481,18903+4]..[481,18903+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[481,18903+4]..[481,18903+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[480,18852+18]..[480,18852+50])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[480,18852+18]..[480,18852+22])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[480,18852+21]..[480,18852+22])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[480,18852+18]..[480,18852+20])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[480,18852+26]..[480,18852+50])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[480,18852+26]..[480,18852+42])
+                    Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[480,18852+37]..[480,18852+42])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[480,18852+27]..[480,18852+35])
+                        Ptyp_tuple
+                        [
+                          core_type (stdlib/templates/hashtbl.template.mli[480,18852+27]..[480,18852+30])
+                            Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[480,18852+27]..[480,18852+30])
+                            []
+                          core_type (stdlib/templates/hashtbl.template.mli[480,18852+33]..[480,18852+35])
+                            Ptyp_var a
+                        ]
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[480,18852+46]..[480,18852+50])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[480,18852+46]..[480,18852+50])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[483,18927+4]..[483,18927+54])
+            Psig_value
+            value_description "replace_seq" (stdlib/templates/hashtbl.template.mli[483,18927+8]..[483,18927+19]) (stdlib/templates/hashtbl.template.mli[483,18927+4]..[483,18927+54])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[484,18982+4]..[484,18982+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[484,18982+4]..[484,18982+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[484,18982+4]..[484,18982+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[483,18927+22]..[483,18927+54])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[483,18927+22]..[483,18927+26])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[483,18927+25]..[483,18927+26])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[483,18927+22]..[483,18927+24])
+                      Ptyp_var a
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[483,18927+30]..[483,18927+54])
+                  Ptyp_arrow
+                  Nolabel
+                  core_type (stdlib/templates/hashtbl.template.mli[483,18927+30]..[483,18927+46])
+                    Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[483,18927+41]..[483,18927+46])
+                    [
+                      core_type (stdlib/templates/hashtbl.template.mli[483,18927+31]..[483,18927+39])
+                        Ptyp_tuple
+                        [
+                          core_type (stdlib/templates/hashtbl.template.mli[483,18927+31]..[483,18927+34])
+                            Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[483,18927+31]..[483,18927+34])
+                            []
+                          core_type (stdlib/templates/hashtbl.template.mli[483,18927+37]..[483,18927+39])
+                            Ptyp_var a
+                        ]
+                    ]
+                  core_type (stdlib/templates/hashtbl.template.mli[483,18927+50]..[483,18927+54])
+                    Ptyp_constr "unit" (stdlib/templates/hashtbl.template.mli[483,18927+50]..[483,18927+54])
+                    []
+              []
+          signature_item (stdlib/templates/hashtbl.template.mli[486,19006+4]..[486,19006+41])
+            Psig_value
+            value_description "of_seq" (stdlib/templates/hashtbl.template.mli[486,19006+8]..[486,19006+14]) (stdlib/templates/hashtbl.template.mli[486,19006+4]..[486,19006+41])
+              attribute "ocaml.doc"
+                [
+                  structure_item (stdlib/templates/hashtbl.template.mli[487,19048+4]..[487,19048+22])
+                    Pstr_eval
+                    expression (stdlib/templates/hashtbl.template.mli[487,19048+4]..[487,19048+22])
+                      Pexp_constant PConst_string(" @since 4.07 ",(stdlib/templates/hashtbl.template.mli[487,19048+4]..[487,19048+22]),None)
+                ]
+              core_type (stdlib/templates/hashtbl.template.mli[486,19006+17]..[486,19006+41])
+                Ptyp_arrow
+                Nolabel
+                core_type (stdlib/templates/hashtbl.template.mli[486,19006+17]..[486,19006+33])
+                  Ptyp_constr "Seq.t" (stdlib/templates/hashtbl.template.mli[486,19006+28]..[486,19006+33])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[486,19006+18]..[486,19006+26])
+                      Ptyp_tuple
+                      [
+                        core_type (stdlib/templates/hashtbl.template.mli[486,19006+18]..[486,19006+21])
+                          Ptyp_constr "key" (stdlib/templates/hashtbl.template.mli[486,19006+18]..[486,19006+21])
+                          []
+                        core_type (stdlib/templates/hashtbl.template.mli[486,19006+24]..[486,19006+26])
+                          Ptyp_var a
+                      ]
+                  ]
+                core_type (stdlib/templates/hashtbl.template.mli[486,19006+37]..[486,19006+41])
+                  Ptyp_constr "t" (stdlib/templates/hashtbl.template.mli[486,19006+40]..[486,19006+41])
+                  [
+                    core_type (stdlib/templates/hashtbl.template.mli[486,19006+37]..[486,19006+39])
+                      Ptyp_var a
+                  ]
+              []
+        ]
+  signature_item (stdlib/templates/hashtbl.template.mli[492,19152+0]..[492,19152+70])
+    Psig_module "MakeSeeded" (stdlib/templates/hashtbl.template.mli[492,19152+7]..[492,19152+17])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[493,19223+0]..[504,19914+18])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[493,19223+0]..[504,19914+18])
+              Pexp_constant PConst_string(" Functor building an implementation of the hashtable structure.\n    The functor [Hashtbl.MakeSeeded] returns a structure containing\n    a type [key] of keys and a type ['a t] of hash tables\n    associating data of type ['a] to keys of type [key].\n    The operations perform similarly to those of the generic\n    interface, but use the seeded hashing and equality functions\n    specified in the functor argument [H] instead of generic\n    equality and hashing.  The [create] operation of the\n    result structure supports the [~random] optional parameter\n    and returns randomized hash tables if [~random:true] is passed\n    or if randomization is globally on (see {!Hashtbl.randomize}).\n    @since 4.00 ",(stdlib/templates/hashtbl.template.mli[493,19223+0]..[504,19914+18]),None)
+        ]
+    module_type (stdlib/templates/hashtbl.template.mli[492,19152+18]..[492,19152+70])
+      Pmty_functor "H" (stdlib/templates/hashtbl.template.mli[492,19152+19]..[492,19152+20])
+      module_type (stdlib/templates/hashtbl.template.mli[492,19152+23]..[492,19152+39])
+        Pmty_ident "SeededHashedType" (stdlib/templates/hashtbl.template.mli[492,19152+23]..[492,19152+39])
+      module_type (stdlib/templates/hashtbl.template.mli[492,19152+43]..[492,19152+70])
+        Pmty_with
+        module_type (stdlib/templates/hashtbl.template.mli[492,19152+43]..[492,19152+50])
+          Pmty_ident "SeededS" (stdlib/templates/hashtbl.template.mli[492,19152+43]..[492,19152+50])
+        [
+          Pwith_type "key" (stdlib/templates/hashtbl.template.mli[492,19152+61]..[492,19152+64])
+            type_declaration "key" (stdlib/templates/hashtbl.template.mli[492,19152+61]..[492,19152+64]) (stdlib/templates/hashtbl.template.mli[492,19152+56]..[492,19152+70])
+              ptype_params =
+                []
+              ptype_cstrs =
+                []
+              ptype_kind =
+                Ptype_abstract
+              ptype_private = Public
+              ptype_manifest =
+                Some
+                  core_type (stdlib/templates/hashtbl.template.mli[492,19152+67]..[492,19152+70])
+                    Ptyp_constr "H.t" (stdlib/templates/hashtbl.template.mli[492,19152+67]..[492,19152+70])
+                    []
+        ]
+  signature_item (stdlib/templates/hashtbl.template.mli[507,19935+0]..[507,19935+41])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[507,19935+0]..[507,19935+41])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[507,19935+0]..[507,19935+41])
+          Pexp_constant PConst_string(" {1 The polymorphic hash functions} ",(stdlib/templates/hashtbl.template.mli[507,19935+0]..[507,19935+41]),None)
+    ]
+  signature_item (stdlib/templates/hashtbl.template.mli[510,19979+0]..[510,19979+20])
+    Psig_value
+    value_description "hash" (stdlib/templates/hashtbl.template.mli[510,19979+4]..[510,19979+8]) (stdlib/templates/hashtbl.template.mli[510,19979+0]..[510,19979+20])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[511,20000+0]..[514,20172+68])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[511,20000+0]..[514,20172+68])
+              Pexp_constant PConst_string(" [Hashtbl.hash x] associates a nonnegative integer to any value of\n   any type. It is guaranteed that\n   if [x = y] or [Stdlib.compare x y = 0], then [hash x = hash y].\n   Moreover, [hash] always terminates, even on cyclic structures. ",(stdlib/templates/hashtbl.template.mli[511,20000+0]..[514,20172+68]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[510,19979+11]..[510,19979+20])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[510,19979+11]..[510,19979+13])
+          Ptyp_var a
+        core_type (stdlib/templates/hashtbl.template.mli[510,19979+17]..[510,19979+20])
+          Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[510,19979+17]..[510,19979+20])
+          []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[516,20242+0]..[516,20242+34])
+    Psig_value
+    value_description "seeded_hash" (stdlib/templates/hashtbl.template.mli[516,20242+4]..[516,20242+15]) (stdlib/templates/hashtbl.template.mli[516,20242+0]..[516,20242+34])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[517,20277+0]..[519,20355+17])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[517,20277+0]..[519,20355+17])
+              Pexp_constant PConst_string(" A variant of {!hash} that is further parameterized by\n   an integer seed.\n   @since 4.00 ",(stdlib/templates/hashtbl.template.mli[517,20277+0]..[519,20355+17]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[516,20242+18]..[516,20242+34])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[516,20242+18]..[516,20242+21])
+          Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[516,20242+18]..[516,20242+21])
+          []
+        core_type (stdlib/templates/hashtbl.template.mli[516,20242+25]..[516,20242+34])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[516,20242+25]..[516,20242+27])
+            Ptyp_var a
+          core_type (stdlib/templates/hashtbl.template.mli[516,20242+31]..[516,20242+34])
+            Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[516,20242+31]..[516,20242+34])
+            []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[521,20374+0]..[521,20374+40])
+    Psig_value
+    value_description "hash_param" (stdlib/templates/hashtbl.template.mli[521,20374+4]..[521,20374+14]) (stdlib/templates/hashtbl.template.mli[521,20374+0]..[521,20374+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[522,20415+0]..[538,21440+42])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[522,20415+0]..[538,21440+42])
+              Pexp_constant PConst_string(" [Hashtbl.hash_param meaningful total x] computes a hash value for [x],\n   with the same properties as for [hash]. The two extra integer\n   parameters [meaningful] and [total] give more precise control over\n   hashing. Hashing performs a breadth-first, left-to-right traversal\n   of the structure [x], stopping after [meaningful] meaningful nodes\n   were encountered, or [total] nodes (meaningful or not) were\n   encountered.  If [total] as specified by the user exceeds a certain\n   value, currently 256, then it is capped to that value.\n   Meaningful nodes are: integers; floating-point\n   numbers; strings; characters; booleans; and constant\n   constructors. Larger values of [meaningful] and [total] means that\n   more nodes are taken into account to compute the final hash value,\n   and therefore collisions are less likely to happen.  However,\n   hashing takes longer. The parameters [meaningful] and [total]\n   govern the tradeoff between accuracy and speed.  As default\n   choices, {!hash} and {!seeded_hash} take\n   [meaningful = 10] and [total = 100]. ",(stdlib/templates/hashtbl.template.mli[522,20415+0]..[538,21440+42]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[521,20374+17]..[521,20374+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[521,20374+17]..[521,20374+20])
+          Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[521,20374+17]..[521,20374+20])
+          []
+        core_type (stdlib/templates/hashtbl.template.mli[521,20374+24]..[521,20374+40])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[521,20374+24]..[521,20374+27])
+            Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[521,20374+24]..[521,20374+27])
+            []
+          core_type (stdlib/templates/hashtbl.template.mli[521,20374+31]..[521,20374+40])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/templates/hashtbl.template.mli[521,20374+31]..[521,20374+33])
+              Ptyp_var a
+            core_type (stdlib/templates/hashtbl.template.mli[521,20374+37]..[521,20374+40])
+              Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[521,20374+37]..[521,20374+40])
+              []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[540,21484+0]..[540,21484+54])
+    Psig_value
+    value_description "seeded_hash_param" (stdlib/templates/hashtbl.template.mli[540,21484+4]..[540,21484+21]) (stdlib/templates/hashtbl.template.mli[540,21484+0]..[540,21484+54])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/templates/hashtbl.template.mli[541,21539+0]..[544,21687+17])
+            Pstr_eval
+            expression (stdlib/templates/hashtbl.template.mli[541,21539+0]..[544,21687+17])
+              Pexp_constant PConst_string(" A variant of {!hash_param} that is further parameterized by\n   an integer seed.  Usage:\n   [Hashtbl.seeded_hash_param meaningful total seed x].\n   @since 4.00 ",(stdlib/templates/hashtbl.template.mli[541,21539+0]..[544,21687+17]),None)
+        ]
+      core_type (stdlib/templates/hashtbl.template.mli[540,21484+24]..[540,21484+54])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/templates/hashtbl.template.mli[540,21484+24]..[540,21484+27])
+          Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[540,21484+24]..[540,21484+27])
+          []
+        core_type (stdlib/templates/hashtbl.template.mli[540,21484+31]..[540,21484+54])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/templates/hashtbl.template.mli[540,21484+31]..[540,21484+34])
+            Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[540,21484+31]..[540,21484+34])
+            []
+          core_type (stdlib/templates/hashtbl.template.mli[540,21484+38]..[540,21484+54])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/templates/hashtbl.template.mli[540,21484+38]..[540,21484+41])
+              Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[540,21484+38]..[540,21484+41])
+              []
+            core_type (stdlib/templates/hashtbl.template.mli[540,21484+45]..[540,21484+54])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/templates/hashtbl.template.mli[540,21484+45]..[540,21484+47])
+                Ptyp_var a
+              core_type (stdlib/templates/hashtbl.template.mli[540,21484+51]..[540,21484+54])
+                Ptyp_constr "int" (stdlib/templates/hashtbl.template.mli[540,21484+51]..[540,21484+54])
+                []
+      []
+  signature_item (stdlib/templates/hashtbl.template.mli[546,21706+0]..[638,24245+2])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/templates/hashtbl.template.mli[546,21706+0]..[638,24245+2])
+        Pstr_eval
+        expression (stdlib/templates/hashtbl.template.mli[546,21706+0]..[638,24245+2])
+          Pexp_constant PConst_string(" {1:examples Examples}\n\n  {2 Basic Example}\n\n  {[\n    (* 0...99 *)\n    let seq = Seq.ints 0 |> Seq.take 100\n\n    (* build from Seq.t *)\n    # let tbl =\n        seq\n        |> Seq.map (fun x -> x, string_of_int x)\n        |> Hashtbl.of_seq\n    val tbl : (int, string) Hashtbl.t = <abstr>\n\n    # Hashtbl.length tbl\n    - : int = 100\n\n    # Hashtbl.find_opt tbl 32\n    - : string option = Some \"32\"\n\n    # Hashtbl.find_opt tbl 166\n    - : string option = None\n\n    # Hashtbl.replace tbl 166 \"one six six\"\n    - : unit = ()\n\n    # Hashtbl.find_opt tbl 166\n    - : string option = Some \"one six six\"\n\n    # Hashtbl.length tbl\n    - : int = 101\n    ]}\n\n\n  {2 Counting Elements}\n\n  Given a sequence of elements (here, a {!Seq.t}), we want to count how many\n  times each distinct element occurs in the sequence. A simple way to do this,\n  assuming the elements are comparable and hashable, is to use a hash table\n  that maps elements to their number of occurrences.\n\n  Here we illustrate that principle using a sequence of (ascii) characters\n  (type [char]).\n  We use a custom [Char_tbl] specialized for [char].\n\n  {[\n    # module Char_tbl = Hashtbl.Make(struct\n        type t = char\n        let equal = Char.equal\n        let hash = Hashtbl.hash\n      end)\n\n    (*  count distinct occurrences of chars in [seq] *)\n    # let count_chars (seq:char Seq.t) : _ list =\n        let counts = Char_tbl.create 16 in\n        Seq.iter\n          (fun c ->\n            let count_c =\n              Char_tbl.find_opt counts c\n              |> Option.value ~default:0\n            in\n            Char_tbl.replace counts c (count_c + 1))\n          seq;\n        (* turn into a list *)\n        Char_tbl.fold (fun c n l -> (c,n) :: l) counts []\n          |> List.sort (fun (c1,_)(c2,_) -> Char.compare c1 c2)\n    val count_chars : Char_tbl.key Seq.t -> (Char.t * int) list = <fun>\n\n    (* basic seq from a string *)\n    # let seq = String.to_seq \"hello world, and all the camels in it!\"\n    val seq : char Seq.t = <fun>\n\n    # count_chars seq\n    - : (Char.t * int) list =\n    [(' ', 7); ('!', 1); (',', 1); ('a', 3); ('c', 1); ('d', 2); ('e', 3);\n     ('h', 2); ('i', 2); ('l', 6); ('m', 1); ('n', 2); ('o', 2); ('r', 1);\n     ('s', 1); ('t', 2); ('w', 1)]\n\n    (* \"abcabcabc...\" *)\n    # let seq2 =\n        Seq.cycle (String.to_seq \"abc\") |> Seq.take 31\n    val seq2 : char Seq.t = <fun>\n\n    # String.of_seq seq2\n    - : String.t = \"abcabcabcabcabcabcabcabcabcabca\"\n\n    # count_chars seq2\n    - : (Char.t * int) list = [('a', 11); ('b', 10); ('c', 10)]\n\n  ]}\n\n",(stdlib/templates/hashtbl.template.mli[546,21706+0]..[638,24245+2]),None)
+    ]
+]
+

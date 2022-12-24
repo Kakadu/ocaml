@@ -1,0 +1,2284 @@
+[
+  signature_item (ocamldoc/odoc_man.mli[16,1079+0]..[16,1079+31])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (ocamldoc/odoc_man.mli[16,1079+0]..[16,1079+31])
+        Pstr_eval
+        expression (ocamldoc/odoc_man.mli[16,1079+0]..[16,1079+31])
+          Pexp_constant PConst_string(" The man pages generator. ",(ocamldoc/odoc_man.mli[16,1079+0]..[16,1079+31]),None)
+    ]
+  signature_item (ocamldoc/odoc_man.mli[18,1112+0]..[18,1112+27])
+    Psig_value
+    value_description "man_suffix" (ocamldoc/odoc_man.mli[18,1112+4]..[18,1112+14]) (ocamldoc/odoc_man.mli[18,1112+0]..[18,1112+27])
+      core_type (ocamldoc/odoc_man.mli[18,1112+17]..[18,1112+27])
+        Ptyp_constr "ref" (ocamldoc/odoc_man.mli[18,1112+24]..[18,1112+27])
+        [
+          core_type (ocamldoc/odoc_man.mli[18,1112+17]..[18,1112+23])
+            Ptyp_constr "string" (ocamldoc/odoc_man.mli[18,1112+17]..[18,1112+23])
+            []
+        ]
+      []
+  signature_item (ocamldoc/odoc_man.mli[20,1141+0]..[20,1141+28])
+    Psig_value
+    value_description "man_section" (ocamldoc/odoc_man.mli[20,1141+4]..[20,1141+15]) (ocamldoc/odoc_man.mli[20,1141+0]..[20,1141+28])
+      core_type (ocamldoc/odoc_man.mli[20,1141+18]..[20,1141+28])
+        Ptyp_constr "ref" (ocamldoc/odoc_man.mli[20,1141+25]..[20,1141+28])
+        [
+          core_type (ocamldoc/odoc_man.mli[20,1141+18]..[20,1141+24])
+            Ptyp_constr "string" (ocamldoc/odoc_man.mli[20,1141+18]..[20,1141+24])
+            []
+        ]
+      []
+  signature_item (ocamldoc/odoc_man.mli[22,1171+0]..[22,1171+23])
+    Psig_value
+    value_description "man_mini" (ocamldoc/odoc_man.mli[22,1171+4]..[22,1171+12]) (ocamldoc/odoc_man.mli[22,1171+0]..[22,1171+23])
+      core_type (ocamldoc/odoc_man.mli[22,1171+15]..[22,1171+23])
+        Ptyp_constr "ref" (ocamldoc/odoc_man.mli[22,1171+20]..[22,1171+23])
+        [
+          core_type (ocamldoc/odoc_man.mli[22,1171+15]..[22,1171+19])
+            Ptyp_constr "bool" (ocamldoc/odoc_man.mli[22,1171+15]..[22,1171+19])
+            []
+        ]
+      []
+  signature_item (ocamldoc/odoc_man.mli[24,1196+0]..[131,6444+5])
+    Psig_module "Generator" (ocamldoc/odoc_man.mli[24,1196+7]..[24,1196+16])
+    module_type (ocamldoc/odoc_man.mli[25,1215+2]..[131,6444+5])
+      Pmty_signature
+      [
+        signature_item (ocamldoc/odoc_man.mli[26,1221+4]..[130,6434+9])
+          Psig_class
+          [
+            class_description (ocamldoc/odoc_man.mli[26,1221+4]..[130,6434+9])
+              pci_virt = Concrete
+              pci_params =
+                []
+              pci_name = "man" (ocamldoc/odoc_man.mli[26,1221+10]..[26,1221+13])
+              pci_expr =
+                class_type (ocamldoc/odoc_man.mli[27,1237+6]..[130,6434+9])
+                  Pcty_signature
+                  class_signature
+                    core_type (ocamldoc/odoc_man.mli[27,1237+12]..[27,1237+12])
+                      Ptyp_any
+                    [
+                      class_type_field (ocamldoc/odoc_man.mli[28,1250+8]..[29,1286+52])
+                        Pctf_val "tag_functions" Mutable Concrete
+                          core_type (ocamldoc/odoc_man.mli[29,1286+10]..[29,1286+52])
+                            Ptyp_constr "list" (ocamldoc/odoc_man.mli[29,1286+48]..[29,1286+52])
+                            [
+                              core_type (ocamldoc/odoc_man.mli[29,1286+11]..[29,1286+46])
+                                Ptyp_tuple
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[29,1286+11]..[29,1286+17])
+                                    Ptyp_constr "string" (ocamldoc/odoc_man.mli[29,1286+11]..[29,1286+17])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[29,1286+21]..[29,1286+45])
+                                    Ptyp_arrow
+                                    Nolabel
+                                    core_type (ocamldoc/odoc_man.mli[29,1286+21]..[29,1286+35])
+                                      Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[29,1286+21]..[29,1286+35])
+                                      []
+                                    core_type (ocamldoc/odoc_man.mli[29,1286+39]..[29,1286+45])
+                                      Ptyp_constr "string" (ocamldoc/odoc_man.mli[29,1286+39]..[29,1286+45])
+                                      []
+                                ]
+                            ]
+                      class_type_field (ocamldoc/odoc_man.mli[30,1339+8]..[33,1432+51])
+                        Pctf_method "create_groups" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[31,1370+10]..[33,1432+51])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[31,1370+10]..[31,1370+14])
+                              Ptyp_constr "bool" (ocamldoc/odoc_man.mli[31,1370+10]..[31,1370+14])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[32,1388+10]..[33,1432+51])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[32,1388+10]..[32,1388+40])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[32,1388+36]..[32,1388+40])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[32,1388+10]..[32,1388+35])
+                                    Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[32,1388+10]..[32,1388+35])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[33,1432+10]..[33,1432+51])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[33,1432+47]..[33,1432+51])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[33,1432+10]..[33,1432+46])
+                                    Ptyp_constr "list" (ocamldoc/odoc_man.mli[33,1432+42]..[33,1432+46])
+                                    [
+                                      core_type (ocamldoc/odoc_man.mli[33,1432+10]..[33,1432+41])
+                                        Ptyp_constr "Odoc_info.Search.result_element" (ocamldoc/odoc_man.mli[33,1432+10]..[33,1432+41])
+                                        []
+                                    ]
+                                ]
+                      class_type_field (ocamldoc/odoc_man.mli[34,1484+8]..[34,1484+40])
+                        Pctf_method "escape" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[34,1484+24]..[34,1484+40])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[34,1484+24]..[34,1484+30])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[34,1484+24]..[34,1484+30])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[34,1484+34]..[34,1484+40])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[34,1484+34]..[34,1484+40])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[35,1525+8]..[35,1525+72])
+                        Pctf_method "field_comment" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[35,1525+31]..[35,1525+72])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[35,1525+31]..[35,1525+39])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[35,1525+31]..[35,1525+39])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[35,1525+43]..[35,1525+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[35,1525+43]..[35,1525+64])
+                                Ptyp_constr "option" (ocamldoc/odoc_man.mli[35,1525+58]..[35,1525+64])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[35,1525+43]..[35,1525+57])
+                                    Ptyp_constr "Odoc_info.info" (ocamldoc/odoc_man.mli[35,1525+43]..[35,1525+57])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[35,1525+68]..[35,1525+72])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[35,1525+68]..[35,1525+72])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[36,1598+8]..[36,1598+53])
+                        Pctf_method "file_name" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[36,1598+27]..[36,1598+53])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[36,1598+27]..[36,1598+43])
+                              Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[36,1598+27]..[36,1598+43])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[36,1598+47]..[36,1598+53])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[36,1598+47]..[36,1598+53])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[37,1652+8]..[37,1652+64])
+                        Pctf_method "generate" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[37,1652+26]..[37,1652+64])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[37,1652+26]..[37,1652+56])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[37,1652+52]..[37,1652+56])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[37,1652+26]..[37,1652+51])
+                                  Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[37,1652+26]..[37,1652+51])
+                                  []
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[37,1652+60]..[37,1652+64])
+                              Ptyp_constr "unit" (ocamldoc/odoc_man.mli[37,1652+60]..[37,1652+64])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[38,1717+8]..[38,1717+67])
+                        Pctf_method "generate_for_class" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[38,1717+36]..[38,1717+67])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[38,1717+36]..[38,1717+59])
+                              Ptyp_constr "Odoc_info.Class.t_class" (ocamldoc/odoc_man.mli[38,1717+36]..[38,1717+59])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[38,1717+63]..[38,1717+67])
+                              Ptyp_constr "unit" (ocamldoc/odoc_man.mli[38,1717+63]..[38,1717+67])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[39,1785+8]..[39,1785+77])
+                        Pctf_method "generate_for_class_type" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[39,1785+41]..[39,1785+77])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[39,1785+41]..[39,1785+69])
+                              Ptyp_constr "Odoc_info.Class.t_class_type" (ocamldoc/odoc_man.mli[39,1785+41]..[39,1785+69])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[39,1785+73]..[39,1785+77])
+                              Ptyp_constr "unit" (ocamldoc/odoc_man.mli[39,1785+73]..[39,1785+77])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[40,1863+8]..[41,1899+54])
+                        Pctf_method "generate_for_group" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[41,1899+10]..[41,1899+54])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[41,1899+10]..[41,1899+46])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[41,1899+42]..[41,1899+46])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[41,1899+10]..[41,1899+41])
+                                  Ptyp_constr "Odoc_info.Search.result_element" (ocamldoc/odoc_man.mli[41,1899+10]..[41,1899+41])
+                                  []
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[41,1899+50]..[41,1899+54])
+                              Ptyp_constr "unit" (ocamldoc/odoc_man.mli[41,1899+50]..[41,1899+54])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[42,1954+8]..[42,1954+70])
+                        Pctf_method "generate_for_module" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[42,1954+37]..[42,1954+70])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[42,1954+37]..[42,1954+62])
+                              Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[42,1954+37]..[42,1954+62])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[42,1954+66]..[42,1954+70])
+                              Ptyp_constr "unit" (ocamldoc/odoc_man.mli[42,1954+66]..[42,1954+70])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[43,2025+8]..[44,2067+48])
+                        Pctf_method "generate_for_module_type" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[44,2067+10]..[44,2067+48])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[44,2067+10]..[44,2067+40])
+                              Ptyp_constr "Odoc_info.Module.t_module_type" (ocamldoc/odoc_man.mli[44,2067+10]..[44,2067+40])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[44,2067+44]..[44,2067+48])
+                              Ptyp_constr "unit" (ocamldoc/odoc_man.mli[44,2067+44]..[44,2067+48])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[45,2116+8]..[46,2147+58])
+                        Pctf_method "man_of_Target" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[46,2147+10]..[46,2147+58])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[46,2147+10]..[46,2147+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[46,2147+10]..[46,2147+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[46,2147+22]..[46,2147+58])
+                              Ptyp_arrow
+                              Labelled "target"
+                              core_type (ocamldoc/odoc_man.mli[46,2147+29]..[46,2147+35])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[46,2147+29]..[46,2147+35])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[46,2147+39]..[46,2147+58])
+                                Ptyp_arrow
+                                Labelled "code"
+                                core_type (ocamldoc/odoc_man.mli[46,2147+44]..[46,2147+50])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[46,2147+44]..[46,2147+50])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[46,2147+54]..[46,2147+58])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[46,2147+54]..[46,2147+58])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[47,2206+8]..[48,2240+57])
+                        Pctf_method "man_of_attribute" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[48,2240+10]..[48,2240+57])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[48,2240+10]..[48,2240+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[48,2240+10]..[48,2240+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[48,2240+22]..[48,2240+57])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[48,2240+22]..[48,2240+49])
+                                Ptyp_constr "Odoc_info.Value.t_attribute" (ocamldoc/odoc_man.mli[48,2240+22]..[48,2240+49])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[48,2240+53]..[48,2240+57])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[48,2240+53]..[48,2240+57])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[49,2298+8]..[49,2298+73])
+                        Pctf_method "man_of_class" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[49,2298+30]..[49,2298+73])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[49,2298+30]..[49,2298+38])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[49,2298+30]..[49,2298+38])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[49,2298+42]..[49,2298+73])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[49,2298+42]..[49,2298+65])
+                                Ptyp_constr "Odoc_info.Class.t_class" (ocamldoc/odoc_man.mli[49,2298+42]..[49,2298+65])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[49,2298+69]..[49,2298+73])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[49,2298+69]..[49,2298+73])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[50,2372+8]..[50,2372+72])
+                        Pctf_method "man_of_class_comment" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[50,2372+38]..[50,2372+72])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[50,2372+38]..[50,2372+46])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[50,2372+38]..[50,2372+46])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[50,2372+50]..[50,2372+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[50,2372+50]..[50,2372+64])
+                                Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[50,2372+50]..[50,2372+64])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[50,2372+68]..[50,2372+72])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[50,2372+68]..[50,2372+72])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[51,2445+8]..[52,2480+58])
+                        Pctf_method "man_of_class_type" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[52,2480+10]..[52,2480+58])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[52,2480+10]..[52,2480+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[52,2480+10]..[52,2480+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[52,2480+22]..[52,2480+58])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[52,2480+22]..[52,2480+50])
+                                Ptyp_constr "Odoc_info.Class.t_class_type" (ocamldoc/odoc_man.mli[52,2480+22]..[52,2480+50])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[52,2480+54]..[52,2480+58])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[52,2480+54]..[52,2480+58])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[53,2539+8]..[54,2579+66])
+                        Pctf_method "man_of_class_type_expr" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[54,2579+10]..[54,2579+66])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[54,2579+10]..[54,2579+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[54,2579+10]..[54,2579+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[54,2579+22]..[54,2579+66])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[54,2579+22]..[54,2579+38])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[54,2579+22]..[54,2579+38])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[54,2579+42]..[54,2579+66])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[54,2579+42]..[54,2579+58])
+                                  Ptyp_constr "Types.class_type" (ocamldoc/odoc_man.mli[54,2579+42]..[54,2579+58])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[54,2579+62]..[54,2579+66])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[54,2579+62]..[54,2579+66])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[55,2646+8]..[55,2646+55])
+                        Pctf_method "man_of_code" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[55,2646+29]..[55,2646+55])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[55,2646+29]..[55,2646+37])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[55,2646+29]..[55,2646+37])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[55,2646+41]..[55,2646+55])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[55,2646+41]..[55,2646+47])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[55,2646+41]..[55,2646+47])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[55,2646+51]..[55,2646+55])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[55,2646+51]..[55,2646+55])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[56,2702+8]..[58,2754+72])
+                        Pctf_method "man_of_const" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[57,2732+10]..[58,2754+72])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[57,2732+10]..[57,2732+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[57,2732+10]..[57,2732+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[58,2754+10]..[58,2754+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[58,2754+10]..[58,2754+26])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[58,2754+10]..[58,2754+26])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[58,2754+30]..[58,2754+72])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[58,2754+30]..[58,2754+64])
+                                  Ptyp_constr "Odoc_info.Type.variant_constructor" (ocamldoc/odoc_man.mli[58,2754+30]..[58,2754+64])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[58,2754+68]..[58,2754+72])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[58,2754+68]..[58,2754+72])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[59,2827+8]..[63,2936+59])
+                        Pctf_method "man_of_cstr_args" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[60,2861+10]..[63,2936+59])
+                            Ptyp_arrow
+                            Optional "par"
+                            core_type (ocamldoc/odoc_man.mli[60,2861+15]..[60,2861+19])
+                              Ptyp_constr "bool" (ocamldoc/odoc_man.mli[60,2861+15]..[60,2861+19])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[61,2884+10]..[63,2936+59])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[61,2884+10]..[61,2884+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[61,2884+10]..[61,2884+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[62,2906+10]..[63,2936+59])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[62,2906+10]..[62,2906+26])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[62,2906+10]..[62,2906+26])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[63,2936+10]..[63,2936+59])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[63,2936+10]..[63,2936+16])
+                                    Ptyp_constr "string" (ocamldoc/odoc_man.mli[63,2936+10]..[63,2936+16])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[63,2936+20]..[63,2936+59])
+                                    Ptyp_arrow
+                                    Nolabel
+                                    core_type (ocamldoc/odoc_man.mli[63,2936+20]..[63,2936+51])
+                                      Ptyp_constr "Odoc_info.Type.constructor_args" (ocamldoc/odoc_man.mli[63,2936+20]..[63,2936+51])
+                                      []
+                                    core_type (ocamldoc/odoc_man.mli[63,2936+55]..[63,2936+59])
+                                      Ptyp_constr "unit" (ocamldoc/odoc_man.mli[63,2936+55]..[63,2936+59])
+                                      []
+                      class_type_field (ocamldoc/odoc_man.mli[64,2996+8]..[65,3032+54])
+                        Pctf_method "man_of_custom_text" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[65,3032+10]..[65,3032+54])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[65,3032+10]..[65,3032+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[65,3032+10]..[65,3032+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[65,3032+22]..[65,3032+54])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[65,3032+22]..[65,3032+28])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[65,3032+22]..[65,3032+28])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[65,3032+32]..[65,3032+54])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[65,3032+32]..[65,3032+46])
+                                  Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[65,3032+32]..[65,3032+46])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[65,3032+50]..[65,3032+54])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[65,3032+50]..[65,3032+54])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[66,3087+8]..[67,3121+61])
+                        Pctf_method "man_of_exception" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[67,3121+10]..[67,3121+61])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[67,3121+10]..[67,3121+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[67,3121+10]..[67,3121+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[67,3121+22]..[67,3121+61])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[67,3121+22]..[67,3121+53])
+                                Ptyp_constr "Odoc_info.Exception.t_exception" (ocamldoc/odoc_man.mli[67,3121+22]..[67,3121+53])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[67,3121+57]..[67,3121+61])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[67,3121+57]..[67,3121+61])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[68,3183+8]..[70,3245+70])
+                        Pctf_method "man_of_included_module" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[69,3223+10]..[70,3245+70])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[69,3223+10]..[69,3223+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[69,3223+10]..[69,3223+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[70,3245+10]..[70,3245+70])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[70,3245+10]..[70,3245+26])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[70,3245+10]..[70,3245+26])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[70,3245+30]..[70,3245+70])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[70,3245+30]..[70,3245+62])
+                                  Ptyp_constr "Odoc_info.Module.included_module" (ocamldoc/odoc_man.mli[70,3245+30]..[70,3245+62])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[70,3245+66]..[70,3245+70])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[70,3245+66]..[70,3245+70])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[71,3316+8]..[72,3345+67])
+                        Pctf_method "man_of_info" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[72,3345+10]..[72,3345+67])
+                            Ptyp_arrow
+                            Optional "margin"
+                            core_type (ocamldoc/odoc_man.mli[72,3345+18]..[72,3345+21])
+                              Ptyp_constr "int" (ocamldoc/odoc_man.mli[72,3345+18]..[72,3345+21])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[72,3345+25]..[72,3345+67])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[72,3345+25]..[72,3345+33])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[72,3345+25]..[72,3345+33])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[72,3345+37]..[72,3345+67])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[72,3345+37]..[72,3345+59])
+                                  Ptyp_constr "option" (ocamldoc/odoc_man.mli[72,3345+53]..[72,3345+59])
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[72,3345+37]..[72,3345+52])
+                                      Ptyp_constr "Odoc_types.info" (ocamldoc/odoc_man.mli[72,3345+37]..[72,3345+52])
+                                      []
+                                  ]
+                                core_type (ocamldoc/odoc_man.mli[72,3345+63]..[72,3345+67])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[72,3345+63]..[72,3345+67])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[73,3413+8]..[73,3413+75])
+                        Pctf_method "man_of_method" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[73,3413+31]..[73,3413+75])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[73,3413+31]..[73,3413+39])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[73,3413+31]..[73,3413+39])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[73,3413+43]..[73,3413+75])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[73,3413+43]..[73,3413+67])
+                                Ptyp_constr "Odoc_info.Value.t_method" (ocamldoc/odoc_man.mli[73,3413+43]..[73,3413+67])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[73,3413+71]..[73,3413+75])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[73,3413+71]..[73,3413+75])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[74,3489+8]..[75,3521+60])
+                        Pctf_method "man_of_modtype" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[75,3521+10]..[75,3521+60])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[75,3521+10]..[75,3521+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[75,3521+10]..[75,3521+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[75,3521+22]..[75,3521+60])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[75,3521+22]..[75,3521+52])
+                                Ptyp_constr "Odoc_info.Module.t_module_type" (ocamldoc/odoc_man.mli[75,3521+22]..[75,3521+52])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[75,3521+56]..[75,3521+60])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[75,3521+56]..[75,3521+60])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[76,3582+8]..[76,3582+76])
+                        Pctf_method "man_of_module" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[76,3582+31]..[76,3582+76])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[76,3582+31]..[76,3582+39])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[76,3582+31]..[76,3582+39])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[76,3582+43]..[76,3582+76])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[76,3582+43]..[76,3582+68])
+                                Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[76,3582+43]..[76,3582+68])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[76,3582+72]..[76,3582+76])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[76,3582+72]..[76,3582+76])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[77,3659+8]..[78,3695+55])
+                        Pctf_method "man_of_module_body" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[78,3695+10]..[78,3695+55])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[78,3695+10]..[78,3695+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[78,3695+10]..[78,3695+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[78,3695+22]..[78,3695+55])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[78,3695+22]..[78,3695+47])
+                                Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[78,3695+22]..[78,3695+47])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[78,3695+51]..[78,3695+55])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[78,3695+51]..[78,3695+55])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[79,3751+8]..[79,3751+73])
+                        Pctf_method "man_of_module_comment" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[79,3751+39]..[79,3751+73])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[79,3751+39]..[79,3751+47])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[79,3751+39]..[79,3751+47])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[79,3751+51]..[79,3751+73])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[79,3751+51]..[79,3751+65])
+                                Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[79,3751+51]..[79,3751+65])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[79,3751+69]..[79,3751+73])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[79,3751+69]..[79,3751+73])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[80,3825+8]..[84,4001+14])
+                        Pctf_method "man_of_module_parameter_list" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[81,3871+10]..[84,4001+14])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[81,3871+10]..[81,3871+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[81,3871+10]..[81,3871+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[82,3893+10]..[84,4001+14])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[82,3893+10]..[82,3893+26])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[82,3893+10]..[82,3893+26])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[83,3923+10]..[84,4001+14])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[83,3923+10]..[83,3923+74])
+                                  Ptyp_constr "list" (ocamldoc/odoc_man.mli[83,3923+70]..[83,3923+74])
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[83,3923+11]..[83,3923+68])
+                                      Ptyp_tuple
+                                      [
+                                        core_type (ocamldoc/odoc_man.mli[83,3923+11]..[83,3923+44])
+                                          Ptyp_constr "Odoc_info.Module.module_parameter" (ocamldoc/odoc_man.mli[83,3923+11]..[83,3923+44])
+                                          []
+                                        core_type (ocamldoc/odoc_man.mli[83,3923+47]..[83,3923+68])
+                                          Ptyp_constr "option" (ocamldoc/odoc_man.mli[83,3923+62]..[83,3923+68])
+                                          [
+                                            core_type (ocamldoc/odoc_man.mli[83,3923+47]..[83,3923+61])
+                                              Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[83,3923+47]..[83,3923+61])
+                                              []
+                                          ]
+                                      ]
+                                  ]
+                                core_type (ocamldoc/odoc_man.mli[84,4001+10]..[84,4001+14])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[84,4001+10]..[84,4001+14])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[85,4016+8]..[86,4052+67])
+                        Pctf_method "man_of_module_type" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[86,4052+10]..[86,4052+67])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[86,4052+10]..[86,4052+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[86,4052+10]..[86,4052+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[86,4052+22]..[86,4052+67])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[86,4052+22]..[86,4052+38])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[86,4052+22]..[86,4052+38])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[86,4052+42]..[86,4052+67])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[86,4052+42]..[86,4052+59])
+                                  Ptyp_constr "Types.module_type" (ocamldoc/odoc_man.mli[86,4052+42]..[86,4052+59])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[86,4052+63]..[86,4052+67])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[86,4052+63]..[86,4052+67])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[87,4120+8]..[88,4161+60])
+                        Pctf_method "man_of_module_type_body" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[88,4161+10]..[88,4161+60])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[88,4161+10]..[88,4161+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[88,4161+10]..[88,4161+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[88,4161+22]..[88,4161+60])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[88,4161+22]..[88,4161+52])
+                                Ptyp_constr "Odoc_info.Module.t_module_type" (ocamldoc/odoc_man.mli[88,4161+22]..[88,4161+52])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[88,4161+56]..[88,4161+60])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[88,4161+56]..[88,4161+60])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[89,4222+8]..[90,4268+59])
+                        Pctf_method "man_of_parameter_description" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[90,4268+10]..[90,4268+59])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[90,4268+10]..[90,4268+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[90,4268+10]..[90,4268+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[90,4268+22]..[90,4268+59])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[90,4268+22]..[90,4268+51])
+                                Ptyp_constr "Odoc_info.Parameter.parameter" (ocamldoc/odoc_man.mli[90,4268+22]..[90,4268+51])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[90,4268+55]..[90,4268+59])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[90,4268+55]..[90,4268+59])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[91,4328+8]..[93,4389+72])
+                        Pctf_method "man_of_parameter_list" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[92,4367+10]..[93,4389+72])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[92,4367+10]..[92,4367+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[92,4367+10]..[92,4367+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[93,4389+10]..[93,4389+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[93,4389+10]..[93,4389+26])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[93,4389+10]..[93,4389+26])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[93,4389+30]..[93,4389+72])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[93,4389+30]..[93,4389+64])
+                                  Ptyp_constr "list" (ocamldoc/odoc_man.mli[93,4389+60]..[93,4389+64])
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[93,4389+30]..[93,4389+59])
+                                      Ptyp_constr "Odoc_info.Parameter.parameter" (ocamldoc/odoc_man.mli[93,4389+30]..[93,4389+59])
+                                      []
+                                  ]
+                                core_type (ocamldoc/odoc_man.mli[93,4389+68]..[93,4389+72])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[93,4389+68]..[93,4389+72])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[94,4462+8]..[95,4495+77])
+                        Pctf_method "man_of_recfield" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[95,4495+10]..[95,4495+77])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[95,4495+10]..[95,4495+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[95,4495+10]..[95,4495+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[95,4495+22]..[95,4495+77])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[95,4495+22]..[95,4495+38])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[95,4495+22]..[95,4495+38])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[95,4495+42]..[95,4495+77])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[95,4495+42]..[95,4495+69])
+                                  Ptyp_constr "Odoc_info.Type.record_field" (ocamldoc/odoc_man.mli[95,4495+42]..[95,4495+69])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[95,4495+73]..[95,4495+77])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[95,4495+73]..[95,4495+77])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[96,4573+8]..[98,4634+62])
+                        Pctf_method "man_of_record" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[97,4604+10]..[98,4634+62])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[97,4604+10]..[97,4604+26])
+                              Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[97,4604+10]..[97,4604+26])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[98,4634+10]..[98,4634+62])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[98,4634+10]..[98,4634+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[98,4634+10]..[98,4634+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[98,4634+22]..[98,4634+62])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[98,4634+22]..[98,4634+54])
+                                  Ptyp_constr "list" (ocamldoc/odoc_man.mli[98,4634+50]..[98,4634+54])
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[98,4634+22]..[98,4634+49])
+                                      Ptyp_constr "Odoc_info.Type.record_field" (ocamldoc/odoc_man.mli[98,4634+22]..[98,4634+49])
+                                      []
+                                  ]
+                                core_type (ocamldoc/odoc_man.mli[98,4634+58]..[98,4634+62])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[98,4634+58]..[98,4634+62])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[99,4697+8]..[99,4697+63])
+                        Pctf_method "man_of_text" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[99,4697+29]..[99,4697+63])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[99,4697+29]..[99,4697+37])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[99,4697+29]..[99,4697+37])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[99,4697+41]..[99,4697+63])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[99,4697+41]..[99,4697+55])
+                                Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[99,4697+41]..[99,4697+55])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[99,4697+59]..[99,4697+63])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[99,4697+59]..[99,4697+63])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[100,4761+8]..[100,4761+72])
+                        Pctf_method "man_of_text2" Private Concrete
+                          core_type (ocamldoc/odoc_man.mli[100,4761+38]..[100,4761+72])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[100,4761+38]..[100,4761+46])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[100,4761+38]..[100,4761+46])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[100,4761+50]..[100,4761+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[100,4761+50]..[100,4761+64])
+                                Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[100,4761+50]..[100,4761+64])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[100,4761+68]..[100,4761+72])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[100,4761+68]..[100,4761+72])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[101,4834+8]..[102,4871+52])
+                        Pctf_method "man_of_text_element" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[102,4871+10]..[102,4871+52])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[102,4871+10]..[102,4871+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[102,4871+10]..[102,4871+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[102,4871+22]..[102,4871+52])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[102,4871+22]..[102,4871+44])
+                                Ptyp_constr "Odoc_info.text_element" (ocamldoc/odoc_man.mli[102,4871+22]..[102,4871+44])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[102,4871+48]..[102,4871+52])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[102,4871+48]..[102,4871+52])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[103,4924+8]..[103,4924+70])
+                        Pctf_method "man_of_type" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[103,4924+29]..[103,4924+70])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[103,4924+29]..[103,4924+37])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[103,4924+29]..[103,4924+37])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[103,4924+41]..[103,4924+70])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[103,4924+41]..[103,4924+62])
+                                Ptyp_constr "Odoc_info.Type.t_type" (ocamldoc/odoc_man.mli[103,4924+41]..[103,4924+62])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[103,4924+66]..[103,4924+70])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[103,4924+66]..[103,4924+70])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[104,4995+8]..[105,5029+65])
+                        Pctf_method "man_of_type_expr" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[105,5029+10]..[105,5029+65])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[105,5029+10]..[105,5029+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[105,5029+10]..[105,5029+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[105,5029+22]..[105,5029+65])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[105,5029+22]..[105,5029+38])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[105,5029+22]..[105,5029+38])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[105,5029+42]..[105,5029+65])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[105,5029+42]..[105,5029+57])
+                                  Ptyp_constr "Types.type_expr" (ocamldoc/odoc_man.mli[105,5029+42]..[105,5029+57])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[105,5029+61]..[105,5029+65])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[105,5029+61]..[105,5029+65])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[106,5095+8]..[107,5140+71])
+                        Pctf_method "man_of_type_expr_param_list" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[107,5140+10]..[107,5140+71])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[107,5140+10]..[107,5140+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[107,5140+10]..[107,5140+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[107,5140+22]..[107,5140+71])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[107,5140+22]..[107,5140+38])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[107,5140+22]..[107,5140+38])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[107,5140+42]..[107,5140+71])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[107,5140+42]..[107,5140+63])
+                                  Ptyp_constr "Odoc_info.Type.t_type" (ocamldoc/odoc_man.mli[107,5140+42]..[107,5140+63])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[107,5140+67]..[107,5140+71])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[107,5140+67]..[107,5140+71])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[108,5212+8]..[110,5273+74])
+                        Pctf_method "man_of_type_extension" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[109,5251+10]..[110,5273+74])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[109,5251+10]..[109,5251+18])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[109,5251+10]..[109,5251+18])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[110,5273+10]..[110,5273+74])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[110,5273+10]..[110,5273+26])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[110,5273+10]..[110,5273+26])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[110,5273+30]..[110,5273+74])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[110,5273+30]..[110,5273+66])
+                                  Ptyp_constr "Odoc_info.Extension.t_type_extension" (ocamldoc/odoc_man.mli[110,5273+30]..[110,5273+66])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[110,5273+70]..[110,5273+74])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[110,5273+70]..[110,5273+74])
+                                  []
+                      class_type_field (ocamldoc/odoc_man.mli[111,5348+8]..[111,5348+73])
+                        Pctf_method "man_of_value" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[111,5348+30]..[111,5348+73])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[111,5348+30]..[111,5348+38])
+                              Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[111,5348+30]..[111,5348+38])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[111,5348+42]..[111,5348+73])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[111,5348+42]..[111,5348+65])
+                                Ptyp_constr "Odoc_info.Value.t_value" (ocamldoc/odoc_man.mli[111,5348+42]..[111,5348+65])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[111,5348+69]..[111,5348+73])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[111,5348+69]..[111,5348+73])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[112,5422+8]..[112,5422+47])
+                        Pctf_method "open_out" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[112,5422+26]..[112,5422+47])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[112,5422+26]..[112,5422+32])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[112,5422+26]..[112,5422+32])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[112,5422+36]..[112,5422+47])
+                              Ptyp_constr "out_channel" (ocamldoc/odoc_man.mli[112,5422+36]..[112,5422+47])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[113,5470+8]..[114,5503+56])
+                        Pctf_method "relative_idents" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[114,5503+10]..[114,5503+56])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[114,5503+10]..[114,5503+26])
+                              Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[114,5503+10]..[114,5503+26])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[114,5503+30]..[114,5503+56])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[114,5503+30]..[114,5503+46])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[114,5503+30]..[114,5503+46])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[114,5503+50]..[114,5503+56])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[114,5503+50]..[114,5503+56])
+                                []
+                      class_type_field (ocamldoc/odoc_man.mli[115,5560+8]..[115,5560+49])
+                        Pctf_method "remove_newlines" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[115,5560+33]..[115,5560+49])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[115,5560+33]..[115,5560+39])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[115,5560+33]..[115,5560+39])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[115,5560+43]..[115,5560+49])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[115,5560+43]..[115,5560+49])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[116,5610+8]..[116,5610+70])
+                        Pctf_method "str_man_of_alerts" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[116,5610+35]..[116,5610+70])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[116,5610+35]..[116,5610+55])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[116,5610+51]..[116,5610+55])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[116,5610+35]..[116,5610+50])
+                                  Ptyp_constr "Odoc_info.alert" (ocamldoc/odoc_man.mli[116,5610+35]..[116,5610+50])
+                                  []
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[116,5610+59]..[116,5610+70])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[116,5610+66]..[116,5610+70])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[116,5610+59]..[116,5610+65])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[116,5610+59]..[116,5610+65])
+                                  []
+                              ]
+                      class_type_field (ocamldoc/odoc_man.mli[117,5681+8]..[117,5681+61])
+                        Pctf_method "str_man_of_author_list" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[117,5681+40]..[117,5681+61])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[117,5681+40]..[117,5681+51])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[117,5681+47]..[117,5681+51])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[117,5681+40]..[117,5681+46])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[117,5681+40]..[117,5681+46])
+                                  []
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[117,5681+55]..[117,5681+61])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[117,5681+55]..[117,5681+61])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[118,5743+8]..[118,5743+75])
+                        Pctf_method "str_man_of_before" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[118,5743+35]..[118,5743+75])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[118,5743+35]..[118,5743+65])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[118,5743+61]..[118,5743+65])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[118,5743+36]..[118,5743+59])
+                                  Ptyp_tuple
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[118,5743+36]..[118,5743+42])
+                                      Ptyp_constr "string" (ocamldoc/odoc_man.mli[118,5743+36]..[118,5743+42])
+                                      []
+                                    core_type (ocamldoc/odoc_man.mli[118,5743+45]..[118,5743+59])
+                                      Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[118,5743+45]..[118,5743+59])
+                                      []
+                                  ]
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[118,5743+69]..[118,5743+75])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[118,5743+69]..[118,5743+75])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[119,5819+8]..[120,5854+55])
+                        Pctf_method "str_man_of_custom" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[120,5854+10]..[120,5854+55])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[120,5854+10]..[120,5854+40])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[120,5854+36]..[120,5854+40])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[120,5854+11]..[120,5854+34])
+                                  Ptyp_tuple
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[120,5854+11]..[120,5854+17])
+                                      Ptyp_constr "string" (ocamldoc/odoc_man.mli[120,5854+11]..[120,5854+17])
+                                      []
+                                    core_type (ocamldoc/odoc_man.mli[120,5854+20]..[120,5854+34])
+                                      Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[120,5854+20]..[120,5854+34])
+                                      []
+                                  ]
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[120,5854+44]..[120,5854+55])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[120,5854+51]..[120,5854+55])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[120,5854+44]..[120,5854+50])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[120,5854+44]..[120,5854+50])
+                                  []
+                              ]
+                      class_type_field (ocamldoc/odoc_man.mli[121,5910+8]..[122,5956+50])
+                        Pctf_method "str_man_of_raised_exceptions" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[122,5956+10]..[122,5956+50])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[122,5956+10]..[122,5956+40])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[122,5956+36]..[122,5956+40])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[122,5956+11]..[122,5956+34])
+                                  Ptyp_tuple
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[122,5956+11]..[122,5956+17])
+                                      Ptyp_constr "string" (ocamldoc/odoc_man.mli[122,5956+11]..[122,5956+17])
+                                      []
+                                    core_type (ocamldoc/odoc_man.mli[122,5956+20]..[122,5956+34])
+                                      Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[122,5956+20]..[122,5956+34])
+                                      []
+                                  ]
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[122,5956+44]..[122,5956+50])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[122,5956+44]..[122,5956+50])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[123,6007+8]..[123,6007+70])
+                        Pctf_method "str_man_of_return_opt" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[123,6007+39]..[123,6007+70])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[123,6007+39]..[123,6007+60])
+                              Ptyp_constr "option" (ocamldoc/odoc_man.mli[123,6007+54]..[123,6007+60])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[123,6007+39]..[123,6007+53])
+                                  Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[123,6007+39]..[123,6007+53])
+                                  []
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[123,6007+64]..[123,6007+70])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[123,6007+64]..[123,6007+70])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[124,6078+8]..[124,6078+76])
+                        Pctf_method "str_man_of_see" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[124,6078+32]..[124,6078+76])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[124,6078+32]..[124,6078+66])
+                              Ptyp_tuple
+                              [
+                                core_type (ocamldoc/odoc_man.mli[124,6078+32]..[124,6078+49])
+                                  Ptyp_constr "Odoc_info.see_ref" (ocamldoc/odoc_man.mli[124,6078+32]..[124,6078+49])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[124,6078+52]..[124,6078+66])
+                                  Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[124,6078+52]..[124,6078+66])
+                                  []
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[124,6078+70]..[124,6078+76])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[124,6078+70]..[124,6078+76])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[125,6155+8]..[126,6188+61])
+                        Pctf_method "str_man_of_sees" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[126,6188+10]..[126,6188+61])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[126,6188+10]..[126,6188+51])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[126,6188+47]..[126,6188+51])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[126,6188+11]..[126,6188+45])
+                                  Ptyp_tuple
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[126,6188+11]..[126,6188+28])
+                                      Ptyp_constr "Odoc_info.see_ref" (ocamldoc/odoc_man.mli[126,6188+11]..[126,6188+28])
+                                      []
+                                    core_type (ocamldoc/odoc_man.mli[126,6188+31]..[126,6188+45])
+                                      Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[126,6188+31]..[126,6188+45])
+                                      []
+                                  ]
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[126,6188+55]..[126,6188+61])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[126,6188+55]..[126,6188+61])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[127,6250+8]..[127,6250+61])
+                        Pctf_method "str_man_of_since_opt" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[127,6250+38]..[127,6250+61])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[127,6250+38]..[127,6250+51])
+                              Ptyp_constr "option" (ocamldoc/odoc_man.mli[127,6250+45]..[127,6250+51])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[127,6250+38]..[127,6250+44])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[127,6250+38]..[127,6250+44])
+                                  []
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[127,6250+55]..[127,6250+61])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[127,6250+55]..[127,6250+61])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[128,6312+8]..[128,6312+57])
+                        Pctf_method "str_man_of_text" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[128,6312+33]..[128,6312+57])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[128,6312+33]..[128,6312+47])
+                              Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[128,6312+33]..[128,6312+47])
+                              []
+                            core_type (ocamldoc/odoc_man.mli[128,6312+51]..[128,6312+57])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[128,6312+51]..[128,6312+57])
+                              []
+                      class_type_field (ocamldoc/odoc_man.mli[129,6370+8]..[129,6370+63])
+                        Pctf_method "str_man_of_version_opt" Public Concrete
+                          core_type (ocamldoc/odoc_man.mli[129,6370+40]..[129,6370+63])
+                            Ptyp_arrow
+                            Nolabel
+                            core_type (ocamldoc/odoc_man.mli[129,6370+40]..[129,6370+53])
+                              Ptyp_constr "option" (ocamldoc/odoc_man.mli[129,6370+47]..[129,6370+53])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[129,6370+40]..[129,6370+46])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[129,6370+40]..[129,6370+46])
+                                  []
+                              ]
+                            core_type (ocamldoc/odoc_man.mli[129,6370+57]..[129,6370+63])
+                              Ptyp_constr "string" (ocamldoc/odoc_man.mli[129,6370+57]..[129,6370+63])
+                              []
+                    ]
+          ]
+      ]
+  signature_item (ocamldoc/odoc_man.mli[133,6451+0]..[240,11708+5])
+    Psig_modtype "Man_generator" (ocamldoc/odoc_man.mli[133,6451+12]..[133,6451+25])
+      module_type (ocamldoc/odoc_man.mli[134,6479+2]..[240,11708+5])
+        Pmty_signature
+        [
+          signature_item (ocamldoc/odoc_man.mli[135,6485+4]..[239,11698+9])
+            Psig_class
+            [
+              class_description (ocamldoc/odoc_man.mli[135,6485+4]..[239,11698+9])
+                pci_virt = Concrete
+                pci_params =
+                  []
+                pci_name = "man" (ocamldoc/odoc_man.mli[135,6485+10]..[135,6485+13])
+                pci_expr =
+                  class_type (ocamldoc/odoc_man.mli[136,6501+6]..[239,11698+9])
+                    Pcty_signature
+                    class_signature
+                      core_type (ocamldoc/odoc_man.mli[136,6501+12]..[136,6501+12])
+                        Ptyp_any
+                      [
+                        class_type_field (ocamldoc/odoc_man.mli[137,6514+8]..[138,6550+52])
+                          Pctf_val "tag_functions" Mutable Concrete
+                            core_type (ocamldoc/odoc_man.mli[138,6550+10]..[138,6550+52])
+                              Ptyp_constr "list" (ocamldoc/odoc_man.mli[138,6550+48]..[138,6550+52])
+                              [
+                                core_type (ocamldoc/odoc_man.mli[138,6550+11]..[138,6550+46])
+                                  Ptyp_tuple
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[138,6550+11]..[138,6550+17])
+                                      Ptyp_constr "string" (ocamldoc/odoc_man.mli[138,6550+11]..[138,6550+17])
+                                      []
+                                    core_type (ocamldoc/odoc_man.mli[138,6550+21]..[138,6550+45])
+                                      Ptyp_arrow
+                                      Nolabel
+                                      core_type (ocamldoc/odoc_man.mli[138,6550+21]..[138,6550+35])
+                                        Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[138,6550+21]..[138,6550+35])
+                                        []
+                                      core_type (ocamldoc/odoc_man.mli[138,6550+39]..[138,6550+45])
+                                        Ptyp_constr "string" (ocamldoc/odoc_man.mli[138,6550+39]..[138,6550+45])
+                                        []
+                                  ]
+                              ]
+                        class_type_field (ocamldoc/odoc_man.mli[139,6603+8]..[142,6696+51])
+                          Pctf_method "create_groups" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[140,6634+10]..[142,6696+51])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[140,6634+10]..[140,6634+14])
+                                Ptyp_constr "bool" (ocamldoc/odoc_man.mli[140,6634+10]..[140,6634+14])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[141,6652+10]..[142,6696+51])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[141,6652+10]..[141,6652+40])
+                                  Ptyp_constr "list" (ocamldoc/odoc_man.mli[141,6652+36]..[141,6652+40])
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[141,6652+10]..[141,6652+35])
+                                      Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[141,6652+10]..[141,6652+35])
+                                      []
+                                  ]
+                                core_type (ocamldoc/odoc_man.mli[142,6696+10]..[142,6696+51])
+                                  Ptyp_constr "list" (ocamldoc/odoc_man.mli[142,6696+47]..[142,6696+51])
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[142,6696+10]..[142,6696+46])
+                                      Ptyp_constr "list" (ocamldoc/odoc_man.mli[142,6696+42]..[142,6696+46])
+                                      [
+                                        core_type (ocamldoc/odoc_man.mli[142,6696+10]..[142,6696+41])
+                                          Ptyp_constr "Odoc_info.Search.result_element" (ocamldoc/odoc_man.mli[142,6696+10]..[142,6696+41])
+                                          []
+                                      ]
+                                  ]
+                        class_type_field (ocamldoc/odoc_man.mli[143,6748+8]..[143,6748+40])
+                          Pctf_method "escape" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[143,6748+24]..[143,6748+40])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[143,6748+24]..[143,6748+30])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[143,6748+24]..[143,6748+30])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[143,6748+34]..[143,6748+40])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[143,6748+34]..[143,6748+40])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[144,6789+8]..[144,6789+72])
+                          Pctf_method "field_comment" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[144,6789+31]..[144,6789+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[144,6789+31]..[144,6789+39])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[144,6789+31]..[144,6789+39])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[144,6789+43]..[144,6789+72])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[144,6789+43]..[144,6789+64])
+                                  Ptyp_constr "option" (ocamldoc/odoc_man.mli[144,6789+58]..[144,6789+64])
+                                  [
+                                    core_type (ocamldoc/odoc_man.mli[144,6789+43]..[144,6789+57])
+                                      Ptyp_constr "Odoc_info.info" (ocamldoc/odoc_man.mli[144,6789+43]..[144,6789+57])
+                                      []
+                                  ]
+                                core_type (ocamldoc/odoc_man.mli[144,6789+68]..[144,6789+72])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[144,6789+68]..[144,6789+72])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[145,6862+8]..[145,6862+53])
+                          Pctf_method "file_name" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[145,6862+27]..[145,6862+53])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[145,6862+27]..[145,6862+43])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[145,6862+27]..[145,6862+43])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[145,6862+47]..[145,6862+53])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[145,6862+47]..[145,6862+53])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[146,6916+8]..[146,6916+64])
+                          Pctf_method "generate" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[146,6916+26]..[146,6916+64])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[146,6916+26]..[146,6916+56])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[146,6916+52]..[146,6916+56])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[146,6916+26]..[146,6916+51])
+                                    Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[146,6916+26]..[146,6916+51])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[146,6916+60]..[146,6916+64])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[146,6916+60]..[146,6916+64])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[147,6981+8]..[147,6981+67])
+                          Pctf_method "generate_for_class" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[147,6981+36]..[147,6981+67])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[147,6981+36]..[147,6981+59])
+                                Ptyp_constr "Odoc_info.Class.t_class" (ocamldoc/odoc_man.mli[147,6981+36]..[147,6981+59])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[147,6981+63]..[147,6981+67])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[147,6981+63]..[147,6981+67])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[148,7049+8]..[148,7049+77])
+                          Pctf_method "generate_for_class_type" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[148,7049+41]..[148,7049+77])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[148,7049+41]..[148,7049+69])
+                                Ptyp_constr "Odoc_info.Class.t_class_type" (ocamldoc/odoc_man.mli[148,7049+41]..[148,7049+69])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[148,7049+73]..[148,7049+77])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[148,7049+73]..[148,7049+77])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[149,7127+8]..[150,7163+54])
+                          Pctf_method "generate_for_group" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[150,7163+10]..[150,7163+54])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[150,7163+10]..[150,7163+46])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[150,7163+42]..[150,7163+46])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[150,7163+10]..[150,7163+41])
+                                    Ptyp_constr "Odoc_info.Search.result_element" (ocamldoc/odoc_man.mli[150,7163+10]..[150,7163+41])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[150,7163+50]..[150,7163+54])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[150,7163+50]..[150,7163+54])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[151,7218+8]..[151,7218+70])
+                          Pctf_method "generate_for_module" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[151,7218+37]..[151,7218+70])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[151,7218+37]..[151,7218+62])
+                                Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[151,7218+37]..[151,7218+62])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[151,7218+66]..[151,7218+70])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[151,7218+66]..[151,7218+70])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[152,7289+8]..[153,7331+48])
+                          Pctf_method "generate_for_module_type" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[153,7331+10]..[153,7331+48])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[153,7331+10]..[153,7331+40])
+                                Ptyp_constr "Odoc_info.Module.t_module_type" (ocamldoc/odoc_man.mli[153,7331+10]..[153,7331+40])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[153,7331+44]..[153,7331+48])
+                                Ptyp_constr "unit" (ocamldoc/odoc_man.mli[153,7331+44]..[153,7331+48])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[154,7380+8]..[155,7411+58])
+                          Pctf_method "man_of_Target" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[155,7411+10]..[155,7411+58])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[155,7411+10]..[155,7411+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[155,7411+10]..[155,7411+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[155,7411+22]..[155,7411+58])
+                                Ptyp_arrow
+                                Labelled "target"
+                                core_type (ocamldoc/odoc_man.mli[155,7411+29]..[155,7411+35])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[155,7411+29]..[155,7411+35])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[155,7411+39]..[155,7411+58])
+                                  Ptyp_arrow
+                                  Labelled "code"
+                                  core_type (ocamldoc/odoc_man.mli[155,7411+44]..[155,7411+50])
+                                    Ptyp_constr "string" (ocamldoc/odoc_man.mli[155,7411+44]..[155,7411+50])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[155,7411+54]..[155,7411+58])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[155,7411+54]..[155,7411+58])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[156,7470+8]..[157,7504+57])
+                          Pctf_method "man_of_attribute" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[157,7504+10]..[157,7504+57])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[157,7504+10]..[157,7504+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[157,7504+10]..[157,7504+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[157,7504+22]..[157,7504+57])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[157,7504+22]..[157,7504+49])
+                                  Ptyp_constr "Odoc_info.Value.t_attribute" (ocamldoc/odoc_man.mli[157,7504+22]..[157,7504+49])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[157,7504+53]..[157,7504+57])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[157,7504+53]..[157,7504+57])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[158,7562+8]..[158,7562+73])
+                          Pctf_method "man_of_class" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[158,7562+30]..[158,7562+73])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[158,7562+30]..[158,7562+38])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[158,7562+30]..[158,7562+38])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[158,7562+42]..[158,7562+73])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[158,7562+42]..[158,7562+65])
+                                  Ptyp_constr "Odoc_info.Class.t_class" (ocamldoc/odoc_man.mli[158,7562+42]..[158,7562+65])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[158,7562+69]..[158,7562+73])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[158,7562+69]..[158,7562+73])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[159,7636+8]..[159,7636+72])
+                          Pctf_method "man_of_class_comment" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[159,7636+38]..[159,7636+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[159,7636+38]..[159,7636+46])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[159,7636+38]..[159,7636+46])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[159,7636+50]..[159,7636+72])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[159,7636+50]..[159,7636+64])
+                                  Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[159,7636+50]..[159,7636+64])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[159,7636+68]..[159,7636+72])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[159,7636+68]..[159,7636+72])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[160,7709+8]..[161,7744+58])
+                          Pctf_method "man_of_class_type" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[161,7744+10]..[161,7744+58])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[161,7744+10]..[161,7744+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[161,7744+10]..[161,7744+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[161,7744+22]..[161,7744+58])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[161,7744+22]..[161,7744+50])
+                                  Ptyp_constr "Odoc_info.Class.t_class_type" (ocamldoc/odoc_man.mli[161,7744+22]..[161,7744+50])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[161,7744+54]..[161,7744+58])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[161,7744+54]..[161,7744+58])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[162,7803+8]..[163,7843+66])
+                          Pctf_method "man_of_class_type_expr" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[163,7843+10]..[163,7843+66])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[163,7843+10]..[163,7843+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[163,7843+10]..[163,7843+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[163,7843+22]..[163,7843+66])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[163,7843+22]..[163,7843+38])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[163,7843+22]..[163,7843+38])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[163,7843+42]..[163,7843+66])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[163,7843+42]..[163,7843+58])
+                                    Ptyp_constr "Types.class_type" (ocamldoc/odoc_man.mli[163,7843+42]..[163,7843+58])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[163,7843+62]..[163,7843+66])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[163,7843+62]..[163,7843+66])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[164,7910+8]..[164,7910+55])
+                          Pctf_method "man_of_code" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[164,7910+29]..[164,7910+55])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[164,7910+29]..[164,7910+37])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[164,7910+29]..[164,7910+37])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[164,7910+41]..[164,7910+55])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[164,7910+41]..[164,7910+47])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[164,7910+41]..[164,7910+47])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[164,7910+51]..[164,7910+55])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[164,7910+51]..[164,7910+55])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[165,7966+8]..[167,8018+72])
+                          Pctf_method "man_of_const" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[166,7996+10]..[167,8018+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[166,7996+10]..[166,7996+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[166,7996+10]..[166,7996+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[167,8018+10]..[167,8018+72])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[167,8018+10]..[167,8018+26])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[167,8018+10]..[167,8018+26])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[167,8018+30]..[167,8018+72])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[167,8018+30]..[167,8018+64])
+                                    Ptyp_constr "Odoc_info.Type.variant_constructor" (ocamldoc/odoc_man.mli[167,8018+30]..[167,8018+64])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[167,8018+68]..[167,8018+72])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[167,8018+68]..[167,8018+72])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[168,8091+8]..[172,8200+59])
+                          Pctf_method "man_of_cstr_args" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[169,8125+10]..[172,8200+59])
+                              Ptyp_arrow
+                              Optional "par"
+                              core_type (ocamldoc/odoc_man.mli[169,8125+15]..[169,8125+19])
+                                Ptyp_constr "bool" (ocamldoc/odoc_man.mli[169,8125+15]..[169,8125+19])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[170,8148+10]..[172,8200+59])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[170,8148+10]..[170,8148+18])
+                                  Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[170,8148+10]..[170,8148+18])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[171,8170+10]..[172,8200+59])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[171,8170+10]..[171,8170+26])
+                                    Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[171,8170+10]..[171,8170+26])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[172,8200+10]..[172,8200+59])
+                                    Ptyp_arrow
+                                    Nolabel
+                                    core_type (ocamldoc/odoc_man.mli[172,8200+10]..[172,8200+16])
+                                      Ptyp_constr "string" (ocamldoc/odoc_man.mli[172,8200+10]..[172,8200+16])
+                                      []
+                                    core_type (ocamldoc/odoc_man.mli[172,8200+20]..[172,8200+59])
+                                      Ptyp_arrow
+                                      Nolabel
+                                      core_type (ocamldoc/odoc_man.mli[172,8200+20]..[172,8200+51])
+                                        Ptyp_constr "Odoc_info.Type.constructor_args" (ocamldoc/odoc_man.mli[172,8200+20]..[172,8200+51])
+                                        []
+                                      core_type (ocamldoc/odoc_man.mli[172,8200+55]..[172,8200+59])
+                                        Ptyp_constr "unit" (ocamldoc/odoc_man.mli[172,8200+55]..[172,8200+59])
+                                        []
+                        class_type_field (ocamldoc/odoc_man.mli[173,8260+8]..[174,8296+54])
+                          Pctf_method "man_of_custom_text" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[174,8296+10]..[174,8296+54])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[174,8296+10]..[174,8296+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[174,8296+10]..[174,8296+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[174,8296+22]..[174,8296+54])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[174,8296+22]..[174,8296+28])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[174,8296+22]..[174,8296+28])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[174,8296+32]..[174,8296+54])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[174,8296+32]..[174,8296+46])
+                                    Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[174,8296+32]..[174,8296+46])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[174,8296+50]..[174,8296+54])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[174,8296+50]..[174,8296+54])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[175,8351+8]..[176,8385+61])
+                          Pctf_method "man_of_exception" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[176,8385+10]..[176,8385+61])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[176,8385+10]..[176,8385+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[176,8385+10]..[176,8385+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[176,8385+22]..[176,8385+61])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[176,8385+22]..[176,8385+53])
+                                  Ptyp_constr "Odoc_info.Exception.t_exception" (ocamldoc/odoc_man.mli[176,8385+22]..[176,8385+53])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[176,8385+57]..[176,8385+61])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[176,8385+57]..[176,8385+61])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[177,8447+8]..[179,8509+70])
+                          Pctf_method "man_of_included_module" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[178,8487+10]..[179,8509+70])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[178,8487+10]..[178,8487+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[178,8487+10]..[178,8487+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[179,8509+10]..[179,8509+70])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[179,8509+10]..[179,8509+26])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[179,8509+10]..[179,8509+26])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[179,8509+30]..[179,8509+70])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[179,8509+30]..[179,8509+62])
+                                    Ptyp_constr "Odoc_info.Module.included_module" (ocamldoc/odoc_man.mli[179,8509+30]..[179,8509+62])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[179,8509+66]..[179,8509+70])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[179,8509+66]..[179,8509+70])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[180,8580+8]..[181,8609+67])
+                          Pctf_method "man_of_info" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[181,8609+10]..[181,8609+67])
+                              Ptyp_arrow
+                              Optional "margin"
+                              core_type (ocamldoc/odoc_man.mli[181,8609+18]..[181,8609+21])
+                                Ptyp_constr "int" (ocamldoc/odoc_man.mli[181,8609+18]..[181,8609+21])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[181,8609+25]..[181,8609+67])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[181,8609+25]..[181,8609+33])
+                                  Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[181,8609+25]..[181,8609+33])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[181,8609+37]..[181,8609+67])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[181,8609+37]..[181,8609+59])
+                                    Ptyp_constr "option" (ocamldoc/odoc_man.mli[181,8609+53]..[181,8609+59])
+                                    [
+                                      core_type (ocamldoc/odoc_man.mli[181,8609+37]..[181,8609+52])
+                                        Ptyp_constr "Odoc_types.info" (ocamldoc/odoc_man.mli[181,8609+37]..[181,8609+52])
+                                        []
+                                    ]
+                                  core_type (ocamldoc/odoc_man.mli[181,8609+63]..[181,8609+67])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[181,8609+63]..[181,8609+67])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[182,8677+8]..[182,8677+75])
+                          Pctf_method "man_of_method" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[182,8677+31]..[182,8677+75])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[182,8677+31]..[182,8677+39])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[182,8677+31]..[182,8677+39])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[182,8677+43]..[182,8677+75])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[182,8677+43]..[182,8677+67])
+                                  Ptyp_constr "Odoc_info.Value.t_method" (ocamldoc/odoc_man.mli[182,8677+43]..[182,8677+67])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[182,8677+71]..[182,8677+75])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[182,8677+71]..[182,8677+75])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[183,8753+8]..[184,8785+60])
+                          Pctf_method "man_of_modtype" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[184,8785+10]..[184,8785+60])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[184,8785+10]..[184,8785+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[184,8785+10]..[184,8785+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[184,8785+22]..[184,8785+60])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[184,8785+22]..[184,8785+52])
+                                  Ptyp_constr "Odoc_info.Module.t_module_type" (ocamldoc/odoc_man.mli[184,8785+22]..[184,8785+52])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[184,8785+56]..[184,8785+60])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[184,8785+56]..[184,8785+60])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[185,8846+8]..[185,8846+76])
+                          Pctf_method "man_of_module" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[185,8846+31]..[185,8846+76])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[185,8846+31]..[185,8846+39])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[185,8846+31]..[185,8846+39])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[185,8846+43]..[185,8846+76])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[185,8846+43]..[185,8846+68])
+                                  Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[185,8846+43]..[185,8846+68])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[185,8846+72]..[185,8846+76])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[185,8846+72]..[185,8846+76])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[186,8923+8]..[187,8959+55])
+                          Pctf_method "man_of_module_body" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[187,8959+10]..[187,8959+55])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[187,8959+10]..[187,8959+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[187,8959+10]..[187,8959+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[187,8959+22]..[187,8959+55])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[187,8959+22]..[187,8959+47])
+                                  Ptyp_constr "Odoc_info.Module.t_module" (ocamldoc/odoc_man.mli[187,8959+22]..[187,8959+47])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[187,8959+51]..[187,8959+55])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[187,8959+51]..[187,8959+55])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[188,9015+8]..[188,9015+73])
+                          Pctf_method "man_of_module_comment" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[188,9015+39]..[188,9015+73])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[188,9015+39]..[188,9015+47])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[188,9015+39]..[188,9015+47])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[188,9015+51]..[188,9015+73])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[188,9015+51]..[188,9015+65])
+                                  Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[188,9015+51]..[188,9015+65])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[188,9015+69]..[188,9015+73])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[188,9015+69]..[188,9015+73])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[189,9089+8]..[193,9265+14])
+                          Pctf_method "man_of_module_parameter_list" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[190,9135+10]..[193,9265+14])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[190,9135+10]..[190,9135+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[190,9135+10]..[190,9135+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[191,9157+10]..[193,9265+14])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[191,9157+10]..[191,9157+26])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[191,9157+10]..[191,9157+26])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[192,9187+10]..[193,9265+14])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[192,9187+10]..[192,9187+74])
+                                    Ptyp_constr "list" (ocamldoc/odoc_man.mli[192,9187+70]..[192,9187+74])
+                                    [
+                                      core_type (ocamldoc/odoc_man.mli[192,9187+11]..[192,9187+68])
+                                        Ptyp_tuple
+                                        [
+                                          core_type (ocamldoc/odoc_man.mli[192,9187+11]..[192,9187+44])
+                                            Ptyp_constr "Odoc_info.Module.module_parameter" (ocamldoc/odoc_man.mli[192,9187+11]..[192,9187+44])
+                                            []
+                                          core_type (ocamldoc/odoc_man.mli[192,9187+47]..[192,9187+68])
+                                            Ptyp_constr "option" (ocamldoc/odoc_man.mli[192,9187+62]..[192,9187+68])
+                                            [
+                                              core_type (ocamldoc/odoc_man.mli[192,9187+47]..[192,9187+61])
+                                                Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[192,9187+47]..[192,9187+61])
+                                                []
+                                            ]
+                                        ]
+                                    ]
+                                  core_type (ocamldoc/odoc_man.mli[193,9265+10]..[193,9265+14])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[193,9265+10]..[193,9265+14])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[194,9280+8]..[195,9316+67])
+                          Pctf_method "man_of_module_type" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[195,9316+10]..[195,9316+67])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[195,9316+10]..[195,9316+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[195,9316+10]..[195,9316+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[195,9316+22]..[195,9316+67])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[195,9316+22]..[195,9316+38])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[195,9316+22]..[195,9316+38])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[195,9316+42]..[195,9316+67])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[195,9316+42]..[195,9316+59])
+                                    Ptyp_constr "Types.module_type" (ocamldoc/odoc_man.mli[195,9316+42]..[195,9316+59])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[195,9316+63]..[195,9316+67])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[195,9316+63]..[195,9316+67])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[196,9384+8]..[197,9425+60])
+                          Pctf_method "man_of_module_type_body" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[197,9425+10]..[197,9425+60])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[197,9425+10]..[197,9425+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[197,9425+10]..[197,9425+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[197,9425+22]..[197,9425+60])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[197,9425+22]..[197,9425+52])
+                                  Ptyp_constr "Odoc_info.Module.t_module_type" (ocamldoc/odoc_man.mli[197,9425+22]..[197,9425+52])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[197,9425+56]..[197,9425+60])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[197,9425+56]..[197,9425+60])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[198,9486+8]..[199,9532+59])
+                          Pctf_method "man_of_parameter_description" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[199,9532+10]..[199,9532+59])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[199,9532+10]..[199,9532+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[199,9532+10]..[199,9532+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[199,9532+22]..[199,9532+59])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[199,9532+22]..[199,9532+51])
+                                  Ptyp_constr "Odoc_info.Parameter.parameter" (ocamldoc/odoc_man.mli[199,9532+22]..[199,9532+51])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[199,9532+55]..[199,9532+59])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[199,9532+55]..[199,9532+59])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[200,9592+8]..[202,9653+72])
+                          Pctf_method "man_of_parameter_list" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[201,9631+10]..[202,9653+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[201,9631+10]..[201,9631+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[201,9631+10]..[201,9631+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[202,9653+10]..[202,9653+72])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[202,9653+10]..[202,9653+26])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[202,9653+10]..[202,9653+26])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[202,9653+30]..[202,9653+72])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[202,9653+30]..[202,9653+64])
+                                    Ptyp_constr "list" (ocamldoc/odoc_man.mli[202,9653+60]..[202,9653+64])
+                                    [
+                                      core_type (ocamldoc/odoc_man.mli[202,9653+30]..[202,9653+59])
+                                        Ptyp_constr "Odoc_info.Parameter.parameter" (ocamldoc/odoc_man.mli[202,9653+30]..[202,9653+59])
+                                        []
+                                    ]
+                                  core_type (ocamldoc/odoc_man.mli[202,9653+68]..[202,9653+72])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[202,9653+68]..[202,9653+72])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[203,9726+8]..[204,9759+77])
+                          Pctf_method "man_of_recfield" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[204,9759+10]..[204,9759+77])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[204,9759+10]..[204,9759+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[204,9759+10]..[204,9759+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[204,9759+22]..[204,9759+77])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[204,9759+22]..[204,9759+38])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[204,9759+22]..[204,9759+38])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[204,9759+42]..[204,9759+77])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[204,9759+42]..[204,9759+69])
+                                    Ptyp_constr "Odoc_info.Type.record_field" (ocamldoc/odoc_man.mli[204,9759+42]..[204,9759+69])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[204,9759+73]..[204,9759+77])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[204,9759+73]..[204,9759+77])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[205,9837+8]..[207,9898+62])
+                          Pctf_method "man_of_record" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[206,9868+10]..[207,9898+62])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[206,9868+10]..[206,9868+26])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[206,9868+10]..[206,9868+26])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[207,9898+10]..[207,9898+62])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[207,9898+10]..[207,9898+18])
+                                  Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[207,9898+10]..[207,9898+18])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[207,9898+22]..[207,9898+62])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[207,9898+22]..[207,9898+54])
+                                    Ptyp_constr "list" (ocamldoc/odoc_man.mli[207,9898+50]..[207,9898+54])
+                                    [
+                                      core_type (ocamldoc/odoc_man.mli[207,9898+22]..[207,9898+49])
+                                        Ptyp_constr "Odoc_info.Type.record_field" (ocamldoc/odoc_man.mli[207,9898+22]..[207,9898+49])
+                                        []
+                                    ]
+                                  core_type (ocamldoc/odoc_man.mli[207,9898+58]..[207,9898+62])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[207,9898+58]..[207,9898+62])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[208,9961+8]..[208,9961+63])
+                          Pctf_method "man_of_text" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[208,9961+29]..[208,9961+63])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[208,9961+29]..[208,9961+37])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[208,9961+29]..[208,9961+37])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[208,9961+41]..[208,9961+63])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[208,9961+41]..[208,9961+55])
+                                  Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[208,9961+41]..[208,9961+55])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[208,9961+59]..[208,9961+63])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[208,9961+59]..[208,9961+63])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[209,10025+8]..[209,10025+72])
+                          Pctf_method "man_of_text2" Private Concrete
+                            core_type (ocamldoc/odoc_man.mli[209,10025+38]..[209,10025+72])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[209,10025+38]..[209,10025+46])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[209,10025+38]..[209,10025+46])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[209,10025+50]..[209,10025+72])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[209,10025+50]..[209,10025+64])
+                                  Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[209,10025+50]..[209,10025+64])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[209,10025+68]..[209,10025+72])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[209,10025+68]..[209,10025+72])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[210,10098+8]..[211,10135+52])
+                          Pctf_method "man_of_text_element" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[211,10135+10]..[211,10135+52])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[211,10135+10]..[211,10135+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[211,10135+10]..[211,10135+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[211,10135+22]..[211,10135+52])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[211,10135+22]..[211,10135+44])
+                                  Ptyp_constr "Odoc_info.text_element" (ocamldoc/odoc_man.mli[211,10135+22]..[211,10135+44])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[211,10135+48]..[211,10135+52])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[211,10135+48]..[211,10135+52])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[212,10188+8]..[212,10188+70])
+                          Pctf_method "man_of_type" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[212,10188+29]..[212,10188+70])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[212,10188+29]..[212,10188+37])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[212,10188+29]..[212,10188+37])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[212,10188+41]..[212,10188+70])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[212,10188+41]..[212,10188+62])
+                                  Ptyp_constr "Odoc_info.Type.t_type" (ocamldoc/odoc_man.mli[212,10188+41]..[212,10188+62])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[212,10188+66]..[212,10188+70])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[212,10188+66]..[212,10188+70])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[213,10259+8]..[214,10293+65])
+                          Pctf_method "man_of_type_expr" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[214,10293+10]..[214,10293+65])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[214,10293+10]..[214,10293+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[214,10293+10]..[214,10293+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[214,10293+22]..[214,10293+65])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[214,10293+22]..[214,10293+38])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[214,10293+22]..[214,10293+38])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[214,10293+42]..[214,10293+65])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[214,10293+42]..[214,10293+57])
+                                    Ptyp_constr "Types.type_expr" (ocamldoc/odoc_man.mli[214,10293+42]..[214,10293+57])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[214,10293+61]..[214,10293+65])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[214,10293+61]..[214,10293+65])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[215,10359+8]..[216,10404+71])
+                          Pctf_method "man_of_type_expr_param_list" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[216,10404+10]..[216,10404+71])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[216,10404+10]..[216,10404+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[216,10404+10]..[216,10404+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[216,10404+22]..[216,10404+71])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[216,10404+22]..[216,10404+38])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[216,10404+22]..[216,10404+38])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[216,10404+42]..[216,10404+71])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[216,10404+42]..[216,10404+63])
+                                    Ptyp_constr "Odoc_info.Type.t_type" (ocamldoc/odoc_man.mli[216,10404+42]..[216,10404+63])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[216,10404+67]..[216,10404+71])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[216,10404+67]..[216,10404+71])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[217,10476+8]..[219,10537+74])
+                          Pctf_method "man_of_type_extension" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[218,10515+10]..[219,10537+74])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[218,10515+10]..[218,10515+18])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[218,10515+10]..[218,10515+18])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[219,10537+10]..[219,10537+74])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[219,10537+10]..[219,10537+26])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[219,10537+10]..[219,10537+26])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[219,10537+30]..[219,10537+74])
+                                  Ptyp_arrow
+                                  Nolabel
+                                  core_type (ocamldoc/odoc_man.mli[219,10537+30]..[219,10537+66])
+                                    Ptyp_constr "Odoc_info.Extension.t_type_extension" (ocamldoc/odoc_man.mli[219,10537+30]..[219,10537+66])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[219,10537+70]..[219,10537+74])
+                                    Ptyp_constr "unit" (ocamldoc/odoc_man.mli[219,10537+70]..[219,10537+74])
+                                    []
+                        class_type_field (ocamldoc/odoc_man.mli[220,10612+8]..[220,10612+73])
+                          Pctf_method "man_of_value" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[220,10612+30]..[220,10612+73])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[220,10612+30]..[220,10612+38])
+                                Ptyp_constr "Buffer.t" (ocamldoc/odoc_man.mli[220,10612+30]..[220,10612+38])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[220,10612+42]..[220,10612+73])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[220,10612+42]..[220,10612+65])
+                                  Ptyp_constr "Odoc_info.Value.t_value" (ocamldoc/odoc_man.mli[220,10612+42]..[220,10612+65])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[220,10612+69]..[220,10612+73])
+                                  Ptyp_constr "unit" (ocamldoc/odoc_man.mli[220,10612+69]..[220,10612+73])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[221,10686+8]..[221,10686+47])
+                          Pctf_method "open_out" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[221,10686+26]..[221,10686+47])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[221,10686+26]..[221,10686+32])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[221,10686+26]..[221,10686+32])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[221,10686+36]..[221,10686+47])
+                                Ptyp_constr "out_channel" (ocamldoc/odoc_man.mli[221,10686+36]..[221,10686+47])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[222,10734+8]..[223,10767+56])
+                          Pctf_method "relative_idents" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[223,10767+10]..[223,10767+56])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[223,10767+10]..[223,10767+26])
+                                Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[223,10767+10]..[223,10767+26])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[223,10767+30]..[223,10767+56])
+                                Ptyp_arrow
+                                Nolabel
+                                core_type (ocamldoc/odoc_man.mli[223,10767+30]..[223,10767+46])
+                                  Ptyp_constr "Odoc_info.Name.t" (ocamldoc/odoc_man.mli[223,10767+30]..[223,10767+46])
+                                  []
+                                core_type (ocamldoc/odoc_man.mli[223,10767+50]..[223,10767+56])
+                                  Ptyp_constr "string" (ocamldoc/odoc_man.mli[223,10767+50]..[223,10767+56])
+                                  []
+                        class_type_field (ocamldoc/odoc_man.mli[224,10824+8]..[224,10824+49])
+                          Pctf_method "remove_newlines" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[224,10824+33]..[224,10824+49])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[224,10824+33]..[224,10824+39])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[224,10824+33]..[224,10824+39])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[224,10824+43]..[224,10824+49])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[224,10824+43]..[224,10824+49])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[225,10874+8]..[225,10874+70])
+                          Pctf_method "str_man_of_alerts" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[225,10874+35]..[225,10874+70])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[225,10874+35]..[225,10874+55])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[225,10874+51]..[225,10874+55])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[225,10874+35]..[225,10874+50])
+                                    Ptyp_constr "Odoc_info.alert" (ocamldoc/odoc_man.mli[225,10874+35]..[225,10874+50])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[225,10874+59]..[225,10874+70])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[225,10874+66]..[225,10874+70])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[225,10874+59]..[225,10874+65])
+                                    Ptyp_constr "string" (ocamldoc/odoc_man.mli[225,10874+59]..[225,10874+65])
+                                    []
+                                ]
+                        class_type_field (ocamldoc/odoc_man.mli[226,10945+8]..[226,10945+61])
+                          Pctf_method "str_man_of_author_list" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[226,10945+40]..[226,10945+61])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[226,10945+40]..[226,10945+51])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[226,10945+47]..[226,10945+51])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[226,10945+40]..[226,10945+46])
+                                    Ptyp_constr "string" (ocamldoc/odoc_man.mli[226,10945+40]..[226,10945+46])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[226,10945+55]..[226,10945+61])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[226,10945+55]..[226,10945+61])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[227,11007+8]..[227,11007+75])
+                          Pctf_method "str_man_of_before" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[227,11007+35]..[227,11007+75])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[227,11007+35]..[227,11007+65])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[227,11007+61]..[227,11007+65])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[227,11007+36]..[227,11007+59])
+                                    Ptyp_tuple
+                                    [
+                                      core_type (ocamldoc/odoc_man.mli[227,11007+36]..[227,11007+42])
+                                        Ptyp_constr "string" (ocamldoc/odoc_man.mli[227,11007+36]..[227,11007+42])
+                                        []
+                                      core_type (ocamldoc/odoc_man.mli[227,11007+45]..[227,11007+59])
+                                        Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[227,11007+45]..[227,11007+59])
+                                        []
+                                    ]
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[227,11007+69]..[227,11007+75])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[227,11007+69]..[227,11007+75])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[228,11083+8]..[229,11118+55])
+                          Pctf_method "str_man_of_custom" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[229,11118+10]..[229,11118+55])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[229,11118+10]..[229,11118+40])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[229,11118+36]..[229,11118+40])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[229,11118+11]..[229,11118+34])
+                                    Ptyp_tuple
+                                    [
+                                      core_type (ocamldoc/odoc_man.mli[229,11118+11]..[229,11118+17])
+                                        Ptyp_constr "string" (ocamldoc/odoc_man.mli[229,11118+11]..[229,11118+17])
+                                        []
+                                      core_type (ocamldoc/odoc_man.mli[229,11118+20]..[229,11118+34])
+                                        Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[229,11118+20]..[229,11118+34])
+                                        []
+                                    ]
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[229,11118+44]..[229,11118+55])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[229,11118+51]..[229,11118+55])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[229,11118+44]..[229,11118+50])
+                                    Ptyp_constr "string" (ocamldoc/odoc_man.mli[229,11118+44]..[229,11118+50])
+                                    []
+                                ]
+                        class_type_field (ocamldoc/odoc_man.mli[230,11174+8]..[231,11220+50])
+                          Pctf_method "str_man_of_raised_exceptions" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[231,11220+10]..[231,11220+50])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[231,11220+10]..[231,11220+40])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[231,11220+36]..[231,11220+40])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[231,11220+11]..[231,11220+34])
+                                    Ptyp_tuple
+                                    [
+                                      core_type (ocamldoc/odoc_man.mli[231,11220+11]..[231,11220+17])
+                                        Ptyp_constr "string" (ocamldoc/odoc_man.mli[231,11220+11]..[231,11220+17])
+                                        []
+                                      core_type (ocamldoc/odoc_man.mli[231,11220+20]..[231,11220+34])
+                                        Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[231,11220+20]..[231,11220+34])
+                                        []
+                                    ]
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[231,11220+44]..[231,11220+50])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[231,11220+44]..[231,11220+50])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[232,11271+8]..[232,11271+70])
+                          Pctf_method "str_man_of_return_opt" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[232,11271+39]..[232,11271+70])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[232,11271+39]..[232,11271+60])
+                                Ptyp_constr "option" (ocamldoc/odoc_man.mli[232,11271+54]..[232,11271+60])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[232,11271+39]..[232,11271+53])
+                                    Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[232,11271+39]..[232,11271+53])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[232,11271+64]..[232,11271+70])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[232,11271+64]..[232,11271+70])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[233,11342+8]..[233,11342+76])
+                          Pctf_method "str_man_of_see" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[233,11342+32]..[233,11342+76])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[233,11342+32]..[233,11342+66])
+                                Ptyp_tuple
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[233,11342+32]..[233,11342+49])
+                                    Ptyp_constr "Odoc_info.see_ref" (ocamldoc/odoc_man.mli[233,11342+32]..[233,11342+49])
+                                    []
+                                  core_type (ocamldoc/odoc_man.mli[233,11342+52]..[233,11342+66])
+                                    Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[233,11342+52]..[233,11342+66])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[233,11342+70]..[233,11342+76])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[233,11342+70]..[233,11342+76])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[234,11419+8]..[235,11452+61])
+                          Pctf_method "str_man_of_sees" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[235,11452+10]..[235,11452+61])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[235,11452+10]..[235,11452+51])
+                                Ptyp_constr "list" (ocamldoc/odoc_man.mli[235,11452+47]..[235,11452+51])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[235,11452+11]..[235,11452+45])
+                                    Ptyp_tuple
+                                    [
+                                      core_type (ocamldoc/odoc_man.mli[235,11452+11]..[235,11452+28])
+                                        Ptyp_constr "Odoc_info.see_ref" (ocamldoc/odoc_man.mli[235,11452+11]..[235,11452+28])
+                                        []
+                                      core_type (ocamldoc/odoc_man.mli[235,11452+31]..[235,11452+45])
+                                        Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[235,11452+31]..[235,11452+45])
+                                        []
+                                    ]
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[235,11452+55]..[235,11452+61])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[235,11452+55]..[235,11452+61])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[236,11514+8]..[236,11514+61])
+                          Pctf_method "str_man_of_since_opt" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[236,11514+38]..[236,11514+61])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[236,11514+38]..[236,11514+51])
+                                Ptyp_constr "option" (ocamldoc/odoc_man.mli[236,11514+45]..[236,11514+51])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[236,11514+38]..[236,11514+44])
+                                    Ptyp_constr "string" (ocamldoc/odoc_man.mli[236,11514+38]..[236,11514+44])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[236,11514+55]..[236,11514+61])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[236,11514+55]..[236,11514+61])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[237,11576+8]..[237,11576+57])
+                          Pctf_method "str_man_of_text" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[237,11576+33]..[237,11576+57])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[237,11576+33]..[237,11576+47])
+                                Ptyp_constr "Odoc_info.text" (ocamldoc/odoc_man.mli[237,11576+33]..[237,11576+47])
+                                []
+                              core_type (ocamldoc/odoc_man.mli[237,11576+51]..[237,11576+57])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[237,11576+51]..[237,11576+57])
+                                []
+                        class_type_field (ocamldoc/odoc_man.mli[238,11634+8]..[238,11634+63])
+                          Pctf_method "str_man_of_version_opt" Public Concrete
+                            core_type (ocamldoc/odoc_man.mli[238,11634+40]..[238,11634+63])
+                              Ptyp_arrow
+                              Nolabel
+                              core_type (ocamldoc/odoc_man.mli[238,11634+40]..[238,11634+53])
+                                Ptyp_constr "option" (ocamldoc/odoc_man.mli[238,11634+47]..[238,11634+53])
+                                [
+                                  core_type (ocamldoc/odoc_man.mli[238,11634+40]..[238,11634+46])
+                                    Ptyp_constr "string" (ocamldoc/odoc_man.mli[238,11634+40]..[238,11634+46])
+                                    []
+                                ]
+                              core_type (ocamldoc/odoc_man.mli[238,11634+57]..[238,11634+63])
+                                Ptyp_constr "string" (ocamldoc/odoc_man.mli[238,11634+57]..[238,11634+63])
+                                []
+                      ]
+            ]
+        ]
+]
+

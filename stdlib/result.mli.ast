@@ -1,0 +1,758 @@
+[
+  signature_item (stdlib/result.mli[16,1079+0]..[21,1231+18])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/result.mli[16,1079+0]..[21,1231+18])
+        Pstr_eval
+        expression (stdlib/result.mli[16,1079+0]..[21,1231+18])
+          Pexp_constant PConst_string(" Result values.\n\n    Result values handle computation results and errors in an explicit\n    and declarative manner without resorting to exceptions.\n\n    @since 4.08 ",(stdlib/result.mli[16,1079+0]..[21,1231+18]),None)
+    ]
+  signature_item (stdlib/result.mli[23,1251+0]..[23,1251+26])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/result.mli[23,1251+0]..[23,1251+26])
+        Pstr_eval
+        expression (stdlib/result.mli[23,1251+0]..[23,1251+26])
+          Pexp_constant PConst_string(" {1:results Results} ",(stdlib/result.mli[23,1251+0]..[23,1251+26]),None)
+    ]
+  signature_item (stdlib/result.mli[25,1279+0]..[25,1279+58])
+    Psig_type Rec
+    [
+      type_declaration "t" (stdlib/result.mli[25,1279+14]..[25,1279+15]) (stdlib/result.mli[25,1279+0]..[25,1279+58])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/result.mli[26,1343+0]..[26,1343+79])
+              Pstr_eval
+              expression (stdlib/result.mli[26,1343+0]..[26,1343+79])
+                Pexp_constant PConst_string(" The type for result values. Either a value [Ok v] or an error [Error e]. ",(stdlib/result.mli[26,1343+0]..[26,1343+79]),None)
+          ]
+        ptype_params =
+          [
+            core_type (stdlib/result.mli[25,1279+6]..[25,1279+8])
+              Ptyp_var a
+            core_type (stdlib/result.mli[25,1279+10]..[25,1279+12])
+              Ptyp_var e
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (stdlib/result.mli[25,1279+36]..[25,1279+44])
+                "Ok" (stdlib/result.mli[25,1279+36]..[25,1279+38])
+                [
+                  core_type (stdlib/result.mli[25,1279+42]..[25,1279+44])
+                    Ptyp_var a
+                ]
+                None
+              (stdlib/result.mli[25,1279+45]..[25,1279+58])
+                "Error" (stdlib/result.mli[25,1279+47]..[25,1279+52])
+                [
+                  core_type (stdlib/result.mli[25,1279+56]..[25,1279+58])
+                    Ptyp_var e
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (stdlib/result.mli[25,1279+18]..[25,1279+33])
+              Ptyp_constr "result" (stdlib/result.mli[25,1279+27]..[25,1279+33])
+              [
+                core_type (stdlib/result.mli[25,1279+19]..[25,1279+21])
+                  Ptyp_var a
+                core_type (stdlib/result.mli[25,1279+23]..[25,1279+25])
+                  Ptyp_var e
+              ]
+    ]
+  signature_item (stdlib/result.mli[28,1424+0]..[28,1424+30])
+    Psig_value
+    value_description "ok" (stdlib/result.mli[28,1424+4]..[28,1424+6]) (stdlib/result.mli[28,1424+0]..[28,1424+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[29,1455+0]..[29,1455+24])
+            Pstr_eval
+            expression (stdlib/result.mli[29,1455+0]..[29,1455+24])
+              Pexp_constant PConst_string(" [ok v] is [Ok v]. ",(stdlib/result.mli[29,1455+0]..[29,1455+24]),None)
+        ]
+      core_type (stdlib/result.mli[28,1424+9]..[28,1424+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[28,1424+9]..[28,1424+11])
+          Ptyp_var a
+        core_type (stdlib/result.mli[28,1424+15]..[28,1424+30])
+          Ptyp_constr "result" (stdlib/result.mli[28,1424+24]..[28,1424+30])
+          [
+            core_type (stdlib/result.mli[28,1424+16]..[28,1424+18])
+              Ptyp_var a
+            core_type (stdlib/result.mli[28,1424+20]..[28,1424+22])
+              Ptyp_var e
+          ]
+      []
+  signature_item (stdlib/result.mli[31,1481+0]..[31,1481+33])
+    Psig_value
+    value_description "error" (stdlib/result.mli[31,1481+4]..[31,1481+9]) (stdlib/result.mli[31,1481+0]..[31,1481+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[32,1515+0]..[32,1515+30])
+            Pstr_eval
+            expression (stdlib/result.mli[32,1515+0]..[32,1515+30])
+              Pexp_constant PConst_string(" [error e] is [Error e]. ",(stdlib/result.mli[32,1515+0]..[32,1515+30]),None)
+        ]
+      core_type (stdlib/result.mli[31,1481+12]..[31,1481+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[31,1481+12]..[31,1481+14])
+          Ptyp_var e
+        core_type (stdlib/result.mli[31,1481+18]..[31,1481+33])
+          Ptyp_constr "result" (stdlib/result.mli[31,1481+27]..[31,1481+33])
+          [
+            core_type (stdlib/result.mli[31,1481+19]..[31,1481+21])
+              Ptyp_var a
+            core_type (stdlib/result.mli[31,1481+23]..[31,1481+25])
+              Ptyp_var e
+          ]
+      []
+  signature_item (stdlib/result.mli[34,1547+0]..[34,1547+47])
+    Psig_value
+    value_description "value" (stdlib/result.mli[34,1547+4]..[34,1547+9]) (stdlib/result.mli[34,1547+0]..[34,1547+47])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[35,1595+0]..[35,1595+74])
+            Pstr_eval
+            expression (stdlib/result.mli[35,1595+0]..[35,1595+74])
+              Pexp_constant PConst_string(" [value r ~default] is [v] if [r] is [Ok v] and [default] otherwise. ",(stdlib/result.mli[35,1595+0]..[35,1595+74]),None)
+        ]
+      core_type (stdlib/result.mli[34,1547+12]..[34,1547+47])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[34,1547+12]..[34,1547+27])
+          Ptyp_constr "result" (stdlib/result.mli[34,1547+21]..[34,1547+27])
+          [
+            core_type (stdlib/result.mli[34,1547+13]..[34,1547+15])
+              Ptyp_var a
+            core_type (stdlib/result.mli[34,1547+17]..[34,1547+19])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[34,1547+31]..[34,1547+47])
+          Ptyp_arrow
+          Labelled "default"
+          core_type (stdlib/result.mli[34,1547+39]..[34,1547+41])
+            Ptyp_var a
+          core_type (stdlib/result.mli[34,1547+45]..[34,1547+47])
+            Ptyp_var a
+      []
+  signature_item (stdlib/result.mli[37,1671+0]..[37,1671+34])
+    Psig_value
+    value_description "get_ok" (stdlib/result.mli[37,1671+4]..[37,1671+10]) (stdlib/result.mli[37,1671+0]..[37,1671+34])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[38,1706+0]..[40,1767+51])
+            Pstr_eval
+            expression (stdlib/result.mli[38,1706+0]..[40,1767+51])
+              Pexp_constant PConst_string(" [get_ok r] is [v] if [r] is [Ok v] and raise otherwise.\n\n    @raise Invalid_argument if [r] is [Error _]. ",(stdlib/result.mli[38,1706+0]..[40,1767+51]),None)
+        ]
+      core_type (stdlib/result.mli[37,1671+13]..[37,1671+34])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[37,1671+13]..[37,1671+28])
+          Ptyp_constr "result" (stdlib/result.mli[37,1671+22]..[37,1671+28])
+          [
+            core_type (stdlib/result.mli[37,1671+14]..[37,1671+16])
+              Ptyp_var a
+            core_type (stdlib/result.mli[37,1671+18]..[37,1671+20])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[37,1671+32]..[37,1671+34])
+          Ptyp_var a
+      []
+  signature_item (stdlib/result.mli[42,1820+0]..[42,1820+37])
+    Psig_value
+    value_description "get_error" (stdlib/result.mli[42,1820+4]..[42,1820+13]) (stdlib/result.mli[42,1820+0]..[42,1820+37])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[43,1858+0]..[45,1925+48])
+            Pstr_eval
+            expression (stdlib/result.mli[43,1858+0]..[45,1925+48])
+              Pexp_constant PConst_string(" [get_error r] is [e] if [r] is [Error e] and raise otherwise.\n\n    @raise Invalid_argument if [r] is [Ok _]. ",(stdlib/result.mli[43,1858+0]..[45,1925+48]),None)
+        ]
+      core_type (stdlib/result.mli[42,1820+16]..[42,1820+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[42,1820+16]..[42,1820+31])
+          Ptyp_constr "result" (stdlib/result.mli[42,1820+25]..[42,1820+31])
+          [
+            core_type (stdlib/result.mli[42,1820+17]..[42,1820+19])
+              Ptyp_var a
+            core_type (stdlib/result.mli[42,1820+21]..[42,1820+23])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[42,1820+35]..[42,1820+37])
+          Ptyp_var e
+      []
+  signature_item (stdlib/result.mli[47,1975+0]..[47,1975+72])
+    Psig_value
+    value_description "bind" (stdlib/result.mli[47,1975+4]..[47,1975+8]) (stdlib/result.mli[47,1975+0]..[47,1975+72])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[48,2048+0]..[48,2048+72])
+            Pstr_eval
+            expression (stdlib/result.mli[48,2048+0]..[48,2048+72])
+              Pexp_constant PConst_string(" [bind r f] is [f v] if [r] is [Ok v] and [r] if [r] is [Error _]. ",(stdlib/result.mli[48,2048+0]..[48,2048+72]),None)
+        ]
+      core_type (stdlib/result.mli[47,1975+11]..[47,1975+72])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[47,1975+11]..[47,1975+26])
+          Ptyp_constr "result" (stdlib/result.mli[47,1975+20]..[47,1975+26])
+          [
+            core_type (stdlib/result.mli[47,1975+12]..[47,1975+14])
+              Ptyp_var a
+            core_type (stdlib/result.mli[47,1975+16]..[47,1975+18])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[47,1975+30]..[47,1975+72])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[47,1975+31]..[47,1975+52])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/result.mli[47,1975+31]..[47,1975+33])
+              Ptyp_var a
+            core_type (stdlib/result.mli[47,1975+37]..[47,1975+52])
+              Ptyp_constr "result" (stdlib/result.mli[47,1975+46]..[47,1975+52])
+              [
+                core_type (stdlib/result.mli[47,1975+38]..[47,1975+40])
+                  Ptyp_var b
+                core_type (stdlib/result.mli[47,1975+42]..[47,1975+44])
+                  Ptyp_var e
+              ]
+          core_type (stdlib/result.mli[47,1975+57]..[47,1975+72])
+            Ptyp_constr "result" (stdlib/result.mli[47,1975+66]..[47,1975+72])
+            [
+              core_type (stdlib/result.mli[47,1975+58]..[47,1975+60])
+                Ptyp_var b
+              core_type (stdlib/result.mli[47,1975+62]..[47,1975+64])
+                Ptyp_var e
+            ]
+      []
+  signature_item (stdlib/result.mli[50,2122+0]..[50,2122+58])
+    Psig_value
+    value_description "join" (stdlib/result.mli[50,2122+4]..[50,2122+8]) (stdlib/result.mli[50,2122+0]..[50,2122+58])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[51,2181+0]..[51,2181+72])
+            Pstr_eval
+            expression (stdlib/result.mli[51,2181+0]..[51,2181+72])
+              Pexp_constant PConst_string(" [join rr] is [r] if [rr] is [Ok r] and [rr] if [rr] is [Error _]. ",(stdlib/result.mli[51,2181+0]..[51,2181+72]),None)
+        ]
+      core_type (stdlib/result.mli[50,2122+11]..[50,2122+58])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[50,2122+11]..[50,2122+39])
+          Ptyp_constr "result" (stdlib/result.mli[50,2122+33]..[50,2122+39])
+          [
+            core_type (stdlib/result.mli[50,2122+12]..[50,2122+27])
+              Ptyp_constr "result" (stdlib/result.mli[50,2122+21]..[50,2122+27])
+              [
+                core_type (stdlib/result.mli[50,2122+13]..[50,2122+15])
+                  Ptyp_var a
+                core_type (stdlib/result.mli[50,2122+17]..[50,2122+19])
+                  Ptyp_var e
+              ]
+            core_type (stdlib/result.mli[50,2122+29]..[50,2122+31])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[50,2122+43]..[50,2122+58])
+          Ptyp_constr "result" (stdlib/result.mli[50,2122+52]..[50,2122+58])
+          [
+            core_type (stdlib/result.mli[50,2122+44]..[50,2122+46])
+              Ptyp_var a
+            core_type (stdlib/result.mli[50,2122+48]..[50,2122+50])
+              Ptyp_var e
+          ]
+      []
+  signature_item (stdlib/result.mli[53,2255+0]..[53,2255+58])
+    Psig_value
+    value_description "map" (stdlib/result.mli[53,2255+4]..[53,2255+7]) (stdlib/result.mli[53,2255+0]..[53,2255+58])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[54,2314+0]..[54,2314+76])
+            Pstr_eval
+            expression (stdlib/result.mli[54,2314+0]..[54,2314+76])
+              Pexp_constant PConst_string(" [map f r] is [Ok (f v)] if [r] is [Ok v] and [r] if [r] is [Error _]. ",(stdlib/result.mli[54,2314+0]..[54,2314+76]),None)
+        ]
+      core_type (stdlib/result.mli[53,2255+10]..[53,2255+58])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[53,2255+11]..[53,2255+19])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[53,2255+11]..[53,2255+13])
+            Ptyp_var a
+          core_type (stdlib/result.mli[53,2255+17]..[53,2255+19])
+            Ptyp_var b
+        core_type (stdlib/result.mli[53,2255+24]..[53,2255+58])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[53,2255+24]..[53,2255+39])
+            Ptyp_constr "result" (stdlib/result.mli[53,2255+33]..[53,2255+39])
+            [
+              core_type (stdlib/result.mli[53,2255+25]..[53,2255+27])
+                Ptyp_var a
+              core_type (stdlib/result.mli[53,2255+29]..[53,2255+31])
+                Ptyp_var e
+            ]
+          core_type (stdlib/result.mli[53,2255+43]..[53,2255+58])
+            Ptyp_constr "result" (stdlib/result.mli[53,2255+52]..[53,2255+58])
+            [
+              core_type (stdlib/result.mli[53,2255+44]..[53,2255+46])
+                Ptyp_var b
+              core_type (stdlib/result.mli[53,2255+48]..[53,2255+50])
+                Ptyp_var e
+            ]
+      []
+  signature_item (stdlib/result.mli[56,2392+0]..[56,2392+64])
+    Psig_value
+    value_description "map_error" (stdlib/result.mli[56,2392+4]..[56,2392+13]) (stdlib/result.mli[56,2392+0]..[56,2392+64])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[57,2457+0]..[58,2525+21])
+            Pstr_eval
+            expression (stdlib/result.mli[57,2457+0]..[58,2525+21])
+              Pexp_constant PConst_string(" [map_error f r] is [Error (f e)] if [r] is [Error e] and [r] if\n    [r] is [Ok _]. ",(stdlib/result.mli[57,2457+0]..[58,2525+21]),None)
+        ]
+      core_type (stdlib/result.mli[56,2392+16]..[56,2392+64])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[56,2392+17]..[56,2392+25])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[56,2392+17]..[56,2392+19])
+            Ptyp_var e
+          core_type (stdlib/result.mli[56,2392+23]..[56,2392+25])
+            Ptyp_var f
+        core_type (stdlib/result.mli[56,2392+30]..[56,2392+64])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[56,2392+30]..[56,2392+45])
+            Ptyp_constr "result" (stdlib/result.mli[56,2392+39]..[56,2392+45])
+            [
+              core_type (stdlib/result.mli[56,2392+31]..[56,2392+33])
+                Ptyp_var a
+              core_type (stdlib/result.mli[56,2392+35]..[56,2392+37])
+                Ptyp_var e
+            ]
+          core_type (stdlib/result.mli[56,2392+49]..[56,2392+64])
+            Ptyp_constr "result" (stdlib/result.mli[56,2392+58]..[56,2392+64])
+            [
+              core_type (stdlib/result.mli[56,2392+50]..[56,2392+52])
+                Ptyp_var a
+              core_type (stdlib/result.mli[56,2392+54]..[56,2392+56])
+                Ptyp_var f
+            ]
+      []
+  signature_item (stdlib/result.mli[60,2548+0]..[60,2548+69])
+    Psig_value
+    value_description "fold" (stdlib/result.mli[60,2548+4]..[60,2548+8]) (stdlib/result.mli[60,2548+0]..[60,2548+69])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[61,2618+0]..[62,2690+20])
+            Pstr_eval
+            expression (stdlib/result.mli[61,2618+0]..[62,2690+20])
+              Pexp_constant PConst_string(" [fold ~ok ~error r] is [ok v] if [r] is [Ok v] and [error e] if [r]\n    is [Error e]. ",(stdlib/result.mli[61,2618+0]..[62,2690+20]),None)
+        ]
+      core_type (stdlib/result.mli[60,2548+11]..[60,2548+69])
+        Ptyp_arrow
+        Labelled "ok"
+        core_type (stdlib/result.mli[60,2548+15]..[60,2548+23])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[60,2548+15]..[60,2548+17])
+            Ptyp_var a
+          core_type (stdlib/result.mli[60,2548+21]..[60,2548+23])
+            Ptyp_var c
+        core_type (stdlib/result.mli[60,2548+28]..[60,2548+69])
+          Ptyp_arrow
+          Labelled "error"
+          core_type (stdlib/result.mli[60,2548+35]..[60,2548+43])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/result.mli[60,2548+35]..[60,2548+37])
+              Ptyp_var e
+            core_type (stdlib/result.mli[60,2548+41]..[60,2548+43])
+              Ptyp_var c
+          core_type (stdlib/result.mli[60,2548+48]..[60,2548+69])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/result.mli[60,2548+48]..[60,2548+63])
+              Ptyp_constr "result" (stdlib/result.mli[60,2548+57]..[60,2548+63])
+              [
+                core_type (stdlib/result.mli[60,2548+49]..[60,2548+51])
+                  Ptyp_var a
+                core_type (stdlib/result.mli[60,2548+53]..[60,2548+55])
+                  Ptyp_var e
+              ]
+            core_type (stdlib/result.mli[60,2548+67]..[60,2548+69])
+              Ptyp_var c
+      []
+  signature_item (stdlib/result.mli[64,2712+0]..[64,2712+50])
+    Psig_value
+    value_description "iter" (stdlib/result.mli[64,2712+4]..[64,2712+8]) (stdlib/result.mli[64,2712+0]..[64,2712+50])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[65,2763+0]..[65,2763+63])
+            Pstr_eval
+            expression (stdlib/result.mli[65,2763+0]..[65,2763+63])
+              Pexp_constant PConst_string(" [iter f r] is [f v] if [r] is [Ok v] and [()] otherwise. ",(stdlib/result.mli[65,2763+0]..[65,2763+63]),None)
+        ]
+      core_type (stdlib/result.mli[64,2712+11]..[64,2712+50])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[64,2712+12]..[64,2712+22])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[64,2712+12]..[64,2712+14])
+            Ptyp_var a
+          core_type (stdlib/result.mli[64,2712+18]..[64,2712+22])
+            Ptyp_constr "unit" (stdlib/result.mli[64,2712+18]..[64,2712+22])
+            []
+        core_type (stdlib/result.mli[64,2712+27]..[64,2712+50])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[64,2712+27]..[64,2712+42])
+            Ptyp_constr "result" (stdlib/result.mli[64,2712+36]..[64,2712+42])
+            [
+              core_type (stdlib/result.mli[64,2712+28]..[64,2712+30])
+                Ptyp_var a
+              core_type (stdlib/result.mli[64,2712+32]..[64,2712+34])
+                Ptyp_var e
+            ]
+          core_type (stdlib/result.mli[64,2712+46]..[64,2712+50])
+            Ptyp_constr "unit" (stdlib/result.mli[64,2712+46]..[64,2712+50])
+            []
+      []
+  signature_item (stdlib/result.mli[67,2828+0]..[67,2828+56])
+    Psig_value
+    value_description "iter_error" (stdlib/result.mli[67,2828+4]..[67,2828+14]) (stdlib/result.mli[67,2828+0]..[67,2828+56])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[68,2885+0]..[68,2885+72])
+            Pstr_eval
+            expression (stdlib/result.mli[68,2885+0]..[68,2885+72])
+              Pexp_constant PConst_string(" [iter_error f r] is [f e] if [r] is [Error e] and [()] otherwise. ",(stdlib/result.mli[68,2885+0]..[68,2885+72]),None)
+        ]
+      core_type (stdlib/result.mli[67,2828+17]..[67,2828+56])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[67,2828+18]..[67,2828+28])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[67,2828+18]..[67,2828+20])
+            Ptyp_var e
+          core_type (stdlib/result.mli[67,2828+24]..[67,2828+28])
+            Ptyp_constr "unit" (stdlib/result.mli[67,2828+24]..[67,2828+28])
+            []
+        core_type (stdlib/result.mli[67,2828+33]..[67,2828+56])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[67,2828+33]..[67,2828+48])
+            Ptyp_constr "result" (stdlib/result.mli[67,2828+42]..[67,2828+48])
+            [
+              core_type (stdlib/result.mli[67,2828+34]..[67,2828+36])
+                Ptyp_var a
+              core_type (stdlib/result.mli[67,2828+38]..[67,2828+40])
+                Ptyp_var e
+            ]
+          core_type (stdlib/result.mli[67,2828+52]..[67,2828+56])
+            Ptyp_constr "unit" (stdlib/result.mli[67,2828+52]..[67,2828+56])
+            []
+      []
+  signature_item (stdlib/result.mli[70,2959+0]..[70,2959+43])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/result.mli[70,2959+0]..[70,2959+43])
+        Pstr_eval
+        expression (stdlib/result.mli[70,2959+0]..[70,2959+43])
+          Pexp_constant PConst_string(" {1:preds Predicates and comparisons} ",(stdlib/result.mli[70,2959+0]..[70,2959+43]),None)
+    ]
+  signature_item (stdlib/result.mli[72,3004+0]..[72,3004+35])
+    Psig_value
+    value_description "is_ok" (stdlib/result.mli[72,3004+4]..[72,3004+9]) (stdlib/result.mli[72,3004+0]..[72,3004+35])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[73,3040+0]..[73,3040+56])
+            Pstr_eval
+            expression (stdlib/result.mli[73,3040+0]..[73,3040+56])
+              Pexp_constant PConst_string(" [is_ok r] is [true] if and only if [r] is [Ok _]. ",(stdlib/result.mli[73,3040+0]..[73,3040+56]),None)
+        ]
+      core_type (stdlib/result.mli[72,3004+12]..[72,3004+35])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[72,3004+12]..[72,3004+27])
+          Ptyp_constr "result" (stdlib/result.mli[72,3004+21]..[72,3004+27])
+          [
+            core_type (stdlib/result.mli[72,3004+13]..[72,3004+15])
+              Ptyp_var a
+            core_type (stdlib/result.mli[72,3004+17]..[72,3004+19])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[72,3004+31]..[72,3004+35])
+          Ptyp_constr "bool" (stdlib/result.mli[72,3004+31]..[72,3004+35])
+          []
+      []
+  signature_item (stdlib/result.mli[75,3098+0]..[75,3098+38])
+    Psig_value
+    value_description "is_error" (stdlib/result.mli[75,3098+4]..[75,3098+12]) (stdlib/result.mli[75,3098+0]..[75,3098+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[76,3137+0]..[76,3137+62])
+            Pstr_eval
+            expression (stdlib/result.mli[76,3137+0]..[76,3137+62])
+              Pexp_constant PConst_string(" [is_error r] is [true] if and only if [r] is [Error _]. ",(stdlib/result.mli[76,3137+0]..[76,3137+62]),None)
+        ]
+      core_type (stdlib/result.mli[75,3098+15]..[75,3098+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[75,3098+15]..[75,3098+30])
+          Ptyp_constr "result" (stdlib/result.mli[75,3098+24]..[75,3098+30])
+          [
+            core_type (stdlib/result.mli[75,3098+16]..[75,3098+18])
+              Ptyp_var a
+            core_type (stdlib/result.mli[75,3098+20]..[75,3098+22])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[75,3098+34]..[75,3098+38])
+          Ptyp_constr "bool" (stdlib/result.mli[75,3098+34]..[75,3098+38])
+          []
+      []
+  signature_item (stdlib/result.mli[78,3201+0]..[80,3287+25])
+    Psig_value
+    value_description "equal" (stdlib/result.mli[78,3201+4]..[78,3201+9]) (stdlib/result.mli[78,3201+0]..[80,3287+25])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[81,3313+0]..[83,3454+17])
+            Pstr_eval
+            expression (stdlib/result.mli[81,3313+0]..[83,3454+17])
+              Pexp_constant PConst_string(" [equal ~ok ~error r0 r1] tests equality of [r0] and [r1] using [ok]\n    and [error] to respectively compare values wrapped by [Ok _] and\n    [Error _]. ",(stdlib/result.mli[81,3313+0]..[83,3454+17]),None)
+        ]
+      core_type (stdlib/result.mli[79,3213+2]..[80,3287+25])
+        Ptyp_arrow
+        Labelled "ok"
+        core_type (stdlib/result.mli[79,3213+6]..[79,3213+22])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[79,3213+6]..[79,3213+8])
+            Ptyp_var a
+          core_type (stdlib/result.mli[79,3213+12]..[79,3213+22])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/result.mli[79,3213+12]..[79,3213+14])
+              Ptyp_var a
+            core_type (stdlib/result.mli[79,3213+18]..[79,3213+22])
+              Ptyp_constr "bool" (stdlib/result.mli[79,3213+18]..[79,3213+22])
+              []
+        core_type (stdlib/result.mli[79,3213+27]..[80,3287+25])
+          Ptyp_arrow
+          Labelled "error"
+          core_type (stdlib/result.mli[79,3213+34]..[79,3213+50])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/result.mli[79,3213+34]..[79,3213+36])
+              Ptyp_var e
+            core_type (stdlib/result.mli[79,3213+40]..[79,3213+50])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/result.mli[79,3213+40]..[79,3213+42])
+                Ptyp_var e
+              core_type (stdlib/result.mli[79,3213+46]..[79,3213+50])
+                Ptyp_constr "bool" (stdlib/result.mli[79,3213+46]..[79,3213+50])
+                []
+          core_type (stdlib/result.mli[79,3213+55]..[80,3287+25])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/result.mli[79,3213+55]..[79,3213+70])
+              Ptyp_constr "result" (stdlib/result.mli[79,3213+64]..[79,3213+70])
+              [
+                core_type (stdlib/result.mli[79,3213+56]..[79,3213+58])
+                  Ptyp_var a
+                core_type (stdlib/result.mli[79,3213+60]..[79,3213+62])
+                  Ptyp_var e
+              ]
+            core_type (stdlib/result.mli[80,3287+2]..[80,3287+25])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/result.mli[80,3287+2]..[80,3287+17])
+                Ptyp_constr "result" (stdlib/result.mli[80,3287+11]..[80,3287+17])
+                [
+                  core_type (stdlib/result.mli[80,3287+3]..[80,3287+5])
+                    Ptyp_var a
+                  core_type (stdlib/result.mli[80,3287+7]..[80,3287+9])
+                    Ptyp_var e
+                ]
+              core_type (stdlib/result.mli[80,3287+21]..[80,3287+25])
+                Ptyp_constr "bool" (stdlib/result.mli[80,3287+21]..[80,3287+25])
+                []
+      []
+  signature_item (stdlib/result.mli[85,3473+0]..[87,3559+24])
+    Psig_value
+    value_description "compare" (stdlib/result.mli[85,3473+4]..[85,3473+11]) (stdlib/result.mli[85,3473+0]..[87,3559+24])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[88,3584+0]..[90,3736+55])
+            Pstr_eval
+            expression (stdlib/result.mli[88,3584+0]..[90,3736+55])
+              Pexp_constant PConst_string(" [compare ~ok ~error r0 r1] totally orders [r0] and [r1] using [ok] and\n    [error] to respectively compare values wrapped by [Ok _ ] and [Error _].\n    [Ok _] values are smaller than [Error _] values. ",(stdlib/result.mli[88,3584+0]..[90,3736+55]),None)
+        ]
+      core_type (stdlib/result.mli[86,3487+2]..[87,3559+24])
+        Ptyp_arrow
+        Labelled "ok"
+        core_type (stdlib/result.mli[86,3487+6]..[86,3487+21])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/result.mli[86,3487+6]..[86,3487+8])
+            Ptyp_var a
+          core_type (stdlib/result.mli[86,3487+12]..[86,3487+21])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/result.mli[86,3487+12]..[86,3487+14])
+              Ptyp_var a
+            core_type (stdlib/result.mli[86,3487+18]..[86,3487+21])
+              Ptyp_constr "int" (stdlib/result.mli[86,3487+18]..[86,3487+21])
+              []
+        core_type (stdlib/result.mli[86,3487+26]..[87,3559+24])
+          Ptyp_arrow
+          Labelled "error"
+          core_type (stdlib/result.mli[86,3487+33]..[86,3487+48])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/result.mli[86,3487+33]..[86,3487+35])
+              Ptyp_var e
+            core_type (stdlib/result.mli[86,3487+39]..[86,3487+48])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/result.mli[86,3487+39]..[86,3487+41])
+                Ptyp_var e
+              core_type (stdlib/result.mli[86,3487+45]..[86,3487+48])
+                Ptyp_constr "int" (stdlib/result.mli[86,3487+45]..[86,3487+48])
+                []
+          core_type (stdlib/result.mli[86,3487+53]..[87,3559+24])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/result.mli[86,3487+53]..[86,3487+68])
+              Ptyp_constr "result" (stdlib/result.mli[86,3487+62]..[86,3487+68])
+              [
+                core_type (stdlib/result.mli[86,3487+54]..[86,3487+56])
+                  Ptyp_var a
+                core_type (stdlib/result.mli[86,3487+58]..[86,3487+60])
+                  Ptyp_var e
+              ]
+            core_type (stdlib/result.mli[87,3559+2]..[87,3559+24])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/result.mli[87,3559+2]..[87,3559+17])
+                Ptyp_constr "result" (stdlib/result.mli[87,3559+11]..[87,3559+17])
+                [
+                  core_type (stdlib/result.mli[87,3559+3]..[87,3559+5])
+                    Ptyp_var a
+                  core_type (stdlib/result.mli[87,3559+7]..[87,3559+9])
+                    Ptyp_var e
+                ]
+              core_type (stdlib/result.mli[87,3559+21]..[87,3559+24])
+                Ptyp_constr "int" (stdlib/result.mli[87,3559+21]..[87,3559+24])
+                []
+      []
+  signature_item (stdlib/result.mli[92,3793+0]..[92,3793+29])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/result.mli[92,3793+0]..[92,3793+29])
+        Pstr_eval
+        expression (stdlib/result.mli[92,3793+0]..[92,3793+29])
+          Pexp_constant PConst_string(" {1:convert Converting} ",(stdlib/result.mli[92,3793+0]..[92,3793+29]),None)
+    ]
+  signature_item (stdlib/result.mli[94,3824+0]..[94,3824+44])
+    Psig_value
+    value_description "to_option" (stdlib/result.mli[94,3824+4]..[94,3824+13]) (stdlib/result.mli[94,3824+0]..[94,3824+44])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[95,3869+0]..[96,3939+27])
+            Pstr_eval
+            expression (stdlib/result.mli[95,3869+0]..[96,3939+27])
+              Pexp_constant PConst_string(" [to_option r] is [r] as an option, mapping [Ok v] to [Some v] and\n    [Error _] to [None]. ",(stdlib/result.mli[95,3869+0]..[96,3939+27]),None)
+        ]
+      core_type (stdlib/result.mli[94,3824+16]..[94,3824+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[94,3824+16]..[94,3824+31])
+          Ptyp_constr "result" (stdlib/result.mli[94,3824+25]..[94,3824+31])
+          [
+            core_type (stdlib/result.mli[94,3824+17]..[94,3824+19])
+              Ptyp_var a
+            core_type (stdlib/result.mli[94,3824+21]..[94,3824+23])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[94,3824+35]..[94,3824+44])
+          Ptyp_constr "option" (stdlib/result.mli[94,3824+38]..[94,3824+44])
+          [
+            core_type (stdlib/result.mli[94,3824+35]..[94,3824+37])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/result.mli[98,3968+0]..[98,3968+40])
+    Psig_value
+    value_description "to_list" (stdlib/result.mli[98,3968+4]..[98,3968+11]) (stdlib/result.mli[98,3968+0]..[98,3968+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[99,4009+0]..[99,4009+64])
+            Pstr_eval
+            expression (stdlib/result.mli[99,4009+0]..[99,4009+64])
+              Pexp_constant PConst_string(" [to_list r] is [[v]] if [r] is [Ok v] and [[]] otherwise. ",(stdlib/result.mli[99,4009+0]..[99,4009+64]),None)
+        ]
+      core_type (stdlib/result.mli[98,3968+14]..[98,3968+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[98,3968+14]..[98,3968+29])
+          Ptyp_constr "result" (stdlib/result.mli[98,3968+23]..[98,3968+29])
+          [
+            core_type (stdlib/result.mli[98,3968+15]..[98,3968+17])
+              Ptyp_var a
+            core_type (stdlib/result.mli[98,3968+19]..[98,3968+21])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[98,3968+33]..[98,3968+40])
+          Ptyp_constr "list" (stdlib/result.mli[98,3968+36]..[98,3968+40])
+          [
+            core_type (stdlib/result.mli[98,3968+33]..[98,3968+35])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/result.mli[101,4075+0]..[101,4075+40])
+    Psig_value
+    value_description "to_seq" (stdlib/result.mli[101,4075+4]..[101,4075+10]) (stdlib/result.mli[101,4075+0]..[101,4075+40])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/result.mli[102,4116+0]..[103,4186+58])
+            Pstr_eval
+            expression (stdlib/result.mli[102,4116+0]..[103,4186+58])
+              Pexp_constant PConst_string(" [to_seq r] is [r] as a sequence. [Ok v] is the singleton sequence\n    containing [v] and [Error _] is the empty sequence. ",(stdlib/result.mli[102,4116+0]..[103,4186+58]),None)
+        ]
+      core_type (stdlib/result.mli[101,4075+13]..[101,4075+40])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/result.mli[101,4075+13]..[101,4075+28])
+          Ptyp_constr "result" (stdlib/result.mli[101,4075+22]..[101,4075+28])
+          [
+            core_type (stdlib/result.mli[101,4075+14]..[101,4075+16])
+              Ptyp_var a
+            core_type (stdlib/result.mli[101,4075+18]..[101,4075+20])
+              Ptyp_var e
+          ]
+        core_type (stdlib/result.mli[101,4075+32]..[101,4075+40])
+          Ptyp_constr "Seq.t" (stdlib/result.mli[101,4075+35]..[101,4075+40])
+          [
+            core_type (stdlib/result.mli[101,4075+32]..[101,4075+34])
+              Ptyp_var a
+          ]
+      []
+]
+

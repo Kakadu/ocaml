@@ -1,0 +1,128 @@
+[
+  structure_item (testsuite/tests/statmemprof/exception_callback_minor.ml[7,119+0]..[7,119+15])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/statmemprof/exception_callback_minor.ml[7,119+5]..[7,119+15])
+      Pmod_ident "Gc.Memprof" (testsuite/tests/statmemprof/exception_callback_minor.ml[7,119+5]..[7,119+15])
+  structure_item (testsuite/tests/statmemprof/exception_callback_minor.ml[13,339+0]..[13,339+39])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/statmemprof/exception_callback_minor.ml[13,339+4]..[13,339+5])
+          Ppat_any
+        expression (testsuite/tests/statmemprof/exception_callback_minor.ml[13,339+8]..[13,339+39])
+          Pexp_apply
+          expression (testsuite/tests/statmemprof/exception_callback_minor.ml[13,339+8]..[13,339+33])
+            Pexp_ident "Printexc.record_backtrace" (testsuite/tests/statmemprof/exception_callback_minor.ml[13,339+8]..[13,339+33])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/statmemprof/exception_callback_minor.ml[13,339+34]..[13,339+39])
+                Pexp_construct "false" (testsuite/tests/statmemprof/exception_callback_minor.ml[13,339+34]..[13,339+39])
+                None
+          ]
+    ]
+  structure_item (testsuite/tests/statmemprof/exception_callback_minor.ml[15,380+0]..[22,601+9])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/statmemprof/exception_callback_minor.ml[15,380+4]..[15,380+5])
+          Ppat_any
+        expression (testsuite/tests/statmemprof/exception_callback_minor.ml[16,388+2]..[22,601+9])
+          Pexp_sequence
+          expression (testsuite/tests/statmemprof/exception_callback_minor.ml[16,388+2]..[20,547+5])
+            Pexp_apply
+            expression (testsuite/tests/statmemprof/exception_callback_minor.ml[16,388+2]..[16,388+7])
+              Pexp_ident "start" (testsuite/tests/statmemprof/exception_callback_minor.ml[16,388+2]..[16,388+7])
+            [
+              <arg>
+              Labelled "callstack_size"
+                expression (testsuite/tests/statmemprof/exception_callback_minor.ml[16,388+24]..[16,388+26])
+                  Pexp_constant PConst_int (10,None)
+              <arg>
+              Labelled "sampling_rate"
+                expression (testsuite/tests/statmemprof/exception_callback_minor.ml[16,388+42]..[16,388+44])
+                  Pexp_constant PConst_float (1.,None)
+              <arg>
+              Nolabel
+                expression (testsuite/tests/statmemprof/exception_callback_minor.ml[17,433+4]..[20,547+5])
+                  Pexp_record
+                  [
+                    "alloc_minor" (testsuite/tests/statmemprof/exception_callback_minor.ml[18,457+6]..[18,457+17])
+                      expression (testsuite/tests/statmemprof/exception_callback_minor.ml[18,457+20]..[18,457+43])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/statmemprof/exception_callback_minor.ml[18,457+25]..[18,457+26])
+                          Ppat_any
+                        expression (testsuite/tests/statmemprof/exception_callback_minor.ml[18,457+30]..[18,457+42])
+                          Pexp_assert
+                          expression (testsuite/tests/statmemprof/exception_callback_minor.ml[18,457+37]..[18,457+42])
+                            Pexp_construct "false" (testsuite/tests/statmemprof/exception_callback_minor.ml[18,457+37]..[18,457+42])
+                            None
+                    "alloc_major" (testsuite/tests/statmemprof/exception_callback_minor.ml[19,502+6]..[19,502+17])
+                      expression (testsuite/tests/statmemprof/exception_callback_minor.ml[19,502+20]..[19,502+43])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/statmemprof/exception_callback_minor.ml[19,502+25]..[19,502+26])
+                          Ppat_any
+                        expression (testsuite/tests/statmemprof/exception_callback_minor.ml[19,502+30]..[19,502+42])
+                          Pexp_assert
+                          expression (testsuite/tests/statmemprof/exception_callback_minor.ml[19,502+37]..[19,502+42])
+                            Pexp_construct "false" (testsuite/tests/statmemprof/exception_callback_minor.ml[19,502+37]..[19,502+42])
+                            None
+                  ]
+                  Some
+                    expression (testsuite/tests/statmemprof/exception_callback_minor.ml[17,433+6]..[17,433+18])
+                      Pexp_ident "null_tracker" (testsuite/tests/statmemprof/exception_callback_minor.ml[17,433+6]..[17,433+18])
+            ]
+          expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+2]..[22,601+9])
+            Pexp_sequence
+            expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+2]..[21,554+45])
+              Pexp_apply
+              expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+2]..[21,554+8])
+                Pexp_ident "ignore" (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+2]..[21,554+8])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+9]..[21,554+45])
+                    Pexp_apply
+                    expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+10]..[21,554+29])
+                      Pexp_ident "Sys.opaque_identity" (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+10]..[21,554+29])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+30]..[21,554+44])
+                          Pexp_apply
+                          expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+31]..[21,554+34])
+                            Pexp_ident "ref" (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+31]..[21,554+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+35]..[21,554+43])
+                                Pexp_apply
+                                expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+36]..[21,554+39])
+                                  Pexp_ident "ref" (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+36]..[21,554+39])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (testsuite/tests/statmemprof/exception_callback_minor.ml[21,554+40]..[21,554+42])
+                                      Pexp_constant PConst_int (42,None)
+                                ]
+                          ]
+                    ]
+              ]
+            expression (testsuite/tests/statmemprof/exception_callback_minor.ml[22,601+2]..[22,601+9])
+              Pexp_apply
+              expression (testsuite/tests/statmemprof/exception_callback_minor.ml[22,601+2]..[22,601+6])
+                Pexp_ident "stop" (testsuite/tests/statmemprof/exception_callback_minor.ml[22,601+2]..[22,601+6])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/statmemprof/exception_callback_minor.ml[22,601+7]..[22,601+9])
+                    Pexp_construct "()" (testsuite/tests/statmemprof/exception_callback_minor.ml[22,601+7]..[22,601+9])
+                    None
+              ]
+    ]
+]
+

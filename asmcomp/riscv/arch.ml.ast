@@ -1,0 +1,781 @@
+[
+  structure_item (asmcomp/riscv/arch.ml[19,1159+0]..[19,1159+11])
+    Pstr_open Fresh
+    module_expr (asmcomp/riscv/arch.ml[19,1159+5]..[19,1159+11])
+      Pmod_ident "Format" (asmcomp/riscv/arch.ml[19,1159+5]..[19,1159+11])
+  structure_item (asmcomp/riscv/arch.ml[23,1217+0]..[23,1217+29])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[23,1217+4]..[23,1217+24])
+          Ppat_var "command_line_options" (asmcomp/riscv/arch.ml[23,1217+4]..[23,1217+24])
+        expression (asmcomp/riscv/arch.ml[23,1217+27]..[23,1217+29])
+          Pexp_construct "[]" (asmcomp/riscv/arch.ml[23,1217+27]..[23,1217+29])
+          None
+    ]
+  structure_item (asmcomp/riscv/arch.ml[27,1275+0]..[29,1373+21])
+    Pstr_type Rec
+    [
+      type_declaration "specific_operation" (asmcomp/riscv/arch.ml[27,1275+5]..[27,1275+23]) (asmcomp/riscv/arch.ml[27,1275+0]..[29,1373+21])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/riscv/arch.ml[28,1301+2]..[28,1301+21])
+                "Imultaddf" (asmcomp/riscv/arch.ml[28,1301+4]..[28,1301+13])
+                [
+                  core_type (asmcomp/riscv/arch.ml[28,1301+17]..[28,1301+21])
+                    Ptyp_constr "bool" (asmcomp/riscv/arch.ml[28,1301+17]..[28,1301+21])
+                    []
+                ]
+                None
+              (asmcomp/riscv/arch.ml[29,1373+2]..[29,1373+21])
+                "Imultsubf" (asmcomp/riscv/arch.ml[29,1373+4]..[29,1373+13])
+                [
+                  core_type (asmcomp/riscv/arch.ml[29,1373+17]..[29,1373+21])
+                    Ptyp_constr "bool" (asmcomp/riscv/arch.ml[29,1373+17]..[29,1373+21])
+                    []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/riscv/arch.ml[33,1475+0]..[34,1498+19])
+    Pstr_type Rec
+    [
+      type_declaration "addressing_mode" (asmcomp/riscv/arch.ml[33,1475+5]..[33,1475+20]) (asmcomp/riscv/arch.ml[33,1475+0]..[34,1498+19])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (asmcomp/riscv/arch.ml[34,1498+2]..[34,1498+19])
+                "Iindexed" (asmcomp/riscv/arch.ml[34,1498+4]..[34,1498+12])
+                [
+                  core_type (asmcomp/riscv/arch.ml[34,1498+16]..[34,1498+19])
+                    Ptyp_constr "int" (asmcomp/riscv/arch.ml[34,1498+16]..[34,1498+19])
+                    []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (asmcomp/riscv/arch.ml[36,1557+0]..[37,1578+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[36,1557+4]..[36,1557+16])
+          Ppat_var "is_immediate" (asmcomp/riscv/arch.ml[36,1557+4]..[36,1557+16])
+        expression (asmcomp/riscv/arch.ml[36,1557+17]..[37,1578+31]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/riscv/arch.ml[36,1557+17]..[36,1557+18])
+            Ppat_var "n" (asmcomp/riscv/arch.ml[36,1557+17]..[36,1557+18])
+          expression (asmcomp/riscv/arch.ml[37,1578+2]..[37,1578+31])
+            Pexp_apply
+            expression (asmcomp/riscv/arch.ml[37,1578+15]..[37,1578+17])
+              Pexp_ident "&&" (asmcomp/riscv/arch.ml[37,1578+15]..[37,1578+17])
+            [
+              <arg>
+              Nolabel
+                expression (asmcomp/riscv/arch.ml[37,1578+2]..[37,1578+14])
+                  Pexp_apply
+                  expression (asmcomp/riscv/arch.ml[37,1578+5]..[37,1578+7])
+                    Pexp_ident "<=" (asmcomp/riscv/arch.ml[37,1578+5]..[37,1578+7])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/riscv/arch.ml[37,1578+3]..[37,1578+4])
+                        Pexp_ident "n" (asmcomp/riscv/arch.ml[37,1578+3]..[37,1578+4])
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/riscv/arch.ml[37,1578+8]..[37,1578+13])
+                        Pexp_constant PConst_int (0x7FF,None)
+                  ]
+              <arg>
+              Nolabel
+                expression (asmcomp/riscv/arch.ml[37,1578+18]..[37,1578+31])
+                  Pexp_apply
+                  expression (asmcomp/riscv/arch.ml[37,1578+21]..[37,1578+23])
+                    Pexp_ident ">=" (asmcomp/riscv/arch.ml[37,1578+21]..[37,1578+23])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/riscv/arch.ml[37,1578+19]..[37,1578+20])
+                        Pexp_ident "n" (asmcomp/riscv/arch.ml[37,1578+19]..[37,1578+20])
+                    <arg>
+                    Nolabel
+                      expression (asmcomp/riscv/arch.ml[37,1578+24]..[37,1578+30])
+                        Pexp_constant PConst_int (-0x800,None)
+                  ]
+            ]
+    ]
+  structure_item (asmcomp/riscv/arch.ml[41,1636+0]..[41,1636+22])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[41,1636+4]..[41,1636+14])
+          Ppat_var "big_endian" (asmcomp/riscv/arch.ml[41,1636+4]..[41,1636+14])
+        expression (asmcomp/riscv/arch.ml[41,1636+17]..[41,1636+22])
+          Pexp_construct "false" (asmcomp/riscv/arch.ml[41,1636+17]..[41,1636+22])
+          None
+    ]
+  structure_item (asmcomp/riscv/arch.ml[43,1660+0]..[43,1660+17])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[43,1660+4]..[43,1660+13])
+          Ppat_var "size_addr" (asmcomp/riscv/arch.ml[43,1660+4]..[43,1660+13])
+        expression (asmcomp/riscv/arch.ml[43,1660+16]..[43,1660+17])
+          Pexp_constant PConst_int (8,None)
+    ]
+  structure_item (asmcomp/riscv/arch.ml[44,1678+0]..[44,1678+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[44,1678+4]..[44,1678+12])
+          Ppat_var "size_int" (asmcomp/riscv/arch.ml[44,1678+4]..[44,1678+12])
+        expression (asmcomp/riscv/arch.ml[44,1678+15]..[44,1678+24])
+          Pexp_ident "size_addr" (asmcomp/riscv/arch.ml[44,1678+15]..[44,1678+24])
+    ]
+  structure_item (asmcomp/riscv/arch.ml[45,1703+0]..[45,1703+18])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[45,1703+4]..[45,1703+14])
+          Ppat_var "size_float" (asmcomp/riscv/arch.ml[45,1703+4]..[45,1703+14])
+        expression (asmcomp/riscv/arch.ml[45,1703+17]..[45,1703+18])
+          Pexp_constant PConst_int (8,None)
+    ]
+  structure_item (asmcomp/riscv/arch.ml[47,1723+0]..[47,1723+34])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[47,1723+4]..[47,1723+26])
+          Ppat_var "allow_unaligned_access" (asmcomp/riscv/arch.ml[47,1723+4]..[47,1723+26])
+        expression (asmcomp/riscv/arch.ml[47,1723+29]..[47,1723+34])
+          Pexp_construct "false" (asmcomp/riscv/arch.ml[47,1723+29]..[47,1723+34])
+          None
+    ]
+  structure_item (asmcomp/riscv/arch.ml[51,1787+0]..[51,1787+40])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[51,1787+4]..[51,1787+32])
+          Ppat_var "division_crashes_on_overflow" (asmcomp/riscv/arch.ml[51,1787+4]..[51,1787+32])
+        expression (asmcomp/riscv/arch.ml[51,1787+35]..[51,1787+40])
+          Pexp_construct "false" (asmcomp/riscv/arch.ml[51,1787+35]..[51,1787+40])
+          None
+    ]
+  structure_item (asmcomp/riscv/arch.ml[55,1867+0]..[55,1867+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[55,1867+4]..[55,1867+23])
+          Ppat_var "identity_addressing" (asmcomp/riscv/arch.ml[55,1867+4]..[55,1867+23])
+        expression (asmcomp/riscv/arch.ml[55,1867+26]..[55,1867+36])
+          Pexp_construct "Iindexed" (asmcomp/riscv/arch.ml[55,1867+26]..[55,1867+34])
+          Some
+            expression (asmcomp/riscv/arch.ml[55,1867+35]..[55,1867+36])
+              Pexp_constant PConst_int (0,None)
+    ]
+  structure_item (asmcomp/riscv/arch.ml[57,1905+0]..[59,1958+37])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[57,1905+4]..[57,1905+21])
+          Ppat_var "offset_addressing" (asmcomp/riscv/arch.ml[57,1905+4]..[57,1905+21])
+        expression (asmcomp/riscv/arch.ml[57,1905+22]..[59,1958+37]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/riscv/arch.ml[57,1905+22]..[57,1905+26])
+            Ppat_var "addr" (asmcomp/riscv/arch.ml[57,1905+22]..[57,1905+26])
+          expression (asmcomp/riscv/arch.ml[57,1905+27]..[59,1958+37]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/riscv/arch.ml[57,1905+27]..[57,1905+32])
+              Ppat_var "delta" (asmcomp/riscv/arch.ml[57,1905+27]..[57,1905+32])
+            expression (asmcomp/riscv/arch.ml[58,1940+2]..[59,1958+37])
+              Pexp_match
+              expression (asmcomp/riscv/arch.ml[58,1940+8]..[58,1940+12])
+                Pexp_ident "addr" (asmcomp/riscv/arch.ml[58,1940+8]..[58,1940+12])
+              [
+                <case>
+                  pattern (asmcomp/riscv/arch.ml[59,1958+4]..[59,1958+14])
+                    Ppat_construct "Iindexed" (asmcomp/riscv/arch.ml[59,1958+4]..[59,1958+12])
+                    Some
+                      []
+                      pattern (asmcomp/riscv/arch.ml[59,1958+13]..[59,1958+14])
+                        Ppat_var "n" (asmcomp/riscv/arch.ml[59,1958+13]..[59,1958+14])
+                  expression (asmcomp/riscv/arch.ml[59,1958+18]..[59,1958+37])
+                    Pexp_construct "Iindexed" (asmcomp/riscv/arch.ml[59,1958+18]..[59,1958+26])
+                    Some
+                      expression (asmcomp/riscv/arch.ml[59,1958+26]..[59,1958+37])
+                        Pexp_apply
+                        expression (asmcomp/riscv/arch.ml[59,1958+29]..[59,1958+30])
+                          Pexp_ident "+" (asmcomp/riscv/arch.ml[59,1958+29]..[59,1958+30])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[59,1958+27]..[59,1958+28])
+                              Pexp_ident "n" (asmcomp/riscv/arch.ml[59,1958+27]..[59,1958+28])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[59,1958+31]..[59,1958+36])
+                              Pexp_ident "delta" (asmcomp/riscv/arch.ml[59,1958+31]..[59,1958+36])
+                        ]
+              ]
+    ]
+  structure_item (asmcomp/riscv/arch.ml[61,1997+0]..[62,2032+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[61,1997+4]..[61,1997+23])
+          Ppat_var "num_args_addressing" (asmcomp/riscv/arch.ml[61,1997+4]..[61,1997+23])
+        expression (asmcomp/riscv/arch.ml[61,1997+26]..[62,2032+19])
+          Pexp_function
+          [
+            <case>
+              pattern (asmcomp/riscv/arch.ml[62,2032+4]..[62,2032+14])
+                Ppat_construct "Iindexed" (asmcomp/riscv/arch.ml[62,2032+4]..[62,2032+12])
+                Some
+                  []
+                  pattern (asmcomp/riscv/arch.ml[62,2032+13]..[62,2032+14])
+                    Ppat_any
+              expression (asmcomp/riscv/arch.ml[62,2032+18]..[62,2032+19])
+                Pexp_constant PConst_int (1,None)
+          ]
+    ]
+  structure_item (asmcomp/riscv/arch.ml[66,2101+0]..[70,2249+45])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[66,2101+4]..[66,2101+20])
+          Ppat_var "print_addressing" (asmcomp/riscv/arch.ml[66,2101+4]..[66,2101+20])
+        expression (asmcomp/riscv/arch.ml[66,2101+21]..[70,2249+45]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/riscv/arch.ml[66,2101+21]..[66,2101+29])
+            Ppat_var "printreg" (asmcomp/riscv/arch.ml[66,2101+21]..[66,2101+29])
+          expression (asmcomp/riscv/arch.ml[66,2101+30]..[70,2249+45]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/riscv/arch.ml[66,2101+30]..[66,2101+34])
+              Ppat_var "addr" (asmcomp/riscv/arch.ml[66,2101+30]..[66,2101+34])
+            expression (asmcomp/riscv/arch.ml[66,2101+35]..[70,2249+45]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (asmcomp/riscv/arch.ml[66,2101+35]..[66,2101+38])
+                Ppat_var "ppf" (asmcomp/riscv/arch.ml[66,2101+35]..[66,2101+38])
+              expression (asmcomp/riscv/arch.ml[66,2101+39]..[70,2249+45]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (asmcomp/riscv/arch.ml[66,2101+39]..[66,2101+42])
+                  Ppat_var "arg" (asmcomp/riscv/arch.ml[66,2101+39]..[66,2101+42])
+                expression (asmcomp/riscv/arch.ml[67,2146+2]..[70,2249+45])
+                  Pexp_match
+                  expression (asmcomp/riscv/arch.ml[67,2146+8]..[67,2146+12])
+                    Pexp_ident "addr" (asmcomp/riscv/arch.ml[67,2146+8]..[67,2146+12])
+                  [
+                    <case>
+                      pattern (asmcomp/riscv/arch.ml[68,2164+4]..[68,2164+14])
+                        Ppat_construct "Iindexed" (asmcomp/riscv/arch.ml[68,2164+4]..[68,2164+12])
+                        Some
+                          []
+                          pattern (asmcomp/riscv/arch.ml[68,2164+13]..[68,2164+14])
+                            Ppat_var "n" (asmcomp/riscv/arch.ml[68,2164+13]..[68,2164+14])
+                      expression (asmcomp/riscv/arch.ml[69,2182+6]..[70,2249+45])
+                        Pexp_let Nonrec
+                        [
+                          <def>
+                            pattern (asmcomp/riscv/arch.ml[69,2182+10]..[69,2182+13])
+                              Ppat_var "idx" (asmcomp/riscv/arch.ml[69,2182+10]..[69,2182+13])
+                            expression (asmcomp/riscv/arch.ml[69,2182+16]..[69,2182+63])
+                              Pexp_ifthenelse
+                              expression (asmcomp/riscv/arch.ml[69,2182+19]..[69,2182+25])
+                                Pexp_apply
+                                expression (asmcomp/riscv/arch.ml[69,2182+21]..[69,2182+23])
+                                  Pexp_ident "<>" (asmcomp/riscv/arch.ml[69,2182+21]..[69,2182+23])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/riscv/arch.ml[69,2182+19]..[69,2182+20])
+                                      Pexp_ident "n" (asmcomp/riscv/arch.ml[69,2182+19]..[69,2182+20])
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/riscv/arch.ml[69,2182+24]..[69,2182+25])
+                                      Pexp_constant PConst_int (0,None)
+                                ]
+                              expression (asmcomp/riscv/arch.ml[69,2182+31]..[69,2182+55])
+                                Pexp_apply
+                                expression (asmcomp/riscv/arch.ml[69,2182+31]..[69,2182+45])
+                                  Pexp_ident "Printf.sprintf" (asmcomp/riscv/arch.ml[69,2182+31]..[69,2182+45])
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/riscv/arch.ml[69,2182+46]..[69,2182+53])
+                                      Pexp_constant PConst_string(" + %i",(asmcomp/riscv/arch.ml[69,2182+47]..[69,2182+52]),None)
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/riscv/arch.ml[69,2182+54]..[69,2182+55])
+                                      Pexp_ident "n" (asmcomp/riscv/arch.ml[69,2182+54]..[69,2182+55])
+                                ]
+                              Some
+                                expression (asmcomp/riscv/arch.ml[69,2182+61]..[69,2182+63])
+                                  Pexp_constant PConst_string("",(asmcomp/riscv/arch.ml[69,2182+62]..[69,2182+62]),None)
+                        ]
+                        expression (asmcomp/riscv/arch.ml[70,2249+6]..[70,2249+45])
+                          Pexp_apply
+                          expression (asmcomp/riscv/arch.ml[70,2249+6]..[70,2249+13])
+                            Pexp_ident "fprintf" (asmcomp/riscv/arch.ml[70,2249+6]..[70,2249+13])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/riscv/arch.ml[70,2249+14]..[70,2249+17])
+                                Pexp_ident "ppf" (asmcomp/riscv/arch.ml[70,2249+14]..[70,2249+17])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/riscv/arch.ml[70,2249+18]..[70,2249+24])
+                                Pexp_constant PConst_string("%a%s",(asmcomp/riscv/arch.ml[70,2249+19]..[70,2249+23]),None)
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/riscv/arch.ml[70,2249+25]..[70,2249+33])
+                                Pexp_ident "printreg" (asmcomp/riscv/arch.ml[70,2249+25]..[70,2249+33])
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/riscv/arch.ml[70,2249+34]..[70,2249+41])
+                                Pexp_apply
+                                expression (asmcomp/riscv/arch.ml[70,2249+34]..[70,2249+41]) ghost
+                                  Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[70,2249+34]..[70,2249+41]) ghost
+                                [
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/riscv/arch.ml[70,2249+34]..[70,2249+37])
+                                      Pexp_ident "arg" (asmcomp/riscv/arch.ml[70,2249+34]..[70,2249+37])
+                                  <arg>
+                                  Nolabel
+                                    expression (asmcomp/riscv/arch.ml[70,2249+39]..[70,2249+40])
+                                      Pexp_constant PConst_int (0,None)
+                                ]
+                            <arg>
+                            Nolabel
+                              expression (asmcomp/riscv/arch.ml[70,2249+42]..[70,2249+45])
+                                Pexp_ident "idx" (asmcomp/riscv/arch.ml[70,2249+42]..[70,2249+45])
+                          ]
+                  ]
+    ]
+  structure_item (asmcomp/riscv/arch.ml[72,2296+0]..[85,2780+58])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[72,2296+4]..[72,2296+28])
+          Ppat_var "print_specific_operation" (asmcomp/riscv/arch.ml[72,2296+4]..[72,2296+28])
+        expression (asmcomp/riscv/arch.ml[72,2296+29]..[85,2780+58]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/riscv/arch.ml[72,2296+29]..[72,2296+37])
+            Ppat_var "printreg" (asmcomp/riscv/arch.ml[72,2296+29]..[72,2296+37])
+          expression (asmcomp/riscv/arch.ml[72,2296+38]..[85,2780+58]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (asmcomp/riscv/arch.ml[72,2296+38]..[72,2296+40])
+              Ppat_var "op" (asmcomp/riscv/arch.ml[72,2296+38]..[72,2296+40])
+            expression (asmcomp/riscv/arch.ml[72,2296+41]..[85,2780+58]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (asmcomp/riscv/arch.ml[72,2296+41]..[72,2296+44])
+                Ppat_var "ppf" (asmcomp/riscv/arch.ml[72,2296+41]..[72,2296+44])
+              expression (asmcomp/riscv/arch.ml[72,2296+45]..[85,2780+58]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (asmcomp/riscv/arch.ml[72,2296+45]..[72,2296+48])
+                  Ppat_var "arg" (asmcomp/riscv/arch.ml[72,2296+45]..[72,2296+48])
+                expression (asmcomp/riscv/arch.ml[73,2347+2]..[85,2780+58])
+                  Pexp_match
+                  expression (asmcomp/riscv/arch.ml[73,2347+8]..[73,2347+10])
+                    Pexp_ident "op" (asmcomp/riscv/arch.ml[73,2347+8]..[73,2347+10])
+                  [
+                    <case>
+                      pattern (asmcomp/riscv/arch.ml[74,2363+4]..[74,2363+19])
+                        Ppat_construct "Imultaddf" (asmcomp/riscv/arch.ml[74,2363+4]..[74,2363+13])
+                        Some
+                          []
+                          pattern (asmcomp/riscv/arch.ml[74,2363+14]..[74,2363+19])
+                            Ppat_construct "false" (asmcomp/riscv/arch.ml[74,2363+14]..[74,2363+19])
+                            None
+                      expression (asmcomp/riscv/arch.ml[75,2386+6]..[76,2421+58])
+                        Pexp_apply
+                        expression (asmcomp/riscv/arch.ml[75,2386+6]..[75,2386+13])
+                          Pexp_ident "fprintf" (asmcomp/riscv/arch.ml[75,2386+6]..[75,2386+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[75,2386+14]..[75,2386+17])
+                              Pexp_ident "ppf" (asmcomp/riscv/arch.ml[75,2386+14]..[75,2386+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[75,2386+18]..[75,2386+34])
+                              Pexp_constant PConst_string("%a *f %a +f %a",(asmcomp/riscv/arch.ml[75,2386+19]..[75,2386+33]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[76,2421+8]..[76,2421+16])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[76,2421+8]..[76,2421+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[76,2421+17]..[76,2421+24])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[76,2421+17]..[76,2421+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[76,2421+17]..[76,2421+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[76,2421+17]..[76,2421+20])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[76,2421+17]..[76,2421+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[76,2421+22]..[76,2421+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[76,2421+25]..[76,2421+33])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[76,2421+25]..[76,2421+33])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[76,2421+34]..[76,2421+41])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[76,2421+34]..[76,2421+41]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[76,2421+34]..[76,2421+41]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[76,2421+34]..[76,2421+37])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[76,2421+34]..[76,2421+37])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[76,2421+39]..[76,2421+40])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[76,2421+42]..[76,2421+50])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[76,2421+42]..[76,2421+50])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[76,2421+51]..[76,2421+58])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[76,2421+51]..[76,2421+58]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[76,2421+51]..[76,2421+58]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[76,2421+51]..[76,2421+54])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[76,2421+51]..[76,2421+54])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[76,2421+56]..[76,2421+57])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/riscv/arch.ml[77,2480+4]..[77,2480+18])
+                        Ppat_construct "Imultaddf" (asmcomp/riscv/arch.ml[77,2480+4]..[77,2480+13])
+                        Some
+                          []
+                          pattern (asmcomp/riscv/arch.ml[77,2480+14]..[77,2480+18])
+                            Ppat_construct "true" (asmcomp/riscv/arch.ml[77,2480+14]..[77,2480+18])
+                            None
+                      expression (asmcomp/riscv/arch.ml[78,2502+6]..[79,2542+58])
+                        Pexp_apply
+                        expression (asmcomp/riscv/arch.ml[78,2502+6]..[78,2502+13])
+                          Pexp_ident "fprintf" (asmcomp/riscv/arch.ml[78,2502+6]..[78,2502+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[78,2502+14]..[78,2502+17])
+                              Pexp_ident "ppf" (asmcomp/riscv/arch.ml[78,2502+14]..[78,2502+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[78,2502+18]..[78,2502+39])
+                              Pexp_constant PConst_string("-f (%a *f %a +f %a)",(asmcomp/riscv/arch.ml[78,2502+19]..[78,2502+38]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[79,2542+8]..[79,2542+16])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[79,2542+8]..[79,2542+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[79,2542+17]..[79,2542+24])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[79,2542+17]..[79,2542+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[79,2542+17]..[79,2542+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[79,2542+17]..[79,2542+20])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[79,2542+17]..[79,2542+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[79,2542+22]..[79,2542+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[79,2542+25]..[79,2542+33])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[79,2542+25]..[79,2542+33])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[79,2542+34]..[79,2542+41])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[79,2542+34]..[79,2542+41]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[79,2542+34]..[79,2542+41]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[79,2542+34]..[79,2542+37])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[79,2542+34]..[79,2542+37])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[79,2542+39]..[79,2542+40])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[79,2542+42]..[79,2542+50])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[79,2542+42]..[79,2542+50])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[79,2542+51]..[79,2542+58])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[79,2542+51]..[79,2542+58]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[79,2542+51]..[79,2542+58]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[79,2542+51]..[79,2542+54])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[79,2542+51]..[79,2542+54])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[79,2542+56]..[79,2542+57])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/riscv/arch.ml[80,2601+4]..[80,2601+19])
+                        Ppat_construct "Imultsubf" (asmcomp/riscv/arch.ml[80,2601+4]..[80,2601+13])
+                        Some
+                          []
+                          pattern (asmcomp/riscv/arch.ml[80,2601+14]..[80,2601+19])
+                            Ppat_construct "false" (asmcomp/riscv/arch.ml[80,2601+14]..[80,2601+19])
+                            None
+                      expression (asmcomp/riscv/arch.ml[81,2624+6]..[82,2659+58])
+                        Pexp_apply
+                        expression (asmcomp/riscv/arch.ml[81,2624+6]..[81,2624+13])
+                          Pexp_ident "fprintf" (asmcomp/riscv/arch.ml[81,2624+6]..[81,2624+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[81,2624+14]..[81,2624+17])
+                              Pexp_ident "ppf" (asmcomp/riscv/arch.ml[81,2624+14]..[81,2624+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[81,2624+18]..[81,2624+34])
+                              Pexp_constant PConst_string("%a *f %a -f %a",(asmcomp/riscv/arch.ml[81,2624+19]..[81,2624+33]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[82,2659+8]..[82,2659+16])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[82,2659+8]..[82,2659+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[82,2659+17]..[82,2659+24])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[82,2659+17]..[82,2659+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[82,2659+17]..[82,2659+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[82,2659+17]..[82,2659+20])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[82,2659+17]..[82,2659+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[82,2659+22]..[82,2659+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[82,2659+25]..[82,2659+33])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[82,2659+25]..[82,2659+33])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[82,2659+34]..[82,2659+41])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[82,2659+34]..[82,2659+41]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[82,2659+34]..[82,2659+41]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[82,2659+34]..[82,2659+37])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[82,2659+34]..[82,2659+37])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[82,2659+39]..[82,2659+40])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[82,2659+42]..[82,2659+50])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[82,2659+42]..[82,2659+50])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[82,2659+51]..[82,2659+58])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[82,2659+51]..[82,2659+58]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[82,2659+51]..[82,2659+58]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[82,2659+51]..[82,2659+54])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[82,2659+51]..[82,2659+54])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[82,2659+56]..[82,2659+57])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                    <case>
+                      pattern (asmcomp/riscv/arch.ml[83,2718+4]..[83,2718+18])
+                        Ppat_construct "Imultsubf" (asmcomp/riscv/arch.ml[83,2718+4]..[83,2718+13])
+                        Some
+                          []
+                          pattern (asmcomp/riscv/arch.ml[83,2718+14]..[83,2718+18])
+                            Ppat_construct "true" (asmcomp/riscv/arch.ml[83,2718+14]..[83,2718+18])
+                            None
+                      expression (asmcomp/riscv/arch.ml[84,2740+6]..[85,2780+58])
+                        Pexp_apply
+                        expression (asmcomp/riscv/arch.ml[84,2740+6]..[84,2740+13])
+                          Pexp_ident "fprintf" (asmcomp/riscv/arch.ml[84,2740+6]..[84,2740+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[84,2740+14]..[84,2740+17])
+                              Pexp_ident "ppf" (asmcomp/riscv/arch.ml[84,2740+14]..[84,2740+17])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[84,2740+18]..[84,2740+39])
+                              Pexp_constant PConst_string("-f (%a *f %a -f %a)",(asmcomp/riscv/arch.ml[84,2740+19]..[84,2740+38]),None)
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[85,2780+8]..[85,2780+16])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[85,2780+8]..[85,2780+16])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[85,2780+17]..[85,2780+24])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[85,2780+17]..[85,2780+24]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[85,2780+17]..[85,2780+24]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[85,2780+17]..[85,2780+20])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[85,2780+17]..[85,2780+20])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[85,2780+22]..[85,2780+23])
+                                    Pexp_constant PConst_int (0,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[85,2780+25]..[85,2780+33])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[85,2780+25]..[85,2780+33])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[85,2780+34]..[85,2780+41])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[85,2780+34]..[85,2780+41]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[85,2780+34]..[85,2780+41]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[85,2780+34]..[85,2780+37])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[85,2780+34]..[85,2780+37])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[85,2780+39]..[85,2780+40])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[85,2780+42]..[85,2780+50])
+                              Pexp_ident "printreg" (asmcomp/riscv/arch.ml[85,2780+42]..[85,2780+50])
+                          <arg>
+                          Nolabel
+                            expression (asmcomp/riscv/arch.ml[85,2780+51]..[85,2780+58])
+                              Pexp_apply
+                              expression (asmcomp/riscv/arch.ml[85,2780+51]..[85,2780+58]) ghost
+                                Pexp_ident "Array.get" (asmcomp/riscv/arch.ml[85,2780+51]..[85,2780+58]) ghost
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[85,2780+51]..[85,2780+54])
+                                    Pexp_ident "arg" (asmcomp/riscv/arch.ml[85,2780+51]..[85,2780+54])
+                                <arg>
+                                Nolabel
+                                  expression (asmcomp/riscv/arch.ml[85,2780+56]..[85,2780+57])
+                                    Pexp_constant PConst_int (2,None)
+                              ]
+                        ]
+                  ]
+    ]
+  structure_item (asmcomp/riscv/arch.ml[89,2881+0]..[89,2881+30])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[89,2881+4]..[89,2881+21])
+          Ppat_var "operation_is_pure" (asmcomp/riscv/arch.ml[89,2881+4]..[89,2881+21])
+        expression (asmcomp/riscv/arch.ml[89,2881+22]..[89,2881+30]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/riscv/arch.ml[89,2881+22]..[89,2881+23])
+            Ppat_any
+          expression (asmcomp/riscv/arch.ml[89,2881+26]..[89,2881+30])
+            Pexp_construct "true" (asmcomp/riscv/arch.ml[89,2881+26]..[89,2881+30])
+            None
+    ]
+  structure_item (asmcomp/riscv/arch.ml[93,2955+0]..[93,2955+33])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (asmcomp/riscv/arch.ml[93,2955+4]..[93,2955+23])
+          Ppat_var "operation_can_raise" (asmcomp/riscv/arch.ml[93,2955+4]..[93,2955+23])
+        expression (asmcomp/riscv/arch.ml[93,2955+24]..[93,2955+33]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (asmcomp/riscv/arch.ml[93,2955+24]..[93,2955+25])
+            Ppat_any
+          expression (asmcomp/riscv/arch.ml[93,2955+28]..[93,2955+33])
+            Pexp_construct "false" (asmcomp/riscv/arch.ml[93,2955+28]..[93,2955+33])
+            None
+    ]
+]
+

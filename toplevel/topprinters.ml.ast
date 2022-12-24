@@ -1,0 +1,220 @@
+[
+  structure_item (toplevel/topprinters.ml[18,1160+0]..[18,1160+54])
+    Pstr_type Rec
+    [
+      type_declaration "printer_type" (toplevel/topprinters.ml[18,1160+5]..[18,1160+17]) (toplevel/topprinters.ml[18,1160+0]..[18,1160+54])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (toplevel/topprinters.ml[18,1160+20]..[18,1160+54])
+              Ptyp_arrow
+              Nolabel
+              core_type (toplevel/topprinters.ml[18,1160+20]..[18,1160+35])
+                Ptyp_constr "Types.type_expr" (toplevel/topprinters.ml[18,1160+20]..[18,1160+35])
+                []
+              core_type (toplevel/topprinters.ml[18,1160+39]..[18,1160+54])
+                Ptyp_constr "Types.type_expr" (toplevel/topprinters.ml[18,1160+39]..[18,1160+54])
+                []
+    ]
+  structure_item (toplevel/topprinters.ml[20,1216+0]..[21,1239+69])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/topprinters.ml[20,1216+4]..[20,1216+14])
+          Ppat_var "type_arrow" (toplevel/topprinters.ml[20,1216+4]..[20,1216+14])
+        expression (toplevel/topprinters.ml[20,1216+15]..[21,1239+69]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/topprinters.ml[20,1216+15]..[20,1216+17])
+            Ppat_var "ta" (toplevel/topprinters.ml[20,1216+15]..[20,1216+17])
+          expression (toplevel/topprinters.ml[20,1216+18]..[21,1239+69]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (toplevel/topprinters.ml[20,1216+18]..[20,1216+20])
+              Ppat_var "tb" (toplevel/topprinters.ml[20,1216+18]..[20,1216+20])
+            expression (toplevel/topprinters.ml[21,1239+2]..[21,1239+69])
+              Pexp_apply
+              expression (toplevel/topprinters.ml[21,1239+2]..[21,1239+13])
+                Pexp_ident "Ctype.newty" (toplevel/topprinters.ml[21,1239+2]..[21,1239+13])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/topprinters.ml[21,1239+14]..[21,1239+69])
+                    Pexp_construct "Tarrow" (toplevel/topprinters.ml[21,1239+15]..[21,1239+21])
+                    Some
+                      expression (toplevel/topprinters.ml[21,1239+22]..[21,1239+68])
+                        Pexp_tuple
+                        [
+                          expression (toplevel/topprinters.ml[21,1239+23]..[21,1239+39])
+                            Pexp_construct "Asttypes.Nolabel" (toplevel/topprinters.ml[21,1239+23]..[21,1239+39])
+                            None
+                          expression (toplevel/topprinters.ml[21,1239+41]..[21,1239+43])
+                            Pexp_ident "ta" (toplevel/topprinters.ml[21,1239+41]..[21,1239+43])
+                          expression (toplevel/topprinters.ml[21,1239+45]..[21,1239+47])
+                            Pexp_ident "tb" (toplevel/topprinters.ml[21,1239+45]..[21,1239+47])
+                          expression (toplevel/topprinters.ml[21,1239+49]..[21,1239+67])
+                            Pexp_apply
+                            expression (toplevel/topprinters.ml[21,1239+49]..[21,1239+64])
+                              Pexp_ident "Types.commu_var" (toplevel/topprinters.ml[21,1239+49]..[21,1239+64])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (toplevel/topprinters.ml[21,1239+65]..[21,1239+67])
+                                  Pexp_construct "()" (toplevel/topprinters.ml[21,1239+65]..[21,1239+67])
+                                  None
+                            ]
+                        ]
+              ]
+    ]
+  structure_item (toplevel/topprinters.ml[23,1310+0]..[25,1407+53])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/topprinters.ml[23,1310+4]..[23,1310+18])
+          Ppat_var "type_formatter" (toplevel/topprinters.ml[23,1310+4]..[23,1310+18])
+        expression (toplevel/topprinters.ml[23,1310+19]..[25,1407+53]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/topprinters.ml[23,1310+19]..[23,1310+21])
+            Ppat_construct "()" (toplevel/topprinters.ml[23,1310+19]..[23,1310+21])
+            None
+          expression (toplevel/topprinters.ml[24,1334+2]..[25,1407+53])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (toplevel/topprinters.ml[24,1334+6]..[24,1334+12])
+                  Ppat_var "format" (toplevel/topprinters.ml[24,1334+6]..[24,1334+12])
+                expression (toplevel/topprinters.ml[24,1334+15]..[24,1334+69])
+                  Pexp_construct "Path.Pident" (toplevel/topprinters.ml[24,1334+15]..[24,1334+26])
+                  Some
+                    expression (toplevel/topprinters.ml[24,1334+27]..[24,1334+69])
+                      Pexp_apply
+                      expression (toplevel/topprinters.ml[24,1334+28]..[24,1334+51])
+                        Pexp_ident "Ident.create_persistent" (toplevel/topprinters.ml[24,1334+28]..[24,1334+51])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (toplevel/topprinters.ml[24,1334+52]..[24,1334+68])
+                            Pexp_constant PConst_string("Stdlib__Format",(toplevel/topprinters.ml[24,1334+53]..[24,1334+67]),None)
+                      ]
+            ]
+            expression (toplevel/topprinters.ml[25,1407+2]..[25,1407+53])
+              Pexp_apply
+              expression (toplevel/topprinters.ml[25,1407+2]..[25,1407+17])
+                Pexp_ident "Ctype.newconstr" (toplevel/topprinters.ml[25,1407+2]..[25,1407+17])
+              [
+                <arg>
+                Nolabel
+                  expression (toplevel/topprinters.ml[25,1407+18]..[25,1407+50])
+                    Pexp_construct "Path.Pdot" (toplevel/topprinters.ml[25,1407+19]..[25,1407+28])
+                    Some
+                      expression (toplevel/topprinters.ml[25,1407+28]..[25,1407+49])
+                        Pexp_tuple
+                        [
+                          expression (toplevel/topprinters.ml[25,1407+29]..[25,1407+35])
+                            Pexp_ident "format" (toplevel/topprinters.ml[25,1407+29]..[25,1407+35])
+                          expression (toplevel/topprinters.ml[25,1407+37]..[25,1407+48])
+                            Pexp_constant PConst_string("formatter",(toplevel/topprinters.ml[25,1407+38]..[25,1407+47]),None)
+                        ]
+                <arg>
+                Nolabel
+                  expression (toplevel/topprinters.ml[25,1407+51]..[25,1407+53])
+                    Pexp_construct "[]" (toplevel/topprinters.ml[25,1407+51]..[25,1407+53])
+                    None
+              ]
+    ]
+  structure_item (toplevel/topprinters.ml[27,1462+0]..[27,1462+32])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/topprinters.ml[27,1462+4]..[27,1462+13])
+          Ppat_var "type_unit" (toplevel/topprinters.ml[27,1462+4]..[27,1462+13])
+        expression (toplevel/topprinters.ml[27,1462+16]..[27,1462+32])
+          Pexp_ident "Predef.type_unit" (toplevel/topprinters.ml[27,1462+16]..[27,1462+32])
+    ]
+  structure_item (toplevel/topprinters.ml[33,1602+0]..[34,1631+28])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/topprinters.ml[33,1602+4]..[33,1602+20])
+          Ppat_var "printer_type_old" (toplevel/topprinters.ml[33,1602+4]..[33,1602+20])
+        expression (toplevel/topprinters.ml[33,1602+21]..[34,1631+28]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/topprinters.ml[33,1602+21]..[33,1602+26])
+            Ppat_var "alpha" (toplevel/topprinters.ml[33,1602+21]..[33,1602+26])
+          expression (toplevel/topprinters.ml[34,1631+2]..[34,1631+28])
+            Pexp_apply
+            expression (toplevel/topprinters.ml[34,1631+2]..[34,1631+12])
+              Pexp_ident "type_arrow" (toplevel/topprinters.ml[34,1631+2]..[34,1631+12])
+            [
+              <arg>
+              Nolabel
+                expression (toplevel/topprinters.ml[34,1631+13]..[34,1631+18])
+                  Pexp_ident "alpha" (toplevel/topprinters.ml[34,1631+13]..[34,1631+18])
+              <arg>
+              Nolabel
+                expression (toplevel/topprinters.ml[34,1631+19]..[34,1631+28])
+                  Pexp_ident "type_unit" (toplevel/topprinters.ml[34,1631+19]..[34,1631+28])
+            ]
+    ]
+  structure_item (toplevel/topprinters.ml[36,1661+0]..[37,1690+61])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (toplevel/topprinters.ml[36,1661+4]..[36,1661+20])
+          Ppat_var "printer_type_new" (toplevel/topprinters.ml[36,1661+4]..[36,1661+20])
+        expression (toplevel/topprinters.ml[36,1661+21]..[37,1690+61]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (toplevel/topprinters.ml[36,1661+21]..[36,1661+26])
+            Ppat_var "alpha" (toplevel/topprinters.ml[36,1661+21]..[36,1661+26])
+          expression (toplevel/topprinters.ml[37,1690+2]..[37,1690+61])
+            Pexp_apply
+            expression (toplevel/topprinters.ml[37,1690+2]..[37,1690+12])
+              Pexp_ident "type_arrow" (toplevel/topprinters.ml[37,1690+2]..[37,1690+12])
+            [
+              <arg>
+              Nolabel
+                expression (toplevel/topprinters.ml[37,1690+13]..[37,1690+32])
+                  Pexp_apply
+                  expression (toplevel/topprinters.ml[37,1690+14]..[37,1690+28])
+                    Pexp_ident "type_formatter" (toplevel/topprinters.ml[37,1690+14]..[37,1690+28])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (toplevel/topprinters.ml[37,1690+29]..[37,1690+31])
+                        Pexp_construct "()" (toplevel/topprinters.ml[37,1690+29]..[37,1690+31])
+                        None
+                  ]
+              <arg>
+              Nolabel
+                expression (toplevel/topprinters.ml[37,1690+33]..[37,1690+61])
+                  Pexp_apply
+                  expression (toplevel/topprinters.ml[37,1690+34]..[37,1690+44])
+                    Pexp_ident "type_arrow" (toplevel/topprinters.ml[37,1690+34]..[37,1690+44])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (toplevel/topprinters.ml[37,1690+45]..[37,1690+50])
+                        Pexp_ident "alpha" (toplevel/topprinters.ml[37,1690+45]..[37,1690+50])
+                    <arg>
+                    Nolabel
+                      expression (toplevel/topprinters.ml[37,1690+51]..[37,1690+60])
+                        Pexp_ident "type_unit" (toplevel/topprinters.ml[37,1690+51]..[37,1690+60])
+                  ]
+            ]
+    ]
+]
+

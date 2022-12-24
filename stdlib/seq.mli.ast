@@ -1,0 +1,2287 @@
+[
+  signature_item (stdlib/seq.mli[16,1079+0]..[88,4767+18])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[16,1079+0]..[88,4767+18])
+        Pstr_eval
+        expression (stdlib/seq.mli[16,1079+0]..[88,4767+18])
+          Pexp_constant PConst_string(" Sequences.\n\n   A sequence of type ['a Seq.t] can be thought of as a {b delayed list},\n   that is, a list whose elements are computed only when they are demanded\n   by a consumer. This allows sequences to be produced and transformed\n   lazily (one element at a time) rather than eagerly (all elements at\n   once). This also allows constructing conceptually infinite sequences.\n\n   The type ['a Seq.t] is defined as a synonym for [unit -> 'a Seq.node].\n   This is a function type: therefore, it is opaque. The consumer can {b\n   query} a sequence in order to request the next element (if there is\n   one), but cannot otherwise inspect the sequence in any way.\n\n   Because it is opaque, the type ['a Seq.t] does {i not} reveal whether\n   a sequence is:\n   - {b persistent},\n     which means that the sequence can be used as many times as desired,\n     producing the same elements every time,\n     just like an immutable list; or\n   - {b ephemeral},\n     which means that the sequence is not persistent.\n     Querying an ephemeral sequence might have an observable side effect,\n     such as incrementing a mutable counter.\n     As a common special case, an ephemeral sequence can be {b affine},\n     which means that it must be queried at most once.\n\n   It also does {i not} reveal whether the elements of the sequence are:\n\n   - {b pre-computed and stored} in memory,\n     which means that querying the sequence is cheap;\n   - {b computed when first demanded and then stored} in memory,\n     which means that querying the sequence once can be expensive,\n     but querying the same sequence again is cheap; or\n   - {b re-computed every time they are demanded},\n     which may or may not be cheap.\n\n   It is up to the programmer to keep these distinctions in mind\n   so as to understand the time and space requirements of sequences.\n\n   For the sake of simplicity, most of the documentation that follows\n   is written under the implicit assumption that the sequences at hand\n   are persistent.\n   We normally do not point out {i when} or {i how many times}\n   each function is invoked, because that would be too verbose.\n   For instance, in the description of [map], we write:\n   \"if [xs] is the sequence [x0; x1; ...]\n    then [map f xs] is the sequence [f x0; f x1; ...]\".\n   If we wished to be more explicit,\n   we could point out that the transformation takes place on demand:\n   that is, the elements of [map f xs] are computed only when they\n   are demanded. In other words,\n   the definition [let ys = map f xs] terminates immediately and\n   does not invoke [f]. The function call [f x0] takes place only when the\n   first element of [ys] is demanded, via the function call [ys()].\n   Furthermore, calling [ys()] twice causes [f x0] to be called twice\n   as well. If one wishes for [f] to be applied at most once to each\n   element of [xs], even in scenarios where [ys] is queried more than once,\n   then one should use [let ys = memoize (map f xs)].\n\n   As a general rule, the functions that build sequences, such as [map],\n   [filter], [scan], [take], etc., produce sequences whose elements are\n   computed only on demand. The functions that eagerly consume sequences,\n   such as [is_empty], [find], [length], [iter], [fold_left],\n   etc., are the functions that force computation to take place.\n\n   When possible, we recommend using sequences rather than dispensers\n   (functions of type [unit -> 'a option] that produce elements upon\n   demand). Whereas sequences can be persistent or ephemeral, dispensers\n   are always ephemeral, and are typically more difficult to work with\n   than sequences. Two conversion functions, {!to_dispenser} and\n   {!of_dispenser}, are provided.\n\n    @since 4.07 ",(stdlib/seq.mli[16,1079+0]..[88,4767+18]),None)
+    ]
+  signature_item (stdlib/seq.mli[90,4787+0]..[99,5180+21])
+    Psig_type Rec
+    [
+      type_declaration "t" (stdlib/seq.mli[90,4787+8]..[90,4787+9]) (stdlib/seq.mli[90,4787+0]..[90,4787+27])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/seq.mli[91,4815+0]..[95,5083+72])
+              Pstr_eval
+              expression (stdlib/seq.mli[91,4815+0]..[95,5083+72])
+                Pexp_constant PConst_string(" A sequence [xs] of type ['a t] is a delayed list of elements of\n    type ['a]. Such a sequence is queried by performing a function\n    application [xs()]. This function application returns a node,\n    allowing the caller to determine whether the sequence is empty\n    or nonempty, and in the latter case, to obtain its head and tail. ",(stdlib/seq.mli[91,4815+0]..[95,5083+72]),None)
+          ]
+        ptype_params =
+          [
+            core_type (stdlib/seq.mli[90,4787+5]..[90,4787+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_abstract
+        ptype_private = Public
+        ptype_manifest =
+          Some
+            core_type (stdlib/seq.mli[90,4787+12]..[90,4787+27])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/seq.mli[90,4787+12]..[90,4787+16])
+                Ptyp_constr "unit" (stdlib/seq.mli[90,4787+12]..[90,4787+16])
+                []
+              core_type (stdlib/seq.mli[90,4787+20]..[90,4787+27])
+                Ptyp_constr "node" (stdlib/seq.mli[90,4787+23]..[90,4787+27])
+                [
+                  core_type (stdlib/seq.mli[90,4787+20]..[90,4787+22])
+                    Ptyp_var a
+                ]
+      type_declaration "node" (stdlib/seq.mli[97,5157+8]..[97,5157+12]) (stdlib/seq.mli[97,5157+0]..[99,5180+21])
+        attribute "ocaml.doc"
+          [
+            structure_item (stdlib/seq.mli[100,5207+0]..[102,5340+70])
+              Pstr_eval
+              expression (stdlib/seq.mli[100,5207+0]..[102,5340+70])
+                Pexp_constant PConst_string(" A node is either [Nil], which means that the sequence is empty,\n    or [Cons (x, xs)], which means that [x] is the first element\n    of the sequence and that [xs] is the remainder of the sequence. ",(stdlib/seq.mli[100,5207+0]..[102,5340+70]),None)
+          ]
+        ptype_params =
+          [
+            core_type (stdlib/seq.mli[97,5157+5]..[97,5157+7])
+              Ptyp_var a
+          ]
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (stdlib/seq.mli[98,5172+2]..[98,5172+7])
+                "Nil" (stdlib/seq.mli[98,5172+4]..[98,5172+7])
+                []
+                None
+              (stdlib/seq.mli[99,5180+2]..[99,5180+21])
+                "Cons" (stdlib/seq.mli[99,5180+4]..[99,5180+8])
+                [
+                  core_type (stdlib/seq.mli[99,5180+12]..[99,5180+14])
+                    Ptyp_var a
+                  core_type (stdlib/seq.mli[99,5180+17]..[99,5180+21])
+                    Ptyp_constr "t" (stdlib/seq.mli[99,5180+20]..[99,5180+21])
+                    [
+                      core_type (stdlib/seq.mli[99,5180+17]..[99,5180+19])
+                        Ptyp_var a
+                    ]
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  signature_item (stdlib/seq.mli[104,5412+0]..[104,5412+30])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[104,5412+0]..[104,5412+30])
+        Pstr_eval
+        expression (stdlib/seq.mli[104,5412+0]..[104,5412+30])
+          Pexp_constant PConst_string(" {1 Consuming sequences} ",(stdlib/seq.mli[104,5412+0]..[104,5412+30]),None)
+    ]
+  signature_item (stdlib/seq.mli[106,5444+0]..[130,6658+63])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[106,5444+0]..[130,6658+63])
+        Pstr_eval
+        expression (stdlib/seq.mli[106,5444+0]..[130,6658+63])
+          Pexp_constant PConst_string("\n\n   The functions in this section consume their argument, a sequence, either\n   partially or completely:\n   - [is_empty] and [uncons] consume the sequence down to depth 1.\n     That is, they demand the first argument of the sequence, if there is one.\n   - [iter], [fold_left], [length], etc., consume the sequence all the way to\n     its end. They terminate only if the sequence is finite.\n   - [for_all], [exists], [find], etc. consume the sequence down to a certain\n     depth, which is a priori unpredictable.\n\n   Similarly, among the functions that consume two sequences,\n   one can distinguish two groups:\n   - [iter2] and [fold_left2] consume both sequences all the way\n     to the end, provided the sequences have the same length.\n   - [for_all2], [exists2], [equal], [compare] consume the sequences down\n     to a certain depth, which is a priori unpredictable.\n\n   The functions that consume two sequences can be applied to two sequences\n   of distinct lengths: in that case, the excess elements in the longer\n   sequence are ignored. (It may be the case that one excess element is\n   demanded, even though this element is not used.)\n\n   None of the functions in this section is lazy. These functions\n   are consumers: they force some computation to take place. ",(stdlib/seq.mli[106,5444+0]..[130,6658+63]),None)
+    ]
+  signature_item (stdlib/seq.mli[132,6723+0]..[132,6723+27])
+    Psig_value
+    value_description "is_empty" (stdlib/seq.mli[132,6723+4]..[132,6723+12]) (stdlib/seq.mli[132,6723+0]..[132,6723+27])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[133,6751+0]..[140,7063+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[133,6751+0]..[140,7063+18])
+              Pexp_constant PConst_string(" [is_empty xs] determines whether the sequence [xs] is empty.\n\n    It is recommended that the sequence [xs] be persistent.\n    Indeed, [is_empty xs] demands the head of the sequence [xs],\n    so, if [xs] is ephemeral, it may be the case that [xs] cannot\n    be used any more after this call has taken place.\n\n    @since 4.14 ",(stdlib/seq.mli[133,6751+0]..[140,7063+18]),None)
+        ]
+      core_type (stdlib/seq.mli[132,6723+15]..[132,6723+27])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[132,6723+15]..[132,6723+19])
+          Ptyp_constr "t" (stdlib/seq.mli[132,6723+18]..[132,6723+19])
+          [
+            core_type (stdlib/seq.mli[132,6723+15]..[132,6723+17])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[132,6723+23]..[132,6723+27])
+          Ptyp_constr "bool" (stdlib/seq.mli[132,6723+23]..[132,6723+27])
+          []
+      []
+  signature_item (stdlib/seq.mli[142,7083+0]..[142,7083+39])
+    Psig_value
+    value_description "uncons" (stdlib/seq.mli[142,7083+4]..[142,7083+10]) (stdlib/seq.mli[142,7083+0]..[142,7083+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[143,7123+0]..[148,7296+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[143,7123+0]..[148,7296+18])
+              Pexp_constant PConst_string(" If [xs] is empty, then [uncons xs] is [None].\n\n    If [xs] is nonempty, then [uncons xs] is [Some (x, ys)] where [x] is the\n    head of the sequence and [ys] its tail.\n\n    @since 4.14 ",(stdlib/seq.mli[143,7123+0]..[148,7296+18]),None)
+        ]
+      core_type (stdlib/seq.mli[142,7083+13]..[142,7083+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[142,7083+13]..[142,7083+17])
+          Ptyp_constr "t" (stdlib/seq.mli[142,7083+16]..[142,7083+17])
+          [
+            core_type (stdlib/seq.mli[142,7083+13]..[142,7083+15])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[142,7083+21]..[142,7083+39])
+          Ptyp_constr "option" (stdlib/seq.mli[142,7083+33]..[142,7083+39])
+          [
+            core_type (stdlib/seq.mli[142,7083+22]..[142,7083+31])
+              Ptyp_tuple
+              [
+                core_type (stdlib/seq.mli[142,7083+22]..[142,7083+24])
+                  Ptyp_var a
+                core_type (stdlib/seq.mli[142,7083+27]..[142,7083+31])
+                  Ptyp_constr "t" (stdlib/seq.mli[142,7083+30]..[142,7083+31])
+                  [
+                    core_type (stdlib/seq.mli[142,7083+27]..[142,7083+29])
+                      Ptyp_var a
+                  ]
+              ]
+          ]
+      []
+  signature_item (stdlib/seq.mli[150,7316+0]..[150,7316+24])
+    Psig_value
+    value_description "length" (stdlib/seq.mli[150,7316+4]..[150,7316+10]) (stdlib/seq.mli[150,7316+0]..[150,7316+24])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[151,7341+0]..[155,7433+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[151,7341+0]..[155,7433+18])
+              Pexp_constant PConst_string(" [length xs] is the length of the sequence [xs].\n\n    The sequence [xs] must be finite.\n\n    @since 4.14 ",(stdlib/seq.mli[151,7341+0]..[155,7433+18]),None)
+        ]
+      core_type (stdlib/seq.mli[150,7316+13]..[150,7316+24])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[150,7316+13]..[150,7316+17])
+          Ptyp_constr "t" (stdlib/seq.mli[150,7316+16]..[150,7316+17])
+          [
+            core_type (stdlib/seq.mli[150,7316+13]..[150,7316+15])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[150,7316+21]..[150,7316+24])
+          Ptyp_constr "int" (stdlib/seq.mli[150,7316+21]..[150,7316+24])
+          []
+      []
+  signature_item (stdlib/seq.mli[157,7453+0]..[157,7453+39])
+    Psig_value
+    value_description "iter" (stdlib/seq.mli[157,7453+4]..[157,7453+8]) (stdlib/seq.mli[157,7453+0]..[157,7453+39])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[158,7493+0]..[162,7609+57])
+            Pstr_eval
+            expression (stdlib/seq.mli[158,7493+0]..[162,7609+57])
+              Pexp_constant PConst_string(" [iter f xs] invokes [f x] successively\n    for every element [x] of the sequence [xs],\n    from left to right.\n\n    It terminates only if the sequence [xs] is finite. ",(stdlib/seq.mli[158,7493+0]..[162,7609+57]),None)
+        ]
+      core_type (stdlib/seq.mli[157,7453+11]..[157,7453+39])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[157,7453+12]..[157,7453+22])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[157,7453+12]..[157,7453+14])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[157,7453+18]..[157,7453+22])
+            Ptyp_constr "unit" (stdlib/seq.mli[157,7453+18]..[157,7453+22])
+            []
+        core_type (stdlib/seq.mli[157,7453+27]..[157,7453+39])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[157,7453+27]..[157,7453+31])
+            Ptyp_constr "t" (stdlib/seq.mli[157,7453+30]..[157,7453+31])
+            [
+              core_type (stdlib/seq.mli[157,7453+27]..[157,7453+29])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[157,7453+35]..[157,7453+39])
+            Ptyp_constr "unit" (stdlib/seq.mli[157,7453+35]..[157,7453+39])
+            []
+      []
+  signature_item (stdlib/seq.mli[164,7668+0]..[164,7668+52])
+    Psig_value
+    value_description "fold_left" (stdlib/seq.mli[164,7668+4]..[164,7668+13]) (stdlib/seq.mli[164,7668+0]..[164,7668+52])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[165,7721+0]..[171,7917+57])
+            Pstr_eval
+            expression (stdlib/seq.mli[165,7721+0]..[171,7917+57])
+              Pexp_constant PConst_string(" [fold_left f _ xs] invokes [f _ x] successively\n    for every element [x] of the sequence [xs],\n    from left to right.\n\n    An accumulator of type ['a] is threaded through the calls to [f].\n\n    It terminates only if the sequence [xs] is finite. ",(stdlib/seq.mli[165,7721+0]..[171,7917+57]),None)
+        ]
+      core_type (stdlib/seq.mli[164,7668+16]..[164,7668+52])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[164,7668+17]..[164,7668+31])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[164,7668+17]..[164,7668+19])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[164,7668+23]..[164,7668+31])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[164,7668+23]..[164,7668+25])
+              Ptyp_var b
+            core_type (stdlib/seq.mli[164,7668+29]..[164,7668+31])
+              Ptyp_var a
+        core_type (stdlib/seq.mli[164,7668+36]..[164,7668+52])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[164,7668+36]..[164,7668+38])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[164,7668+42]..[164,7668+52])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[164,7668+42]..[164,7668+46])
+              Ptyp_constr "t" (stdlib/seq.mli[164,7668+45]..[164,7668+46])
+              [
+                core_type (stdlib/seq.mli[164,7668+42]..[164,7668+44])
+                  Ptyp_var b
+              ]
+            core_type (stdlib/seq.mli[164,7668+50]..[164,7668+52])
+              Ptyp_var a
+      []
+  signature_item (stdlib/seq.mli[173,7976+0]..[173,7976+47])
+    Psig_value
+    value_description "iteri" (stdlib/seq.mli[173,7976+4]..[173,7976+9]) (stdlib/seq.mli[173,7976+0]..[173,7976+47])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[174,8024+0]..[182,8283+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[174,8024+0]..[182,8283+18])
+              Pexp_constant PConst_string(" [iteri f xs] invokes [f i x] successively\n    for every element [x] located at index [i] in the sequence [xs].\n\n    It terminates only if the sequence [xs] is finite.\n\n    [iteri f xs] is equivalent to\n    [iter (fun (i, x) -> f i x) (zip (ints 0) xs)].\n\n    @since 4.14 ",(stdlib/seq.mli[174,8024+0]..[182,8283+18]),None)
+        ]
+      core_type (stdlib/seq.mli[173,7976+12]..[173,7976+47])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[173,7976+13]..[173,7976+30])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[173,7976+13]..[173,7976+16])
+            Ptyp_constr "int" (stdlib/seq.mli[173,7976+13]..[173,7976+16])
+            []
+          core_type (stdlib/seq.mli[173,7976+20]..[173,7976+30])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[173,7976+20]..[173,7976+22])
+              Ptyp_var a
+            core_type (stdlib/seq.mli[173,7976+26]..[173,7976+30])
+              Ptyp_constr "unit" (stdlib/seq.mli[173,7976+26]..[173,7976+30])
+              []
+        core_type (stdlib/seq.mli[173,7976+35]..[173,7976+47])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[173,7976+35]..[173,7976+39])
+            Ptyp_constr "t" (stdlib/seq.mli[173,7976+38]..[173,7976+39])
+            [
+              core_type (stdlib/seq.mli[173,7976+35]..[173,7976+37])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[173,7976+43]..[173,7976+47])
+            Ptyp_constr "unit" (stdlib/seq.mli[173,7976+43]..[173,7976+47])
+            []
+      []
+  signature_item (stdlib/seq.mli[184,8303+0]..[184,8303+60])
+    Psig_value
+    value_description "fold_lefti" (stdlib/seq.mli[184,8303+4]..[184,8303+14]) (stdlib/seq.mli[184,8303+0]..[184,8303+60])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[185,8364+0]..[195,8733+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[185,8364+0]..[195,8733+18])
+              Pexp_constant PConst_string(" [fold_lefti f _ xs] invokes [f _ i x] successively\n    for every element [x] located at index [i] of the sequence [xs].\n\n    An accumulator of type ['b] is threaded through the calls to [f].\n\n    It terminates only if the sequence [xs] is finite.\n\n    [fold_lefti f accu xs] is equivalent to\n    [fold_left (fun accu (i, x) -> f accu i x) accu (zip (ints 0) xs)].\n\n    @since 4.14 ",(stdlib/seq.mli[185,8364+0]..[195,8733+18]),None)
+        ]
+      core_type (stdlib/seq.mli[184,8303+17]..[184,8303+60])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[184,8303+18]..[184,8303+39])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[184,8303+18]..[184,8303+20])
+            Ptyp_var b
+          core_type (stdlib/seq.mli[184,8303+24]..[184,8303+39])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[184,8303+24]..[184,8303+27])
+              Ptyp_constr "int" (stdlib/seq.mli[184,8303+24]..[184,8303+27])
+              []
+            core_type (stdlib/seq.mli[184,8303+31]..[184,8303+39])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/seq.mli[184,8303+31]..[184,8303+33])
+                Ptyp_var a
+              core_type (stdlib/seq.mli[184,8303+37]..[184,8303+39])
+                Ptyp_var b
+        core_type (stdlib/seq.mli[184,8303+44]..[184,8303+60])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[184,8303+44]..[184,8303+46])
+            Ptyp_var b
+          core_type (stdlib/seq.mli[184,8303+50]..[184,8303+60])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[184,8303+50]..[184,8303+54])
+              Ptyp_constr "t" (stdlib/seq.mli[184,8303+53]..[184,8303+54])
+              [
+                core_type (stdlib/seq.mli[184,8303+50]..[184,8303+52])
+                  Ptyp_var a
+              ]
+            core_type (stdlib/seq.mli[184,8303+58]..[184,8303+60])
+              Ptyp_var b
+      []
+  signature_item (stdlib/seq.mli[197,8753+0]..[197,8753+42])
+    Psig_value
+    value_description "for_all" (stdlib/seq.mli[197,8753+4]..[197,8753+11]) (stdlib/seq.mli[197,8753+0]..[197,8753+42])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[198,8796+0]..[203,8931+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[198,8796+0]..[203,8931+18])
+              Pexp_constant PConst_string(" [for_all p xs] determines whether all elements [x] of the sequence [xs]\n    satisfy [p x].\n\n    The sequence [xs] must be finite.\n\n    @since 4.14 ",(stdlib/seq.mli[198,8796+0]..[203,8931+18]),None)
+        ]
+      core_type (stdlib/seq.mli[197,8753+14]..[197,8753+42])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[197,8753+15]..[197,8753+25])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[197,8753+15]..[197,8753+17])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[197,8753+21]..[197,8753+25])
+            Ptyp_constr "bool" (stdlib/seq.mli[197,8753+21]..[197,8753+25])
+            []
+        core_type (stdlib/seq.mli[197,8753+30]..[197,8753+42])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[197,8753+30]..[197,8753+34])
+            Ptyp_constr "t" (stdlib/seq.mli[197,8753+33]..[197,8753+34])
+            [
+              core_type (stdlib/seq.mli[197,8753+30]..[197,8753+32])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[197,8753+38]..[197,8753+42])
+            Ptyp_constr "bool" (stdlib/seq.mli[197,8753+38]..[197,8753+42])
+            []
+      []
+  signature_item (stdlib/seq.mli[205,8951+0]..[205,8951+41])
+    Psig_value
+    value_description "exists" (stdlib/seq.mli[205,8951+4]..[205,8951+10]) (stdlib/seq.mli[205,8951+0]..[205,8951+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[206,8993+0]..[211,9137+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[206,8993+0]..[211,9137+18])
+              Pexp_constant PConst_string(" [exists xs p] determines whether at least one element [x]\n    of the sequence [xs] satisfies [p x].\n\n    The sequence [xs] must be finite.\n\n    @since 4.14 ",(stdlib/seq.mli[206,8993+0]..[211,9137+18]),None)
+        ]
+      core_type (stdlib/seq.mli[205,8951+13]..[205,8951+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[205,8951+14]..[205,8951+24])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[205,8951+14]..[205,8951+16])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[205,8951+20]..[205,8951+24])
+            Ptyp_constr "bool" (stdlib/seq.mli[205,8951+20]..[205,8951+24])
+            []
+        core_type (stdlib/seq.mli[205,8951+29]..[205,8951+41])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[205,8951+29]..[205,8951+33])
+            Ptyp_constr "t" (stdlib/seq.mli[205,8951+32]..[205,8951+33])
+            [
+              core_type (stdlib/seq.mli[205,8951+29]..[205,8951+31])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[205,8951+37]..[205,8951+41])
+            Ptyp_constr "bool" (stdlib/seq.mli[205,8951+37]..[205,8951+41])
+            []
+      []
+  signature_item (stdlib/seq.mli[213,9157+0]..[213,9157+44])
+    Psig_value
+    value_description "find" (stdlib/seq.mli[213,9157+4]..[213,9157+8]) (stdlib/seq.mli[213,9157+0]..[213,9157+44])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[214,9202+0]..[221,9435+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[214,9202+0]..[221,9435+18])
+              Pexp_constant PConst_string(" [find p xs] returns [Some x], where [x] is the first element of the\n    sequence [xs] that satisfies [p x], if there is such an element.\n\n    It returns [None] if there is no such element.\n\n    The sequence [xs] must be finite.\n\n    @since 4.14 ",(stdlib/seq.mli[214,9202+0]..[221,9435+18]),None)
+        ]
+      core_type (stdlib/seq.mli[213,9157+11]..[213,9157+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[213,9157+12]..[213,9157+22])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[213,9157+12]..[213,9157+14])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[213,9157+18]..[213,9157+22])
+            Ptyp_constr "bool" (stdlib/seq.mli[213,9157+18]..[213,9157+22])
+            []
+        core_type (stdlib/seq.mli[213,9157+27]..[213,9157+44])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[213,9157+27]..[213,9157+31])
+            Ptyp_constr "t" (stdlib/seq.mli[213,9157+30]..[213,9157+31])
+            [
+              core_type (stdlib/seq.mli[213,9157+27]..[213,9157+29])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[213,9157+35]..[213,9157+44])
+            Ptyp_constr "option" (stdlib/seq.mli[213,9157+38]..[213,9157+44])
+            [
+              core_type (stdlib/seq.mli[213,9157+35]..[213,9157+37])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[223,9455+0]..[223,9455+53])
+    Psig_value
+    value_description "find_map" (stdlib/seq.mli[223,9455+4]..[223,9455+12]) (stdlib/seq.mli[223,9455+0]..[223,9455+53])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[224,9509+0]..[232,9798+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[224,9509+0]..[232,9798+18])
+              Pexp_constant PConst_string(" [find_map f xs] returns [Some y], where [x] is the first element of the\n    sequence [xs] such that [f x = Some _], if there is such an element,\n    and where [y] is defined by [f x = Some y].\n\n    It returns [None] if there is no such element.\n\n    The sequence [xs] must be finite.\n\n    @since 4.14 ",(stdlib/seq.mli[224,9509+0]..[232,9798+18]),None)
+        ]
+      core_type (stdlib/seq.mli[223,9455+15]..[223,9455+53])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[223,9455+16]..[223,9455+31])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[223,9455+16]..[223,9455+18])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[223,9455+22]..[223,9455+31])
+            Ptyp_constr "option" (stdlib/seq.mli[223,9455+25]..[223,9455+31])
+            [
+              core_type (stdlib/seq.mli[223,9455+22]..[223,9455+24])
+                Ptyp_var b
+            ]
+        core_type (stdlib/seq.mli[223,9455+36]..[223,9455+53])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[223,9455+36]..[223,9455+40])
+            Ptyp_constr "t" (stdlib/seq.mli[223,9455+39]..[223,9455+40])
+            [
+              core_type (stdlib/seq.mli[223,9455+36]..[223,9455+38])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[223,9455+44]..[223,9455+53])
+            Ptyp_constr "option" (stdlib/seq.mli[223,9455+47]..[223,9455+53])
+            [
+              core_type (stdlib/seq.mli[223,9455+44]..[223,9455+46])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/seq.mli[234,9818+0]..[234,9818+54])
+    Psig_value
+    value_description "iter2" (stdlib/seq.mli[234,9818+4]..[234,9818+9]) (stdlib/seq.mli[234,9818+0]..[234,9818+54])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[235,9873+0]..[248,10376+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[235,9873+0]..[248,10376+18])
+              Pexp_constant PConst_string(" [iter2 f xs ys] invokes [f x y] successively for every pair [(x, y)] of\n    elements drawn synchronously from the sequences [xs] and [ys].\n\n    If the sequences [xs] and [ys] have different lengths, then\n    iteration stops as soon as one sequence is exhausted;\n    the excess elements in the other sequence are ignored.\n\n    Iteration terminates only if at least one of the sequences\n    [xs] and [ys] is finite.\n\n    [iter2 f xs ys] is equivalent to\n    [iter (fun (x, y) -> f x y) (zip xs ys)].\n\n    @since 4.14 ",(stdlib/seq.mli[235,9873+0]..[248,10376+18]),None)
+        ]
+      core_type (stdlib/seq.mli[234,9818+12]..[234,9818+54])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[234,9818+13]..[234,9818+29])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[234,9818+13]..[234,9818+15])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[234,9818+19]..[234,9818+29])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[234,9818+19]..[234,9818+21])
+              Ptyp_var b
+            core_type (stdlib/seq.mli[234,9818+25]..[234,9818+29])
+              Ptyp_constr "unit" (stdlib/seq.mli[234,9818+25]..[234,9818+29])
+              []
+        core_type (stdlib/seq.mli[234,9818+34]..[234,9818+54])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[234,9818+34]..[234,9818+38])
+            Ptyp_constr "t" (stdlib/seq.mli[234,9818+37]..[234,9818+38])
+            [
+              core_type (stdlib/seq.mli[234,9818+34]..[234,9818+36])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[234,9818+42]..[234,9818+54])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[234,9818+42]..[234,9818+46])
+              Ptyp_constr "t" (stdlib/seq.mli[234,9818+45]..[234,9818+46])
+              [
+                core_type (stdlib/seq.mli[234,9818+42]..[234,9818+44])
+                  Ptyp_var b
+              ]
+            core_type (stdlib/seq.mli[234,9818+50]..[234,9818+54])
+              Ptyp_constr "unit" (stdlib/seq.mli[234,9818+50]..[234,9818+54])
+              []
+      []
+  signature_item (stdlib/seq.mli[250,10396+0]..[250,10396+67])
+    Psig_value
+    value_description "fold_left2" (stdlib/seq.mli[250,10396+4]..[250,10396+14]) (stdlib/seq.mli[250,10396+0]..[250,10396+67])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[251,10464+0]..[267,11076+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[251,10464+0]..[267,11076+18])
+              Pexp_constant PConst_string(" [fold_left2 f _ xs ys] invokes [f _ x y] successively\n    for every pair [(x, y)] of elements drawn synchronously\n    from the sequences [xs] and [ys].\n\n    An accumulator of type ['a] is threaded through the calls to [f].\n\n    If the sequences [xs] and [ys] have different lengths, then\n    iteration stops as soon as one sequence is exhausted;\n    the excess elements in the other sequence are ignored.\n\n    Iteration terminates only if at least one of the sequences\n    [xs] and [ys] is finite.\n\n    [fold_left2 f accu xs ys] is equivalent to\n    [fold_left (fun accu (x, y) -> f accu x y) (zip xs ys)].\n\n    @since 4.14 ",(stdlib/seq.mli[251,10464+0]..[267,11076+18]),None)
+        ]
+      core_type (stdlib/seq.mli[250,10396+17]..[250,10396+67])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[250,10396+18]..[250,10396+38])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[250,10396+18]..[250,10396+20])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[250,10396+24]..[250,10396+38])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[250,10396+24]..[250,10396+26])
+              Ptyp_var b
+            core_type (stdlib/seq.mli[250,10396+30]..[250,10396+38])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/seq.mli[250,10396+30]..[250,10396+32])
+                Ptyp_var c
+              core_type (stdlib/seq.mli[250,10396+36]..[250,10396+38])
+                Ptyp_var a
+        core_type (stdlib/seq.mli[250,10396+43]..[250,10396+67])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[250,10396+43]..[250,10396+45])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[250,10396+49]..[250,10396+67])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[250,10396+49]..[250,10396+53])
+              Ptyp_constr "t" (stdlib/seq.mli[250,10396+52]..[250,10396+53])
+              [
+                core_type (stdlib/seq.mli[250,10396+49]..[250,10396+51])
+                  Ptyp_var b
+              ]
+            core_type (stdlib/seq.mli[250,10396+57]..[250,10396+67])
+              Ptyp_arrow
+              Nolabel
+              core_type (stdlib/seq.mli[250,10396+57]..[250,10396+61])
+                Ptyp_constr "t" (stdlib/seq.mli[250,10396+60]..[250,10396+61])
+                [
+                  core_type (stdlib/seq.mli[250,10396+57]..[250,10396+59])
+                    Ptyp_var c
+                ]
+              core_type (stdlib/seq.mli[250,10396+65]..[250,10396+67])
+                Ptyp_var a
+      []
+  signature_item (stdlib/seq.mli[269,11096+0]..[269,11096+57])
+    Psig_value
+    value_description "for_all2" (stdlib/seq.mli[269,11096+4]..[269,11096+12]) (stdlib/seq.mli[269,11096+0]..[269,11096+57])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[270,11154+0]..[285,11837+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[270,11154+0]..[285,11837+18])
+              Pexp_constant PConst_string(" [for_all2 p xs ys] determines whether all pairs [(x, y)] of elements\n    drawn synchronously from the sequences [xs] and [ys] satisfy [p x y].\n\n    If the sequences [xs] and [ys] have different lengths, then\n    iteration stops as soon as one sequence is exhausted;\n    the excess elements in the other sequence are ignored.\n    In particular, if [xs] or [ys] is empty, then\n    [for_all2 p xs ys] is true. This is where\n    [for_all2] and [equal] differ: [equal eq xs ys] can\n    be true only if [xs] and [ys] have the same length.\n\n    At least one of the sequences [xs] and [ys] must be finite.\n\n    [for_all2 p xs ys] is equivalent to [for_all (fun b -> b) (map2 p xs ys)].\n\n    @since 4.14 ",(stdlib/seq.mli[270,11154+0]..[285,11837+18]),None)
+        ]
+      core_type (stdlib/seq.mli[269,11096+15]..[269,11096+57])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[269,11096+16]..[269,11096+32])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[269,11096+16]..[269,11096+18])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[269,11096+22]..[269,11096+32])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[269,11096+22]..[269,11096+24])
+              Ptyp_var b
+            core_type (stdlib/seq.mli[269,11096+28]..[269,11096+32])
+              Ptyp_constr "bool" (stdlib/seq.mli[269,11096+28]..[269,11096+32])
+              []
+        core_type (stdlib/seq.mli[269,11096+37]..[269,11096+57])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[269,11096+37]..[269,11096+41])
+            Ptyp_constr "t" (stdlib/seq.mli[269,11096+40]..[269,11096+41])
+            [
+              core_type (stdlib/seq.mli[269,11096+37]..[269,11096+39])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[269,11096+45]..[269,11096+57])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[269,11096+45]..[269,11096+49])
+              Ptyp_constr "t" (stdlib/seq.mli[269,11096+48]..[269,11096+49])
+              [
+                core_type (stdlib/seq.mli[269,11096+45]..[269,11096+47])
+                  Ptyp_var b
+              ]
+            core_type (stdlib/seq.mli[269,11096+53]..[269,11096+57])
+              Ptyp_constr "bool" (stdlib/seq.mli[269,11096+53]..[269,11096+57])
+              []
+      []
+  signature_item (stdlib/seq.mli[287,11857+0]..[287,11857+56])
+    Psig_value
+    value_description "exists2" (stdlib/seq.mli[287,11857+4]..[287,11857+11]) (stdlib/seq.mli[287,11857+0]..[287,11857+56])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[288,11914+0]..[299,12392+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[288,11914+0]..[299,12392+18])
+              Pexp_constant PConst_string(" [exists2 p xs ys] determines whether some pair [(x, y)] of elements\n    drawn synchronously from the sequences [xs] and [ys] satisfies [p x y].\n\n    If the sequences [xs] and [ys] have different lengths, then\n    iteration must stop as soon as one sequence is exhausted;\n    the excess elements in the other sequence are ignored.\n\n    At least one of the sequences [xs] and [ys] must be finite.\n\n    [exists2 p xs ys] is equivalent to [exists (fun b -> b) (map2 p xs ys)].\n\n    @since 4.14 ",(stdlib/seq.mli[288,11914+0]..[299,12392+18]),None)
+        ]
+      core_type (stdlib/seq.mli[287,11857+14]..[287,11857+56])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[287,11857+15]..[287,11857+31])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[287,11857+15]..[287,11857+17])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[287,11857+21]..[287,11857+31])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[287,11857+21]..[287,11857+23])
+              Ptyp_var b
+            core_type (stdlib/seq.mli[287,11857+27]..[287,11857+31])
+              Ptyp_constr "bool" (stdlib/seq.mli[287,11857+27]..[287,11857+31])
+              []
+        core_type (stdlib/seq.mli[287,11857+36]..[287,11857+56])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[287,11857+36]..[287,11857+40])
+            Ptyp_constr "t" (stdlib/seq.mli[287,11857+39]..[287,11857+40])
+            [
+              core_type (stdlib/seq.mli[287,11857+36]..[287,11857+38])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[287,11857+44]..[287,11857+56])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[287,11857+44]..[287,11857+48])
+              Ptyp_constr "t" (stdlib/seq.mli[287,11857+47]..[287,11857+48])
+              [
+                core_type (stdlib/seq.mli[287,11857+44]..[287,11857+46])
+                  Ptyp_var b
+              ]
+            core_type (stdlib/seq.mli[287,11857+52]..[287,11857+56])
+              Ptyp_constr "bool" (stdlib/seq.mli[287,11857+52]..[287,11857+56])
+              []
+      []
+  signature_item (stdlib/seq.mli[301,12412+0]..[301,12412+54])
+    Psig_value
+    value_description "equal" (stdlib/seq.mli[301,12412+4]..[301,12412+9]) (stdlib/seq.mli[301,12412+0]..[301,12412+54])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[302,12467+0]..[308,12690+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[302,12467+0]..[308,12690+18])
+              Pexp_constant PConst_string(" Provided the function [eq] defines an equality on elements,\n    [equal eq xs ys] determines whether the sequences [xs] and [ys]\n    are pointwise equal.\n\n    At least one of the sequences [xs] and [ys] must be finite.\n\n    @since 4.14 ",(stdlib/seq.mli[302,12467+0]..[308,12690+18]),None)
+        ]
+      core_type (stdlib/seq.mli[301,12412+12]..[301,12412+54])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[301,12412+13]..[301,12412+29])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[301,12412+13]..[301,12412+15])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[301,12412+19]..[301,12412+29])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[301,12412+19]..[301,12412+21])
+              Ptyp_var b
+            core_type (stdlib/seq.mli[301,12412+25]..[301,12412+29])
+              Ptyp_constr "bool" (stdlib/seq.mli[301,12412+25]..[301,12412+29])
+              []
+        core_type (stdlib/seq.mli[301,12412+34]..[301,12412+54])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[301,12412+34]..[301,12412+38])
+            Ptyp_constr "t" (stdlib/seq.mli[301,12412+37]..[301,12412+38])
+            [
+              core_type (stdlib/seq.mli[301,12412+34]..[301,12412+36])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[301,12412+42]..[301,12412+54])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[301,12412+42]..[301,12412+46])
+              Ptyp_constr "t" (stdlib/seq.mli[301,12412+45]..[301,12412+46])
+              [
+                core_type (stdlib/seq.mli[301,12412+42]..[301,12412+44])
+                  Ptyp_var b
+              ]
+            core_type (stdlib/seq.mli[301,12412+50]..[301,12412+54])
+              Ptyp_constr "bool" (stdlib/seq.mli[301,12412+50]..[301,12412+54])
+              []
+      []
+  signature_item (stdlib/seq.mli[310,12710+0]..[310,12710+54])
+    Psig_value
+    value_description "compare" (stdlib/seq.mli[310,12710+4]..[310,12710+11]) (stdlib/seq.mli[310,12710+0]..[310,12710+54])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[311,12765+0]..[319,13067+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[311,12765+0]..[319,13067+18])
+              Pexp_constant PConst_string(" Provided the function [cmp] defines a preorder on elements,\n    [compare cmp xs ys] compares the sequences [xs] and [ys]\n    according to the lexicographic preorder.\n\n    For more details on comparison functions, see {!Array.sort}.\n\n    At least one of the sequences [xs] and [ys] must be finite.\n\n    @since 4.14 ",(stdlib/seq.mli[311,12765+0]..[319,13067+18]),None)
+        ]
+      core_type (stdlib/seq.mli[310,12710+14]..[310,12710+54])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[310,12710+15]..[310,12710+30])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[310,12710+15]..[310,12710+17])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[310,12710+21]..[310,12710+30])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[310,12710+21]..[310,12710+23])
+              Ptyp_var b
+            core_type (stdlib/seq.mli[310,12710+27]..[310,12710+30])
+              Ptyp_constr "int" (stdlib/seq.mli[310,12710+27]..[310,12710+30])
+              []
+        core_type (stdlib/seq.mli[310,12710+35]..[310,12710+54])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[310,12710+35]..[310,12710+39])
+            Ptyp_constr "t" (stdlib/seq.mli[310,12710+38]..[310,12710+39])
+            [
+              core_type (stdlib/seq.mli[310,12710+35]..[310,12710+37])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[310,12710+43]..[310,12710+54])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[310,12710+43]..[310,12710+47])
+              Ptyp_constr "t" (stdlib/seq.mli[310,12710+46]..[310,12710+47])
+              [
+                core_type (stdlib/seq.mli[310,12710+43]..[310,12710+45])
+                  Ptyp_var b
+              ]
+            core_type (stdlib/seq.mli[310,12710+51]..[310,12710+54])
+              Ptyp_constr "int" (stdlib/seq.mli[310,12710+51]..[310,12710+54])
+              []
+      []
+  signature_item (stdlib/seq.mli[321,13087+0]..[321,13087+33])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[321,13087+0]..[321,13087+33])
+        Pstr_eval
+        expression (stdlib/seq.mli[321,13087+0]..[321,13087+33])
+          Pexp_constant PConst_string(" {1 Constructing sequences} ",(stdlib/seq.mli[321,13087+0]..[321,13087+33]),None)
+    ]
+  signature_item (stdlib/seq.mli[323,13122+0]..[324,13197+54])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[323,13122+0]..[324,13197+54])
+        Pstr_eval
+        expression (stdlib/seq.mli[323,13122+0]..[324,13197+54])
+          Pexp_constant PConst_string(" The functions in this section are lazy: that is, they return sequences\n    whose elements are computed only when demanded. ",(stdlib/seq.mli[323,13122+0]..[324,13197+54]),None)
+    ]
+  signature_item (stdlib/seq.mli[326,13253+0]..[326,13253+16])
+    Psig_value
+    value_description "empty" (stdlib/seq.mli[326,13253+4]..[326,13253+9]) (stdlib/seq.mli[326,13253+0]..[326,13253+16])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[327,13270+0]..[328,13305+43])
+            Pstr_eval
+            expression (stdlib/seq.mli[327,13270+0]..[328,13305+43])
+              Pexp_constant PConst_string(" [empty] is the empty sequence.\n    It has no elements. Its length is 0. ",(stdlib/seq.mli[327,13270+0]..[328,13305+43]),None)
+        ]
+      core_type (stdlib/seq.mli[326,13253+12]..[326,13253+16])
+        Ptyp_constr "t" (stdlib/seq.mli[326,13253+15]..[326,13253+16])
+        [
+          core_type (stdlib/seq.mli[326,13253+12]..[326,13253+14])
+            Ptyp_var a
+        ]
+      []
+  signature_item (stdlib/seq.mli[330,13350+0]..[330,13350+23])
+    Psig_value
+    value_description "return" (stdlib/seq.mli[330,13350+4]..[330,13350+10]) (stdlib/seq.mli[330,13350+0]..[330,13350+23])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[331,13374+0]..[332,13432+23])
+            Pstr_eval
+            expression (stdlib/seq.mli[331,13374+0]..[332,13432+23])
+              Pexp_constant PConst_string(" [return x] is the sequence whose sole element is [x].\n    Its length is 1. ",(stdlib/seq.mli[331,13374+0]..[332,13432+23]),None)
+        ]
+      core_type (stdlib/seq.mli[330,13350+13]..[330,13350+23])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[330,13350+13]..[330,13350+15])
+          Ptyp_var a
+        core_type (stdlib/seq.mli[330,13350+19]..[330,13350+23])
+          Ptyp_constr "t" (stdlib/seq.mli[330,13350+22]..[330,13350+23])
+          [
+            core_type (stdlib/seq.mli[330,13350+19]..[330,13350+21])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/seq.mli[334,13457+0]..[334,13457+29])
+    Psig_value
+    value_description "cons" (stdlib/seq.mli[334,13457+4]..[334,13457+8]) (stdlib/seq.mli[334,13457+0]..[334,13457+29])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[335,13487+0]..[343,13801+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[335,13487+0]..[343,13801+18])
+              Pexp_constant PConst_string(" [cons x xs] is the sequence that begins with the element [x],\n    followed with the sequence [xs].\n\n    Writing [cons (f()) xs] causes the function call [f()]\n    to take place immediately. For this call to be delayed until the\n    sequence is queried, one must instead write\n    [(fun () -> Cons(f(), xs))].\n\n    @since 4.11 ",(stdlib/seq.mli[335,13487+0]..[343,13801+18]),None)
+        ]
+      core_type (stdlib/seq.mli[334,13457+11]..[334,13457+29])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[334,13457+11]..[334,13457+13])
+          Ptyp_var a
+        core_type (stdlib/seq.mli[334,13457+17]..[334,13457+29])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[334,13457+17]..[334,13457+21])
+            Ptyp_constr "t" (stdlib/seq.mli[334,13457+20]..[334,13457+21])
+            [
+              core_type (stdlib/seq.mli[334,13457+17]..[334,13457+19])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[334,13457+25]..[334,13457+29])
+            Ptyp_constr "t" (stdlib/seq.mli[334,13457+28]..[334,13457+29])
+            [
+              core_type (stdlib/seq.mli[334,13457+25]..[334,13457+27])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[345,13821+0]..[345,13821+37])
+    Psig_value
+    value_description "init" (stdlib/seq.mli[345,13821+4]..[345,13821+8]) (stdlib/seq.mli[345,13821+0]..[345,13821+37])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[346,13859+0]..[355,14091+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[346,13859+0]..[355,14091+18])
+              Pexp_constant PConst_string(" [init n f] is the sequence [f 0; f 1; ...; f (n-1)].\n\n    [n] must be nonnegative.\n\n    If desired, the infinite sequence [f 0; f 1; ...]\n    can be defined as [map f (ints 0)].\n\n    @raise Invalid_argument if [n] is negative.\n\n    @since 4.14 ",(stdlib/seq.mli[346,13859+0]..[355,14091+18]),None)
+        ]
+      core_type (stdlib/seq.mli[345,13821+11]..[345,13821+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[345,13821+11]..[345,13821+14])
+          Ptyp_constr "int" (stdlib/seq.mli[345,13821+11]..[345,13821+14])
+          []
+        core_type (stdlib/seq.mli[345,13821+18]..[345,13821+37])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[345,13821+19]..[345,13821+28])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[345,13821+19]..[345,13821+22])
+              Ptyp_constr "int" (stdlib/seq.mli[345,13821+19]..[345,13821+22])
+              []
+            core_type (stdlib/seq.mli[345,13821+26]..[345,13821+28])
+              Ptyp_var a
+          core_type (stdlib/seq.mli[345,13821+33]..[345,13821+37])
+            Ptyp_constr "t" (stdlib/seq.mli[345,13821+36]..[345,13821+37])
+            [
+              core_type (stdlib/seq.mli[345,13821+33]..[345,13821+35])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[357,14111+0]..[357,14111+51])
+    Psig_value
+    value_description "unfold" (stdlib/seq.mli[357,14111+4]..[357,14111+10]) (stdlib/seq.mli[357,14111+0]..[357,14111+51])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[358,14163+0]..[369,14532+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[358,14163+0]..[369,14532+18])
+              Pexp_constant PConst_string(" [unfold] constructs a sequence\n    out of a step function and an initial state.\n\n    If [f u] is [None] then\n    [unfold f u] is the empty sequence.\n    If [f u] is [Some (x, u')] then\n    [unfold f u] is the nonempty sequence [cons x (unfold f u')].\n\n    For example, [unfold (function [] -> None | h :: t -> Some (h, t)) l]\n    is equivalent to [List.to_seq l].\n\n    @since 4.11 ",(stdlib/seq.mli[358,14163+0]..[369,14532+18]),None)
+        ]
+      core_type (stdlib/seq.mli[357,14111+13]..[357,14111+51])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[357,14111+14]..[357,14111+36])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[357,14111+14]..[357,14111+16])
+            Ptyp_var b
+          core_type (stdlib/seq.mli[357,14111+20]..[357,14111+36])
+            Ptyp_constr "option" (stdlib/seq.mli[357,14111+30]..[357,14111+36])
+            [
+              core_type (stdlib/seq.mli[357,14111+21]..[357,14111+28])
+                Ptyp_tuple
+                [
+                  core_type (stdlib/seq.mli[357,14111+21]..[357,14111+23])
+                    Ptyp_var a
+                  core_type (stdlib/seq.mli[357,14111+26]..[357,14111+28])
+                    Ptyp_var b
+                ]
+            ]
+        core_type (stdlib/seq.mli[357,14111+41]..[357,14111+51])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[357,14111+41]..[357,14111+43])
+            Ptyp_var b
+          core_type (stdlib/seq.mli[357,14111+47]..[357,14111+51])
+            Ptyp_constr "t" (stdlib/seq.mli[357,14111+50]..[357,14111+51])
+            [
+              core_type (stdlib/seq.mli[357,14111+47]..[357,14111+49])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[371,14552+0]..[371,14552+23])
+    Psig_value
+    value_description "repeat" (stdlib/seq.mli[371,14552+4]..[371,14552+10]) (stdlib/seq.mli[371,14552+0]..[371,14552+23])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[372,14576+0]..[377,14722+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[372,14576+0]..[377,14722+18])
+              Pexp_constant PConst_string(" [repeat x] is the infinite sequence\n    where the element [x] is repeated indefinitely.\n\n    [repeat x] is equivalent to [cycle (return x)].\n\n    @since 4.14 ",(stdlib/seq.mli[372,14576+0]..[377,14722+18]),None)
+        ]
+      core_type (stdlib/seq.mli[371,14552+13]..[371,14552+23])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[371,14552+13]..[371,14552+15])
+          Ptyp_var a
+        core_type (stdlib/seq.mli[371,14552+19]..[371,14552+23])
+          Ptyp_constr "t" (stdlib/seq.mli[371,14552+22]..[371,14552+23])
+          [
+            core_type (stdlib/seq.mli[371,14552+19]..[371,14552+21])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/seq.mli[379,14742+0]..[379,14742+34])
+    Psig_value
+    value_description "forever" (stdlib/seq.mli[379,14742+4]..[379,14742+11]) (stdlib/seq.mli[379,14742+0]..[379,14742+34])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[380,14777+0]..[388,15034+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[380,14777+0]..[388,15034+18])
+              Pexp_constant PConst_string(" [forever f] is an infinite sequence where every element is produced\n    (on demand) by the function call [f()].\n\n    For instance,\n    [forever Random.bool] is an infinite sequence of random bits.\n\n    [forever f] is equivalent to [map f (repeat ())].\n\n    @since 4.14 ",(stdlib/seq.mli[380,14777+0]..[388,15034+18]),None)
+        ]
+      core_type (stdlib/seq.mli[379,14742+14]..[379,14742+34])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[379,14742+15]..[379,14742+25])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[379,14742+15]..[379,14742+19])
+            Ptyp_constr "unit" (stdlib/seq.mli[379,14742+15]..[379,14742+19])
+            []
+          core_type (stdlib/seq.mli[379,14742+23]..[379,14742+25])
+            Ptyp_var a
+        core_type (stdlib/seq.mli[379,14742+30]..[379,14742+34])
+          Ptyp_constr "t" (stdlib/seq.mli[379,14742+33]..[379,14742+34])
+          [
+            core_type (stdlib/seq.mli[379,14742+30]..[379,14742+32])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/seq.mli[390,15054+0]..[390,15054+24])
+    Psig_value
+    value_description "cycle" (stdlib/seq.mli[390,15054+4]..[390,15054+9]) (stdlib/seq.mli[390,15054+0]..[390,15054+24])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[391,15079+0]..[401,15431+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[391,15079+0]..[401,15431+18])
+              Pexp_constant PConst_string(" [cycle xs] is the infinite sequence that consists of an infinite\n    number of repetitions of the sequence [xs].\n\n    If [xs] is an empty sequence,\n    then [cycle xs] is empty as well.\n\n    Consuming (a prefix of) the sequence [cycle xs] once\n    can cause the sequence [xs] to be consumed more than once.\n    Therefore, [xs] must be persistent.\n\n    @since 4.14 ",(stdlib/seq.mli[391,15079+0]..[401,15431+18]),None)
+        ]
+      core_type (stdlib/seq.mli[390,15054+12]..[390,15054+24])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[390,15054+12]..[390,15054+16])
+          Ptyp_constr "t" (stdlib/seq.mli[390,15054+15]..[390,15054+16])
+          [
+            core_type (stdlib/seq.mli[390,15054+12]..[390,15054+14])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[390,15054+20]..[390,15054+24])
+          Ptyp_constr "t" (stdlib/seq.mli[390,15054+23]..[390,15054+24])
+          [
+            core_type (stdlib/seq.mli[390,15054+20]..[390,15054+22])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/seq.mli[403,15451+0]..[403,15451+38])
+    Psig_value
+    value_description "iterate" (stdlib/seq.mli[403,15451+4]..[403,15451+11]) (stdlib/seq.mli[403,15451+0]..[403,15451+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[404,15490+0]..[410,15670+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[404,15490+0]..[410,15670+18])
+              Pexp_constant PConst_string(" [iterate f x] is the infinite sequence whose elements are\n    [x], [f x], [f (f x)], and so on.\n\n    In other words, it is the orbit of the function [f],\n    starting at [x].\n\n    @since 4.14 ",(stdlib/seq.mli[404,15490+0]..[410,15670+18]),None)
+        ]
+      core_type (stdlib/seq.mli[403,15451+14]..[403,15451+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[403,15451+15]..[403,15451+23])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[403,15451+15]..[403,15451+17])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[403,15451+21]..[403,15451+23])
+            Ptyp_var a
+        core_type (stdlib/seq.mli[403,15451+28]..[403,15451+38])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[403,15451+28]..[403,15451+30])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[403,15451+34]..[403,15451+38])
+            Ptyp_constr "t" (stdlib/seq.mli[403,15451+37]..[403,15451+38])
+            [
+              core_type (stdlib/seq.mli[403,15451+34]..[403,15451+36])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[412,15690+0]..[412,15690+33])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[412,15690+0]..[412,15690+33])
+        Pstr_eval
+        expression (stdlib/seq.mli[412,15690+0]..[412,15690+33])
+          Pexp_constant PConst_string(" {1 Transforming sequences} ",(stdlib/seq.mli[412,15690+0]..[412,15690+33]),None)
+    ]
+  signature_item (stdlib/seq.mli[414,15725+0]..[415,15800+54])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[414,15725+0]..[415,15800+54])
+        Pstr_eval
+        expression (stdlib/seq.mli[414,15725+0]..[415,15800+54])
+          Pexp_constant PConst_string(" The functions in this section are lazy: that is, they return sequences\n    whose elements are computed only when demanded. ",(stdlib/seq.mli[414,15725+0]..[415,15800+54]),None)
+    ]
+  signature_item (stdlib/seq.mli[417,15856+0]..[417,15856+36])
+    Psig_value
+    value_description "map" (stdlib/seq.mli[417,15856+4]..[417,15856+7]) (stdlib/seq.mli[417,15856+0]..[417,15856+36])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[418,15893+0]..[422,16026+52])
+            Pstr_eval
+            expression (stdlib/seq.mli[418,15893+0]..[422,16026+52])
+              Pexp_constant PConst_string(" [map f xs] is the image of the sequence [xs] through the\n    transformation [f].\n\n    If [xs] is the sequence [x0; x1; ...] then\n    [map f xs] is the sequence [f x0; f x1; ...]. ",(stdlib/seq.mli[418,15893+0]..[422,16026+52]),None)
+        ]
+      core_type (stdlib/seq.mli[417,15856+10]..[417,15856+36])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[417,15856+11]..[417,15856+19])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[417,15856+11]..[417,15856+13])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[417,15856+17]..[417,15856+19])
+            Ptyp_var b
+        core_type (stdlib/seq.mli[417,15856+24]..[417,15856+36])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[417,15856+24]..[417,15856+28])
+            Ptyp_constr "t" (stdlib/seq.mli[417,15856+27]..[417,15856+28])
+            [
+              core_type (stdlib/seq.mli[417,15856+24]..[417,15856+26])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[417,15856+32]..[417,15856+36])
+            Ptyp_constr "t" (stdlib/seq.mli[417,15856+35]..[417,15856+36])
+            [
+              core_type (stdlib/seq.mli[417,15856+32]..[417,15856+34])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/seq.mli[424,16080+0]..[424,16080+44])
+    Psig_value
+    value_description "mapi" (stdlib/seq.mli[424,16080+4]..[424,16080+8]) (stdlib/seq.mli[424,16080+0]..[424,16080+44])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[425,16125+0]..[430,16277+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[425,16125+0]..[430,16277+18])
+              Pexp_constant PConst_string(" [mapi] is analogous to [map], but applies the function [f] to\n    an index and an element.\n\n    [mapi f xs] is equivalent to [map2 f (ints 0) xs].\n\n    @since 4.14 ",(stdlib/seq.mli[425,16125+0]..[430,16277+18]),None)
+        ]
+      core_type (stdlib/seq.mli[424,16080+11]..[424,16080+44])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[424,16080+12]..[424,16080+27])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[424,16080+12]..[424,16080+15])
+            Ptyp_constr "int" (stdlib/seq.mli[424,16080+12]..[424,16080+15])
+            []
+          core_type (stdlib/seq.mli[424,16080+19]..[424,16080+27])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[424,16080+19]..[424,16080+21])
+              Ptyp_var a
+            core_type (stdlib/seq.mli[424,16080+25]..[424,16080+27])
+              Ptyp_var b
+        core_type (stdlib/seq.mli[424,16080+32]..[424,16080+44])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[424,16080+32]..[424,16080+36])
+            Ptyp_constr "t" (stdlib/seq.mli[424,16080+35]..[424,16080+36])
+            [
+              core_type (stdlib/seq.mli[424,16080+32]..[424,16080+34])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[424,16080+40]..[424,16080+44])
+            Ptyp_constr "t" (stdlib/seq.mli[424,16080+43]..[424,16080+44])
+            [
+              core_type (stdlib/seq.mli[424,16080+40]..[424,16080+42])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/seq.mli[432,16297+0]..[432,16297+41])
+    Psig_value
+    value_description "filter" (stdlib/seq.mli[432,16297+4]..[432,16297+10]) (stdlib/seq.mli[432,16297+0]..[432,16297+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[433,16339+0]..[437,16482+61])
+            Pstr_eval
+            expression (stdlib/seq.mli[433,16339+0]..[437,16482+61])
+              Pexp_constant PConst_string(" [filter p xs] is the sequence of the elements [x] of [xs]\n    that satisfy [p x].\n\n    In other words, [filter p xs] is the sequence [xs],\n    deprived of the elements [x] such that [p x] is false. ",(stdlib/seq.mli[433,16339+0]..[437,16482+61]),None)
+        ]
+      core_type (stdlib/seq.mli[432,16297+13]..[432,16297+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[432,16297+14]..[432,16297+24])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[432,16297+14]..[432,16297+16])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[432,16297+20]..[432,16297+24])
+            Ptyp_constr "bool" (stdlib/seq.mli[432,16297+20]..[432,16297+24])
+            []
+        core_type (stdlib/seq.mli[432,16297+29]..[432,16297+41])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[432,16297+29]..[432,16297+33])
+            Ptyp_constr "t" (stdlib/seq.mli[432,16297+32]..[432,16297+33])
+            [
+              core_type (stdlib/seq.mli[432,16297+29]..[432,16297+31])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[432,16297+37]..[432,16297+41])
+            Ptyp_constr "t" (stdlib/seq.mli[432,16297+40]..[432,16297+41])
+            [
+              core_type (stdlib/seq.mli[432,16297+37]..[432,16297+39])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[439,16545+0]..[439,16545+50])
+    Psig_value
+    value_description "filter_map" (stdlib/seq.mli[439,16545+4]..[439,16545+14]) (stdlib/seq.mli[439,16545+0]..[439,16545+50])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[440,16596+0]..[444,16752+59])
+            Pstr_eval
+            expression (stdlib/seq.mli[440,16596+0]..[444,16752+59])
+              Pexp_constant PConst_string(" [filter_map f xs] is the sequence of the elements [y] such that\n    [f x = Some y], where [x] ranges over [xs].\n\n    [filter_map f xs] is equivalent to\n    [map Option.get (filter Option.is_some (map f xs))]. ",(stdlib/seq.mli[440,16596+0]..[444,16752+59]),None)
+        ]
+      core_type (stdlib/seq.mli[439,16545+17]..[439,16545+50])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[439,16545+18]..[439,16545+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[439,16545+18]..[439,16545+20])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[439,16545+24]..[439,16545+33])
+            Ptyp_constr "option" (stdlib/seq.mli[439,16545+27]..[439,16545+33])
+            [
+              core_type (stdlib/seq.mli[439,16545+24]..[439,16545+26])
+                Ptyp_var b
+            ]
+        core_type (stdlib/seq.mli[439,16545+38]..[439,16545+50])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[439,16545+38]..[439,16545+42])
+            Ptyp_constr "t" (stdlib/seq.mli[439,16545+41]..[439,16545+42])
+            [
+              core_type (stdlib/seq.mli[439,16545+38]..[439,16545+40])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[439,16545+46]..[439,16545+50])
+            Ptyp_constr "t" (stdlib/seq.mli[439,16545+49]..[439,16545+50])
+            [
+              core_type (stdlib/seq.mli[439,16545+46]..[439,16545+48])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/seq.mli[446,16813+0]..[446,16813+49])
+    Psig_value
+    value_description "scan" (stdlib/seq.mli[446,16813+4]..[446,16813+8]) (stdlib/seq.mli[446,16813+0]..[446,16813+49])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[447,16863+0]..[463,17451+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[447,16863+0]..[463,17451+18])
+              Pexp_constant PConst_string(" If [xs] is a sequence [[x0; x1; x2; ...]], then\n    [scan f a0 xs] is a sequence of accumulators\n    [[a0; a1; a2; ...]]\n    where [a1] is [f a0 x0], [a2] is [f a1 x1], and so on.\n\n    Thus, [scan f a0 xs] is conceptually related to\n    [fold_left f a0 xs]. However, instead of performing an\n    eager iteration and immediately returning the final accumulator,\n    it returns a sequence of accumulators.\n\n    For instance, [scan (+) 0] transforms a sequence of integers\n    into the sequence of its partial sums.\n\n    If [xs] has length [n]\n    then [scan f a0 xs] has length [n+1].\n\n    @since 4.14 ",(stdlib/seq.mli[447,16863+0]..[463,17451+18]),None)
+        ]
+      core_type (stdlib/seq.mli[446,16813+11]..[446,16813+49])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[446,16813+12]..[446,16813+26])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[446,16813+12]..[446,16813+14])
+            Ptyp_var b
+          core_type (stdlib/seq.mli[446,16813+18]..[446,16813+26])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[446,16813+18]..[446,16813+20])
+              Ptyp_var a
+            core_type (stdlib/seq.mli[446,16813+24]..[446,16813+26])
+              Ptyp_var b
+        core_type (stdlib/seq.mli[446,16813+31]..[446,16813+49])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[446,16813+31]..[446,16813+33])
+            Ptyp_var b
+          core_type (stdlib/seq.mli[446,16813+37]..[446,16813+49])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[446,16813+37]..[446,16813+41])
+              Ptyp_constr "t" (stdlib/seq.mli[446,16813+40]..[446,16813+41])
+              [
+                core_type (stdlib/seq.mli[446,16813+37]..[446,16813+39])
+                  Ptyp_var a
+              ]
+            core_type (stdlib/seq.mli[446,16813+45]..[446,16813+49])
+              Ptyp_constr "t" (stdlib/seq.mli[446,16813+48]..[446,16813+49])
+              [
+                core_type (stdlib/seq.mli[446,16813+45]..[446,16813+47])
+                  Ptyp_var b
+              ]
+      []
+  signature_item (stdlib/seq.mli[465,17471+0]..[465,17471+30])
+    Psig_value
+    value_description "take" (stdlib/seq.mli[465,17471+4]..[465,17471+8]) (stdlib/seq.mli[465,17471+0]..[465,17471+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[466,17502+0]..[475,17735+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[466,17502+0]..[475,17735+18])
+              Pexp_constant PConst_string(" [take n xs] is the sequence of the first [n] elements of [xs].\n\n    If [xs] has fewer than [n] elements,\n    then [take n xs] is equivalent to [xs].\n\n    [n] must be nonnegative.\n\n    @raise Invalid_argument if [n] is negative.\n\n    @since 4.14 ",(stdlib/seq.mli[466,17502+0]..[475,17735+18]),None)
+        ]
+      core_type (stdlib/seq.mli[465,17471+11]..[465,17471+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[465,17471+11]..[465,17471+14])
+          Ptyp_constr "int" (stdlib/seq.mli[465,17471+11]..[465,17471+14])
+          []
+        core_type (stdlib/seq.mli[465,17471+18]..[465,17471+30])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[465,17471+18]..[465,17471+22])
+            Ptyp_constr "t" (stdlib/seq.mli[465,17471+21]..[465,17471+22])
+            [
+              core_type (stdlib/seq.mli[465,17471+18]..[465,17471+20])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[465,17471+26]..[465,17471+30])
+            Ptyp_constr "t" (stdlib/seq.mli[465,17471+29]..[465,17471+30])
+            [
+              core_type (stdlib/seq.mli[465,17471+26]..[465,17471+28])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[477,17755+0]..[477,17755+30])
+    Psig_value
+    value_description "drop" (stdlib/seq.mli[477,17755+4]..[477,17755+8]) (stdlib/seq.mli[477,17755+0]..[477,17755+30])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[478,17786+0]..[492,18258+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[478,17786+0]..[492,18258+18])
+              Pexp_constant PConst_string(" [drop n xs] is the sequence [xs], deprived of its first [n] elements.\n\n    If [xs] has fewer than [n] elements,\n    then [drop n xs] is empty.\n\n    [n] must be nonnegative.\n\n    [drop] is lazy: the first [n+1] elements of the sequence [xs]\n    are demanded only when the first element of [drop n xs] is\n    demanded. For this reason, [drop 1 xs] is {i not} equivalent\n    to [tail xs], which queries [xs] immediately.\n\n    @raise Invalid_argument if [n] is negative.\n\n    @since 4.14 ",(stdlib/seq.mli[478,17786+0]..[492,18258+18]),None)
+        ]
+      core_type (stdlib/seq.mli[477,17755+11]..[477,17755+30])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[477,17755+11]..[477,17755+14])
+          Ptyp_constr "int" (stdlib/seq.mli[477,17755+11]..[477,17755+14])
+          []
+        core_type (stdlib/seq.mli[477,17755+18]..[477,17755+30])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[477,17755+18]..[477,17755+22])
+            Ptyp_constr "t" (stdlib/seq.mli[477,17755+21]..[477,17755+22])
+            [
+              core_type (stdlib/seq.mli[477,17755+18]..[477,17755+20])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[477,17755+26]..[477,17755+30])
+            Ptyp_constr "t" (stdlib/seq.mli[477,17755+29]..[477,17755+30])
+            [
+              core_type (stdlib/seq.mli[477,17755+26]..[477,17755+28])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[494,18278+0]..[494,18278+45])
+    Psig_value
+    value_description "take_while" (stdlib/seq.mli[494,18278+4]..[494,18278+14]) (stdlib/seq.mli[494,18278+0]..[494,18278+45])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[495,18324+0]..[498,18435+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[495,18324+0]..[498,18435+18])
+              Pexp_constant PConst_string(" [take_while p xs] is the longest prefix of the sequence [xs]\n    where every element [x] satisfies [p x].\n\n    @since 4.14 ",(stdlib/seq.mli[495,18324+0]..[498,18435+18]),None)
+        ]
+      core_type (stdlib/seq.mli[494,18278+17]..[494,18278+45])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[494,18278+18]..[494,18278+28])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[494,18278+18]..[494,18278+20])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[494,18278+24]..[494,18278+28])
+            Ptyp_constr "bool" (stdlib/seq.mli[494,18278+24]..[494,18278+28])
+            []
+        core_type (stdlib/seq.mli[494,18278+33]..[494,18278+45])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[494,18278+33]..[494,18278+37])
+            Ptyp_constr "t" (stdlib/seq.mli[494,18278+36]..[494,18278+37])
+            [
+              core_type (stdlib/seq.mli[494,18278+33]..[494,18278+35])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[494,18278+41]..[494,18278+45])
+            Ptyp_constr "t" (stdlib/seq.mli[494,18278+44]..[494,18278+45])
+            [
+              core_type (stdlib/seq.mli[494,18278+41]..[494,18278+43])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[500,18455+0]..[500,18455+45])
+    Psig_value
+    value_description "drop_while" (stdlib/seq.mli[500,18455+4]..[500,18455+14]) (stdlib/seq.mli[500,18455+0]..[500,18455+45])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[501,18501+0]..[504,18592+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[501,18501+0]..[504,18592+18])
+              Pexp_constant PConst_string(" [drop_while p xs] is the sequence [xs], deprived of the prefix\n    [take_while p xs].\n\n    @since 4.14 ",(stdlib/seq.mli[501,18501+0]..[504,18592+18]),None)
+        ]
+      core_type (stdlib/seq.mli[500,18455+17]..[500,18455+45])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[500,18455+18]..[500,18455+28])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[500,18455+18]..[500,18455+20])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[500,18455+24]..[500,18455+28])
+            Ptyp_constr "bool" (stdlib/seq.mli[500,18455+24]..[500,18455+28])
+            []
+        core_type (stdlib/seq.mli[500,18455+33]..[500,18455+45])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[500,18455+33]..[500,18455+37])
+            Ptyp_constr "t" (stdlib/seq.mli[500,18455+36]..[500,18455+37])
+            [
+              core_type (stdlib/seq.mli[500,18455+33]..[500,18455+35])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[500,18455+41]..[500,18455+45])
+            Ptyp_constr "t" (stdlib/seq.mli[500,18455+44]..[500,18455+45])
+            [
+              core_type (stdlib/seq.mli[500,18455+41]..[500,18455+43])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[506,18612+0]..[506,18612+48])
+    Psig_value
+    value_description "group" (stdlib/seq.mli[506,18612+4]..[506,18612+9]) (stdlib/seq.mli[506,18612+0]..[506,18612+48])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[507,18661+0]..[519,19145+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[507,18661+0]..[519,19145+18])
+              Pexp_constant PConst_string(" Provided the function [eq] defines an equality on elements,\n    [group eq xs] is the sequence of the maximal runs\n    of adjacent duplicate elements of the sequence [xs].\n\n    Every element of [group eq xs] is a nonempty sequence of equal elements.\n\n    The concatenation [concat (group eq xs)] is equal to [xs].\n\n    Consuming [group eq xs], and consuming the sequences that it contains,\n    can cause [xs] to be consumed more than once. Therefore, [xs] must be\n    persistent.\n\n    @since 4.14 ",(stdlib/seq.mli[507,18661+0]..[519,19145+18]),None)
+        ]
+      core_type (stdlib/seq.mli[506,18612+12]..[506,18612+48])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[506,18612+13]..[506,18612+29])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[506,18612+13]..[506,18612+15])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[506,18612+19]..[506,18612+29])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[506,18612+19]..[506,18612+21])
+              Ptyp_var a
+            core_type (stdlib/seq.mli[506,18612+25]..[506,18612+29])
+              Ptyp_constr "bool" (stdlib/seq.mli[506,18612+25]..[506,18612+29])
+              []
+        core_type (stdlib/seq.mli[506,18612+34]..[506,18612+48])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[506,18612+34]..[506,18612+38])
+            Ptyp_constr "t" (stdlib/seq.mli[506,18612+37]..[506,18612+38])
+            [
+              core_type (stdlib/seq.mli[506,18612+34]..[506,18612+36])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[506,18612+42]..[506,18612+48])
+            Ptyp_constr "t" (stdlib/seq.mli[506,18612+47]..[506,18612+48])
+            [
+              core_type (stdlib/seq.mli[506,18612+42]..[506,18612+46])
+                Ptyp_constr "t" (stdlib/seq.mli[506,18612+45]..[506,18612+46])
+                [
+                  core_type (stdlib/seq.mli[506,18612+42]..[506,18612+44])
+                    Ptyp_var a
+                ]
+            ]
+      []
+  signature_item (stdlib/seq.mli[521,19165+0]..[521,19165+26])
+    Psig_value
+    value_description "memoize" (stdlib/seq.mli[521,19165+4]..[521,19165+11]) (stdlib/seq.mli[521,19165+0]..[521,19165+26])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[522,19192+0]..[533,19696+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[522,19192+0]..[533,19696+18])
+              Pexp_constant PConst_string(" The sequence [memoize xs] has the same elements as the sequence [xs].\n\n    Regardless of whether [xs] is ephemeral or persistent,\n    [memoize xs] is persistent: even if it is queried several times,\n    [xs] is queried at most once.\n\n    The construction of the sequence [memoize xs] internally relies on\n    suspensions provided by the module {!Lazy}. These suspensions are\n    {i not} thread-safe. Therefore, the sequence [memoize xs]\n    must {i not} be queried by multiple threads concurrently.\n\n    @since 4.14 ",(stdlib/seq.mli[522,19192+0]..[533,19696+18]),None)
+        ]
+      core_type (stdlib/seq.mli[521,19165+14]..[521,19165+26])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[521,19165+14]..[521,19165+18])
+          Ptyp_constr "t" (stdlib/seq.mli[521,19165+17]..[521,19165+18])
+          [
+            core_type (stdlib/seq.mli[521,19165+14]..[521,19165+16])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[521,19165+22]..[521,19165+26])
+          Ptyp_constr "t" (stdlib/seq.mli[521,19165+25]..[521,19165+26])
+          [
+            core_type (stdlib/seq.mli[521,19165+22]..[521,19165+24])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/seq.mli[535,19716+0]..[535,19716+22])
+    Psig_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (stdlib/seq.mli[535,19716+0]..[535,19716+22])
+          attribute "ocaml.doc"
+            [
+              structure_item (stdlib/seq.mli[536,19739+0]..[539,19856+18])
+                Pstr_eval
+                expression (stdlib/seq.mli[536,19739+0]..[539,19856+18])
+                  Pexp_constant PConst_string(" This exception is raised when a sequence returned by {!once}\n    (or a suffix of it) is queried more than once.\n\n    @since 4.14 ",(stdlib/seq.mli[536,19739+0]..[539,19856+18]),None)
+            ]
+          pext_name = "Forced_twice"
+          pext_kind =
+            Pext_decl
+              []
+              None
+  signature_item (stdlib/seq.mli[541,19876+0]..[541,19876+23])
+    Psig_value
+    value_description "once" (stdlib/seq.mli[541,19876+4]..[541,19876+8]) (stdlib/seq.mli[541,19876+0]..[541,19876+23])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[542,19900+0]..[553,20410+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[542,19900+0]..[553,20410+18])
+              Pexp_constant PConst_string(" The sequence [once xs] has the same elements as the sequence [xs].\n\n    Regardless of whether [xs] is ephemeral or persistent,\n    [once xs] is an ephemeral sequence: it can be queried at most once.\n    If it (or a suffix of it) is queried more than once, then the exception\n    [Forced_twice] is raised. This can be useful, while debugging or testing,\n    to ensure that a sequence is consumed at most once.\n\n    @raise Forced_twice if [once xs], or a suffix of it,\n           is queried more than once.\n\n    @since 4.14 ",(stdlib/seq.mli[542,19900+0]..[553,20410+18]),None)
+        ]
+      core_type (stdlib/seq.mli[541,19876+11]..[541,19876+23])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[541,19876+11]..[541,19876+15])
+          Ptyp_constr "t" (stdlib/seq.mli[541,19876+14]..[541,19876+15])
+          [
+            core_type (stdlib/seq.mli[541,19876+11]..[541,19876+13])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[541,19876+19]..[541,19876+23])
+          Ptyp_constr "t" (stdlib/seq.mli[541,19876+22]..[541,19876+23])
+          [
+            core_type (stdlib/seq.mli[541,19876+19]..[541,19876+21])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/seq.mli[555,20430+0]..[555,20430+32])
+    Psig_value
+    value_description "transpose" (stdlib/seq.mli[555,20430+4]..[555,20430+13]) (stdlib/seq.mli[555,20430+0]..[555,20430+32])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[556,20463+0]..[565,20780+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[556,20463+0]..[565,20780+18])
+              Pexp_constant PConst_string(" If [xss] is a matrix (a sequence of rows), then [transpose xss] is\n    the sequence of the columns of the matrix [xss].\n\n    The rows of the matrix [xss] are not required to have the same length.\n\n    The matrix [xss] is not required to be finite (in either direction).\n\n    The matrix [xss] must be persistent.\n\n    @since 4.14 ",(stdlib/seq.mli[556,20463+0]..[565,20780+18]),None)
+        ]
+      core_type (stdlib/seq.mli[555,20430+16]..[555,20430+32])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[555,20430+16]..[555,20430+22])
+          Ptyp_constr "t" (stdlib/seq.mli[555,20430+21]..[555,20430+22])
+          [
+            core_type (stdlib/seq.mli[555,20430+16]..[555,20430+20])
+              Ptyp_constr "t" (stdlib/seq.mli[555,20430+19]..[555,20430+20])
+              [
+                core_type (stdlib/seq.mli[555,20430+16]..[555,20430+18])
+                  Ptyp_var a
+              ]
+          ]
+        core_type (stdlib/seq.mli[555,20430+26]..[555,20430+32])
+          Ptyp_constr "t" (stdlib/seq.mli[555,20430+31]..[555,20430+32])
+          [
+            core_type (stdlib/seq.mli[555,20430+26]..[555,20430+30])
+              Ptyp_constr "t" (stdlib/seq.mli[555,20430+29]..[555,20430+30])
+              [
+                core_type (stdlib/seq.mli[555,20430+26]..[555,20430+28])
+                  Ptyp_var a
+              ]
+          ]
+      []
+  signature_item (stdlib/seq.mli[567,20800+0]..[567,20800+30])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[567,20800+0]..[567,20800+30])
+        Pstr_eval
+        expression (stdlib/seq.mli[567,20800+0]..[567,20800+30])
+          Pexp_constant PConst_string(" {1 Combining sequences} ",(stdlib/seq.mli[567,20800+0]..[567,20800+30]),None)
+    ]
+  signature_item (stdlib/seq.mli[569,20832+0]..[569,20832+33])
+    Psig_value
+    value_description "append" (stdlib/seq.mli[569,20832+4]..[569,20832+10]) (stdlib/seq.mli[569,20832+0]..[569,20832+33])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[570,20866+0]..[574,21017+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[570,20866+0]..[574,21017+18])
+              Pexp_constant PConst_string(" [append xs ys] is the concatenation of the sequences [xs] and [ys].\n\n    Its elements are the elements of [xs], followed by the elements of [ys].\n\n    @since 4.11 ",(stdlib/seq.mli[570,20866+0]..[574,21017+18]),None)
+        ]
+      core_type (stdlib/seq.mli[569,20832+13]..[569,20832+33])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[569,20832+13]..[569,20832+17])
+          Ptyp_constr "t" (stdlib/seq.mli[569,20832+16]..[569,20832+17])
+          [
+            core_type (stdlib/seq.mli[569,20832+13]..[569,20832+15])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[569,20832+21]..[569,20832+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[569,20832+21]..[569,20832+25])
+            Ptyp_constr "t" (stdlib/seq.mli[569,20832+24]..[569,20832+25])
+            [
+              core_type (stdlib/seq.mli[569,20832+21]..[569,20832+23])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[569,20832+29]..[569,20832+33])
+            Ptyp_constr "t" (stdlib/seq.mli[569,20832+32]..[569,20832+33])
+            [
+              core_type (stdlib/seq.mli[569,20832+29]..[569,20832+31])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[576,21037+0]..[576,21037+27])
+    Psig_value
+    value_description "concat" (stdlib/seq.mli[576,21037+4]..[576,21037+10]) (stdlib/seq.mli[576,21037+0]..[576,21037+27])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[577,21065+0]..[583,21254+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[577,21065+0]..[583,21254+18])
+              Pexp_constant PConst_string(" If [xss] is a sequence of sequences,\n    then [concat xss] is its concatenation.\n\n    If [xss] is the sequence [xs0; xs1; ...] then\n    [concat xss] is the sequence [xs0 @ xs1 @ ...].\n\n    @since 4.13 ",(stdlib/seq.mli[577,21065+0]..[583,21254+18]),None)
+        ]
+      core_type (stdlib/seq.mli[576,21037+13]..[576,21037+27])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[576,21037+13]..[576,21037+19])
+          Ptyp_constr "t" (stdlib/seq.mli[576,21037+18]..[576,21037+19])
+          [
+            core_type (stdlib/seq.mli[576,21037+13]..[576,21037+17])
+              Ptyp_constr "t" (stdlib/seq.mli[576,21037+16]..[576,21037+17])
+              [
+                core_type (stdlib/seq.mli[576,21037+13]..[576,21037+15])
+                  Ptyp_var a
+              ]
+          ]
+        core_type (stdlib/seq.mli[576,21037+23]..[576,21037+27])
+          Ptyp_constr "t" (stdlib/seq.mli[576,21037+26]..[576,21037+27])
+          [
+            core_type (stdlib/seq.mli[576,21037+23]..[576,21037+25])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/seq.mli[585,21274+0]..[585,21274+43])
+    Psig_value
+    value_description "flat_map" (stdlib/seq.mli[585,21274+4]..[585,21274+12]) (stdlib/seq.mli[585,21274+0]..[585,21274+43])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[586,21318+0]..[586,21318+60])
+            Pstr_eval
+            expression (stdlib/seq.mli[586,21318+0]..[586,21318+60])
+              Pexp_constant PConst_string(" [flat_map f xs] is equivalent to [concat (map f xs)]. ",(stdlib/seq.mli[586,21318+0]..[586,21318+60]),None)
+        ]
+      core_type (stdlib/seq.mli[585,21274+15]..[585,21274+43])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[585,21274+16]..[585,21274+26])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[585,21274+16]..[585,21274+18])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[585,21274+22]..[585,21274+26])
+            Ptyp_constr "t" (stdlib/seq.mli[585,21274+25]..[585,21274+26])
+            [
+              core_type (stdlib/seq.mli[585,21274+22]..[585,21274+24])
+                Ptyp_var b
+            ]
+        core_type (stdlib/seq.mli[585,21274+31]..[585,21274+43])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[585,21274+31]..[585,21274+35])
+            Ptyp_constr "t" (stdlib/seq.mli[585,21274+34]..[585,21274+35])
+            [
+              core_type (stdlib/seq.mli[585,21274+31]..[585,21274+33])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[585,21274+39]..[585,21274+43])
+            Ptyp_constr "t" (stdlib/seq.mli[585,21274+42]..[585,21274+43])
+            [
+              core_type (stdlib/seq.mli[585,21274+39]..[585,21274+41])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/seq.mli[588,21380+0]..[588,21380+45])
+    Psig_value
+    value_description "concat_map" (stdlib/seq.mli[588,21380+4]..[588,21380+14]) (stdlib/seq.mli[588,21380+0]..[588,21380+45])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[589,21426+0]..[593,21533+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[589,21426+0]..[593,21533+18])
+              Pexp_constant PConst_string(" [concat_map f xs] is equivalent to [concat (map f xs)].\n\n    [concat_map] is an alias for [flat_map].\n\n    @since 4.13 ",(stdlib/seq.mli[589,21426+0]..[593,21533+18]),None)
+        ]
+      core_type (stdlib/seq.mli[588,21380+17]..[588,21380+45])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[588,21380+18]..[588,21380+28])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[588,21380+18]..[588,21380+20])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[588,21380+24]..[588,21380+28])
+            Ptyp_constr "t" (stdlib/seq.mli[588,21380+27]..[588,21380+28])
+            [
+              core_type (stdlib/seq.mli[588,21380+24]..[588,21380+26])
+                Ptyp_var b
+            ]
+        core_type (stdlib/seq.mli[588,21380+33]..[588,21380+45])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[588,21380+33]..[588,21380+37])
+            Ptyp_constr "t" (stdlib/seq.mli[588,21380+36]..[588,21380+37])
+            [
+              core_type (stdlib/seq.mli[588,21380+33]..[588,21380+35])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[588,21380+41]..[588,21380+45])
+            Ptyp_constr "t" (stdlib/seq.mli[588,21380+44]..[588,21380+45])
+            [
+              core_type (stdlib/seq.mli[588,21380+41]..[588,21380+43])
+                Ptyp_var b
+            ]
+      []
+  signature_item (stdlib/seq.mli[595,21553+0]..[595,21553+37])
+    Psig_value
+    value_description "zip" (stdlib/seq.mli[595,21553+4]..[595,21553+7]) (stdlib/seq.mli[595,21553+0]..[595,21553+37])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[596,21591+0]..[605,21952+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[596,21591+0]..[605,21952+18])
+              Pexp_constant PConst_string(" [zip xs ys] is the sequence of pairs [(x, y)]\n    drawn synchronously from the sequences [xs] and [ys].\n\n    If the sequences [xs] and [ys] have different lengths, then\n    the sequence ends as soon as one sequence is exhausted;\n    the excess elements in the other sequence are ignored.\n\n    [zip xs ys] is equivalent to [map2 (fun a b -> (a, b)) xs ys].\n\n    @since 4.14 ",(stdlib/seq.mli[596,21591+0]..[605,21952+18]),None)
+        ]
+      core_type (stdlib/seq.mli[595,21553+10]..[595,21553+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[595,21553+10]..[595,21553+14])
+          Ptyp_constr "t" (stdlib/seq.mli[595,21553+13]..[595,21553+14])
+          [
+            core_type (stdlib/seq.mli[595,21553+10]..[595,21553+12])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[595,21553+18]..[595,21553+37])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[595,21553+18]..[595,21553+22])
+            Ptyp_constr "t" (stdlib/seq.mli[595,21553+21]..[595,21553+22])
+            [
+              core_type (stdlib/seq.mli[595,21553+18]..[595,21553+20])
+                Ptyp_var b
+            ]
+          core_type (stdlib/seq.mli[595,21553+26]..[595,21553+37])
+            Ptyp_constr "t" (stdlib/seq.mli[595,21553+36]..[595,21553+37])
+            [
+              core_type (stdlib/seq.mli[595,21553+27]..[595,21553+34])
+                Ptyp_tuple
+                [
+                  core_type (stdlib/seq.mli[595,21553+27]..[595,21553+29])
+                    Ptyp_var a
+                  core_type (stdlib/seq.mli[595,21553+32]..[595,21553+34])
+                    Ptyp_var b
+                ]
+            ]
+      []
+  signature_item (stdlib/seq.mli[607,21972+0]..[607,21972+51])
+    Psig_value
+    value_description "map2" (stdlib/seq.mli[607,21972+4]..[607,21972+8]) (stdlib/seq.mli[607,21972+0]..[607,21972+51])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[608,22024+0]..[618,22438+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[608,22024+0]..[618,22438+18])
+              Pexp_constant PConst_string(" [map2 f xs ys] is the sequence of the elements [f x y],\n    where the pairs [(x, y)] are drawn synchronously from the\n    sequences [xs] and [ys].\n\n    If the sequences [xs] and [ys] have different lengths, then\n    the sequence ends as soon as one sequence is exhausted;\n    the excess elements in the other sequence are ignored.\n\n    [map2 f xs ys] is equivalent to [map (fun (x, y) -> f x y) (zip xs ys)].\n\n    @since 4.14 ",(stdlib/seq.mli[608,22024+0]..[618,22438+18]),None)
+        ]
+      core_type (stdlib/seq.mli[607,21972+11]..[607,21972+51])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[607,21972+12]..[607,21972+26])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[607,21972+12]..[607,21972+14])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[607,21972+18]..[607,21972+26])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[607,21972+18]..[607,21972+20])
+              Ptyp_var b
+            core_type (stdlib/seq.mli[607,21972+24]..[607,21972+26])
+              Ptyp_var c
+        core_type (stdlib/seq.mli[607,21972+31]..[607,21972+51])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[607,21972+31]..[607,21972+35])
+            Ptyp_constr "t" (stdlib/seq.mli[607,21972+34]..[607,21972+35])
+            [
+              core_type (stdlib/seq.mli[607,21972+31]..[607,21972+33])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[607,21972+39]..[607,21972+51])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[607,21972+39]..[607,21972+43])
+              Ptyp_constr "t" (stdlib/seq.mli[607,21972+42]..[607,21972+43])
+              [
+                core_type (stdlib/seq.mli[607,21972+39]..[607,21972+41])
+                  Ptyp_var b
+              ]
+            core_type (stdlib/seq.mli[607,21972+47]..[607,21972+51])
+              Ptyp_constr "t" (stdlib/seq.mli[607,21972+50]..[607,21972+51])
+              [
+                core_type (stdlib/seq.mli[607,21972+47]..[607,21972+49])
+                  Ptyp_var c
+              ]
+      []
+  signature_item (stdlib/seq.mli[620,22458+0]..[620,22458+37])
+    Psig_value
+    value_description "interleave" (stdlib/seq.mli[620,22458+4]..[620,22458+14]) (stdlib/seq.mli[620,22458+0]..[620,22458+37])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[621,22496+0]..[627,22766+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[621,22496+0]..[627,22766+18])
+              Pexp_constant PConst_string(" [interleave xs ys] is the sequence that begins with the first element of\n    [xs], continues with the first element of [ys], and so on.\n\n    When one of the sequences [xs] and [ys] is exhausted,\n    [interleave xs ys] continues with the rest of the other sequence.\n\n    @since 4.14 ",(stdlib/seq.mli[621,22496+0]..[627,22766+18]),None)
+        ]
+      core_type (stdlib/seq.mli[620,22458+17]..[620,22458+37])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[620,22458+17]..[620,22458+21])
+          Ptyp_constr "t" (stdlib/seq.mli[620,22458+20]..[620,22458+21])
+          [
+            core_type (stdlib/seq.mli[620,22458+17]..[620,22458+19])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[620,22458+25]..[620,22458+37])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[620,22458+25]..[620,22458+29])
+            Ptyp_constr "t" (stdlib/seq.mli[620,22458+28]..[620,22458+29])
+            [
+              core_type (stdlib/seq.mli[620,22458+25]..[620,22458+27])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[620,22458+33]..[620,22458+37])
+            Ptyp_constr "t" (stdlib/seq.mli[620,22458+36]..[620,22458+37])
+            [
+              core_type (stdlib/seq.mli[620,22458+33]..[620,22458+35])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[629,22786+0]..[629,22786+60])
+    Psig_value
+    value_description "sorted_merge" (stdlib/seq.mli[629,22786+4]..[629,22786+16]) (stdlib/seq.mli[629,22786+0]..[629,22786+60])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[630,22847+0]..[636,23109+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[630,22847+0]..[636,23109+18])
+              Pexp_constant PConst_string(" If the sequences [xs] and [ys] are sorted according to the total preorder\n    [cmp], then [sorted_merge cmp xs ys] is the sorted sequence obtained by\n    merging the sequences [xs] and [ys].\n\n    For more details on comparison functions, see {!Array.sort}.\n\n    @since 4.14 ",(stdlib/seq.mli[630,22847+0]..[636,23109+18]),None)
+        ]
+      core_type (stdlib/seq.mli[629,22786+19]..[629,22786+60])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[629,22786+20]..[629,22786+35])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[629,22786+20]..[629,22786+22])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[629,22786+26]..[629,22786+35])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[629,22786+26]..[629,22786+28])
+              Ptyp_var a
+            core_type (stdlib/seq.mli[629,22786+32]..[629,22786+35])
+              Ptyp_constr "int" (stdlib/seq.mli[629,22786+32]..[629,22786+35])
+              []
+        core_type (stdlib/seq.mli[629,22786+40]..[629,22786+60])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[629,22786+40]..[629,22786+44])
+            Ptyp_constr "t" (stdlib/seq.mli[629,22786+43]..[629,22786+44])
+            [
+              core_type (stdlib/seq.mli[629,22786+40]..[629,22786+42])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[629,22786+48]..[629,22786+60])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[629,22786+48]..[629,22786+52])
+              Ptyp_constr "t" (stdlib/seq.mli[629,22786+51]..[629,22786+52])
+              [
+                core_type (stdlib/seq.mli[629,22786+48]..[629,22786+50])
+                  Ptyp_var a
+              ]
+            core_type (stdlib/seq.mli[629,22786+56]..[629,22786+60])
+              Ptyp_constr "t" (stdlib/seq.mli[629,22786+59]..[629,22786+60])
+              [
+                core_type (stdlib/seq.mli[629,22786+56]..[629,22786+58])
+                  Ptyp_var a
+              ]
+      []
+  signature_item (stdlib/seq.mli[638,23129+0]..[638,23129+41])
+    Psig_value
+    value_description "product" (stdlib/seq.mli[638,23129+4]..[638,23129+11]) (stdlib/seq.mli[638,23129+0]..[638,23129+41])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[639,23171+0]..[650,23562+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[639,23171+0]..[650,23562+18])
+              Pexp_constant PConst_string(" [product xs ys] is the Cartesian product of the sequences [xs] and [ys].\n\n    For every element [x] of [xs] and for every element [y] of [ys],\n    the pair [(x, y)] appears once as an element of [product xs ys].\n\n    The order in which the pairs appear is unspecified.\n\n    The sequences [xs] and [ys] are not required to be finite.\n\n    The sequences [xs] and [ys] must be persistent.\n\n    @since 4.14 ",(stdlib/seq.mli[639,23171+0]..[650,23562+18]),None)
+        ]
+      core_type (stdlib/seq.mli[638,23129+14]..[638,23129+41])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[638,23129+14]..[638,23129+18])
+          Ptyp_constr "t" (stdlib/seq.mli[638,23129+17]..[638,23129+18])
+          [
+            core_type (stdlib/seq.mli[638,23129+14]..[638,23129+16])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[638,23129+22]..[638,23129+41])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[638,23129+22]..[638,23129+26])
+            Ptyp_constr "t" (stdlib/seq.mli[638,23129+25]..[638,23129+26])
+            [
+              core_type (stdlib/seq.mli[638,23129+22]..[638,23129+24])
+                Ptyp_var b
+            ]
+          core_type (stdlib/seq.mli[638,23129+30]..[638,23129+41])
+            Ptyp_constr "t" (stdlib/seq.mli[638,23129+40]..[638,23129+41])
+            [
+              core_type (stdlib/seq.mli[638,23129+31]..[638,23129+38])
+                Ptyp_tuple
+                [
+                  core_type (stdlib/seq.mli[638,23129+31]..[638,23129+33])
+                    Ptyp_var a
+                  core_type (stdlib/seq.mli[638,23129+36]..[638,23129+38])
+                    Ptyp_var b
+                ]
+            ]
+      []
+  signature_item (stdlib/seq.mli[652,23582+0]..[652,23582+58])
+    Psig_value
+    value_description "map_product" (stdlib/seq.mli[652,23582+4]..[652,23582+15]) (stdlib/seq.mli[652,23582+0]..[652,23582+58])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[653,23641+0]..[668,24186+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[653,23641+0]..[668,24186+18])
+              Pexp_constant PConst_string(" The sequence [map_product f xs ys] is the image through [f]\n    of the Cartesian product of the sequences [xs] and [ys].\n\n    For every element [x] of [xs] and for every element [y] of [ys],\n    the element [f x y] appears once as an element of [map_product f xs ys].\n\n    The order in which these elements appear is unspecified.\n\n    The sequences [xs] and [ys] are not required to be finite.\n\n    The sequences [xs] and [ys] must be persistent.\n\n    [map_product f xs ys] is equivalent to\n    [map (fun (x, y) -> f x y) (product xs ys)].\n\n    @since 4.14 ",(stdlib/seq.mli[653,23641+0]..[668,24186+18]),None)
+        ]
+      core_type (stdlib/seq.mli[652,23582+18]..[652,23582+58])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[652,23582+19]..[652,23582+33])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[652,23582+19]..[652,23582+21])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[652,23582+25]..[652,23582+33])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[652,23582+25]..[652,23582+27])
+              Ptyp_var b
+            core_type (stdlib/seq.mli[652,23582+31]..[652,23582+33])
+              Ptyp_var c
+        core_type (stdlib/seq.mli[652,23582+38]..[652,23582+58])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[652,23582+38]..[652,23582+42])
+            Ptyp_constr "t" (stdlib/seq.mli[652,23582+41]..[652,23582+42])
+            [
+              core_type (stdlib/seq.mli[652,23582+38]..[652,23582+40])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[652,23582+46]..[652,23582+58])
+            Ptyp_arrow
+            Nolabel
+            core_type (stdlib/seq.mli[652,23582+46]..[652,23582+50])
+              Ptyp_constr "t" (stdlib/seq.mli[652,23582+49]..[652,23582+50])
+              [
+                core_type (stdlib/seq.mli[652,23582+46]..[652,23582+48])
+                  Ptyp_var b
+              ]
+            core_type (stdlib/seq.mli[652,23582+54]..[652,23582+58])
+              Ptyp_constr "t" (stdlib/seq.mli[652,23582+57]..[652,23582+58])
+              [
+                core_type (stdlib/seq.mli[652,23582+54]..[652,23582+56])
+                  Ptyp_var c
+              ]
+      []
+  signature_item (stdlib/seq.mli[670,24206+0]..[670,24206+50])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[670,24206+0]..[670,24206+50])
+        Pstr_eval
+        expression (stdlib/seq.mli[670,24206+0]..[670,24206+50])
+          Pexp_constant PConst_string(" {1 Splitting a sequence into two sequences} ",(stdlib/seq.mli[670,24206+0]..[670,24206+50]),None)
+    ]
+  signature_item (stdlib/seq.mli[672,24258+0]..[672,24258+38])
+    Psig_value
+    value_description "unzip" (stdlib/seq.mli[672,24258+4]..[672,24258+9]) (stdlib/seq.mli[672,24258+0]..[672,24258+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[673,24297+0]..[684,24694+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[673,24297+0]..[684,24694+18])
+              Pexp_constant PConst_string(" [unzip] transforms a sequence of pairs into a pair of sequences.\n\n    [unzip xs] is equivalent to [(map fst xs, map snd xs)].\n\n    Querying either of the sequences returned by [unzip xs]\n    causes [xs] to be queried.\n    Therefore, querying both of them\n    causes [xs] to be queried twice.\n    Thus, [xs] must be persistent and cheap.\n    If that is not the case, use [unzip (memoize xs)].\n\n    @since 4.14 ",(stdlib/seq.mli[673,24297+0]..[684,24694+18]),None)
+        ]
+      core_type (stdlib/seq.mli[672,24258+12]..[672,24258+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[672,24258+12]..[672,24258+23])
+          Ptyp_constr "t" (stdlib/seq.mli[672,24258+22]..[672,24258+23])
+          [
+            core_type (stdlib/seq.mli[672,24258+13]..[672,24258+20])
+              Ptyp_tuple
+              [
+                core_type (stdlib/seq.mli[672,24258+13]..[672,24258+15])
+                  Ptyp_var a
+                core_type (stdlib/seq.mli[672,24258+18]..[672,24258+20])
+                  Ptyp_var b
+              ]
+          ]
+        core_type (stdlib/seq.mli[672,24258+27]..[672,24258+38])
+          Ptyp_tuple
+          [
+            core_type (stdlib/seq.mli[672,24258+27]..[672,24258+31])
+              Ptyp_constr "t" (stdlib/seq.mli[672,24258+30]..[672,24258+31])
+              [
+                core_type (stdlib/seq.mli[672,24258+27]..[672,24258+29])
+                  Ptyp_var a
+              ]
+            core_type (stdlib/seq.mli[672,24258+34]..[672,24258+38])
+              Ptyp_constr "t" (stdlib/seq.mli[672,24258+37]..[672,24258+38])
+              [
+                core_type (stdlib/seq.mli[672,24258+34]..[672,24258+36])
+                  Ptyp_var b
+              ]
+          ]
+      []
+  signature_item (stdlib/seq.mli[686,24714+0]..[686,24714+38])
+    Psig_value
+    value_description "split" (stdlib/seq.mli[686,24714+4]..[686,24714+9]) (stdlib/seq.mli[686,24714+0]..[686,24714+38])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[687,24753+0]..[689,24791+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[687,24753+0]..[689,24791+18])
+              Pexp_constant PConst_string(" [split] is an alias for [unzip].\n\n    @since 4.14 ",(stdlib/seq.mli[687,24753+0]..[689,24791+18]),None)
+        ]
+      core_type (stdlib/seq.mli[686,24714+12]..[686,24714+38])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[686,24714+12]..[686,24714+23])
+          Ptyp_constr "t" (stdlib/seq.mli[686,24714+22]..[686,24714+23])
+          [
+            core_type (stdlib/seq.mli[686,24714+13]..[686,24714+20])
+              Ptyp_tuple
+              [
+                core_type (stdlib/seq.mli[686,24714+13]..[686,24714+15])
+                  Ptyp_var a
+                core_type (stdlib/seq.mli[686,24714+18]..[686,24714+20])
+                  Ptyp_var b
+              ]
+          ]
+        core_type (stdlib/seq.mli[686,24714+27]..[686,24714+38])
+          Ptyp_tuple
+          [
+            core_type (stdlib/seq.mli[686,24714+27]..[686,24714+31])
+              Ptyp_constr "t" (stdlib/seq.mli[686,24714+30]..[686,24714+31])
+              [
+                core_type (stdlib/seq.mli[686,24714+27]..[686,24714+29])
+                  Ptyp_var a
+              ]
+            core_type (stdlib/seq.mli[686,24714+34]..[686,24714+38])
+              Ptyp_constr "t" (stdlib/seq.mli[686,24714+37]..[686,24714+38])
+              [
+                core_type (stdlib/seq.mli[686,24714+34]..[686,24714+36])
+                  Ptyp_var b
+              ]
+          ]
+      []
+  signature_item (stdlib/seq.mli[691,24811+0]..[691,24811+68])
+    Psig_value
+    value_description "partition_map" (stdlib/seq.mli[691,24811+4]..[691,24811+17]) (stdlib/seq.mli[691,24811+0]..[691,24811+68])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[692,24880+0]..[711,25605+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[692,24880+0]..[711,25605+18])
+              Pexp_constant PConst_string(" [partition_map f xs] returns a pair of sequences [(ys, zs)], where:\n\n    - [ys] is the sequence of the elements [y] such that\n      [f x = Left y], where [x] ranges over [xs];\n\n    - [zs] is the sequence of the elements [z] such that\n      [f x = Right z], where [x] ranges over [xs].\n\n    [partition_map f xs] is equivalent to a pair of\n    [filter_map Either.find_left (map f xs)] and\n    [filter_map Either.find_right (map f xs)].\n\n    Querying either of the sequences returned by [partition_map f xs]\n    causes [xs] to be queried.\n    Therefore, querying both of them\n    causes [xs] to be queried twice.\n    Thus, [xs] must be persistent and cheap.\n    If that is not the case, use [partition_map f (memoize xs)].\n\n    @since 4.14 ",(stdlib/seq.mli[692,24880+0]..[711,25605+18]),None)
+        ]
+      core_type (stdlib/seq.mli[691,24811+20]..[691,24811+68])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[691,24811+21]..[691,24811+44])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[691,24811+21]..[691,24811+23])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[691,24811+27]..[691,24811+44])
+            Ptyp_constr "Either.t" (stdlib/seq.mli[691,24811+36]..[691,24811+44])
+            [
+              core_type (stdlib/seq.mli[691,24811+28]..[691,24811+30])
+                Ptyp_var b
+              core_type (stdlib/seq.mli[691,24811+32]..[691,24811+34])
+                Ptyp_var c
+            ]
+        core_type (stdlib/seq.mli[691,24811+49]..[691,24811+68])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[691,24811+49]..[691,24811+53])
+            Ptyp_constr "t" (stdlib/seq.mli[691,24811+52]..[691,24811+53])
+            [
+              core_type (stdlib/seq.mli[691,24811+49]..[691,24811+51])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[691,24811+57]..[691,24811+68])
+            Ptyp_tuple
+            [
+              core_type (stdlib/seq.mli[691,24811+57]..[691,24811+61])
+                Ptyp_constr "t" (stdlib/seq.mli[691,24811+60]..[691,24811+61])
+                [
+                  core_type (stdlib/seq.mli[691,24811+57]..[691,24811+59])
+                    Ptyp_var b
+                ]
+              core_type (stdlib/seq.mli[691,24811+64]..[691,24811+68])
+                Ptyp_constr "t" (stdlib/seq.mli[691,24811+67]..[691,24811+68])
+                [
+                  core_type (stdlib/seq.mli[691,24811+64]..[691,24811+66])
+                    Ptyp_var c
+                ]
+            ]
+      []
+  signature_item (stdlib/seq.mli[713,25625+0]..[713,25625+51])
+    Psig_value
+    value_description "partition" (stdlib/seq.mli[713,25625+4]..[713,25625+13]) (stdlib/seq.mli[713,25625+0]..[713,25625+51])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[714,25677+0]..[728,26285+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[714,25677+0]..[728,26285+18])
+              Pexp_constant PConst_string(" [partition p xs] returns a pair of the subsequence of the elements\n    of [xs] that satisfy [p] and the subsequence of the elements of\n    [xs] that do not satisfy [p].\n\n    [partition p xs] is equivalent to\n    [filter p xs, filter (fun x -> not (p x)) xs].\n\n    Consuming both of the sequences returned by [partition p xs] causes\n    [xs] to be consumed twice and causes the function [f] to be applied\n    twice to each element of the list.\n    Therefore, [f] should be pure and cheap.\n    Furthermore, [xs] should be persistent and cheap.\n    If that is not the case, use [partition p (memoize xs)].\n\n    @since 4.14 ",(stdlib/seq.mli[714,25677+0]..[728,26285+18]),None)
+        ]
+      core_type (stdlib/seq.mli[713,25625+16]..[713,25625+51])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[713,25625+17]..[713,25625+27])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[713,25625+17]..[713,25625+19])
+            Ptyp_var a
+          core_type (stdlib/seq.mli[713,25625+23]..[713,25625+27])
+            Ptyp_constr "bool" (stdlib/seq.mli[713,25625+23]..[713,25625+27])
+            []
+        core_type (stdlib/seq.mli[713,25625+32]..[713,25625+51])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[713,25625+32]..[713,25625+36])
+            Ptyp_constr "t" (stdlib/seq.mli[713,25625+35]..[713,25625+36])
+            [
+              core_type (stdlib/seq.mli[713,25625+32]..[713,25625+34])
+                Ptyp_var a
+            ]
+          core_type (stdlib/seq.mli[713,25625+40]..[713,25625+51])
+            Ptyp_tuple
+            [
+              core_type (stdlib/seq.mli[713,25625+40]..[713,25625+44])
+                Ptyp_constr "t" (stdlib/seq.mli[713,25625+43]..[713,25625+44])
+                [
+                  core_type (stdlib/seq.mli[713,25625+40]..[713,25625+42])
+                    Ptyp_var a
+                ]
+              core_type (stdlib/seq.mli[713,25625+47]..[713,25625+51])
+                Ptyp_constr "t" (stdlib/seq.mli[713,25625+50]..[713,25625+51])
+                [
+                  core_type (stdlib/seq.mli[713,25625+47]..[713,25625+49])
+                    Ptyp_var a
+                ]
+            ]
+      []
+  signature_item (stdlib/seq.mli[730,26305+0]..[730,26305+54])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[730,26305+0]..[730,26305+54])
+        Pstr_eval
+        expression (stdlib/seq.mli[730,26305+0]..[730,26305+54])
+          Pexp_constant PConst_string(" {1 Converting between sequences and dispensers} ",(stdlib/seq.mli[730,26305+0]..[730,26305+54]),None)
+    ]
+  signature_item (stdlib/seq.mli[732,26361+0]..[737,26724+12])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[732,26361+0]..[737,26724+12])
+        Pstr_eval
+        expression (stdlib/seq.mli[732,26361+0]..[737,26724+12])
+          Pexp_constant PConst_string(" A dispenser is a representation of a sequence as a function of type\n    [unit -> 'a option]. Every time this function is invoked, it returns\n    the next element of the sequence. When there are no more elements,\n    it returns [None]. A dispenser has mutable internal state, therefore\n    is ephemeral: the sequence that it represents can be consumed at most\n    once. ",(stdlib/seq.mli[732,26361+0]..[737,26724+12]),None)
+    ]
+  signature_item (stdlib/seq.mli[739,26738+0]..[739,26738+46])
+    Psig_value
+    value_description "of_dispenser" (stdlib/seq.mli[739,26738+4]..[739,26738+16]) (stdlib/seq.mli[739,26738+0]..[739,26738+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[740,26785+0]..[745,27015+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[740,26785+0]..[745,27015+18])
+              Pexp_constant PConst_string(" [of_dispenser it] is the sequence of the elements produced by the\n    dispenser [it]. It is an ephemeral sequence: it can be consumed at most\n    once. If a persistent sequence is needed, use\n    [memoize (of_dispenser it)].\n\n    @since 4.14 ",(stdlib/seq.mli[740,26785+0]..[745,27015+18]),None)
+        ]
+      core_type (stdlib/seq.mli[739,26738+19]..[739,26738+46])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[739,26738+20]..[739,26738+37])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[739,26738+20]..[739,26738+24])
+            Ptyp_constr "unit" (stdlib/seq.mli[739,26738+20]..[739,26738+24])
+            []
+          core_type (stdlib/seq.mli[739,26738+28]..[739,26738+37])
+            Ptyp_constr "option" (stdlib/seq.mli[739,26738+31]..[739,26738+37])
+            [
+              core_type (stdlib/seq.mli[739,26738+28]..[739,26738+30])
+                Ptyp_var a
+            ]
+        core_type (stdlib/seq.mli[739,26738+42]..[739,26738+46])
+          Ptyp_constr "t" (stdlib/seq.mli[739,26738+45]..[739,26738+46])
+          [
+            core_type (stdlib/seq.mli[739,26738+42]..[739,26738+44])
+              Ptyp_var a
+          ]
+      []
+  signature_item (stdlib/seq.mli[747,27035+0]..[747,27035+46])
+    Psig_value
+    value_description "to_dispenser" (stdlib/seq.mli[747,27035+4]..[747,27035+16]) (stdlib/seq.mli[747,27035+0]..[747,27035+46])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[748,27082+0]..[754,27295+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[748,27082+0]..[754,27295+18])
+              Pexp_constant PConst_string(" [to_dispenser xs] is a fresh dispenser on the sequence [xs].\n\n    This dispenser has mutable internal state,\n    which is not protected by a lock;\n    so, it must not be used by several threads concurrently.\n\n    @since 4.14 ",(stdlib/seq.mli[748,27082+0]..[754,27295+18]),None)
+        ]
+      core_type (stdlib/seq.mli[747,27035+19]..[747,27035+46])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[747,27035+19]..[747,27035+23])
+          Ptyp_constr "t" (stdlib/seq.mli[747,27035+22]..[747,27035+23])
+          [
+            core_type (stdlib/seq.mli[747,27035+19]..[747,27035+21])
+              Ptyp_var a
+          ]
+        core_type (stdlib/seq.mli[747,27035+28]..[747,27035+45])
+          Ptyp_arrow
+          Nolabel
+          core_type (stdlib/seq.mli[747,27035+28]..[747,27035+32])
+            Ptyp_constr "unit" (stdlib/seq.mli[747,27035+28]..[747,27035+32])
+            []
+          core_type (stdlib/seq.mli[747,27035+36]..[747,27035+45])
+            Ptyp_constr "option" (stdlib/seq.mli[747,27035+39]..[747,27035+45])
+            [
+              core_type (stdlib/seq.mli[747,27035+36]..[747,27035+38])
+                Ptyp_var a
+            ]
+      []
+  signature_item (stdlib/seq.mli[756,27315+0]..[756,27315+32])
+    Psig_attribute "ocaml.text"
+    [
+      structure_item (stdlib/seq.mli[756,27315+0]..[756,27315+32])
+        Pstr_eval
+        expression (stdlib/seq.mli[756,27315+0]..[756,27315+32])
+          Pexp_constant PConst_string(" {1 Sequences of integers} ",(stdlib/seq.mli[756,27315+0]..[756,27315+32]),None)
+    ]
+  signature_item (stdlib/seq.mli[758,27349+0]..[758,27349+23])
+    Psig_value
+    value_description "ints" (stdlib/seq.mli[758,27349+4]..[758,27349+8]) (stdlib/seq.mli[758,27349+0]..[758,27349+23])
+      attribute "ocaml.doc"
+        [
+          structure_item (stdlib/seq.mli[759,27373+0]..[762,27466+18])
+            Pstr_eval
+            expression (stdlib/seq.mli[759,27373+0]..[762,27466+18])
+              Pexp_constant PConst_string(" [ints i] is the infinite sequence of the integers beginning at [i] and\n    counting up.\n\n    @since 4.14 ",(stdlib/seq.mli[759,27373+0]..[762,27466+18]),None)
+        ]
+      core_type (stdlib/seq.mli[758,27349+11]..[758,27349+23])
+        Ptyp_arrow
+        Nolabel
+        core_type (stdlib/seq.mli[758,27349+11]..[758,27349+14])
+          Ptyp_constr "int" (stdlib/seq.mli[758,27349+11]..[758,27349+14])
+          []
+        core_type (stdlib/seq.mli[758,27349+18]..[758,27349+23])
+          Ptyp_constr "t" (stdlib/seq.mli[758,27349+22]..[758,27349+23])
+          [
+            core_type (stdlib/seq.mli[758,27349+18]..[758,27349+21])
+              Ptyp_constr "int" (stdlib/seq.mli[758,27349+18]..[758,27349+21])
+              []
+          ]
+      []
+]
+

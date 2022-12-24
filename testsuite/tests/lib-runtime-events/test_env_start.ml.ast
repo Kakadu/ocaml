@@ -1,0 +1,196 @@
+[
+  structure_item (testsuite/tests/lib-runtime-events/test_env_start.ml[9,226+0]..[9,226+25])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[9,226+4]..[9,226+13])
+          Ppat_var "got_start" (testsuite/tests/lib-runtime-events/test_env_start.ml[9,226+4]..[9,226+13])
+        expression (testsuite/tests/lib-runtime-events/test_env_start.ml[9,226+16]..[9,226+25])
+          Pexp_apply
+          expression (testsuite/tests/lib-runtime-events/test_env_start.ml[9,226+16]..[9,226+19])
+            Pexp_ident "ref" (testsuite/tests/lib-runtime-events/test_env_start.ml[9,226+16]..[9,226+19])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/lib-runtime-events/test_env_start.ml[9,226+20]..[9,226+25])
+                Pexp_construct "false" (testsuite/tests/lib-runtime-events/test_env_start.ml[9,226+20]..[9,226+25])
+                None
+          ]
+    ]
+  structure_item (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+0]..[20,509+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+4]..[11,253+13])
+          Ppat_var "lifecycle" (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+4]..[11,253+13])
+        expression (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+14]..[20,509+11]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+14]..[11,253+23])
+            Ppat_var "domain_id" (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+14]..[11,253+23])
+          expression (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+24]..[20,509+11]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+24]..[11,253+26])
+              Ppat_var "ts" (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+24]..[11,253+26])
+            expression (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+27]..[20,509+11]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+27]..[11,253+42])
+                Ppat_var "lifecycle_event" (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+27]..[11,253+42])
+              expression (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+43]..[20,509+11]) ghost
+                Pexp_fun
+                Nolabel
+                None
+                pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+43]..[11,253+47])
+                  Ppat_var "data" (testsuite/tests/lib-runtime-events/test_env_start.ml[11,253+43]..[11,253+47])
+                expression (testsuite/tests/lib-runtime-events/test_env_start.ml[12,303+2]..[20,509+11])
+                  Pexp_match
+                  expression (testsuite/tests/lib-runtime-events/test_env_start.ml[12,303+8]..[12,303+23])
+                    Pexp_ident "lifecycle_event" (testsuite/tests/lib-runtime-events/test_env_start.ml[12,303+8]..[12,303+23])
+                  [
+                    <case>
+                      pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[13,332+4]..[13,332+32])
+                        Ppat_construct "Runtime_events.EV_RING_START" (testsuite/tests/lib-runtime-events/test_env_start.ml[13,332+4]..[13,332+32])
+                        None
+                      expression (testsuite/tests/lib-runtime-events/test_env_start.ml[14,368+6]..[19,499+9])
+                        Pexp_sequence
+                        expression (testsuite/tests/lib-runtime-events/test_env_start.ml[15,380+10]..[17,443+26])
+                          Pexp_assert
+                          expression (testsuite/tests/lib-runtime-events/test_env_start.ml[15,380+16]..[17,443+26])
+                            Pexp_match
+                            expression (testsuite/tests/lib-runtime-events/test_env_start.ml[15,380+23]..[15,380+27])
+                              Pexp_ident "data" (testsuite/tests/lib-runtime-events/test_env_start.ml[15,380+23]..[15,380+27])
+                            [
+                              <case>
+                                pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[16,413+12]..[16,413+21])
+                                  Ppat_construct "Some" (testsuite/tests/lib-runtime-events/test_env_start.ml[16,413+12]..[16,413+16])
+                                  Some
+                                    []
+                                    pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[16,413+16]..[16,413+21])
+                                      Ppat_var "pid" (testsuite/tests/lib-runtime-events/test_env_start.ml[16,413+17]..[16,413+20])
+                                expression (testsuite/tests/lib-runtime-events/test_env_start.ml[16,413+25]..[16,413+29])
+                                  Pexp_construct "true" (testsuite/tests/lib-runtime-events/test_env_start.ml[16,413+25]..[16,413+29])
+                                  None
+                              <case>
+                                pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[17,443+12]..[17,443+16])
+                                  Ppat_construct "None" (testsuite/tests/lib-runtime-events/test_env_start.ml[17,443+12]..[17,443+16])
+                                  None
+                                expression (testsuite/tests/lib-runtime-events/test_env_start.ml[17,443+20]..[17,443+25])
+                                  Pexp_construct "false" (testsuite/tests/lib-runtime-events/test_env_start.ml[17,443+20]..[17,443+25])
+                                  None
+                            ]
+                        expression (testsuite/tests/lib-runtime-events/test_env_start.ml[18,471+10]..[18,471+27])
+                          Pexp_apply
+                          expression (testsuite/tests/lib-runtime-events/test_env_start.ml[18,471+20]..[18,471+22])
+                            Pexp_ident ":=" (testsuite/tests/lib-runtime-events/test_env_start.ml[18,471+20]..[18,471+22])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-runtime-events/test_env_start.ml[18,471+10]..[18,471+19])
+                                Pexp_ident "got_start" (testsuite/tests/lib-runtime-events/test_env_start.ml[18,471+10]..[18,471+19])
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/lib-runtime-events/test_env_start.ml[18,471+23]..[18,471+27])
+                                Pexp_construct "true" (testsuite/tests/lib-runtime-events/test_env_start.ml[18,471+23]..[18,471+27])
+                                None
+                          ]
+                    <case>
+                      pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[20,509+4]..[20,509+5])
+                        Ppat_any
+                      expression (testsuite/tests/lib-runtime-events/test_env_start.ml[20,509+9]..[20,509+11])
+                        Pexp_construct "()" (testsuite/tests/lib-runtime-events/test_env_start.ml[20,509+9]..[20,509+11])
+                        None
+                  ]
+    ]
+  structure_item (testsuite/tests/lib-runtime-events/test_env_start.ml[22,522+0]..[26,720+26])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[22,522+4]..[22,522+6])
+          Ppat_construct "()" (testsuite/tests/lib-runtime-events/test_env_start.ml[22,522+4]..[22,522+6])
+          None
+        expression (testsuite/tests/lib-runtime-events/test_env_start.ml[23,531+2]..[26,720+26])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[23,531+6]..[23,531+12])
+                Ppat_var "cursor" (testsuite/tests/lib-runtime-events/test_env_start.ml[23,531+6]..[23,531+12])
+              expression (testsuite/tests/lib-runtime-events/test_env_start.ml[23,531+15]..[23,531+48])
+                Pexp_apply
+                expression (testsuite/tests/lib-runtime-events/test_env_start.ml[23,531+15]..[23,531+43])
+                  Pexp_ident "Runtime_events.create_cursor" (testsuite/tests/lib-runtime-events/test_env_start.ml[23,531+15]..[23,531+43])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/lib-runtime-events/test_env_start.ml[23,531+44]..[23,531+48])
+                      Pexp_construct "None" (testsuite/tests/lib-runtime-events/test_env_start.ml[23,531+44]..[23,531+48])
+                      None
+                ]
+          ]
+          expression (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+4]..[26,720+26])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+8]..[24,583+17])
+                  Ppat_var "callbacks" (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+8]..[24,583+17])
+                expression (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+20]..[24,583+65])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+20]..[24,583+51])
+                    Pexp_ident "Runtime_events.Callbacks.create" (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+20]..[24,583+51])
+                  [
+                    <arg>
+                    Labelled "lifecycle"
+                      expression (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+53]..[24,583+62])
+                        Pexp_ident "lifecycle" (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+53]..[24,583+62])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+63]..[24,583+65])
+                        Pexp_construct "()" (testsuite/tests/lib-runtime-events/test_env_start.ml[24,583+63]..[24,583+65])
+                        None
+                  ]
+            ]
+            expression (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+6]..[26,720+26])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+10]..[25,652+15])
+                    Ppat_var "_read" (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+10]..[25,652+15])
+                  expression (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+18]..[25,652+64])
+                    Pexp_apply
+                    expression (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+18]..[25,652+42])
+                      Pexp_ident "Runtime_events.read_poll" (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+18]..[25,652+42])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+43]..[25,652+49])
+                          Pexp_ident "cursor" (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+43]..[25,652+49])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+50]..[25,652+59])
+                          Pexp_ident "callbacks" (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+50]..[25,652+59])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+60]..[25,652+64])
+                          Pexp_construct "None" (testsuite/tests/lib-runtime-events/test_env_start.ml[25,652+60]..[25,652+64])
+                          None
+                    ]
+              ]
+              expression (testsuite/tests/lib-runtime-events/test_env_start.ml[26,720+8]..[26,720+26])
+                Pexp_assert
+                expression (testsuite/tests/lib-runtime-events/test_env_start.ml[26,720+14]..[26,720+26])
+                  Pexp_apply
+                  expression (testsuite/tests/lib-runtime-events/test_env_start.ml[26,720+15]..[26,720+16])
+                    Pexp_ident "!" (testsuite/tests/lib-runtime-events/test_env_start.ml[26,720+15]..[26,720+16])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/lib-runtime-events/test_env_start.ml[26,720+16]..[26,720+25])
+                        Pexp_ident "got_start" (testsuite/tests/lib-runtime-events/test_env_start.ml[26,720+16]..[26,720+25])
+                  ]
+    ]
+]
+

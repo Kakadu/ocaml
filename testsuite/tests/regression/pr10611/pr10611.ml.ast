@@ -1,0 +1,129 @@
+[
+  structure_item (testsuite/tests/regression/pr10611/pr10611.ml[3,12+0]..[3,12+30])
+    Pstr_type Rec
+    [
+      type_declaration "t" (testsuite/tests/regression/pr10611/pr10611.ml[3,12+5]..[3,12+6]) (testsuite/tests/regression/pr10611/pr10611.ml[3,12+0]..[3,12+30])
+        ptype_params =
+          []
+        ptype_cstrs =
+          []
+        ptype_kind =
+          Ptype_variant
+            [
+              (testsuite/tests/regression/pr10611/pr10611.ml[3,12+9]..[3,12+10])
+                "A" (testsuite/tests/regression/pr10611/pr10611.ml[3,12+9]..[3,12+10])
+                []
+                None
+              (testsuite/tests/regression/pr10611/pr10611.ml[3,12+11]..[3,12+30])
+                "B" (testsuite/tests/regression/pr10611/pr10611.ml[3,12+13]..[3,12+14])
+                [
+                  core_type (testsuite/tests/regression/pr10611/pr10611.ml[3,12+19]..[3,12+29])
+                    Ptyp_arrow
+                    Nolabel
+                    core_type (testsuite/tests/regression/pr10611/pr10611.ml[3,12+19]..[3,12+22])
+                      Ptyp_constr "int" (testsuite/tests/regression/pr10611/pr10611.ml[3,12+19]..[3,12+22])
+                      []
+                    core_type (testsuite/tests/regression/pr10611/pr10611.ml[3,12+26]..[3,12+29])
+                      Ptyp_constr "int" (testsuite/tests/regression/pr10611/pr10611.ml[3,12+26]..[3,12+29])
+                      []
+                ]
+                None
+            ]
+        ptype_private = Public
+        ptype_manifest =
+          None
+    ]
+  structure_item (testsuite/tests/regression/pr10611/pr10611.ml[5,44+0]..[5,44+13])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/regression/pr10611/pr10611.ml[5,44+4]..[5,44+5])
+          Ppat_var "p" (testsuite/tests/regression/pr10611/pr10611.ml[5,44+4]..[5,44+5])
+        expression (testsuite/tests/regression/pr10611/pr10611.ml[5,44+8]..[5,44+13])
+          Pexp_apply
+          expression (testsuite/tests/regression/pr10611/pr10611.ml[5,44+10]..[5,44+11])
+            Pexp_ident "+" (testsuite/tests/regression/pr10611/pr10611.ml[5,44+10]..[5,44+11])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/regression/pr10611/pr10611.ml[5,44+8]..[5,44+9])
+                Pexp_constant PConst_int (1,None)
+            <arg>
+            Nolabel
+              expression (testsuite/tests/regression/pr10611/pr10611.ml[5,44+12]..[5,44+13])
+                Pexp_constant PConst_int (1,None)
+          ]
+    ]
+  structure_item (testsuite/tests/regression/pr10611/pr10611.ml[7,59+0]..[12,132+14])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/regression/pr10611/pr10611.ml[7,59+8]..[7,59+9])
+          Ppat_var "b" (testsuite/tests/regression/pr10611/pr10611.ml[7,59+8]..[7,59+9])
+        expression (testsuite/tests/regression/pr10611/pr10611.ml[7,59+12]..[7,59+15])
+          Pexp_construct "B" (testsuite/tests/regression/pr10611/pr10611.ml[7,59+12]..[7,59+13])
+          Some
+            expression (testsuite/tests/regression/pr10611/pr10611.ml[7,59+14]..[7,59+15])
+              Pexp_ident "g" (testsuite/tests/regression/pr10611/pr10611.ml[7,59+14]..[7,59+15])
+      <def>
+        pattern (testsuite/tests/regression/pr10611/pr10611.ml[8,75+4]..[8,75+5])
+          Ppat_var "g" (testsuite/tests/regression/pr10611/pr10611.ml[8,75+4]..[8,75+5])
+        expression (testsuite/tests/regression/pr10611/pr10611.ml[8,75+6]..[12,132+14]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/regression/pr10611/pr10611.ml[8,75+6]..[8,75+7])
+            Ppat_var "n" (testsuite/tests/regression/pr10611/pr10611.ml[8,75+6]..[8,75+7])
+          expression (testsuite/tests/regression/pr10611/pr10611.ml[9,85+2]..[12,132+14])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/regression/pr10611/pr10611.ml[9,85+6]..[9,85+8])
+                  Ppat_var "b'" (testsuite/tests/regression/pr10611/pr10611.ml[9,85+6]..[9,85+8])
+                expression (testsuite/tests/regression/pr10611/pr10611.ml[9,85+11]..[9,85+12])
+                  Pexp_ident "b" (testsuite/tests/regression/pr10611/pr10611.ml[9,85+11]..[9,85+12])
+            ]
+            expression (testsuite/tests/regression/pr10611/pr10611.ml[10,101+2]..[12,132+14])
+              Pexp_match
+              expression (testsuite/tests/regression/pr10611/pr10611.ml[10,101+8]..[10,101+10])
+                Pexp_ident "b'" (testsuite/tests/regression/pr10611/pr10611.ml[10,101+8]..[10,101+10])
+              [
+                <case>
+                  pattern (testsuite/tests/regression/pr10611/pr10611.ml[11,117+4]..[11,117+5])
+                    Ppat_construct "A" (testsuite/tests/regression/pr10611/pr10611.ml[11,117+4]..[11,117+5])
+                    None
+                  expression (testsuite/tests/regression/pr10611/pr10611.ml[11,117+9]..[11,117+14])
+                    Pexp_apply
+                    expression (testsuite/tests/regression/pr10611/pr10611.ml[11,117+11]..[11,117+12])
+                      Pexp_ident "+" (testsuite/tests/regression/pr10611/pr10611.ml[11,117+11]..[11,117+12])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/regression/pr10611/pr10611.ml[11,117+9]..[11,117+10])
+                          Pexp_ident "n" (testsuite/tests/regression/pr10611/pr10611.ml[11,117+9]..[11,117+10])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/regression/pr10611/pr10611.ml[11,117+13]..[11,117+14])
+                          Pexp_ident "p" (testsuite/tests/regression/pr10611/pr10611.ml[11,117+13]..[11,117+14])
+                    ]
+                <case>
+                  pattern (testsuite/tests/regression/pr10611/pr10611.ml[12,132+4]..[12,132+7])
+                    Ppat_construct "B" (testsuite/tests/regression/pr10611/pr10611.ml[12,132+4]..[12,132+5])
+                    Some
+                      []
+                      pattern (testsuite/tests/regression/pr10611/pr10611.ml[12,132+6]..[12,132+7])
+                        Ppat_var "f" (testsuite/tests/regression/pr10611/pr10611.ml[12,132+6]..[12,132+7])
+                  expression (testsuite/tests/regression/pr10611/pr10611.ml[12,132+11]..[12,132+14])
+                    Pexp_apply
+                    expression (testsuite/tests/regression/pr10611/pr10611.ml[12,132+11]..[12,132+12])
+                      Pexp_ident "f" (testsuite/tests/regression/pr10611/pr10611.ml[12,132+11]..[12,132+12])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/regression/pr10611/pr10611.ml[12,132+13]..[12,132+14])
+                          Pexp_ident "n" (testsuite/tests/regression/pr10611/pr10611.ml[12,132+13]..[12,132+14])
+                    ]
+              ]
+    ]
+]
+

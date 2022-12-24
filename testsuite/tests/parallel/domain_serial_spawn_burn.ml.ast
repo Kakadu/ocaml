@@ -1,0 +1,551 @@
+[
+  structure_item (testsuite/tests/parallel/domain_serial_spawn_burn.ml[8,57+0]..[8,57+11])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/parallel/domain_serial_spawn_burn.ml[8,57+5]..[8,57+11])
+      Pmod_ident "Domain" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[8,57+5]..[8,57+11])
+  structure_item (testsuite/tests/parallel/domain_serial_spawn_burn.ml[10,70+0]..[12,137+33])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[10,70+4]..[10,70+13])
+          Ppat_var "test_size" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[10,70+4]..[10,70+13])
+        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[11,86+2]..[12,137+33])
+          Pexp_try
+          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[11,86+6]..[11,86+50])
+            Pexp_apply
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[11,86+6]..[11,86+19])
+              Pexp_ident "int_of_string" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[11,86+6]..[11,86+19])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[11,86+20]..[11,86+50])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[11,86+21]..[11,86+31])
+                    Pexp_ident "Sys.getenv" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[11,86+21]..[11,86+31])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[11,86+32]..[11,86+49])
+                        Pexp_constant PConst_string("OCAML_TEST_SIZE",(testsuite/tests/parallel/domain_serial_spawn_burn.ml[11,86+33]..[11,86+48]),None)
+                  ]
+            ]
+          [
+            <case>
+              pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[12,137+7]..[12,137+28])
+                Ppat_or
+                pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[12,137+7]..[12,137+16])
+                  Ppat_construct "Not_found" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[12,137+7]..[12,137+16])
+                  None
+                pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[12,137+19]..[12,137+28])
+                  Ppat_construct "Failure" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[12,137+19]..[12,137+26])
+                  Some
+                    []
+                    pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[12,137+27]..[12,137+28])
+                      Ppat_any
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[12,137+32]..[12,137+33])
+                Pexp_constant PConst_int (0,None)
+          ]
+    ]
+  structure_item (testsuite/tests/parallel/domain_serial_spawn_burn.ml[20,376+0]..[23,485+9])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[20,376+4]..[20,376+13])
+          Ppat_var "list_size" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[20,376+4]..[20,376+13])
+        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+2]..[23,485+9])
+          Pexp_ifthenelse
+          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+5]..[21,392+18])
+            Pexp_apply
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+15]..[21,392+16])
+              Pexp_ident "<" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+15]..[21,392+16])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+5]..[21,392+14])
+                  Pexp_ident "test_size" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+5]..[21,392+14])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+17]..[21,392+18])
+                  Pexp_constant PConst_int (2,None)
+            ]
+          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+24]..[21,392+60])
+            Pexp_sequence
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+30]..[21,392+48])
+              Pexp_apply
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+30]..[21,392+43])
+                Pexp_ident "print_endline" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+30]..[21,392+43])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+44]..[21,392+48])
+                    Pexp_constant PConst_string("ok",(testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+45]..[21,392+47]),None)
+              ]
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+50]..[21,392+56])
+              Pexp_apply
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+50]..[21,392+54])
+                Pexp_ident "exit" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+50]..[21,392+54])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[21,392+55]..[21,392+56])
+                    Pexp_constant PConst_int (0,None)
+              ]
+          Some
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[22,453+7]..[23,485+9])
+              Pexp_ifthenelse
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[22,453+10]..[22,453+23])
+                Pexp_apply
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[22,453+20]..[22,453+21])
+                  Pexp_ident "=" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[22,453+20]..[22,453+21])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[22,453+10]..[22,453+19])
+                      Pexp_ident "test_size" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[22,453+10]..[22,453+19])
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[22,453+22]..[22,453+23])
+                      Pexp_constant PConst_int (2,None)
+                ]
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[22,453+29]..[22,453+31])
+                Pexp_constant PConst_int (14,None)
+              Some
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[23,485+7]..[23,485+9])
+                  Pexp_constant PConst_int (15,None)
+    ]
+  structure_item (testsuite/tests/parallel/domain_serial_spawn_burn.ml[25,496+0]..[28,555+45])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[25,496+8]..[25,496+12])
+          Ppat_var "burn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[25,496+8]..[25,496+12])
+        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[25,496+13]..[28,555+45]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[25,496+13]..[25,496+14])
+            Ppat_var "l" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[25,496+13]..[25,496+14])
+          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+2]..[28,555+45])
+            Pexp_ifthenelse
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+5]..[26,513+26])
+              Pexp_apply
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+15]..[26,513+16])
+                Pexp_ident ">" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+15]..[26,513+16])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+5]..[26,513+14])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+5]..[26,513+12])
+                      Pexp_ident "List.hd" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+5]..[26,513+12])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+13]..[26,513+14])
+                          Pexp_ident "l" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+13]..[26,513+14])
+                    ]
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+17]..[26,513+26])
+                    Pexp_ident "test_size" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+17]..[26,513+26])
+              ]
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+32]..[26,513+34])
+              Pexp_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[26,513+32]..[26,513+34])
+              None
+            Some
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+4]..[28,555+45])
+                Pexp_apply
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+4]..[28,555+8])
+                  Pexp_ident "burn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+4]..[28,555+8])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+9]..[28,555+45])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+16]..[28,555+18])
+                        Pexp_ident "|>" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+16]..[28,555+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+10]..[28,555+15])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+12]..[28,555+13])
+                              Pexp_ident "@" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+12]..[28,555+13])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+10]..[28,555+11])
+                                  Pexp_ident "l" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+10]..[28,555+11])
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+14]..[28,555+15])
+                                  Pexp_ident "l" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+14]..[28,555+15])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+19]..[28,555+44])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+19]..[28,555+27])
+                              Pexp_ident "List.map" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+19]..[28,555+27])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+28]..[28,555+44])
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+33]..[28,555+34])
+                                    Ppat_var "x" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+33]..[28,555+34])
+                                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+38]..[28,555+43])
+                                    Pexp_apply
+                                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+40]..[28,555+41])
+                                      Pexp_ident "+" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+40]..[28,555+41])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+38]..[28,555+39])
+                                          Pexp_ident "x" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+38]..[28,555+39])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[28,555+42]..[28,555+43])
+                                          Pexp_constant PConst_int (1,None)
+                                    ]
+                            ]
+                      ]
+                ]
+    ]
+  structure_item (testsuite/tests/parallel/domain_serial_spawn_burn.ml[30,602+0]..[34,718+6])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[30,602+4]..[30,602+28])
+          Ppat_var "test_serial_domain_spawn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[30,602+4]..[30,602+28])
+        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[30,602+29]..[34,718+6]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[30,602+29]..[30,602+31])
+            Ppat_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[30,602+29]..[30,602+31])
+            None
+          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[31,636+2]..[34,718+6])
+            Pexp_for Up
+            pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[31,636+6]..[31,636+7])
+              Ppat_var "i" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[31,636+6]..[31,636+7])
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[31,636+10]..[31,636+11])
+              Pexp_constant PConst_int (1,None)
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[31,636+15]..[31,636+18])
+              Pexp_constant PConst_int (250,None)
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+4]..[33,707+10])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+8]..[32,658+9])
+                    Ppat_var "d" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+8]..[32,658+9])
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+12]..[32,658+45])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+12]..[32,658+24])
+                      Pexp_ident "Domain.spawn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+12]..[32,658+24])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+25]..[32,658+45])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+30]..[32,658+32])
+                            Ppat_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+30]..[32,658+32])
+                            None
+                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+36]..[32,658+44])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+36]..[32,658+40])
+                              Pexp_ident "burn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+36]..[32,658+40])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+41]..[32,658+44])
+                                  Pexp_construct "::" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+42]..[32,658+44]) ghost
+                                  Some
+                                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+42]..[32,658+44]) ghost
+                                      Pexp_tuple
+                                      [
+                                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+42]..[32,658+43])
+                                          Pexp_constant PConst_int (0,None)
+                                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+43]..[32,658+44]) ghost
+                                          Pexp_construct "[]" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[32,658+43]..[32,658+44]) ghost
+                                          None
+                                      ]
+                            ]
+                    ]
+              ]
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[33,707+4]..[33,707+10])
+                Pexp_apply
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[33,707+4]..[33,707+8])
+                  Pexp_ident "join" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[33,707+4]..[33,707+8])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[33,707+9]..[33,707+10])
+                      Pexp_ident "d" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[33,707+9]..[33,707+10])
+                ]
+    ]
+  structure_item (testsuite/tests/parallel/domain_serial_spawn_burn.ml[36,726+0]..[53,1130+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[36,726+4]..[36,726+6])
+          Ppat_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[36,726+4]..[36,726+6])
+          None
+        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[37,735+2]..[53,1130+20])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[37,735+6]..[37,735+13])
+                Ppat_var "running" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[37,735+6]..[37,735+13])
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[37,735+16]..[37,735+24])
+                Pexp_apply
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[37,735+16]..[37,735+19])
+                  Pexp_ident "ref" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[37,735+16]..[37,735+19])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[37,735+20]..[37,735+24])
+                      Pexp_construct "true" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[37,735+20]..[37,735+24])
+                      None
+                ]
+          ]
+          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[38,763+2]..[53,1130+20])
+            Pexp_let Rec
+            [
+              <def>
+                pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[38,763+10]..[38,763+24])
+                  Ppat_var "run_until_stop" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[38,763+10]..[38,763+24])
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[38,763+25]..[41,831+8]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[38,763+25]..[38,763+27])
+                    Ppat_var "fn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[38,763+25]..[38,763+27])
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[38,763+28]..[41,831+8]) ghost
+                    Pexp_fun
+                    Nolabel
+                    None
+                    pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[38,763+28]..[38,763+30])
+                      Ppat_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[38,763+28]..[38,763+30])
+                      None
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[39,796+4]..[41,831+8])
+                      Pexp_while
+                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[39,796+10]..[39,796+18])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[39,796+10]..[39,796+11])
+                          Pexp_ident "!" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[39,796+10]..[39,796+11])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[39,796+11]..[39,796+18])
+                              Pexp_ident "running" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[39,796+11]..[39,796+18])
+                        ]
+                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[40,818+6]..[40,818+11])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[40,818+6]..[40,818+8])
+                          Pexp_ident "fn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[40,818+6]..[40,818+8])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[40,818+9]..[40,818+11])
+                              Pexp_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[40,818+9]..[40,818+11])
+                              None
+                        ]
+            ]
+            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+2]..[53,1130+20])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+6]..[44,846+21])
+                    Ppat_var "domain_minor_gc" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+6]..[44,846+21])
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+24]..[44,846+87])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+24]..[44,846+36])
+                      Pexp_ident "Domain.spawn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+24]..[44,846+36])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+37]..[44,846+87])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+38]..[44,846+52])
+                            Pexp_ident "run_until_stop" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+38]..[44,846+52])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+53]..[44,846+86])
+                                Pexp_fun
+                                Nolabel
+                                None
+                                pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+58]..[44,846+60])
+                                  Ppat_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+58]..[44,846+60])
+                                  None
+                                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+64]..[44,846+85])
+                                  Pexp_sequence
+                                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+64]..[44,846+72])
+                                    Pexp_apply
+                                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+64]..[44,846+68])
+                                      Pexp_ident "burn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+64]..[44,846+68])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+69]..[44,846+72])
+                                          Pexp_construct "::" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+70]..[44,846+72]) ghost
+                                          Some
+                                            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+70]..[44,846+72]) ghost
+                                              Pexp_tuple
+                                              [
+                                                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+70]..[44,846+71])
+                                                  Pexp_constant PConst_int (8,None)
+                                                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+71]..[44,846+72]) ghost
+                                                  Pexp_construct "[]" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+71]..[44,846+72]) ghost
+                                                  None
+                                              ]
+                                    ]
+                                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+74]..[44,846+85])
+                                    Pexp_apply
+                                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+74]..[44,846+82])
+                                      Pexp_ident "Gc.minor" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+74]..[44,846+82])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+83]..[44,846+85])
+                                          Pexp_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[44,846+83]..[44,846+85])
+                                          None
+                                    ]
+                          ]
+                    ]
+              ]
+              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+2]..[53,1130+20])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+6]..[45,937+21])
+                      Ppat_var "domain_major_gc" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+6]..[45,937+21])
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+24]..[45,937+87])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+24]..[45,937+36])
+                        Pexp_ident "Domain.spawn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+24]..[45,937+36])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+37]..[45,937+87])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+38]..[45,937+52])
+                              Pexp_ident "run_until_stop" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+38]..[45,937+52])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+53]..[45,937+86])
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+58]..[45,937+60])
+                                    Ppat_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+58]..[45,937+60])
+                                    None
+                                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+64]..[45,937+85])
+                                    Pexp_sequence
+                                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+64]..[45,937+72])
+                                      Pexp_apply
+                                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+64]..[45,937+68])
+                                        Pexp_ident "burn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+64]..[45,937+68])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+69]..[45,937+72])
+                                            Pexp_construct "::" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+70]..[45,937+72]) ghost
+                                            Some
+                                              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+70]..[45,937+72]) ghost
+                                                Pexp_tuple
+                                                [
+                                                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+70]..[45,937+71])
+                                                    Pexp_constant PConst_int (8,None)
+                                                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+71]..[45,937+72]) ghost
+                                                    Pexp_construct "[]" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+71]..[45,937+72]) ghost
+                                                    None
+                                                ]
+                                      ]
+                                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+74]..[45,937+85])
+                                      Pexp_apply
+                                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+74]..[45,937+82])
+                                        Pexp_ident "Gc.major" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+74]..[45,937+82])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+83]..[45,937+85])
+                                            Pexp_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[45,937+83]..[45,937+85])
+                                            None
+                                      ]
+                            ]
+                      ]
+                ]
+                expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[47,1029+2]..[53,1130+20])
+                  Pexp_sequence
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[47,1029+2]..[47,1029+29])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[47,1029+2]..[47,1029+26])
+                      Pexp_ident "test_serial_domain_spawn" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[47,1029+2]..[47,1029+26])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[47,1029+27]..[47,1029+29])
+                          Pexp_construct "()" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[47,1029+27]..[47,1029+29])
+                          None
+                    ]
+                  expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[49,1061+2]..[53,1130+20])
+                    Pexp_sequence
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[49,1061+2]..[49,1061+18])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[49,1061+10]..[49,1061+12])
+                        Pexp_ident ":=" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[49,1061+10]..[49,1061+12])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[49,1061+2]..[49,1061+9])
+                            Pexp_ident "running" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[49,1061+2]..[49,1061+9])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[49,1061+13]..[49,1061+18])
+                            Pexp_construct "false" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[49,1061+13]..[49,1061+18])
+                            None
+                      ]
+                    expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[50,1081+2]..[53,1130+20])
+                      Pexp_sequence
+                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[50,1081+2]..[50,1081+22])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[50,1081+2]..[50,1081+6])
+                          Pexp_ident "join" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[50,1081+2]..[50,1081+6])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[50,1081+7]..[50,1081+22])
+                              Pexp_ident "domain_minor_gc" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[50,1081+7]..[50,1081+22])
+                        ]
+                      expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[51,1105+2]..[53,1130+20])
+                        Pexp_sequence
+                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[51,1105+2]..[51,1105+22])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[51,1105+2]..[51,1105+6])
+                            Pexp_ident "join" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[51,1105+2]..[51,1105+6])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[51,1105+7]..[51,1105+22])
+                                Pexp_ident "domain_major_gc" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[51,1105+7]..[51,1105+22])
+                          ]
+                        expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[53,1130+2]..[53,1130+20])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[53,1130+2]..[53,1130+15])
+                            Pexp_ident "print_endline" (testsuite/tests/parallel/domain_serial_spawn_burn.ml[53,1130+2]..[53,1130+15])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/domain_serial_spawn_burn.ml[53,1130+16]..[53,1130+20])
+                                Pexp_constant PConst_string("ok",(testsuite/tests/parallel/domain_serial_spawn_burn.ml[53,1130+17]..[53,1130+19]),None)
+                          ]
+    ]
+]
+

@@ -1,0 +1,1136 @@
+[
+  structure_item (testsuite/tests/parallel/join.ml[4,12+0]..[6,79+33])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[4,12+4]..[4,12+13])
+          Ppat_var "test_size" (testsuite/tests/parallel/join.ml[4,12+4]..[4,12+13])
+        expression (testsuite/tests/parallel/join.ml[5,28+2]..[6,79+33])
+          Pexp_try
+          expression (testsuite/tests/parallel/join.ml[5,28+6]..[5,28+50])
+            Pexp_apply
+            expression (testsuite/tests/parallel/join.ml[5,28+6]..[5,28+19])
+              Pexp_ident "int_of_string" (testsuite/tests/parallel/join.ml[5,28+6]..[5,28+19])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/join.ml[5,28+20]..[5,28+50])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/join.ml[5,28+21]..[5,28+31])
+                    Pexp_ident "Sys.getenv" (testsuite/tests/parallel/join.ml[5,28+21]..[5,28+31])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[5,28+32]..[5,28+49])
+                        Pexp_constant PConst_string("OCAML_TEST_SIZE",(testsuite/tests/parallel/join.ml[5,28+33]..[5,28+48]),None)
+                  ]
+            ]
+          [
+            <case>
+              pattern (testsuite/tests/parallel/join.ml[6,79+7]..[6,79+28])
+                Ppat_or
+                pattern (testsuite/tests/parallel/join.ml[6,79+7]..[6,79+16])
+                  Ppat_construct "Not_found" (testsuite/tests/parallel/join.ml[6,79+7]..[6,79+16])
+                  None
+                pattern (testsuite/tests/parallel/join.ml[6,79+19]..[6,79+28])
+                  Ppat_construct "Failure" (testsuite/tests/parallel/join.ml[6,79+19]..[6,79+26])
+                  Some
+                    []
+                    pattern (testsuite/tests/parallel/join.ml[6,79+27]..[6,79+28])
+                      Ppat_any
+              expression (testsuite/tests/parallel/join.ml[6,79+32]..[6,79+33])
+                Pexp_constant PConst_int (0,None)
+          ]
+    ]
+  structure_item (testsuite/tests/parallel/join.ml[8,114+0]..[9,132+36])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[8,114+4]..[8,114+15])
+          Ppat_var "num_domains" (testsuite/tests/parallel/join.ml[8,114+4]..[8,114+15])
+        expression (testsuite/tests/parallel/join.ml[9,132+2]..[9,132+36])
+          Pexp_ifthenelse
+          expression (testsuite/tests/parallel/join.ml[9,132+5]..[9,132+19])
+            Pexp_apply
+            expression (testsuite/tests/parallel/join.ml[9,132+15]..[9,132+17])
+              Pexp_ident ">=" (testsuite/tests/parallel/join.ml[9,132+15]..[9,132+17])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/join.ml[9,132+5]..[9,132+14])
+                  Pexp_ident "test_size" (testsuite/tests/parallel/join.ml[9,132+5]..[9,132+14])
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/join.ml[9,132+18]..[9,132+19])
+                  Pexp_constant PConst_int (2,None)
+            ]
+          expression (testsuite/tests/parallel/join.ml[9,132+25]..[9,132+28])
+            Pexp_constant PConst_int (100,None)
+          Some
+            expression (testsuite/tests/parallel/join.ml[9,132+34]..[9,132+36])
+              Pexp_constant PConst_int (14,None)
+    ]
+  structure_item (testsuite/tests/parallel/join.ml[11,170+0]..[19,450+11])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[11,170+4]..[11,170+13])
+          Ppat_var "main_join" (testsuite/tests/parallel/join.ml[11,170+4]..[11,170+13])
+        expression (testsuite/tests/parallel/join.ml[11,170+14]..[19,450+11]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/join.ml[11,170+14]..[11,170+15])
+            Ppat_var "n" (testsuite/tests/parallel/join.ml[11,170+14]..[11,170+15])
+          expression (testsuite/tests/parallel/join.ml[12,188+2]..[19,450+11])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/parallel/join.ml[12,188+6]..[12,188+7])
+                  Ppat_var "a" (testsuite/tests/parallel/join.ml[12,188+6]..[12,188+7])
+                expression (testsuite/tests/parallel/join.ml[12,188+10]..[12,188+39])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/join.ml[12,188+10]..[12,188+20])
+                    Pexp_ident "Array.init" (testsuite/tests/parallel/join.ml[12,188+10]..[12,188+20])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[12,188+21]..[12,188+22])
+                        Pexp_ident "n" (testsuite/tests/parallel/join.ml[12,188+21]..[12,188+22])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[12,188+23]..[12,188+39])
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/parallel/join.ml[12,188+28]..[12,188+29])
+                          Ppat_any
+                        expression (testsuite/tests/parallel/join.ml[12,188+33]..[12,188+38])
+                          Pexp_construct "false" (testsuite/tests/parallel/join.ml[12,188+33]..[12,188+38])
+                          None
+                  ]
+            ]
+            expression (testsuite/tests/parallel/join.ml[13,231+2]..[19,450+11])
+              Pexp_sequence
+              expression (testsuite/tests/parallel/join.ml[13,231+2]..[17,318+71])
+                Pexp_apply
+                expression (testsuite/tests/parallel/join.ml[16,310+5]..[16,310+7])
+                  Pexp_ident "|>" (testsuite/tests/parallel/join.ml[16,310+5]..[16,310+7])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/join.ml[13,231+2]..[16,310+4])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[13,231+2]..[13,231+12])
+                        Pexp_ident "Array.init" (testsuite/tests/parallel/join.ml[13,231+2]..[13,231+12])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[13,231+13]..[13,231+14])
+                            Pexp_ident "n" (testsuite/tests/parallel/join.ml[13,231+13]..[13,231+14])
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[13,231+15]..[16,310+4])
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (testsuite/tests/parallel/join.ml[13,231+20]..[13,231+21])
+                              Ppat_var "i" (testsuite/tests/parallel/join.ml[13,231+20]..[13,231+21])
+                            expression (testsuite/tests/parallel/join.ml[13,231+25]..[16,310+3])
+                              Pexp_apply
+                              expression (testsuite/tests/parallel/join.ml[13,231+25]..[13,231+37])
+                                Pexp_ident "Domain.spawn" (testsuite/tests/parallel/join.ml[13,231+25]..[13,231+37])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/join.ml[13,231+38]..[16,310+3])
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (testsuite/tests/parallel/join.ml[13,231+43]..[13,231+45])
+                                      Ppat_construct "()" (testsuite/tests/parallel/join.ml[13,231+43]..[13,231+45])
+                                      None
+                                    expression (testsuite/tests/parallel/join.ml[14,280+4]..[15,299+10])
+                                      Pexp_sequence
+                                      expression (testsuite/tests/parallel/join.ml[14,280+4]..[14,280+17])
+                                        Pexp_apply
+                                        expression (testsuite/tests/parallel/join.ml[14,280+4]..[14,280+17]) ghost
+                                          Pexp_ident "Array.set" (testsuite/tests/parallel/join.ml[14,280+4]..[14,280+17]) ghost
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/parallel/join.ml[14,280+4]..[14,280+5])
+                                              Pexp_ident "a" (testsuite/tests/parallel/join.ml[14,280+4]..[14,280+5])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/parallel/join.ml[14,280+7]..[14,280+8])
+                                              Pexp_ident "i" (testsuite/tests/parallel/join.ml[14,280+7]..[14,280+8])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/parallel/join.ml[14,280+13]..[14,280+17])
+                                              Pexp_construct "true" (testsuite/tests/parallel/join.ml[14,280+13]..[14,280+17])
+                                              None
+                                        ]
+                                      expression (testsuite/tests/parallel/join.ml[15,299+4]..[15,299+10])
+                                        Pexp_construct "Some" (testsuite/tests/parallel/join.ml[15,299+4]..[15,299+8])
+                                        Some
+                                          expression (testsuite/tests/parallel/join.ml[15,299+9]..[15,299+10])
+                                            Pexp_ident "i" (testsuite/tests/parallel/join.ml[15,299+9]..[15,299+10])
+                              ]
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/join.ml[17,318+2]..[17,318+71])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[17,318+2]..[17,318+13])
+                        Pexp_ident "Array.iteri" (testsuite/tests/parallel/join.ml[17,318+2]..[17,318+13])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[17,318+14]..[17,318+71])
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (testsuite/tests/parallel/join.ml[17,318+19]..[17,318+20])
+                              Ppat_var "i" (testsuite/tests/parallel/join.ml[17,318+19]..[17,318+20])
+                            expression (testsuite/tests/parallel/join.ml[17,318+21]..[17,318+70]) ghost
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (testsuite/tests/parallel/join.ml[17,318+21]..[17,318+22])
+                                Ppat_var "d" (testsuite/tests/parallel/join.ml[17,318+21]..[17,318+22])
+                              expression (testsuite/tests/parallel/join.ml[17,318+26]..[17,318+70])
+                                Pexp_let Nonrec
+                                [
+                                  <def>
+                                    pattern (testsuite/tests/parallel/join.ml[17,318+30]..[17,318+31])
+                                      Ppat_var "v" (testsuite/tests/parallel/join.ml[17,318+30]..[17,318+31])
+                                    expression (testsuite/tests/parallel/join.ml[17,318+34]..[17,318+47])
+                                      Pexp_apply
+                                      expression (testsuite/tests/parallel/join.ml[17,318+34]..[17,318+45])
+                                        Pexp_ident "Domain.join" (testsuite/tests/parallel/join.ml[17,318+34]..[17,318+45])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/parallel/join.ml[17,318+46]..[17,318+47])
+                                            Pexp_ident "d" (testsuite/tests/parallel/join.ml[17,318+46]..[17,318+47])
+                                      ]
+                                ]
+                                expression (testsuite/tests/parallel/join.ml[17,318+51]..[17,318+70])
+                                  Pexp_assert
+                                  expression (testsuite/tests/parallel/join.ml[17,318+58]..[17,318+70])
+                                    Pexp_apply
+                                    expression (testsuite/tests/parallel/join.ml[17,318+61]..[17,318+62])
+                                      Pexp_ident "=" (testsuite/tests/parallel/join.ml[17,318+61]..[17,318+62])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/parallel/join.ml[17,318+59]..[17,318+60])
+                                          Pexp_ident "v" (testsuite/tests/parallel/join.ml[17,318+59]..[17,318+60])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/parallel/join.ml[17,318+63]..[17,318+69])
+                                          Pexp_construct "Some" (testsuite/tests/parallel/join.ml[17,318+63]..[17,318+67])
+                                          Some
+                                            expression (testsuite/tests/parallel/join.ml[17,318+68]..[17,318+69])
+                                              Pexp_ident "i" (testsuite/tests/parallel/join.ml[17,318+68]..[17,318+69])
+                                    ]
+                      ]
+                ]
+              expression (testsuite/tests/parallel/join.ml[18,391+2]..[19,450+11])
+                Pexp_let Nonrec
+                [
+                  <def>
+                    pattern (testsuite/tests/parallel/join.ml[18,391+6]..[18,391+8])
+                      Ppat_var "ok" (testsuite/tests/parallel/join.ml[18,391+6]..[18,391+8])
+                    expression (testsuite/tests/parallel/join.ml[18,391+11]..[18,391+55])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[18,391+27]..[18,391+29])
+                        Pexp_ident "|>" (testsuite/tests/parallel/join.ml[18,391+27]..[18,391+29])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[18,391+11]..[18,391+26])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/join.ml[18,391+11]..[18,391+24])
+                              Pexp_ident "Array.to_list" (testsuite/tests/parallel/join.ml[18,391+11]..[18,391+24])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/join.ml[18,391+25]..[18,391+26])
+                                  Pexp_ident "a" (testsuite/tests/parallel/join.ml[18,391+25]..[18,391+26])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[18,391+30]..[18,391+55])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/join.ml[18,391+30]..[18,391+42])
+                              Pexp_ident "List.for_all" (testsuite/tests/parallel/join.ml[18,391+30]..[18,391+42])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/join.ml[18,391+43]..[18,391+55])
+                                  Pexp_fun
+                                  Nolabel
+                                  None
+                                  pattern (testsuite/tests/parallel/join.ml[18,391+48]..[18,391+49])
+                                    Ppat_var "x" (testsuite/tests/parallel/join.ml[18,391+48]..[18,391+49])
+                                  expression (testsuite/tests/parallel/join.ml[18,391+53]..[18,391+54])
+                                    Pexp_ident "x" (testsuite/tests/parallel/join.ml[18,391+53]..[18,391+54])
+                            ]
+                      ]
+                ]
+                expression (testsuite/tests/parallel/join.ml[19,450+2]..[19,450+11])
+                  Pexp_assert
+                  expression (testsuite/tests/parallel/join.ml[19,450+9]..[19,450+11])
+                    Pexp_ident "ok" (testsuite/tests/parallel/join.ml[19,450+9]..[19,450+11])
+    ]
+  structure_item (testsuite/tests/parallel/join.ml[21,463+0]..[26,621+22])
+    Pstr_value Rec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[21,463+8]..[21,463+18])
+          Ppat_var "other_join" (testsuite/tests/parallel/join.ml[21,463+8]..[21,463+18])
+        expression (testsuite/tests/parallel/join.ml[21,463+19]..[26,621+22]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/join.ml[21,463+19]..[21,463+24])
+            Ppat_var "flags" (testsuite/tests/parallel/join.ml[21,463+19]..[21,463+24])
+          expression (testsuite/tests/parallel/join.ml[21,463+25]..[26,621+22]) ghost
+            Pexp_fun
+            Nolabel
+            None
+            pattern (testsuite/tests/parallel/join.ml[21,463+25]..[21,463+26])
+              Ppat_var "n" (testsuite/tests/parallel/join.ml[21,463+25]..[21,463+26])
+            expression (testsuite/tests/parallel/join.ml[21,463+27]..[26,621+22]) ghost
+              Pexp_fun
+              Nolabel
+              None
+              pattern (testsuite/tests/parallel/join.ml[21,463+27]..[21,463+33])
+                Ppat_var "domain" (testsuite/tests/parallel/join.ml[21,463+27]..[21,463+33])
+              expression (testsuite/tests/parallel/join.ml[22,499+2]..[26,621+22])
+                Pexp_ifthenelse
+                expression (testsuite/tests/parallel/join.ml[22,499+5]..[22,499+10])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/join.ml[22,499+7]..[22,499+8])
+                    Pexp_ident ">" (testsuite/tests/parallel/join.ml[22,499+7]..[22,499+8])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[22,499+5]..[22,499+6])
+                        Pexp_ident "n" (testsuite/tests/parallel/join.ml[22,499+5]..[22,499+6])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[22,499+9]..[22,499+10])
+                        Pexp_constant PConst_int (0,None)
+                  ]
+                expression (testsuite/tests/parallel/join.ml[23,515+4]..[24,584+29])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/join.ml[24,584+4]..[24,584+6])
+                    Pexp_ident "|>" (testsuite/tests/parallel/join.ml[24,584+4]..[24,584+6])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[23,515+4]..[23,515+68])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/join.ml[23,515+4]..[23,515+16])
+                          Pexp_ident "Domain.spawn" (testsuite/tests/parallel/join.ml[23,515+4]..[23,515+16])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/join.ml[23,515+17]..[23,515+68])
+                              Pexp_fun
+                              Nolabel
+                              None
+                              pattern (testsuite/tests/parallel/join.ml[23,515+22]..[23,515+24])
+                                Ppat_construct "()" (testsuite/tests/parallel/join.ml[23,515+22]..[23,515+24])
+                                None
+                              expression (testsuite/tests/parallel/join.ml[23,515+28]..[23,515+67])
+                                Pexp_sequence
+                                expression (testsuite/tests/parallel/join.ml[23,515+28]..[23,515+47])
+                                  Pexp_apply
+                                  expression (testsuite/tests/parallel/join.ml[23,515+28]..[23,515+47]) ghost
+                                    Pexp_ident "Array.set" (testsuite/tests/parallel/join.ml[23,515+28]..[23,515+47]) ghost
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/parallel/join.ml[23,515+28]..[23,515+33])
+                                        Pexp_ident "flags" (testsuite/tests/parallel/join.ml[23,515+28]..[23,515+33])
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/parallel/join.ml[23,515+35]..[23,515+38])
+                                        Pexp_apply
+                                        expression (testsuite/tests/parallel/join.ml[23,515+36]..[23,515+37])
+                                          Pexp_ident "-" (testsuite/tests/parallel/join.ml[23,515+36]..[23,515+37])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/parallel/join.ml[23,515+35]..[23,515+36])
+                                              Pexp_ident "n" (testsuite/tests/parallel/join.ml[23,515+35]..[23,515+36])
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/parallel/join.ml[23,515+37]..[23,515+38])
+                                              Pexp_constant PConst_int (1,None)
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/parallel/join.ml[23,515+43]..[23,515+47])
+                                        Pexp_construct "true" (testsuite/tests/parallel/join.ml[23,515+43]..[23,515+47])
+                                        None
+                                  ]
+                                expression (testsuite/tests/parallel/join.ml[23,515+49]..[23,515+67])
+                                  Pexp_apply
+                                  expression (testsuite/tests/parallel/join.ml[23,515+49]..[23,515+60])
+                                    Pexp_ident "Domain.join" (testsuite/tests/parallel/join.ml[23,515+49]..[23,515+60])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/parallel/join.ml[23,515+61]..[23,515+67])
+                                        Pexp_ident "domain" (testsuite/tests/parallel/join.ml[23,515+61]..[23,515+67])
+                                  ]
+                        ]
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[24,584+7]..[24,584+29])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/join.ml[24,584+7]..[24,584+17])
+                          Pexp_ident "other_join" (testsuite/tests/parallel/join.ml[24,584+7]..[24,584+17])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/join.ml[24,584+18]..[24,584+23])
+                              Pexp_ident "flags" (testsuite/tests/parallel/join.ml[24,584+18]..[24,584+23])
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/join.ml[24,584+24]..[24,584+29])
+                              Pexp_apply
+                              expression (testsuite/tests/parallel/join.ml[24,584+26]..[24,584+27])
+                                Pexp_ident "-" (testsuite/tests/parallel/join.ml[24,584+26]..[24,584+27])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/join.ml[24,584+25]..[24,584+26])
+                                    Pexp_ident "n" (testsuite/tests/parallel/join.ml[24,584+25]..[24,584+26])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/join.ml[24,584+27]..[24,584+28])
+                                    Pexp_constant PConst_int (1,None)
+                              ]
+                        ]
+                  ]
+                Some
+                  expression (testsuite/tests/parallel/join.ml[26,621+4]..[26,621+22])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/join.ml[26,621+4]..[26,621+15])
+                      Pexp_ident "Domain.join" (testsuite/tests/parallel/join.ml[26,621+4]..[26,621+15])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[26,621+16]..[26,621+22])
+                          Pexp_ident "domain" (testsuite/tests/parallel/join.ml[26,621+16]..[26,621+22])
+                    ]
+    ]
+  structure_item (testsuite/tests/parallel/join.ml[28,645+0]..[33,776+24])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[28,645+4]..[28,645+9])
+          Ppat_var "join2" (testsuite/tests/parallel/join.ml[28,645+4]..[28,645+9])
+        expression (testsuite/tests/parallel/join.ml[28,645+10]..[33,776+24]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/join.ml[28,645+10]..[28,645+12])
+            Ppat_construct "()" (testsuite/tests/parallel/join.ml[28,645+10]..[28,645+12])
+            None
+          expression (testsuite/tests/parallel/join.ml[29,660+2]..[33,776+24])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/parallel/join.ml[29,660+6]..[29,660+7])
+                  Ppat_var "r" (testsuite/tests/parallel/join.ml[29,660+6]..[29,660+7])
+                expression (testsuite/tests/parallel/join.ml[29,660+10]..[29,660+19])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/join.ml[29,660+10]..[29,660+13])
+                    Pexp_ident "ref" (testsuite/tests/parallel/join.ml[29,660+10]..[29,660+13])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[29,660+14]..[29,660+19])
+                        Pexp_construct "false" (testsuite/tests/parallel/join.ml[29,660+14]..[29,660+19])
+                        None
+                  ]
+            ]
+            expression (testsuite/tests/parallel/join.ml[30,683+2]..[33,776+24])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/parallel/join.ml[30,683+6]..[30,683+7])
+                    Ppat_var "t" (testsuite/tests/parallel/join.ml[30,683+6]..[30,683+7])
+                  expression (testsuite/tests/parallel/join.ml[30,683+10]..[30,683+50])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/join.ml[30,683+10]..[30,683+22])
+                      Pexp_ident "Domain.spawn" (testsuite/tests/parallel/join.ml[30,683+10]..[30,683+22])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[30,683+23]..[30,683+50])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/parallel/join.ml[30,683+28]..[30,683+30])
+                            Ppat_construct "()" (testsuite/tests/parallel/join.ml[30,683+28]..[30,683+30])
+                            None
+                          expression (testsuite/tests/parallel/join.ml[30,683+34]..[30,683+49])
+                            Pexp_sequence
+                            expression (testsuite/tests/parallel/join.ml[30,683+34]..[30,683+43])
+                              Pexp_apply
+                              expression (testsuite/tests/parallel/join.ml[30,683+36]..[30,683+38])
+                                Pexp_ident ":=" (testsuite/tests/parallel/join.ml[30,683+36]..[30,683+38])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/join.ml[30,683+34]..[30,683+35])
+                                    Pexp_ident "r" (testsuite/tests/parallel/join.ml[30,683+34]..[30,683+35])
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/join.ml[30,683+39]..[30,683+43])
+                                    Pexp_construct "true" (testsuite/tests/parallel/join.ml[30,683+39]..[30,683+43])
+                                    None
+                              ]
+                            expression (testsuite/tests/parallel/join.ml[30,683+45]..[30,683+49])
+                              Pexp_construct "true" (testsuite/tests/parallel/join.ml[30,683+45]..[30,683+49])
+                              None
+                    ]
+              ]
+              expression (testsuite/tests/parallel/join.ml[31,737+2]..[33,776+24])
+                Pexp_sequence
+                expression (testsuite/tests/parallel/join.ml[31,737+2]..[31,737+24])
+                  Pexp_assert
+                  expression (testsuite/tests/parallel/join.ml[31,737+9]..[31,737+24])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/join.ml[31,737+10]..[31,737+21])
+                      Pexp_ident "Domain.join" (testsuite/tests/parallel/join.ml[31,737+10]..[31,737+21])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[31,737+22]..[31,737+23])
+                          Pexp_ident "t" (testsuite/tests/parallel/join.ml[31,737+22]..[31,737+23])
+                    ]
+                expression (testsuite/tests/parallel/join.ml[32,763+2]..[33,776+24])
+                  Pexp_sequence
+                  expression (testsuite/tests/parallel/join.ml[32,763+2]..[32,763+11])
+                    Pexp_assert
+                    expression (testsuite/tests/parallel/join.ml[32,763+9]..[32,763+11])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[32,763+9]..[32,763+10])
+                        Pexp_ident "!" (testsuite/tests/parallel/join.ml[32,763+9]..[32,763+10])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[32,763+10]..[32,763+11])
+                            Pexp_ident "r" (testsuite/tests/parallel/join.ml[32,763+10]..[32,763+11])
+                      ]
+                  expression (testsuite/tests/parallel/join.ml[33,776+2]..[33,776+24])
+                    Pexp_assert
+                    expression (testsuite/tests/parallel/join.ml[33,776+9]..[33,776+24])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[33,776+10]..[33,776+21])
+                        Pexp_ident "Domain.join" (testsuite/tests/parallel/join.ml[33,776+10]..[33,776+21])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[33,776+22]..[33,776+23])
+                            Pexp_ident "t" (testsuite/tests/parallel/join.ml[33,776+22]..[33,776+23])
+                      ]
+    ]
+  structure_item (testsuite/tests/parallel/join.ml[35,802+0]..[35,802+22])
+    Pstr_exception
+    type_exception
+      ptyext_constructor =
+        extension_constructor (testsuite/tests/parallel/join.ml[35,802+0]..[35,802+22])
+          pext_name = "Ex"
+          pext_kind =
+            Pext_decl
+              [
+                core_type (testsuite/tests/parallel/join.ml[35,802+16]..[35,802+22])
+                  Ptyp_constr "string" (testsuite/tests/parallel/join.ml[35,802+16]..[35,802+22])
+                  []
+              ]
+              None
+  structure_item (testsuite/tests/parallel/join.ml[36,825+0]..[39,943+32])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[36,825+4]..[36,825+12])
+          Ppat_var "join_exn" (testsuite/tests/parallel/join.ml[36,825+4]..[36,825+12])
+        expression (testsuite/tests/parallel/join.ml[36,825+13]..[39,943+32]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/join.ml[36,825+13]..[36,825+15])
+            Ppat_construct "()" (testsuite/tests/parallel/join.ml[36,825+13]..[36,825+15])
+            None
+          expression (testsuite/tests/parallel/join.ml[37,843+2]..[39,943+32])
+            Pexp_match
+            expression (testsuite/tests/parallel/join.ml[37,843+8]..[37,843+72])
+              Pexp_open Fresh
+              module_expr (testsuite/tests/parallel/join.ml[37,843+8]..[37,843+14])
+                Pmod_ident "Domain" (testsuite/tests/parallel/join.ml[37,843+8]..[37,843+14])
+              expression (testsuite/tests/parallel/join.ml[37,843+16]..[37,843+71])
+                Pexp_apply
+                expression (testsuite/tests/parallel/join.ml[37,843+16]..[37,843+20])
+                  Pexp_ident "join" (testsuite/tests/parallel/join.ml[37,843+16]..[37,843+20])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/join.ml[37,843+21]..[37,843+71])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[37,843+22]..[37,843+27])
+                        Pexp_ident "spawn" (testsuite/tests/parallel/join.ml[37,843+22]..[37,843+27])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[37,843+28]..[37,843+70])
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (testsuite/tests/parallel/join.ml[37,843+33]..[37,843+35])
+                              Ppat_construct "()" (testsuite/tests/parallel/join.ml[37,843+33]..[37,843+35])
+                              None
+                            expression (testsuite/tests/parallel/join.ml[37,843+39]..[37,843+69])
+                              Pexp_apply
+                              expression (testsuite/tests/parallel/join.ml[37,843+39]..[37,843+44])
+                                Pexp_ident "raise" (testsuite/tests/parallel/join.ml[37,843+39]..[37,843+44])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/join.ml[37,843+45]..[37,843+69])
+                                    Pexp_construct "Ex" (testsuite/tests/parallel/join.ml[37,843+46]..[37,843+48])
+                                    Some
+                                      expression (testsuite/tests/parallel/join.ml[37,843+49]..[37,843+68])
+                                        Pexp_apply
+                                        expression (testsuite/tests/parallel/join.ml[37,843+50]..[37,843+61])
+                                          Pexp_ident "String.make" (testsuite/tests/parallel/join.ml[37,843+50]..[37,843+61])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/parallel/join.ml[37,843+62]..[37,843+63])
+                                              Pexp_constant PConst_int (5,None)
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/parallel/join.ml[37,843+64]..[37,843+67])
+                                              Pexp_constant PConst_char 21
+                                        ]
+                              ]
+                      ]
+                ]
+            [
+              <case>
+                pattern (testsuite/tests/parallel/join.ml[38,921+4]..[38,921+5])
+                  Ppat_any
+                expression (testsuite/tests/parallel/join.ml[38,921+9]..[38,921+21])
+                  Pexp_assert
+                  expression (testsuite/tests/parallel/join.ml[38,921+16]..[38,921+21])
+                    Pexp_construct "false" (testsuite/tests/parallel/join.ml[38,921+16]..[38,921+21])
+                    None
+              <case>
+                pattern (testsuite/tests/parallel/join.ml[39,943+4]..[39,943+26])
+                  Ppat_exception
+                  pattern (testsuite/tests/parallel/join.ml[39,943+14]..[39,943+26])
+                    Ppat_construct "Ex" (testsuite/tests/parallel/join.ml[39,943+15]..[39,943+17])
+                    Some
+                      []
+                      pattern (testsuite/tests/parallel/join.ml[39,943+18]..[39,943+25])
+                        Ppat_constant PConst_string("!!!!!",(testsuite/tests/parallel/join.ml[39,943+19]..[39,943+24]),None)
+                expression (testsuite/tests/parallel/join.ml[39,943+30]..[39,943+32])
+                  Pexp_construct "()" (testsuite/tests/parallel/join.ml[39,943+30]..[39,943+32])
+                  None
+            ]
+    ]
+  structure_item (testsuite/tests/parallel/join.ml[41,977+0]..[47,1108+4])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[41,977+4]..[41,977+8])
+          Ppat_var "burn" (testsuite/tests/parallel/join.ml[41,977+4]..[41,977+8])
+        expression (testsuite/tests/parallel/join.ml[41,977+9]..[47,1108+4]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/join.ml[41,977+9]..[41,977+11])
+            Ppat_construct "()" (testsuite/tests/parallel/join.ml[41,977+9]..[41,977+11])
+            None
+          expression (testsuite/tests/parallel/join.ml[42,991+2]..[47,1108+4])
+            Pexp_let Rec
+            [
+              <def>
+                pattern (testsuite/tests/parallel/join.ml[42,991+10]..[42,991+14])
+                  Ppat_var "loop" (testsuite/tests/parallel/join.ml[42,991+10]..[42,991+14])
+                expression (testsuite/tests/parallel/join.ml[42,991+15]..[44,1040+50]) ghost
+                  Pexp_fun
+                  Nolabel
+                  None
+                  pattern (testsuite/tests/parallel/join.ml[42,991+15]..[42,991+16])
+                    Ppat_var "l" (testsuite/tests/parallel/join.ml[42,991+15]..[42,991+16])
+                  expression (testsuite/tests/parallel/join.ml[43,1010+4]..[44,1040+50])
+                    Pexp_ifthenelse
+                    expression (testsuite/tests/parallel/join.ml[43,1010+7]..[43,1010+21])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[43,1010+17]..[43,1010+18])
+                        Pexp_ident ">" (testsuite/tests/parallel/join.ml[43,1010+17]..[43,1010+18])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[43,1010+7]..[43,1010+16])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/join.ml[43,1010+7]..[43,1010+14])
+                              Pexp_ident "List.hd" (testsuite/tests/parallel/join.ml[43,1010+7]..[43,1010+14])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/join.ml[43,1010+15]..[43,1010+16])
+                                  Pexp_ident "l" (testsuite/tests/parallel/join.ml[43,1010+15]..[43,1010+16])
+                            ]
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[43,1010+19]..[43,1010+21])
+                            Pexp_constant PConst_int (14,None)
+                      ]
+                    expression (testsuite/tests/parallel/join.ml[43,1010+27]..[43,1010+29])
+                      Pexp_construct "()" (testsuite/tests/parallel/join.ml[43,1010+27]..[43,1010+29])
+                      None
+                    Some
+                      expression (testsuite/tests/parallel/join.ml[44,1040+9]..[44,1040+50])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/join.ml[44,1040+9]..[44,1040+13])
+                          Pexp_ident "loop" (testsuite/tests/parallel/join.ml[44,1040+9]..[44,1040+13])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/join.ml[44,1040+14]..[44,1040+50])
+                              Pexp_apply
+                              expression (testsuite/tests/parallel/join.ml[44,1040+21]..[44,1040+23])
+                                Pexp_ident "|>" (testsuite/tests/parallel/join.ml[44,1040+21]..[44,1040+23])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/join.ml[44,1040+15]..[44,1040+20])
+                                    Pexp_apply
+                                    expression (testsuite/tests/parallel/join.ml[44,1040+17]..[44,1040+18])
+                                      Pexp_ident "@" (testsuite/tests/parallel/join.ml[44,1040+17]..[44,1040+18])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/parallel/join.ml[44,1040+15]..[44,1040+16])
+                                          Pexp_ident "l" (testsuite/tests/parallel/join.ml[44,1040+15]..[44,1040+16])
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/parallel/join.ml[44,1040+19]..[44,1040+20])
+                                          Pexp_ident "l" (testsuite/tests/parallel/join.ml[44,1040+19]..[44,1040+20])
+                                    ]
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/join.ml[44,1040+24]..[44,1040+49])
+                                    Pexp_apply
+                                    expression (testsuite/tests/parallel/join.ml[44,1040+24]..[44,1040+32])
+                                      Pexp_ident "List.map" (testsuite/tests/parallel/join.ml[44,1040+24]..[44,1040+32])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/parallel/join.ml[44,1040+33]..[44,1040+49])
+                                          Pexp_fun
+                                          Nolabel
+                                          None
+                                          pattern (testsuite/tests/parallel/join.ml[44,1040+38]..[44,1040+39])
+                                            Ppat_var "x" (testsuite/tests/parallel/join.ml[44,1040+38]..[44,1040+39])
+                                          expression (testsuite/tests/parallel/join.ml[44,1040+43]..[44,1040+48])
+                                            Pexp_apply
+                                            expression (testsuite/tests/parallel/join.ml[44,1040+45]..[44,1040+46])
+                                              Pexp_ident "+" (testsuite/tests/parallel/join.ml[44,1040+45]..[44,1040+46])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/parallel/join.ml[44,1040+43]..[44,1040+44])
+                                                  Pexp_ident "x" (testsuite/tests/parallel/join.ml[44,1040+43]..[44,1040+44])
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/parallel/join.ml[44,1040+47]..[44,1040+48])
+                                                  Pexp_constant PConst_int (1,None)
+                                            ]
+                                    ]
+                              ]
+                        ]
+            ]
+            expression (testsuite/tests/parallel/join.ml[46,1096+2]..[47,1108+4])
+              Pexp_sequence
+              expression (testsuite/tests/parallel/join.ml[46,1096+2]..[46,1096+10])
+                Pexp_apply
+                expression (testsuite/tests/parallel/join.ml[46,1096+2]..[46,1096+6])
+                  Pexp_ident "loop" (testsuite/tests/parallel/join.ml[46,1096+2]..[46,1096+6])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/join.ml[46,1096+7]..[46,1096+10])
+                      Pexp_construct "::" (testsuite/tests/parallel/join.ml[46,1096+8]..[46,1096+10]) ghost
+                      Some
+                        expression (testsuite/tests/parallel/join.ml[46,1096+8]..[46,1096+10]) ghost
+                          Pexp_tuple
+                          [
+                            expression (testsuite/tests/parallel/join.ml[46,1096+8]..[46,1096+9])
+                              Pexp_constant PConst_int (0,None)
+                            expression (testsuite/tests/parallel/join.ml[46,1096+9]..[46,1096+10]) ghost
+                              Pexp_construct "[]" (testsuite/tests/parallel/join.ml[46,1096+9]..[46,1096+10]) ghost
+                              None
+                          ]
+                ]
+              expression (testsuite/tests/parallel/join.ml[47,1108+2]..[47,1108+4])
+                Pexp_constant PConst_int (42,None)
+    ]
+  structure_item (testsuite/tests/parallel/join.ml[49,1114+0]..[50,1133+42])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[49,1114+4]..[49,1114+13])
+          Ppat_var "join_slow" (testsuite/tests/parallel/join.ml[49,1114+4]..[49,1114+13])
+        expression (testsuite/tests/parallel/join.ml[49,1114+14]..[50,1133+42]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/join.ml[49,1114+14]..[49,1114+16])
+            Ppat_construct "()" (testsuite/tests/parallel/join.ml[49,1114+14]..[49,1114+16])
+            None
+          expression (testsuite/tests/parallel/join.ml[50,1133+2]..[50,1133+42])
+            Pexp_assert
+            expression (testsuite/tests/parallel/join.ml[50,1133+9]..[50,1133+42])
+              Pexp_apply
+              expression (testsuite/tests/parallel/join.ml[50,1133+37]..[50,1133+38])
+                Pexp_ident "=" (testsuite/tests/parallel/join.ml[50,1133+37]..[50,1133+38])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/join.ml[50,1133+10]..[50,1133+36])
+                    Pexp_open Fresh
+                    module_expr (testsuite/tests/parallel/join.ml[50,1133+10]..[50,1133+16])
+                      Pmod_ident "Domain" (testsuite/tests/parallel/join.ml[50,1133+10]..[50,1133+16])
+                    expression (testsuite/tests/parallel/join.ml[50,1133+18]..[50,1133+35])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[50,1133+18]..[50,1133+22])
+                        Pexp_ident "join" (testsuite/tests/parallel/join.ml[50,1133+18]..[50,1133+22])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[50,1133+23]..[50,1133+35])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/join.ml[50,1133+24]..[50,1133+29])
+                              Pexp_ident "spawn" (testsuite/tests/parallel/join.ml[50,1133+24]..[50,1133+29])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/join.ml[50,1133+30]..[50,1133+34])
+                                  Pexp_ident "burn" (testsuite/tests/parallel/join.ml[50,1133+30]..[50,1133+34])
+                            ]
+                      ]
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/parallel/join.ml[50,1133+39]..[50,1133+41])
+                    Pexp_constant PConst_int (42,None)
+              ]
+    ]
+  structure_item (testsuite/tests/parallel/join.ml[52,1177+0]..[56,1311+30])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[52,1177+4]..[52,1177+9])
+          Ppat_var "join3" (testsuite/tests/parallel/join.ml[52,1177+4]..[52,1177+9])
+        expression (testsuite/tests/parallel/join.ml[52,1177+10]..[56,1311+30]) ghost
+          Pexp_fun
+          Nolabel
+          None
+          pattern (testsuite/tests/parallel/join.ml[52,1177+10]..[52,1177+12])
+            Ppat_construct "()" (testsuite/tests/parallel/join.ml[52,1177+10]..[52,1177+12])
+            None
+          expression (testsuite/tests/parallel/join.ml[53,1192+2]..[56,1311+30])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/parallel/join.ml[53,1192+6]..[53,1192+8])
+                  Ppat_var "d1" (testsuite/tests/parallel/join.ml[53,1192+6]..[53,1192+8])
+                expression (testsuite/tests/parallel/join.ml[53,1192+11]..[53,1192+28])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/join.ml[53,1192+11]..[53,1192+23])
+                    Pexp_ident "Domain.spawn" (testsuite/tests/parallel/join.ml[53,1192+11]..[53,1192+23])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[53,1192+24]..[53,1192+28])
+                        Pexp_ident "burn" (testsuite/tests/parallel/join.ml[53,1192+24]..[53,1192+28])
+                  ]
+            ]
+            expression (testsuite/tests/parallel/join.ml[54,1224+2]..[56,1311+30])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/parallel/join.ml[54,1224+6]..[54,1224+8])
+                    Ppat_var "d2" (testsuite/tests/parallel/join.ml[54,1224+6]..[54,1224+8])
+                  expression (testsuite/tests/parallel/join.ml[54,1224+11]..[54,1224+51])
+                    Pexp_open Fresh
+                    module_expr (testsuite/tests/parallel/join.ml[54,1224+11]..[54,1224+17])
+                      Pmod_ident "Domain" (testsuite/tests/parallel/join.ml[54,1224+11]..[54,1224+17])
+                    expression (testsuite/tests/parallel/join.ml[54,1224+19]..[54,1224+50])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[54,1224+19]..[54,1224+24])
+                        Pexp_ident "spawn" (testsuite/tests/parallel/join.ml[54,1224+19]..[54,1224+24])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[54,1224+25]..[54,1224+50])
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (testsuite/tests/parallel/join.ml[54,1224+30]..[54,1224+31])
+                              Ppat_any
+                            expression (testsuite/tests/parallel/join.ml[54,1224+35]..[54,1224+49])
+                              Pexp_apply
+                              expression (testsuite/tests/parallel/join.ml[54,1224+35]..[54,1224+46])
+                                Pexp_ident "Domain.join" (testsuite/tests/parallel/join.ml[54,1224+35]..[54,1224+46])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/parallel/join.ml[54,1224+47]..[54,1224+49])
+                                    Pexp_ident "d1" (testsuite/tests/parallel/join.ml[54,1224+47]..[54,1224+49])
+                              ]
+                      ]
+              ]
+              expression (testsuite/tests/parallel/join.ml[55,1279+2]..[56,1311+30])
+                Pexp_sequence
+                expression (testsuite/tests/parallel/join.ml[55,1279+2]..[55,1279+30])
+                  Pexp_assert
+                  expression (testsuite/tests/parallel/join.ml[55,1279+9]..[55,1279+30])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/join.ml[55,1279+25]..[55,1279+26])
+                      Pexp_ident "=" (testsuite/tests/parallel/join.ml[55,1279+25]..[55,1279+26])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[55,1279+10]..[55,1279+24])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/join.ml[55,1279+10]..[55,1279+21])
+                            Pexp_ident "Domain.join" (testsuite/tests/parallel/join.ml[55,1279+10]..[55,1279+21])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/join.ml[55,1279+22]..[55,1279+24])
+                                Pexp_ident "d1" (testsuite/tests/parallel/join.ml[55,1279+22]..[55,1279+24])
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[55,1279+27]..[55,1279+29])
+                          Pexp_constant PConst_int (42,None)
+                    ]
+                expression (testsuite/tests/parallel/join.ml[56,1311+2]..[56,1311+30])
+                  Pexp_assert
+                  expression (testsuite/tests/parallel/join.ml[56,1311+9]..[56,1311+30])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/join.ml[56,1311+25]..[56,1311+26])
+                      Pexp_ident "=" (testsuite/tests/parallel/join.ml[56,1311+25]..[56,1311+26])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[56,1311+10]..[56,1311+24])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/join.ml[56,1311+10]..[56,1311+21])
+                            Pexp_ident "Domain.join" (testsuite/tests/parallel/join.ml[56,1311+10]..[56,1311+21])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/join.ml[56,1311+22]..[56,1311+24])
+                                Pexp_ident "d2" (testsuite/tests/parallel/join.ml[56,1311+22]..[56,1311+24])
+                          ]
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[56,1311+27]..[56,1311+29])
+                          Pexp_constant PConst_int (42,None)
+                    ]
+    ]
+  structure_item (testsuite/tests/parallel/join.ml[58,1343+0]..[68,1606+18])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/parallel/join.ml[58,1343+4]..[58,1343+6])
+          Ppat_construct "()" (testsuite/tests/parallel/join.ml[58,1343+4]..[58,1343+6])
+          None
+        expression (testsuite/tests/parallel/join.ml[59,1352+2]..[68,1606+18])
+          Pexp_sequence
+          expression (testsuite/tests/parallel/join.ml[59,1352+2]..[59,1352+23])
+            Pexp_apply
+            expression (testsuite/tests/parallel/join.ml[59,1352+2]..[59,1352+11])
+              Pexp_ident "main_join" (testsuite/tests/parallel/join.ml[59,1352+2]..[59,1352+11])
+            [
+              <arg>
+              Nolabel
+                expression (testsuite/tests/parallel/join.ml[59,1352+12]..[59,1352+23])
+                  Pexp_ident "num_domains" (testsuite/tests/parallel/join.ml[59,1352+12]..[59,1352+23])
+            ]
+          expression (testsuite/tests/parallel/join.ml[60,1377+2]..[68,1606+18])
+            Pexp_let Nonrec
+            [
+              <def>
+                pattern (testsuite/tests/parallel/join.ml[60,1377+6]..[60,1377+11])
+                  Ppat_var "flags" (testsuite/tests/parallel/join.ml[60,1377+6]..[60,1377+11])
+                expression (testsuite/tests/parallel/join.ml[60,1377+14]..[60,1377+42])
+                  Pexp_apply
+                  expression (testsuite/tests/parallel/join.ml[60,1377+14]..[60,1377+24])
+                    Pexp_ident "Array.make" (testsuite/tests/parallel/join.ml[60,1377+14]..[60,1377+24])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[60,1377+25]..[60,1377+36])
+                        Pexp_ident "num_domains" (testsuite/tests/parallel/join.ml[60,1377+25]..[60,1377+36])
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/parallel/join.ml[60,1377+37]..[60,1377+42])
+                        Pexp_construct "false" (testsuite/tests/parallel/join.ml[60,1377+37]..[60,1377+42])
+                        None
+                  ]
+            ]
+            expression (testsuite/tests/parallel/join.ml[61,1423+2]..[68,1606+18])
+              Pexp_sequence
+              expression (testsuite/tests/parallel/join.ml[61,1423+2]..[61,1423+61])
+                Pexp_apply
+                expression (testsuite/tests/parallel/join.ml[61,1423+2]..[61,1423+12])
+                  Pexp_ident "other_join" (testsuite/tests/parallel/join.ml[61,1423+2]..[61,1423+12])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/join.ml[61,1423+13]..[61,1423+18])
+                      Pexp_ident "flags" (testsuite/tests/parallel/join.ml[61,1423+13]..[61,1423+18])
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/join.ml[61,1423+19]..[61,1423+39])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[61,1423+20]..[61,1423+32])
+                        Pexp_ident "Array.length" (testsuite/tests/parallel/join.ml[61,1423+20]..[61,1423+32])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[61,1423+33]..[61,1423+38])
+                            Pexp_ident "flags" (testsuite/tests/parallel/join.ml[61,1423+33]..[61,1423+38])
+                      ]
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/parallel/join.ml[61,1423+40]..[61,1423+61])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[61,1423+41]..[61,1423+53])
+                        Pexp_ident "Domain.spawn" (testsuite/tests/parallel/join.ml[61,1423+41]..[61,1423+53])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[61,1423+54]..[61,1423+60])
+                            Pexp_ident "ignore" (testsuite/tests/parallel/join.ml[61,1423+54]..[61,1423+60])
+                      ]
+                ]
+              expression (testsuite/tests/parallel/join.ml[62,1486+2]..[68,1606+18])
+                Pexp_sequence
+                expression (testsuite/tests/parallel/join.ml[62,1486+2]..[62,1486+43])
+                  Pexp_assert
+                  expression (testsuite/tests/parallel/join.ml[62,1486+9]..[62,1486+43])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/join.ml[62,1486+10]..[62,1486+23])
+                      Pexp_ident "Array.for_all" (testsuite/tests/parallel/join.ml[62,1486+10]..[62,1486+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[62,1486+24]..[62,1486+36])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/parallel/join.ml[62,1486+29]..[62,1486+30])
+                            Ppat_var "x" (testsuite/tests/parallel/join.ml[62,1486+29]..[62,1486+30])
+                          expression (testsuite/tests/parallel/join.ml[62,1486+34]..[62,1486+35])
+                            Pexp_ident "x" (testsuite/tests/parallel/join.ml[62,1486+34]..[62,1486+35])
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[62,1486+37]..[62,1486+42])
+                          Pexp_ident "flags" (testsuite/tests/parallel/join.ml[62,1486+37]..[62,1486+42])
+                    ]
+                expression (testsuite/tests/parallel/join.ml[63,1531+2]..[68,1606+18])
+                  Pexp_sequence
+                  expression (testsuite/tests/parallel/join.ml[63,1531+2]..[63,1531+10])
+                    Pexp_apply
+                    expression (testsuite/tests/parallel/join.ml[63,1531+2]..[63,1531+7])
+                      Pexp_ident "join2" (testsuite/tests/parallel/join.ml[63,1531+2]..[63,1531+7])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/parallel/join.ml[63,1531+8]..[63,1531+10])
+                          Pexp_construct "()" (testsuite/tests/parallel/join.ml[63,1531+8]..[63,1531+10])
+                          None
+                    ]
+                  expression (testsuite/tests/parallel/join.ml[64,1543+2]..[68,1606+18])
+                    Pexp_sequence
+                    expression (testsuite/tests/parallel/join.ml[64,1543+2]..[64,1543+13])
+                      Pexp_apply
+                      expression (testsuite/tests/parallel/join.ml[64,1543+2]..[64,1543+10])
+                        Pexp_ident "join_exn" (testsuite/tests/parallel/join.ml[64,1543+2]..[64,1543+10])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/parallel/join.ml[64,1543+11]..[64,1543+13])
+                            Pexp_construct "()" (testsuite/tests/parallel/join.ml[64,1543+11]..[64,1543+13])
+                            None
+                      ]
+                    expression (testsuite/tests/parallel/join.ml[65,1558+2]..[68,1606+18])
+                      Pexp_sequence
+                      expression (testsuite/tests/parallel/join.ml[65,1558+2]..[65,1558+14])
+                        Pexp_apply
+                        expression (testsuite/tests/parallel/join.ml[65,1558+2]..[65,1558+11])
+                          Pexp_ident "join_slow" (testsuite/tests/parallel/join.ml[65,1558+2]..[65,1558+11])
+                        [
+                          <arg>
+                          Nolabel
+                            expression (testsuite/tests/parallel/join.ml[65,1558+12]..[65,1558+14])
+                              Pexp_construct "()" (testsuite/tests/parallel/join.ml[65,1558+12]..[65,1558+14])
+                              None
+                        ]
+                      expression (testsuite/tests/parallel/join.ml[66,1574+2]..[68,1606+18])
+                        Pexp_sequence
+                        expression (testsuite/tests/parallel/join.ml[66,1574+2]..[66,1574+10])
+                          Pexp_apply
+                          expression (testsuite/tests/parallel/join.ml[66,1574+2]..[66,1574+7])
+                            Pexp_ident "join3" (testsuite/tests/parallel/join.ml[66,1574+2]..[66,1574+7])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/parallel/join.ml[66,1574+8]..[66,1574+10])
+                                Pexp_construct "()" (testsuite/tests/parallel/join.ml[66,1574+8]..[66,1574+10])
+                                None
+                          ]
+                        expression (testsuite/tests/parallel/join.ml[67,1586+2]..[68,1606+18])
+                          Pexp_sequence
+                          expression (testsuite/tests/parallel/join.ml[67,1586+2]..[67,1586+18])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/join.ml[67,1586+2]..[67,1586+15])
+                              Pexp_ident "Gc.full_major" (testsuite/tests/parallel/join.ml[67,1586+2]..[67,1586+15])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/join.ml[67,1586+16]..[67,1586+18])
+                                  Pexp_construct "()" (testsuite/tests/parallel/join.ml[67,1586+16]..[67,1586+18])
+                                  None
+                            ]
+                          expression (testsuite/tests/parallel/join.ml[68,1606+2]..[68,1606+18])
+                            Pexp_apply
+                            expression (testsuite/tests/parallel/join.ml[68,1606+2]..[68,1606+15])
+                              Pexp_ident "Gc.full_major" (testsuite/tests/parallel/join.ml[68,1606+2]..[68,1606+15])
+                            [
+                              <arg>
+                              Nolabel
+                                expression (testsuite/tests/parallel/join.ml[68,1606+16]..[68,1606+18])
+                                  Pexp_construct "()" (testsuite/tests/parallel/join.ml[68,1606+16]..[68,1606+18])
+                                  None
+                            ]
+    ]
+]
+

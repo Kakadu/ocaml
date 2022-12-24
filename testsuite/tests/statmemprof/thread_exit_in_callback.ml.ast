@@ -1,0 +1,297 @@
+[
+  structure_item (testsuite/tests/statmemprof/thread_exit_in_callback.ml[10,149+0]..[22,590+20])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/statmemprof/thread_exit_in_callback.ml[10,149+4]..[10,149+5])
+          Ppat_any
+        expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+2]..[22,590+20])
+          Pexp_let Nonrec
+          [
+            <def>
+              pattern (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+6]..[11,157+17])
+                Ppat_var "main_thread" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+6]..[11,157+17])
+              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+20]..[11,157+46])
+                Pexp_apply
+                expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+20]..[11,157+29])
+                  Pexp_ident "Thread.id" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+20]..[11,157+29])
+                [
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+30]..[11,157+46])
+                      Pexp_apply
+                      expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+31]..[11,157+42])
+                        Pexp_ident "Thread.self" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+31]..[11,157+42])
+                      [
+                        <arg>
+                        Nolabel
+                          expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+43]..[11,157+45])
+                            Pexp_construct "()" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[11,157+43]..[11,157+45])
+                            None
+                      ]
+                ]
+          ]
+          expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[12,207+2]..[22,590+20])
+            Pexp_sequence
+            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[12,207+2]..[16,435+29])
+              Pexp_open Fresh
+              module_expr (testsuite/tests/statmemprof/thread_exit_in_callback.ml[12,207+2]..[12,207+12])
+                Pmod_ident "Gc.Memprof" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[12,207+2]..[12,207+12])
+              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[12,207+14]..[16,435+28])
+                Pexp_apply
+                expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[12,207+14]..[12,207+19])
+                  Pexp_ident "start" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[12,207+14]..[12,207+19])
+                [
+                  <arg>
+                  Labelled "callstack_size"
+                    expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[12,207+36]..[12,207+38])
+                      Pexp_constant PConst_int (10,None)
+                  <arg>
+                  Labelled "sampling_rate"
+                    expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[12,207+54]..[12,207+56])
+                      Pexp_constant PConst_float (1.,None)
+                  <arg>
+                  Nolabel
+                    expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[13,264+16]..[16,435+28])
+                      Pexp_record
+                      [
+                        "alloc_minor" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[13,264+36]..[13,264+47])
+                          expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[13,264+50]..[16,435+26])
+                            Pexp_fun
+                            Nolabel
+                            None
+                            pattern (testsuite/tests/statmemprof/thread_exit_in_callback.ml[13,264+54]..[13,264+55])
+                              Ppat_any
+                            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+22]..[16,435+26])
+                              Pexp_sequence
+                              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+22]..[15,395+38])
+                                Pexp_ifthenelse
+                                expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+25]..[14,323+66])
+                                  Pexp_apply
+                                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+52]..[14,323+54])
+                                    Pexp_ident "<>" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+52]..[14,323+54])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+25]..[14,323+51])
+                                        Pexp_apply
+                                        expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+25]..[14,323+34])
+                                          Pexp_ident "Thread.id" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+25]..[14,323+34])
+                                        [
+                                          <arg>
+                                          Nolabel
+                                            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+35]..[14,323+51])
+                                              Pexp_apply
+                                              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+36]..[14,323+47])
+                                                Pexp_ident "Thread.self" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+36]..[14,323+47])
+                                              [
+                                                <arg>
+                                                Nolabel
+                                                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+48]..[14,323+50])
+                                                    Pexp_construct "()" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+48]..[14,323+50])
+                                                    None
+                                              ]
+                                        ]
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+55]..[14,323+66])
+                                        Pexp_ident "main_thread" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[14,323+55]..[14,323+66])
+                                  ]
+                                expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[15,395+24]..[15,395+38])
+                                  Pexp_apply
+                                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[15,395+24]..[15,395+35])
+                                    Pexp_ident "Thread.exit" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[15,395+24]..[15,395+35])
+                                  [
+                                    <arg>
+                                    Nolabel
+                                      expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[15,395+36]..[15,395+38])
+                                        Pexp_construct "()" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[15,395+36]..[15,395+38])
+                                        None
+                                  ]
+                                None
+                              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[16,435+22]..[16,435+26])
+                                Pexp_construct "None" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[16,435+22]..[16,435+26])
+                                None
+                      ]
+                      Some
+                        expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[13,264+18]..[13,264+30])
+                          Pexp_ident "null_tracker" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[13,264+18]..[13,264+30])
+                ]
+            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[17,466+2]..[22,590+20])
+              Pexp_let Nonrec
+              [
+                <def>
+                  pattern (testsuite/tests/statmemprof/thread_exit_in_callback.ml[17,466+6]..[17,466+7])
+                    Ppat_var "t" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[17,466+6]..[17,466+7])
+                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[17,466+10]..[19,545+22])
+                    Pexp_apply
+                    expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[17,466+10]..[17,466+23])
+                      Pexp_ident "Thread.create" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[17,466+10]..[17,466+23])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[17,466+24]..[19,545+19])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/statmemprof/thread_exit_in_callback.ml[17,466+29]..[17,466+31])
+                            Ppat_construct "()" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[17,466+29]..[17,466+31])
+                            None
+                          expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+6]..[19,545+18])
+                            Pexp_sequence
+                            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+6]..[18,501+42])
+                              Pexp_apply
+                              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+6]..[18,501+12])
+                                Pexp_ident "ignore" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+6]..[18,501+12])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+13]..[18,501+42])
+                                    Pexp_apply
+                                    expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+14]..[18,501+33])
+                                      Pexp_ident "Sys.opaque_identity" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+14]..[18,501+33])
+                                    [
+                                      <arg>
+                                      Nolabel
+                                        expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+34]..[18,501+41])
+                                          Pexp_apply
+                                          expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+35]..[18,501+38])
+                                            Pexp_ident "ref" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+35]..[18,501+38])
+                                          [
+                                            <arg>
+                                            Nolabel
+                                              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[18,501+39]..[18,501+40])
+                                                Pexp_constant PConst_int (1,None)
+                                          ]
+                                    ]
+                              ]
+                            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[19,545+6]..[19,545+18])
+                              Pexp_assert
+                              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[19,545+13]..[19,545+18])
+                                Pexp_construct "false" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[19,545+13]..[19,545+18])
+                                None
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[19,545+20]..[19,545+22])
+                          Pexp_construct "()" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[19,545+20]..[19,545+22])
+                          None
+                    ]
+              ]
+              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[21,573+2]..[22,590+20])
+                Pexp_sequence
+                expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[21,573+2]..[21,573+15])
+                  Pexp_apply
+                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[21,573+2]..[21,573+13])
+                    Pexp_ident "Thread.join" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[21,573+2]..[21,573+13])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[21,573+14]..[21,573+15])
+                        Pexp_ident "t" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[21,573+14]..[21,573+15])
+                  ]
+                expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[22,590+2]..[22,590+20])
+                  Pexp_apply
+                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[22,590+2]..[22,590+17])
+                    Pexp_ident "Gc.Memprof.stop" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[22,590+2]..[22,590+17])
+                  [
+                    <arg>
+                    Nolabel
+                      expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[22,590+18]..[22,590+20])
+                        Pexp_construct "()" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[22,590+18]..[22,590+20])
+                        None
+                  ]
+    ]
+  structure_item (testsuite/tests/statmemprof/thread_exit_in_callback.ml[24,612+0]..[28,789+14])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/statmemprof/thread_exit_in_callback.ml[24,612+4]..[24,612+5])
+          Ppat_any
+        expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[25,620+2]..[28,789+14])
+          Pexp_sequence
+          expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[25,620+2]..[26,677+70])
+            Pexp_open Fresh
+            module_expr (testsuite/tests/statmemprof/thread_exit_in_callback.ml[25,620+2]..[25,620+12])
+              Pmod_ident "Gc.Memprof" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[25,620+2]..[25,620+12])
+            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[25,620+14]..[26,677+69])
+              Pexp_apply
+              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[25,620+14]..[25,620+19])
+                Pexp_ident "start" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[25,620+14]..[25,620+19])
+              [
+                <arg>
+                Labelled "callstack_size"
+                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[25,620+36]..[25,620+38])
+                    Pexp_constant PConst_int (10,None)
+                <arg>
+                Labelled "sampling_rate"
+                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[25,620+54]..[25,620+56])
+                    Pexp_constant PConst_float (1.,None)
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+4]..[26,677+69])
+                    Pexp_record
+                    [
+                      "alloc_minor" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+24]..[26,677+35])
+                        expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+38]..[26,677+67])
+                          Pexp_fun
+                          Nolabel
+                          None
+                          pattern (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+42]..[26,677+43])
+                            Ppat_any
+                          expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+47]..[26,677+67])
+                            Pexp_sequence
+                            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+47]..[26,677+61])
+                              Pexp_apply
+                              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+47]..[26,677+58])
+                                Pexp_ident "Thread.exit" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+47]..[26,677+58])
+                              [
+                                <arg>
+                                Nolabel
+                                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+59]..[26,677+61])
+                                    Pexp_construct "()" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+59]..[26,677+61])
+                                    None
+                              ]
+                            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+63]..[26,677+67])
+                              Pexp_construct "None" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+63]..[26,677+67])
+                              None
+                    ]
+                    Some
+                      expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+6]..[26,677+18])
+                        Pexp_ident "null_tracker" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[26,677+6]..[26,677+18])
+              ]
+          expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+2]..[28,789+14])
+            Pexp_sequence
+            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+2]..[27,749+38])
+              Pexp_apply
+              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+2]..[27,749+8])
+                Pexp_ident "ignore" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+2]..[27,749+8])
+              [
+                <arg>
+                Nolabel
+                  expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+9]..[27,749+38])
+                    Pexp_apply
+                    expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+10]..[27,749+29])
+                      Pexp_ident "Sys.opaque_identity" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+10]..[27,749+29])
+                    [
+                      <arg>
+                      Nolabel
+                        expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+30]..[27,749+37])
+                          Pexp_apply
+                          expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+31]..[27,749+34])
+                            Pexp_ident "ref" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+31]..[27,749+34])
+                          [
+                            <arg>
+                            Nolabel
+                              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[27,749+35]..[27,749+36])
+                                Pexp_constant PConst_int (1,None)
+                          ]
+                    ]
+              ]
+            expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[28,789+2]..[28,789+14])
+              Pexp_assert
+              expression (testsuite/tests/statmemprof/thread_exit_in_callback.ml[28,789+9]..[28,789+14])
+                Pexp_construct "false" (testsuite/tests/statmemprof/thread_exit_in_callback.ml[28,789+9]..[28,789+14])
+                None
+    ]
+]
+

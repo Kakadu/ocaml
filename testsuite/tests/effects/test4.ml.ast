@@ -1,0 +1,248 @@
+[
+  structure_item (testsuite/tests/effects/test4.ml[4,13+0]..[4,13+11])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/effects/test4.ml[4,13+5]..[4,13+11])
+      Pmod_ident "Effect" (testsuite/tests/effects/test4.ml[4,13+5]..[4,13+11])
+  structure_item (testsuite/tests/effects/test4.ml[5,25+0]..[5,25+16])
+    Pstr_open Fresh
+    module_expr (testsuite/tests/effects/test4.ml[5,25+5]..[5,25+16])
+      Pmod_ident "Effect.Deep" (testsuite/tests/effects/test4.ml[5,25+5]..[5,25+16])
+  structure_item (testsuite/tests/effects/test4.ml[7,43+0]..[7,43+30])
+    Pstr_typext
+    type_extension
+      ptyext_path = "t" (testsuite/tests/effects/test4.ml[7,43+7]..[7,43+8])
+      ptyext_params =
+        [
+          core_type (testsuite/tests/effects/test4.ml[7,43+5]..[7,43+6])
+            Ptyp_any
+        ]
+      ptyext_constructors =
+        [
+          extension_constructor (testsuite/tests/effects/test4.ml[7,43+12]..[7,43+30])
+            pext_name = "Foo"
+            pext_kind =
+              Pext_decl
+                [
+                  core_type (testsuite/tests/effects/test4.ml[7,43+18]..[7,43+21])
+                    Ptyp_constr "int" (testsuite/tests/effects/test4.ml[7,43+18]..[7,43+21])
+                    []
+                ]
+                Some
+                  core_type (testsuite/tests/effects/test4.ml[7,43+25]..[7,43+30])
+                    Ptyp_constr "t" (testsuite/tests/effects/test4.ml[7,43+29]..[7,43+30])
+                    [
+                      core_type (testsuite/tests/effects/test4.ml[7,43+25]..[7,43+28])
+                        Ptyp_constr "int" (testsuite/tests/effects/test4.ml[7,43+25]..[7,43+28])
+                        []
+                    ]
+        ]
+      ptyext_private = Public
+  structure_item (testsuite/tests/effects/test4.ml[9,75+0]..[19,415+19])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/effects/test4.ml[9,75+4]..[9,75+5])
+          Ppat_var "r" (testsuite/tests/effects/test4.ml[9,75+4]..[9,75+5])
+        expression (testsuite/tests/effects/test4.ml[10,83+2]..[19,415+19])
+          Pexp_apply
+          expression (testsuite/tests/effects/test4.ml[10,83+2]..[10,83+10])
+            Pexp_ident "try_with" (testsuite/tests/effects/test4.ml[10,83+2]..[10,83+10])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/effects/test4.ml[10,83+11]..[10,83+18])
+                Pexp_ident "perform" (testsuite/tests/effects/test4.ml[10,83+11]..[10,83+18])
+            <arg>
+            Nolabel
+              expression (testsuite/tests/effects/test4.ml[10,83+19]..[10,83+26])
+                Pexp_construct "Foo" (testsuite/tests/effects/test4.ml[10,83+20]..[10,83+23])
+                Some
+                  expression (testsuite/tests/effects/test4.ml[10,83+24]..[10,83+25])
+                    Pexp_constant PConst_int (3,None)
+            <arg>
+            Nolabel
+              expression (testsuite/tests/effects/test4.ml[11,110+2]..[19,415+19])
+                Pexp_record
+                [
+                  "effc" (testsuite/tests/effects/test4.ml[11,110+4]..[11,110+8])
+                    expression (testsuite/tests/effects/test4.ml[11,110+11]..[19,415+17])
+                      Pexp_newtype "a"
+                      expression (testsuite/tests/effects/test4.ml[11,110+24]..[19,415+17]) ghost
+                        Pexp_fun
+                        Nolabel
+                        None
+                        pattern (testsuite/tests/effects/test4.ml[11,110+24]..[11,110+33])
+                          Ppat_constraint
+                          pattern (testsuite/tests/effects/test4.ml[11,110+25]..[11,110+26])
+                            Ppat_var "e" (testsuite/tests/effects/test4.ml[11,110+25]..[11,110+26])
+                          core_type (testsuite/tests/effects/test4.ml[11,110+29]..[11,110+32])
+                            Ptyp_constr "t" (testsuite/tests/effects/test4.ml[11,110+31]..[11,110+32])
+                            [
+                              core_type (testsuite/tests/effects/test4.ml[11,110+29]..[11,110+30])
+                                Ptyp_constr "a" (testsuite/tests/effects/test4.ml[11,110+29]..[11,110+30])
+                                []
+                            ]
+                        expression (testsuite/tests/effects/test4.ml[12,147+6]..[19,415+17])
+                          Pexp_match
+                          expression (testsuite/tests/effects/test4.ml[12,147+12]..[12,147+13])
+                            Pexp_ident "e" (testsuite/tests/effects/test4.ml[12,147+12]..[12,147+13])
+                          [
+                            <case>
+                              pattern (testsuite/tests/effects/test4.ml[13,166+8]..[13,166+13])
+                                Ppat_construct "Foo" (testsuite/tests/effects/test4.ml[13,166+8]..[13,166+11])
+                                Some
+                                  []
+                                  pattern (testsuite/tests/effects/test4.ml[13,166+12]..[13,166+13])
+                                    Ppat_var "i" (testsuite/tests/effects/test4.ml[13,166+12]..[13,166+13])
+                              expression (testsuite/tests/effects/test4.ml[13,166+17]..[18,386+28])
+                                Pexp_construct "Some" (testsuite/tests/effects/test4.ml[13,166+17]..[13,166+21])
+                                Some
+                                  expression (testsuite/tests/effects/test4.ml[13,166+22]..[18,386+28])
+                                    Pexp_fun
+                                    Nolabel
+                                    None
+                                    pattern (testsuite/tests/effects/test4.ml[13,166+27]..[13,166+51])
+                                      Ppat_constraint
+                                      pattern (testsuite/tests/effects/test4.ml[13,166+28]..[13,166+29])
+                                        Ppat_var "k" (testsuite/tests/effects/test4.ml[13,166+28]..[13,166+29])
+                                      core_type (testsuite/tests/effects/test4.ml[13,166+32]..[13,166+50])
+                                        Ptyp_constr "continuation" (testsuite/tests/effects/test4.ml[13,166+38]..[13,166+50])
+                                        [
+                                          core_type (testsuite/tests/effects/test4.ml[13,166+33]..[13,166+34])
+                                            Ptyp_constr "a" (testsuite/tests/effects/test4.ml[13,166+33]..[13,166+34])
+                                            []
+                                          core_type (testsuite/tests/effects/test4.ml[13,166+35]..[13,166+36])
+                                            Ptyp_any
+                                        ]
+                                    expression (testsuite/tests/effects/test4.ml[14,221+10]..[18,386+27])
+                                      Pexp_apply
+                                      expression (testsuite/tests/effects/test4.ml[14,221+10]..[14,221+18])
+                                        Pexp_ident "try_with" (testsuite/tests/effects/test4.ml[14,221+10]..[14,221+18])
+                                      [
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/effects/test4.ml[14,221+19]..[14,221+31])
+                                            Pexp_apply
+                                            expression (testsuite/tests/effects/test4.ml[14,221+20]..[14,221+28])
+                                              Pexp_ident "continue" (testsuite/tests/effects/test4.ml[14,221+20]..[14,221+28])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/effects/test4.ml[14,221+29]..[14,221+30])
+                                                  Pexp_ident "k" (testsuite/tests/effects/test4.ml[14,221+29]..[14,221+30])
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/effects/test4.ml[14,221+32]..[14,221+37])
+                                            Pexp_apply
+                                            expression (testsuite/tests/effects/test4.ml[14,221+34]..[14,221+35])
+                                              Pexp_ident "+" (testsuite/tests/effects/test4.ml[14,221+34]..[14,221+35])
+                                            [
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/effects/test4.ml[14,221+33]..[14,221+34])
+                                                  Pexp_ident "i" (testsuite/tests/effects/test4.ml[14,221+33]..[14,221+34])
+                                              <arg>
+                                              Nolabel
+                                                expression (testsuite/tests/effects/test4.ml[14,221+35]..[14,221+36])
+                                                  Pexp_constant PConst_int (1,None)
+                                            ]
+                                        <arg>
+                                        Nolabel
+                                          expression (testsuite/tests/effects/test4.ml[15,259+10]..[18,386+27])
+                                            Pexp_record
+                                            [
+                                              "effc" (testsuite/tests/effects/test4.ml[15,259+12]..[15,259+16])
+                                                expression (testsuite/tests/effects/test4.ml[15,259+19]..[18,386+25])
+                                                  Pexp_newtype "a"
+                                                  expression (testsuite/tests/effects/test4.ml[15,259+32]..[18,386+25]) ghost
+                                                    Pexp_fun
+                                                    Nolabel
+                                                    None
+                                                    pattern (testsuite/tests/effects/test4.ml[15,259+32]..[15,259+41])
+                                                      Ppat_constraint
+                                                      pattern (testsuite/tests/effects/test4.ml[15,259+33]..[15,259+34])
+                                                        Ppat_var "e" (testsuite/tests/effects/test4.ml[15,259+33]..[15,259+34])
+                                                      core_type (testsuite/tests/effects/test4.ml[15,259+37]..[15,259+40])
+                                                        Ptyp_constr "t" (testsuite/tests/effects/test4.ml[15,259+39]..[15,259+40])
+                                                        [
+                                                          core_type (testsuite/tests/effects/test4.ml[15,259+37]..[15,259+38])
+                                                            Ptyp_constr "a" (testsuite/tests/effects/test4.ml[15,259+37]..[15,259+38])
+                                                            []
+                                                        ]
+                                                    expression (testsuite/tests/effects/test4.ml[16,304+14]..[18,386+25])
+                                                      Pexp_match
+                                                      expression (testsuite/tests/effects/test4.ml[16,304+20]..[16,304+21])
+                                                        Pexp_ident "e" (testsuite/tests/effects/test4.ml[16,304+20]..[16,304+21])
+                                                      [
+                                                        <case>
+                                                          pattern (testsuite/tests/effects/test4.ml[17,331+16]..[17,331+21])
+                                                            Ppat_construct "Foo" (testsuite/tests/effects/test4.ml[17,331+16]..[17,331+19])
+                                                            Some
+                                                              []
+                                                              pattern (testsuite/tests/effects/test4.ml[17,331+20]..[17,331+21])
+                                                                Ppat_var "i" (testsuite/tests/effects/test4.ml[17,331+20]..[17,331+21])
+                                                          expression (testsuite/tests/effects/test4.ml[17,331+25]..[17,331+54])
+                                                            Pexp_construct "Some" (testsuite/tests/effects/test4.ml[17,331+25]..[17,331+29])
+                                                            Some
+                                                              expression (testsuite/tests/effects/test4.ml[17,331+30]..[17,331+54])
+                                                                Pexp_fun
+                                                                Nolabel
+                                                                None
+                                                                pattern (testsuite/tests/effects/test4.ml[17,331+35]..[17,331+36])
+                                                                  Ppat_var "k" (testsuite/tests/effects/test4.ml[17,331+35]..[17,331+36])
+                                                                expression (testsuite/tests/effects/test4.ml[17,331+40]..[17,331+53])
+                                                                  Pexp_apply
+                                                                  expression (testsuite/tests/effects/test4.ml[17,331+40]..[17,331+48])
+                                                                    Pexp_ident "failwith" (testsuite/tests/effects/test4.ml[17,331+40]..[17,331+48])
+                                                                  [
+                                                                    <arg>
+                                                                    Nolabel
+                                                                      expression (testsuite/tests/effects/test4.ml[17,331+49]..[17,331+53])
+Pexp_constant PConst_string("NO",(testsuite/tests/effects/test4.ml[17,331+50]..[17,331+52]),None)
+                                                                  ]
+                                                        <case>
+                                                          pattern (testsuite/tests/effects/test4.ml[18,386+16]..[18,386+17])
+                                                            Ppat_var "e" (testsuite/tests/effects/test4.ml[18,386+16]..[18,386+17])
+                                                          expression (testsuite/tests/effects/test4.ml[18,386+21]..[18,386+25])
+                                                            Pexp_construct "None" (testsuite/tests/effects/test4.ml[18,386+21]..[18,386+25])
+                                                            None
+                                                      ]
+                                            ]
+                                            None
+                                      ]
+                            <case>
+                              pattern (testsuite/tests/effects/test4.ml[19,415+8]..[19,415+9])
+                                Ppat_var "e" (testsuite/tests/effects/test4.ml[19,415+8]..[19,415+9])
+                              expression (testsuite/tests/effects/test4.ml[19,415+13]..[19,415+17])
+                                Pexp_construct "None" (testsuite/tests/effects/test4.ml[19,415+13]..[19,415+17])
+                                None
+                          ]
+                ]
+                None
+          ]
+    ]
+  structure_item (testsuite/tests/effects/test4.ml[21,436+0]..[21,436+31])
+    Pstr_value Nonrec
+    [
+      <def>
+        pattern (testsuite/tests/effects/test4.ml[21,436+4]..[21,436+6])
+          Ppat_construct "()" (testsuite/tests/effects/test4.ml[21,436+4]..[21,436+6])
+          None
+        expression (testsuite/tests/effects/test4.ml[21,436+9]..[21,436+31])
+          Pexp_apply
+          expression (testsuite/tests/effects/test4.ml[21,436+9]..[21,436+22])
+            Pexp_ident "Printf.printf" (testsuite/tests/effects/test4.ml[21,436+9]..[21,436+22])
+          [
+            <arg>
+            Nolabel
+              expression (testsuite/tests/effects/test4.ml[21,436+23]..[21,436+29])
+                Pexp_constant PConst_string("%d\n",(testsuite/tests/effects/test4.ml[21,436+24]..[21,436+28]),None)
+            <arg>
+            Nolabel
+              expression (testsuite/tests/effects/test4.ml[21,436+30]..[21,436+31])
+                Pexp_ident "r" (testsuite/tests/effects/test4.ml[21,436+30]..[21,436+31])
+          ]
+    ]
+]
+
